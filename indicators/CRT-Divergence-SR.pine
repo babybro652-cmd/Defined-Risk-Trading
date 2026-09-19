@@ -11,6 +11,11 @@
 //   4. Flags a high-confluence BUY/SELL signal only when a confirmed CRT
 //      sweep happens at/through a tracked S/R level while a recent divergence
 //      supports the same direction.
+//   5. Plots the CRT range's equilibrium (50%) level with a composite
+//      Bull%/Bear% bias readout (CRT direction + RSI + divergence + price
+//      position vs equilibrium), mirroring a generic "unbiased level" style
+//      display. This is an original composite score, not a reverse-engineered
+//      copy of any third-party indicator's formula.
 //   The CRT Range Timeframe is independent of the chart you're viewing, so
 //   the same formations/labels/signals appear whether you're on a 1min
 //   execution chart or the 15min chart the range is built from.
@@ -41,6 +46,10 @@ divValidBars    = input.int(25, "Divergence Validity Window (bars)", minval = 1,
 grpConf = "Confluence Rules"
 requireSR   = input.bool(true, "Require Sweep At Support/Resistance", group = grpConf)
 requireDiv  = input.bool(true, "Require Recent Divergence", group = grpConf)
+
+grpBias = "Bias Level"
+showBiasLevel  = input.bool(true, "Show Equilibrium Level + Bull/Bear Bias %", group = grpBias, tooltip = "Draws the 50% equilibrium of the current CRT range plus a composite Bull%/Bear% readout, similar to a generic 'unbiased level' style display. This is our own composite score built from the CRT direction, RSI, divergence and price position already tracked above — it is not a copy of any third-party indicator's formula.")
+biasDecayBars  = input.int(50, "CRT Bias Decay (bars)", minval = 5, group = grpBias, tooltip = "How many bars the last confirmed CRT direction keeps pulling the bias score before decaying to zero.")
 
 grpStyle = "Style"
 bullColor       = input.color(color.new(color.teal, 0), "Bullish", group = grpStyle)
@@ -192,6 +201,53 @@ if showDivLabels and bearDivPulse
     label.new(x = bar_index - divPivotLen, y = high[divPivotLen], style = label.style_label_down, color = color.new(bearColor, 40), textcolor = color.white, text = "Bear Div", size = size.tiny)
 
 // ---------------------------------------------------------------------------
+// Bias Level — equilibrium (50%) of the current CRT range plus a composite
+// Bull/Bear % readout built from signals already computed above.
+// ---------------------------------------------------------------------------
+var float eqLevel    = na
+var int   lastCRTDir = 0
+var int   lastCRTBar = na
+
+if newRange
+    eqLevel := (c1H + c1L) / 2
+
+if bullCRTSignal
+    lastCRTDir := 1
+    lastCRTBar := bar_index
+
+if bearCRTSignal
+    lastCRTDir := -1
+    lastCRTBar := bar_index
+
+eqBias  = na(eqLevel) ? 0.0 : (close > eqLevel ? 1.0 : -1.0)
+rsiBias = rsi > 50 ? 1.0 : -1.0
+divBias = recentBullDiv and not recentBearDiv ? 1.0 : (recentBearDiv and not recentBullDiv ? -1.0 : 0.0)
+
+crtRecencyFactor = na(lastCRTBar) ? 0.0 : math.max(0.0, 1.0 - (bar_index - lastCRTBar) / float(biasDecayBars))
+crtBias = lastCRTDir * crtRecencyFactor
+
+biasSum    = 3.0 * eqBias + 2.0 * rsiBias + 2.0 * divBias + 3.0 * crtBias
+biasMaxAbs = 3.0 + 2.0 + 2.0 + 3.0
+bullPct = int(math.round(math.max(0.0, math.min(100.0, 50 + (biasSum / biasMaxAbs) * 50))))
+bearPct = 100 - bullPct
+
+var line eqLine = na
+if showBiasLevel and newRange
+    if not na(eqLine)
+        line.delete(eqLine)
+    eqLine := line.new(x1 = t1, y1 = eqLevel, x2 = t3End, y2 = eqLevel, xloc = xloc.bar_time, color = color.new(color.purple, 0), style = line.style_dotted, width = 1, extend = extend.right)
+
+var label bullBiasLabel = na
+var label bearBiasLabel = na
+if showBiasLevel and not na(eqLevel) and barstate.islast
+    if not na(bullBiasLabel)
+        label.delete(bullBiasLabel)
+    if not na(bearBiasLabel)
+        label.delete(bearBiasLabel)
+    bullBiasLabel := label.new(x = bar_index + 2, y = eqLevel + atr * 0.4, style = label.style_label_left, color = color.new(color.black, 100), textcolor = color.new(color.teal, 0), text = "Bull - " + str.tostring(bullPct) + "%", size = size.normal)
+    bearBiasLabel := label.new(x = bar_index + 2, y = eqLevel - atr * 0.4, style = label.style_label_left, color = color.new(color.black, 100), textcolor = color.new(color.red, 0), text = "Bear - " + str.tostring(bearPct) + "%", size = size.normal)
+
+// ---------------------------------------------------------------------------
 // Confluence
 // ---------------------------------------------------------------------------
 longConfluence  = bullCRTSignal and (not requireSR or nearSupport)    and (not requireDiv or recentBullDiv)
@@ -238,15 +294,17 @@ if shortConfluence
     lastSignalText  := "SELL @ " + str.tostring(high, format.mintick)
     lastSignalColor := bearColor
 
-var table statusTable = table.new(position.top_right, 2, 3, border_width = 1)
+var table statusTable = table.new(position.top_right, 2, 4, border_width = 1)
 
 if showStatusPanel and barstate.islast
     table.cell(statusTable, 0, 0, "CRT Range TF", text_color = color.white, bgcolor = color.new(color.gray, 75))
     table.cell(statusTable, 1, 0, crtTF, text_color = color.white, bgcolor = color.new(color.gray, 75))
     table.cell(statusTable, 0, 1, "Chart TF", text_color = color.white, bgcolor = color.new(color.gray, 85))
     table.cell(statusTable, 1, 1, timeframe.period + (tfWarning ? " ⚠" : ""), text_color = tfWarning ? color.orange : color.white, bgcolor = color.new(color.gray, 85))
-    table.cell(statusTable, 0, 2, "Last Signal", text_color = color.white, bgcolor = color.new(color.gray, 75))
-    table.cell(statusTable, 1, 2, lastSignalText, text_color = lastSignalColor, bgcolor = color.new(color.gray, 75))
+    table.cell(statusTable, 0, 2, "Bias", text_color = color.white, bgcolor = color.new(color.gray, 75))
+    table.cell(statusTable, 1, 2, "Bull " + str.tostring(bullPct) + "% / Bear " + str.tostring(bearPct) + "%", text_color = bullPct >= bearPct ? color.teal : color.red, bgcolor = color.new(color.gray, 75))
+    table.cell(statusTable, 0, 3, "Last Signal", text_color = color.white, bgcolor = color.new(color.gray, 85))
+    table.cell(statusTable, 1, 3, lastSignalText, text_color = lastSignalColor, bgcolor = color.new(color.gray, 85))
 
 // ---------------------------------------------------------------------------
 // Alerts
