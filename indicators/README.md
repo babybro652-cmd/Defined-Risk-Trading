@@ -58,6 +58,24 @@ The weighted sum is normalized to a 0-100% Bull score; Bear is `100 - Bull`.
 Treat it as a quick read of which way the current confluence factors lean,
 not a standalone signal.
 
+**5. Trade Levels - Entry, Stop Loss, and three Take Profits**
+Every BUY/SELL confluence signal draws a full trade plan, styled like a
+typical entry/SL/TP callout:
+
+- **Entry**: the distribution candle's close (the bar that confirmed the CRT reversal).
+- **Stop Loss**: beyond the CRT sweep extreme (the manipulation candle's wick) by
+  **Stop Buffer Beyond Sweep**, in ATRs - the level a valid setup shouldn't revisit.
+- **TP1 / TP2 / TP3**: R-multiples of that risk (defaults 1R / 2R / 3R, all
+  configurable), where 1R = the distance from Entry to Stop Loss.
+
+Each level draws as a colored line + label extending right from the signal.
+The moment price actually trades through a level, its line freezes at that
+bar and the label grays out with "(HIT)" appended, so you can see at a
+glance which targets played out on a given setup. A new confluence signal
+replaces the previous setup's levels entirely - only one active setup is
+shown at a time. Toggle the whole feature off with **Show Entry / SL / Take
+Profits**.
+
 ## The signal
 
 A **BUY** confluence label + triangle fires when: a bullish CRT sequence
@@ -74,9 +92,9 @@ Unfiltered CRT patterns that don't reach full confluence still get a plain
 A status panel in the top-right corner (toggle with **Show Status Panel**)
 always shows the current Range Timeframe, your chart's timeframe (flagged
 if it's set higher than the Range Timeframe, which breaks the multi-timeframe
-fetch), the current Bull/Bear bias split, and the last BUY/SELL signal - so
-you can tell the indicator is tracking correctly even when scrolled away
-from the actual formation.
+fetch), the current Bull/Bear bias split, the last BUY/SELL signal, and the
+active trade setup's direction/entry/stop - so you can tell the indicator is
+tracking correctly even when scrolled away from the actual formation.
 
 ## Alerts
 
