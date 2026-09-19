@@ -337,8 +337,8 @@ if showTradeLevels and (longConfluence or shortConfluence)
         ln = line.new(x1 = t3End, y1 = p, x2 = t3End + timeframe.in_seconds() * 1000, y2 = p, xloc = xloc.bar_time, color = col, width = 2, extend = extend.right)
         label lb = na
         if i == 0
-            entryLabelX = t3End + timeframe.in_seconds() * 1000 * 3
-            lb := dir == 1 ? label.new(x = entryLabelX, y = p, xloc = xloc.bar_time, style = label.style_label_up, color = col, textcolor = color.white, text = txt, size = size.small) : label.new(x = entryLabelX, y = p, xloc = xloc.bar_time, style = label.style_label_down, color = col, textcolor = color.white, text = txt, size = size.small)
+            entryLabelY = dir == 1 ? low - atr * 0.8 : high + atr * 0.8
+            lb := dir == 1 ? label.new(x = t3End, y = entryLabelY, xloc = xloc.bar_time, style = label.style_label_up, color = col, textcolor = color.white, text = txt, size = size.small) : label.new(x = t3End, y = entryLabelY, xloc = xloc.bar_time, style = label.style_label_down, color = col, textcolor = color.white, text = txt, size = size.small)
         else
             lb := label.new(x = t3End, y = p, xloc = xloc.bar_time, style = label.style_label_left, color = col, textcolor = color.white, text = txt, size = size.small)
         lvlLine.set(i, ln)
@@ -394,10 +394,10 @@ if bearCRTSignal and not shortConfluence
     label.new(x = t3End, y = high, xloc = xloc.bar_time, yloc = yloc.abovebar, style = label.style_label_down, color = color.new(bearColor, 40), textcolor = color.white, text = "CRT", size = size.small)
 
 if longConfluence
-    label.new(x = t3End, y = low - atr * 1.3, xloc = xloc.bar_time, style = label.style_label_up, color = bullColor, textcolor = color.white, text = "BUY\nCRT + SR + DIV", size = size.normal)
+    label.new(x = t3End, y = low, xloc = xloc.bar_time, yloc = yloc.belowbar, style = label.style_label_up, color = bullColor, textcolor = color.white, text = "BUY\nCRT + SR + DIV", size = size.normal)
 
 if shortConfluence
-    label.new(x = t3End, y = high + atr * 1.3, xloc = xloc.bar_time, style = label.style_label_down, color = bearColor, textcolor = color.white, text = "SELL\nCRT + SR + DIV", size = size.normal)
+    label.new(x = t3End, y = high, xloc = xloc.bar_time, yloc = yloc.abovebar, style = label.style_label_down, color = bearColor, textcolor = color.white, text = "SELL\nCRT + SR + DIV", size = size.normal)
 
 // Fixed-size markers (plotshape scales with zoom/timeframe better than labels
 // when you're jumping between a 1min execution chart and the 15min CRT view).
