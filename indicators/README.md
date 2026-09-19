@@ -16,10 +16,16 @@ pre-trade checklist against a real setup instead of scanning charts by hand.
   extreme; in "Close Back Inside Range" mode (fast) it just needs to close
   in the reversal direction.
 
-Runs on the chart's own candles by default. Set **Range Timeframe** to a
-higher timeframe (e.g. `240` for 4H, `D` for daily) to detect that range's
-CRT sequence while entries are timed on a lower timeframe chart — the same
-idea as running HTF bias with an LTF kill-zone entry.
+**Range Timeframe** (default `15`) is independent of whatever chart you're
+looking at. Set it once to the timeframe you actually trade CRT on, and the
+same formations, labels, and BUY/SELL signals show up whether you're viewing
+the 15min chart itself or a 1min execution chart — you don't need to flip
+timeframes to see if a setup is forming. This only works when the chart
+timeframe is **at or below** the Range Timeframe (e.g. viewing 1min or 5min
+while Range Timeframe is 15 is fine; viewing 30min or higher is not — the
+status panel's Chart TF cell turns orange with a ⚠ if you're on an invalid
+combination). Leave it blank to build CRT from the chart's own candles
+instead.
 
 **2. Support & Resistance — pivot-based, self-maintaining**
 Tracks swing high/low pivots as horizontal levels, each valid until price
@@ -35,15 +41,22 @@ confluence signal even if it formed a few bars before the CRT confirmation.
 
 ## The signal
 
-A **LONG** confluence label fires when: a bullish CRT sequence confirms, the
-sweep occurred at/through a tracked support level, and a bullish RSI
-divergence is still active. **SHORT** is the mirror at resistance. Either
-`requireSR` or `requireDiv` can be turned off in the Confluence Rules group
-to loosen the filter (e.g. CRT + S/R only, no divergence requirement) —
-useful while backtesting which combination fits a given instrument/session.
+A **BUY** confluence label + triangle fires when: a bullish CRT sequence
+confirms, the sweep occurred at/through a tracked support level, and a
+bullish RSI divergence is still active. **SELL** is the mirror at
+resistance. Either `requireSR` or `requireDiv` can be turned off in the
+Confluence Rules group to loosen the filter (e.g. CRT + S/R only, no
+divergence requirement) — useful while backtesting which combination fits a
+given instrument/session.
 
 Unfiltered CRT patterns that don't reach full confluence still get a plain
 "CRT" label so you can see what the filters excluded.
+
+A status panel in the top-right corner (toggle with **Show Status Panel**)
+always shows the current Range Timeframe, your chart's timeframe (flagged
+if it's set higher than the Range Timeframe, which breaks the multi-timeframe
+fetch), and the last BUY/SELL signal — so you can tell the indicator is
+tracking correctly even when scrolled away from the actual formation.
 
 ## Alerts
 
@@ -53,9 +66,9 @@ fits your workflow.
 
 ## Suggested starting point for ES futures
 
-- Chart timeframe: 1–5 min for entries.
-- Range Timeframe: blank (chart TF) for kill-zone-scale CRT, or `60`
-  for hourly range context.
+- Range Timeframe: `15` (matches the 15min CRT / 1min entry workflow).
+- Chart timeframe while scanning or executing: 1min, or 5min — anything at
+  or below 15min will show the same signals.
 - Keep both `requireSR` and `requireDiv` on for the highest-conviction
   signals; this will fire less often but each hit has three confirmations
   stacked.
