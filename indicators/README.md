@@ -69,12 +69,21 @@ typical entry/SL/TP callout:
   configurable), where 1R = the distance from Entry to Stop Loss.
 
 Each level draws as a colored line + label extending right from the signal.
-The moment price actually trades through a level, its line freezes at that
-bar and the label grays out with "(HIT)" appended, so you can see at a
-glance which targets played out on a given setup. A new confluence signal
-replaces the previous setup's levels entirely - only one active setup is
-shown at a time. Toggle the whole feature off with **Show Entry / SL / Take
-Profits**.
+The Entry label sits above the signal candle's high (the line itself stays
+at the entry price and keeps extending forward with new bars). The moment
+price actually trades through a level, its line freezes at that bar and the
+label grays out with "(HIT)" appended, so you can see at a glance which
+targets played out on a given setup. A new confluence signal replaces the
+previous setup's levels entirely - only one active setup is shown at a time.
+Toggle the whole feature off with **Show Entry / SL / Take Profits**.
+
+**Move SL to Breakeven at TP1, Trail at TP2/TP3** (on by default): once TP1
+hits, the Stop Loss line moves up to Entry; once TP2 hits, it moves to TP1;
+once TP3 hits, it moves to TP2. The original stop segment freezes in place
+at the moment of each move so the chart still shows exactly where the stop
+was at any point in the trade's history, and the new segment carries a
+"(BE)" or "(TRAIL)" tag. Turn this off to keep a single fixed stop for the
+life of the trade.
 
 ## The signal
 
@@ -89,14 +98,16 @@ given instrument/session.
 Unfiltered CRT patterns that don't reach full confluence still get a plain
 "CRT" label so you can see what the filters excluded.
 
-A compact 4-row status panel in the top-right corner (toggle with **Show
-Status Panel**) shows: Range TF / chart TF (flagged if the chart TF is
-higher than the Range TF, which breaks the multi-timeframe fetch), the
-current Bull/Bear bias split, the last BUY/SELL signal, and the active
-setup's direction, entry, and a live status word - **LIVE**, **STOPPED**,
-or **TP1/TP2/TP3 HIT** - so you can tell at a glance whether that setup is
-still in play or already resolved, without scrolling back to find it on
-the chart.
+A 4-row status panel in the top-right corner (toggle with **Show Status
+Panel**) shows: Range TF / chart TF (flagged if the chart TF is higher than
+the Range TF, which breaks the multi-timeframe fetch), the current Bull/Bear
+bias split (Bull in teal, Bear in red, each in its own cell), the last
+BUY/SELL signal, and the active setup's direction, entry, and a live status
+word - **WAITING** (no signal yet), **LIVE**, **TP1/TP2/TP3 HIT**,
+**STOPPED**, **STOPPED (BE)**, or **STOPPED (TRAIL)** - so you can tell at a
+glance whether that setup is still in play or already resolved, and whether
+a stop-out was a full loss or a breakeven/trailed exit, without scrolling
+back to find it on the chart.
 
 ## Alerts
 

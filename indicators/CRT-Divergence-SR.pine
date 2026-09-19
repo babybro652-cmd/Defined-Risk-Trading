@@ -61,6 +61,7 @@ stopBufferATR   = input.float(0.15, "Stop Buffer Beyond Sweep (x ATR)", minval =
 tp1R            = input.float(1.0, "TP1 (R multiple)", minval = 0.1, step = 0.1, group = grpTrade)
 tp2R            = input.float(2.0, "TP2 (R multiple)", minval = 0.1, step = 0.1, group = grpTrade)
 tp3R            = input.float(3.0, "TP3 (R multiple)", minval = 0.1, step = 0.1, group = grpTrade)
+moveSLToBreakeven = input.bool(true, "Move SL to Breakeven at TP1, Trail at TP2/TP3", group = grpTrade, tooltip = "When a target hits, the Stop Loss moves to lock in progress: to Entry after TP1, to TP1 after TP2, to TP2 after TP3. Turn off to keep the original fixed stop for the life of the trade.")
 
 grpStyle = "Style"
 bullColor       = input.color(color.new(color.teal, 0), "Bullish", group = grpStyle)
@@ -107,6 +108,23 @@ f_nearAbove(array<float> arr, float price, float buffer) =>
 
 f_lvlName(int idx) => idx == 0 ? "ENTRY" : idx == 1 ? "SL" : idx == 2 ? "TP1" : idx == 3 ? "TP2" : "TP3"
 f_lvlColor(int idx) => idx == 0 ? color.new(color.yellow, 0) : idx == 1 ? color.new(color.red, 0) : color.new(color.teal, 0)
+
+// Ends the current SL line/label at this bar and starts a fresh one at newPrice,
+// so the chart shows the original stop up to the move and the new stop after it.
+moveSL(array<float> pricesArr, array<line> linesArr, array<label> labelsArr, array<string> baseTextArr, float newPrice, string suffix) =>
+    oldLn = linesArr.get(1)
+    line.set_extend(oldLn, extend.none)
+    line.set_x2(oldLn, math.max(time, line.get_x1(oldLn) + 1))
+    oldLb = labelsArr.get(1)
+    label.delete(oldLb)
+    pricesArr.set(1, newPrice)
+    slColor = f_lvlColor(1)
+    txt = "SL " + str.tostring(newPrice, format.mintick) + suffix
+    baseTextArr.set(1, txt)
+    newLn = line.new(x1 = time, y1 = newPrice, x2 = time + timeframe.in_seconds() * 1000, y2 = newPrice, xloc = xloc.bar_time, color = slColor, width = 2, extend = extend.right)
+    newLb = label.new(x = time, y = newPrice, xloc = xloc.bar_time, style = label.style_label_left, color = slColor, textcolor = color.white, text = txt, size = size.small)
+    linesArr.set(1, newLn)
+    labelsArr.set(1, newLb)
 
 // ---------------------------------------------------------------------------
 // Support & Resistance engine (chart timeframe, pivot based)
@@ -280,6 +298,7 @@ var array<line>   lvlLine     = array.new<line>(5)
 var array<label>  lvlLabel    = array.new<label>(5)
 var array<bool>   lvlHit      = array.new<bool>(5, false)
 var int tradeDir = 0
+var int slMoveStage = 0
 
 if showTradeLevels and (longConfluence or shortConfluence)
     for i = 0 to 4
@@ -292,6 +311,7 @@ if showTradeLevels and (longConfluence or shortConfluence)
 
     dir = longConfluence ? 1 : -1
     tradeDir := dir
+    slMoveStage := 0
 
     entryPrice = c3C
     slPrice    = dir == 1 ? c2L - atr * stopBufferATR : c2H + atr * stopBufferATR
@@ -313,7 +333,8 @@ if showTradeLevels and (longConfluence or shortConfluence)
         lvlBaseText.set(i, txt)
         col = f_lvlColor(i)
         ln = line.new(x1 = t3End, y1 = p, x2 = t3End + timeframe.in_seconds() * 1000, y2 = p, xloc = xloc.bar_time, color = col, width = 2, extend = extend.right)
-        lb = label.new(x = t3End, y = p, xloc = xloc.bar_time, style = label.style_label_left, color = col, textcolor = color.white, text = txt, size = size.small)
+        labelY = i == 0 ? high + atr * 0.3 : p
+        lb = label.new(x = t3End, y = labelY, xloc = xloc.bar_time, style = label.style_label_left, color = col, textcolor = color.white, text = txt, size = size.small)
         lvlLine.set(i, ln)
         lvlLabel.set(i, lb)
 
@@ -331,6 +352,12 @@ if showTradeLevels and tradeDir != 0
                 line.set_x2(ln, math.max(time, line.get_x1(ln) + 1))
                 label.set_text(lb, lvlBaseText.get(i) + " (HIT)")
                 label.set_color(lb, color.gray)
+
+                if moveSLToBreakeven and i >= 2 and not lvlHit.get(1)
+                    newSL = i == 2 ? lvlPrice.get(0) : i == 3 ? lvlPrice.get(2) : lvlPrice.get(3)
+                    suffix = i == 2 ? " (BE)" : " (TRAIL)"
+                    moveSL(lvlPrice, lvlLine, lvlLabel, lvlBaseText, newSL, suffix)
+                    slMoveStage := i - 1
 
 // ---------------------------------------------------------------------------
 // Plotting
@@ -373,20 +400,22 @@ if shortConfluence
     lastSignalText  := "SELL @ " + str.tostring(high, format.mintick)
     lastSignalColor := bearColor
 
-var table statusTable = table.new(position.top_right, 2, 4, border_width = 1)
+var table statusTable = table.new(position.top_right, 3, 4, border_width = 1)
 
-tradeStatus = tradeDir == 0 ? "WAITING" : lvlHit.get(1) ? "STOPPED" : lvlHit.get(4) ? "TP3 HIT" : lvlHit.get(3) ? "TP2 HIT" : lvlHit.get(2) ? "TP1 HIT" : "LIVE"
-tradeStatusColor = tradeStatus == "WAITING" ? color.gray : tradeStatus == "STOPPED" ? bearColor : tradeStatus == "LIVE" ? color.gray : bullColor
+stoppedLabel = slMoveStage == 0 ? "STOPPED" : slMoveStage == 1 ? "STOPPED (BE)" : "STOPPED (TRAIL)"
+tradeStatus = tradeDir == 0 ? "WAITING" : lvlHit.get(1) ? stoppedLabel : lvlHit.get(4) ? "TP3 HIT" : lvlHit.get(3) ? "TP2 HIT" : lvlHit.get(2) ? "TP1 HIT" : "LIVE"
+tradeStatusColor = tradeDir == 0 ? color.gray : lvlHit.get(1) ? bearColor : tradeStatus == "LIVE" ? color.gray : bullColor
 
 if showStatusPanel and barstate.islast
-    table.cell(statusTable, 0, 0, "TF", text_color = color.white, bgcolor = color.new(color.gray, 75), text_size = size.tiny)
-    table.cell(statusTable, 1, 0, crtTF + " / " + timeframe.period + (tfWarning ? " (!)" : ""), text_color = tfWarning ? color.orange : color.white, bgcolor = color.new(color.gray, 75), text_size = size.tiny)
-    table.cell(statusTable, 0, 1, "Bias", text_color = color.white, bgcolor = color.new(color.gray, 85), text_size = size.tiny)
-    table.cell(statusTable, 1, 1, "Bull " + str.tostring(bullPct) + "% / Bear " + str.tostring(bearPct) + "%", text_color = bullPct >= bearPct ? color.teal : color.red, bgcolor = color.new(color.gray, 85), text_size = size.tiny)
-    table.cell(statusTable, 0, 2, "Signal", text_color = color.white, bgcolor = color.new(color.gray, 75), text_size = size.tiny)
-    table.cell(statusTable, 1, 2, lastSignalText, text_color = lastSignalColor, bgcolor = color.new(color.gray, 75), text_size = size.tiny)
-    table.cell(statusTable, 0, 3, "Setup", text_color = color.white, bgcolor = color.new(color.gray, 85), text_size = size.tiny)
-    table.cell(statusTable, 1, 3, tradeDir == 0 ? tradeStatus : (tradeDir == 1 ? "LONG " : "SHORT ") + str.tostring(lvlPrice.get(0), format.mintick) + " (" + tradeStatus + ")", text_color = tradeStatusColor, bgcolor = color.new(color.gray, 85), text_size = size.tiny)
+    table.cell(statusTable, 0, 0, "TF", text_color = color.white, bgcolor = color.new(color.gray, 75), text_size = size.small)
+    table.cell(statusTable, 1, 0, crtTF + " / " + timeframe.period + (tfWarning ? " (!)" : ""), text_color = tfWarning ? color.orange : color.white, bgcolor = color.new(color.gray, 75), text_size = size.small)
+    table.cell(statusTable, 0, 1, "Bias", text_color = color.white, bgcolor = color.new(color.gray, 85), text_size = size.small)
+    table.cell(statusTable, 1, 1, "Bull " + str.tostring(bullPct) + "%", text_color = color.teal, bgcolor = color.new(color.gray, 85), text_size = size.small)
+    table.cell(statusTable, 2, 1, "Bear " + str.tostring(bearPct) + "%", text_color = color.red, bgcolor = color.new(color.gray, 85), text_size = size.small)
+    table.cell(statusTable, 0, 2, "Signal", text_color = color.white, bgcolor = color.new(color.gray, 75), text_size = size.small)
+    table.cell(statusTable, 1, 2, lastSignalText, text_color = lastSignalColor, bgcolor = color.new(color.gray, 75), text_size = size.small)
+    table.cell(statusTable, 0, 3, "Setup", text_color = color.white, bgcolor = color.new(color.gray, 85), text_size = size.small)
+    table.cell(statusTable, 1, 3, tradeDir == 0 ? tradeStatus : (tradeDir == 1 ? "LONG " : "SHORT ") + str.tostring(lvlPrice.get(0), format.mintick) + " (" + tradeStatus + ")", text_color = tradeStatusColor, bgcolor = color.new(color.gray, 85), text_size = size.small)
 
 // ---------------------------------------------------------------------------
 // Alerts
