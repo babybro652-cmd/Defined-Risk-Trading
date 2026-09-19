@@ -343,6 +343,10 @@ if showTradeLevels and (longConfluence or shortConfluence)
         lvlLabel.set(i, lb)
 
 // Freeze a level's line/label in place the first time price actually touches it.
+slJustHit  = false
+tp1JustHit = false
+tp2JustHit = false
+tp3JustHit = false
 if showTradeLevels and tradeDir != 0
     for i = 1 to 4
         if not lvlHit.get(i)
@@ -356,6 +360,15 @@ if showTradeLevels and tradeDir != 0
                 line.set_x2(ln, math.max(time, line.get_x1(ln) + 1))
                 label.set_text(lb, lvlBaseText.get(i) + " (HIT)")
                 label.set_color(lb, color.gray)
+
+                if i == 1
+                    slJustHit := true
+                if i == 2
+                    tp1JustHit := true
+                if i == 3
+                    tp2JustHit := true
+                if i == 4
+                    tp3JustHit := true
 
                 if moveSLToBreakeven and i >= 2 and not lvlHit.get(1)
                     newSL = i == 2 ? lvlPrice.get(0) : i == 3 ? lvlPrice.get(2) : lvlPrice.get(3)
@@ -428,3 +441,9 @@ alertcondition(longConfluence,  "Bullish CRT + S/R + Divergence", "Bullish CRT s
 alertcondition(shortConfluence, "Bearish CRT + S/R + Divergence", "Bearish CRT sweep confirmed at resistance with bearish RSI divergence on {{ticker}}.")
 alertcondition(bullCRTSignal,   "Bullish CRT Pattern (unfiltered)", "Bullish CRT pattern confirmed on {{ticker}}.")
 alertcondition(bearCRTSignal,   "Bearish CRT Pattern (unfiltered)", "Bearish CRT pattern confirmed on {{ticker}}.")
+alertcondition(bullDivPulse,    "Bullish Divergence", "Bullish RSI divergence detected on {{ticker}}.")
+alertcondition(bearDivPulse,    "Bearish Divergence", "Bearish RSI divergence detected on {{ticker}}.")
+alertcondition(slJustHit,       "Stop Loss Hit", "Stop loss hit on the active {{ticker}} setup.")
+alertcondition(tp1JustHit,      "TP1 Hit", "TP1 hit on the active {{ticker}} setup.")
+alertcondition(tp2JustHit,      "TP2 Hit", "TP2 hit on the active {{ticker}} setup.")
+alertcondition(tp3JustHit,      "TP3 Hit", "TP3 hit on the active {{ticker}} setup.")

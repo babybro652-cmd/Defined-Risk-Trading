@@ -111,9 +111,13 @@ back to find it on the chart.
 
 ## Alerts
 
-Four alert conditions are exposed: full bullish/bearish confluence, and
-raw (unfiltered) bullish/bearish CRT patterns - set alerts on whichever
-fits your workflow.
+Ten alert conditions are exposed, covering every stage of a setup:
+full bullish/bearish confluence (BUY/SELL), raw (unfiltered) bullish/bearish
+CRT patterns, bullish/bearish RSI divergence on its own, and Stop
+Loss/TP1/TP2/TP3 hit on the active setup. Set alerts on whichever fits your
+workflow - the divergence and outcome alerts in particular are worth
+turning on if you're forward-testing and logging every occurrence, since
+they're easy to miss just glancing at the chart.
 
 ## Suggested starting point for ES futures
 
