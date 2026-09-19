@@ -1,0 +1,222 @@
+// Defined Risk Trading — CRT + Divergence + Support/Resistance Confluence
+// Educational indicator. Not financial advice. Combine with the full
+// pre-trade checklist (bias, session, defined risk) before acting on any signal.
+//
+// What it does:
+//   1. Detects a 3-candle CRT (Candle Range Theory) sequence: a Range candle,
+//      a Manipulation candle that sweeps liquidity beyond the range and closes
+//      back inside it, and a Distribution candle that confirms the reversal.
+//   2. Tracks pivot-based Support & Resistance levels on the chart timeframe.
+//   3. Tracks regular RSI divergence (price vs. momentum) at swing highs/lows.
+//   4. Flags a high-confluence LONG/SHORT signal only when a confirmed CRT
+//      sweep happens at/through a tracked S/R level while a recent divergence
+//      supports the same direction.
+//
+//@version=6
+indicator("CRT + Divergence + S/R Confluence | Defined Risk Trading", shorttitle = "CRT-DIV-SR", overlay = true, max_lines_count = 300, max_labels_count = 300, max_boxes_count = 300)
+
+// ---------------------------------------------------------------------------
+// Inputs
+// ---------------------------------------------------------------------------
+grpCRT = "CRT (Candle Range Theory)"
+crtTimeframe    = input.timeframe("", "Range Timeframe (blank = chart timeframe)", group = grpCRT, tooltip = "Leave blank to build the CRT range from the chart's own candles. Set a higher timeframe (e.g. 240, D) to detect that range's CRT sequence while viewing a lower timeframe chart.")
+crtConfirmMode  = input.string("Break of Range", "Confirmation Mode", options = ["Close Back Inside Range", "Break of Range"], group = grpCRT, tooltip = "Break of Range (strict): the 3rd candle must close beyond the range candle's opposite extreme.\nClose Back Inside Range (fast): only requires the manipulation candle to close back inside the range.")
+crtMinSweepATR  = input.float(0.10, "Min Sweep Size (x ATR)", minval = 0.0, step = 0.05, group = grpCRT, tooltip = "Filters out insignificant wicks. The sweep beyond the range must exceed this many ATRs.")
+
+grpSR = "Support & Resistance"
+srPivotLen      = input.int(10, "Pivot Length", minval = 2, maxval = 50, group = grpSR)
+srMaxLevels     = input.int(8, "Max Levels (each side)", minval = 1, maxval = 20, group = grpSR)
+srTouchATR      = input.float(0.25, "Proximity Zone (x ATR)", minval = 0.05, step = 0.05, group = grpSR, tooltip = "How close (in ATRs) the CRT sweep must come to a tracked level to count as 'at' that level.")
+srInvalidation  = input.string("Close", "Break Invalidation", options = ["Wick", "Close"], group = grpSR)
+
+grpDiv = "Divergence"
+rsiLen          = input.int(14, "RSI Length", minval = 2, group = grpDiv)
+divPivotLen     = input.int(5, "Divergence Pivot Length", minval = 2, maxval = 30, group = grpDiv)
+divMaxBars      = input.int(60, "Max Bars Between Pivots", minval = 5, group = grpDiv)
+divValidBars    = input.int(25, "Divergence Validity Window (bars)", minval = 1, group = grpDiv, tooltip = "How many bars after a divergence forms it still counts toward a confluence signal.")
+
+grpConf = "Confluence Rules"
+requireSR   = input.bool(true, "Require Sweep At Support/Resistance", group = grpConf)
+requireDiv  = input.bool(true, "Require Recent Divergence", group = grpConf)
+
+grpStyle = "Style"
+bullColor       = input.color(color.new(color.teal, 0), "Bullish", group = grpStyle)
+bearColor       = input.color(color.new(color.red, 0), "Bearish", group = grpStyle)
+supportColor    = input.color(color.new(color.teal, 60), "Support Level", group = grpStyle)
+resistanceColor = input.color(color.new(color.red, 60), "Resistance Level", group = grpStyle)
+showCRTBoxes    = input.bool(true, "Show CRT Range Boxes", group = grpStyle)
+showDivLabels   = input.bool(true, "Show Divergence Labels", group = grpStyle)
+
+// ---------------------------------------------------------------------------
+// Core series
+// ---------------------------------------------------------------------------
+atr = ta.atr(20)
+rsi = ta.rsi(close, rsiLen)
+
+// ---------------------------------------------------------------------------
+// Helper functions
+// ---------------------------------------------------------------------------
+addLevel(array<float> pricesArr, array<line> linesArr, float lvl, color lineColor, int maxCount) =>
+    ln = line.new(x1 = bar_index - srPivotLen, y1 = lvl, x2 = bar_index, y2 = lvl, color = lineColor, width = 2, extend = extend.right)
+    pricesArr.unshift(lvl)
+    linesArr.unshift(ln)
+    if pricesArr.size() > maxCount
+        pricesArr.pop()
+        oldLn = linesArr.pop()
+        line.delete(oldLn)
+
+f_nearBelow(array<float> arr, float price, float buffer) =>
+    bool found = false
+    if arr.size() > 0
+        for i = 0 to arr.size() - 1
+            if price <= arr.get(i) + buffer
+                found := true
+    found
+
+f_nearAbove(array<float> arr, float price, float buffer) =>
+    bool found = false
+    if arr.size() > 0
+        for i = 0 to arr.size() - 1
+            if price >= arr.get(i) - buffer
+                found := true
+    found
+
+// ---------------------------------------------------------------------------
+// Support & Resistance engine (chart timeframe, pivot based)
+// ---------------------------------------------------------------------------
+var array<float> supLevels = array.new<float>()
+var array<line>  supLines  = array.new<line>()
+var array<float> resLevels = array.new<float>()
+var array<line>  resLines  = array.new<line>()
+
+pivLow  = ta.pivotlow(srPivotLen, srPivotLen)
+pivHigh = ta.pivothigh(srPivotLen, srPivotLen)
+
+if not na(pivLow)
+    addLevel(supLevels, supLines, pivLow, supportColor, srMaxLevels)
+
+if not na(pivHigh)
+    addLevel(resLevels, resLines, pivHigh, resistanceColor, srMaxLevels)
+
+// Break invalidation: drop levels once price closes (or wicks) through them
+for i = supLevels.size() - 1 to 0
+    lvl = supLevels.get(i)
+    brokenPrice = srInvalidation == "Close" ? close : low
+    if brokenPrice < lvl
+        line.delete(supLines.get(i))
+        supLevels.remove(i)
+        supLines.remove(i)
+
+for i = resLevels.size() - 1 to 0
+    lvl = resLevels.get(i)
+    brokenPrice = srInvalidation == "Close" ? close : high
+    if brokenPrice > lvl
+        line.delete(resLines.get(i))
+        resLevels.remove(i)
+        resLines.remove(i)
+
+// ---------------------------------------------------------------------------
+// CRT (Candle Range Theory) detection
+// ---------------------------------------------------------------------------
+crtTF = crtTimeframe == "" ? timeframe.period : crtTimeframe
+
+[c1H, c1L, c2H, c2L, c2C, c3C, t1, t3End] = request.security(syminfo.tickerid, crtTF,
+     [high[3], low[3], high[2], low[2], close[2], close[1], time[3], time_close[1]])
+
+sweepLow  = c2L < c1L and c2C > c1L and (c1L - c2L) >= atr * crtMinSweepATR
+sweepHigh = c2H > c1H and c2C < c1H and (c2H - c1H) >= atr * crtMinSweepATR
+
+confirmBull = sweepLow  and (crtConfirmMode == "Break of Range" ? c3C > c1H : c3C > c2C)
+confirmBear = sweepHigh and (crtConfirmMode == "Break of Range" ? c3C < c1L : c3C < c2C)
+
+newRange = t3End != t3End[1]
+
+bullCRTSignal = newRange and confirmBull
+bearCRTSignal = newRange and confirmBear
+
+nearSupport    = f_nearBelow(supLevels, c2L, atr * srTouchATR)
+nearResistance = f_nearAbove(resLevels, c2H, atr * srTouchATR)
+
+// ---------------------------------------------------------------------------
+// Regular RSI divergence at swing pivots
+// ---------------------------------------------------------------------------
+var float lastPLPrice = na
+var int   lastPLBar   = na
+var float lastPLRSI   = na
+
+var float lastPHPrice = na
+var int   lastPHBar   = na
+var float lastPHRSI   = na
+
+bullDivPulse = false
+bearDivPulse = false
+
+pivLowPrice  = ta.pivotlow(divPivotLen, divPivotLen)
+pivHighPrice = ta.pivothigh(divPivotLen, divPivotLen)
+
+if not na(pivLowPrice)
+    pivotBar = bar_index - divPivotLen
+    pivotRSI = rsi[divPivotLen]
+    if not na(lastPLPrice) and (pivotBar - lastPLBar) <= divMaxBars
+        if pivLowPrice < lastPLPrice and pivotRSI > lastPLRSI
+            bullDivPulse := true
+    lastPLPrice := pivLowPrice
+    lastPLBar   := pivotBar
+    lastPLRSI   := pivotRSI
+
+if not na(pivHighPrice)
+    pivotBarH = bar_index - divPivotLen
+    pivotRSIH = rsi[divPivotLen]
+    if not na(lastPHPrice) and (pivotBarH - lastPHBar) <= divMaxBars
+        if pivHighPrice > lastPHPrice and pivotRSIH < lastPHRSI
+            bearDivPulse := true
+    lastPHPrice := pivHighPrice
+    lastPHBar   := pivotBarH
+    lastPHRSI   := pivotRSIH
+
+barsSinceBullDiv = ta.barssince(bullDivPulse)
+barsSinceBearDiv = ta.barssince(bearDivPulse)
+
+recentBullDiv = not na(barsSinceBullDiv) and barsSinceBullDiv <= divValidBars
+recentBearDiv = not na(barsSinceBearDiv) and barsSinceBearDiv <= divValidBars
+
+if showDivLabels and bullDivPulse
+    label.new(x = bar_index - divPivotLen, y = low[divPivotLen], style = label.style_label_up, color = color.new(bullColor, 40), textcolor = color.white, text = "Bull Div", size = size.tiny)
+
+if showDivLabels and bearDivPulse
+    label.new(x = bar_index - divPivotLen, y = high[divPivotLen], style = label.style_label_down, color = color.new(bearColor, 40), textcolor = color.white, text = "Bear Div", size = size.tiny)
+
+// ---------------------------------------------------------------------------
+// Confluence
+// ---------------------------------------------------------------------------
+longConfluence  = bullCRTSignal and (not requireSR or nearSupport)    and (not requireDiv or recentBullDiv)
+shortConfluence = bearCRTSignal and (not requireSR or nearResistance) and (not requireDiv or recentBearDiv)
+
+// ---------------------------------------------------------------------------
+// Plotting
+// ---------------------------------------------------------------------------
+if showCRTBoxes and bullCRTSignal
+    box.new(left = t1, top = math.max(c1H, c2H), right = t3End, bottom = math.min(c1L, c2L), xloc = xloc.bar_time, bgcolor = color.new(bullColor, 88), border_color = bullColor, extend = extend.none)
+
+if showCRTBoxes and bearCRTSignal
+    box.new(left = t1, top = math.max(c1H, c2H), right = t3End, bottom = math.min(c1L, c2L), xloc = xloc.bar_time, bgcolor = color.new(bearColor, 88), border_color = bearColor, extend = extend.none)
+
+if bullCRTSignal and not longConfluence
+    label.new(x = t3End, y = low, xloc = xloc.bar_time, yloc = yloc.belowbar, style = label.style_label_up, color = color.new(bullColor, 40), textcolor = color.white, text = "CRT", size = size.small)
+
+if bearCRTSignal and not shortConfluence
+    label.new(x = t3End, y = high, xloc = xloc.bar_time, yloc = yloc.abovebar, style = label.style_label_down, color = color.new(bearColor, 40), textcolor = color.white, text = "CRT", size = size.small)
+
+if longConfluence
+    label.new(x = t3End, y = low, xloc = xloc.bar_time, yloc = yloc.belowbar, style = label.style_label_up, color = bullColor, textcolor = color.white, text = "LONG\nCRT + SR + DIV", size = size.normal)
+
+if shortConfluence
+    label.new(x = t3End, y = high, xloc = xloc.bar_time, yloc = yloc.abovebar, style = label.style_label_down, color = bearColor, textcolor = color.white, text = "SHORT\nCRT + SR + DIV", size = size.normal)
+
+// ---------------------------------------------------------------------------
+// Alerts
+// ---------------------------------------------------------------------------
+alertcondition(longConfluence,  "Bullish CRT + S/R + Divergence", "Bullish CRT sweep confirmed at support with bullish RSI divergence on {{ticker}}.")
+alertcondition(shortConfluence, "Bearish CRT + S/R + Divergence", "Bearish CRT sweep confirmed at resistance with bearish RSI divergence on {{ticker}}.")
+alertcondition(bullCRTSignal,   "Bullish CRT Pattern (unfiltered)", "Bullish CRT pattern confirmed on {{ticker}}.")
+alertcondition(bearCRTSignal,   "Bearish CRT Pattern (unfiltered)", "Bearish CRT pattern confirmed on {{ticker}}.")
