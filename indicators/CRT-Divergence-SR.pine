@@ -112,21 +112,23 @@ if not na(pivHigh)
     addLevel(resLevels, resLines, pivHigh, resistanceColor, srMaxLevels)
 
 // Break invalidation: drop levels once price closes (or wicks) through them
-for i = supLevels.size() - 1 to 0
-    lvl = supLevels.get(i)
-    brokenPrice = srInvalidation == "Close" ? close : low
-    if brokenPrice < lvl
-        line.delete(supLines.get(i))
-        supLevels.remove(i)
-        supLines.remove(i)
+if supLevels.size() > 0
+    for i = supLevels.size() - 1 to 0
+        lvl = supLevels.get(i)
+        brokenPrice = srInvalidation == "Close" ? close : low
+        if brokenPrice < lvl
+            line.delete(supLines.get(i))
+            supLevels.remove(i)
+            supLines.remove(i)
 
-for i = resLevels.size() - 1 to 0
-    lvl = resLevels.get(i)
-    brokenPrice = srInvalidation == "Close" ? close : high
-    if brokenPrice > lvl
-        line.delete(resLines.get(i))
-        resLevels.remove(i)
-        resLines.remove(i)
+if resLevels.size() > 0
+    for i = resLevels.size() - 1 to 0
+        lvl = resLevels.get(i)
+        brokenPrice = srInvalidation == "Close" ? close : high
+        if brokenPrice > lvl
+            line.delete(resLines.get(i))
+            resLevels.remove(i)
+            resLines.remove(i)
 
 // ---------------------------------------------------------------------------
 // CRT (Candle Range Theory) detection
