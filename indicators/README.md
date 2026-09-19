@@ -72,10 +72,9 @@ typical entry/SL/TP callout:
   configurable), where 1R = the distance from Entry to Stop Loss.
 
 Each level draws as a colored line + label extending right from the signal.
-The Entry label sits just above/below the signal candle (closer to price
-than the BUY/SELL confluence label above it, so the two stack cleanly
-instead of overlapping), and the line itself stays at the entry price and
-keeps extending forward with new bars. The moment
+The Entry label sits above/below the signal candle's high/low (the line
+itself stays at the entry price and keeps extending forward with new
+bars). The moment
 price actually trades through a level, its line freezes at that bar and the
 label grays out with "(HIT)" appended, so you can see at a glance which
 targets played out on a given setup. A new confluence signal replaces the
