@@ -335,7 +335,8 @@ if showTradeLevels and (longConfluence or shortConfluence)
         ln = line.new(x1 = t3End, y1 = p, x2 = t3End + timeframe.in_seconds() * 1000, y2 = p, xloc = xloc.bar_time, color = col, width = 2, extend = extend.right)
         label lb = na
         if i == 0
-            lb := dir == 1 ? label.new(x = t3End, y = p, xloc = xloc.bar_time, yloc = yloc.belowbar, style = label.style_label_up, color = col, textcolor = color.white, text = txt, size = size.small) : label.new(x = t3End, y = p, xloc = xloc.bar_time, yloc = yloc.abovebar, style = label.style_label_down, color = col, textcolor = color.white, text = txt, size = size.small)
+            entryLabelY = dir == 1 ? low - atr * 0.8 : high + atr * 0.8
+            lb := dir == 1 ? label.new(x = t3End, y = entryLabelY, xloc = xloc.bar_time, style = label.style_label_up, color = col, textcolor = color.white, text = txt, size = size.small) : label.new(x = t3End, y = entryLabelY, xloc = xloc.bar_time, style = label.style_label_down, color = col, textcolor = color.white, text = txt, size = size.small)
         else
             lb := label.new(x = t3End, y = p, xloc = xloc.bar_time, style = label.style_label_left, color = col, textcolor = color.white, text = txt, size = size.small)
         lvlLine.set(i, ln)
