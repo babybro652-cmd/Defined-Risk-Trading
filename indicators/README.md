@@ -89,12 +89,14 @@ given instrument/session.
 Unfiltered CRT patterns that don't reach full confluence still get a plain
 "CRT" label so you can see what the filters excluded.
 
-A status panel in the top-right corner (toggle with **Show Status Panel**)
-always shows the current Range Timeframe, your chart's timeframe (flagged
-if it's set higher than the Range Timeframe, which breaks the multi-timeframe
-fetch), the current Bull/Bear bias split, the last BUY/SELL signal, and the
-active trade setup's direction/entry/stop - so you can tell the indicator is
-tracking correctly even when scrolled away from the actual formation.
+A compact 4-row status panel in the top-right corner (toggle with **Show
+Status Panel**) shows: Range TF / chart TF (flagged if the chart TF is
+higher than the Range TF, which breaks the multi-timeframe fetch), the
+current Bull/Bear bias split, the last BUY/SELL signal, and the active
+setup's direction, entry, and a live status word - **LIVE**, **STOPPED**,
+or **TP1/TP2/TP3 HIT** - so you can tell at a glance whether that setup is
+still in play or already resolved, without scrolling back to find it on
+the chart.
 
 ## Alerts
 

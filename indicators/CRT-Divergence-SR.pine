@@ -373,19 +373,20 @@ if shortConfluence
     lastSignalText  := "SELL @ " + str.tostring(high, format.mintick)
     lastSignalColor := bearColor
 
-var table statusTable = table.new(position.top_right, 2, 5, border_width = 1)
+var table statusTable = table.new(position.top_right, 2, 4, border_width = 1)
+
+tradeStatus = tradeDir == 0 ? "" : lvlHit.get(1) ? "STOPPED" : lvlHit.get(4) ? "TP3 HIT" : lvlHit.get(3) ? "TP2 HIT" : lvlHit.get(2) ? "TP1 HIT" : "LIVE"
+tradeStatusColor = tradeStatus == "STOPPED" ? bearColor : tradeStatus == "LIVE" ? color.gray : bullColor
 
 if showStatusPanel and barstate.islast
-    table.cell(statusTable, 0, 0, "CRT Range TF", text_color = color.white, bgcolor = color.new(color.gray, 75))
-    table.cell(statusTable, 1, 0, crtTF, text_color = color.white, bgcolor = color.new(color.gray, 75))
-    table.cell(statusTable, 0, 1, "Chart TF", text_color = color.white, bgcolor = color.new(color.gray, 85))
-    table.cell(statusTable, 1, 1, timeframe.period + (tfWarning ? " (!)" : ""), text_color = tfWarning ? color.orange : color.white, bgcolor = color.new(color.gray, 85))
-    table.cell(statusTable, 0, 2, "Bias", text_color = color.white, bgcolor = color.new(color.gray, 75))
-    table.cell(statusTable, 1, 2, "Bull " + str.tostring(bullPct) + "% / Bear " + str.tostring(bearPct) + "%", text_color = bullPct >= bearPct ? color.teal : color.red, bgcolor = color.new(color.gray, 75))
-    table.cell(statusTable, 0, 3, "Last Signal", text_color = color.white, bgcolor = color.new(color.gray, 85))
-    table.cell(statusTable, 1, 3, lastSignalText, text_color = lastSignalColor, bgcolor = color.new(color.gray, 85))
-    table.cell(statusTable, 0, 4, "Active Setup", text_color = color.white, bgcolor = color.new(color.gray, 75))
-    table.cell(statusTable, 1, 4, tradeDir == 0 ? "-" : (tradeDir == 1 ? "LONG E:" : "SHORT E:") + str.tostring(lvlPrice.get(0), format.mintick) + " SL:" + str.tostring(lvlPrice.get(1), format.mintick), text_color = tradeDir == 1 ? bullColor : tradeDir == -1 ? bearColor : color.white, bgcolor = color.new(color.gray, 75))
+    table.cell(statusTable, 0, 0, "TF", text_color = color.white, bgcolor = color.new(color.gray, 75), text_size = size.tiny)
+    table.cell(statusTable, 1, 0, crtTF + " / " + timeframe.period + (tfWarning ? " (!)" : ""), text_color = tfWarning ? color.orange : color.white, bgcolor = color.new(color.gray, 75), text_size = size.tiny)
+    table.cell(statusTable, 0, 1, "Bias", text_color = color.white, bgcolor = color.new(color.gray, 85), text_size = size.tiny)
+    table.cell(statusTable, 1, 1, "Bull " + str.tostring(bullPct) + "% / Bear " + str.tostring(bearPct) + "%", text_color = bullPct >= bearPct ? color.teal : color.red, bgcolor = color.new(color.gray, 85), text_size = size.tiny)
+    table.cell(statusTable, 0, 2, "Signal", text_color = color.white, bgcolor = color.new(color.gray, 75), text_size = size.tiny)
+    table.cell(statusTable, 1, 2, lastSignalText, text_color = lastSignalColor, bgcolor = color.new(color.gray, 75), text_size = size.tiny)
+    table.cell(statusTable, 0, 3, "Setup", text_color = color.white, bgcolor = color.new(color.gray, 85), text_size = size.tiny)
+    table.cell(statusTable, 1, 3, tradeDir == 0 ? "-" : (tradeDir == 1 ? "LONG " : "SHORT ") + str.tostring(lvlPrice.get(0), format.mintick) + " (" + tradeStatus + ")", text_color = tradeDir == 0 ? color.white : tradeStatusColor, bgcolor = color.new(color.gray, 85), text_size = size.tiny)
 
 // ---------------------------------------------------------------------------
 // Alerts
