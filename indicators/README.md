@@ -38,6 +38,9 @@ Compares consecutive swing lows (bullish) or swing highs (bearish) on price
 against RSI at the same pivots. A divergence stays "active" for
 **Divergence Validity Window** bars, so it can still count toward a
 confluence signal even if it formed a few bars before the CRT confirmation.
+Each divergence pulse marks a small dashed line right at the pivot price
+so you can see exactly where the swing high/low that triggered it sits,
+alongside the "Bull Div" / "Bear Div" label.
 
 **4. Bias Level - equilibrium + a Bull%/Bear% readout**
 Draws a dotted line at the 50% equilibrium of the current CRT range (the
@@ -69,8 +72,10 @@ typical entry/SL/TP callout:
   configurable), where 1R = the distance from Entry to Stop Loss.
 
 Each level draws as a colored line + label extending right from the signal.
-The Entry label sits above the signal candle's high (the line itself stays
-at the entry price and keeps extending forward with new bars). The moment
+The Entry label sits just above/below the signal candle (closer to price
+than the BUY/SELL confluence label above it, so the two stack cleanly
+instead of overlapping), and the line itself stays at the entry price and
+keeps extending forward with new bars. The moment
 price actually trades through a level, its line freezes at that bar and the
 label grays out with "(HIT)" appended, so you can see at a glance which
 targets played out on a given setup. A new confluence signal replaces the
