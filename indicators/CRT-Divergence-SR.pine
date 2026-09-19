@@ -1,4 +1,4 @@
-// Defined Risk Trading — CRT + Divergence + Support/Resistance Confluence
+// Defined Risk Trading - CRT + Divergence + Support/Resistance Confluence
 // Educational indicator. Not financial advice. Combine with the full
 // pre-trade checklist (bias, session, defined risk) before acting on any signal.
 //
@@ -48,7 +48,7 @@ requireSR   = input.bool(true, "Require Sweep At Support/Resistance", group = gr
 requireDiv  = input.bool(true, "Require Recent Divergence", group = grpConf)
 
 grpBias = "Bias Level"
-showBiasLevel  = input.bool(true, "Show Equilibrium Level + Bull/Bear Bias %", group = grpBias, tooltip = "Draws the 50% equilibrium of the current CRT range plus a composite Bull%/Bear% readout, similar to a generic 'unbiased level' style display. This is our own composite score built from the CRT direction, RSI, divergence and price position already tracked above — it is not a copy of any third-party indicator's formula.")
+showBiasLevel  = input.bool(true, "Show Equilibrium Level + Bull/Bear Bias %", group = grpBias, tooltip = "Draws the 50% equilibrium of the current CRT range plus a composite Bull%/Bear% readout, similar to a generic 'unbiased level' style display. This is our own composite score built from the CRT direction, RSI, divergence and price position already tracked above - it is not a copy of any third-party indicator's formula.")
 biasDecayBars  = input.int(50, "CRT Bias Decay (bars)", minval = 5, group = grpBias, tooltip = "How many bars the last confirmed CRT direction keeps pulling the bias score before decaying to zero.")
 
 grpStyle = "Style"
@@ -201,7 +201,7 @@ if showDivLabels and bearDivPulse
     label.new(x = bar_index - divPivotLen, y = high[divPivotLen], style = label.style_label_down, color = color.new(bearColor, 40), textcolor = color.white, text = "Bear Div", size = size.tiny)
 
 // ---------------------------------------------------------------------------
-// Bias Level — equilibrium (50%) of the current CRT range plus a composite
+// Bias Level - equilibrium (50%) of the current CRT range plus a composite
 // Bull/Bear % readout built from signals already computed above.
 // ---------------------------------------------------------------------------
 var float eqLevel    = na
@@ -280,10 +280,10 @@ plotshape(longConfluence,  title = "Buy Signal",  style = shape.triangleup,   lo
 plotshape(shortConfluence, title = "Sell Signal", style = shape.triangledown, location = location.abovebar, color = bearColor, size = size.small)
 
 // ---------------------------------------------------------------------------
-// Status panel — always visible regardless of which timeframe/chart you're on,
+// Status panel - always visible regardless of which timeframe/chart you're on,
 // even when the actual formation has scrolled out of view.
 // ---------------------------------------------------------------------------
-var string lastSignalText  = "—"
+var string lastSignalText  = "-"
 var color  lastSignalColor = color.gray
 
 if longConfluence
@@ -300,7 +300,7 @@ if showStatusPanel and barstate.islast
     table.cell(statusTable, 0, 0, "CRT Range TF", text_color = color.white, bgcolor = color.new(color.gray, 75))
     table.cell(statusTable, 1, 0, crtTF, text_color = color.white, bgcolor = color.new(color.gray, 75))
     table.cell(statusTable, 0, 1, "Chart TF", text_color = color.white, bgcolor = color.new(color.gray, 85))
-    table.cell(statusTable, 1, 1, timeframe.period + (tfWarning ? " ⚠" : ""), text_color = tfWarning ? color.orange : color.white, bgcolor = color.new(color.gray, 85))
+    table.cell(statusTable, 1, 1, timeframe.period + (tfWarning ? " (!)" : ""), text_color = tfWarning ? color.orange : color.white, bgcolor = color.new(color.gray, 85))
     table.cell(statusTable, 0, 2, "Bias", text_color = color.white, bgcolor = color.new(color.gray, 75))
     table.cell(statusTable, 1, 2, "Bull " + str.tostring(bullPct) + "% / Bear " + str.tostring(bearPct) + "%", text_color = bullPct >= bearPct ? color.teal : color.red, bgcolor = color.new(color.gray, 75))
     table.cell(statusTable, 0, 3, "Last Signal", text_color = color.white, bgcolor = color.new(color.gray, 85))
