@@ -71,14 +71,19 @@ typical entry/SL/TP callout:
 - **TP1 / TP2 / TP3**: R-multiples of that risk (defaults 1R / 2R / 3R, all
   configurable), where 1R = the distance from Entry to Stop Loss.
 
-Each level draws as a colored line + label extending right from the signal.
-The Entry label sits above/below the signal candle's high/low (the line
-itself stays at the entry price and keeps extending forward with new
-bars). The moment
-price actually trades through a level, its line freezes at that bar and the
-label grays out with "(HIT)" appended, so you can see at a glance which
-targets played out on a given setup. A new confluence signal replaces the
-previous setup's levels entirely - only one active setup is shown at a time.
+Each level draws as a colored line extending right from the signal, with
+its price flag anchored to the current bar - so as long as a level hasn't
+been hit, its flag keeps sliding forward with new price action instead of
+staying pinned back at the signal candle, the way a live price line
+behaves. The moment price actually trades through a level, its line and
+flag freeze in place right there, the flag grays out and "(HIT)" is
+appended, so you can see at a glance which targets played out on a given
+setup. If the Stop Loss is the one that hits, the trade is treated as
+closed: any Take Profits that never got reached are removed from the
+chart entirely rather than continuing to flow forward on a dead trade,
+and Entry also stops moving and stays frozen at the stop-out bar. A new
+confluence signal replaces the previous setup's levels entirely - only
+one active setup is shown at a time.
 Toggle the whole feature off with **Show Entry / SL / Take Profits**.
 
 **Move SL to Breakeven at TP1, Trail at TP2/TP3** (on by default): once TP1

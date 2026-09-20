@@ -335,14 +335,22 @@ if showTradeLevels and (longConfluence or shortConfluence)
         lvlBaseText.set(i, txt)
         col = f_lvlColor(i)
         ln = line.new(x1 = t3End, y1 = p, x2 = t3End + timeframe.in_seconds() * 1000, y2 = p, xloc = xloc.bar_time, color = col, width = 2, extend = extend.right)
-        label lb = na
-        if i == 0
-            entryLabelY = dir == 1 ? low - atr * 0.8 : high + atr * 0.8
-            lb := dir == 1 ? label.new(x = t3End, y = entryLabelY, xloc = xloc.bar_time, style = label.style_label_up, color = col, textcolor = color.white, text = txt, size = size.small) : label.new(x = t3End, y = entryLabelY, xloc = xloc.bar_time, style = label.style_label_down, color = col, textcolor = color.white, text = txt, size = size.small)
-        else
-            lb := label.new(x = t3End, y = p, xloc = xloc.bar_time, style = label.style_label_left, color = col, textcolor = color.white, text = txt, size = size.small)
         lvlLine.set(i, ln)
-        lvlLabel.set(i, lb)
+        lvlLabel.set(i, na)
+
+// Keep each not-yet-hit level's label anchored to the current bar so it flows
+// forward with the chart (like a live price-line label) instead of staying
+// pinned back at the signal candle.
+if showTradeLevels and tradeDir != 0
+    for i = 0 to 4
+        if not lvlHit.get(i)
+            oldLb = lvlLabel.get(i)
+            if not na(oldLb)
+                label.delete(oldLb)
+            p = lvlPrice.get(i)
+            col = f_lvlColor(i)
+            newLb = label.new(x = time, y = p, xloc = xloc.bar_time, style = label.style_label_left, color = col, textcolor = color.white, text = lvlBaseText.get(i), size = size.small)
+            lvlLabel.set(i, newLb)
 
 // Freeze a level's line/label in place the first time price actually touches it.
 slJustHit  = false
@@ -365,6 +373,17 @@ if showTradeLevels and tradeDir != 0
 
                 if i == 1
                     slJustHit := true
+                    lvlHit.set(0, true)
+                    // Stopped out: hide any un-reached take-profits until the next signal.
+                    for j = 2 to 4
+                        if not lvlHit.get(j)
+                            oldLn2 = lvlLine.get(j)
+                            if not na(oldLn2)
+                                line.delete(oldLn2)
+                            oldLb2 = lvlLabel.get(j)
+                            if not na(oldLb2)
+                                label.delete(oldLb2)
+                            lvlHit.set(j, true)
                 if i == 2
                     tp1JustHit := true
                 if i == 3
