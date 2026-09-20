@@ -374,6 +374,15 @@ if showTradeLevels and tradeDir != 0
                 if i == 1
                     slJustHit := true
                     lvlHit.set(0, true)
+                    // Trade closed: freeze the Entry line/label in place too instead of
+                    // leaving it extending forward forever.
+                    entryLn = lvlLine.get(0)
+                    if not na(entryLn)
+                        line.set_extend(entryLn, extend.none)
+                        line.set_x2(entryLn, math.max(time, line.get_x1(entryLn) + 1))
+                    entryLb = lvlLabel.get(0)
+                    if not na(entryLb)
+                        label.set_color(entryLb, color.gray)
                     // Stopped out: hide any un-reached take-profits until the next signal.
                     for j = 2 to 4
                         if not lvlHit.get(j)
