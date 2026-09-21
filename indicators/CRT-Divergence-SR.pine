@@ -237,6 +237,22 @@ if showDivLabels and bearDivPulse
     line.new(x1 = bar_index - divPivotLen - 2, y1 = high[divPivotLen], x2 = bar_index - divPivotLen + 2, y2 = high[divPivotLen], color = bearColor, width = 1, style = line.style_dashed, extend = extend.none)
 
 // ---------------------------------------------------------------------------
+// Webhook payloads - JSON via Pine's alert() so a "Any alert() function call"
+// TradingView alert can POST full signal data (not just the fixed {{close}}/
+// {{ticker}} placeholders alertcondition() is limited to) to a Google Apps
+// Script Web App, which appends/updates rows in the forward-test log.
+// ---------------------------------------------------------------------------
+if bullDivPulse
+    divDate = str.format_time(time[divPivotLen], "yyyy-MM-dd", syminfo.timezone)
+    divTime = str.format_time(time[divPivotLen], "HH:mm", syminfo.timezone)
+    alert('{"type":"SIGNAL","signal":"Bull Div","ticker":"' + syminfo.ticker + '","date":"' + divDate + '","time":"' + divTime + '","ref_price":' + str.tostring(low[divPivotLen], format.mintick) + '}', alert.freq_once_per_bar_close)
+
+if bearDivPulse
+    divDateB = str.format_time(time[divPivotLen], "yyyy-MM-dd", syminfo.timezone)
+    divTimeB = str.format_time(time[divPivotLen], "HH:mm", syminfo.timezone)
+    alert('{"type":"SIGNAL","signal":"Bear Div","ticker":"' + syminfo.ticker + '","date":"' + divDateB + '","time":"' + divTimeB + '","ref_price":' + str.tostring(high[divPivotLen], format.mintick) + '}', alert.freq_once_per_bar_close)
+
+// ---------------------------------------------------------------------------
 // Bias Level - equilibrium (50%) of the current CRT range plus a composite
 // Bull/Bear % readout built from signals already computed above.
 // ---------------------------------------------------------------------------
@@ -322,6 +338,18 @@ if showTradeLevels and (longConfluence or shortConfluence)
     tp2Price   = dir == 1 ? entryPrice + riskR * tp2R : entryPrice - riskR * tp2R
     tp3Price   = dir == 1 ? entryPrice + riskR * tp3R : entryPrice - riskR * tp3R
 
+    sigDate = str.format_time(time, "yyyy-MM-dd", syminfo.timezone)
+    sigTime = str.format_time(time, "HH:mm", syminfo.timezone)
+    sigType = dir == 1 ? "BUY" : "SELL"
+    sigDir  = dir == 1 ? "Long" : "Short"
+    alert('{"type":"SIGNAL","signal":"' + sigType + '","direction":"' + sigDir + '","ticker":"' + syminfo.ticker +
+         '","date":"' + sigDate + '","time":"' + sigTime +
+         '","entry":' + str.tostring(entryPrice, format.mintick) +
+         ',"sl":' + str.tostring(slPrice, format.mintick) +
+         ',"tp1":' + str.tostring(tp1Price, format.mintick) +
+         ',"tp2":' + str.tostring(tp2Price, format.mintick) +
+         ',"tp3":' + str.tostring(tp3Price, format.mintick) + '}', alert.freq_once_per_bar_close)
+
     lvlPrice.set(0, entryPrice)
     lvlPrice.set(1, slPrice)
     lvlPrice.set(2, tp1Price)
@@ -373,6 +401,8 @@ if showTradeLevels and tradeDir != 0
 
                 if i == 1
                     slJustHit := true
+                    resultText = slMoveStage == 0 ? "STOPPED" : slMoveStage == 1 ? "STOPPED (BE)" : "STOPPED (TRAIL)"
+                    alert('{"type":"UPDATE","result":"' + resultText + '"}', alert.freq_once_per_bar_close)
                     lvlHit.set(0, true)
                     // Trade closed: freeze the Entry line/label in place too instead of
                     // leaving it extending forward forever.
@@ -395,10 +425,13 @@ if showTradeLevels and tradeDir != 0
                             lvlHit.set(j, true)
                 if i == 2
                     tp1JustHit := true
+                    alert('{"type":"UPDATE","result":"TP1 HIT"}', alert.freq_once_per_bar_close)
                 if i == 3
                     tp2JustHit := true
+                    alert('{"type":"UPDATE","result":"TP2 HIT"}', alert.freq_once_per_bar_close)
                 if i == 4
                     tp3JustHit := true
+                    alert('{"type":"UPDATE","result":"TP3 HIT"}', alert.freq_once_per_bar_close)
 
                 if moveSLToBreakeven and i >= 2 and not lvlHit.get(1)
                     newSL = i == 2 ? lvlPrice.get(0) : i == 3 ? lvlPrice.get(2) : lvlPrice.get(3)
@@ -417,9 +450,15 @@ if showCRTBoxes and bearCRTSignal
 
 if bullCRTSignal and not longConfluence
     label.new(x = t3End, y = low, xloc = xloc.bar_time, yloc = yloc.belowbar, style = label.style_label_up, color = color.new(bullColor, 40), textcolor = color.white, text = "CRT", size = size.small)
+    crtDateBull = str.format_time(t3End, "yyyy-MM-dd", syminfo.timezone)
+    crtTimeBull = str.format_time(t3End, "HH:mm", syminfo.timezone)
+    alert('{"type":"SIGNAL","signal":"CRT Bull (unfiltered)","ticker":"' + syminfo.ticker + '","date":"' + crtDateBull + '","time":"' + crtTimeBull + '","ref_price":' + str.tostring(c2L, format.mintick) + '}', alert.freq_once_per_bar_close)
 
 if bearCRTSignal and not shortConfluence
     label.new(x = t3End, y = high, xloc = xloc.bar_time, yloc = yloc.abovebar, style = label.style_label_down, color = color.new(bearColor, 40), textcolor = color.white, text = "CRT", size = size.small)
+    crtDateBear = str.format_time(t3End, "yyyy-MM-dd", syminfo.timezone)
+    crtTimeBear = str.format_time(t3End, "HH:mm", syminfo.timezone)
+    alert('{"type":"SIGNAL","signal":"CRT Bear (unfiltered)","ticker":"' + syminfo.ticker + '","date":"' + crtDateBear + '","time":"' + crtTimeBear + '","ref_price":' + str.tostring(c2H, format.mintick) + '}', alert.freq_once_per_bar_close)
 
 if longConfluence
     label.new(x = t3End, y = low, xloc = xloc.bar_time, yloc = yloc.belowbar, style = label.style_label_up, color = bullColor, textcolor = color.white, text = "BUY\nCRT + SR + DIV", size = size.normal)
