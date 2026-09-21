@@ -25,7 +25,7 @@
 //   execution chart or the 15min chart the range is built from.
 //
 //@version=6
-indicator("CRT + Divergence + S/R Confluence | Defined Risk Trading", shorttitle = "CRT-DIV-SR", overlay = true, max_lines_count = 300, max_labels_count = 300, max_boxes_count = 300)
+indicator("CRT + Divergence + S/R Confluence | Defined Risk Trading", shorttitle = "CRT-DIV-SR", overlay = true, max_lines_count = 500, max_labels_count = 500, max_boxes_count = 500)
 
 // ---------------------------------------------------------------------------
 // Inputs
