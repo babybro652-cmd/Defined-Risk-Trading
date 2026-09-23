@@ -6,7 +6,7 @@
 //   Candle 1 : the range candle
 //   Candle 2 : wicks beyond Candle 1's low (or high) and CLOSES back inside,
 //              closing in the trade direction (green for buys, red for sells)
-//   Entry    : Candle 2 close
+//   Candle 3 : the signal — enter at Candle 3's open
 //   Stop     : beyond Candle 2's wick
 //   TP1      : 50% of Candle 1 → close part, stop to breakeven
 //   TP2      : far side of Candle 1
@@ -15,8 +15,9 @@
 //   Key levels (1H and 4H)
 //   Swing highs = resistance, swing lows = support, confirmed swings only.
 //   A level is removed once a 15m candle closes through it.
-//   The entry label shows when Candle 2 swept a key level, and warns when a
-//   key level sits between the entry and TP2.
+//
+//   Alerts: "Any alert() function call" sends JSON for a webhook (e.g. Google
+//   Apps Script → Google Sheet) or plain text, per the Alert Format setting.
 // ══════════════════════════════════════════════════════════════════════════════
 
 indicator("CRT Basic", overlay=true, max_labels_count=500, max_lines_count=500)
@@ -24,13 +25,13 @@ indicator("CRT Basic", overlay=true, max_labels_count=500, max_lines_count=500)
 // ─── SETTINGS ─────────────────────────────────────────────────────────────────
 
 grpCrt    = "CRT"
-setupTf   = input.timeframe("15", "CRT Timeframe", group=grpCrt, tooltip="Candle 1 and Candle 2 come from this timeframe. Use it on the 15m chart, or on a lower chart (e.g. 1m) to follow the trade bar by bar.")
+setupTf   = input.timeframe("15", "CRT Timeframe", group=grpCrt, tooltip="Candles 1-3 come from this timeframe. Use it on the 15m chart, or on a lower chart (e.g. 1m) to follow the trade bar by bar.")
 minRange  = input.float(0.5, "Min Candle 1 Size (× ATR)", minval=0, step=0.1, group=grpCrt, tooltip="Skip small, quiet range candles. 0 = off.")
 bufTicks  = input.int(2, "Stop Buffer (ticks)", minval=0, maxval=40, group=grpCrt)
 maxRisk   = input.float(500, "Max Risk per Trade ($)", minval=1, step=25, group=grpCrt, tooltip="Skip any setup whose stop would risk more than this.")
 contracts = input.int(1, "Contracts", minval=1, group=grpCrt)
 tp1Pct    = input.int(50, "Close at TP1 (%)", minval=0, maxval=100, group=grpCrt, tooltip="TP1 = 50% of Candle 1. Close this much there and move the stop to breakeven. The rest rides to TP2.")
-useSess   = input.bool(true, "Only Trade During Sessions (NY time)", group=grpCrt)
+useSess   = input.bool(true, "Only Trade During Sessions (NY time)", group=grpCrt, tooltip="Checked at Candle 3's open.")
 sess1     = input.session("0930-1130", "Session 1", group=grpCrt)
 sess2     = input.session("1400-1600", "Session 2", group=grpCrt)
 
@@ -43,6 +44,10 @@ maxLvls   = input.int(3, "Levels per Timeframe & Side", minval=1, maxval=10, gro
 zonePts   = input.float(2.0, "Level Zone (pts)", minval=0, step=0.25, group=grpLvl, tooltip="How close price must come to a level to count as touching it. Levels closer together than this are merged.")
 needLevel = input.bool(false, "Only Take CRTs That Sweep a Key Level", group=grpLvl, tooltip="Buy only when Candle 2's wick swept into a 1H/4H support; sell only when it swept into a resistance.")
 
+grpAlert  = "Alerts / Webhook"
+alertFmt  = input.string("JSON (webhook)", "Alert Format", options=["JSON (webhook)", "Text"], group=grpAlert, tooltip="JSON for a webhook (Google Sheet tracking). Text for readable phone/email alerts.")
+hookKey   = input.string("", "Webhook Key", group=grpAlert, tooltip="Any password. Put the same value in the Apps Script SECRET so the sheet only accepts your alerts.")
+
 grpStyle  = "Style"
 showTable = input.bool(true, "Show Stats Table", group=grpStyle)
 bullCol   = input.color(#00E676, "Buy Color", group=grpStyle)
@@ -51,11 +56,17 @@ lvlCol    = input.color(#2962FF, "Target Color", group=grpStyle)
 resCol    = input.color(#FF9800, "Resistance Color", group=grpStyle)
 supCol    = input.color(#26A69A, "Support Color", group=grpStyle)
 
-pv  = syminfo.pointvalue * contracts
-buf = bufTicks * syminfo.mintick
+pv     = syminfo.pointvalue * contracts
+buf    = bufTicks * syminfo.mintick
+isJson = alertFmt == "JSON (webhook)"
 
 px(float p) => str.tostring(p, format.mintick)
 usd(float x) => (x >= 0 ? "+$" : "-$") + str.tostring(math.abs(x), "#,##0")
+
+// JSON helpers for webhook alerts
+jStr(string k, string v) => '"' + k + '":"' + v + '"'
+jNum(string k, float v, string f) => '"' + k + '":' + (na(v) ? "null" : str.tostring(v, f))
+jHead(string ev, string id) => "{" + jStr("key", hookKey) + "," + jStr("event", ev) + "," + jStr("id", id) + "," + jStr("symbol", syminfo.ticker) + "," + jStr("time", str.format_time(time, "yyyy-MM-dd HH:mm", "America/New_York"))
 
 // ─── CANDLE 1 & CANDLE 2 ──────────────────────────────────────────────────────
 // Higher timeframe: [1] + lookahead_on = last COMPLETED candles only (no repaint).
@@ -78,9 +89,11 @@ c2C   = sameTf ? close     : hC2C
 c1H   = sameTf ? high[1]   : hC1H
 c1L   = sameTf ? low[1]    : hC1L
 c1ATR = sameTf ? atrNow[1] : hATR
-newC2 = sameTf or tfNew
 
-c1Mid = (c1H + c1L) / 2
+// Candle 2 has just closed: at this bar's close (same TF), or on the first
+// chart bar of Candle 3 (lower chart)
+c2Done = sameTf ? barstate.isconfirmed : tfNew
+
 c1Ok  = minRange <= 0 or (c1H - c1L) >= c1ATR * minRange
 
 // ─── KEY LEVELS: 1H / 4H SWING HIGHS & LOWS ───────────────────────────────────
@@ -168,7 +181,7 @@ obstacle(array<Level> lv, bool wantRes, float fromPx, float toPx) =>
 bullLvl = levelIn(levels, false, c2L - zonePts, c1L + zonePts)
 bearLvl = levelIn(levels, true,  c1H - zonePts, c2H + zonePts)
 
-// ─── CRT SETUPS ───────────────────────────────────────────────────────────────
+// ─── CRT SETUPS (Candle 1 + Candle 2) ─────────────────────────────────────────
 
 bullCRT = c1Ok and c2L < c1L and c2C > c1L and c2C < c1H and c2C > c2O and (not needLevel or bullLvl != "")
 bearCRT = c1Ok and c2H > c1H and c2C < c1H and c2C > c1L and c2C < c2O and (not needLevel or bearLvl != "")
@@ -176,17 +189,34 @@ bearCRT = c1Ok and c2H > c1H and c2C < c1H and c2C > c1L and c2C < c2O and (not 
 inSess(s) => not na(time(timeframe.period, s, "America/New_York"))
 inSession = not useSess or not timeframe.isintraday or inSess(sess1) or inSess(sess2)
 
-setupBull = barstate.isconfirmed and newC2 and bullCRT and inSession
-setupBear = barstate.isconfirmed and newC2 and bearCRT and inSession
+// Same timeframe: the setup found at Candle 2's close is held for one bar,
+// then traded on Candle 3. Lower chart: Candle 3 starts on this very bar.
+var int    pDir = 0
+var int    pBar = na
+var float  pC1H = na
+var float  pC1L = na
+var float  pC2H = na
+var float  pC2L = na
+var string pTag = ""
+
+setDir = c2Done ? (bullCRT ? 1 : bearCRT ? -1 : 0) : 0
+cDir   = sameTf ? (bar_index == pBar + 1 ? pDir : 0) : setDir
+cC1H   = sameTf ? pC1H : c1H
+cC1L   = sameTf ? pC1L : c1L
+cC2H   = sameTf ? pC2H : c2H
+cC2L   = sameTf ? pC2L : c2L
+cTag   = sameTf ? pTag : (setDir == 1 ? bullLvl : setDir == -1 ? bearLvl : "")
 
 // ─── TRADE STATE ──────────────────────────────────────────────────────────────
 
 var int   dir     = 0        // 1 = long, -1 = short, 0 = flat
 var int   eBar    = na
+var int   eTime   = na
 var float ePx     = na
 var float sl      = na
 var float tp1     = na
 var float tp2     = na
+var float riskUSD = na
 var bool  tp1Done = false
 var float banked  = 0.0      // points locked in at TP1 (already weighted by size)
 var line  lnSL    = na
@@ -196,24 +226,71 @@ var int   nTrades = 0
 var int   nWins   = 0
 var float netUSD  = 0.0
 
-frac = tp1Pct / 100.0
+frac  = tp1Pct / 100.0
+tid() => syminfo.ticker + "-" + str.tostring(eTime)
+
+// ─── CANDLE 3: ENTRY AT ITS OPEN ──────────────────────────────────────────────
+
+flatAtOpen = dir == 0
+c3Mid      = (cC1H + cC1L) / 2
+c3Stop     = cDir == 1 ? cC2L - buf : cC2H + buf
+c3RiskUSD  = math.abs(open - c3Stop) * pv
+c3PriceOK  = cDir == 1 ? (open > c3Stop and open < cC1H) : (open < c3Stop and open > cC1L)
+isC3       = cDir != 0 and flatAtOpen and inSession
+goNow      = isC3 and c3PriceOK and c3RiskUSD <= maxRisk
+
+// Valid CRT but skipped because the stop is too far or price already left
+if isC3 and not goNow
+    why = c3RiskUSD > maxRisk ? "risk $" + str.tostring(math.round(c3RiskUSD)) + " > max" : "price already moved"
+    label.new(bar_index, cDir == 1 ? low : high, "CRT " + (cDir == 1 ? "buy" : "sell") + " skipped\n" + why, yloc=cDir == 1 ? yloc.belowbar : yloc.abovebar, style=cDir == 1 ? label.style_label_up : label.style_label_down, color=color.new(color.gray, 60), textcolor=color.white, size=size.tiny)
+    alert(isJson ? jHead("SKIP", "") + "," + jStr("side", cDir == 1 ? "LONG" : "SHORT") + "," + jStr("reason", why) + "}" : "CRT " + syminfo.ticker + ": " + (cDir == 1 ? "buy" : "sell") + " skipped, " + why, alert.freq_once_per_bar)
+
+if goNow
+    dir     := cDir
+    ePx     := open
+    eBar    := bar_index
+    eTime   := time
+    sl      := c3Stop
+    tp2     := dir == 1 ? cC1H : cC1L
+    tp1     := (dir == 1 and ePx < c3Mid) or (dir == -1 and ePx > c3Mid) ? c3Mid : na
+    tp1Done := false
+    banked  := 0.0
+    riskUSD := math.abs(ePx - sl) * pv
+    lnSL  := line.new(bar_index, sl,  bar_index + 1, sl,  color=bearCol, width=2)
+    lnTP2 := line.new(bar_index, tp2, bar_index + 1, tp2, color=lvlCol,  width=2)
+    lnTP1 := na
+    if not na(tp1)
+        lnTP1 := line.new(bar_index, tp1, bar_index + 1, tp1, color=lvlCol, width=1, style=line.style_dashed)
+    tpTxt = na(tp1) ? "\nTP " + px(tp2) : "\nTP1 " + px(tp1) + "  (" + str.tostring(tp1Pct) + "%)\nTP2 " + px(tp2)
+    // Key-level context: what Candle 2 swept, and anything in the way of TP2
+    [obPx, obTag] = obstacle(levels, dir == 1, ePx, tp2)
+    obTxt  = na(obPx) ? "" : obTag + (dir == 1 ? " R " : " S ") + px(obPx)
+    lvlTxt = (cTag != "" ? "\nSwept " + cTag + (dir == 1 ? " support" : " resistance") : "") + (obTxt == "" ? "" : "\n⚠ " + obTxt + " before TP2")
+    if dir == 1
+        label.new(bar_index, low, "▲ BUY " + px(ePx) + "\nSL " + px(sl) + "  (-$" + str.tostring(math.round(riskUSD)) + ")" + tpTxt + lvlTxt, yloc=yloc.belowbar, style=label.style_label_up, color=bullCol, textcolor=color.black, size=size.normal, textalign=text.align_left)
+    else
+        label.new(bar_index, high, "▼ SELL " + px(ePx) + "\nSL " + px(sl) + "  (-$" + str.tostring(math.round(riskUSD)) + ")" + tpTxt + lvlTxt, yloc=yloc.abovebar, style=label.style_label_down, color=bearCol, textcolor=color.white, size=size.normal, textalign=text.align_left)
+    msgJ = jHead("ENTRY", tid()) + "," + jStr("ctf", setupTf) + "," + jStr("side", dir == 1 ? "LONG" : "SHORT") + "," + jNum("entry", ePx, format.mintick) + "," + jNum("sl", sl, format.mintick) + "," + jNum("tp1", tp1, format.mintick) + "," + jNum("tp2", tp2, format.mintick) + "," + jNum("risk_usd", riskUSD, "#.##") + "," + jStr("swept", cTag) + "," + jStr("obstacle", obTxt) + "," + jNum("contracts", contracts, "#") + "}"
+    msgT = "CRT " + syminfo.ticker + ": " + (dir == 1 ? "BUY " : "SELL ") + px(ePx) + "  SL " + px(sl) + (na(tp1) ? "" : "  TP1 " + px(tp1)) + "  TP2 " + px(tp2) + "  risk $" + str.tostring(math.round(riskUSD)) + (cTag != "" ? "  (swept " + cTag + " level)" : "")
+    alert(isJson ? msgJ : msgT, alert.freq_once_per_bar)
 
 // ─── MANAGE OPEN TRADE ────────────────────────────────────────────────────────
-// Checked from the bar after entry. If a bar touches the stop and a target,
-// the stop is assumed first (conservative).
+// Checked at each bar's close, including Candle 3 itself (the trade is live
+// from its open). If a bar touches the stop and a target, the stop is assumed
+// first (conservative).
 
 exitNow = false
 exitPx  = float(na)
 exitTxt = ""
 
-if barstate.isconfirmed and dir != 0 and bar_index > eBar
+if barstate.isconfirmed and dir != 0 and bar_index >= eBar
     slHit  = dir == 1 ? low <= sl : high >= sl
     tp1Hit = not tp1Done and not na(tp1) and (dir == 1 ? high >= tp1 : low <= tp1)
     tp2Hit = dir == 1 ? high >= tp2 : low <= tp2
     if slHit
         exitNow := true
         exitPx  := sl
-        exitTxt := tp1Done ? "BE" : "SL ✕"
+        exitTxt := tp1Done ? "BE" : "SL"
     else
         if tp1Hit
             tp1Done := true
@@ -221,17 +298,19 @@ if barstate.isconfirmed and dir != 0 and bar_index > eBar
             if frac >= 1
                 exitNow := true
                 exitPx  := tp1
-                exitTxt := "TP1 ✓"
+                exitTxt := "TP1"
             else
                 label.new(bar_index, dir == 1 ? high : low, "TP1 ✓ " + px(tp1) + "  (" + str.tostring(tp1Pct) + "% off)\nStop → BE " + px(ePx), yloc=dir == 1 ? yloc.abovebar : yloc.belowbar, style=dir == 1 ? label.style_label_down : label.style_label_up, color=color.new(lvlCol, 20), textcolor=color.white, size=size.small, textalign=text.align_left)
-                alert("CRT " + syminfo.ticker + ": TP1 hit @ " + px(tp1) + ". Close " + str.tostring(tp1Pct) + "%, move stop to " + px(ePx), alert.freq_once_per_bar_close)
+                msgJ = jHead("TP1", tid()) + "," + jNum("price", tp1, format.mintick) + "," + jNum("banked_usd", banked * pv, "#.##") + "," + jNum("new_sl", ePx, format.mintick) + "}"
+                msgT = "CRT " + syminfo.ticker + ": TP1 hit @ " + px(tp1) + ". Close " + str.tostring(tp1Pct) + "%, move stop to " + px(ePx)
+                alert(isJson ? msgJ : msgT, alert.freq_once_per_bar_close)
                 line.set_x2(lnSL, bar_index)
                 sl   := ePx
                 lnSL := line.new(bar_index, sl, bar_index + 1, sl, color=color.gray, width=1, style=line.style_dashed)
         if not exitNow and tp2Hit
             exitNow := true
             exitPx  := tp2
-            exitTxt := "TP2 ✓"
+            exitTxt := "TP2"
 
 if exitNow
     rem    = tp1Done ? 1 - frac : 1.0
@@ -239,8 +318,11 @@ if exitNow
     nTrades += 1
     nWins   += pnlUSD > 0 ? 1 : 0
     netUSD  += pnlUSD
-    label.new(bar_index, dir == 1 ? low : high, exitTxt + " " + px(exitPx) + "\nTrade " + usd(pnlUSD), yloc=dir == 1 ? yloc.belowbar : yloc.abovebar, style=dir == 1 ? label.style_label_up : label.style_label_down, color=pnlUSD > 0 ? color.new(lvlCol, 20) : color.new(color.gray, 20), textcolor=color.white, size=size.small, textalign=text.align_left)
-    alert("CRT " + syminfo.ticker + ": EXIT " + exitTxt + " @ " + px(exitPx) + "  Trade " + usd(pnlUSD), alert.freq_once_per_bar_close)
+    shown = exitTxt == "SL" ? "SL ✕" : exitTxt == "BE" ? "BE" : exitTxt + " ✓"
+    label.new(bar_index, dir == 1 ? low : high, shown + " " + px(exitPx) + "\nTrade " + usd(pnlUSD), yloc=dir == 1 ? yloc.belowbar : yloc.abovebar, style=dir == 1 ? label.style_label_up : label.style_label_down, color=pnlUSD > 0 ? color.new(lvlCol, 20) : color.new(color.gray, 20), textcolor=color.white, size=size.small, textalign=text.align_left)
+    msgJ = jHead("EXIT", tid()) + "," + jNum("price", exitPx, format.mintick) + "," + jStr("reason", exitTxt) + "," + jNum("pnl_usd", pnlUSD, "#.##") + "," + jNum("r_multiple", riskUSD > 0 ? pnlUSD / riskUSD : na, "#.##") + "}"
+    msgT = "CRT " + syminfo.ticker + ": EXIT " + exitTxt + " @ " + px(exitPx) + "  Trade " + usd(pnlUSD)
+    alert(isJson ? msgJ : msgT, alert.freq_once_per_bar_close)
     line.set_x2(lnSL, bar_index)
     line.set_x2(lnTP2, bar_index)
     if not na(lnTP1)
@@ -254,52 +336,21 @@ if dir != 0
     if not na(lnTP1) and not tp1Done
         line.set_x2(lnTP1, bar_index + 1)
 
-// ─── NEW ENTRIES ──────────────────────────────────────────────────────────────
+// ─── HOLD THIS BAR'S SETUP FOR CANDLE 3 (same timeframe only) ─────────────────
 
-bullStop    = c2L - buf
-bearStop    = c2H + buf
-bullRiskUSD = (close - bullStop) * pv
-bearRiskUSD = (bearStop - close) * pv
-
-bullGo = setupBull and dir == 0 and close > bullStop and close < c1H and bullRiskUSD <= maxRisk
-bearGo = setupBear and dir == 0 and close < bearStop and close > c1L and bearRiskUSD <= maxRisk
-
-// Valid CRT but skipped because the stop is too far or price already left
-if setupBull and dir == 0 and not bullGo
-    label.new(bar_index, low, "CRT buy skipped\n" + (bullRiskUSD > maxRisk ? "risk $" + str.tostring(math.round(bullRiskUSD)) + " > max" : "price already moved"), yloc=yloc.belowbar, style=label.style_label_up, color=color.new(color.gray, 60), textcolor=color.white, size=size.tiny)
-if setupBear and dir == 0 and not bearGo
-    label.new(bar_index, high, "CRT sell skipped\n" + (bearRiskUSD > maxRisk ? "risk $" + str.tostring(math.round(bearRiskUSD)) + " > max" : "price already moved"), yloc=yloc.abovebar, style=label.style_label_down, color=color.new(color.gray, 60), textcolor=color.white, size=size.tiny)
-
-if bullGo or bearGo
-    dir     := bullGo ? 1 : -1
-    ePx     := close
-    eBar    := bar_index
-    sl      := dir == 1 ? bullStop : bearStop
-    tp2     := dir == 1 ? c1H : c1L
-    tp1     := (dir == 1 and close < c1Mid) or (dir == -1 and close > c1Mid) ? c1Mid : na
-    tp1Done := false
-    banked  := 0.0
-    riskUSD = math.abs(ePx - sl) * pv
-    lnSL  := line.new(bar_index, sl,  bar_index + 1, sl,  color=bearCol, width=2)
-    lnTP2 := line.new(bar_index, tp2, bar_index + 1, tp2, color=lvlCol,  width=2)
-    lnTP1 := na
-    if not na(tp1)
-        lnTP1 := line.new(bar_index, tp1, bar_index + 1, tp1, color=lvlCol, width=1, style=line.style_dashed)
-    tpTxt = na(tp1) ? "\nTP " + px(tp2) : "\nTP1 " + px(tp1) + "  (" + str.tostring(tp1Pct) + "%)\nTP2 " + px(tp2)
-    // Key-level context: what Candle 2 swept, and anything in the way of TP2
-    sweptTag = dir == 1 ? bullLvl : bearLvl
-    [obPx, obTag] = obstacle(levels, dir == 1, ePx, tp2)
-    lvlTxt = (sweptTag != "" ? "\nSwept " + sweptTag + (dir == 1 ? " support" : " resistance") : "") + (na(obPx) ? "" : "\n⚠ " + obTag + (dir == 1 ? " R " : " S ") + px(obPx) + " before TP2")
-    if dir == 1
-        label.new(bar_index, low, "▲ BUY " + px(ePx) + "\nSL " + px(sl) + "  (-$" + str.tostring(math.round(riskUSD)) + ")" + tpTxt + lvlTxt, yloc=yloc.belowbar, style=label.style_label_up, color=bullCol, textcolor=color.black, size=size.normal, textalign=text.align_left)
-    else
-        label.new(bar_index, high, "▼ SELL " + px(ePx) + "\nSL " + px(sl) + "  (-$" + str.tostring(math.round(riskUSD)) + ")" + tpTxt + lvlTxt, yloc=yloc.abovebar, style=label.style_label_down, color=bearCol, textcolor=color.white, size=size.normal, textalign=text.align_left)
-    alert("CRT " + syminfo.ticker + ": " + (dir == 1 ? "BUY " : "SELL ") + px(ePx) + "  SL " + px(sl) + (na(tp1) ? "" : "  TP1 " + px(tp1)) + "  TP2 " + px(tp2) + "  risk $" + str.tostring(math.round(riskUSD)) + (sweptTag != "" ? "  (swept " + sweptTag + " level)" : ""), alert.freq_once_per_bar_close)
+if sameTf and barstate.isconfirmed
+    pDir := setDir
+    pBar := bar_index
+    pC1H := c1H
+    pC1L := c1L
+    pC2H := c2H
+    pC2L := c2L
+    pTag := setDir == 1 ? bullLvl : setDir == -1 ? bearLvl : ""
 
 // ─── KEY LEVEL UPKEEP (after this bar's signals) ──────────────────────────────
 
 if barstate.isconfirmed
-    if newC2
+    if c2Done
         removeBroken(levels, c2C)
     if use4h and new4h
         if not na(ph4)
