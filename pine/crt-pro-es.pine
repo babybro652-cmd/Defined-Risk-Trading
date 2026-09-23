@@ -369,8 +369,8 @@ if showStop and (newLong or newShort)
 
 // ─── LABELS ───────────────────────────────────────────────────────────────────
 // Every step of a trade gets a label with the exact prices to use.
-// Long labels sit below the bar and short labels above; exits go on the
-// opposite side of their entry so a reversal's EXIT never overlaps the new entry.
+// Long entries/exits sit below the bar and short entries/exits above, so a
+// reversal's EXIT and the new entry land on opposite sides of the bar.
 
 px(float p) => str.tostring(p, format.mintick)
 usd(float x) => (x >= 0 ? "+$" : "-$") + str.tostring(math.abs(x), "#,##0")
