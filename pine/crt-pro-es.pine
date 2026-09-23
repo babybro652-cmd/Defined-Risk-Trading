@@ -147,9 +147,9 @@ if setupBear
 // Cancel if the sweep wick is taken out or the window runs out
 longCancel  = confirmed and armL and (low < armSweep or bar_index - armBar > confWindow)
 shortCancel = confirmed and armS and (high > armSweep or bar_index - armBar > confWindow)
-if confirmed and armL and (low < armSweep or bar_index - armBar > confWindow)
+if longCancel
     armL := false
-if confirmed and armS and (high > armSweep or bar_index - armBar > confWindow)
+if shortCancel
     armS := false
 
 // ─── ENTRY TRIGGERS (chart timeframe) ─────────────────────────────────────────
