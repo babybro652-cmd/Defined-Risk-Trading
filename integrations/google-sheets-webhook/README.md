@@ -58,10 +58,10 @@ That's it - one alert, no need to set up the 10 separate ones from before. From 
 
 ## What still needs manual entry
 
-- **Furthest Adverse Price** (column H) on CRT/Div rows - this is inherently a hindsight number (the worst price reached *after* the signal, before it turned), so there's no way to know it at the moment the signal fires. Fill it in once you can see what happened, same as before.
+- **Furthest Adverse Price** (column H) on CRT/Div rows - this is inherently a hindsight number (the worst price reached *after* the signal, before it turned), so there's no way to know it at the moment the signal fires. Fill it in once you can see what happened, same as before. Only check price up to the **Div Valid Until** timestamp (column S, Bull/Bear Div rows only) - that's the same window the indicator itself uses to still count the divergence as "recent" for confluence, so it's the natural cutoff for what counts as this signal's drawdown. If price hasn't made a new adverse extreme by then, log 0 ticks; anything the market does after that point belongs to a different move, not this signal.
 - **Notes** (column R) - free text, not something a webhook has anything meaningful to say.
 
-Everything else - Date, Time, Instrument, Signal Type, Direction, Entry/SL/TP1-3, Signal Ref Price, and the Result as the trade progresses (TP1 HIT -> TP2 HIT -> ... -> STOPPED/STOPPED (BE)/STOPPED (TRAIL)) - now fills itself in.
+Everything else - Date, Time, Instrument, Signal Type, Direction, Entry/SL/TP1-3, Signal Ref Price, Div Valid Until, and the Result as the trade progresses (TP1 HIT -> TP2 HIT -> ... -> STOPPED/STOPPED (BE)/STOPPED (TRAIL)) - now fills itself in.
 
 ## Troubleshooting
 

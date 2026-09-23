@@ -245,12 +245,18 @@ if showDivLabels and bearDivPulse
 if bullDivPulse
     divDate = str.format_time(time[divPivotLen], "yyyy-MM-dd", syminfo.timezone)
     divTime = str.format_time(time[divPivotLen], "HH:mm", syminfo.timezone)
-    alert('{"type":"SIGNAL","signal":"Bull Div","ticker":"' + syminfo.ticker + '","date":"' + divDate + '","time":"' + divTime + '","ref_price":' + str.tostring(low[divPivotLen], format.mintick) + '}', alert.freq_once_per_bar_close)
+    validUntilMs = time[divPivotLen] + divValidBars * timeframe.in_seconds() * 1000
+    validDate = str.format_time(validUntilMs, "yyyy-MM-dd", syminfo.timezone)
+    validTime = str.format_time(validUntilMs, "HH:mm", syminfo.timezone)
+    alert('{"type":"SIGNAL","signal":"Bull Div","ticker":"' + syminfo.ticker + '","date":"' + divDate + '","time":"' + divTime + '","ref_price":' + str.tostring(low[divPivotLen], format.mintick) + ',"valid_until_date":"' + validDate + '","valid_until_time":"' + validTime + '"}', alert.freq_once_per_bar_close)
 
 if bearDivPulse
     divDateB = str.format_time(time[divPivotLen], "yyyy-MM-dd", syminfo.timezone)
     divTimeB = str.format_time(time[divPivotLen], "HH:mm", syminfo.timezone)
-    alert('{"type":"SIGNAL","signal":"Bear Div","ticker":"' + syminfo.ticker + '","date":"' + divDateB + '","time":"' + divTimeB + '","ref_price":' + str.tostring(high[divPivotLen], format.mintick) + '}', alert.freq_once_per_bar_close)
+    validUntilMsB = time[divPivotLen] + divValidBars * timeframe.in_seconds() * 1000
+    validDateB = str.format_time(validUntilMsB, "yyyy-MM-dd", syminfo.timezone)
+    validTimeB = str.format_time(validUntilMsB, "HH:mm", syminfo.timezone)
+    alert('{"type":"SIGNAL","signal":"Bear Div","ticker":"' + syminfo.ticker + '","date":"' + divDateB + '","time":"' + divTimeB + '","ref_price":' + str.tostring(high[divPivotLen], format.mintick) + ',"valid_until_date":"' + validDateB + '","valid_until_time":"' + validTimeB + '"}', alert.freq_once_per_bar_close)
 
 // ---------------------------------------------------------------------------
 // Bias Level - equilibrium (50%) of the current CRT range plus a composite

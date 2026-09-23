@@ -16,7 +16,10 @@
  *     A # | B Date | C Time | D Instrument | E Signal Type | F Direction |
  *     G Signal Ref Price | H Furthest Adverse Price | I Ticks of Drawdown
  *     (formula, untouched) | J Entry | K SL | L TP1 | M TP2 | N TP3 |
- *     O Result | P R Achieved (formula) | Q Cumulative R (formula) | R Notes
+ *     O Result | P R Achieved (formula) | Q Cumulative R (formula) | R Notes |
+ *     S Div Valid Until (Bull/Bear Div rows only - the last bar the pivot
+ *     still counts as "recent" for confluence; any drawdown checked after
+ *     this belongs to a different move, not this signal)
  *
  *   UPDATE - a TP/SL hit on the currently open trade. Finds the most
  *   recent row whose Signal Type is BUY or SELL and overwrites its
@@ -29,7 +32,7 @@ var COL = {
   NUM: 1, DATE: 2, TIME: 3, INSTRUMENT: 4, SIGNAL_TYPE: 5, DIRECTION: 6,
   REF_PRICE: 7, ADVERSE_PRICE: 8, TICKS: 9, ENTRY: 10, SL: 11,
   TP1: 12, TP2: 13, TP3: 14, RESULT: 15, R_ACHIEVED: 16,
-  CUMULATIVE_R: 17, NOTES: 18
+  CUMULATIVE_R: 17, NOTES: 18, DIV_VALID_UNTIL: 19
 };
 
 var HEADER_ROW = 1;
@@ -74,7 +77,7 @@ function appendSignalRow(sheet, body) {
   var row = lastRow < HEADER_ROW ? FIRST_DATA_ROW : lastRow + 1;
   var nextNum = row - FIRST_DATA_ROW + 1;
 
-  var values = new Array(COL.NOTES).fill("");
+  var values = new Array(COL.DIV_VALID_UNTIL).fill("");
   values[COL.NUM - 1] = nextNum;
   values[COL.DATE - 1] = body.date || "";
   values[COL.TIME - 1] = body.time || "";
@@ -93,9 +96,12 @@ function appendSignalRow(sheet, body) {
     // price is known at signal time. Furthest Adverse Price is filled in
     // later once you can see what price actually did.
     values[COL.REF_PRICE - 1] = numOrBlank(body.ref_price);
+    if (body.valid_until_date || body.valid_until_time) {
+      values[COL.DIV_VALID_UNTIL - 1] = (body.valid_until_date || "") + " " + (body.valid_until_time || "");
+    }
   }
 
-  sheet.getRange(row, 1, 1, COL.NOTES).setValues([values]);
+  sheet.getRange(row, 1, 1, COL.DIV_VALID_UNTIL).setValues([values]);
 }
 
 function updateLastOpenTrade(sheet, body) {
