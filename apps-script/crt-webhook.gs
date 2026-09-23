@@ -101,7 +101,9 @@ function onExit_(d) {
   sh.getRange(r, COL.exitTime, 1, 5).setValues([[d.time, d.price, d.reason, d.pnl_usd, d.r_multiple === null ? '' : d.r_multiple]]);
   sh.getRange(r, COL.pnl).setFontColor(d.pnl_usd > 0 ? '#188038' : '#d93025');
   // The final target closes the trade without a separate TP alert
-  if (d.reason === 'TP2' || d.reason === 'TP3') sh.getRange(r, COL.tp2Hit, 1, 2).setValues([['Yes', d.time]]);
+  if ((d.reason === 'TP2' || d.reason === 'TP3') && sh.getRange(r, COL.tp2Hit).getValue() !== 'Yes') {
+    sh.getRange(r, COL.tp2Hit, 1, 2).setValues([['Yes', d.time]]);
+  }
 }
 
 /** Run once from the editor (select setup ▸ Run) to create the sheets and the summary. */
