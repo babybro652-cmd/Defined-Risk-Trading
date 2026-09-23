@@ -39,10 +39,12 @@ An alert keeps using the script and settings it was created with. **After you ch
 | Alert | When | Sheet |
 |---|---|---|
 | `ENTRY` | Candle 3 opens | New row in **Trades** |
-| `TP1` | TP1 is touched | Sets TP1 Hit = Yes |
-| `EXIT` | SL, BE or TP2 | Adds exit price, reason, P&L $ and R |
+| `TP1` / `TP2` | A partial target is hit | Sets TP1 Hit / TP2 Hit = Yes |
+| `EXIT` | SL, BE, or the final target (TP2 or TP3) | Adds exit price, reason, P&L $ and R |
 | `SKIP` | A valid CRT was skipped (too much risk, or price already moved) | **Log** only |
 
-**Summary** shows closed trades, win rate, net P&L, average win and loss, average R, TP1 hit rate, how trades exited, and win rate and P&L for trades that **swept a 1H/4H key level** compared with those that didn't.
+**Summary** shows closed trades, win rate, net P&L, average win and loss, average R, TP1 and TP2 hit rates, how trades exited, and win rate and P&L for trades that **swept a 1H/4H key level** compared with those that didn't.
+
+**Upgrading from an earlier version of the script:** the Trades columns changed when TP3 was added. Delete the old **Trades** and **Summary** tabs (or start a new sheet), paste in the new script, run **setup** again, and deploy a new version.
 
 P&L is calculated from the indicator's levels (stop and target prices) for the number of contracts in the settings. It does not include commission or slippage.

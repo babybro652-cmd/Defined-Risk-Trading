@@ -9,7 +9,8 @@
 //   Candle 3 : the signal — enter at Candle 3's open
 //   Stop     : beyond Candle 2's wick
 //   TP1      : 50% of Candle 1 → close part, stop to breakeven
-//   TP2      : far side of Candle 1
+//   TP2      : far side of Candle 1 → close part
+//   TP3      : beyond Candle 1 by a % of its range → close the rest
 //   One trade at a time. Setups are skipped if the stop risks more than Max $.
 //
 //   Key levels (1H and 4H)
@@ -30,7 +31,9 @@ minRange  = input.float(0.5, "Min Candle 1 Size (× ATR)", minval=0, step=0.1, g
 bufTicks  = input.int(2, "Stop Buffer (ticks)", minval=0, maxval=40, group=grpCrt)
 maxRisk   = input.float(500, "Max Risk per Trade ($)", minval=1, step=25, group=grpCrt, tooltip="Skip any setup whose stop would risk more than this.")
 contracts = input.int(1, "Contracts", minval=1, group=grpCrt)
-tp1Pct    = input.int(50, "Close at TP1 (%)", minval=0, maxval=100, group=grpCrt, tooltip="TP1 = 50% of Candle 1. Close this much there and move the stop to breakeven. The rest rides to TP2.")
+tp1Pct    = input.int(50, "Close at TP1 (%)", minval=0, maxval=100, group=grpCrt, tooltip="TP1 = 50% of Candle 1. Close this much there and move the stop to breakeven.")
+tp2Pct    = input.int(25, "Close at TP2 (%)", minval=0, maxval=100, group=grpCrt, tooltip="TP2 = far side of Candle 1. The rest rides to TP3.")
+tp3Ext    = input.float(50, "TP3 Beyond TP2 (% of Candle 1)", minval=0, step=5, group=grpCrt, tooltip="TP3 = TP2 plus this much of Candle 1's range. 0 = no TP3 (everything left closes at TP2).")
 useSess   = input.bool(true, "Only Trade During Sessions (NY time)", group=grpCrt, tooltip="Checked at Candle 3's open.")
 sess1     = input.session("0930-1130", "Session 1", group=grpCrt)
 sess2     = input.session("1400-1600", "Session 2", group=grpCrt)
@@ -52,7 +55,8 @@ grpStyle  = "Style"
 showTable = input.bool(true, "Show Stats Table", group=grpStyle)
 bullCol   = input.color(#00E676, "Buy Color", group=grpStyle)
 bearCol   = input.color(#FF1744, "Sell Color", group=grpStyle)
-lvlCol    = input.color(#2962FF, "Target Color", group=grpStyle)
+entryCol  = input.color(#FFD600, "Entry Color", group=grpStyle)
+tpCol     = input.color(#089981, "Target Color", group=grpStyle)
 resCol    = input.color(#FF9800, "Resistance Color", group=grpStyle)
 supCol    = input.color(#26A69A, "Support Color", group=grpStyle)
 
@@ -207,31 +211,76 @@ cC2H   = sameTf ? pC2H : c2H
 cC2L   = sameTf ? pC2L : c2L
 cTag   = sameTf ? pTag : (setDir == 1 ? bullLvl : setDir == -1 ? bearLvl : "")
 
+// ─── TRADE LEVEL TAGS ─────────────────────────────────────────────────────────
+// Each level (ENTRY, SL, TP1-3) is a line with a price tag at its right end.
+// While live, the line and tag ride along with the newest bar. When the level
+// is hit, the tag freezes at that bar and turns grey with "(HIT)".
+
+type Tag
+    string name
+    float  price
+    line   ln
+    label  lb
+    bool   live
+
+newTag(string name, float p, color bg, color txt) =>
+    ln = line.new(bar_index, p, bar_index, p, color=bg, width=2)
+    lb = label.new(bar_index, p, name + "  " + px(p), style=label.style_label_left, color=bg, textcolor=txt, size=size.small)
+    Tag.new(name, p, ln, lb, true)
+
+rideTag(Tag t) =>
+    if not na(t) and t.live
+        line.set_x2(t.ln, bar_index)
+        label.set_x(t.lb, bar_index)
+    true
+
+freezeTag(Tag t, string suffix, color bg, color txt) =>
+    if not na(t) and t.live
+        t.live := false
+        line.set_x2(t.ln, bar_index)
+        label.set_x(t.lb, bar_index)
+        label.set_color(t.lb, bg)
+        label.set_textcolor(t.lb, txt)
+        label.set_text(t.lb, t.name + "  " + px(t.price) + suffix)
+    true
+
+hitBg   = color.new(color.gray, 25)
+fadeBg  = color.new(color.gray, 75)
+fadeTxt = color.new(color.white, 40)
+
 // ─── TRADE STATE ──────────────────────────────────────────────────────────────
 
-var int   dir     = 0        // 1 = long, -1 = short, 0 = flat
-var int   eBar    = na
-var int   eTime   = na
-var float ePx     = na
-var float sl      = na
-var float tp1     = na
-var float tp2     = na
-var float riskUSD = na
-var bool  tp1Done = false
-var float banked  = 0.0      // points locked in at TP1 (already weighted by size)
-var line  lnSL    = na
-var line  lnTP1   = na
-var line  lnTP2   = na
-var int   nTrades = 0
-var int   nWins   = 0
-var float netUSD  = 0.0
+var int   dir       = 0      // 1 = long, -1 = short, 0 = flat
+var int   eBar      = na
+var int   eTime     = na
+var float ePx       = na
+var float sl        = na
+var float tp1       = na
+var float tp2       = na
+var float tp3       = na
+var float f1        = 0.0    // size closed at each target
+var float f2        = 0.0
+var float f3        = 0.0
+var int   tpIdx     = 1      // next target to hit
+var bool  beMoved   = false
+var float remaining = 1.0
+var float banked    = 0.0    // points locked in at targets (already weighted by size)
+var float riskUSD   = na
+var Tag   tE        = na
+var Tag   tSL       = na
+var Tag   tT1       = na
+var Tag   tT2       = na
+var Tag   tT3       = na
+var int   nTrades   = 0
+var int   nWins     = 0
+var float netUSD    = 0.0
 
-frac  = tp1Pct / 100.0
 tid() => syminfo.ticker + "-" + str.tostring(eTime)
 
 // ─── CANDLE 3: ENTRY AT ITS OPEN ──────────────────────────────────────────────
 
 flatAtOpen = dir == 0
+c3Rng      = cC1H - cC1L
 c3Mid      = (cC1H + cC1L) / 2
 c3Stop     = cDir == 1 ? cC2L - buf : cC2H + buf
 c3RiskUSD  = math.abs(open - c3Stop) * pv
@@ -246,95 +295,117 @@ if isC3 and not goNow
     alert(isJson ? jHead("SKIP", "") + "," + jStr("side", cDir == 1 ? "LONG" : "SHORT") + "," + jStr("reason", why) + "}" : "CRT " + syminfo.ticker + ": " + (cDir == 1 ? "buy" : "sell") + " skipped, " + why, alert.freq_once_per_bar)
 
 if goNow
-    dir     := cDir
-    ePx     := open
-    eBar    := bar_index
-    eTime   := time
-    sl      := c3Stop
-    tp2     := dir == 1 ? cC1H : cC1L
-    tp1     := (dir == 1 and ePx < c3Mid) or (dir == -1 and ePx > c3Mid) ? c3Mid : na
-    tp1Done := false
-    banked  := 0.0
-    riskUSD := math.abs(ePx - sl) * pv
-    lnSL  := line.new(bar_index, sl,  bar_index + 1, sl,  color=bearCol, width=2)
-    lnTP2 := line.new(bar_index, tp2, bar_index + 1, tp2, color=lvlCol,  width=2)
-    lnTP1 := na
-    if not na(tp1)
-        lnTP1 := line.new(bar_index, tp1, bar_index + 1, tp1, color=lvlCol, width=1, style=line.style_dashed)
-    tpTxt = na(tp1) ? "\nTP " + px(tp2) : "\nTP1 " + px(tp1) + "  (" + str.tostring(tp1Pct) + "%)\nTP2 " + px(tp2)
-    // Key-level context: what Candle 2 swept, and anything in the way of TP2
+    dir       := cDir
+    ePx       := open
+    eBar      := bar_index
+    eTime     := time
+    sl        := c3Stop
+    tp2       := dir == 1 ? cC1H : cC1L
+    tp1       := (dir == 1 and ePx < c3Mid) or (dir == -1 and ePx > c3Mid) ? c3Mid : na
+    tp3       := tp3Ext > 0 ? tp2 + dir * c3Rng * tp3Ext / 100 : na
+    tpIdx     := 1
+    beMoved   := false
+    remaining := 1.0
+    banked    := 0.0
+    riskUSD   := math.abs(ePx - sl) * pv
+    // Position split across targets; a missing TP1 or TP3 hands its share to TP2
+    f1 := tp1Pct / 100.0
+    f2 := math.min(tp2Pct / 100.0, 1 - f1)
+    f3 := 1 - f1 - f2
+    if na(tp3)
+        f2 += f3
+        f3 := 0.0
+    if na(tp1)
+        f2 += f1
+        f1 := 0.0
+    // Signal + level tags
     [obPx, obTag] = obstacle(levels, dir == 1, ePx, tp2)
-    obTxt  = na(obPx) ? "" : obTag + (dir == 1 ? " R " : " S ") + px(obPx)
-    lvlTxt = (cTag != "" ? "\nSwept " + cTag + (dir == 1 ? " support" : " resistance") : "") + (obTxt == "" ? "" : "\n⚠ " + obTxt + " before TP2")
-    if dir == 1
-        label.new(bar_index, low, "▲ BUY " + px(ePx) + "\nSL " + px(sl) + "  (-$" + str.tostring(math.round(riskUSD)) + ")" + tpTxt + lvlTxt, yloc=yloc.belowbar, style=label.style_label_up, color=bullCol, textcolor=color.black, size=size.normal, textalign=text.align_left)
-    else
-        label.new(bar_index, high, "▼ SELL " + px(ePx) + "\nSL " + px(sl) + "  (-$" + str.tostring(math.round(riskUSD)) + ")" + tpTxt + lvlTxt, yloc=yloc.abovebar, style=label.style_label_down, color=bearCol, textcolor=color.white, size=size.normal, textalign=text.align_left)
-    msgJ = jHead("ENTRY", tid()) + "," + jStr("ctf", setupTf) + "," + jStr("side", dir == 1 ? "LONG" : "SHORT") + "," + jNum("entry", ePx, format.mintick) + "," + jNum("sl", sl, format.mintick) + "," + jNum("tp1", tp1, format.mintick) + "," + jNum("tp2", tp2, format.mintick) + "," + jNum("risk_usd", riskUSD, "#.##") + "," + jStr("swept", cTag) + "," + jStr("obstacle", obTxt) + "," + jNum("contracts", contracts, "#") + "}"
-    msgT = "CRT " + syminfo.ticker + ": " + (dir == 1 ? "BUY " : "SELL ") + px(ePx) + "  SL " + px(sl) + (na(tp1) ? "" : "  TP1 " + px(tp1)) + "  TP2 " + px(tp2) + "  risk $" + str.tostring(math.round(riskUSD)) + (cTag != "" ? "  (swept " + cTag + " level)" : "")
+    obTxt = na(obPx) ? "" : obTag + (dir == 1 ? " R " : " S ") + px(obPx)
+    label.new(bar_index, dir == 1 ? low : high, (dir == 1 ? "BUY" : "SELL") + "\nCRT" + (cTag != "" ? " + " + cTag + (dir == 1 ? " S" : " R") : ""), yloc=dir == 1 ? yloc.belowbar : yloc.abovebar, style=dir == 1 ? label.style_label_up : label.style_label_down, color=dir == 1 ? bullCol : bearCol, textcolor=color.white, size=size.large)
+    tE  := newTag("ENTRY", ePx, entryCol, color.black)
+    tSL := newTag("SL", sl, bearCol, color.white)
+    tT1 := na(tp1) ? na : newTag("TP1", tp1, tpCol, color.white)
+    tT2 := newTag("TP2", tp2, tpCol, color.white)
+    tT3 := na(tp3) or f3 <= 0 ? na : newTag("TP3", tp3, tpCol, color.white)
+    msgJ = jHead("ENTRY", tid()) + "," + jStr("ctf", setupTf) + "," + jStr("side", dir == 1 ? "LONG" : "SHORT") + "," + jNum("entry", ePx, format.mintick) + "," + jNum("sl", sl, format.mintick) + "," + jNum("tp1", tp1, format.mintick) + "," + jNum("tp2", tp2, format.mintick) + "," + jNum("tp3", f3 > 0 ? tp3 : na, format.mintick) + "," + jNum("risk_usd", riskUSD, "#.##") + "," + jStr("swept", cTag) + "," + jStr("obstacle", obTxt) + "," + jNum("contracts", contracts, "#") + "}"
+    msgT = "CRT " + syminfo.ticker + ": " + (dir == 1 ? "BUY " : "SELL ") + px(ePx) + "  SL " + px(sl) + (na(tp1) ? "" : "  TP1 " + px(tp1)) + "  TP2 " + px(tp2) + (f3 > 0 ? "  TP3 " + px(tp3) : "") + "  risk $" + str.tostring(math.round(riskUSD)) + (cTag != "" ? "  (swept " + cTag + " level)" : "")
     alert(isJson ? msgJ : msgT, alert.freq_once_per_bar)
 
 // ─── MANAGE OPEN TRADE ────────────────────────────────────────────────────────
 // Checked at each bar's close, including Candle 3 itself (the trade is live
-// from its open). If a bar touches the stop and a target, the stop is assumed
-// first (conservative).
+// from its open). Targets are taken in order; after the first target the stop
+// moves to breakeven. If a bar touches the stop and a target, the stop is
+// assumed first (conservative).
 
 exitNow = false
 exitPx  = float(na)
 exitTxt = ""
 
 if barstate.isconfirmed and dir != 0 and bar_index >= eBar
-    slHit  = dir == 1 ? low <= sl : high >= sl
-    tp1Hit = not tp1Done and not na(tp1) and (dir == 1 ? high >= tp1 : low <= tp1)
-    tp2Hit = dir == 1 ? high >= tp2 : low <= tp2
+    slHit = dir == 1 ? low <= sl : high >= sl
     if slHit
         exitNow := true
         exitPx  := sl
-        exitTxt := tp1Done ? "BE" : "SL"
-    else
-        if tp1Hit
-            tp1Done := true
-            banked  := frac * (tp1 - ePx) * dir
-            if frac >= 1
+        exitTxt := beMoved ? "BE" : "SL"
+    else if tpIdx <= 3
+        for k = tpIdx to 3
+            p = k == 1 ? tp1 : k == 2 ? tp2 : tp3
+            f = k == 1 ? f1 : k == 2 ? f2 : f3
+            if na(p) or f <= 0
+                tpIdx := k + 1
+                continue
+            if not (dir == 1 ? high >= p : low <= p)
+                break
+            banked    += f * (p - ePx) * dir
+            remaining -= f
+            tpIdx     := k + 1
+            freezeTag(k == 1 ? tT1 : k == 2 ? tT2 : tT3, "  (HIT)", hitBg, color.white)
+            if remaining <= 0.0001
                 exitNow := true
-                exitPx  := tp1
-                exitTxt := "TP1"
-            else
-                label.new(bar_index, dir == 1 ? high : low, "TP1 ✓ " + px(tp1) + "  (" + str.tostring(tp1Pct) + "% off)\nStop → BE " + px(ePx), yloc=dir == 1 ? yloc.abovebar : yloc.belowbar, style=dir == 1 ? label.style_label_down : label.style_label_up, color=color.new(lvlCol, 20), textcolor=color.white, size=size.small, textalign=text.align_left)
-                msgJ = jHead("TP1", tid()) + "," + jNum("price", tp1, format.mintick) + "," + jNum("banked_usd", banked * pv, "#.##") + "," + jNum("new_sl", ePx, format.mintick) + "}"
-                msgT = "CRT " + syminfo.ticker + ": TP1 hit @ " + px(tp1) + ". Close " + str.tostring(tp1Pct) + "%, move stop to " + px(ePx)
-                alert(isJson ? msgJ : msgT, alert.freq_once_per_bar_close)
-                line.set_x2(lnSL, bar_index)
-                sl   := ePx
-                lnSL := line.new(bar_index, sl, bar_index + 1, sl, color=color.gray, width=1, style=line.style_dashed)
-        if not exitNow and tp2Hit
-            exitNow := true
-            exitPx  := tp2
-            exitTxt := "TP2"
+                exitPx  := p
+                exitTxt := "TP" + str.tostring(k)
+                break
+            msgJ = jHead("TP" + str.tostring(k), tid()) + "," + jNum("price", p, format.mintick) + "," + jNum("closed_pct", f * 100, "#") + "," + jNum("banked_usd", banked * pv, "#.##") + "," + jNum("new_sl", ePx, format.mintick) + "}"
+            msgT = "CRT " + syminfo.ticker + ": TP" + str.tostring(k) + " hit @ " + px(p) + ". Close " + str.tostring(math.round(f * 100)) + "%, stop at breakeven " + px(ePx)
+            alert(isJson ? msgJ : msgT, alert.freq_once_per_bar_close)
+            // First target banked: stop to breakeven (the ENTRY tag becomes the stop)
+            if not beMoved
+                beMoved := true
+                freezeTag(tSL, "  → BE", fadeBg, fadeTxt)
+                sl := ePx
+                tE.name := "BE STOP"
+                label.set_text(tE.lb, "BE STOP  " + px(ePx))
+                label.set_color(tE.lb, bearCol)
+                label.set_textcolor(tE.lb, color.white)
 
 if exitNow
-    rem    = tp1Done ? 1 - frac : 1.0
-    pnlUSD = (banked + rem * (exitPx - ePx) * dir) * pv
+    pnlUSD = (banked + remaining * (exitPx - ePx) * dir) * pv
     nTrades += 1
     nWins   += pnlUSD > 0 ? 1 : 0
     netUSD  += pnlUSD
-    shown = exitTxt == "SL" ? "SL ✕" : exitTxt == "BE" ? "BE" : exitTxt + " ✓"
-    label.new(bar_index, dir == 1 ? low : high, shown + " " + px(exitPx) + "\nTrade " + usd(pnlUSD), yloc=dir == 1 ? yloc.belowbar : yloc.abovebar, style=dir == 1 ? label.style_label_up : label.style_label_down, color=pnlUSD > 0 ? color.new(lvlCol, 20) : color.new(color.gray, 20), textcolor=color.white, size=size.small, textalign=text.align_left)
+    if exitTxt == "SL"
+        freezeTag(tSL, "  (HIT)", hitBg, color.white)
+    if exitTxt == "BE"
+        freezeTag(tE, "  (HIT)", hitBg, color.white)
+    // Everything still live freezes here, faded
+    freezeTag(tE,  "", fadeBg, fadeTxt)
+    freezeTag(tSL, "", fadeBg, fadeTxt)
+    freezeTag(tT1, "", fadeBg, fadeTxt)
+    freezeTag(tT2, "", fadeBg, fadeTxt)
+    freezeTag(tT3, "", fadeBg, fadeTxt)
+    label.new(bar_index, dir == 1 ? high : low, exitTxt + "  " + usd(pnlUSD), yloc=dir == 1 ? yloc.abovebar : yloc.belowbar, style=dir == 1 ? label.style_label_down : label.style_label_up, color=pnlUSD > 0 ? color.new(tpCol, 20) : color.new(color.gray, 20), textcolor=color.white, size=size.small)
     msgJ = jHead("EXIT", tid()) + "," + jNum("price", exitPx, format.mintick) + "," + jStr("reason", exitTxt) + "," + jNum("pnl_usd", pnlUSD, "#.##") + "," + jNum("r_multiple", riskUSD > 0 ? pnlUSD / riskUSD : na, "#.##") + "}"
     msgT = "CRT " + syminfo.ticker + ": EXIT " + exitTxt + " @ " + px(exitPx) + "  Trade " + usd(pnlUSD)
     alert(isJson ? msgJ : msgT, alert.freq_once_per_bar_close)
-    line.set_x2(lnSL, bar_index)
-    line.set_x2(lnTP2, bar_index)
-    if not na(lnTP1)
-        line.set_x2(lnTP1, bar_index)
     dir := 0
 
-// Keep the trade lines running while the trade is open
+// Live tags ride along with the newest bar
 if dir != 0
-    line.set_x2(lnSL, bar_index + 1)
-    line.set_x2(lnTP2, bar_index + 1)
-    if not na(lnTP1) and not tp1Done
-        line.set_x2(lnTP1, bar_index + 1)
+    rideTag(tE)
+    rideTag(tSL)
+    rideTag(tT1)
+    rideTag(tT2)
+    rideTag(tT3)
 
 // ─── HOLD THIS BAR'S SETUP FOR CANDLE 3 (same timeframe only) ─────────────────
 
@@ -375,7 +446,8 @@ var table tbl = table.new(position.top_right, 2, 3, bgcolor=color.new(color.blac
 
 if showTable and barstate.islast
     tfTxt  = sameTf ? timeframe.period + " chart" : setupTf + " CRT → " + timeframe.period + " chart"
-    posTxt = dir == 0 ? "FLAT" : (dir == 1 ? "LONG " : "SHORT ") + px(ePx) + "  SL " + px(sl) + "  TP " + px(tp1Done or na(tp1) ? tp2 : tp1)
+    nextTp = tpIdx <= 1 and not na(tp1) ? tp1 : tpIdx <= 2 ? tp2 : tp3
+    posTxt = dir == 0 ? "FLAT" : (dir == 1 ? "LONG " : "SHORT ") + px(ePx) + "  SL " + px(sl) + "  next TP " + px(nextTp)
     winPct = nTrades > 0 ? 100.0 * nWins / nTrades : 0.0
     table.cell(tbl, 0, 0, "CRT", text_color=color.white, text_size=size.small)
     table.cell(tbl, 1, 0, tfTxt, text_color=color.white, text_size=size.small)

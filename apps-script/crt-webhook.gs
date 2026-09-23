@@ -2,7 +2,7 @@
  * CRT Basic → Google Sheet trade tracker (Google Apps Script)
  *
  * Receives the indicator's JSON webhook alerts and records them:
- *   Trades  — one row per trade (entry, stop, targets, TP1, exit, P&L, R)
+ *   Trades  — one row per trade (entry, stop, TP1-3, targets hit, exit, P&L, R)
  *   Log     — every alert received, raw
  *   Summary — win rate, net P&L, average R, swept-level vs. not
  *
@@ -17,15 +17,15 @@ const LOG = 'Log';
 const SUMMARY = 'Summary';
 
 const TRADE_HEADERS = [
-  'Trade ID', 'Symbol', 'CRT TF', 'Side', 'Entry Time (NY)', 'Entry', 'Stop', 'TP1', 'TP2',
-  'Risk $', 'Swept Level', 'Level Before TP2', 'TP1 Hit', 'TP1 Time (NY)',
+  'Trade ID', 'Symbol', 'CRT TF', 'Side', 'Entry Time (NY)', 'Entry', 'Stop', 'TP1', 'TP2', 'TP3',
+  'Risk $', 'Swept Level', 'Level Before TP2', 'TP1 Hit', 'TP1 Time (NY)', 'TP2 Hit', 'TP2 Time (NY)',
   'Exit Time (NY)', 'Exit Price', 'Exit Reason', 'P&L $', 'R Multiple', 'Contracts',
 ];
 // 1-based column numbers in the Trades sheet
 const COL = {
-  id: 1, symbol: 2, ctf: 3, side: 4, entryTime: 5, entry: 6, sl: 7, tp1: 8, tp2: 9,
-  risk: 10, swept: 11, obstacle: 12, tp1Hit: 13, tp1Time: 14,
-  exitTime: 15, exitPrice: 16, reason: 17, pnl: 18, r: 19, contracts: 20,
+  id: 1, symbol: 2, ctf: 3, side: 4, entryTime: 5, entry: 6, sl: 7, tp1: 8, tp2: 9, tp3: 10,
+  risk: 11, swept: 12, obstacle: 13, tp1Hit: 14, tp1Time: 15, tp2Hit: 16, tp2Time: 17,
+  exitTime: 18, exitPrice: 19, reason: 20, pnl: 21, r: 22, contracts: 23,
 };
 const LOG_HEADERS = ['Received', 'Event', 'Trade ID', 'Symbol', 'Bar Time (NY)', 'Payload'];
 
@@ -48,7 +48,7 @@ function doPost(e) {
     sheet_(LOG, LOG_HEADERS).appendRow([new Date(), d.event, d.id || '', d.symbol || '', d.time || '', JSON.stringify(d)]);
 
     if (d.event === 'ENTRY') onEntry_(d);
-    else if (d.event === 'TP1') onTp1_(d);
+    else if (d.event === 'TP1' || d.event === 'TP2') onTarget_(d, d.event);
     else if (d.event === 'EXIT') onExit_(d);
     // SKIP events are only logged
 
@@ -76,20 +76,22 @@ function onEntry_(d) {
   row[COL.sl - 1] = d.sl;
   row[COL.tp1 - 1] = d.tp1 === null ? '' : d.tp1;
   row[COL.tp2 - 1] = d.tp2;
+  row[COL.tp3 - 1] = d.tp3 === null || d.tp3 === undefined ? '' : d.tp3;
   row[COL.risk - 1] = d.risk_usd;
   row[COL.swept - 1] = d.swept;
   row[COL.obstacle - 1] = d.obstacle;
-  row[COL.tp1Hit - 1] = 'No';
+  row[COL.tp1Hit - 1] = d.tp1 === null ? 'n/a' : 'No';
+  row[COL.tp2Hit - 1] = 'No';
   row[COL.contracts - 1] = d.contracts;
   sh.appendRow(row);
 }
 
-function onTp1_(d) {
+function onTarget_(d, which) {
   const sh = sheet_(TRADES, TRADE_HEADERS);
   const r = findRow_(sh, d.id);
   if (!r) return;
-  sh.getRange(r, COL.tp1Hit).setValue('Yes');
-  sh.getRange(r, COL.tp1Time).setValue(d.time);
+  const hitCol = which === 'TP1' ? COL.tp1Hit : COL.tp2Hit;
+  sh.getRange(r, hitCol, 1, 2).setValues([['Yes', d.time]]);
 }
 
 function onExit_(d) {
@@ -98,6 +100,8 @@ function onExit_(d) {
   if (!r) return;
   sh.getRange(r, COL.exitTime, 1, 5).setValues([[d.time, d.price, d.reason, d.pnl_usd, d.r_multiple === null ? '' : d.r_multiple]]);
   sh.getRange(r, COL.pnl).setFontColor(d.pnl_usd > 0 ? '#188038' : '#d93025');
+  // The final target closes the trade without a separate TP alert
+  if (d.reason === 'TP2' || d.reason === 'TP3') sh.getRange(r, COL.tp2Hit, 1, 2).setValues([['Yes', d.time]]);
 }
 
 /** Run once from the editor (select setup ▸ Run) to create the sheets and the summary. */
@@ -109,26 +113,28 @@ function setup() {
   sh.clear();
   const rows = [
     ['Metric', 'Value'],
-    ['Closed trades', '=COUNTA(Trades!P2:P)'],
-    ['Wins', '=COUNTIF(Trades!R2:R,">0")'],
+    ['Closed trades', '=COUNTA(Trades!S2:S)'],
+    ['Wins', '=COUNTIF(Trades!U2:U,">0")'],
     ['Win rate', '=IFERROR(B3/B2,0)'],
-    ['Net P&L $', '=SUM(Trades!R2:R)'],
-    ['Average win $', '=IFERROR(AVERAGEIF(Trades!R2:R,">0"),0)'],
-    ['Average loss $', '=IFERROR(AVERAGEIF(Trades!R2:R,"<=0"),0)'],
-    ['Average R', '=IFERROR(AVERAGE(Trades!S2:S),0)'],
-    ['TP1 hit rate', '=IFERROR(COUNTIF(Trades!M2:M,"Yes")/B2,0)'],
-    ['Stopped out (SL)', '=COUNTIF(Trades!Q2:Q,"SL")'],
-    ['Breakeven (BE)', '=COUNTIF(Trades!Q2:Q,"BE")'],
-    ['Full target (TP2)', '=COUNTIF(Trades!Q2:Q,"TP2")'],
-    ['Win rate — swept a key level', '=IFERROR(COUNTIFS(Trades!K2:K,"?*",Trades!R2:R,">0")/COUNTIFS(Trades!K2:K,"?*",Trades!P2:P,"<>"),0)'],
-    ['Win rate — no key level', '=IFERROR(COUNTIFS(Trades!K2:K,"",Trades!R2:R,">0")/COUNTIFS(Trades!K2:K,"",Trades!P2:P,"<>"),0)'],
-    ['Net P&L $ — swept a key level', '=SUMIFS(Trades!R2:R,Trades!K2:K,"?*")'],
-    ['Net P&L $ — no key level', '=SUMIFS(Trades!R2:R,Trades!K2:K,"",Trades!P2:P,"<>")'],
+    ['Net P&L $', '=SUM(Trades!U2:U)'],
+    ['Average win $', '=IFERROR(AVERAGEIF(Trades!U2:U,">0"),0)'],
+    ['Average loss $', '=IFERROR(AVERAGEIF(Trades!U2:U,"<=0"),0)'],
+    ['Average R', '=IFERROR(AVERAGE(Trades!V2:V),0)'],
+    ['TP1 hit rate', '=IFERROR(COUNTIF(Trades!N2:N,"Yes")/B2,0)'],
+    ['TP2 hit rate', '=IFERROR(COUNTIF(Trades!P2:P,"Yes")/B2,0)'],
+    ['Stopped out (SL)', '=COUNTIF(Trades!T2:T,"SL")'],
+    ['Breakeven (BE)', '=COUNTIF(Trades!T2:T,"BE")'],
+    ['Closed at TP2', '=COUNTIF(Trades!T2:T,"TP2")'],
+    ['Closed at TP3', '=COUNTIF(Trades!T2:T,"TP3")'],
+    ['Win rate — swept a key level', '=IFERROR(COUNTIFS(Trades!L2:L,"?*",Trades!U2:U,">0")/COUNTIFS(Trades!L2:L,"?*",Trades!S2:S,"<>"),0)'],
+    ['Win rate — no key level', '=IFERROR(COUNTIFS(Trades!L2:L,"",Trades!U2:U,">0")/COUNTIFS(Trades!L2:L,"",Trades!S2:S,"<>"),0)'],
+    ['Net P&L $ — swept a key level', '=SUMIFS(Trades!U2:U,Trades!L2:L,"?*")'],
+    ['Net P&L $ — no key level', '=SUMIFS(Trades!U2:U,Trades!L2:L,"",Trades!S2:S,"<>")'],
   ];
   sh.getRange(1, 1, rows.length, 2).setValues(rows);
   sh.getRange('A1:B1').setFontWeight('bold');
-  ['B4', 'B9', 'B13', 'B14'].forEach(a => sh.getRange(a).setNumberFormat('0%'));
-  ['B5', 'B6', 'B7', 'B15', 'B16'].forEach(a => sh.getRange(a).setNumberFormat('$#,##0.00'));
+  ['B4', 'B9', 'B10', 'B15', 'B16'].forEach(a => sh.getRange(a).setNumberFormat('0%'));
+  ['B5', 'B6', 'B7', 'B17', 'B18'].forEach(a => sh.getRange(a).setNumberFormat('$#,##0.00'));
   sh.getRange('B8').setNumberFormat('0.00');
   sh.autoResizeColumns(1, 2);
 }
@@ -137,9 +143,10 @@ function setup() {
 function testTrade() {
   const id = 'TEST-' + Date.now();
   const post = obj => doPost({ postData: { contents: JSON.stringify(Object.assign({ key: SECRET, symbol: 'ES1!', id: id }, obj)) } });
-  post({ event: 'ENTRY', time: '2026-09-23 09:45', ctf: '15', side: 'LONG', entry: 5800.25, sl: 5796.5, tp1: 5804, tp2: 5808.75, risk_usd: 187.5, swept: '1H', obstacle: '', contracts: 1 });
-  post({ event: 'TP1', time: '2026-09-23 10:00', price: 5804, banked_usd: 93.75, new_sl: 5800.25 });
-  post({ event: 'EXIT', time: '2026-09-23 10:30', price: 5808.75, reason: 'TP2', pnl_usd: 306.25, r_multiple: 1.63 });
+  post({ event: 'ENTRY', time: '2026-09-23 09:45', ctf: '15', side: 'LONG', entry: 5800.25, sl: 5796.5, tp1: 5804, tp2: 5808.75, tp3: 5813, risk_usd: 187.5, swept: '1H', obstacle: '', contracts: 1 });
+  post({ event: 'TP1', time: '2026-09-23 10:00', price: 5804, closed_pct: 50, banked_usd: 93.75, new_sl: 5800.25 });
+  post({ event: 'TP2', time: '2026-09-23 10:15', price: 5808.75, closed_pct: 25, banked_usd: 200, new_sl: 5800.25 });
+  post({ event: 'EXIT', time: '2026-09-23 10:45', price: 5813, reason: 'TP3', pnl_usd: 359.38, r_multiple: 1.92 });
 }
 
 function sheet_(name, headers) {
