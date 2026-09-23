@@ -6,13 +6,16 @@
 //   1. Reference candle: the bar N back, with a range of at least X × ATR
 //   2. Sweep: current candle wicks beyond the ref high/low, CLOSES back inside,
 //      and is the FIRST bar to trade beyond that side (optional)
-//   3. Filters: EMA trend (price side AND slope agree), volume, NY sessions
+//   3. Filters: EMA trend, volume, NY sessions, minimum reward:risk
 //   4. Signals are confirmed on bar close by default (no live-bar flicker)
-//   5. Exits, first trigger wins: stop (sweep wick + ATR buffer), target (opposite side of
-//      the range), opposite CRT signal, or close through the EMA
+//   5. Trade management built for retests:
+//        • Stop beyond the sweep wick + ATR buffer (close-based by default)
+//        • TP1 = opposite side of the range → scale out, stop to breakeven
+//        • Runner trails by ATR, optional TP2 at an R multiple
+//        • EMA exit only applies to the runner by default
 // ══════════════════════════════════════════════════════════════════════════════
 
-indicator("CRT Pro — ES Futures", overlay=true, max_lines_count=500, max_labels_count=300, max_boxes_count=200)
+indicator("CRT Pro — ES Futures", overlay=true, max_lines_count=500, max_labels_count=500, max_boxes_count=200)
 
 // ─── INPUTS ───────────────────────────────────────────────────────────────────
 
@@ -21,10 +24,10 @@ lookback     = input.int(1,      "Lookback Bars",          minval=1, maxval=20, 
 minRangeATR  = input.float(0.75, "Min Range (× ATR)",      step=0.05,            group=grpRef, tooltip="Reference candle must be at least this multiple of ATR in range")
 atrLen       = input.int(14,     "ATR Length",             minval=1,             group=grpRef)
 requireClean = input.bool(true,  "First Sweep Only",                             group=grpRef, tooltip="Reject the signal if any bar between the reference candle and the sweep candle already traded beyond that side of the range")
-requireRoom  = input.bool(true,  "Require Room to Target",                       group=grpRef, tooltip="Bull: close must be below the ref high. Bear: close must be above the ref low.")
 
 grpFilter    = "🧠 Smart Filters"
 confirmClose = input.bool(true,  "Signal Only on Bar Close",                     group=grpFilter, tooltip="Prevents signals and alerts from appearing and disappearing on the live bar")
+minRR        = input.float(1.0,  "Min Reward:Risk to TP1", minval=0, step=0.1,  group=grpFilter, tooltip="Skip setups where the distance to the opposite side of the range is less than this × the distance to the stop. 0 = off.")
 useEMA       = input.bool(true,  "Trend Filter (EMA)",                           group=grpFilter, tooltip="Long: close above EMA AND EMA rising. Short: close below EMA AND EMA falling.")
 emaLen       = input.int(20,     "EMA Length",             minval=5, maxval=500, group=grpFilter)
 slopeLen     = input.int(2,      "EMA Slope Bars",         minval=1, maxval=50,  group=grpFilter)
@@ -35,19 +38,26 @@ useTime      = input.bool(true,  "Session Time Filter",                         
 sess1        = input.session("0930-1130", "Morning Session (ET)",               group=grpFilter)
 sess2        = input.session("1400-1600", "Afternoon Session (ET)",             group=grpFilter)
 
-grpExit      = "🚪 Exits (first trigger wins)"
-useStopExit  = input.bool(true,  "Stop: Beyond Sweep Wick",                      group=grpExit)
-stopMode     = input.string("Close Beyond", "Stop Trigger", options=["Close Beyond", "Wick Touch"], group=grpExit, tooltip="Close Beyond: a bar must CLOSE past the stop (ignores wick retests of the sweep low/high). Wick Touch: any trade through the stop exits.")
-stopBufATR   = input.float(0.25, "Stop Buffer (× ATR)",    minval=0, step=0.05, group=grpExit, tooltip="Extra room beyond the sweep wick. 0 = stop exactly at the wick.")
-useTgtExit   = input.bool(true,  "Target: Opposite Side of Range",               group=grpExit)
-useEmaExit   = input.bool(true,  "Close Through EMA",                            group=grpExit)
+grpStop      = "🛑 Stop"
+useStopExit  = input.bool(true,  "Use Stop",                                     group=grpStop)
+stopMode     = input.string("Close Beyond", "Stop Trigger", options=["Close Beyond", "Wick Touch"], group=grpStop, tooltip="Close Beyond: a bar must CLOSE past the stop, so wick retests don't stop you out. Wick Touch: any trade through the stop exits.")
+stopBufATR   = input.float(0.25, "Stop Buffer (× ATR)",    minval=0, step=0.05, group=grpStop, tooltip="Extra room beyond the sweep wick. 0 = stop exactly at the wick.")
+
+grpTgt       = "🎯 Targets & Runner"
+tgtMode      = input.string("Scale Out", "TP1 Mode", options=["Scale Out", "Full Exit", "Off"], group=grpTgt, tooltip="TP1 is the opposite side of the reference range. Scale Out: close part there and manage the rest as a runner. Full Exit: close everything at TP1.")
+scalePct     = input.int(50,     "Scale Out at TP1 (%)",   minval=10, maxval=90, group=grpTgt)
+beOnTP1      = input.bool(true,  "Move Stop to Breakeven at TP1",                group=grpTgt)
+trailATR     = input.float(1.5,  "Runner Trail (× ATR)",   minval=0, step=0.1,  group=grpTgt, tooltip="After TP1, trail the stop this many ATRs behind the best price since entry. 0 = no trail.")
+tp2R         = input.float(3.0,  "Runner TP2 (R multiple)", minval=0, step=0.5, group=grpTgt, tooltip="Close the runner at this multiple of initial risk. 0 = no TP2 (trail/EMA only).")
+emaExitMode  = input.string("Runner Only", "Close Through EMA Exit", options=["Runner Only", "Always", "Off"], group=grpTgt, tooltip="Runner Only: the EMA exit is ignored until TP1 is hit, so a retest through the EMA doesn't cut the trade.")
 // An opposite CRT signal always exits (and reverses)
 
 grpStyle     = "🎨 Style"
 extBars      = input.int(10,     "Line Extension (bars)",  minval=1, maxval=100, group=grpStyle)
 showEMA      = input.bool(true,  "Show EMA",                                     group=grpStyle)
 showZone     = input.bool(true,  "Show Reference Zone",                          group=grpStyle)
-showStop     = input.bool(true,  "Show Stop Line",                               group=grpStyle)
+showStop     = input.bool(true,  "Show Stop / TP2 Lines",                        group=grpStyle)
+showRepeat   = input.bool(false, "Show Repeat Signals While in a Trade",         group=grpStyle)
 showTable    = input.bool(true,  "Show Info Table",                              group=grpStyle)
 wickColor    = input.color(color.new(#2962FF, 0), "Wick Line Color",             group=grpStyle)
 confColor    = input.color(color.new(#FF9800, 0), "Confirmation Line Color",     group=grpStyle)
@@ -80,9 +90,15 @@ cleanBear = not requireClean or lookback == 1 or midHigh <= refH
 bullCandle = close > open
 bearCandle = close < open
 
-bullSetup = isQualRef and cleanBull and low < refL and close > refL and bullCandle and (not requireRoom or close < refH)
+// Planned stop and reward:risk to TP1 (opposite side of the range)
+bullStop = low  - atrVal * stopBufATR
+bearStop = high + atrVal * stopBufATR
+bullRR   = (refH - close) / math.max(close - bullStop, syminfo.mintick)
+bearRR   = (close - refL) / math.max(bearStop - close, syminfo.mintick)
 
-bearSetup = isQualRef and cleanBear and high > refH and close < refH and bearCandle and (not requireRoom or close > refL)
+bullSetup = isQualRef and cleanBull and low < refL and close > refL and close < refH and bullCandle and (minRR <= 0 or bullRR >= minRR)
+
+bearSetup = isQualRef and cleanBear and high > refH and close < refH and close > refL and bearCandle and (minRR <= 0 or bearRR >= minRR)
 
 // ─── SMART FILTERS ────────────────────────────────────────────────────────────
 
@@ -100,121 +116,194 @@ bullSignal = confirmed and bullSetup and (not useEMA or inUptrend) and (not useV
 
 bearSignal = confirmed and bearSetup and (not useEMA or inDowntrend) and (not useVol or volOK) and inSession
 
-// ─── POSITION STATE & EXITS ───────────────────────────────────────────────────
+// ─── POSITION STATE ───────────────────────────────────────────────────────────
 // Exits are evaluated against the state carried in from the PREVIOUS bar,
 // before this bar's entries are applied. That way:
 //   • a trade can never enter and exit on the same bar
 //   • a reversal signal fires the exit for the old side
 
-var bool  inLong  = false
-var bool  inShort = false
-var float stopPx  = na
-var float tgtPx   = na
+var bool  inLong    = false
+var bool  inShort   = false
+var bool  tp1Done   = false
+var float entryPx   = na
+var float stopPx    = na
+var float tgtPx     = na
+var float tp2Px     = na
+var float extremePx = na
+var float remFrac   = 1.0
+var float tradePnl  = 0.0
 
-longStopHit  = inLong  and useStopExit and (stopMode == "Wick Touch" ? low  < stopPx : close < stopPx)
-longTgtHit   = inLong  and useTgtExit  and high >= tgtPx
-longRevHit   = inLong  and bearSignal
-longEmaHit   = inLong  and useEmaExit  and close < emaVal
+wickStop  = stopMode == "Wick Touch"
+scaleFrac = scalePct / 100.0
+emaExitOn = emaExitMode == "Always" or (emaExitMode == "Runner Only" and tp1Done)
+tp1Full   = tgtMode == "Full Exit"
+tp1Scale  = tgtMode == "Scale Out"
 
-shortStopHit = inShort and useStopExit and (stopMode == "Wick Touch" ? high > stopPx : close > stopPx)
-shortTgtHit  = inShort and useTgtExit  and low  <= tgtPx
+// ─── LONG EXITS ───────────────────────────────────────────────────────────────
+
+longStopHit = inLong and useStopExit and (wickStop ? low < stopPx : close < stopPx)
+longTp1Hit  = inLong and not tp1Done and tgtMode != "Off" and high >= tgtPx
+longTp2Hit  = inLong and tp1Done and tp2R > 0 and high >= tp2Px
+longRevHit  = inLong and bearSignal
+longEmaHit  = inLong and emaExitOn and close < emaVal
+
+// Stop is checked first: if stop and target are both touched in one bar, assume the stop
+longPartial = confirmed and tp1Scale and longTp1Hit and not longStopHit
+exitLong    = confirmed and (longStopHit or longTp2Hit or longRevHit or longEmaHit or (tp1Full and longTp1Hit))
+
+longStopWhy = not tp1Done or stopPx < entryPx ? "STOP" : stopPx == entryPx ? "BE" : "TRAIL"
+longReason  = longStopHit ? longStopWhy : (longTp2Hit or (tp1Full and longTp1Hit)) ? "TARGET" : longRevHit ? "REVERSAL" : "EMA"
+longTp1Px   = math.max(open, tgtPx)
+longExitPx  = longStopHit ? (wickStop ? math.min(open, stopPx) : close) : longTp2Hit ? math.max(open, tp2Px) : (tp1Full and longTp1Hit) ? longTp1Px : close
+
+// ─── SHORT EXITS ──────────────────────────────────────────────────────────────
+
+shortStopHit = inShort and useStopExit and (wickStop ? high > stopPx : close > stopPx)
+shortTp1Hit  = inShort and not tp1Done and tgtMode != "Off" and low <= tgtPx
+shortTp2Hit  = inShort and tp1Done and tp2R > 0 and low <= tp2Px
 shortRevHit  = inShort and bullSignal
-shortEmaHit  = inShort and useEmaExit  and close > emaVal
+shortEmaHit  = inShort and emaExitOn and close > emaVal
 
-exitLong  = confirmed and (longStopHit  or longTgtHit  or longRevHit  or longEmaHit)
-exitShort = confirmed and (shortStopHit or shortTgtHit or shortRevHit or shortEmaHit)
+shortPartial = confirmed and tp1Scale and shortTp1Hit and not shortStopHit
+exitShort    = confirmed and (shortStopHit or shortTp2Hit or shortRevHit or shortEmaHit or (tp1Full and shortTp1Hit))
 
-// If stop and target are both touched in one bar, assume the stop (conservative)
-longReason  = longStopHit  ? "STOP" : longTgtHit  ? "TARGET" : longRevHit  ? "REVERSAL" : "EMA"
-shortReason = shortStopHit ? "STOP" : shortTgtHit ? "TARGET" : shortRevHit ? "REVERSAL" : "EMA"
+shortStopWhy = not tp1Done or stopPx > entryPx ? "STOP" : stopPx == entryPx ? "BE" : "TRAIL"
+shortReason  = shortStopHit ? shortStopWhy : (shortTp2Hit or (tp1Full and shortTp1Hit)) ? "TARGET" : shortRevHit ? "REVERSAL" : "EMA"
+shortTp1Px   = math.min(open, tgtPx)
+shortExitPx  = shortStopHit ? (wickStop ? math.max(open, stopPx) : close) : shortTp2Hit ? math.min(open, tp2Px) : (tp1Full and shortTp1Hit) ? shortTp1Px : close
 
-// Approximate fill price for the stats (gaps fill at the open)
-longExitPx  = longStopHit  ? (stopMode == "Wick Touch" ? math.min(open, stopPx) : close) : longTgtHit  ? math.max(open, tgtPx) : close
-shortExitPx = shortStopHit ? (stopMode == "Wick Touch" ? math.max(open, stopPx) : close) : shortTgtHit ? math.min(open, tgtPx) : close
+// ─── TRADE STATS (ES points per 1 contract, no commission/slippage) ──────────
+// stats: [wins, losses, net, sumWin, sumLoss]
+// exitCounts: [STOP, BE, TRAIL, TARGET, REVERSAL, EMA]
 
-// ─── TRADE STATS (points, no commission/slippage) ─────────────────────────────
+var array<float> stats      = array.new<float>(5, 0.0)
+var array<int>   exitCounts = array.new<int>(6, 0)
+var int          nTp1       = 0
 
-var float entryPx  = na
-var int   nWins    = 0
-var int   nLosses  = 0
-var float netPts   = 0.0
-var int   nStop    = 0
-var int   nTgt     = 0
-var int   nRev     = 0
-var int   nEma     = 0
+reasonIdx(string r) => r == "STOP" ? 0 : r == "BE" ? 1 : r == "TRAIL" ? 2 : r == "TARGET" ? 3 : r == "REVERSAL" ? 4 : 5
 
-recordExit(float pnl, string reason) =>
-    [pnl > 0 ? 1 : 0, pnl > 0 ? 0 : 1, pnl, reason == "STOP" ? 1 : 0, reason == "TARGET" ? 1 : 0, reason == "REVERSAL" ? 1 : 0, reason == "EMA" ? 1 : 0]
+recordTrade(array<float> st, array<int> ex, float pnl, string reason) =>
+    if pnl > 0
+        array.set(st, 0, array.get(st, 0) + 1)
+        array.set(st, 3, array.get(st, 3) + pnl)
+    else
+        array.set(st, 1, array.get(st, 1) + 1)
+        array.set(st, 4, array.get(st, 4) + pnl)
+    array.set(st, 2, array.get(st, 2) + pnl)
+    idx = reasonIdx(reason)
+    array.set(ex, idx, array.get(ex, idx) + 1)
 
+// ─── APPLY EXITS ──────────────────────────────────────────────────────────────
+
+if longPartial
+    tradePnl += scaleFrac * (longTp1Px - entryPx)
+    remFrac  -= scaleFrac
+    tp1Done  := true
+    nTp1     += 1
+    if beOnTP1
+        stopPx := math.max(stopPx, entryPx)
 if exitLong
-    [w, l, p, a, b, c, d] = recordExit(longExitPx - entryPx, longReason)
-    nWins += w
-    nLosses += l
-    netPts += p
-    nStop += a
-    nTgt += b
-    nRev += c
-    nEma += d
-if exitShort
-    [w, l, p, a, b, c, d] = recordExit(entryPx - shortExitPx, shortReason)
-    nWins += w
-    nLosses += l
-    netPts += p
-    nStop += a
-    nTgt += b
-    nRev += c
-    nEma += d
-
-if exitLong
+    tradePnl += remFrac * (longExitPx - entryPx)
+    recordTrade(stats, exitCounts, tradePnl, longReason)
     inLong := false
+
+if shortPartial
+    tradePnl += scaleFrac * (entryPx - shortTp1Px)
+    remFrac  -= scaleFrac
+    tp1Done  := true
+    nTp1     += 1
+    if beOnTP1
+        stopPx := math.min(stopPx, entryPx)
 if exitShort
+    tradePnl += remFrac * (entryPx - shortExitPx)
+    recordTrade(stats, exitCounts, tradePnl, shortReason)
     inShort := false
 
-if bullSignal
-    inLong  := true
-    inShort := false
-    stopPx  := low - atrVal * stopBufATR
-    entryPx := close
-    tgtPx   := refH
-if bearSignal
-    inShort := true
-    inLong  := false
-    stopPx  := high + atrVal * stopBufATR
-    entryPx := close
-    tgtPx   := refL
+// ─── ENTRIES ──────────────────────────────────────────────────────────────────
+// A repeat signal in the same direction does not reset an open trade's levels
+
+newLong  = bullSignal and not inLong
+newShort = bearSignal and not inShort
+
+if newLong
+    inLong    := true
+    inShort   := false
+    tp1Done   := false
+    entryPx   := close
+    stopPx    := bullStop
+    tgtPx     := refH
+    tp2Px     := close + tp2R * (close - bullStop)
+    extremePx := high
+    remFrac   := 1.0
+    tradePnl  := 0.0
+if newShort
+    inShort   := true
+    inLong    := false
+    tp1Done   := false
+    entryPx   := close
+    stopPx    := bearStop
+    tgtPx     := refL
+    tp2Px     := close - tp2R * (bearStop - close)
+    extremePx := low
+    remFrac   := 1.0
+    tradePnl  := 0.0
+
+// ─── RUNNER TRAIL (uses this bar, applies from the next bar) ──────────────────
+
+if confirmed and inLong and not newLong
+    extremePx := math.max(extremePx, high)
+    if tp1Done and trailATR > 0
+        stopPx := math.max(stopPx, extremePx - trailATR * atrVal)
+if confirmed and inShort and not newShort
+    extremePx := math.min(extremePx, low)
+    if tp1Done and trailATR > 0
+        stopPx := math.min(stopPx, extremePx + trailATR * atrVal)
 
 if not inLong and not inShort
-    stopPx := na
-    tgtPx  := na
+    stopPx    := na
+    tgtPx     := na
+    tp2Px     := na
+    extremePx := na
 
 // ─── DRAWING ──────────────────────────────────────────────────────────────────
 
-if bullSignal or bearSignal
+if newLong or newShort
     startBar = bar_index - lookback
     endBar   = bar_index + extBars
     confMid  = (open + close) / 2.0
-    // Solid lines: reference candle high and low (the far side is the target)
+    // Solid lines: reference candle high and low (the far side is TP1)
     line.new(startBar, refH, endBar, refH, color=wickColor, width=2, style=line.style_solid)
     line.new(startBar, refL, endBar, refL, color=wickColor, width=2, style=line.style_solid)
     // Dashed line: sweep candle body midpoint
     line.new(bar_index, confMid, endBar, confMid, color=confColor, width=1, style=line.style_dashed)
-    // Dotted line: stop beyond the sweep wick
+    // Dotted lines: stop beyond the sweep wick, and runner TP2
     if showStop
         line.new(bar_index, stopPx, endBar, stopPx, color=color.new(bearColor, 20), width=1, style=line.style_dotted)
+        if tp1Scale and tp2R > 0
+            line.new(bar_index, tp2Px, endBar, tp2Px, color=color.new(bullColor, 20), width=1, style=line.style_dotted)
     if showZone
         box.new(startBar, refH, endBar, refL, border_color=color.new(wickColor, 60), bgcolor=color.new(wickColor, 88))
 
 // ─── SIGNAL & EXIT LABELS ─────────────────────────────────────────────────────
 
-plotshape(bullSignal, "CRT Buy",  shape.labelup,   location.belowbar, bullColor, text="▲ CRT BUY",  textcolor=color.white, size=size.normal)
-plotshape(bearSignal, "CRT Sell", shape.labeldown, location.abovebar, bearColor, text="▼ CRT SELL", textcolor=color.white, size=size.normal)
+plotshape(newLong,  "CRT Buy",  shape.labelup,   location.belowbar, bullColor, text="▲ CRT BUY",  textcolor=color.white, size=size.normal)
+plotshape(newShort, "CRT Sell", shape.labeldown, location.abovebar, bearColor, text="▼ CRT SELL", textcolor=color.white, size=size.normal)
+plotshape(showRepeat and bullSignal and not newLong,  "Repeat Buy",  shape.triangleup,   location.belowbar, color.new(bullColor, 50), size=size.tiny)
+plotshape(showRepeat and bearSignal and not newShort, "Repeat Sell", shape.triangledown, location.abovebar, color.new(bearColor, 50), size=size.tiny)
 
 // Long exits sit below the bar and short exits above, so a reversal's EXIT
 // never overlaps the new signal label
+if longPartial and not exitLong
+    label.new(bar_index, high, "◐ TP1 " + str.tostring(scalePct) + "%", yloc=yloc.abovebar, style=label.style_label_down, color=color.new(bullColor, 30), textcolor=color.white, size=size.small)
+if shortPartial and not exitShort
+    label.new(bar_index, low, "◐ TP1 " + str.tostring(scalePct) + "%", yloc=yloc.belowbar, style=label.style_label_up, color=color.new(bearColor, 30), textcolor=color.white, size=size.small)
 if exitLong
     label.new(bar_index, low, "✕ EXIT L · " + longReason, yloc=yloc.belowbar, style=label.style_label_up, color=color.new(color.gray, 20), textcolor=color.white, size=size.small)
 if exitShort
     label.new(bar_index, high, "✕ EXIT S · " + shortReason, yloc=yloc.abovebar, style=label.style_label_down, color=color.new(color.gray, 20), textcolor=color.white, size=size.small)
+
+// Live stop level while in a trade (steps up as the runner trails)
+plot(inLong or inShort ? stopPx : na, "Active Stop", color=color.new(bearColor, 40), style=plot.style_linebr, linewidth=1)
 
 // ─── EMA PLOT ─────────────────────────────────────────────────────────────────
 
@@ -222,7 +311,7 @@ plot(showEMA ? emaVal : na, "EMA", color=color.new(color.yellow, 0), linewidth=2
 
 // ─── INFO TABLE ───────────────────────────────────────────────────────────────
 
-var table infoTable = table.new(position.top_right, 2, 8, bgcolor=color.new(color.black, 60), border_color=color.new(color.gray, 40), border_width=1, frame_color=color.gray, frame_width=1)
+var table infoTable = table.new(position.top_right, 2, 9, bgcolor=color.new(color.black, 60), border_color=color.new(color.gray, 40), border_width=1, frame_color=color.gray, frame_width=1)
 
 if showTable and barstate.islast
     table.cell(infoTable, 0, 0, "CRT Filter", text_color=color.white, text_size=size.small, bgcolor=color.new(color.blue, 40))
@@ -243,34 +332,50 @@ if showTable and barstate.islast
     sessCol    = not useTime ? color.gray : inSession ? color.lime : color.orange
     table.cell(infoTable, 0, 4, "Session", text_color=color.white, text_size=size.tiny)
     table.cell(infoTable, 1, 4, sessStatus, text_color=sessCol,    text_size=size.tiny)
-    posStatus = inLong ? "LONG  SL " + str.tostring(stopPx, format.mintick) + "  TP " + str.tostring(tgtPx, format.mintick) : inShort ? "SHORT  SL " + str.tostring(stopPx, format.mintick) + "  TP " + str.tostring(tgtPx, format.mintick) : "FLAT"
+    nextTgt   = tp1Done ? tp2Px : tgtPx
+    tgtLbl    = tp1Done ? "  TP2 " : "  TP1 "
+    levels    = "  SL " + str.tostring(stopPx, format.mintick) + (na(nextTgt) ? "" : tgtLbl + str.tostring(nextTgt, format.mintick))
+    posStatus = inLong ? "LONG" + (tp1Done ? " (runner)" : "") + levels : inShort ? "SHORT" + (tp1Done ? " (runner)" : "") + levels : "FLAT"
     posCol    = inLong ? bullColor : inShort ? bearColor : color.gray
     table.cell(infoTable, 0, 5, "Position", text_color=color.white, text_size=size.tiny)
     table.cell(infoTable, 1, 5, posStatus,  text_color=posCol,      text_size=size.tiny)
-    statStatus = str.tostring(nWins) + "W / " + str.tostring(nLosses) + "L  ·  " + str.tostring(netPts, "#.##") + " pts"
+    nW      = array.get(stats, 0)
+    nL      = array.get(stats, 1)
+    net     = array.get(stats, 2)
+    winRate = nW + nL > 0 ? 100 * nW / (nW + nL) : 0.0
+    statStatus = str.tostring(nW, "#") + "W / " + str.tostring(nL, "#") + "L (" + str.tostring(winRate, "#") + "%)  ·  " + str.tostring(net, "#.##") + " pts"
     table.cell(infoTable, 0, 6, "Trades", text_color=color.white, text_size=size.tiny)
-    table.cell(infoTable, 1, 6, statStatus, text_color=netPts >= 0 ? color.lime : color.red, text_size=size.tiny)
-    mixStatus = str.tostring(nStop) + " / " + str.tostring(nTgt) + " / " + str.tostring(nRev) + " / " + str.tostring(nEma)
-    table.cell(infoTable, 0, 7, "Exits Stop/Tgt/Rev/EMA", text_color=color.white, text_size=size.tiny)
-    table.cell(infoTable, 1, 7, mixStatus, text_color=color.white, text_size=size.tiny)
+    table.cell(infoTable, 1, 6, statStatus, text_color=net >= 0 ? color.lime : color.red, text_size=size.tiny)
+    avgW = nW > 0 ? array.get(stats, 3) / nW : 0.0
+    avgL = nL > 0 ? array.get(stats, 4) / nL : 0.0
+    table.cell(infoTable, 0, 7, "Avg Win / Avg Loss", text_color=color.white, text_size=size.tiny)
+    table.cell(infoTable, 1, 7, "+" + str.tostring(avgW, "#.##") + " / " + str.tostring(avgL, "#.##") + " pts", text_color=color.white, text_size=size.tiny)
+    mixStatus = "TP1 " + str.tostring(nTp1) + " · Stop " + str.tostring(array.get(exitCounts, 0)) + " · BE " + str.tostring(array.get(exitCounts, 1)) + " · Trail " + str.tostring(array.get(exitCounts, 2)) + " · Tgt " + str.tostring(array.get(exitCounts, 3)) + " · Rev " + str.tostring(array.get(exitCounts, 4)) + " · EMA " + str.tostring(array.get(exitCounts, 5))
+    table.cell(infoTable, 0, 8, "Exits", text_color=color.white, text_size=size.tiny)
+    table.cell(infoTable, 1, 8, mixStatus, text_color=color.white, text_size=size.tiny)
 
 // ─── ALERTS ───────────────────────────────────────────────────────────────────
 // alertcondition(): pick one per alert in the Create Alert dialog.
-// alert(): choose "Any alert() function call" to get one alert with the exit reason
+// alert(): choose "Any alert() function call" to get one alert with the reason
 // and prices in the message (useful for webhooks).
 
-alertcondition(bullSignal, "CRT Buy Signal",   "CRT Pro: Bullish sweep & reverse — potential long setup")
-alertcondition(bearSignal, "CRT Sell Signal",  "CRT Pro: Bearish sweep & reverse — potential short setup")
-alertcondition(exitLong,   "CRT Exit Long",    "CRT Pro: Exit long — stop, target, opposite signal or EMA cross")
-alertcondition(exitShort,  "CRT Exit Short",   "CRT Pro: Exit short — stop, target, opposite signal or EMA cross")
-alertcondition(bullSignal or bearSignal, "CRT Any Signal", "CRT Pro: Setup detected")
+alertcondition(newLong,   "CRT Buy Signal",   "CRT Pro: Bullish sweep & reverse — long entry")
+alertcondition(newShort,  "CRT Sell Signal",  "CRT Pro: Bearish sweep & reverse — short entry")
+alertcondition(longPartial or shortPartial, "CRT TP1 Scale Out", "CRT Pro: TP1 hit — scale out, stop to breakeven")
+alertcondition(exitLong,  "CRT Exit Long",    "CRT Pro: Exit long — stop, breakeven, trail, target, reversal or EMA")
+alertcondition(exitShort, "CRT Exit Short",   "CRT Pro: Exit short — stop, breakeven, trail, target, reversal or EMA")
+alertcondition(newLong or newShort, "CRT Any Signal", "CRT Pro: Setup detected")
 
 // Exits first, so a reversal sends EXIT before the new entry
+if longPartial and not exitLong
+    alert("CRT Pro " + syminfo.ticker + ": LONG TP1 — scale out " + str.tostring(scalePct) + "% @ " + str.tostring(longTp1Px, format.mintick) + ", stop → " + str.tostring(stopPx, format.mintick), alert.freq_once_per_bar_close)
+if shortPartial and not exitShort
+    alert("CRT Pro " + syminfo.ticker + ": SHORT TP1 — scale out " + str.tostring(scalePct) + "% @ " + str.tostring(shortTp1Px, format.mintick) + ", stop → " + str.tostring(stopPx, format.mintick), alert.freq_once_per_bar_close)
 if exitLong
-    alert("CRT Pro " + syminfo.ticker + ": EXIT LONG (" + longReason + ") @ " + str.tostring(close, format.mintick), alert.freq_once_per_bar_close)
+    alert("CRT Pro " + syminfo.ticker + ": EXIT LONG (" + longReason + ") @ " + str.tostring(longExitPx, format.mintick), alert.freq_once_per_bar_close)
 if exitShort
-    alert("CRT Pro " + syminfo.ticker + ": EXIT SHORT (" + shortReason + ") @ " + str.tostring(close, format.mintick), alert.freq_once_per_bar_close)
-if bullSignal
-    alert("CRT Pro " + syminfo.ticker + ": BUY @ " + str.tostring(close, format.mintick) + "  SL " + str.tostring(stopPx, format.mintick) + "  TP " + str.tostring(tgtPx, format.mintick), alert.freq_once_per_bar_close)
-if bearSignal
-    alert("CRT Pro " + syminfo.ticker + ": SELL @ " + str.tostring(close, format.mintick) + "  SL " + str.tostring(stopPx, format.mintick) + "  TP " + str.tostring(tgtPx, format.mintick), alert.freq_once_per_bar_close)
+    alert("CRT Pro " + syminfo.ticker + ": EXIT SHORT (" + shortReason + ") @ " + str.tostring(shortExitPx, format.mintick), alert.freq_once_per_bar_close)
+if newLong
+    alert("CRT Pro " + syminfo.ticker + ": BUY @ " + str.tostring(close, format.mintick) + "  SL " + str.tostring(stopPx, format.mintick) + "  TP1 " + str.tostring(tgtPx, format.mintick), alert.freq_once_per_bar_close)
+if newShort
+    alert("CRT Pro " + syminfo.ticker + ": SELL @ " + str.tostring(close, format.mintick) + "  SL " + str.tostring(stopPx, format.mintick) + "  TP1 " + str.tostring(tgtPx, format.mintick), alert.freq_once_per_bar_close)
