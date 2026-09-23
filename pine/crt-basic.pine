@@ -1,0 +1,199 @@
+//@version=6
+// ══════════════════════════════════════════════════════════════════════════════
+// CRT Basic — Candle Range Theory  |  Indicator  |  Pine Script v6
+// ══════════════════════════════════════════════════════════════════════════════
+//   Candle 1 : the range candle
+//   Candle 2 : wicks beyond Candle 1's low (or high) and CLOSES back inside,
+//              closing in the trade direction (green for buys, red for sells)
+//   Entry    : Candle 2 close
+//   Stop     : beyond Candle 2's wick
+//   TP1      : 50% of Candle 1 → close part, stop to breakeven
+//   TP2      : far side of Candle 1
+//   One trade at a time. Setups are skipped if the stop risks more than Max $.
+// ══════════════════════════════════════════════════════════════════════════════
+
+indicator("CRT Basic", overlay=true, max_labels_count=500, max_lines_count=500)
+
+// ─── SETTINGS ─────────────────────────────────────────────────────────────────
+
+setupTf   = input.timeframe("15", "CRT Timeframe", tooltip="Candle 1 and Candle 2 come from this timeframe. Use it on the same chart, or on a lower chart (e.g. 1m) to follow the trade bar by bar.")
+minRange  = input.float(0.5, "Min Candle 1 Size (× ATR)", minval=0, step=0.1, tooltip="Skip small, quiet range candles. 0 = off.")
+bufTicks  = input.int(2, "Stop Buffer (ticks)", minval=0, maxval=40)
+maxRisk   = input.float(500, "Max Risk per Trade ($)", minval=1, step=25, tooltip="Skip any setup whose stop would risk more than this.")
+contracts = input.int(1, "Contracts", minval=1)
+tp1Pct    = input.int(50, "Close at TP1 (%)", minval=0, maxval=100, tooltip="TP1 = 50% of Candle 1. Close this much there and move the stop to breakeven. The rest rides to TP2.")
+useSess   = input.bool(true, "Only Trade During Sessions (NY time)")
+sess1     = input.session("0930-1130", "Session 1")
+sess2     = input.session("1400-1600", "Session 2")
+showTable = input.bool(true, "Show Stats Table")
+bullCol   = input.color(#00E676, "Buy Color")
+bearCol   = input.color(#FF1744, "Sell Color")
+lvlCol    = input.color(#2962FF, "Target Color")
+
+// ─── CANDLE 1 & CANDLE 2 ──────────────────────────────────────────────────────
+// Higher timeframe: [1] + lookahead_on = last COMPLETED candles only (no repaint).
+// Same timeframe: Candle 2 is the bar that just closed.
+
+pv     = syminfo.pointvalue * contracts
+buf    = bufTicks * syminfo.mintick
+sameTf = timeframe.in_seconds(setupTf) <= timeframe.in_seconds()
+
+crtData() =>
+    [high[1], low[1], open[1], close[1], high[2], low[2], ta.atr(14)[2]]
+
+[hC2H, hC2L, hC2O, hC2C, hC1H, hC1L, hATR] = request.security(syminfo.tickerid, setupTf, crtData(), lookahead=barmerge.lookahead_on)
+
+atrNow = ta.atr(14)
+tfNew  = timeframe.change(setupTf)
+
+c2H   = sameTf ? high      : hC2H
+c2L   = sameTf ? low       : hC2L
+c2O   = sameTf ? open      : hC2O
+c2C   = sameTf ? close     : hC2C
+c1H   = sameTf ? high[1]   : hC1H
+c1L   = sameTf ? low[1]    : hC1L
+c1ATR = sameTf ? atrNow[1] : hATR
+newC2 = sameTf or tfNew
+
+c1Mid = (c1H + c1L) / 2
+c1Ok  = minRange <= 0 or (c1H - c1L) >= c1ATR * minRange
+
+bullCRT = c1Ok and c2L < c1L and c2C > c1L and c2C < c1H and c2C > c2O
+bearCRT = c1Ok and c2H > c1H and c2C < c1H and c2C > c1L and c2C < c2O
+
+inSess(s) => not na(time(timeframe.period, s, "America/New_York"))
+inSession = not useSess or not timeframe.isintraday or inSess(sess1) or inSess(sess2)
+
+setupBull = barstate.isconfirmed and newC2 and bullCRT and inSession
+setupBear = barstate.isconfirmed and newC2 and bearCRT and inSession
+
+// ─── TRADE STATE ──────────────────────────────────────────────────────────────
+
+var int   dir     = 0        // 1 = long, -1 = short, 0 = flat
+var int   eBar    = na
+var float ePx     = na
+var float sl      = na
+var float tp1     = na
+var float tp2     = na
+var bool  tp1Done = false
+var float banked  = 0.0      // points locked in at TP1 (already weighted by size)
+var line  lnSL    = na
+var line  lnTP1   = na
+var line  lnTP2   = na
+var int   nTrades = 0
+var int   nWins   = 0
+var float netUSD  = 0.0
+
+frac = tp1Pct / 100.0
+
+px(float p) => str.tostring(p, format.mintick)
+usd(float x) => (x >= 0 ? "+$" : "-$") + str.tostring(math.abs(x), "#,##0")
+
+// ─── MANAGE OPEN TRADE ────────────────────────────────────────────────────────
+// Checked from the bar after entry. If a bar touches the stop and a target,
+// the stop is assumed first (conservative).
+
+exitNow = false
+exitPx  = float(na)
+exitTxt = ""
+
+if barstate.isconfirmed and dir != 0 and bar_index > eBar
+    slHit  = dir == 1 ? low <= sl : high >= sl
+    tp1Hit = not tp1Done and not na(tp1) and (dir == 1 ? high >= tp1 : low <= tp1)
+    tp2Hit = dir == 1 ? high >= tp2 : low <= tp2
+    if slHit
+        exitNow := true
+        exitPx  := sl
+        exitTxt := tp1Done ? "BE" : "SL ✕"
+    else
+        if tp1Hit
+            tp1Done := true
+            banked  := frac * (tp1 - ePx) * dir
+            if frac >= 1
+                exitNow := true
+                exitPx  := tp1
+                exitTxt := "TP1 ✓"
+            else
+                label.new(bar_index, dir == 1 ? high : low, "TP1 ✓ " + px(tp1) + "  (" + str.tostring(tp1Pct) + "% off)\nStop → BE " + px(ePx), yloc=dir == 1 ? yloc.abovebar : yloc.belowbar, style=dir == 1 ? label.style_label_down : label.style_label_up, color=color.new(lvlCol, 20), textcolor=color.white, size=size.small, textalign=text.align_left)
+                alert("CRT " + syminfo.ticker + ": TP1 hit @ " + px(tp1) + ". Close " + str.tostring(tp1Pct) + "%, move stop to " + px(ePx), alert.freq_once_per_bar_close)
+                line.set_x2(lnSL, bar_index)
+                sl   := ePx
+                lnSL := line.new(bar_index, sl, bar_index + 1, sl, color=color.gray, width=1, style=line.style_dashed)
+        if not exitNow and tp2Hit
+            exitNow := true
+            exitPx  := tp2
+            exitTxt := "TP2 ✓"
+
+if exitNow
+    rem    = tp1Done ? 1 - frac : 1.0
+    pnlUSD = (banked + rem * (exitPx - ePx) * dir) * pv
+    nTrades += 1
+    nWins   += pnlUSD > 0 ? 1 : 0
+    netUSD  += pnlUSD
+    label.new(bar_index, dir == 1 ? low : high, exitTxt + " " + px(exitPx) + "\nTrade " + usd(pnlUSD), yloc=dir == 1 ? yloc.belowbar : yloc.abovebar, style=dir == 1 ? label.style_label_up : label.style_label_down, color=pnlUSD > 0 ? color.new(lvlCol, 20) : color.new(color.gray, 20), textcolor=color.white, size=size.small, textalign=text.align_left)
+    alert("CRT " + syminfo.ticker + ": EXIT " + exitTxt + " @ " + px(exitPx) + "  Trade " + usd(pnlUSD), alert.freq_once_per_bar_close)
+    line.set_x2(lnSL, bar_index)
+    line.set_x2(lnTP2, bar_index)
+    if not na(lnTP1)
+        line.set_x2(lnTP1, bar_index)
+    dir := 0
+
+// Keep the level lines running while the trade is open
+if dir != 0
+    line.set_x2(lnSL, bar_index + 1)
+    line.set_x2(lnTP2, bar_index + 1)
+    if not na(lnTP1) and not tp1Done
+        line.set_x2(lnTP1, bar_index + 1)
+
+// ─── NEW ENTRIES ──────────────────────────────────────────────────────────────
+
+bullStop    = c2L - buf
+bearStop    = c2H + buf
+bullRiskUSD = (close - bullStop) * pv
+bearRiskUSD = (bearStop - close) * pv
+
+bullGo = setupBull and dir == 0 and close > bullStop and close < c1H and bullRiskUSD <= maxRisk
+bearGo = setupBear and dir == 0 and close < bearStop and close > c1L and bearRiskUSD <= maxRisk
+
+// Valid CRT but skipped because the stop is too far or price already left
+if setupBull and dir == 0 and not bullGo
+    label.new(bar_index, low, "CRT buy skipped\n" + (bullRiskUSD > maxRisk ? "risk $" + str.tostring(math.round(bullRiskUSD)) + " > max" : "price already moved"), yloc=yloc.belowbar, style=label.style_label_up, color=color.new(color.gray, 60), textcolor=color.white, size=size.tiny)
+if setupBear and dir == 0 and not bearGo
+    label.new(bar_index, high, "CRT sell skipped\n" + (bearRiskUSD > maxRisk ? "risk $" + str.tostring(math.round(bearRiskUSD)) + " > max" : "price already moved"), yloc=yloc.abovebar, style=label.style_label_down, color=color.new(color.gray, 60), textcolor=color.white, size=size.tiny)
+
+if bullGo or bearGo
+    dir     := bullGo ? 1 : -1
+    ePx     := close
+    eBar    := bar_index
+    sl      := dir == 1 ? bullStop : bearStop
+    tp2     := dir == 1 ? c1H : c1L
+    tp1     := (dir == 1 and close < c1Mid) or (dir == -1 and close > c1Mid) ? c1Mid : na
+    tp1Done := false
+    banked  := 0.0
+    riskUSD = math.abs(ePx - sl) * pv
+    lnSL  := line.new(bar_index, sl,  bar_index + 1, sl,  color=bearCol, width=2)
+    lnTP2 := line.new(bar_index, tp2, bar_index + 1, tp2, color=lvlCol,  width=2)
+    lnTP1 := na
+    if not na(tp1)
+        lnTP1 := line.new(bar_index, tp1, bar_index + 1, tp1, color=lvlCol, width=1, style=line.style_dashed)
+    tpTxt = na(tp1) ? "\nTP " + px(tp2) : "\nTP1 " + px(tp1) + "  (" + str.tostring(tp1Pct) + "%)\nTP2 " + px(tp2)
+    if dir == 1
+        label.new(bar_index, low, "▲ BUY " + px(ePx) + "\nSL " + px(sl) + "  (-$" + str.tostring(math.round(riskUSD)) + ")" + tpTxt, yloc=yloc.belowbar, style=label.style_label_up, color=bullCol, textcolor=color.black, size=size.normal, textalign=text.align_left)
+    else
+        label.new(bar_index, high, "▼ SELL " + px(ePx) + "\nSL " + px(sl) + "  (-$" + str.tostring(math.round(riskUSD)) + ")" + tpTxt, yloc=yloc.abovebar, style=label.style_label_down, color=bearCol, textcolor=color.white, size=size.normal, textalign=text.align_left)
+    alert("CRT " + syminfo.ticker + ": " + (dir == 1 ? "BUY " : "SELL ") + px(ePx) + "  SL " + px(sl) + (na(tp1) ? "" : "  TP1 " + px(tp1)) + "  TP2 " + px(tp2) + "  risk $" + str.tostring(math.round(riskUSD)), alert.freq_once_per_bar_close)
+
+// ─── STATS TABLE ──────────────────────────────────────────────────────────────
+
+var table tbl = table.new(position.top_right, 2, 3, bgcolor=color.new(color.black, 60), border_color=color.new(color.gray, 40), border_width=1)
+
+if showTable and barstate.islast
+    tfTxt  = sameTf ? timeframe.period + " chart" : setupTf + " CRT → " + timeframe.period + " chart"
+    posTxt = dir == 0 ? "FLAT" : (dir == 1 ? "LONG " : "SHORT ") + px(ePx) + "  SL " + px(sl) + "  TP " + px(tp1Done or na(tp1) ? tp2 : tp1)
+    winPct = nTrades > 0 ? 100.0 * nWins / nTrades : 0.0
+    table.cell(tbl, 0, 0, "CRT", text_color=color.white, text_size=size.small)
+    table.cell(tbl, 1, 0, tfTxt, text_color=color.white, text_size=size.small)
+    table.cell(tbl, 0, 1, "Position", text_color=color.white, text_size=size.small)
+    table.cell(tbl, 1, 1, posTxt, text_color=dir == 1 ? bullCol : dir == -1 ? bearCol : color.gray, text_size=size.small)
+    table.cell(tbl, 0, 2, "Results", text_color=color.white, text_size=size.small)
+    table.cell(tbl, 1, 2, str.tostring(nTrades) + " trades · " + str.tostring(winPct, "#") + "% win · " + usd(netUSD), text_color=netUSD >= 0 ? color.lime : color.red, text_size=size.small)
