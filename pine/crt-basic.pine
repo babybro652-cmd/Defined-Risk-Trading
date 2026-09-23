@@ -1,16 +1,16 @@
 //@version=6
-// ══════════════════════════════════════════════════════════════════════════════
-// CRT Basic + Key Levels — Candle Range Theory  |  Indicator  |  Pine Script v6
-// ══════════════════════════════════════════════════════════════════════════════
+// ==============================================================================
+// CRT Basic + Key Levels - Candle Range Theory  |  Indicator  |  Pine Script v6
+// ==============================================================================
 //   CRT (15m by default)
 //   Candle 1 : the range candle
 //   Candle 2 : wicks beyond Candle 1's low (or high) and CLOSES back inside,
 //              closing in the trade direction (green for buys, red for sells)
-//   Candle 3 : the signal — enter at Candle 3's open
+//   Candle 3 : the signal - enter at Candle 3's open
 //   Stop     : beyond Candle 2's wick
-//   TP1      : 50% of Candle 1 → close part, stop to breakeven
-//   TP2      : far side of Candle 1 → close part
-//   TP3      : beyond Candle 1 by a % of its range → close the rest
+//   TP1      : 50% of Candle 1 -> close part, stop to breakeven
+//   TP2      : far side of Candle 1 -> close part
+//   TP3      : beyond Candle 1 by a % of its range -> close the rest
 //   One trade at a time. Setups are skipped if the stop risks more than Max $.
 //
 //   Key levels (1H and 4H)
@@ -18,16 +18,16 @@
 //   A level is removed once a 15m candle closes through it.
 //
 //   Alerts: "Any alert() function call" sends JSON for a webhook (e.g. Google
-//   Apps Script → Google Sheet) or plain text, per the Alert Format setting.
-// ══════════════════════════════════════════════════════════════════════════════
+//   Apps Script -> Google Sheet) or plain text, per the Alert Format setting.
+// ==============================================================================
 
 indicator("CRT Basic", overlay=true, max_labels_count=500, max_lines_count=500)
 
-// ─── SETTINGS ─────────────────────────────────────────────────────────────────
+// --- SETTINGS -----------------------------------------------------------------
 
 grpCrt    = "CRT"
 setupTf   = input.timeframe("15", "CRT Timeframe", group=grpCrt, tooltip="Candles 1-3 come from this timeframe. Use it on the 15m chart, or on a lower chart (e.g. 1m) to follow the trade bar by bar.")
-minRange  = input.float(0.5, "Min Candle 1 Size (× ATR)", minval=0, step=0.1, group=grpCrt, tooltip="Skip small, quiet range candles. 0 = off.")
+minRange  = input.float(0.5, "Min Candle 1 Size (x ATR)", minval=0, step=0.1, group=grpCrt, tooltip="Skip small, quiet range candles. 0 = off.")
 bufTicks  = input.int(2, "Stop Buffer (ticks)", minval=0, maxval=40, group=grpCrt)
 maxRisk   = input.float(500, "Max Risk per Trade ($)", minval=1, step=25, group=grpCrt, tooltip="Skip any setup whose stop would risk more than this.")
 contracts = input.int(1, "Contracts", minval=1, group=grpCrt)
@@ -72,7 +72,7 @@ jStr(string k, string v) => '"' + k + '":"' + v + '"'
 jNum(string k, float v, string f) => '"' + k + '":' + (na(v) ? "null" : str.tostring(v, f))
 jHead(string ev, string id) => "{" + jStr("key", hookKey) + "," + jStr("event", ev) + "," + jStr("id", id) + "," + jStr("symbol", syminfo.ticker) + "," + jStr("time", str.format_time(time, "yyyy-MM-dd HH:mm", "America/New_York"))
 
-// ─── CANDLE 1 & CANDLE 2 ──────────────────────────────────────────────────────
+// --- CANDLE 1 & CANDLE 2 ------------------------------------------------------
 // Higher timeframe: [1] + lookahead_on = last COMPLETED candles only (no repaint).
 // Same timeframe: Candle 2 is the bar that just closed.
 
@@ -100,7 +100,7 @@ c2Done = sameTf ? barstate.isconfirmed : tfNew
 
 c1Ok  = minRange <= 0 or (c1H - c1L) >= c1ATR * minRange
 
-// ─── KEY LEVELS: 1H / 4H SWING HIGHS & LOWS ───────────────────────────────────
+// --- KEY LEVELS: 1H / 4H SWING HIGHS & LOWS -----------------------------------
 
 type Level
     float  price
@@ -185,7 +185,7 @@ obstacle(array<Level> lv, bool wantRes, float fromPx, float toPx) =>
 bullLvl = levelIn(levels, false, c2L - zonePts, c1L + zonePts)
 bearLvl = levelIn(levels, true,  c1H - zonePts, c2H + zonePts)
 
-// ─── CRT SETUPS (Candle 1 + Candle 2) ─────────────────────────────────────────
+// --- CRT SETUPS (Candle 1 + Candle 2) -----------------------------------------
 
 bullCRT = c1Ok and c2L < c1L and c2C > c1L and c2C < c1H and c2C > c2O and (not needLevel or bullLvl != "")
 bearCRT = c1Ok and c2H > c1H and c2C < c1H and c2C > c1L and c2C < c2O and (not needLevel or bearLvl != "")
@@ -211,7 +211,7 @@ cC2H   = sameTf ? pC2H : c2H
 cC2L   = sameTf ? pC2L : c2L
 cTag   = sameTf ? pTag : (setDir == 1 ? bullLvl : setDir == -1 ? bearLvl : "")
 
-// ─── TRADE LEVEL TAGS ─────────────────────────────────────────────────────────
+// --- TRADE LEVEL TAGS ---------------------------------------------------------
 // Each level (ENTRY, SL, TP1-3) is a line with a price tag at its right end.
 // While live, the line and tag ride along with the newest bar. When the level
 // is hit, the tag freezes at that bar and turns grey with "(HIT)".
@@ -248,7 +248,7 @@ hitBg   = color.new(color.gray, 25)
 fadeBg  = color.new(color.gray, 75)
 fadeTxt = color.new(color.white, 40)
 
-// ─── TRADE STATE ──────────────────────────────────────────────────────────────
+// --- TRADE STATE --------------------------------------------------------------
 
 var int   dir       = 0      // 1 = long, -1 = short, 0 = flat
 var int   eBar      = na
@@ -277,7 +277,7 @@ var float netUSD    = 0.0
 
 tid() => syminfo.ticker + "-" + str.tostring(eTime)
 
-// ─── CANDLE 3: ENTRY AT ITS OPEN ──────────────────────────────────────────────
+// --- CANDLE 3: ENTRY AT ITS OPEN ----------------------------------------------
 
 flatAtOpen = dir == 0
 c3Rng      = cC1H - cC1L
@@ -324,14 +324,18 @@ if goNow
     label.new(bar_index, dir == 1 ? low : high, (dir == 1 ? "BUY" : "SELL") + "\nCRT" + (cTag != "" ? " + " + cTag + (dir == 1 ? " S" : " R") : ""), yloc=dir == 1 ? yloc.belowbar : yloc.abovebar, style=dir == 1 ? label.style_label_up : label.style_label_down, color=dir == 1 ? bullCol : bearCol, textcolor=color.white, size=size.large)
     tE  := newTag("ENTRY", ePx, entryCol, color.black)
     tSL := newTag("SL", sl, bearCol, color.white)
-    tT1 := na(tp1) ? na : newTag("TP1", tp1, tpCol, color.white)
+    tT1 := na
+    tT3 := na
+    if not na(tp1)
+        tT1 := newTag("TP1", tp1, tpCol, color.white)
     tT2 := newTag("TP2", tp2, tpCol, color.white)
-    tT3 := na(tp3) or f3 <= 0 ? na : newTag("TP3", tp3, tpCol, color.white)
+    if not na(tp3) and f3 > 0
+        tT3 := newTag("TP3", tp3, tpCol, color.white)
     msgJ = jHead("ENTRY", tid()) + "," + jStr("ctf", setupTf) + "," + jStr("side", dir == 1 ? "LONG" : "SHORT") + "," + jNum("entry", ePx, format.mintick) + "," + jNum("sl", sl, format.mintick) + "," + jNum("tp1", tp1, format.mintick) + "," + jNum("tp2", tp2, format.mintick) + "," + jNum("tp3", f3 > 0 ? tp3 : na, format.mintick) + "," + jNum("risk_usd", riskUSD, "#.##") + "," + jStr("swept", cTag) + "," + jStr("obstacle", obTxt) + "," + jNum("contracts", contracts, "#") + "}"
     msgT = "CRT " + syminfo.ticker + ": " + (dir == 1 ? "BUY " : "SELL ") + px(ePx) + "  SL " + px(sl) + (na(tp1) ? "" : "  TP1 " + px(tp1)) + "  TP2 " + px(tp2) + (f3 > 0 ? "  TP3 " + px(tp3) : "") + "  risk $" + str.tostring(math.round(riskUSD)) + (cTag != "" ? "  (swept " + cTag + " level)" : "")
     alert(isJson ? msgJ : msgT, alert.freq_once_per_bar)
 
-// ─── MANAGE OPEN TRADE ────────────────────────────────────────────────────────
+// --- MANAGE OPEN TRADE --------------------------------------------------------
 // Checked at each bar's close, including Candle 3 itself (the trade is live
 // from its open). Targets are taken in order; after the first target the stop
 // moves to breakeven. If a bar touches the stop and a target, the stop is
@@ -347,36 +351,42 @@ if barstate.isconfirmed and dir != 0 and bar_index >= eBar
         exitNow := true
         exitPx  := sl
         exitTxt := beMoved ? "BE" : "SL"
-    else if tpIdx <= 3
+    if not slHit and tpIdx <= 3
+        bool halt = false
         for k = tpIdx to 3
-            p = k == 1 ? tp1 : k == 2 ? tp2 : tp3
-            f = k == 1 ? f1 : k == 2 ? f2 : f3
-            if na(p) or f <= 0
+            p     = k == 1 ? tp1 : k == 2 ? tp2 : tp3
+            f     = k == 1 ? f1 : k == 2 ? f2 : f3
+            used  = not na(p) and f > 0
+            isHit = used and (dir == 1 ? high >= p : low <= p)
+            // Target not used (e.g. TP3 off): move past it
+            if not halt and not used
                 tpIdx := k + 1
-                continue
-            if not (dir == 1 ? high >= p : low <= p)
-                break
-            banked    += f * (p - ePx) * dir
-            remaining -= f
-            tpIdx     := k + 1
-            freezeTag(k == 1 ? tT1 : k == 2 ? tT2 : tT3, "  (HIT)", hitBg, color.white)
-            if remaining <= 0.0001
-                exitNow := true
-                exitPx  := p
-                exitTxt := "TP" + str.tostring(k)
-                break
-            msgJ = jHead("TP" + str.tostring(k), tid()) + "," + jNum("price", p, format.mintick) + "," + jNum("closed_pct", f * 100, "#") + "," + jNum("banked_usd", banked * pv, "#.##") + "," + jNum("new_sl", ePx, format.mintick) + "}"
-            msgT = "CRT " + syminfo.ticker + ": TP" + str.tostring(k) + " hit @ " + px(p) + ". Close " + str.tostring(math.round(f * 100)) + "%, stop at breakeven " + px(ePx)
-            alert(isJson ? msgJ : msgT, alert.freq_once_per_bar_close)
-            // First target banked: stop to breakeven (the ENTRY tag becomes the stop)
-            if not beMoved
-                beMoved := true
-                freezeTag(tSL, "  → BE", fadeBg, fadeTxt)
-                sl := ePx
-                tE.name := "BE STOP"
-                label.set_text(tE.lb, "BE STOP  " + px(ePx))
-                label.set_color(tE.lb, bearCol)
-                label.set_textcolor(tE.lb, color.white)
+            // Next target not reached yet: stop checking
+            if not halt and used and not isHit
+                halt := true
+            if not halt and isHit
+                banked    += f * (p - ePx) * dir
+                remaining -= f
+                tpIdx     := k + 1
+                freezeTag(k == 1 ? tT1 : k == 2 ? tT2 : tT3, "  (HIT)", hitBg, color.white)
+                if remaining <= 0.0001
+                    exitNow := true
+                    exitPx  := p
+                    exitTxt := "TP" + str.tostring(k)
+                    halt    := true
+                else
+                    msgJ = jHead("TP" + str.tostring(k), tid()) + "," + jNum("price", p, format.mintick) + "," + jNum("closed_pct", f * 100, "#") + "," + jNum("banked_usd", banked * pv, "#.##") + "," + jNum("new_sl", ePx, format.mintick) + "}"
+                    msgT = "CRT " + syminfo.ticker + ": TP" + str.tostring(k) + " hit @ " + px(p) + ". Close " + str.tostring(math.round(f * 100)) + "%, stop at breakeven " + px(ePx)
+                    alert(isJson ? msgJ : msgT, alert.freq_once_per_bar_close)
+                    // First target banked: stop to breakeven (the ENTRY tag becomes the stop)
+                    if not beMoved
+                        beMoved := true
+                        freezeTag(tSL, "  -> BE", fadeBg, fadeTxt)
+                        sl := ePx
+                        tE.name := "BE STOP"
+                        label.set_text(tE.lb, "BE STOP  " + px(ePx))
+                        label.set_color(tE.lb, bearCol)
+                        label.set_textcolor(tE.lb, color.white)
 
 if exitNow
     pnlUSD = (banked + remaining * (exitPx - ePx) * dir) * pv
@@ -407,7 +417,7 @@ if dir != 0
     rideTag(tT2)
     rideTag(tT3)
 
-// ─── HOLD THIS BAR'S SETUP FOR CANDLE 3 (same timeframe only) ─────────────────
+// --- HOLD THIS BAR'S SETUP FOR CANDLE 3 (same timeframe only) -----------------
 
 if sameTf and barstate.isconfirmed
     pDir := setDir
@@ -418,7 +428,7 @@ if sameTf and barstate.isconfirmed
     pC2L := c2L
     pTag := setDir == 1 ? bullLvl : setDir == -1 ? bearLvl : ""
 
-// ─── KEY LEVEL UPKEEP (after this bar's signals) ──────────────────────────────
+// --- KEY LEVEL UPKEEP (after this bar's signals) ------------------------------
 
 if barstate.isconfirmed
     if c2Done
@@ -440,12 +450,12 @@ if barstate.islast
         label.set_xy(l.lb, bar_index + 3, l.price)
         label.set_text(l.lb, l.tf + (l.isRes ? " R " : " S ") + px(l.price))
 
-// ─── STATS TABLE ──────────────────────────────────────────────────────────────
+// --- STATS TABLE --------------------------------------------------------------
 
 var table tbl = table.new(position.top_right, 2, 3, bgcolor=color.new(color.black, 60), border_color=color.new(color.gray, 40), border_width=1)
 
 if showTable and barstate.islast
-    tfTxt  = sameTf ? timeframe.period + " chart" : setupTf + " CRT → " + timeframe.period + " chart"
+    tfTxt  = sameTf ? timeframe.period + " chart" : setupTf + " CRT -> " + timeframe.period + " chart"
     nextTp = tpIdx <= 1 and not na(tp1) ? tp1 : tpIdx <= 2 ? tp2 : tp3
     posTxt = dir == 0 ? "FLAT" : (dir == 1 ? "LONG " : "SHORT ") + px(ePx) + "  SL " + px(sl) + "  next TP " + px(nextTp)
     winPct = nTrades > 0 ? 100.0 * nWins / nTrades : 0.0
@@ -454,4 +464,4 @@ if showTable and barstate.islast
     table.cell(tbl, 0, 1, "Position", text_color=color.white, text_size=size.small)
     table.cell(tbl, 1, 1, posTxt, text_color=dir == 1 ? bullCol : dir == -1 ? bearCol : color.gray, text_size=size.small)
     table.cell(tbl, 0, 2, "Results", text_color=color.white, text_size=size.small)
-    table.cell(tbl, 1, 2, str.tostring(nTrades) + " trades · " + str.tostring(winPct, "#") + "% win · " + usd(netUSD), text_color=netUSD >= 0 ? color.lime : color.red, text_size=size.small)
+    table.cell(tbl, 1, 2, str.tostring(nTrades) + " trades - " + str.tostring(winPct, "#") + "% win - " + usd(netUSD), text_color=netUSD >= 0 ? color.lime : color.red, text_size=size.small)
