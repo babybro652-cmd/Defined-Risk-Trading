@@ -1,7 +1,8 @@
 //@version=6
 // ══════════════════════════════════════════════════════════════════════════════
-// CRT Basic — Candle Range Theory  |  Indicator  |  Pine Script v6
+// CRT Basic + Key Levels — Candle Range Theory  |  Indicator  |  Pine Script v6
 // ══════════════════════════════════════════════════════════════════════════════
+//   CRT (15m by default)
 //   Candle 1 : the range candle
 //   Candle 2 : wicks beyond Candle 1's low (or high) and CLOSES back inside,
 //              closing in the trade direction (green for buys, red for sells)
@@ -10,32 +11,56 @@
 //   TP1      : 50% of Candle 1 → close part, stop to breakeven
 //   TP2      : far side of Candle 1
 //   One trade at a time. Setups are skipped if the stop risks more than Max $.
+//
+//   Key levels (1H and 4H)
+//   Swing highs = resistance, swing lows = support, confirmed swings only.
+//   A level is removed once a 15m candle closes through it.
+//   The entry label shows when Candle 2 swept a key level, and warns when a
+//   key level sits between the entry and TP2.
 // ══════════════════════════════════════════════════════════════════════════════
 
 indicator("CRT Basic", overlay=true, max_labels_count=500, max_lines_count=500)
 
 // ─── SETTINGS ─────────────────────────────────────────────────────────────────
 
-setupTf   = input.timeframe("15", "CRT Timeframe", tooltip="Candle 1 and Candle 2 come from this timeframe. Use it on the same chart, or on a lower chart (e.g. 1m) to follow the trade bar by bar.")
-minRange  = input.float(0.5, "Min Candle 1 Size (× ATR)", minval=0, step=0.1, tooltip="Skip small, quiet range candles. 0 = off.")
-bufTicks  = input.int(2, "Stop Buffer (ticks)", minval=0, maxval=40)
-maxRisk   = input.float(500, "Max Risk per Trade ($)", minval=1, step=25, tooltip="Skip any setup whose stop would risk more than this.")
-contracts = input.int(1, "Contracts", minval=1)
-tp1Pct    = input.int(50, "Close at TP1 (%)", minval=0, maxval=100, tooltip="TP1 = 50% of Candle 1. Close this much there and move the stop to breakeven. The rest rides to TP2.")
-useSess   = input.bool(true, "Only Trade During Sessions (NY time)")
-sess1     = input.session("0930-1130", "Session 1")
-sess2     = input.session("1400-1600", "Session 2")
-showTable = input.bool(true, "Show Stats Table")
-bullCol   = input.color(#00E676, "Buy Color")
-bearCol   = input.color(#FF1744, "Sell Color")
-lvlCol    = input.color(#2962FF, "Target Color")
+grpCrt    = "CRT"
+setupTf   = input.timeframe("15", "CRT Timeframe", group=grpCrt, tooltip="Candle 1 and Candle 2 come from this timeframe. Use it on the 15m chart, or on a lower chart (e.g. 1m) to follow the trade bar by bar.")
+minRange  = input.float(0.5, "Min Candle 1 Size (× ATR)", minval=0, step=0.1, group=grpCrt, tooltip="Skip small, quiet range candles. 0 = off.")
+bufTicks  = input.int(2, "Stop Buffer (ticks)", minval=0, maxval=40, group=grpCrt)
+maxRisk   = input.float(500, "Max Risk per Trade ($)", minval=1, step=25, group=grpCrt, tooltip="Skip any setup whose stop would risk more than this.")
+contracts = input.int(1, "Contracts", minval=1, group=grpCrt)
+tp1Pct    = input.int(50, "Close at TP1 (%)", minval=0, maxval=100, group=grpCrt, tooltip="TP1 = 50% of Candle 1. Close this much there and move the stop to breakeven. The rest rides to TP2.")
+useSess   = input.bool(true, "Only Trade During Sessions (NY time)", group=grpCrt)
+sess1     = input.session("0930-1130", "Session 1", group=grpCrt)
+sess2     = input.session("1400-1600", "Session 2", group=grpCrt)
+
+grpLvl    = "Key Levels (1H / 4H)"
+showLvls  = input.bool(true,  "Show Key Levels", group=grpLvl)
+use1h     = input.bool(true,  "1H Levels", group=grpLvl)
+use4h     = input.bool(true,  "4H Levels", group=grpLvl)
+pivLen    = input.int(3, "Swing Strength (bars each side)", minval=2, maxval=10, group=grpLvl, tooltip="A swing high needs this many lower highs on each side (on that timeframe). Higher = fewer, stronger levels.")
+maxLvls   = input.int(3, "Levels per Timeframe & Side", minval=1, maxval=10, group=grpLvl, tooltip="Keep this many of the most recent support and resistance levels per timeframe.")
+zonePts   = input.float(2.0, "Level Zone (pts)", minval=0, step=0.25, group=grpLvl, tooltip="How close price must come to a level to count as touching it. Levels closer together than this are merged.")
+needLevel = input.bool(false, "Only Take CRTs That Sweep a Key Level", group=grpLvl, tooltip="Buy only when Candle 2's wick swept into a 1H/4H support; sell only when it swept into a resistance.")
+
+grpStyle  = "Style"
+showTable = input.bool(true, "Show Stats Table", group=grpStyle)
+bullCol   = input.color(#00E676, "Buy Color", group=grpStyle)
+bearCol   = input.color(#FF1744, "Sell Color", group=grpStyle)
+lvlCol    = input.color(#2962FF, "Target Color", group=grpStyle)
+resCol    = input.color(#FF9800, "Resistance Color", group=grpStyle)
+supCol    = input.color(#26A69A, "Support Color", group=grpStyle)
+
+pv  = syminfo.pointvalue * contracts
+buf = bufTicks * syminfo.mintick
+
+px(float p) => str.tostring(p, format.mintick)
+usd(float x) => (x >= 0 ? "+$" : "-$") + str.tostring(math.abs(x), "#,##0")
 
 // ─── CANDLE 1 & CANDLE 2 ──────────────────────────────────────────────────────
 // Higher timeframe: [1] + lookahead_on = last COMPLETED candles only (no repaint).
 // Same timeframe: Candle 2 is the bar that just closed.
 
-pv     = syminfo.pointvalue * contracts
-buf    = bufTicks * syminfo.mintick
 sameTf = timeframe.in_seconds(setupTf) <= timeframe.in_seconds()
 
 crtData() =>
@@ -58,8 +83,95 @@ newC2 = sameTf or tfNew
 c1Mid = (c1H + c1L) / 2
 c1Ok  = minRange <= 0 or (c1H - c1L) >= c1ATR * minRange
 
-bullCRT = c1Ok and c2L < c1L and c2C > c1L and c2C < c1H and c2C > c2O
-bearCRT = c1Ok and c2H > c1H and c2C < c1H and c2C > c1L and c2C < c2O
+// ─── KEY LEVELS: 1H / 4H SWING HIGHS & LOWS ───────────────────────────────────
+
+type Level
+    float  price
+    bool   isRes
+    string tf
+    line   ln
+    label  lb
+
+var array<Level> levels = array.new<Level>()
+
+// Confirmed swing points from the last COMPLETED candle of that timeframe
+pivData(int len) =>
+    ph = ta.pivothigh(high, len, len)
+    pl = ta.pivotlow(low, len, len)
+    [ph[1], pl[1], time[len + 1]]
+
+[ph1, pl1, pt1] = request.security(syminfo.tickerid, "60",  pivData(pivLen), lookahead=barmerge.lookahead_on)
+[ph4, pl4, pt4] = request.security(syminfo.tickerid, "240", pivData(pivLen), lookahead=barmerge.lookahead_on)
+new1h = timeframe.change("60")
+new4h = timeframe.change("240")
+
+// Add a level unless one on the same side is already within the zone
+// (a 4H swing on top of a 1H level upgrades it). Keeps the newest maxN per timeframe & side.
+addLevel(array<Level> lv, float p, bool isRes, string tf, int t) =>
+    bool dup = false
+    for l in lv
+        if l.isRes == isRes and math.abs(l.price - p) <= zonePts
+            dup := true
+            if tf == "4H" and l.tf == "1H"
+                l.tf := "1H+4H"
+                line.set_width(l.ln, 2)
+                line.set_style(l.ln, line.style_solid)
+    if not dup
+        col = isRes ? resCol : supCol
+        ln  = line.new(t, p, t + 1, p, xloc=xloc.bar_time, extend=extend.right, color=showLvls ? color.new(col, 25) : color.new(col, 100), width=tf == "4H" ? 2 : 1, style=tf == "4H" ? line.style_solid : line.style_dashed)
+        lb  = label.new(bar_index, p, tf + (isRes ? " R " : " S ") + px(p), style=label.style_label_left, color=showLvls ? color.new(col, 60) : color.new(col, 100), textcolor=showLvls ? color.white : color.new(color.white, 100), size=size.tiny)
+        lv.push(Level.new(p, isRes, tf, ln, lb))
+        int cnt = 0
+        for i = lv.size() - 1 to 0
+            l = lv.get(i)
+            if l.isRes == isRes and l.tf == tf
+                cnt += 1
+                if cnt > maxLvls
+                    line.delete(l.ln)
+                    label.delete(l.lb)
+                    lv.remove(i)
+    dup
+
+// Remove levels that a CRT-timeframe candle closed through
+removeBroken(array<Level> lv, float c) =>
+    if lv.size() > 0
+        for i = lv.size() - 1 to 0
+            l = lv.get(i)
+            if (l.isRes and c > l.price) or (not l.isRes and c < l.price)
+                line.delete(l.ln)
+                label.delete(l.lb)
+                lv.remove(i)
+    true
+
+// Which key level (if any) sits inside a price band; 4H wins over 1H
+levelIn(array<Level> lv, bool wantRes, float lo, float hi) =>
+    string tag = ""
+    for l in lv
+        if l.isRes == wantRes and l.price >= lo and l.price <= hi
+            if tag == "" or str.contains(l.tf, "4H")
+                tag := l.tf
+    tag
+
+// Nearest opposing key level strictly between entry and target
+obstacle(array<Level> lv, bool wantRes, float fromPx, float toPx) =>
+    float best = na
+    string tag = ""
+    for l in lv
+        if l.isRes == wantRes
+            between = wantRes ? (l.price > fromPx and l.price < toPx) : (l.price < fromPx and l.price > toPx)
+            if between and (na(best) or math.abs(l.price - fromPx) < math.abs(best - fromPx))
+                best := l.price
+                tag  := l.tf
+    [best, tag]
+
+// Did Candle 2 sweep into a key level? (checked before this bar removes broken levels)
+bullLvl = levelIn(levels, false, c2L - zonePts, c1L + zonePts)
+bearLvl = levelIn(levels, true,  c1H - zonePts, c2H + zonePts)
+
+// ─── CRT SETUPS ───────────────────────────────────────────────────────────────
+
+bullCRT = c1Ok and c2L < c1L and c2C > c1L and c2C < c1H and c2C > c2O and (not needLevel or bullLvl != "")
+bearCRT = c1Ok and c2H > c1H and c2C < c1H and c2C > c1L and c2C < c2O and (not needLevel or bearLvl != "")
 
 inSess(s) => not na(time(timeframe.period, s, "America/New_York"))
 inSession = not useSess or not timeframe.isintraday or inSess(sess1) or inSess(sess2)
@@ -85,9 +197,6 @@ var int   nWins   = 0
 var float netUSD  = 0.0
 
 frac = tp1Pct / 100.0
-
-px(float p) => str.tostring(p, format.mintick)
-usd(float x) => (x >= 0 ? "+$" : "-$") + str.tostring(math.abs(x), "#,##0")
 
 // ─── MANAGE OPEN TRADE ────────────────────────────────────────────────────────
 // Checked from the bar after entry. If a bar touches the stop and a target,
@@ -138,7 +247,7 @@ if exitNow
         line.set_x2(lnTP1, bar_index)
     dir := 0
 
-// Keep the level lines running while the trade is open
+// Keep the trade lines running while the trade is open
 if dir != 0
     line.set_x2(lnSL, bar_index + 1)
     line.set_x2(lnTP2, bar_index + 1)
@@ -177,11 +286,37 @@ if bullGo or bearGo
     if not na(tp1)
         lnTP1 := line.new(bar_index, tp1, bar_index + 1, tp1, color=lvlCol, width=1, style=line.style_dashed)
     tpTxt = na(tp1) ? "\nTP " + px(tp2) : "\nTP1 " + px(tp1) + "  (" + str.tostring(tp1Pct) + "%)\nTP2 " + px(tp2)
+    // Key-level context: what Candle 2 swept, and anything in the way of TP2
+    sweptTag = dir == 1 ? bullLvl : bearLvl
+    [obPx, obTag] = obstacle(levels, dir == 1, ePx, tp2)
+    lvlTxt = (sweptTag != "" ? "\nSwept " + sweptTag + (dir == 1 ? " support" : " resistance") : "") + (na(obPx) ? "" : "\n⚠ " + obTag + (dir == 1 ? " R " : " S ") + px(obPx) + " before TP2")
     if dir == 1
-        label.new(bar_index, low, "▲ BUY " + px(ePx) + "\nSL " + px(sl) + "  (-$" + str.tostring(math.round(riskUSD)) + ")" + tpTxt, yloc=yloc.belowbar, style=label.style_label_up, color=bullCol, textcolor=color.black, size=size.normal, textalign=text.align_left)
+        label.new(bar_index, low, "▲ BUY " + px(ePx) + "\nSL " + px(sl) + "  (-$" + str.tostring(math.round(riskUSD)) + ")" + tpTxt + lvlTxt, yloc=yloc.belowbar, style=label.style_label_up, color=bullCol, textcolor=color.black, size=size.normal, textalign=text.align_left)
     else
-        label.new(bar_index, high, "▼ SELL " + px(ePx) + "\nSL " + px(sl) + "  (-$" + str.tostring(math.round(riskUSD)) + ")" + tpTxt, yloc=yloc.abovebar, style=label.style_label_down, color=bearCol, textcolor=color.white, size=size.normal, textalign=text.align_left)
-    alert("CRT " + syminfo.ticker + ": " + (dir == 1 ? "BUY " : "SELL ") + px(ePx) + "  SL " + px(sl) + (na(tp1) ? "" : "  TP1 " + px(tp1)) + "  TP2 " + px(tp2) + "  risk $" + str.tostring(math.round(riskUSD)), alert.freq_once_per_bar_close)
+        label.new(bar_index, high, "▼ SELL " + px(ePx) + "\nSL " + px(sl) + "  (-$" + str.tostring(math.round(riskUSD)) + ")" + tpTxt + lvlTxt, yloc=yloc.abovebar, style=label.style_label_down, color=bearCol, textcolor=color.white, size=size.normal, textalign=text.align_left)
+    alert("CRT " + syminfo.ticker + ": " + (dir == 1 ? "BUY " : "SELL ") + px(ePx) + "  SL " + px(sl) + (na(tp1) ? "" : "  TP1 " + px(tp1)) + "  TP2 " + px(tp2) + "  risk $" + str.tostring(math.round(riskUSD)) + (sweptTag != "" ? "  (swept " + sweptTag + " level)" : ""), alert.freq_once_per_bar_close)
+
+// ─── KEY LEVEL UPKEEP (after this bar's signals) ──────────────────────────────
+
+if barstate.isconfirmed
+    if newC2
+        removeBroken(levels, c2C)
+    if use4h and new4h
+        if not na(ph4)
+            addLevel(levels, ph4, true, "4H", pt4)
+        if not na(pl4)
+            addLevel(levels, pl4, false, "4H", pt4)
+    if use1h and new1h
+        if not na(ph1)
+            addLevel(levels, ph1, true, "1H", pt1)
+        if not na(pl1)
+            addLevel(levels, pl1, false, "1H", pt1)
+
+// Level tags sit at the right edge of the chart
+if barstate.islast
+    for l in levels
+        label.set_xy(l.lb, bar_index + 3, l.price)
+        label.set_text(l.lb, l.tf + (l.isRes ? " R " : " S ") + px(l.price))
 
 // ─── STATS TABLE ──────────────────────────────────────────────────────────────
 
