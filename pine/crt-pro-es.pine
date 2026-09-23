@@ -1,3 +1,4 @@
+//@version=6
 // ══════════════════════════════════════════════════════════════════════════════
 // CRT Pro — ES Futures  |  Indicator  |  Pine Script v6
 // ══════════════════════════════════════════════════════════════════════════════
@@ -11,7 +12,6 @@
 //      the range), opposite CRT signal, or close through the EMA
 // ══════════════════════════════════════════════════════════════════════════════
 
-//@version=6
 indicator("CRT Pro — ES Futures", overlay=true, max_lines_count=500, max_labels_count=300, max_boxes_count=200)
 
 // ─── INPUTS ───────────────────────────────────────────────────────────────────
@@ -78,13 +78,9 @@ cleanBear = not requireClean or lookback == 1 or midHigh <= refH
 bullCandle = close > open
 bearCandle = close < open
 
-bullSetup = isQualRef and cleanBull and
-     low < refL and close > refL and bullCandle and
-     (not requireRoom or close < refH)
+bullSetup = isQualRef and cleanBull and low < refL and close > refL and bullCandle and (not requireRoom or close < refH)
 
-bearSetup = isQualRef and cleanBear and
-     high > refH and close < refH and bearCandle and
-     (not requireRoom or close > refL)
+bearSetup = isQualRef and cleanBear and high > refH and close < refH and bearCandle and (not requireRoom or close > refL)
 
 // ─── SMART FILTERS ────────────────────────────────────────────────────────────
 
@@ -98,15 +94,9 @@ inSession = not useTime or not timeframe.isintraday or inSess(sess1) or inSess(s
 
 confirmed = not confirmClose or barstate.isconfirmed
 
-bullSignal = confirmed and bullSetup and
-     (not useEMA or inUptrend) and
-     (not useVol or volOK) and
-     inSession
+bullSignal = confirmed and bullSetup and (not useEMA or inUptrend) and (not useVol or volOK) and inSession
 
-bearSignal = confirmed and bearSetup and
-     (not useEMA or inDowntrend) and
-     (not useVol or volOK) and
-     inSession
+bearSignal = confirmed and bearSetup and (not useEMA or inDowntrend) and (not useVol or volOK) and inSession
 
 // ─── POSITION STATE & EXITS ───────────────────────────────────────────────────
 // Exits are evaluated against the state carried in from the PREVIOUS bar,
@@ -162,18 +152,14 @@ if bullSignal or bearSignal
     startBar = bar_index - lookback
     endBar   = bar_index + extBars
     confMid  = (open + close) / 2.0
-
     // Solid lines: reference candle high and low (the far side is the target)
     line.new(startBar, refH, endBar, refH, color=wickColor, width=2, style=line.style_solid)
     line.new(startBar, refL, endBar, refL, color=wickColor, width=2, style=line.style_solid)
-
     // Dashed line: sweep candle body midpoint
     line.new(bar_index, confMid, endBar, confMid, color=confColor, width=1, style=line.style_dashed)
-
     // Dotted line: stop beyond the sweep wick
     if showStop
         line.new(bar_index, stopPx, endBar, stopPx, color=color.new(bearColor, 20), width=1, style=line.style_dotted)
-
     if showZone
         box.new(startBar, refH, endBar, refL, border_color=color.new(wickColor, 60), bgcolor=color.new(wickColor, 88))
 
@@ -200,29 +186,23 @@ var table infoTable = table.new(position.top_right, 2, 6, bgcolor=color.new(colo
 if showTable and barstate.islast
     table.cell(infoTable, 0, 0, "CRT Filter", text_color=color.white, text_size=size.small, bgcolor=color.new(color.blue, 40))
     table.cell(infoTable, 1, 0, "Status",     text_color=color.white, text_size=size.small, bgcolor=color.new(color.blue, 40))
-
     trendStatus = not useEMA ? "OFF" : inUptrend ? "▲ BULL" : inDowntrend ? "▼ BEAR" : "— NEUTRAL"
     trendCol    = not useEMA ? color.gray : inUptrend ? color.lime : inDowntrend ? color.red : color.orange
     table.cell(infoTable, 0, 1, "Trend (EMA" + str.tostring(emaLen) + ")", text_color=color.white, text_size=size.tiny)
     table.cell(infoTable, 1, 1, trendStatus, text_color=trendCol, text_size=size.tiny)
-
     volStatus = not useVol ? "OFF" : volOK ? "✔ HIGH" : "✘ LOW"
     volCol    = not useVol ? color.gray : volOK ? color.lime : color.orange
     table.cell(infoTable, 0, 2, "Volume (×" + str.tostring(volMult) + ")", text_color=color.white, text_size=size.tiny)
     table.cell(infoTable, 1, 2, volStatus, text_color=volCol, text_size=size.tiny)
-
     refStatus = isQualRef ? "✔ VALID" : "✘ WEAK"
     refCol    = isQualRef ? color.lime : color.orange
     table.cell(infoTable, 0, 3, "Ref Candle", text_color=color.white, text_size=size.tiny)
     table.cell(infoTable, 1, 3, refStatus,    text_color=refCol,      text_size=size.tiny)
-
     sessStatus = not useTime ? "OFF" : inSession ? "✔ OPEN" : "✘ CLOSED"
     sessCol    = not useTime ? color.gray : inSession ? color.lime : color.orange
     table.cell(infoTable, 0, 4, "Session", text_color=color.white, text_size=size.tiny)
     table.cell(infoTable, 1, 4, sessStatus, text_color=sessCol,    text_size=size.tiny)
-
-    posStatus = inLong ? "LONG  SL " + str.tostring(stopPx, format.mintick) + "  TP " + str.tostring(tgtPx, format.mintick) :
-         inShort ? "SHORT  SL " + str.tostring(stopPx, format.mintick) + "  TP " + str.tostring(tgtPx, format.mintick) : "FLAT"
+    posStatus = inLong ? "LONG  SL " + str.tostring(stopPx, format.mintick) + "  TP " + str.tostring(tgtPx, format.mintick) : inShort ? "SHORT  SL " + str.tostring(stopPx, format.mintick) + "  TP " + str.tostring(tgtPx, format.mintick) : "FLAT"
     posCol    = inLong ? bullColor : inShort ? bearColor : color.gray
     table.cell(infoTable, 0, 5, "Position", text_color=color.white, text_size=size.tiny)
     table.cell(infoTable, 1, 5, posStatus,  text_color=posCol,      text_size=size.tiny)
