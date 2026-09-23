@@ -145,6 +145,8 @@ if setupBear
     armSweep := hSwH
 
 // Cancel if the sweep wick is taken out or the window runs out
+longCancel  = confirmed and armL and (low < armSweep or bar_index - armBar > confWindow)
+shortCancel = confirmed and armS and (high > armSweep or bar_index - armBar > confWindow)
 if confirmed and armL and (low < armSweep or bar_index - armBar > confWindow)
     armL := false
 if confirmed and armS and (high > armSweep or bar_index - armBar > confWindow)
@@ -197,6 +199,7 @@ var float extremePx = na
 var float riskPts   = na
 var float remFrac   = 1.0
 var float tradePnl  = 0.0
+var float lastUSD   = 0.0
 
 wickStop  = stopMode == "Wick Touch"
 scaleFrac = scalePct / 100.0
@@ -273,7 +276,8 @@ if longPartial
         stopPx := math.max(stopPx, entryPx)
 if exitLong
     tradePnl += remFrac * (longExitPx - entryPx)
-    recordTrade(stats, exitCounts, tradePnl * pv, longReason)
+    lastUSD := tradePnl * pv
+    recordTrade(stats, exitCounts, lastUSD, longReason)
     inLong := false
 
 if shortPartial
@@ -285,7 +289,8 @@ if shortPartial
         stopPx := math.min(stopPx, entryPx)
 if exitShort
     tradePnl += remFrac * (entryPx - shortExitPx)
-    recordTrade(stats, exitCounts, tradePnl * pv, shortReason)
+    lastUSD := tradePnl * pv
+    recordTrade(stats, exitCounts, lastUSD, shortReason)
     inShort := false
 
 // ─── ENTRIES ──────────────────────────────────────────────────────────────────
@@ -362,26 +367,62 @@ if showStop and (newLong or newShort)
     if tp1Scale and tp2R > 0
         line.new(bar_index, tp2Px, bar_index + extBars, tp2Px, color=color.new(bullColor, 20), width=1, style=line.style_dotted)
 
-// ─── SIGNAL & EXIT LABELS ─────────────────────────────────────────────────────
+// ─── LABELS ───────────────────────────────────────────────────────────────────
+// Every step of a trade gets a label with the exact prices to use.
+// Long labels sit below the bar and short labels above; exits go on the
+// opposite side of their entry so a reversal's EXIT never overlaps the new entry.
 
-plotshape(setupBull, "Setup Bull (sweep candle closed)", shape.diamond, location.belowbar, color.new(bullColor, 40), size=size.tiny)
-plotshape(setupBear, "Setup Bear (sweep candle closed)", shape.diamond, location.abovebar, color.new(bearColor, 40), size=size.tiny)
+px(float p) => str.tostring(p, format.mintick)
+usd(float x) => (x >= 0 ? "+$" : "-$") + str.tostring(math.abs(x), "#,##0")
 
+// Setup armed (mode C: wait for the BUY/SELL label; mode B: the entry comes on this bar)
+if setupBull and not newLong
+    label.new(bar_index, low, htfTf + " LONG SETUP\n" + (modeB ? "Skipped (R:R / session / $ risk)" : "Wait for BUY\nOff below " + px(hSwL)), yloc=yloc.belowbar, style=label.style_label_up, color=color.new(bullColor, 70), textcolor=color.white, size=size.small, textalign=text.align_left)
+if setupBear and not newShort
+    label.new(bar_index, high, htfTf + " SHORT SETUP\n" + (modeB ? "Skipped (R:R / session / $ risk)" : "Wait for SELL\nOff above " + px(hSwH)), yloc=yloc.abovebar, style=label.style_label_down, color=color.new(bearColor, 70), textcolor=color.white, size=size.small, textalign=text.align_left)
+
+// Setup cancelled before an entry
+if longCancel and not newLong
+    label.new(bar_index, low, "Long setup off", yloc=yloc.belowbar, style=label.style_label_up, color=color.new(color.gray, 60), textcolor=color.white, size=size.tiny)
+if shortCancel and not newShort
+    label.new(bar_index, high, "Short setup off", yloc=yloc.abovebar, style=label.style_label_down, color=color.new(color.gray, 60), textcolor=color.white, size=size.tiny)
+
+// Entry: price, stop, targets, $ risk
+tp2Txt = tp1Scale and tp2R > 0 ? "\nTP2 " + px(tp2Px) + " (rest)" : ""
+tp1Txt = tgtMode == "Off" ? "" : "\nTP1 " + px(tgtPx) + (tp1Scale ? " (" + str.tostring(scalePct) + "%)" : " (all)")
 if newLong
-    label.new(bar_index, low, "▲ CRT BUY  $" + str.tostring(math.round(riskPts * pv)) + " risk", yloc=yloc.belowbar, style=label.style_label_up, color=bullColor, textcolor=color.white, size=size.normal)
+    label.new(bar_index, low, "▲ BUY " + px(entryPx) + "\nSL " + px(stopPx) + "  (-$" + str.tostring(math.round(riskPts * pv)) + ")" + tp1Txt + tp2Txt, yloc=yloc.belowbar, style=label.style_label_up, color=bullColor, textcolor=color.black, size=size.normal, textalign=text.align_left)
 if newShort
-    label.new(bar_index, high, "▼ CRT SELL  $" + str.tostring(math.round(riskPts * pv)) + " risk", yloc=yloc.abovebar, style=label.style_label_down, color=bearColor, textcolor=color.white, size=size.normal)
+    label.new(bar_index, high, "▼ SELL " + px(entryPx) + "\nSL " + px(stopPx) + "  (-$" + str.tostring(math.round(riskPts * pv)) + ")" + tp1Txt + tp2Txt, yloc=yloc.abovebar, style=label.style_label_down, color=bearColor, textcolor=color.white, size=size.normal, textalign=text.align_left)
 
-// Long exits sit below the bar and short exits above, so a reversal's EXIT
-// never overlaps the new entry label
+// TP1 scale-out: what to close and where the stop goes now
 if longPartial and not exitLong
-    label.new(bar_index, high, "◐ TP1 " + str.tostring(scalePct) + "%", yloc=yloc.abovebar, style=label.style_label_down, color=color.new(bullColor, 30), textcolor=color.white, size=size.small)
+    label.new(bar_index, high, "◐ TP1 " + px(longTp1Px) + "\nClose " + str.tostring(scalePct) + "%\nStop → " + px(stopPx), yloc=yloc.abovebar, style=label.style_label_down, color=color.new(bullColor, 30), textcolor=color.white, size=size.small, textalign=text.align_left)
 if shortPartial and not exitShort
-    label.new(bar_index, low, "◐ TP1 " + str.tostring(scalePct) + "%", yloc=yloc.belowbar, style=label.style_label_up, color=color.new(bearColor, 30), textcolor=color.white, size=size.small)
+    label.new(bar_index, low, "◐ TP1 " + px(shortTp1Px) + "\nClose " + str.tostring(scalePct) + "%\nStop → " + px(stopPx), yloc=yloc.belowbar, style=label.style_label_up, color=color.new(bearColor, 30), textcolor=color.white, size=size.small, textalign=text.align_left)
+
+// Exit: price, reason, trade result
 if exitLong
-    label.new(bar_index, low, "✕ EXIT L · " + longReason, yloc=yloc.belowbar, style=label.style_label_up, color=color.new(color.gray, 20), textcolor=color.white, size=size.small)
+    label.new(bar_index, low, "✕ EXIT " + px(longExitPx) + " · " + longReason + "\nTrade " + usd(lastUSD), yloc=yloc.belowbar, style=label.style_label_up, color=lastUSD > 0 ? color.new(bullColor, 50) : color.new(color.gray, 20), textcolor=color.white, size=size.small, textalign=text.align_left)
 if exitShort
-    label.new(bar_index, high, "✕ EXIT S · " + shortReason, yloc=yloc.abovebar, style=label.style_label_down, color=color.new(color.gray, 20), textcolor=color.white, size=size.small)
+    label.new(bar_index, high, "✕ EXIT " + px(shortExitPx) + " · " + shortReason + "\nTrade " + usd(lastUSD), yloc=yloc.abovebar, style=label.style_label_down, color=lastUSD > 0 ? color.new(bullColor, 50) : color.new(color.gray, 20), textcolor=color.white, size=size.small, textalign=text.align_left)
+
+// Live tags at the right edge while in a trade: current stop and next target
+var label stopTag = label.new(na, na, "", style=label.style_label_left, color=color.new(bearColor, 20), textcolor=color.white, size=size.small)
+var label tgtTag  = label.new(na, na, "", style=label.style_label_left, color=color.new(wickColor, 20), textcolor=color.white, size=size.small)
+inTrade = inLong or inShort
+nextTp  = tp1Done ? tp2Px : tgtPx
+if barstate.islast
+    if inTrade
+        stopWhy = (inLong and stopPx >= entryPx) or (inShort and stopPx <= entryPx) ? (stopPx == entryPx ? "BE STOP " : "TRAIL STOP ") : "STOP "
+        label.set_xy(stopTag, bar_index + 2, stopPx)
+        label.set_text(stopTag, stopWhy + px(stopPx))
+        label.set_xy(tgtTag, bar_index + 2, nextTp)
+        label.set_text(tgtTag, na(nextTp) ? "" : (tp1Done ? "TP2 " : "TP1 ") + px(nextTp))
+        label.set_color(tgtTag, na(nextTp) ? color.new(color.white, 100) : color.new(wickColor, 20))
+    else
+        label.set_xy(stopTag, na, na)
+        label.set_xy(tgtTag, na, na)
 
 // Live stop level while in a trade (steps up as the runner trails)
 plot(inLong or inShort ? stopPx : na, "Active Stop", color=color.new(bearColor, 40), style=plot.style_linebr, linewidth=1)
