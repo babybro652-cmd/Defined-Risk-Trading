@@ -1,0 +1,249 @@
+// ══════════════════════════════════════════════════════════════════════════════
+// CRT Pro — ES Futures  |  Indicator  |  Pine Script v6
+// ══════════════════════════════════════════════════════════════════════════════
+// Logic:
+//   1. Reference candle: the bar N back, with a range of at least X × ATR
+//   2. Sweep: current candle wicks beyond the ref high/low, CLOSES back inside,
+//      and is the FIRST bar to trade beyond that side (optional)
+//   3. Filters: EMA trend (price side AND slope agree), volume, NY sessions
+//   4. Signals are confirmed on bar close by default (no live-bar flicker)
+//   5. Exits, first trigger wins: stop (sweep wick), target (opposite side of
+//      the range), opposite CRT signal, or close through the EMA
+// ══════════════════════════════════════════════════════════════════════════════
+
+//@version=6
+indicator("CRT Pro — ES Futures", overlay=true, max_lines_count=500, max_labels_count=300, max_boxes_count=200)
+
+// ─── INPUTS ───────────────────────────────────────────────────────────────────
+
+grpRef       = "📊 Reference Candle"
+lookback     = input.int(1,      "Lookback Bars",          minval=1, maxval=20,  group=grpRef, tooltip="Which bar back is the reference candle. 1 = previous candle (classic CRT).")
+minRangeATR  = input.float(0.75, "Min Range (× ATR)",      step=0.05,            group=grpRef, tooltip="Reference candle must be at least this multiple of ATR in range")
+atrLen       = input.int(14,     "ATR Length",             minval=1,             group=grpRef)
+requireClean = input.bool(true,  "First Sweep Only",                             group=grpRef, tooltip="Reject the signal if any bar between the reference candle and the sweep candle already traded beyond that side of the range")
+requireRoom  = input.bool(true,  "Require Room to Target",                       group=grpRef, tooltip="Bull: close must be below the ref high. Bear: close must be above the ref low.")
+
+grpFilter    = "🧠 Smart Filters"
+confirmClose = input.bool(true,  "Signal Only on Bar Close",                     group=grpFilter, tooltip="Prevents signals and alerts from appearing and disappearing on the live bar")
+useEMA       = input.bool(true,  "Trend Filter (EMA)",                           group=grpFilter, tooltip="Long: close above EMA AND EMA rising. Short: close below EMA AND EMA falling.")
+emaLen       = input.int(20,     "EMA Length",             minval=5, maxval=500, group=grpFilter)
+slopeLen     = input.int(2,      "EMA Slope Bars",         minval=1, maxval=50,  group=grpFilter)
+useVol       = input.bool(false, "Volume Confirmation",                          group=grpFilter)
+volLen       = input.int(20,     "Volume MA Length",       minval=1,             group=grpFilter)
+volMult      = input.float(1.5,  "Volume Multiplier",      step=0.05,            group=grpFilter, tooltip="Sweep candle volume must exceed this × the volume MA")
+useTime      = input.bool(true,  "Session Time Filter",                          group=grpFilter, tooltip="Only allow signals during these New York time windows. Ignored on daily and higher charts.")
+sess1        = input.session("0930-1130", "Morning Session (ET)",               group=grpFilter)
+sess2        = input.session("1400-1600", "Afternoon Session (ET)",             group=grpFilter)
+
+grpExit      = "🚪 Exits (first trigger wins)"
+useStopExit  = input.bool(true,  "Stop: Beyond Sweep Wick",                      group=grpExit)
+useTgtExit   = input.bool(true,  "Target: Opposite Side of Range",               group=grpExit)
+useEmaExit   = input.bool(true,  "Close Through EMA",                            group=grpExit)
+// An opposite CRT signal always exits (and reverses)
+
+grpStyle     = "🎨 Style"
+extBars      = input.int(10,     "Line Extension (bars)",  minval=1, maxval=100, group=grpStyle)
+showEMA      = input.bool(true,  "Show EMA",                                     group=grpStyle)
+showZone     = input.bool(true,  "Show Reference Zone",                          group=grpStyle)
+showStop     = input.bool(true,  "Show Stop Line",                               group=grpStyle)
+showTable    = input.bool(true,  "Show Info Table",                              group=grpStyle)
+wickColor    = input.color(color.new(#2962FF, 0), "Wick Line Color",             group=grpStyle)
+confColor    = input.color(color.new(#FF9800, 0), "Confirmation Line Color",     group=grpStyle)
+bullColor    = input.color(color.new(#00E676, 0), "Buy Signal Color",            group=grpStyle)
+bearColor    = input.color(color.new(#FF1744, 0), "Sell Signal Color",           group=grpStyle)
+
+// ─── CORE CALCULATIONS ────────────────────────────────────────────────────────
+
+atrVal = ta.atr(atrLen)
+emaVal = ta.ema(close, emaLen)
+volMA  = ta.sma(volume, volLen)
+
+// Reference candle values (fixed offset)
+refH = high[lookback]
+refL = low[lookback]
+
+// Reference candle must have meaningful range relative to ATR at that bar
+isQualRef = (refH - refL) >= atrVal[lookback] * minRangeATR
+
+// Bars between the reference candle and now must not have already swept the level
+midLow    = ta.lowest(low,   math.max(lookback - 1, 1))[1]
+midHigh   = ta.highest(high, math.max(lookback - 1, 1))[1]
+cleanBull = not requireClean or lookback == 1 or midLow  >= refL
+cleanBear = not requireClean or lookback == 1 or midHigh <= refH
+
+// ─── SWEEP & REVERSE PATTERNS ─────────────────────────────────────────────────
+//  Bullish CRT : wick sweeps BELOW refL, green candle CLOSES back ABOVE refL
+//  Bearish CRT : wick sweeps ABOVE refH, red candle CLOSES back BELOW refH
+
+bullCandle = close > open
+bearCandle = close < open
+
+bullSetup = isQualRef and cleanBull and
+     low < refL and close > refL and bullCandle and
+     (not requireRoom or close < refH)
+
+bearSetup = isQualRef and cleanBear and
+     high > refH and close < refH and bearCandle and
+     (not requireRoom or close > refL)
+
+// ─── SMART FILTERS ────────────────────────────────────────────────────────────
+
+emaSlope    = emaVal - emaVal[slopeLen]
+inUptrend   = close > emaVal and emaSlope > 0    // both must agree
+inDowntrend = close < emaVal and emaSlope < 0
+volOK       = volume > volMA * volMult
+
+inSess(s) => not na(time(timeframe.period, s, "America/New_York"))
+inSession = not useTime or not timeframe.isintraday or inSess(sess1) or inSess(sess2)
+
+confirmed = not confirmClose or barstate.isconfirmed
+
+bullSignal = confirmed and bullSetup and
+     (not useEMA or inUptrend) and
+     (not useVol or volOK) and
+     inSession
+
+bearSignal = confirmed and bearSetup and
+     (not useEMA or inDowntrend) and
+     (not useVol or volOK) and
+     inSession
+
+// ─── POSITION STATE & EXITS ───────────────────────────────────────────────────
+// Exits are evaluated against the state carried in from the PREVIOUS bar,
+// before this bar's entries are applied. That way:
+//   • a trade can never enter and exit on the same bar
+//   • a reversal signal fires the exit for the old side
+
+var bool  inLong  = false
+var bool  inShort = false
+var float stopPx  = na
+var float tgtPx   = na
+
+longStopHit  = inLong  and useStopExit and low  <= stopPx
+longTgtHit   = inLong  and useTgtExit  and high >= tgtPx
+longRevHit   = inLong  and bearSignal
+longEmaHit   = inLong  and useEmaExit  and close < emaVal
+
+shortStopHit = inShort and useStopExit and high >= stopPx
+shortTgtHit  = inShort and useTgtExit  and low  <= tgtPx
+shortRevHit  = inShort and bullSignal
+shortEmaHit  = inShort and useEmaExit  and close > emaVal
+
+exitLong  = confirmed and (longStopHit  or longTgtHit  or longRevHit  or longEmaHit)
+exitShort = confirmed and (shortStopHit or shortTgtHit or shortRevHit or shortEmaHit)
+
+// If stop and target are both touched in one bar, assume the stop (conservative)
+longReason  = longStopHit  ? "STOP" : longTgtHit  ? "TARGET" : longRevHit  ? "REVERSAL" : "EMA"
+shortReason = shortStopHit ? "STOP" : shortTgtHit ? "TARGET" : shortRevHit ? "REVERSAL" : "EMA"
+
+if exitLong
+    inLong := false
+if exitShort
+    inShort := false
+
+if bullSignal
+    inLong  := true
+    inShort := false
+    stopPx  := low
+    tgtPx   := refH
+if bearSignal
+    inShort := true
+    inLong  := false
+    stopPx  := high
+    tgtPx   := refL
+
+if not inLong and not inShort
+    stopPx := na
+    tgtPx  := na
+
+// ─── DRAWING ──────────────────────────────────────────────────────────────────
+
+if bullSignal or bearSignal
+    startBar = bar_index - lookback
+    endBar   = bar_index + extBars
+    confMid  = (open + close) / 2.0
+
+    // Solid lines: reference candle high and low (the far side is the target)
+    line.new(startBar, refH, endBar, refH, color=wickColor, width=2, style=line.style_solid)
+    line.new(startBar, refL, endBar, refL, color=wickColor, width=2, style=line.style_solid)
+
+    // Dashed line: sweep candle body midpoint
+    line.new(bar_index, confMid, endBar, confMid, color=confColor, width=1, style=line.style_dashed)
+
+    // Dotted line: stop beyond the sweep wick
+    if showStop
+        line.new(bar_index, stopPx, endBar, stopPx, color=color.new(bearColor, 20), width=1, style=line.style_dotted)
+
+    if showZone
+        box.new(startBar, refH, endBar, refL, border_color=color.new(wickColor, 60), bgcolor=color.new(wickColor, 88))
+
+// ─── SIGNAL & EXIT LABELS ─────────────────────────────────────────────────────
+
+plotshape(bullSignal, "CRT Buy",  shape.labelup,   location.belowbar, bullColor, text="▲ CRT BUY",  textcolor=color.white, size=size.normal)
+plotshape(bearSignal, "CRT Sell", shape.labeldown, location.abovebar, bearColor, text="▼ CRT SELL", textcolor=color.white, size=size.normal)
+
+// Long exits sit below the bar and short exits above, so a reversal's EXIT
+// never overlaps the new signal label
+if exitLong
+    label.new(bar_index, low, "✕ EXIT L · " + longReason, yloc=yloc.belowbar, style=label.style_label_up, color=color.new(color.gray, 20), textcolor=color.white, size=size.small)
+if exitShort
+    label.new(bar_index, high, "✕ EXIT S · " + shortReason, yloc=yloc.abovebar, style=label.style_label_down, color=color.new(color.gray, 20), textcolor=color.white, size=size.small)
+
+// ─── EMA PLOT ─────────────────────────────────────────────────────────────────
+
+plot(showEMA ? emaVal : na, "EMA", color=color.new(color.yellow, 0), linewidth=2)
+
+// ─── INFO TABLE ───────────────────────────────────────────────────────────────
+
+var table infoTable = table.new(position.top_right, 2, 6, bgcolor=color.new(color.black, 60), border_color=color.new(color.gray, 40), border_width=1, frame_color=color.gray, frame_width=1)
+
+if showTable and barstate.islast
+    table.cell(infoTable, 0, 0, "CRT Filter", text_color=color.white, text_size=size.small, bgcolor=color.new(color.blue, 40))
+    table.cell(infoTable, 1, 0, "Status",     text_color=color.white, text_size=size.small, bgcolor=color.new(color.blue, 40))
+
+    trendStatus = not useEMA ? "OFF" : inUptrend ? "▲ BULL" : inDowntrend ? "▼ BEAR" : "— NEUTRAL"
+    trendCol    = not useEMA ? color.gray : inUptrend ? color.lime : inDowntrend ? color.red : color.orange
+    table.cell(infoTable, 0, 1, "Trend (EMA" + str.tostring(emaLen) + ")", text_color=color.white, text_size=size.tiny)
+    table.cell(infoTable, 1, 1, trendStatus, text_color=trendCol, text_size=size.tiny)
+
+    volStatus = not useVol ? "OFF" : volOK ? "✔ HIGH" : "✘ LOW"
+    volCol    = not useVol ? color.gray : volOK ? color.lime : color.orange
+    table.cell(infoTable, 0, 2, "Volume (×" + str.tostring(volMult) + ")", text_color=color.white, text_size=size.tiny)
+    table.cell(infoTable, 1, 2, volStatus, text_color=volCol, text_size=size.tiny)
+
+    refStatus = isQualRef ? "✔ VALID" : "✘ WEAK"
+    refCol    = isQualRef ? color.lime : color.orange
+    table.cell(infoTable, 0, 3, "Ref Candle", text_color=color.white, text_size=size.tiny)
+    table.cell(infoTable, 1, 3, refStatus,    text_color=refCol,      text_size=size.tiny)
+
+    sessStatus = not useTime ? "OFF" : inSession ? "✔ OPEN" : "✘ CLOSED"
+    sessCol    = not useTime ? color.gray : inSession ? color.lime : color.orange
+    table.cell(infoTable, 0, 4, "Session", text_color=color.white, text_size=size.tiny)
+    table.cell(infoTable, 1, 4, sessStatus, text_color=sessCol,    text_size=size.tiny)
+
+    posStatus = inLong ? "LONG  SL " + str.tostring(stopPx, format.mintick) + "  TP " + str.tostring(tgtPx, format.mintick) :
+         inShort ? "SHORT  SL " + str.tostring(stopPx, format.mintick) + "  TP " + str.tostring(tgtPx, format.mintick) : "FLAT"
+    posCol    = inLong ? bullColor : inShort ? bearColor : color.gray
+    table.cell(infoTable, 0, 5, "Position", text_color=color.white, text_size=size.tiny)
+    table.cell(infoTable, 1, 5, posStatus,  text_color=posCol,      text_size=size.tiny)
+
+// ─── ALERTS ───────────────────────────────────────────────────────────────────
+// alertcondition(): pick one per alert in the Create Alert dialog.
+// alert(): choose "Any alert() function call" to get one alert with the exit reason
+// and prices in the message (useful for webhooks).
+
+alertcondition(bullSignal, "CRT Buy Signal",   "CRT Pro: Bullish sweep & reverse — potential long setup")
+alertcondition(bearSignal, "CRT Sell Signal",  "CRT Pro: Bearish sweep & reverse — potential short setup")
+alertcondition(exitLong,   "CRT Exit Long",    "CRT Pro: Exit long — stop, target, opposite signal or EMA cross")
+alertcondition(exitShort,  "CRT Exit Short",   "CRT Pro: Exit short — stop, target, opposite signal or EMA cross")
+alertcondition(bullSignal or bearSignal, "CRT Any Signal", "CRT Pro: Setup detected")
+
+// Exits first, so a reversal sends EXIT before the new entry
+if exitLong
+    alert("CRT Pro " + syminfo.ticker + ": EXIT LONG (" + longReason + ") @ " + str.tostring(close, format.mintick), alert.freq_once_per_bar_close)
+if exitShort
+    alert("CRT Pro " + syminfo.ticker + ": EXIT SHORT (" + shortReason + ") @ " + str.tostring(close, format.mintick), alert.freq_once_per_bar_close)
+if bullSignal
+    alert("CRT Pro " + syminfo.ticker + ": BUY @ " + str.tostring(close, format.mintick) + "  SL " + str.tostring(stopPx, format.mintick) + "  TP " + str.tostring(tgtPx, format.mintick), alert.freq_once_per_bar_close)
+if bearSignal
+    alert("CRT Pro " + syminfo.ticker + ": SELL @ " + str.tostring(close, format.mintick) + "  SL " + str.tostring(stopPx, format.mintick) + "  TP " + str.tostring(tgtPx, format.mintick), alert.freq_once_per_bar_close)
