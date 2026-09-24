@@ -8,8 +8,10 @@
 //        back inside C1
 //   C3 : 15m entry candle. Entry zone = C2's close. During C3, enter on a
 //        1m candle that either
-//          - retests: touches the entry zone and closes back on the trade side
-//          - breaks:  closes past the entry zone by the break buffer
+//          - breaks cleanly: closes in the trade direction, past the entry
+//            zone by the break buffer
+//          - retests: price first moves away from the zone, then a 1m candle
+//            comes back to touch it and closes back on the trade side
 //        No trigger before C3 ends = no trade.
 //   Exits (no stop loss):
 //        - out if the trade is Max Loss $ against you
@@ -24,7 +26,8 @@ indicator("CRT Setups", overlay=true, max_labels_count=500, max_lines_count=500)
 // --- SETTINGS -----------------------------------------------------------------
 
 setupTf   = input.timeframe("15", "Setup Timeframe")
-bufTicks  = input.int(2, "Break Buffer (ticks)", minval=0, maxval=20, tooltip="A break needs a 1m close this far past the entry zone.")
+bufTicks  = input.int(4, "Clean Break (ticks past zone)", minval=0, maxval=40, tooltip="A clean break is a 1m candle in the trade direction that closes this far past the entry zone. ES: 4 ticks = 1 point.")
+awayTicks = input.int(4, "Retest: Move Away First (ticks)", minval=1, maxval=40, tooltip="Before a retest counts, price must first trade this far away from the entry zone in the trade direction.")
 maxLoss   = input.float(250, "Max Loss ($)", minval=1, step=25)
 lockUSD   = input.float(450, "Profit Lock ($)", minval=1, step=25, tooltip="Once open profit reaches this, you are out at no less than this.")
 contracts = input.int(1, "Contracts", minval=1)
@@ -39,6 +42,7 @@ lockCol   = input.color(#089981, "Profit Lock Color")
 
 pv      = syminfo.pointvalue * contracts
 buf     = bufTicks * syminfo.mintick
+away    = awayTicks * syminfo.mintick
 lossPts = maxLoss / pv
 lockPts = lockUSD / pv
 
@@ -103,6 +107,7 @@ fadeBg = color.new(color.gray, 75)
 var int   armDir  = 0      // setup waiting for its 1m trigger during C3
 var float zone    = na     // entry zone = C2 close
 var int   armEnd  = na     // time C3 ends
+var bool  wentAway = false // price has moved away from the zone (needed for a retest)
 
 var int   dir     = 0      // open trade: 1 long, -1 short, 0 flat
 var float ePx     = na
@@ -140,14 +145,17 @@ if newC3 and barstate.isconfirmed and chartOK
             armDir := d
             zone   := c2C
             armEnd := c3End
+            wentAway := false
             alert("CRT " + syminfo.ticker + ": " + (d == 1 ? "BUY" : "SELL") + " setup. C3 open, entry zone " + px(c2C) + ". Waiting for a 1m retest or break.", alert.freq_once_per_bar_close)
 
 // --- 2) DURING C3: 1m RETEST OR BREAK -----------------------------------------
 
 if barstate.isconfirmed and armDir != 0 and dir == 0 and time < armEnd and not blocked
     d        = armDir
-    retest   = d == 1 ? (low <= zone and close > zone) : (high >= zone and close < zone)
-    brk      = d == 1 ? close >= zone + buf : close <= zone - buf
+    brk      = d == 1 ? (close >= zone + buf and close > open) : (close <= zone - buf and close < open)
+    retest   = wentAway and (d == 1 ? (low <= zone and close > zone) : (high >= zone and close < zone))
+    if not wentAway
+        wentAway := d == 1 ? high >= zone + away : low <= zone - away
     if retest or brk
         dir     := d
         ePx     := close
@@ -156,7 +164,7 @@ if barstate.isconfirmed and armDir != 0 and dir == 0 and time < armEnd and not b
         lockLv  := close + d * lockPts
         locked  := false
         armDir  := 0
-        how      = retest ? "retest" : "break"
+        how      = brk ? "break" : "retest"
         label.new(bar_index, d == 1 ? low : high, d == 1 ? "BUY" : "SELL", yloc=d == 1 ? yloc.belowbar : yloc.abovebar, style=d == 1 ? label.style_label_up : label.style_label_down, color=d == 1 ? buyCol : sellCol, textcolor=color.white, size=size.small)
         tE    := newTag("ENTRY " + how, ePx, zoneCol, color.black)
         tLoss := newTag("-$" + str.tostring(maxLoss, "#"), lossLv, sellCol, color.white)
