@@ -1,82 +1,232 @@
 //@version=6
 // ==============================================================================
-// CRT Setups - Step 1: setup markers only  |  Indicator  |  Pine Script v6
+// CRT Setups - Step 2: setups + 1m entries + $ exits  |  Indicator  |  Pine v6
 // ==============================================================================
-//   Use on the 15m chart.
-//   C1 : the range candle (its high and low are drawn)
-//   C2 : wicks beyond C1's high (sell) or low (buy) and CLOSES back inside C1
-//   C3 : the entry candle. The entry zone is C2's close.
-//   Setups whose C3 falls in a no-trade window are shown greyed out.
-//   No entries, stops, targets or trade tracking yet - that is step 2.
+//   Put this on the 1m chart. Setups come from the 15m chart.
+//   C1 : 15m range candle
+//   C2 : 15m candle that wicks beyond C1's high (sell) or low (buy) and closes
+//        back inside C1
+//   C3 : 15m entry candle. Entry zone = C2's close. During C3, enter on a
+//        1m candle that either
+//          - retests: touches the entry zone and closes back on the trade side
+//          - breaks:  closes past the entry zone by the break buffer
+//        No trigger before C3 ends = no trade.
+//   Exits (no stop loss):
+//        - out if the trade is Max Loss $ against you
+//        - once profit reaches Profit Lock $, that profit is the floor:
+//          out if price comes back to it
+//        - out when a no-trade window starts
+//   No trades start in the no-trade windows. One trade at a time.
 // ==============================================================================
 
 indicator("CRT Setups", overlay=true, max_labels_count=500, max_lines_count=500)
 
-noTrade1 = input.session("2300-0300", "No-Trade Window 1 (NY time)")
-noTrade2 = input.session("1630-2000", "No-Trade Window 2 (NY time)")
-showNoTr = input.bool(true, "Show Setups in No-Trade Windows (greyed)")
-zoneBars = input.int(4, "Entry Zone Length (bars after C3)", minval=1, maxval=20)
-buyCol   = input.color(#00C853, "Buy Color")
-sellCol  = input.color(#FF1744, "Sell Color")
-rangeCol = input.color(#787B86, "C1 Range Color")
-zoneCol  = input.color(#FFD600, "Entry Zone Color")
+// --- SETTINGS -----------------------------------------------------------------
 
+setupTf   = input.timeframe("15", "Setup Timeframe")
+bufTicks  = input.int(2, "Break Buffer (ticks)", minval=0, maxval=20, tooltip="A break needs a 1m close this far past the entry zone.")
+maxLoss   = input.float(250, "Max Loss ($)", minval=1, step=25)
+lockUSD   = input.float(450, "Profit Lock ($)", minval=1, step=25, tooltip="Once open profit reaches this, you are out at no less than this.")
+contracts = input.int(1, "Contracts", minval=1)
+noTrade1  = input.session("2300-0300", "No-Trade Window 1 (NY time)")
+noTrade2  = input.session("1630-2000", "No-Trade Window 2 (NY time)")
+showNoTr  = input.bool(true, "Show Setups in No-Trade Windows (greyed)")
+buyCol    = input.color(#00C853, "Buy Color")
+sellCol   = input.color(#FF1744, "Sell Color")
+rangeCol  = input.color(#787B86, "C1 Range Color")
+zoneCol   = input.color(#FFD600, "Entry Zone Color")
+lockCol   = input.color(#089981, "Profit Lock Color")
+
+pv      = syminfo.pointvalue * contracts
+buf     = bufTicks * syminfo.mintick
+lossPts = maxLoss / pv
+lockPts = lockUSD / pv
+
+px(float p) => str.tostring(p, format.mintick)
+usd(float x) => (x >= 0 ? "+$" : "-$") + str.tostring(math.abs(x), "#,##0")
 inWin(string s) => not na(time(timeframe.period, s, "America/New_York"))
-
-// --- C2 closes: is it a CRT? --------------------------------------------------
-// C1 = previous bar, C2 = this bar
-c1H = high[1]
-c1L = low[1]
-
-sellC2 = high > c1H and close < c1H and close > c1L
-buyC2  = low < c1L and close > c1L and close < c1H
-// A C2 that swept both sides counts in the direction it closed
-if sellC2 and buyC2
-    sellC2 := close < open
-    buyC2  := not sellC2
-
-// Hold the setup from C2's close so it can be drawn when C3 starts
-var int   pDir  = 0
-var int   pBar  = na
-var float pC1H  = na
-var float pC1L  = na
-var float pC2C  = na
-
-// --- C3 starts: draw the setup ------------------------------------------------
-
-isC3    = pDir != 0 and bar_index == pBar + 1
 blocked = inWin(noTrade1) or inWin(noTrade2)
-if isC3
-    if not blocked or showNoTr
-        d     = pDir
-        col   = blocked ? color.gray : d == 1 ? buyCol : sellCol
-        faded = blocked ? 70 : 0
-        c1Bar = bar_index - 2
-        c2Bar = bar_index - 1
-        endX  = bar_index + zoneBars
-        // C1 range
-        line.new(c1Bar, pC1H, endX, pC1H, color=color.new(blocked ? color.gray : rangeCol, faded), width=1, style=line.style_dotted)
-        line.new(c1Bar, pC1L, endX, pC1L, color=color.new(blocked ? color.gray : rangeCol, faded), width=1, style=line.style_dotted)
-        // Candle tags
-        yl = d == 1 ? yloc.belowbar : yloc.abovebar
-        st = d == 1 ? label.style_label_up : label.style_label_down
-        label.new(c1Bar, close, "C1", xloc=xloc.bar_index, yloc=yl, style=st, color=color.new(col, 60 + faded / 4), textcolor=color.white, size=size.tiny)
-        label.new(c2Bar, close, "C2", xloc=xloc.bar_index, yloc=yl, style=st, color=color.new(col, 40 + faded / 4), textcolor=color.white, size=size.tiny)
-        label.new(bar_index, close, blocked ? "C3 (no-trade time)" : d == 1 ? "C3 BUY" : "C3 SELL", xloc=xloc.bar_index, yloc=yl, style=st, color=color.new(col, faded / 2), textcolor=color.white, size=size.small)
-        // Entry zone = C2's close
-        line.new(c2Bar, pC2C, endX, pC2C, color=color.new(blocked ? color.gray : zoneCol, faded), width=2)
-        label.new(endX, pC2C, "Entry zone " + str.tostring(pC2C, format.mintick), style=label.style_label_left, color=color.new(blocked ? color.gray : zoneCol, 20 + faded / 2), textcolor=color.black, size=size.tiny)
 
-// Clear the held setup once C3 has closed, then record a new one if this bar
-// is a C2 (a C3 can also be the C2 of the next setup)
-if barstate.isconfirmed
-    pDir := sellC2 ? -1 : buyC2 ? 1 : 0
-    pBar := bar_index
-    pC1H := c1H
-    pC1L := c1L
-    pC2C := close
+// --- 15m CANDLES --------------------------------------------------------------
+// [1] + lookahead_on = last COMPLETED 15m candles only (no repainting).
+// On the first 1m bar of a new 15m candle: C2 = the candle that just closed,
+// C1 = the one before it, and C3 = the candle that is starting now.
 
-// --- Alert --------------------------------------------------------------------
-// Fires as C3 opens (set the alert to "Once Per Bar"), outside the no-trade windows
-alertcondition(isC3 and not blocked and pDir == -1, "CRT sell setup", "CRT SELL setup on {{ticker}}: C3 is open. Entry zone = C2 close.")
-alertcondition(isC3 and not blocked and pDir == 1, "CRT buy setup", "CRT BUY setup on {{ticker}}: C3 is open. Entry zone = C2 close.")
+[c2H, c2L, c2O, c2C, c2T, c1H, c1L, c1T] = request.security(syminfo.tickerid, setupTf, [high[1], low[1], open[1], close[1], time[1], high[2], low[2], time[2]], lookahead=barmerge.lookahead_on)
+newC3  = timeframe.change(setupTf)
+tfMs   = timeframe.in_seconds(setupTf) * 1000
+chartOK = timeframe.in_seconds() < timeframe.in_seconds(setupTf)
+
+sellCRT = c2H > c1H and c2C < c1H and c2C > c1L
+buyCRT  = c2L < c1L and c2C > c1L and c2C < c1H
+if sellCRT and buyCRT
+    sellCRT := c2C < c2O
+    buyCRT  := not sellCRT
+
+// --- TRADE LEVEL TAGS ---------------------------------------------------------
+// Small price tags that ride along with price while live, then freeze and
+// turn grey when hit.
+
+type Tag
+    string name
+    float  price
+    line   ln
+    label  lb
+    bool   live
+
+newTag(string name, float p, color bg, color txt) =>
+    ln = line.new(bar_index, p, bar_index, p, color=bg, width=1)
+    lb = label.new(bar_index, p, name + " " + px(p), style=label.style_label_left, color=bg, textcolor=txt, size=size.tiny)
+    Tag.new(name, p, ln, lb, true)
+
+rideTag(Tag t) =>
+    if not na(t) and t.live
+        line.set_x2(t.ln, bar_index)
+        label.set_x(t.lb, bar_index)
+    true
+
+freezeTag(Tag t, string suffix, color bg) =>
+    if not na(t) and t.live
+        t.live := false
+        line.set_x2(t.ln, bar_index)
+        label.set_x(t.lb, bar_index)
+        label.set_color(t.lb, bg)
+        label.set_textcolor(t.lb, color.white)
+        label.set_text(t.lb, t.name + " " + px(t.price) + suffix)
+    true
+
+hitBg  = color.new(color.gray, 25)
+fadeBg = color.new(color.gray, 75)
+
+// --- STATE --------------------------------------------------------------------
+
+var int   armDir  = 0      // setup waiting for its 1m trigger during C3
+var float zone    = na     // entry zone = C2 close
+var int   armEnd  = na     // time C3 ends
+
+var int   dir     = 0      // open trade: 1 long, -1 short, 0 flat
+var float ePx     = na
+var int   eBar    = na
+var float lossLv  = na
+var float lockLv  = na
+var bool  locked  = false
+var Tag   tE      = na
+var Tag   tLoss   = na
+var Tag   tLock   = na
+var int   nTrades = 0
+var int   nWins   = 0
+var float netUSD  = 0.0
+
+// --- 1) C3 STARTS: MARK THE SETUP ---------------------------------------------
+
+if newC3 and barstate.isconfirmed and chartOK
+    armDir := 0
+    if sellCRT or buyCRT
+        d      = buyCRT ? 1 : -1
+        col    = blocked ? color.gray : d == 1 ? buyCol : sellCol
+        faded  = blocked ? 70 : 0
+        c3End  = time + tfMs
+        if not blocked or showNoTr
+            yl = d == 1 ? yloc.belowbar : yloc.abovebar
+            st = d == 1 ? label.style_label_up : label.style_label_down
+            line.new(c1T, c1H, c3End, c1H, xloc=xloc.bar_time, color=color.new(blocked ? color.gray : rangeCol, faded), style=line.style_dotted)
+            line.new(c1T, c1L, c3End, c1L, xloc=xloc.bar_time, color=color.new(blocked ? color.gray : rangeCol, faded), style=line.style_dotted)
+            label.new(c1T, d == 1 ? c1L : c1H, "C1", xloc=xloc.bar_time, style=st, color=color.new(col, 60), textcolor=color.white, size=size.tiny)
+            label.new(c2T, d == 1 ? c2L : c2H, "C2", xloc=xloc.bar_time, style=st, color=color.new(col, 40), textcolor=color.white, size=size.tiny)
+            label.new(time, d == 1 ? low : high, blocked ? "C3 (no-trade time)" : d == 1 ? "C3 buy setup" : "C3 sell setup", yloc=yl, style=st, color=color.new(col, 30), textcolor=color.white, size=size.tiny, xloc=xloc.bar_time)
+            line.new(c2T, c2C, c3End, c2C, xloc=xloc.bar_time, color=color.new(blocked ? color.gray : zoneCol, faded), width=2)
+            label.new(c3End, c2C, "zone " + px(c2C), xloc=xloc.bar_time, style=label.style_label_left, color=color.new(blocked ? color.gray : zoneCol, 30), textcolor=color.black, size=size.tiny)
+        if not blocked and dir == 0
+            armDir := d
+            zone   := c2C
+            armEnd := c3End
+            alert("CRT " + syminfo.ticker + ": " + (d == 1 ? "BUY" : "SELL") + " setup. C3 open, entry zone " + px(c2C) + ". Waiting for a 1m retest or break.", alert.freq_once_per_bar_close)
+
+// --- 2) DURING C3: 1m RETEST OR BREAK -----------------------------------------
+
+if barstate.isconfirmed and armDir != 0 and dir == 0 and time < armEnd and not blocked
+    d        = armDir
+    retest   = d == 1 ? (low <= zone and close > zone) : (high >= zone and close < zone)
+    brk      = d == 1 ? close >= zone + buf : close <= zone - buf
+    if retest or brk
+        dir     := d
+        ePx     := close
+        eBar    := bar_index
+        lossLv  := close - d * lossPts
+        lockLv  := close + d * lockPts
+        locked  := false
+        armDir  := 0
+        how      = retest ? "retest" : "break"
+        label.new(bar_index, d == 1 ? low : high, d == 1 ? "BUY" : "SELL", yloc=d == 1 ? yloc.belowbar : yloc.abovebar, style=d == 1 ? label.style_label_up : label.style_label_down, color=d == 1 ? buyCol : sellCol, textcolor=color.white, size=size.small)
+        tE    := newTag("ENTRY " + how, ePx, zoneCol, color.black)
+        tLoss := newTag("-$" + str.tostring(maxLoss, "#"), lossLv, sellCol, color.white)
+        tLock := newTag("+$" + str.tostring(lockUSD, "#"), lockLv, lockCol, color.white)
+        alert("CRT " + syminfo.ticker + ": " + (d == 1 ? "BUY" : "SELL") + " @ " + px(ePx) + " (" + how + "). Out at " + px(lossLv) + " (-$" + str.tostring(maxLoss, "#") + "). Profit lock at " + px(lockLv) + ".", alert.freq_once_per_bar_close)
+
+// C3 ended without a trigger
+if armDir != 0 and time >= armEnd
+    armDir := 0
+
+// --- 3) MANAGE THE OPEN TRADE -------------------------------------------------
+// Checked from the bar after entry. If a bar touches both the loss level and
+// the lock level, the loss is assumed first.
+
+exitNow = false
+exitPx  = float(na)
+exitTxt = ""
+
+if barstate.isconfirmed and dir != 0 and bar_index > eBar
+    hitLoss = not locked and (dir == 1 ? low <= lossLv : high >= lossLv)
+    hitLock = dir == 1 ? high >= lockLv : low <= lockLv
+    backToLock = locked and (dir == 1 ? low <= lockLv : high >= lockLv)
+    if hitLoss
+        exitNow := true
+        exitPx  := lossLv
+        exitTxt := "MAX LOSS"
+        freezeTag(tLoss, " (HIT)", hitBg)
+    else if backToLock
+        exitNow := true
+        exitPx  := lockLv
+        exitTxt := "LOCKED +$" + str.tostring(lockUSD, "#")
+        freezeTag(tLock, " (HIT)", hitBg)
+    else if blocked
+        exitNow := true
+        exitPx  := close
+        exitTxt := "NO-TRADE TIME"
+    else if not locked and hitLock
+        locked := true
+        freezeTag(tLoss, " (off)", fadeBg)
+        label.set_text(tLock.lb, "LOCK +$" + str.tostring(lockUSD, "#") + " " + px(lockLv))
+        alert("CRT " + syminfo.ticker + ": profit reached +$" + str.tostring(lockUSD, "#") + ". Floor locked at " + px(lockLv) + ".", alert.freq_once_per_bar_close)
+
+if exitNow
+    pnl = (exitPx - ePx) * dir * pv
+    nTrades += 1
+    nWins   += pnl > 0 ? 1 : 0
+    netUSD  += pnl
+    freezeTag(tE, "", fadeBg)
+    freezeTag(tLoss, "", fadeBg)
+    freezeTag(tLock, "", fadeBg)
+    label.new(bar_index, dir == 1 ? high : low, exitTxt + " " + usd(pnl), yloc=dir == 1 ? yloc.abovebar : yloc.belowbar, style=dir == 1 ? label.style_label_down : label.style_label_up, color=pnl > 0 ? color.new(lockCol, 20) : color.new(color.gray, 20), textcolor=color.white, size=size.tiny)
+    alert("CRT " + syminfo.ticker + ": EXIT " + exitTxt + " @ " + px(exitPx) + "  Trade " + usd(pnl), alert.freq_once_per_bar_close)
+    dir := 0
+
+if dir != 0
+    rideTag(tE)
+    rideTag(tLoss)
+    rideTag(tLock)
+
+// --- STATUS TABLE -------------------------------------------------------------
+
+var table tbl = table.new(position.top_right, 2, 3, bgcolor=color.new(color.black, 60), border_color=color.new(color.gray, 40), border_width=1)
+
+if barstate.islast
+    openPnl = dir != 0 ? (close - ePx) * dir * pv : 0.0
+    stTxt   = not chartOK ? "Use a chart below " + setupTf + "m (e.g. 1m)" : dir != 0 ? (dir == 1 ? "LONG " : "SHORT ") + px(ePx) + "  open " + usd(openPnl) + (locked ? "  (locked)" : "") : armDir != 0 ? (armDir == 1 ? "BUY" : "SELL") + " setup - zone " + px(zone) : blocked ? "No-trade time" : "Waiting for a setup"
+    winPct  = nTrades > 0 ? 100.0 * nWins / nTrades : 0.0
+    table.cell(tbl, 0, 0, "CRT", text_color=color.white, text_size=size.tiny)
+    table.cell(tbl, 1, 0, setupTf + "m setups -> " + timeframe.period + " entries", text_color=color.white, text_size=size.tiny)
+    table.cell(tbl, 0, 1, "Status", text_color=color.white, text_size=size.tiny)
+    table.cell(tbl, 1, 1, stTxt, text_color=dir == 1 or armDir == 1 ? buyCol : dir == -1 or armDir == -1 ? sellCol : color.gray, text_size=size.tiny)
+    table.cell(tbl, 0, 2, "Results", text_color=color.white, text_size=size.tiny)
+    table.cell(tbl, 1, 2, str.tostring(nTrades) + " trades - " + str.tostring(winPct, "#") + "% win - " + usd(netUSD), text_color=netUSD >= 0 ? color.lime : color.red, text_size=size.tiny)
