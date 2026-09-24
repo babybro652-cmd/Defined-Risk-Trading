@@ -1,0 +1,580 @@
+//@version=6
+// ==============================================================================
+// Liquidity Sweep - Retest Entry  |  Indicator  |  Pine Script v6
+// ==============================================================================
+//   Liquidity pools (where stops sit):
+//     prior day high/low, Asia and London session high/low, equal highs/lows
+//     on the sweep timeframe, 1H and 4H swing highs/lows
+//   Setup (15m by default, completed candles only):
+//     a candle wicks through a pool and closes back on the other side
+//     (above a low pool = buy setup, below a high pool = sell setup)
+//   Entry (chart timeframe, e.g. 1m):
+//     limit order on the retest of the swept level (or 50% of the sweep candle).
+//     Cancelled if not filled within the retest window, or if price runs to TP1
+//     without retesting.
+//   Stop : beyond the sweep candle's wick
+//   TP1 / TP2 : R multiples of the risk.  TP3 : next liquidity pool on the
+//   other side (or an R multiple). After TP1 the stop moves to breakeven.
+//   One setup or trade at a time.
+//   Alerts: "Any alert() function call" sends JSON (webhook / Google Sheet) or
+//   plain text, per the Alert Format setting.
+// ==============================================================================
+
+indicator("Liquidity Sweep", overlay=true, max_labels_count=500, max_lines_count=500)
+
+// --- SETTINGS -----------------------------------------------------------------
+
+grpSet    = "Setup"
+setupTf   = input.timeframe("15", "Sweep Timeframe", group=grpSet, tooltip="Sweeps are read from completed candles of this timeframe. Put the indicator on a lower chart (e.g. 1m) to work the retest entry.")
+needRej   = input.bool(true, "Sweep Candle Must Close in Trade Direction", group=grpSet, tooltip="Sell setups need a red sweep candle, buy setups a green one.")
+bufTicks  = input.int(2, "Stop Buffer (ticks)", minval=0, maxval=40, group=grpSet)
+
+grpEnt    = "Retest Entry"
+entryAt   = input.string("Swept Level", "Limit Order At", options=["Swept Level", "50% of Sweep Candle"], group=grpEnt, tooltip="Swept Level: the pool price that was swept. 50%: the middle of the sweep candle (falls back to the swept level if the candle closed past its middle).")
+waitMin   = input.int(30, "Retest Window (minutes)", minval=1, maxval=240, group=grpEnt, tooltip="Cancel the limit order if it is not filled within this time.")
+maxRisk   = input.float(0, "Max Risk per Trade ($, 0 = off)", minval=0, step=25, group=grpEnt)
+contracts = input.int(1, "Contracts", minval=1, group=grpEnt)
+useSess   = input.bool(true, "Only Take Setups During Sessions (NY time)", group=grpEnt)
+sess1     = input.session("0930-1130", "Session 1", group=grpEnt)
+sess2     = input.session("1400-1600", "Session 2", group=grpEnt)
+
+grpTp     = "Targets"
+tp1R      = input.float(1.0, "TP1 (R)", minval=0.25, step=0.25, group=grpTp)
+tp2R      = input.float(2.0, "TP2 (R)", minval=0.25, step=0.25, group=grpTp)
+tp3Pool   = input.bool(true, "TP3 = Next Liquidity Pool", group=grpTp, tooltip="TP3 is the nearest pool on the other side beyond TP2. If there is none, TP3 (R) is used.")
+tp3R      = input.float(3.0, "TP3 (R)", minval=0.25, step=0.25, group=grpTp)
+tp1Pct    = input.int(50, "Close at TP1 (%)", minval=0, maxval=100, group=grpTp)
+tp2Pct    = input.int(25, "Close at TP2 (%)", minval=0, maxval=100, group=grpTp, tooltip="The rest closes at TP3.")
+
+grpLiq    = "Liquidity Pools"
+showPools = input.bool(true, "Show Pools", group=grpLiq)
+usePD     = input.bool(true, "Prior Day High / Low", group=grpLiq)
+useAsia   = input.bool(true, "Asia High / Low", group=grpLiq)
+asiaSess  = input.session("1900-0300", "Asia Session (NY time)", group=grpLiq)
+useLon    = input.bool(true, "London High / Low", group=grpLiq)
+lonSess   = input.session("0300-0930", "London Session (NY time)", group=grpLiq)
+useEq     = input.bool(true, "Equal Highs / Lows (sweep timeframe)", group=grpLiq)
+use1h     = input.bool(true, "1H Swing Highs / Lows", group=grpLiq)
+use4h     = input.bool(true, "4H Swing Highs / Lows", group=grpLiq)
+pivLen    = input.int(3, "Swing Strength (bars each side)", minval=2, maxval=10, group=grpLiq)
+maxKeep   = input.int(3, "Swing Pools Kept per Source & Side", minval=1, maxval=10, group=grpLiq)
+eqTol     = input.float(1.0, "Equal / Merge Tolerance (pts)", minval=0.25, step=0.25, group=grpLiq, tooltip="Swings this close count as equal highs/lows. Pools this close are merged into one.")
+
+grpAlert  = "Alerts / Webhook"
+alertFmt  = input.string("JSON (webhook)", "Alert Format", options=["JSON (webhook)", "Text"], group=grpAlert)
+hookKey   = input.string("", "Webhook Key", group=grpAlert, tooltip="Same value as SECRET in the Apps Script.")
+
+grpStyle  = "Style"
+showTable = input.bool(true, "Show Status Table", group=grpStyle)
+buyCol    = input.color(#00C853, "Buy Color", group=grpStyle)
+sellCol   = input.color(#FF1744, "Sell Color", group=grpStyle)
+entryCol  = input.color(#FFD600, "Entry Color", group=grpStyle)
+tpCol     = input.color(#089981, "Target Color", group=grpStyle)
+highCol   = input.color(#F23645, "High Pool Color", group=grpStyle)
+lowCol    = input.color(#2962FF, "Low Pool Color", group=grpStyle)
+
+pv     = syminfo.pointvalue * contracts
+buf    = bufTicks * syminfo.mintick
+isJson = alertFmt == "JSON (webhook)"
+
+px(float p) => str.tostring(p, format.mintick)
+usd(float x) => (x >= 0 ? "+$" : "-$") + str.tostring(math.abs(x), "#,##0")
+
+// JSON helpers for webhook alerts
+jStr(string k, string v) => '"' + k + '":"' + v + '"'
+jNum(string k, float v, string f) => '"' + k + '":' + (na(v) ? "null" : str.tostring(v, f))
+jHead(string ev, string id) => "{" + jStr("key", hookKey) + "," + jStr("event", ev) + "," + jStr("id", id) + "," + jStr("symbol", syminfo.ticker) + "," + jStr("time", str.format_time(time, "yyyy-MM-dd HH:mm", "America/New_York"))
+
+inSess(string s) => not na(time(timeframe.period, s, "America/New_York"))
+inSession = not useSess or not timeframe.isintraday or inSess(sess1) or inSess(sess2)
+
+// --- SWEEP-TIMEFRAME CANDLES --------------------------------------------------
+// Higher timeframe: [1] + lookahead_on = last COMPLETED candle only (no repaint).
+// Everything below updates on confirmed chart bars only.
+
+sameTf = timeframe.in_seconds(setupTf) <= timeframe.in_seconds()
+
+[hH, hL, hO, hC] = request.security(syminfo.tickerid, setupTf, [high[1], low[1], open[1], close[1]], lookahead=barmerge.lookahead_on)
+tfNew = timeframe.change(setupTf)
+
+sH = sameTf ? high  : hH
+sL = sameTf ? low   : hL
+sO = sameTf ? open  : hO
+sC = sameTf ? close : hC
+
+// A sweep-timeframe candle has just completed
+sDone = barstate.isconfirmed and (sameTf or tfNew)
+
+// --- LIQUIDITY POOLS ----------------------------------------------------------
+
+type Pool
+    float  price
+    bool   isHigh
+    string src
+    string name
+    line   ln
+    label  lb
+
+var array<Pool> pools = array.new<Pool>()
+
+// Add a pool. A pool within the tolerance of an existing one on the same side
+// is merged into it (its name shows both, e.g. "PDH/4H H"). keep > 0 keeps
+// only the newest `keep` pools from the same source and side.
+addPool(array<Pool> ps, float p, bool isHigh, string src, int t, int keep) =>
+    bool dup = false
+    for q in ps
+        if q.isHigh == isHigh and math.abs(q.price - p) <= eqTol
+            dup := true
+            if not str.contains(q.name, src)
+                q.name := q.name + "/" + src
+                label.set_text(q.lb, q.name + " " + px(q.price))
+    if not dup
+        col    = isHigh ? highCol : lowCol
+        strong = src == "PDH" or src == "PDL" or str.startswith(src, "4H")
+        ln = line.new(t, p, t + 1, p, xloc=xloc.bar_time, extend=extend.right, color=showPools ? color.new(col, 35) : color.new(col, 100), width=strong ? 2 : 1, style=strong ? line.style_solid : line.style_dashed)
+        lb = label.new(bar_index, p, src + " " + px(p), style=label.style_label_left, color=showPools ? color.new(col, 70) : color.new(col, 100), textcolor=showPools ? color.white : color.new(color.white, 100), size=size.tiny)
+        ps.push(Pool.new(p, isHigh, src, src, ln, lb))
+        if keep > 0
+            int cnt = 0
+            for i = ps.size() - 1 to 0
+                q = ps.get(i)
+                if q.src == src and q.isHigh == isHigh
+                    cnt += 1
+                    if cnt > keep
+                        line.delete(q.ln)
+                        label.delete(q.lb)
+                        ps.remove(i)
+    dup
+
+// Stop a pool's line here and grey out its tag
+endPool(Pool q, string tag) =>
+    line.set_extend(q.ln, extend.none)
+    line.set_x2(q.ln, time)
+    label.set_xy(q.lb, bar_index, q.price)
+    label.set_text(q.lb, q.name + " " + tag)
+    label.set_color(q.lb, showPools ? color.new(color.gray, 65) : color.new(color.gray, 100))
+    label.set_textcolor(q.lb, showPools ? color.new(color.white, 30) : color.new(color.white, 100))
+    true
+
+// Check every live pool against the candle that just closed.
+// Wick through + close back = swept (a setup). Close through = broken.
+// Returns the swept pool names and the level nearest the close on each side.
+checkSweeps(array<Pool> ps, float h, float l, float c) =>
+    string bearN  = ""
+    float  bearLv = na
+    string bullN  = ""
+    float  bullLv = na
+    if ps.size() > 0
+        for i = ps.size() - 1 to 0
+            q = ps.get(i)
+            if q.isHigh and c > q.price
+                endPool(q, "broken")
+                ps.remove(i)
+            else if q.isHigh and h > q.price
+                bearN  := bearN == "" ? q.name : bearN + " + " + q.name
+                bearLv := na(bearLv) ? q.price : math.min(bearLv, q.price)
+                endPool(q, "swept")
+                ps.remove(i)
+            else if not q.isHigh and c < q.price
+                endPool(q, "broken")
+                ps.remove(i)
+            else if not q.isHigh and l < q.price
+                bullN  := bullN == "" ? q.name : bullN + " + " + q.name
+                bullLv := na(bullLv) ? q.price : math.max(bullLv, q.price)
+                endPool(q, "swept")
+                ps.remove(i)
+    [bearN, bearLv, bullN, bullLv]
+
+// Nearest pool beyond a price, on the given side (for TP3)
+nextPool(array<Pool> ps, bool wantHigh, float beyond) =>
+    float  best = na
+    string nm   = ""
+    for q in ps
+        if q.isHigh == wantHigh and (wantHigh ? q.price > beyond : q.price < beyond)
+            if na(best) or math.abs(q.price - beyond) < math.abs(best - beyond)
+                best := q.price
+                nm   := q.name
+    [best, nm]
+
+// Prior day high / low (futures day = the Globex session)
+[pdh, pdl, pdt] = request.security(syminfo.tickerid, "D", [high[1], low[1], time[1]], lookahead=barmerge.lookahead_on)
+newDay = timeframe.change("D")
+
+// Swing highs / lows (confirmed) from the last COMPLETED candle of a timeframe
+pivData(int len) =>
+    ph = ta.pivothigh(high, len, len)
+    pl = ta.pivotlow(low, len, len)
+    [ph[1], pl[1], time[len + 1]]
+
+[sph, spl, spt] = request.security(syminfo.tickerid, setupTf, pivData(pivLen), lookahead=barmerge.lookahead_on)
+[ph1, pl1, pt1] = request.security(syminfo.tickerid, "60",  pivData(pivLen), lookahead=barmerge.lookahead_on)
+[ph4, pl4, pt4] = request.security(syminfo.tickerid, "240", pivData(pivLen), lookahead=barmerge.lookahead_on)
+new1h = timeframe.change("60")
+new4h = timeframe.change("240")
+
+// Asia and London session high / low, built from chart bars
+inAsia = inSess(asiaSess)
+inLon  = inSess(lonSess)
+
+var float aH  = na
+var float aL  = na
+var int   aHt = na
+var int   aLt = na
+var float lH  = na
+var float lL  = na
+var int   lHt = na
+var int   lLt = na
+
+if inAsia and not inAsia[1]
+    aH  := high
+    aL  := low
+    aHt := time
+    aLt := time
+else if inAsia
+    if high > aH
+        aH  := high
+        aHt := time
+    if low < aL
+        aL  := low
+        aLt := time
+
+if inLon and not inLon[1]
+    lH  := high
+    lL  := low
+    lHt := time
+    lLt := time
+else if inLon
+    if high > lH
+        lH  := high
+        lHt := time
+    if low < lL
+        lL  := low
+        lLt := time
+
+asiaEnd = inAsia[1] and not inAsia
+lonEnd  = inLon[1] and not inLon
+
+// Recent sweep-timeframe swings, for equal highs / lows
+var array<float> recentHi = array.new<float>()
+var array<float> recentLo = array.new<float>()
+
+// --- TRADE LEVEL TAGS ---------------------------------------------------------
+// ENTRY / SL / TP1-3 are lines with a small price tag at the right end. While
+// live they ride along with the newest bar; when hit, the tag freezes there and
+// turns grey with "(HIT)".
+
+type Tag
+    string name
+    float  price
+    line   ln
+    label  lb
+    bool   live
+
+newTag(string name, float p, color bg, color txt) =>
+    ln = line.new(bar_index, p, bar_index, p, color=bg, width=1)
+    lb = label.new(bar_index, p, name + " " + px(p), style=label.style_label_left, color=bg, textcolor=txt, size=size.tiny)
+    Tag.new(name, p, ln, lb, true)
+
+rideTag(Tag t) =>
+    if not na(t) and t.live
+        line.set_x2(t.ln, bar_index)
+        label.set_x(t.lb, bar_index)
+    true
+
+freezeTag(Tag t, string suffix, color bg, color txt) =>
+    if not na(t) and t.live
+        t.live := false
+        line.set_x2(t.ln, bar_index)
+        label.set_x(t.lb, bar_index)
+        label.set_color(t.lb, bg)
+        label.set_textcolor(t.lb, txt)
+        label.set_text(t.lb, t.name + " " + px(t.price) + suffix)
+    true
+
+renameTag(Tag t, string name, float p, color bg, color txt) =>
+    if not na(t)
+        t.name  := name
+        t.price := p
+        line.set_y1(t.ln, p)
+        line.set_y2(t.ln, p)
+        label.set_y(t.lb, p)
+        label.set_text(t.lb, name + " " + px(p))
+        label.set_color(t.lb, bg)
+        label.set_textcolor(t.lb, txt)
+    true
+
+hitBg   = color.new(color.gray, 25)
+fadeBg  = color.new(color.gray, 75)
+fadeTxt = color.new(color.white, 40)
+
+// --- STATE --------------------------------------------------------------------
+
+var int    state     = 0      // 0 = flat, 1 = limit order waiting, 2 = in trade
+var int    dir       = 0      // 1 = long, -1 = short
+var int    setBar    = na
+var int    setTime   = na
+var string poolTxt   = ""
+var float  ePx       = na
+var int    eBar      = na
+var float  sl        = na
+var float  tp1       = na
+var float  tp2       = na
+var float  tp3       = na
+var string tp3Name   = ""
+var float  f1        = 0.0
+var float  f2        = 0.0
+var float  f3        = 0.0
+var int    tpIdx     = 1
+var bool   beMoved   = false
+var float  remaining = 1.0
+var float  banked    = 0.0
+var float  riskUSD   = na
+var Tag    tE        = na
+var Tag    tSL       = na
+var Tag    tT1       = na
+var Tag    tT2       = na
+var Tag    tT3       = na
+var int    nTrades   = 0
+var int    nWins     = 0
+var float  netUSD    = 0.0
+
+tid() => syminfo.ticker + "-" + str.tostring(setTime)
+
+freezeAll(string suffix) =>
+    freezeTag(tE,  suffix, fadeBg, fadeTxt)
+    freezeTag(tSL, suffix, fadeBg, fadeTxt)
+    freezeTag(tT1, suffix, fadeBg, fadeTxt)
+    freezeTag(tT2, suffix, fadeBg, fadeTxt)
+    freezeTag(tT3, suffix, fadeBg, fadeTxt)
+
+// --- 1) CHECK SWEEPS ON THE CANDLE THAT JUST CLOSED ---------------------------
+
+string bearN  = ""
+float  bearLv = na
+string bullN  = ""
+float  bullLv = na
+
+if sDone
+    [b1, b2, b3, b4] = checkSweeps(pools, sH, sL, sC)
+    bearN  := b1
+    bearLv := b2
+    bullN  := b3
+    bullLv := b4
+
+bearOK = bearN != "" and (not needRej or sC < sO)
+bullOK = bullN != "" and (not needRej or sC > sO)
+// An outside candle that swept both sides counts only in its close direction
+if bearOK and bullOK
+    bearOK := sC < sO
+    bullOK := not bearOK
+
+// --- 2) NEW SETUP: PLACE THE RETEST LIMIT ORDER --------------------------------
+
+if sDone and state == 0 and inSession and (bearOK or bullOK)
+    d      = bullOK ? 1 : -1
+    lvl    = d == 1 ? bullLv : bearLv
+    mid    = (sH + sL) / 2
+    useMid = entryAt == "50% of Sweep Candle" and (d == 1 ? mid < sC : mid > sC)
+    e      = math.round_to_mintick(useMid ? mid : lvl)
+    s      = d == 1 ? sL - buf : sH + buf
+    risk   = math.abs(e - s)
+    rUSD   = risk * pv
+    names  = d == 1 ? bullN : bearN
+    if risk <= 0 or (maxRisk > 0 and rUSD > maxRisk)
+        why = risk <= 0 ? "no room" : "risk $" + str.tostring(math.round(rUSD)) + " > max"
+        label.new(bar_index, d == 1 ? low : high, "skip: " + why, yloc=d == 1 ? yloc.belowbar : yloc.abovebar, style=d == 1 ? label.style_label_up : label.style_label_down, color=color.new(color.gray, 60), textcolor=color.white, size=size.tiny)
+        alert(isJson ? jHead("SKIP", "") + "," + jStr("side", d == 1 ? "LONG" : "SHORT") + "," + jStr("pool", names) + "," + jStr("reason", why) + "}" : "Sweep " + syminfo.ticker + ": " + (d == 1 ? "buy" : "sell") + " setup skipped, " + why, alert.freq_once_per_bar_close)
+    else
+        state     := 1
+        dir       := d
+        setBar    := bar_index
+        setTime   := time
+        poolTxt   := names
+        ePx       := e
+        sl        := s
+        riskUSD   := rUSD
+        tp1       := e + d * tp1R * risk
+        tp2       := e + d * tp2R * risk
+        tp3       := na
+        tp3Name   := ""
+        if tp3Pool
+            [np, nn] = nextPool(pools, d == 1, tp2)
+            tp3     := np
+            tp3Name := nn
+        if na(tp3) and tp3R > tp2R
+            tp3 := e + d * tp3R * risk
+        f1 := tp1Pct / 100.0
+        f2 := math.min(tp2Pct / 100.0, 1 - f1)
+        f3 := 1 - f1 - f2
+        if na(tp3)
+            f2 += f3
+            f3 := 0.0
+        tpIdx     := 1
+        beMoved   := false
+        remaining := 1.0
+        banked    := 0.0
+        label.new(bar_index, d == 1 ? low : high, "sweep " + names, yloc=d == 1 ? yloc.belowbar : yloc.abovebar, style=d == 1 ? label.style_label_up : label.style_label_down, color=color.new(d == 1 ? buyCol : sellCol, 70), textcolor=color.white, size=size.tiny)
+        tE  := newTag(d == 1 ? "BUY LMT" : "SELL LMT", e, color.new(entryCol, 40), color.black)
+        tSL := newTag("SL", s, sellCol, color.white)
+        tT1 := newTag("TP1", tp1, tpCol, color.white)
+        tT2 := newTag("TP2", tp2, tpCol, color.white)
+        tT3 := na
+        if f3 > 0
+            tT3 := newTag(tp3Name != "" ? "TP3 " + tp3Name : "TP3", tp3, tpCol, color.white)
+        msgJ = jHead("SETUP", tid()) + "," + jStr("side", d == 1 ? "LONG" : "SHORT") + "," + jStr("pool", names) + "," + jNum("limit", e, format.mintick) + "," + jNum("sl", s, format.mintick) + "," + jNum("tp1", tp1, format.mintick) + "," + jNum("tp2", tp2, format.mintick) + "," + jNum("tp3", f3 > 0 ? tp3 : na, format.mintick) + "," + jNum("risk_usd", rUSD, "#.##") + "," + jNum("expires_min", waitMin, "#") + "}"
+        msgT = "Sweep " + syminfo.ticker + ": " + names + " swept. " + (d == 1 ? "BUY" : "SELL") + " LIMIT " + px(e) + "  SL " + px(s) + "  TP1 " + px(tp1) + "  TP2 " + px(tp2) + (f3 > 0 ? "  TP3 " + px(tp3) : "") + "  risk $" + str.tostring(math.round(rUSD)) + "  (valid " + str.tostring(waitMin) + " min)"
+        alert(isJson ? msgJ : msgT, alert.freq_once_per_bar_close)
+
+// --- 3) WAITING LIMIT ORDER: FILL, MISS OR EXPIRE -----------------------------
+
+if barstate.isconfirmed and state == 1 and bar_index > setBar
+    filled  = dir == 1 ? low <= ePx : high >= ePx
+    ranAway = dir == 1 ? high >= tp1 : low <= tp1
+    expired = time - setTime >= waitMin * 60000
+    if filled
+        fillPx = dir == 1 ? math.min(open, ePx) : math.max(open, ePx)
+        state := 2
+        eBar  := bar_index
+        ePx   := fillPx
+        riskUSD := math.abs(ePx - sl) * pv
+        renameTag(tE, "ENTRY", ePx, entryCol, color.black)
+        label.new(bar_index, dir == 1 ? low : high, dir == 1 ? "BUY" : "SELL", yloc=dir == 1 ? yloc.belowbar : yloc.abovebar, style=dir == 1 ? label.style_label_up : label.style_label_down, color=dir == 1 ? buyCol : sellCol, textcolor=color.white, size=size.small)
+        msgJ = jHead("ENTRY", tid()) + "," + jStr("ctf", setupTf) + "," + jStr("side", dir == 1 ? "LONG" : "SHORT") + "," + jNum("entry", ePx, format.mintick) + "," + jNum("sl", sl, format.mintick) + "," + jNum("tp1", tp1, format.mintick) + "," + jNum("tp2", tp2, format.mintick) + "," + jNum("tp3", f3 > 0 ? tp3 : na, format.mintick) + "," + jNum("risk_usd", riskUSD, "#.##") + "," + jStr("swept", poolTxt) + "," + jStr("obstacle", "") + "," + jNum("contracts", contracts, "#") + "}"
+        msgT = "Sweep " + syminfo.ticker + ": " + (dir == 1 ? "BUY" : "SELL") + " filled @ " + px(ePx) + "  SL " + px(sl) + "  risk $" + str.tostring(math.round(riskUSD))
+        alert(isJson ? msgJ : msgT, alert.freq_once_per_bar_close)
+    else if ranAway or expired
+        why = ranAway ? "missed" : "expired"
+        freezeAll(" (" + why + ")")
+        state := 0
+        msgJ = jHead("MISSED", tid()) + "," + jStr("side", dir == 1 ? "LONG" : "SHORT") + "," + jStr("reason", ranAway ? "ran to TP1 without retest" : "not filled in " + str.tostring(waitMin) + " min") + "}"
+        msgT = "Sweep " + syminfo.ticker + ": " + (dir == 1 ? "buy" : "sell") + " limit " + px(ePx) + " cancelled (" + why + ")"
+        alert(isJson ? msgJ : msgT, alert.freq_once_per_bar_close)
+
+// --- 4) MANAGE THE OPEN TRADE -------------------------------------------------
+// The stop is checked from the fill bar on; targets from the bar after the fill.
+// Targets are taken in order; after the first one the stop moves to breakeven.
+// If a bar touches the stop and a target, the stop is assumed first.
+
+exitNow = false
+exitPx  = float(na)
+exitTxt = ""
+
+if barstate.isconfirmed and state == 2 and bar_index >= eBar
+    slHit = dir == 1 ? low <= sl : high >= sl
+    if slHit
+        exitNow := true
+        exitPx  := sl
+        exitTxt := beMoved ? "BE" : "SL"
+    if not slHit and bar_index > eBar and tpIdx <= 3
+        bool halt = false
+        for k = tpIdx to 3
+            p     = k == 1 ? tp1 : k == 2 ? tp2 : tp3
+            f     = k == 1 ? f1 : k == 2 ? f2 : f3
+            used  = not na(p) and f > 0
+            isHit = used and (dir == 1 ? high >= p : low <= p)
+            if not halt and not used
+                tpIdx := k + 1
+            if not halt and used and not isHit
+                halt := true
+            if not halt and isHit
+                banked    += f * (p - ePx) * dir
+                remaining -= f
+                tpIdx     := k + 1
+                freezeTag(k == 1 ? tT1 : k == 2 ? tT2 : tT3, " (HIT)", hitBg, color.white)
+                if remaining <= 0.0001
+                    exitNow := true
+                    exitPx  := p
+                    exitTxt := "TP" + str.tostring(k)
+                    halt    := true
+                else
+                    msgJ = jHead("TP" + str.tostring(k), tid()) + "," + jNum("price", p, format.mintick) + "," + jNum("closed_pct", f * 100, "#") + "," + jNum("banked_usd", banked * pv, "#.##") + "," + jNum("new_sl", ePx, format.mintick) + "}"
+                    msgT = "Sweep " + syminfo.ticker + ": TP" + str.tostring(k) + " hit @ " + px(p) + ". Close " + str.tostring(math.round(f * 100)) + "%, stop to breakeven " + px(ePx)
+                    alert(isJson ? msgJ : msgT, alert.freq_once_per_bar_close)
+                    if not beMoved
+                        beMoved := true
+                        freezeTag(tSL, " -> BE", fadeBg, fadeTxt)
+                        sl := ePx
+                        renameTag(tE, "BE", ePx, sellCol, color.white)
+
+if exitNow
+    pnlUSD = (banked + remaining * (exitPx - ePx) * dir) * pv
+    nTrades += 1
+    nWins   += pnlUSD > 0 ? 1 : 0
+    netUSD  += pnlUSD
+    if exitTxt == "SL"
+        freezeTag(tSL, " (HIT)", hitBg, color.white)
+    if exitTxt == "BE"
+        freezeTag(tE, " (HIT)", hitBg, color.white)
+    freezeAll("")
+    label.new(bar_index, dir == 1 ? high : low, exitTxt + " " + usd(pnlUSD), yloc=dir == 1 ? yloc.abovebar : yloc.belowbar, style=dir == 1 ? label.style_label_down : label.style_label_up, color=pnlUSD > 0 ? color.new(tpCol, 20) : color.new(color.gray, 20), textcolor=color.white, size=size.tiny)
+    msgJ = jHead("EXIT", tid()) + "," + jNum("price", exitPx, format.mintick) + "," + jStr("reason", exitTxt) + "," + jNum("pnl_usd", pnlUSD, "#.##") + "," + jNum("r_multiple", riskUSD > 0 ? pnlUSD / riskUSD : na, "#.##") + "}"
+    msgT = "Sweep " + syminfo.ticker + ": EXIT " + exitTxt + " @ " + px(exitPx) + "  Trade " + usd(pnlUSD)
+    alert(isJson ? msgJ : msgT, alert.freq_once_per_bar_close)
+    state := 0
+
+// Live tags ride along with the newest bar
+if state != 0
+    rideTag(tE)
+    rideTag(tSL)
+    rideTag(tT1)
+    rideTag(tT2)
+    rideTag(tT3)
+
+// --- 5) ADD NEW POOLS (after this bar's sweep check) --------------------------
+
+if barstate.isconfirmed
+    if usePD and newDay and not na(pdh)
+        addPool(pools, pdh, true,  "PDH", pdt, 1)
+        addPool(pools, pdl, false, "PDL", pdt, 1)
+    if useAsia and asiaEnd and not na(aH)
+        addPool(pools, aH, true,  "Asia H", aHt, 1)
+        addPool(pools, aL, false, "Asia L", aLt, 1)
+    if useLon and lonEnd and not na(lH)
+        addPool(pools, lH, true,  "Lon H", lHt, 1)
+        addPool(pools, lL, false, "Lon L", lLt, 1)
+    if use4h and new4h
+        if not na(ph4)
+            addPool(pools, ph4, true,  "4H H", pt4, maxKeep)
+        if not na(pl4)
+            addPool(pools, pl4, false, "4H L", pt4, maxKeep)
+    if use1h and new1h
+        if not na(ph1)
+            addPool(pools, ph1, true,  "1H H", pt1, maxKeep)
+        if not na(pl1)
+            addPool(pools, pl1, false, "1H L", pt1, maxKeep)
+    if useEq and (sameTf or tfNew)
+        if not na(sph)
+            for x in recentHi
+                if math.abs(x - sph) <= eqTol
+                    addPool(pools, math.max(x, sph), true, "EQH", spt, maxKeep)
+            recentHi.push(sph)
+            if recentHi.size() > 5
+                recentHi.shift()
+        if not na(spl)
+            for x in recentLo
+                if math.abs(x - spl) <= eqTol
+                    addPool(pools, math.min(x, spl), false, "EQL", spt, maxKeep)
+            recentLo.push(spl)
+            if recentLo.size() > 5
+                recentLo.shift()
+
+// Live pool tags sit at the right edge of the chart
+if barstate.islast
+    for q in pools
+        label.set_xy(q.lb, bar_index + 2, q.price)
+
+// --- STATUS TABLE -------------------------------------------------------------
+
+var table tbl = table.new(position.top_right, 2, 3, bgcolor=color.new(color.black, 60), border_color=color.new(color.gray, 40), border_width=1)
+
+if showTable and barstate.islast
+    tfTxt  = sameTf ? timeframe.period + " chart" : setupTf + " sweeps -> " + timeframe.period + " chart"
+    stTxt  = state == 0 ? "FLAT - watching " + str.tostring(pools.size()) + " pools" : state == 1 ? (dir == 1 ? "BUY" : "SELL") + " LIMIT " + px(ePx) + " (" + poolTxt + ")" : (dir == 1 ? "LONG " : "SHORT ") + px(ePx) + "  SL " + px(sl)
+    stCol  = state == 0 ? color.gray : dir == 1 ? buyCol : sellCol
+    winPct = nTrades > 0 ? 100.0 * nWins / nTrades : 0.0
+    table.cell(tbl, 0, 0, "Sweep", text_color=color.white, text_size=size.tiny)
+    table.cell(tbl, 1, 0, tfTxt, text_color=color.white, text_size=size.tiny)
+    table.cell(tbl, 0, 1, "Status", text_color=color.white, text_size=size.tiny)
+    table.cell(tbl, 1, 1, stTxt, text_color=stCol, text_size=size.tiny)
+    table.cell(tbl, 0, 2, "Results", text_color=color.white, text_size=size.tiny)
+    table.cell(tbl, 1, 2, str.tostring(nTrades) + " trades - " + str.tostring(winPct, "#") + "% win - " + usd(netUSD), text_color=netUSD >= 0 ? color.lime : color.red, text_size=size.tiny)

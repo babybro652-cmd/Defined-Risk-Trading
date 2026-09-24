@@ -1,10 +1,10 @@
 /**
- * CRT Basic → Google Sheet trade tracker (Google Apps Script)
+ * Liquidity Sweep → Google Sheet trade tracker (Google Apps Script)
  *
  * Receives the indicator's JSON webhook alerts and records them:
  *   Trades  — one row per trade (entry, stop, TP1-3, targets hit, exit, P&L, R)
  *   Log     — every alert received, raw
- *   Summary — win rate, net P&L, average R, swept-level vs. not
+ *   Summary — win rate, net P&L, average R, results by swept liquidity pool
  *
  * Setup: see apps-script/README.md
  */
@@ -18,7 +18,7 @@ const SUMMARY = 'Summary';
 
 const TRADE_HEADERS = [
   'Trade ID', 'Symbol', 'CRT TF', 'Side', 'Entry Time (NY)', 'Entry', 'Stop', 'TP1', 'TP2', 'TP3',
-  'Risk $', 'Swept Level', 'Level Before TP2', 'TP1 Hit', 'TP1 Time (NY)', 'TP2 Hit', 'TP2 Time (NY)',
+  'Risk $', 'Swept Pool', 'Level Before TP2', 'TP1 Hit', 'TP1 Time (NY)', 'TP2 Hit', 'TP2 Time (NY)',
   'Exit Time (NY)', 'Exit Price', 'Exit Reason', 'P&L $', 'R Multiple', 'Contracts',
 ];
 // 1-based column numbers in the Trades sheet
@@ -50,7 +50,7 @@ function doPost(e) {
     if (d.event === 'ENTRY') onEntry_(d);
     else if (d.event === 'TP1' || d.event === 'TP2') onTarget_(d, d.event);
     else if (d.event === 'EXIT') onExit_(d);
-    // SKIP events are only logged
+    // SETUP, MISSED and SKIP events are only logged
 
     return reply_('ok');
   } finally {
@@ -128,24 +128,26 @@ function setup() {
     ['Breakeven (BE)', '=COUNTIF(Trades!T2:T,"BE")'],
     ['Closed at TP2', '=COUNTIF(Trades!T2:T,"TP2")'],
     ['Closed at TP3', '=COUNTIF(Trades!T2:T,"TP3")'],
-    ['Win rate — swept a key level', '=IFERROR(COUNTIFS(Trades!L2:L,"?*",Trades!U2:U,">0")/COUNTIFS(Trades!L2:L,"?*",Trades!S2:S,"<>"),0)'],
-    ['Win rate — no key level', '=IFERROR(COUNTIFS(Trades!L2:L,"",Trades!U2:U,">0")/COUNTIFS(Trades!L2:L,"",Trades!S2:S,"<>"),0)'],
-    ['Net P&L $ — swept a key level', '=SUMIFS(Trades!U2:U,Trades!L2:L,"?*")'],
-    ['Net P&L $ — no key level', '=SUMIFS(Trades!U2:U,Trades!L2:L,"",Trades!S2:S,"<>")'],
+    ['Setups placed', '=COUNTIF(Log!B2:B,"SETUP")'],
+    ['Limit orders missed / expired', '=COUNTIF(Log!B2:B,"MISSED")'],
   ];
   sh.getRange(1, 1, rows.length, 2).setValues(rows);
   sh.getRange('A1:B1').setFontWeight('bold');
-  ['B4', 'B9', 'B10', 'B15', 'B16'].forEach(a => sh.getRange(a).setNumberFormat('0%'));
-  ['B5', 'B6', 'B7', 'B17', 'B18'].forEach(a => sh.getRange(a).setNumberFormat('$#,##0.00'));
+  ['B4', 'B9', 'B10'].forEach(a => sh.getRange(a).setNumberFormat('0%'));
+  ['B5', 'B6', 'B7'].forEach(a => sh.getRange(a).setNumberFormat('$#,##0.00'));
   sh.getRange('B8').setNumberFormat('0.00');
-  sh.autoResizeColumns(1, 2);
+  // Results by swept pool (PDH, Asia L, EQH, 4H H, ...)
+  sh.getRange('D1').setValue('By swept pool').setFontWeight('bold');
+  sh.getRange('D2').setFormula('=IFERROR(QUERY(Trades!L2:V,"select L, count(U), sum(U), avg(V) where S is not null group by L order by sum(U) desc label L \'Pool\', count(U) \'Trades\', sum(U) \'Net P&L $\', avg(V) \'Avg R\'",0),"No closed trades yet")');
+  sh.autoResizeColumns(1, 7);
 }
 
 /** Run from the editor to push a fake trade through the sheet without TradingView. */
 function testTrade() {
   const id = 'TEST-' + Date.now();
   const post = obj => doPost({ postData: { contents: JSON.stringify(Object.assign({ key: SECRET, symbol: 'ES1!', id: id }, obj)) } });
-  post({ event: 'ENTRY', time: '2026-09-23 09:45', ctf: '15', side: 'LONG', entry: 5800.25, sl: 5796.5, tp1: 5804, tp2: 5808.75, tp3: 5813, risk_usd: 187.5, swept: '1H', obstacle: '', contracts: 1 });
+  post({ event: 'SETUP', time: '2026-09-23 09:45', side: 'LONG', pool: 'PDL', limit: 5800.25, sl: 5796.5, tp1: 5804, tp2: 5807.75, tp3: 5813, risk_usd: 187.5, expires_min: 30 });
+  post({ event: 'ENTRY', time: '2026-09-23 09:52', ctf: '15', side: 'LONG', entry: 5800.25, sl: 5796.5, tp1: 5804, tp2: 5807.75, tp3: 5813, risk_usd: 187.5, swept: 'PDL', obstacle: '', contracts: 1 });
   post({ event: 'TP1', time: '2026-09-23 10:00', price: 5804, closed_pct: 50, banked_usd: 93.75, new_sl: 5800.25 });
   post({ event: 'TP2', time: '2026-09-23 10:15', price: 5808.75, closed_pct: 25, banked_usd: 200, new_sl: 5800.25 });
   post({ event: 'EXIT', time: '2026-09-23 10:45', price: 5813, reason: 'TP3', pnl_usd: 359.38, r_multiple: 1.92 });

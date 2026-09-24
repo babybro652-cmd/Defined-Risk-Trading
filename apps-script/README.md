@@ -1,10 +1,10 @@
-# CRT Basic → Google Sheet
+# Liquidity Sweep → Google Sheet
 
-Records every trade from the **CRT Basic** TradingView indicator (`pine/crt-basic.pine`) in a Google Sheet using a webhook alert and Google Apps Script (`crt-webhook.gs`).
+Records every trade from the **Liquidity Sweep** TradingView indicator (`pine/liquidity-sweep.pine`) in a Google Sheet using a webhook alert and Google Apps Script (`crt-webhook.gs`).
 
 ## 1. Create the sheet and script
 
-1. Create a new Google Sheet (for example "CRT Tracker").
+1. Create a new Google Sheet (for example "CRT Trade Tracker").
 2. Open **Extensions → Apps Script**, delete the sample code and paste in all of `crt-webhook.gs`.
 3. Change `const SECRET = 'change-me';` to a password of your own.
 4. Save. In the function menu choose **setup**, then **Run**. Approve the permissions the first time it asks. This creates the **Trades**, **Log** and **Summary** sheets.
@@ -21,11 +21,11 @@ If you edit the script later, use **Deploy → Manage deployments → Edit → V
 
 ## 3. Set up the TradingView alert
 
-1. On your chart, open the **CRT Basic** settings. Under **Alerts / Webhook**:
+1. On your chart, open the **Liquidity Sweep** settings. Under **Alerts / Webhook**:
    - Set **Alert Format** to `JSON (webhook)`.
    - Set **Webhook Key** to the same password as `SECRET`.
 2. Create an alert:
-   - **Condition:** `CRT Basic` → **Any alert() function call**
+   - **Condition:** `Liquidity Sweep` → **Any alert() function call**
    - **Expiration:** open-ended, or as long as your plan allows
    - **Notifications:** tick **Webhook URL** and paste the `/exec` URL
 3. Click **Create**.
@@ -38,12 +38,14 @@ An alert keeps using the script and settings it was created with. **After you ch
 
 | Alert | When | Sheet |
 |---|---|---|
-| `ENTRY` | Candle 3 opens | New row in **Trades** |
+| `SETUP` | A pool is swept and the retest limit order is placed | **Log** only |
+| `ENTRY` | The limit order fills | New row in **Trades** |
 | `TP1` / `TP2` | A partial target is hit | Sets TP1 Hit / TP2 Hit = Yes |
 | `EXIT` | SL, BE, or the final target (TP2 or TP3) | Adds exit price, reason, P&L $ and R |
-| `SKIP` | A valid CRT was skipped (too much risk, or price already moved) | **Log** only |
+| `MISSED` | The limit order was not filled (expired, or price ran to TP1 first) | **Log** only |
+| `SKIP` | A sweep was skipped (risk over your max) | **Log** only |
 
-**Summary** shows closed trades, win rate, net P&L, average win and loss, average R, TP1 and TP2 hit rates, how trades exited, and win rate and P&L for trades that **swept a 1H/4H key level** compared with those that didn't.
+**Summary** shows closed trades, win rate, net P&L, average win and loss, average R, TP1 and TP2 hit rates, how trades exited, how many setups were placed and missed, and a **by-pool table** (trades, net P&L and average R for each swept pool: PDH, Asia L, EQH, 4H H, ...).
 
 **Upgrading from an earlier version of the script:** the Trades columns changed when TP3 was added. Delete the old **Trades** and **Summary** tabs (or start a new sheet), paste in the new script, run **setup** again, and deploy a new version.
 
