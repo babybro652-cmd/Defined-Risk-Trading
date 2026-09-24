@@ -1,0 +1,82 @@
+//@version=6
+// ==============================================================================
+// CRT Setups - Step 1: setup markers only  |  Indicator  |  Pine Script v6
+// ==============================================================================
+//   Use on the 15m chart.
+//   C1 : the range candle (its high and low are drawn)
+//   C2 : wicks beyond C1's high (sell) or low (buy) and CLOSES back inside C1
+//   C3 : the entry candle. The entry zone is C2's close.
+//   Setups whose C3 falls in a no-trade window are shown greyed out.
+//   No entries, stops, targets or trade tracking yet - that is step 2.
+// ==============================================================================
+
+indicator("CRT Setups", overlay=true, max_labels_count=500, max_lines_count=500)
+
+noTrade1 = input.session("2300-0300", "No-Trade Window 1 (NY time)")
+noTrade2 = input.session("1630-2000", "No-Trade Window 2 (NY time)")
+showNoTr = input.bool(true, "Show Setups in No-Trade Windows (greyed)")
+zoneBars = input.int(4, "Entry Zone Length (bars after C3)", minval=1, maxval=20)
+buyCol   = input.color(#00C853, "Buy Color")
+sellCol  = input.color(#FF1744, "Sell Color")
+rangeCol = input.color(#787B86, "C1 Range Color")
+zoneCol  = input.color(#FFD600, "Entry Zone Color")
+
+inWin(string s) => not na(time(timeframe.period, s, "America/New_York"))
+
+// --- C2 closes: is it a CRT? --------------------------------------------------
+// C1 = previous bar, C2 = this bar
+c1H = high[1]
+c1L = low[1]
+
+sellC2 = high > c1H and close < c1H and close > c1L
+buyC2  = low < c1L and close > c1L and close < c1H
+// A C2 that swept both sides counts in the direction it closed
+if sellC2 and buyC2
+    sellC2 := close < open
+    buyC2  := not sellC2
+
+// Hold the setup from C2's close so it can be drawn when C3 starts
+var int   pDir  = 0
+var int   pBar  = na
+var float pC1H  = na
+var float pC1L  = na
+var float pC2C  = na
+
+// --- C3 starts: draw the setup ------------------------------------------------
+
+isC3    = pDir != 0 and bar_index == pBar + 1
+blocked = inWin(noTrade1) or inWin(noTrade2)
+if isC3
+    if not blocked or showNoTr
+        d     = pDir
+        col   = blocked ? color.gray : d == 1 ? buyCol : sellCol
+        faded = blocked ? 70 : 0
+        c1Bar = bar_index - 2
+        c2Bar = bar_index - 1
+        endX  = bar_index + zoneBars
+        // C1 range
+        line.new(c1Bar, pC1H, endX, pC1H, color=color.new(blocked ? color.gray : rangeCol, faded), width=1, style=line.style_dotted)
+        line.new(c1Bar, pC1L, endX, pC1L, color=color.new(blocked ? color.gray : rangeCol, faded), width=1, style=line.style_dotted)
+        // Candle tags
+        yl = d == 1 ? yloc.belowbar : yloc.abovebar
+        st = d == 1 ? label.style_label_up : label.style_label_down
+        label.new(c1Bar, close, "C1", xloc=xloc.bar_index, yloc=yl, style=st, color=color.new(col, 60 + faded / 4), textcolor=color.white, size=size.tiny)
+        label.new(c2Bar, close, "C2", xloc=xloc.bar_index, yloc=yl, style=st, color=color.new(col, 40 + faded / 4), textcolor=color.white, size=size.tiny)
+        label.new(bar_index, close, blocked ? "C3 (no-trade time)" : d == 1 ? "C3 BUY" : "C3 SELL", xloc=xloc.bar_index, yloc=yl, style=st, color=color.new(col, faded / 2), textcolor=color.white, size=size.small)
+        // Entry zone = C2's close
+        line.new(c2Bar, pC2C, endX, pC2C, color=color.new(blocked ? color.gray : zoneCol, faded), width=2)
+        label.new(endX, pC2C, "Entry zone " + str.tostring(pC2C, format.mintick), style=label.style_label_left, color=color.new(blocked ? color.gray : zoneCol, 20 + faded / 2), textcolor=color.black, size=size.tiny)
+
+// Clear the held setup once C3 has closed, then record a new one if this bar
+// is a C2 (a C3 can also be the C2 of the next setup)
+if barstate.isconfirmed
+    pDir := sellC2 ? -1 : buyC2 ? 1 : 0
+    pBar := bar_index
+    pC1H := c1H
+    pC1L := c1L
+    pC2C := close
+
+// --- Alert --------------------------------------------------------------------
+// Fires as C3 opens (set the alert to "Once Per Bar"), outside the no-trade windows
+alertcondition(isC3 and not blocked and pDir == -1, "CRT sell setup", "CRT SELL setup on {{ticker}}: C3 is open. Entry zone = C2 close.")
+alertcondition(isC3 and not blocked and pDir == 1, "CRT buy setup", "CRT BUY setup on {{ticker}}: C3 is open. Entry zone = C2 close.")
