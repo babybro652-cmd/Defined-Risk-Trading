@@ -10,8 +10,7 @@
 //     (above a low pool = buy setup, below a high pool = sell setup)
 //   Entry (chart timeframe, e.g. 1m):
 //     limit order on the retest of the swept level (or 50% of the sweep candle).
-//     Cancelled if not filled within the retest window, or if price runs to TP1
-//     without retesting.
+//     Cancelled if not filled within the retest window.
 //   Stop : beyond the sweep candle's wick
 //   TP1 / TP2 : R multiples of the risk.  TP3 : next liquidity pool on the
 //   other side (or an R multiple). After TP1 the stop moves to breakeven.
@@ -26,7 +25,7 @@ indicator("Liquidity Sweep", overlay=true, max_labels_count=500, max_lines_count
 
 grpSet    = "Setup"
 setupTf   = input.timeframe("15", "Sweep Timeframe", group=grpSet, tooltip="Sweeps are read from completed candles of this timeframe. Put the indicator on a lower chart (e.g. 1m) to work the retest entry.")
-needRej   = input.bool(true, "Sweep Candle Must Close in Trade Direction", group=grpSet, tooltip="Sell setups need a red sweep candle, buy setups a green one.")
+needRej   = input.bool(false, "Sweep Candle Must Close in Trade Direction", group=grpSet, tooltip="Stricter: sell setups need a red sweep candle, buy setups a green one. Off = any sweep candle that closes back inside counts.")
 bufTicks  = input.int(2, "Stop Buffer (ticks)", minval=0, maxval=40, group=grpSet)
 
 grpEnt    = "Retest Entry"
@@ -334,6 +333,9 @@ var Tag    tSL       = na
 var Tag    tT1       = na
 var Tag    tT2       = na
 var Tag    tT3       = na
+var int    nSweeps   = 0      // sweeps seen (any time)
+var int    nSetups   = 0      // limit orders placed
+var int    nMissed   = 0      // limit orders that expired
 var int    nTrades   = 0
 var int    nWins     = 0
 var float  netUSD    = 0.0
@@ -361,6 +363,9 @@ if sDone
     bullN  := b3
     bullLv := b4
 
+if bearN != "" or bullN != ""
+    nSweeps += 1
+
 bearOK = bearN != "" and (not needRej or sC < sO)
 bullOK = bullN != "" and (not needRej or sC > sO)
 // An outside candle that swept both sides counts only in its close direction
@@ -385,6 +390,7 @@ if sDone and state == 0 and inSession and (bearOK or bullOK)
         label.new(bar_index, d == 1 ? low : high, "skip: " + why, yloc=d == 1 ? yloc.belowbar : yloc.abovebar, style=d == 1 ? label.style_label_up : label.style_label_down, color=color.new(color.gray, 60), textcolor=color.white, size=size.tiny)
         alert(isJson ? jHead("SKIP", "") + "," + jStr("side", d == 1 ? "LONG" : "SHORT") + "," + jStr("pool", names) + "," + jStr("reason", why) + "}" : "Sweep " + syminfo.ticker + ": " + (d == 1 ? "buy" : "sell") + " setup skipped, " + why, alert.freq_once_per_bar_close)
     else
+        nSetups   += 1
         state     := 1
         dir       := d
         setBar    := bar_index
@@ -413,7 +419,7 @@ if sDone and state == 0 and inSession and (bearOK or bullOK)
         beMoved   := false
         remaining := 1.0
         banked    := 0.0
-        label.new(bar_index, d == 1 ? low : high, "sweep " + names, yloc=d == 1 ? yloc.belowbar : yloc.abovebar, style=d == 1 ? label.style_label_up : label.style_label_down, color=color.new(d == 1 ? buyCol : sellCol, 70), textcolor=color.white, size=size.tiny)
+        label.new(bar_index, d == 1 ? low : high, (d == 1 ? "BUY LMT\n" : "SELL LMT\n") + names + " swept", yloc=d == 1 ? yloc.belowbar : yloc.abovebar, style=d == 1 ? label.style_label_up : label.style_label_down, color=color.new(d == 1 ? buyCol : sellCol, 45), textcolor=color.white, size=size.small)
         tE  := newTag(d == 1 ? "BUY LMT" : "SELL LMT", e, color.new(entryCol, 40), color.black)
         tSL := newTag("SL", s, sellCol, color.white)
         tT1 := newTag("TP1", tp1, tpCol, color.white)
@@ -429,7 +435,6 @@ if sDone and state == 0 and inSession and (bearOK or bullOK)
 
 if barstate.isconfirmed and state == 1 and bar_index > setBar
     filled  = dir == 1 ? low <= ePx : high >= ePx
-    ranAway = dir == 1 ? high >= tp1 : low <= tp1
     expired = time - setTime >= waitMin * 60000
     if filled
         fillPx = dir == 1 ? math.min(open, ePx) : math.max(open, ePx)
@@ -442,12 +447,12 @@ if barstate.isconfirmed and state == 1 and bar_index > setBar
         msgJ = jHead("ENTRY", tid()) + "," + jStr("ctf", setupTf) + "," + jStr("side", dir == 1 ? "LONG" : "SHORT") + "," + jNum("entry", ePx, format.mintick) + "," + jNum("sl", sl, format.mintick) + "," + jNum("tp1", tp1, format.mintick) + "," + jNum("tp2", tp2, format.mintick) + "," + jNum("tp3", f3 > 0 ? tp3 : na, format.mintick) + "," + jNum("risk_usd", riskUSD, "#.##") + "," + jStr("swept", poolTxt) + "," + jStr("obstacle", "") + "," + jNum("contracts", contracts, "#") + "}"
         msgT = "Sweep " + syminfo.ticker + ": " + (dir == 1 ? "BUY" : "SELL") + " filled @ " + px(ePx) + "  SL " + px(sl) + "  risk $" + str.tostring(math.round(riskUSD))
         alert(isJson ? msgJ : msgT, alert.freq_once_per_bar_close)
-    else if ranAway or expired
-        why = ranAway ? "missed" : "expired"
-        freezeAll(" (" + why + ")")
+    else if expired
+        nMissed += 1
+        freezeAll(" (expired)")
         state := 0
-        msgJ = jHead("MISSED", tid()) + "," + jStr("side", dir == 1 ? "LONG" : "SHORT") + "," + jStr("reason", ranAway ? "ran to TP1 without retest" : "not filled in " + str.tostring(waitMin) + " min") + "}"
-        msgT = "Sweep " + syminfo.ticker + ": " + (dir == 1 ? "buy" : "sell") + " limit " + px(ePx) + " cancelled (" + why + ")"
+        msgJ = jHead("MISSED", tid()) + "," + jStr("side", dir == 1 ? "LONG" : "SHORT") + "," + jStr("reason", "not filled in " + str.tostring(waitMin) + " min") + "}"
+        msgT = "Sweep " + syminfo.ticker + ": " + (dir == 1 ? "buy" : "sell") + " limit " + px(ePx) + " expired, not filled in " + str.tostring(waitMin) + " min"
         alert(isJson ? msgJ : msgT, alert.freq_once_per_bar_close)
 
 // --- 4) MANAGE THE OPEN TRADE -------------------------------------------------
@@ -565,7 +570,7 @@ if barstate.islast
 
 // --- STATUS TABLE -------------------------------------------------------------
 
-var table tbl = table.new(position.top_right, 2, 3, bgcolor=color.new(color.black, 60), border_color=color.new(color.gray, 40), border_width=1)
+var table tbl = table.new(position.top_right, 2, 4, bgcolor=color.new(color.black, 60), border_color=color.new(color.gray, 40), border_width=1)
 
 if showTable and barstate.islast
     tfTxt  = sameTf ? timeframe.period + " chart" : setupTf + " sweeps -> " + timeframe.period + " chart"
@@ -576,5 +581,7 @@ if showTable and barstate.islast
     table.cell(tbl, 1, 0, tfTxt, text_color=color.white, text_size=size.tiny)
     table.cell(tbl, 0, 1, "Status", text_color=color.white, text_size=size.tiny)
     table.cell(tbl, 1, 1, stTxt, text_color=stCol, text_size=size.tiny)
+    table.cell(tbl, 0, 3, "Activity", text_color=color.white, text_size=size.tiny)
+    table.cell(tbl, 1, 3, str.tostring(nSweeps) + " sweeps - " + str.tostring(nSetups) + " limit orders - " + str.tostring(nMissed) + " expired", text_color=color.white, text_size=size.tiny)
     table.cell(tbl, 0, 2, "Results", text_color=color.white, text_size=size.tiny)
     table.cell(tbl, 1, 2, str.tostring(nTrades) + " trades - " + str.tostring(winPct, "#") + "% win - " + usd(netUSD), text_color=netUSD >= 0 ? color.lime : color.red, text_size=size.tiny)

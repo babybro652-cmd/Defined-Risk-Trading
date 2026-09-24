@@ -42,7 +42,7 @@ An alert keeps using the script and settings it was created with. **After you ch
 | `ENTRY` | The limit order fills | New row in **Trades** |
 | `TP1` / `TP2` | A partial target is hit | Sets TP1 Hit / TP2 Hit = Yes |
 | `EXIT` | SL, BE, or the final target (TP2 or TP3) | Adds exit price, reason, P&L $ and R |
-| `MISSED` | The limit order was not filled (expired, or price ran to TP1 first) | **Log** only |
+| `MISSED` | The limit order expired without filling | **Log** only |
 | `SKIP` | A sweep was skipped (risk over your max) | **Log** only |
 
 **Summary** shows closed trades, win rate, net P&L, average win and loss, average R, TP1 and TP2 hit rates, how trades exited, how many setups were placed and missed, and a **by-pool table** (trades, net P&L and average R for each swept pool: PDH, Asia L, EQH, 4H H, ...).
