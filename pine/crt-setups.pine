@@ -20,6 +20,11 @@
 //        (support). A level is removed once a 15m candle closes through it.
 //        With "Require Key Level" on, C2 must sweep into a level: a sell C2
 //        into resistance, a buy C2 into support.
+//   Session levels: Asia high/low, London high/low and the previous day's
+//        high/low are added to the key levels once the session is over.
+//   Bias line: the NY midnight open (or the 6pm daily open). With the bias
+//        filter on, a setup only counts when its entry zone is on the right
+//        side of the line: above = buys, below = sells (can be flipped).
 //   Weekly trend: higher/lower daily highs and lows over the last 5 days.
 //        Setups against it are tagged "CT" (counter-trend), not blocked.
 //   Targets: TP1 = Target Step $ from entry, TP2 = 2 steps, TP3 = 3 steps ...
@@ -64,6 +69,16 @@ use4h     = input.bool(true,  "4H Levels", group=grpLvl)
 pivLen    = input.int(3, "Swing Strength (bars each side)", minval=2, maxval=10, group=grpLvl, tooltip="A 1H/4H swing high needs this many lower highs on each side. Higher = fewer, stronger levels.")
 maxLvls   = input.int(3, "Levels Kept per Timeframe & Side", minval=1, maxval=10, group=grpLvl)
 lvlZone   = input.float(2.0, "Level Zone (points)", minval=0, step=0.25, group=grpLvl, tooltip="How close C2's sweep must come to a level to count. Levels closer than this are merged.")
+useAsia   = input.bool(true, "Asia High/Low", group=grpLvl, inline="ses")
+useLon    = input.bool(true, "London High/Low", group=grpLvl, inline="ses")
+usePD     = input.bool(true, "Prev Day High/Low", group=grpLvl)
+asiaSess  = input.session("2000-2359", "Asia Session (NY time)", group=grpLvl)
+lonSess   = input.session("0200-0500", "London Session (NY time)", group=grpLvl)
+grpBias   = "Bias Line"
+biasSrc   = input.string("Midnight Open", "Bias Line", options=["Midnight Open", "Daily Open (6pm)", "Off"], group=grpBias, tooltip="Midnight Open = price at 00:00 NY. Daily Open = price at the 6pm NY futures open.")
+biasRule  = input.string("Above = Buys", "Bias Rule", options=["Above = Buys", "Above = Sells"], group=grpBias, tooltip="Above = Buys: entry zone above the line -> only buys, below -> only sells. Above = Sells is the premium/discount (AMD) reading.")
+useBias   = input.bool(true, "Bias Filter (skip setups on the wrong side)", group=grpBias)
+biasCol   = input.color(#2962FF, "Bias Line Color", group=grpBias)
 resCol    = input.color(#FF9800, "Resistance Color", group=grpLvl)
 supCol    = input.color(#26A69A, "Support Color", group=grpLvl)
 buyCol    = input.color(#00C853, "Buy Color")
@@ -133,15 +148,15 @@ pivData(int len) =>
 new1h = timeframe.change("60")
 new4h = timeframe.change("240")
 
-// Add a level unless one on the same side is already within the zone (a 4H
-// swing on top of a 1H level upgrades it to "1H+4H"). Keeps the newest few.
-addLevel(array<Level> lv, float p, bool isRes, string tf, int t) =>
+// Add a level unless one on the same side is already within the zone (then
+// the two are merged, e.g. "1H+4H" or "1H+Asia"). Keeps the newest few.
+addLevel(array<Level> lv, float p, bool isRes, string tf, int t, int keep) =>
     bool dup = false
     for l in lv
-        if l.isRes == isRes and math.abs(l.price - p) <= lvlZone
+        if not dup and l.isRes == isRes and math.abs(l.price - p) <= lvlZone
             dup := true
-            if tf == "4H" and l.tf == "1H"
-                l.tf := "1H+4H"
+            if not str.contains(l.tf, tf)
+                l.tf := l.tf + "+" + tf
                 line.set_width(l.ln, 2)
                 line.set_style(l.ln, line.style_solid)
     if not dup
@@ -154,7 +169,7 @@ addLevel(array<Level> lv, float p, bool isRes, string tf, int t) =>
             l = lv.get(i)
             if l.isRes == isRes and l.tf == tf
                 cnt += 1
-                if cnt > maxLvls
+                if cnt > keep
                     line.delete(l.ln)
                     label.delete(l.lb)
                     lv.remove(i)
@@ -171,14 +186,56 @@ removeBroken(array<Level> lv, float c) =>
                 lv.remove(i)
     true
 
-// Which level (if any) sits inside a price band; 4H wins over 1H
+// Which level (if any) sits inside a price band; merged levels win
 levelIn(array<Level> lv, bool wantRes, float lo, float hi) =>
     string tag = ""
     for l in lv
         if l.isRes == wantRes and l.price >= lo and l.price <= hi
-            if tag == "" or str.contains(l.tf, "4H")
+            if tag == "" or str.contains(l.tf, "+") or (str.contains(l.tf, "4H") and not str.contains(tag, "+"))
                 tag := l.tf
     tag
+
+// Session high/low: returns the final high/low on the first bar after it ends
+sessTrack(string sess) =>
+    var float h   = na
+    var float l   = na
+    var int   t0  = na
+    var bool  was = false
+    inS = inWin(sess)
+    fin = was and not inS
+    fh  = h
+    fl  = l
+    ft  = t0
+    if inS
+        if not was
+            h  := high
+            l  := low
+            t0 := time
+        else
+            h := math.max(h, high)
+            l := math.min(l, low)
+    was := inS
+    [fin, fh, fl, ft]
+
+[asiaEnd, asiaH, asiaL, asiaT] = sessTrack(asiaSess)
+[lonEnd, lonH, lonL, lonT]     = sessTrack(lonSess)
+[pdH, pdL, pdT] = request.security(syminfo.tickerid, "D", [high[1], low[1], time[1]], lookahead=barmerge.lookahead_on)
+newDay = timeframe.change("D")
+
+// --- BIAS LINE ----------------------------------------------------------------
+
+nyDay = dayofmonth(time, "America/New_York")
+var float midOpen = na
+if nyDay != nyDay[1]
+    midOpen := open
+var float dayOpen = na
+if newDay
+    dayOpen := open
+biasLine = biasSrc == "Midnight Open" ? midOpen : biasSrc == "Daily Open (6pm)" ? dayOpen : na
+plot(biasLine, "Bias Line", color=biasCol, linewidth=2, style=plot.style_stepline)
+// +1 = looking for buys, -1 = looking for sells, 0 = no bias
+biasAt(float p) => na(biasLine) ? 0 : (p > biasLine ? 1 : p < biasLine ? -1 : 0) * (biasRule == "Above = Buys" ? 1 : -1)
+bias = biasAt(close)
 
 // Did C2 sweep into a level? Sell: C2 went from C1's high up to its own high.
 // Buy: from C1's low down to its own low. (Checked before this bar's upkeep.)
@@ -193,8 +250,9 @@ if sellRaw and buyRaw
     buyRaw  := not sellRaw
 // Noise filters
 bigC1   = minRange <= 0 or (c1H - c1L) >= minRange
-sellCRT = sellRaw and bigC1 and c2H >= c1H + sweep and (not needLevel or sellLvl != "")
-buyCRT  = buyRaw and bigC1 and c2L <= c1L - sweep and (not needLevel or buyLvl != "")
+zBias   = biasAt(c2C)
+sellCRT = sellRaw and bigC1 and c2H >= c1H + sweep and (not needLevel or sellLvl != "") and (not useBias or zBias != 1)
+buyCRT  = buyRaw and bigC1 and c2L <= c1L - sweep and (not needLevel or buyLvl != "") and (not useBias or zBias != -1)
 noise   = (sellRaw or buyRaw) and not (sellCRT or buyCRT)
 
 // --- TRADE LEVEL TAGS ---------------------------------------------------------
@@ -391,14 +449,23 @@ if barstate.isconfirmed
         removeBroken(levels, c2C)
     if use4h and new4h
         if not na(ph4)
-            addLevel(levels, ph4, true, "4H", pt4)
+            addLevel(levels, ph4, true, "4H", pt4, maxLvls)
         if not na(pl4)
-            addLevel(levels, pl4, false, "4H", pt4)
+            addLevel(levels, pl4, false, "4H", pt4, maxLvls)
     if use1h and new1h
         if not na(ph1)
-            addLevel(levels, ph1, true, "1H", pt1)
+            addLevel(levels, ph1, true, "1H", pt1, maxLvls)
         if not na(pl1)
-            addLevel(levels, pl1, false, "1H", pt1)
+            addLevel(levels, pl1, false, "1H", pt1, maxLvls)
+    if usePD and newDay and not na(pdH)
+        addLevel(levels, pdH, true, "PD", pdT, 1)
+        addLevel(levels, pdL, false, "PD", pdT, 1)
+    if useAsia and asiaEnd and not na(asiaH)
+        addLevel(levels, asiaH, true, "Asia", asiaT, 1)
+        addLevel(levels, asiaL, false, "Asia", asiaT, 1)
+    if useLon and lonEnd and not na(lonH)
+        addLevel(levels, lonH, true, "London", lonT, 1)
+        addLevel(levels, lonL, false, "London", lonT, 1)
 
 // Level tags sit at the right edge of the chart
 if barstate.islast
@@ -408,7 +475,7 @@ if barstate.islast
 
 // --- STATUS TABLE -------------------------------------------------------------
 
-var table tbl = table.new(position.top_right, 2, 4, bgcolor=color.new(color.black, 60), border_color=color.new(color.gray, 40), border_width=1)
+var table tbl = table.new(position.top_right, 2, 5, bgcolor=color.new(color.black, 60), border_color=color.new(color.gray, 40), border_width=1)
 
 if barstate.islast
     openPnl = dir != 0 ? (close - ePx) * dir * pv : 0.0
@@ -420,5 +487,7 @@ if barstate.islast
     table.cell(tbl, 1, 1, trendTxt + " (" + str.tostring(trendDays) + " days, score " + str.tostring(tScore) + ")", text_color=trend == 1 ? buyCol : trend == -1 ? sellCol : color.gray, text_size=size.tiny)
     table.cell(tbl, 0, 2, "Status", text_color=color.white, text_size=size.tiny)
     table.cell(tbl, 1, 2, stTxt, text_color=dir == 1 or armDir == 1 ? buyCol : dir == -1 or armDir == -1 ? sellCol : color.gray, text_size=size.tiny)
+    table.cell(tbl, 0, 4, "Bias", text_color=color.white, text_size=size.tiny)
+    table.cell(tbl, 1, 4, na(biasLine) ? "Off" : (bias == 1 ? "BUYS" : bias == -1 ? "SELLS" : "AT LINE") + " (" + (close > biasLine ? "above " : "below ") + biasSrc + " " + px(biasLine) + ")", text_color=bias == 1 ? buyCol : bias == -1 ? sellCol : color.gray, text_size=size.tiny)
     table.cell(tbl, 0, 3, "Results", text_color=color.white, text_size=size.tiny)
     table.cell(tbl, 1, 3, str.tostring(nTrades) + " trades - " + str.tostring(winPct, "#") + "% win - " + usd(netUSD), text_color=netUSD >= 0 ? color.lime : color.red, text_size=size.tiny)
