@@ -40,6 +40,11 @@ function doPost(e) {
   lock.waitLock(20000);
   try {
     const body = e && e.postData ? e.postData.contents : '';
+    if (!body) {
+      // doPost was run from the editor (it only works when TradingView calls it)
+      sheet_(LOG, LOG_HEADERS).appendRow([new Date(), 'EMPTY', '', '', '', 'No alert data. Do not run doPost from the editor - run setup, then testTrade.']);
+      return reply_('empty');
+    }
     let d;
     try {
       d = JSON.parse(body);
