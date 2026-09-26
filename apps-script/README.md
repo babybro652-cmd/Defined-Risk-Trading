@@ -1,52 +1,57 @@
-# Liquidity Sweep → Google Sheet
+# CRT Setups → Google Sheet
 
-Records every trade from the **Liquidity Sweep** TradingView indicator (`pine/liquidity-sweep.pine`) in a Google Sheet using a webhook alert and Google Apps Script (`crt-webhook.gs`).
+Records every setup and trade from the **CRT Setups** TradingView indicator (`pine/crt-setups.pine`) in a Google Sheet using webhook alerts and Google Apps Script (`crt-setups-tracker.gs`). The sheet fills in as you trade, so the weekly review is ready without copying anything from the chart.
 
-## 1. Create the sheet and script
+(The older Liquidity Sweep tracker is in `archive/`.)
 
-1. Create a new Google Sheet (for example "CRT Trade Tracker").
-2. Open **Extensions → Apps Script**, delete the sample code and paste in all of `crt-webhook.gs`.
+## 1. Attach the script to the sheet
+
+1. Open the **CRT Setups Tracker** Google Sheet (or create a new blank one).
+2. Open **Extensions → Apps Script**, delete the sample code and paste in all of `crt-setups-tracker.gs`.
 3. Change `const SECRET = 'change-me';` to a password of your own.
-4. Save. In the function menu choose **setup**, then **Run**. Approve the permissions the first time it asks. This creates the **Trades**, **Log** and **Summary** sheets.
-5. Optional: choose **testTrade** and click **Run**. A test trade should appear in **Trades**. Delete that row afterwards.
+4. Save. In the function menu choose **setup**, then **Run**. Approve the permissions the first time it asks. This creates the **Summary**, **Trades**, **Setups** and **Log** tabs.
+5. Optional: choose **testTrade** and click **Run**. A test trade appears in **Trades** and two rows in **Setups**. Delete those rows afterwards (and the matching rows in **Log**).
 
 ## 2. Deploy it as a web app
 
 1. **Deploy → New deployment**. Click the gear and choose **Web app**.
 2. Set **Execute as** to **Me** and **Who has access** to **Anyone**.
 3. Click **Deploy** and copy the **Web app URL** (it ends in `/exec`).
-4. Paste the URL into a browser. It should show `CRT webhook is live`.
+4. Paste the URL into a browser. It should show `CRT Setups tracker is live`.
 
 If you edit the script later, use **Deploy → Manage deployments → Edit → Version: New version** so the URL stays the same.
 
 ## 3. Set up the TradingView alert
 
-1. On your chart, open the **Liquidity Sweep** settings. Under **Alerts / Webhook**:
+1. On the **1m chart**, open the **CRT Setups** settings. Under **Alerts / Webhook**:
    - Set **Alert Format** to `JSON (webhook)`.
    - Set **Webhook Key** to the same password as `SECRET`.
 2. Create an alert:
-   - **Condition:** `Liquidity Sweep` → **Any alert() function call**
+   - **Condition:** `CRT Setups` → **Any alert() function call**
    - **Expiration:** open-ended, or as long as your plan allows
    - **Notifications:** tick **Webhook URL** and paste the `/exec` URL
 3. Click **Create**.
 
-Webhook alerts need a paid TradingView plan and 2-factor authentication turned on.
+Webhook alerts need a paid TradingView plan (Essential or higher) and 2-factor authentication turned on.
 
 An alert keeps using the script and settings it was created with. **After you change the script or its settings, delete the alert and create it again.**
+
+With JSON format, TradingView's own pop-ups and app notifications show the raw JSON text. If you also want readable phone notifications, add the indicator to the chart a second time with **Alert Format** set to `Text` and create a second alert from that copy (without the webhook).
 
 ## What gets recorded
 
 | Alert | When | Sheet |
 |---|---|---|
-| `SETUP` | A pool is swept and the retest limit order is placed | **Log** only |
-| `ENTRY` | The limit order fills | New row in **Trades** |
-| `TP1` / `TP2` | A partial target is hit | Sets TP1 Hit / TP2 Hit = Yes |
-| `EXIT` | SL, BE, or the final target (TP2 or TP3) | Adds exit price, reason, P&L $ and R |
-| `MISSED` | The limit order expired without filling | **Log** only |
-| `SKIP` | A sweep was skipped (risk over your max) | **Log** only |
+| `SETUP` | A setup is armed, a level sweep is waiting for C3, or a sweep is confirmed | New row in **Setups** |
+| `MISSED` | An armed setup's window ended with no 1m retest or clean break | New row in **Setups** |
+| `ENTRY` | The 1m trigger fired | New row in **Trades** |
+| `STOP` | The stop moved (breakeven, 15m trail, profit floor) | Updates **Last Stop** |
+| `EXIT` | SL, BE, TRAIL, REVERSE or NO-TRADE TIME | Adds exit time, price, reason, P&L $, best open $ and Win/Loss/Breakeven |
 
-**Summary** shows closed trades, win rate, net P&L, average win and loss, average R, TP1 and TP2 hit rates, how trades exited, how many setups were placed and missed, and a **by-pool table** (trades, net P&L and average R for each swept pool: PDH, Asia L, EQH, 4H H, ...).
+Every alert is also copied to **Log** as it arrived.
 
-**Upgrading from an earlier version of the script:** the Trades columns changed when TP3 was added. Delete the old **Trades** and **Summary** tabs (or start a new sheet), paste in the new script, run **setup** again, and deploy a new version.
+**Trades** columns: Trade ID, Week Of (Monday), Date, Entry Time, Session (London / NY AM), Side, Setup (CRT / SWEEP), Level (e.g. `London`, `1H+Asia`, `NY low`), Counter-Trend, Trigger (retest / break), Entry, Stop, TP1, Last Stop, Exit Time, Exit Price, Exit Reason, P&L $, Best Open $ (the most the trade was up), Result, Contracts.
 
-P&L is calculated from the indicator's levels (stop and target prices) for the number of contracts in the settings. It does not include commission or slippage.
+**Summary** shows closed trades, wins, losses, win rate, net P&L, average win and loss, profit factor, largest win and loss, average best open profit, setups alerted and missed, plus tables **by week**, **by setup type**, **by level**, **by session** and **by exit reason**.
+
+P&L is calculated from the indicator's own entry and exit prices for the number of contracts in the settings. It does not include commission or slippage.

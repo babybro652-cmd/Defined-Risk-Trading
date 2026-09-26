@@ -35,6 +35,11 @@
 //   Session extreme: a normal CRT also counts when C2 made the new high (sell)
 //        or low (buy) of the current session so far (London from 3:00, NY
 //        from 9:30), even with no other level there.
+//   5m FVG / IFVG (draw only, research): fair value gaps from 5m candles are
+//        boxed on the 1m chart. When a 5m candle closes through one it flips
+//        colour and is tagged "IFVG". Does not change any signals or trades.
+//   Alerts: plain text, or JSON for the Google Sheet tracker
+//        (apps-script/crt-setups-tracker.gs): SETUP, ENTRY, STOP, EXIT, MISSED.
 //   Weekly trend: higher/lower daily highs and lows over the last 5 days.
 //        Setups against it are tagged "CT" (counter-trend), not blocked.
 //   Targets: TP1 = Target Step $ from entry, TP2 = 2 steps, TP3 = 3 steps ...
@@ -54,7 +59,7 @@
 //        it closes the trade at market ("REVERSE") and is armed as usual.
 // ==============================================================================
 
-indicator("CRT Setups", overlay=true, max_labels_count=500, max_lines_count=500)
+indicator("CRT Setups", overlay=true, max_labels_count=500, max_lines_count=500, max_boxes_count=500)
 
 // --- SETTINGS -----------------------------------------------------------------
 
@@ -96,6 +101,17 @@ nySess    = input.session("0930-1600", "NY Session (NY time)", group=grpLvl)
 useExt    = input.bool(true, "Session High/Low So Far Counts as a Level", group=grpLvl, tooltip="A normal CRT qualifies when C2 made the new high (sell) or low (buy) of the current London or NY session.")
 resCol    = input.color(#FF9800, "Resistance Color", group=grpLvl)
 supCol    = input.color(#26A69A, "Support Color", group=grpLvl)
+grpFvg    = "5m FVG / IFVG (draw only)"
+showFvg   = input.bool(true, "Show 5m FVG / IFVG", group=grpFvg, tooltip="Drawn on the 1m (or 5m) chart only. Research tool - it does not change signals or trades.")
+fvgTf     = input.timeframe("5", "FVG Timeframe", group=grpFvg)
+fvgMin    = input.float(1.0, "Min Gap Size (points)", minval=0.25, step=0.25, group=grpFvg)
+fvgLive   = input.int(3, "Live Boxes per Colour", minval=1, maxval=10, group=grpFvg, tooltip="Only the newest boxes keep extending right. Older and finished boxes stay on the chart but stop extending.")
+fvgSess   = input.session("0300-1600", "Draw New Gaps During (NY time)", group=grpFvg)
+fvgBull   = input.color(#26A69A, "Bullish FVG Color", group=grpFvg)
+fvgBear   = input.color(#EF5350, "Bearish FVG Color", group=grpFvg)
+grpAl     = "Alerts / Webhook"
+alertFmt  = input.string("Text", "Alert Format", options=["Text", "JSON (webhook)"], group=grpAl, tooltip="JSON (webhook) sends every alert to the Google Sheet tracker. See apps-script/README.md.")
+hookKey   = input.string("change-me", "Webhook Key", group=grpAl, tooltip="Must match SECRET in the Apps Script.")
 buyCol    = input.color(#00C853, "Buy Color")
 sellCol   = input.color(#FF1744, "Sell Color")
 rangeCol  = input.color(#787B86, "C1 Range Color")
@@ -117,6 +133,23 @@ usd(float x) => (x >= 0 ? "+$" : "-$") + str.tostring(math.abs(x), "#,##0")
 inWin(string s) => not na(time(timeframe.period, s, "America/New_York"))
 blocked = inWin(noTrade1) or inWin(noTrade2)
 inKZ    = inWin(kzLon) or inWin(kzNY)
+kzName  = inWin(kzLon) ? "London" : inWin(kzNY) ? "NY AM" : "Other"
+
+// Alerts: plain text, or one JSON object per event for the webhook
+isJson = alertFmt == "JSON (webhook)"
+q(string s) => "\"" + s + "\""
+num(float x) => na(x) ? "null" : str.tostring(x)
+nyTime(int t) => str.format_time(t, "yyyy-MM-dd HH:mm", "America/New_York")
+kv(string k, string v) => q(k) + ":" + q(v)
+kn(string k, float v) => q(k) + ":" + num(v)
+// One JSON object: common fields (key, event, id, symbol, time) + the event's own fields
+jmsg(string ev, string id, array<string> f) =>
+    a = array.from(kv("key", hookKey), kv("event", ev), kv("id", id), kv("symbol", syminfo.ticker), kv("time", nyTime(time)))
+    a.concat(f)
+    "{" + array.join(a, ",") + "}"
+send(string txt, string js) =>
+    alert(isJson ? js : txt, alert.freq_once_per_bar_close)
+    true
 
 // --- WEEKLY TREND -------------------------------------------------------------
 // Over the last N completed days: +1 for each higher high and each higher low,
@@ -371,6 +404,16 @@ var int    swDir    = 0      // level sweep waiting for C3 to close back past th
 var float  swLvl    = na
 var string swCT     = ""
 var label  swLb     = na     // its C3 label (marked OK or x when C3 closes)
+var string armType  = ""     // "CRT" or "SWEEP" (for the tracker)
+var string armLvl   = ""     // level name, e.g. "London" or "NY low"
+var string armSess  = ""     // killzone the setup formed in
+var string swTagS   = ""
+var string swSess   = ""
+var string tId      = ""     // open trade: tracker id and details
+var string tType    = ""
+var string tLvl     = ""
+var string tSess    = ""
+var string tCT      = ""
 
 var int   dir     = 0        // open trade: 1 long, -1 short, 0 flat
 var float ePx     = na
@@ -391,6 +434,9 @@ var float netUSD  = 0.0
 revNow = false   // an opposite setup armed: close the open trade this bar
 
 if newC3 and barstate.isconfirmed and canDraw
+    // The armed setup's window is over without a 1m trigger
+    if armDir != 0 and chartOK
+        send("CRT " + syminfo.ticker + ": " + (armDir == 1 ? "BUY" : "SELL") + " setup expired - no 1m trigger.", jmsg("MISSED", "", array.from(kv("side", armDir == 1 ? "BUY" : "SELL"), kv("setup", armType), kv("level", armLvl), kn("zone", zone))))
     armDir := 0
     offTime = blocked or (useKZ and not inKZ)
     // 1a) A level sweep was waiting: the 15m candle that just closed is its C3
@@ -412,7 +458,10 @@ if newC3 and barstate.isconfirmed and canDraw
                 armEnd   := endT
                 wentAway := false
                 armCT    := swCT
-                alert("CRT " + syminfo.ticker + ": " + (d == 1 ? "BUY" : "SELL") + swCT + " sweep confirmed. Entry zone " + px(c2C) + ". Waiting for a 1m retest or clean break.", alert.freq_once_per_bar_close)
+                armType  := "SWEEP"
+                armLvl   := swTagS
+                armSess  := swSess
+                send("CRT " + syminfo.ticker + ": " + (d == 1 ? "BUY" : "SELL") + swCT + " sweep confirmed. Entry zone " + px(c2C) + ". Waiting for a 1m retest or clean break.", jmsg("SETUP", "", array.from(kv("side", d == 1 ? "BUY" : "SELL"), kv("setup", "SWEEP"), kv("level", swTagS), kv("stage", "confirmed"), kn("zone", c2C), kv("ct", swCT != "" ? "Yes" : "No"))))
         else
             label.set_text(swLb, label.get_text(swLb) + " x")
             label.set_color(swLb, color.new(color.gray, 50))
@@ -451,8 +500,10 @@ if newC3 and barstate.isconfirmed and canDraw
                     swDir := d
                     swLvl := d == 1 ? bSwPx : sSwPx
                     swCT  := ct
+                    swTagS := lvTag
+                    swSess := kzName
                     if chartOK
-                        alert("CRT " + syminfo.ticker + ": " + (d == 1 ? "BUY" : "SELL") + ct + " sweep of " + lvTag + " " + px(swLvl) + ". Waiting for C3 to close back " + (d == 1 ? "above" : "below") + " it.", alert.freq_once_per_bar_close)
+                        send("CRT " + syminfo.ticker + ": " + (d == 1 ? "BUY" : "SELL") + ct + " sweep of " + lvTag + " " + px(swLvl) + ". Waiting for C3 to close back " + (d == 1 ? "above" : "below") + " it.", jmsg("SETUP", "", array.from(kv("side", d == 1 ? "BUY" : "SELL"), kv("setup", "SWEEP"), kv("level", lvTag), kv("stage", "waiting for C3"), kn("level_price", swLvl), kv("ct", ct != "" ? "Yes" : "No"))))
                 if not offTime and not isSw and chartOK
                     revNow   := dir != 0
                     armDir   := d
@@ -460,7 +511,10 @@ if newC3 and barstate.isconfirmed and canDraw
                     armEnd   := c3End
                     wentAway := false
                     armCT    := ct
-                    alert("CRT " + syminfo.ticker + ": " + (d == 1 ? "BUY" : "SELL") + ct + " setup" + (lvTag != "" ? " at " + lvTag + (d == 1 ? " support" : " resistance") : "") + ". Entry zone " + px(c2C) + ". Waiting for a 1m retest or clean break.", alert.freq_once_per_bar_close)
+                    armType  := "CRT"
+                    armLvl   := lvTag
+                    armSess  := kzName
+                    send("CRT " + syminfo.ticker + ": " + (d == 1 ? "BUY" : "SELL") + ct + " setup" + (lvTag != "" ? " at " + lvTag + (d == 1 ? " support" : " resistance") : "") + ". Entry zone " + px(c2C) + ". Waiting for a 1m retest or clean break.", jmsg("SETUP", "", array.from(kv("side", d == 1 ? "BUY" : "SELL"), kv("setup", "CRT"), kv("level", lvTag), kv("stage", "armed"), kn("zone", c2C), kv("ct", ct != "" ? "Yes" : "No"))))
 
 // --- 2) DURING C3: 1m RETEST OR CLEAN BREAK -----------------------------------
 
@@ -478,15 +532,20 @@ if barstate.isconfirmed and armDir != 0 and dir == 0 and time < armEnd and not b
         best   := 0.0
         armDir := 0
         how     = brk ? "break" : "retest"
+        tId    := syminfo.ticker + "-" + str.format_time(time, "yyyyMMdd-HHmm", "America/New_York")
+        tType  := armType
+        tLvl   := armLvl
+        tSess  := armSess
+        tCT    := armCT != "" ? "Yes" : "No"
         label.new(bar_index, d == 1 ? low : high, (d == 1 ? "BUY" : "SELL") + armCT, yloc=d == 1 ? yloc.belowbar : yloc.abovebar, style=d == 1 ? label.style_label_up : label.style_label_down, color=d == 1 ? buyCol : sellCol, textcolor=color.white, size=size.small)
         tE  := newTag("ENTRY", ePx, zoneCol, color.black)
         tSL := newTag("SL", sl, sellCol, color.white)
         tT1 := newTag("TP1", ePx + d * stepPts, tpCol, color.white)
         tT2 := newTag("TP2", ePx + d * 2 * stepPts, tpCol, color.white)
         tT3 := newTag("TP3", ePx + d * 3 * stepPts, tpCol, color.white)
-        alert("CRT " + syminfo.ticker + ": " + (d == 1 ? "BUY" : "SELL") + armCT + " @ " + px(ePx) + " (" + how + "). SL " + px(sl) + "  TP1 " + px(ePx + d * stepPts), alert.freq_once_per_bar_close)
+        send("CRT " + syminfo.ticker + ": " + (d == 1 ? "BUY" : "SELL") + armCT + " @ " + px(ePx) + " (" + how + "). SL " + px(sl) + "  TP1 " + px(ePx + d * stepPts), jmsg("ENTRY", tId, array.from(kv("side", d == 1 ? "BUY" : "SELL"), kv("setup", tType), kv("level", tLvl), kv("session", tSess), kv("ct", tCT), kv("trigger", how), kn("entry", ePx), kn("sl", sl), kn("tp1", ePx + d * stepPts), kn("contracts", contracts))))
 
-// C3 ended without a trigger
+// C3 ended without a trigger (safety net; normally cleared at the next 15m candle)
 if armDir != 0 and time >= armEnd
     armDir := 0
 
@@ -541,7 +600,7 @@ if barstate.isconfirmed and dir != 0 and bar_index > eBar
             label.set_y(tSL.lb, sl)
             label.set_text(tSL.lb, "SL " + px(sl) + " (" + usd((sl - ePx) * dir * pv) + ")")
             label.set_color(tSL.lb, (sl - ePx) * dir >= 0 ? tpCol : sellCol)
-            alert("CRT " + syminfo.ticker + ": move stop to " + px(sl) + " (" + usd((sl - ePx) * dir * pv) + " locked)", alert.freq_once_per_bar_close)
+            send("CRT " + syminfo.ticker + ": move stop to " + px(sl) + " (" + usd((sl - ePx) * dir * pv) + " locked)", jmsg("STOP", tId, array.from(kn("sl", sl), kn("locked_usd", (sl - ePx) * dir * pv))))
 
 if exitNow
     pnl = (exitPx - ePx) * dir * pv
@@ -554,7 +613,7 @@ if exitNow
     freezeTag(tT2, "", fadeBg)
     freezeTag(tT3, "", fadeBg)
     label.new(bar_index, dir == 1 ? high : low, exitTxt + " " + usd(pnl), yloc=dir == 1 ? yloc.abovebar : yloc.belowbar, style=dir == 1 ? label.style_label_down : label.style_label_up, color=pnl > 0 ? color.new(tpCol, 20) : color.new(color.gray, 20), textcolor=color.white, size=size.tiny)
-    alert("CRT " + syminfo.ticker + ": EXIT " + exitTxt + " @ " + px(exitPx) + "  Trade " + usd(pnl), alert.freq_once_per_bar_close)
+    send("CRT " + syminfo.ticker + ": EXIT " + exitTxt + " @ " + px(exitPx) + "  Trade " + usd(pnl), jmsg("EXIT", tId, array.from(kn("price", exitPx), kv("reason", exitTxt), kn("pnl_usd", pnl), kn("best_usd", best * pv))))
     dir := 0
 
 if dir != 0
@@ -594,6 +653,73 @@ if barstate.islast
     for l in levels
         label.set_xy(l.lb, bar_index + 3, l.price)
         label.set_text(l.lb, l.tf + " " + px(l.price) + (na(l.brokeAt) ? "" : " swept"))
+
+// --- 5m FVG / IFVG (DRAW ONLY) -------------------------------------------------
+// Bullish FVG: candle 1 high < candle 3 low. Bearish: candle 1 low > candle 3 high.
+// A 5m close through the gap inverts it (IFVG); a close back through ends it.
+
+type Gap
+    float top
+    float bot
+    bool  bull   // made by an up move
+    bool  inv    // closed through -> IFVG (acts the other way)
+    box   bx
+
+var array<Gap> gaps = array.new<Gap>()
+
+[fH1, fL1, fC1, fH3, fL3, fT2] = request.security(syminfo.tickerid, fvgTf, [high[1], low[1], close[1], high[3], low[3], time[2]], lookahead=barmerge.lookahead_on)
+new5   = timeframe.change(fvgTf)
+fvgOK  = showFvg and timeframe.in_seconds() <= timeframe.in_seconds(fvgTf)
+inFvgS = inWin(fvgSess)
+
+endGap(Gap g) =>
+    box.set_extend(g.bx, extend.none)
+    box.set_right(g.bx, time)
+    true
+
+// Keep only the newest few boxes of a colour extending (green = support side)
+capGaps(array<Gap> gs, bool green, int keep) =>
+    int cnt = 0
+    if gs.size() > 0
+        for i = gs.size() - 1 to 0
+            g = gs.get(i)
+            if (g.bull != g.inv) == green
+                cnt += 1
+                if cnt > keep
+                    endGap(g)
+                    gs.remove(i)
+    true
+
+newGap(array<Gap> gs, float top, float bot, bool bull, int t) =>
+    col = bull ? fvgBull : fvgBear
+    bx  = box.new(t, top, time, bot, xloc=xloc.bar_time, extend=extend.right, border_color=color.new(col, 50), border_style=line.style_dashed, bgcolor=color.new(col, 85), text="", text_size=size.tiny, text_halign=text.align_left, text_valign=text.align_top, text_color=col)
+    gs.push(Gap.new(top, bot, bull, false, bx))
+    true
+
+if fvgOK and new5 and barstate.isconfirmed and not na(fC1)
+    // Existing gaps: invert (IFVG) or finish on this 5m close
+    if gaps.size() > 0
+        for i = gaps.size() - 1 to 0
+            g = gaps.get(i)
+            if not g.inv and (g.bull ? fC1 < g.bot : fC1 > g.top)
+                g.inv := true
+                col = g.bull ? fvgBear : fvgBull
+                box.set_bgcolor(g.bx, color.new(col, 75))
+                box.set_border_color(g.bx, color.new(col, 20))
+                box.set_border_style(g.bx, line.style_solid)
+                box.set_text(g.bx, "IFVG")
+                box.set_text_color(g.bx, col)
+            else if g.inv and (g.bull ? fC1 > g.top : fC1 < g.bot)
+                endGap(g)
+                gaps.remove(i)
+    // New gap from the last three 5m candles
+    if inFvgS and not na(fH3)
+        if fL1 - fH3 >= fvgMin
+            newGap(gaps, fL1, fH3, true, fT2)
+        if fL3 - fH1 >= fvgMin
+            newGap(gaps, fL3, fH1, false, fT2)
+    capGaps(gaps, true, fvgLive)
+    capGaps(gaps, false, fvgLive)
 
 // --- STATUS TABLE -------------------------------------------------------------
 
