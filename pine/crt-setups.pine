@@ -22,9 +22,6 @@
 //        into resistance, a buy C2 into support.
 //   Session levels: Asia high/low, London high/low and the previous day's
 //        high/low are added to the key levels once the session is over.
-//   Bias line: the NY midnight open (or the 6pm daily open). With the bias
-//        filter on, a setup only counts when its entry zone is on the right
-//        side of the line: above = buys, below = sells (can be flipped).
 //   Weekly trend: higher/lower daily highs and lows over the last 5 days.
 //        Setups against it are tagged "CT" (counter-trend), not blocked.
 //   Targets: TP1 = Target Step $ from entry, TP2 = 2 steps, TP3 = 3 steps ...
@@ -74,11 +71,6 @@ useLon    = input.bool(true, "London High/Low", group=grpLvl, inline="ses")
 usePD     = input.bool(true, "Prev Day High/Low", group=grpLvl)
 asiaSess  = input.session("2000-2359", "Asia Session (NY time)", group=grpLvl)
 lonSess   = input.session("0200-0500", "London Session (NY time)", group=grpLvl)
-grpBias   = "Bias Line"
-biasSrc   = input.string("Midnight Open", "Bias Line", options=["Midnight Open", "Daily Open (6pm)", "Off"], group=grpBias, tooltip="Midnight Open = price at 00:00 NY. Daily Open = price at the 6pm NY futures open.")
-biasRule  = input.string("Above = Buys", "Bias Rule", options=["Above = Buys", "Above = Sells"], group=grpBias, tooltip="Above = Buys: entry zone above the line -> only buys, below -> only sells. Above = Sells is the premium/discount (AMD) reading.")
-useBias   = input.bool(true, "Bias Filter (skip setups on the wrong side)", group=grpBias)
-biasCol   = input.color(#2962FF, "Bias Line Color", group=grpBias)
 resCol    = input.color(#FF9800, "Resistance Color", group=grpLvl)
 supCol    = input.color(#26A69A, "Support Color", group=grpLvl)
 buyCol    = input.color(#00C853, "Buy Color")
@@ -222,21 +214,6 @@ sessTrack(string sess) =>
 [pdH, pdL, pdT] = request.security(syminfo.tickerid, "D", [high[1], low[1], time[1]], lookahead=barmerge.lookahead_on)
 newDay = timeframe.change("D")
 
-// --- BIAS LINE ----------------------------------------------------------------
-
-nyDay = dayofmonth(time, "America/New_York")
-var float midOpen = na
-if nyDay != nyDay[1]
-    midOpen := open
-var float dayOpen = na
-if newDay
-    dayOpen := open
-biasLine = biasSrc == "Midnight Open" ? midOpen : biasSrc == "Daily Open (6pm)" ? dayOpen : na
-plot(biasLine, "Bias Line", color=biasCol, linewidth=2, style=plot.style_stepline)
-// +1 = looking for buys, -1 = looking for sells, 0 = no bias
-biasAt(float p) => na(biasLine) ? 0 : (p > biasLine ? 1 : p < biasLine ? -1 : 0) * (biasRule == "Above = Buys" ? 1 : -1)
-bias = biasAt(close)
-
 // Did C2 sweep into a level? Sell: C2 went from C1's high up to its own high.
 // Buy: from C1's low down to its own low. (Checked before this bar's upkeep.)
 sellLvl = levelIn(levels, true,  c1H - lvlZone, c2H + lvlZone)
@@ -250,9 +227,8 @@ if sellRaw and buyRaw
     buyRaw  := not sellRaw
 // Noise filters
 bigC1   = minRange <= 0 or (c1H - c1L) >= minRange
-zBias   = biasAt(c2C)
-sellCRT = sellRaw and bigC1 and c2H >= c1H + sweep and (not needLevel or sellLvl != "") and (not useBias or zBias != 1)
-buyCRT  = buyRaw and bigC1 and c2L <= c1L - sweep and (not needLevel or buyLvl != "") and (not useBias or zBias != -1)
+sellCRT = sellRaw and bigC1 and c2H >= c1H + sweep and (not needLevel or sellLvl != "")
+buyCRT  = buyRaw and bigC1 and c2L <= c1L - sweep and (not needLevel or buyLvl != "")
 noise   = (sellRaw or buyRaw) and not (sellCRT or buyCRT)
 
 // --- TRADE LEVEL TAGS ---------------------------------------------------------
@@ -475,7 +451,7 @@ if barstate.islast
 
 // --- STATUS TABLE -------------------------------------------------------------
 
-var table tbl = table.new(position.top_right, 2, 5, bgcolor=color.new(color.black, 60), border_color=color.new(color.gray, 40), border_width=1)
+var table tbl = table.new(position.top_right, 2, 4, bgcolor=color.new(color.black, 60), border_color=color.new(color.gray, 40), border_width=1)
 
 if barstate.islast
     openPnl = dir != 0 ? (close - ePx) * dir * pv : 0.0
@@ -487,7 +463,5 @@ if barstate.islast
     table.cell(tbl, 1, 1, trendTxt + " (" + str.tostring(trendDays) + " days, score " + str.tostring(tScore) + ")", text_color=trend == 1 ? buyCol : trend == -1 ? sellCol : color.gray, text_size=size.tiny)
     table.cell(tbl, 0, 2, "Status", text_color=color.white, text_size=size.tiny)
     table.cell(tbl, 1, 2, stTxt, text_color=dir == 1 or armDir == 1 ? buyCol : dir == -1 or armDir == -1 ? sellCol : color.gray, text_size=size.tiny)
-    table.cell(tbl, 0, 4, "Bias", text_color=color.white, text_size=size.tiny)
-    table.cell(tbl, 1, 4, na(biasLine) ? "Off" : (bias == 1 ? "BUYS" : bias == -1 ? "SELLS" : "AT LINE") + " (" + (close > biasLine ? "above " : "below ") + biasSrc + " " + px(biasLine) + ")", text_color=bias == 1 ? buyCol : bias == -1 ? sellCol : color.gray, text_size=size.tiny)
     table.cell(tbl, 0, 3, "Results", text_color=color.white, text_size=size.tiny)
     table.cell(tbl, 1, 3, str.tostring(nTrades) + " trades - " + str.tostring(winPct, "#") + "% win - " + usd(netUSD), text_color=netUSD >= 0 ? color.lime : color.red, text_size=size.tiny)
