@@ -32,6 +32,9 @@
 //        A level a 15m candle closes through is kept (dotted grey) for Keep
 //        Swept Levels minutes, so a failed breakout can still be traded. A
 //        close back on the other side restores it.
+//   Session extreme: a normal CRT also counts when C2 made the new high (sell)
+//        or low (buy) of the current session so far (London from 3:00, NY
+//        from 9:30), even with no other level there.
 //   Weekly trend: higher/lower daily highs and lows over the last 5 days.
 //        Setups against it are tagged "CT" (counter-trend), not blocked.
 //   Targets: TP1 = Target Step $ from entry, TP2 = 2 steps, TP3 = 3 steps ...
@@ -87,6 +90,8 @@ useLon    = input.bool(true, "London High/Low", group=grpLvl, inline="ses")
 usePD     = input.bool(true, "Prev Day High/Low", group=grpLvl)
 asiaSess  = input.session("1900-0300", "Asia Session (NY time)", group=grpLvl)
 lonSess   = input.session("0300-0930", "London Session (NY time)", group=grpLvl)
+nySess    = input.session("0930-1600", "NY Session (NY time)", group=grpLvl)
+useExt    = input.bool(true, "Session High/Low So Far Counts as a Level", group=grpLvl, tooltip="A normal CRT qualifies when C2 made the new high (sell) or low (buy) of the current London or NY session.")
 resCol    = input.color(#FF9800, "Resistance Color", group=grpLvl)
 supCol    = input.color(#26A69A, "Support Color", group=grpLvl)
 buyCol    = input.color(#00C853, "Buy Color")
@@ -264,6 +269,32 @@ sessTrack(string sess) =>
 
 [asiaEnd, asiaH, asiaL, asiaT] = sessTrack(asiaSess)
 [lonEnd, lonH, lonL, lonT]     = sessTrack(lonSess)
+// Running high/low of a session while it is open
+sessRun(string sess) =>
+    var float h   = na
+    var float l   = na
+    var int   t0  = na
+    var bool  was = false
+    inS = inWin(sess)
+    if inS
+        if not was
+            h  := high
+            l  := low
+            t0 := time
+        else
+            h := math.max(h, high)
+            l := math.min(l, low)
+    was := inS
+    [inS, h, l, t0]
+
+[lonIn, lonRH, lonRL, lonRT] = sessRun(lonSess)
+[nyIn, nyRH, nyRL, nyRT]     = sessRun(nySess)
+// As of the end of C2 (previous bar): which session, and its high/low so far
+extName = nyIn[1] ? "NY" : lonIn[1] ? "London" : ""
+extH    = nyIn[1] ? nyRH[1] : lonRH[1]
+extL    = nyIn[1] ? nyRL[1] : lonRL[1]
+extT    = nyIn[1] ? nyRT[1] : lonRT[1]
+
 [pdH, pdL, pdT] = request.security(syminfo.tickerid, "D", [high[1], low[1], time[1]], lookahead=barmerge.lookahead_on)
 newDay = timeframe.change("D")
 
@@ -273,6 +304,9 @@ sellLvl = levelIn(levels, true,  c1H - lvlZone, c2H + lvlZone)
 buyLvl  = levelIn(levels, false, c2L - lvlZone, c1L + lvlZone)
 
 sweep   = minSweep * syminfo.mintick
+// C2 made the session's new high / low (and C1 was already in that session)
+sellExt = useExt and extName != "" and c1T >= extT and c2H >= extH
+buyExt  = useExt and extName != "" and c1T >= extT and c2L <= extL
 sellRaw = c2H > c1H and c2C < c1H and c2C > c1L
 buyRaw  = c2L < c1L and c2C > c1L and c2C < c1H
 if sellRaw and buyRaw
@@ -280,8 +314,8 @@ if sellRaw and buyRaw
     buyRaw  := not sellRaw
 // Noise filters
 bigC1   = minRange <= 0 or (c1H - c1L) >= minRange
-sellCRT = sellRaw and bigC1 and c2H >= c1H + sweep and (not needLevel or sellLvl != "")
-buyCRT  = buyRaw and bigC1 and c2L <= c1L - sweep and (not needLevel or buyLvl != "")
+sellCRT = sellRaw and bigC1 and c2H >= c1H + sweep and (not needLevel or sellLvl != "" or sellExt)
+buyCRT  = buyRaw and bigC1 and c2L <= c1L - sweep and (not needLevel or buyLvl != "" or buyExt)
 // Level sweep setups (only when there is no normal CRT; skipped if C2 swept both ways)
 [sSwTag, sSwPx] = sweptLvl(levels, true,  c2H, c2L, c2C, sweep)
 [bSwTag, bSwPx] = sweptLvl(levels, false, c2H, c2L, c2C, sweep)
@@ -356,12 +390,14 @@ if newC3 and barstate.isconfirmed and canDraw
     armDir := 0
     offTime = blocked or (useKZ and not inKZ)
     // 1a) A level sweep was waiting: the 15m candle that just closed is its C3
+    swGo = false
     if swDir != 0
         d      = swDir
         swDir := 0
         ok     = d == 1 ? c2C > swLvl : c2C < swLvl
         if ok and dir == 0 and not blocked
             label.set_text(swLb, label.get_text(swLb) + " OK")
+            swGo := true
             endT = time + tfMs
             line.new(c2T, c2C, endT, c2C, xloc=xloc.bar_time, color=zoneCol, width=2)
             label.new(endT, c2C, px(c2C), xloc=xloc.bar_time, style=label.style_label_left, color=color.new(zoneCol, 30), textcolor=color.black, size=size.tiny)
@@ -376,7 +412,7 @@ if newC3 and barstate.isconfirmed and canDraw
             label.set_text(swLb, label.get_text(swLb) + " x")
             label.set_color(swLb, color.new(color.gray, 50))
     // 1b) Look for a new setup (only when no trade is open or armed)
-    if dir == 0 and armDir == 0
+    if dir == 0 and armDir == 0 and not swGo
         // Filtered-out setup: optional small grey marker
         if noise and showNoise
             label.new(time, sellRaw ? high : low, "noise", xloc=xloc.bar_time, yloc=sellRaw ? yloc.abovebar : yloc.belowbar, style=sellRaw ? label.style_label_down : label.style_label_up, color=color.new(color.gray, 70), textcolor=color.white, size=size.tiny)
@@ -384,7 +420,9 @@ if newC3 and barstate.isconfirmed and canDraw
             isSw   = sellSw or buySw
             d      = buyCRT or buySw ? 1 : -1
             ct     = trend != 0 and d != trend ? " CT" : ""
-            lvTag  = isSw ? (d == 1 ? bSwTag : sSwTag) : d == 1 ? buyLvl : sellLvl
+            lvl0   = d == 1 ? buyLvl : sellLvl
+            extTag = (d == 1 ? buyExt : sellExt) ? extName + (d == 1 ? " low" : " high") : ""
+            lvTag  = isSw ? (d == 1 ? bSwTag : sSwTag) : lvl0 != "" ? lvl0 : extTag
             col    = offTime ? color.gray : d == 1 ? buyCol : sellCol
             faded  = offTime ? 70 : 0
             c3End  = time + tfMs
