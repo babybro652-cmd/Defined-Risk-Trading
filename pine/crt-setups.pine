@@ -49,7 +49,9 @@
 //        out when a 15m candle takes out the previous one ("move is over")
 //        once a 15m candle CLOSES past Profit Floor $, the stop never sits
 //        below that profit
-//   Also out when a no-trade window starts. One trade at a time.
+//   Also out when a no-trade window starts. One trade at a time: a setup in
+//        the same direction as the open trade is ignored; a valid setup AGAINST
+//        it closes the trade at market ("REVERSE") and is armed as usual.
 // ==============================================================================
 
 indicator("CRT Setups", overlay=true, max_labels_count=500, max_lines_count=500)
@@ -386,6 +388,8 @@ var float netUSD  = 0.0
 
 // --- 1) C3 STARTS: MARK THE SETUP ---------------------------------------------
 
+revNow = false   // an opposite setup armed: close the open trade this bar
+
 if newC3 and barstate.isconfirmed and canDraw
     armDir := 0
     offTime = blocked or (useKZ and not inKZ)
@@ -395,13 +399,14 @@ if newC3 and barstate.isconfirmed and canDraw
         d      = swDir
         swDir := 0
         ok     = d == 1 ? c2C > swLvl : c2C < swLvl
-        if ok and dir == 0 and not blocked
+        if ok and (dir == 0 or d == -dir) and not blocked
             label.set_text(swLb, label.get_text(swLb) + " OK")
             swGo := true
             endT = time + tfMs
             line.new(c2T, c2C, endT, c2C, xloc=xloc.bar_time, color=zoneCol, width=2)
             label.new(endT, c2C, px(c2C), xloc=xloc.bar_time, style=label.style_label_left, color=color.new(zoneCol, 30), textcolor=color.black, size=size.tiny)
             if chartOK
+                revNow   := dir != 0
                 armDir   := d
                 zone     := c2C
                 armEnd   := endT
@@ -411,48 +416,51 @@ if newC3 and barstate.isconfirmed and canDraw
         else
             label.set_text(swLb, label.get_text(swLb) + " x")
             label.set_color(swLb, color.new(color.gray, 50))
-    // 1b) Look for a new setup (only when no trade is open or armed)
-    if dir == 0 and armDir == 0 and not swGo
+    // 1b) Look for a new setup (nothing armed; flat, or against the open trade)
+    if armDir == 0 and not swGo
         // Filtered-out setup: optional small grey marker
-        if noise and showNoise
+        if noise and showNoise and dir == 0
             label.new(time, sellRaw ? high : low, "noise", xloc=xloc.bar_time, yloc=sellRaw ? yloc.abovebar : yloc.belowbar, style=sellRaw ? label.style_label_down : label.style_label_up, color=color.new(color.gray, 70), textcolor=color.white, size=size.tiny)
         if sellCRT or buyCRT or sellSw or buySw
             isSw   = sellSw or buySw
             d      = buyCRT or buySw ? 1 : -1
-            ct     = trend != 0 and d != trend ? " CT" : ""
-            lvl0   = d == 1 ? buyLvl : sellLvl
-            extTag = (d == 1 ? buyExt : sellExt) ? extName + (d == 1 ? " low" : " high") : ""
-            lvTag  = isSw ? (d == 1 ? bSwTag : sSwTag) : lvl0 != "" ? lvl0 : extTag
-            col    = offTime ? color.gray : d == 1 ? buyCol : sellCol
-            faded  = offTime ? 70 : 0
-            c3End  = time + tfMs
-            st     = d == 1 ? label.style_label_up : label.style_label_down
-            c3Txt  = offTime ? "C3 x" : "C3" + (isSw ? " SWEEP" : "") + (lvTag != "" ? " " + lvTag : "") + ct
-            if not offTime or showNoTr
-                if not isSw
-                    line.new(c1T, c1H, c3End, c1H, xloc=xloc.bar_time, color=color.new(offTime ? color.gray : rangeCol, faded), style=line.style_dotted)
-                    line.new(c1T, c1L, c3End, c1L, xloc=xloc.bar_time, color=color.new(offTime ? color.gray : rangeCol, faded), style=line.style_dotted)
-                    label.new(c1T, d == 1 ? c1L : c1H, "C1", xloc=xloc.bar_time, style=st, color=color.new(col, 60), textcolor=color.white, size=size.tiny)
-                label.new(c2T, d == 1 ? c2L : c2H, "C2", xloc=xloc.bar_time, style=st, color=color.new(col, 40), textcolor=color.white, size=size.tiny)
-                c3Lb = label.new(time, d == 1 ? low : high, c3Txt, xloc=xloc.bar_time, yloc=d == 1 ? yloc.belowbar : yloc.abovebar, style=st, color=color.new(col, 30), textcolor=color.white, size=size.tiny)
-                if isSw and not offTime
-                    swLb := c3Lb
-                if not isSw
-                    line.new(c2T, c2C, c3End, c2C, xloc=xloc.bar_time, color=color.new(offTime ? color.gray : zoneCol, faded), width=2)
-                    label.new(c3End, c2C, px(c2C), xloc=xloc.bar_time, style=label.style_label_left, color=color.new(offTime ? color.gray : zoneCol, 30), textcolor=color.black, size=size.tiny)
-            if not offTime and isSw
-                swDir := d
-                swLvl := d == 1 ? bSwPx : sSwPx
-                swCT  := ct
-                if chartOK
-                    alert("CRT " + syminfo.ticker + ": " + (d == 1 ? "BUY" : "SELL") + ct + " sweep of " + lvTag + " " + px(swLvl) + ". Waiting for C3 to close back " + (d == 1 ? "above" : "below") + " it.", alert.freq_once_per_bar_close)
-            if not offTime and not isSw and chartOK
-                armDir   := d
-                zone     := c2C
-                armEnd   := c3End
-                wentAway := false
-                armCT    := ct
-                alert("CRT " + syminfo.ticker + ": " + (d == 1 ? "BUY" : "SELL") + ct + " setup" + (lvTag != "" ? " at " + lvTag + (d == 1 ? " support" : " resistance") : "") + ". Entry zone " + px(c2C) + ". Waiting for a 1m retest or clean break.", alert.freq_once_per_bar_close)
+            // Flat, or a setup AGAINST the open trade (then reverse)
+            if dir == 0 or d == -dir
+                ct     = trend != 0 and d != trend ? " CT" : ""
+                lvl0   = d == 1 ? buyLvl : sellLvl
+                extTag = (d == 1 ? buyExt : sellExt) ? extName + (d == 1 ? " low" : " high") : ""
+                lvTag  = isSw ? (d == 1 ? bSwTag : sSwTag) : lvl0 != "" ? lvl0 : extTag
+                col    = offTime ? color.gray : d == 1 ? buyCol : sellCol
+                faded  = offTime ? 70 : 0
+                c3End  = time + tfMs
+                st     = d == 1 ? label.style_label_up : label.style_label_down
+                c3Txt  = offTime ? "C3 x" : "C3" + (isSw ? " SWEEP" : "") + (lvTag != "" ? " " + lvTag : "") + ct
+                if not offTime or showNoTr
+                    if not isSw
+                        line.new(c1T, c1H, c3End, c1H, xloc=xloc.bar_time, color=color.new(offTime ? color.gray : rangeCol, faded), style=line.style_dotted)
+                        line.new(c1T, c1L, c3End, c1L, xloc=xloc.bar_time, color=color.new(offTime ? color.gray : rangeCol, faded), style=line.style_dotted)
+                        label.new(c1T, d == 1 ? c1L : c1H, "C1", xloc=xloc.bar_time, style=st, color=color.new(col, 60), textcolor=color.white, size=size.tiny)
+                    label.new(c2T, d == 1 ? c2L : c2H, "C2", xloc=xloc.bar_time, style=st, color=color.new(col, 40), textcolor=color.white, size=size.tiny)
+                    c3Lb = label.new(time, d == 1 ? low : high, c3Txt, xloc=xloc.bar_time, yloc=d == 1 ? yloc.belowbar : yloc.abovebar, style=st, color=color.new(col, 30), textcolor=color.white, size=size.tiny)
+                    if isSw and not offTime
+                        swLb := c3Lb
+                    if not isSw
+                        line.new(c2T, c2C, c3End, c2C, xloc=xloc.bar_time, color=color.new(offTime ? color.gray : zoneCol, faded), width=2)
+                        label.new(c3End, c2C, px(c2C), xloc=xloc.bar_time, style=label.style_label_left, color=color.new(offTime ? color.gray : zoneCol, 30), textcolor=color.black, size=size.tiny)
+                if not offTime and isSw
+                    swDir := d
+                    swLvl := d == 1 ? bSwPx : sSwPx
+                    swCT  := ct
+                    if chartOK
+                        alert("CRT " + syminfo.ticker + ": " + (d == 1 ? "BUY" : "SELL") + ct + " sweep of " + lvTag + " " + px(swLvl) + ". Waiting for C3 to close back " + (d == 1 ? "above" : "below") + " it.", alert.freq_once_per_bar_close)
+                if not offTime and not isSw and chartOK
+                    revNow   := dir != 0
+                    armDir   := d
+                    zone     := c2C
+                    armEnd   := c3End
+                    wentAway := false
+                    armCT    := ct
+                    alert("CRT " + syminfo.ticker + ": " + (d == 1 ? "BUY" : "SELL") + ct + " setup" + (lvTag != "" ? " at " + lvTag + (d == 1 ? " support" : " resistance") : "") + ". Entry zone " + px(c2C) + ". Waiting for a 1m retest or clean break.", alert.freq_once_per_bar_close)
 
 // --- 2) DURING C3: 1m RETEST OR CLEAN BREAK -----------------------------------
 
@@ -497,6 +505,10 @@ if barstate.isconfirmed and dir != 0 and bar_index > eBar
         exitPx  := sl
         exitTxt := (sl - ePx) * dir < 0 ? "SL" : (sl - ePx) * dir == 0 ? "BE" : "TRAIL"
         freezeTag(tSL, " (HIT)", hitBg)
+    else if revNow
+        exitNow := true
+        exitPx  := close
+        exitTxt := "REVERSE"
     else if blocked
         exitNow := true
         exitPx  := close
