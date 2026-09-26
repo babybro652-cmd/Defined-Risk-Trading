@@ -9,8 +9,9 @@ Records every setup and trade from the **CRT Setups** TradingView indicator (`pi
 1. Open the **CRT Setups Tracker** Google Sheet (or create a new blank one).
 2. Open **Extensions → Apps Script**, delete the sample code and paste in all of `crt-setups-tracker.gs`.
 3. Change `const SECRET = 'change-me';` to a password of your own.
-4. Save. In the function menu choose **setup**, then **Run**. Approve the permissions the first time it asks. This creates the **Summary**, **Trades**, **Setups** and **Log** tabs.
-5. Optional: choose **testTrade** and click **Run**. A test trade appears in **Trades** and two rows in **Setups**. Delete those rows afterwards (and the matching rows in **Log**).
+4. Save, then click **Run** (whatever function the box next to **Debug** shows is fine). Approve the permissions the first time it asks. This creates the **Summary**, **Trades**, **Setups** and **Log** tabs. (The box next to **Debug** is a dropdown listing every function; running **setup** from it does the same.)
+5. Reload the sheet. A **CRT Tracker** menu appears with **Set up / repair tabs** and **Add a test trade**.
+6. Optional: **CRT Tracker → Add a test trade**. A test trade appears in **Trades** and two rows in **Setups**. Delete those rows afterwards (and the matching rows in **Log**).
 
 ## 2. Deploy it as a web app
 

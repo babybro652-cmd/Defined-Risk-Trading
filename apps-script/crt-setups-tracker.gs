@@ -41,9 +41,10 @@ function doPost(e) {
   try {
     const body = e && e.postData ? e.postData.contents : '';
     if (!body) {
-      // doPost was run from the editor (it only works when TradingView calls it)
-      sheet_(LOG, LOG_HEADERS).appendRow([new Date(), 'EMPTY', '', '', '', 'No alert data. Do not run doPost from the editor - run setup, then testTrade.']);
-      return reply_('empty');
+      // Run from the editor (no alert data): build the tabs instead
+      setup();
+      sheet_(LOG, LOG_HEADERS).appendRow([new Date(), 'SETUP RUN', '', '', '', 'doPost was run from the editor with no alert data, so the tabs were set up instead.']);
+      return reply_('setup done');
     }
     let d;
     try {
@@ -66,6 +67,14 @@ function doPost(e) {
   } finally {
     lock.releaseLock();
   }
+}
+
+/** Adds a "CRT Tracker" menu to the sheet so setup and the test trade can be run without the editor. */
+function onOpen() {
+  SpreadsheetApp.getUi().createMenu('CRT Tracker')
+    .addItem('Set up / repair tabs', 'setup')
+    .addItem('Add a test trade', 'testTrade')
+    .addToUi();
 }
 
 /** Open the web app URL in a browser to check the deployment is live. */
@@ -167,6 +176,8 @@ function setup() {
     sh.getRange(col + '2').setFormula(`=IFERROR(QUERY(Trades!A2:U,"${q}",0),"No closed trades yet")`);
   });
   sh.autoResizeColumns(1, 27);
+  const blank = ss.getSheetByName('Sheet1');
+  if (blank && blank.getLastRow() === 0 && ss.getSheets().length > 1) ss.deleteSheet(blank);
 }
 
 /** Run from the editor to push a fake trade through the sheet without TradingView. */
