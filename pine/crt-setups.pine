@@ -23,12 +23,17 @@
 //   Weekly trend: higher/lower daily highs and lows over the last 5 days.
 //        Setups against it are tagged "CT" (counter-trend), not blocked.
 //   Targets: TP1 = Target Step $ from entry, TP2 = 2 steps, TP3 = 3 steps ...
-//   Trailing stop, in half-steps:
+//        (TP tags are markers only - the trade is not closed there.)
+//   Stop:
 //        starts at Max Loss $ against you
-//        halfway to TP1 -> stop to entry
-//        TP1            -> stop to halfway point (entry..TP1)
-//        halfway to TP2 -> stop to TP1   ... and so on
-//        once profit reaches Profit Floor $, the stop never sits below it
+//        halfway to TP1 -> stop to entry (breakeven)
+//        after that, each time a 15m candle closes the stop trails behind it:
+//          buy  -> just below that 15m candle's low
+//          sell -> just above that 15m candle's high
+//        so you stay in while the 15m candles keep stepping your way, and are
+//        out when a 15m candle takes out the previous one ("move is over")
+//        once a 15m candle CLOSES past Profit Floor $, the stop never sits
+//        below that profit
 //   Also out when a no-trade window starts. One trade at a time.
 // ==============================================================================
 
@@ -43,8 +48,9 @@ showNoise = input.bool(false, "Show Filtered-Out Setups (small grey)")
 bufTicks  = input.int(4, "Clean Break (ticks past zone)", minval=0, maxval=40, tooltip="A clean break is a 1m candle in the trade direction that closes this far past the entry zone. ES: 4 ticks = 1 point.")
 awayTicks = input.int(4, "Retest: Move Away First (ticks)", minval=1, maxval=40, tooltip="Before a retest counts, price must first trade this far away from the entry zone in the trade direction.")
 maxLoss   = input.float(250, "Max Loss ($)", minval=1, step=25, tooltip="Starting stop. Applies until the stop moves to entry.")
-stepUSD   = input.float(400, "Target Step ($)", minval=50, step=50, tooltip="TP1 is this far from entry, TP2 twice as far, and so on. The stop trails in half-steps.")
-floorUSD  = input.float(450, "Profit Floor ($, 0 = off)", minval=0, step=25, tooltip="Once open profit reaches this, the stop never sits below this profit.")
+stepUSD   = input.float(400, "Target Step ($)", minval=50, step=50, tooltip="TP1 is this far from entry, TP2 twice as far, and so on. Halfway to TP1 the stop moves to entry.")
+trailTks  = input.int(2, "Trail: Ticks Beyond 15m Candle", minval=0, maxval=40, tooltip="After breakeven the stop sits this far beyond the last closed 15m candle's low (buy) or high (sell).")
+floorUSD  = input.float(450, "Profit Floor ($, 0 = off)", minval=0, step=25, tooltip="Once a 15m candle closes with at least this much profit, the stop never sits below this profit.")
 contracts = input.int(1, "Contracts", minval=1)
 trendDays = input.int(5, "Trend: Days to Look Back", minval=2, maxval=10)
 noTrade1  = input.session("2300-0300", "No-Trade Window 1 (NY time)")
@@ -72,6 +78,7 @@ away     = awayTicks * syminfo.mintick
 lossPts  = maxLoss / pv
 stepPts  = stepUSD / pv
 halfPts  = stepPts / 2
+trailBuf = trailTks * syminfo.mintick
 floorPts = floorUSD / pv
 
 px(float p) => str.tostring(p, format.mintick)
@@ -335,11 +342,17 @@ if barstate.isconfirmed and dir != 0 and bar_index > eBar
             freezeTag(tT2, " (HIT)", hitBg)
         if best >= 3 * stepPts
             freezeTag(tT3, " (HIT)", hitBg)
-        // Trailing stop: one half-step behind the furthest half-step reached
-        k       = math.floor(best / halfPts)
-        newSl   = k >= 1 ? ePx + dir * (k - 1) * halfPts : sl
-        if floorUSD > 0 and best >= floorPts
-            newSl := dir == 1 ? math.max(newSl, ePx + floorPts) : math.min(newSl, ePx - floorPts)
+        newSl = sl
+        // Halfway to TP1: stop to entry
+        if best >= halfPts
+            newSl := dir == 1 ? math.max(newSl, ePx) : math.min(newSl, ePx)
+        // A 15m candle just closed: after breakeven, trail behind it
+        if newC3 and not na(c2H) and (newSl - ePx) * dir >= 0
+            candSl = dir == 1 ? c2L - trailBuf : c2H + trailBuf
+            newSl := dir == 1 ? math.max(newSl, candSl) : math.min(newSl, candSl)
+            // Profit floor once a 15m candle has closed past it
+            if floorUSD > 0 and (c2C - ePx) * dir >= floorPts
+                newSl := dir == 1 ? math.max(newSl, ePx + floorPts) : math.min(newSl, ePx - floorPts)
         if (newSl - sl) * dir > 0
             sl := newSl
             tSL.price := sl
