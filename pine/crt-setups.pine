@@ -13,6 +13,9 @@
 //          - retests: price first moves away from the zone, then a 1m candle
 //            comes back to touch it and closes back on the trade side
 //        No trigger before C3 ends = no trade.
+//   Noise filters: C1 must be at least Min C1 Range tall, and C2 must go at
+//        least Min Sweep past C1. No new setups are drawn or taken while a
+//        trade is open.
 //   Weekly trend: higher/lower daily highs and lows over the last 5 days.
 //        Setups against it are tagged "CT" (counter-trend), not blocked.
 //   Targets: TP1 = Target Step $ from entry, TP2 = 2 steps, TP3 = 3 steps ...
@@ -30,6 +33,9 @@ indicator("CRT Setups", overlay=true, max_labels_count=500, max_lines_count=500)
 // --- SETTINGS -----------------------------------------------------------------
 
 setupTf   = input.timeframe("15", "Setup Timeframe")
+minRange  = input.float(8.0, "Min C1 Range (points)", minval=0, step=0.25, tooltip="Skip setups whose C1 range is smaller than this. 8 points = $400 on 1 ES, the TP1 distance. 0 = off.")
+minSweep  = input.int(2, "Min Sweep Past C1 (ticks)", minval=1, maxval=40, tooltip="C2 must trade at least this far past C1's high (sell) or low (buy).")
+showNoise = input.bool(false, "Show Filtered-Out Setups (small grey)")
 bufTicks  = input.int(4, "Clean Break (ticks past zone)", minval=0, maxval=40, tooltip="A clean break is a 1m candle in the trade direction that closes this far past the entry zone. ES: 4 ticks = 1 point.")
 awayTicks = input.int(4, "Retest: Move Away First (ticks)", minval=1, maxval=40, tooltip="Before a retest counts, price must first trade this far away from the entry zone in the trade direction.")
 maxLoss   = input.float(250, "Max Loss ($)", minval=1, step=25, tooltip="Starting stop. Applies until the stop moves to entry.")
@@ -84,11 +90,17 @@ newC3   = timeframe.change(setupTf)
 tfMs    = timeframe.in_seconds(setupTf) * 1000
 chartOK = timeframe.in_seconds() < timeframe.in_seconds(setupTf)
 
-sellCRT = c2H > c1H and c2C < c1H and c2C > c1L
-buyCRT  = c2L < c1L and c2C > c1L and c2C < c1H
-if sellCRT and buyCRT
-    sellCRT := c2C < c2O
-    buyCRT  := not sellCRT
+sweep   = minSweep * syminfo.mintick
+sellRaw = c2H > c1H and c2C < c1H and c2C > c1L
+buyRaw  = c2L < c1L and c2C > c1L and c2C < c1H
+if sellRaw and buyRaw
+    sellRaw := c2C < c2O
+    buyRaw  := not sellRaw
+// Noise filters
+bigC1   = minRange <= 0 or (c1H - c1L) >= minRange
+sellCRT = sellRaw and bigC1 and c2H >= c1H + sweep
+buyCRT  = buyRaw and bigC1 and c2L <= c1L - sweep
+noise   = (sellRaw or buyRaw) and not (sellCRT or buyCRT)
 
 // --- TRADE LEVEL TAGS ---------------------------------------------------------
 // Small price tags that ride along with price while live, then freeze and
@@ -151,7 +163,11 @@ var float netUSD  = 0.0
 
 if newC3 and barstate.isconfirmed and chartOK
     armDir := 0
-    if sellCRT or buyCRT
+    // Filtered-out setup: optional small grey marker
+    if noise and showNoise and dir == 0
+        label.new(time, sellRaw ? high : low, "noise", xloc=xloc.bar_time, yloc=sellRaw ? yloc.abovebar : yloc.belowbar, style=sellRaw ? label.style_label_down : label.style_label_up, color=color.new(color.gray, 70), textcolor=color.white, size=size.tiny)
+    // Only look for a new setup when no trade is open
+    if (sellCRT or buyCRT) and dir == 0
         d      = buyCRT ? 1 : -1
         ct     = trend != 0 and d != trend ? " CT" : ""
         col    = blocked ? color.gray : d == 1 ? buyCol : sellCol
@@ -166,7 +182,7 @@ if newC3 and barstate.isconfirmed and chartOK
             label.new(time, d == 1 ? low : high, blocked ? "C3 x" : "C3" + ct, xloc=xloc.bar_time, yloc=d == 1 ? yloc.belowbar : yloc.abovebar, style=st, color=color.new(col, 30), textcolor=color.white, size=size.tiny)
             line.new(c2T, c2C, c3End, c2C, xloc=xloc.bar_time, color=color.new(blocked ? color.gray : zoneCol, faded), width=2)
             label.new(c3End, c2C, px(c2C), xloc=xloc.bar_time, style=label.style_label_left, color=color.new(blocked ? color.gray : zoneCol, 30), textcolor=color.black, size=size.tiny)
-        if not blocked and dir == 0
+        if not blocked
             armDir   := d
             zone     := c2C
             armEnd   := c3End
