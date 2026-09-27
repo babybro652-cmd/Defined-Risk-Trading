@@ -1,6 +1,6 @@
 # Brand Brief
 
-> Captured: 2026-09-07 · Updated: 2026-09-26
+> Captured: 2026-09-07 · Updated: 2026-09-27
 > Update this file as the business evolves.
 
 ## Public-copy rule (read first)
@@ -26,7 +26,7 @@ Second wedge: most traders don't have a strategy problem, they have a discipline
 - The paper trading bar: 20 trades minimum, 2 weeks minimum, 1-2 trades/day max, every one following the full checklist with defined risk. It's not about being profitable yet. It's about proving the process holds without skipping steps.
 - Real risk rules used in the program: never risk more than $1,000 total in a day, and no more than $200 during the early session (3:00-9:29 AM ET).
 - Brand identity: a clean wordmark ("DEFINED RISK TRADING") in near-black, muted navy, and reversed-on-navy versions, a framed wordmark lockup, and a matching DR monogram/favicon set.
-- Signature hashtag: #MyHobbyismyFREEDOM
+- Signature hashtags: #MyHobbyismyFREEDOM and #definedrisktrading (IG and TikTok, never Facebook)
 
 ## Voice
 Calm confidence, mentor energy with blunt honesty. Short sentences, clean structure, punchy emphasis. No hype, no profit promises, process over outcome. Professional and clean, expert and authoritative, but not arrogant. A guy actively building and being straight with you about the process.
@@ -40,3 +40,5 @@ Calm confidence, mentor energy with blunt honesty. Short sentences, clean struct
 - One concrete idea per post, not three
 - Specific details over generic statements
 - Every platform gets its own caption. Never reuse the same wording across platforms.
+- No filler words: actually, really, just, simply, truly, genuinely
+- Lead with the result or the concept, not a confession. 9-5 proof posts and education posts perform best

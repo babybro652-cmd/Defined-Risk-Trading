@@ -52,13 +52,25 @@ Write each from scratch. Don't write one and trim it into the others.
 
 | Platform | Blotato account | Native shape |
 |---|---|---|
-| **Instagram** | `68887` (@definedrisktrading) | Hook in the first 125 chars. 3-6 short lines with line breaks. CTA that drives **saves or shares**. 3-5 niche hashtags at the end, always including `#MyHobbyismyFREEDOM`. Needs media. Use `mediaType: "reel"` for video. |
-| **TikTok** | `58063` (@definedrisktrading) | Short caption: **under 150 chars**, keyword in the first 30. Talks like a person, not a post. Max 5 hashtags. `privacyLevel: PUBLIC_TO_EVERYONE` for live posts, `isAiGenerated: false`, `isBrandedContent: false`, `isYourBrand: false`. |
-| **Facebook** | `50185`, **pageId `993318963868124`** (Defined Risk Trading page) | Story-first and conversational. Can run longer than IG. **No hashtags.** CTA that drives **shares or comments**. ⚠️ The account's default page is Prosperity Legendz, so **always pass `pageId: 993318963868124` explicitly.** |
+| **Instagram** | `68887` (@definedrisktrading) | Hook in the first 125 chars. 3-6 short lines with line breaks. CTA that drives **saves or shares**. 3-5 niche hashtags at the end, always including `#MyHobbyismyFREEDOM` and `#definedrisktrading`. **Reels only** (`mediaType: "reel"`): usually the TikTok video with its own caption. |
+| **TikTok** | `58063` (@definedrisktrading) | Short caption: **under 150 chars**, keyword in the first 30. Talks like a person, not a post. Max 5 hashtags, always including `#definedrisktrading`. Video or photo carousel (the top TikTok so far was a carousel). `privacyLevel: PUBLIC_TO_EVERYONE` for live posts, `isAiGenerated: false`, `isBrandedContent: false`, `isYourBrand: false`. |
+| **Facebook** | `50185`, **pageId `993318963868124`** (Defined Risk Trading page) | Story-first and conversational. Can run longer than IG. **No hashtags.** **Every post needs a video (reel). No text-only posts.** CTA that drives **saves or shares**. ⚠️ The account's default page is Prosperity Legendz, so **always pass `pageId: 993318963868124` explicitly.** |
 
 YouTube is connected but has no posts yet. Skip it unless Tim asks.
 
-Voice (from `brand-brief.md`): calm, disciplined, real. A trader working a 9-5 who defines risk first. Use contractions and digits for numbers. No em dashes. No hype ("to the moon", "easy money"). Never promise returns.
+Voice (from `brand-brief.md`): calm, disciplined, real. A trader working a 9-5 who defines risk first. Use contractions and digits for numbers. No em dashes. No hype ("to the moon", "easy money"). Never promise returns. No filler words: actually, really, just, simply, truly, genuinely.
+
+**CTAs:** ask for a save, share, or follow ("Save this", "Follow for the exit"). Don't ask people to comment or tag someone: every post from 9/8 to 9/26 got 0 comments.
+
+**Content mix** (from Blotato results 9/8-9/26):
+
+| Share | Type | Why |
+|---|---|---|
+| 40% | **9-5 proof**: a real result framed around the day job ("$2,100 before 8 AM. Then I went to work.") | Top 2 TikToks (447 and 374 views, most likes) |
+| 40% | **Education**: one market concept, no P&L ("The market's first move is designed to trap retail traders") | Only breakout post: 3,406 views on Facebook |
+| 20% | **Loss lessons and lifestyle**: stop-outs, rules broken, rest days | Mid-to-low reach (190-220 views). Keep for honesty, don't lead with it |
+
+Open with the result or the concept, not with a confession. Proof posts are trade posts, so they still go through the approval gate.
 
 ### Step 3: Grade
 
@@ -77,8 +89,9 @@ It fails if any two captions share a run of 5+ words in a row (hashtags and trad
 ### Step 5: Pre-publish checks
 
 - [ ] Rule 4 placeholder scan passes
-- [ ] Hashtag counts: IG 3-5, TikTok ≤5, Facebook 0
-- [ ] Media attached for IG and TikTok
+- [ ] Hashtag counts: IG 3-5, TikTok ≤5, Facebook 0. `#definedrisktrading` on IG and TikTok
+- [ ] Video attached for IG and Facebook, video or carousel for TikTok
+- [ ] No filler words, no comment/tag CTAs
 - [ ] Facebook `pageId` = `993318963868124`
 - [ ] Every number in the caption matches the screenshot/video exactly (trade posts)
 
@@ -91,15 +104,15 @@ It fails if any two captions share a run of 5+ words in a row (hashtags and trad
 2. Send a phone notification with `PushNotification`: under 200 chars, leading with the action. Example: `Approve trade post: ES short +$1,075 (IG/TT/FB). Reply "go" or send edits.`
 3. Wait. Schedule only after Tim says go (or approves an edited version). If he edits one platform, re-run Step 4 before scheduling.
 
-**Posting cadence: 2-4 posts per platform per day (target 3).** The daily routine "Master Content Agent — Daily" (5:00 AM ET) fills these slots with non-trade posts:
+**Posting cadence (per day): TikTok 3, Facebook 2, Instagram 1.** TikTok is the growth platform. Instagram reels reach 12-64 views, so 1 repurposed reel a day is enough there. The daily routine "Master Content Agent — Daily" (5:00 AM ET) fills these slots with non-trade posts:
 
-| Platform | Slot 1 | Slot 2 | Slot 3 |
-|---|---|---|---|
-| Instagram | 8:00 AM | 12:30 PM | 7:00 PM |
-| TikTok | 7:00 AM | 12:00 PM | 8:00 PM |
-| Facebook | 9:00 AM | 1:00 PM | 5:00 PM |
+| Platform | Slots (ET) |
+|---|---|
+| TikTok | 7:00 AM, 12:00 PM, 8:00 PM |
+| Facebook | 9:00 AM, 5:00 PM |
+| Instagram | 12:30 PM |
 
-Trade posts from this skill are extra on top of those, so a trading day lands at 4 per platform. Before scheduling, check `blotato_list_schedules`. If a platform already has 4 posts today, replace (`blotato_update_schedule`) the next upcoming non-trade post on that platform instead of adding a 5th. Approved trade posts usually go out right away ("post now"); otherwise use the next open slot at least 30 minutes from any other post on that platform.
+Trade posts from this skill are extra on top of those, with a daily cap of TikTok 4, Facebook 3, Instagram 2. Before scheduling, check `blotato_list_schedules`. If a platform is already at its cap today, replace (`blotato_update_schedule`) the next upcoming non-trade post on that platform instead of adding another. Approved trade posts usually go out right away ("post now"); otherwise use the next open slot at least 30 minutes from any other post on that platform.
 
 ### Step 7: Report
 
