@@ -3,7 +3,7 @@
 
 Usage: check_unique.py captions.json [--n 5]
 captions.json: {"instagram": "...", "tiktok": "...", "facebook": "..."}
-Hashtags, @mentions, and pure numbers/prices are ignored so that shared
+Links, hashtags, @mentions, and pure numbers/prices are ignored so that shared
 trade figures (entry 7775.50, +$1,075) don't count as copied wording.
 Exit code 0 = all unique, 1 = overlap found.
 """
@@ -16,6 +16,7 @@ import sys
 
 def words(text):
     out = []
+    text = re.sub(r"(https?://|www\.)\S+", " ", text)
     for tok in re.findall(r"[#@]?[\w$.,'%+-]+", text.lower()):
         if tok[0] in "#@":
             continue
