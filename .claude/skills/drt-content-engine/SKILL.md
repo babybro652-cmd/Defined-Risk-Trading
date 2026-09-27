@@ -91,12 +91,15 @@ It fails if any two captions share a run of 5+ words in a row (hashtags and trad
 2. Send a phone notification with `PushNotification`: under 200 chars, leading with the action. Example: `Approve trade post: ES short +$1,075 (IG/TT/FB). Reply "go" or send edits.`
 3. Wait. Schedule only after Tim says go (or approves an edited version). If he edits one platform, re-run Step 4 before scheduling.
 
-**Posting slots (ET)**, matching the rhythm already working:
-- Instagram: **10:00 AM**
-- TikTok: **12:00 PM** and **7:00 PM**
-- Facebook: **5:00 PM**
+**Posting cadence: 2-4 posts per platform per day (target 3).** The daily routine "Master Content Agent — Daily" (5:00 AM ET) fills these slots with non-trade posts:
 
-Trade posts approved during the trading day can go out right away instead ("post now"). Keep about **2-4 posts per platform per day**. Check `blotato_list_posts` for what's already scheduled so you don't stack posts into a slot that's taken.
+| Platform | Slot 1 | Slot 2 | Slot 3 |
+|---|---|---|---|
+| Instagram | 8:00 AM | 12:30 PM | 7:00 PM |
+| TikTok | 7:00 AM | 12:00 PM | 8:00 PM |
+| Facebook | 9:00 AM | 1:00 PM | 5:00 PM |
+
+Trade posts from this skill are extra on top of those, so a trading day lands at 4 per platform. Before scheduling, check `blotato_list_schedules`. If a platform already has 4 posts today, replace (`blotato_update_schedule`) the next upcoming non-trade post on that platform instead of adding a 5th. Approved trade posts usually go out right away ("post now"); otherwise use the next open slot at least 30 minutes from any other post on that platform.
 
 ### Step 7: Report
 
