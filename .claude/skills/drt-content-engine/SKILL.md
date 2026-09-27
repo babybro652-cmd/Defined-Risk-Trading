@@ -45,6 +45,8 @@ If a trade number is unreadable, don't guess. Ask Tim once, in one short message
 
 **Where videos live:** Tim's phone uploads to the **DRT Phone** folder in the support@definedrisktrading.com Drive. That folder is shared with the connected babybro652@gmail.com account and set to "anyone with the link", so new clips show up in Drive search (`mimeType contains 'video/'`, newest first) and need no sharing changes. CapCut exports are named `lv_0_<timestamp>.mp4`.
 
+**Photo limits:** TikTok rejects phone screenshots taller than 9:16 ("Unsupported picture size"; a 1080x2340 screenshot failed on 9/27). Ask Tim to crop to 9:16 (1080x1920) before uploading, or skip TikTok for that post.
+
 **Video limits:** keep it under 100 MB and at a steady **30 fps**. Raw phone screen recordings get rejected by TikTok ("Unsupported frame rate"), so Tim runs them through **CapCut** and exports at 30 fps first. If TikTok still fails for that reason, post to the other platforms anyway and tell Tim to re-export at 30 fps.
 
 ### Step 2: Write one native caption per platform
