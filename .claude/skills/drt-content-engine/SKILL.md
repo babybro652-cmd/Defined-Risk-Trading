@@ -18,12 +18,13 @@ Brands in scope right now: **Defined Risk Trading only.** Prosperity Legendz is 
 
 ---
 
-## The 4 rules Tim set (non-negotiable)
+## The 5 rules Tim set (non-negotiable)
 
 1. **Autopilot by default.** Non-trade posts (mindset, education, 9-5 grind, promos, testimonials already approved by the student) get written, graded, and scheduled without asking.
 2. **Trade posts need Tim's approval.** A post is a *trade post* if it contains any of: P&L or dollar results, entries/exits/stops/targets, a trade screenshot or trade video, win/loss counts, a weekly recap, or funded/prop account numbers. Build it in full, but **do not schedule it** until Tim approves (see Approval gate).
 3. **No two posts share the same words.** Each platform gets its own caption written for that platform. It's the same idea, not the same text. Enforce this with `scripts/check_unique.py` (below).
 4. **Never publish placeholder or test text.** If the caption contains `Post Text`, `[`, `TODO`, `TEST`, `lorem`, or is under 20 characters, stop. (A literal "Post Text" post went live on 9/26. Never again.)
+5. **Never name "AMD" or "CRT" in public copy.** They're Tim's proprietary method names and belong only inside the paid course. `brand-brief.md` mentions them for context only. In captions, describe the idea instead ("the 3-candle entry", "session liquidity").
 
 ---
 
