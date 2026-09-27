@@ -18,13 +18,14 @@ Brands in scope right now: **Defined Risk Trading only.** Prosperity Legendz is 
 
 ---
 
-## The 5 rules Tim set (non-negotiable)
+## The 6 rules Tim set (non-negotiable)
 
 1. **Autopilot by default.** Non-trade posts (mindset, education, 9-5 grind, promos, testimonials already approved by the student) get written, graded, and scheduled without asking.
 2. **Trade posts need Tim's approval.** A post is a *trade post* if it contains any of: P&L or dollar results, entries/exits/stops/targets, a trade screenshot or trade video, win/loss counts, a weekly recap, or funded/prop account numbers. Build it in full, but **do not schedule it** until Tim approves (see Approval gate).
 3. **No two posts share the same words.** Each platform gets its own caption written for that platform. It's the same idea, not the same text. Enforce this with `scripts/check_unique.py` (below).
 4. **Never publish placeholder or test text.** If the caption contains `Post Text`, `[`, `TODO`, `TEST`, `lorem`, or is under 20 characters, stop. (A literal "Post Text" post went live on 9/26. Never again.)
 5. **Never name "AMD" or "CRT" in public copy.** They're Tim's proprietary method names and belong only inside the paid course. `brand-brief.md` mentions them for context only. In captions, describe the idea instead ("the 3-candle entry", "session liquidity").
+6. **Fact-check before anything posts.** Every claim about markets, sessions, contracts, or numbers gets checked against "Verified Market Facts" in `brand-brief.md`. Anything not covered there and not confirmable from CME Group gets cut. (A post on 9/27 called Globex a session. Globex is the electronic platform that runs almost the whole week.)
 
 ---
 
@@ -72,9 +73,9 @@ Voice (from `brand-brief.md`): calm, disciplined, real. A trader working a 9-5 w
 
 Open with the result or the concept, not with a confession. Proof posts are trade posts, so they still go through the approval gate.
 
-### Step 3: Grade
+### Step 3: Fact-check, then grade
 
-Run `post-grader` on each caption for its platform. Rewrite anything under 8/10.
+First, list every factual claim in each caption (session names and times, contract specs, how the market works, any statistic, any trade number) and check each one against "Verified Market Facts" in `brand-brief.md` and, for trades, against Tim's source. Fix or cut anything wrong or unverifiable. Then run `post-grader` on each caption for its platform. Rewrite anything under 8/10.
 
 ### Step 4: Uniqueness check
 
@@ -88,6 +89,7 @@ It fails if any two captions share a run of 5+ words in a row (hashtags and trad
 
 ### Step 5: Pre-publish checks
 
+- [ ] Fact-check done: every market claim matches "Verified Market Facts" or was cut
 - [ ] Rule 4 placeholder scan passes
 - [ ] Hashtag counts: IG 3-5, TikTok ≤5, Facebook 0. `#definedrisktrading` on IG and TikTok
 - [ ] Video attached for IG and Facebook, video or carousel for TikTok

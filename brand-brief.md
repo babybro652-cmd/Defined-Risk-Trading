@@ -31,6 +31,15 @@ Second wedge: most traders don't have a strategy problem, they have a discipline
 ## Voice
 Calm confidence, mentor energy with blunt honesty. Short sentences, clean structure, punchy emphasis. No hype, no profit promises, process over outcome. Professional and clean, expert and authoritative, but not arrogant. A guy actively building and being straight with you about the process.
 
+## Verified Market Facts (check every post against these)
+- **Globex is CME's electronic trading platform, not a session.** ES trades on Globex nearly 24 hours: Sunday 6:00 PM ET to Friday 5:00 PM ET, with a daily 1-hour break from 5:00 to 6:00 PM ET.
+- Sessions inside that trading day (ET, approximate): Asia 6:00 PM to 3:00 AM, London 3:00 AM to 9:30 AM, New York regular trading hours (RTH) 9:30 AM to 4:00 PM. Everything outside RTH is the overnight / electronic trading hours (ETH).
+- ES contract: $50 per point, minimum tick 0.25 = $12.50. MES (micro): $5 per point, tick = $1.25.
+- Don't state what institutions do as fact ("institutions execute in RTH"). Frame it as how Tim reads the market ("I treat the New York open as...").
+- No made-up statistics ("90% of traders...") unless there's a real source. Say "most traders" instead.
+- Trade numbers must match Tim's screenshot, video, or message exactly.
+- If a claim isn't covered here and can't be confirmed from an official source (CME Group), cut it. When in doubt, leave it out.
+
 ## Universal Voice Rules (apply to every post)
 - Contractions always ("don't" not "do not")
 - Active voice, short sentences
