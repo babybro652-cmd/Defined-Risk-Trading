@@ -1,0 +1,524 @@
+// Defined Risk Trading - CRT + Divergence + Support/Resistance Confluence
+// Educational indicator. Not financial advice. Combine with the full
+// pre-trade checklist (bias, session, defined risk) before acting on any signal.
+//
+// What it does:
+//   1. Detects a 3-candle CRT (Candle Range Theory) sequence: a Range candle,
+//      a Manipulation candle that sweeps liquidity beyond the range and closes
+//      back inside it, and a Distribution candle that confirms the reversal.
+//   2. Tracks pivot-based Support & Resistance levels on the chart timeframe.
+//   3. Tracks regular RSI divergence (price vs. momentum) at swing highs/lows.
+//   4. Flags a high-confluence BUY/SELL signal only when a confirmed CRT
+//      sweep happens at/through a tracked S/R level while a recent divergence
+//      supports the same direction.
+//   5. Plots the CRT range's equilibrium (50%) level with a composite
+//      Bull%/Bear% bias readout (CRT direction + RSI + divergence + price
+//      position vs equilibrium), mirroring a generic "unbiased level" style
+//      display. This is an original composite score, not a reverse-engineered
+//      copy of any third-party indicator's formula.
+//   6. Draws Entry / Stop Loss / TP1 / TP2 / TP3 for every BUY/SELL
+//      confluence signal. Stop sits beyond the CRT sweep extreme; targets
+//      are R-multiples of that risk. Each level freezes and grays out the
+//      moment price actually touches it.
+//   The CRT Range Timeframe is independent of the chart you're viewing, so
+//   the same formations/labels/signals appear whether you're on a 1min
+//   execution chart or the 15min chart the range is built from.
+//
+//@version=6
+indicator("CRT + Divergence + S/R Confluence | Defined Risk Trading", shorttitle = "CRT-DIV-SR", overlay = true, max_lines_count = 500, max_labels_count = 500, max_boxes_count = 500)
+
+// ---------------------------------------------------------------------------
+// Inputs
+// ---------------------------------------------------------------------------
+grpCRT = "CRT (Candle Range Theory)"
+crtTimeframe    = input.timeframe("15", "Range Timeframe (blank = chart timeframe)", group = grpCRT, tooltip = "The timeframe the CRT range/manipulation/distribution sequence is built from. This is independent of the chart you're viewing, so leave it set to your CRT timeframe (e.g. 15) and the same formations, labels and signals will show up whether you're on a 1min, 5min or 15min chart. Only works correctly when the chart timeframe is <= this timeframe. Leave blank to use the chart's own timeframe instead.")
+crtConfirmMode  = input.string("Break of Range", "Confirmation Mode", options = ["Close Back Inside Range", "Break of Range"], group = grpCRT, tooltip = "Break of Range (strict): the 3rd candle must close beyond the range candle's opposite extreme.\nClose Back Inside Range (fast): only requires the manipulation candle to close back inside the range.")
+crtMinSweepATR  = input.float(0.10, "Min Sweep Size (x ATR)", minval = 0.0, step = 0.05, group = grpCRT, tooltip = "Filters out insignificant wicks. The sweep beyond the range must exceed this many ATRs.")
+
+grpSR = "Support & Resistance"
+srPivotLen      = input.int(10, "Pivot Length", minval = 2, maxval = 50, group = grpSR)
+srMaxLevels     = input.int(8, "Max Levels (each side)", minval = 1, maxval = 20, group = grpSR)
+srTouchATR      = input.float(0.25, "Proximity Zone (x ATR)", minval = 0.05, step = 0.05, group = grpSR, tooltip = "How close (in ATRs) the CRT sweep must come to a tracked level to count as 'at' that level.")
+srInvalidation  = input.string("Close", "Break Invalidation", options = ["Wick", "Close"], group = grpSR)
+
+grpDiv = "Divergence"
+rsiLen          = input.int(14, "RSI Length", minval = 2, group = grpDiv)
+divPivotLen     = input.int(5, "Divergence Pivot Length", minval = 2, maxval = 30, group = grpDiv)
+divMaxBars      = input.int(60, "Max Bars Between Pivots", minval = 5, group = grpDiv)
+divValidBars    = input.int(25, "Divergence Validity Window (bars)", minval = 1, group = grpDiv, tooltip = "How many bars after a divergence forms it still counts toward a confluence signal.")
+
+grpConf = "Confluence Rules"
+requireSR   = input.bool(true, "Require Sweep At Support/Resistance", group = grpConf)
+requireDiv  = input.bool(true, "Require Recent Divergence", group = grpConf)
+
+grpBias = "Bias Level"
+showBiasLevel  = input.bool(true, "Show Equilibrium Level + Bull/Bear Bias %", group = grpBias, tooltip = "Draws the 50% equilibrium of the current CRT range plus a composite Bull%/Bear% readout, similar to a generic 'unbiased level' style display. This is our own composite score built from the CRT direction, RSI, divergence and price position already tracked above - it is not a copy of any third-party indicator's formula.")
+biasDecayBars  = input.int(50, "CRT Bias Decay (bars)", minval = 5, group = grpBias, tooltip = "How many bars the last confirmed CRT direction keeps pulling the bias score before decaying to zero.")
+
+grpTrade = "Trade Levels"
+showTradeLevels = input.bool(true, "Show Entry / SL / Take Profits", group = grpTrade, tooltip = "Draws an Entry, Stop Loss and three R-multiple Take Profit levels whenever a BUY/SELL confluence signal fires. Each new signal replaces the previous setup's levels.")
+stopBufferATR   = input.float(0.15, "Stop Buffer Beyond Sweep (x ATR)", minval = 0.0, step = 0.05, group = grpTrade, tooltip = "Stop is placed this many ATRs beyond the CRT manipulation candle's sweep extreme.")
+tp1R            = input.float(1.0, "TP1 (R multiple)", minval = 0.1, step = 0.1, group = grpTrade)
+tp2R            = input.float(2.0, "TP2 (R multiple)", minval = 0.1, step = 0.1, group = grpTrade)
+tp3R            = input.float(3.0, "TP3 (R multiple)", minval = 0.1, step = 0.1, group = grpTrade)
+moveSLToBreakeven = input.bool(true, "Move SL to Breakeven at TP1, Trail at TP2/TP3", group = grpTrade, tooltip = "When a target hits, the Stop Loss moves to lock in progress: to Entry after TP1, to TP1 after TP2, to TP2 after TP3. Turn off to keep the original fixed stop for the life of the trade.")
+
+grpStyle = "Style"
+bullColor       = input.color(color.new(color.teal, 0), "Bullish", group = grpStyle)
+bearColor       = input.color(color.new(color.red, 0), "Bearish", group = grpStyle)
+supportColor    = input.color(color.new(color.teal, 60), "Support Level", group = grpStyle)
+resistanceColor = input.color(color.new(color.red, 60), "Resistance Level", group = grpStyle)
+showCRTBoxes    = input.bool(true, "Show CRT Range Boxes", group = grpStyle)
+showDivLabels   = input.bool(true, "Show Divergence Labels", group = grpStyle)
+showStatusPanel = input.bool(true, "Show Status Panel (top-right)", group = grpStyle)
+
+// ---------------------------------------------------------------------------
+// Core series
+// ---------------------------------------------------------------------------
+atr = ta.atr(20)
+rsi = ta.rsi(close, rsiLen)
+
+// ---------------------------------------------------------------------------
+// Helper functions
+// ---------------------------------------------------------------------------
+addLevel(array<float> pricesArr, array<line> linesArr, float lvl, color lineColor, int maxCount) =>
+    ln = line.new(x1 = bar_index - srPivotLen, y1 = lvl, x2 = bar_index, y2 = lvl, color = lineColor, width = 2, extend = extend.right)
+    pricesArr.unshift(lvl)
+    linesArr.unshift(ln)
+    if pricesArr.size() > maxCount
+        pricesArr.pop()
+        oldLn = linesArr.pop()
+        line.delete(oldLn)
+
+f_nearBelow(array<float> arr, float price, float buffer) =>
+    bool found = false
+    if arr.size() > 0
+        for i = 0 to arr.size() - 1
+            if price <= arr.get(i) + buffer
+                found := true
+    found
+
+f_nearAbove(array<float> arr, float price, float buffer) =>
+    bool found = false
+    if arr.size() > 0
+        for i = 0 to arr.size() - 1
+            if price >= arr.get(i) - buffer
+                found := true
+    found
+
+f_lvlName(int idx) => idx == 0 ? "ENTRY" : idx == 1 ? "SL" : idx == 2 ? "TP1" : idx == 3 ? "TP2" : "TP3"
+f_lvlColor(int idx) => idx == 0 ? color.new(color.yellow, 0) : idx == 1 ? color.new(color.red, 0) : color.new(color.teal, 0)
+
+// Ends the current SL line/label at this bar and starts a fresh one at newPrice,
+// so the chart shows the original stop up to the move and the new stop after it.
+moveSL(array<float> pricesArr, array<line> linesArr, array<label> labelsArr, array<string> baseTextArr, float newPrice, string suffix) =>
+    oldLn = linesArr.get(1)
+    line.set_extend(oldLn, extend.none)
+    line.set_x2(oldLn, math.max(time, line.get_x1(oldLn) + 1))
+    oldLb = labelsArr.get(1)
+    label.delete(oldLb)
+    pricesArr.set(1, newPrice)
+    slColor = f_lvlColor(1)
+    txt = "SL " + str.tostring(newPrice, format.mintick) + suffix
+    baseTextArr.set(1, txt)
+    newLn = line.new(x1 = time, y1 = newPrice, x2 = time + timeframe.in_seconds() * 1000, y2 = newPrice, xloc = xloc.bar_time, color = slColor, width = 2, extend = extend.right)
+    newLb = label.new(x = time, y = newPrice, xloc = xloc.bar_time, style = label.style_label_left, color = slColor, textcolor = color.white, text = txt, size = size.small)
+    linesArr.set(1, newLn)
+    labelsArr.set(1, newLb)
+
+// ---------------------------------------------------------------------------
+// Support & Resistance engine (chart timeframe, pivot based)
+// ---------------------------------------------------------------------------
+var array<float> supLevels = array.new<float>()
+var array<line>  supLines  = array.new<line>()
+var array<float> resLevels = array.new<float>()
+var array<line>  resLines  = array.new<line>()
+
+pivLow  = ta.pivotlow(srPivotLen, srPivotLen)
+pivHigh = ta.pivothigh(srPivotLen, srPivotLen)
+
+if not na(pivLow)
+    addLevel(supLevels, supLines, pivLow, supportColor, srMaxLevels)
+
+if not na(pivHigh)
+    addLevel(resLevels, resLines, pivHigh, resistanceColor, srMaxLevels)
+
+// Break invalidation: drop levels once price closes (or wicks) through them
+if supLevels.size() > 0
+    for i = supLevels.size() - 1 to 0
+        lvl = supLevels.get(i)
+        brokenPrice = srInvalidation == "Close" ? close : low
+        if brokenPrice < lvl
+            line.delete(supLines.get(i))
+            supLevels.remove(i)
+            supLines.remove(i)
+
+if resLevels.size() > 0
+    for i = resLevels.size() - 1 to 0
+        lvl = resLevels.get(i)
+        brokenPrice = srInvalidation == "Close" ? close : high
+        if brokenPrice > lvl
+            line.delete(resLines.get(i))
+            resLevels.remove(i)
+            resLines.remove(i)
+
+// ---------------------------------------------------------------------------
+// CRT (Candle Range Theory) detection
+// ---------------------------------------------------------------------------
+crtTF = crtTimeframe == "" ? timeframe.period : crtTimeframe
+tfWarning = timeframe.in_seconds(timeframe.period) > timeframe.in_seconds(crtTF)
+
+[c1H, c1L, c2H, c2L, c2C, c3C, t1, t3End] = request.security(syminfo.tickerid, crtTF,
+     [high[3], low[3], high[2], low[2], close[2], close[1], time[3], time_close[1]])
+
+sweepLow  = c2L < c1L and c2C > c1L and (c1L - c2L) >= atr * crtMinSweepATR
+sweepHigh = c2H > c1H and c2C < c1H and (c2H - c1H) >= atr * crtMinSweepATR
+
+confirmBull = sweepLow  and (crtConfirmMode == "Break of Range" ? c3C > c1H : c3C > c2C)
+confirmBear = sweepHigh and (crtConfirmMode == "Break of Range" ? c3C < c1L : c3C < c2C)
+
+newRange = t3End != t3End[1]
+
+bullCRTSignal = newRange and confirmBull
+bearCRTSignal = newRange and confirmBear
+
+nearSupport    = f_nearBelow(supLevels, c2L, atr * srTouchATR)
+nearResistance = f_nearAbove(resLevels, c2H, atr * srTouchATR)
+
+// ---------------------------------------------------------------------------
+// Regular RSI divergence at swing pivots
+// ---------------------------------------------------------------------------
+var float lastPLPrice = na
+var int   lastPLBar   = na
+var float lastPLRSI   = na
+
+var float lastPHPrice = na
+var int   lastPHBar   = na
+var float lastPHRSI   = na
+
+bullDivPulse = false
+bearDivPulse = false
+
+pivLowPrice  = ta.pivotlow(divPivotLen, divPivotLen)
+pivHighPrice = ta.pivothigh(divPivotLen, divPivotLen)
+
+if not na(pivLowPrice)
+    pivotBar = bar_index - divPivotLen
+    pivotRSI = rsi[divPivotLen]
+    if not na(lastPLPrice) and (pivotBar - lastPLBar) <= divMaxBars
+        if pivLowPrice < lastPLPrice and pivotRSI > lastPLRSI
+            bullDivPulse := true
+    lastPLPrice := pivLowPrice
+    lastPLBar   := pivotBar
+    lastPLRSI   := pivotRSI
+
+if not na(pivHighPrice)
+    pivotBarH = bar_index - divPivotLen
+    pivotRSIH = rsi[divPivotLen]
+    if not na(lastPHPrice) and (pivotBarH - lastPHBar) <= divMaxBars
+        if pivHighPrice > lastPHPrice and pivotRSIH < lastPHRSI
+            bearDivPulse := true
+    lastPHPrice := pivHighPrice
+    lastPHBar   := pivotBarH
+    lastPHRSI   := pivotRSIH
+
+barsSinceBullDiv = ta.barssince(bullDivPulse)
+barsSinceBearDiv = ta.barssince(bearDivPulse)
+
+recentBullDiv = not na(barsSinceBullDiv) and barsSinceBullDiv <= divValidBars
+recentBearDiv = not na(barsSinceBearDiv) and barsSinceBearDiv <= divValidBars
+
+if showDivLabels and bullDivPulse
+    label.new(x = bar_index - divPivotLen, y = low[divPivotLen], style = label.style_label_up, color = color.new(bullColor, 40), textcolor = color.white, text = "Bull Div", size = size.tiny)
+    line.new(x1 = bar_index - divPivotLen - 2, y1 = low[divPivotLen], x2 = bar_index - divPivotLen + 2, y2 = low[divPivotLen], color = bullColor, width = 1, style = line.style_dashed, extend = extend.none)
+
+if showDivLabels and bearDivPulse
+    label.new(x = bar_index - divPivotLen, y = high[divPivotLen], style = label.style_label_down, color = color.new(bearColor, 40), textcolor = color.white, text = "Bear Div", size = size.tiny)
+    line.new(x1 = bar_index - divPivotLen - 2, y1 = high[divPivotLen], x2 = bar_index - divPivotLen + 2, y2 = high[divPivotLen], color = bearColor, width = 1, style = line.style_dashed, extend = extend.none)
+
+// ---------------------------------------------------------------------------
+// Webhook payloads - JSON via Pine's alert() so a "Any alert() function call"
+// TradingView alert can POST full signal data (not just the fixed {{close}}/
+// {{ticker}} placeholders alertcondition() is limited to) to a Google Apps
+// Script Web App, which appends/updates rows in the forward-test log.
+// ---------------------------------------------------------------------------
+if bullDivPulse
+    divDate = str.format_time(time[divPivotLen], "yyyy-MM-dd", syminfo.timezone)
+    divTime = str.format_time(time[divPivotLen], "HH:mm", syminfo.timezone)
+    validUntilMs = time[divPivotLen] + divValidBars * timeframe.in_seconds() * 1000
+    validDate = str.format_time(validUntilMs, "yyyy-MM-dd", syminfo.timezone)
+    validTime = str.format_time(validUntilMs, "HH:mm", syminfo.timezone)
+    alert('{"type":"SIGNAL","signal":"Bull Div","ticker":"' + syminfo.ticker + '","date":"' + divDate + '","time":"' + divTime + '","ref_price":' + str.tostring(low[divPivotLen], format.mintick) + ',"valid_until_date":"' + validDate + '","valid_until_time":"' + validTime + '"}', alert.freq_once_per_bar_close)
+
+if bearDivPulse
+    divDateB = str.format_time(time[divPivotLen], "yyyy-MM-dd", syminfo.timezone)
+    divTimeB = str.format_time(time[divPivotLen], "HH:mm", syminfo.timezone)
+    validUntilMsB = time[divPivotLen] + divValidBars * timeframe.in_seconds() * 1000
+    validDateB = str.format_time(validUntilMsB, "yyyy-MM-dd", syminfo.timezone)
+    validTimeB = str.format_time(validUntilMsB, "HH:mm", syminfo.timezone)
+    alert('{"type":"SIGNAL","signal":"Bear Div","ticker":"' + syminfo.ticker + '","date":"' + divDateB + '","time":"' + divTimeB + '","ref_price":' + str.tostring(high[divPivotLen], format.mintick) + ',"valid_until_date":"' + validDateB + '","valid_until_time":"' + validTimeB + '"}', alert.freq_once_per_bar_close)
+
+// ---------------------------------------------------------------------------
+// Bias Level - equilibrium (50%) of the current CRT range plus a composite
+// Bull/Bear % readout built from signals already computed above.
+// ---------------------------------------------------------------------------
+var float eqLevel    = na
+var int   lastCRTDir = 0
+var int   lastCRTBar = na
+
+if newRange
+    eqLevel := (c1H + c1L) / 2
+
+if bullCRTSignal
+    lastCRTDir := 1
+    lastCRTBar := bar_index
+
+if bearCRTSignal
+    lastCRTDir := -1
+    lastCRTBar := bar_index
+
+eqBias  = na(eqLevel) ? 0.0 : (close > eqLevel ? 1.0 : -1.0)
+rsiBias = rsi > 50 ? 1.0 : -1.0
+divBias = recentBullDiv and not recentBearDiv ? 1.0 : (recentBearDiv and not recentBullDiv ? -1.0 : 0.0)
+
+crtRecencyFactor = na(lastCRTBar) ? 0.0 : math.max(0.0, 1.0 - (bar_index - lastCRTBar) / float(biasDecayBars))
+crtBias = lastCRTDir * crtRecencyFactor
+
+biasSum    = 3.0 * eqBias + 2.0 * rsiBias + 2.0 * divBias + 3.0 * crtBias
+biasMaxAbs = 3.0 + 2.0 + 2.0 + 3.0
+bullPct = int(math.round(math.max(0.0, math.min(100.0, 50 + (biasSum / biasMaxAbs) * 50))))
+bearPct = 100 - bullPct
+
+var line eqLine = na
+if showBiasLevel and newRange
+    if not na(eqLine)
+        line.delete(eqLine)
+    eqLine := line.new(x1 = t1, y1 = eqLevel, x2 = t3End, y2 = eqLevel, xloc = xloc.bar_time, color = color.new(color.purple, 0), style = line.style_dotted, width = 1, extend = extend.right)
+
+var label bullBiasLabel = na
+var label bearBiasLabel = na
+if showBiasLevel and not na(eqLevel) and barstate.islast
+    if not na(bullBiasLabel)
+        label.delete(bullBiasLabel)
+    if not na(bearBiasLabel)
+        label.delete(bearBiasLabel)
+    bullBiasLabel := label.new(x = bar_index + 2, y = eqLevel + atr * 0.4, style = label.style_label_left, color = color.new(color.black, 100), textcolor = color.new(color.teal, 0), text = "Bull - " + str.tostring(bullPct) + "%", size = size.normal)
+    bearBiasLabel := label.new(x = bar_index + 2, y = eqLevel - atr * 0.4, style = label.style_label_left, color = color.new(color.black, 100), textcolor = color.new(color.red, 0), text = "Bear - " + str.tostring(bearPct) + "%", size = size.normal)
+
+// ---------------------------------------------------------------------------
+// Confluence
+// ---------------------------------------------------------------------------
+longConfluence  = bullCRTSignal and (not requireSR or nearSupport)    and (not requireDiv or recentBullDiv)
+shortConfluence = bearCRTSignal and (not requireSR or nearResistance) and (not requireDiv or recentBearDiv)
+
+// ---------------------------------------------------------------------------
+// Trade Levels: Entry / Stop Loss / TP1 / TP2 / TP3 for the active setup.
+// Index 0 = Entry, 1 = Stop Loss, 2-4 = TP1-TP3. A new confluence signal
+// replaces the previous setup's lines and labels.
+// ---------------------------------------------------------------------------
+var array<float>  lvlPrice    = array.new<float>(5, na)
+var array<string> lvlBaseText = array.new<string>(5, "")
+var array<line>   lvlLine     = array.new<line>(5)
+var array<label>  lvlLabel    = array.new<label>(5)
+var array<bool>   lvlHit      = array.new<bool>(5, false)
+var int tradeDir = 0
+var int slMoveStage = 0
+
+if showTradeLevels and (longConfluence or shortConfluence)
+    for i = 0 to 4
+        oldLn = lvlLine.get(i)
+        if not na(oldLn)
+            line.delete(oldLn)
+        oldLb = lvlLabel.get(i)
+        if not na(oldLb)
+            label.delete(oldLb)
+
+    dir = longConfluence ? 1 : -1
+    tradeDir := dir
+    slMoveStage := 0
+
+    entryPrice = c3C
+    slPrice    = dir == 1 ? c2L - atr * stopBufferATR : c2H + atr * stopBufferATR
+    riskR      = math.abs(entryPrice - slPrice)
+    tp1Price   = dir == 1 ? entryPrice + riskR * tp1R : entryPrice - riskR * tp1R
+    tp2Price   = dir == 1 ? entryPrice + riskR * tp2R : entryPrice - riskR * tp2R
+    tp3Price   = dir == 1 ? entryPrice + riskR * tp3R : entryPrice - riskR * tp3R
+
+    sigDate = str.format_time(time, "yyyy-MM-dd", syminfo.timezone)
+    sigTime = str.format_time(time, "HH:mm", syminfo.timezone)
+    sigType = dir == 1 ? "BUY" : "SELL"
+    sigDir  = dir == 1 ? "Long" : "Short"
+    alert('{"type":"SIGNAL","signal":"' + sigType + '","direction":"' + sigDir + '","ticker":"' + syminfo.ticker +
+         '","date":"' + sigDate + '","time":"' + sigTime +
+         '","entry":' + str.tostring(entryPrice, format.mintick) +
+         ',"sl":' + str.tostring(slPrice, format.mintick) +
+         ',"tp1":' + str.tostring(tp1Price, format.mintick) +
+         ',"tp2":' + str.tostring(tp2Price, format.mintick) +
+         ',"tp3":' + str.tostring(tp3Price, format.mintick) + '}', alert.freq_once_per_bar_close)
+
+    lvlPrice.set(0, entryPrice)
+    lvlPrice.set(1, slPrice)
+    lvlPrice.set(2, tp1Price)
+    lvlPrice.set(3, tp2Price)
+    lvlPrice.set(4, tp3Price)
+
+    for i = 0 to 4
+        lvlHit.set(i, false)
+        p = lvlPrice.get(i)
+        txt = f_lvlName(i) + " " + str.tostring(p, format.mintick)
+        lvlBaseText.set(i, txt)
+        col = f_lvlColor(i)
+        ln = line.new(x1 = t3End, y1 = p, x2 = t3End + timeframe.in_seconds() * 1000, y2 = p, xloc = xloc.bar_time, color = col, width = 2, extend = extend.right)
+        lvlLine.set(i, ln)
+        lvlLabel.set(i, na)
+
+// Keep each not-yet-hit level's label anchored to the current bar so it flows
+// forward with the chart (like a live price-line label) instead of staying
+// pinned back at the signal candle.
+if showTradeLevels and tradeDir != 0
+    for i = 0 to 4
+        if not lvlHit.get(i)
+            oldLb = lvlLabel.get(i)
+            if not na(oldLb)
+                label.delete(oldLb)
+            p = lvlPrice.get(i)
+            col = f_lvlColor(i)
+            newLb = label.new(x = time, y = p, xloc = xloc.bar_time, style = label.style_label_left, color = col, textcolor = color.white, text = lvlBaseText.get(i), size = size.small)
+            lvlLabel.set(i, newLb)
+
+// Freeze a level's line/label in place the first time price actually touches it.
+slJustHit  = false
+tp1JustHit = false
+tp2JustHit = false
+tp3JustHit = false
+if showTradeLevels and tradeDir != 0
+    for i = 1 to 4
+        if not lvlHit.get(i)
+            p = lvlPrice.get(i)
+            isHit = tradeDir == 1 ? (i == 1 ? low <= p : high >= p) : (i == 1 ? high >= p : low <= p)
+            if isHit
+                lvlHit.set(i, true)
+                ln = lvlLine.get(i)
+                lb = lvlLabel.get(i)
+                line.set_extend(ln, extend.none)
+                line.set_x2(ln, math.max(time, line.get_x1(ln) + 1))
+                label.set_text(lb, lvlBaseText.get(i) + " (HIT)")
+                label.set_color(lb, color.gray)
+
+                if i == 1
+                    slJustHit := true
+                    resultText = slMoveStage == 0 ? "STOPPED" : slMoveStage == 1 ? "STOPPED (BE)" : "STOPPED (TRAIL)"
+                    alert('{"type":"UPDATE","result":"' + resultText + '"}', alert.freq_once_per_bar_close)
+                    lvlHit.set(0, true)
+                    // Trade closed: freeze the Entry line/label in place too instead of
+                    // leaving it extending forward forever.
+                    entryLn = lvlLine.get(0)
+                    if not na(entryLn)
+                        line.set_extend(entryLn, extend.none)
+                        line.set_x2(entryLn, math.max(time, line.get_x1(entryLn) + 1))
+                    entryLb = lvlLabel.get(0)
+                    if not na(entryLb)
+                        label.set_color(entryLb, color.gray)
+                    // Stopped out: hide any un-reached take-profits until the next signal.
+                    for j = 2 to 4
+                        if not lvlHit.get(j)
+                            oldLn2 = lvlLine.get(j)
+                            if not na(oldLn2)
+                                line.delete(oldLn2)
+                            oldLb2 = lvlLabel.get(j)
+                            if not na(oldLb2)
+                                label.delete(oldLb2)
+                            lvlHit.set(j, true)
+                if i == 2
+                    tp1JustHit := true
+                    alert('{"type":"UPDATE","result":"TP1 HIT"}', alert.freq_once_per_bar_close)
+                if i == 3
+                    tp2JustHit := true
+                    alert('{"type":"UPDATE","result":"TP2 HIT"}', alert.freq_once_per_bar_close)
+                if i == 4
+                    tp3JustHit := true
+                    alert('{"type":"UPDATE","result":"TP3 HIT"}', alert.freq_once_per_bar_close)
+
+                if moveSLToBreakeven and i >= 2 and not lvlHit.get(1)
+                    newSL = i == 2 ? lvlPrice.get(0) : i == 3 ? lvlPrice.get(2) : lvlPrice.get(3)
+                    suffix = i == 2 ? " (BE)" : " (TRAIL)"
+                    moveSL(lvlPrice, lvlLine, lvlLabel, lvlBaseText, newSL, suffix)
+                    slMoveStage := i - 1
+
+// ---------------------------------------------------------------------------
+// Plotting
+// ---------------------------------------------------------------------------
+if showCRTBoxes and bullCRTSignal
+    box.new(left = t1, top = math.max(c1H, c2H), right = t3End, bottom = math.min(c1L, c2L), xloc = xloc.bar_time, bgcolor = color.new(bullColor, 88), border_color = bullColor, extend = extend.none)
+
+if showCRTBoxes and bearCRTSignal
+    box.new(left = t1, top = math.max(c1H, c2H), right = t3End, bottom = math.min(c1L, c2L), xloc = xloc.bar_time, bgcolor = color.new(bearColor, 88), border_color = bearColor, extend = extend.none)
+
+if bullCRTSignal and not longConfluence
+    label.new(x = t3End, y = low, xloc = xloc.bar_time, yloc = yloc.belowbar, style = label.style_label_up, color = color.new(bullColor, 40), textcolor = color.white, text = "CRT", size = size.small)
+    crtDateBull = str.format_time(t3End, "yyyy-MM-dd", syminfo.timezone)
+    crtTimeBull = str.format_time(t3End, "HH:mm", syminfo.timezone)
+    alert('{"type":"SIGNAL","signal":"CRT Bull (unfiltered)","ticker":"' + syminfo.ticker + '","date":"' + crtDateBull + '","time":"' + crtTimeBull + '","ref_price":' + str.tostring(c2L, format.mintick) + '}', alert.freq_once_per_bar_close)
+
+if bearCRTSignal and not shortConfluence
+    label.new(x = t3End, y = high, xloc = xloc.bar_time, yloc = yloc.abovebar, style = label.style_label_down, color = color.new(bearColor, 40), textcolor = color.white, text = "CRT", size = size.small)
+    crtDateBear = str.format_time(t3End, "yyyy-MM-dd", syminfo.timezone)
+    crtTimeBear = str.format_time(t3End, "HH:mm", syminfo.timezone)
+    alert('{"type":"SIGNAL","signal":"CRT Bear (unfiltered)","ticker":"' + syminfo.ticker + '","date":"' + crtDateBear + '","time":"' + crtTimeBear + '","ref_price":' + str.tostring(c2H, format.mintick) + '}', alert.freq_once_per_bar_close)
+
+if longConfluence
+    label.new(x = t3End, y = low, xloc = xloc.bar_time, yloc = yloc.belowbar, style = label.style_label_up, color = bullColor, textcolor = color.white, text = "BUY\nCRT + SR + DIV", size = size.normal)
+
+if shortConfluence
+    label.new(x = t3End, y = high, xloc = xloc.bar_time, yloc = yloc.abovebar, style = label.style_label_down, color = bearColor, textcolor = color.white, text = "SELL\nCRT + SR + DIV", size = size.normal)
+
+// Fixed-size markers (plotshape scales with zoom/timeframe better than labels
+// when you're jumping between a 1min execution chart and the 15min CRT view).
+plotshape(longConfluence,  title = "Buy Signal",  style = shape.triangleup,   location = location.belowbar, color = bullColor, size = size.small)
+plotshape(shortConfluence, title = "Sell Signal", style = shape.triangledown, location = location.abovebar, color = bearColor, size = size.small)
+
+// ---------------------------------------------------------------------------
+// Status panel - always visible regardless of which timeframe/chart you're on,
+// even when the actual formation has scrolled out of view.
+// ---------------------------------------------------------------------------
+var string lastSignalText  = "-"
+var color  lastSignalColor = color.gray
+
+if longConfluence
+    lastSignalText  := "BUY @ " + str.tostring(low, format.mintick)
+    lastSignalColor := bullColor
+
+if shortConfluence
+    lastSignalText  := "SELL @ " + str.tostring(high, format.mintick)
+    lastSignalColor := bearColor
+
+var table statusTable = table.new(position.top_right, 3, 4, border_width = 1)
+
+stoppedLabel = slMoveStage == 0 ? "STOPPED" : slMoveStage == 1 ? "STOPPED (BE)" : "STOPPED (TRAIL)"
+tradeStatus = tradeDir == 0 ? "WAITING" : lvlHit.get(1) ? stoppedLabel : lvlHit.get(4) ? "TP3 HIT" : lvlHit.get(3) ? "TP2 HIT" : lvlHit.get(2) ? "TP1 HIT" : "LIVE"
+tradeStatusColor = tradeDir == 0 ? color.gray : lvlHit.get(1) ? bearColor : tradeStatus == "LIVE" ? color.gray : bullColor
+
+if showStatusPanel and barstate.islast
+    table.cell(statusTable, 0, 0, "TF", text_color = color.white, bgcolor = color.new(color.gray, 75), text_size = size.small)
+    table.cell(statusTable, 1, 0, crtTF + " / " + timeframe.period + (tfWarning ? " (!)" : ""), text_color = tfWarning ? color.orange : color.white, bgcolor = color.new(color.gray, 75), text_size = size.small)
+    table.cell(statusTable, 0, 1, "Bias", text_color = color.white, bgcolor = color.new(color.gray, 85), text_size = size.small)
+    table.cell(statusTable, 1, 1, "Bull " + str.tostring(bullPct) + "%", text_color = color.teal, bgcolor = color.new(color.gray, 85), text_size = size.small)
+    table.cell(statusTable, 2, 1, "Bear " + str.tostring(bearPct) + "%", text_color = color.red, bgcolor = color.new(color.gray, 85), text_size = size.small)
+    table.cell(statusTable, 0, 2, "Signal", text_color = color.white, bgcolor = color.new(color.gray, 75), text_size = size.small)
+    table.cell(statusTable, 1, 2, lastSignalText, text_color = lastSignalColor, bgcolor = color.new(color.gray, 75), text_size = size.small)
+    table.cell(statusTable, 0, 3, "Setup", text_color = color.white, bgcolor = color.new(color.gray, 85), text_size = size.small)
+    table.cell(statusTable, 1, 3, tradeDir == 0 ? tradeStatus : (tradeDir == 1 ? "LONG " : "SHORT ") + str.tostring(lvlPrice.get(0), format.mintick) + " (" + tradeStatus + ")", text_color = tradeStatusColor, bgcolor = color.new(color.gray, 85), text_size = size.small)
+
+// ---------------------------------------------------------------------------
+// Alerts
+// ---------------------------------------------------------------------------
+alertcondition(longConfluence,  "Bullish CRT + S/R + Divergence", "Bullish CRT sweep confirmed at support with bullish RSI divergence on {{ticker}}.")
+alertcondition(shortConfluence, "Bearish CRT + S/R + Divergence", "Bearish CRT sweep confirmed at resistance with bearish RSI divergence on {{ticker}}.")
+alertcondition(bullCRTSignal,   "Bullish CRT Pattern (unfiltered)", "Bullish CRT pattern confirmed on {{ticker}}.")
+alertcondition(bearCRTSignal,   "Bearish CRT Pattern (unfiltered)", "Bearish CRT pattern confirmed on {{ticker}}.")
+alertcondition(bullDivPulse,    "Bullish Divergence", "Bullish RSI divergence detected on {{ticker}}.")
+alertcondition(bearDivPulse,    "Bearish Divergence", "Bearish RSI divergence detected on {{ticker}}.")
+alertcondition(slJustHit,       "Stop Loss Hit", "Stop loss hit on the active {{ticker}} setup.")
+alertcondition(tp1JustHit,      "TP1 Hit", "TP1 hit on the active {{ticker}} setup.")
+alertcondition(tp2JustHit,      "TP2 Hit", "TP2 hit on the active {{ticker}} setup.")
+alertcondition(tp3JustHit,      "TP3 Hit", "TP3 hit on the active {{ticker}} setup.")
