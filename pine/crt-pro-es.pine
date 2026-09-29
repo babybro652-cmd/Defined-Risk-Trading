@@ -1,0 +1,234 @@
+// ══════════════════════════════════════════════════════════════════════════════
+// CRT Pro — ES Futures | Indicator | Pine Script v6
+// ══════════════════════════════════════════════════════════════════════════════
+// Logic:
+// 1. Identify a "reference candle" (significant range) N bars back
+// 2. Detect a sweep: current candle wicks beyond ref candle high/low
+//    but CLOSES back inside (liquidity grab + reversal)
+// 3. Draw solid lines on ref candle wicks, dashed line on confirmation body
+// 4. Smart filters: EMA slope + candle color + session time
+// 5. Exit signals: opposite CRT OR EMA cross — whichever fires first
+// 6. Trade log: one JSON alert() per entry and exit for the CRT Pro Tracker
+//    Google Sheet (integrations/crt-pro-tracker). Logging only — it does not
+//    change any signal, exit or drawing above it.
+// ══════════════════════════════════════════════════════════════════════════════
+
+//@version=6
+indicator("CRT Pro — ES Futures", overlay=true, max_lines_count=500, max_labels_count=200, max_boxes_count=200)
+
+// ─── INPUTS ───────────────────────────────────────────────────────────────────
+
+grpRef = "📊 Reference Candle"
+lookback = input.int(3, "Lookback Bars", minval=1, maxval=20, group=grpRef, tooltip="How many bars back to look for the reference candle")
+minRangeATR = input.float(0.75, "Min Range (× ATR)", step=0.05, group=grpRef, tooltip="Reference candle must be at least this multiple of ATR in range")
+atrLen = input.int(14, "ATR Length", group=grpRef)
+
+grpFilter = "🧠 Smart Filters"
+useEMA = input.bool(true, "Trend Filter (EMA)", group=grpFilter)
+emaLen = input.int(20, "EMA Length", minval=5, maxval=500, group=grpFilter)
+useVol = input.bool(false, "Volume Confirmation", group=grpFilter)
+volLen = input.int(20, "Volume MA Length", group=grpFilter)
+volMult = input.float(1.5, "Volume Multiplier", step=0.05, group=grpFilter, tooltip="Confirmation candle volume must exceed this × the volume MA")
+useTime = input.bool(true, "Session Time Filter", group=grpFilter, tooltip="Only allow signals during high-activity windows")
+sess1Start = input.int(930, "Morning Session Start (HHMM ET)", group=grpFilter)
+sess1End = input.int(1130, "Morning Session End (HHMM ET)", group=grpFilter)
+sess2Start = input.int(1400, "Afternoon Session Start (HHMM ET)", group=grpFilter)
+sess2End = input.int(1600, "Afternoon Session End (HHMM ET)", group=grpFilter)
+
+grpStyle = "🎨 Style"
+extBars = input.int(10, "Line Extension (bars)", minval=1, maxval=100, group=grpStyle)
+showEMA = input.bool(true, "Show EMA", group=grpStyle)
+showZone = input.bool(true, "Show Reference Zone", group=grpStyle)
+wickColor = input.color(color.new(#2962FF, 0), "Wick Line Color", group=grpStyle)
+confColor = input.color(color.new(#FF9800, 0), "Confirmation Line Color", group=grpStyle)
+bullColor = input.color(color.new(#00E676, 0), "Buy Signal Color", group=grpStyle)
+bearColor = input.color(color.new(#FF1744, 0), "Sell Signal Color", group=grpStyle)
+
+grpLog = "📝 Trade Log (webhook)"
+logOn = input.bool(true, "Send trade log alerts", group=grpLog, tooltip="Fires one JSON alert() per entry and exit. Create ONE TradingView alert on 'Any alert() function call' with the tracker's /exec URL as the webhook.")
+logKey = input.string("", "Webhook Key", group=grpLog, tooltip="Optional. Must match SECRET in the tracker's Apps Script if you set one there.")
+
+// ─── CORE CALCULATIONS ────────────────────────────────────────────────────────
+
+atr14 = ta.atr(atrLen)
+emaVal = ta.ema(close, emaLen)
+volMA = ta.sma(volume, volLen)
+
+// Reference candle values (fixed offset — avoids repainting)
+refH = high[lookback]
+refL = low[lookback]
+
+// Reference candle must have meaningful range relative to ATR
+isQualRef = (refH - refL) >= atr14[lookback] * minRangeATR
+
+// ─── SWEEP & REVERSE PATTERNS ─────────────────────────────────────────────────
+// Bullish CRT : wick sweeps BELOW refL but candle CLOSES ABOVE refL
+// Bearish CRT : wick sweeps ABOVE refH but candle CLOSES BELOW refH
+
+bullCandle = close > open // sweep candle must close green
+bearCandle = close < open // sweep candle must close red
+
+bullSetup = isQualRef and (low < refL) and (close > refL) and bullCandle
+bearSetup = isQualRef and (high > refH) and (close < refH) and bearCandle
+
+// ─── SMART FILTERS ────────────────────────────────────────────────────────────
+
+emaSlope = emaVal - emaVal[2] // EMA direction over last 2 bars
+inUptrend = close > emaVal or emaSlope > 0 // price above EMA OR EMA sloping up
+inDowntrend = close < emaVal or emaSlope < 0 // price below EMA OR EMA sloping down
+volOK = volume > (volMA * volMult)
+
+// Session time filter (New York time)
+nyTime = hour(time, "America/New_York") * 100 + minute(time, "America/New_York")
+inSession = not useTime or
+     (nyTime >= sess1Start and nyTime < sess1End) or
+     (nyTime >= sess2Start and nyTime < sess2End)
+
+// Operator must be at END of line for Pine Script line continuation
+bullSignal = bullSetup and
+     (not useEMA or inUptrend) and
+     (not useVol or volOK) and
+     inSession
+
+bearSignal = bearSetup and
+     (not useEMA or inDowntrend) and
+     (not useVol or volOK) and
+     inSession
+
+// ─── DRAWING ──────────────────────────────────────────────────────────────────
+
+if bullSignal or bearSignal
+    startBar = bar_index - lookback
+    endBar = bar_index + extBars
+    confMid = (open + close) / 2.0
+
+    // Solid lines: Reference candle HIGH and LOW wicks
+    line.new(startBar, refH, endBar, refH, color=wickColor, width=2, style=line.style_solid)
+    line.new(startBar, refL, endBar, refL, color=wickColor, width=2, style=line.style_solid)
+
+    // Dashed line: Confirmation candle body midpoint
+    line.new(bar_index, confMid, endBar, confMid, color=confColor, width=1, style=line.style_dashed)
+
+    // Reference zone box
+    if showZone
+        box.new(startBar, refH, endBar, refL, border_color=color.new(wickColor, 60), bgcolor=color.new(wickColor, 88))
+
+// ─── SIGNAL LABELS ────────────────────────────────────────────────────────────
+
+plotshape(bullSignal, "CRT Buy", shape.labelup, location.belowbar, bullColor, text="▲ CRT BUY", textcolor=color.white, size=size.normal)
+plotshape(bearSignal, "CRT Sell", shape.labeldown, location.abovebar, bearColor, text="▼ CRT SELL", textcolor=color.white, size=size.normal)
+
+// ─── EMA PLOT ─────────────────────────────────────────────────────────────────
+
+plot(showEMA ? emaVal : na, "EMA", color=color.new(color.yellow, 0), linewidth=2)
+
+// ─── INFO TABLE ───────────────────────────────────────────────────────────────
+
+var table infoTable = table.new(position.top_right, 2, 4, bgcolor=color.new(color.black, 60), border_color=color.new(color.gray, 40), border_width=1, frame_color=color.gray, frame_width=1)
+
+if barstate.islast
+    table.cell(infoTable, 0, 0, "CRT Filter", text_color=color.white, text_size=size.small, bgcolor=color.new(color.blue, 40))
+    table.cell(infoTable, 1, 0, "Status", text_color=color.white, text_size=size.small, bgcolor=color.new(color.blue, 40))
+
+    trendStatus = not useEMA ? "OFF" : inUptrend ? "▲ BULL" : "▼ BEAR"
+    trendCol = not useEMA ? color.gray : inUptrend ? color.lime : color.red
+    table.cell(infoTable, 0, 1, "Trend (EMA" + str.tostring(emaLen) + ")", text_color=color.white, text_size=size.tiny)
+    table.cell(infoTable, 1, 1, trendStatus, text_color=trendCol, text_size=size.tiny)
+
+    volStatus = not useVol ? "OFF" : volOK ? "✔ HIGH" : "✘ LOW"
+    volCol = not useVol ? color.gray : volOK ? color.lime : color.orange
+    table.cell(infoTable, 0, 2, "Volume (×" + str.tostring(volMult) + ")", text_color=color.white, text_size=size.tiny)
+    table.cell(infoTable, 1, 2, volStatus, text_color=volCol, text_size=size.tiny)
+
+    refStatus = isQualRef ? "✔ VALID" : "✘ WEAK"
+    refCol2 = isQualRef ? color.lime : color.orange
+    table.cell(infoTable, 0, 3, "Ref Candle", text_color=color.white, text_size=size.tiny)
+    table.cell(infoTable, 1, 3, refStatus, text_color=refCol2, text_size=size.tiny)
+
+// ─── EXIT SIGNALS (Option 4 — First Trigger Wins) ────────────────────────────
+// For an active long: exit on opposite CRT SELL or price closes below EMA
+// For an active short: exit on opposite CRT BUY or price closes above EMA
+
+var bool inLong = false
+var bool inShort = false
+
+if bullSignal
+    inLong := true
+    inShort := false
+if bearSignal
+    inShort := true
+    inLong := false
+
+// Exit conditions — first trigger wins:
+// 1. Opposite CRT signal
+// 2. Bearish/bullish candle closes on wrong side of EMA
+exitLong = inLong and (bearSignal or (close < emaVal and bearCandle))
+exitShort = inShort and (bullSignal or (close > emaVal and bullCandle))
+
+if exitLong
+    inLong := false
+if exitShort
+    inShort := false
+
+// Exit labels
+plotshape(exitLong, "Exit Long", shape.xcross, location.abovebar, color.new(color.white, 20), text="EXIT", textcolor=color.white, size=size.small)
+plotshape(exitShort, "Exit Short", shape.xcross, location.belowbar, color.new(color.white, 20), text="EXIT", textcolor=color.white, size=size.small)
+
+// ─── ALERTS ───────────────────────────────────────────────────────────────────
+
+alertcondition(bullSignal, "CRT Buy Signal", "CRT Pro: Bullish sweep & reverse — potential long setup")
+alertcondition(bearSignal, "CRT Sell Signal", "CRT Pro: Bearish sweep & reverse — potential short setup")
+alertcondition(exitLong, "CRT Exit Long", "CRT Pro: Exit long — opposite signal or EMA cross")
+alertcondition(exitShort, "CRT Exit Short", "CRT Pro: Exit short — opposite signal or EMA cross")
+alertcondition(bullSignal or bearSignal, "CRT Any Signal", "CRT Pro: Setup detected")
+
+// ─── TRADE LOG (webhook) ──────────────────────────────────────────────────────
+// Tracks its own copy of the open trade so every entry gets a matching exit,
+// including reversals (a CRT SELL while long closes the long, then opens the
+// short). Entry = close of the signal bar. "Sweep stop" = the signal candle's
+// sweep wick (low for a long, high for a short); it is logged so the sheet
+// can express each trade in R, it is not a stop the indicator enforces.
+// Times are New York time. Fires on bar close only, so it never repaints.
+
+var string logSide = ""
+var string logId = ""
+var float logEntry = na
+var float logStop = na
+
+nyStamp(t) =>
+    str.format_time(t, "yyyy-MM-dd HH:mm", "America/New_York")
+
+sendLog(string body) =>
+    if logOn
+        keyPart = logKey == "" ? "" : ',"key":"' + logKey + '"'
+        alert('{"source":"CRT Pro","symbol":"' + syminfo.ticker + '","tf":"' + timeframe.period + '"' + keyPart + ',' + body + '}', alert.freq_once_per_bar_close)
+
+sendExit(string reason) =>
+    pnlPts = logSide == "LONG" ? close - logEntry : logEntry - close
+    sendLog('"event":"EXIT","id":"' + logId + '","side":"' + logSide + '","time":"' + nyStamp(time_close) +
+         '","exit":' + str.tostring(close, format.mintick) + ',"reason":"' + reason +
+         '","pnl_pts":' + str.tostring(pnlPts, format.mintick))
+
+newSide = bullSignal ? "LONG" : bearSignal ? "SHORT" : ""
+
+// Close the open logged trade: reversal first, then the EMA exits.
+if logSide != "" and newSide != "" and newSide != logSide
+    sendExit("REVERSE")
+    logSide := ""
+else if logSide == "LONG" and close < emaVal and bearCandle
+    sendExit("EMA")
+    logSide := ""
+else if logSide == "SHORT" and close > emaVal and bullCandle
+    sendExit("EMA")
+    logSide := ""
+
+// Open a new logged trade (a repeat signal in the same direction is ignored).
+if newSide != "" and logSide == ""
+    logSide := newSide
+    logEntry := close
+    logStop := newSide == "LONG" ? low : high
+    logId := "CRTPRO-" + str.format_time(time_close, "yyyyMMdd-HHmm", "America/New_York") + "-" + newSide
+    sendLog('"event":"ENTRY","id":"' + logId + '","side":"' + newSide + '","time":"' + nyStamp(time_close) +
+         '","entry":' + str.tostring(logEntry, format.mintick) + ',"sweep_stop":' + str.tostring(logStop, format.mintick) +
+         ',"risk_pts":' + str.tostring(math.abs(logEntry - logStop), format.mintick) +
+         ',"ref_high":' + str.tostring(refH, format.mintick) + ',"ref_low":' + str.tostring(refL, format.mintick))
