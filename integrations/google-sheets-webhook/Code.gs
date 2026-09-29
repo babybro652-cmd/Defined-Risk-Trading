@@ -96,7 +96,7 @@ function normTime(t) {
 }
 
 function isDuplicateSignal(sheet, body) {
-  var lastRow = sheet.getLastRow();
+  var lastRow = lastSignalRow(sheet);
   if (lastRow < FIRST_DATA_ROW) return false;
   var start = Math.max(FIRST_DATA_ROW, lastRow - DEDUPE_LOOKBACK_ROWS + 1);
   var rows = sheet.getRange(start, 1, lastRow - start + 1, COL.DIV_VALID_UNTIL).getDisplayValues();
@@ -114,12 +114,36 @@ function isDuplicateSignal(sheet, body) {
   return false;
 }
 
+// Per-row formulas for the calculated columns, in R1C1 form so the same text
+// works on any row. V4 = tick size, V5:V7 = TP1-3 R multiples (Dashboard).
+var FORMULA_TICKS = '=IF(OR(RC7="",RC8=""),"",ROUND(ABS(RC8-RC7)/R4C22,0))';
+var FORMULA_R = '=IF(RC15="","",IF(RC15="TP1 HIT",R5C22,IF(RC15="TP2 HIT",R6C22,' +
+  'IF(RC15="TP3 HIT",R7C22,IF(RC15="STOPPED",-1,IF(RC15="STOPPED (BE)",0,' +
+  'IF(RC15="STOPPED (TRAIL)",R5C22,"")))))))';
+var FORMULA_CUM_R = '=SUM(R2C16:RC16)';
+
+// Last row that holds a signal. getLastRow() can't be used: the formula
+// columns and the dashboard (columns U:AA) extend past the real data.
+function lastSignalRow(sheet) {
+  var last = sheet.getLastRow();
+  if (last < FIRST_DATA_ROW) return HEADER_ROW;
+  var types = sheet.getRange(FIRST_DATA_ROW, COL.SIGNAL_TYPE, last - FIRST_DATA_ROW + 1, 1).getValues();
+  for (var i = types.length - 1; i >= 0; i--) {
+    if (types[i][0] !== "") return FIRST_DATA_ROW + i;
+  }
+  return HEADER_ROW;
+}
+
+function setRowFormulas(sheet, row) {
+  sheet.getRange(row, COL.TICKS).setFormulaR1C1(FORMULA_TICKS);
+  sheet.getRange(row, COL.R_ACHIEVED, 1, 2).setFormulasR1C1([[FORMULA_R, FORMULA_CUM_R]]);
+}
+
 function appendSignalRow(sheet, body) {
   if (isDuplicateSignal(sheet, body)) return;
 
-  var lastRow = sheet.getLastRow();
-  var row = lastRow < HEADER_ROW ? FIRST_DATA_ROW : lastRow + 1;
-  var nextNum = row - FIRST_DATA_ROW + 1;
+  var row = lastSignalRow(sheet) + 1;
+  var nextNum = Number(sheet.getRange(row - 1, COL.NUM).getValue()) + 1 || 1;
 
   var values = new Array(COL.DIV_VALID_UNTIL).fill("");
   values[COL.NUM - 1] = nextNum;
@@ -145,11 +169,16 @@ function appendSignalRow(sheet, body) {
     }
   }
 
-  sheet.getRange(row, 1, 1, COL.DIV_VALID_UNTIL).setValues([values]);
+  // Write only the input columns (A:H, J:O, R:S). I, P and Q hold formulas.
+  sheet.getRange(row, COL.NUM, 1, COL.ADVERSE_PRICE).setValues([values.slice(0, COL.ADVERSE_PRICE)]);
+  sheet.getRange(row, COL.ENTRY, 1, COL.RESULT - COL.ENTRY + 1)
+    .setValues([values.slice(COL.ENTRY - 1, COL.RESULT)]);
+  sheet.getRange(row, COL.NOTES, 1, 2).setValues([values.slice(COL.NOTES - 1, COL.DIV_VALID_UNTIL)]);
+  setRowFormulas(sheet, row);
 }
 
 function updateLastOpenTrade(sheet, body) {
-  var lastRow = sheet.getLastRow();
+  var lastRow = lastSignalRow(sheet);
   if (lastRow < FIRST_DATA_ROW) return;
 
   var signalTypes = sheet.getRange(FIRST_DATA_ROW, COL.SIGNAL_TYPE, lastRow - FIRST_DATA_ROW + 1, 1).getValues();
@@ -161,6 +190,49 @@ function updateLastOpenTrade(sheet, body) {
       return;
     }
   }
+}
+
+/**
+ * One-time repair, run by hand from the Apps Script editor (select
+ * fixFormulasAndDashboard, then Run). The template only had formulas and
+ * dashboard ranges for rows 2-50, so trades logged below row 50 never got
+ * an R value and the dashboard ignored them. This:
+ *  1. writes the Ticks of Drawdown, R Achieved and Cumulative R formulas on
+ *     every row from 2 down to the last signal, and
+ *  2. widens every dashboard range (columns U:AA) from row 50 to row 5000.
+ * Only formula cells change; nothing you typed is touched. Safe to re-run.
+ */
+function fixFormulasAndDashboard() {
+  var sheet = SpreadsheetApp.getActiveSpreadsheet().getSheets()[0];
+  var last = lastSignalRow(sheet);
+  var fixedRows = 0;
+  if (last >= FIRST_DATA_ROW) {
+    var n = last - FIRST_DATA_ROW + 1;
+    var ticks = [], rCols = [];
+    for (var i = 0; i < n; i++) {
+      ticks.push([FORMULA_TICKS]);
+      rCols.push([FORMULA_R, FORMULA_CUM_R]);
+    }
+    sheet.getRange(FIRST_DATA_ROW, COL.TICKS, n, 1).setFormulasR1C1(ticks);
+    sheet.getRange(FIRST_DATA_ROW, COL.R_ACHIEVED, n, 2).setFormulasR1C1(rCols);
+    fixedRows = n;
+  }
+
+  var dash = sheet.getRange("U1:AA20");
+  var formulas = dash.getFormulas();
+  var widened = 0;
+  for (var r = 0; r < formulas.length; r++) {
+    for (var c = 0; c < formulas[r].length; c++) {
+      var f = formulas[r][c];
+      if (!f) continue;
+      var nf = f.replace(/(\$?[A-Z]{1,2}\$?)50(?!\d)/g, function (m, ref) { return ref + "5000"; });
+      if (nf !== f) {
+        dash.getCell(r + 1, c + 1).setFormula(nf);
+        widened++;
+      }
+    }
+  }
+  Logger.log("Formulas written on " + fixedRows + " rows; " + widened + " dashboard formulas widened to row 5000.");
 }
 
 /**
