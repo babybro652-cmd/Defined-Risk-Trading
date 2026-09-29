@@ -56,3 +56,9 @@ Every alert is also copied to **Log** as it arrived.
 **Summary** shows closed trades, wins, losses, win rate, net P&L, average win and loss, profit factor, largest win and loss, average best open profit, setups alerted and missed, plus tables **by week**, **by setup type**, **by level**, **by session** and **by exit reason**.
 
 P&L is calculated from the indicator's own entry and exit prices for the number of contracts in the settings. It does not include commission or slippage.
+
+## Troubleshooting
+
+- **Every setup logged 3 times, plus "BAD JSON" / "TEXT ALERT (ignored)" rows in Log:** more than one TradingView alert posts to the web app URL. The Log on 9/28 showed 5: three JSON alerts and two Text alerts. Keep exactly **one** alert on the JSON copy of the indicator with the webhook URL. The Text copy's alert is for phone notifications only, so turn its **Webhook URL** off. The script now logs repeats as "(duplicate)" and text alerts as "TEXT ALERT (ignored)" without adding rows, so extra alerts stop doing damage either way.
+- **Clearing the repeats already logged:** paste in the current `crt-setups-tracker.gs`, redeploy (Deploy > Manage deployments > edit > Version: New version, so the URL stays the same), then **CRT Tracker > Remove duplicate setups** in the sheet menu. It keeps the first copy of each setup.
+- **Nothing logging at all:** check the alert's History in TradingView and the Apps Script Executions log. TradingView alerts expire; recreate an expired one.

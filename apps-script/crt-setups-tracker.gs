@@ -50,18 +50,21 @@ function doPost(e) {
     try {
       d = JSON.parse(body);
     } catch (err) {
-      sheet_(LOG, LOG_HEADERS).appendRow([new Date(), 'BAD JSON', '', '', '', body]);
-      return reply_('bad json');
+      // A plain-text alert (Alert Format "Text") is pointed at this sheet. Delete that alert in TradingView.
+      sheet_(LOG, LOG_HEADERS).appendRow([new Date(), 'TEXT ALERT (ignored)', '', '', '', body]);
+      return reply_('ignored: not json');
     }
     if (SECRET && d.key !== SECRET) return reply_('forbidden');
     delete d.key;
 
-    sheet_(LOG, LOG_HEADERS).appendRow([new Date(), d.event, d.id || '', d.symbol || '', d.time || '', JSON.stringify(d)]);
+    let status = 'ok';
+    if (d.event === 'ENTRY') status = onEntry_(d);
+    else if (d.event === 'STOP') status = onStop_(d);
+    else if (d.event === 'EXIT') status = onExit_(d);
+    else if (d.event === 'SETUP' || d.event === 'MISSED') status = onSetup_(d);
 
-    if (d.event === 'ENTRY') onEntry_(d);
-    else if (d.event === 'STOP') onStop_(d);
-    else if (d.event === 'EXIT') onExit_(d);
-    else if (d.event === 'SETUP' || d.event === 'MISSED') onSetup_(d);
+    const label = status === 'ok' ? d.event : d.event + ' (' + status + ')';
+    sheet_(LOG, LOG_HEADERS).appendRow([new Date(), label, d.id || '', d.symbol || '', d.time || '', JSON.stringify(d)]);
 
     return reply_('ok');
   } finally {
@@ -74,6 +77,7 @@ function onOpen() {
   SpreadsheetApp.getUi().createMenu('CRT Tracker')
     .addItem('Set up / repair tabs', 'setup')
     .addItem('Add a test trade', 'testTrade')
+    .addItem('Remove duplicate setups', 'removeDuplicateSetups')
     .addToUi();
 }
 
@@ -84,7 +88,7 @@ function doGet() {
 
 function onEntry_(d) {
   const sh = sheet_(TRADES, TRADE_HEADERS);
-  if (findRow_(sh, d.id)) return; // duplicate alert
+  if (findRow_(sh, d.id)) return 'duplicate';
   const row = new Array(TRADE_HEADERS.length).fill('');
   row[COL.id - 1] = d.id;
   row[COL.week - 1] = weekOf_(d.time);
@@ -102,31 +106,69 @@ function onEntry_(d) {
   row[COL.lastSl - 1] = d.sl;
   row[COL.contracts - 1] = d.contracts;
   sh.appendRow(row);
+  return 'ok';
 }
 
 function onStop_(d) {
   const sh = sheet_(TRADES, TRADE_HEADERS);
   const r = findRow_(sh, d.id);
-  if (r) sh.getRange(r, COL.lastSl).setValue(d.sl);
+  if (!r) return 'no matching entry';
+  sh.getRange(r, COL.lastSl).setValue(d.sl);
+  return 'ok';
 }
 
 function onExit_(d) {
   const sh = sheet_(TRADES, TRADE_HEADERS);
   const r = findRow_(sh, d.id);
-  if (!r || sh.getRange(r, COL.exitTime).getValue() !== '') return; // unknown trade or duplicate alert
+  if (!r) return 'no matching entry';
+  if (sh.getRange(r, COL.exitTime).getValue() !== '') return 'duplicate';
   const pnl = Math.round(Number(d.pnl_usd) * 100) / 100;
   const best = d.best_usd === null || d.best_usd === undefined ? '' : Math.round(Number(d.best_usd) * 100) / 100;
   const result = pnl > 0 ? 'Win' : pnl < 0 ? 'Loss' : 'Breakeven';
   sh.getRange(r, COL.exitTime, 1, 6).setValues([[d.time, d.price, d.reason, pnl, best, result]]);
   sh.getRange(r, COL.pnl).setFontColor(pnl > 0 ? '#188038' : pnl < 0 ? '#d93025' : '#5f6368');
+  return 'ok';
 }
 
 function onSetup_(d) {
+  const sh = sheet_(SETUPS, SETUP_HEADERS);
   const price = d.zone !== undefined && d.zone !== null ? d.zone : (d.level_price !== undefined ? d.level_price : '');
-  sheet_(SETUPS, SETUP_HEADERS).appendRow([
+  const row = [
     new Date(), d.time, weekOf_(d.time), d.event, d.side, d.setup || '', d.level || '',
     d.event === 'MISSED' ? 'no 1m trigger' : (d.stage || ''), price, d.ct || '',
-  ]);
+  ];
+  // Setups carry no trade id, so a repeat is the same bar time, event, side, setup, level, stage and price
+  const last = sh.getLastRow();
+  if (last > 1) {
+    const n = Math.min(50, last - 1);
+    const key = setupKey_(row.slice(1));
+    if (sh.getRange(last - n + 1, 2, n, 8).getValues().some(r => setupKey_(r) === key)) return 'duplicate';
+  }
+  sh.appendRow(row);
+  return 'ok';
+}
+
+// Columns B:I of a Setups row (bar time .. price) as one comparable string
+function setupKey_(r) {
+  const t = r[0] instanceof Date ? Utilities.formatDate(r[0], SpreadsheetApp.getActiveSpreadsheet().getSpreadsheetTimeZone(), 'yyyy-MM-dd H:mm') : String(r[0]).replace(/ 0(\d):/, ' $1:');
+  return [t, r[2], r[3], r[4], r[5], r[6], Number(r[7])].join('|');
+}
+
+/** Run once from the menu or editor: keeps the first copy of each setup and deletes the repeats. */
+function removeDuplicateSetups() {
+  const sh = sheet_(SETUPS, SETUP_HEADERS);
+  const last = sh.getLastRow();
+  if (last < 3) return;
+  const rows = sh.getRange(2, 2, last - 1, 8).getValues();
+  const seen = {};
+  const drop = [];
+  rows.forEach((r, i) => {
+    const k = setupKey_(r);
+    if (seen[k]) drop.push(i + 2);
+    seen[k] = true;
+  });
+  for (let i = drop.length - 1; i >= 0; i--) sh.deleteRow(drop[i]);
+  sheet_(LOG, LOG_HEADERS).appendRow([new Date(), 'CLEANUP', '', '', '', 'Removed ' + drop.length + ' duplicate setup rows.']);
 }
 
 /** Run once from the editor (select setup > Run) to create the sheets and the summary. */
