@@ -8,9 +8,12 @@
 // 3. Draw solid lines on ref candle wicks, dashed line on confirmation body
 // 4. Smart filters: EMA slope + candle color + session time
 // 5. Exit signals: opposite CRT OR EMA cross — whichever fires first
-// 6. Trade log: one JSON alert() per entry and exit for the CRT Pro Tracker
-//    Google Sheet (integrations/crt-pro-tracker). Logging only — it does not
-//    change any signal, exit or drawing above it.
+// 6. Trade levels: Entry, SL (sweep wick) and TP1/TP2/TP3 (R multiples) are
+//    drawn per trade. The trade closes at SL, at TP3, or on the exit signals
+//    above, whichever comes first.
+// 7. Trade log: one JSON alert() per entry, TP hit and exit for the CRT Pro
+//    Tracker Google Sheet (integrations/crt-pro-tracker). Signals and the
+//    drawings above are unchanged.
 // ══════════════════════════════════════════════════════════════════════════════
 
 //@version=6
@@ -44,8 +47,18 @@ confColor = input.color(color.new(#FF9800, 0), "Confirmation Line Color", group=
 bullColor = input.color(color.new(#00E676, 0), "Buy Signal Color", group=grpStyle)
 bearColor = input.color(color.new(#FF1744, 0), "Sell Signal Color", group=grpStyle)
 
+grpLvl = "🎯 Entry / SL / Targets"
+showLvls = input.bool(true, "Show Entry, SL and TP lines", group=grpLvl)
+slBufTicks = input.int(0, "SL Buffer (ticks past the sweep wick)", minval=0, maxval=40, group=grpLvl, tooltip="0 = stop exactly at the signal candle's sweep wick")
+tp1R = input.float(1.0, "TP1 (R)", minval=0.25, step=0.25, group=grpLvl, tooltip="R = distance from entry to SL")
+tp2R = input.float(2.0, "TP2 (R)", minval=0.25, step=0.25, group=grpLvl)
+tp3R = input.float(3.0, "TP3 (R)", minval=0.25, step=0.25, group=grpLvl)
+entryLvlColor = input.color(color.new(color.white, 20), "Entry Line Color", group=grpLvl)
+slLvlColor = input.color(color.new(#FF1744, 0), "SL Line Color", group=grpLvl)
+tpLvlColor = input.color(color.new(#00E676, 0), "TP Line Color", group=grpLvl)
+
 grpLog = "📝 Trade Log (webhook)"
-logOn = input.bool(true, "Send trade log alerts", group=grpLog, tooltip="Fires one JSON alert() per entry and exit. Create ONE TradingView alert on 'Any alert() function call' with the tracker's /exec URL as the webhook.")
+logOn = input.bool(true, "Send trade log alerts", group=grpLog, tooltip="Fires one JSON alert() per entry, TP hit and exit. Create ONE TradingView alert on 'Any alert() function call' with the tracker's /exec URL as the webhook.")
 logKey = input.string("", "Webhook Key", group=grpLog, tooltip="Optional. Must match SECRET in the tracker's Apps Script if you set one there.")
 
 // ─── CORE CALCULATIONS ────────────────────────────────────────────────────────
@@ -182,53 +195,131 @@ alertcondition(exitLong, "CRT Exit Long", "CRT Pro: Exit long — opposite signa
 alertcondition(exitShort, "CRT Exit Short", "CRT Pro: Exit short — opposite signal or EMA cross")
 alertcondition(bullSignal or bearSignal, "CRT Any Signal", "CRT Pro: Setup detected")
 
-// ─── TRADE LOG (webhook) ──────────────────────────────────────────────────────
+// ─── TRADE LEVELS & TRADE LOG (webhook) ──────────────────────────────────────
 // Tracks its own copy of the open trade so every entry gets a matching exit,
 // including reversals (a CRT SELL while long closes the long, then opens the
-// short). Entry = close of the signal bar. "Sweep stop" = the signal candle's
-// sweep wick (low for a long, high for a short); it is logged so the sheet
-// can express each trade in R, it is not a stop the indicator enforces.
+// short). Entry = close of the signal bar. SL = the signal candle's sweep wick
+// (low for a long, high for a short) plus the SL buffer. TP1/TP2/TP3 = entry
+// plus 1R/2R/3R (settings), where R = entry to SL.
+// From the bar after entry, each bar is checked in this order:
+//   1. SL touched          -> exit at SL (if SL and a TP touch on the same
+//                             bar, SL is assumed first: the conservative read)
+//   2. TP1 / TP2 / TP3     -> each new TP logged; TP3 exits at TP3
+//   3. Opposite signal     -> exit at close (REVERSE)
+//   4. EMA exit            -> exit at close (EMA)
 // Times are New York time. Fires on bar close only, so it never repaints.
 
 var string logSide = ""
 var string logId = ""
 var float logEntry = na
 var float logStop = na
+var float logTP1 = na
+var float logTP2 = na
+var float logTP3 = na
+var int tpHits = 0
+var int entryBar = na
+var lvlLines = array.new<line>()
+var lvlLabels = array.new<label>()
 
 nyStamp(t) =>
     str.format_time(t, "yyyy-MM-dd HH:mm", "America/New_York")
+
+px(float v) =>
+    str.tostring(v, format.mintick)
 
 sendLog(string body) =>
     if logOn
         keyPart = logKey == "" ? "" : ',"key":"' + logKey + '"'
         alert('{"source":"CRT Pro","symbol":"' + syminfo.ticker + '","tf":"' + timeframe.period + '"' + keyPart + ',' + body + '}', alert.freq_once_per_bar_close)
 
-sendExit(string reason) =>
-    pnlPts = logSide == "LONG" ? close - logEntry : logEntry - close
+sendExit(string reason, float atPx) =>
+    pnlPts = logSide == "LONG" ? atPx - logEntry : logEntry - atPx
     sendLog('"event":"EXIT","id":"' + logId + '","side":"' + logSide + '","time":"' + nyStamp(time_close) +
-         '","exit":' + str.tostring(close, format.mintick) + ',"reason":"' + reason +
-         '","pnl_pts":' + str.tostring(pnlPts, format.mintick))
+         '","exit":' + px(atPx) + ',"reason":"' + reason + '","tp_hits":' + str.tostring(tpHits) +
+         ',"pnl_pts":' + px(pnlPts))
+
+addLevel(float price, color col, string style, string name) =>
+    if showLvls
+        array.push(lvlLines, line.new(bar_index, price, bar_index + 1, price, color=col, width=1, style=style))
+        array.push(lvlLabels, label.new(bar_index + 1, price, name + " " + px(price), style=label.style_label_left, color=color.new(col, 75), textcolor=col, size=size.small))
 
 newSide = bullSignal ? "LONG" : bearSignal ? "SHORT" : ""
+exitReason = ""
+exitPx = float(na)
 
-// Close the open logged trade: reversal first, then the EMA exits.
-if logSide != "" and newSide != "" and newSide != logSide
-    sendExit("REVERSE")
-    logSide := ""
-else if logSide == "LONG" and close < emaVal and bearCandle
-    sendExit("EMA")
-    logSide := ""
-else if logSide == "SHORT" and close > emaVal and bullCandle
-    sendExit("EMA")
+// 1-2. SL and TP levels, from the bar after entry
+if logSide != "" and bar_index > entryBar
+    isLong = logSide == "LONG"
+    slHit = isLong ? low <= logStop : high >= logStop
+    if slHit
+        exitReason := "SL"
+        exitPx := logStop
+    else
+        reach1 = isLong ? high >= logTP1 : low <= logTP1
+        reach2 = isLong ? high >= logTP2 : low <= logTP2
+        reach3 = isLong ? high >= logTP3 : low <= logTP3
+        reached = reach3 ? 3 : reach2 ? 2 : reach1 ? 1 : 0
+        if reached > tpHits
+            for k = tpHits + 1 to reached
+                tpPx = k == 1 ? logTP1 : k == 2 ? logTP2 : logTP3
+                sendLog('"event":"TP","id":"' + logId + '","side":"' + logSide + '","time":"' + nyStamp(time_close) +
+                     '","level":"TP' + str.tostring(k) + '","price":' + px(tpPx))
+                if showLvls
+                    label.new(bar_index, tpPx, "TP" + str.tostring(k), style=isLong ? label.style_label_down : label.style_label_up, color=tpLvlColor, textcolor=color.black, size=size.tiny)
+            tpHits := reached
+        if tpHits >= 3
+            exitReason := "TP3"
+            exitPx := logTP3
+
+// 3-4. The indicator's own exits, at the bar's close
+if logSide != "" and exitReason == ""
+    if newSide != "" and newSide != logSide
+        exitReason := "REVERSE"
+        exitPx := close
+    else if logSide == "LONG" and close < emaVal and bearCandle
+        exitReason := "EMA"
+        exitPx := close
+    else if logSide == "SHORT" and close > emaVal and bullCandle
+        exitReason := "EMA"
+        exitPx := close
+
+if exitReason != ""
+    sendExit(exitReason, exitPx)
+    if showLvls and exitReason == "SL"
+        label.new(bar_index, logStop, "SL", style=logSide == "LONG" ? label.style_label_up : label.style_label_down, color=slLvlColor, textcolor=color.white, size=size.tiny)
     logSide := ""
 
-// Open a new logged trade (a repeat signal in the same direction is ignored).
+// Keep the open trade's lines running to the current bar; they stop where the trade closed.
+if array.size(lvlLines) > 0 and (logSide != "" or exitReason != "")
+    xEnd = logSide != "" ? bar_index + 1 : bar_index
+    for ln in lvlLines
+        line.set_x2(ln, xEnd)
+    for lb in lvlLabels
+        label.set_x(lb, xEnd)
+
+// Open a new trade (a repeat signal in the same direction is ignored).
 if newSide != "" and logSide == ""
+    isLong = newSide == "LONG"
+    buf = slBufTicks * syminfo.mintick
     logSide := newSide
     logEntry := close
-    logStop := newSide == "LONG" ? low : high
+    logStop := isLong ? low - buf : high + buf
+    risk = math.abs(logEntry - logStop)
+    dir = isLong ? 1.0 : -1.0
+    logTP1 := logEntry + dir * tp1R * risk
+    logTP2 := logEntry + dir * tp2R * risk
+    logTP3 := logEntry + dir * tp3R * risk
+    tpHits := 0
+    entryBar := bar_index
     logId := "CRTPRO-" + str.format_time(time_close, "yyyyMMdd-HHmm", "America/New_York") + "-" + newSide
+    array.clear(lvlLines)
+    array.clear(lvlLabels)
+    addLevel(logEntry, entryLvlColor, line.style_solid, "Entry")
+    addLevel(logStop, slLvlColor, line.style_solid, "SL")
+    addLevel(logTP1, tpLvlColor, line.style_dashed, "TP1")
+    addLevel(logTP2, tpLvlColor, line.style_dashed, "TP2")
+    addLevel(logTP3, tpLvlColor, line.style_dashed, "TP3")
     sendLog('"event":"ENTRY","id":"' + logId + '","side":"' + newSide + '","time":"' + nyStamp(time_close) +
-         '","entry":' + str.tostring(logEntry, format.mintick) + ',"sweep_stop":' + str.tostring(logStop, format.mintick) +
-         ',"risk_pts":' + str.tostring(math.abs(logEntry - logStop), format.mintick) +
-         ',"ref_high":' + str.tostring(refH, format.mintick) + ',"ref_low":' + str.tostring(refL, format.mintick))
+         '","entry":' + px(logEntry) + ',"sl":' + px(logStop) + ',"risk_pts":' + px(risk) +
+         ',"tp1":' + px(logTP1) + ',"tp2":' + px(logTP2) + ',"tp3":' + px(logTP3) +
+         ',"ref_high":' + px(refH) + ',"ref_low":' + px(refL))

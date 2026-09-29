@@ -10,8 +10,9 @@
  * README.md next to this file.
  *
  * Payloads (JSON, one per bar close):
- *   ENTRY {id, side, time, entry, sweep_stop, risk_pts, ref_high, ref_low, tf}
- *   EXIT  {id, side, time, exit, reason (EMA | REVERSE), pnl_pts}
+ *   ENTRY {id, side, time, entry, sl, risk_pts, tp1, tp2, tp3, ref_high, ref_low, tf}
+ *   TP    {id, side, time, level (TP1 | TP2 | TP3), price}
+ *   EXIT  {id, side, time, exit, reason (SL | TP3 | REVERSE | EMA), tp_hits, pnl_pts}
  *
  * Duplicates are ignored: an ENTRY whose id is already in the sheet, or an
  * EXIT for a trade that already has one, only goes to the Log tab.
@@ -32,10 +33,11 @@ var SUMMARY = "CRT Pro Summary";
 var LOG = "CRT Pro Log";
 
 var HEADERS = ["Trade ID", "Date", "Entry Time (ET)", "Session", "Side", "Chart TF",
-  "Entry", "Sweep Stop", "Risk (pts)", "Exit Time (ET)", "Exit", "Exit Reason",
-  "P&L (pts)", "R", "P&L $ (2 ES)", "Result"];
+  "Entry", "SL", "TP1", "TP2", "TP3", "Risk (pts)", "TP Reached", "Exit Time (ET)", "Exit",
+  "Exit Reason", "P&L (pts)", "R", "P&L $ (2 ES)", "Result"];
 var C = { ID: 1, DATE: 2, ENTRY_TIME: 3, SESSION: 4, SIDE: 5, TF: 6, ENTRY: 7, STOP: 8,
-  RISK: 9, EXIT_TIME: 10, EXIT: 11, REASON: 12, PNL_PTS: 13, R: 14, PNL_USD: 15, RESULT: 16 };
+  TP1: 9, TP2: 10, TP3: 11, RISK: 12, TP_HIT: 13, EXIT_TIME: 14, EXIT: 15, REASON: 16,
+  PNL_PTS: 17, R: 18, PNL_USD: 19, RESULT: 20 };
 
 function doGet() {
   return ContentService.createTextOutput("CRT Pro tracker is live.");
@@ -62,6 +64,7 @@ function doPost(e) {
 
     var status;
     if (body.event === "ENTRY") status = recordEntry(ss, body);
+    else if (body.event === "TP") status = recordTp(ss, body);
     else if (body.event === "EXIT") status = recordExit(ss, body);
     else status = "UNKNOWN EVENT";
 
@@ -76,11 +79,25 @@ function recordEntry(ss, b) {
   var sh = ss.getSheetByName(TRADES);
   if (findTradeRow(sh, b.id)) return "duplicate";
   var parts = String(b.time || "").split(" ");
+  var sl = b.sl !== undefined ? b.sl : b.sweep_stop; // sweep_stop = alerts from before the TP update
   var row = [
     b.id, parts[0] || "", parts[1] || "", sessionFor(parts[1]), b.side, b.tf || "",
-    num(b.entry), num(b.sweep_stop), num(b.risk_pts), "", "", "", "", "", "", "OPEN"
+    num(b.entry), num(sl), num(b.tp1), num(b.tp2), num(b.tp3), num(b.risk_pts), 0,
+    "", "", "", "", "", "", "OPEN"
   ];
   sh.appendRow(row);
+  return "ok";
+}
+
+// Marks the highest TP the open trade has reached (1-3).
+function recordTp(ss, b) {
+  var sh = ss.getSheetByName(TRADES);
+  var r = findTradeRow(sh, b.id);
+  if (!r) return "no matching entry";
+  if (sh.getRange(r, C.EXIT).getValue() !== "") return "trade already closed";
+  var level = Number(String(b.level || "").replace(/\D/g, ""));
+  if (!(level > Number(sh.getRange(r, C.TP_HIT).getValue() || 0))) return "duplicate";
+  sh.getRange(r, C.TP_HIT).setValue(level);
   return "ok";
 }
 
@@ -95,6 +112,8 @@ function recordExit(ss, b) {
   var parts = String(b.time || "").split(" ");
   var rMult = risk > 0 ? Math.round((pnl / risk) * 100) / 100 : "";
   var result = pnl > 0 ? "Win" : pnl < 0 ? "Loss" : "Breakeven";
+  var hits = b.tp_hits !== undefined ? Number(b.tp_hits) : "";
+  if (hits !== "" && hits > Number(sh.getRange(r, C.TP_HIT).getValue() || 0)) sh.getRange(r, C.TP_HIT).setValue(hits);
   sh.getRange(r, C.EXIT_TIME, 1, 7).setValues([[
     parts[1] || "", num(b.exit), b.reason || "", pnl, rMult, pnl * POINT_VALUE * CONTRACTS, result
   ]]);
@@ -166,8 +185,10 @@ function ensureTabs(ss) {
 
 function buildSummary(s) {
   var T = "'" + TRADES + "'!";
-  var res = T + "$P$2:$P", ses = T + "$D$2:$D", rr = T + "$N$2:$N", usd = T + "$O$2:$O", pts = T + "$M$2:$M";
+  var res = T + "$T$2:$T", ses = T + "$D$2:$D", rr = T + "$R$2:$R", usd = T + "$S$2:$S", pts = T + "$Q$2:$Q";
+  var tp = T + "$M$2:$M", why = T + "$P$2:$P";
   var closed = "COUNTIF(" + res + ",\"Win\")+COUNTIF(" + res + ",\"Loss\")+COUNTIF(" + res + ",\"Breakeven\")";
+  var reached = function (n) { return "=IFERROR(COUNTIFS(" + tp + ",\">=" + n + "\"," + why + ",\"<>\")/B3,0)"; };
   var rows = [
     ["CRT Pro — forward test", ""],
     ["", ""],
@@ -181,6 +202,13 @@ function buildSummary(s) {
     ["Total R", "=SUM(" + rr + ")"],
     ["Average R per trade", "=IFERROR(B10/B3,0)"],
     ["Total $ (2 ES)", "=SUM(" + usd + ")"],
+    ["Reached TP1", reached(1)],
+    ["Reached TP2", reached(2)],
+    ["Reached TP3", reached(3)],
+    ["Exit: SL", "=COUNTIF(" + why + ",\"SL\")"],
+    ["Exit: TP3", "=COUNTIF(" + why + ",\"TP3\")"],
+    ["Exit: EMA", "=COUNTIF(" + why + ",\"EMA\")"],
+    ["Exit: opposite signal", "=COUNTIF(" + why + ",\"REVERSE\")"],
     ["", ""],
     ["By session (ET)", "Trades", "Total R", "Total $ (2 ES)"]
   ];
@@ -188,9 +216,10 @@ function buildSummary(s) {
   for (var i = 0; i < rows.length; i++) {
     s.getRange(i + 1, 1, 1, rows[i].length).setValues([rows[i]]);
   }
+  var first = rows.length + 1;
   var sessions = ["Asia", "London", "NY open (9:30-10)", "NY 10-12", "NY afternoon", "After hours"];
   for (var j = 0; j < sessions.length; j++) {
-    var r = 15 + j, name = sessions[j];
+    var r = first + j, name = sessions[j];
     s.getRange(r, 1, 1, 4).setValues([[
       name,
       "=COUNTIFS(" + ses + ",A" + r + "," + res + ",\"<>OPEN\"," + res + ",\"<>\")",
@@ -199,17 +228,20 @@ function buildSummary(s) {
     ]]);
   }
   s.getRange("A1").setFontWeight("bold").setFontSize(12);
-  s.getRange("A14:D14").setFontWeight("bold");
+  s.getRange(rows.length, 1, 1, 4).setFontWeight("bold");
   s.getRange("B8").setNumberFormat("0%");
   s.getRange("B11").setNumberFormat("0.00");
   s.getRange("B12").setNumberFormat("$#,##0");
-  s.getRange("D15:D20").setNumberFormat("$#,##0");
+  s.getRange("B13:B15").setNumberFormat("0%");
+  s.getRange(first, 4, sessions.length, 1).setNumberFormat("$#,##0");
 }
 
 /** Adds one sample trade so you can see the layout; delete its rows after. */
 function addTestTrade() {
   var ss = SpreadsheetApp.getActiveSpreadsheet();
   ensureTabs(ss);
-  recordEntry(ss, { id: "TEST-1", side: "LONG", time: "2026-09-30 10:15", entry: 7800, sweep_stop: 7796, risk_pts: 4, tf: "1" });
-  recordExit(ss, { id: "TEST-1", side: "LONG", time: "2026-09-30 10:40", exit: 7808, reason: "EMA", pnl_pts: 8 });
+  recordEntry(ss, { id: "TEST-1", side: "LONG", time: "2026-09-30 10:15", entry: 7800, sl: 7796, risk_pts: 4, tp1: 7804, tp2: 7808, tp3: 7812, tf: "1" });
+  recordTp(ss, { id: "TEST-1", side: "LONG", time: "2026-09-30 10:22", level: "TP1", price: 7804 });
+  recordTp(ss, { id: "TEST-1", side: "LONG", time: "2026-09-30 10:31", level: "TP2", price: 7808 });
+  recordExit(ss, { id: "TEST-1", side: "LONG", time: "2026-09-30 10:40", exit: 7809.5, reason: "EMA", tp_hits: 2, pnl_pts: 9.5 });
 }
