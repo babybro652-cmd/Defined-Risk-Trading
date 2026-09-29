@@ -1,0 +1,504 @@
+//@version=6
+// ══════════════════════════════════════════════════════════════════════════════
+// CRT Pro MTF — ES Futures  |  Indicator  |  Pine Script v6
+// ══════════════════════════════════════════════════════════════════════════════
+// Run this on a LOWER timeframe chart (e.g. 1m). The setup comes from the
+// Setup Timeframe (default 15m); entries, stops and exits run on the chart bars.
+//
+//   1. Setup (15m, completed bars only — no repainting):
+//        reference candle N back with range ≥ X × ATR, then a sweep candle that
+//        wicks beyond it and CLOSES back inside, in the trend of the 15m EMA
+//   2. Entry (1m):
+//        B: first 1m bar after the 15m sweep candle closes
+//        C: wait for a 1m break of structure in the trade direction
+//      Cancelled if price takes out the 15m sweep wick first
+//   3. Stop: B = beyond the 15m sweep wick, C = beyond the 1m swing,
+//      never more than Max Risk $ (hard stop)
+//   4. TP1 = far side of the 15m reference range → scale out, stop to breakeven,
+//      runner trails by 15m ATR, optional TP2 at an R multiple
+// ══════════════════════════════════════════════════════════════════════════════
+
+indicator("CRT Pro — ES Futures", overlay=true, max_lines_count=500, max_labels_count=500, max_boxes_count=300)
+
+// ─── INPUTS ───────────────────────────────────────────────────────────────────
+
+grpSetup     = "📊 Setup (Higher Timeframe)"
+htfTf        = input.timeframe("15", "Setup Timeframe",                          group=grpSetup, tooltip="Reference and sweep candles come from this timeframe. Put the indicator on a LOWER timeframe chart (e.g. 1m) for entries and exits.")
+lookback     = input.int(1,      "Lookback Bars",          minval=1, maxval=20,  group=grpSetup, tooltip="Which setup-timeframe bar before the sweep candle is the reference candle. 1 = the candle right before (classic CRT).")
+minRangeATR  = input.float(0.75, "Min Range (× ATR)",      step=0.05,            group=grpSetup, tooltip="Reference candle range must be at least this multiple of the setup-timeframe ATR")
+atrLen       = input.int(14,     "ATR Length",             minval=1,             group=grpSetup)
+requireClean = input.bool(true,  "First Sweep Only",                             group=grpSetup, tooltip="Reject the setup if any candle between the reference candle and the sweep candle already traded beyond that side of the range")
+
+grpEntry     = "🎯 Entry (Chart Timeframe)"
+entryMode    = input.string("C: Chart-TF Confirmation", "Entry Trigger", options=["B: Next Bar After Setup Close", "C: Chart-TF Confirmation"], group=grpEntry, tooltip="B: enter on the first chart bar after the sweep candle closes; stop beyond the sweep wick. C: wait for a break of structure on the chart timeframe; stop beyond that swing.")
+bosLen       = input.int(5,      "Confirmation: Break of Last N Bars",  minval=2, maxval=50, group=grpEntry, tooltip="C only. Long: a green bar closes above the highest high of the previous N bars. Short: mirror. The stop goes beyond the lowest low / highest high of the last N bars.")
+confWindow   = input.int(15,     "Confirmation Window (bars)",          minval=1, maxval=240, group=grpEntry, tooltip="C only. How many chart bars after the sweep candle closes to wait for the confirmation. The setup is also cancelled if price takes out the sweep wick.")
+confirmClose = input.bool(true,  "Signal Only on Bar Close",                     group=grpEntry, tooltip="Prevents signals and alerts from appearing and disappearing on the live bar")
+
+grpFilter    = "🧠 Filters"
+minRR        = input.float(1.0,  "Min Reward:Risk to TP1", minval=0, step=0.1,  group=grpFilter, tooltip="Skip entries where the distance to TP1 (far side of the reference range) is less than this × the distance to the stop. 0 = off.")
+useEMA       = input.bool(true,  "Trend Filter (Setup-TF EMA)",                  group=grpFilter, tooltip="Long: sweep candle closes above the EMA AND EMA rising. Short: mirror. Measured on the setup timeframe.")
+emaLen       = input.int(20,     "EMA Length",             minval=5, maxval=500, group=grpFilter)
+slopeLen     = input.int(2,      "EMA Slope Bars",         minval=1, maxval=50,  group=grpFilter)
+useVol       = input.bool(false, "Volume Confirmation",                          group=grpFilter)
+volLen       = input.int(20,     "Volume MA Length",       minval=1,             group=grpFilter)
+volMult      = input.float(1.5,  "Volume Multiplier",      step=0.05,            group=grpFilter, tooltip="Sweep candle volume must exceed this × the volume MA (setup timeframe)")
+useTime      = input.bool(true,  "Session Time Filter",                          group=grpFilter, tooltip="Only take entries during these New York time windows")
+sess1        = input.session("0930-1130", "Morning Session (ET)",               group=grpFilter)
+sess2        = input.session("1400-1600", "Afternoon Session (ET)",             group=grpFilter)
+
+grpRisk      = "🛑 Risk & Stop"
+maxRiskUSD   = input.float(500,  "Max Risk per Trade ($)", minval=1, step=25,   group=grpRisk, tooltip="Hard stop: a trade never loses more than this (before slippage). ES = $50/pt, so $500 = 10 pts on 1 contract.")
+contracts    = input.int(1,      "Contracts",              minval=1,             group=grpRisk)
+riskMode     = input.string("Cap Stop at Max $", "If Structural Stop Is Too Far", options=["Cap Stop at Max $", "Skip Trade"], group=grpRisk, tooltip="Cap: tighten the stop to the Max $ distance. Skip: don't take the trade.")
+stopMode     = input.string("Wick Touch", "Stop Trigger", options=["Wick Touch", "Close Beyond"], group=grpRisk, tooltip="Close Beyond: a bar must CLOSE past the structural stop. The Max $ stop is always a hard wick-touch stop.")
+stopBufTicks = input.int(2,      "Stop Buffer (ticks)",    minval=0, maxval=40,  group=grpRisk, tooltip="Ticks beyond the sweep wick / swing. ES tick = 0.25 pt = $12.50.")
+useStopExit  = input.bool(true,  "Use Structural Stop",                          group=grpRisk)
+
+grpTgt       = "🎯 Targets & Runner"
+tgtMode      = input.string("Scale Out", "TP1 Mode", options=["Scale Out", "Full Exit", "Off"], group=grpTgt, tooltip="TP1 = far side of the setup-timeframe reference range. Scale Out: close part there and manage the rest as a runner. Full Exit: close everything at TP1.")
+scalePct     = input.int(50,     "Scale Out at TP1 (%)",   minval=10, maxval=90, group=grpTgt)
+beOnTP1      = input.bool(true,  "Move Stop to Breakeven at TP1",                group=grpTgt)
+trailATR     = input.float(0.5,  "Runner Trail (× Setup-TF ATR)", minval=0, step=0.1, group=grpTgt, tooltip="After TP1, trail the stop this many setup-timeframe ATRs behind the best price since entry. 0 = no trail.")
+tp2R         = input.float(3.0,  "Runner TP2 (R multiple)", minval=0, step=0.5, group=grpTgt, tooltip="Close the runner at this multiple of initial risk. 0 = no TP2.")
+emaExitMode  = input.string("Runner Only", "Close Through Setup-TF EMA", options=["Runner Only", "Always", "Off"], group=grpTgt, tooltip="Runner Only: ignored until TP1 is hit, so a retest through the EMA doesn't cut the trade.")
+// An opposite entry always exits (and reverses)
+
+grpStyle     = "🎨 Style"
+extBars      = input.int(30,     "Line Extension (chart bars)", minval=1, maxval=300, group=grpStyle)
+showEMA      = input.bool(true,  "Show Setup-TF EMA",                            group=grpStyle)
+showZone     = input.bool(true,  "Show Reference Zone",                          group=grpStyle)
+showStop     = input.bool(true,  "Show Stop / TP Lines",                         group=grpStyle)
+showTable    = input.bool(true,  "Show Info Table",                              group=grpStyle)
+wickColor    = input.color(color.new(#2962FF, 0), "Range Line Color",            group=grpStyle)
+bullColor    = input.color(color.new(#00E676, 0), "Buy Color",                   group=grpStyle)
+bearColor    = input.color(color.new(#FF1744, 0), "Sell Color",                  group=grpStyle)
+
+// ─── CONSTANTS ────────────────────────────────────────────────────────────────
+
+pv       = syminfo.pointvalue * contracts          // $ per point for the position
+maxPts   = maxRiskUSD / pv                         // max stop distance in points
+bufPts   = stopBufTicks * syminfo.mintick
+chartOK  = timeframe.in_seconds() < timeframe.in_seconds(htfTf)
+modeB    = str.startswith(entryMode, "B")
+extMs    = extBars * timeframe.in_seconds() * 1000
+
+// ─── SETUP TIMEFRAME DATA ─────────────────────────────────────────────────────
+// Everything is offset by [1] and requested with lookahead_on, so each chart bar
+// sees only the LAST COMPLETED setup candle (no repainting, no future data).
+//   bar [1]            = sweep candle
+//   bar [1 + lookback] = reference candle
+
+htfData() =>
+    sO   = open[1]
+    sH   = high[1]
+    sL   = low[1]
+    sC   = close[1]
+    rH   = high[1 + lookback]
+    rL   = low[1 + lookback]
+    a    = ta.atr(atrLen)
+    qual = (rH - rL) >= a[1 + lookback] * minRangeATR
+    n    = math.max(lookback - 1, 1)
+    mLo  = ta.lowest(low, n)[2]
+    mHi  = ta.highest(high, n)[2]
+    cB   = not requireClean or lookback == 1 or mLo >= rL
+    cS   = not requireClean or lookback == 1 or mHi <= rH
+    e    = ta.ema(close, emaLen)
+    eSl  = e[1] - e[1 + slopeLen]
+    vOK  = volume[1] > ta.sma(volume, volLen)[1] * volMult
+    bull = qual and cB and sL < rL and sC > rL and sC < rH and sC > sO and (not useEMA or (sC > e[1] and eSl > 0)) and (not useVol or vOK)
+    bear = qual and cS and sH > rH and sC < rH and sC > rL and sC < sO and (not useEMA or (sC < e[1] and eSl < 0)) and (not useVol or vOK)
+    [bull, bear, rH, rL, sH, sL, e[1], a[1], time[1 + lookback]]
+
+[hBull, hBear, hRefH, hRefL, hSwH, hSwL, hEma, hAtr, hRefTime] = request.security(syminfo.tickerid, htfTf, htfData(), lookahead=barmerge.lookahead_on)
+
+htfNew = timeframe.change(htfTf)
+
+inSess(s) => not na(time(timeframe.period, s, "America/New_York"))
+inSession = not useTime or inSess(sess1) or inSess(sess2)
+
+confirmed = not confirmClose or barstate.isconfirmed
+
+// A setup completes on the first chart bar of a new setup-timeframe candle
+setupBull = confirmed and chartOK and htfNew and hBull
+setupBear = confirmed and chartOK and htfNew and hBear
+
+// ─── ARMED SETUP ──────────────────────────────────────────────────────────────
+
+var bool  armL     = false
+var bool  armS     = false
+var int   armBar   = na
+var float armTp    = na     // TP1 = far side of the reference range
+var float armSweep = na     // sweep wick of the setup candle
+
+if setupBull
+    armL     := true
+    armS     := false
+    armBar   := bar_index
+    armTp    := hRefH
+    armSweep := hSwL
+if setupBear
+    armS     := true
+    armL     := false
+    armBar   := bar_index
+    armTp    := hRefL
+    armSweep := hSwH
+
+// Cancel if the sweep wick is taken out or the window runs out
+longCancel  = confirmed and armL and (low < armSweep or bar_index - armBar > confWindow)
+shortCancel = confirmed and armS and (high > armSweep or bar_index - armBar > confWindow)
+if longCancel
+    armL := false
+if shortCancel
+    armS := false
+
+// ─── ENTRY TRIGGERS (chart timeframe) ─────────────────────────────────────────
+
+hhPrev  = ta.highest(high, bosLen)[1]
+llPrev  = ta.lowest(low, bosLen)[1]
+swingLo = ta.lowest(low, bosLen)
+swingHi = ta.highest(high, bosLen)
+bosUp   = close > hhPrev and close > open
+bosDn   = close < llPrev and close < open
+
+longTrig  = confirmed and armL and inSession and (modeB ? bar_index == armBar : bosUp)
+shortTrig = confirmed and armS and inSession and (modeB ? bar_index == armBar : bosDn)
+
+// Structural stop, then the Max $ rule
+longStruct  = (modeB ? armSweep : swingLo) - bufPts
+shortStruct = (modeB ? armSweep : swingHi) + bufPts
+longMaxStop  = math.ceil((close - maxPts) / syminfo.mintick) * syminfo.mintick
+shortMaxStop = math.floor((close + maxPts) / syminfo.mintick) * syminfo.mintick
+longTooFar  = longStruct  < longMaxStop
+shortTooFar = shortStruct > shortMaxStop
+longStop    = longTooFar  ? (riskMode == "Skip Trade" ? na : longMaxStop)  : longStruct
+shortStop   = shortTooFar ? (riskMode == "Skip Trade" ? na : shortMaxStop) : shortStruct
+longRisk    = close - longStop
+shortRisk   = shortStop - close
+longRR      = longRisk  > 0 ? (armTp - close) / longRisk  : 0.0
+shortRR     = shortRisk > 0 ? (close - armTp) / shortRisk : 0.0
+
+bullSignal = longTrig  and not na(longStop)  and longRisk  > 0 and close < armTp and (minRR <= 0 or longRR  >= minRR)
+bearSignal = shortTrig and not na(shortStop) and shortRisk > 0 and close > armTp and (minRR <= 0 or shortRR >= minRR)
+
+// ─── POSITION STATE ───────────────────────────────────────────────────────────
+// Exits are evaluated against the state carried in from the PREVIOUS bar,
+// before this bar's entries are applied. That way:
+//   • a trade can never enter and exit on the same bar
+//   • an opposite entry fires the exit for the old side
+
+var bool  inLong    = false
+var bool  inShort   = false
+var bool  tp1Done   = false
+var float entryPx   = na
+var float stopPx    = na
+var float hardPx    = na
+var float tgtPx     = na
+var float tp2Px     = na
+var float extremePx = na
+var float riskPts   = na
+var float remFrac   = 1.0
+var float tradePnl  = 0.0
+var float lastUSD   = 0.0
+
+wickStop  = stopMode == "Wick Touch"
+scaleFrac = scalePct / 100.0
+emaExitOn = emaExitMode == "Always" or (emaExitMode == "Runner Only" and tp1Done)
+tp1Full   = tgtMode == "Full Exit"
+tp1Scale  = tgtMode == "Scale Out"
+
+// ─── LONG EXITS ───────────────────────────────────────────────────────────────
+
+longHardHit = inLong and low <= hardPx
+longStopHit = inLong and (longHardHit or (useStopExit and (wickStop ? low < stopPx : close < stopPx)))
+longTp1Hit  = inLong and not tp1Done and tgtMode != "Off" and high >= tgtPx
+longTp2Hit  = inLong and tp1Done and tp2R > 0 and high >= tp2Px
+longRevHit  = inLong and bearSignal
+longEmaHit  = inLong and emaExitOn and close < hEma
+
+// Stop is checked first: if stop and target are both touched in one bar, assume the stop
+longPartial = confirmed and tp1Scale and longTp1Hit and not longStopHit
+exitLong    = confirmed and (longStopHit or longTp2Hit or longRevHit or longEmaHit or (tp1Full and longTp1Hit))
+
+longStopWhy = not tp1Done or stopPx < entryPx ? "STOP" : stopPx == entryPx ? "BE" : "TRAIL"
+longReason  = longStopHit ? longStopWhy : (longTp2Hit or (tp1Full and longTp1Hit)) ? "TARGET" : longRevHit ? "REVERSAL" : "EMA"
+longStopFill = wickStop and useStopExit and low < stopPx ? math.min(open, stopPx) : longHardHit ? math.min(open, hardPx) : close
+longTp1Px   = math.max(open, tgtPx)
+longExitPx  = longStopHit ? longStopFill : longTp2Hit ? math.max(open, tp2Px) : (tp1Full and longTp1Hit) ? longTp1Px : close
+
+// ─── SHORT EXITS ──────────────────────────────────────────────────────────────
+
+shortHardHit = inShort and high >= hardPx
+shortStopHit = inShort and (shortHardHit or (useStopExit and (wickStop ? high > stopPx : close > stopPx)))
+shortTp1Hit  = inShort and not tp1Done and tgtMode != "Off" and low <= tgtPx
+shortTp2Hit  = inShort and tp1Done and tp2R > 0 and low <= tp2Px
+shortRevHit  = inShort and bullSignal
+shortEmaHit  = inShort and emaExitOn and close > hEma
+
+shortPartial = confirmed and tp1Scale and shortTp1Hit and not shortStopHit
+exitShort    = confirmed and (shortStopHit or shortTp2Hit or shortRevHit or shortEmaHit or (tp1Full and shortTp1Hit))
+
+shortStopWhy = not tp1Done or stopPx > entryPx ? "STOP" : stopPx == entryPx ? "BE" : "TRAIL"
+shortReason  = shortStopHit ? shortStopWhy : (shortTp2Hit or (tp1Full and shortTp1Hit)) ? "TARGET" : shortRevHit ? "REVERSAL" : "EMA"
+shortStopFill = wickStop and useStopExit and high > stopPx ? math.max(open, stopPx) : shortHardHit ? math.max(open, hardPx) : close
+shortTp1Px   = math.min(open, tgtPx)
+shortExitPx  = shortStopHit ? shortStopFill : shortTp2Hit ? math.min(open, tp2Px) : (tp1Full and shortTp1Hit) ? shortTp1Px : close
+
+// ─── TRADE STATS ($, no commission/slippage) ──────────────────────────────────
+// stats: [wins, losses, net, sumWin, sumLoss]
+// exitCounts: [STOP, BE, TRAIL, TARGET, REVERSAL, EMA]
+
+var array<float> stats      = array.new<float>(5, 0.0)
+var array<int>   exitCounts = array.new<int>(6, 0)
+var int          nTp1       = 0
+
+reasonIdx(string r) => r == "STOP" ? 0 : r == "BE" ? 1 : r == "TRAIL" ? 2 : r == "TARGET" ? 3 : r == "REVERSAL" ? 4 : 5
+
+recordTrade(array<float> st, array<int> ex, float pnl, string reason) =>
+    if pnl > 0
+        array.set(st, 0, array.get(st, 0) + 1)
+        array.set(st, 3, array.get(st, 3) + pnl)
+    else
+        array.set(st, 1, array.get(st, 1) + 1)
+        array.set(st, 4, array.get(st, 4) + pnl)
+    array.set(st, 2, array.get(st, 2) + pnl)
+    idx = reasonIdx(reason)
+    array.set(ex, idx, array.get(ex, idx) + 1)
+
+// ─── APPLY EXITS ──────────────────────────────────────────────────────────────
+
+if longPartial
+    tradePnl += scaleFrac * (longTp1Px - entryPx)
+    remFrac  -= scaleFrac
+    tp1Done  := true
+    nTp1     += 1
+    if beOnTP1
+        stopPx := math.max(stopPx, entryPx)
+if exitLong
+    tradePnl += remFrac * (longExitPx - entryPx)
+    lastUSD := tradePnl * pv
+    recordTrade(stats, exitCounts, lastUSD, longReason)
+    inLong := false
+
+if shortPartial
+    tradePnl += scaleFrac * (entryPx - shortTp1Px)
+    remFrac  -= scaleFrac
+    tp1Done  := true
+    nTp1     += 1
+    if beOnTP1
+        stopPx := math.min(stopPx, entryPx)
+if exitShort
+    tradePnl += remFrac * (entryPx - shortExitPx)
+    lastUSD := tradePnl * pv
+    recordTrade(stats, exitCounts, lastUSD, shortReason)
+    inShort := false
+
+// ─── ENTRIES ──────────────────────────────────────────────────────────────────
+// A repeat signal in the same direction does not reset an open trade's levels
+
+newLong  = bullSignal and not inLong
+newShort = bearSignal and not inShort
+
+if newLong
+    inLong    := true
+    inShort   := false
+    tp1Done   := false
+    entryPx   := close
+    stopPx    := longStop
+    hardPx    := longMaxStop
+    tgtPx     := armTp
+    riskPts   := longRisk
+    tp2Px     := close + tp2R * longRisk
+    extremePx := high
+    remFrac   := 1.0
+    tradePnl  := 0.0
+if newShort
+    inShort   := true
+    inLong    := false
+    tp1Done   := false
+    entryPx   := close
+    stopPx    := shortStop
+    hardPx    := shortMaxStop
+    tgtPx     := armTp
+    riskPts   := shortRisk
+    tp2Px     := close - tp2R * shortRisk
+    extremePx := low
+    remFrac   := 1.0
+    tradePnl  := 0.0
+
+// Setup is used up once it triggers; mode B only gets the one bar
+if confirmed and armL and (bullSignal or modeB)
+    armL := false
+if confirmed and armS and (bearSignal or modeB)
+    armS := false
+
+// ─── RUNNER TRAIL (uses this bar, applies from the next bar) ──────────────────
+
+if confirmed and inLong and not newLong
+    extremePx := math.max(extremePx, high)
+    if tp1Done and trailATR > 0
+        stopPx := math.max(stopPx, extremePx - trailATR * hAtr)
+if confirmed and inShort and not newShort
+    extremePx := math.min(extremePx, low)
+    if tp1Done and trailATR > 0
+        stopPx := math.min(stopPx, extremePx + trailATR * hAtr)
+
+if not inLong and not inShort
+    stopPx    := na
+    hardPx    := na
+    tgtPx     := na
+    tp2Px     := na
+    extremePx := na
+    riskPts   := na
+
+// ─── DRAWING ──────────────────────────────────────────────────────────────────
+
+// Setup-timeframe reference range, drawn when the setup completes
+if setupBull or setupBear
+    line.new(hRefTime, hRefH, time + extMs, hRefH, xloc=xloc.bar_time, color=wickColor, width=2, style=line.style_solid)
+    line.new(hRefTime, hRefL, time + extMs, hRefL, xloc=xloc.bar_time, color=wickColor, width=2, style=line.style_solid)
+    if showZone
+        box.new(hRefTime, hRefH, time + extMs, hRefL, xloc=xloc.bar_time, border_color=color.new(wickColor, 60), bgcolor=color.new(wickColor, 88))
+
+// Stop (red dotted), TP1 (blue dashed), TP2 (green dotted) from the entry bar
+if showStop and (newLong or newShort)
+    line.new(bar_index, stopPx, bar_index + extBars, stopPx, color=color.new(bearColor, 20), width=1, style=line.style_dotted)
+    line.new(bar_index, tgtPx,  bar_index + extBars, tgtPx,  color=color.new(wickColor, 20), width=1, style=line.style_dashed)
+    if tp1Scale and tp2R > 0
+        line.new(bar_index, tp2Px, bar_index + extBars, tp2Px, color=color.new(bullColor, 20), width=1, style=line.style_dotted)
+
+// ─── LABELS ───────────────────────────────────────────────────────────────────
+// Every step of a trade gets a label with the exact prices to use.
+// Long entries/exits sit below the bar and short entries/exits above, so a
+// reversal's EXIT and the new entry land on opposite sides of the bar.
+
+px(float p) => str.tostring(p, format.mintick)
+usd(float x) => (x >= 0 ? "+$" : "-$") + str.tostring(math.abs(x), "#,##0")
+
+// Setup armed (mode C: wait for the BUY/SELL label; mode B: the entry comes on this bar)
+if setupBull and not newLong
+    label.new(bar_index, low, htfTf + " LONG SETUP\n" + (modeB ? "Skipped (R:R / session / $ risk)" : "Wait for BUY\nOff below " + px(hSwL)), yloc=yloc.belowbar, style=label.style_label_up, color=color.new(bullColor, 70), textcolor=color.white, size=size.small, textalign=text.align_left)
+if setupBear and not newShort
+    label.new(bar_index, high, htfTf + " SHORT SETUP\n" + (modeB ? "Skipped (R:R / session / $ risk)" : "Wait for SELL\nOff above " + px(hSwH)), yloc=yloc.abovebar, style=label.style_label_down, color=color.new(bearColor, 70), textcolor=color.white, size=size.small, textalign=text.align_left)
+
+// Setup cancelled before an entry
+if longCancel and not newLong
+    label.new(bar_index, low, "Long setup off", yloc=yloc.belowbar, style=label.style_label_up, color=color.new(color.gray, 60), textcolor=color.white, size=size.tiny)
+if shortCancel and not newShort
+    label.new(bar_index, high, "Short setup off", yloc=yloc.abovebar, style=label.style_label_down, color=color.new(color.gray, 60), textcolor=color.white, size=size.tiny)
+
+// Entry: price, stop, targets, $ risk
+tp2Txt = tp1Scale and tp2R > 0 ? "\nTP2 " + px(tp2Px) + " (rest)" : ""
+tp1Txt = tgtMode == "Off" ? "" : "\nTP1 " + px(tgtPx) + (tp1Scale ? " (" + str.tostring(scalePct) + "%)" : " (all)")
+if newLong
+    label.new(bar_index, low, "▲ BUY " + px(entryPx) + "\nSL " + px(stopPx) + "  (-$" + str.tostring(math.round(riskPts * pv)) + ")" + tp1Txt + tp2Txt, yloc=yloc.belowbar, style=label.style_label_up, color=bullColor, textcolor=color.black, size=size.normal, textalign=text.align_left)
+if newShort
+    label.new(bar_index, high, "▼ SELL " + px(entryPx) + "\nSL " + px(stopPx) + "  (-$" + str.tostring(math.round(riskPts * pv)) + ")" + tp1Txt + tp2Txt, yloc=yloc.abovebar, style=label.style_label_down, color=bearColor, textcolor=color.white, size=size.normal, textalign=text.align_left)
+
+// TP1 scale-out: what to close and where the stop goes now
+if longPartial and not exitLong
+    label.new(bar_index, high, "◐ TP1 " + px(longTp1Px) + "\nClose " + str.tostring(scalePct) + "%\nStop → " + px(stopPx), yloc=yloc.abovebar, style=label.style_label_down, color=color.new(bullColor, 30), textcolor=color.white, size=size.small, textalign=text.align_left)
+if shortPartial and not exitShort
+    label.new(bar_index, low, "◐ TP1 " + px(shortTp1Px) + "\nClose " + str.tostring(scalePct) + "%\nStop → " + px(stopPx), yloc=yloc.belowbar, style=label.style_label_up, color=color.new(bearColor, 30), textcolor=color.white, size=size.small, textalign=text.align_left)
+
+// Exit: price, reason, trade result
+if exitLong
+    label.new(bar_index, low, "✕ EXIT " + px(longExitPx) + " · " + longReason + "\nTrade " + usd(lastUSD), yloc=yloc.belowbar, style=label.style_label_up, color=lastUSD > 0 ? color.new(bullColor, 50) : color.new(color.gray, 20), textcolor=color.white, size=size.small, textalign=text.align_left)
+if exitShort
+    label.new(bar_index, high, "✕ EXIT " + px(shortExitPx) + " · " + shortReason + "\nTrade " + usd(lastUSD), yloc=yloc.abovebar, style=label.style_label_down, color=lastUSD > 0 ? color.new(bullColor, 50) : color.new(color.gray, 20), textcolor=color.white, size=size.small, textalign=text.align_left)
+
+// Live tags at the right edge while in a trade: current stop and next target
+var label stopTag = label.new(na, na, "", style=label.style_label_left, color=color.new(bearColor, 20), textcolor=color.white, size=size.small)
+var label tgtTag  = label.new(na, na, "", style=label.style_label_left, color=color.new(wickColor, 20), textcolor=color.white, size=size.small)
+inTrade = inLong or inShort
+nextTp  = tp1Done ? tp2Px : tgtPx
+if barstate.islast
+    if inTrade
+        stopWhy = (inLong and stopPx >= entryPx) or (inShort and stopPx <= entryPx) ? (stopPx == entryPx ? "BE STOP " : "TRAIL STOP ") : "STOP "
+        label.set_xy(stopTag, bar_index + 2, stopPx)
+        label.set_text(stopTag, stopWhy + px(stopPx))
+        label.set_xy(tgtTag, bar_index + 2, nextTp)
+        label.set_text(tgtTag, na(nextTp) ? "" : (tp1Done ? "TP2 " : "TP1 ") + px(nextTp))
+        label.set_color(tgtTag, na(nextTp) ? color.new(color.white, 100) : color.new(wickColor, 20))
+    else
+        label.set_xy(stopTag, na, na)
+        label.set_xy(tgtTag, na, na)
+
+// Live stop level while in a trade (steps up as the runner trails)
+plot(inLong or inShort ? stopPx : na, "Active Stop", color=color.new(bearColor, 40), style=plot.style_linebr, linewidth=1)
+
+// Setup-timeframe EMA (steps once per setup candle)
+plot(showEMA ? hEma : na, "Setup-TF EMA", color=color.new(color.yellow, 0), linewidth=2, style=plot.style_stepline)
+
+// ─── INFO TABLE ───────────────────────────────────────────────────────────────
+
+var table infoTable = table.new(position.top_right, 2, 9, bgcolor=color.new(color.black, 60), border_color=color.new(color.gray, 40), border_width=1, frame_color=color.gray, frame_width=1)
+
+if showTable and barstate.islast
+    table.cell(infoTable, 0, 0, "CRT Pro MTF", text_color=color.white, text_size=size.small, bgcolor=color.new(color.blue, 40))
+    table.cell(infoTable, 1, 0, "Status",      text_color=color.white, text_size=size.small, bgcolor=color.new(color.blue, 40))
+    tfStatus = chartOK ? htfTf + " setup → " + timeframe.period + " entries (" + (modeB ? "B" : "C") + ")" : "⚠ Chart TF must be lower than " + htfTf
+    table.cell(infoTable, 0, 1, "Timeframes", text_color=color.white, text_size=size.tiny)
+    table.cell(infoTable, 1, 1, tfStatus, text_color=chartOK ? color.white : color.orange, text_size=size.tiny)
+    trendStatus = not useEMA ? "OFF" : close > hEma ? "▲ above " + htfTf + " EMA" + str.tostring(emaLen) : "▼ below " + htfTf + " EMA" + str.tostring(emaLen)
+    trendCol    = not useEMA ? color.gray : close > hEma ? color.lime : color.red
+    table.cell(infoTable, 0, 2, "Trend", text_color=color.white, text_size=size.tiny)
+    table.cell(infoTable, 1, 2, trendStatus, text_color=trendCol, text_size=size.tiny)
+    armStatus = armL ? "LONG setup — waiting for confirmation" : armS ? "SHORT setup — waiting for confirmation" : "—"
+    table.cell(infoTable, 0, 3, "Armed", text_color=color.white, text_size=size.tiny)
+    table.cell(infoTable, 1, 3, armStatus, text_color=armL ? bullColor : armS ? bearColor : color.gray, text_size=size.tiny)
+    sessStatus = not useTime ? "OFF" : inSession ? "✔ OPEN" : "✘ CLOSED"
+    sessCol    = not useTime ? color.gray : inSession ? color.lime : color.orange
+    table.cell(infoTable, 0, 4, "Session", text_color=color.white, text_size=size.tiny)
+    table.cell(infoTable, 1, 4, sessStatus, text_color=sessCol,    text_size=size.tiny)
+    nextTgt   = tp1Done ? tp2Px : tgtPx
+    tgtLbl    = tp1Done ? "  TP2 " : "  TP1 "
+    levels    = "  SL " + str.tostring(stopPx, format.mintick) + (na(nextTgt) ? "" : tgtLbl + str.tostring(nextTgt, format.mintick)) + "  risk $" + str.tostring(math.round(riskPts * pv))
+    posStatus = inLong ? "LONG" + (tp1Done ? " (runner)" : "") + levels : inShort ? "SHORT" + (tp1Done ? " (runner)" : "") + levels : "FLAT"
+    posCol    = inLong ? bullColor : inShort ? bearColor : color.gray
+    table.cell(infoTable, 0, 5, "Position", text_color=color.white, text_size=size.tiny)
+    table.cell(infoTable, 1, 5, posStatus,  text_color=posCol,      text_size=size.tiny)
+    nW      = array.get(stats, 0)
+    nL      = array.get(stats, 1)
+    net     = array.get(stats, 2)
+    winRate = nW + nL > 0 ? 100 * nW / (nW + nL) : 0.0
+    statStatus = str.tostring(nW, "#") + "W / " + str.tostring(nL, "#") + "L (" + str.tostring(winRate, "#") + "%)  ·  $" + str.tostring(net, "#,##0")
+    table.cell(infoTable, 0, 6, "Trades (" + str.tostring(contracts) + " ct)", text_color=color.white, text_size=size.tiny)
+    table.cell(infoTable, 1, 6, statStatus, text_color=net >= 0 ? color.lime : color.red, text_size=size.tiny)
+    avgW = nW > 0 ? array.get(stats, 3) / nW : 0.0
+    avgL = nL > 0 ? array.get(stats, 4) / nL : 0.0
+    table.cell(infoTable, 0, 7, "Avg Win / Avg Loss", text_color=color.white, text_size=size.tiny)
+    table.cell(infoTable, 1, 7, "+$" + str.tostring(avgW, "#,##0") + " / $" + str.tostring(avgL, "#,##0"), text_color=color.white, text_size=size.tiny)
+    mixStatus = "TP1 " + str.tostring(nTp1) + " · Stop " + str.tostring(array.get(exitCounts, 0)) + " · BE " + str.tostring(array.get(exitCounts, 1)) + " · Trail " + str.tostring(array.get(exitCounts, 2)) + " · Tgt " + str.tostring(array.get(exitCounts, 3)) + " · Rev " + str.tostring(array.get(exitCounts, 4)) + " · EMA " + str.tostring(array.get(exitCounts, 5))
+    table.cell(infoTable, 0, 8, "Exits", text_color=color.white, text_size=size.tiny)
+    table.cell(infoTable, 1, 8, mixStatus, text_color=color.white, text_size=size.tiny)
+
+// ─── ALERTS ───────────────────────────────────────────────────────────────────
+// alertcondition(): pick one per alert in the Create Alert dialog.
+// alert(): choose "Any alert() function call" to get one alert with the reason
+// and prices in the message (useful for webhooks).
+
+alertcondition(setupBull or setupBear, "CRT Setup Armed", "CRT Pro: Setup-TF sweep candle closed — watch for entry")
+alertcondition(newLong,   "CRT Buy Entry",    "CRT Pro: Long entry")
+alertcondition(newShort,  "CRT Sell Entry",   "CRT Pro: Short entry")
+alertcondition(longPartial or shortPartial, "CRT TP1 Scale Out", "CRT Pro: TP1 hit — scale out, stop to breakeven")
+alertcondition(exitLong,  "CRT Exit Long",    "CRT Pro: Exit long — stop, breakeven, trail, target, reversal or EMA")
+alertcondition(exitShort, "CRT Exit Short",   "CRT Pro: Exit short — stop, breakeven, trail, target, reversal or EMA")
+
+// Exits first, so a reversal sends EXIT before the new entry
+if setupBull
+    alert("CRT Pro " + syminfo.ticker + ": " + htfTf + " LONG setup armed. Sweep low " + str.tostring(hSwL, format.mintick) + ", TP1 " + str.tostring(hRefH, format.mintick), alert.freq_once_per_bar_close)
+if setupBear
+    alert("CRT Pro " + syminfo.ticker + ": " + htfTf + " SHORT setup armed. Sweep high " + str.tostring(hSwH, format.mintick) + ", TP1 " + str.tostring(hRefL, format.mintick), alert.freq_once_per_bar_close)
+if longPartial and not exitLong
+    alert("CRT Pro " + syminfo.ticker + ": LONG TP1 — scale out " + str.tostring(scalePct) + "% @ " + str.tostring(longTp1Px, format.mintick) + ", stop → " + str.tostring(stopPx, format.mintick), alert.freq_once_per_bar_close)
+if shortPartial and not exitShort
+    alert("CRT Pro " + syminfo.ticker + ": SHORT TP1 — scale out " + str.tostring(scalePct) + "% @ " + str.tostring(shortTp1Px, format.mintick) + ", stop → " + str.tostring(stopPx, format.mintick), alert.freq_once_per_bar_close)
+if exitLong
+    alert("CRT Pro " + syminfo.ticker + ": EXIT LONG (" + longReason + ") @ " + str.tostring(longExitPx, format.mintick), alert.freq_once_per_bar_close)
+if exitShort
+    alert("CRT Pro " + syminfo.ticker + ": EXIT SHORT (" + shortReason + ") @ " + str.tostring(shortExitPx, format.mintick), alert.freq_once_per_bar_close)
+if newLong
+    alert("CRT Pro " + syminfo.ticker + ": BUY @ " + str.tostring(close, format.mintick) + "  SL " + str.tostring(stopPx, format.mintick) + "  TP1 " + str.tostring(tgtPx, format.mintick) + "  risk $" + str.tostring(math.round(riskPts * pv)), alert.freq_once_per_bar_close)
+if newShort
+    alert("CRT Pro " + syminfo.ticker + ": SELL @ " + str.tostring(close, format.mintick) + "  SL " + str.tostring(stopPx, format.mintick) + "  TP1 " + str.tostring(tgtPx, format.mintick) + "  risk $" + str.tostring(math.round(riskPts * pv)), alert.freq_once_per_bar_close)

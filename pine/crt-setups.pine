@@ -1,0 +1,739 @@
+//@version=6
+// ==============================================================================
+// CRT Setups  |  Indicator  |  Pine Script v6
+// ==============================================================================
+//   Put this on the 1m chart for entries. On the 15m chart it only draws the
+//   setups and levels (for review).
+//   C1 : 15m range candle
+//   C2 : 15m candle that wicks beyond C1's high (sell) or low (buy) and closes
+//        back inside C1
+//   C3 : 15m entry candle. Entry zone = C2's close. During C3, enter on a
+//        1m candle that either
+//          - breaks cleanly: closes in the trade direction, past the entry
+//            zone by the clean-break distance
+//          - retests: price first moves away from the zone, then a 1m candle
+//            comes back to touch it and closes back on the trade side
+//        No trigger before C3 ends = no trade.
+//   Level sweep (second setup type): C2 wicks through a key level and closes
+//        back past it, even if it closes outside C1. Weaker proof, so C3 must
+//        also close back past the level ("C3 SWEEP ... OK"). Then the entry
+//        zone is C3's close, and the 1m retest / clean break must come during
+//        the next 15m candle.
+//   Killzones: new setups only when C3 starts in Late London (2:00-5:00) or
+//        NY AM (9:30-11:30). Others are drawn greyed and not taken.
+//   Noise filters: C1 must be at least Min C1 Range tall, and C2 must go at
+//        least Min Sweep past C1. No new setups are drawn or taken while a
+//        trade is open.
+//   Key levels: confirmed 1H and 4H swing highs (resistance) and swing lows
+//        (support). With "Require Key Level" on, C2 must sweep into a level: a sell C2
+//        into resistance, a buy C2 into support.
+//   Session levels: Asia high/low, London high/low and the previous day's
+//        high/low are added to the key levels once the session is over.
+//        A level a 15m candle closes through is kept (dotted grey) for Keep
+//        Swept Levels minutes, so a failed breakout can still be traded. A
+//        close back on the other side restores it.
+//   Session extreme: a normal CRT also counts when C2 made the new high (sell)
+//        or low (buy) of the current session so far (London from 3:00, NY
+//        from 9:30), even with no other level there.
+//   5m FVG / IFVG (draw only, research): fair value gaps from 5m candles are
+//        boxed on the 1m chart. When a 5m candle closes through one it flips
+//        colour and is tagged "IFVG". Does not change any signals or trades.
+//   Alerts: plain text, or JSON for the Google Sheet tracker
+//        (apps-script/crt-setups-tracker.gs): SETUP, ENTRY, STOP, EXIT, MISSED.
+//   Weekly trend: higher/lower daily highs and lows over the last 5 days.
+//        Setups against it are tagged "CT" (counter-trend), not blocked.
+//   Targets: TP1 = Target Step $ from entry, TP2 = 2 steps, TP3 = 3 steps ...
+//        (TP tags are markers only - the trade is not closed there.)
+//   Stop:
+//        starts at Max Loss $ against you
+//        halfway to TP1 -> stop to entry (breakeven)
+//        after that, each time a 15m candle closes the stop trails behind it:
+//          buy  -> just below that 15m candle's low
+//          sell -> just above that 15m candle's high
+//        so you stay in while the 15m candles keep stepping your way, and are
+//        out when a 15m candle takes out the previous one ("move is over")
+//        once a 15m candle CLOSES past Profit Floor $, the stop never sits
+//        below that profit
+//   Also out when a no-trade window starts. One trade at a time: a setup in
+//        the same direction as the open trade is ignored; a valid setup AGAINST
+//        it closes the trade at market ("REVERSE") and is armed as usual.
+// ==============================================================================
+
+indicator("CRT Setups", overlay=true, max_labels_count=500, max_lines_count=500, max_boxes_count=500)
+
+// --- SETTINGS -----------------------------------------------------------------
+
+setupTf   = input.timeframe("15", "Setup Timeframe")
+minRange  = input.float(8.0, "Min C1 Range (points)", minval=0, step=0.25, tooltip="Skip setups whose C1 range is smaller than this. 8 points = $400 on 1 ES, the TP1 distance. 0 = off.")
+minSweep  = input.int(2, "Min Sweep Past C1 (ticks)", minval=1, maxval=40, tooltip="C2 must trade at least this far past C1's high (sell) or low (buy).")
+showNoise = input.bool(false, "Show Filtered-Out Setups (small grey)")
+bufTicks  = input.int(4, "Clean Break (ticks past zone)", minval=0, maxval=40, tooltip="A clean break is a 1m candle in the trade direction that closes this far past the entry zone. ES: 4 ticks = 1 point.")
+awayTicks = input.int(4, "Retest: Move Away First (ticks)", minval=1, maxval=40, tooltip="Before a retest counts, price must first trade this far away from the entry zone in the trade direction.")
+maxLoss   = input.float(250, "Max Loss ($)", minval=1, step=25, tooltip="Starting stop. Applies until the stop moves to entry.")
+stepUSD   = input.float(400, "Target Step ($)", minval=50, step=50, tooltip="TP1 is this far from entry, TP2 twice as far, and so on. Halfway to TP1 the stop moves to entry.")
+trailTks  = input.int(2, "Trail: Ticks Beyond 15m Candle", minval=0, maxval=40, tooltip="After breakeven the stop sits this far beyond the last closed 15m candle's low (buy) or high (sell).")
+floorUSD  = input.float(450, "Profit Floor ($, 0 = off)", minval=0, step=25, tooltip="Once a 15m candle closes with at least this much profit, the stop never sits below this profit.")
+contracts = input.int(1, "Contracts", minval=1)
+trendDays = input.int(5, "Trend: Days to Look Back", minval=2, maxval=10)
+grpTime   = "Trading Times (NY)"
+useKZ     = input.bool(true, "Killzones Only", group=grpTime, tooltip="New setups only when C3 starts inside a killzone. Open trades are not closed when a killzone ends.")
+kzLon     = input.session("0200-0500", "Late London Killzone", group=grpTime)
+kzNY      = input.session("0930-1130", "NY AM Killzone", group=grpTime)
+noTrade1  = input.session("2300-0200", "No-Trade Window 1", group=grpTime, tooltip="No entries, and open trades are closed when a no-trade window starts.")
+noTrade2  = input.session("1630-2000", "No-Trade Window 2", group=grpTime)
+showNoTr  = input.bool(true, "Show Setups Outside Trading Times (greyed)", group=grpTime)
+grpLvl    = "Key Levels"
+needLevel = input.bool(true,  "Require Key Level", group=grpLvl, tooltip="Only take normal CRT setups where C2's sweep reached a key level: resistance for sells, support for buys.")
+useSweep  = input.bool(true,  "Level Sweep Setups", group=grpLvl, tooltip="C2 wicks through a key level and closes back past it (even outside C1). C3 must confirm by closing back past the level too.")
+keepMin   = input.int(60, "Keep Swept Levels (minutes)", minval=0, maxval=480, step=15, group=grpLvl, tooltip="After a 15m candle closes through a level, keep it (dotted grey) this long before removing it. 0 = remove at once.")
+showLvls  = input.bool(true,  "Show Key Levels", group=grpLvl)
+use1h     = input.bool(true,  "1H Levels", group=grpLvl)
+use4h     = input.bool(true,  "4H Levels", group=grpLvl)
+pivLen    = input.int(3, "Swing Strength (bars each side)", minval=2, maxval=10, group=grpLvl, tooltip="A 1H/4H swing high needs this many lower highs on each side. Higher = fewer, stronger levels.")
+maxLvls   = input.int(3, "Levels Kept per Timeframe & Side", minval=1, maxval=10, group=grpLvl)
+lvlZone   = input.float(2.0, "Level Zone (points)", minval=0, step=0.25, group=grpLvl, tooltip="How close C2's sweep must come to a level to count. Levels closer than this are merged.")
+useAsia   = input.bool(true, "Asia High/Low", group=grpLvl, inline="ses")
+useLon    = input.bool(true, "London High/Low", group=grpLvl, inline="ses")
+usePD     = input.bool(true, "Prev Day High/Low", group=grpLvl)
+asiaSess  = input.session("1900-0300", "Asia Session (NY time)", group=grpLvl)
+lonSess   = input.session("0300-0930", "London Session (NY time)", group=grpLvl)
+nySess    = input.session("0930-1600", "NY Session (NY time)", group=grpLvl)
+useExt    = input.bool(true, "Session High/Low So Far Counts as a Level", group=grpLvl, tooltip="A normal CRT qualifies when C2 made the new high (sell) or low (buy) of the current London or NY session.")
+resCol    = input.color(#FF9800, "Resistance Color", group=grpLvl)
+supCol    = input.color(#26A69A, "Support Color", group=grpLvl)
+grpFvg    = "5m FVG / IFVG (draw only)"
+showFvg   = input.bool(true, "Show 5m FVG / IFVG", group=grpFvg, tooltip="Drawn on the 1m (or 5m) chart only. Research tool - it does not change signals or trades.")
+fvgTf     = input.timeframe("5", "FVG Timeframe", group=grpFvg)
+fvgMin    = input.float(1.0, "Min Gap Size (points)", minval=0.25, step=0.25, group=grpFvg)
+fvgLive   = input.int(3, "Live Boxes per Colour", minval=1, maxval=10, group=grpFvg, tooltip="Only the newest boxes keep extending right. Older and finished boxes stay on the chart but stop extending.")
+fvgSess   = input.session("0300-1600", "Draw New Gaps During (NY time)", group=grpFvg)
+fvgBull   = input.color(#26A69A, "Bullish FVG Color", group=grpFvg)
+fvgBear   = input.color(#EF5350, "Bearish FVG Color", group=grpFvg)
+grpAl     = "Alerts / Webhook"
+alertFmt  = input.string("Text", "Alert Format", options=["Text", "JSON (webhook)"], group=grpAl, tooltip="JSON (webhook) sends every alert to the Google Sheet tracker. See apps-script/README.md.")
+hookKey   = input.string("change-me", "Webhook Key", group=grpAl, tooltip="Must match SECRET in the Apps Script.")
+buyCol    = input.color(#00C853, "Buy Color")
+sellCol   = input.color(#FF1744, "Sell Color")
+rangeCol  = input.color(#787B86, "C1 Range Color")
+zoneCol   = input.color(#FFD600, "Entry Zone Color")
+tpCol     = input.color(#089981, "Target Color")
+
+pv       = syminfo.pointvalue * contracts
+buf      = bufTicks * syminfo.mintick
+away     = awayTicks * syminfo.mintick
+lossPts  = maxLoss / pv
+stepPts  = stepUSD / pv
+halfPts  = stepPts / 2
+trailBuf = trailTks * syminfo.mintick
+floorPts = floorUSD / pv
+keepMs   = keepMin * 60000
+
+px(float p) => str.tostring(p, format.mintick)
+usd(float x) => (x >= 0 ? "+$" : "-$") + str.tostring(math.abs(x), "#,##0")
+inWin(string s) => not na(time(timeframe.period, s, "America/New_York"))
+blocked = inWin(noTrade1) or inWin(noTrade2)
+inKZ    = inWin(kzLon) or inWin(kzNY)
+kzName  = inWin(kzLon) ? "London" : inWin(kzNY) ? "NY AM" : "Other"
+
+// Alerts: plain text, or one JSON object per event for the webhook
+isJson = alertFmt == "JSON (webhook)"
+q(string s) => "\"" + s + "\""
+num(float x) => na(x) ? "null" : str.tostring(x)
+nyTime(int t) => str.format_time(t, "yyyy-MM-dd HH:mm", "America/New_York")
+kv(string k, string v) => q(k) + ":" + q(v)
+kn(string k, float v) => q(k) + ":" + num(v)
+// One JSON object: common fields (key, event, id, symbol, time) + the event's own fields
+jmsg(string ev, string id, array<string> f) =>
+    a = array.from(kv("key", hookKey), kv("event", ev), kv("id", id), kv("symbol", syminfo.ticker), kv("time", nyTime(time)))
+    a.concat(f)
+    "{" + array.join(a, ",") + "}"
+send(string txt, string js) =>
+    alert(isJson ? js : txt, alert.freq_once_per_bar_close)
+    true
+
+// --- WEEKLY TREND -------------------------------------------------------------
+// Over the last N completed days: +1 for each higher high and each higher low,
+// -1 for each lower high and each lower low. Clearly positive = UP, clearly
+// negative = DOWN, otherwise RANGE.
+
+trendData(int n) =>
+    int score = 0
+    for i = 1 to n
+        score += (high[i] > high[i + 1] ? 1 : high[i] < high[i + 1] ? -1 : 0) + (low[i] > low[i + 1] ? 1 : low[i] < low[i + 1] ? -1 : 0)
+    score
+
+tScore = request.security(syminfo.tickerid, "D", trendData(trendDays), lookahead=barmerge.lookahead_on)
+trend  = tScore >= 3 ? 1 : tScore <= -3 ? -1 : 0
+trendTxt = trend == 1 ? "UP" : trend == -1 ? "DOWN" : "RANGE"
+
+// --- 15m CANDLES --------------------------------------------------------------
+// [1] + lookahead_on = last COMPLETED 15m candles only (no repainting).
+// On the first 1m bar of a new 15m candle: C2 = the candle that just closed,
+// C1 = the one before it, and C3 = the candle that is starting now.
+
+[c2H, c2L, c2O, c2C, c2T, c1H, c1L, c1T] = request.security(syminfo.tickerid, setupTf, [high[1], low[1], open[1], close[1], time[1], high[2], low[2], time[2]], lookahead=barmerge.lookahead_on)
+newC3   = timeframe.change(setupTf)
+tfMs    = timeframe.in_seconds(setupTf) * 1000
+chartOK = timeframe.in_seconds() < timeframe.in_seconds(setupTf)    // entries + trades
+onSetup = timeframe.in_seconds() == timeframe.in_seconds(setupTf)   // setups drawn only
+canDraw = chartOK or onSetup
+
+// --- KEY LEVELS: 1H / 4H SWING HIGHS & LOWS -----------------------------------
+
+type Level
+    float  price
+    bool   isRes
+    string tf
+    line   ln
+    label  lb
+    int    brokeAt = na   // time a 15m candle closed through it (swept)
+
+var array<Level> levels = array.new<Level>()
+
+// Confirmed swing points from the last COMPLETED candle of that timeframe
+pivData(int len) =>
+    ph = ta.pivothigh(high, len, len)
+    pl = ta.pivotlow(low, len, len)
+    [ph[1], pl[1], time[len + 1]]
+
+[ph1, pl1, pt1] = request.security(syminfo.tickerid, "60",  pivData(pivLen), lookahead=barmerge.lookahead_on)
+[ph4, pl4, pt4] = request.security(syminfo.tickerid, "240", pivData(pivLen), lookahead=barmerge.lookahead_on)
+new1h = timeframe.change("60")
+new4h = timeframe.change("240")
+
+// 4H and merged levels: thick solid. 1H / session: dashed. Swept: dotted grey.
+styleLevel(Level l) =>
+    swept  = not na(l.brokeAt)
+    strong = str.contains(l.tf, "4H") or str.contains(l.tf, "+")
+    base   = swept ? color.gray : l.isRes ? resCol : supCol
+    line.set_color(l.ln, color.new(base, showLvls ? 30 : 100))
+    line.set_width(l.ln, strong ? 2 : 1)
+    line.set_style(l.ln, swept ? line.style_dotted : strong ? line.style_solid : line.style_dashed)
+    label.set_color(l.lb, color.new(base, showLvls ? 60 : 100))
+    true
+
+// Add a level unless one on the same side is already within the zone (then
+// the two are merged, e.g. "1H+4H" or "1H+Asia"). Keeps the newest few.
+addLevel(array<Level> lv, float p, bool isRes, string tf, int t, int keep) =>
+    bool dup = false
+    for l in lv
+        if not dup and l.isRes == isRes and math.abs(l.price - p) <= lvlZone
+            dup := true
+            if not str.contains(l.tf, tf)
+                l.tf := l.tf + "+" + tf
+                styleLevel(l)
+    if not dup
+        ln  = line.new(t, p, t + 1, p, xloc=xloc.bar_time, extend=extend.right)
+        lb  = label.new(bar_index, p, tf + " " + px(p), style=label.style_label_left, textcolor=showLvls ? color.white : color.new(color.white, 100), size=size.tiny)
+        nl  = Level.new(p, isRes, tf, ln, lb)
+        styleLevel(nl)
+        lv.push(nl)
+        int cnt = 0
+        for i = lv.size() - 1 to 0
+            l = lv.get(i)
+            if l.isRes == isRes and l.tf == tf
+                cnt += 1
+                if cnt > keep
+                    line.delete(l.ln)
+                    label.delete(l.lb)
+                    lv.remove(i)
+    dup
+
+// A 15m candle closed at c: mark levels it closed through as swept, restore
+// swept levels it closed back past, remove levels swept too long ago
+updateLevels(array<Level> lv, float c, int t) =>
+    if lv.size() > 0
+        for i = lv.size() - 1 to 0
+            l = lv.get(i)
+            through = (l.isRes and c > l.price) or (not l.isRes and c < l.price)
+            if through and (keepMs == 0 or (not na(l.brokeAt) and t - l.brokeAt >= keepMs))
+                line.delete(l.ln)
+                label.delete(l.lb)
+                lv.remove(i)
+            else if through and na(l.brokeAt)
+                l.brokeAt := t
+                styleLevel(l)
+            else if not through and not na(l.brokeAt)
+                l.brokeAt := na
+                styleLevel(l)
+    true
+
+// Which level (if any) sits inside a price band; merged levels win
+levelIn(array<Level> lv, bool wantRes, float lo, float hi) =>
+    string tag = ""
+    for l in lv
+        if l.isRes == wantRes and l.price >= lo and l.price <= hi
+            if tag == "" or str.contains(l.tf, "+") or (str.contains(l.tf, "4H") and not str.contains(tag, "+"))
+                tag := l.tf
+    tag
+
+// Level sweep: the deepest level C2 wicked through by the min sweep and closed
+// back past. Returns its name and price.
+sweptLvl(array<Level> lv, bool wantRes, float hi, float lo, float c, float minS) =>
+    string tag = ""
+    float  p   = na
+    for l in lv
+        if l.isRes == wantRes
+            ok = wantRes ? (hi >= l.price + minS and c < l.price) : (lo <= l.price - minS and c > l.price)
+            if ok and (na(p) or (wantRes ? l.price > p : l.price < p))
+                tag := l.tf
+                p   := l.price
+    [tag, p]
+
+// Session high/low: returns the final high/low on the first bar after it ends
+sessTrack(string sess) =>
+    var float h   = na
+    var float l   = na
+    var int   t0  = na
+    var bool  was = false
+    inS = inWin(sess)
+    fin = was and not inS
+    fh  = h
+    fl  = l
+    ft  = t0
+    if inS
+        if not was
+            h  := high
+            l  := low
+            t0 := time
+        else
+            h := math.max(h, high)
+            l := math.min(l, low)
+    was := inS
+    [fin, fh, fl, ft]
+
+[asiaEnd, asiaH, asiaL, asiaT] = sessTrack(asiaSess)
+[lonEnd, lonH, lonL, lonT]     = sessTrack(lonSess)
+// Running high/low of a session while it is open
+sessRun(string sess) =>
+    var float h   = na
+    var float l   = na
+    var int   t0  = na
+    var bool  was = false
+    inS = inWin(sess)
+    if inS
+        if not was
+            h  := high
+            l  := low
+            t0 := time
+        else
+            h := math.max(h, high)
+            l := math.min(l, low)
+    was := inS
+    [inS, h, l, t0]
+
+[lonIn, lonRH, lonRL, lonRT] = sessRun(lonSess)
+[nyIn, nyRH, nyRL, nyRT]     = sessRun(nySess)
+// As of the end of C2 (previous bar): which session, and its high/low so far
+extName = nyIn[1] ? "NY" : lonIn[1] ? "London" : ""
+extH    = nyIn[1] ? nyRH[1] : lonRH[1]
+extL    = nyIn[1] ? nyRL[1] : lonRL[1]
+extT    = nyIn[1] ? nyRT[1] : lonRT[1]
+
+[pdH, pdL, pdT] = request.security(syminfo.tickerid, "D", [high[1], low[1], time[1]], lookahead=barmerge.lookahead_on)
+newDay = timeframe.change("D")
+
+// Did C2 sweep into a level? Sell: C2 went from C1's high up to its own high.
+// Buy: from C1's low down to its own low. (Checked before this bar's upkeep.)
+sellLvl = levelIn(levels, true,  c1H - lvlZone, c2H + lvlZone)
+buyLvl  = levelIn(levels, false, c2L - lvlZone, c1L + lvlZone)
+
+sweep   = minSweep * syminfo.mintick
+// C2 made the session's new high / low (and C1 was already in that session)
+sellExt = useExt and extName != "" and c1T >= extT and c2H >= extH
+buyExt  = useExt and extName != "" and c1T >= extT and c2L <= extL
+sellRaw = c2H > c1H and c2C < c1H and c2C > c1L
+buyRaw  = c2L < c1L and c2C > c1L and c2C < c1H
+if sellRaw and buyRaw
+    sellRaw := c2C < c2O
+    buyRaw  := not sellRaw
+// Noise filters
+bigC1   = minRange <= 0 or (c1H - c1L) >= minRange
+sellCRT = sellRaw and bigC1 and c2H >= c1H + sweep and (not needLevel or sellLvl != "" or sellExt)
+buyCRT  = buyRaw and bigC1 and c2L <= c1L - sweep and (not needLevel or buyLvl != "" or buyExt)
+// Level sweep setups (only when there is no normal CRT; skipped if C2 swept both ways)
+[sSwTag, sSwPx] = sweptLvl(levels, true,  c2H, c2L, c2C, sweep)
+[bSwTag, bSwPx] = sweptLvl(levels, false, c2H, c2L, c2C, sweep)
+sellSw  = useSweep and not (sellCRT or buyCRT) and sSwTag != "" and bSwTag == ""
+buySw   = useSweep and not (sellCRT or buyCRT) and bSwTag != "" and sSwTag == ""
+noise   = (sellRaw or buyRaw) and not (sellCRT or buyCRT or sellSw or buySw)
+
+// --- TRADE LEVEL TAGS ---------------------------------------------------------
+// Small price tags that ride along with price while live, then freeze and
+// turn grey when hit.
+
+type Tag
+    string name
+    float  price
+    line   ln
+    label  lb
+    bool   live
+
+newTag(string name, float p, color bg, color txt) =>
+    ln = line.new(bar_index, p, bar_index, p, color=bg, width=1)
+    lb = label.new(bar_index, p, name + " " + px(p), style=label.style_label_left, color=bg, textcolor=txt, size=size.tiny)
+    Tag.new(name, p, ln, lb, true)
+
+rideTag(Tag t) =>
+    if not na(t) and t.live
+        line.set_x2(t.ln, bar_index)
+        label.set_x(t.lb, bar_index)
+    true
+
+freezeTag(Tag t, string suffix, color bg) =>
+    if not na(t) and t.live
+        t.live := false
+        line.set_x2(t.ln, bar_index)
+        label.set_x(t.lb, bar_index)
+        label.set_color(t.lb, bg)
+        label.set_textcolor(t.lb, color.white)
+        label.set_text(t.lb, t.name + " " + px(t.price) + suffix)
+    true
+
+hitBg  = color.new(color.gray, 25)
+fadeBg = color.new(color.gray, 75)
+
+// --- STATE --------------------------------------------------------------------
+
+var int    armDir   = 0      // setup waiting for its 1m trigger during C3
+var float  zone     = na     // entry zone = C2 close
+var int    armEnd   = na     // time C3 ends
+var bool   wentAway = false  // price has moved away from the zone (needed for a retest)
+var string armCT    = ""     // " CT" when the setup is counter-trend
+var int    swDir    = 0      // level sweep waiting for C3 to close back past the level
+var float  swLvl    = na
+var string swCT     = ""
+var label  swLb     = na     // its C3 label (marked OK or x when C3 closes)
+var string armType  = ""     // "CRT" or "SWEEP" (for the tracker)
+var string armLvl   = ""     // level name, e.g. "London" or "NY low"
+var string armSess  = ""     // killzone the setup formed in
+var string swTagS   = ""
+var string swSess   = ""
+var string tId      = ""     // open trade: tracker id and details
+var string tType    = ""
+var string tLvl     = ""
+var string tSess    = ""
+var string tCT      = ""
+
+var int   dir     = 0        // open trade: 1 long, -1 short, 0 flat
+var float ePx     = na
+var int   eBar    = na
+var float sl      = na       // current (trailing) stop
+var float best    = 0.0      // best open profit so far, in points
+var Tag   tE      = na
+var Tag   tSL     = na
+var Tag   tT1     = na
+var Tag   tT2     = na
+var Tag   tT3     = na
+var int   nTrades = 0
+var int   nWins   = 0
+var float netUSD  = 0.0
+
+// --- 1) C3 STARTS: MARK THE SETUP ---------------------------------------------
+
+revNow = false   // an opposite setup armed: close the open trade this bar
+
+if newC3 and barstate.isconfirmed and canDraw
+    // The armed setup's window is over without a 1m trigger
+    if armDir != 0 and chartOK
+        send("CRT " + syminfo.ticker + ": " + (armDir == 1 ? "BUY" : "SELL") + " setup expired - no 1m trigger.", jmsg("MISSED", "", array.from(kv("side", armDir == 1 ? "BUY" : "SELL"), kv("setup", armType), kv("level", armLvl), kn("zone", zone))))
+    armDir := 0
+    offTime = blocked or (useKZ and not inKZ)
+    // 1a) A level sweep was waiting: the 15m candle that just closed is its C3
+    swGo = false
+    if swDir != 0
+        d      = swDir
+        swDir := 0
+        ok     = d == 1 ? c2C > swLvl : c2C < swLvl
+        if ok and (dir == 0 or d == -dir) and not blocked
+            label.set_text(swLb, label.get_text(swLb) + " OK")
+            swGo := true
+            endT = time + tfMs
+            line.new(c2T, c2C, endT, c2C, xloc=xloc.bar_time, color=zoneCol, width=2)
+            label.new(endT, c2C, px(c2C), xloc=xloc.bar_time, style=label.style_label_left, color=color.new(zoneCol, 30), textcolor=color.black, size=size.tiny)
+            if chartOK
+                revNow   := dir != 0
+                armDir   := d
+                zone     := c2C
+                armEnd   := endT
+                wentAway := false
+                armCT    := swCT
+                armType  := "SWEEP"
+                armLvl   := swTagS
+                armSess  := swSess
+                send("CRT " + syminfo.ticker + ": " + (d == 1 ? "BUY" : "SELL") + swCT + " sweep confirmed. Entry zone " + px(c2C) + ". Waiting for a 1m retest or clean break.", jmsg("SETUP", "", array.from(kv("side", d == 1 ? "BUY" : "SELL"), kv("setup", "SWEEP"), kv("level", swTagS), kv("stage", "confirmed"), kn("zone", c2C), kv("ct", swCT != "" ? "Yes" : "No"))))
+        else
+            label.set_text(swLb, label.get_text(swLb) + " x")
+            label.set_color(swLb, color.new(color.gray, 50))
+    // 1b) Look for a new setup (nothing armed; flat, or against the open trade)
+    if armDir == 0 and not swGo
+        // Filtered-out setup: optional small grey marker
+        if noise and showNoise and dir == 0
+            label.new(time, sellRaw ? high : low, "noise", xloc=xloc.bar_time, yloc=sellRaw ? yloc.abovebar : yloc.belowbar, style=sellRaw ? label.style_label_down : label.style_label_up, color=color.new(color.gray, 70), textcolor=color.white, size=size.tiny)
+        if sellCRT or buyCRT or sellSw or buySw
+            isSw   = sellSw or buySw
+            d      = buyCRT or buySw ? 1 : -1
+            // Flat, or a setup AGAINST the open trade (then reverse)
+            if dir == 0 or d == -dir
+                ct     = trend != 0 and d != trend ? " CT" : ""
+                lvl0   = d == 1 ? buyLvl : sellLvl
+                extTag = (d == 1 ? buyExt : sellExt) ? extName + (d == 1 ? " low" : " high") : ""
+                lvTag  = isSw ? (d == 1 ? bSwTag : sSwTag) : lvl0 != "" ? lvl0 : extTag
+                col    = offTime ? color.gray : d == 1 ? buyCol : sellCol
+                faded  = offTime ? 70 : 0
+                c3End  = time + tfMs
+                st     = d == 1 ? label.style_label_up : label.style_label_down
+                c3Txt  = offTime ? "C3 x" : "C3" + (isSw ? " SWEEP" : "") + (lvTag != "" ? " " + lvTag : "") + ct
+                if not offTime or showNoTr
+                    if not isSw
+                        line.new(c1T, c1H, c3End, c1H, xloc=xloc.bar_time, color=color.new(offTime ? color.gray : rangeCol, faded), style=line.style_dotted)
+                        line.new(c1T, c1L, c3End, c1L, xloc=xloc.bar_time, color=color.new(offTime ? color.gray : rangeCol, faded), style=line.style_dotted)
+                        label.new(c1T, d == 1 ? c1L : c1H, "C1", xloc=xloc.bar_time, style=st, color=color.new(col, 60), textcolor=color.white, size=size.tiny)
+                    label.new(c2T, d == 1 ? c2L : c2H, "C2", xloc=xloc.bar_time, style=st, color=color.new(col, 40), textcolor=color.white, size=size.tiny)
+                    c3Lb = label.new(time, d == 1 ? low : high, c3Txt, xloc=xloc.bar_time, yloc=d == 1 ? yloc.belowbar : yloc.abovebar, style=st, color=color.new(col, 30), textcolor=color.white, size=size.tiny)
+                    if isSw and not offTime
+                        swLb := c3Lb
+                    if not isSw
+                        line.new(c2T, c2C, c3End, c2C, xloc=xloc.bar_time, color=color.new(offTime ? color.gray : zoneCol, faded), width=2)
+                        label.new(c3End, c2C, px(c2C), xloc=xloc.bar_time, style=label.style_label_left, color=color.new(offTime ? color.gray : zoneCol, 30), textcolor=color.black, size=size.tiny)
+                if not offTime and isSw
+                    swDir := d
+                    swLvl := d == 1 ? bSwPx : sSwPx
+                    swCT  := ct
+                    swTagS := lvTag
+                    swSess := kzName
+                    if chartOK
+                        send("CRT " + syminfo.ticker + ": " + (d == 1 ? "BUY" : "SELL") + ct + " sweep of " + lvTag + " " + px(swLvl) + ". Waiting for C3 to close back " + (d == 1 ? "above" : "below") + " it.", jmsg("SETUP", "", array.from(kv("side", d == 1 ? "BUY" : "SELL"), kv("setup", "SWEEP"), kv("level", lvTag), kv("stage", "waiting for C3"), kn("level_price", swLvl), kv("ct", ct != "" ? "Yes" : "No"))))
+                if not offTime and not isSw and chartOK
+                    revNow   := dir != 0
+                    armDir   := d
+                    zone     := c2C
+                    armEnd   := c3End
+                    wentAway := false
+                    armCT    := ct
+                    armType  := "CRT"
+                    armLvl   := lvTag
+                    armSess  := kzName
+                    send("CRT " + syminfo.ticker + ": " + (d == 1 ? "BUY" : "SELL") + ct + " setup" + (lvTag != "" ? " at " + lvTag + (d == 1 ? " support" : " resistance") : "") + ". Entry zone " + px(c2C) + ". Waiting for a 1m retest or clean break.", jmsg("SETUP", "", array.from(kv("side", d == 1 ? "BUY" : "SELL"), kv("setup", "CRT"), kv("level", lvTag), kv("stage", "armed"), kn("zone", c2C), kv("ct", ct != "" ? "Yes" : "No"))))
+
+// --- 2) DURING C3: 1m RETEST OR CLEAN BREAK -----------------------------------
+
+if barstate.isconfirmed and armDir != 0 and dir == 0 and time < armEnd and not blocked
+    d      = armDir
+    brk    = d == 1 ? (close >= zone + buf and close > open) : (close <= zone - buf and close < open)
+    retest = wentAway and (d == 1 ? (low <= zone and close > zone) : (high >= zone and close < zone))
+    if not wentAway
+        wentAway := d == 1 ? high >= zone + away : low <= zone - away
+    if retest or brk
+        dir    := d
+        ePx    := close
+        eBar   := bar_index
+        sl     := close - d * lossPts
+        best   := 0.0
+        armDir := 0
+        how     = brk ? "break" : "retest"
+        tId    := syminfo.ticker + "-" + str.format_time(time, "yyyyMMdd-HHmm", "America/New_York")
+        tType  := armType
+        tLvl   := armLvl
+        tSess  := armSess
+        tCT    := armCT != "" ? "Yes" : "No"
+        label.new(bar_index, d == 1 ? low : high, (d == 1 ? "BUY" : "SELL") + armCT, yloc=d == 1 ? yloc.belowbar : yloc.abovebar, style=d == 1 ? label.style_label_up : label.style_label_down, color=d == 1 ? buyCol : sellCol, textcolor=color.white, size=size.small)
+        tE  := newTag("ENTRY", ePx, zoneCol, color.black)
+        tSL := newTag("SL", sl, sellCol, color.white)
+        tT1 := newTag("TP1", ePx + d * stepPts, tpCol, color.white)
+        tT2 := newTag("TP2", ePx + d * 2 * stepPts, tpCol, color.white)
+        tT3 := newTag("TP3", ePx + d * 3 * stepPts, tpCol, color.white)
+        send("CRT " + syminfo.ticker + ": " + (d == 1 ? "BUY" : "SELL") + armCT + " @ " + px(ePx) + " (" + how + "). SL " + px(sl) + "  TP1 " + px(ePx + d * stepPts), jmsg("ENTRY", tId, array.from(kv("side", d == 1 ? "BUY" : "SELL"), kv("setup", tType), kv("level", tLvl), kv("session", tSess), kv("ct", tCT), kv("trigger", how), kn("entry", ePx), kn("sl", sl), kn("tp1", ePx + d * stepPts), kn("contracts", contracts))))
+
+// C3 ended without a trigger (safety net; normally cleared at the next 15m candle)
+if armDir != 0 and time >= armEnd
+    armDir := 0
+
+// --- 3) MANAGE THE OPEN TRADE -------------------------------------------------
+// The stop is checked against the level set on the previous bars; this bar's
+// high/low then moves the trailing stop for the next bar.
+
+exitNow = false
+exitPx  = float(na)
+exitTxt = ""
+
+if barstate.isconfirmed and dir != 0 and bar_index > eBar
+    stopHit = dir == 1 ? low <= sl : high >= sl
+    if stopHit
+        exitNow := true
+        exitPx  := sl
+        exitTxt := (sl - ePx) * dir < 0 ? "SL" : (sl - ePx) * dir == 0 ? "BE" : "TRAIL"
+        freezeTag(tSL, " (HIT)", hitBg)
+    else if revNow
+        exitNow := true
+        exitPx  := close
+        exitTxt := "REVERSE"
+    else if blocked
+        exitNow := true
+        exitPx  := close
+        exitTxt := "NO-TRADE TIME"
+    else
+        // Targets reached this bar
+        best := math.max(best, (dir == 1 ? high - ePx : ePx - low))
+        if best >= stepPts
+            freezeTag(tT1, " (HIT)", hitBg)
+        if best >= 2 * stepPts
+            freezeTag(tT2, " (HIT)", hitBg)
+        if best >= 3 * stepPts
+            freezeTag(tT3, " (HIT)", hitBg)
+        newSl = sl
+        // Halfway to TP1: stop to entry
+        if best >= halfPts
+            newSl := dir == 1 ? math.max(newSl, ePx) : math.min(newSl, ePx)
+        // A 15m candle just closed: after breakeven, trail behind it
+        if newC3 and not na(c2H) and (newSl - ePx) * dir >= 0
+            candSl = dir == 1 ? c2L - trailBuf : c2H + trailBuf
+            newSl := dir == 1 ? math.max(newSl, candSl) : math.min(newSl, candSl)
+            // Profit floor once a 15m candle has closed past it
+            if floorUSD > 0 and (c2C - ePx) * dir >= floorPts
+                newSl := dir == 1 ? math.max(newSl, ePx + floorPts) : math.min(newSl, ePx - floorPts)
+        if (newSl - sl) * dir > 0
+            sl := newSl
+            tSL.price := sl
+            line.set_y1(tSL.ln, sl)
+            line.set_y2(tSL.ln, sl)
+            label.set_y(tSL.lb, sl)
+            label.set_text(tSL.lb, "SL " + px(sl) + " (" + usd((sl - ePx) * dir * pv) + ")")
+            label.set_color(tSL.lb, (sl - ePx) * dir >= 0 ? tpCol : sellCol)
+            send("CRT " + syminfo.ticker + ": move stop to " + px(sl) + " (" + usd((sl - ePx) * dir * pv) + " locked)", jmsg("STOP", tId, array.from(kn("sl", sl), kn("locked_usd", (sl - ePx) * dir * pv))))
+
+if exitNow
+    pnl = (exitPx - ePx) * dir * pv
+    nTrades += 1
+    nWins   += pnl > 0 ? 1 : 0
+    netUSD  += pnl
+    freezeTag(tE, "", fadeBg)
+    freezeTag(tSL, "", fadeBg)
+    freezeTag(tT1, "", fadeBg)
+    freezeTag(tT2, "", fadeBg)
+    freezeTag(tT3, "", fadeBg)
+    label.new(bar_index, dir == 1 ? high : low, exitTxt + " " + usd(pnl), yloc=dir == 1 ? yloc.abovebar : yloc.belowbar, style=dir == 1 ? label.style_label_down : label.style_label_up, color=pnl > 0 ? color.new(tpCol, 20) : color.new(color.gray, 20), textcolor=color.white, size=size.tiny)
+    send("CRT " + syminfo.ticker + ": EXIT " + exitTxt + " @ " + px(exitPx) + "  Trade " + usd(pnl), jmsg("EXIT", tId, array.from(kn("price", exitPx), kv("reason", exitTxt), kn("pnl_usd", pnl), kn("best_usd", best * pv))))
+    dir := 0
+
+if dir != 0
+    rideTag(tE)
+    rideTag(tSL)
+    rideTag(tT1)
+    rideTag(tT2)
+    rideTag(tT3)
+
+// --- KEY LEVEL UPKEEP (after this bar's setup check) --------------------------
+
+if barstate.isconfirmed
+    if newC3 and not na(c2C)
+        updateLevels(levels, c2C, time)
+    if use4h and new4h
+        if not na(ph4)
+            addLevel(levels, ph4, true, "4H", pt4, maxLvls)
+        if not na(pl4)
+            addLevel(levels, pl4, false, "4H", pt4, maxLvls)
+    if use1h and new1h
+        if not na(ph1)
+            addLevel(levels, ph1, true, "1H", pt1, maxLvls)
+        if not na(pl1)
+            addLevel(levels, pl1, false, "1H", pt1, maxLvls)
+    if usePD and newDay and not na(pdH)
+        addLevel(levels, pdH, true, "PD", pdT, 1)
+        addLevel(levels, pdL, false, "PD", pdT, 1)
+    if useAsia and asiaEnd and not na(asiaH)
+        addLevel(levels, asiaH, true, "Asia", asiaT, 1)
+        addLevel(levels, asiaL, false, "Asia", asiaT, 1)
+    if useLon and lonEnd and not na(lonH)
+        addLevel(levels, lonH, true, "London", lonT, 1)
+        addLevel(levels, lonL, false, "London", lonT, 1)
+
+// Level tags sit at the right edge of the chart
+if barstate.islast
+    for l in levels
+        label.set_xy(l.lb, bar_index + 3, l.price)
+        label.set_text(l.lb, l.tf + " " + px(l.price) + (na(l.brokeAt) ? "" : " swept"))
+
+// --- 5m FVG / IFVG (DRAW ONLY) -------------------------------------------------
+// Bullish FVG: candle 1 high < candle 3 low. Bearish: candle 1 low > candle 3 high.
+// A 5m close through the gap inverts it (IFVG); a close back through ends it.
+
+type Gap
+    float top
+    float bot
+    bool  bull   // made by an up move
+    bool  inv    // closed through -> IFVG (acts the other way)
+    box   bx
+
+var array<Gap> gaps = array.new<Gap>()
+
+[fH1, fL1, fC1, fH3, fL3, fT2] = request.security(syminfo.tickerid, fvgTf, [high[1], low[1], close[1], high[3], low[3], time[2]], lookahead=barmerge.lookahead_on)
+new5   = timeframe.change(fvgTf)
+fvgOK  = showFvg and timeframe.in_seconds() <= timeframe.in_seconds(fvgTf)
+inFvgS = inWin(fvgSess)
+
+endGap(Gap g) =>
+    box.set_extend(g.bx, extend.none)
+    box.set_right(g.bx, time)
+    true
+
+// Keep only the newest few boxes of a colour extending (green = support side)
+capGaps(array<Gap> gs, bool green, int keep) =>
+    int cnt = 0
+    if gs.size() > 0
+        for i = gs.size() - 1 to 0
+            g = gs.get(i)
+            if (g.bull != g.inv) == green
+                cnt += 1
+                if cnt > keep
+                    endGap(g)
+                    gs.remove(i)
+    true
+
+newGap(array<Gap> gs, float top, float bot, bool bull, int t) =>
+    col = bull ? fvgBull : fvgBear
+    bx  = box.new(t, top, time, bot, xloc=xloc.bar_time, extend=extend.right, border_color=color.new(col, 50), border_style=line.style_dashed, bgcolor=color.new(col, 85), text="", text_size=size.tiny, text_halign=text.align_left, text_valign=text.align_top, text_color=col)
+    gs.push(Gap.new(top, bot, bull, false, bx))
+    true
+
+if fvgOK and new5 and barstate.isconfirmed and not na(fC1)
+    // Existing gaps: invert (IFVG) or finish on this 5m close
+    if gaps.size() > 0
+        for i = gaps.size() - 1 to 0
+            g = gaps.get(i)
+            if not g.inv and (g.bull ? fC1 < g.bot : fC1 > g.top)
+                g.inv := true
+                col = g.bull ? fvgBear : fvgBull
+                box.set_bgcolor(g.bx, color.new(col, 75))
+                box.set_border_color(g.bx, color.new(col, 20))
+                box.set_border_style(g.bx, line.style_solid)
+                box.set_text(g.bx, "IFVG")
+                box.set_text_color(g.bx, col)
+            else if g.inv and (g.bull ? fC1 > g.top : fC1 < g.bot)
+                endGap(g)
+                gaps.remove(i)
+    // New gap from the last three 5m candles
+    if inFvgS and not na(fH3)
+        if fL1 - fH3 >= fvgMin
+            newGap(gaps, fL1, fH3, true, fT2)
+        if fL3 - fH1 >= fvgMin
+            newGap(gaps, fL3, fH1, false, fT2)
+    capGaps(gaps, true, fvgLive)
+    capGaps(gaps, false, fvgLive)
+
+// --- STATUS TABLE -------------------------------------------------------------
+
+var table tbl = table.new(position.top_right, 2, 4, bgcolor=color.new(color.black, 60), border_color=color.new(color.gray, 40), border_width=1)
+
+if barstate.islast
+    openPnl = dir != 0 ? (close - ePx) * dir * pv : 0.0
+    stTxt   = onSetup ? "Setups only - use the 1m chart for entries" : not chartOK ? "Use a chart below " + setupTf + "m (e.g. 1m)" : dir != 0 ? (dir == 1 ? "LONG " : "SHORT ") + px(ePx) + "  open " + usd(openPnl) + "  SL " + px(sl) : armDir != 0 ? (armDir == 1 ? "BUY" : "SELL") + armCT + " setup - zone " + px(zone) : swDir != 0 ? (swDir == 1 ? "BUY" : "SELL") + " sweep - waiting for C3 close " + (swDir == 1 ? "above " : "below ") + px(swLvl) : blocked ? "No-trade time" : useKZ and not inKZ ? "Outside killzones" : "Waiting for a setup"
+    winPct  = nTrades > 0 ? 100.0 * nWins / nTrades : 0.0
+    table.cell(tbl, 0, 0, "CRT", text_color=color.white, text_size=size.tiny)
+    table.cell(tbl, 1, 0, setupTf + "m setups -> " + timeframe.period + " entries", text_color=color.white, text_size=size.tiny)
+    table.cell(tbl, 0, 1, "Trend", text_color=color.white, text_size=size.tiny)
+    table.cell(tbl, 1, 1, trendTxt + " (" + str.tostring(trendDays) + " days, score " + str.tostring(tScore) + ")", text_color=trend == 1 ? buyCol : trend == -1 ? sellCol : color.gray, text_size=size.tiny)
+    table.cell(tbl, 0, 2, "Status", text_color=color.white, text_size=size.tiny)
+    table.cell(tbl, 1, 2, stTxt, text_color=dir == 1 or armDir == 1 or swDir == 1 ? buyCol : dir == -1 or armDir == -1 or swDir == -1 ? sellCol : color.gray, text_size=size.tiny)
+    table.cell(tbl, 0, 3, "Results", text_color=color.white, text_size=size.tiny)
+    table.cell(tbl, 1, 3, str.tostring(nTrades) + " trades - " + str.tostring(winPct, "#") + "% win - " + usd(netUSD), text_color=netUSD >= 0 ? color.lime : color.red, text_size=size.tiny)
