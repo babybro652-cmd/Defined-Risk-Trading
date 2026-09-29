@@ -236,6 +236,57 @@ function fixFormulasAndDashboard() {
 }
 
 /**
+ * Rebuilds the Forward Test Dashboard block (U1:AA19) with the template's
+ * labels, settings and formulas, covering rows 2-5000. Run by hand if the
+ * block gets wiped (deleting whole rows 2-50 deletes it, since it shares
+ * those rows with the log). It only writes to U1:AA19, then refreshes the
+ * row formulas. Settings go back to the defaults (tick 0.25, TP1-3 = 1/2/3R);
+ * change V4:V7 afterwards if you use other values.
+ */
+function rebuildDashboard() {
+  var sheet = SpreadsheetApp.getActiveSpreadsheet().getSheets()[0];
+  var E = "$E$2:$E$5000", I = "$I$2:$I$5000", O = "$O$2:$O$5000", P = "$P$2:$P$5000";
+  var trades = "((" + E + "=\"BUY\")+(" + E + "=\"SELL\"))";
+  var cnt = function (t) { return "=COUNTIF(" + E + ",\"" + t + "\")"; };
+  var avg = function (t) { return "=IFERROR(AVERAGEIFS(" + I + "," + E + ",\"" + t + "\"),\"\")"; };
+  var mx = function (cell, t) { return "=IF(" + cell + "=\"\",\"\",MAXIFS(" + I + "," + E + ",\"" + t + "\"))"; };
+  var mn = function (cell, t) { return "=IF(" + cell + "=\"\",\"\",MINIFS(" + I + "," + E + ",\"" + t + "\"))"; };
+
+  // Columns U, V, W, X, Y, Z, AA for rows 1-19.
+  var block = [
+    ["Forward Test Dashboard", "", "", "", "", "", ""],
+    ["", "", "", "", "", "", ""],
+    ["Settings (edit these)", "", "", "Signal Counts", "", "", ""],
+    ["Tick Size", 0.25, "", "Total Signals Logged", "=COUNTA(" + E + ")", "", ""],
+    ["TP1 R multiple", 1, "", "BUY", cnt("BUY"), "", ""],
+    ["TP2 R multiple", 2, "", "SELL", cnt("SELL"), "", ""],
+    ["TP3 R multiple", 3, "", "CRT Bull (unfiltered)", cnt("CRT Bull (unfiltered)"), "", ""],
+    ["", "", "", "CRT Bear (unfiltered)", cnt("CRT Bear (unfiltered)"), "", ""],
+    ["", "", "", "Bull Div", cnt("Bull Div"), "", ""],
+    ["", "", "", "Bear Div", cnt("Bear Div"), "", ""],
+    ["", "", "", "", "", "", ""],
+    ["BUY/SELL Trade Performance", "", "", "Signal Drawdown Before Follow-Through", "", "", ""],
+    ["Closed Trades", "=SUMPRODUCT(" + trades + "*(" + O + "<>\"\")*(" + O + "<>\"WAITING\")*(" + O + "<>\"LIVE\"))", "",
+      "Avg Ticks - Bull Div", avg("Bull Div"), "Avg Ticks - CRT Bull", avg("CRT Bull (unfiltered)")],
+    ["Wins (TP hit or trailed)", "=SUMPRODUCT(" + trades + "*(ISNUMBER(SEARCH(\"TP\"," + O + "))+(" + O + "=\"STOPPED (TRAIL)\")))", "",
+      "Avg Ticks - Bear Div", avg("Bear Div"), "Avg Ticks - CRT Bear", avg("CRT Bear (unfiltered)")],
+    ["Breakeven Stops", "=SUMPRODUCT(" + trades + "*(" + O + "=\"STOPPED (BE)\"))", "",
+      "Max Ticks - Bull Div", mx("Y13", "Bull Div"), "Max Ticks - CRT Bull", mx("AA13", "CRT Bull (unfiltered)")],
+    ["Full Losses", "=SUMPRODUCT(" + trades + "*(" + O + "=\"STOPPED\"))", "",
+      "Max Ticks - Bear Div", mx("Y14", "Bear Div"), "Max Ticks - CRT Bear", mx("AA14", "CRT Bear (unfiltered)")],
+    ["Win Rate", "=IFERROR(V14/V13,0)", "",
+      "Min Ticks - Bull Div", mn("Y13", "Bull Div"), "Min Ticks - CRT Bull", mn("AA13", "CRT Bull (unfiltered)")],
+    ["Total R", "=SUM(" + P + ")", "",
+      "Min Ticks - Bear Div", mn("Y14", "Bear Div"), "Min Ticks - CRT Bear", mn("AA14", "CRT Bear (unfiltered)")],
+    ["Average R per Trade", "=IFERROR(V18/V13,0)", "", "", "", "", ""]
+  ];
+  sheet.getRange(1, 21, block.length, 7).setValues(block);
+  sheet.getRange("V17").setNumberFormat("0%");
+  fixFormulasAndDashboard();
+  Logger.log("Dashboard rebuilt in U1:AA19.");
+}
+
+/**
  * One-time cleanup for rows logged before the duplicate check existed.
  * Run it by hand from the Apps Script editor (select removeDuplicateRows,
  * then Run). For each group of identical signals it keeps the first row,
