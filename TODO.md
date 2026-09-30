@@ -8,7 +8,6 @@ Newest decisions win; move finished items to Done with the date.
 
 ### Personal
 - [ ] Pay the Google Workspace bill. Due Thu 10/1; payment failed 9/20. Reminder at 8:45 AM.
-- [ ] Turn on forwarding from support@definedrisktrading.com to babybro652@gmail.com (Gmail settings > Forwarding and POP/IMAP; keep a copy in support@).
 - [ ] Check the 5 Skool login codes from 9/29. If they weren't all you, change the Skool password.
 - [ ] Add a second sign-in method to Stripe.
 - [ ] Confirm the support@ recovery email change (8/23) was you.
@@ -36,6 +35,7 @@ Newest decisions win; move finished items to Done with the date.
 - [ ] FUTURE UPGRADE (after CRT Pro hit rate improves): position-tool style boxes on CRT Pro. Red box entry→SL, green box entry→TP3 with TP1/TP2 dashed inside, label with risk pts / $ at 2 ES and R:R per TP. Boxes run until the trade closes; replaces the plain lines. Sheet unchanged; needs a new alert after pasting.
 
 ## Done
+- 9/30 support@definedrisktrading.com forwards to babybro652@gmail.com (confirmed).
 - 9/30 Install CRT Pro logging (Pine code + tracker + alert), then Entry/SL/TP1-3 added and reinstalled.
 - 9/30 Fix CRT Setups Tracker triple logging and BAD JSON (script updated, 8 duplicate rows removed).
 - 9/30 Propa Pit Designs: keeping; merged with the pet store idea.
