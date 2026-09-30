@@ -14,7 +14,8 @@ Newest decisions win; move finished items to Done with the date.
 - [ ] Check the trade tracker Apps Script SECRET isn't still 'change-me'.
 - [ ] Export claude.ai chat data to Drive (Settings > Privacy > Export data), for the PL redefinition.
 - [ ] Clean up the profile doc (it still opens with the 9/26 handoff note).
-- [ ] Decide keep / pause / drop for Fantasy Homes LLC and the faceless channel. (Propa Pit: keeping, 9/30. Legionz: own agent, 9/30.)
+- [ ] Decide keep / pause / drop for Fantasy Homes LLC. (Propa Pit: keeping, 9/30. Legionz: own agent, 9/30. Faceless channel: paused, 9/30.)
+- [ ] Unsubscribe from the Digital Creator emails (tap Unsubscribe at the top of one in Gmail).
 
 ### Prosperity Legendz
 - [ ] Get a domain and verify the sender email in Systeme.io (blocking the funnel). Paste the DNS records to Jarvis to check.
@@ -45,6 +46,7 @@ Newest decisions win; move finished items to Done with the date.
 - [ ] FUTURE UPGRADE (after CRT Pro hit rate improves): position-tool style boxes on CRT Pro. Red box entry→SL, green box entry→TP3 with TP1/TP2 dashed inside, label with risk pts / $ at 2 ES and R:R per TP. Boxes run until the trade closes; replaces the plain lines. Sheet unchanged; needs a new alert after pasting.
 
 ## Done
+- 9/30 Faceless channel: paused (theme-page research verified; skip paid coaching; a $0 30-day Reddit-story test is ready if revisited).
 - 9/30 support@definedrisktrading.com forwards to babybro652@gmail.com (confirmed).
 - 9/30 Install CRT Pro logging (Pine code + tracker + alert), then Entry/SL/TP1-3 added and reinstalled.
 - 9/30 Fix CRT Setups Tracker triple logging and BAD JSON (script updated, 8 duplicate rows removed).

@@ -10,8 +10,11 @@ found, and anything that still needs Tim. You start with no memory of past chats
 ## Scope right now: the faceless content channel only
 Earlier research compared Reddit storytelling with personal finance; the
 recommendation was to start with Reddit storytelling. Niche not picked yet. Tools
-considered: ElevenLabs, CapCut, Canva. Tim hasn't decided whether to keep, pause or
-drop it.
+considered: ElevenLabs, CapCut, Canva.
+
+**Status: PAUSED (9/30).** Theme-page research was verified; skip paid coaching
+(Digital Creator). If Tim revisits, the starting point is a $0 30-day Reddit-story
+test. Do no work on it unless Tim restarts it.
 
 Keep personal finance clear of Prosperity Legendz's lane (the pl agent owns that brand).
 
