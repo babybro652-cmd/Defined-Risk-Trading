@@ -22,10 +22,11 @@ the files below that the task touches before acting.
   PUBLIC_TO_EVERYONE; `isAiGenerated` false only for Tim's real screenshots/footage)
 - Facebook `50185`, always with `pageId` `993318963868124` (video only)
 - Tim's personal TikTok `59764`. Never post DRT content to Prosperity Legendz accounts.
-- Media must be a public URL. `database.blotato.io` uploads are blocked from this
-  environment; use Drive files in the "DRT Phone" folder (anyone-with-link) via
-  `https://drive.usercontent.google.com/download?id=FILE_ID&export=download&confirm=t`,
-  or Blotato's own visual templates.
+- Media must be a public URL. Upload local files with
+  `blotato_create_presigned_upload_url` + a curl PUT (database.blotato.io is allowed
+  since 9/30), or use Drive files shared anyone-with-link via
+  `https://drive.usercontent.google.com/download?id=FILE_ID&export=download&confirm=t`.
+  The Drive connector's own download tool stops at 10 MB; ask Tim for 720p exports.
 
 ## Sheets
 - CRT Forward Test Log (CRT + Divergence): `1H9KSzv9C0hIhDuWjUCQKpKURv_kEkRE5CLlLV-kmofA`.
