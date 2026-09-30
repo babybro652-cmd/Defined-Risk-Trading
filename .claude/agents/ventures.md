@@ -14,7 +14,7 @@ considered: ElevenLabs, CapCut, Canva.
 
 **Status: PAUSED (9/30).** Theme-page research was verified; skip paid coaching
 (Digital Creator). If Tim revisits, the starting point is a $0 30-day Reddit-story
-test. Do no work on it unless Tim restarts it.
+test. A faceless YouTube channel was checked 9/30 too: same answer (YPP doubles 2/1/27; AI-voiced Reddit stories get demonetized). Restart only with 10+ free hours a week and his own voice. Do no work on it unless Tim restarts it.
 
 Keep personal finance clear of Prosperity Legendz's lane (the pl agent owns that brand).
 
