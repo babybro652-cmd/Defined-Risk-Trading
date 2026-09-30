@@ -26,6 +26,16 @@ Newest decisions win; move finished items to Done with the date.
 - [ ] Test the funnel: comment LEGEND from your personal Facebook.
 - [ ] Rotate the Systeme.io API key (after setup).
 
+### Legionz Detailing
+- [ ] Answer the services menu questions so Jarvis can finalize it (draft sent 9/30):
+    - What Emperor includes at "from $290" (old top tier was paint correction + ceramic at $450+)
+    - Confirm Centurion = interior detail and Legionnaire = full detail
+    - Keep the 2024 add-on prices? (Legionnaire + ceramic add-on currently costs more than Emperor)
+    - Phone number, Facebook page link, payment methods (is Square set up?)
+    - Keep "Results guaranteed" on headlight restoration?
+    - Add a maintenance wash to the menu? (the SOP sells one)
+- [ ] Update the SOP quote prices and the business plan (old tier names, weekday 8-5 hours) to match the new menu.
+
 ### Defined Risk Trading
 - [ ] Fill column H on Forward Test Log rows #139 and #140 (#140 → 7734; #139 → lowest low after 20:31 ET before the rally).
 - [ ] Record Modules 4 and 5 (v2 decks + updated scripts delivered 9/29-9/30; convert decks to Google Slides).
