@@ -5,11 +5,12 @@
 // indicator and is not touched by this file).
 //
 // What this adds on top of CRT Pro:
-// 1. Volume Map: a volume profile of the London session (03:00-09:29 ET, on by
-//    default), Asia (19:00-02:59 ET, off) or NY (09:30-15:59 ET, off), built
-//    from 1-minute intrabar volume (chart bars as the fallback). At the session
-//    end it draws the POC, "shelves" (high-volume rows) and "thin" zones
-//    (low-volume rows), kept on the chart until 16:00 ET.
+// 1. Volume Map built from 1-minute intrabar volume (chart bars as the
+//    fallback): POC, "shelves" (high-volume rows) and "thin" zones (low-volume
+//    rows). Map mode "Developing" (default) builds one profile from 19:00 ET
+//    the evening before (or 03:00 ET) through 15:59 ET and updates it every
+//    bar. "London fixed" freezes the London profile at 09:30 ET. A separate
+//    Asia map (dashed "Asia POC", display only) is drawn at 03:00 ET.
 // 2. Test entries that need CRT AND the Volume Map:
 //    Setup A = a CRT Pro signal the map agrees with.
 //    Setup B = a reaction off the session POC in the CRT bias direction.
@@ -57,9 +58,10 @@ bearColor = input.color(color.new(#FF1744, 0), "Sell Signal Color", group=grpSty
 bColor = input.color(color.new(#00B8D4, 0), "Setup B Color", group=grpStyle)
 
 grpVm = "🗺️ Volume Map"
-vmLondon = input.bool(true, "London profile (03:00-09:29 ET)", group=grpVm)
-vmAsia = input.bool(false, "Asia profile (19:00-02:59 ET)", group=grpVm)
-vmNY = input.bool(false, "NY profile (09:30-15:59 ET)", group=grpVm, tooltip="Drawn at 16:00 ET and kept to 16:00 the next trading day, unless a newer session map replaces it first.")
+vmMode = input.string("Developing", "Map mode", options=["Developing", "London fixed"], group=grpVm, tooltip="Developing: one profile from the start below that keeps adding every bar through 15:59 ET; POC, shelves and thin zones update each bar. London fixed: the London profile (03:00-09:29 ET), frozen at 09:30 ET.")
+vmDevStart = input.string("Asia open 19:00 ET", "Developing start", options=["Asia open 19:00 ET", "London open 03:00 ET"], group=grpVm, tooltip="Asia: builds from 19:00 ET the evening before through 15:59 ET, so one map covers Asia, London and NY.")
+vmLondon = input.bool(true, "Fixed mode: London profile (03:00-09:29 ET)", group=grpVm)
+vmNY = input.bool(false, "Fixed mode: NY profile (09:30-15:59 ET)", group=grpVm, tooltip="Drawn at 16:00 ET and kept to 16:00 the next trading day, unless the next London map replaces it first.")
 vmSrc = input.string("1m intrabars", "Profile Source", options=["1m intrabars", "Chart bars"], group=grpVm, tooltip="1m intrabars is the most accurate. Bars older than TradingView's intrabar limit fall back to chart bars automatically.")
 vmRow = input.float(1.0, "Row Size (pts)", minval=0.25, step=0.25, group=grpVm)
 vmShelfPct = input.float(60, "Shelf = rows at or above this % of POC volume", minval=1, maxval=100, group=grpVm)
@@ -67,13 +69,20 @@ vmThinPct = input.float(25, "Thin = rows at or below this % of POC volume", minv
 vmMinZone = input.float(2.0, "Ignore zones smaller than (pts)", minval=0, step=0.25, group=grpVm)
 vmTol = input.float(0.5, "At POC / shelf edge tolerance (pts)", minval=0, step=0.25, group=grpVm)
 vmMaxZones = input.int(15, "Max boxes drawn per zone type", minval=1, maxval=40, group=grpVm)
+vmMaxRows = input.int(800, "Max profile rows", minval=50, maxval=3000, group=grpVm, tooltip="Safety cap. If the range needs more rows than this, that map pauses (raise Row Size).")
 showPoc = input.bool(true, "Show POC line", group=grpVm)
 showShelf = input.bool(true, "Show shelves", group=grpVm)
 showThin = input.bool(true, "Show thin zones", group=grpVm)
 showVmText = input.bool(true, "Show map labels", group=grpVm)
 showVmTable = input.bool(true, "Show Volume Map table", group=grpVm)
+showPocPath = input.bool(false, "Show POC path", group=grpVm, tooltip="Step line of the map's POC bar by bar, to see it migrate during the day.")
 vmGold = input.color(color.new(#FFC107, 0), "POC / Shelf Color", group=grpVm)
 vmGray = input.color(color.new(#9E9E9E, 0), "Thin Color", group=grpVm)
+
+grpAsia = "🌏 Asia Map (separate, display only)"
+vmAsia = input.bool(true, "Show the Asia map (19:00-02:59 ET)", group=grpAsia, tooltip="Its own fixed profile, drawn at 03:00 ET and kept to 16:00 ET: dashed Asia POC plus outlined Asia shelves. Display and table only; setups use the main map.")
+showAsiaShelf = input.bool(true, "Show Asia shelves", group=grpAsia)
+asiaColor = input.color(color.new(#B39DDB, 0), "Asia Color", group=grpAsia)
 
 grpSet = "🧪 Test Entries (CRT + Volume Map)"
 useA = input.bool(true, "Setup A: CRT signal confirmed by the map", group=grpSet)
@@ -209,12 +218,15 @@ if exitShort
 
 // ─── VOLUME MAP ───────────────────────────────────────────────────────────────
 // Profile rows are vmRow points tall. Each 1m bar's volume is spread evenly
-// across the rows its high-low covers. When the session ends, the rows become:
+// across the rows its high-low covers. The rows become:
 //   POC   = the row with the most volume (price = row middle)
 //   Shelf = run of rows with volume >= vmShelfPct % of the POC row
 //   Thin  = run of rows with volume <= vmThinPct % of the POC row
-// Runs shorter than vmMinZone points are dropped. Only the latest finished
-// session's map is kept; its drawings are deleted when the next one is drawn.
+// Runs shorter than vmMinZone points are dropped.
+// Developing mode recomputes these on every bar from the profile so far (no
+// look-ahead: each bar uses the map as it stood at its own close). London
+// fixed mode computes them once at 09:30 ET. Only one set of main-map
+// drawings and one Asia set exist at a time; old ones are deleted first.
 
 VM_TZ = "America/New_York"
 vmLtfTf = timeframe.in_seconds() <= 60 ? timeframe.period : "1"
@@ -224,8 +236,18 @@ vmSessOf(int t) =>
     hm = hour(t, "America/New_York") * 100 + minute(t, "America/New_York")
     hm >= 1900 or hm < 300 ? "Asia" : hm < 930 ? "London" : hm < 1600 ? "NY" : ""
 
+vmDev = vmMode == "Developing"
+devFromAsia = vmDevStart == "Asia open 19:00 ET"
+
+// Developing window: 19:00 (or 03:00) ET through 15:59 ET.
+vmDevOf(int t) =>
+    hm = hour(t, "America/New_York") * 100 + minute(t, "America/New_York")
+    inDev = devFromAsia ? (hm >= 1900 or hm < 1600) : (hm >= 300 and hm < 1600)
+    inDev ? "Dev" : ""
+
+// Sessions feeding the fixed map and the session high/low targets.
 vmSessOn(string s) =>
-    s == "Asia" ? vmAsia : s == "London" ? vmLondon : s == "NY" ? vmNY : false
+    s == "London" ? vmLondon : s == "NY" ? vmNY : false
 
 // Adds one bar's volume to the profile map (row index -> volume). Returns rows touched.
 vmAdd(map<int, float> m, float h, float l, float v, float rs) =>
@@ -252,11 +274,26 @@ vmEndOf(int t) =>
         e := timestamp(VM_TZ, year(n2, VM_TZ), month(n2, VM_TZ), dayofmonth(n2, VM_TZ), 16, 0)
     e
 
+vmFmt(float p) =>
+    str.tostring(p, "#,##0.##")
+
+// Main map state (drives the setups) and the separate Asia map.
 var map<int, float> vmProf = map.new<int, float>()
 var map<int, float> vmFin = map.new<int, float>()
+var map<int, float> devProf = map.new<int, float>()
+var map<int, float> asiaProf = map.new<int, float>()
 var string vmAcc = ""
 var float vmAccHi = na
 var float vmAccLo = na
+var int vmAccKMin = na
+var int vmAccKMax = na
+var string devAcc = ""
+var int devStart = na
+var int devKMin = na
+var int devKMax = na
+var string asiaAcc = ""
+var int asiaKMin = na
+var int asiaKMax = na
 var string vmSess = ""
 var float vmPoc = na
 var float vmHigh = na
@@ -265,21 +302,112 @@ var float vmSessHi = na
 var float vmSessLo = na
 var int vmStart = na
 var int vmEnd = na
+var int lvlEnd = na
+var float asiaPoc = na
+var int asiaEnd = na
 var zTop = array.new<float>()
 var zBot = array.new<float>()
 var zType = array.new<string>()
+var aTop = array.new<float>()
+var aBot = array.new<float>()
+var aType = array.new<string>()
 var vmBoxes = array.new<box>()
 var vmLines = array.new<line>()
 var vmLabels = array.new<label>()
+var asiaBoxes = array.new<box>()
+var asiaLines = array.new<line>()
+var asiaLabels = array.new<label>()
+
+// Rebuilds a zone list (tops / bots / types) from a profile map whose row keys
+// run kMin..kMax. Returns [POC, profile low, profile high]; all na (and no
+// zones) when the map is empty or wider than vmMaxRows.
+vmBuild(map<int, float> m, int kMin, int kMax, array<float> tops, array<float> bots, array<string> types) =>
+    tops.clear()
+    bots.clear()
+    types.clear()
+    float poc = na
+    float pLo = na
+    float pHi = na
+    int nRows = na(kMin) or na(kMax) ? 0 : kMax - kMin + 1
+    if m.size() > 0 and nRows > 0 and nRows <= vmMaxRows
+        vols = array.new<float>(nRows, 0.0)
+        for [k, kv] in m
+            if k >= kMin and k <= kMax
+                vols.set(k - kMin, kv)
+        pocVol = vols.max()
+        pocIdx = vols.indexof(pocVol)
+        poc := math.round_to_mintick((kMin + pocIdx + 0.5) * vmRow)
+        pLo := kMin * vmRow
+        pHi := (kMax + 1) * vmRow
+        string runType = ""
+        int runStart = 0
+        for i = 0 to nRows
+            string rt = ""
+            if i < nRows
+                rv = vols.get(i)
+                rt := rv >= pocVol * vmShelfPct / 100 ? "shelf" : rv <= pocVol * vmThinPct / 100 ? "thin" : ""
+            if rt != runType
+                if runType != "" and (i - runStart) * vmRow >= vmMinZone - 1e-9
+                    bots.push(math.round_to_mintick((kMin + runStart) * vmRow))
+                    tops.push(math.round_to_mintick((kMin + i) * vmRow))
+                    types.push(runType)
+                runType := rt
+                runStart := i
+    [poc, pLo, pHi]
+
+// Deletes a map's old drawings and draws its zones from x1 to x2 (bar times).
+// isAsia = dashed POC "Asia POC" and outlined shelves only, in the Asia color.
+vmDraw(int x1, int x2, float poc, array<float> tops, array<float> bots, array<string> types, array<box> bxs, array<line> lns, array<label> lbs, bool isAsia) =>
+    for b in bxs
+        box.delete(b)
+    for ln in lns
+        line.delete(ln)
+    for lb in lbs
+        label.delete(lb)
+    bxs.clear()
+    lns.clear()
+    lbs.clear()
+    int nShelf = 0
+    int nThin = 0
+    if not na(poc)
+        for [i, zt] in types
+            isShelf = zt == "shelf"
+            okShelf = isAsia ? showAsiaShelf : showShelf
+            drawIt = isShelf ? (okShelf and nShelf < vmMaxZones) : (not isAsia and showThin and nThin < vmMaxZones)
+            if drawIt
+                zc = isAsia ? asiaColor : isShelf ? vmGold : vmGray
+                zb = bots.get(i)
+                ztp = tops.get(i)
+                txt = showVmText ? (isAsia ? "Asia shelf " : isShelf ? "Shelf " : "Thin ") + vmFmt(zb) + "-" + vmFmt(ztp) : ""
+                bxs.push(box.new(x1, ztp, x2, zb, xloc=xloc.bar_time, border_color=color.new(zc, isAsia ? 40 : 60), border_style=isAsia ? line.style_dashed : line.style_solid, bgcolor=color.new(zc, isAsia ? 94 : isShelf ? 82 : 85), text=txt, text_color=zc, text_size=size.small, text_halign=isAsia ? text.align_left : text.align_right, text_valign=text.align_center))
+                if isShelf
+                    nShelf += 1
+                else
+                    nThin += 1
+        if isAsia or showPoc
+            pc = isAsia ? asiaColor : vmGold
+            lns.push(line.new(x1, poc, x2, poc, xloc=xloc.bar_time, color=pc, width=isAsia ? 1 : 2, style=isAsia ? line.style_dashed : line.style_solid))
+            if showVmText
+                lbs.push(label.new(x2, poc, (isAsia ? "Asia POC " : "POC ") + vmFmt(poc), xloc=xloc.bar_time, style=label.style_label_right, color=color.new(color.black, 100), textcolor=pc, size=size.small))
+    nShelf + nThin
 
 bool vmNew = false
 string finSess = ""
 int finTime = na
 float finHi = na
 float finLo = na
+int finKMin = na
+int finKMax = na
+bool devAdded = false
+bool asiaDone = false
+int asiaDoneT = na
 
-// Feed this chart bar's 1m bars (or the chart bar itself) into the profile.
-// A change of session closes the profile being built.
+// Feed this chart bar's 1m bars (or the chart bar itself) into the profiles.
+// Each bar only adds its own volume to the rows it touched (incremental).
+//   vmProf  : the fixed session (London, or NY if on). Its end sets the session
+//             high/low targets and, in "London fixed" mode, the map.
+//   devProf : the developing profile ("Developing" mode).
+//   asiaProf: the separate Asia map.
 useLtf = vmSrc == "1m intrabars" and ltfV.size() > 0
 nPts = useLtf ? ltfV.size() : 1
 for i = 0 to nPts - 1
@@ -292,98 +420,114 @@ for i = 0 to nPts - 1
         h := ltfH.get(i)
         l := ltfL.get(i)
         v := ltfV.get(i)
+    okBar = not na(h) and not na(l)
+    kLo = okBar ? math.floor(l / vmRow + 1e-9) : 0
+    kHi = okBar ? math.max(kLo, math.ceil(h / vmRow - 1e-9) - 1) : 0
     s = vmSessOf(t)
+    // Fixed session profile
     if s != vmAcc
-        if vmProf.size() > 0
-            vmFin.clear()
-            vmFin.put_all(vmProf)
+        if not na(vmAccHi)
             finSess := vmAcc
             finTime := t
             finHi := vmAccHi
             finLo := vmAccLo
+            finKMin := vmAccKMin
+            finKMax := vmAccKMax
+            vmFin.clear()
+            vmFin.put_all(vmProf)
             vmNew := true
         vmProf.clear()
         vmAccHi := na
         vmAccLo := na
+        vmAccKMin := na
+        vmAccKMax := na
         vmAcc := s
-    if vmSessOn(s) and not na(h) and not na(l)
-        vmAdd(vmProf, h, l, v, vmRow)
+    if vmSessOn(s) and okBar
+        if not vmDev and vmAdd(vmProf, h, l, v, vmRow) > 0
+            vmAccKMin := na(vmAccKMin) ? kLo : math.min(vmAccKMin, kLo)
+            vmAccKMax := na(vmAccKMax) ? kHi : math.max(vmAccKMax, kHi)
         vmAccHi := na(vmAccHi) ? h : math.max(vmAccHi, h)
         vmAccLo := na(vmAccLo) ? l : math.min(vmAccLo, l)
+    // Developing profile
+    if vmDev
+        sd = vmDevOf(t)
+        if sd != devAcc
+            if sd == "Dev"
+                devProf.clear()
+                devKMin := na
+                devKMax := na
+                devStart := t
+            devAcc := sd
+        if sd == "Dev" and okBar and vmAdd(devProf, h, l, v, vmRow) > 0
+            devKMin := na(devKMin) ? kLo : math.min(devKMin, kLo)
+            devKMax := na(devKMax) ? kHi : math.max(devKMax, kHi)
+            devAdded := true
+    // Asia map
+    if vmAsia
+        sa = s == "Asia" ? "Asia" : ""
+        if sa != asiaAcc
+            if sa == "Asia"
+                asiaProf.clear()
+                asiaKMin := na
+                asiaKMax := na
+            else if asiaProf.size() > 0
+                asiaDone := true
+                asiaDoneT := t
+            asiaAcc := sa
+        if sa == "Asia" and okBar and vmAdd(asiaProf, h, l, v, vmRow) > 0
+            asiaKMin := na(asiaKMin) ? kLo : math.min(asiaKMin, kLo)
+            asiaKMax := na(asiaKMax) ? kHi : math.max(asiaKMax, kHi)
 
-vmFmt(float p) =>
-    str.tostring(p, "#,##0.##")
-
-// Build the finished session's map: POC, shelves, thin zones, drawings.
+// A finished fixed session: new session high/low targets; in fixed mode, a
+// new map (from vmFin, the copy taken when the session ended).
 if vmNew
-    for b in vmBoxes
-        box.delete(b)
-    for ln in vmLines
-        line.delete(ln)
-    for lb in vmLabels
-        label.delete(lb)
-    vmBoxes.clear()
-    vmLines.clear()
-    vmLabels.clear()
-    zTop.clear()
-    zBot.clear()
-    zType.clear()
-    keys = vmFin.keys()
-    int kMin = int(keys.min())
-    int kMax = int(keys.max())
-    int nRows = kMax - kMin + 1
-    vols = array.new<float>(nRows, 0.0)
-    for [k, kv] in vmFin
-        vols.set(k - kMin, kv)
-    pocVol = vols.max()
-    pocIdx = vols.indexof(pocVol)
-    vmSess := finSess
-    vmPoc := math.round_to_mintick((kMin + pocIdx + 0.5) * vmRow)
-    vmLow := kMin * vmRow
-    vmHigh := (kMax + 1) * vmRow
     vmSessHi := finHi
     vmSessLo := finLo
-    vmStart := finTime
-    vmEnd := vmEndOf(finTime)
-    string runType = ""
-    int runStart = 0
-    for i = 0 to nRows
-        string rt = ""
-        if i < nRows
-            rv = vols.get(i)
-            rt := rv >= pocVol * vmShelfPct / 100 ? "shelf" : rv <= pocVol * vmThinPct / 100 ? "thin" : ""
-        if rt != runType
-            if runType != "" and (i - runStart) * vmRow >= vmMinZone - 1e-9
-                zBot.push(math.round_to_mintick((kMin + runStart) * vmRow))
-                zTop.push(math.round_to_mintick((kMin + i) * vmRow))
-                zType.push(runType)
-            runType := rt
-            runStart := i
-    int nShelf = 0
-    int nThin = 0
-    for [i, zt] in zType
-        isShelf = zt == "shelf"
-        drawIt = isShelf ? (showShelf and nShelf < vmMaxZones) : (showThin and nThin < vmMaxZones)
-        if drawIt
-            zc = isShelf ? vmGold : vmGray
-            zb = zBot.get(i)
-            ztp = zTop.get(i)
-            txt = showVmText ? (isShelf ? "Shelf " : "Thin ") + vmFmt(zb) + "-" + vmFmt(ztp) : ""
-            vmBoxes.push(box.new(vmStart, ztp, vmEnd, zb, xloc=xloc.bar_time, border_color=color.new(zc, 60), bgcolor=color.new(zc, isShelf ? 82 : 85), text=txt, text_color=zc, text_size=size.small, text_halign=text.align_right, text_valign=text.align_center))
-            if isShelf
-                nShelf += 1
-            else
-                nThin += 1
-    if showPoc
-        vmLines.push(line.new(vmStart, vmPoc, vmEnd, vmPoc, xloc=xloc.bar_time, color=vmGold, width=2))
-        if showVmText
-            vmLabels.push(label.new(vmEnd, vmPoc, "POC " + vmFmt(vmPoc), xloc=xloc.bar_time, style=label.style_label_right, color=color.new(color.black, 100), textcolor=vmGold, size=size.small))
+    lvlEnd := vmEndOf(finTime)
+    if not vmDev and vmFin.size() > 0
+        [fPoc, fLo, fHi] = vmBuild(vmFin, finKMin, finKMax, zTop, zBot, zType)
+        vmPoc := fPoc
+        vmLow := fLo
+        vmHigh := fHi
+        vmSess := finSess
+        vmStart := finTime
+        vmEnd := lvlEnd
+        vmDraw(vmStart, vmEnd, vmPoc, zTop, zBot, zType, vmBoxes, vmLines, vmLabels, false)
 
-// The map is live from its session end until its 16:00 ET close-out.
-vmActive = not na(vmEnd) and time < vmEnd
+// Developing mode: recompute POC / shelves / thin from the developing profile
+// on every bar that added volume, so each bar sees the map exactly as it
+// stood at its own close (historical and live match).
+devLive = vmDev and devAcc == "Dev" and devProf.size() > 0
+if devLive and devAdded
+    [dPoc, dLo, dHi] = vmBuild(devProf, devKMin, devKMax, zTop, zBot, zType)
+    vmPoc := dPoc
+    vmLow := dLo
+    vmHigh := dHi
+    vmSess := devFromAsia ? "Developing (Asia+)" : "Developing (London+)"
+    vmStart := devStart
+    vmEnd := vmEndOf(devStart)
+// Drawings: redrawn on the live bar, plus each day's final map when it ends
+// (one drawing set at a time, so the drawing limits are never reached).
+devEnded = vmDev and devAcc != "Dev" and devAcc[1] == "Dev"
+if (devLive and barstate.islast) or devEnded
+    vmDraw(vmStart, vmEnd, vmPoc, zTop, zBot, zType, vmBoxes, vmLines, vmLabels, false)
 
-// Session high / low sweeps since the map was drawn (Setup B bias fallback
-// and the "untaken" final target).
+// Asia map: built once when Asia ends (03:00 ET), shown until 16:00 ET.
+if asiaDone
+    [aPoc, aLo, aHi] = vmBuild(asiaProf, asiaKMin, asiaKMax, aTop, aBot, aType)
+    asiaPoc := aPoc
+    asiaEnd := vmEndOf(asiaDoneT)
+    vmDraw(asiaDoneT, asiaEnd, asiaPoc, aTop, aBot, aType, asiaBoxes, asiaLines, asiaLabels, true)
+asiaActive = vmAsia and not na(asiaEnd) and time < asiaEnd and not na(asiaPoc)
+
+// Fixed: live from the session end to 16:00 ET. Developing: while it builds.
+vmActive = (vmDev ? devLive : not na(vmEnd) and time < vmEnd) and not na(vmPoc)
+lvlActive = not na(lvlEnd) and time < lvlEnd
+
+plot(showPocPath and vmActive ? vmPoc : na, "POC Path", color=vmGold, linewidth=1, style=plot.style_stepline)
+
+// Session high / low sweeps since the fixed session ended (Setup B bias
+// fallback and the "untaken" final target).
 var int sweepBias = 0
 var bool hiTaken = false
 var bool loTaken = false
@@ -393,9 +537,10 @@ if vmNew
     sweepBias := 0
     hiTaken := false
     loTaken := false
+if (vmNew and not vmDev) or (devLive and devAcc[1] != "Dev")
     bArmL := false
     bArmS := false
-if vmActive
+if lvlActive
     sweptHi = high > vmSessHi
     sweptLo = low < vmSessLo
     if sweptHi
@@ -510,7 +655,7 @@ vmNext(float p, bool above) =>
                 best := (zt == "shelf" ? "Shelf " : "Thin ") + vmFmt(zBot.get(i)) + "-" + vmFmt(zTop.get(i))
     na(bestD) ? best : best + " (" + (above ? "+" : "-") + str.tostring(bestD, "0.##") + ")"
 
-var table vmTable = table.new(position.top_right, 2, 7, bgcolor=color.new(color.black, 60), border_color=color.new(color.gray, 40), border_width=1, frame_color=color.gray, frame_width=1)
+var table vmTable = table.new(position.top_right, 2, 8, bgcolor=color.new(color.black, 60), border_color=color.new(color.gray, 40), border_width=1, frame_color=color.gray, frame_width=1)
 
 if barstate.islast and showVmTable
     hdrBg = color.new(#7A5C00, 30)
@@ -530,6 +675,10 @@ if barstate.islast and showVmTable
     table.cell(vmTable, 1, 5, vmNext(close, false), text_color=color.white, text_size=size.tiny)
     table.cell(vmTable, 0, 6, "Bias", text_color=color.white, text_size=size.tiny)
     table.cell(vmTable, 1, 6, biasText, text_color=crtBias == 1 ? color.lime : crtBias == -1 ? color.red : color.gray, text_size=size.tiny)
+    asiaDist = close - asiaPoc
+    asiaTxt = asiaActive ? vmFmt(asiaPoc) + " (" + (asiaDist >= 0 ? "+" : "") + str.tostring(asiaDist, "0.00") + ")" : "-"
+    table.cell(vmTable, 0, 7, "Asia POC", text_color=color.white, text_size=size.tiny)
+    table.cell(vmTable, 1, 7, asiaTxt, text_color=asiaColor, text_size=size.tiny)
 
 // ─── TEST SETUPS ──────────────────────────────────────────────────────────────
 // Setup A (CRT + map): a CRT Pro signal that the map agrees with.
@@ -714,7 +863,7 @@ if newSide != ""
         pocT = vmPoc - dir * tp1Off
         if dir * (pocT - close) > 0
             t1 := pocT
-    float lvl = isLong ? (hiTaken ? na : vmSessHi) : (loTaken ? na : vmSessLo)
+    float lvl = not lvlActive ? na : isLong ? (hiTaken ? na : vmSessHi) : (loTaken ? na : vmSessLo)
     float fin = na(lvl) ? na : lvl - dir * finOff
     if not na(fin) and dir * (fin - close) <= 0
         fin := na

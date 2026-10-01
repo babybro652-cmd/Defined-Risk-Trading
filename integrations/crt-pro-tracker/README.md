@@ -92,10 +92,14 @@ script sends them to their own tabs:
 
 ### Test rules (defaults; all are inputs)
 
-- **Volume Map:** London 03:00-09:29 ET profile (Asia and NY off), 1-minute
-  volume, 1.0 pt rows. POC = busiest row. Shelf = rows at 60%+ of POC volume.
-  Thin = rows at 25% or less. Zones under 2 pts ignored. Drawn at the session
-  end and kept until 16:00 ET.
+- **Volume Map:** "Developing" mode (default): one profile from 19:00 ET the
+  evening before (input: or 03:00 ET) through 15:59 ET, updated every bar;
+  setups use the map as it stood at that bar's close. "London fixed" mode:
+  the London 03:00-09:29 profile, frozen at 09:30. 1-minute volume, 1.0 pt
+  rows. POC = busiest row. Shelf = rows at 60%+ of POC volume. Thin = rows at
+  25% or less. Zones under 2 pts ignored. A separate Asia map (dashed "Asia
+  POC", outlined shelves) shows from 03:00 to 16:00 for reference only.
+  Session high/low targets come from the London session (03:00-09:29).
 - **Setup A:** a CRT Pro BUY/SELL (same filters as CRT Pro) taken only if the
   map agrees: the sweep wick went through a thin zone or the POC, or it went
   past a shelf edge and the candle closed back at/inside that shelf. Skipped
