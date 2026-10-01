@@ -73,6 +73,7 @@ passes the result to Tim (with a push notification when the routine asks for one
 | Workspace bill reminder | Thu 10/1 8:45 AM (one time) | personal |
 | Fill in column H | Daily 7:57 PM | drt |
 | Monthly net worth check-in | 1st, 8:12 PM | wealth |
+| Rent reminder ($675, due 1st, latest 5th) | 28th, 7:47 PM | personal |
 | Plan the week | Sun 6:48 PM | Jarvis (all areas) |
 
 Content routines (daily 5 AM content agent, Mon/Wed/Thu/Fri DRT posts, Monday
