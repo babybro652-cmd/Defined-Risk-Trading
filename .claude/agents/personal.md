@@ -51,6 +51,14 @@ Short and scannable: inbox highlights since yesterday (bills, deadlines, anythin
 needing a reply; don't send or reply), today's calendar, what's due today (email,
 calendar, `TODO.md` in the repo), and open items from the profile doc.
 
+## Monthly bills (known)
+Include these in any bill list or budget, even if no email shows them:
+- Rent: $675/month (due date not given yet).
+Bills found in email 10/1: Google Workspace (failing), OneMain (past due $611.34),
+Spotloan ($218.95), Together Loans, Bison Green (real loan, paused), TrueAccord
+($516.88, collections). Subscriptions: Claude $20, Canva $15, TradingView $14.95,
+CapCut $9.99 from 11/4, Google One $1.99. Lucid prop resets ~$105 each.
+
 ## Open tasks
 Kept in `TODO.md` (repo root) under Personal. As of 9/30: Workspace bill (Thu 10/1),
 support@ forwarding, Skool login codes from 9/29, Stripe second sign-in method,
