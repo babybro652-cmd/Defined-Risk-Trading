@@ -39,7 +39,7 @@ Newest decisions win; move finished items to Done with the date.
 
 ### Defined Risk Trading
 - [ ] Fill column H on Forward Test Log rows #139 and #140 (#140 → 7734; #139 → lowest low after 20:31 ET before the rally).
-- [ ] Record Modules 4 and 5 (v2 decks + updated scripts delivered 9/29-9/30; convert decks to Google Slides).
+- [ ] Record Modules 4 and 5 from the v3 decks (final 10/1: POC lesson 4.5, 30m profile, 3.5-4 pt stops, 1 or 2 contract sizing). Scripts: Drive Doc "Modules 4 & 5 Scripts (v3)". Convert decks to Google Slides.
 - [ ] Build the indicator comparison page (CRT Pro ES vs CRT + Divergence vs CRT Setups) once CRT Pro has a few days of trades. Same scoring: R, $ at 2 ES, win rate, by session in ET, 10 AM-12 PM window.
 - [ ] YouTube for DRT (researched 10/1, on hold until Tim says go): feeder for Skool, 3-4 hrs/week from existing breakdowns, reels and module clips. Blotato YouTube account 48727 already connected; Tim confirms it's the right channel, adds banner/logo/About, verifies phone.
 - [ ] Turn off the Nested Lumen nl-* skills.
