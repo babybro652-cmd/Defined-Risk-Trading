@@ -1,0 +1,765 @@
+// ══════════════════════════════════════════════════════════════════════════════
+// CRT Pro ES + Volume Map (TEST) | Indicator | Pine Script v6
+// ══════════════════════════════════════════════════════════════════════════════
+// TEST copy of CRT Pro ES (pine/crt-pro-es.pine stays the live, primary
+// indicator and is not touched by this file).
+//
+// What this adds on top of CRT Pro:
+// 1. Volume Map: a volume profile of the London session (03:00-09:29 ET, on by
+//    default), Asia (19:00-02:59 ET, off) or NY (09:30-15:59 ET, off), built
+//    from 1-minute intrabar volume (chart bars as the fallback). At the session
+//    end it draws the POC, "shelves" (high-volume rows) and "thin" zones
+//    (low-volume rows), kept on the chart until 16:00 ET.
+// 2. Test entries that need CRT AND the Volume Map:
+//    Setup A = a CRT Pro signal the map agrees with.
+//    Setup B = a reaction off the session POC in the CRT bias direction.
+// 3. Course risk rules: hard stop in points, TP1 at the POC (or 1R), final
+//    target at the untaken session high/low, one position at a time, no new
+//    entries after the cutoff, flat by the close.
+// 4. Trade log: same JSON alerts as CRT Pro, with "source":"crt-pro-vmap",
+//    "VM-" trade IDs and the Volume Map fields, so the CRT Pro Tracker logs
+//    these trades on their own "CRT Pro VMap" tab.
+// The CRT signal logic itself (reference candle, sweep, filters) is the same
+// as CRT Pro.
+// ══════════════════════════════════════════════════════════════════════════════
+
+//@version=6
+indicator("CRT Pro ES + Volume Map (TEST)", shorttitle="CRT Pro VMap", overlay=true, max_lines_count=500, max_labels_count=500, max_boxes_count=500)
+
+// ─── INPUTS ───────────────────────────────────────────────────────────────────
+
+grpRef = "📊 Reference Candle"
+lookback = input.int(3, "Lookback Bars", minval=1, maxval=20, group=grpRef, tooltip="How many bars back to look for the reference candle")
+minRangeATR = input.float(0.75, "Min Range (× ATR)", step=0.05, group=grpRef, tooltip="Reference candle must be at least this multiple of ATR in range")
+atrLen = input.int(14, "ATR Length", group=grpRef)
+
+grpFilter = "🧠 Smart Filters"
+useEMA = input.bool(true, "Trend Filter (EMA)", group=grpFilter)
+emaLen = input.int(20, "EMA Length", minval=5, maxval=500, group=grpFilter)
+useVol = input.bool(false, "Volume Confirmation", group=grpFilter)
+volLen = input.int(20, "Volume MA Length", group=grpFilter)
+volMult = input.float(1.5, "Volume Multiplier", step=0.05, group=grpFilter, tooltip="Confirmation candle volume must exceed this × the volume MA")
+useTime = input.bool(true, "Session Time Filter", group=grpFilter, tooltip="Only allow signals during high-activity windows")
+sess1Start = input.int(930, "Morning Session Start (HHMM ET)", group=grpFilter)
+sess1End = input.int(1130, "Morning Session End (HHMM ET)", group=grpFilter)
+sess2Start = input.int(1400, "Afternoon Session Start (HHMM ET)", group=grpFilter)
+sess2End = input.int(1600, "Afternoon Session End (HHMM ET)", group=grpFilter)
+
+grpStyle = "🎨 Style"
+extBars = input.int(10, "Line Extension (bars)", minval=1, maxval=100, group=grpStyle)
+showEMA = input.bool(true, "Show EMA", group=grpStyle)
+showZone = input.bool(true, "Show Reference Zone", group=grpStyle)
+showRaw = input.bool(true, "Mark every raw CRT signal (small gray)", group=grpStyle, tooltip="Raw CRT Pro signals, including the ones the Volume Map filtered out. Test entries print as A BUY / A SELL / B BUY / B SELL.")
+wickColor = input.color(color.new(#2962FF, 0), "Wick Line Color", group=grpStyle)
+confColor = input.color(color.new(#FF9800, 0), "Confirmation Line Color", group=grpStyle)
+bullColor = input.color(color.new(#00E676, 0), "Buy Signal Color", group=grpStyle)
+bearColor = input.color(color.new(#FF1744, 0), "Sell Signal Color", group=grpStyle)
+bColor = input.color(color.new(#00B8D4, 0), "Setup B Color", group=grpStyle)
+
+grpVm = "🗺️ Volume Map"
+vmLondon = input.bool(true, "London profile (03:00-09:29 ET)", group=grpVm)
+vmAsia = input.bool(false, "Asia profile (19:00-02:59 ET)", group=grpVm)
+vmNY = input.bool(false, "NY profile (09:30-15:59 ET)", group=grpVm, tooltip="Drawn at 16:00 ET and kept to 16:00 the next trading day, unless a newer session map replaces it first.")
+vmSrc = input.string("1m intrabars", "Profile Source", options=["1m intrabars", "Chart bars"], group=grpVm, tooltip="1m intrabars is the most accurate. Bars older than TradingView's intrabar limit fall back to chart bars automatically.")
+vmRow = input.float(1.0, "Row Size (pts)", minval=0.25, step=0.25, group=grpVm)
+vmShelfPct = input.float(60, "Shelf = rows at or above this % of POC volume", minval=1, maxval=100, group=grpVm)
+vmThinPct = input.float(25, "Thin = rows at or below this % of POC volume", minval=0, maxval=99, group=grpVm)
+vmMinZone = input.float(2.0, "Ignore zones smaller than (pts)", minval=0, step=0.25, group=grpVm)
+vmTol = input.float(0.5, "At POC / shelf edge tolerance (pts)", minval=0, step=0.25, group=grpVm)
+vmMaxZones = input.int(15, "Max boxes drawn per zone type", minval=1, maxval=40, group=grpVm)
+showPoc = input.bool(true, "Show POC line", group=grpVm)
+showShelf = input.bool(true, "Show shelves", group=grpVm)
+showThin = input.bool(true, "Show thin zones", group=grpVm)
+showVmText = input.bool(true, "Show map labels", group=grpVm)
+showVmTable = input.bool(true, "Show Volume Map table", group=grpVm)
+vmGold = input.color(color.new(#FFC107, 0), "POC / Shelf Color", group=grpVm)
+vmGray = input.color(color.new(#9E9E9E, 0), "Thin Color", group=grpVm)
+
+grpSet = "🧪 Test Entries (CRT + Volume Map)"
+useA = input.bool(true, "Setup A: CRT signal confirmed by the map", group=grpSet)
+aThinPoc = input.bool(true, "A: sweep wick through a thin zone or the POC qualifies", group=grpSet)
+aShelf = input.bool(true, "A: wick past a shelf edge, close back at the shelf qualifies", group=grpSet, tooltip="Long: the wick went under a shelf's bottom and the candle closed back inside or above that shelf. Short: the wick went over a shelf's top and closed back inside or below it.")
+aSkipMid = input.bool(true, "A: skip entries in the middle of a shelf", group=grpSet)
+aMidPct = input.float(50, "A: middle of shelf = central % of its height", minval=0, maxval=100, step=5, group=grpSet)
+aRoomOn = input.bool(true, "A: skip when the POC is too close ahead", group=grpSet)
+aRoom = input.float(3.5, "A: min room to the POC ahead (pts)", minval=0, step=0.25, group=grpSet)
+useB = input.bool(true, "Setup B: POC reaction", group=grpSet)
+bTouch = input.float(1.0, "B: POC touch distance (pts)", minval=0, step=0.25, group=grpSet)
+bUseTime = input.bool(true, "B: only inside the Session Time Filter windows", group=grpSet)
+cutoff = input.int(1530, "No new entries after (HHMM ET)", group=grpSet)
+flatAt = input.int(1600, "Close open trades at (HHMM ET)", group=grpSet)
+useCrtExits = input.bool(false, "Also use CRT Pro's EMA / opposite-signal exits", group=grpSet)
+
+grpLvl = "🎯 Stop / Targets"
+showLvls = input.bool(true, "Show Entry, SL and TP lines", group=grpLvl)
+stopPts = input.float(4.0, "Hard Stop (pts from entry)", minval=3.5, maxval=4.0, step=0.25, group=grpLvl)
+tp1Off = input.float(1.0, "TP1 at POC: exit this many pts before it", minval=0, maxval=1, step=0.25, group=grpLvl)
+finOff = input.float(1.0, "Final target: exit this many pts before the session high/low", minval=0, maxval=1, step=0.25, group=grpLvl)
+fallbackR = input.float(3.0, "Final target if no untaken session level (R)", minval=1, step=0.5, group=grpLvl)
+entryLvlColor = input.color(color.new(color.white, 20), "Entry Line Color", group=grpLvl)
+slLvlColor = input.color(color.new(#FF1744, 0), "SL Line Color", group=grpLvl)
+tpLvlColor = input.color(color.new(#00E676, 0), "TP Line Color", group=grpLvl)
+
+grpLog = "📝 Trade Log (webhook)"
+logOn = input.bool(true, "Send trade log alerts", group=grpLog, tooltip="Fires one JSON alert() per entry, TP hit and exit. Create ONE TradingView alert on 'Any alert() function call' with the tracker's /exec URL as the webhook. Alerts keep the settings they were created with: change settings first, then (re)create the alert.")
+logKey = input.string("", "Webhook Key", group=grpLog, tooltip="Optional. Must match SECRET in the tracker's Apps Script if you set one there.")
+
+// ─── CORE CALCULATIONS (same as CRT Pro) ──────────────────────────────────────
+
+atr14 = ta.atr(atrLen)
+emaVal = ta.ema(close, emaLen)
+volMA = ta.sma(volume, volLen)
+
+// Reference candle values (fixed offset — avoids repainting)
+refH = high[lookback]
+refL = low[lookback]
+
+// Reference candle must have meaningful range relative to ATR
+isQualRef = (refH - refL) >= atr14[lookback] * minRangeATR
+
+// ─── SWEEP & REVERSE PATTERNS (same as CRT Pro) ───────────────────────────────
+
+bullCandle = close > open // sweep candle must close green
+bearCandle = close < open // sweep candle must close red
+
+bullSetup = isQualRef and (low < refL) and (close > refL) and bullCandle
+bearSetup = isQualRef and (high > refH) and (close < refH) and bearCandle
+
+// ─── SMART FILTERS (same as CRT Pro) ──────────────────────────────────────────
+
+emaSlope = emaVal - emaVal[2] // EMA direction over last 2 bars
+inUptrend = close > emaVal or emaSlope > 0 // price above EMA OR EMA sloping up
+inDowntrend = close < emaVal or emaSlope < 0 // price below EMA OR EMA sloping down
+volOK = volume > (volMA * volMult)
+
+// Session time filter (New York time)
+nyTime = hour(time, "America/New_York") * 100 + minute(time, "America/New_York")
+inSession = not useTime or
+     (nyTime >= sess1Start and nyTime < sess1End) or
+     (nyTime >= sess2Start and nyTime < sess2End)
+
+bullSignal = bullSetup and
+     (not useEMA or inUptrend) and
+     (not useVol or volOK) and
+     inSession
+
+bearSignal = bearSetup and
+     (not useEMA or inDowntrend) and
+     (not useVol or volOK) and
+     inSession
+
+// ─── CRT DRAWING (raw CRT signals, same as CRT Pro) ───────────────────────────
+
+if bullSignal or bearSignal
+    startBar = bar_index - lookback
+    endBar = bar_index + extBars
+    confMid = (open + close) / 2.0
+    line.new(startBar, refH, endBar, refH, color=wickColor, width=2, style=line.style_solid)
+    line.new(startBar, refL, endBar, refL, color=wickColor, width=2, style=line.style_solid)
+    line.new(bar_index, confMid, endBar, confMid, color=confColor, width=1, style=line.style_dashed)
+    if showZone
+        box.new(startBar, refH, endBar, refL, border_color=color.new(wickColor, 60), bgcolor=color.new(wickColor, 88))
+
+plotshape(showRaw and bullSignal, "CRT Buy (raw)", shape.triangleup, location.belowbar, color.new(color.gray, 20), size=size.tiny)
+plotshape(showRaw and bearSignal, "CRT Sell (raw)", shape.triangledown, location.abovebar, color.new(color.gray, 20), size=size.tiny)
+
+plot(showEMA ? emaVal : na, "EMA", color=color.new(color.yellow, 0), linewidth=2)
+
+// ─── CRT FILTER TABLE (moved to bottom-right; the Volume Map uses top-right) ──
+
+var table infoTable = table.new(position.bottom_right, 2, 4, bgcolor=color.new(color.black, 60), border_color=color.new(color.gray, 40), border_width=1, frame_color=color.gray, frame_width=1)
+
+if barstate.islast
+    table.cell(infoTable, 0, 0, "CRT Filter", text_color=color.white, text_size=size.small, bgcolor=color.new(color.blue, 40))
+    table.cell(infoTable, 1, 0, "Status", text_color=color.white, text_size=size.small, bgcolor=color.new(color.blue, 40))
+    trendStatus = not useEMA ? "OFF" : inUptrend ? "▲ BULL" : "▼ BEAR"
+    trendCol = not useEMA ? color.gray : inUptrend ? color.lime : color.red
+    table.cell(infoTable, 0, 1, "Trend (EMA" + str.tostring(emaLen) + ")", text_color=color.white, text_size=size.tiny)
+    table.cell(infoTable, 1, 1, trendStatus, text_color=trendCol, text_size=size.tiny)
+    volStatus = not useVol ? "OFF" : volOK ? "✔ HIGH" : "✘ LOW"
+    volCol = not useVol ? color.gray : volOK ? color.lime : color.orange
+    table.cell(infoTable, 0, 2, "Volume (×" + str.tostring(volMult) + ")", text_color=color.white, text_size=size.tiny)
+    table.cell(infoTable, 1, 2, volStatus, text_color=volCol, text_size=size.tiny)
+    refStatus = isQualRef ? "✔ VALID" : "✘ WEAK"
+    refCol2 = isQualRef ? color.lime : color.orange
+    table.cell(infoTable, 0, 3, "Ref Candle", text_color=color.white, text_size=size.tiny)
+    table.cell(infoTable, 1, 3, refStatus, text_color=refCol2, text_size=size.tiny)
+
+// ─── CRT DIRECTION STATE (same as CRT Pro's exit tracking) ────────────────────
+// inLong / inShort = CRT Pro's own "active long / active short" state. The
+// test uses it as the CRT bias for Setup B.
+
+var bool inLong = false
+var bool inShort = false
+
+if bullSignal
+    inLong := true
+    inShort := false
+if bearSignal
+    inShort := true
+    inLong := false
+
+exitLong = inLong and (bearSignal or (close < emaVal and bearCandle))
+exitShort = inShort and (bullSignal or (close > emaVal and bullCandle))
+
+if exitLong
+    inLong := false
+if exitShort
+    inShort := false
+
+// ─── VOLUME MAP ───────────────────────────────────────────────────────────────
+// Profile rows are vmRow points tall. Each 1m bar's volume is spread evenly
+// across the rows its high-low covers. When the session ends, the rows become:
+//   POC   = the row with the most volume (price = row middle)
+//   Shelf = run of rows with volume >= vmShelfPct % of the POC row
+//   Thin  = run of rows with volume <= vmThinPct % of the POC row
+// Runs shorter than vmMinZone points are dropped. Only the latest finished
+// session's map is kept; its drawings are deleted when the next one is drawn.
+
+VM_TZ = "America/New_York"
+vmLtfTf = timeframe.in_seconds() <= 60 ? timeframe.period : "1"
+[ltfH, ltfL, ltfV, ltfT] = request.security_lower_tf(syminfo.tickerid, vmLtfTf, [high, low, volume, time])
+
+vmSessOf(int t) =>
+    hm = hour(t, "America/New_York") * 100 + minute(t, "America/New_York")
+    hm >= 1900 or hm < 300 ? "Asia" : hm < 930 ? "London" : hm < 1600 ? "NY" : ""
+
+vmSessOn(string s) =>
+    s == "Asia" ? vmAsia : s == "London" ? vmLondon : s == "NY" ? vmNY : false
+
+// Adds one bar's volume to the profile map (row index -> volume). Returns rows touched.
+vmAdd(map<int, float> m, float h, float l, float v, float rs) =>
+    int rows = 0
+    if not na(v) and v > 0 and not na(h) and not na(l) and h >= l
+        lo = math.floor(l / rs + 1e-9)
+        hi = math.max(lo, math.ceil(h / rs - 1e-9) - 1)
+        if hi - lo < 2000
+            per = v / (hi - lo + 1)
+            for k = lo to hi
+                m.put(k, nz(m.get(k)) + per)
+            rows := hi - lo + 1
+    rows
+
+// 16:00 ET on the same day as t, or the next weekday if t is already past it.
+vmEndOf(int t) =>
+    int e = timestamp(VM_TZ, year(t, VM_TZ), month(t, VM_TZ), dayofmonth(t, VM_TZ), 16, 0)
+    if e <= t
+        n1 = e + 86400000
+        e := timestamp(VM_TZ, year(n1, VM_TZ), month(n1, VM_TZ), dayofmonth(n1, VM_TZ), 16, 0)
+    dw = dayofweek(e, VM_TZ)
+    if dw == dayofweek.saturday or dw == dayofweek.sunday
+        n2 = e + (dw == dayofweek.saturday ? 2 : 1) * 86400000
+        e := timestamp(VM_TZ, year(n2, VM_TZ), month(n2, VM_TZ), dayofmonth(n2, VM_TZ), 16, 0)
+    e
+
+var map<int, float> vmProf = map.new<int, float>()
+var map<int, float> vmFin = map.new<int, float>()
+var string vmAcc = ""
+var float vmAccHi = na
+var float vmAccLo = na
+var string vmSess = ""
+var float vmPoc = na
+var float vmHigh = na
+var float vmLow = na
+var float vmSessHi = na
+var float vmSessLo = na
+var int vmStart = na
+var int vmEnd = na
+var zTop = array.new<float>()
+var zBot = array.new<float>()
+var zType = array.new<string>()
+var vmBoxes = array.new<box>()
+var vmLines = array.new<line>()
+var vmLabels = array.new<label>()
+
+bool vmNew = false
+string finSess = ""
+int finTime = na
+float finHi = na
+float finLo = na
+
+// Feed this chart bar's 1m bars (or the chart bar itself) into the profile.
+// A change of session closes the profile being built.
+useLtf = vmSrc == "1m intrabars" and ltfV.size() > 0
+nPts = useLtf ? ltfV.size() : 1
+for i = 0 to nPts - 1
+    int t = time
+    float h = high
+    float l = low
+    float v = volume
+    if useLtf
+        t := ltfT.get(i)
+        h := ltfH.get(i)
+        l := ltfL.get(i)
+        v := ltfV.get(i)
+    s = vmSessOf(t)
+    if s != vmAcc
+        if vmProf.size() > 0
+            vmFin.clear()
+            vmFin.put_all(vmProf)
+            finSess := vmAcc
+            finTime := t
+            finHi := vmAccHi
+            finLo := vmAccLo
+            vmNew := true
+        vmProf.clear()
+        vmAccHi := na
+        vmAccLo := na
+        vmAcc := s
+    if vmSessOn(s) and not na(h) and not na(l)
+        vmAdd(vmProf, h, l, v, vmRow)
+        vmAccHi := na(vmAccHi) ? h : math.max(vmAccHi, h)
+        vmAccLo := na(vmAccLo) ? l : math.min(vmAccLo, l)
+
+vmFmt(float p) =>
+    str.tostring(p, "#,##0.##")
+
+// Build the finished session's map: POC, shelves, thin zones, drawings.
+if vmNew
+    for b in vmBoxes
+        box.delete(b)
+    for ln in vmLines
+        line.delete(ln)
+    for lb in vmLabels
+        label.delete(lb)
+    vmBoxes.clear()
+    vmLines.clear()
+    vmLabels.clear()
+    zTop.clear()
+    zBot.clear()
+    zType.clear()
+    keys = vmFin.keys()
+    int kMin = int(keys.min())
+    int kMax = int(keys.max())
+    int nRows = kMax - kMin + 1
+    vols = array.new<float>(nRows, 0.0)
+    for [k, kv] in vmFin
+        vols.set(k - kMin, kv)
+    pocVol = vols.max()
+    pocIdx = vols.indexof(pocVol)
+    vmSess := finSess
+    vmPoc := math.round_to_mintick((kMin + pocIdx + 0.5) * vmRow)
+    vmLow := kMin * vmRow
+    vmHigh := (kMax + 1) * vmRow
+    vmSessHi := finHi
+    vmSessLo := finLo
+    vmStart := finTime
+    vmEnd := vmEndOf(finTime)
+    string runType = ""
+    int runStart = 0
+    for i = 0 to nRows
+        string rt = ""
+        if i < nRows
+            rv = vols.get(i)
+            rt := rv >= pocVol * vmShelfPct / 100 ? "shelf" : rv <= pocVol * vmThinPct / 100 ? "thin" : ""
+        if rt != runType
+            if runType != "" and (i - runStart) * vmRow >= vmMinZone - 1e-9
+                zBot.push(math.round_to_mintick((kMin + runStart) * vmRow))
+                zTop.push(math.round_to_mintick((kMin + i) * vmRow))
+                zType.push(runType)
+            runType := rt
+            runStart := i
+    int nShelf = 0
+    int nThin = 0
+    for [i, zt] in zType
+        isShelf = zt == "shelf"
+        drawIt = isShelf ? (showShelf and nShelf < vmMaxZones) : (showThin and nThin < vmMaxZones)
+        if drawIt
+            zc = isShelf ? vmGold : vmGray
+            zb = zBot.get(i)
+            ztp = zTop.get(i)
+            txt = showVmText ? (isShelf ? "Shelf " : "Thin ") + vmFmt(zb) + "-" + vmFmt(ztp) : ""
+            vmBoxes.push(box.new(vmStart, ztp, vmEnd, zb, xloc=xloc.bar_time, border_color=color.new(zc, 60), bgcolor=color.new(zc, isShelf ? 82 : 85), text=txt, text_color=zc, text_size=size.small, text_halign=text.align_right, text_valign=text.align_center))
+            if isShelf
+                nShelf += 1
+            else
+                nThin += 1
+    if showPoc
+        vmLines.push(line.new(vmStart, vmPoc, vmEnd, vmPoc, xloc=xloc.bar_time, color=vmGold, width=2))
+        if showVmText
+            vmLabels.push(label.new(vmEnd, vmPoc, "POC " + vmFmt(vmPoc), xloc=xloc.bar_time, style=label.style_label_right, color=color.new(color.black, 100), textcolor=vmGold, size=size.small))
+
+// The map is live from its session end until its 16:00 ET close-out.
+vmActive = not na(vmEnd) and time < vmEnd
+
+// Session high / low sweeps since the map was drawn (Setup B bias fallback
+// and the "untaken" final target).
+var int sweepBias = 0
+var bool hiTaken = false
+var bool loTaken = false
+var bool bArmL = false
+var bool bArmS = false
+if vmNew
+    sweepBias := 0
+    hiTaken := false
+    loTaken := false
+    bArmL := false
+    bArmS := false
+if vmActive
+    sweptHi = high > vmSessHi
+    sweptLo = low < vmSessLo
+    if sweptHi
+        hiTaken := true
+    if sweptLo
+        loTaken := true
+    if sweptLo and not sweptHi
+        sweepBias := 1
+    else if sweptHi and not sweptLo
+        sweepBias := -1
+
+// CRT bias: CRT Pro's active long/short state; if neither, the side of the
+// latest session sweep (session low swept -> longs only, high swept -> shorts).
+crtBias = inLong ? 1 : inShort ? -1 : sweepBias
+biasText = inLong ? "Long (CRT)" : inShort ? "Short (CRT)" : sweepBias == 1 ? "Long (low swept)" : sweepBias == -1 ? "Short (high swept)" : "None"
+
+// Zone a price sits in: poc, shelf, thin or none.
+vmZoneAt(float p) =>
+    string r = "none"
+    if vmActive
+        if math.abs(p - vmPoc) <= vmTol
+            r := "poc"
+        else
+            for [i, zt] in zType
+                if p >= zBot.get(i) and p <= zTop.get(i)
+                    if zt == "shelf"
+                        r := "shelf"
+                    else if r == "none"
+                        r := "thin"
+    r
+
+// True when the price range lo..hi trades through a zone of type tp ("poc" = contains the POC).
+vmTouches(float lo, float hi, string tp) =>
+    bool hit = false
+    if vmActive
+        if tp == "poc"
+            hit := vmPoc >= lo and vmPoc <= hi
+        else
+            for [i, zt] in zType
+                if zt == tp and zBot.get(i) < hi and zTop.get(i) > lo
+                    hit := true
+    hit
+
+vmSweepZone(float lo, float hi) =>
+    vmTouches(lo, hi, "poc") ? "poc" : vmTouches(lo, hi, "thin") ? "thin" : vmTouches(lo, hi, "shelf") ? "shelf" : "none"
+
+// Long: the wick went under a shelf's bottom and the bar closed back at or above it. Short mirrors.
+vmShelfReclaim(bool isLong) =>
+    bool ok = false
+    if vmActive
+        for [i, zt] in zType
+            if zt == "shelf"
+                if isLong and low < zBot.get(i) and close >= zBot.get(i)
+                    ok := true
+                if not isLong and high > zTop.get(i) and close <= zTop.get(i)
+                    ok := true
+    ok
+
+// True when p is in the central aMidPct % of a shelf (chop).
+vmMidShelf(float p) =>
+    bool mid = false
+    if vmActive
+        for [i, zt] in zType
+            if zt == "shelf"
+                zb = zBot.get(i)
+                ztp = zTop.get(i)
+                pad = (ztp - zb) * (100 - aMidPct) / 200
+                if p > zb + pad and p < ztp - pad
+                    mid := true
+    mid
+
+vmStatus(float p) =>
+    string r = ""
+    if not vmActive
+        r := "No active map"
+    else if p > vmHigh or p < vmLow
+        r := "Outside map"
+    else if math.abs(p - vmPoc) <= vmTol
+        r := "At POC"
+    else
+        for [i, zt] in zType
+            if zt == "shelf" and r == ""
+                zb = zBot.get(i)
+                ztp = zTop.get(i)
+                if math.abs(p - ztp) <= vmTol
+                    r := "Shelf top edge"
+                else if math.abs(p - zb) <= vmTol
+                    r := "Shelf bottom edge"
+                else if p > zb and p < ztp
+                    r := "In shelf"
+        if r == ""
+            for [j, zt2] in zType
+                if zt2 == "thin" and r == "" and p >= zBot.get(j) and p <= zTop.get(j)
+                    r := p > vmPoc ? "In thin above" : "In thin below"
+        if r == ""
+            r := p > vmPoc ? "Above POC" : "Below POC"
+    r
+
+// Nearest zone (or the POC) fully above / below p, with its distance.
+vmNext(float p, bool above) =>
+    string best = "None"
+    float bestD = na
+    if vmActive
+        dPoc = above ? vmPoc - p : p - vmPoc
+        if dPoc > vmTol
+            best := "POC " + vmFmt(vmPoc)
+            bestD := dPoc
+        for [i, zt] in zType
+            d = above ? zBot.get(i) - p : p - zTop.get(i)
+            if d > 0 and (na(bestD) or d < bestD)
+                bestD := d
+                best := (zt == "shelf" ? "Shelf " : "Thin ") + vmFmt(zBot.get(i)) + "-" + vmFmt(zTop.get(i))
+    na(bestD) ? best : best + " (" + (above ? "+" : "-") + str.tostring(bestD, "0.##") + ")"
+
+var table vmTable = table.new(position.top_right, 2, 7, bgcolor=color.new(color.black, 60), border_color=color.new(color.gray, 40), border_width=1, frame_color=color.gray, frame_width=1)
+
+if barstate.islast and showVmTable
+    hdrBg = color.new(#7A5C00, 30)
+    table.cell(vmTable, 0, 0, "VOLUME MAP", text_color=vmGold, text_size=size.small, bgcolor=hdrBg)
+    table.cell(vmTable, 1, 0, vmActive ? vmSess : "No active map", text_color=vmGold, text_size=size.small, bgcolor=hdrBg)
+    table.cell(vmTable, 0, 1, "Price", text_color=color.white, text_size=size.tiny)
+    table.cell(vmTable, 1, 1, vmFmt(close), text_color=color.white, text_size=size.tiny)
+    table.cell(vmTable, 0, 2, "Zone", text_color=color.white, text_size=size.tiny)
+    table.cell(vmTable, 1, 2, vmStatus(close), text_color=vmGold, text_size=size.tiny)
+    pocDist = close - vmPoc
+    pocTxt = vmActive ? vmFmt(vmPoc) + " (" + (pocDist >= 0 ? "+" : "") + str.tostring(pocDist, "0.00") + ")" : "-"
+    table.cell(vmTable, 0, 3, "POC", text_color=color.white, text_size=size.tiny)
+    table.cell(vmTable, 1, 3, pocTxt, text_color=vmGold, text_size=size.tiny)
+    table.cell(vmTable, 0, 4, "Next above", text_color=color.white, text_size=size.tiny)
+    table.cell(vmTable, 1, 4, vmNext(close, true), text_color=color.white, text_size=size.tiny)
+    table.cell(vmTable, 0, 5, "Next below", text_color=color.white, text_size=size.tiny)
+    table.cell(vmTable, 1, 5, vmNext(close, false), text_color=color.white, text_size=size.tiny)
+    table.cell(vmTable, 0, 6, "Bias", text_color=color.white, text_size=size.tiny)
+    table.cell(vmTable, 1, 6, biasText, text_color=crtBias == 1 ? color.lime : crtBias == -1 ? color.red : color.gray, text_size=size.tiny)
+
+// ─── TEST SETUPS ──────────────────────────────────────────────────────────────
+// Setup A (CRT + map): a CRT Pro signal that the map agrees with.
+//   Long agrees when the sweep wick (low up to the reference low) traded
+//   through a thin zone or the POC, or the wick went under a shelf's bottom
+//   and the candle closed back inside/above that shelf. Short mirrors.
+//   Skipped when the entry close is mid-shelf, or the POC is ahead by less
+//   than aRoom points.
+// Setup B (POC reaction): price comes back to the POC from one side (the
+//   candle's low/high within bTouch of it) and the candle closes more than
+//   bTouch away from the POC in the CRT bias direction (green for longs, red
+//   for shorts). Each approach to the POC can trigger once.
+
+closeHM = hour(time_close, VM_TZ) * 100 + minute(time_close, VM_TZ)
+canEnter = vmActive and closeHM <= cutoff
+
+aAgreeL = (aThinPoc and (vmTouches(low, refL, "thin") or vmTouches(low, refL, "poc"))) or (aShelf and vmShelfReclaim(true))
+aAgreeS = (aThinPoc and (vmTouches(refH, high, "thin") or vmTouches(refH, high, "poc"))) or (aShelf and vmShelfReclaim(false))
+midNow = aSkipMid and vmMidShelf(close)
+roomL = not aRoomOn or not (vmPoc - close >= 0 and vmPoc - close < aRoom)
+roomS = not aRoomOn or not (close - vmPoc >= 0 and close - vmPoc < aRoom)
+aLong = useA and vmActive and bullSignal and aAgreeL and not midNow and roomL
+aShort = useA and vmActive and bearSignal and aAgreeS and not midNow and roomS
+
+touchL = vmActive and math.abs(low - vmPoc) <= bTouch
+touchS = vmActive and math.abs(high - vmPoc) <= bTouch
+bTimeOK = not bUseTime or inSession
+bLong = useB and bArmL and touchL and close > vmPoc + bTouch and bullCandle and crtBias == 1 and bTimeOK
+bShort = useB and bArmS and touchS and close < vmPoc - bTouch and bearCandle and crtBias == -1 and bTimeOK
+
+// Arm B when price is clear of the POC on a side; disarm once it triggers or closes through.
+if vmActive
+    if bLong or close < vmPoc - bTouch
+        bArmL := false
+    if bShort or close > vmPoc + bTouch
+        bArmS := false
+    if low > vmPoc + bTouch
+        bArmL := true
+    if high < vmPoc - bTouch
+        bArmS := true
+
+// ─── TRADE LEVELS & TRADE LOG (webhook) ──────────────────────────────────────
+// One position at a time. Entry = close of the signal bar.
+//   SL    = entry -/+ stopPts (hard stop).
+//   TP1   = Setup A trading toward the POC: the POC minus tp1Off (in the trade
+//           direction). Otherwise 1R.
+//   TP3   = final target: the untaken session high (longs) / low (shorts) minus
+//           finOff. If that level is nearer than TP1 it is the only target. If
+//           there is no untaken level beyond entry: fallbackR R (at least TP1).
+//   TP2   = halfway between TP1 and TP3 (tracking only).
+// From the bar after entry, each bar is checked in this order:
+//   1. SL touched          -> exit at SL (SL counts first if a TP touches too)
+//   2. TP1 / TP2 / TP3     -> each new TP logged; TP3 exits at TP3
+//   3. (optional) CRT Pro opposite signal / EMA exit -> exit at close
+//   4. Close time at or after flatAt -> exit at close (EOD)
+// Times are New York time. Fires on bar close only, so it never repaints.
+
+var string logSide = ""
+var string logId = ""
+var string logSetup = ""
+var float logEntry = na
+var float logStop = na
+var float logTP1 = na
+var float logTP2 = na
+var float logTP3 = na
+var int tpHits = 0
+var int entryBar = na
+var lvlLines = array.new<line>()
+var lvlLabels = array.new<label>()
+
+nyStamp(t) =>
+    str.format_time(t, "yyyy-MM-dd HH:mm", "America/New_York")
+
+px(float v) =>
+    str.tostring(v, format.mintick)
+
+sendLog(string body) =>
+    if logOn
+        keyPart = logKey == "" ? "" : ',"key":"' + logKey + '"'
+        alert('{"source":"crt-pro-vmap","symbol":"' + syminfo.ticker + '","tf":"' + timeframe.period + '"' + keyPart + ',' + body + '}', alert.freq_once_per_bar_close)
+
+sendExit(string reason, float atPx) =>
+    pnlPts = logSide == "LONG" ? atPx - logEntry : logEntry - atPx
+    sendLog('"event":"EXIT","id":"' + logId + '","side":"' + logSide + '","setup":"' + logSetup + '","time":"' + nyStamp(time_close) +
+         '","exit":' + px(atPx) + ',"reason":"' + reason + '","tp_hits":' + str.tostring(tpHits) +
+         ',"pnl_pts":' + px(pnlPts))
+
+addLevel(float price, color col, string style, string name) =>
+    if showLvls
+        array.push(lvlLines, line.new(bar_index, price, bar_index + 1, price, color=col, width=1, style=style))
+        array.push(lvlLabels, label.new(bar_index + 1, price, name + " " + px(price), style=label.style_label_left, color=color.new(col, 75), textcolor=col, size=size.small))
+
+rawSide = bullSignal ? "LONG" : bearSignal ? "SHORT" : ""
+exitReason = ""
+exitPx = float(na)
+
+// 1-2. SL and TP levels, from the bar after entry
+if logSide != "" and bar_index > entryBar
+    isLong = logSide == "LONG"
+    slHit = isLong ? low <= logStop : high >= logStop
+    if slHit
+        exitReason := "SL"
+        exitPx := logStop
+    else
+        reach1 = isLong ? high >= logTP1 : low <= logTP1
+        reach2 = isLong ? high >= logTP2 : low <= logTP2
+        reach3 = isLong ? high >= logTP3 : low <= logTP3
+        reached = reach3 ? 3 : reach2 ? 2 : reach1 ? 1 : 0
+        if reached > tpHits
+            for k = tpHits + 1 to reached
+                tpPx = k == 1 ? logTP1 : k == 2 ? logTP2 : logTP3
+                sendLog('"event":"TP","id":"' + logId + '","side":"' + logSide + '","time":"' + nyStamp(time_close) +
+                     '","level":"TP' + str.tostring(k) + '","price":' + px(tpPx))
+                if showLvls
+                    label.new(bar_index, tpPx, "TP" + str.tostring(k), style=isLong ? label.style_label_down : label.style_label_up, color=tpLvlColor, textcolor=color.black, size=size.tiny)
+            tpHits := reached
+        if tpHits >= 3
+            exitReason := "TP3"
+            exitPx := logTP3
+
+// 3-4. Optional CRT Pro exits, then the end-of-day close, at the bar's close
+if logSide != "" and exitReason == ""
+    if useCrtExits and rawSide != "" and rawSide != logSide
+        exitReason := "REVERSE"
+        exitPx := close
+    else if useCrtExits and logSide == "LONG" and close < emaVal and bearCandle
+        exitReason := "EMA"
+        exitPx := close
+    else if useCrtExits and logSide == "SHORT" and close > emaVal and bullCandle
+        exitReason := "EMA"
+        exitPx := close
+    else if closeHM >= flatAt
+        exitReason := "EOD"
+        exitPx := close
+
+if exitReason != ""
+    sendExit(exitReason, exitPx)
+    if showLvls and exitReason == "SL"
+        label.new(bar_index, logStop, "SL", style=logSide == "LONG" ? label.style_label_up : label.style_label_down, color=slLvlColor, textcolor=color.white, size=size.tiny)
+    logSide := ""
+
+// Keep the open trade's lines running to the current bar; they stop where the trade closed.
+if array.size(lvlLines) > 0 and (logSide != "" or exitReason != "")
+    xEnd = logSide != "" ? bar_index + 1 : bar_index
+    for ln in lvlLines
+        line.set_x2(ln, xEnd)
+    for lb in lvlLabels
+        label.set_x(lb, xEnd)
+
+// Open a new trade when flat. A first, then B.
+string newSide = ""
+string newSetup = ""
+if canEnter and logSide == ""
+    if aLong
+        newSide := "LONG"
+        newSetup := "A"
+    else if aShort
+        newSide := "SHORT"
+        newSetup := "A"
+    else if bLong
+        newSide := "LONG"
+        newSetup := "B"
+    else if bShort
+        newSide := "SHORT"
+        newSetup := "B"
+
+bool entALong = false
+bool entAShort = false
+bool entBLong = false
+bool entBShort = false
+
+if newSide != ""
+    isLong = newSide == "LONG"
+    dir = isLong ? 1.0 : -1.0
+    risk = stopPts
+    logSide := newSide
+    logSetup := newSetup
+    logEntry := close
+    logStop := math.round_to_mintick(close - dir * risk)
+    float t1 = close + dir * risk
+    if newSetup == "A" and dir * (vmPoc - close) > 0
+        pocT = vmPoc - dir * tp1Off
+        if dir * (pocT - close) > 0
+            t1 := pocT
+    float lvl = isLong ? (hiTaken ? na : vmSessHi) : (loTaken ? na : vmSessLo)
+    float fin = na(lvl) ? na : lvl - dir * finOff
+    if not na(fin) and dir * (fin - close) <= 0
+        fin := na
+    float t3 = na
+    if na(fin)
+        fb = close + dir * fallbackR * risk
+        t3 := dir * (fb - t1) >= 0 ? fb : t1
+    else if dir * (fin - t1) <= 0
+        t1 := fin
+        t3 := fin
+    else
+        t3 := fin
+    logTP1 := math.round_to_mintick(t1)
+    logTP3 := math.round_to_mintick(t3)
+    logTP2 := math.round_to_mintick((t1 + t3) / 2)
+    tpHits := 0
+    entryBar := bar_index
+    logId := "VM-" + newSetup + "-" + str.format_time(time_close, "yyyyMMdd-HHmm", "America/New_York") + "-" + newSide
+    entALong := isLong and newSetup == "A"
+    entAShort := not isLong and newSetup == "A"
+    entBLong := isLong and newSetup == "B"
+    entBShort := not isLong and newSetup == "B"
+    array.clear(lvlLines)
+    array.clear(lvlLabels)
+    addLevel(logEntry, entryLvlColor, line.style_solid, "Entry")
+    addLevel(logStop, slLvlColor, line.style_solid, "SL")
+    addLevel(logTP1, tpLvlColor, line.style_dashed, "TP1")
+    addLevel(logTP2, tpLvlColor, line.style_dashed, "TP2")
+    addLevel(logTP3, tpLvlColor, line.style_dashed, "TP3")
+    entryZone = vmZoneAt(logEntry)
+    sweepZone = newSetup == "A" ? (isLong ? vmSweepZone(low, refL) : vmSweepZone(refH, high)) : "none"
+    refJs = newSetup == "A" ? ',"ref_high":' + px(refH) + ',"ref_low":' + px(refL) : ',"ref_high":null,"ref_low":null'
+    sendLog('"event":"ENTRY","id":"' + logId + '","side":"' + newSide + '","time":"' + nyStamp(time_close) +
+         '","entry":' + px(logEntry) + ',"sl":' + px(logStop) + ',"risk_pts":' + px(risk) +
+         ',"tp1":' + px(logTP1) + ',"tp2":' + px(logTP2) + ',"tp3":' + px(logTP3) + refJs +
+         ',"setup":"' + newSetup + '","poc":' + px(vmPoc) + ',"dist_to_poc_pts":' + px(logEntry - vmPoc) +
+         ',"entry_zone":"' + entryZone + '","sweep_zone":"' + sweepZone + '","map_session":"' + vmSess + '"')
+
+// ─── TEST ENTRY LABELS & ALERTS ───────────────────────────────────────────────
+
+plotshape(entALong, "A Buy", shape.labelup, location.belowbar, bullColor, text="A BUY", textcolor=color.white, size=size.normal)
+plotshape(entAShort, "A Sell", shape.labeldown, location.abovebar, bearColor, text="A SELL", textcolor=color.white, size=size.normal)
+plotshape(entBLong, "B Buy", shape.labelup, location.belowbar, bColor, text="B BUY", textcolor=color.white, size=size.normal)
+plotshape(entBShort, "B Sell", shape.labeldown, location.abovebar, bColor, text="B SELL", textcolor=color.white, size=size.normal)
+
+alertcondition(entALong or entAShort, "VMap Setup A Entry", "CRT Pro VMap: Setup A entry (CRT + Volume Map)")
+alertcondition(entBLong or entBShort, "VMap Setup B Entry", "CRT Pro VMap: Setup B entry (POC reaction)")
+alertcondition(exitReason != "", "VMap Trade Exit", "CRT Pro VMap: test trade closed")

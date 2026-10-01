@@ -19,6 +19,14 @@
  *
  * It creates its own tabs (CRT Pro Trades / CRT Pro Summary / CRT Pro Log)
  * and never touches the sheet's older tabs.
+ *
+ * TEST indicator (pine/crt-pro-vmap-es.pine): payloads with
+ * "source":"crt-pro-vmap" go to their own tabs, "CRT Pro VMap" and
+ * "CRT Pro VMap Summary", created the first time one arrives (or run
+ * setupVmap()). Those ENTRY payloads also carry setup (A | B), poc,
+ * dist_to_poc_pts, entry_zone and sweep_zone (poc | shelf | thin | none).
+ * Live CRT Pro rows keep going to CRT Pro Trades exactly as before. Both
+ * indicators share the CRT Pro Log tab (VMap events are marked "VMAP").
  */
 
 // Optional shared secret. Leave "" to accept any post, or set it to the same
@@ -38,6 +46,12 @@ var HEADERS = ["Trade ID", "Date", "Entry Time (ET)", "Session", "Side", "Chart 
 var C = { ID: 1, DATE: 2, ENTRY_TIME: 3, SESSION: 4, SIDE: 5, TF: 6, ENTRY: 7, STOP: 8,
   TP1: 9, TP2: 10, TP3: 11, RISK: 12, TP_HIT: 13, EXIT_TIME: 14, EXIT: 15, REASON: 16,
   PNL_PTS: 17, R: 18, PNL_USD: 19, RESULT: 20 };
+
+// TEST indicator (CRT Pro + Volume Map). Same columns as above, plus U:Y.
+var VMAP_SOURCE = "crt-pro-vmap";
+var VMAP_TRADES = "CRT Pro VMap";
+var VMAP_SUMMARY = "CRT Pro VMap Summary";
+var VMAP_HEADERS = HEADERS.concat(["POC", "Dist to POC", "Entry Zone", "Sweep Zone", "Setup"]);
 
 function doGet() {
   return ContentService.createTextOutput("CRT Pro tracker is live.");
@@ -62,21 +76,32 @@ function doPost(e) {
       return json({ ok: false, error: "unauthorized" });
     }
 
+    if (isVmap(body)) ensureVmapTabs(ss);
+
     var status;
     if (body.event === "ENTRY") status = recordEntry(ss, body);
     else if (body.event === "TP") status = recordTp(ss, body);
     else if (body.event === "EXIT") status = recordExit(ss, body);
     else status = "UNKNOWN EVENT";
 
-    logRow(ss, (body.event || "?") + (status === "ok" ? "" : " (" + status + ")"), body.id || "", raw);
+    logRow(ss, (isVmap(body) ? "VMAP " : "") + (body.event || "?") + (status === "ok" ? "" : " (" + status + ")"), body.id || "", raw);
     return json({ ok: true, status: status });
   } finally {
     lock.releaseLock();
   }
 }
 
+// VMap payloads go to their own tab; everything else to CRT Pro Trades.
+function isVmap(b) {
+  return b && b.source === VMAP_SOURCE;
+}
+
+function tradesTab(b) {
+  return isVmap(b) ? VMAP_TRADES : TRADES;
+}
+
 function recordEntry(ss, b) {
-  var sh = ss.getSheetByName(TRADES);
+  var sh = ss.getSheetByName(tradesTab(b));
   if (findTradeRow(sh, b.id)) return "duplicate";
   var parts = String(b.time || "").split(" ");
   var sl = b.sl !== undefined ? b.sl : b.sweep_stop; // sweep_stop = alerts from before the TP update
@@ -85,13 +110,16 @@ function recordEntry(ss, b) {
     num(b.entry), num(sl), num(b.tp1), num(b.tp2), num(b.tp3), num(b.risk_pts), 0,
     "", "", "", "", "", "", "OPEN"
   ];
+  if (isVmap(b)) {
+    row.push(num(b.poc), num(b.dist_to_poc_pts), b.entry_zone || "", b.sweep_zone || "", b.setup || "");
+  }
   sh.appendRow(row);
   return "ok";
 }
 
 // Marks the highest TP the open trade has reached (1-3).
 function recordTp(ss, b) {
-  var sh = ss.getSheetByName(TRADES);
+  var sh = ss.getSheetByName(tradesTab(b));
   var r = findTradeRow(sh, b.id);
   if (!r) return "no matching entry";
   if (sh.getRange(r, C.EXIT).getValue() !== "") return "trade already closed";
@@ -102,7 +130,7 @@ function recordTp(ss, b) {
 }
 
 function recordExit(ss, b) {
-  var sh = ss.getSheetByName(TRADES);
+  var sh = ss.getSheetByName(tradesTab(b));
   var r = findTradeRow(sh, b.id);
   if (!r) return "no matching entry";
   if (sh.getRange(r, C.EXIT).getValue() !== "") return "duplicate";
@@ -184,13 +212,18 @@ function ensureTabs(ss) {
 }
 
 function buildSummary(s) {
-  var T = "'" + TRADES + "'!";
+  buildSummaryFor(s, TRADES, "CRT Pro — forward test");
+}
+
+// Writes the summary block for one trades tab. Returns the first free row.
+function buildSummaryFor(s, tradesName, title) {
+  var T = "'" + tradesName + "'!";
   var res = T + "$T$2:$T", ses = T + "$D$2:$D", rr = T + "$R$2:$R", usd = T + "$S$2:$S", pts = T + "$Q$2:$Q";
   var tp = T + "$M$2:$M", why = T + "$P$2:$P";
   var closed = "COUNTIF(" + res + ",\"Win\")+COUNTIF(" + res + ",\"Loss\")+COUNTIF(" + res + ",\"Breakeven\")";
   var reached = function (n) { return "=IFERROR(COUNTIFS(" + tp + ",\">=" + n + "\"," + why + ",\"<>\")/B3,0)"; };
   var rows = [
-    ["CRT Pro — forward test", ""],
+    [title, ""],
     ["", ""],
     ["Closed trades", "=" + closed],
     ["Open trades", "=COUNTIF(" + res + ",\"OPEN\")"],
@@ -234,6 +267,65 @@ function buildSummary(s) {
   s.getRange("B12").setNumberFormat("$#,##0");
   s.getRange("B13:B15").setNumberFormat("0%");
   s.getRange(first, 4, sessions.length, 1).setNumberFormat("$#,##0");
+  return first + sessions.length + 1;
+}
+
+/** Run once from the editor to create the VMap tabs now (they are also created on the first VMap alert). */
+function setupVmap() {
+  var ss = SpreadsheetApp.getActiveSpreadsheet();
+  ensureVmapTabs(ss);
+  buildVmapSummary(ss.getSheetByName(VMAP_SUMMARY));
+}
+
+function ensureVmapTabs(ss) {
+  var t = ss.getSheetByName(VMAP_TRADES);
+  if (!t) {
+    t = ss.insertSheet(VMAP_TRADES);
+    t.getRange(1, 1, 1, VMAP_HEADERS.length).setValues([VMAP_HEADERS]).setFontWeight("bold");
+    t.setFrozenRows(1);
+  }
+  if (!ss.getSheetByName(VMAP_SUMMARY)) {
+    buildVmapSummary(ss.insertSheet(VMAP_SUMMARY));
+  }
+}
+
+// Same summary as CRT Pro, plus the test result: win rate and R by setup,
+// entry zone and sweep zone.
+function buildVmapSummary(s) {
+  var row = buildSummaryFor(s, VMAP_TRADES, "CRT Pro + Volume Map (TEST) — forward test");
+  var T = "'" + VMAP_TRADES + "'!";
+  var why = T + "$P$2:$P", setup = T + "$Y$2:$Y";
+  s.getRange(row, 1, 1, 2).setValues([["Exit: end of day", "=COUNTIF(" + why + ",\"EOD\")"]]);
+  s.getRange(row + 1, 1).setValue("(Exit: TP3 = the final target: untaken session high/low, or the fallback R.)").setFontStyle("italic");
+  row += 3;
+  row = breakdown(s, row, "By setup", T + "$Y$2:$Y", ["A", "B"], "");
+  row = breakdown(s, row, "By entry zone", T + "$W$2:$W", ["poc", "shelf", "thin", "none"], "");
+  row = breakdown(s, row, "By sweep zone (setup A)", T + "$X$2:$X", ["poc", "thin", "shelf", "none"], "," + setup + ",\"A\"");
+  breakdown(s, row, "Setup A by entry zone", T + "$W$2:$W", ["poc", "shelf", "thin", "none"], "," + setup + ",\"A\"");
+}
+
+// One results table: Trades / Wins / Win rate / Avg R / Total R / Total $ per
+// value in col. extra = more COUNTIFS/SUMIFS criteria (e.g. setup A only).
+function breakdown(s, row, title, col, names, extra) {
+  var T = "'" + VMAP_TRADES + "'!";
+  var res = T + "$T$2:$T", rr = T + "$R$2:$R", usd = T + "$S$2:$S";
+  s.getRange(row, 1, 1, 7).setValues([[title, "Trades", "Wins", "Win rate", "Avg R", "Total R", "Total $ (2 ES)"]]).setFontWeight("bold");
+  for (var i = 0; i < names.length; i++) {
+    var r = row + 1 + i, key = col + ",A" + r + extra;
+    s.getRange(r, 1, 1, 7).setValues([[
+      names[i],
+      "=COUNTIFS(" + key + "," + res + ",\"<>OPEN\"," + res + ",\"<>\")",
+      "=COUNTIFS(" + key + "," + res + ",\"Win\")",
+      "=IFERROR(C" + r + "/B" + r + ",0)",
+      "=IFERROR(F" + r + "/B" + r + ",0)",
+      "=SUMIFS(" + rr + "," + key + ")",
+      "=SUMIFS(" + usd + "," + key + ")"
+    ]]);
+  }
+  s.getRange(row + 1, 4, names.length, 1).setNumberFormat("0%");
+  s.getRange(row + 1, 5, names.length, 1).setNumberFormat("0.00");
+  s.getRange(row + 1, 7, names.length, 1).setNumberFormat("$#,##0");
+  return row + names.length + 2;
 }
 
 /** Adds one sample trade so you can see the layout; delete its rows after. */
@@ -244,4 +336,14 @@ function addTestTrade() {
   recordTp(ss, { id: "TEST-1", side: "LONG", time: "2026-09-30 10:22", level: "TP1", price: 7804 });
   recordTp(ss, { id: "TEST-1", side: "LONG", time: "2026-09-30 10:31", level: "TP2", price: 7808 });
   recordExit(ss, { id: "TEST-1", side: "LONG", time: "2026-09-30 10:40", exit: 7809.5, reason: "EMA", tp_hits: 2, pnl_pts: 9.5 });
+}
+
+/** Adds one sample VMap trade to the CRT Pro VMap tab; delete its row after. */
+function addTestVmapTrade() {
+  var ss = SpreadsheetApp.getActiveSpreadsheet();
+  ensureVmapTabs(ss);
+  var src = VMAP_SOURCE;
+  recordEntry(ss, { source: src, id: "VM-TEST-1", side: "LONG", time: "2026-09-30 10:15", entry: 7738, sl: 7734, risk_pts: 4, tp1: 7741.5, tp2: 7751.75, tp3: 7762, tf: "5", setup: "A", poc: 7742.5, dist_to_poc_pts: -4.5, entry_zone: "shelf", sweep_zone: "thin" });
+  recordTp(ss, { source: src, id: "VM-TEST-1", side: "LONG", time: "2026-09-30 10:22", level: "TP1", price: 7741.5 });
+  recordExit(ss, { source: src, id: "VM-TEST-1", side: "LONG", time: "2026-09-30 10:40", exit: 7734, reason: "SL", tp_hits: 1, pnl_pts: -4 });
 }
