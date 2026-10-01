@@ -38,6 +38,12 @@ Newest decisions win; move finished items to Done with the date.
 - [ ] Update the SOP quote prices and the business plan (old tier names, weekday 8-5 hours) to match the new menu.
 
 ### Defined Risk Trading
+- [ ] Move off prop-firm resets to your own MES account (plan 10/1):
+    1. Paper trade CRT Pro + VMap test on TradingView for a few weeks (free).
+    2. Catch up bills first (Workspace, OneMain, Spotloan).
+    3. Open NinjaTrader Free plan (no minimum, $50 MES day margin, ~$1.88 round trip, data + TradingView once funded). Fund small, trade 1 MES (4-pt stop = ~$22).
+    4. Don't fund until ready to trade ($35 fee after 30 days with no trade).
+- [ ] Check the Lucid Trading order history for the real September reset total (estimate ~$1,700).
 - [ ] Fill column H on Forward Test Log rows #139 and #140 (#140 → 7734; #139 → lowest low after 20:31 ET before the rally).
 - [ ] Record Modules 4 and 5 from the v3 decks (final 10/1: POC lesson 4.5, 30m profile, 3.5-4 pt stops, 1 or 2 contract sizing). Scripts: Drive Doc "Modules 4 & 5 Scripts (v3)". Convert decks to Google Slides.
 - [ ] Build the indicator comparison page (CRT Pro ES vs CRT + Divergence vs CRT Setups) once CRT Pro has a few days of trades. Same scoring: R, $ at 2 ES, win rate, by session in ET, 10 AM-12 PM window.
