@@ -55,6 +55,7 @@ Newest decisions win; move finished items to Done with the date.
 
 ## Done
 - 10/1 Verizon past-due paid.
+- 10/1 October rent ($675) paid.
 - 9/30 Faceless channel: paused (theme-page research verified; skip paid coaching; a $0 30-day Reddit-story test is ready if revisited).
 - 9/30 support@definedrisktrading.com forwards to babybro652@gmail.com (confirmed).
 - 9/30 Install CRT Pro logging (Pine code + tracker + alert), then Entry/SL/TP1-3 added and reinstalled.

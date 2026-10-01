@@ -53,7 +53,8 @@ calendar, `TODO.md` in the repo), and open items from the profile doc.
 
 ## Monthly bills (known)
 Include these in any bill list or budget, even if no email shows them:
-- Rent: $675/month, due the 1st, latest the 5th. Reminder routine fires the 28th, 7:47 PM.
+- Rent: $675/month, due the 1st, latest the 5th. Reminder routine fires the 28th, 7:47 PM. October paid.
+- Payday: every Thursday (weekly). Plan bills around it: on Thursdays, list what's due before next Thursday.
 Bills found in email 10/1: Google Workspace (failing), OneMain (past due $611.34),
 Spotloan ($218.95), Together Loans, Bison Green (real loan, paused), TrueAccord
 ($516.88, collections). Subscriptions: Claude $20, Canva $15, TradingView $14.95,
