@@ -41,6 +41,7 @@ Newest decisions win; move finished items to Done with the date.
 - [ ] Fill column H on Forward Test Log rows #139 and #140 (#140 → 7734; #139 → lowest low after 20:31 ET before the rally).
 - [ ] Record Modules 4 and 5 (v2 decks + updated scripts delivered 9/29-9/30; convert decks to Google Slides).
 - [ ] Build the indicator comparison page (CRT Pro ES vs CRT + Divergence vs CRT Setups) once CRT Pro has a few days of trades. Same scoring: R, $ at 2 ES, win rate, by session in ET, 10 AM-12 PM window.
+- [ ] YouTube for DRT (researched 10/1, on hold until Tim says go): feeder for Skool, 3-4 hrs/week from existing breakdowns, reels and module clips. Blotato YouTube account 48727 already connected; Tim confirms it's the right channel, adds banner/logo/About, verifies phone.
 - [ ] Turn off the Nested Lumen nl-* skills.
 - [ ] Optional: delete the 3 old branches on GitHub (all fully in main).
 - [ ] FUTURE UPGRADE (after CRT Pro hit rate improves): position-tool style boxes on CRT Pro. Red box entry→SL, green box entry→TP3 with TP1/TP2 dashed inside, label with risk pts / $ at 2 ES and R:R per TP. Boxes run until the trade closes; replaces the plain lines. Sheet unchanged; needs a new alert after pasting.
