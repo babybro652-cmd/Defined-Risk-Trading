@@ -37,6 +37,12 @@ Newest decisions win; move finished items to Done with the date.
     - Add a maintenance wash to the menu? (the SOP sells one)
 - [ ] Update the SOP quote prices and the business plan (old tier names, weekday 8-5 hours) to match the new menu.
 
+### Calm Wings (Ventures)
+- [ ] Pick the Etsy shop name.
+- [ ] Open the Etsy shop (steps: ventures/calm-wings-journal/etsy/shop-setup.md, about $15, 1 hr).
+- [ ] Upload the 5 listings (files, images, copy ready in ventures/calm-wings-journal/etsy/). Target launch 10/10.
+- [ ] Decide: launch sale, Offsite Ads opt-out, counselor/group license.
+
 ### Defined Risk Trading
 - [ ] Move off prop-firm resets to your own MES account (plan 10/1):
     1. Paper trade CRT Pro + VMap test on TradingView for a few weeks (free).
