@@ -49,11 +49,21 @@ class Tf:
         return (self.cx + x, self.cy + y)
 
 
+# Points closer than this (in points, 1/72") to the last kept point are dropped and
+# coordinates are rounded to 0.01 pt. Invisible in print, and it keeps PDFs small.
+MIN_STEP = 0.35
+
+
 def poly_path(c, pts, close=True):
     p = c.beginPath()
-    p.moveTo(*pts[0])
-    for q in pts[1:]:
-        p.lineTo(*q)
+    lx, ly = pts[0]
+    p.moveTo(round(lx, 2), round(ly, 2))
+    last = len(pts) - 1
+    for i, (x, y) in enumerate(pts[1:], 1):
+        if i < last and abs(x - lx) < MIN_STEP and abs(y - ly) < MIN_STEP:
+            continue
+        p.lineTo(round(x, 2), round(y, 2))
+        lx, ly = x, y
     if close:
         p.close()
     return p

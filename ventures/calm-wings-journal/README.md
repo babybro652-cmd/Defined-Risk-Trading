@@ -11,6 +11,16 @@ built so it can become a product Tim sells.
 - `designs.py`: full-page coloring designs (mandala, geometric, 13 weekly rewards, mood butterfly cells)
 - `butterfly_art.py`: vector butterfly engine (symmetric wings, bands, veins, spots, eyespots)
 
+## Etsy (approved 10/2)
+`python3 build_etsy.py` builds all 5 Etsy listings into `etsy/` (about 30 s): one folder per product with
+`files/` (upload these) and `images/` (5 listing photos, 2000x2000). Copy is in `etsy/listings.md`; shop
+setup, policies and FAQ in `etsy/shop-setup.md`. Letter + A4 for every product (`--size a4` on
+`build_journal.py`, or `set_page_size()`). The generic journal now has a "Before you begin" page 2
+(disclaimer, crisis lines incl. outside-US, terms of use), so it is 169 pages. Shop name: set
+`CONFIG["shop_name"]` and rebuild. Path simplification in `butterfly_art.poly_path` cut PDFs from ~7 MB to ~2.8 MB.
+The two PDFs in this folder are the older 10/2 builds (QR box, 168 pp); use `etsy/` for selling.
+Mockups: `etsy_mockups.py`. Extra coloring designs: `designs.sampler`, `designs.monarch_meadow`.
+
 ## Rebuild
 ```
 pip install reportlab
@@ -36,7 +46,7 @@ back page.
 - Rebrand: change `CONFIG` (title, subtitles, file names) and `PALETTE` at the top of `build_journal.py`.
 - Fonts: uses system Liberation Sans + FreeSerif Italic (both embeddable). To use Quicksand / Nunito / Caveat,
   drop their static TTFs in `fonts/` (e.g. `fonts/Quicksand-Regular.ttf`, `fonts/Caveat-Regular.ttf`); the script picks them up.
-- PMR page has a placeholder box "QR code: guided audio (add link)". Record or license audio first, then add a real QR.
+- PMR page: the old QR placeholder is now a "My favorite calming audio" write-in line.
 - Before selling: re-check the US resource numbers in `content.py` (988, 741741, NAMI, SAMHSA), get a quick review
   from a licensed therapist, and keep the "supports, not replaces, care from a professional" note.
 - Possible listings: Etsy digital download, Shopify digital product, or Amazon KDP (KDP needs bleed/trim settings changed).

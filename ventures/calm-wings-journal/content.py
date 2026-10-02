@@ -198,4 +198,33 @@ RESOURCES = [
     ("SAMHSA Helpline", "1-800-662-4357. Free treatment referral and information, 24/7."),
     ("Find a therapist", "findtreatment.gov, your insurance member services line, or your doctor."),
     ("Emergency", "Call 911 if you or someone else is in immediate danger."),
+    ("Outside the US", "Call your local emergency number, or find a free helpline in your country at "
+     "findahelpline.com."),
 ]
+
+# "Before you begin" page (page 2 of every Etsy product)
+DISCLAIMER = (
+    "Calm Wings is a self-reflection {product} for general wellbeing. It is not medical advice, diagnosis, "
+    "or treatment, and it supports, not replaces, care from a licensed professional. If something in here "
+    "doesn't feel right for you, skip it."
+)
+
+CRISIS_SHORT = [
+    ("In the US", "Call or text 988 (Suicide & Crisis Lifeline), or text HOME to 741741. Free and "
+     "confidential, 24/7."),
+    ("Emergency", "Call 911, or your local emergency number, if you or someone else is in danger."),
+    ("Outside the US", "Find a free helpline in your country at findahelpline.com."),
+]
+
+TERMS = (
+    "This printable is for your personal use. You're welcome to print as many copies as you need for "
+    "yourself and your household, at home or at a print shop.\n"
+    "Please don't share, resell, or upload the file, or sell printed copies. If you'd like to use it with a "
+    "group, class, or clients, send a message through the shop and we'll talk about it.\n"
+    "Thank you for supporting a small shop."
+)
+
+PRINT_NOTE = (
+    "See the \"How to print\" guide that came with your download for paper, double-sided printing, and "
+    "print-shop tips. Colored pencils work best on the coloring pages."
+)

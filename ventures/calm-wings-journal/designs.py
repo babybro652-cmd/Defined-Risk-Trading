@@ -508,7 +508,7 @@ def wk_deco_arch(c, box, ink):
     draw_butterfly(c, cx, cy + H * 0.2, W * 0.3, DECO, lw=LW, ink=ink)
 
 
-def wk_finale(c, box, ink, days=90):
+def wk_finale(c, box, ink, days=90, label=None):
     cx, cy, W, H = fit(box)
     x0, y0, x1, y1 = box
     cl = branch(c, ((x0 - 2, y1 - H * 0.08), (x0 + W * 0.2, y1 - H * 0.05), (x0 + W * 0.4, y1 - H * 0.12),
@@ -531,7 +531,7 @@ def wk_finale(c, box, ink, days=90):
         hpat=[("band", 0.42), ("veins", 3, 0.0, 0.42, 0.05), ("spots", 3, 0.68, 0.06), ("band", 0.86)],
     )
     draw_butterfly(c, cx + W * 0.1, cy - H * 0.04, W * 0.32, style, lw=LW, ink=ink)
-    banner(c, cx, y0 + H * 0.06, W * 0.36, 34, f"{days} days", ink)
+    banner(c, cx, y0 + H * 0.06, W * 0.36, 34, label or f"{days} days", ink)
     for (fx, fy) in ((0.85, 0.85), (0.12, 0.35), (0.9, 0.3)):
         star(c, x0 + W * fx, y0 + H * fy, W * 0.03, ink, LW * 0.9)
 
@@ -569,7 +569,9 @@ def _splits(w, n, k0, k1):
     return out
 
 
-def mood_cells(c, box, ink, muted, start_day=1):
+def mood_cells(c, box, ink, muted, start_day=1, n_days=None):
+    """30 numbered wing cells. n_days (calendar months): cells past n_days stay blank,
+    and n_days=31 adds a round 31st cell under the butterfly."""
     cx, cy, W, H = fit(box)
     size = min(W / 2.15, H / 1.72)
     fore = Wing((0.03, 0.06), 82, -8, [0, 0.74, 0.96, 1.0, 0.93, 0.78, 0.6, 0.0])
@@ -605,7 +607,60 @@ def mood_cells(c, box, ink, muted, start_day=1):
                 dd += 1
     c.setFillColor(muted)
     c.setFont("Sans", 8)
+    last = start_day + n_days - 1 if n_days else None
     for (tx, ty), num, _ in labels:
+        if last is not None and num > last:
+            continue
         c.drawCentredString(tx, ty - 2.8, str(num))
     art.draw_body(c, Tf(cx, cyy, size), LW, ink)
+    if n_days and n_days > 30:
+        r = size * 0.07
+        ex, ey = cx, cyy - size * 0.86
+        setup(c, ink, LW * 1.3)
+        c.circle(ex, ey, r, stroke=1, fill=1)
+        c.setFillColor(muted)
+        c.setFont("Sans", 8)
+        c.drawCentredString(ex, ey - 2.8, str(start_day + 30))
     c.restoreState()
+
+
+# --------------------------------------------------------------------------
+# extra designs for the stand-alone coloring pack
+# --------------------------------------------------------------------------
+
+
+def sampler(c, box, ink):
+    """Nine butterfly styles, each in its own scalloped frame."""
+    x0, y0, x1, y1 = box
+    W, H = x1 - x0, y1 - y0
+    styles = ["classic", "swallowtail", "round", "scallop", "peacock", "petal", "monarch", "lacy", "mandala"]
+    cw, ch = W / 3, H / 3
+    for i, st in enumerate(styles):
+        cx = x0 + cw * (i % 3 + 0.5)
+        cy = y1 - ch * (i // 3 + 0.5)
+        setup(c, ink, LW)
+        c.roundRect(cx - cw / 2 + 5, cy - ch / 2 + 5, cw - 10, ch - 10, 14, stroke=1, fill=0)
+        c.roundRect(cx - cw / 2 + 11, cy - ch / 2 + 11, cw - 22, ch - 22, 10, stroke=1, fill=0)
+        # corner leaves
+        for sx, sy, a in ((-1, 1, 135), (1, 1, 45), (-1, -1, 225), (1, -1, -45)):
+            draw_leaf(c, cx + sx * (cw / 2 - 22), cy + sy * (ch / 2 - 22), min(cw, ch) * 0.09, a + 180,
+                      LW * 0.9, ink)
+        draw_butterfly(c, cx, cy + ch * 0.03, min(cw, ch) * 0.34, st, lw=LW, ink=ink)
+
+
+def monarch_meadow(c, box, ink):
+    """One big monarch over a row of daisies and tulips."""
+    cx, cy, W, H = fit(box)
+    x0, y0, x1, y1 = box
+    draw_butterfly(c, cx, cy + H * 0.14, W * 0.38, "monarch", lw=LW * 1.1, ink=ink)
+    for i, fx in enumerate((0.08, 0.22, 0.36, 0.5, 0.64, 0.78, 0.92)):
+        x = x0 + W * fx
+        top = y0 + H * (0.2 + 0.06 * ((i * 3) % 4) / 3)
+        stem(c, [(x, y0 + 4), (x + 4, y0 + (top - y0) * 0.35), (x - 3, y0 + (top - y0) * 0.7), (x, top)], ink)
+        draw_leaf(c, x, y0 + H * 0.06, W * 0.06, 40 if i % 2 else 140, LW, ink)
+        if i % 2 == 0:
+            draw_daisy(c, x, top, W * 0.05, 12, LW, ink)
+        else:
+            draw_tulip(c, x, top - W * 0.02, W * 0.07, LW, ink)
+    for (fx, fy, s, a) in ((0.14, 0.36, 0.06, -20), (0.86, 0.4, 0.05, 25)):
+        draw_butterfly(c, x0 + W * fx, y0 + H * fy, W * s, "simple", angle=a, lw=LW * 0.9, ink=ink)

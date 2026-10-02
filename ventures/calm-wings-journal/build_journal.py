@@ -13,7 +13,7 @@ import os
 import sys
 
 from reportlab.lib.colors import HexColor, white
-from reportlab.lib.pagesizes import letter
+from reportlab.lib.pagesizes import A4, letter
 from reportlab.lib.units import inch
 from reportlab.pdfbase import pdfmetrics
 from reportlab.pdfbase.ttfonts import TTFont
@@ -43,7 +43,13 @@ CONFIG = {
     "margin": 0.6,
     "binding_extra": 0.25,
     "duplex": True,       # True: binding edge alternates (double-sided print)
+    "page_size": "letter",  # "letter" (US) or "a4" (UK, EU, AU)
+    "year": 2026,           # copyright year on the "Before you begin" page
+    "shop_name": None,      # e.g. "Calm Wings Journal"; None keeps the shop name off the pages
+    "about_page": True,     # generic edition: page 2 = disclaimer + terms of use
 }
+
+PAGE_SIZES = {"letter": letter, "a4": A4}
 
 PALETTE = {
     "ink": "#3E4050",      # body text
@@ -82,6 +88,13 @@ FONT_CANDIDATES = {
 
 C = {k: HexColor(v) for k, v in PALETTE.items()}
 PW, PH = letter
+
+
+def set_page_size(name):
+    """Switch every layout to US Letter or A4. Layouts read PW / PH at draw time."""
+    global PW, PH
+    PW, PH = PAGE_SIZES[name.lower()]
+    return PW, PH
 
 
 def register_fonts():
@@ -301,6 +314,8 @@ class Journal:
     def plan(self):
         P = self
         P.add(cover, footer=False)
+        if self.generic and self.cfg.get("about_page"):
+            P.add(about_page, "journal")
         P.mark("start")
         for fn in (welcome, how_anxiety_works, starting_point, my_people, more_help, key_pages):
             P.add(fn)
@@ -356,7 +371,8 @@ class Journal:
     # --------------------------------------------------------------- build
     def build(self, path):
         self.plan()
-        c = canvas.Canvas(path, pagesize=letter)
+        set_page_size(self.cfg.get("page_size", "letter"))
+        c = canvas.Canvas(path, pagesize=(PW, PH))
         title_txt = self.cfg["title"] + ": " + self.subtitle()
         c.setTitle(title_txt)
         c.setAuthor("Calm Wings")
@@ -384,8 +400,15 @@ class Journal:
 # ==========================================================================
 
 
-def cover(J, c, F):
+def cover(J, c, F, opts=None):
+    """opts (optional, for the stand-alone packs): title, subtitle, tagline, style, fills, lineart."""
+    o = dict(title=J.cfg["title"], subtitle=J.subtitle(), tagline="breathe  \u00b7  notice  \u00b7  grow",
+             style="classic", fills=("lavender", "mint", "peach"), lineart=False,
+             belongs="This journal belongs to" if J.generic else None)
+    o.update(opts or {})
     cx = PW / 2
+    c.saveState()
+    c.translate(0, (PH - letter[1]) / 2)   # A4 is taller: keep the design centered
     # soft halo
     c.saveState()
     c.setFillColor(C["tint"])
@@ -395,8 +418,9 @@ def cover(J, c, F):
     c.setDash(1, 4)
     c.circle(cx, 500, 206, stroke=1, fill=0)
     c.restoreState()
-    art.draw_butterfly(c, cx, 505, 168, "classic", lw=1.0, ink=C["art"],
-                       fills=(C["lavender"], C["mint"], C["peach"]), body_fill=white)
+    fills = None if o["lineart"] else tuple(C[k] for k in o["fills"])
+    art.draw_butterfly(c, cx, 505, 168, o["style"], lw=1.2 if o["lineart"] else 1.0, ink=C["art"],
+                       fills=fills, body_fill=white)
     # little companions with dotted flight trails
     trail = art.bezier_pts((cx - 205, 300), (cx - 250, 360), (cx - 170, 400), (cx - 218, 452))
     art.dashed_path(c, trail, lw=0.6, ink=C["muted"], dash=(0.8, 3.5))
@@ -405,9 +429,8 @@ def cover(J, c, F):
     art.dashed_path(c, trail2, lw=0.6, ink=C["muted"], dash=(0.8, 3.5))
     small_fly(c, cx + 150, 698, 14, 1, angle=28)
     small_fly(c, cx + 208, 300, 12, 4, angle=-12)
-    text(c, cx, 228, J.cfg["title"], "Accent", 58, C["accent"], "center")
-    sub = J.subtitle()
-    text(c, cx, 192, sub, "Sans", 15, C["ink"], "center", space=0.6)
+    text(c, cx, 228, o["title"], "Accent", 58, C["accent"], "center")
+    text(c, cx, 192, o["subtitle"], "Sans", 15, C["ink"], "center", space=0.6)
     c.saveState()
     c.setStrokeColor(C["rule"])
     c.setLineWidth(0.7)
@@ -416,12 +439,41 @@ def cover(J, c, F):
     c.restoreState()
     c.setFillColor(C["accent"])
     c.circle(cx, 170, 2, stroke=0, fill=1)
-    text(c, cx, 150, "breathe  ·  notice  ·  grow", "Sans", 9.5, C["muted"], "center", space=1.2)
-    if J.generic:
-        text(c, cx - 150, 82, "This journal belongs to", "Sans", 9.5, C["muted"])
+    text(c, cx, 150, o["tagline"], "Sans", 9.5, C["muted"], "center", space=1.2)
+    if o["belongs"]:
+        bx = cx - 150
+        text(c, bx, 82, o["belongs"], "Sans", 9.5, C["muted"])
         c.setStrokeColor(C["rule"])
         c.setLineWidth(0.6)
-        c.line(cx - 40, 80, cx + 150, 80)
+        c.line(bx + sw(o["belongs"], "Sans", 9.5) + 8, 80, cx + 150, 80)
+    c.restoreState()
+
+
+def about_page(J, c, F, product="journal"):
+    """Page 2 of every product: disclaimer, crisis lines, terms of use."""
+    kicker(c, F, "Before you begin")
+    y = title(c, F, "A few words first")
+    small_fly(c, F.right - 26, F.top - 26, 22, 2, angle=14)
+    y -= 4
+    rbox(c, F.left, y + 14, F.w, 100, 14, stroke=C["accent"], fill=C["tint"], lw=1.0)
+    label(c, F.left + 20, y - 8, f"About this {product}", 11.5, C["accent"])
+    para(c, F.left + 20, y - 28, F.w - 40, content.DISCLAIMER.format(product=product), "Sans", 10.5, 15.5)
+    y -= 122
+    label(c, F.left, y, "If you need help now", 11.5, C["accent"])
+    y -= 22
+    for a, b in content.CRISIS_SHORT:
+        text(c, F.left, y, a, "SansB", 10.5)
+        y = para(c, F.left + 130, y, F.w - 130, b, "Sans", 10.5, 15) - 9
+    y -= 14
+    label(c, F.left, y, "Terms of use", 11.5, C["accent"])
+    y = para(c, F.left, y - 22, F.w, content.TERMS.format(product=product), "Sans", 10.5, 15.5, after=8) - 14
+    label(c, F.left, y, "Printing", 11.5, C["accent"])
+    y = para(c, F.left, y - 22, F.w, content.PRINT_NOTE, "Sans", 10.5, 15.5) - 26
+    shop = J.cfg.get("shop_name")
+    owner = f"Calm Wings by {shop}" if shop else "Calm Wings"
+    text(c, F.left, y, f"\u00a9 {J.cfg.get('year', 2026)} {owner}. All rights reserved.", "Sans", 9, C["muted"])
+    text(c, F.left, y - 14, "Content and art created with AI assistance and reviewed by the maker.", "Sans", 9,
+         C["muted"])
 
 
 def welcome(J, c, F):
@@ -586,10 +638,11 @@ def my_people(J, c, F):
     text(c, F.left + 140, y - 9, "988  (call or text, US Suicide & Crisis Lifeline)", "SansB", 10.5)
 
 
-def more_help(J, c, F):
-    kicker(c, F, "Start here")
+def more_help(J, c, F, product="journal", kick="Start here"):
+    kicker(c, F, kick)
     y = title(c, F, "When to get more help")
-    y = para(c, F.left, y, F.w, content.HELP_INTRO, "Sans", 10.5, 15.5) - 12
+    intro = content.HELP_INTRO.replace("This journal", f"This {product}")
+    y = para(c, F.left, y, F.w, intro, "Sans", 10.5, 15.5) - 12
     for b in content.HELP_SIGNS:
         c.setFillColor(C["accent"])
         c.circle(F.left + 5, y + 3.5, 2.2, stroke=0, fill=1)
@@ -840,18 +893,16 @@ def grounding(J, c, F):
 def pmr(J, c, F):
     kicker(c, F, "SOS toolkit")
     y = title(c, F, "Progressive muscle relaxation")
-    qr = 116
-    qx = F.right - qr
-    tw = F.w - qr - 26
-    y0 = y
-    y = para(c, F.left, y, tw, "Tense each part of your body for about 5 seconds, then let it go for about "
+    y = para(c, F.left, y, F.w, "Tense each part of your body for about 5 seconds, then let it go for about "
              "10 seconds and notice the difference. Tense gently. It should never hurt. Sitting or lying down "
              "both work.", "Sans", 10.5, 15.5, C["muted"]) - 12
-    # QR placeholder
-    rbox(c, qx, y0 + 4, qr, qr, 10, stroke=C["muted"], dash=(3, 3))
-    para(c, qx + 10, y0 - qr / 2 + 14, qr - 20, "QR code: guided audio (add link)", "Sans", 8.5, 12,
-         C["muted"], "center")
-    y = min(y, y0 - qr - 10) - 6
+    # write-in for the reader's own calming audio (replaces the old QR placeholder)
+    rbox(c, F.left, y + 4, F.w, 62, 12, stroke=False, fill=C["tint"])
+    text(c, F.left + 16, y - 16, "My favorite calming audio", "SansB", 10.5, C["accent"])
+    text(c, F.left + 16 + sw("My favorite calming audio", "SansB", 10.5) + 8, y - 16,
+         "a song, playlist, podcast, or guided recording that helps me relax", "Sans", 8.5, C["muted"])
+    rule_lines(c, F.left + 16, y - 42, F.w - 32, 1)
+    y -= 84
     for i, (part, how) in enumerate(content.PMR_STEPS, 1):
         badge(c, F.left + 11, y + 3.5, str(i), C["lavender"], 10, 9)
         text(c, F.left + 30, y, part, "SansB", 10.5)
@@ -964,7 +1015,7 @@ def coloring_page(J, c, F, which):
 
 def will_pass(J, c, F):
     kicker(c, F, "SOS toolkit")
-    y = title(c, F, "This will pass", align="center", y=F.top - 44)
+    y = title(c, F, "This will pass", align="center", y=F.top - 44) - 8
     y = para(c, F.left + 40, y, F.w - 80, "Gentle words for the hard moments. Read them slowly, out loud if you can. "
              "Circle the ones that fit.", "Sans", 10.5, 15.5, C["muted"], "center") - 18
     for i, ph in enumerate(content.PASS_PHRASES):
@@ -1426,7 +1477,7 @@ def keep_going(J, c, F):
     kicker(c, F, "Look back")
     y = title(c, F, "Keep going")
     y = para(c, F.left, y, F.w, content.KEEP_GOING, "Sans", 10.5, 16, after=10) - 18
-    label(c, F.left, y, "Support and resources (US)", 11.5, C["accent"])
+    label(c, F.left, y, "Support and resources", 11.5, C["accent"])
     y -= 24
     for a, b in content.RESOURCES:
         text(c, F.left, y, a, "SansB", 10.5)
@@ -1444,6 +1495,8 @@ def back_page(J, c, F):
          "Sans", 9.5, C["ink"], "center")
     text(c, F.cx, PH / 2 - 66, "In a crisis, call or text 988 (US). In an emergency, call 911.",
          "Sans", 8.5, C["muted"], "center")
+    text(c, F.cx, PH / 2 - 80, "Outside the US, call your local emergency number or visit findahelpline.com.",
+         "Sans", 8.5, C["muted"], "center")
 
 
 # ==========================================================================
@@ -1454,9 +1507,10 @@ def main():
     ap.add_argument("--edition", choices=["personal", "generic", "both"], default="both")
     ap.add_argument("--name", default=CONFIG["name"])
     ap.add_argument("--out", default=HERE)
+    ap.add_argument("--size", choices=["letter", "a4"], default=CONFIG["page_size"])
     args = ap.parse_args()
     register_fonts()
-    cfg = dict(CONFIG, name=args.name)
+    cfg = dict(CONFIG, name=args.name, page_size=args.size)
     eds = ["personal", "generic"] if args.edition == "both" else [args.edition]
     for ed in eds:
         generic = ed == "generic"

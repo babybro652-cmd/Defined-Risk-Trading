@@ -14,8 +14,10 @@ README and both PDFs: `ventures/calm-wings-journal/`. Name, title and palette ar
 parameters at the top of the build script. Evidence base: CBT thought records, worry
 time, expressive writing, positive affect journaling, grounding, structured coloring.
 Always keep the "supports, not replaces, professional care" note and crisis resources
-(988). Never market it as treatment or make medical claims. Open items: audio QR
-placeholder, nicer fonts (download was blocked), fillable tablet version (future).
+(988). Never market it as treatment or make medical claims. Etsy approved 10/2: 5 listings
+(journal, bundle, coloring pack, SOS kit, mood tracker) built by `build_etsy.py` into `etsy/`
+with listings.md and shop-setup.md; shop name placeholder {SHOP_NAME} until Tim picks one.
+Open items: shop name, nicer fonts (download was blocked), fillable tablet version (future).
 
 ## Faceless content channel (paused)
 Earlier research compared Reddit storytelling with personal finance; the
