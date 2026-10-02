@@ -38,6 +38,7 @@ Newest decisions win; move finished items to Done with the date.
 - [ ] Update the SOP quote prices and the business plan (old tier names, weekday 8-5 hours) to match the new menu.
 
 ### Peace by Page (Ventures)
+- [ ] Work through the launch build-out sheet, step by step (domain to first sales, 67 steps, target launch 10/10): [Peace by Page: Launch Build-Out](https://docs.google.com/spreadsheets/d/1TLL394lyp_JITaeTmSNjxmjrJ_4T-Ie6UZMhja7xzOk/edit)
 - [ ] Buy peacebypage.com (~$11).
 - [ ] Claim @peacebypage on Instagram, TikTok and Pinterest.
 - [ ] Open a free Payhip account (Etsy is out: old account permanently suspended 10/24/2024).
