@@ -37,11 +37,11 @@ Newest decisions win; move finished items to Done with the date.
     - Add a maintenance wash to the menu? (the SOP sells one)
 - [ ] Update the SOP quote prices and the business plan (old tier names, weekday 8-5 hours) to match the new menu.
 
-### Calm Wings (Ventures)
-- [ ] Pick the Etsy shop name.
-- [ ] Open the Etsy shop (steps: ventures/calm-pages/editions/calm-wings/shop-setup.md, about $15, 1 hr).
-- [ ] Upload the 5 listings (files, images, copy ready in ventures/calm-pages/editions/calm-wings/). Target launch 10/10.
-- [ ] Decide: launch sale, Offsite Ads opt-out, counselor/group license.
+### Calm Pages Co. (Ventures)
+- [ ] Pick the brand name (working: Calm Pages Co.; shortlist Quiet Mind Co., Peace by Page, Stillwater Journals). Jarvis checks availability.
+- [ ] Open a free Payhip account (Etsy is out: old account permanently suspended 10/24/2024).
+- [ ] Upload the 15 products (Calm Wings, Calm Petals, Calm Nights) (files, images, copy ready in ventures/calm-pages/editions/; links doc in Drive 05 Calm Pages Co / Calm Wings). Target launch 10/10.
+- [ ] Decide: launch sale, counselor/group license.
 
 ### Defined Risk Trading
 - [ ] Move off prop-firm resets to your own MES account (plan 10/1):
