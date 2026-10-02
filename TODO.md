@@ -46,7 +46,7 @@ Newest decisions win; move finished items to Done with the date.
 - [ ] Check the Lucid Trading order history for the real September reset total (estimate ~$1,700).
 - [ ] Fill column H on Forward Test Log rows #139 and #140 (#140 → 7734; #139 → lowest low after 20:31 ET before the rally).
 - [ ] Record Modules 4 and 5 from the v3 decks (final 10/1: POC lesson 4.5, 30m profile, 3.5-4 pt stops, 1 or 2 contract sizing). Scripts: Drive Doc "Modules 4 & 5 Scripts (v3)". Convert decks to Google Slides.
-- [ ] Build the indicator comparison page (CRT Pro ES vs CRT + Divergence vs CRT Setups) once CRT Pro has a few days of trades. Same scoring: R, $ at 2 ES, win rate, by session in ET, 10 AM-12 PM window.
+- [ ] Build the indicator comparison page (CRT Pro ES vs CRT + Divergence vs CRT Setups) once CRT Pro has a few days of trades. Same scoring: R, $ at 2 ES, win rate, by session in ET, 10 AM-12 PM window. Include the TP-then-SL rows under alternative exits (BE after TP1, half at TP1, full at TP1); see drt.md analysis notes.
 - [ ] YouTube for DRT (researched 10/1, on hold until Tim says go): feeder for Skool, 3-4 hrs/week from existing breakdowns, reels and module clips. Blotato YouTube account 48727 already connected; Tim confirms it's the right channel, adds banner/logo/About, verifies phone.
 - [ ] Install + test CRT Pro VMap (TEST) indicator (built 10/1, branch only): CRT + Volume Map combo entries, setups A/B, 4-pt stop. Logs to its own "CRT Pro VMap" tab. Review A vs B results after a week; merge to main only when Tim OKs.
 - [ ] Turn off the Nested Lumen nl-* skills.

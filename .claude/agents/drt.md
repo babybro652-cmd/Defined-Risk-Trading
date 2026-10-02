@@ -47,6 +47,19 @@ adverse move = same price as G); column I converts to ticks. Sheet:
 https://docs.google.com/spreadsheets/d/1H9KSzv9C0hIhDuWjUCQKpKURv_kEkRE5CLlLV-kmofA/edit
 Don't edit the sheet.
 
+## CRT Pro analysis notes (read before any indicator upgrade analysis)
+- CRT Pro does NOT exit or move the stop at TP1/TP2. TP hits are tracked only; the trade
+  runs to TP3 or the full stop. So "TP Reached 1+, Exit SL" rows are correct logs: price
+  touched TP1, then reversed to the full stop.
+- Every upgrade analysis must score these rows under alternative exit rules, not only as
+  actual: (a) actual, (b) stop to break-even after TP1, (c) half off at TP1 + rest to BE,
+  (d) full exit at TP1. Same for the CRT Pro VMap test tab.
+- Baseline 10/1 (71 closed trades, 9/30-10/1): actual -0.69R; BE after TP1 +10.56R;
+  half at TP1 + BE +4.65R; full exit at TP1 -1.27R. 33/71 reached TP1, 10 of those
+  reversed to full SL.
+- Also check wide-risk entries (e.g. 12.25 and 17.25 pt stops) against the course's
+  3.5-4 pt stop rule.
+
 ## Rules
 - Never name "AMD" or "CRT" in public copy.
 - Anything about a real trade (P&L, entries/exits, screenshots, recaps, funded
