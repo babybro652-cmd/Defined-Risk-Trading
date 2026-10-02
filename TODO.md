@@ -40,7 +40,6 @@ Newest decisions win; move finished items to Done with the date.
 ### Peace by Page (Ventures)
 - [ ] Buy peacebypage.com (~$11).
 - [ ] Claim @peacebypage on Instagram, TikTok and Pinterest.
-- [ ] Quick USPTO check for "Peace by Page" (tmsearch.uspto.gov, Class 16).
 - [ ] Open a free Payhip account (Etsy is out: old account permanently suspended 10/24/2024).
 - [ ] Upload the 15 products (Calm Wings, Calm Petals, Calm Nights) (files, images, copy ready in ventures/calm-pages/editions/; links doc in Drive 05 Peace by Page / Calm Wings). Target launch 10/10.
 - [ ] Decide: launch sale, counselor/group license.
@@ -62,6 +61,7 @@ Newest decisions win; move finished items to Done with the date.
 - [ ] FUTURE UPGRADE (after CRT Pro hit rate improves): position-tool style boxes on CRT Pro. Red box entry→SL, green box entry→TP3 with TP1/TP2 dashed inside, label with risk pts / $ at 2 ES and R:R per TP. Boxes run until the trade closes; replaces the plain lines. Sheet unchanged; needs a new alert after pasting.
 
 ## Done
+- 10/2 USPTO check (Jarvis): no "Peace by Page" mark filed or registered. Closest: pending "PEACE BY PIECE: MICRO-WELLNESS TOOLKIT" (filed 12/9/2025, Class 16 stress-relief printed materials, Class 44). Low-moderate risk; fine to launch. Optional later: file our own mark (~$350/class) once sales start.
 - 10/2 Brand name: Peace by Page
 - 10/1 Verizon past-due paid.
 - 10/1 October rent ($675) paid.

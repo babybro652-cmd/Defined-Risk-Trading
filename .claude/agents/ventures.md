@@ -22,7 +22,7 @@ structured coloring. Always keep the "supports, not replaces, professional care"
 (988). Never market it as treatment or make medical claims. Store: moving to Payhip (Etsy is out); new
 listing copy is platform-neutral. Prices: journal $11.99, bundle $16.99, coloring $4.99, SOS $3.99, mood $2.99.
 All three editions show the brand on covers and listing images (Wings since 10/2); personal copies stay unbranded.
-Brand to-dos for Tim: buy peacebypage.com, claim @peacebypage handles, quick USPTO check.
+Brand to-dos for Tim: buy peacebypage.com, claim @peacebypage handles. USPTO checked 10/2: no "Peace by Page" mark; closest is a pending "PEACE BY PIECE: MICRO-WELLNESS TOOLKIT" (Class 16/44, filed 12/9/2025). Keep copy from echoing "peace by piece" and avoid "micro-wellness toolkit" wording.
 Open items: nicer fonts (download was blocked), fillable tablet version (future).
 
 ## Faceless content channel (paused)
