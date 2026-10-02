@@ -47,7 +47,7 @@ CONFIG = {
     "duplex": True,       # True: binding edge alternates (double-sided print)
     "page_size": "letter",  # "letter" (US) or "a4" (UK, EU, AU)
     "year": 2026,           # copyright year on the "Before you begin" page
-    "shop_name": None,      # e.g. "Calm Pages Co."; None keeps a shop name off the pages
+    "shop_name": None,      # e.g. "Peace by Page"; None keeps a shop name off the pages
     "about_page": True,     # generic edition: page 2 = disclaimer + terms of use
 }
 

@@ -1,4 +1,4 @@
-"""Edition themes for the Calm Pages engine.
+"""Edition themes for the Peace by Page journal engine (folder: calm-pages).
 
 A theme is everything that makes an edition look and sound like itself: the series title,
 palette, art module (accents, cover art, coloring designs, mood tracker cells) and the
@@ -14,8 +14,8 @@ import importlib
 
 from reportlab.lib.colors import HexColor
 
-# The umbrella brand. Not final: change it here and rebuild.
-BRAND = "Calm Pages Co."
+# The umbrella brand (chosen 10/2). Change it here and rebuild.
+BRAND = "Peace by Page"
 
 KEYS = ("wings", "petals", "nights")
 

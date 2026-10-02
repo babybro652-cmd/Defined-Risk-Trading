@@ -205,6 +205,7 @@ Etsy fee math at $11.99 [E]: $0.20 listing + $0.78 transaction (6.5%) + $0.61 pr
 ## 5. How to market it (low time, low cost)
 
 ### 5.1 Brand and accounts
+- **Update 10/2: Tim chose the umbrella brand "Peace by Page"** (handle @peacebypage, domain peacebypage.com). Calm Wings, Calm Petals and Calm Nights stay as edition names. The options below are kept for the record.
 - **Don't use DRT (trading) or Prosperity Legendz (finance) accounts.** Mixing a mental-health journal into either audience hurts all three brands, and PL belongs to the pl agent.
 - **Recommend a new small brand**, set up only on Tim's go: an Etsy shop plus one Pinterest business account. Add TikTok/Instagram only if Tim wants video.
   - Simplest option: shop and handle **"Calm Wings Journal"** (@calmwingsjournal). The product and brand match.

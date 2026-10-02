@@ -37,10 +37,12 @@ Newest decisions win; move finished items to Done with the date.
     - Add a maintenance wash to the menu? (the SOP sells one)
 - [ ] Update the SOP quote prices and the business plan (old tier names, weekday 8-5 hours) to match the new menu.
 
-### Calm Pages Co. (Ventures)
-- [ ] Confirm the brand name. Tim liked Kindred Spirit Journals, Tranquil Ink, Peace by Page (10/2). Jarvis recommends Peace by Page: peacebypage.com open, no journal brand using it. Tranquil Ink: .com taken + tattoo shops. Kindred Spirit: UK magazine of the same name. Once confirmed: buy the .com (~$11), grab @peacebypage handles, ventures swaps the cover brand.
+### Peace by Page (Ventures)
+- [ ] Buy peacebypage.com (~$11).
+- [ ] Claim @peacebypage on Instagram, TikTok and Pinterest.
+- [ ] Quick USPTO check for "Peace by Page" (tmsearch.uspto.gov, Class 16).
 - [ ] Open a free Payhip account (Etsy is out: old account permanently suspended 10/24/2024).
-- [ ] Upload the 15 products (Calm Wings, Calm Petals, Calm Nights) (files, images, copy ready in ventures/calm-pages/editions/; links doc in Drive 05 Calm Pages Co / Calm Wings). Target launch 10/10.
+- [ ] Upload the 15 products (Calm Wings, Calm Petals, Calm Nights) (files, images, copy ready in ventures/calm-pages/editions/; links doc in Drive 05 Peace by Page / Calm Wings). Target launch 10/10.
 - [ ] Decide: launch sale, counselor/group license.
 
 ### Defined Risk Trading
@@ -60,6 +62,7 @@ Newest decisions win; move finished items to Done with the date.
 - [ ] FUTURE UPGRADE (after CRT Pro hit rate improves): position-tool style boxes on CRT Pro. Red box entry→SL, green box entry→TP3 with TP1/TP2 dashed inside, label with risk pts / $ at 2 ES and R:R per TP. Boxes run until the trade closes; replaces the plain lines. Sheet unchanged; needs a new alert after pasting.
 
 ## Done
+- 10/2 Brand name: Peace by Page
 - 10/1 Verizon past-due paid.
 - 10/1 October rent ($675) paid.
 - 9/30 Faceless channel: paused (theme-page research verified; skip paid coaching; a $0 30-day Reddit-story test is ready if revisited).

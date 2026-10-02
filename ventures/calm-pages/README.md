@@ -1,7 +1,8 @@
-# Calm Pages Co.: 90-day anxiety journals
+# Peace by Page: 90-day anxiety journals
 
-One engine, three themed editions of the same 90-day anxiety journal. **Calm Pages Co.** is the
-working umbrella brand (not final: `BRAND` in `themes.py`). Each edition is a series title.
+One engine, three themed editions of the same 90-day anxiety journal. **Peace by Page** is the
+umbrella brand (chosen 10/2, was the working name Calm Pages Co.; `BRAND` in `themes.py`). Each edition is a
+series title. The folder keeps the name `calm-pages` because Drive links and docs point to it.
 
 | Edition | Theme | Folder |
 |---|---|---|

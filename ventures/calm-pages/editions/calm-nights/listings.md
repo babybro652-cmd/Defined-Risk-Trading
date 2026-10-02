@@ -1,6 +1,6 @@
 # Calm Nights: listings (5 products)
 
-Platform-neutral copy, written for Payhip (works for any digital-download store). Brand: **Calm Pages Co.** (working name; set `BRAND` in `themes.py` and rebuild if it changes).
+Platform-neutral copy, written for Payhip (works for any digital-download store). Brand: **Peace by Page** (chosen 10/2; set as `BRAND` in `themes.py`).
 Files to upload are in `files/<product>/`, images in `images/<product>/` (01 is the main image). Every product includes Letter and A4.
 
 ## Settings for every product
@@ -281,7 +281,7 @@ Content and art created with AI assistance and reviewed by the seller.
 ---
 
 ## Before publishing (Tim)
-- [ ] Confirm the brand name (Calm Pages Co. is a working name) and rebuild if it changes
+- [x] Brand name: Peace by Page (10/2; covers and listing images rebuilt)
 - [ ] Prices as above; optional launch discount
 - [ ] Files uploaded match the list for each product; image 01 first
 - [ ] Re-check the US crisis numbers (988, 741741) are current

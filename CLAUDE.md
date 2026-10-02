@@ -27,7 +27,7 @@ Messages to him are short and phone-friendly. Full profile: Google Doc
 | `wealth` | Net worth tracker, investing, real estate (Fantasy Homes LLC, 5–20 unit buildings, tax liens), son's accounts and plan, the monthly net worth check-in |
 | `legionz` | Legionz Detailing (mobile detailing, Roxboro / Person County) |
 | `propa-pit` | Propa Pit Designs, including the merged pet-products store idea |
-| `ventures` | Calm Wings anxiety journal (product), the faceless channel (paused), new ideas |
+| `ventures` | Peace by Page anxiety journals (product), the faceless channel (paused), new ideas |
 
 ## How Jarvis routes
 
