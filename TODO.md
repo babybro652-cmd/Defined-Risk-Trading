@@ -38,7 +38,7 @@ Newest decisions win; move finished items to Done with the date.
 - [ ] Update the SOP quote prices and the business plan (old tier names, weekday 8-5 hours) to match the new menu.
 
 ### Calm Pages Co. (Ventures)
-- [ ] Pick the brand name (working: Calm Pages Co.; shortlist Quiet Mind Co., Peace by Page, Stillwater Journals). Jarvis checks availability.
+- [ ] Confirm the brand name. Tim liked Kindred Spirit Journals, Tranquil Ink, Peace by Page (10/2). Jarvis recommends Peace by Page: peacebypage.com open, no journal brand using it. Tranquil Ink: .com taken + tattoo shops. Kindred Spirit: UK magazine of the same name. Once confirmed: buy the .com (~$11), grab @peacebypage handles, ventures swaps the cover brand.
 - [ ] Open a free Payhip account (Etsy is out: old account permanently suspended 10/24/2024).
 - [ ] Upload the 15 products (Calm Wings, Calm Petals, Calm Nights) (files, images, copy ready in ventures/calm-pages/editions/; links doc in Drive 05 Calm Pages Co / Calm Wings). Target launch 10/10.
 - [ ] Decide: launch sale, counselor/group license.
