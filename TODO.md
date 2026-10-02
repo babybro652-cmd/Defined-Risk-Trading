@@ -39,8 +39,8 @@ Newest decisions win; move finished items to Done with the date.
 
 ### Calm Wings (Ventures)
 - [ ] Pick the Etsy shop name.
-- [ ] Open the Etsy shop (steps: ventures/calm-wings-journal/etsy/shop-setup.md, about $15, 1 hr).
-- [ ] Upload the 5 listings (files, images, copy ready in ventures/calm-wings-journal/etsy/). Target launch 10/10.
+- [ ] Open the Etsy shop (steps: ventures/calm-pages/editions/calm-wings/shop-setup.md, about $15, 1 hr).
+- [ ] Upload the 5 listings (files, images, copy ready in ventures/calm-pages/editions/calm-wings/). Target launch 10/10.
 - [ ] Decide: launch sale, Offsite Ads opt-out, counselor/group license.
 
 ### Defined Risk Trading
