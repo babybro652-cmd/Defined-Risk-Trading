@@ -28,8 +28,8 @@ python3 build_products.py --theme wings       # rebuilds Calm Wings byte-for-byt
 python3 build_products.py --all
 python3 build_journal.py --theme wings --edition personal --name Sekora   # a personal copy
 ```
-Check that Calm Wings is unchanged after engine edits: build with `RL_invariant=1` into two folders
-(before / after) and `cmp` the PDFs and PNGs. Verified identical on 10/2 after the refactor.
+All three retail editions carry the Peace by Page mark (Calm Wings since 10/2). Personal copies never show it.
+Sekora's copy (`editions/calm-wings/Calm_Wings_Sekora.pdf`) is frozen: don't rebuild or replace it.
 
 ## Code
 - `build_journal.py`: page layouts (shared), CONFIG for geometry, fonts, `set_theme()`

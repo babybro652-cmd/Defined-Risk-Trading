@@ -1,6 +1,6 @@
 # Calm Wings: Etsy listings (5)
 
-Copy each block into Etsy's listing form. `{SHOP_NAME}` = the shop name Tim picks; replace it before publishing.
+Copy each block into Etsy's listing form. Brand: **Peace by Page** (10/2; on the covers and listing images too).
 Upload files are in each product's `files/` folder, photos in `images/` (upload in order 01 to 05; 01 is the thumbnail).
 
 ## Settings that apply to every listing
@@ -81,7 +81,7 @@ Personal use only. Please don't share, resell or redistribute the files.
 
 Content and art created with AI assistance and reviewed by the seller.
 
-{SHOP_NAME}
+Peace by Page
 ```
 
 **FAQ (add to listing FAQ or answer in messages):**
@@ -142,7 +142,7 @@ Personal use only. Please don't share, resell or redistribute the files.
 
 Content and art created with AI assistance and reviewed by the seller.
 
-{SHOP_NAME}
+Peace by Page
 ```
 
 **FAQ:**
@@ -200,7 +200,7 @@ Personal use only. Please don't share, resell or redistribute the files, or sell
 
 Content and art created with AI assistance and reviewed by the seller.
 
-{SHOP_NAME}
+Peace by Page
 ```
 
 **FAQ:**
@@ -264,7 +264,7 @@ Personal use only. Please don't share, resell or redistribute the files.
 
 Content and art created with AI assistance and reviewed by the seller.
 
-{SHOP_NAME}
+Peace by Page
 ```
 
 **FAQ:**
@@ -321,7 +321,7 @@ Personal use only. Please don't share, resell or redistribute the files.
 
 Content and art created with AI assistance and reviewed by the seller.
 
-{SHOP_NAME}
+Peace by Page
 ```
 
 **FAQ:**
@@ -332,7 +332,7 @@ Content and art created with AI assistance and reviewed by the seller.
 ---
 
 ## Quick check before publishing (Tim)
-- [ ] Replace every `{SHOP_NAME}` (or delete that last line)
+- [x] Brand name filled in: Peace by Page (10/2)
 - [ ] Prices as above; launch sale set in Marketing > Sales and discounts, if wanted
 - [ ] Files uploaded match the list for each listing
 - [ ] Photo 01 is first in each listing

@@ -36,7 +36,7 @@ IMG = {
     "bg_top": (248, 245, 252), "bg_bot": (236, 229, 247), "ink": (62, 64, 80), "muted": (122, 125, 146),
     "accent": (126, 107, 181), "accent2": (78, 140, 133), "lav": (231, 223, 245), "mint": (215, 238, 234),
     "peach": (251, 226, 211), "rose": (248, 220, 229), "butter": (251, 240, 207), "white": (255, 255, 255),
-    "border": (226, 222, 236), "shadow": (70, 55, 110), "band": (126, 107, 181),
+    "border": (226, 222, 236), "shadow": (70, 55, 110), "band": (126, 107, 181), "band_text": (231, 223, 245),
 }
 
 
@@ -234,7 +234,7 @@ THEME = Theme(
     key="wings", slug="calm-wings", title="Calm Wings", subtitle="A 90-Day Anxiety Journal",
     file_prefix="CalmWings", file_generic="Calm_Wings_90_Day_Anxiety_Journal.pdf",
     file_personal="Calm_Wings_{name}.pdf", author="Calm Wings",
-    palette=PALETTE, img=IMG, store="Etsy",
+    palette=PALETTE, img=IMG, store="Etsy", brand_mark=True,
     cover_defaults=dict(style="classic", fills=("lavender", "mint", "peach")),
     accent=accent, cover_art=cover_art, lifecycle=lifecycle, exhale=exhale, exhale_center=exhale_center,
     sos_coloring={"mandala": ("Butterfly mandala", designs.mandala),

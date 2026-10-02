@@ -16,12 +16,12 @@ edition under `editions/` (`files/`, `images/`, `listings.md`):
 - **Calm Petals** (botanical) and **Calm Nights** (moon and stars, leans toward evenings; 171 pp), added 10/2.
 Each edition has 5 products (journal, bundle, coloring pack, SOS kit, mood tracker) in Letter + A4, built by
 `python3 build_products.py --theme wings|petals|nights`. The theme (art, palette, series title, flavor text)
-is one parameter; Calm Wings must keep rebuilding byte-identical (check with `RL_invariant=1`).
+is one parameter. Sekora's personal PDF is frozen: never rebuild or replace it.
 Evidence base: CBT thought records, worry time, expressive writing, positive affect journaling, grounding,
 structured coloring. Always keep the "supports, not replaces, professional care" note and crisis resources
 (988). Never market it as treatment or make medical claims. Store: moving to Payhip (Etsy is out); new
 listing copy is platform-neutral. Prices: journal $11.99, bundle $16.99, coloring $4.99, SOS $3.99, mood $2.99.
-Petals and Nights show the brand on covers and listing images; Calm Wings has `brand_mark` off (unbranded).
+All three editions show the brand on covers and listing images (Wings since 10/2); personal copies stay unbranded.
 Brand to-dos for Tim: buy peacebypage.com, claim @peacebypage handles, quick USPTO check.
 Open items: nicer fonts (download was blocked), fillable tablet version (future).
 

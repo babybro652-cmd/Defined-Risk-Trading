@@ -430,7 +430,7 @@ def cover(J, c, F, opts=None):
     c.saveState()
     c.translate(0, (PH - letter[1]) / 2)   # A4 is taller: keep the design centered
     T.cover_art(c, cx, o)
-    if T.brand_mark:
+    if T.brand_mark and J.generic:   # personal copies (Sekora's) stay unbranded
         brand_mark(c, cx, 742)
     text(c, cx, 228, o["title"], "Accent", 58, C["accent"], "center")
     text(c, cx, 192, o["subtitle"], "Sans", 15, C["ink"], "center", space=0.6)
