@@ -60,6 +60,20 @@ Spotloan ($218.95), Together Loans, Bison Green (real loan, paused), TrueAccord
 ($516.88, collections). Subscriptions: Claude $20, Canva $15, TradingView $14.95,
 CapCut $9.99 from 11/4, Google One $1.99. Lucid prop resets ~$105 each.
 
+## Monthly budget
+Google Sheet "Tim Monthly Budget", ID `1xgYJAvSSjophlePU2fQMdJ14fC7lFpE9yMUYVXX12_c`
+(https://docs.google.com/spreadsheets/d/1xgYJAvSSjophlePU2fQMdJ14fC7lFpE9yMUYVXX12_c/edit).
+Tabs: How to use | Transactions | Categories | Bills | Dashboard. Tim asked for it 10/1,
+so logging to it is allowed.
+- When Tim texts Jarvis a spend or income ("spent $12 gas", "got paid $X"), append a row
+  to Transactions (Date | Description | Category | In ($) | Out ($) | Paid with | Note):
+  today's date (ET), a best-fit category from the Categories tab, the amount in In or Out.
+  Confirm in one line ("Logged $12 gas, Car/Gas, Out").
+- Dashboard B3 = month shown (defaults to this month), B4 = weekly paycheck (input).
+- Bills tab: "Paid this month" checkboxes; uncheck all on the 1st.
+- Thursday brief (payday): add the Bills rows not checked as paid with a due day before
+  next Thursday.
+
 ## Open tasks
 Kept in `TODO.md` (repo root) under Personal. As of 9/30: Workspace bill (Thu 10/1),
 support@ forwarding, Skool login codes from 9/29, Stripe second sign-in method,
