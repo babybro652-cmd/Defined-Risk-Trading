@@ -46,6 +46,11 @@ up to column S (Div Valid Until, also Central); column H takes a PRICE, never 0 
 adverse move = same price as G); column I converts to ticks. Sheet:
 https://docs.google.com/spreadsheets/d/1H9KSzv9C0hIhDuWjUCQKpKURv_kEkRE5CLlLV-kmofA/edit
 Don't edit the sheet.
+Column R notes convention (Tim, 10/3), times in Central to match column C:
+`Dropped to 7755.25 @ 10:35 CT, reversed to 7783.75 @ 12:03 CT` (Bear rows; Bull rows use
+`Rallied to X @ time CT, reversed to Y @ time CT`). First part = best move in the signal's
+favor, second = the extreme of the reversal after it. Parse these in analysis (MFE and
+later reversal); H stays the adverse price before the favorable move.
 
 ## CRT Pro analysis notes (read before any indicator upgrade analysis)
 - CRT Pro does NOT exit or move the stop at TP1/TP2. TP hits are tracked only; the trade
