@@ -91,6 +91,19 @@ It fails if any two captions share a run of 5+ words in a row (hashtags and trad
 
 ### Step 5: Pre-publish checks
 
+**Media QA (mandatory, every post, before any `blotato_create_post` or `blotato_update_schedule` that sets media).** Added 10/3 after a review video showed an AI calendar reading "2024" and a fake "$155 target / $1.35 per share" chart, and a stop-cluster video went out under a volume caption.
+
+1. Extract frames and look at them. Videos: `ffmpeg -i in.mp4 -vf fps=2,scale=240:-1 f_%03d.png`, tile into a contact sheet (PIL), and Read the sheet. ffmpeg lives at `/usr/local/lib/python3.11/dist-packages/imageio_ffmpeg/binaries/ffmpeg-linux-x86_64-v7.0.2` (or `pip install imageio-ffmpeg`). Images and carousels: Read every slide. Download Blotato visuals from their `mediaUrl` first.
+2. **Topic match:** the visuals and any burned-in captions/narration match the caption's topic.
+3. **Dates:** no visible dates or years (calendars, clocks, chart axes, documents) unless correct for the post date.
+4. **AI text:** no garbled, misspelled or nonsense text, and no invented prices, targets, P&L or per-share/stock numbers on ES content.
+5. **Reuse:** one video goes to several platforms only if every platform's caption fits that video.
+6. Any failure: fix it (blur/cover the region or replace the shot, keeping captions, audio and length), regenerate, or swap the media. Never schedule it as is. Note the contact sheet path in the Step 7 report.
+
+For AI image prompts add "no text, no numbers, no dates, no calendars, no screens". Put text the viewer must read on a clean graphic you render yourself (PIL) and upload it as a scene.
+
+- [ ] Media QA above passed for every video/image (contact sheet checked)
+
 - [ ] Fact-check done: every market claim matches "Verified Market Facts" or was cut
 - [ ] Rule 4 placeholder scan passes
 - [ ] Hashtag counts: IG 3-5, TikTok ≤5, Facebook 0. `#definedrisktrading` on IG and TikTok

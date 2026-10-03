@@ -60,6 +60,25 @@ Don't edit the sheet.
 - Also check wide-risk entries (e.g. 12.25 and 17.25 pt stops) against the course's
   3.5-4 pt stop rule.
 
+## Media QA before anything is scheduled (mandatory, added 10/3)
+On 10/3 a review video showed an AI calendar reading "2024" plus a fake "$155 target /
+$1.35 per share" chart, and a stop-cluster video went out under a volume caption. Before
+any `blotato_create_post` or `blotato_update_schedule` that sets media:
+1. Pull frames and look at them: `ffmpeg -i in.mp4 -vf fps=2,scale=240:-1 f_%03d.png`,
+   tile them into a contact sheet, and Read it (ffmpeg:
+   `/usr/local/lib/python3.11/dist-packages/imageio_ffmpeg/binaries/ffmpeg-linux-x86_64-v7.0.2`
+   or `pip install imageio-ffmpeg`). Images and carousels: Read every slide.
+2. The visuals and burned-in captions must match the caption's topic.
+3. No visible dates or years unless correct for the post date (calendars, clocks, charts).
+4. No garbled, misspelled or nonsense AI text, and no invented prices, targets, P&L or
+   per-share/stock numbers on ES content.
+5. One video goes to several platforms only if every caption fits that video.
+6. Any failure: fix it (blur/cover the bad region or replace the shot, keeping captions,
+   audio and length), regenerate, or swap the media. Never schedule it as is.
+   Keep the contact sheet path in the report.
+For AI image prompts, add "no text, no numbers, no dates, no calendars, no screens".
+Put any text the viewer must read on a clean graphic you render yourself.
+
 ## Rules
 - Never name "AMD" or "CRT" in public copy.
 - Anything about a real trade (P&L, entries/exits, screenshots, recaps, funded
