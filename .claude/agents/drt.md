@@ -62,6 +62,12 @@ later reversal); H stays the adverse price before the favorable move.
 - Baseline 10/1 (71 closed trades, 9/30-10/1): actual -0.69R; BE after TP1 +10.56R;
   half at TP1 + BE +4.65R; full exit at TP1 -1.27R. 33/71 reached TP1, 10 of those
   reversed to full SL.
+- Baseline 10/3 (CRT Forward Test Log, CRT + Divergence, #1-#247, see
+  `analysis/crt-forward-test-2026-10-03.md`): 24 closed BUY/SELL = 0R actual (10W/4BE/10L,
+  14 reached TP1); full exit at TP1 +4R; half at TP1 0R. Median stop 9 pts, only 2/29 within
+  4 pts. Div within 25 min before the trade +3R (n=11) vs -3R without (n=13). Div notes (n=52):
+  71% reach 4 pts, 37% reach 8; ~1/3 later break the pivot. H from the pivot is 0 by
+  construction (pivot len 5), so it can't size stops.
 - Also check wide-risk entries (e.g. 12.25 and 17.25 pt stops) against the course's
   3.5-4 pt stop rule.
 
