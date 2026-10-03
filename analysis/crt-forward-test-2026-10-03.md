@@ -180,3 +180,77 @@ Tentative. Column S being blank makes the exact window uncheckable from the shee
 - Column S needs to populate so the confluence window can be checked exactly.
 
 Chart: `crt-forward-test-2026-10-03.png` (scratchpad, not committed).
+
+## 7. Follow-up (10/3): opposite-Div exits and trading Divs directly
+
+Assumptions for both parts:
+- 1-minute chart, Div pivot length 5. The log's Div time and price are the **pivot** bar
+  (`time[5]`, `low[5]`/`high[5]`), and the Div is only known 5 bars later.
+- **Timing check from the notes (36 rows with times):** the first favorable leg peaked within
+  5 minutes of the pivot on 27 of 36 (75%), median 3 minutes, median size 4 pts. So most of
+  the visible move is over before the Div can be acted on. This drives both results below.
+- A new BUY/SELL replaces the active trade in the indicator, so a trade's window ends at
+  the next BUY/SELL.
+
+### A. Exit on the next opposite Div (24 closed trades)
+
+Rule: BUY exits on the next Bear Div, SELL on the next Bull Div, if the Div's pivot comes after
+entry and confirms before the trade ended. The indicator's own BE-at-TP1 / trail-at-TP2 stop
+stays on. Exit price: best = pivot (G); realistic A = pivot minus 35% of the entry-to-pivot
+move; realistic B = pivot minus 4 pts (median first leg inside the 5-bar lag). R = pts / stop.
+
+- 7 trades: no opposite Div before the trade ended (#37, #61, #89, #119, #146, #188, #200),
+  actual stands.
+- 5 trades: stop hit before the Div (an opposite Div or CRT tag beyond the stop printed first:
+  #10, #121, #147, #153, #229), actual stands.
+- 12 trades: Div exit possible. 2 of them (#101, #218, both full stops) have unverified order:
+  the stop may have come first.
+
+| Variant | Best (pivot) | Realistic A (35%) | Realistic B (4 pt) |
+|---|---|---|---|
+| (1) Full exit on opposite Div | +5.65R | +1.65R | +0.08R |
+| (1) excluding #101/#218 | +3.85R | +0.05R | -1.42R |
+| (2) Half at TP1 (if before Div), rest on Div, BE after TP1 | +4.24R | +1.62R | +0.09R |
+| (2) excluding #101/#218 | +2.44R | +0.02R | -1.41R |
+| Actual | 0R | | |
+| Full exit at TP1 | +4R | | |
+
+It helps the BE trades (#97, #173, #194) and cuts the two wide-stop losers (#101, #218),
+but it exits the TRAIL winners early (#38, #64, #81, #203). Only the best case (exit at the
+exact pivot, which can't be done) beats full exit at TP1. Realistic: about 0 to +1.7R, below
++4R. Verdict: opposite-Div exits don't add value over banking TP1.
+
+### B. Trading Divs directly: TP 4 pts, SL 3.5 / 4 pts
+
+52 Div rows with notes (H = G on all of them). Each was walked through its notes in order:
+target first = win, stop first = loss, neither recorded = unresolved. Unresolved shown three
+ways: best (scratch, 0), mark (closed at the last price in the notes, capped -SL..+4), worst
+(full stop). Costs: MES $1.88, ES $5 round trip. Breakeven win rate: 4/4 = 54.7% MES,
+51.3% ES; 4/3.5 = 51.7% MES, 48.0% ES.
+
+**Realistic (timing-aware) entry:** price at confirmation = midpoint of the last noted price
+before pivot+5 min and the next noted price; rows without times assume the first leg finished
+before confirmation (the 75% base rate). 2 rows skipped (already back through the pivot).
+
+| Filter, SL 4 | n | W / L / unresolved | Mark pts | ES $ (mark) | MES $ (mark) | Clears breakeven? |
+|---|---|---|---|---|---|---|
+| All | 50 | 9 / 9 / 32 | -32.6 | -$1,881 | -$257 | No |
+| Bull only | 25 | 5 / 5 / 15 | -11.6 | -$706 | -$105 | No |
+| Bear only | 25 | 4 / 4 / 17 | -21.0 | -$1,175 | -$152 | No |
+| Bull NY AM (tentative) | 4 | 1 / 2 / 1 | -4.0 | -$220 | -$28 | No |
+| Bear NY PM (tentative) | 7 | 2 / 1 / 4 | -2.3 | -$148 | -$24 | No (best case +$165 ES) |
+| Excl Bear Asia | 40 | 7 / 9 / 24 | -34.0 | -$1,900 | -$245 | No |
+
+SL 3.5: All 9 W / 10 L / 31 unresolved, mark -27.9 pts (-$1,644 ES, -$233 MES). Same picture.
+
+**Optimistic (fixed lag, ignores timing):** entry = pivot +/- 2 pts, all noted moves counted
+as after entry. SL 4: All 29 W / 1 L / 19 unresolved, mark +87.5 pts (+$4,130 ES, +$345 MES);
+Bull NY AM 5/5 wins; Excl Bear Asia 27 W / 0 L. With a 4 pt lag: All 19 W / 6 L / 12
+unresolved, mark +24.8 pts; 15 rows never reach the entry. This model counts moves that the
+timing data says mostly happened before the Div confirmed, so it overstates.
+
+Verdict: option 2 only makes money if entries come near the pivot, and the notes say 75% of
+first legs are done before confirmation. Under the realistic entry no filter clears
+breakeven. Low confidence either way: 32 of 50 outcomes are unresolved because the notes
+don't record the path after confirmation. To settle it, log the confirmation-bar close and
+whether +4 or -4 from that price hit first.
