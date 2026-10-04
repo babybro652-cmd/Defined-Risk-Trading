@@ -73,6 +73,12 @@ that close hit first. Score Div entries from the label price, never from the piv
   4 pts. Div within 25 min before the trade +3R (n=11) vs -3R without (n=13). Div notes (n=52):
   71% reach 4 pts, 37% reach 8; ~1/3 later break the pivot. H from the pivot is 0 by
   construction (pivot len 5), so it can't size stops.
+- Baseline 10/4 (CRT Pro, 137 closed 9/30-10/2, re-scored on real 1m ES bars, see
+  `analysis/crt-pro-2026-10-04.md`): actual -4.84R / -$4,117 net on 2 ES, 22.6% win, max DD
+  16.4R, 17-loss streak; BE after TP1 -0.97R; half at TP1 + BE -4.86R; full at TP1 -8.74R; fixed
+  4/4 bracket +34.8 pts / +$2,105. Median stop 2 pts; stops <=1 pt -10.25R, 2-4 pts +9.98R.
+  London +10.4R, Asia -11.2R, NY PM -6.4R. Bar-path scoring is lower than the Result-column
+  method (5 of 26 TP3 winners touch BE first). VMap test: 10 trades, 0 wins, -10R.
 - Also check wide-risk entries (e.g. 12.25 and 17.25 pt stops) against the course's
   3.5-4 pt stop rule.
 
