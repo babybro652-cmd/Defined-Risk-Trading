@@ -51,6 +51,11 @@ Column R notes convention (Tim, 10/3), times in Central to match column C:
 `Rallied to X @ time CT, reversed to Y @ time CT`). First part = best move in the signal's
 favor, second = the extreme of the reversal after it. Parse these in analysis (MFE and
 later reversal); H stays the adverse price before the favorable move.
+From 10/4 Tim WAITS FOR THE LABEL (no early entry), so Div notes start with the label bar:
+`Label 7779.50 @ 14:04 CT, +4 first. Rallied to X @ time CT, reversed to Y @ time CT`
+Label = close of the bar where the Div label first appears (5 bars after the pivot on the
+1m chart, divPivotLen = 5). "+4 first" / "-4 first" / "neither" = which of +/-4 pts from
+that close hit first. Score Div entries from the label price, never from the pivot (G).
 
 ## CRT Pro analysis notes (read before any indicator upgrade analysis)
 - CRT Pro does NOT exit or move the stop at TP1/TP2. TP hits are tracked only; the trade
