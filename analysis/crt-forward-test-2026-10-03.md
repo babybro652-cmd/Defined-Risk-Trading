@@ -254,3 +254,63 @@ first legs are done before confirmation. Under the realistic entry no filter cle
 breakeven. Low confidence either way: 32 of 50 outcomes are unresolved because the notes
 don't record the path after confirmation. To settle it, log the confirmation-bar close and
 whether +4 or -4 from that price hit first.
+
+## 8. Option 2 on real 1-minute data (10/4)
+
+Data: Yahoo Finance ES=F 1-minute bars, 9/20 17:10 CT to 10/2 16:00 CT (13,697 bars),
+converted to Central to match the log. **Match check:** 168 of 170 Div rows have a bar at the
+logged time whose low (Bull) / high (Bear) equals G exactly, with no time offsets; the 2 misses
+(#54, #175) were dropped. 46 of 48 CRT rows match the sweep candle's wick exactly (#107, #134
+are the Sunday/after-halt opens). All 28 BUY/SELL rows that have a bar match the logged entry
+to within one tick. No duplicate rows found.
+
+Rule: entry = close of the bar 5 bars after the pivot (pivot length 5). Bull Div long, Bear
+Div short. Walk from the next bar; a bar touching both TP and SL counts as a loss (none did).
+Time out after 60 minutes or at the 16:00 CT halt, closed at that bar's close. CRT rows: entry
+= close of the 15m confirmation candle (the 1m bar ending at the logged time), since the CRT
+time is the confirmation candle's close. #243 reproduces: entry 7779.00 at 11:15 CT, TP
+7775.00 hit 11:22 CT, +4.
+
+Breakeven win rate: TP4/SL4 51.2% ES, 54.7% MES. TP4/SL3.5 48.0% / 51.7%. TP6/SL4 41.0% /
+43.8%. TP8/SL4 34.2% / 36.5%.
+
+### TP 4 / SL 4
+
+| Filter | n | W / L / timeout | Win % | Net pts | 1 ES | 1 MES | ES per trade | Max losing streak | Clears? |
+|---|---|---|---|---|---|---|---|---|---|
+| All Div | 166 | 81 / 73 / 12 | 48.8 | +26.5 | +$495 | -$180 | +$3 | 5 | No (ES flat, MES negative) |
+| Bull Div | 100 | 49 / 47 / 4 | 49.0 | +5.3 | -$238 | -$162 | -$2 | 8 | No |
+| Bear Div | 66 | 32 / 26 / 8 | 48.5 | +21.3 | +$732 | -$18 | +$11 | 4 | No (timeouts carry it) |
+| Bull Div NY AM | 14 | 9 / 5 / 0 | 64.3 | +16 | +$730 | +$54 | +$52 | 2 | Yes, small n |
+| Bear Div NY PM | 14 | 4 / 9 / 1 | 28.6 | -20 | -$1,070 | -$126 | -$76 | 5 | No, worst cell |
+| Div ex Bear Asia | 140 | 69 / 66 / 5 | 49.3 | +9.3 | -$238 | -$217 | -$2 | 8 | No |
+| All CRT rows | 47 | 22 / 23 / 2 | 46.8 | -6.5 | -$560 | -$121 | -$12 | 5 | No |
+
+By session (Div, win %, ES $): Bull Asia 50% (+$150, n=40), Bull London 50% (-$130, n=26),
+Bull NY AM 64% (+$730, n=14), Bull NY PM 35% (-$988, n=20); Bear Asia 46% (+$732, n=26, carried by
+timeouts), Bear London 63% (+$905, n=19), Bear NY AM 57% (+$165, n=7), Bear NY PM 29% (-$1,070,
+n=14). CRT: Bull 40% (-$800, n=20), Bear 52% (+$240, n=27); every CRT session cell is under 11.
+
+Other brackets (All Div): TP4/SL3.5 45.2%, -$80 ES; TP6/SL4 34.3%, -$655; TP8/SL4 25.9%, +$308.
+Bull Div NY AM holds up at wider targets (TP8/SL4: 7 of 14, +$1,330 ES). Bear Div NY PM
+loses at every size. Wider targets help Bear Div (TP6/SL4 +$1,770) but cost Bull Div.
+
+### Confluence filter
+
+Taking a Div only when a same-direction BUY/SELL fires within 25 bars looks like 15 of 16 wins,
+but that is hindsight: the BUY/SELL fired 6 to 20 minutes after the Div entry every time. The
+tradable version is entering at the BUY/SELL close with a fixed 4/4 bracket when a Div pivot
+printed within 25 bars before it: 15 trades, 10 W / 3 L / 2 timeouts, 66.7%, +29.5 pts, +$1,400
+ES, +$119 MES, max losing streak 1. Tentative (n=15). All BUY/SELL with a 4/4 bracket: 28
+trades, 50%, +$335 ES; SELL 8 of 12, BUY 6 of 16.
+
+### Bottom line
+
+Trading every Div with a 4/4 bracket is a coin flip (48.8%) that doesn't clear costs on MES and
+only scratches on ES. The notes-based "realistic" estimate in section 7 was too pessimistic. The
+real data shows no edge, but no large loss either. Two cells stand out: Bull Div NY AM (64%, n=14)
+and Bear Div London (63%, n=19). Bear Div NY PM (29%) and Bull Div NY PM (35%) should be skipped.
+The best result is the BUY/SELL signal itself with a 4/4 bracket when a Div preceded it (67%,
+n=15), which is the indicator's own confluence signal with a tighter, fixed bracket.
+Confidence: low to moderate. 12 trading days, one market regime, and every promising cell is
+under 20 trades; about 40-50 trades per cell are needed before the 60%+ cells are reliable.
