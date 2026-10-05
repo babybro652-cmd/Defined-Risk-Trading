@@ -78,7 +78,7 @@ passes the result to Tim (with a push notification when the routine asks for one
 | NFL tracker weekly update (scorers, red zone, defenses; grade pending bets) | Tue 9:52 AM | general-purpose |
 | NFL Saturday injury recheck + final shortlist | Sat 10:47 AM | general-purpose |
 | Loan spam cleanup (delete + unsubscribe; replaces the old label-only check) | Mon 8:56 AM | personal |
-| Paycheck amount for the Weekly Money Plan | Mon 6:22 PM | Jarvis |
+| Paycheck amount for the Weekly Money Plan (Tim Money workbook) | Mon 6:22 PM | Jarvis |
 
 Content routines (daily 5 AM content agent, Mon/Wed/Thu/Fri DRT posts) run in their
 own fresh sessions and don't report here. The old label-only Monday loan-spam check
