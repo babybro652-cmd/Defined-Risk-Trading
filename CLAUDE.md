@@ -75,6 +75,8 @@ passes the result to Tim (with a push notification when the routine asks for one
 | Monthly net worth check-in | 1st, 8:12 PM | wealth |
 | Rent reminder ($675, due 1st, latest 5th) | 28th, 7:47 PM | personal |
 | Plan the week | Sun 6:48 PM | Jarvis (all areas) |
+| NFL tracker weekly update (scorers, red zone, defenses; grade pending bets) | Tue 9:52 AM | general-purpose |
+| NFL Saturday injury recheck + final shortlist | Sat 10:47 AM | general-purpose |
 
 Content routines (daily 5 AM content agent, Mon/Wed/Thu/Fri DRT posts, Monday
 loan-spam check) run in their own fresh sessions and don't report here.
