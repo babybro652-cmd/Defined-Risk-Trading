@@ -225,16 +225,16 @@ MOCK = {
     "mood_band": "Color one wing a day. See your year in color.",
     "mood_inside": "Monthly butterfly",
     "mood_included": ("12 monthly mood butterflies", "January to December, undated, 28 to 31 day cells"),
-    "buy_step": "Check out on Etsy. No physical item is shipped.",
-    "dl_step": "Get your PDFs from Purchases and reviews on Etsy, or the link in your email.",
-    "dl_step_bundle": "Download the zip for your paper size from Purchases and reviews, then unzip it.",
+    "buy_step": "Check out securely. No physical item is shipped.",
+    "dl_step": "Download your PDFs from the link on your order page or in your email.",
+    "dl_step_bundle": "Download the zip for your paper size from your order link, then unzip it.",
 }
 
 THEME = Theme(
     key="wings", slug="calm-wings", title="Calm Wings", subtitle="A 90-Day Anxiety Journal",
     file_prefix="CalmWings", file_generic="Calm_Wings_90_Day_Anxiety_Journal.pdf",
     file_personal="Calm_Wings_{name}.pdf", author="Calm Wings",
-    palette=PALETTE, img=IMG, store="Etsy", brand_mark=True,
+    palette=PALETTE, img=IMG, store=None, brand_mark=True,
     cover_defaults=dict(style="classic", fills=("lavender", "mint", "peach")),
     accent=accent, cover_art=cover_art, lifecycle=lifecycle, exhale=exhale, exhale_center=exhale_center,
     sos_coloring={"mandala": ("Butterfly mandala", designs.mandala),

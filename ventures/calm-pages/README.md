@@ -16,7 +16,9 @@ each with a How to Print PDF: 1 journal, 2 bundle (zip), 3 coloring pack (18 des
 5 mood tracker (12 undated months).
 
 Calm Wings also keeps its Etsy-era `shop-setup.md`, the personal Sekora PDF and the older 10/2 generic PDF.
-Its files and listing text still mention Etsy; they were left unchanged on purpose. The new editions use
+Since 10/5 its buyer files and listing images are Etsy-free (store=None, Payhip wording; How to Print PDFs, bundle zips
+and 05_download images rebuilt). Its `listings.md` and `shop-setup.md` are Etsy-era references; for Payhip copy use
+`launch/upload-packets.md`. The new editions use
 platform-neutral wording (store is moving to Payhip).
 
 ## Build

@@ -12,7 +12,7 @@ Umbrella brand "Peace by Page" (chosen 10/2, replaced the working name Calm Page
 anxiety journal. Everything lives in `ventures/calm-pages/` (folder name kept; links depend on it) (shared engine, README) with one folder per
 edition under `editions/` (`files/`, `images/`, `listings.md`):
 - **Calm Wings** (butterflies, 169 pp): the original, built as a gift for Tim's friend Sekora; her personal PDF
-  and the Etsy-era `shop-setup.md` are in `editions/calm-wings/`. Its files still say Etsy (left unchanged).
+  and the Etsy-era `shop-setup.md` are in `editions/calm-wings/`. Its buyer files and images were made Etsy-free on 10/5 (store=None); its `listings.md` is Etsy-era, so use `launch/upload-packets.md` for Payhip copy.
 - **Calm Petals** (botanical) and **Calm Nights** (moon and stars, leans toward evenings; 171 pp), added 10/2.
 Each edition has 5 products (journal, bundle, coloring pack, SOS kit, mood tracker) in Letter + A4, built by
 `python3 build_products.py --theme wings|petals|nights`. The theme (art, palette, series title, flavor text)
@@ -23,6 +23,7 @@ structured coloring. Always keep the "supports, not replaces, professional care"
 listing copy is platform-neutral. Prices: journal $11.99, bundle $16.99, coloring $4.99, SOS $3.99, mood $2.99.
 All three editions show the brand on covers and listing images (Wings since 10/2); personal copies stay unbranded.
 Brand to-dos for Tim: buy peacebypage.com, claim @peacebypage handles. USPTO checked 10/2: no "Peace by Page" mark; closest is a pending "PEACE BY PIECE: MICRO-WELLNESS TOOLKIT" (Class 16/44, filed 12/9/2025). Keep copy from echoing "peace by piece" and avoid "micro-wellness toolkit" wording.
+Launch kit (10/5) in `ventures/calm-pages/launch/`: sales-tax-nc.md (Payhip collects US sales tax since 7/1/26; no NCDOR registration needed while all sales go through Payhip), policies.md, store-branding.md (+ brand/payhip-*.png), upload-packets.md (Google Doc 1MXWRCC557IibySP9kIhXuYlUBevL0PXkRue2ydcp1pU in Drive "05 Peace by Page"), free 7-day sampler in editions/sampler/.
 Open items: nicer fonts (download was blocked), fillable tablet version (future).
 
 ## Faceless content channel (paused)

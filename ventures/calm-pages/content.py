@@ -202,7 +202,7 @@ RESOURCES = [
      "findahelpline.com."),
 ]
 
-# "Before you begin" page (page 2 of every Etsy product)
+# "Before you begin" page (page 2 of every product)
 DISCLAIMER = (
     "{title} is a self-reflection {product} for general wellbeing. It is not medical advice, diagnosis, "
     "or treatment, and it supports, not replaces, care from a licensed professional. If something in here "
