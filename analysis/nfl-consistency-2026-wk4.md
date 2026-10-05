@@ -59,7 +59,7 @@ Ranked by combined hit rate (2025 + 2026), then 2026 hit rate. Opportunity colum
 
 **What stands out**
 
-- **The RB goal-line backs own this list.** Every top 7 name is a lead back with 2 or more inside-10 touches per game. That role is what makes a TD repeatable.
+- **The RB goal-line backs own this list.** Every top 7 name is a lead back with about 2 or more inside-10 touches per game (Hampton is lowest at 1.8). That role is what makes a TD repeatable.
 - **McCaffrey** is the steadiest: 15 of 21 games with a TD. 2026 inside-10 work is down a bit (2.2 per game vs 2.8) but the role is intact.
 - **Gibbs and Henry** have scored in all 4 games of 2026 and own 50% of their team's TDs. Gibbs' 7 TDs include a 3-TD game (Week 3), but the 4/4 hit rate is what matters here.
 - **Kyren Williams** scored in 10 of 17 in 2025 and 3 of 4 in 2026, and never more than 2 TDs in a game in this sample. Lowest spike risk of the lead RBs.
