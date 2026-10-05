@@ -55,6 +55,8 @@ calendar, `TODO.md` in the repo), and open items from the profile doc.
 Include these in any bill list or budget, even if no email shows them:
 - Rent: $675/month, due the 1st, latest the 5th. Reminder routine fires the 28th, 7:47 PM. October paid.
 - Internet: $101.54/month, split with girlfriend (Tim pays $50.77). October: paying on payday Thu 10/8; confirm the actual due date with Tim.
+- Uplift Loans (AFS-FTC, Rosebud Sioux tribal lender), loan #67827: $450 funded 8/4/2026, 709.67% APR, $72.75 auto-drafted EVERY THURSDAY (8/20/2026 through mid-2027, 44 payments, $3,202.40 total). Emails don't show amounts; this is from the loan agreement Tim shared 10/5. Paying extra/early cuts the interest.
+- Other loans (from Gmail, 10/5): Spotloan #3154997 $218.95 every 2 weeks (next 10/15; 10/1 skip prearranged); OneMain $899.01 past due; Bison Green plan paused after a failed payment (ref 733480); Fortiva via January $722.40 overdue; Flash Funds (app/text only, no emails; took a payment Thu 10/1); American Web Loan 2019 loan, $3,058.38 in collections, 90% settlement offers (old debt, likely past NC 3-year limit; get any deal in writing). Tim said 10/5: don't add these to the payday list.
 - Payday: every Thursday (weekly). Plan bills around it: on Thursdays, list what's due before next Thursday.
 Bills found in email 10/1: Google Workspace (failing), OneMain (past due $611.34),
 Spotloan ($218.95), Together Loans, Bison Green (real loan, paused), TrueAccord
