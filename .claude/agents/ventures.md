@@ -39,3 +39,9 @@ Keep personal finance clear of Prosperity Legendz's lane (the pl agent owns that
 ## Rules
 Nothing spends money, opens accounts or posts publicly without Tim's explicit go.
 Background: Tim's profile doc (Google Doc `1nqEGp36FxnB5UZr9-2hE14y12sTmvIDjSZnnsixXO9E`).
+
+## Peace by Page social accounts (10/4)
+- Blotato Facebook: account 50185, Peace by Page pageId 1255582607649321 (connected).
+- Blotato Pinterest: account 9654, username Peacebypage (the old NestedLumen account, renamed; has history). Needs boardId per post; boards planned: Anxiety Journal Prompts, Calming Coloring Pages, Self-Care Printables, Gifts for Someone Who Worries.
+- Instagram and TikTok @peacebypage: brand new, WARMING UP. Do not connect to Blotato before ~10/18. Until then Tim posts by hand from his phone (3-4x/week); Jarvis prepares the video + caption and sends it to him.
+- Launch 10/10: Facebook + Pinterest via Blotato; IG + TikTok launch reel posted by Tim manually.
