@@ -1,0 +1,13 @@
+Item,Detail
+Last update,Mon 10/05/2026 05:00 AM ET (2026 games through Week 4; not final yet: ATL @ NO (Wk4); injuries feed 2026-10-05 09:00 UTC)
+Data,ESPN game summaries (box score + play-by-play) for every 2025 regular-season game and 2026 games through this week. ESPN injuries feed. ESPN athlete pages for positions.
+Scorers,"Wk columns = rushing + receiving TDs that week. Blank = no box-score line (bye, did not play, or played without a touch). 0 = played, no TD. Return and passing TDs not counted."
+Hit %,Games with a rushing or receiving TD / games played. 2025 numbers came with the 2025 team.
+Red Zone,"Wk cell = RZ opps / inside-10 opps. RZ opp = target or carry on a play that started inside the opponent 20; i10 = inside the 10. Counted from ESPN play-by-play text; plays wiped out by penalty excluded. Estimates, not official counts."
+Team RZ share,Player RZ opps / all RZ opps (targets + carries) by his team in the games he played.
+Defense,"TDs and catches allowed to each position, 2026 per game. Rank #1 = allows the most (softest), #32 = allows the least. Ties share a rank. RZ TD% allowed = opponent drives that ran a play inside the 20 and ended in a TD / those drives. 2025 ranks shown as a second look."
+Week Shortlist,"Mechanical rule: Play = 55%+ hit rate (2025+2026) and opponent top 16 softest vs the position; Small stake = 55%+ vs a tough defense, or 45%+ vs a top 12 soft defense; Questionable, a cold 2026 (TD in 25% or fewer of 4+ games) and a small sample (under 8 games) each drop one level; Out/IR/Doubtful/bye = Skip. Small stakes only, for fun."
+Injuries,"Status from the ESPN injuries feed. ""Out (inactive)"" = listed inactive as a coach decision. Not on the report = Active. ""Out"" with note ""inactive"" right after a Sunday means he sat that game; the status for the next game comes with the Wed-Fri practice reports, so recheck Saturday before betting."
+Not available,"Routes run %, snap counts and official red-zone splits (Pro-Football-Reference blocks requests). Left out rather than guessed."
+Name matches,Play-by-play names are matched to the box score by team + last name + first initials. Unresolved RZ plays in 2026 so far: 0.
+Refresh,python3 analysis/nfl/build_tracker.py --week N (full) or --injuries-only. Repo: analysis/nfl/README.md

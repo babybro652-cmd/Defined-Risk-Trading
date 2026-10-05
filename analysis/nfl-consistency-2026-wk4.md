@@ -2,12 +2,14 @@
 
 Prepared Mon 10/5/2026 for Tim. Small stakes, for fun. Consistency first, not one big game.
 
+**Live tracker:** [NFL Scorer Tracker 2026](https://docs.google.com/spreadsheets/d/1VPYeOtn3BGq4JYPiwkI_XfvVXCGyvg7nMhGGOzl2VTM/edit) (Google Sheet: scorers by week, red-zone usage, injuries, defense vs position, weekly shortlist). Refreshed each week with `analysis/nfl/build_tracker.py`.
+
 ## How this was built
 
 - **Data:** every 2025 regular-season game (272 games, Weeks 1 to 18) and every 2026 game through Week 4 (63 games; ATL @ NO Monday night not yet played, so ATL and NO players show 3 games). Per-game stats were pulled from ESPN box scores and play-by-play (the same numbers that feed ESPN player game logs). Spot checks: Jaxon Smith-Njigba 2026 log (8, 9, 10, 5 catches) matches his ESPN game log; Trey McBride 2025 (126 catches on 169 targets) matches PlayerProfiler; CeeDee Lamb Week 4 (17 catches, 189 yards, 1 TD) matches news reports.
 - **Sample:** 4 games is small. Rankings lean on the pooled 2025 + 2026 rate (about 20 games per player), with 2026 used to confirm the role is still the same.
 - **TD hit rate** = games with a rushing or receiving TD / games played. Return TDs and passing TDs are not counted. Games played = games where the player shows up in the box score.
-- **Red-zone (RZ) and inside-10 opportunities** = targets plus carries that started inside the opponent 20 (or 10), counted from ESPN play-by-play text. Plays wiped out by penalty are excluded. Treat these as close estimates, not official counts. Bijan Robinson's 2026 RZ count is n/a because the play-by-play lists him and teammate Brian Robinson Jr. both as "B.Robinson".
+- **Red-zone (RZ) and inside-10 opportunities** = targets plus carries that started inside the opponent 20 (or 10), counted from ESPN play-by-play text. Plays wiped out by penalty are excluded. Treat these as close estimates, not official counts. Bijan Robinson and teammate Brian Robinson Jr. are told apart by the play-by-play initials ("Bi." vs "Br."); ATL had no red-zone snaps at all in Weeks 1 and 2.
 - **Team TD share** = player's rushing + receiving TDs / all rushing + receiving TDs scored by his team in the games he played.
 - **Target share** = player targets / team targets in games he played.
 - **Not available:** routes run % (PlayerProfiler and PFF keep it behind a login or did not render; Pro-Football-Reference blocked requests with HTTP 403). It is left out rather than guessed.
@@ -52,7 +54,7 @@ Ranked by combined hit rate (2025 + 2026), then 2026 hit rate. Opportunity colum
 | 9 | George Kittle | SF | TE | 3/4 | 6/11 | 60% | 4 / 7 | 25% / 21% | 1.2 / 1.2 | 0.8 / 0.5 | 2 | 2 |
 | 10 | James Cook III | BUF | RB | 3/4 | 9/17 | 57% | 3 / 14 | 19% / 24% | 3.8 / 3.4 | 2.2 / 1.5 | 4 | 3 |
 | 11 | Puka Nacua | LAR | WR | 1/2 | 9/16 | 56% | 1 / 11 | 25% / 19% | 1.0 / 1.1 | 1.0 / 0.7 | 2 | 2 |
-| 12 | Bijan Robinson | ATL | RB | 2/3 | 9/17 | 55% | 3 / 11 | 60% / 31% | n/a / 2.8 | n/a / 1.2 | 3 | 2 |
+| 12 | Bijan Robinson | ATL | RB | 2/3 | 9/17 | 55% | 3 / 11 | 60% / 31% | 3.3 / 2.8 | 2.0 / 1.2 | 3 | 2 |
 | 13 | Jaxon Smith-Njigba | SEA | WR | 3/4 | 8/17 | 52% | 6 / 10 | 46% / 23% | 2.5 / 0.9 | 1.2 / 0.4 | 4 | 3 |
 | 14 | Trey McBride | ARI | TE | 2/4 | 9/17 | 52% | 2 / 11 | 22% / 29% | 2.2 / 1.8 | 1.8 / 0.5 | 2 | 2 |
 | 15 | Davante Adams | LAR | WR | 1/4 | 9/14 | 56% | 2 / 14 | 20% / 26% | 1.0 / 2.2 | 0.0 / 1.6 | 5 | 3 |
@@ -149,9 +151,65 @@ Diggs and LaPorta are low-ceiling, low-variance plays: good for small overs at 3
 | D'Andre Swift (TD) | 3 TDs in Week 1, 0 since. | 2026: 3, 0, 0, 0 |
 | Davante Adams (TD) | 9/14 in 2025 included a 3-TD game. 1 of 4 in 2026 with 0 inside-10 looks. | 2026: 0, 2, 0, 0 |
 
+## 2026 only rankings
+
+Same data, but only this season's 4 games (3 for ATL and NO). Use it to spot who is hot right now; the pooled lists above are steadier.
+
+### 2026 only: Anytime TD top 15
+
+Ranked by number of 2026 games with a TD, then red-zone opps per game. No 2025 data in the order.
+
+| # | Player | Tm | Pos | 2026 games w/ TD | TDs | RZ opps/g | Inside-10/g | Team RZ share | 2026 by game |
+|---|---|---|---|---|---|---|---|---|---|
+| 1 | Jahmyr Gibbs | DET | RB | 4/4 | 7 | 6.8 | 2.8 | 48% | 2 1 3 1 |
+| 2 | Derrick Henry | BAL | RB | 4/4 | 7 | 5.2 | 3.8 | 54% | 3 1 2 1 |
+| 3 | Josh Allen | BUF | QB | 4/4 | 7 | 2.2 | 1.5 | 23% | 2 2 2 1 |
+| 4 | Kenneth Walker III | KC | RB | 3/4 | 6 | 5.5 | 3.0 | 54% | 2 0 2 2 |
+| 5 | Javonte Williams | DAL | RB | 3/4 | 6 | 5.2 | 3.0 | 46% | 2 0 1 3 |
+| 6 | Jonathan Taylor | IND | RB | 3/4 | 6 | 4.2 | 2.0 | 47% | 2 2 0 2 |
+| 7 | Christian McCaffrey | SF | RB | 3/4 | 4 | 3.8 | 2.2 | 36% | 0 2 1 1 |
+| 8 | Kyren Williams | LAR | RB | 3/4 | 4 | 3.8 | 2.2 | 44% | 1 1 0 2 |
+| 9 | James Cook III | BUF | RB | 3/4 | 3 | 3.8 | 2.2 | 38% | 0 1 1 1 |
+| 10 | Omarion Hampton | LAC | RB | 3/4 | 3 | 3.2 | 1.8 | 38% | 1 1 0 1 |
+| 11 | Amon-Ra St. Brown | DET | WR | 3/4 | 5 | 3.0 | 1.0 | 21% | 2 2 1 0 |
+| 12 | Chuba Hubbard | CAR | RB | 3/4 | 5 | 2.8 | 2.0 | 28% | 2 1 0 2 |
+| 13 | Jaxon Smith-Njigba | SEA | WR | 3/4 | 6 | 2.5 | 1.2 | 23% | 1 3 2 0 |
+| 14 | Christian Watson | GB | WR | 3/4 | 4 | 1.8 | 1.0 | 16% | 2 1 1 0 |
+| 15 | CeeDee Lamb | DAL | WR | 3/4 | 4 | 1.5 | 0.8 | 13% | 1 2 0 1 |
+
+### 2026 only: Receptions top 15
+
+Ranked by 2026 catches per game, then the lowest game (floor). Minimum 3 games played in 2026.
+
+| # | Player | Tm | Pos | Games | Avg | Floor | Over 4.5 | Over 5.5 | Tgt share | 2026 by game |
+|---|---|---|---|---|---|---|---|---|---|---|
+| 1 | CeeDee Lamb | DAL | WR | 4 | 9.2 | 5 | 4/4 | 3/4 | 32% | 5 8 7 17 |
+| 2 | Chris Olave | NO | WR | 3 | 9.0 | 8 | 3/3 | 3/3 | 29% | 10 8 9 |
+| 3 | Trey McBride | ARI | TE | 4 | 8.2 | 7 | 4/4 | 4/4 | 31% | 9 8 9 7 |
+| 4 | Jaxon Smith-Njigba | SEA | WR | 4 | 8.0 | 5 | 4/4 | 3/4 | 37% | 8 9 10 5 |
+| 5 | Amon-Ra St. Brown | DET | WR | 4 | 7.8 | 4 | 3/4 | 3/4 | 29% | 10 9 4 8 |
+| 6 | RJ Harvey | DEN | RB | 3 | 6.7 | 4 | 2/3 | 2/3 | 22% | 4 6 10 |
+| 7 | Tetairoa McMillan | CAR | WR | 4 | 6.5 | 2 | 3/4 | 1/4 | 27% | 5 5 2 14 |
+| 8 | DeVonta Smith | PHI | WR | 3 | 6.3 | 3 | 2/3 | 2/3 | 33% | 3 10 6 |
+| 9 | Tee Higgins | CIN | WR | 4 | 6.2 | 3 | 3/4 | 2/4 | 25% | 3 5 6 11 |
+| 10 | Michael Wilson | ARI | WR | 4 | 6.2 | 2 | 3/4 | 2/4 | 30% | 5 2 11 7 |
+| 11 | Zay Flowers | BAL | WR | 3 | 6.0 | 5 | 3/3 | 1/3 | 30% | 5 5 8 |
+| 12 | Garrett Wilson | NYJ | WR | 4 | 6.0 | 3 | 3/4 | 2/4 | 28% | 6 5 10 3 |
+| 13 | Jalen Coker | CAR | WR | 3 | 6.0 | 2 | 2/3 | 2/3 | 20% | 8 8 2 |
+| 14 | Tyler Warren | IND | TE | 4 | 5.8 | 3 | 3/4 | 2/4 | 22% | 3 6 9 5 |
+| 15 | Jahmyr Gibbs | DET | RB | 4 | 5.5 | 4 | 3/4 | 2/4 | 18% | 5 6 7 4 |
+
+**What stands out (2026 only)**
+
+- **Gibbs, Henry and Josh Allen are the only players with a TD in all 4 games.** Gibbs has the most red-zone work in the league on this count (6.8 per game); Henry has the most inside-10 work (3.8).
+- **Kenneth Walker III** (3 of 4, 5.5 RZ opps per game, 54% of KC's red-zone looks) is the biggest riser versus 2025 (4 of 17 with SEA). KC is on bye in Week 5.
+- **Chuba Hubbard** (3 of 4, CAR) and **Christian Watson** (3 of 4) make the 2026 list but not the pooled one. CAR is on bye.
+- **Receptions:** 4 of the 2026 top 5 are also in the pooled top 5 (Lamb, Olave, McBride, JSN); St. Brown takes the spot of Puka, who has only 2 games. **RJ Harvey** (DEN RB, 4, 6, 10) is the 2026-only name to watch. **McMillan, Higgins and Michael Wilson** sit high on averages built on one big game; their floors are 2 or 3.
+- Puka Nacua (2 games) and Brock Bowers (2 games) miss the 3-game minimum for the catch list.
+
 ## Week 5 schedule and matchups
 
-**Byes:** Kansas City and Carolina (Kenneth Walker III, Travis Kelce, Rashee Rice, Tetairoa McMillan, Chuba Hubbard). None of the top 15 in either list is on bye.
+**Byes:** Kansas City and Carolina (Kenneth Walker III, Travis Kelce, Rashee Rice, Tetairoa McMillan, Chuba Hubbard). None of the pooled top 15 in either list is on bye (Walker, Hubbard, McMillan and Coker from the 2026-only lists are).
 
 Opponent columns are 2026 Weeks 1 to 4 per game allowed to that position (rank, #1 = most allowed), with the 2025 full-season rank in parentheses as a second look.
 
@@ -162,7 +220,7 @@ Opponent columns are 2026 Weeks 1 to 4 per game allowed to that position (rank, 
 | Christian McCaffrey | SF @ SEA (Sun) | RB 0.8 (#15) | #32 | Neutral. SEA was the stingiest vs RB TDs in 2025. Role carries it. |
 | Jahmyr Gibbs | DET @ ARI (Sun) | RB 0.5 (#26) | #2 | Mixed. Role is the reason to play it. |
 | Javonte Williams | TB @ DAL (Thu) | RB 0.2 (#28) | #17 | Tough matchup. Lower the stake. |
-| Derrick Henry | BAL @ ATL (Mon) | RB 0.3 (#27) | #21 | Tough on paper. If Lamar sits, Henry could see even more goal-line work. |
+| Derrick Henry | BAL @ ATL (Sun night) | RB 0.3 (#27) | #21 | Tough on paper. If Lamar sits, Henry could see even more goal-line work. |
 | Kyren Williams | BUF @ LAR (Mon night) | RB 1.5 (#3) | #5 | Best RB matchup on the list. |
 | Jonathan Taylor | IND @ PIT (Sun) | RB 1.0 (#11) | #31 | Neutral. |
 | Omarion Hampton | DEN @ LAC (Sun) | RB 1.0 (#14) | #19 | Neutral. |
@@ -170,7 +228,7 @@ Opponent columns are 2026 Weeks 1 to 4 per game allowed to that position (rank, 
 | George Kittle | SF @ SEA (Sun) | TE 0.5 (#12) | #21 | Neutral. |
 | James Cook III | BUF @ LAR (Mon night) | RB 0.0 (#31) | #30 | LAR has allowed 0 RB TDs. Pass. |
 | Puka Nacua | BUF @ LAR (Mon night) | WR 1.5 (#5) | #24 | Good. |
-| Bijan Robinson | BAL @ ATL (Mon) | RB 1.0 (#10) | #16 | Neutral to good. |
+| Bijan Robinson | BAL @ ATL (Sun night) | RB 1.0 (#10) | #16 | Neutral to good. |
 | Jaxon Smith-Njigba | SF @ SEA (Sun) | WR 0.8 (#16) | #19 | Neutral. |
 | Trey McBride | DET @ ARI (Sun) | TE 1.5 (#1) | #11 | Best TE matchup on the board. |
 | Davante Adams | BUF @ LAR (Mon night) | WR 1.5 (#5) | #24 | Good matchup, shrinking role. |
@@ -187,11 +245,11 @@ Opponent columns are 2026 Weeks 1 to 4 per game allowed to that position (rank, 
 | Amon-Ra St. Brown | DET @ ARI | WR 9.2 (#26) | #15 | Below average matchup. Stick to 3.5 or 4.5. |
 | Ja'Marr Chase | CIN @ MIA | WR 9.8 (#24) | #21 | Concussion; skip until cleared. |
 | Christian McCaffrey | SF @ SEA | RB 5.8 (#4) | #1 | Good for catches. SEA is #4 in RB catches allowed in 2026 and was #1 in 2025. |
-| Zay Flowers | BAL @ ATL (Mon) | WR 14.3 (#5) | #17 | Good matchup, QB risk (Lamar). |
+| Zay Flowers | BAL @ ATL (Sun night) | WR 14.3 (#5) | #17 | Good matchup, QB risk (Lamar). |
 | Brock Bowers | LV @ NE | TE 3.2 (#27) | #10 | Tough. |
 | Wan'Dale Robinson | HOU @ TEN | WR 15.0 (#2) | #29 | Good matchup, but his 2026 role is shaky (5, 1, 7, 3). |
 | George Pickens | TB @ DAL (Thu) | WR 8.8 (#31) | #11 | Tough. |
-| Drake London | BAL @ ATL (Mon) | WR 14.8 (#3) | #2 | Good both years. 9 catches with Penix in Week 3. |
+| Drake London | BAL @ ATL (Sun night) | WR 14.8 (#3) | #2 | Good both years. 9 catches with Penix in Week 3. |
 | Tyler Warren | IND @ PIT | TE 3.2 (#28) | #4 | Tough in 2026, soft in 2025. |
 | Davante Adams | BUF @ LAR | WR 13.2 (#7) | #28 | Good for over 3.5. |
 
@@ -202,7 +260,7 @@ Opponent columns are 2026 Weeks 1 to 4 per game allowed to that position (rank, 
 1. **Christian McCaffrey** (SF @ SEA): 15 of 21 games, best hit rate in the sample.
 2. **Jahmyr Gibbs** (DET @ ARI): 4 of 4 in 2026, 50% of Detroit's TDs, 6.8 red-zone opps per game.
 3. **Kyren Williams** (vs BUF, Mon night): 13 of 21, never a spike, and Buffalo allows the 3rd most RB TDs.
-4. **Derrick Henry** (BAL @ ATL, Mon): 4 of 4 in 2026, 3.8 inside-10 opps per game. Tough matchup, so a smaller stake.
+4. **Derrick Henry** (BAL @ ATL, Sun night): 4 of 4 in 2026, 3.8 inside-10 opps per game. Tough matchup, so a smaller stake.
 5. **Trey McBride** (DET @ ARI): Detroit allows the most TE TDs (1.5 per game) and McBride gets 2.2 red-zone looks per game. Lower hit rate (11 of 21), so expect a longer price.
 
 **Receptions overs**
