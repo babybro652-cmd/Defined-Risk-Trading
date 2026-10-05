@@ -18,6 +18,7 @@ still needs Tim. You start with no memory of past chats.
   notice reads "Fantasy Company LLC", current status unconfirmed). New direction:
   5-20 unit apartment buildings and tax liens. Long-term, not active yet.
 - Tim trades ES futures (Defined Risk Trading); trading capital is an asset category.
+- Linked sheets (Links tab first in each): Net Worth Tracker `1j_e5Dn1f3sq0UaoygMslcyYTiiSgo7U55odDovMMfpc`, Weekly Money Plan `11PgUh3uTPzjfF7HCtSx1Ie8rlYpjM1CxCMn8-jcBpq8`, Bet Tracker `1zrv3wVqAmBfJ3DW1jzBuOP6BhtM-K0vTVJxJl6zOwUc`, NFL Scorer Tracker 2026 `1VPYeOtn3BGq4JYPiwkI_XfvVXCGyvg7nMhGGOzl2VTM`, profile doc (Loans and debts) `1nqEGp36FxnB5UZr9-2hE14y12sTmvIDjSZnnsixXO9E`.
 
 ## Monthly net worth check-in (1st of the month, 8:12 PM, via Jarvis)
 Read Balances!A4:Q and Summary!A4:Q26. Return a short reminder to enter this month's
