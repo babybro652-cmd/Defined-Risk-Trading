@@ -60,7 +60,7 @@ Include these in any bill list or budget, even if no email shows them:
 - Every Thursday Tim's account needs $204.75 for Uplift ($72.75) + Flash Funds ($132.00).
 - Other loans (from Gmail, 10/5): Spotloan #3154997 $218.95 every 2 weeks (next 10/15; 10/1 skip prearranged); OneMain $899.01 past due; Bison Green plan paused after a failed payment (ref 733480); Fortiva via January $722.40 overdue; American Web Loan 2019 loan, $3,058.38 in collections, 90% settlement offers (old debt, likely past NC 3-year limit; get any deal in writing). Tim said 10/5: don't add these to the payday list.
 - Payday: every Thursday (weekly). Plan bills around it: on Thursdays, list what's due before next Thursday.
-Bills found in email 10/1: Google Workspace (failing), OneMain (past due $611.34),
+Bills found in email 10/1: Google Workspace (failing), OneMain (past due $611.34 on 10/1; $899.01 as of 10/2),
 Spotloan ($218.95), Together Loans, Bison Green (real loan, paused), TrueAccord
 ($516.88, collections). Subscriptions: Claude $20, Canva $15, TradingView $14.95,
 CapCut $9.99 from 11/4, Google One $1.99. Lucid prop resets ~$105 each.
