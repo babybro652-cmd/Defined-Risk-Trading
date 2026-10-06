@@ -19,6 +19,8 @@ Download links (work after the push to main):
 
 Rebuild them with `python3 launch/make_brand_assets.py` (the art is cut from each edition's journal cover).
 
+For the full store layout (homepage sections, pages, menu, footer, colors, fonts) and the extra store images in `../brand/store/`, follow `store-builder-guide.md`.
+
 ## Store name and tagline
 
 ```
