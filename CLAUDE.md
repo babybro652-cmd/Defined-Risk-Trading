@@ -82,4 +82,4 @@ passes the result to Tim (with a push notification when the routine asks for one
 
 Content routines (daily 5 AM content agent, Mon/Wed/Thu/Fri DRT posts) run in their
 own fresh sessions and don't report here. The old label-only Monday loan-spam check
-(Cowork desktop, paused) is replaced by the cleanup above.
+(Cowork, disabled 10/7) is replaced by the cleanup above.
