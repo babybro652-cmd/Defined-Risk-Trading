@@ -105,3 +105,5 @@ Keep this one saved for when your entry candle fights you.
 ==============================
 
 ```
+
+**Tim, 10/8: no trade posts. Both clips declined; do not schedule them.**
