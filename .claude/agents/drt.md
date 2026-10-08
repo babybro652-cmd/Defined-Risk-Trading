@@ -124,3 +124,6 @@ The Skool post is a short teaser that gets members to watch the video, not a tra
 or full recap: a hook title, 2-3 sentences on what the market did, 3-4 bullets of what the
 video covers, then "watch the video" and a discussion question. No level-by-level notes,
 no chapter list. No social trade clips from these videos unless Tim asks.
+Tim's standard video sign-off (chosen 10/8): "Define your risk, wait for your setup. Let's
+have a disciplined day." Use it in scripts and suggest it if a video ends on a profit line
+("let's make today a profitable day").
