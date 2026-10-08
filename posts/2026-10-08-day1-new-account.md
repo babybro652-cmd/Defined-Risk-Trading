@@ -41,3 +41,22 @@ Link: https://www.tiktok.com/@definedrisktrading/photo/7694442221885525279
 ```
 Day 1 on a new account: +$1,471. Target $3,000. Now the hard part, not giving it back. #definedrisktrading #esfutures #daytrading #propfirm
 ```
+
+## Story-style follow-ups (Tim approved, 10/8)
+Navy story cards with fade-in text, then the Day 1 stats panel. 1080x1920, no audio. No account number or firm branding.
+
+### TikTok story video (58063, published)
+Submission: e5896317-a675-4a50-b769-aa9a4096a553
+Link: https://www.tiktok.com/@definedrisktrading/video/7694446142712597791
+Media: https://database.blotato.io/storage/v1/object/public/public_media/246c6cef-6cbe-4b5b-81a9-7bb84481df9c/864e343e-eb59-4137-b8bf-8391f2a405e8.mp4 (also `posts/media/2026-10-08/day1-tiktok-story.mp4`, 10s)
+On screen: "6 AM to 4:30 at the warehouse. / Baby boy at home. / Charts in between." then stats.
+
+```
+POV: you work 6 to 4:30, you've got a baby at home, and you still found time to trade. Day 1 on a new account: +$1,471. One day at a time. #definedrisktrading #newdad #daytrading #esfutures
+```
+
+### IG Story (Tim posts himself)
+File: `posts/media/2026-10-08/day1-ig-story.mp4` (12s). Cards: "6 AM to 4:30 at the warehouse. / Baby boy at home. / Charts in between." -> "Today I opened a new account and finished day 1 up $1,471." -> "Not bragging. / Reminding myself the plan works when I follow it." -> stats.
+
+### FB Story (Tim posts himself)
+File: `posts/media/2026-10-08/day1-fb-story.mp4` (11s). Cards: "New dad, full-time job, trading in the gaps." -> "Day 1 on a new account: +$1,471." -> "One day at a time." -> stats.
