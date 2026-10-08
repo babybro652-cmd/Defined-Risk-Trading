@@ -7,39 +7,20 @@ Note: frame at about 6:04 in the source shows the phone notification shade (pers
 
 ```
 TITLE
-Market Breakdown: Wednesday 10/7 ES Session Review
+Wednesday 10/7: The Bias Was Right. The Trade Came From the Flip.
 
 POST
-Wednesday's bias was short, and we were right. Tuesday's big swing up went against the normal AMD cycle, Asia built a range, and London failed, so I called a down day with New York correcting Tuesday's move. That's what happened. Price fell from London through the 9:30 open and kept falling into about 10:30. AMD pointed long, and that read kept failing until the 10:30 to 10:45 area, when price finally swung back up. There was no clean setup at the open. The only clean setup in New York was a buy: the 10:30 candle set the range, the 10:45 candle swept below it and made the low of the day, and C3 gave the entry with a lot of drawdown you had to plan for. The takeaway: even when the bias isn't in your favor, holding to your rules still works. You could ride the short from 9:30 into 10:30, then flip and catch the buy on the way back up.
+Wednesday was a down day, and the bias called it before the open.
 
-KEY LEVELS AND NOTES (ES, 15m, times ET)
-- Bias: short. Called from the Asia range and a failed London session after Tuesday's swing up
-- London through the open: steady selling into about 10:30. The first New York candle fought back (long wick) and then kept falling
-- 10:30 candle (C1): high 7,828.00, low 7,818.50
-- 10:45 candle (C2): swept to 7,815.75, the low of the day, and closed back inside at 7,823.50
-- 11:00 candle (C3, the entry): opened 7,823.75, dipped to 7,817.25 before running to 7,833.00. Give your stop room for that drawdown
-- Price at recording (about 8:45 PM ET): 7,846 to 7,847
-- 4:30 AM London sell: it was there, but I don't trade London
-- 9:30: no clean setup. Entering at the start of C3 stopped out fast
-- Later in the morning a sell almost set up, but C2 broke both the high and the low of C1. If C2 breaks both sides, I don't enter
-- Later sells had no real manipulation, lots of back and forth
-- Two-sided day: short from 9:30 into 10:30, then the 10:45 buy on the way back up
+Tuesday ran hard, Asia built a range, London failed, and New York sold off from the open into 10:30. Then price flipped and ran 17 points off the low of the day.
 
-CHAPTERS
-00:00 Intro, Wednesday 10/7
-00:14 The bias call: a down day
-00:33 Why: Tuesday's swing up, the Asia range, a failed London
-01:06 30 minute chart: falling from London into 10:30
-01:52 15 minute: the London sell (not a session I trade)
-02:18 9:30: no clean setup
-02:50 The 10:45 buy: C1 at 10:30, C2 makes the low of the day
-03:17 C3 drawdown: plan for it
-03:47 Risk: my daily max and min
-04:34 The sell that almost set up
-04:59 Rule: if C2 breaks both sides of C1, no trade
-05:19 Late sells with no manipulation
-05:39 Bias against you, rules still work on both sides
-06:06 Wrap up
+In this 6 minute breakdown I walk through:
+- Why the short bias made sense before 9:30
+- Why there was no clean setup at the open
+- The 10:45 buy and the drawdown you had to plan for
+- The sell that almost set up, and the one rule that kept me out
+
+Watch the full video below, then tell me how you traded it.
 
 DISCUSSION
 Did you stay with the short bias into 10:30, or did you catch the flip on the 10:45 buy? How much drawdown would your stop have allowed on C3?

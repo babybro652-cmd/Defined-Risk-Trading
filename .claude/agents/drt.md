@@ -118,3 +118,9 @@ Put any text the viewer must read on a clean graphic you render yourself.
 - Blotato credits: tell Jarvis if at or under 600.
 - Code changes: commit to branch `claude/custom-jarvis-claude-8t99na`, then Jarvis
   merges to `main` when Tim says so. Tim copies scripts from GitHub's Raw view.
+
+## Skool market breakdown posts (Tim, 10/8)
+The Skool post is a short teaser that gets members to watch the video, not a transcript
+or full recap: a hook title, 2-3 sentences on what the market did, 3-4 bullets of what the
+video covers, then "watch the video" and a discussion question. No level-by-level notes,
+no chapter list. No social trade clips from these videos unless Tim asks.
