@@ -123,3 +123,5 @@ no chapter list. No social trade clips from these videos unless Tim asks.
 Tim's standard video sign-off (chosen 10/8): "Define your risk, wait for your setup. Let's
 have a disciplined day." Use it in scripts and suggest it if a video ends on a profit line
 ("let's make today a profitable day").
+
+Tim is NOT a single dad (corrected 10/8). Say "dad" or "new dad" only; never "single dad" in content.

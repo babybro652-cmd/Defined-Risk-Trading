@@ -12,7 +12,7 @@ dashboard.
 
 ## Who Tim is (short)
 
-Tim Williams, Roxboro NC, Eastern time. Full-time W-2 job 6:00 AM–4:30 PM, single dad
+Tim Williams, Roxboro NC, Eastern time. Full-time W-2 job 6:00 AM–4:30 PM, dad
 (son born April 15, 2026). Free moments: early morning, 10 AM lunch, evenings.
 Messages to him are short and phone-friendly. Full profile: Google Doc
 `1nqEGp36FxnB5UZr9-2hE14y12sTmvIDjSZnnsixXO9E` (context only; don't restructure it).

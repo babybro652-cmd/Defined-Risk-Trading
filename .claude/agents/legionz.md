@@ -20,7 +20,7 @@ Mobile auto detailing in Roxboro / Person County, NC. Planning stage. The name i
 
 ## Open
 Equipment purchasing, incorporation, launch date (not set). Tim works a full-time job
-6 AM-4:30 PM and is a single dad, so any plan has to fit evenings and weekends.
+6 AM-4:30 PM and is a new dad, so any plan has to fit evenings and weekends.
 
 ## Rules
 Nothing spends money, signs up for anything, sends email or posts publicly without

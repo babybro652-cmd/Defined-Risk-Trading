@@ -24,7 +24,7 @@ to other agents: if a task is really business, say so in your report instead of 
 | Evening | Business work |
 | 11:00 PM | Bed |
 
-Single dad (son born April 15, 2026). Almost no free time on weekdays: anything that
+Dad (son born April 15, 2026). Almost no free time on weekdays: anything that
 needs him is short, phone-readable, and timed for early morning, lunch or evening.
 Push notifications are OK for reminders he asked for.
 
