@@ -44,7 +44,7 @@ Newest decisions win; move finished items to Done with the date.
 - [ ] Decide: launch sale, counselor/group license.
 
 ### Defined Risk Trading
-- [ ] Renew TradingView Essentials (lapsed 10/5). No new alerts or tracker rows until it's paid. After renewing, check the alerts are active again.
+- [x] Renew TradingView Essentials: renewed 10/8 at $18.99/mo, alerts back on.
 - [ ] Move off prop-firm resets to your own MES account (plan 10/1):
     1. Paper trade CRT Pro + VMap test on TradingView for a few weeks (free).
     2. Catch up bills first (Workspace, OneMain, Spotloan).

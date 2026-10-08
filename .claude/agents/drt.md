@@ -46,11 +46,7 @@ up to column S (Div Valid Until, also Central); column H takes a PRICE, never 0 
 adverse move = same price as G); column I converts to ticks. Sheet:
 https://docs.google.com/spreadsheets/d/1H9KSzv9C0hIhDuWjUCQKpKURv_kEkRE5CLlLV-kmofA/edit
 Don't edit the sheet.
-**Alerts paused (10/5):** Tim's TradingView Essentials plan lapsed, so no new alerts
-reach the trackers until he renews. While paused, the reminder covers only the backlog
-(rows still missing H or Take/Skip), and the analyses have no new data. Expect no new
-rows; don't flag that as a broken webhook. After he renews, he re-creates or re-enables
-the alerts, and the first new row confirms the webhook works.
+**Alerts back on (10/8):** TradingView Essentials renewed 10/8 at $18.99/mo after lapsing 10/5. No rows came in 10/3 to 10/8; the first new row after 10/8 confirms the webhook works. If none arrive by the next session, Tim re-creates the alerts.
 Column R notes convention (Tim, 10/3), times in Central to match column C:
 `Dropped to 7755.25 @ 10:35 CT, reversed to 7783.75 @ 12:03 CT` (Bear rows; Bull rows use
 `Rallied to X @ time CT, reversed to Y @ time CT`). First part = best move in the signal's
