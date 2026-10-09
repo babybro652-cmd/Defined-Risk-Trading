@@ -9,6 +9,7 @@ ranking tables (out/rank_2026.md).
 Usage:
     python3 analysis/nfl/build_tracker.py --week 5            # full refresh
     python3 analysis/nfl/build_tracker.py --week 5 --injuries-only
+    python3 analysis/nfl/build_tracker.py --week 5 --slate 5   # after TNF: TNF stats in, shortlist = rest of Week 5
 
 Parsed games are cached in data/games_<season>.json (small, committed), so a
 weekly rerun only downloads the new 2026 games. Raw ESPN JSON is not kept.
@@ -258,7 +259,7 @@ def short_status(s):
 
 
 # ---------------------------------------------------------------- build
-def build(week, log, injuries_only=False):
+def build(week, log, injuries_only=False, slate=None):
     now = datetime.now(timezone.utc)
     g25 = load(os.path.join(DATA, 'games_2025.json'), {})
     if not injuries_only:
@@ -413,7 +414,7 @@ def build(week, log, injuries_only=False):
     tabs['Defense'] = df
 
     # ---- Week Shortlist
-    nxt = week + 1
+    nxt = slate or week + 1
     opp_of, game_of = {}, {}
     try:
         sb = scoreboard(2026, nxt)
@@ -527,9 +528,10 @@ def build(week, log, injuries_only=False):
 def main():
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument('--week', type=int, required=True, help='last completed 2026 week to include')
+    ap.add_argument('--slate', type=int, help='week for the Week Shortlist (default --week + 1); use mid-week, e.g. --week 5 --slate 5 after TNF')
     ap.add_argument('--injuries-only', action='store_true', help='only refresh Injuries + Week Shortlist + Notes')
     a = ap.parse_args()
-    build(a.week, lambda m: print(m, file=sys.stderr), a.injuries_only)
+    build(a.week, lambda m: print(m, file=sys.stderr), a.injuries_only, a.slate)
 
 
 if __name__ == '__main__':

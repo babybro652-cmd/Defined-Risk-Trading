@@ -33,10 +33,19 @@ play-by-play and the ESPN injuries feed. Small stakes, for fun.
 
 3. Commit `data/` and `out/` so the next run starts from the cache.
 
+## Mid-week (after TNF)
+
+```
+python3 analysis/nfl/build_tracker.py --week 5 --slate 5
+```
+
+Adds the Thursday game to the stats and keeps the Week Shortlist on the rest of Week 5
+(`--slate` defaults to `--week + 1`). The unplayed games show as "not final" on Notes.
+
 ## Saturday injury recheck
 
 ```
-python3 analysis/nfl/build_tracker.py --week 5 --injuries-only
+python3 analysis/nfl/build_tracker.py --week 5 --slate 5 --injuries-only
 ```
 
 Refreshes only Injuries, Week Shortlist and Notes from the live injuries feed (no game downloads).
