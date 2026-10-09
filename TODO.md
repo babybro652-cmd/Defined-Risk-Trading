@@ -38,7 +38,7 @@ Newest decisions win; move finished items to Done with the date.
 - [ ] Update the SOP quote prices and the business plan (old tier names, weekday 8-5 hours) to match the new menu.
 
 ### Peace by Page (Ventures)
-- [ ] Work through the launch build-out sheet, step by step (domain to first sales, 67 steps, target launch 10/10): [Peace by Page: Launch Build-Out](https://docs.google.com/spreadsheets/d/1TLL394lyp_JITaeTmSNjxmjrJ_4T-Ie6UZMhja7xzOk/edit)
+- [ ] Work through the launch build-out sheet, step by step (domain to first sales, 67 steps, launch PUSHED (10/9): new date TBD, Tim needs a couple of days): [Peace by Page: Launch Build-Out](https://docs.google.com/spreadsheets/d/1TLL394lyp_JITaeTmSNjxmjrJ_4T-Ie6UZMhja7xzOk/edit)
 - [ ] Buy peacebypage.com (~$11).
 - [ ] Store fixes before launch: About text, disclaimer + 988 in footer, store name "Peace by Page", turn off "On Sale", reorder products, check photos. Then the test purchase (100% off coupon). OK the pins, videos and launch post (Doc "Peace by Page: Launch Content Drafts").
 - [ ] Decide: launch sale (LAUNCH25 or none), email sign-off (Tim or The Peace by Page team), counselor/group license (later).
