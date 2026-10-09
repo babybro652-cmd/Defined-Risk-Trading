@@ -1,4 +1,4 @@
-# Peace by Page: Payhip launch (Sat 10/10)
+# Peace by Page: Payhip launch (Fri 10/16; moved from Sat 10/10)
 
 | Step | What | File |
 |---|---|---|

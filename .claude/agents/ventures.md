@@ -46,4 +46,4 @@ Background: Tim's profile doc (Google Doc `1nqEGp36FxnB5UZr9-2hE14y12sTmvIDjSZnn
 - Blotato Facebook: account 50185, Peace by Page pageId 1255582607649321 (connected).
 - Blotato Pinterest: account 9654, username Peacebypage (the old NestedLumen account, renamed; has history). Needs boardId per post; boards planned: Anxiety Journal Prompts, Calming Coloring Pages, Self-Care Printables, Gifts for Someone Who Worries.
 - Instagram and TikTok @peacebypage: brand new, WARMING UP. Do not connect to Blotato before ~10/18. Until then Tim posts by hand from his phone (3-4x/week); Jarvis prepares the video + caption and sends it to him.
-- Launch 10/10: Facebook + Pinterest via Blotato; IG + TikTok launch reel posted by Tim manually.
+- Launch moved to FRI 10/16 (Tim approved all content 10/9; no launch sale unless he says LAUNCH25). Schedule and copy: `launch/launch-schedule.md`. Facebook launch post + 5 Reels scheduled in Blotato 10/9. Blotato REFUSES Pinterest until the account is warmed up (100+ monthly views): pins go by hand / Pinterest's own scheduler for now. IG + TikTok: Tim posts launch day by hand; schedule V2-V5 once connected ~10/18.

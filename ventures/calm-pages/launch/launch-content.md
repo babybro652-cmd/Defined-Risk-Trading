@@ -1,9 +1,9 @@
-# Peace by Page: launch content drafts (10/10)
+# Peace by Page: launch content (launch Fri 10/16)
 
-Drafts for Tim's approval. Nothing here is posted, scheduled or sent. Checklist rows 35 (welcome emails), 41 (pins), 44 (videos), 47 (launch post).
+Approved by Tim 10/9. Launch moved from Sat 10/10 to Fri 10/16; what is scheduled where: `launch-schedule.md`. No launch sale for now: scheduled posts carry no code. The LAUNCH25 variants below stay here in case Tim says yes by Tue 10/13. Checklist rows 35 (welcome emails), 41 (pins), 44 (videos), 47 (launch post).
 Images and videos: `ventures/calm-pages/launch/content/` (rebuild: `python3 launch/make_launch_content.py`).
 Rules kept: no medical claims, "supports, not replaces, professional care" and 988 on every email, the launch post, the carousel and each video's end card. No mention of the gift origin story (row 50 is still open).
-Placeholders to fill: [LAUNCH CODE] and [END DATE] (row 48 decides the sale), [FIRST NAME] if the email tool supports it.
+Placeholders: [FIRST NAME] if the email tool supports it.
 
 ---
 
@@ -85,7 +85,7 @@ It comes in three editions. The pages inside are the same; only the art changes.
 
 Each journal is $11.99. The bundle for each edition ($16.99) adds an 18-page coloring pack and a 12-month mood tracker.
 
-**Launch offer:** use code **[LAUNCH CODE]** at checkout for [25%] off everything until [END DATE].
+**Launch offer (LAUNCH25 only):** use code **LAUNCH25** at checkout for 25% off everything until Fri 10/30.
 
 Every file is an instant download in US Letter and A4. Print at home, a page at a time or all at once.
 
@@ -107,7 +107,7 @@ Peace by Page
 
 ## 2. Pinterest pins (row 41)
 
-15 pins, 1000 x 1500, in `launch/content/pins/`. Plan: 1 pin a day from 10/10 (row 43). Each pin links to its product page.
+15 pins, 1000 x 1500, in `launch/content/pins/`. Plan: 1 pin a day from 10/16 for 15 days (row 43). Blotato blocked Pinterest on 10/9 (account needs warm-up), so pins go by hand or via Pinterest's own scheduler; order and copy in `launch-schedule.md`. Each pin links to its product page.
 
 | # | File | Board | Link |
 |---|---|---|---|
@@ -210,7 +210,7 @@ Suggested order (alternates editions and angles): W1, P2, N3, W5, P4, N1, W2, P3
 
 5 vertical videos, 1080 x 1920, 13 to 17 seconds, no voice, captions on screen. Each ends on a card with "Supports, not replaces, professional care. In crisis in the US? Call or text 988." Add a soft, quiet track from the app's music library when posting (IG/TikTok trending audio is fine; keep it calm). Files in `launch/content/videos/` with a `-cover.png` for each.
 
-Plan: video 1 on 10/10, then 3 a week (row 46). IG and TikTok are posted by Tim by hand until ~10/18.
+Plan: video 1 on 10/16, then 3 a week (row 46). Facebook Reels scheduled in Blotato. IG and TikTok are posted by Tim by hand until ~10/18.
 
 ### V1. 1-wings-flip-through.mp4 (launch day)
 On screen: "A 90-day anxiety journal you print at home" > "Hard moment? Start with the SOS pages" > "Trace the square. Breathe in for four." > "One page a day. About five minutes." > "Finish a week, color a page" > end card.
@@ -239,10 +239,12 @@ On screen: "Not sure yet? Try a week free" > "7 daily pages, about five minutes 
 
 ---
 
-## 4. Launch post, Sat 10/10, World Mental Health Day (row 47)
+## 4. Launch post, Fri 10/16 (row 47)
+
+World Mental Health Day lines removed after the move to 10/16. Lines marked LAUNCH25 go in only if Tim picks the sale (code LAUNCH25, 25% off everything for 2 weeks).
 
 Carousel: 7 slides, 1080 x 1350, `launch/content/carousel/launch-1.png` to `launch-7.png`.
-1. Today we open the doors (three covers)
+1. Now open | October 16: Today we open the doors (three covers)
 2. A 90-day journal you print at home
 3. Notice. Write. Take one small step. (daily page + thought record)
 4. An SOS toolkit in every journal
@@ -251,7 +253,7 @@ Carousel: 7 slides, 1080 x 1350, `launch/content/carousel/launch-1.png` to `laun
 7. A note of care: supports, not replaces, professional care; call or text 988; findahelpline.com
 
 ### Facebook (Blotato, with the 7 slides)
-Today is World Mental Health Day, and today Peace by Page opens.
+Today Peace by Page opens.
 
 We make gentle printable journals for anyone who worries. One page a day, about five minutes: check in with your mood, write three good things, name one worry and a more balanced thought, and pick one small step for tomorrow.
 
@@ -264,31 +266,31 @@ Calm Nights: moon and stars, with extra pages for evenings
 
 Not sure yet? The 7-day sampler is free.
 Shop: https://payhip.com/PeaceByPage
-[Launch offer: code [LAUNCH CODE] for [25%] off everything through [END DATE].]
+(LAUNCH25 only: Launch offer: code LAUNCH25 for 25% off everything through Fri 10/30.)
 
 A note of care: our journals are for self-reflection and general wellbeing. They support, not replace, care from a licensed professional. If you are in crisis in the US, call or text 988. Outside the US, find a helpline at findahelpline.com.
 
 ### Instagram (Tim posts by hand, carousel)
-Today is World Mental Health Day, and Peace by Page is open.
+Peace by Page is open.
 
 Gentle printable journals for anyone who worries. One page a day. About five minutes. An SOS toolkit for the hard moments, and a page to color when you finish a week.
 
 Three editions, same pages inside: Calm Wings, Calm Petals and Calm Nights. Swipe to see them.
 
 Try a week free with the 7-day sampler. Link in bio.
-[Launch code [LAUNCH CODE]: [25%] off through [END DATE].]
+(LAUNCH25 only: Launch code LAUNCH25: 25% off through Fri 10/30.)
 
 Supports, not replaces, professional care. In crisis in the US, call or text 988. Outside the US: findahelpline.com.
 
-**Hashtags:** #worldmentalhealthday #mentalhealthawareness #anxietyjournal #printablejournal #guidedjournal #selfcare #journaling
+**Hashtags:** #mentalhealthawareness #anxietyjournal #printablejournal #guidedjournal #selfcare #journaling
 
 ### TikTok (Tim posts by hand, photo mode with the 7 slides, or video V1)
-World Mental Health Day felt like the right day to open. Peace by Page makes printable journals for anyone who worries: one page a day, about five minutes. Free 7-day sampler, link in bio. Supports, not replaces, professional care. In crisis in the US, call or text 988.
-**Hashtags:** #worldmentalhealthday #anxietyjournal #journaling #printables #selfcare
+Peace by Page is open today. We make printable journals for anyone who worries: one page a day, about five minutes. Free 7-day sampler, link in bio. Supports, not replaces, professional care. In crisis in the US, call or text 988.
+**Hashtags:** #anxietyjournal #journaling #printables #selfcare #mentalhealthawareness
 
 ### Pinterest (Blotato, slide 1 as a pin to Self-Care Printables)
-**Title:** Printable Anxiety Journals for World Mental Health Day
-**Description:** Peace by Page opens on World Mental Health Day: gentle 90-day printable journals in three editions (butterflies, botanicals, moon and stars), five minutes a day, plus a free 7-day sampler. Supports, not replaces, professional care. US crisis line: call or text 988.
+**Title:** Printable Anxiety Journals from Peace by Page, Now Open
+**Description:** Peace by Page is now open: gentle 90-day printable journals in three editions (butterflies, botanicals, moon and stars), five minutes a day, plus a free 7-day sampler. Supports, not replaces, professional care. US crisis line: call or text 988.
 **Link:** https://payhip.com/PeaceByPage
 
 ### Share text for friends and family (row 54, optional)
