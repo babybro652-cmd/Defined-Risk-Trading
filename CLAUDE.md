@@ -81,7 +81,7 @@ passes the result to Tim (with a push notification when the routine asks for one
 | Loan spam cleanup (delete + unsubscribe; replaces the old label-only check) | Mon 8:56 AM | personal |
 | Paycheck amount for the Weekly Money Plan (Tim Money workbook) | Mon 6:22 PM | Jarvis |
 | Work: week 1 surveys reminder (push) | Fri 6:52 AM and 12:57 PM | Jarvis |
-| Pre-NY trading rules push | Mon–Fri 9:22 AM | Jarvis |
+| Evening trading rules push | Sun–Thu 6:58 PM | Jarvis |
 
 Content routines (daily 5 AM content agent, Mon/Wed/Thu/Fri DRT posts) run in their
 own fresh sessions and don't report here. The old label-only Monday loan-spam check

@@ -129,4 +129,4 @@ Tim is NOT a single dad (corrected 10/8). Say "dad" or "new dad" only; never "si
 ## Tim's personal trading rules (restated 10/9, after losing 2 Lucid accounts trading London)
 NY session only (no London, no Asia). Wait for the label (no early entry). Hard stop 3.5-4 pts.
 1-2 good trades, then done. Max $1,000 risk in a day. One last reset planned for Thu 10/15.
-A push with these rules goes out weekdays 9:22 AM ET (routine "Pre-NY trading rules push").
+A push with these rules goes out Sun-Thu 6:58 PM ET, before the overnight sessions (routine "Evening trading rules push").
