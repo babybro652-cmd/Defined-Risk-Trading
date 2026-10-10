@@ -415,7 +415,7 @@ def build(week, log, injuries_only=False, slate=None):
 
     # ---- Week Shortlist
     nxt = slate or week + 1
-    opp_of, game_of = {}, {}
+    opp_of, game_of, played = {}, {}, set()
     try:
         sb = scoreboard(2026, nxt)
         for e in sb.get('events', []):
@@ -426,6 +426,8 @@ def build(week, log, injuries_only=False, slate=None):
             day = kt.strftime('%a %-I:%M %p ET')
             opp_of[home], opp_of[away] = away, home
             game_of[home] = game_of[away] = f"{e.get('shortName', away + ' @ ' + home)} ({day})"
+            if c.get('status', e.get('status', {})).get('type', {}).get('completed'):
+                played.update((home, away))
     except Exception as ex:  # noqa
         log(f'Week {nxt} schedule unavailable: {ex}')
     key_of = {'RB': 'RB_td', 'FB': 'RB_td', 'WR': 'WR_td', 'TE': 'TE_td', 'QB': 'QB_rush'}
@@ -440,6 +442,8 @@ def build(week, log, injuries_only=False, slate=None):
         c = x['comb']
         if not opp:
             v, why = 'Skip', 'Bye week'
+        elif t in played:
+            v, why = 'Skip', 'Game already played'
         elif s in ('Out', 'Out (inactive)', 'IR', 'Doubtful', 'Suspension'):
             v, why = 'Skip', f'Injury status: {s}'
         else:

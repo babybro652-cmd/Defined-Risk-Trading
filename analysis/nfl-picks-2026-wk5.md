@@ -54,6 +54,21 @@ Straight bets or 2 legs max. Every 4-8 leg parlay lost this week; even four 70% 
 Olave (foot), Lamar Jackson (moves Henry and Zay Flowers), Mike Evans (Kittle upside), Chase (stays on avoid either way),
 DeVonta Smith and Goedert (PHI, both Q).
 
+## Saturday 10/10 recheck result
+
+ESPN injuries feed 10/10 10:48 AM ET (`build_tracker.py --week 5 --slate 5 --injuries-only`). TNF players now show "Game already played" on the Week Shortlist.
+
+- **Lamar Jackson: OUT.** Huntley starts. BAL @ ATL flipped from BAL -6 (open) to ATL -3 / -3.5, total 43.5. Henry stays on (4/4 TD, 54% team RZ share, still a "Play" on the sheet) but drops from Safer to Middle: BAL is now the road dog in a low total. Bijan gets a small boost (ATL home favorite).
+- **Chris Olave: no designation.** Foot cleared; keep the 7.5 catches pick.
+- **Mike Evans: no designation.** Kittle pick stays, but the "Evans out" upside is gone.
+- **Chase: Q (concussion protocol).** Stays on avoid. **DeVonta Smith: OUT**, Goedert no designation.
+- Gibbs, Bijan, Amon-Ra, McBride, Kittle, JSN, Henry: no injury listing.
+- Other Q: Caleb Williams (CHI, hamstring, limited Fri), Jefferson and Addison (MIN), Kamara (NO), Jeanty (LV), Stevenson (NE), McLaurin (WSH, game-time), Flowers (BAL). Out: Monangai, Breece Hall, Diggs.
+- **Drops:** none forced by injury. Henry downgraded only.
+- **First TD lean:** Gibbs (6.8 RZ opps/g, 48% share, DET -5.5 in the highest total). Bijan second.
+
+Line moves (Doc's Sports 10/7, Oddsshopper/FanDuel): BAL -6 to ATL -3.5; HOU -3.5 to -7 (now -7.5); GB -2.5 to CHI -1.5/-3; JAX -3.5 to -7.5; DET-ARI total 49.5 to 53.5/54.5.
+
 ## Sources
 
 - [ESPN via ABC11: Week 5 odds, lines and totals (10/9)](https://abc11.com/post/nfl-week-5-betting-odds-lines-totals-every-game/19909973/)
@@ -62,3 +77,4 @@ DeVonta Smith and Goedert (PHI, both Q).
 - [Dimers: Gibbs Week 5 projection (71% anytime TD)](https://www.dimers.com/nfl/news/jahmyr-gibbs-projected-fantasy-stats-nfl-week-5-2026-ac)
 - [Ravens Lamar Jackson ankle (Field Level Media, 10/5)](https://wmbdradio.com/2026/10/05/ravens-optimistic-qb-lamar-jackson-ankle-injury-isnt-crazy-long-term/), [Newsweek Week 5 status](https://www.newsweek.com/sports/nfl/ravens-jesse-minter-updates-week-5-injury-status-for-qb-lamar-jackson-12526656)
 - ESPN box scores, play-by-play and injuries feed (via `analysis/nfl/build_tracker.py`)
+- [Doc's Sports Week 5 line movements (10/7)](https://www.docsports.com/2026/nfl-week-5-line-movements-point-spread-analysis.html), [Oddsshopper Ravens vs Falcons](https://www.oddsshopper.com/articles/prediction-markets/ravens-vs-falcons-week-5-picks)
