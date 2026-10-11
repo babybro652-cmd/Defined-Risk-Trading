@@ -83,7 +83,12 @@ passes the result to Tim (with a push notification when the routine asks for one
 | Work: week 1 surveys reminder (push) | Fri 6:52 AM and 12:57 PM | Jarvis |
 | Evening trading rules push | Sun–Thu 6:58 PM | Jarvis |
 | Daily DRT content (moved here 10/11; full prompt stays in the disabled trig_01NkNxxc7neQATLrTifB42kv) | Daily 5:02 AM | drt |
+| DRT Monday IG carousel (prompt in disabled trig_01KKoeA87HpY3wb8fzaQK8Jb) | Mon 6:52 PM | drt |
+| DRT Wednesday TikTok commentary (prompt in disabled trig_01Td2366YryxzXU8BPrxUv1Z) | Wed 7:22 PM | drt |
+| DRT Thursday FB lifestyle reel (prompt in disabled trig_01AgRQCG6Fn3maoJGToxnFRT) | Thu 7:52 PM | drt |
+| DRT Friday trade recap, needs Tim's go (prompt in disabled trig_01CgC1RonbscetrWJhFAWLZp) | Fri 4:57 PM | drt |
 
-The Mon/Wed/Thu/Fri DRT post routines run in their own fresh sessions and don't report
-here. Those sessions can't download database.blotato.io, so their media QA step fails. The old label-only Monday loan-spam check
+All DRT content routines moved here 10/11: the old fresh sessions couldn't download
+database.blotato.io for media QA. The disabled originals hold the full prompts; edit
+those (update_trigger prompt) to change what a routine does. The old label-only Monday loan-spam check
 (Cowork, disabled 10/7) is replaced by the cleanup above.
