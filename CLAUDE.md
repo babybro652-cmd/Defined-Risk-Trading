@@ -82,7 +82,8 @@ passes the result to Tim (with a push notification when the routine asks for one
 | Paycheck amount for the Weekly Money Plan (Tim Money workbook) | Mon 6:22 PM | Jarvis |
 | Work: week 1 surveys reminder (push) | Fri 6:52 AM and 12:57 PM | Jarvis |
 | Evening trading rules push | Sun–Thu 6:58 PM | Jarvis |
+| Daily DRT content (moved here 10/11; full prompt stays in the disabled trig_01NkNxxc7neQATLrTifB42kv) | Daily 5:02 AM | drt |
 
-Content routines (daily 5 AM content agent, Mon/Wed/Thu/Fri DRT posts) run in their
-own fresh sessions and don't report here. The old label-only Monday loan-spam check
+The Mon/Wed/Thu/Fri DRT post routines run in their own fresh sessions and don't report
+here. Those sessions can't download database.blotato.io, so their media QA step fails. The old label-only Monday loan-spam check
 (Cowork, disabled 10/7) is replaced by the cleanup above.
