@@ -43,7 +43,11 @@ this how-to: CRT and Div rows only (not BUY/SELL); column G is where the tag fir
 log times are Central, so add 1 hour to find the bar on the chart; Bull Div / CRT Bull
 = lowest low before price rallied, Bear = highest high before it dropped; Div rows only
 up to column S (Div Valid Until, also Central); column H takes a PRICE, never 0 (no
-adverse move = same price as G); column I converts to ticks. Sheet:
+adverse move = same price as G); column I converts to ticks. CRT rows (Tim, 10/11): G
+is the swept candle-2 low/high (c2L/c2H in the Pine alert), NOT the price at the tag, which
+sits several points away; for CRT rows Tim enters the actual worst price after the tag
+(lowest low before the rally / highest high before the drop) even if it never reaches G, so
+analysis can measure both entry drawdown and whether the sweep level held. Sheet:
 https://docs.google.com/spreadsheets/d/1H9KSzv9C0hIhDuWjUCQKpKURv_kEkRE5CLlLV-kmofA/edit
 Don't edit the sheet.
 **Alerts back on (10/8):** TradingView Essentials renewed 10/8 at $18.99/mo after lapsing 10/5. No rows came in 10/3 to 10/8; the first new row after 10/8 confirms the webhook works. If none arrive by the next session, Tim re-creates the alerts.
