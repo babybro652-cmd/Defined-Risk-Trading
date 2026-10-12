@@ -1,7 +1,7 @@
 # 1979 Oldsmobile Cutlass Supreme
 
 **Goal:** high-performance street car, aggressive styling. Build plan: (to plan)
-**Power plan (Tim, 10/12/2026):** Twin turbo setup (on the new motor)
+**Power plan (Tim, 10/12/2026):** LS swap with forged internals, twin turbo setup.
 
 - Engine: (add)
 - VIN: (add)
