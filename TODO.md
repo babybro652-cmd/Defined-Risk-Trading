@@ -7,6 +7,8 @@ Newest decisions win; move finished items to Done with the date.
 ## Open
 
 ### Personal
+- [ ] Charger oil change (past due, ~188k miles). Tell Jarvis the engine (3.6 V6 or 5.7 Hemi) for the oil type.
+- [ ] Send Jarvis the Cruze mileage.
 - [ ] Google Workspace: downgrade Business Plus (~$26-28/mo) to Business Starter (~$8/mo) at admin.google.com > Billing > Subscriptions, then pay the balance and tell Jarvis the new amount. Payments failing since 9/20.
 - [ ] Check the 5 Skool login codes from 9/29. If they weren't all you, change the Skool password.
 - [ ] Add a second sign-in method to Stripe.

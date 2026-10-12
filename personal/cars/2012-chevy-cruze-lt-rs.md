@@ -1,7 +1,8 @@
 # 2012 Chevy Cruze LT RS
 
 - Engine: 1.4L turbo Ecotec (aluminum block). Confirm the engine code (LUJ or LUV) from the VIN, 8th digit.
-- VIN / mileage: (add)
+- VIN: (add)
+- Mileage: Tim getting it 10/13/2026
 
 ## Repair in progress: head off (10/12/2026)
 Cylinder head removed. Block deck and pistons need cleaning before reassembly.
