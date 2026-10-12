@@ -45,6 +45,7 @@ Newest decisions win; move finished items to Done with the date.
 - [ ] Decide by Tue 10/13: launch sale (LAUNCH25 or none; default none), email sign-off (Tim or The Peace by Page team), counselor/group license (later).
 
 ### Defined Risk Trading
+- [ ] Pink Out softball tournament (Sat 10/17-Sun 10/18): after it's over, Tim drops photos in DRT Phone and Jarvis drafts a DRT post plus a personal post (Tim approves before posting).
 - [x] Renew TradingView Essentials: renewed 10/8 at $18.99/mo, alerts back on.
 - [ ] Move off prop-firm resets to your own MES account (plan 10/1):
     1. Paper trade CRT Pro + VMap test on TradingView for a few weeks (free).
