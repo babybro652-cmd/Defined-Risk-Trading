@@ -1,5 +1,7 @@
 # 2012 Chevy Cruze LT RS
 
+**Goal:** high-performance street car, aggressive styling. Build plan: (to plan)
+
 - Engine: 1.4L turbo Ecotec (aluminum block). Confirm the engine code (LUJ or LUV) from the VIN, 8th digit.
 - VIN: (add)
 - Mileage: Tim getting it 10/13/2026

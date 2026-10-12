@@ -1,5 +1,7 @@
 # Tim's cars
 
+**End goal for every car (Tim, 10/12/2026): high-performance street car with aggressive styling.** Builds go in phases: reliable first, then power, then looks.
+
 One file per car: specs, maintenance log, repairs in progress, parts bought.
 
 Google Drive: 06 Personal & Money > Personal > Cars (https://drive.google.com/drive/folders/10Mqf2lj4AoqWKRMivu_sigzrUgVmqcq5), one subfolder per car for photos and receipts. Cruze notes doc: https://docs.google.com/document/d/1Ts_Ja4Pwt4kC9y40Aw24OrMKjZLosUWHW3X4vqcqK2I/edit
