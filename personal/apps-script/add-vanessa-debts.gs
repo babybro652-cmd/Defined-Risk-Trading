@@ -30,7 +30,7 @@ function addVanessaDebts() {
     ['State Employees Credit Union', 100, 'Monthly', d(2026, 10, 31), 'Due the 31st', '', '', 'Owed $1,200 at 10.75% (Vanessa, 10/9). Current.'],
     ['Shell card', 92, 'Monthly', d(2026, 10, 16), 'Due the 16th', '', '', 'Owed $1,645.83 at 32.49% (Vanessa, 10/9). Current.'],
     ['Cash App loans', 100, 'Monthly', d(2026, 11, 15), 'Planning figure, 15th', '', '', 'Owed $3,985 (Vanessa, 10/9). No set payment; $100/mo is a placeholder. Cash App may auto-deduct; check the app.'],
-    ['', '', '', '', '', '', '', 'Open row'],
+    ['Verizon', 282.37, 'Monthly', d(2026, 10, 15), 'Due the 11th; Oct bill paid Thu 10/15', '', '', '$282.37 bill due 10/11 (email 10/12), unpaid as of 10/12. Confirm the regular monthly amount.'],
   ]);
 
   // 3. Old prop reset row (now row 36) is replaced by row 19.
