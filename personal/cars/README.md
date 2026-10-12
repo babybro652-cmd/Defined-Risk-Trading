@@ -2,7 +2,7 @@
 
 **End goal for every car (Tim, 10/12/2026): high-performance street car with aggressive styling.** Builds go in phases: reliable first, then power, then looks.
 
-**Standard on every car (Tim, 10/12/2026):** oil catch can(s), oil cooler, and AN fittings/lines on all major systems (fuel, oil, coolant, turbo/supercharger feeds and returns).
+**Standard on every car (Tim, 10/12/2026):** oil catch can(s), oil cooler, baffled oil pan, and AN fittings/lines on all major systems (fuel, oil, coolant, turbo/supercharger feeds and returns).
 
 One file per car: specs, maintenance log, repairs in progress, parts bought.
 
