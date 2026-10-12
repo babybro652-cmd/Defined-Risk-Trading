@@ -1,6 +1,7 @@
 # 2016 Dodge Charger Pursuit
 
 **Goal:** high-performance street car, aggressive styling. Build plan: (to plan)
+**Power plan (Tim, 10/12/2026):** Supercharger
 
 - Engine: 5.7L Hemi V8
 - VIN: (add)
