@@ -1,21 +1,20 @@
-# NHL shortlist 2026-10-09 (not guaranteed)
+# NHL shortlist 2026-10-12 (not guaranteed)
 
-- **Anytime goal: Kyle Connor** (WPG vs ANA). Scored in 45% of games (blend); 26-27: 5 G in 4 GP; ANA allows 3.5 GA/G; faces Lukas Dostal (unconfirmed, SV .887)
-- **Anytime goal: Cutter Gauthier** (ANA @ WPG). Scored in 42% of games (blend); 26-27: 2 G in 3 GP; WPG allows 3.0 GA/G; faces Stuart Skinner (unconfirmed, SV .890)
-- **Anytime goal: Alex DeBrincat** (DET vs SEA). Scored in 41% of games (blend); 26-27: 2 G in 3 GP; SEA allows 3.1 GA/G; faces Joey Daccord (unconfirmed, SV .898)
-- **Anytime goal: Dylan Larkin** (DET vs SEA). Scored in 40% of games (blend); 26-27: 1 G in 1 GP; SEA allows 3.1 GA/G; faces Joey Daccord (unconfirmed, SV .898)
-- **First goal: Alex Tuch** (WSH vs NYR). Scored first in 5/79 games in 25-26, 1/3 in 26-27; 0.48 goals/G (blend); WSH scores first 62%; Top 6 PP2
-- **First goal: Mark Scheifele** (WPG vs ANA). Scored first in 5/82 games in 25-26, 0/4 in 26-27; 0.38 goals/G (blend); WPG scores first 53%; Top 6 PP1
-- **First goal: Bryan Rust** (PIT @ CBJ). Scored first in 3/72 games in 25-26, 0/1 in 26-27; 0.43 goals/G (blend); PIT scores first 56%; Top 6 PP2
-- **SOG over 1.5: Alex DeBrincat** (DET vs SEA). Over 1.5 in 84% of games (blend); 3.4 SOG/G; L5: 3 4 1 1 6; SEA allows 29.3 SA/G
-- **SOG over 2.5: Cutter Gauthier** (ANA @ WPG). Over 2.5 in 71% of games (blend); 3.9 SOG/G; L5: 7 4 5 6 4; WPG allows 28.4 SA/G
-- **SOG over 1.5: Kyle Connor** (WPG vs ANA). Over 1.5 in 87% of games (blend); 3.7 SOG/G; L5: 4 6 5 9 7; ANA allows 28.2 SA/G
-- **SOG over 1.5: Zach Werenski** (CBJ vs PIT). Over 1.5 in 86% of games (blend); 3.4 SOG/G; L5: 1 3 3 8 4; PIT allows 27.3 SA/G
-- **SOG over 1.5: Alex Ovechkin** (WSH vs NYR). Over 1.5 in 82% of games (blend); 2.8 SOG/G; L5: 2 0 1 4 3; NYR allows 28.0 SA/G
+- **Anytime goal: Tage Thompson** (BUF vs FLA). Scored in 46% of games (blend); 26-27: 3 G in 5 GP; FLA allows 3.2 GA/G; faces Jacob Markstrom (unconfirmed, SV .886)
+- **Anytime goal: Kirill Kaprizov** (MIN vs VGK). Scored in 49% of games (blend); 26-27: 6 G in 5 GP; VGK allows 2.8 GA/G; faces Carter Hart (unconfirmed, SV .894)
+- **Anytime goal: Tim Stützle** (OTT @ NJD). Scored in 41% of games (blend); 26-27: 4 G in 5 GP; NJD allows 3.1 GA/G; faces Jake Allen (unconfirmed, SV .903)
+- **Anytime goal: Matthew Tkachuk** (FLA @ BUF). Scored in 39% of games (blend); 26-27: 3 G in 5 GP; BUF allows 3.1 GA/G; faces Ukko-Pekka Luukkonen (unconfirmed, SV .900)
+- **First goal: Matt Boldy** (MIN vs VGK). Scored first in 8/76 games in 25-26, 1/5 in 26-27; 0.49 goals/G (blend); MIN scores first 56%; Top 6 PP1
+- **First goal: Drake Batherson** (OTT @ NJD). Scored first in 8/79 games in 25-26, 0/5 in 26-27; 0.45 goals/G (blend); OTT scores first 54%; Top 6 PP1
+- **First goal: Sam Reinhart** (FLA @ BUF). Scored first in 5/64 games in 25-26, 0/5 in 26-27; 0.37 goals/G (blend); FLA scores first 45%; Top 6 PP1
+- **SOG over 1.5: Jack Eichel** (VGK @ MIN). Over 1.5 in 92% of games (blend); 3.4 SOG/G; L5: 4 6 2 2 2; MIN allows 29.2 SA/G
+- **SOG over 1.5: Brady Tkachuk** (FLA @ BUF). Over 1.5 in 83% of games (blend); 3.4 SOG/G; L5: 1 2 4 4 1; BUF allows 27.8 SA/G
+- **SOG over 1.5: Matthew Tkachuk** (FLA @ BUF). Over 1.5 in 83% of games (blend); 2.6 SOG/G; L5: 4 2 1 2 2; BUF allows 27.8 SA/G
+- **SOG over 1.5: Tage Thompson** (BUF vs FLA). Over 1.5 in 86% of games (blend); 3.7 SOG/G; L5: 6 6 9 4 4; FLA allows 26.2 SA/G
+- **SOG over 1.5: Jack Hughes** (NJD vs OTT). Over 1.5 in 89% of games (blend); 3.7 SOG/G; L5: 2 5 3 5 2; OTT allows 24.7 SA/G
 
 ## Goalies
 
-- SEA @ DET 7:00 ET: ('Joey Daccord', 'Unconfirmed') / ('John Gibson', 'Confirmed')
-- NYR @ WSH 7:00 ET: ('Igor Shesterkin', 'Unconfirmed') / ('Logan Thompson', 'Unconfirmed')
-- PIT @ CBJ 7:00 ET: ('Arturs Silovs', 'Unconfirmed') / ('Jet Greaves', 'Unconfirmed')
-- ANA @ WPG 8:00 ET: ('Lukas Dostal', 'Unconfirmed') / ('Stuart Skinner', 'Unconfirmed')
+- FLA @ BUF 1:00 ET: ('Jacob Markstrom', 'Unconfirmed') / ('Ukko-Pekka Luukkonen', 'Unconfirmed')
+- OTT @ NJD 7:00 ET: ('Linus Ullmark', 'Unconfirmed') / ('Jake Allen', 'Unconfirmed')
+- VGK @ MIN 8:00 ET: ('Carter Hart', 'Unconfirmed') / ('Jesper Wallstedt', 'Unconfirmed')
