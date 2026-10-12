@@ -2,6 +2,7 @@
 
 **Goal:** high-performance street car, aggressive styling. Build plan: (to plan)
 **Power plan (Tim, 10/12/2026):** Supercharger
+**Looks:** wide body kit, big wheels, new lights.
 
 - Engine: 5.7L Hemi V8
 - VIN: (add)
