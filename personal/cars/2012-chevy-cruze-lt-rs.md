@@ -3,6 +3,7 @@
 **Goal:** high-performance street car, aggressive styling. Build plan: (to plan)
 **Power plan (Tim, 10/12/2026):** Upgraded turbo
 **Suspension:** air suspension (bags) instead of coilovers, plus sway bars.
+**Looks:** new lights (LED headlights and taillights).
 
 - Engine: 1.4L turbo Ecotec (aluminum block). Confirm the engine code (LUJ or LUV) from the VIN, 8th digit.
 - VIN: (add)

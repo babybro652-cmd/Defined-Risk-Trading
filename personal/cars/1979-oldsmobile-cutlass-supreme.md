@@ -3,6 +3,7 @@
 **Goal:** high-performance street car, aggressive styling. Build plan: (to plan)
 **Power plan (Tim, 10/12/2026):** LS swap with forged internals, twin turbo setup.
 **Stance:** lowered a few inches (coilovers + tubular control arms; check turbo/exhaust and oil pan ground clearance).
+**Looks:** new lights (LED headlights and taillights).
 
 - Engine: (add)
 - VIN: (add)
