@@ -1,20 +1,33 @@
-# NHL shortlist 2026-10-12 (not guaranteed)
+# NHL shortlist 2026-10-13 (not guaranteed)
 
-- **Anytime goal: Tage Thompson** (BUF vs FLA). Scored in 46% of games (blend); 26-27: 3 G in 5 GP; FLA allows 3.2 GA/G; faces Jacob Markstrom (unconfirmed, SV .886)
-- **Anytime goal: Kirill Kaprizov** (MIN vs VGK). Scored in 49% of games (blend); 26-27: 6 G in 5 GP; VGK allows 2.8 GA/G; faces Carter Hart (unconfirmed, SV .894)
-- **Anytime goal: Tim Stützle** (OTT @ NJD). Scored in 41% of games (blend); 26-27: 4 G in 5 GP; NJD allows 3.1 GA/G; faces Jake Allen (unconfirmed, SV .903)
-- **Anytime goal: Matthew Tkachuk** (FLA @ BUF). Scored in 39% of games (blend); 26-27: 3 G in 5 GP; BUF allows 3.1 GA/G; faces Ukko-Pekka Luukkonen (unconfirmed, SV .900)
-- **First goal: Matt Boldy** (MIN vs VGK). Scored first in 8/76 games in 25-26, 1/5 in 26-27; 0.49 goals/G (blend); MIN scores first 56%; Top 6 PP1
-- **First goal: Drake Batherson** (OTT @ NJD). Scored first in 8/79 games in 25-26, 0/5 in 26-27; 0.45 goals/G (blend); OTT scores first 54%; Top 6 PP1
-- **First goal: Sam Reinhart** (FLA @ BUF). Scored first in 5/64 games in 25-26, 0/5 in 26-27; 0.37 goals/G (blend); FLA scores first 45%; Top 6 PP1
-- **SOG over 1.5: Jack Eichel** (VGK @ MIN). Over 1.5 in 92% of games (blend); 3.4 SOG/G; L5: 4 6 2 2 2; MIN allows 29.2 SA/G
-- **SOG over 1.5: Brady Tkachuk** (FLA @ BUF). Over 1.5 in 83% of games (blend); 3.4 SOG/G; L5: 1 2 4 4 1; BUF allows 27.8 SA/G
-- **SOG over 1.5: Matthew Tkachuk** (FLA @ BUF). Over 1.5 in 83% of games (blend); 2.6 SOG/G; L5: 4 2 1 2 2; BUF allows 27.8 SA/G
-- **SOG over 1.5: Tage Thompson** (BUF vs FLA). Over 1.5 in 86% of games (blend); 3.7 SOG/G; L5: 6 6 9 4 4; FLA allows 26.2 SA/G
-- **SOG over 1.5: Jack Hughes** (NJD vs OTT). Over 1.5 in 89% of games (blend); 3.7 SOG/G; L5: 2 5 3 5 2; OTT allows 24.7 SA/G
+- **Anytime goal: Bo Horvat** (NYI vs VAN). Scored in 41% of games (blend); 26-27: 4 G in 5 GP; VAN allows 4.1 GA/G; faces Leevi Merilainen (unconfirmed, SV .871)
+- **Anytime goal: Kirill Kaprizov** (MIN @ WPG). Scored in 48% of games (blend); 26-27: 6 G in 6 GP; WPG allows 3.1 GA/G; faces Stuart Skinner (unconfirmed, SV .890)
+- **Anytime goal: Dylan Guenther** (UTA vs TOR). Scored in 40% of games (blend); 26-27: 3 G in 6 GP; TOR allows 3.5 GA/G; faces Sergei Bobrovsky (unconfirmed, SV .879)
+- **Anytime goal: Nick Schmaltz** (UTA vs TOR). Scored in 38% of games (blend); 26-27: 6 G in 6 GP; TOR allows 3.5 GA/G; faces Sergei Bobrovsky (unconfirmed, SV .879)
+- **First goal: Nathan MacKinnon** (COL @ DAL). Scored first in 7/80 games in 25-26, 0/5 in 26-27; 0.72 goals/G (blend); COL scores first 64%; Top 6 PP1
+- **First goal: Cole Caufield** (MTL vs BUF). Scored first in 9/81 games in 25-26, 1/5 in 26-27; 0.59 goals/G (blend); MTL scores first 54%; Top 6 PP1
+- **First goal: Connor McDavid** (EDM @ LAK). Scored first in 7/82 games in 25-26, 0/5 in 26-27; 0.59 goals/G (blend); EDM scores first 51%; Top 6 PP1
+- **SOG over 2.5: Alex DeBrincat** (DET vs NJD). Over 2.5 in 76% of games (blend); 3.5 SOG/G; L5: 7 3 3 4 1; NJD allows 27.1 SA/G
+- **SOG over 2.5: Matt Boldy** (MIN @ WPG). Over 2.5 in 70% of games (blend); 3.5 SOG/G; L5: 3 4 3 7 4; WPG allows 28.1 SA/G
+- **SOG over 2.5: Nathan MacKinnon** (COL @ DAL). Over 2.5 in 73% of games (blend); 4.4 SOG/G; L5: 8 2 1 4 8; DAL allows 25.5 SA/G
+- **SOG over 1.5: Jack Eichel** (VGK @ NSH). Over 1.5 in 93% of games (blend); 3.4 SOG/G; L5: 2 4 6 2 2; NSH allows 29.7 SA/G
+- **SOG over 1.5: Dylan Guenther** (UTA vs TOR). Over 1.5 in 81% of games (blend); 3.2 SOG/G; L5: 5 0 5 2 5; TOR allows 32.0 SA/G
 
 ## Goalies
 
-- FLA @ BUF 1:00 ET: ('Jacob Markstrom', 'Unconfirmed') / ('Ukko-Pekka Luukkonen', 'Unconfirmed')
-- OTT @ NJD 7:00 ET: ('Linus Ullmark', 'Unconfirmed') / ('Jake Allen', 'Unconfirmed')
-- VGK @ MIN 8:00 ET: ('Carter Hart', 'Unconfirmed') / ('Jesper Wallstedt', 'Unconfirmed')
+- NJD @ DET 6:00 ET: ('Jake Allen', 'Confirmed') / ('Daniil Tarasov', 'Unconfirmed')
+- FLA @ CBJ 6:15 ET: ('Akira Schmid', 'Unconfirmed') / ('Jet Greaves', 'Unconfirmed')
+- BUF @ MTL 6:30 ET: ('Ukko-Pekka Luukkonen', 'Unconfirmed') / ('Jacob Fowler', 'Unconfirmed')
+- WSH @ CAR 6:45 ET: ('Logan Thompson', 'Unconfirmed') / ('Brandon Bussi', 'Unconfirmed')
+- SEA @ PHI 7:00 ET: ('Philipp Grubauer', 'Unconfirmed') / ('Dan Vladar', 'Unconfirmed')
+- TBL @ NYR 7:15 ET: ('Andrei Vasilevskiy', 'Unconfirmed') / ('Dylan Garand', 'Unconfirmed')
+- STL @ OTT 7:30 ET: ('Joel Hofer', 'Unconfirmed') / ('Samuel Ersson', 'Unconfirmed')
+- VAN @ NYI 7:45 ET: ('Leevi Merilainen', 'Unconfirmed') / ('Ilya Sorokin', 'Unconfirmed')
+- PIT @ CHI 8:00 ET: ('Sergei Murashov', 'Unconfirmed') / ('Spencer Knight', 'Unconfirmed')
+- MIN @ WPG 8:15 ET: ('Calvin Pickard', 'Confirmed') / ('Stuart Skinner', 'Unconfirmed')
+- COL @ DAL 8:30 ET: ('Mackenzie Blackwood', 'Confirmed') / ('Jake Oettinger', 'Unconfirmed')
+- VGK @ NSH 8:45 ET: ('Adin Hill', 'Likely') / ('Juuse Saros', 'Unconfirmed')
+- TOR @ UTA 9:00 ET: ('Sergei Bobrovsky', 'Unconfirmed') / ('Karel Vejmelka', 'Unconfirmed')
+- CGY @ ANA 9:45 ET: ('Devin Cooley', 'Unconfirmed') / ('Lukas Dostal', 'Unconfirmed')
+- EDM @ LAK 10:30 ET: ('Devon Levi', 'Unconfirmed') / ('Darcy Kuemper', 'Unconfirmed')
+- BOS @ SJS 11:00 ET: ('Jeremy Swayman', 'Unconfirmed') / ('Yaroslav Askarov', 'Unconfirmed')
