@@ -12,6 +12,19 @@ Decided 10/13: no launch sale, emails signed "The Peace by Page team", counselor
 - Problems found: store name shows "Peace By Page" (capital B); the About section still has Payhip's placeholder text and a stock photo; no disclaimer or 988 anywhere on the store pages (only inside product descriptions); every product shows an "On Sale" label; products run newest-first (Nights, Petals, Wings). Jarvis can't see product photos (they load by script), so check those on the phone.
 - Instagram and TikTok @peacebypage are NOT connected to Blotato yet (only Facebook and Pinterest are). That matches the plan: connect them about 10/18.
 
+## Files for every step (added 10/13 evening)
+- Phone: Launch Files page https://claude.ai/artifact/81s4uPQAcfntqXDvALTWmN (carousel, reels, all 16 pins, logo, sampler; tap, open full size, save). Checked byte for byte against the Blotato copies.
+- Drive: 05 Peace by Page > Launch Docs > Launch Assets https://drive.google.com/drive/folders/1T58DeBW40wBF2x5wNB1P3MclKjx_KMnz (Store: payhip-logo.png + both sampler PDFs; Pinterest: pins zip; Reels and Carousel: videos/carousel zip). Loose pins/slides/videos aren't in Drive: the connector can't upload large binaries.
+- Slide 1 in the 10/9 PeaceByPage_Videos_Carousel.zip may be the pre-date-change version (zip built 8 min before the slide changed). Use the Launch Files page copy.
+
+## Store status, Tue 10/13 evening (Jarvis re-check)
+- Done: About ("Hi, and welcome"), help block with 988, disclaimer at the bottom, header shows "Peace by Page", announcement bar, full Home page.
+- Open: step 1 (browser tab title still "Peace By Page"), step 5 ("On Sale" on every product page), step 6 (still newest-first), steps 7 to 9 (Jarvis can't check).
+- New: Home > "What's in each edition" > SOS Calm-Down Kit item still has Payhip placeholder ("Talk about who you are and what your brand is all about"). Replace with:
+```
+The 10-page toolkit for hard moments: breathing, grounding and a pocket card.
+```
+
 ---
 
 ## WED 10/14 (lunch or evening, about 25 min on a laptop)
