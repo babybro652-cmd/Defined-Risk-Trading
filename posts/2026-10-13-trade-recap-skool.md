@@ -1,30 +1,41 @@
-# Skool post: 10/13 paper trade recap (ES long)
+# Skool post: 10/13 paper trade review (ES long)
 
 TITLE
-Tuesday Trade Recap: The Bias Played Out on My Lunch Break
+Trade Review: ES Long, Tuesday 10/13 (Paper)
 
 POST
-This morning's bias was buys. Here's how it played out.
+Trade review time. Good result, imperfect execution. Here's the honest breakdown.
 
-The setup
-London took the Asia high early, which normally has me looking for sells. With the desks back after Monday's holiday, I stayed on the buy side and waited for price to come to me.
+THE PLAN
+• Bias: buys (posted this morning)
+• Context: London took the Asia high, normally a sell signal, but post-holiday volume had me leaning long
+• Wait for the pullback, enter long, stop under the low, target the high side
 
-The trade (paper account, ES, 2 contracts)
-• Entry: 7841.00 after the late morning pullback
-• Stop: 7838.00 (3 points, $300 total risk)
+THE EXECUTION
+• Instrument: ES, 2 contracts, paper account
+• Entry: 7841.00
+• Stop: 7838.00 (3 points, $300 risk)
 • Target: 7853.00 (12 points, 4R)
 • Exit: 7851.00 by hand
-• Result: +10 points per contract, +$1,000
+• Result: +10 points per contract, +$1,000 (about 3.3R)
 
-Why I closed early
-My lunch break was over, and phones aren't allowed on the floor at work. Price was 2 points from target. I took what the market gave me and went back to work. A trade has to fit your life, not the other way around.
+WHAT WENT RIGHT
+✅ Traded with the bias, not against it
+✅ Risk was set before the entry and never moved
+✅ Took profit instead of hoping
 
-What I'd tighten up
-My stop was 3 points. My rule is 3.5 to 4. It held today, but a tighter stop than your plan is still a rule break, even when it works. Next time it goes where the plan says.
+WHAT WENT WRONG
+❌ Late entry. The move had already started when I got in. I was chasing instead of waiting at my level.
+❌ Stop too tight. A late entry pushed my stop to 3 points, under my 3.5 to 4 point rule. It held today. Most days it doesn't.
+❌ Exit 2 points short of target. My lunch break ended and phones aren't allowed on the floor at work. That one was about life, not the chart, and I'm fine with it.
 
-The part that matters
-The $300 risk was set before the entry and never moved. That's the whole game.
+GRADE
+Result: A. Process: B minus.
+The money doesn't fix the late entry. A late entry plus a squeezed stop is how a good idea turns into a stop-out.
 
-Watch the clip below, then tell me: do you let a trade run to target, or do you manage it around your schedule?
+THE LESSON
+If I miss the entry, I let it go or wait for the next one. I don't shrink the stop to make a late entry fit.
+
+Your turn: when you miss an entry, do you chase, wait for a retest, or walk away?
 
 Education only, not financial advice. Futures trading involves substantial risk of loss.
