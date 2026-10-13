@@ -45,7 +45,7 @@ Newest decisions win; move finished items to Done with the date.
 - [ ] Store fixes before launch, Wed 10/14 (~25 min, paste-ready steps in ventures/calm-pages/launch/launch-week-tim.md): store name "Peace by Page" (shows "Peace By Page"), About section (still Payhip placeholder), help block with 988 + footer text, "On Sale" label, reorder products, phone photo check, then the TEST100 test purchase, then link in bio on IG/TikTok/Pinterest. (Jarvis proofed all 16 products 10/13: prices, disclaimer, 988 and wording all OK.)
 - [ ] Launch day Fri 10/16: post the IG carousel + TikTok in the morning, reel V1 after work (captions in launch-week-tim.md). FB posts are scheduled in Blotato (checked 10/13).
 - [ ] ~10/18: connect IG + TikTok @peacebypage to Blotato (not connected yet as of 10/13), then Jarvis schedules reels V2-V5.
-- [ ] Pinterest by hand, Thu 10/15 (Blotato blocks it until warmed up): queue the launch pin + 15 daily pins 10/16-10/30 with Pinterest's "Publish at a later date". List: ventures/calm-pages/launch/launch-schedule.md (also in the Drive Doc "Peace by Page: Launch Week Checklist").
+- [ ] Pinterest by hand, Thu 10/15 (Blotato blocks it until warmed up): queue the launch pin + 15 daily pins 10/16-10/30 with Pinterest's "Publish at a later date". List: ventures/calm-pages/launch/launch-schedule.md (also in the Drive Doc [Peace by Page: Launch Week Checklist](https://docs.google.com/document/d/1krokPYnh-VLkPNI7HbbRPpS7a8HvAPx2gLeuKZOuaDc/edit)).
 
 ### Defined Risk Trading
 - [ ] Pink Out softball tournament (Sat 10/17-Sun 10/18): after it's over, Tim drops photos in DRT Phone and Jarvis drafts a DRT post plus a personal post (Tim approves before posting).

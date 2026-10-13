@@ -1,7 +1,7 @@
 # Peace by Page: Tim's launch-week checklist (launch Fri 10/16)
 
 Written Tue 10/13 after Jarvis proofed the live store (payhip.com/PeaceByPage) and Blotato.
-Only the steps Tim has to do himself, in deadline order. Everything to paste is in a box.
+Only the steps Tim has to do himself, in deadline order. Everything to paste is in a box. Phone copy (with the full pin list): Drive Doc "Peace by Page: Launch Week Checklist" https://docs.google.com/document/d/1krokPYnh-VLkPNI7HbbRPpS7a8HvAPx2gLeuKZOuaDc/edit
 Decided 10/13: no launch sale, emails signed "The Peace by Page team", counselor/group license later.
 
 ## What Jarvis checked on 10/13
@@ -110,7 +110,7 @@ Not needed for launch: every post and pin links to payhip.com. Pointing the doma
 
 ### 11. Queue the Pinterest pins (20 min on a laptop)
 pinterest.com > Create > Create Pin > upload image > paste title, description, alt text (More options), link, board > **Publish at a later date** > pick the date and time.
-All 16 pins (launch pin Fri 8:30 AM + 15 daily pins at 7:45 PM, 10/16 to 10/30) with image links and copy: `ventures/calm-pages/launch/launch-schedule.md`, section 2 (also in the Drive Doc "Peace by Page: Launch Week Checklist").
+All 16 pins (launch pin Fri 8:30 AM + 15 daily pins at 7:45 PM, 10/16 to 10/30) with image links and copy: `ventures/calm-pages/launch/launch-schedule.md`, section 2 (also in the Drive Doc [Peace by Page: Launch Week Checklist](https://docs.google.com/document/d/1krokPYnh-VLkPNI7HbbRPpS7a8HvAPx2gLeuKZOuaDc/edit)).
 If time is short, queue the launch pin and the first 3 now and the rest over the weekend.
 
 ### 12. Final check (evening, 5 min)
