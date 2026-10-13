@@ -1,6 +1,6 @@
 # Peace by Page: launch content (launch Fri 10/16)
 
-Approved by Tim 10/9. Launch moved from Sat 10/10 to Fri 10/16; what is scheduled where: `launch-schedule.md`. No launch sale for now: scheduled posts carry no code. The LAUNCH25 variants below stay here in case Tim says yes by Tue 10/13. Checklist rows 35 (welcome emails), 41 (pins), 44 (videos), 47 (launch post).
+Approved by Tim 10/9. Launch moved from Sat 10/10 to Fri 10/16; what is scheduled where: `launch-schedule.md`. Tim decided 10/13: no launch sale (LAUNCH25 lines removed), emails signed "The Peace by Page team", counselor/group license later. Checklist rows 35 (welcome emails), 41 (pins), 44 (videos), 47 (launch post).
 Images and videos: `ventures/calm-pages/launch/content/` (rebuild: `python3 launch/make_launch_content.py`).
 Rules kept: no medical claims, "supports, not replaces, professional care" and 988 on every email, the launch post, the carousel and each video's end card. No mention of the gift origin story (row 50 is still open).
 Placeholders: [FIRST NAME] if the email tool supports it.
@@ -30,11 +30,10 @@ That's it for today. Skipped a day? The pages are undated, so pick up wherever y
 
 Cut out the pocket SOS card on page 13 and keep it in your wallet or bag. It has a few steps to try when a moment feels like a lot.
 
-In three days I'll send a short note on one tool from the full journal: worry time.
+In three days we'll send a short note on one tool from the full journal: worry time.
 
 Take care,
-Tim
-Peace by Page
+The Peace by Page team
 
 ---
 *Peace by Page journals are for self-reflection and general wellbeing. They are not medical advice or treatment, and they support, not replace, care from a licensed professional. If you are in crisis in the US, call or text 988, or text HOME to 741741. In an emergency, call 911. Outside the US: findahelpline.com.*
@@ -61,8 +60,7 @@ It can feel strange at first. Most people find it gets easier with practice, so 
 The full 90-day journal has a worry time page, a worry tree and a quick thought record in its SOS Toolkit, ready to print as often as you need.
 
 Take care,
-Tim
-Peace by Page
+The Peace by Page team
 
 ---
 *Peace by Page journals are for self-reflection and general wellbeing. They are not medical advice or treatment, and they support, not replace, care from a licensed professional. If you are in crisis in the US, call or text 988, or text HOME to 741741. In an emergency, call 911. Outside the US: findahelpline.com.*
@@ -85,8 +83,6 @@ It comes in three editions. The pages inside are the same; only the art changes.
 
 Each journal is $11.99. The bundle for each edition ($16.99) adds an 18-page coloring pack and a 12-month mood tracker.
 
-**Launch offer (LAUNCH25 only):** use code **LAUNCH25** at checkout for 25% off everything until Fri 10/30.
-
 Every file is an instant download in US Letter and A4. Print at home, a page at a time or all at once.
 
 Browse the whole shop: https://payhip.com/PeaceByPage
@@ -94,14 +90,11 @@ Browse the whole shop: https://payhip.com/PeaceByPage
 Thank you for spending this week with us.
 
 Take care,
-Tim
-Peace by Page
+The Peace by Page team
 
 ---
 *Peace by Page journals are for self-reflection and general wellbeing. They are not medical advice or treatment, and they support, not replace, care from a licensed professional. If you are in crisis in the US, call or text 988, or text HOME to 741741. In an emergency, call 911. Outside the US: findahelpline.com.*
 *Unsubscribe any time with the link below.*
-
-> If Tim skips a launch sale (row 48), delete the "Launch offer" paragraph.
 
 ---
 
@@ -241,7 +234,7 @@ On screen: "Not sure yet? Try a week free" > "7 daily pages, about five minutes 
 
 ## 4. Launch post, Fri 10/16 (row 47)
 
-World Mental Health Day lines removed after the move to 10/16. Lines marked LAUNCH25 go in only if Tim picks the sale (code LAUNCH25, 25% off everything for 2 weeks).
+World Mental Health Day lines removed after the move to 10/16. No launch sale (decided 10/13).
 
 Carousel: 7 slides, 1080 x 1350, `launch/content/carousel/launch-1.png` to `launch-7.png`.
 1. Now open | October 16: Today we open the doors (three covers)
@@ -266,7 +259,6 @@ Calm Nights: moon and stars, with extra pages for evenings
 
 Not sure yet? The 7-day sampler is free.
 Shop: https://payhip.com/PeaceByPage
-(LAUNCH25 only: Launch offer: code LAUNCH25 for 25% off everything through Fri 10/30.)
 
 A note of care: our journals are for self-reflection and general wellbeing. They support, not replace, care from a licensed professional. If you are in crisis in the US, call or text 988. Outside the US, find a helpline at findahelpline.com.
 
@@ -278,7 +270,6 @@ Gentle printable journals for anyone who worries. One page a day. About five min
 Three editions, same pages inside: Calm Wings, Calm Petals and Calm Nights. Swipe to see them.
 
 Try a week free with the 7-day sampler. Link in bio.
-(LAUNCH25 only: Launch code LAUNCH25: 25% off through Fri 10/30.)
 
 Supports, not replaces, professional care. In crisis in the US, call or text 988. Outside the US: findahelpline.com.
 

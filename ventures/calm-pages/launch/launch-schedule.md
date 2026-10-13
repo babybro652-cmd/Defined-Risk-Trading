@@ -1,6 +1,6 @@
 # Peace by Page: launch schedule (launch Fri 10/16)
 
-Set up 10/9 after Tim approved all launch content. Times are Eastern. No launch sale in anything scheduled (LAUNCH25 variants are in `launch-content.md` if Tim says yes by Tue 10/13).
+Set up 10/9 after Tim approved all launch content. Times are Eastern. No launch sale (Tim decided 10/13).
 Launch date changed from Sat 10/10 (World Mental Health Day) to Fri 10/16, so the "World Mental Health Day" lines were dropped and carousel slide 1 now reads "Now open | October 16". Nothing else in the approved copy changed except "link in bio" becoming the product link on Facebook.
 
 ## 1. Scheduled in Blotato (Peace by Page Facebook Page)

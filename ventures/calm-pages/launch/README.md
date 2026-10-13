@@ -7,6 +7,7 @@
 | 22 | Logo, favicon, banners, About text | `store-branding.md`, images in `../brand/`, built by `make_brand_assets.py` |
 | 22b | Store Builder design: pages, sections, copy, colors, fonts, menu, footer (click-by-click) | `store-builder-guide.md`, images in `../brand/store/`, built by `make_store_assets.py` |
 | 26 | Upload packets for all 15 products + free sampler | `upload-packets.md`, built by `make_upload_packets.py` |
+| 32-55 | Tim's launch-week checklist (store fixes, test purchase, pins, launch day), written 10/13 | `launch-week-tim.md` |
 | 34 | Free 7-day sampler PDF (Letter + A4) | `../editions/sampler/`, built by `build_sampler.py` |
 
 Run the scripts from `ventures/calm-pages/`.
