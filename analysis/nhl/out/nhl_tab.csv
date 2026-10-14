@@ -20,8 +20,8 @@ How picked,"Goal = blended goal hit% x opponent GA/G x goalie SV%. First goal = 
 ,,,,,,,,,,,,,,,,
 "Tonight: probable goalies and key injuries (Daily Faceoff, ESPN)",,,,,,,,,,,,,,,,
 Game (ET),Away goalie,Home goalie,Out / IR (ESPN),,,,,,,,,,,,,
-MTL @ WSH 7:30,Jakub Dobes (Confirmed),Charlie Lindgren (Unconfirmed),"MTL: Ivan Demidov, Oliver Kapanen, Mike Matheson; WSH: Matt Roy",,,,,,,,,,,,,
-DAL @ COL 8:30,Casey DeSmith (Confirmed),Scott Wedgewood (Likely),"DAL: Matt Duchene, Wyatt Johnston, Joel Kiviranta; COL: Cale Makar",,,,,,,,,,,,,
+MTL @ WSH 7:30,Jakub Dobes (Confirmed),Charlie Lindgren (Unconfirmed),"MTL: Ivan Demidov, Oliver Kapanen; WSH: Matt Roy",,,,,,,,,,,,,
+DAL @ COL 8:30,Casey DeSmith (Confirmed),Scott Wedgewood (Likely),"DAL: Matt Duchene, Wyatt Johnston",,,,,,,,,,,,,
 ,,,,,,,,,,,,,,,,
 "Anytime goal (top 34 forwards by blended goal hit%, plus top 6 D by shots)",,,,,,,,,,,,,,,,
 Player,Tm,Pos,Role,GP 26,G 26,Games w/ G 26,Hit% 26,GP 25,G 25,Games w/ G 25,Hit% 25,Blend hit%,PPG 26,PPG 25,SOG/G,Injury
@@ -36,7 +36,7 @@ Cole Caufield,MTL,R,Top 6 PP1,6,3,2,"=IF(E35=0,""-"",G35/E35)",81,51,37,"=IF(I35
 Auston Matthews,TOR,C,Top 6 PP1,7,5,4,"=IF(E36=0,""-"",G36/E36)",60,27,23,"=IF(I36=0,""-"",K36/I36)","=IF($B$3*E36+I36=0,""-"",($B$3*G36+K36)/($B$3*E36+I36))",2,5,3.73,
 Brad Marchand,FLA,L,Top 6,2,1,1,"=IF(E37=0,""-"",G37/E37)",52,27,22,"=IF(I37=0,""-"",K37/I37)","=IF($B$3*E37+I37=0,""-"",($B$3*G37+K37)/($B$3*E37+I37))",0,6,2.64,Injured Reserve
 Jason Robertson,DAL,L,Top 6 PP1,6,2,2,"=IF(E38=0,""-"",G38/E38)",82,45,37,"=IF(I38=0,""-"",K38/I38)","=IF($B$3*E38+I38=0,""-"",($B$3*G38+K38)/($B$3*E38+I38))",0,15,3.42,
-Zach Hyman,EDM,L,Top 6 PP1,1,0,0,"=IF(E39=0,""-"",G39/E39)",58,31,26,"=IF(I39=0,""-"",K39/I39)","=IF($B$3*E39+I39=0,""-"",($B$3*G39+K39)/($B$3*E39+I39))",0,10,2.75,Out
+Zach Hyman,EDM,L,Top 6 PP1,1,0,0,"=IF(E39=0,""-"",G39/E39)",58,31,26,"=IF(I39=0,""-"",K39/I39)","=IF($B$3*E39+I39=0,""-"",($B$3*G39+K39)/($B$3*E39+I39))",0,10,2.75,Day-To-Day
 Dylan Guenther,UTA,R,Top 6 PP1,7,4,3,"=IF(E40=0,""-"",G40/E40)",79,40,33,"=IF(I40=0,""-"",K40/I40)","=IF($B$3*E40+I40=0,""-"",($B$3*G40+K40)/($B$3*E40+I40))",3,9,3.14,
 Tim Stützle,OTT,C,Top 6 PP1,7,5,4,"=IF(E41=0,""-"",G41/E41)",80,34,30,"=IF(I41=0,""-"",K41/I41)","=IF($B$3*E41+I41=0,""-"",($B$3*G41+K41)/($B$3*E41+I41))",1,9,2.31,
 Matt Boldy,MIN,L,Top 6 PP1,7,2,2,"=IF(E42=0,""-"",G42/E42)",76,42,34,"=IF(I42=0,""-"",K42/I42)","=IF($B$3*E42+I42=0,""-"",($B$3*G42+K42)/($B$3*E42+I42))",0,11,3.45,
@@ -45,7 +45,7 @@ Martin Necas,COL,C,Top 6 PP1,6,4,2,"=IF(E44=0,""-"",G44/E44)",78,38,33,"=IF(I44=
 Brandon Hagel,TBL,L,Top 6 PP1,6,4,2,"=IF(E45=0,""-"",G45/E45)",71,36,30,"=IF(I45=0,""-"",K45/I45)","=IF($B$3*E45+I45=0,""-"",($B$3*G45+K45)/($B$3*E45+I45))",0,5,3.31,
 Alex DeBrincat,DET,R,Top 6 PP1,6,4,2,"=IF(E46=0,""-"",G46/E46)",82,41,34,"=IF(I46=0,""-"",K46/I46)","=IF($B$3*E46+I46=0,""-"",($B$3*G46+K46)/($B$3*E46+I46))",1,15,3.59,
 Nikita Kucherov,TBL,R,Top 6 PP1,6,1,1,"=IF(E47=0,""-"",G47/E47)",77,44,35,"=IF(I47=0,""-"",K47/I47)","=IF($B$3*E47+I47=0,""-"",($B$3*G47+K47)/($B$3*E47+I47))",0,8,2.72,
-Cutter Gauthier,ANA,L,Top 6 PP1,5,2,1,"=IF(E48=0,""-"",G48/E48)",76,41,33,"=IF(I48=0,""-"",K48/I48)","=IF($B$3*E48+I48=0,""-"",($B$3*G48+K48)/($B$3*E48+I48))",2,11,3.69,Out
+Cutter Gauthier,ANA,L,Top 6 PP1,5,2,1,"=IF(E48=0,""-"",G48/E48)",76,41,33,"=IF(I48=0,""-"",K48/I48)","=IF($B$3*E48+I48=0,""-"",($B$3*G48+K48)/($B$3*E48+I48))",2,11,3.69,Day-To-Day
 Bo Horvat,NYI,C,Top 6 PP1,6,4,3,"=IF(E49=0,""-"",G49/E49)",68,31,25,"=IF(I49=0,""-"",K49/I49)","=IF($B$3*E49+I49=0,""-"",($B$3*G49+K49)/($B$3*E49+I49))",3,7,3.33,
 Steven Stamkos,NSH,C,Top 6 PP1,6,3,2,"=IF(E50=0,""-"",G50/E50)",82,42,33,"=IF(I50=0,""-"",K50/I50)","=IF($B$3*E50+I50=0,""-"",($B$3*G50+K50)/($B$3*E50+I50))",2,14,2.39,
 Jake Guentzel,TBL,C,Top 6 PP1,6,3,2,"=IF(E51=0,""-"",G51/E51)",81,38,32,"=IF(I51=0,""-"",K51/I51)","=IF($B$3*E51+I51=0,""-"",($B$3*G51+K51)/($B$3*E51+I51))",1,8,2.71,
@@ -199,4 +199,4 @@ MIN,7,2.29,26.9,0.917,2.87,29.4,0.798,Jesper Wallstedt,0.933,0.916,0.429,,,,,
 NYR,8,1.75,24.0,0.917,3.04,28.8,0.799,Igor Shesterkin,0.927,0.912,0.125,,,,,
 DAL,6,1.67,22.5,0.85,2.71,26.2,0.803,Jake Oettinger,0.944,0.899,0.5,@ COL; G: Casey DeSmith (Confirmed),,,,
 ,,,,,,,,,,,,,,,,
-Sources,"NHL API boxscores and game summaries (api-web.nhle.com), 1312 2025-26 and 105 2026-27 regular-season games; NHL stats API (api.nhle.com) for GA/G, SA/G, PK%, SV%, PP time on ice; Daily Faceoff starting goalies; ESPN injuries. Pulled 10/14 7:48 AM ET. Role = TOI rank on team (Top 6 F, Top pair D) and PP time rank (PP1 = top 5 on team), a proxy for line charts, not the official lines. Rebuilt weekly by analysis/nhl/build_nhl_tab.py.",,,,,,,,,,,,,,,
+Sources,"NHL API boxscores and game summaries (api-web.nhle.com), 1312 2025-26 and 105 2026-27 regular-season games; NHL stats API (api.nhle.com) for GA/G, SA/G, PK%, SV%, PP time on ice; Daily Faceoff starting goalies; ESPN injuries. Pulled 10/14 9:42 AM ET. Role = TOI rank on team (Top 6 F, Top pair D) and PP time rank (PP1 = top 5 on team), a proxy for line charts, not the official lines. Rebuilt weekly by analysis/nhl/build_nhl_tab.py.",,,,,,,,,,,,,,,

@@ -78,6 +78,9 @@ passes the result to Tim (with a push notification when the routine asks for one
 | NFL tracker weekly update (scorers, red zone, defenses; grade pending bets) | Tue 9:52 AM | general-purpose |
 | NFL Saturday injury recheck + final shortlist | Sat 10:47 AM | general-purpose |
 | NHL tab weekly refresh (goals, first goal, SOG; grade NHL bets) | Wed 9:41 AM | general-purpose |
+| NBA first-basket refresh (skips days with no regular-season games; season starts 10/20) | Daily 10:07 AM | general-purpose |
+| UCL refresh, eve of matchday (goals, shots, BTTS, corners; skips if no matches tomorrow) | Mon/Tue 7:37 PM | general-purpose |
+| UCL refresh, matchday morning (lineups; skips if no matches today) | Tue/Wed 9:37 AM | general-purpose |
 | Loan spam cleanup (delete + unsubscribe; replaces the old label-only check) | Mon 8:56 AM | personal |
 | Paycheck amount for the Weekly Money Plan (Tim Money workbook) | Mon 6:22 PM | Jarvis |
 | Work: week 1 surveys reminder (push) | Fri 6:52 AM and 12:57 PM | Jarvis |
