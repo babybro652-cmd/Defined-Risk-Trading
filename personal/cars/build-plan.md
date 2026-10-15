@@ -59,7 +59,7 @@ If the compression test is weak, plan a built engine before the supercharger ($5
 |---|---|---|
 | 1 Reliable | Frame, body mounts, floors and trunk check (not on video yet) | $0–? |
 | 1 Reliable | Rust seen 10/15: remove vinyl top, repair roof rust, rear window channel, both C-pillar quarters (patch panels, DIY) | $1,000–3,500 |
-| 1 Reliable | Get it rolling: used tires, driver rear door glass, missing headlight | $250–650 |
+| 1 Reliable | Get it rolling: used tires, driver quarter window glass, missing headlight | $250–650 |
 | 1 Reliable | Fuel tank, lines and pump sized for EFI and boost | $800–1,500 |
 | 1 Reliable | Radiator and electric fans for the LS | $500–900 |
 | 1 Safe | Braided stainless lines, multi-piston front and rear big brakes | $1,600–3,200 |
