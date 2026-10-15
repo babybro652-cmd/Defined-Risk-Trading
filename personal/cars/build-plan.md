@@ -57,7 +57,9 @@ If the compression test is weak, plan a built engine before the supercharger ($5
 
 | Phase | Work | Cost |
 |---|---|---|
-| 1 Reliable | Frame, body mounts and rust check (cost unknown until inspected) | $0–? |
+| 1 Reliable | Frame, body mounts, floors and trunk check (not on video yet) | $0–? |
+| 1 Reliable | Rust seen 10/15: remove vinyl top, repair roof rust, rear window channel, both C-pillar quarters (patch panels, DIY) | $1,000–3,500 |
+| 1 Reliable | Get it rolling: used tires, driver rear door glass, missing headlight | $250–650 |
 | 1 Reliable | Fuel tank, lines and pump sized for EFI and boost | $800–1,500 |
 | 1 Reliable | Radiator and electric fans for the LS | $500–900 |
 | 1 Safe | Braided stainless lines, multi-piston front and rear big brakes | $1,600–3,200 |
@@ -70,7 +72,7 @@ If the compression test is weak, plan a built engine before the supercharger ($5
 | 2 Safe | Catch cans, oil cooler, baffled oil pan, AN lines/fittings | $800–1,800 |
 | 2 Handling | Coilovers set a few inches lower, upgraded sway bars | $1,800–3,600 |
 | 3 Looks | New headlights and taillights | $300–800 |
-| | **Cutlass total** | **about $19,800–42,100** (before paint or rust repair) |
+| | **Cutlass total** | **about $21,050–46,250** (before paint; more if floors, trunk or frame are rotted) |
 
 ---
 
@@ -80,8 +82,8 @@ If the compression test is weak, plan a built engine before the supercharger ($5
 |---|---|---|
 | Cruze | $7,250 | $15,700 |
 | Charger | $19,200 | $39,500 |
-| Cutlass | $19,800 | $42,100 |
-| **Total** | **about $46,000** | **about $97,000** |
+| Cutlass | $21,050 | $46,250 |
+| **Total** | **about $47,500** | **about $101,450** |
 
 Biggest savings: doing the labor, buying used brake and suspension parts, and finding a
-cheap LS. Biggest risks: the Charger's engine at 188k under boost and rust on the Cutlass.
+cheap LS. Biggest risks: the Charger's engine at 188k under boost and rust on the Cutlass (10/15 videos: vinyl top, rear window and C-pillar rust; floors, trunk and frame still unseen).
