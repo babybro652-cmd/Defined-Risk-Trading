@@ -10,6 +10,7 @@ Launch date changed from Sat 10/10 (World Mental Health Day) to Fri 10/16, so th
 | When (ET) | Post | Link in text | Blotato schedule id |
 |---|---|---|---|
 | Fri 10/16 8:30 AM (published) | Launch post + 7-slide carousel | https://payhip.com/PeaceByPage | 5364160 |
+| Fri 10/23 8:30 AM | Launch post repost, slide 1 now "Now open \| October 23" (Tim deletes the 10/16 one in Facebook) | https://payhip.com/PeaceByPage | submission c3ccf6fc-675b-47ce-8076-789ad33ce1cb |
 | Fri 10/23 4:45 PM | Reel V1, Calm Wings flip-through | https://payhip.com/b/ySCnJ | 5364170 |
 | Mon 10/26 6:30 PM | Reel V2, Calm Nights evening pages | https://payhip.com/b/NzAkL | 5364173 |
 | Wed 10/28 6:30 PM | Reel V3, Calm Petals coloring reveal | https://payhip.com/b/8QkY4 | 5364176 |
@@ -25,8 +26,8 @@ Easiest: on a computer, pinterest.com > Create > Create Pin > upload the image, 
 Image links below are public copies (tap to open, then save). Originals: `launch/content/pins/` and `launch/content/carousel/launch-1.png`.
 Board ids (for Blotato later): Anxiety Journal Prompts 1140184899352420443, Calming Coloring Pages 1140184899352420445, Gifts for Someone Who Worries 1140184899352420448, Self-Care Printables 1140184899352420446
 
-### Launch pin: Fri 10/16, 8:30 AM
-- **Image:** https://database.blotato.io/storage/v1/object/public/public_media/246c6cef-6cbe-4b5b-81a9-7bb84481df9c/b85ef37d-803c-4b7d-8f06-a50dc34949d3.png (carousel slide 1)
+### Launch pin: Fri 10/23, 8:30 AM
+- **Image:** https://database.blotato.io/storage/v1/object/public/public_media/246c6cef-6cbe-4b5b-81a9-7bb84481df9c/b85ef37d-803c-4b7d-8f06-a50dc34949d3.png (OLD slide 1, says October 16; use the new one: https://database.blotato.io/storage/v1/object/public/public_media/246c6cef-6cbe-4b5b-81a9-7bb84481df9c/3b381f4e-2b31-451b-ac15-5ce74631005d.png)
 - **Board:** Self-Care Printables
 - **Link:** https://payhip.com/PeaceByPage
 - **Title:** Printable Anxiety Journals from Peace by Page, Now Open

@@ -194,7 +194,7 @@ def carousel():
     W, H = 1080, 1350
     J = {k: PDF[k]["journal"] for k in PDF}
     # 1 cover
-    im, d, y = slide("wings", "Now open  |  October 16", "Today we open the doors",
+    im, d, y = slide("wings", "Now open  |  October 23", "Today we open the doors",
                      "Peace by Page: gentle printable journals for anyone who worries")
     fan_covers(im, W / 2, (y + H - 90) / 2 + 40, 400)
     save(im, "carousel", "launch-1.png")
