@@ -1,4 +1,6 @@
-# Peace by Page: launch schedule (launch Fri 10/16)
+# Peace by Page: launch schedule (launch moved to Fri 10/23)
+
+**10/16: Tim postponed the launch to Fri 10/23.** The 8:30 AM FB launch post had already published on 10/16 (https://facebook.com/1255582607649321_122107439931504383; carousel slide 1 reads "Now open | October 16"). The 5 reels below were moved 1 week later. Pinterest pins: start 10/23 instead of 10/16.
 
 Set up 10/9 after Tim approved all launch content. Times are Eastern. No launch sale (Tim decided 10/13).
 Launch date changed from Sat 10/10 (World Mental Health Day) to Fri 10/16, so the "World Mental Health Day" lines were dropped and carousel slide 1 now reads "Now open | October 16". Nothing else in the approved copy changed except "link in bio" becoming the product link on Facebook.
@@ -7,12 +9,12 @@ Launch date changed from Sat 10/10 (World Mental Health Day) to Fri 10/16, so th
 
 | When (ET) | Post | Link in text | Blotato schedule id |
 |---|---|---|---|
-| Fri 10/16 8:30 AM | Launch post + 7-slide carousel | https://payhip.com/PeaceByPage | 5364160 |
-| Fri 10/16 4:45 PM | Reel V1, Calm Wings flip-through | https://payhip.com/b/ySCnJ | 5364170 |
-| Mon 10/19 6:30 PM | Reel V2, Calm Nights evening pages | https://payhip.com/b/NzAkL | 5364173 |
-| Wed 10/21 6:30 PM | Reel V3, Calm Petals coloring reveal | https://payhip.com/b/8QkY4 | 5364176 |
-| Fri 10/23 6:30 PM | Reel V4, three editions | https://payhip.com/PeaceByPage | 5364179 |
-| Mon 10/26 6:30 PM | Reel V5, free sampler | https://payhip.com/b/yrk3j | 5364182 |
+| Fri 10/16 8:30 AM (published) | Launch post + 7-slide carousel | https://payhip.com/PeaceByPage | 5364160 |
+| Fri 10/23 4:45 PM | Reel V1, Calm Wings flip-through | https://payhip.com/b/ySCnJ | 5364170 |
+| Mon 10/26 6:30 PM | Reel V2, Calm Nights evening pages | https://payhip.com/b/NzAkL | 5364173 |
+| Wed 10/28 6:30 PM | Reel V3, Calm Petals coloring reveal | https://payhip.com/b/8QkY4 | 5364176 |
+| Fri 10/30 6:30 PM | Reel V4, three editions | https://payhip.com/PeaceByPage | 5364179 |
+| Mon 11/2 6:30 PM | Reel V5, free sampler | https://payhip.com/b/yrk3j | 5364182 |
 
 To change or cancel one: Blotato > Calendar, or ask Jarvis (blotato_update_schedule / blotato_delete_schedule with the id).
 

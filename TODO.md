@@ -40,12 +40,12 @@ Newest decisions win; move finished items to Done with the date.
 - [ ] Update the SOP quote prices and the business plan (old tier names, weekday 8-5 hours) to match the new menu.
 
 ### Peace by Page (Ventures)
-- [ ] Work through the launch build-out sheet, step by step (domain to first sales, 67 steps, launch FRI 10/16; dates in the sheet updated 10/9): [Peace by Page: Launch Build-Out](https://docs.google.com/spreadsheets/d/1TLL394lyp_JITaeTmSNjxmjrJ_4T-Ie6UZMhja7xzOk/edit)
+- [ ] Work through the launch build-out sheet, step by step (domain to first sales, 67 steps, launch moved to FRI 10/23 (Tim, 10/16); sheet dates still say 10/16): [Peace by Page: Launch Build-Out](https://docs.google.com/spreadsheets/d/1TLL394lyp_JITaeTmSNjxmjrJ_4T-Ie6UZMhja7xzOk/edit)
 - [ ] Buy peacebypage.com (~$11), Thu 10/15. Not needed for launch (all links use payhip.com); point it at the store + hello@ email after launch.
 - [ ] Store fixes, Wed 10/14 (steps in ventures/calm-pages/launch/launch-week-tim.md). Done 10/13: About, 988 help block, disclaimer, Home page. Still open: browser-tab name "Peace By Page", "On Sale" on product pages, product order, SOS Kit placeholder text on Home, phone photo check, TEST100 test purchase, link in bio. Files: [Launch Files page](https://claude.ai/artifact/81s4uPQAcfntqXDvALTWmN) + Drive Launch Docs > Launch Assets.
-- [ ] Launch day Fri 10/16: post the IG carousel + TikTok in the morning, reel V1 after work (captions in launch-week-tim.md). FB posts are scheduled in Blotato (checked 10/13).
-- [ ] ~10/18: connect IG + TikTok @peacebypage to Blotato (not connected yet as of 10/13), then Jarvis schedules reels V2-V5.
-- [ ] Pinterest by hand, Thu 10/15 (Blotato blocks it until warmed up): queue the launch pin + 15 daily pins 10/16-10/30 with Pinterest's "Publish at a later date". List: ventures/calm-pages/launch/launch-schedule.md (also in the Drive Doc [Peace by Page: Launch Week Checklist](https://docs.google.com/document/d/1krokPYnh-VLkPNI7HbbRPpS7a8HvAPx2gLeuKZOuaDc/edit)).
+- [ ] Launch day Fri 10/23 (moved from 10/16): post the IG carousel + TikTok in the morning, reel V1 after work (captions in launch-week-tim.md; carousel slide 1 still says "October 16"). FB reels moved to 10/23-11/2 in Blotato; the FB launch post already went out 10/16.
+- [ ] ~10/25: connect IG + TikTok @peacebypage to Blotato (not connected yet as of 10/13), then Jarvis schedules reels V2-V5.
+- [ ] Pinterest by hand, Thu 10/15 (Blotato blocks it until warmed up): queue the launch pin + 15 daily pins 10/23-11/6 with Pinterest's "Publish at a later date". List: ventures/calm-pages/launch/launch-schedule.md (also in the Drive Doc [Peace by Page: Launch Week Checklist](https://docs.google.com/document/d/1krokPYnh-VLkPNI7HbbRPpS7a8HvAPx2gLeuKZOuaDc/edit)).
 
 ### Defined Risk Trading
 - [ ] Pink Out softball tournament (Sat 10/17-Sun 10/18): after it's over, Tim drops photos in DRT Phone and Jarvis drafts a DRT post plus a personal post (Tim approves before posting).
