@@ -1,55 +1,56 @@
 Player,Team,Pos,Week 6 game,Opponent,Opp rank vs pos (2026),Opp rank vs pos (2025),Opp RZ TD% rank,Hit % 25+26,2026 games w/ TD,RZ opps/g 2026,Injury status,Verdict,Why
 Javonte Williams,DAL,RB,DAL @ GB (Sun 8:20 PM ET),GB,2,22,8,67%,4/5,4.6,Active,Play,"67% hit rate, opp #2 softest"
-Kyren Williams,LAR,RB,ARI @ LAR (Sun 4:05 PM ET),ARI,12,2,6,64%,4/5,4.2,Active,Play,"64% hit rate, opp #12 softest"
+Kyren Williams,LAR,RB,ARI @ LAR (Sun 4:05 PM ET),ARI,13,2,6,64%,4/5,4.2,Active,Play,"64% hit rate, opp #13 softest"
 Josh Allen,BUF,QB,BUF @ LV (Sun 4:25 PM ET),LV,3,3,5,62%,5/5,2.2,Active,Play,"62% hit rate, opp #3 softest"
-James Cook III,BUF,RB,BUF @ LV (Sun 4:25 PM ET),LV,12,10,5,59%,4/5,3.8,Active,Play,"59% hit rate, opp #12 softest"
+James Cook III,BUF,RB,BUF @ LV (Sun 4:25 PM ET),LV,13,10,5,59%,4/5,3.8,Active,Play,"59% hit rate, opp #13 softest"
 Garrett Wilson,NYJ,WR,NYJ @ NE (Sun 1:00 PM ET),NE,11,6,10,58%,3/5,0.4,Active,Play,"58% hit rate, opp #11 softest"
 Davante Adams,LAR,WR,ARI @ LAR (Sun 4:05 PM ET),ARI,1,20,6,58%,2/5,1.4,Active,Play,"58% hit rate, opp #1 softest"
 Puka Nacua,LAR,WR,ARI @ LAR (Sun 4:05 PM ET),ARI,1,20,6,58%,2/3,1.7,Active,Play,"58% hit rate, opp #1 softest"
-George Kittle,SF,TE,WSH @ SF (Mon 8:15 PM ET),WSH,2,2,1,56%,3/5,1.2,Active,Play,"56% hit rate, opp #2 softest"
-Christian McCaffrey,SF,RB,WSH @ SF (Mon 8:15 PM ET),WSH,27,4,1,73%,4/5,3.4,Active,Small stake,"73% hit rate, tough opp (#27)"
+George Kittle,SF,TE,WSH @ SF (Mon 8:15 PM ET),WSH,2,2,2,56%,3/5,1.2,Active,Play,"56% hit rate, opp #2 softest"
+Christian McCaffrey,SF,RB,WSH @ SF (Mon 8:15 PM ET),WSH,27,4,2,73%,4/5,3.4,Active,Small stake,"73% hit rate, tough opp (#27)"
 Derrick Henry,BAL,RB,BAL @ CLE (Sun 1:00 PM ET),CLE,32,13,29,64%,5/5,5.0,Active,Small stake,"64% hit rate, tough opp (#32)"
 Denzel Boston,CLE,WR,BAL @ CLE (Sun 1:00 PM ET),BAL,24,13,21,60%,3/5,0.6,Active,Small stake,"60% hit rate, tough opp (#24); small sample"
 Jonathan Taylor,IND,RB,TEN @ IND (Sun 1:00 PM ET),TEN,22,4,15,59%,3/5,4.4,Active,Small stake,"59% hit rate, tough opp (#22)"
 Omarion Hampton,LAC,RB,LAC @ KC (Sun 4:25 PM ET),KC,21,25,24,57%,3/5,2.8,Active,Small stake,"57% hit rate, tough opp (#21)"
-Bijan Robinson,ATL,RB,CHI @ ATL (Sun 1:00 PM ET),CHI,12,17,12,55%,3/5,4.2,Active,Small stake,"55% hit rate, soft opp (#12)"
 Christian Watson,GB,WR,DAL @ GB (Sun 8:20 PM ET),DAL,7,1,9,53%,4/5,1.4,Active,Small stake,"53% hit rate, soft opp (#7)"
 Josh Cameron,JAX,WR,HOU VS JAX (Sun 9:30 AM ET),HOU,7,27,18,50%,2/4,1.0,Active,Small stake,"50% hit rate, soft opp (#7); small sample"
-D'Andre Swift,CHI,RB,CHI @ ATL (Sun 1:00 PM ET),ATL,12,22,19,48%,2/5,4.4,Active,Small stake,"48% hit rate, soft opp (#12)"
-Mike Evans,SF,WR,WSH @ SF (Mon 8:15 PM ET),WSH,3,8,1,46%,3/5,1.2,Active,Small stake,"46% hit rate, soft opp (#3)"
 Jahmyr Gibbs,DET,RB,BYE,-,-,n/a,-,68%,5/5,7.2,Active,Skip,Bye week
-Jaxon Smith-Njigba,SEA,WR,SEA @ DEN (Thu 8:15 PM ET),DEN,24,31,27,55%,4/5,2.2,Questionable,Skip,"55% hit rate, opp #24; questionable, check Sat/Sun"
+Bijan Robinson,ATL,RB,CHI @ ATL (Sun 1:00 PM ET),CHI,13,17,12,55%,3/5,4.2,Active,Skip,"55% hit rate, opp #13"
 Trey McBride,ARI,TE,ARI @ LAR (Sun 4:05 PM ET),LAR,22,10,15,55%,3/5,2.2,Active,Skip,"55% hit rate, opp #22"
+Jaxon Smith-Njigba,SEA,WR,SEA @ DEN (Thu 8:15 PM ET),DEN,27,31,24,52%,4/6,1.8,Active,Skip,Game already played
+D'Andre Swift,CHI,RB,CHI @ ATL (Sun 1:00 PM ET),ATL,13,22,19,48%,2/5,4.4,Active,Skip,"48% hit rate, opp #13"
 Chris Rodriguez Jr.,JAX,RB,HOU VS JAX (Sun 9:30 AM ET),HOU,22,17,18,47%,2/5,1.4,Active,Skip,"47% hit rate, opp #22"
 Brock Bowers,LV,TE,BUF @ LV (Sun 4:25 PM ET),BUF,22,25,3,47%,3/3,1.3,Active,Skip,"47% hit rate, opp #22"
+Mike Evans,SF,WR,WSH @ SF (Mon 8:15 PM ET),WSH,3,8,2,46%,3/5,1.2,Questionable,Skip,"46% hit rate, soft opp (#3); questionable, check Sat/Sun"
 Amon-Ra St. Brown,DET,WR,BYE,-,-,n/a,-,45%,3/5,3.2,Active,Skip,Bye week
 Bhayshul Tuten,JAX,RB,HOU VS JAX (Sun 9:30 AM ET),HOU,22,17,18,45%,2/5,2.4,Active,Skip,"45% hit rate, opp #22"
 Nico Collins,HOU,WR,HOU VS JAX (Sun 9:30 AM ET),JAX,28,20,31,44%,2/3,1.0,Active,Skip,"44% hit rate, opp #28"
 Ja'Marr Chase,CIN,WR,BYE,-,-,n/a,-,43%,3/5,1.4,Active,Skip,Bye week
 Sam LaPorta,DET,TE,BYE,-,-,n/a,-,43%,3/5,1.8,Active,Skip,Bye week
-Deebo Samuel Sr.,SF,WR,WSH @ SF (Mon 8:15 PM ET),WSH,3,8,1,43%,3/5,1.0,Out,Skip,Injury status: Out
+Deebo Samuel Sr.,SF,WR,WSH @ SF (Mon 8:15 PM ET),WSH,3,8,2,43%,3/5,1.0,Out,Skip,Injury status: Out
 Parker Washington,JAX,WR,HOU VS JAX (Sun 9:30 AM ET),HOU,7,27,18,40%,3/5,1.0,Active,Skip,"40% hit rate, opp #7"
-Bucky Irving,TB,RB,PIT @ TB (Sun 1:00 PM ET),PIT,12,31,24,40%,2/5,3.4,Active,Skip,"40% hit rate, opp #12"
+Bucky Irving,TB,RB,PIT @ TB (Sun 1:00 PM ET),PIT,13,31,24,40%,2/5,3.4,Active,Skip,"40% hit rate, opp #13"
 MarShawn Lloyd,GB,RB,DAL @ GB (Sun 8:20 PM ET),DAL,5,4,9,40%,2/5,2.6,Active,Skip,"40% hit rate, opp #5; small sample"
-Jeremiyah Love,ARI,RB,ARI @ LAR (Sun 4:05 PM ET),LAR,27,30,15,40%,2/5,2.8,Active,Skip,"40% hit rate, opp #27; small sample"
+Jeremiyah Love,ARI,RB,ARI @ LAR (Sun 4:05 PM ET),LAR,27,30,15,40%,2/5,2.8,Out,Skip,Injury status: Out
 Kenyon Sadiq,NYJ,TE,NYJ @ NE (Sun 1:00 PM ET),NE,22,15,10,40%,2/5,0.4,Questionable,Skip,"40% hit rate, opp #22; questionable, check Sat/Sun; small sample"
 Kimani Vidal,LAC,RB,LAC @ KC (Sun 4:25 PM ET),KC,21,25,24,40%,2/3,0.7,Active,Skip,"40% hit rate, opp #21"
 Harold Fannin Jr.,CLE,TE,BAL @ CLE (Sun 1:00 PM ET),BAL,9,29,21,38%,2/5,0.4,Active,Skip,"38% hit rate, opp #9"
 Mike Gesicki,CIN,TE,BYE,-,-,n/a,-,38%,4/4,1.0,Active,Skip,Bye week
 Darius Cooper,PHI,WR,CAR @ PHI (Sun 1:00 PM ET),CAR,31,25,7,38%,3/3,1.3,Active,Skip,"38% hit rate, opp #31"
 Cody White,LV,WR,BUF @ LV (Sun 4:25 PM ET),BUF,2,23,3,38%,2/5,0.6,Active,Skip,"38% hit rate, opp #2"
-Nate Adkins,DEN,TE,SEA @ DEN (Thu 8:15 PM ET),SEA,16,15,2,38%,2/2,1.0,Active,Skip,"38% hit rate, opp #16"
+J.K. Dobbins,DEN,RB,SEA @ DEN (Thu 8:15 PM ET),SEA,9,31,1,38%,2/6,2.0,Active,Skip,Game already played
+Nate Adkins,DEN,TE,SEA @ DEN (Thu 8:15 PM ET),SEA,21,15,1,38%,2/2,1.0,Active,Skip,Game already played
 Chuba Hubbard,CAR,RB,CAR @ PHI (Sun 1:00 PM ET),PHI,22,10,24,37%,3/4,2.8,Active,Skip,"37% hit rate, opp #22"
 Rhamondre Stevenson,NE,RB,NYJ @ NE (Sun 1:00 PM ET),NYJ,7,1,21,37%,2/5,1.2,Active,Skip,"37% hit rate, opp #7"
-Tyler Warren,IND,TE,TEN @ IND (Sun 1:00 PM ET),TEN,16,8,15,36%,3/5,1.0,Active,Skip,"36% hit rate, opp #16"
+Tyler Warren,IND,TE,TEN @ IND (Sun 1:00 PM ET),TEN,16,8,15,36%,3/5,1.0,Questionable,Skip,"36% hit rate, opp #16; questionable, check Sat/Sun"
 Jake Ferguson,DAL,TE,DAL @ GB (Sun 8:20 PM ET),GB,16,15,8,36%,2/5,0.6,Active,Skip,"36% hit rate, opp #16"
-Jacory Croskey-Merritt,WSH,RB,WSH @ SF (Mon 8:15 PM ET),SF,22,15,28,36%,2/5,1.4,Active,Skip,"36% hit rate, opp #22"
+Jacory Croskey-Merritt,WSH,RB,WSH @ SF (Mon 8:15 PM ET),SF,22,15,28,36%,2/5,1.4,Questionable,Skip,"36% hit rate, opp #22; questionable, check Sat/Sun"
 Keon Coleman,BUF,WR,BUF @ LV (Sun 4:25 PM ET),LV,11,13,5,35%,2/5,0.6,Active,Skip,"35% hit rate, opp #11"
 Ollie Gordon II,MIA,RB,BYE,-,-,n/a,-,35%,3/4,3.8,Active,Skip,Bye week
 Kenneth Walker III,KC,RB,LAC @ KC (Sun 4:25 PM ET),LAC,9,25,23,33%,3/4,5.5,Active,Skip,"33% hit rate, opp #9"
-CeeDee Lamb,DAL,WR,DAL @ GB (Sun 8:20 PM ET),GB,24,6,8,33%,3/5,1.2,Questionable,Skip,"33% hit rate, opp #24; questionable, check Sat/Sun"
-Kyle Monangai,CHI,RB,CHI @ ATL (Sun 1:00 PM ET),ATL,12,22,19,33%,2/4,3.8,Out,Skip,Injury status: Out
-Braelon Allen,NYJ,RB,NYJ @ NE (Sun 1:00 PM ET),NE,12,29,10,33%,2/5,1.8,Active,Skip,"33% hit rate, opp #12"
+CeeDee Lamb,DAL,WR,DAL @ GB (Sun 8:20 PM ET),GB,24,6,8,33%,3/5,1.2,Active,Skip,"33% hit rate, opp #24"
+Kyle Monangai,CHI,RB,CHI @ ATL (Sun 1:00 PM ET),ATL,13,22,19,33%,2/4,3.8,Out,Skip,Injury status: Out
+Braelon Allen,NYJ,RB,NYJ @ NE (Sun 1:00 PM ET),NE,13,29,10,33%,2/5,1.8,Active,Skip,"33% hit rate, opp #13"
 Malik Nabers,NYG,WR,NO @ NYG (Sun 1:00 PM ET),NO,7,13,12,33%,2/5,1.2,Active,Skip,"33% hit rate, opp #7"
 Zay Flowers,BAL,WR,BAL @ CLE (Sun 1:00 PM ET),CLE,3,8,29,33%,2/4,1.2,Active,Skip,"33% hit rate, opp #3"
 Malik Willis,MIA,QB,BYE,-,-,n/a,-,33%,2/5,0.6,Active,Skip,Bye week
@@ -58,18 +59,18 @@ Emeka Egbuka,TB,WR,PIT @ TB (Sun 1:00 PM ET),PIT,28,8,24,32%,2/5,1.2,Active,Skip
 Noah Fant,NO,TE,NO @ NYG (Sun 1:00 PM ET),NYG,16,25,10,31%,2/3,0.7,Active,Skip,"31% hit rate, opp #16"
 Pat Freiermuth,PIT,TE,PIT @ TB (Sun 1:00 PM ET),TB,9,3,20,30%,3/5,0.8,Active,Skip,"30% hit rate, opp #9"
 Aaron Jones Sr.,MIN,RB,BYE,-,-,n/a,-,29%,2/5,2.4,Active,Skip,Bye week
-Stefon Diggs,WSH,WR,WSH @ SF (Mon 8:15 PM ET),SF,17,19,28,29%,2/4,1.0,Out,Skip,Injury status: Out
+Stefon Diggs,WSH,WR,WSH @ SF (Mon 8:15 PM ET),SF,17,19,28,29%,2/4,1.0,Questionable,Skip,"29% hit rate, opp #17; questionable, check Sat/Sun"
 Woody Marks,HOU,RB,HOU VS JAX (Sun 9:30 AM ET),JAX,27,28,31,29%,2/5,2.2,Active,Skip,"29% hit rate, opp #27"
 Devaughn Vele,NO,WR,NO @ NYG (Sun 1:00 PM ET),NYG,11,8,10,29%,2/5,1.2,Active,Skip,"29% hit rate, opp #11"
 Wan'Dale Robinson,TEN,WR,TEN @ IND (Sun 1:00 PM ET),IND,17,13,15,29%,2/5,0.6,Active,Skip,"29% hit rate, opp #17"
 Roman Wilson,PIT,WR,PIT @ TB (Sun 1:00 PM ET),TB,17,20,20,29%,2/5,0.4,Out,Skip,Injury status: Out
 Kendre Miller,NO,RB,NO @ NYG (Sun 1:00 PM ET),NYG,9,8,10,27%,2/4,1.8,Active,Skip,"27% hit rate, opp #9"
-Treylon Burks,WSH,WR,WSH @ SF (Mon 8:15 PM ET),SF,17,19,28,25%,2/4,0.2,Active,Skip,"25% hit rate, opp #17"
+Treylon Burks,WSH,WR,WSH @ SF (Mon 8:15 PM ET),SF,17,19,28,25%,2/4,0.2,Questionable,Skip,"25% hit rate, opp #17; questionable, check Sat/Sun"
 Jakobi Meyers,JAX,WR,HOU VS JAX (Sun 9:30 AM ET),HOU,7,27,18,24%,2/5,0.8,Active,Skip,"24% hit rate, opp #7"
 Juwan Johnson,NO,TE,NO @ NYG (Sun 1:00 PM ET),NYG,16,25,10,23%,2/5,1.4,Active,Skip,"23% hit rate, opp #16"
-Brian Robinson Jr.,ATL,RB,CHI @ ATL (Sun 1:00 PM ET),CHI,12,17,12,19%,2/5,1.2,Active,Skip,"19% hit rate, opp #12"
-Emanuel Wilson,SEA,RB,SEA @ DEN (Thu 8:15 PM ET),DEN,9,17,27,19%,2/5,3.2,Active,Skip,"19% hit rate, opp #9"
+Brian Robinson Jr.,ATL,RB,CHI @ ATL (Sun 1:00 PM ET),CHI,13,17,12,19%,2/5,1.2,Active,Skip,"19% hit rate, opp #13"
 Justin Jefferson,MIN,WR,BYE,-,-,n/a,-,19%,2/4,1.0,Active,Skip,Bye week
 Isaiah Likely,NYG,TE,NO @ NYG (Sun 1:00 PM ET),NO,16,15,12,19%,2/5,1.6,Active,Skip,"19% hit rate, opp #16"
-Joshua Palmer,BUF,WR,BUF @ LV (Sun 4:25 PM ET),LV,11,13,5,13%,2/3,0.0,Out,Skip,Injury status: Out
+Emanuel Wilson,SEA,RB,SEA @ DEN (Thu 8:15 PM ET),DEN,9,17,24,18%,2/6,2.7,Active,Skip,Game already played
+Joshua Palmer,BUF,WR,BUF @ LV (Sun 4:25 PM ET),LV,11,13,5,13%,2/3,0.0,Questionable,Skip,"13% hit rate, opp #11; questionable, check Sat/Sun"
 Matthew Golden,GB,WR,DAL @ GB (Sun 8:20 PM ET),DAL,7,1,9,11%,2/5,1.6,Active,Skip,"11% hit rate, opp #7"
