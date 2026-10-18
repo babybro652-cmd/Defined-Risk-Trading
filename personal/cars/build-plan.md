@@ -118,7 +118,9 @@ Bottom line: Path A caps the power; Path B costs about as much as the supercharg
 | 2 Safe | Catch cans, oil cooler, baffled oil pan, AN lines/fittings | $800–1,800 |
 | 2 Handling | Coilovers set a few inches lower, upgraded sway bars | $1,800–3,600 |
 | 3 Looks | New headlights and taillights | $300–800 |
-| | **Cutlass total** | **about $21,050–46,250** (before paint; more if floors, trunk or frame are rotted) |
+| 3 Looks | Full-glass panoramic roof (Tim, 10/18): custom shop cuts out the roof center, adds steel framing back, fits fixed glass; do it with the vinyl-top removal and roof rust repair | $6,000–15,000 |
+| 3 Safe | Body reinforcement for the cut roof: subframe connectors and reinforcement plates | $300–800 |
+| | **Cutlass total** | **about $27,350–62,050** (before paint; more if floors, trunk or frame are rotted) |
 
 ---
 
@@ -128,8 +130,8 @@ Bottom line: Path A caps the power; Path B costs about as much as the supercharg
 |---|---|---|
 | Cruze | $7,250 | $15,700 |
 | Charger | $23,550 | $48,250 |
-| Cutlass | $21,050 | $46,250 |
-| **Total** | **about $51,850** | **about $110,200** |
+| Cutlass | $27,350 | $62,050 |
+| **Total** | **about $58,150** | **about $126,000** |
 
 Biggest savings: doing the labor, buying used brake and suspension parts, and finding a
 cheap LS. Biggest risks: the Charger's engine at 188k under boost and rust on the Cutlass (10/15 videos: vinyl top, rear window and C-pillar rust; floors, trunk and frame still unseen).
