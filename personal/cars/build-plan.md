@@ -34,6 +34,8 @@ This is a list for later, paid from extra money, never from bill money.
 
 ## 2016 Dodge Charger Pursuit (5.7 Hemi, ~188k)
 
+**Stays RWD (Tim, 10/18).** Every strong drivetrain part bolts in on RWD; on AWD the transfer case and front diff have no bolt-in upgrades. The AWD route is written up below for reference.
+
 | Phase | Work | Cost |
 |---|---|---|
 | 1 Reliable | Oil change: 7 qt 5W-20 high-mileage + MO-339 | $50–70 |
@@ -45,13 +47,57 @@ This is a list for later, paid from extra money, never from bill money.
 | 2 Power | Supercharger kit | $6,000–8,500 |
 | 2 Power | Fuel upgrades and tune | $800–1,600 |
 | 2 Handling | Coilovers, upgraded sway bars | $1,600–3,200 |
+| 2 Drivetrain | 230mm limited-slip rear diff from a Scat Pack or Hellcat (bolts in) | $800–1,500 |
+| 2 Drivetrain | Transmission tune for the 8HP70 (firmer shifts, more line pressure) | $300–500 |
+| 2 Drivetrain | Past ~650 hp: stronger rear axles and a one-piece aluminum or carbon driveshaft | $1,900–3,800 |
+| 2 Handling | Adjustable rear camber arms and toe links (fix alignment once it's lowered) | $400–900 |
+| 2 Handling | Rear cradle/subframe bushing inserts (stops wheel hop) | $200–500 |
+| 2 Handling | Adjustable front tension struts or poly bushings (caster, sharper steering) | $300–700 |
+| 2 Handling | Adjustable sway bar end links, front strut tower brace | $300–600 |
+| 2 Handling | Performance alignment after the suspension work | $150–250 |
 | 3 Looks | Wide body kit | $2,000–6,000 |
 | 3 Looks | Body work and paint for the kit | $3,000–8,000 |
 | 3 Looks | Big wheels and tires | $2,500–5,000 |
 | 3 Looks | New headlights and taillights | $600–1,500 |
-| | **Charger total** | **about $19,200–39,500** (plus $1,500–3,000 if lifters) |
+| | **Charger total** | **about $23,550–48,250** (plus $1,500–3,000 if lifters) |
 
 If the compression test is weak, plan a built engine before the supercharger ($5,000–10,000).
+
+### Charger AWD option (reference only, not the plan)
+
+Two ways to do it. Prices are rough; Path B is one-off custom work, so get a quote from a shop that has done LX drivetrain swaps.
+
+**Path A: factory AWD parts from a donor (2011+ AWD Charger or 300 with the 5.7).** Fits a mild blower only (about 550 hp, gentle launches). Nothing stronger bolts in.
+
+| Work | Cost |
+|---|---|
+| AWD front crossmember, control arms, knuckles and hubs, front diff, front axles | in donor price |
+| AWD 8HP70 with the active transfer case, front and rear driveshafts | in donor price |
+| AWD oil pan and pickup, engine mounts, steering rack if different | in donor price |
+| Donor car or parts set (used) | $3,000–6,000 |
+| Program the engine, transmission, ABS and body computers for AWD | $300–800 |
+| **Path A total** | **about $3,300–6,800**, plus 2–4 weekends of your labor |
+
+Weak points: the transfer case and front diff. The front and rear diff ratios must match, which limits gear changes.
+
+**Path B: built AWD for 650+ hp.** Uses the stronger Trackhawk / Durango Hellcat drivetrain (built for 707+ hp). It does not bolt into a Charger, so most of this is fabrication.
+
+| Work | Custom work needed | Cost |
+|---|---|---|
+| 8HP95 transmission with the Trackhawk transfer case (used) | New transmission crossmember; check tunnel clearance | $4,000–7,000 |
+| Transmission crossmember and tunnel work | Fabricate mounts, trim or massage the tunnel | $1,500–3,000 |
+| Wiring and computer integration | Make the Trackhawk transmission and transfer case modules talk to the Charger; custom tune | $1,000–2,500 |
+| Trackhawk front diff (used) | Fabricate front diff mounts in the Charger crossmember | $800–1,500 |
+| Front diff mounts | Fabrication | $1,000–2,000 |
+| Custom front axles | Built to fit the Trackhawk diff and Charger AWD knuckles | $1,500–3,000 |
+| Custom front driveshaft, one-piece rear driveshaft | Measured after the swap | $1,500–3,000 |
+| Match front and rear gear ratios | Regear the rear to match the Trackhawk front ratio | $800–2,000 |
+| Oil pan clearance with the supercharger | AWD pan, check blower and front diff clearance | $300–600 |
+| Transmission and transfer case coolers | Plumbing | $300–600 |
+| Shop labor for fabrication and install | | $5,000–12,000 |
+| **Path B total** | | **about $17,700–37,200** on top of the rest of the build |
+
+Bottom line: Path A caps the power; Path B costs about as much as the supercharger, wide body and paint combined. RWD with the parts above holds more power for far less.
 
 ## 1979 Oldsmobile Cutlass Supreme (needs a motor)
 
@@ -81,9 +127,9 @@ If the compression test is weak, plan a built engine before the supercharger ($5
 | Car | Low | High |
 |---|---|---|
 | Cruze | $7,250 | $15,700 |
-| Charger | $19,200 | $39,500 |
+| Charger | $23,550 | $48,250 |
 | Cutlass | $21,050 | $46,250 |
-| **Total** | **about $47,500** | **about $101,450** |
+| **Total** | **about $51,850** | **about $110,200** |
 
 Biggest savings: doing the labor, buying used brake and suspension parts, and finding a
 cheap LS. Biggest risks: the Charger's engine at 188k under boost and rust on the Cutlass (10/15 videos: vinyl top, rear window and C-pillar rust; floors, trunk and frame still unseen).
