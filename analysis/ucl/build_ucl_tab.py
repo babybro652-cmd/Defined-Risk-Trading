@@ -99,7 +99,9 @@ def schedule(key, lg, a, b, upto, log):
     cache = load(path, {})
     days = [a + dt.timedelta(i) for i in range((min(b, upto) - a).days + 1)]
     recent = dt.datetime.now(ET).date() - dt.timedelta(3)
-    todo = [d for d in days if d.isoformat() not in cache or d >= recent]
+    today = dt.datetime.now(ET).date()
+    stale = lambda d: any(not e.get('final') for e in cache.get(d.isoformat(), [])) and d < today
+    todo = [d for d in days if d.isoformat() not in cache or d >= recent or stale(d)]
     with ThreadPoolExecutor(10) as ex:
         for d, evs in zip(todo, ex.map(lambda d: scoreboard(lg, d), todo)):
             cache[d.isoformat()] = evs
