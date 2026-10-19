@@ -7,6 +7,8 @@ Newest decisions win; move finished items to Done with the date.
 ## Open
 
 ### Personal
+- [ ] Pay the light bill and internet this week (due week of 10/19).
+- [ ] Verizon: $282.37 scheduled Thu 10/22; then call Verizon to remove the unused lines (Jarvis reminder Fri 10/23 10 AM).
 - [ ] Charger oil change (past due, ~188k miles): 5.7 Hemi, 7 qt 5W-20 high-mileage + MO-339 filter.
 - [ ] Send Jarvis the Cruze mileage.
 - [ ] Google Workspace: downgrade Business Plus (~$26-28/mo) to Business Starter (~$8/mo) at admin.google.com > Billing > Subscriptions, then pay the balance and tell Jarvis the new amount. Payments failing since 9/20.
@@ -70,6 +72,7 @@ Newest decisions win; move finished items to Done with the date.
 - 10/5: Payhip account, payouts and tax settings set up (#17–19). @peacebypage claimed on Instagram, TikTok and Pinterest. Facebook Page + Pinterest connected to Blotato; IG + TikTok wait until ~10/18.
 - 10/2 USPTO check (Jarvis): no "Peace by Page" mark filed or registered. Closest: pending "PEACE BY PIECE: MICRO-WELLNESS TOOLKIT" (filed 12/9/2025, Class 16 stress-relief printed materials, Class 44). Low-moderate risk; fine to launch. Optional later: file our own mark (~$350/class) once sales start.
 - 10/2 Brand name: Peace by Page
+- 10/19 401(k) withdrawal: received and spent (Tim). Paycheck split: 80% to main account, 20% to Chime.
 - 10/1 Verizon past-due paid.
 - 10/1 October rent ($675) paid.
 - 9/30 Faceless channel: paused (theme-page research verified; skip paid coaching; a $0 30-day Reddit-story test is ready if revisited).
