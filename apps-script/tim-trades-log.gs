@@ -44,3 +44,25 @@ function logTrade_20261020() {
     'Target filled 2 @ 7744.50. $ = 30 pts x $50 x 2, before commissions.',
   ]);
 }
+
+// Tue 10/20/2026 ES short #1 (afternoon), stopped out. Paper account (Tim, 10/20).
+// Recording opens at 1:44 PM with the position already on; entry time not shown.
+function logTrade_20261020_2() {
+  appendTimTrade_([
+    '2026-10-20', 'before 1:44', '1:53', 'NY', 'ES', 'SHORT', 2,
+    'Paper', 7763.00, 7767.00, 7741.00, 7767.00, 'SL', 4.00, -4.00,
+    -1, -400, 'DRT Phone Screen_Recording_20261020_135352_TradingView.mp4',
+    'Stop filled 2 @ 7767.00. $ = -4 pts x $50 x 2, before commissions.',
+  ]);
+}
+
+// Tue 10/20/2026 ES short #2, re-entry minutes after #1 stopped. Closed by hand
+// below the entry, target not reached. Paper account (Tim, 10/20).
+function logTrade_20261020_3() {
+  appendTimTrade_([
+    '2026-10-20', '1:53-1:56', '3:47', 'NY', 'ES', 'SHORT', 2,
+    'Paper', 7766.00, 7770.00, 7746.00, 7754.75, 'Manual', 4.00, 11.25,
+    2.81, 1125, 'DRT Phone Screen_Recording_20261020_154729_TradingView.mp4',
+    'Closed 2 @ 7754.75 by hand (reason not stated). Low came within about 2 pts of the 7746 target before the exit. $ = 11.25 pts x $50 x 2, before commissions.',
+  ]);
+}
