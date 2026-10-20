@@ -101,13 +101,27 @@ Bottom line: Path A caps the power; Path B costs about as much as the supercharg
 
 ## 1979 Oldsmobile Cutlass Supreme (needs a motor)
 
+**Frame-off restoration (Tim, 10/20).** Body comes off the frame; both are stripped, repaired
+and coated, and the chassis is rebuilt on the bare frame. Step order, DIY vs shop and tools are
+in `1979-oldsmobile-cutlass-supreme.md`. Frame-off lines below replace the old frame check and
+separate rust repair lines. Blasting, powder coat and the roof are shop prices; the welding line
+runs from DIY (low) to shop (high).
+
 | Phase | Work | Cost |
 |---|---|---|
-| 1 Reliable | Frame, body mounts, floors and trunk check (not on video yet) | $0–? |
-| 1 Reliable | Rust seen 10/15: remove vinyl top, repair roof rust, rear window channel, both C-pillar quarters (patch panels, DIY) | $1,000–3,500 |
+| 1 Frame-off | Tools: engine hoist and stand, body dolly, jack stands, bags and tags (rotisserie extra, $900–2,600) | $600–1,500 |
+| 1 Frame-off | Media blast the body shell inside and out, epoxy prime (chemical dip instead: $3,000–6,000) | $1,500–4,000 |
+| 1 Frame-off | Blast and powder coat the frame | $700–1,500 |
+| 1 Frame-off | Frame rust repair, boxing plates, steering box brace (not seen yet; a used G-body frame is $500–1,500 if this one is bad) | $500–2,500 |
+| 1 Frame-off | Repro panels: quarters or quarter patches, rear window channel, package tray, trunk pan, floor pans, cowl (rust seen 10/15 plus what blasting finds) | $1,500–3,500 |
+| 1 Frame-off | Welding and panel install: DIY with a MIG welder (low) to shop (high) | $400–8,000 |
+| 1 Frame-off | Body mount bushing kit, bolts, cage nut repair | $150–400 |
+| 1 Frame-off | Reassembly: weatherstrip kit, rear window gasket, clips and fasteners, seam sealer, undercoating | $1,000–2,500 |
 | 1 Reliable | Get it rolling: used tires, driver quarter window glass, missing headlight | $250–650 |
-| 1 Reliable | Fuel tank, lines and pump sized for EFI and boost | $800–1,500 |
+| 1 Reliable | Fuel tank, lines and pump sized for EFI and boost (on the bare frame) | $800–1,500 |
 | 1 Reliable | Radiator and electric fans for the LS | $500–900 |
+| 1 Reliable | Chassis on the bare frame: ball joints, tie rods, steering box, rear bushings, hardware | $600–1,500 |
+| 1 Safe | Stainless brake hard lines (on the bare frame) | $150–350 |
 | 1 Safe | Braided stainless lines, multi-piston front and rear big brakes | $1,600–3,200 |
 | 2 Power | LS engine (junkyard 5.3 or 6.0 truck motor) | $800–2,000 |
 | 2 Power | Forged rotating assembly plus machine work | $4,000–8,000 |
@@ -118,9 +132,9 @@ Bottom line: Path A caps the power; Path B costs about as much as the supercharg
 | 2 Safe | Catch cans, oil cooler, baffled oil pan, AN lines/fittings | $800–1,800 |
 | 2 Handling | Coilovers set a few inches lower, upgraded sway bars | $1,800–3,600 |
 | 3 Looks | New headlights and taillights | $300–800 |
-| 3 Looks | Full-glass panoramic roof (Tim, 10/18): custom shop cuts out the roof center, adds steel framing back, fits fixed glass; do it with the vinyl-top removal and roof rust repair | $6,000–15,000 |
-| 3 Safe | Body reinforcement for the cut roof: subframe connectors and reinforcement plates | $300–800 |
-| | **Cutlass total** | **about $27,350–62,050** (before paint; more if floors, trunk or frame are rotted) |
+| 3 Looks | Full-glass panoramic roof (Tim, 10/18): custom shop cuts out the roof center, adds steel framing back, fits fixed glass; done on the blasted shell during the frame-off, before paint | $6,000–15,000 |
+| 3 Safe | Body reinforcement for the cut roof: roof and pillar reinforcement plates | $300–800 |
+| | **Cutlass total** | **about $33,450–84,300** (before paint; a garage rental if needed is extra) |
 
 ---
 
@@ -130,8 +144,8 @@ Bottom line: Path A caps the power; Path B costs about as much as the supercharg
 |---|---|---|
 | Cruze | $7,250 | $15,700 |
 | Charger | $23,550 | $48,250 |
-| Cutlass | $27,350 | $62,050 |
-| **Total** | **about $58,150** | **about $126,000** |
+| Cutlass | $33,450 | $84,300 |
+| **Total** | **about $64,250** | **about $148,250** |
 
 Biggest savings: doing the labor, buying used brake and suspension parts, and finding a
-cheap LS. Biggest risks: the Charger's engine at 188k under boost and rust on the Cutlass (10/15 videos: vinyl top, rear window and C-pillar rust; floors, trunk and frame still unseen).
+cheap LS. Biggest risks: the Charger's engine at 188k under boost and rust on the Cutlass (10/15 videos: vinyl top, rear window and C-pillar rust; floors, trunk and frame still unseen). The frame-off plan (10/20) handles all of it; the swing is DIY vs shop welding.
