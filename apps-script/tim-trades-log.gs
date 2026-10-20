@@ -57,12 +57,12 @@ function logTrade_20261020_2() {
 }
 
 // Tue 10/20/2026 ES short #2, re-entry minutes after #1 stopped. Closed by hand
-// below the entry, target not reached. Paper account (Tim, 10/20).
+// on the turn after price came 1 tick from target (Tim, 10/20). Paper account.
 function logTrade_20261020_3() {
   appendTimTrade_([
     '2026-10-20', '1:53-1:56', '3:47', 'NY', 'ES', 'SHORT', 2,
     'Paper', 7766.00, 7770.00, 7746.00, 7754.75, 'Manual', 4.00, 11.25,
     2.81, 1125, 'DRT Phone Screen_Recording_20261020_154729_TradingView.mp4',
-    'Closed 2 @ 7754.75 by hand (reason not stated). Low came within about 2 pts of the 7746 target before the exit. $ = 11.25 pts x $50 x 2, before commissions.',
+    'Closed 2 @ 7754.75 by hand: came 1 tick from the 7746 target and turned. In almost 2 hrs, open P&L reached $1,800 twice and $1,975 once; Tim closed on the turn. $ = 11.25 pts x $50 x 2, before commissions.',
   ]);
 }
