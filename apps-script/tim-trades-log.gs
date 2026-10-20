@@ -35,12 +35,11 @@ function appendTimTrade_(row) {
   timTradesSheet_().appendRow(row);
 }
 
-// Tue 10/20/2026 ES long, target hit. Account type was not visible in the
-// recording: change 'CHECK' to Paper / Eval / Live before running.
+// Tue 10/20/2026 ES long, target hit. Paper account (Tim, 10/20).
 function logTrade_20261020() {
   appendTimTrade_([
     '2026-10-20', 'before 9:55', '9:58', 'NY', 'ES', 'LONG', 2,
-    'CHECK', 7714.50, 7710.50, 7744.50, 7744.50, 'TP', 4.00, 30.00,
+    'Paper', 7714.50, 7710.50, 7744.50, 7744.50, 'TP', 4.00, 30.00,
     7.5, 3000, 'DRT Phone Screen_Recording_20261020_095850_TradingView.mp4',
     'Target filled 2 @ 7744.50. $ = 30 pts x $50 x 2, before commissions.',
   ]);
