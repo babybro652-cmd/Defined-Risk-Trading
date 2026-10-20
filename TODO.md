@@ -7,7 +7,7 @@ Newest decisions win; move finished items to Done with the date.
 ## Open
 
 ### Personal
-- [ ] Pay the light bill and internet this week (due week of 10/19).
+- [ ] Pay the light bill ($102.50, half of $205) and internet ($50.77) this week (due week of 10/19).
 - [ ] Verizon: $282.37 scheduled Thu 10/22; then call Verizon to remove the unused lines (Jarvis reminder Fri 10/23 10 AM).
 - [ ] Charger oil change (past due, ~188k miles): 5.7 Hemi, 7 qt 5W-20 high-mileage + MO-339 filter.
 - [ ] Send Jarvis the Cruze mileage.
