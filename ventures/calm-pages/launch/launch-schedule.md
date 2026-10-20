@@ -36,7 +36,7 @@ Board ids (for Blotato later): Anxiety Journal Prompts 1140184899352420443, Calm
 
 ### Daily pins, one a day around 7:45 PM (journal, bundle and sampler pins first)
 
-#### 1. Fri 10/16: W1 (wings-1-inside.png)
+#### 1. Fri 10/23: W1 (wings-1-inside.png)
 - **Image:** https://database.blotato.io/storage/v1/object/public/public_media/246c6cef-6cbe-4b5b-81a9-7bb84481df9c/2d258982-4260-4354-824b-02a181b078a2.png
 - **Board:** Anxiety Journal Prompts
 - **Link:** https://payhip.com/b/ySCnJ
@@ -44,7 +44,7 @@ Board ids (for Blotato later): Anxiety Journal Prompts 1140184899352420443, Calm
 - **Description:** A gentle 90-day printable journal with a soft butterfly theme. One daily page takes about five minutes: mood check, three good things, one worry and a more balanced thought, one small step. Includes an SOS toolkit (box breathing, grounding, worry tree) and coloring breaks. Instant download, US Letter and A4. Supports, not replaces, professional care. US crisis line: call or text 988.
 - **Alt text:** Three printable pages from the Calm Wings anxiety journal: a daily page, box breathing and a butterfly coloring page
 
-#### 2. Sat 10/17: N4 (nights-4-gift.png)
+#### 2. Sat 10/24: N4 (nights-4-gift.png)
 - **Image:** https://database.blotato.io/storage/v1/object/public/public_media/246c6cef-6cbe-4b5b-81a9-7bb84481df9c/6b50298e-f27b-4ef6-9388-07aa135675fc.png
 - **Board:** Gifts for Someone Who Worries
 - **Link:** https://payhip.com/b/7ZIgE
@@ -52,7 +52,7 @@ Board ids (for Blotato later): Anxiety Journal Prompts 1140184899352420443, Calm
 - **Description:** For the night owl who worries: the Calm Nights 90-day journal, 18 moon and stars coloring pages and a 12-month mood star tracker. Print, bind and wrap it with colored pencils, or send the file. Instant download, US Letter and A4. Supports, not replaces, professional care.
 - **Alt text:** Calm Nights journal, celestial coloring pack and mood star tracker printable bundle shown as a gift idea
 
-#### 3. Sun 10/18: P5 (petals-5-sampler.png)
+#### 3. Sun 10/25: P5 (petals-5-sampler.png)
 - **Image:** https://database.blotato.io/storage/v1/object/public/public_media/246c6cef-6cbe-4b5b-81a9-7bb84481df9c/43f366ac-3751-48e3-8381-41ff02ee1387.png
 - **Board:** Self-Care Printables
 - **Link:** https://payhip.com/b/yrk3j
@@ -60,7 +60,7 @@ Board ids (for Blotato later): Anxiety Journal Prompts 1140184899352420443, Calm
 - **Description:** Not sure a journal is for you? Start with seven free daily pages, a pocket SOS card and a coloring page. About five minutes a day, undated, print at home. Free PDF in Letter and A4. Supports, not replaces, professional care. US crisis line: call or text 988.
 - **Alt text:** Free printable 7-day journal sampler shown next to the Calm Petals journal cover
 
-#### 4. Mon 10/19: N1 (nights-1-inside.png)
+#### 4. Mon 10/26: N1 (nights-1-inside.png)
 - **Image:** https://database.blotato.io/storage/v1/object/public/public_media/246c6cef-6cbe-4b5b-81a9-7bb84481df9c/534495cf-0fa4-4d97-b716-1753d4dc2acb.png
 - **Board:** Anxiety Journal Prompts
 - **Link:** https://payhip.com/b/NzAkL
@@ -68,7 +68,7 @@ Board ids (for Blotato later): Anxiety Journal Prompts 1140184899352420443, Calm
 - **Description:** For worries that get louder at night. The Calm Nights 90-day journal has moon and stars art, five-minute daily pages, an SOS toolkit with an extra page for nights when your mind won't switch off, and a bedtime wind-down list. Instant download, US Letter and A4. Supports, not replaces, professional care. US crisis line: call or text 988.
 - **Alt text:** Three printable pages from the Calm Nights anxiety journal: a daily page, box breathing and a moon coloring page
 
-#### 5. Tue 10/20: P4 (petals-4-gift.png)
+#### 5. Tue 10/27: P4 (petals-4-gift.png)
 - **Image:** https://database.blotato.io/storage/v1/object/public/public_media/246c6cef-6cbe-4b5b-81a9-7bb84481df9c/e93e9b78-a550-4685-8829-8321ddc0a05e.png
 - **Board:** Gifts for Someone Who Worries
 - **Link:** https://payhip.com/b/8teNR
@@ -76,7 +76,7 @@ Board ids (for Blotato later): Anxiety Journal Prompts 1140184899352420443, Calm
 - **Description:** The Calm Petals bundle: a 90-day journal, 18 botanical coloring pages and a 12-month mood flower tracker. A gentle gift you can print, bind and wrap, or send as a file. Instant download, US Letter and A4. Supports, not replaces, professional care.
 - **Alt text:** Calm Petals journal, botanical coloring pack and mood flower tracker printable bundle shown as a gift idea
 
-#### 6. Wed 10/21: W5 (wings-5-sampler.png)
+#### 6. Wed 10/28: W5 (wings-5-sampler.png)
 - **Image:** https://database.blotato.io/storage/v1/object/public/public_media/246c6cef-6cbe-4b5b-81a9-7bb84481df9c/fec977af-16b4-4673-a92b-f7de631107f4.png
 - **Board:** Self-Care Printables
 - **Link:** https://payhip.com/b/yrk3j
@@ -84,7 +84,7 @@ Board ids (for Blotato later): Anxiety Journal Prompts 1140184899352420443, Calm
 - **Description:** Try a week of the Peace by Page journal free: 7 daily pages, a pocket SOS card to cut out and a page to color. About five minutes a day. Free PDF in US Letter and A4. Supports, not replaces, professional care. US crisis line: call or text 988.
 - **Alt text:** Free 7-day anxiety journal sampler printable with daily pages and a pocket SOS card
 
-#### 7. Thu 10/22: P1 (petals-1-inside.png)
+#### 7. Thu 10/29: P1 (petals-1-inside.png)
 - **Image:** https://database.blotato.io/storage/v1/object/public/public_media/246c6cef-6cbe-4b5b-81a9-7bb84481df9c/6e1ae7ee-81f5-4b65-8052-7995918f6b83.png
 - **Board:** Anxiety Journal Prompts
 - **Link:** https://payhip.com/b/73fNd
@@ -92,7 +92,7 @@ Board ids (for Blotato later): Anxiety Journal Prompts 1140184899352420443, Calm
 - **Description:** A gentle 90-day printable journal with soft botanical art in sage and blush. Daily pages take about five minutes, with CBT-inspired prompts, an SOS toolkit and a flower coloring page at the end of each week. Instant download, US Letter and A4. Supports, not replaces, professional care. US crisis line: call or text 988.
 - **Alt text:** Three printable pages from the Calm Petals anxiety journal: a daily page, box breathing and a botanical coloring page
 
-#### 8. Fri 10/23: W4 (wings-4-gift.png)
+#### 8. Fri 10/30: W4 (wings-4-gift.png)
 - **Image:** https://database.blotato.io/storage/v1/object/public/public_media/246c6cef-6cbe-4b5b-81a9-7bb84481df9c/cfc1b469-ff70-42f6-9d4e-076c410f3638.png
 - **Board:** Gifts for Someone Who Worries
 - **Link:** https://payhip.com/b/JFAK9
@@ -100,7 +100,7 @@ Board ids (for Blotato later): Anxiety Journal Prompts 1140184899352420443, Calm
 - **Description:** A thoughtful gift for a friend who carries a lot: the Calm Wings 90-day journal, an 18-page butterfly coloring pack and a 12-month mood tracker. Print it and tuck it in a binder with colored pencils, or send the file. Instant download, Letter and A4. Supports, not replaces, professional care.
 - **Alt text:** Calm Wings journal, butterfly coloring pack and mood tracker printable bundle shown as a gift idea
 
-#### 9. Sat 10/24: N3 (nights-3-day1.png)
+#### 9. Sat 10/31: N3 (nights-3-day1.png)
 - **Image:** https://database.blotato.io/storage/v1/object/public/public_media/246c6cef-6cbe-4b5b-81a9-7bb84481df9c/3bf94115-5754-4d28-921a-5835e68e3aae.png
 - **Board:** Self-Care Printables
 - **Link:** https://payhip.com/b/NzAkL
@@ -108,7 +108,7 @@ Board ids (for Blotato later): Anxiety Journal Prompts 1140184899352420443, Calm
 - **Description:** Day 1 of the Calm Nights 90-day journal. Rate your day, write three good things, set down one worry with a more balanced thought, and choose one small step for tomorrow. A calm way to close the day. Printable PDF in Letter and A4. Supports, not replaces, professional care. US crisis line: call or text 988.
 - **Alt text:** Printable Day 1 page from the Calm Nights evening anxiety journal with moon and star accents
 
-#### 10. Sun 10/25: P2 (petals-2-coloring.png)
+#### 10. Sun 11/1: P2 (petals-2-coloring.png)
 - **Image:** https://database.blotato.io/storage/v1/object/public/public_media/246c6cef-6cbe-4b5b-81a9-7bb84481df9c/ab95153c-1a75-4d5c-b0f8-65bb4adb9e65.png
 - **Board:** Calming Coloring Pages
 - **Link:** https://payhip.com/b/8QkY4
@@ -116,7 +116,7 @@ Board ids (for Blotato later): Anxiety Journal Prompts 1140184899352420443, Calm
 - **Description:** Original flower and leaf coloring pages for a calm creative break: wreaths, bouquets and botanical mandalas in clean line art. No rules, nothing to finish. Print on cardstock for colored pencils. Instant download, US Letter and A4. From Peace by Page.
 - **Alt text:** Floral wreath coloring page for adults from the Calm Petals botanical coloring pack
 
-#### 11. Mon 10/26: W3 (wings-3-day1.png)
+#### 11. Mon 11/2: W3 (wings-3-day1.png)
 - **Image:** https://database.blotato.io/storage/v1/object/public/public_media/246c6cef-6cbe-4b5b-81a9-7bb84481df9c/e17cdc17-da8a-4478-abe5-eab3babf03ee.png
 - **Board:** Anxiety Journal Prompts
 - **Link:** https://payhip.com/b/ySCnJ
@@ -124,7 +124,7 @@ Board ids (for Blotato later): Anxiety Journal Prompts 1140184899352420443, Calm
 - **Description:** Day 1 of the Calm Wings 90-day journal. Rate anxiety, mood and sleep, write three good things, name one worry and a more balanced thought, and pick one small step for tomorrow. Undated pages, so skipped days are fine. Printable PDF in Letter and A4. Supports, not replaces, professional care. US crisis line: call or text 988.
 - **Alt text:** Printable Day 1 page from the Calm Wings 90-day anxiety journal with mood ratings and journal prompts
 
-#### 12. Tue 10/27: N2 (nights-2-coloring.png)
+#### 12. Tue 11/3: N2 (nights-2-coloring.png)
 - **Image:** https://database.blotato.io/storage/v1/object/public/public_media/246c6cef-6cbe-4b5b-81a9-7bb84481df9c/38a466d9-8c3a-4199-82eb-3d0680426e00.png
 - **Board:** Calming Coloring Pages
 - **Link:** https://payhip.com/b/TlxrB
@@ -132,7 +132,7 @@ Board ids (for Blotato later): Anxiety Journal Prompts 1140184899352420443, Calm
 - **Description:** Celestial coloring pages for quiet evenings: moon phases, constellations, a night lake and starry mandalas in clean line art. Pick a few colors and stop whenever you like. Instant download, US Letter and A4. From Peace by Page.
 - **Alt text:** Night lake coloring page with moon, clouds and pine trees from the Calm Nights celestial coloring pack
 
-#### 13. Wed 10/28: P3 (petals-3-day1.png)
+#### 13. Wed 11/4: P3 (petals-3-day1.png)
 - **Image:** https://database.blotato.io/storage/v1/object/public/public_media/246c6cef-6cbe-4b5b-81a9-7bb84481df9c/ccb4b429-cfa5-4960-9a9d-207025c0c304.png
 - **Board:** Self-Care Printables
 - **Link:** https://payhip.com/b/73fNd
@@ -140,7 +140,7 @@ Board ids (for Blotato later): Anxiety Journal Prompts 1140184899352420443, Calm
 - **Description:** One page a day from the Calm Petals 90-day journal: mood ratings, three good things, one worry and a more balanced thought, and one small step. Undated, so you can start any day. Printable PDF in Letter and A4. Supports, not replaces, professional care. US crisis line: call or text 988.
 - **Alt text:** Printable Day 1 page from the Calm Petals anxiety journal with botanical accents
 
-#### 14. Thu 10/29: W2 (wings-2-coloring.png)
+#### 14. Thu 11/5: W2 (wings-2-coloring.png)
 - **Image:** https://database.blotato.io/storage/v1/object/public/public_media/246c6cef-6cbe-4b5b-81a9-7bb84481df9c/7d303899-57c5-4929-98fe-c2d9935ef85c.png
 - **Board:** Calming Coloring Pages
 - **Link:** https://payhip.com/b/fGDhE
@@ -148,7 +148,7 @@ Board ids (for Blotato later): Anxiety Journal Prompts 1140184899352420443, Calm
 - **Description:** Original butterfly coloring pages for a quiet break: mandalas, garden scenes, wreaths and geometric wings in clean line art. Pick three colors and start with one wing. Print your favorites as often as you like. Instant download, US Letter and A4. From Peace by Page.
 - **Alt text:** Butterfly and flower coloring page for adults from the Calm Wings coloring pack
 
-#### 15. Fri 10/30: N5 (nights-5-sampler.png)
+#### 15. Fri 11/6: N5 (nights-5-sampler.png)
 - **Image:** https://database.blotato.io/storage/v1/object/public/public_media/246c6cef-6cbe-4b5b-81a9-7bb84481df9c/568f9c97-69a0-4db9-bc92-5baa3ab01054.png
 - **Board:** Self-Care Printables
 - **Link:** https://payhip.com/b/yrk3j
