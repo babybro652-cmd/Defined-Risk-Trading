@@ -87,6 +87,9 @@ that close hit first. Score Div entries from the label price, never from the piv
 - Also check wide-risk entries (e.g. 12.25 and 17.25 pt stops) against the course's
   3.5-4 pt stop rule.
 
+## Blotato AI visuals paused (10/20)
+blotato_create_visual has been unavailable or stalling since 10/15 and charged credits twice (about 250 on 10/19, 75 on 10/20) without returning media. Don't call it until Tim or Jarvis says it works again. Use Tim's non-trade DRT Phone clips, else ffmpeg/PIL text-card reels and slides you render yourself (0 credits).
+
 ## Media QA before anything is scheduled (mandatory, added 10/3)
 On 10/3 a review video showed an AI calendar reading "2024" plus a fake "$155 target /
 $1.35 per share" chart, and a stop-cluster video went out under a volume caption. Before
