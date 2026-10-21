@@ -3,7 +3,10 @@
 **Goal:** high-performance street car, aggressive styling. Build plan: (to plan)
 **Power plan (Tim, 10/12/2026):** Upgraded turbo
 **Suspension:** air suspension (bags) instead of coilovers, plus sway bars.
-**Looks:** new lights (LED headlights and taillights).
+**Looks:** new lights (LED headlights and smoked LED taillights; smoked: yes, Tim 10/21).
+**Color (Tim, 10/21):** the car is white now. Going gloss black like the render: 3M 2080 or Avery SW900 gloss black wrap at an NC certified shop, $2,500–3,800 (chosen: cheaper than a good paint job, reversible, protects the white paint). Paint instead: $1,500–2,500 budget shop, $5,000–8,000 quality shop.
+**Interior (Tim, 10/21):** burnt orange accents instead of red: stitching, trim accents, ambient lighting ($400–2,400).
+**Taillights:** smoked LED assemblies, part SW-0126A-BRB (about $190), listed for the 1st-gen 2011-2015 sedan; the RS package does not change the tail lamps. Check the listing says sedan before ordering.
 **Parts list (10/21):** [parts-lists.md](parts-lists.md#2012-chevy-cruze-lt-rs-14t-182995-miles). Air ride on Air Lift Performance 3P/3H with UAS bags or AirREX struts; ZZP Z04 turbo only if the engine tests healthy. Drive: "2012 Chevy Cruze LT RS parts list (10/21)".
 
 - Engine: 1.4L turbo Ecotec (aluminum block). Confirm the engine code (LUJ or LUV) from the VIN, 8th digit.

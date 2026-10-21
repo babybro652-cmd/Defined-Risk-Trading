@@ -2,8 +2,8 @@
 
 **Goal:** high-performance street car, aggressive styling. Build plan: frame-off restoration (Tim, 10/20/2026), see below and `build-plan.md`.
 **Power plan (Tim, 10/12/2026):** LS swap with forged internals, twin turbo setup. Turbos under the hood, one per bank, front-mount style (Tim, 10/21), see below. Full 3 inch stainless dual exhaust with switchable front dumps (Tim, 10/21), see "Exhaust".
-**Stance:** lowered a few inches (coilovers + tubular control arms; check turbo/exhaust and oil pan ground clearance).
-**Looks:** new lights (LED headlights and taillights; one rectangular headlight per side plus a parking/turn lamp by the grille, all stock locations). Full-glass panoramic roof (Tim, 10/18), custom, done with the roof rust repair. Style target: as clean as the Roid Runner (Tim, 10/21), see below.
+**Stance (Tim, 10/21):** coilovers, not air ride. Ridetech G-body coil-over system with StrongArms tubular arms, lowered a few inches; check turbo/exhaust and oil pan ground clearance.
+**Looks:** new lights (LED headlights and taillights; one rectangular headlight per side, 7x6 inch (H6054 size), plus a parking/turn lamp by the grille, all stock locations). Full-glass panoramic roof (Tim, 10/18), custom, done with the roof rust repair. Style target: as clean as the Roid Runner (Tim, 10/21), see below.
 
 - Engine: (add)
 - VIN: (add)
@@ -12,7 +12,27 @@
 ## Parts list (10/21)
 
 Brand-level parts for the whole build: [parts-lists.md](parts-lists.md#1979-oldsmobile-cutlass-supreme-g-body-frame-off). Drive: "1979 Oldsmobile Cutlass Supreme parts list (10/21)" in the Cutlass folder.
-**Open decision:** the plan says 4L80E automatic, but the approved interior rendering shows a 6-speed stick (T-56 Magnum). T-56 route is $6,700–8,600 vs $2,800–5,000 for a built 4L80E.
+
+## Build decisions (Tim, 10/21)
+
+| Item | Chosen | Part and price | Not chosen |
+|---|---|---|---|
+| Transmission | Keep the 4L80E automatic (built, already in the base budget) with a console-mounted gear selector | B&M 81040 Magnum Grip Pro Stick gated shifter, lists 4L80E fit ($553–615 checked 10/21 at US sellers), plus B&M 70499 cable bracket kit and 80712 4-speed gate plate (listed as needed on a 4L80E with the PRNDL switch). Mounts in the console; the trim shop builds the console plate. Check the 4L80E's shifter shaft length when ordering the cable. Lokar's 4L80E floor shifters show as discontinued at JEGS. New budget line: $700–1,000 | T-56 6-speed: not chosen (10/21) |
+| Suspension | Coilovers | Ridetech 11320301 coil-over system for 1978-88 G-body: front and rear HQ coilovers, front upper and lower and rear upper and lower StrongArms (tubular), front and rear MuscleBars ($7,560 checked at Speedway Motors). Lower cost: Ridetech 11320201 (about $5,420 listed; HQ coilovers, rear StrongArms, MuscleBar; confirm the front arms with Ridetech). Base line now $5,400–7,600 (was $2,700–4,500) | Air ride (Ridetech 11320298): not chosen (10/21) |
+| A/C | RestoMod Air | Vapir 3-S kit ($1,399 checked at restomodair.com: heat and A/C unit, ECU, harnesses, vents, bulkhead hoses, multi-mount hardware), custom condenser kit ($449 checked), remote ($149) or Diablo vent controls ($350), engine bay hoses, drier and charge. The compressor comes with the Holley mid-mount accessory drive already in the budget. About $2,200–2,800 | Vintage Air (its G-body kits list 1982-88 only). Neither brand lists a bolt-in kit for a 1979, so this is a custom install; call RestoMod Air (866-784-4278) to confirm the Vapir 3-S fits under the 1979 dash |
+| Headlights | 7x6 inch (200x142 mm) LED, sealed beam size H6054 / 6052 | Holley RetroBright LFRB150 (5700K modern white), about $250 each ($249.95 checked at JEGS for the LFRB130), $500 a pair. Upgrade: JW Speaker 8910 Evolution 2 ($349.97 each checked, $700 a pair). Lights line now $650–1,050 with LED parking lamps and taillights (was $300–800) | 4x6 (H4656/H4651): that size comes in sets of four, and this car has one lamp per side |
+
+**Headlight size: about 85% sure it is 7x6.** Aftermarket fitment listings for the 1978-1979
+Cutlass Supreme (for example https://www.ebay.com/itm/256909494197) all call for the 7x6 inch
+(200x142 mm) lamp and cross it to H6054, H6052 and 6054, and Holley lists the RetroBright 5x7/7x6
+as the replacement for trade numbers H5054, H6052 and H6054. No GM catalog page confirmed it.
+**How Tim confirms:** read the number molded into the glass of the old lamp (usually near the
+bottom center or top edge). 6054, H6054, H6054LL, 6052 or H6052 means 7x6: buy the parts above.
+4656, 4651, H4656 or H4651 means 4x6: tell Jarvis before ordering. A 7x6 lamp is about 7.9 in
+wide and 5.6 in tall.
+
+**Render note:** the interior render shows a 6-speed stick. The build is the 4L80E with the
+console shifter; a future re-render will show the console shifter.
 
 ## Frame-off restoration (Tim, 10/20/2026)
 
@@ -119,7 +139,7 @@ Prices are NC 2026, rough, parts plus shop labor where it says shop.
 | Graphics | One restrained graphic: a stripe fade on the quarters or a 442 or Hurst-style script in a darker shade of the body color | DIY vinyl (low); painted (high) | $400-3,000 |
 | Tail lights | Full-width LED tail panel across the back (custom panel, LED strip, smoked lens), extra over the taillight line already in the budget | DIY with sheet metal and an LED kit; shop for a finished panel | $600-2,500 |
 | Exhaust | Twin square tips cut into the rear valance under the LED tail panel. Now part of the full exhaust line in the base budget (see "Exhaust (Tim, 10/21)") | Shop cuts the valance | in the base exhaust line |
-| Stance | The plan is coilovers (already budgeted). Air ride (RideTech-type G-body kit plus management) lays it on the ground parked and lifts it to drive, extra over coilovers. Check turbo, oil pan and downpipe clearance at full drop either way | DIY on the bare frame | $2,000-4,500 |
+| Stance | Coilovers (Tim, 10/21): Ridetech coil-over system with StrongArms, in the base budget. Air ride: not chosen (10/21). Check turbo, oil pan and downpipe clearance at the lowest setting | DIY on the bare frame | in base |
 | Tubs | Mini-tubs so a wider rear tire fits under the stock quarter | Shop or skilled DIY welding | $600-4,000 |
 | Wheels | Polished billet in G-body sizes: about 18x8 or 19x8 front, 20x10 rear (20x12 with tubs). Measure backspacing after the drop. 22/24 inch wheels need the Roid Runner's custom chassis: skip | Buy | $4,000-9,500 with tires |
 | Engine bay | Smooth the firewall (weld up unused holes), smooth inner fenders, battery to the trunk, harness run inside the fenders and under the cowl, coil and valley covers on the LS, powder coated or polished turbo piping | DIY | $700-6,000 bay; $500-1,500 covers and piping |
@@ -128,10 +148,10 @@ Prices are NC 2026, rough, parts plus shop labor where it says shop.
 | Interior | One leather color through seats, door panels, console, headliner and carpet. Budget route: kit or late-model buckets recovered, DIY carpet and panels. Trim shop route: full custom (Greensboro, Raleigh) | DIY (low) to shop (high) | $3,000-20,000 |
 | Trunk | Carpet and trim panels in the interior color; hide the battery, fuel pump wiring and turbo electronics behind panels | DIY | $300-1,200 |
 | Dash | Dakota Digital RTX for the G-body, or a Holley 12.3 Pro Dash if the LS runs a Holley ECU | DIY | $1,000-2,500 |
-| A/C | Vintage Air Gen IV (the Roid Runner has it; NC summers) | DIY | $1,600-2,800 |
+| A/C | RestoMod Air Vapir 3-S with condenser kit and controls (Tim, 10/21; replaces Vintage Air). NC summers | DIY | $2,200-2,800 |
 | Steering | Tilt column and a wheel that matches the interior | DIY | $500-1,200 |
 
-**Optional "Roid Runner-level finish" adder: about $24,100-91,100** on top of the base Cutlass
+**Optional "Roid Runner-level finish" adder: about $22,700-86,600** (10/21: air ride dropped, RestoMod Air in; was $25,100-92,000) on top of the base Cutlass
 budget (in `build-plan.md` as its own table, not in the base total). The low end is DIY metal
 work, vinyl graphics, coilovers kept, kit seats; the high end is shop metal, show paint and a
 trim shop interior. Biggest swings: paint and interior.
@@ -149,13 +169,13 @@ trim shop interior. Biggest swings: paint and interior.
 for the clean look, and some fight the plan:
 - Roof chop and narrowing (conflicts with the glass roof), A-pillars laid back.
 - Floors dropped 2 inches, custom chassis and custom IFS (the boxed stock frame with tubular
-  arms and coilovers or air ride gets most of the stance).
+  arms and coilovers gets most of the stance).
 - Stretched quarters and fenders, hand-built inner fenders and tubs, custom deck lid and spoiler.
 - 22/24 inch wheels (need the custom chassis and stretched body).
 - The HEMI and supercharger (the LS twin turbo plan covers power).
 
 **Order in the frame-off.** Metal work (smoothing, gaps, tubs, tail panel, bumper brackets,
-firewall) goes in step 7-8 on the bare shell. Air ride or coilovers and wheel fitment in step 9
+firewall) goes in step 7-8 on the bare shell. Coilovers and wheel fitment in step 9
 on the bare frame. Hard lines and engine bay finish at the step 11 drivetrain install. Paint,
 graphics, interior, trunk and dash last.
 
@@ -171,7 +191,7 @@ and parking lamps stay stock.
 The '79 Supreme has one large rectangular headlight per side (2 total), plus a small
 parking/turn lamp next to the grille on each side. All four stay in the stock locations as LED
 units (the "new headlights" line already in the budget). Keep the dash high-beam indicator
-working. No lamp openings get cut.
+working. No lamp openings get cut. Headlight size: 7x6 inch (H6054); see "Build decisions (Tim, 10/21)".
 
 ### The design
 
@@ -204,7 +224,7 @@ working. No lamp openings get cut.
 | Inner fender and core support clearance | The turbos sit where the inner fenders and core support corners are. Trim or notch them, or go tubular |
 | Tubular or shortened inner fenders (optional route) | Opens the most room for the turbos and hot pipes and fits the smoothed-bay look in "Style target" |
 | Steering shaft routing | The driver side turbo and hot pipe pass near the steering box and shaft. Plan the shaft path first; a heat sleeve on the shaft and rag joint |
-| A/C routing | Vintage Air lines and the condenser must clear the hot side and intercooler pipes. Route them on the cold side of the bay |
+| A/C routing | RestoMod Air lines and the condenser must clear the hot side and intercooler pipes. Route them on the cold side of the bay |
 | Heat shielding | Ceramic coat the hot pipes and turbine housings, turbo blankets, shields for the brake master cylinder, steering, wiring and the inner fender paint |
 | Battery to the trunk | Frees the battery tray corner for a turbo (already in the finish table) |
 | Radiator and fans | Base radiator line covers it; the intercooler sits ahead of the radiator, so run strong electric fans |
@@ -275,15 +295,14 @@ with room left. Step the downpipes to 3.5 inch only if the goal goes past about 
 | Mid-pipes | 3 inch 304 stainless mandrel bends, tucked along the tunnel, above the bottom of the frame rails | Flex section on each side (the engine moves on its mounts) |
 | X-pipe | 3 inch stainless X (smoother, raspier) or H (deeper, more old-school) right behind the 4L80E crossmember | X for a turbo LS; turbos already muffle a lot, so an X keeps it clean, not droning |
 | Mufflers | Two straight-through or chambered 3 inch (Borla XR-1 / Pro-XS, MagnaFlow, Flowmaster Super 44 for more sound) ahead of the rear axle, in the stock muffler spots | Pick the sound before welding; a turbo LS is quieter than an NA one |
-| Tailpipes | 3 inch over the rear axle, under the rear frame kick-up, back to the valance | Check axle travel at full bump on the coilovers or air ride |
+| Tailpipes | 3 inch over the rear axle, under the rear frame kick-up, back to the valance | Check axle travel at full bump on the coilovers |
 | Tips | Twin square stainless (about 3x5 or 4x4 in.) through the rear valance | Under the LED tail panel; body shop cuts and finishes the openings |
 | Hangers | Stainless rod hangers welded to the frame with poly or rubber isolators, hidden above the pipe | No hangers bolted to the floor pan (drone and rattles) |
 | Heat | Ceramic coat the downpipes and cutout Y-pipes; heat shield the floor over the X and mufflers; gold or aluminum heat reflective sheet on the floor and the transmission tunnel | Turbos make the front pipes much hotter than the rear |
 
 **Ground clearance at the lowered stance.** The lowest pipe must sit at or above the bottom of
-the frame rails, so the frame hits first. Aim for 3.5-4 in. of clearance at ride height. On
-air ride, check full drop parked: pipes resting on the ground crush and the frame should be the
-lowest point. Mock up the whole system with the chassis at ride height on the bare frame
+the frame rails, so the frame hits first. Aim for 3.5-4 in. of clearance at ride height. At
+the lowest coilover setting the frame should still be the lowest point. Mock up the whole system with the chassis at ride height on the bare frame
 (frame-off step 9) and the body on, before ceramic coating and paint.
 
 **Catalytic converters.** G.S. 20-128(c) requires 1968 and newer cars to keep the emissions

@@ -24,17 +24,18 @@ Google Docs (one per vehicle folder under Cars):
 full-width LED tail panel, twin square tips, LS forged twin turbo (turbos in the front corners of
 the bay), intercooler behind the grille, 3 inch stainless duals with front dumps, slammed on
 polished billet 19 front / 20 rear, mini-tubs, burgundy diamond-stitched leather into the trunk,
-digital dash, 6-speed manual, hidden trunk battery.
+digital dash, 6-speed manual (the build keeps the 4L80E with a console shifter, 10/21; a future
+re-render will show the console shifter), hidden trunk battery.
 
-**Decision for Tim: 4L80E automatic or T-56 6-speed.** The plan files say 4L80E; the interior
-rendering shows a 6-speed stick. Both are priced below. The T-56 route costs about $3,600–3,900
-more and needs a clutch pedal conversion. The base budget now carries the 4L80E; the T-56 is
-shown as an add-on until Tim picks.
+**Decided 10/21 (Tim):** 4L80E automatic with a console-mounted B&M Pro Stick shifter (T-56:
+not chosen), coilovers (air ride: not chosen), RestoMod Air A/C (replaces Vintage Air), 7x6 LED
+headlights. Details and how to confirm the headlight size: "Build decisions (Tim, 10/21)" in the
+Cutlass notes.
 
 ### Closest match to the rendering
 
-- **Stance:** Ridetech complete G-body air system (11320298) lays it on the ground like the
-  rendering; coilovers (QA1 or Ridetech HQ) sit an inch or two higher. Air ride is the match.
+- **Stance:** coilovers (Tim, 10/21): Ridetech 11320301 G-body coil-over system with StrongArms.
+  Air ride (Ridetech 11320298) sits lower parked but is not chosen (10/21).
 - **Wheels:** Billet Specialties or Schott polished billet, 19x8 front, 20x10 rear (20x11/12 with
   tubs). Closest look to the smooth polished faces in the rendering.
 - **Body:** no kit exists for this look. The rendering is custom metal work (shaved, flush glass,
@@ -55,7 +56,7 @@ shown as an add-on until Tim picks.
 | Swap | Engine mount brackets | Hooker BlackHeart 12643HKR (checked, 1978-88 A/G-body) plus clamshell mounts | Bolt-in LS position | $200–300 | DIY | Req |
 | Swap | Oil pan | Holley 302-2 LS retrofit pan (baffled) | Common G-body choice; Fit: confirm with the Hooker mounts and the steering linkage | $350–450 | DIY | Req |
 | Swap | ECU and harness | Holley Terminator X Max (drive-by-wire, boost control, 4L80E control) | Pairs with the Holley 12.3 dash | $1,600–2,000 | DIY | Req |
-| Swap | Accessory drive with A/C | Holley mid-mount LS accessory drive with A/C compressor and alternator | New line: not in the old budget. Needed for Vintage Air | $1,000–1,600 | DIY | Req |
+| Swap | Accessory drive with A/C | Holley mid-mount LS accessory drive with A/C compressor and alternator | New line: not in the old budget. Its compressor runs the RestoMod Air system | $1,000–1,600 | DIY | Req |
 | Turbo | Turbos (pair) | Precision 6266 Gen2 (premium) or Speed Engineering LS twin kit with 62 mm turbos ($3,200, checked; listed for A/F-body, Fit: confirm on G-body) | Front-corner layout is custom, so use the kit for turbos and parts, not its hot side | $2,400–4,200 | Shop fab | Req |
 | Turbo | Wastegates, BOVs | Turbosmart GenV CompGate40 x2, Turbosmart Race Port BOV x2 | | $1,300–1,800 | DIY | Req |
 | Turbo | Intercooler | Treadstone or CX Racing front mount, about 31x12x3.5 | Behind the grille, ahead of the radiator | $300–700 | DIY | Req |
@@ -65,14 +66,15 @@ shown as an add-on until Tim picks.
 | Fuel | Tune | Dyno tune on the Terminator X | | $600–1,200 | Shop | Req |
 | Cooling | Radiator and fans | Champion or Griffin aluminum G-body LS radiator with dual fans and shroud | | $500–900 | DIY | Req |
 | Oiling | Catch cans, cooler, AN | Mighty Mouse catch cans, Setrab or Earl's oil cooler with sandwich adapter, Earl's AN lines | | $800–1,800 | DIY | Req |
-| Trans (A) | 4L80E route | Used 4L80E, rebuild with hard parts, Circle D or Yank converter, Hooker 12656HKR bracket, cooler | Hooker crossmember 12644HKR takes the 4L80E with that bracket | $2,800–5,000 | Shop rebuild | Req (or B) |
-| Trans (B) | T-56 route | Tremec T-56 Magnum TUET11009 ($3,545–4,100 checked), McLeod RXT twin disc clutch, hydraulic throwout bearing, G-Force G-body T-56 crossmember ($436 checked), clutch pedal and master conversion, driveshaft | Matches the interior rendering | $6,700–8,600 | DIY plus driveshaft shop | Opt (or A) |
+| Trans (A) | 4L80E route | Used 4L80E, rebuild with hard parts, Circle D or Yank converter, Hooker 12656HKR bracket, cooler | Hooker crossmember 12644HKR takes the 4L80E with that bracket | $2,800–5,000 | Shop rebuild | Req (chosen 10/21) |
+| Trans | Console shifter | B&M 81040 Magnum Grip Pro Stick gated shifter ($553–615 checked), 70499 cable bracket kit, 80712 4-speed gate plate | Console mount; lists 4L80E fit; check the shifter shaft length for the cable | $700–1,000 | DIY | Req |
+| Trans (B) | T-56 route: not chosen (10/21) | Tremec T-56 Magnum TUET11009 ($3,545–4,100 checked), McLeod RXT twin disc clutch, hydraulic throwout bearing, G-Force G-body T-56 crossmember ($436 checked), clutch pedal and master conversion, driveshaft | The interior render shows it; the build keeps the 4L80E | $6,700–8,600 | DIY plus driveshaft shop | Not chosen |
 | Rear end | Housing | Currie G-body bolt-in 9 inch housing, 31-spline axles ($1,925 checked) | Bolts to G-body links | $1,925–2,300 | DIY | Req |
 | Rear end | Third member | Currie or Strange 9 inch, nodular case, Truetrac or spool, 3.50 gears | | $900–1,700 | DIY | Req |
-| Suspension | Coilovers | QA1 or Ridetech HQ front and rear G-body coilover kits (Ridetech rear HQ about $1,040 checked) | | $1,800–2,800 | DIY | Req (or air) |
-| Suspension | Control arms | Hotchkis 1114UL front upper and lower tubular arms, UMI rear upper and lower arms | | $900–1,400 | DIY | Req |
-| Suspension | Sway bars | Hotchkis or UMI G-body front and rear | | $350–600 | DIY | Req |
-| Suspension | Air ride (render match) | Ridetech complete G-body system 11320298 ($5,635–5,802 checked) plus RidePro E5 management | Replaces coilovers and arms above | $7,500–8,100 | DIY | Opt |
+| Suspension | Coilover system (chosen 10/21) | Ridetech 11320301 G-body coil-over system: HQ coilovers front and rear, front upper and lower and rear upper and lower StrongArms (tubular), front and rear MuscleBars ($7,560 checked at Speedway Motors). Lower cost: Ridetech 11320201 (about $5,420 listed; confirm its front arms) | Replaces the separate coilover, arm and sway bar lines | $5,400–7,600 | DIY | Req |
+| Suspension | Control arms | Ridetech StrongArms, in the coilover system | | in system | DIY | Req |
+| Suspension | Sway bars | Ridetech MuscleBars, in the coilover system | | in system | DIY | Req |
+| Suspension | Air ride: not chosen (10/21) | Ridetech complete G-body system 11320298 ($5,635–5,802 checked) plus RidePro E5 management | Tim picked coilovers | $7,500–8,100 | DIY | Not chosen |
 | Body | Mini-tubs | No prefab G-body kit found; custom tubs plus frame notch kit (JEGS 555-64530, $92 checked) | Shop job | $600–4,000 | Shop | Opt |
 | Brakes | Front and rear big brakes | Wilwood 6-piston front, 4-piston rear on the 9 inch ends (Currie sells the 9 inch with Wilwood rear discs, $3,400 bundle checked) | Fit: confirm wheel clearance with 19 inch fronts | $1,600–3,200 | DIY | Req |
 | Brakes | Lines | Stainless hard line kit, braided flex hoses (Inline Tube) | | $250–500 | DIY | Req |
@@ -80,7 +82,7 @@ shown as an add-on until Tim picks.
 | Tires | Tires | Nitto NT555 G2 or Michelin Pilot Sport 4S: 245/35R19 front, 295/35R20 rear | | $1,000–1,800 | Shop mount | Req |
 | Exhaust | Full exhaust | 3 inch 304 stainless mandrel kit, X-pipe, Borla XR-1 or MagnaFlow mufflers, twin square stainless tips | | $1,500–4,500 | Shop | Req |
 | Exhaust | Front dumps | Doug's Headers DEC300A 3 inch stainless cutouts x2 (about $250–505 each) or Pypes HVE10K3 kit ($676) | Closed on public roads | $700–2,500 | Shop weld | Req |
-| Lighting | Headlights | 7x6 LED (H6054 size): JW Speaker 8910 Evolution or Holley RetroBright 7x6 | Fit: confirm the 1979 lamp size against the old bulb | $300–900 | DIY | Req |
+| Lighting | Headlights | Holley RetroBright LFRB150 7x6 LED (5700K), about $250 each ($249.95 checked for the LFRB130); upgrade JW Speaker 8910 Evolution 2 ($349.97 each checked) | 7x6 / 200x142 mm (H6054, 6052), about 85% sure; confirm the number molded on the old lens | $500–700 | DIY | Req |
 | Lighting | Parking/turn | LED 1157 bulbs or custom LED lamps | | $40–150 | DIY | Req |
 | Lighting | Full-width tail panel | Custom steel panel, LED strip, smoked lens; no bolt-on product for this car | Shop fab | $600–2,500 | Shop | Req |
 | Body | Panoramic roof | Custom cut, steel frame, fixed glass, reinforcement plates | Shop | $6,300–15,800 | Shop | Req |
@@ -94,7 +96,7 @@ shown as an add-on until Tim picks.
 | Interior | Carpet, sound | ACC G-body cutpile carpet (burgundy), Dynamat or Kilmat | | $300–600 | DIY | Req |
 | Interior | Trunk | Carpet and panels in burgundy to hide the battery and fuel wiring | | $300–1,200 | DIY | Req |
 | Interior | Dash | Holley 12.3 Pro Dash (render match) or Dakota Digital VHX-78O-CUT ($1,021 checked) | Holley needs a custom panel | $1,000–2,500 | DIY | Req |
-| Interior | A/C | Vintage Air Gen IV G-body kit | Fit: confirm the Cutlass kit number | $1,600–2,800 | DIY | Req |
+| Interior | A/C | RestoMod Air Vapir 3-S kit ($1,399 checked), custom condenser kit ($449 checked), remote ($149) or Diablo vent controls ($350), engine bay hoses, drier, charge | Chosen 10/21 over Vintage Air. No brand lists a bolt-in kit for a 1979; call RestoMod Air (866-784-4278) to confirm under-dash fit | $2,200–2,800 | DIY | Req |
 | Interior | Column and wheel | ididit G-body tilt column, Billet Specialties wheel | | $500–1,200 | DIY | Req |
 | Paint | Supplies | Epoxy primer, 2K high-build, dark pewter metallic base and clear (PPG or Axalta), seam sealer | Paint labor not in budget | $1,200–2,500 | Shop | Req |
 | Hardware | Fluids, fasteners | ARP bolts, AN fittings, gaskets, fluids, coolant, hose clamps | | $400–900 | DIY | Req |
@@ -106,11 +108,16 @@ shown as an add-on until Tim picks.
 | Transmission, driveshaft | $1,400–3,300 | $2,800–5,000 | A used 4L80E with no rebuild or converter will not live behind a forged twin turbo |
 | Rear end | $1,500–3,500 | $2,800–4,000 | Currie 9 inch housing ($1,925 checked) plus third member |
 | Coilovers, sway bars | $1,800–3,600 | $2,700–4,500 | Adds the tubular arms the stance note already calls for |
-| Accessory drive with A/C (new) | n/a | $1,000–1,600 | Needed to run the LS with Vintage Air |
+| Accessory drive with A/C (new) | n/a | $1,000–1,600 | Needed to run the LS with A/C |
 | Chassis wiring harness (new) | n/a | $500–900 | Full new harness on a frame-off |
-| **Cutlass base total** | **$37,150–95,300** | **$42,250–100,900** | +$5,100 low, +$5,600 high |
-| T-56 instead of 4L80E | | +$3,900 low, +$3,600 high | Only if Tim picks the stick |
-| Finish table: air ride adder | $2,000–4,500 | $3,000–5,400 | Ridetech complete system checked at $5,635–5,802 plus management |
+| Console shifter (new, 10/21) | n/a | $700–1,000 | B&M Pro Stick for the 4L80E |
+| Coilovers, arms, sway bars (10/21) | $2,700–4,500 | $5,400–7,600 | Ridetech coil-over system with StrongArms chosen |
+| Headlights and taillights (10/21) | $300–800 | $650–1,050 | 7x6 LED pair priced at $500–700 |
+| **Cutlass base total** | **$37,150–95,300** | **$46,000–105,250** | Parts list +$5,100 low, +$5,600 high ($42,250–100,900); 10/21 decisions +$3,750 low, +$4,350 high |
+| T-56 instead of 4L80E | | not chosen (10/21) | Tim kept the automatic |
+| Finish table: air ride adder | $3,000–5,400 | removed | Not chosen (10/21) |
+| Finish table: A/C | $1,600–2,800 (Vintage Air) | $2,200–2,800 (RestoMod Air) | Tim's pick (10/21) |
+| Finish table total | $25,100–92,000 | $22,700–86,600 | Air ride out, RestoMod Air in |
 
 ---
 
@@ -189,6 +196,10 @@ Tuners or Diablo tune.
 camber, LED halo projector headlights, smoked LED taillights, front lip, side skirts, rear
 diffuser, single large tip, black bowties and grille, upgraded turbo.
 
+**Tim, 10/21:** the car is white now; he wants the render's gloss black, so the color change is
+in the build and the budget (wrap chosen, paint priced as the option). Interior accents change
+from red to burnt orange: stitching, trim accents, ambient lighting. Smoked taillights: yes.
+
 **What 182,995 miles changes:** the head is off now, so finish the head job first and have the
 machine shop check the head and deck. Before a bigger turbo, run compression and leak-down after
 the rebuild and check for oil burning; the 1.4T's cast pistons and ringlands are the weak point
@@ -225,9 +236,11 @@ job, then air ride, wheels and lights (the look), then the turbo only if the eng
 | Tires | Stretched tires | Nankang NS-2 or Federal 595 in 215/40R18 or 205/40R18 | Stretch fit depends on wheel width | $350–600 | Shop mount | Req |
 | Body | Front lip, skirts, diffuser | Universal lip, side skirt extensions and rear diffuser (no Cruze RS kit confirmed) | Fit: confirm | $300–700 | DIY | Req |
 | Body | Black bowties and grille | Black Chevy bowtie emblems or vinyl, gloss black grille | | $50–200 | DIY | Req |
-| Body | Gloss black | Paint or wrap if the car is not black now | Decision for Tim | $2,000–4,500 | Shop | Opt |
+| Body | Gloss black wrap (chosen) | 3M 2080 Gloss Black (G12) or Avery SW900 Gloss Black, full color change by a 3M or Avery certified NC installer; door jambs add about $500 | Car is white. Cheaper than a good paint job, reversible, protects the white paint. DIY film alone: $500–700 | $2,500–3,800 | Shop | Req |
+| Body | Gloss black paint (option) | Budget shop single-stage with jambs $1,500–2,500; quality body shop color change, trim off, jambs $5,000–8,000 | Not the pick: a good job costs more, it is permanent, and black shows every swirl | $1,500–8,000 | Shop | Opt |
+| Interior | Burnt orange accents (10/21, was red) | Seat covers or reupholstery with burnt orange stitching, burnt orange steering wheel stitching, burnt orange vinyl on dash and door trim strips, app-controlled RGB ambient LED kit set to burnt orange | Covers and DIY low, upholstery shop high; Fit: confirm covers list the 2011-2015 Cruze | $400–2,400 | DIY or shop | Req |
 | Lighting | Headlights | Spyder Auto LED halo projectors, black, 2011-2014 Cruze | | $330–350 | DIY | Req |
-| Lighting | Taillights | Smoked LED taillights (no confirmed Cruze product found) or smoke tint film | Fit: confirm | $70–650 | DIY | Req |
+| Lighting | Taillights (smoked, Tim: yes 10/21) | Smoked LED tail light assemblies, part SW-0126A-BRB (listed for the 2010-2015 Cruze, about $190); smoke tint film as the fallback (about $70) | Fits the 1st-gen sedan (2011-2015 and 2016 Limited); the RS package changes the fascias, rockers and spoiler, not the tail lamps. Not for the 2016+ 2nd gen or the hatchback. Unbranded: check the listing says sedan before ordering | $70–650 | DIY | Req |
 | Exhaust | Single large tip | Cat-back with a single 4 inch tip (ZZP or local shop) | | $300–800 | Shop | Req |
 | Hardware | Fluids, fasteners | Coolant, trans fluid, fasteners | | $100–200 | DIY | Req |
 
@@ -238,7 +251,9 @@ job, then air ride, wheels and lights (the look), then the turbo only if the eng
 | Upgraded turbo | $900–1,800 | $1,800–2,200 | ZZP Z04 checked at $1,999.99 |
 | Wheels, adapters, tires, camber (new) | n/a | $1,200–2,500 | Not in the old budget; the rendering needs them |
 | Lip, skirts, diffuser, badges, single tip cat-back (new) | n/a | $600–1,700 | Not in the old budget |
-| **Cruze total** | **$7,250–15,700** | **$9,950–20,300** | +$2,700 low, +$4,600 high; gloss black paint or wrap not included |
+| Gloss black wrap (new, 10/21) | not in total | $2,500–3,800 | Car is white; wrap chosen over paint |
+| Burnt orange interior accents (new, 10/21) | n/a | $400–2,400 | Stitching, trim accents, ambient lighting |
+| **Cruze total** | **$7,250–15,700** | **$12,850–26,500** | Parts list +$2,700 low, +$4,600 high ($9,950–20,300); 10/21 wrap and interior +$2,900 low, +$6,200 high |
 
 ---
 
@@ -311,23 +326,25 @@ speakers in the undertail and inner front fairing, amp and Bluetooth.
 
 | Vehicle | Was | Now |
 |---|---|---|
-| Cruze | $7,250–15,700 | $9,950–20,300 |
+| Cruze | $7,250–15,700 | $12,850–26,500 |
 | Charger | $23,550–48,250 | $27,050–53,750 |
-| Cutlass | $37,150–95,300 | $42,250–100,900 |
+| Cutlass | $37,150–95,300 | $46,000–105,250 |
 | Hayabusa | $9,540–24,050 | $9,690–24,650 |
-| **Total** | **$77,490–183,300** | **$88,940–199,600** |
+| **Total** | **$77,490–183,300** | **$95,590–210,150** |
 
-Not in the totals: Cutlass T-56 (+$3,600–3,900 over the 4L80E), Cruze gloss black paint or
-wrap ($2,000–4,500), Cutlass Roid Runner finish table (now $25,100–92,000), Charger lifters.
+Totals include Tim's 10/21 decisions (before them: $88,940–199,600). Not in the totals: Cutlass
+Roid Runner finish table (now $22,700–86,600), Charger lifters. The Cutlass T-56 and air ride
+are not chosen (10/21).
 
 ## Decisions and fitment checks for Tim
 
-1. Cutlass: 4L80E automatic or T-56 6-speed (rendering shows the stick).
-2. Cutlass: air ride (rendering match) or coilovers.
-3. Cruze: is it black now, or does it need paint or a wrap? Turbo only if the engine tests healthy.
+1. Decided 10/21: Cutlass keeps the 4L80E with a console shifter (T-56 not chosen).
+2. Decided 10/21: Cutlass coilovers (air ride not chosen), RestoMod Air A/C.
+3. Decided 10/21: Cruze is white; gloss black wrap, burnt orange interior accents, smoked
+   taillights. Turbo only if the engine tests healthy.
 4. Cruze: rear drums or discs? Pick 5x105 wheels or adapters.
 5. Charger: Clinched Flares ($4,000) or budget Vicrez flares ($783).
 6. Hayabusa: stretch length, then call C&S Customs and DSC to confirm a Gen 1 300 kit is in stock.
-7. Unconfirmed fitment: Cutlass headlight size and Vintage Air kit number, Holley 302-2 pan with
+7. Unconfirmed fitment: Cutlass headlight size (about 85% sure of 7x6; read the number molded on the old lens) and RestoMod Air under-dash fit, Holley 302-2 pan with
    G-body steering, Charger aero with widebody flares and Pursuit LED headlight wiring, Cruze
    aero and smoked taillights, Busa Ricks Hot Shot part number and 300 tire size.

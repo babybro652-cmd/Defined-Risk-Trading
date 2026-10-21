@@ -10,9 +10,9 @@ Google Drive: 06 Personal & Money > Personal > Cars (https://drive.google.com/dr
 
 | Vehicle | File | Notes |
 |---|---|---|
-| 2012 Chevy Cruze LT RS | [2012-chevy-cruze-lt-rs.md](2012-chevy-cruze-lt-rs.md) | Head off as of 10/12/2026. Plan: bigger turbo |
+| 2012 Chevy Cruze LT RS | [2012-chevy-cruze-lt-rs.md](2012-chevy-cruze-lt-rs.md) | Head off as of 10/12/2026. Plan: bigger turbo; white to gloss black wrap, burnt orange interior (10/21) |
 | 2016 Dodge Charger Pursuit | [2016-dodge-charger-pursuit.md](2016-dodge-charger-pursuit.md) | ~188k miles, oil change past due. Plan: supercharger |
-| 1979 Oldsmobile Cutlass Supreme | [1979-oldsmobile-cutlass-supreme.md](1979-oldsmobile-cutlass-supreme.md) | Needs a new motor. Plan: LS swap, forged internals, twin turbo |
+| 1979 Oldsmobile Cutlass Supreme | [1979-oldsmobile-cutlass-supreme.md](1979-oldsmobile-cutlass-supreme.md) | Needs a new motor. Plan: LS swap, forged internals, twin turbo; 4L80E with console shifter, coilovers, RestoMod Air (10/21) |
 | 2007 Suzuki Hayabusa | [2007-suzuki-hayabusa.md](2007-suzuki-hayabusa.md) | Added 10/21/2026. Oil drips to fix. Plan: 300 fat tire stretch, lowered, chrome, Harley Quinn paint, audio |
 
 Phased plan with costs: [build-plan.md](build-plan.md)
