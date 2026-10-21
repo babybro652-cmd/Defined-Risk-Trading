@@ -66,3 +66,10 @@ function logTrade_20261020_3() {
     'Closed 2 @ 7754.75 by hand: came 1 tick from the 7746 target and turned. In almost 2 hrs, open P&L reached $1,800 twice and $1,975 once; Tim closed on the turn. $ = 11.25 pts x $50 x 2, before commissions.',
   ]);
 }
+
+// Runs all three 10/20 trades in one go. Run this OR the three above, not both.
+function logAll_20261020() {
+  logTrade_20261020();
+  logTrade_20261020_2();
+  logTrade_20261020_3();
+}
