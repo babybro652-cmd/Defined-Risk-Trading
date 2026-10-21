@@ -9,14 +9,14 @@
 **Taillights:** smoked LED assemblies, part SW-0126A-BRB (about $190), listed for the 1st-gen 2011-2015 sedan; the RS package does not change the tail lamps. Check the listing says sedan before ordering.
 **Parts list (10/21):** [parts-lists.md](parts-lists.md#2012-chevy-cruze-lt-rs-14t-182995-miles). Air ride on Air Lift Performance 3P/3H with UAS bags or AirREX struts; ZZP Z04 turbo only if the engine tests healthy. Drive: "2012 Chevy Cruze LT RS parts list (10/21)".
 
-- Engine: 1.4L turbo Ecotec (aluminum block). Confirm the engine code (LUJ or LUV) from the VIN, 8th digit.
+- Engine: 1.4L turbo Ecotec (cast iron block, aluminum head; timing chain, not a belt; corrected 10/21). Confirm the engine code (LUJ or LUV) from the VIN, 8th digit.
 - VIN: (add)
 - Mileage: 182,995 (dash photo, 10/21/2026)
 
 ## Repair in progress: head off (10/12/2026)
 Cylinder head removed. Block deck and pistons need cleaning before reassembly.
 
-Deck cleaning plan (aluminum block):
+Deck cleaning plan (iron block, aluminum head; same care on both):
 - No Roloc, Scotch-Brite or wire wheel on a drill; they cut aluminum and leave grit that reaches the bearings.
 - Plug oil and coolant holes with rags, tape bolt holes, grease the top of each cylinder wall to catch debris.
 - Gasket remover spray, wait 10-15 min, then a plastic scraper or a razor held nearly flat.
