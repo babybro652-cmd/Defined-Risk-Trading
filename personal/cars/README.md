@@ -18,3 +18,5 @@ Google Drive: 06 Personal & Money > Personal > Cars (https://drive.google.com/dr
 Phased plan with costs: [build-plan.md](build-plan.md)
 
 Parts lists with brands, prices and fitment for all four builds (10/21): [parts-lists.md](parts-lists.md)
+
+Build guides (step-by-step order, "don't do this before that" lists, biggest engine per vehicle) (10/21): [build-guides.md](build-guides.md)
