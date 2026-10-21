@@ -86,12 +86,13 @@ Cutlass notes.
 | Lighting | Parking/turn | LED 1157 bulbs or custom LED lamps | | $40–150 | DIY | Req |
 | Lighting | Full-width tail panel | Custom steel panel, LED strip, smoked lens; no bolt-on product for this car | Shop fab | $600–2,500 | Shop | Req |
 | Body | Panoramic roof | Custom cut, steel frame, fixed glass, reinforcement plates | Shop | $6,300–15,800 | Shop | Req |
-| Body | Shaved handles | AutoLoc solenoid popper kit with remote | | $150–300 | DIY | Req |
+| Body | Shaved handles | AutoLoc 50 lb solenoids x2 (AUTSL50, $99.95 each listed) with popper springs; the iKey Premier fires them (10/21), so skip AutoLoc's own remote | | $150–300 | DIY | Req |
 | Body | Flush glass | Urethane bonding kit, setting blocks (glass shop) | | $800–2,500 | Shop | Req |
 | Body | Tucked bumpers | Narrowed brackets, new bumper fillers (OPGI) or smoothed covers | | $800–3,000 | Shop | Req |
 | Body | Shell and panels | Repro quarters, floors, trunk pan (OPGI), body mount kit, weatherstrip kit (SoffSeal or Metro) | Already in the frame-off lines | in base | Shop/DIY | Req |
 | Electrical | Battery in trunk | Odyssey PC1200 or Optima, sealed box, cutoff switch, 1/0 cable, Painless relocation kit | | $450–700 | DIY | Req |
 | Electrical | Chassis harness | Painless or American Autowire G-body harness | New line: old wiring is 47 years old | $500–900 | DIY | Req |
+| Electrical | Security, keyless entry, push start, remote start (10/21) | Digital Guard Dawg iKey Premier IKEY-O ($712.35 checked at Summit Racing; $783 at digitalguarddawg.com): passive keyless entry, push button start, 2-stage alarm with dual-stage shock sensor, immobilizer, trunk pop, 2 fobs, emergency bypass card. Add the iKey remote start upgrade (price from DGD, 877-246-5395; budgeted $150–250), DGD Power Trunk Release Kit ($44 checked), DGD Mini Siren ($20 checked), hood pin, 30A relays and diodes, a hidden pull cable to each door latch, remote jump posts | Shaved doors: DIP switch 1 down (PKE off) so the fob buttons fire the poppers; lock outputs are 20A, so run the two popper solenoids through external relays. Ignition output feeds the Terminator X switched 12V input and the 12.3 dash through a relay; tach learn from the Terminator X tach output; the neutral safety input must be grounded only in park or neutral, so wire it through the 4L80E range switch park/neutral contacts (starter stays locked out in gear). Fob remote start range over 250 ft; no phone app (the DGD 4G GPS tracker adds one). Backup way in: the hidden door pulls plus jump posts, since the trunk battery powers the poppers. Holley sells no keyless or alarm system; AutoLoc kits do entry only | $1,050–1,350 | DIY | Req |
 | Interior | Seats and trim | Late-model buckets recovered in burgundy diamond-stitched leather; door panels, console, headliner by a trim shop | | $3,000–20,000 | Shop | Req |
 | Interior | Carpet, sound | ACC G-body cutpile carpet (burgundy), Dynamat or Kilmat | | $300–600 | DIY | Req |
 | Interior | Trunk | Carpet and panels in burgundy to hide the battery and fuel wiring | | $300–1,200 | DIY | Req |
@@ -113,7 +114,8 @@ Cutlass notes.
 | Console shifter (new, 10/21) | n/a | $700–1,000 | B&M Pro Stick for the 4L80E |
 | Coilovers, arms, sway bars (10/21) | $2,700–4,500 | $5,400–7,600 | Ridetech coil-over system with StrongArms chosen |
 | Headlights and taillights (10/21) | $300–800 | $650–1,050 | 7x6 LED pair priced at $500–700 |
-| **Cutlass base total** | **$37,150–95,300** | **$46,000–105,250** | Parts list +$5,100 low, +$5,600 high ($42,250–100,900); 10/21 decisions +$3,750 low, +$4,350 high |
+| Security, keyless, push and remote start (new, 10/21) | n/a | $1,050–1,350 | Digital Guard Dawg iKey Premier with remote start |
+| **Cutlass base total** | **$46,000–105,250** | **$47,050–106,600** | Security system added 10/21. Before it: parts list +$5,100 low, +$5,600 high ($42,250–100,900); 10/21 decisions +$3,750 low, +$4,350 high |
 | T-56 instead of 4L80E | | not chosen (10/21) | Tim kept the automatic |
 | Finish table: air ride adder | $3,000–5,400 | removed | Not chosen (10/21) |
 | Finish table: A/C | $1,600–2,800 (Vintage Air) | $2,200–2,800 (RestoMod Air) | Tim's pick (10/21) |
@@ -176,6 +178,7 @@ Tuners or Diablo tune.
 | Wheels | Bronze concave wheels | Vossen HF-5 (flow formed) low, forged Vossen S17 or Forgeline high; 20x10.5 F, 20x11 R, 5x115 | Measure after the flares | $2,000–6,500 | Buy | Req |
 | Tires | Wide tires | Michelin Pilot Sport 4S 275/35ZR20 front, 305/35ZR20 rear | | $1,600–2,200 | Shop mount | Req |
 | Electrical | Battery | H8 AGM (Odyssey or Mopar) | Pursuit has a heavy-duty alternator | $250–350 | DIY | Opt |
+| Electrical | Remote start and alarm (10/21) | Compustar CS7900-AS 2-way alarm and remote start (3,000 ft LCD remote) with a Blade-AL bypass flashed for the car ($400 as a kit at Sound of Tri-State; $199.99 without the bypass), 2011-2023 Charger push-to-start T-harness, Compustar FTI-SPTS-CH (kills the start button while armed), DroneMobile X2 LTE for the phone app ($89.99 listed; yearly plan extra). Install at a Compustar dealer or Best Buy Car and Tech in Raleigh or Durham, about $150–350 labor | Fit: confirm on the Pursuit. Charger push-to-start harnesses (iDatalink ADS-THR-CH12) list 2011-2023 Charger PTS automatic, but no maker lists the Pursuit by name. Police cars can have fleet BCM settings with remote functions off and the RF antennas in the roof fin unplugged; have the installer scan the BCM and run the VIN in the fit guide first. Simpler plug-in option without a siren or shock sensor: iDataStart HC2312AC-CH12 ($299.99 at AmericanMuscle, DroneMobile ready) | $650–950 installed | Shop | Req |
 | Hardware | Fluids, gaskets | Diff fluid, trans fluid, coolant, supercharger fluid, fasteners | | $200–400 | DIY | Req |
 
 ### Budget changes (Charger)
@@ -186,7 +189,10 @@ Tuners or Diablo tune.
 | Fuel upgrades and tune | $800–1,600 | $300–800 | The complete kit includes fuel parts; this line is the dyno tune and PCM unlock |
 | Big wheels and tires | $2,500–5,000 | $4,000–9,000 | Bronze concave wheels as rendered, flow formed low, forged high |
 | Cat-back with quad tips (new) | n/a | $1,000–2,000 | Quad tips in the rendering |
-| **Charger total** | **$23,550–48,250** | **$27,050–53,750** | +$3,500 low, +$5,500 high (lifters still extra) |
+| Remote start and alarm (new, 10/21) | n/a | $650–950 | Compustar CS7900-AS with DroneMobile, installed |
+| **Charger total** | **$27,050–53,750** | **$27,700–54,700** | Remote start and alarm added 10/21. Before it: +$3,500 low, +$5,500 high over $23,550–48,250 (lifters still extra) |
+
+**Matching app on both cars (option, 10/21):** put the Cutlass on Compustar too: CS7900-AS brain, DroneMobile X2 LTE and a Digital Guard Dawg PBS-X push button start ($443 at DGD), which runs off the Compustar remote. Both cars then use one DroneMobile app and one style of 2-way remote; the Cutlass gives up the iKey hands-free walk-up unlock and costs about the same (about $1,000–1,300 with the same poppers, trunk release, relays and door pulls).
 
 ---
 
@@ -329,12 +335,12 @@ speakers in the undertail and inner front fairing, amp and Bluetooth.
 | Vehicle | Was | Now |
 |---|---|---|
 | Cruze | $7,250–15,700 | $12,850–26,500 |
-| Charger | $23,550–48,250 | $27,050–53,750 |
-| Cutlass | $37,150–95,300 | $46,000–105,250 |
+| Charger | $23,550–48,250 | $27,700–54,700 |
+| Cutlass | $37,150–95,300 | $47,050–106,600 |
 | Hayabusa | $9,540–24,050 | $9,690–24,650 |
-| **Total** | **$77,490–183,300** | **$95,590–210,150** |
+| **Total** | **$77,490–183,300** | **$97,290–212,450** |
 
-Totals include Tim's 10/21 decisions (before them: $88,940–199,600). Not in the totals: Cutlass
+Totals include Tim's 10/21 decisions and the 10/21 Cutlass and Charger security systems (before the decisions: $88,940–199,600; before the security systems: $95,590–210,150). Not in the totals: Cutlass
 Roid Runner finish table (now $22,700–86,600), Charger lifters. The Cutlass T-56 and air ride
 are not chosen (10/21).
 
@@ -350,3 +356,5 @@ are not chosen (10/21).
 7. Unconfirmed fitment: Cutlass headlight size (about 85% sure of 7x6; read the number molded on the old lens) and RestoMod Air under-dash fit, Holley 302-2 pan with
    G-body steering, Charger aero with widebody flares and Pursuit LED headlight wiring, Cruze
    aero and smoked taillights, Busa Ricks Hot Shot part number and 300 tire size.
+8. Charger remote start: have the installer scan the Pursuit BCM and run the VIN before buying (fleet settings).
+   Cutlass: call Digital Guard Dawg (877-246-5395) for the iKey remote start upgrade price.

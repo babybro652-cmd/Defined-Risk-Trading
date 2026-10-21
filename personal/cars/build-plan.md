@@ -9,7 +9,7 @@ Cruze +$2,700 to +$4,600, Charger +$3,500 to +$5,500, Cutlass +$5,100 to +$5,600
 +$150 to +$600. All four: $77,490–183,300 became $88,940–199,600.
 Tim's build decisions later on 10/21 (Cutlass console shifter, Ridetech coilover system, 7x6 LED
 headlights, RestoMod Air; Cruze gloss black wrap and burnt orange interior) moved it to
-$95,590–210,150.
+$95,590–210,150. Remote start, alarm and keyless systems for the Cutlass and Charger (10/21) moved it to $97,290–212,450.
 
 Costs are rough parts-only ranges (2026 prices) assuming Tim does the labor. Shop labor,
 paint and surprises (rust, a bad bottom end) add on top. Get real quotes before buying.
@@ -73,7 +73,8 @@ This is a list for later, paid from extra money, never from bill money.
 | 3 Looks | Dark bronze concave wheels (flow formed low, forged high) and wide tires (was $2,500–5,000) | $4,000–9,000 |
 | 3 Looks | New headlights and taillights | $600–1,500 |
 | 3 Looks | New 10/21: cat-back with quad tips | $1,000–2,000 |
-| | **Charger total** (was $23,550–48,250) | **about $27,050–53,750** (plus $1,500–3,000 if lifters) |
+| 1 Safe | New 10/21: remote start and alarm, Compustar CS7900-AS 2-way with DroneMobile X2, push-to-start T-harness, installed (Fit: confirm on the Pursuit) | $650–950 |
+| | **Charger total** (was $27,050–53,750 before the 10/21 remote start; $23,550–48,250 before the parts list) | **about $27,700–54,700** (plus $1,500–3,000 if lifters) |
 
 If the compression test is weak, plan a built engine before the supercharger ($5,000–10,000).
 
@@ -154,7 +155,8 @@ runs from DIY (low) to shop (high).
 | 3 Looks | New headlights and taillights (LED: 2 rectangular 7x6 headlights, Holley RetroBright LFRB150 about $250 each or JW Speaker 8910 $350 each; 2 parking/turn lamps, taillights; stock locations) (was $300–800) | $650–1,050 |
 | 3 Looks | Full-glass panoramic roof (Tim, 10/18): custom shop cuts out the roof center, adds steel framing back, fits fixed glass; done on the blasted shell during the frame-off, before paint | $6,000–15,000 |
 | 3 Safe | Body reinforcement for the cut roof: roof and pillar reinforcement plates | $300–800 |
-| | **Cutlass total** (was $42,250–100,900 before the 10/21 decisions) | **about $46,000–105,250** (before paint; a garage rental if needed is extra) |
+| 3 Safe | New 10/21: Digital Guard Dawg iKey Premier (keyless entry for the shaved doors, push start, alarm) with remote start upgrade, trunk release, siren, relays, hidden door pulls | $1,050–1,350 |
+| | **Cutlass total** (was $46,000–105,250 before the 10/21 security system; $42,250–100,900 before the 10/21 decisions) | **about $47,050–106,600** (before paint; a garage rental if needed is extra) |
 
 ### Cutlass optional: Roid Runner-level finish (Tim, 10/21)
 
@@ -221,10 +223,10 @@ rails (+$1,500–3,500).
 | Vehicle | Low | High |
 |---|---|---|
 | Cruze | $12,850 | $26,500 |
-| Charger | $27,050 | $53,750 |
-| Cutlass | $46,000 | $105,250 |
+| Charger | $27,700 | $54,700 |
+| Cutlass | $47,050 | $106,600 |
 | Hayabusa | $9,690 | $24,650 |
-| **Total** (was $88,940–199,600) | **about $95,590** | **about $210,150** |
+| **Total** (was $95,590–210,150 before the 10/21 security systems) | **about $97,290** | **about $212,450** |
 | Cutlass Roid Runner-level finish (optional, not in the total) | +$22,700 | +$86,600 |
 
 Biggest savings: doing the labor, buying used brake and suspension parts, and finding a
