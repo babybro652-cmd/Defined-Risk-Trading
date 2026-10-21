@@ -14,6 +14,13 @@
 - Mileage: 182,995 (dash photo, 10/21/2026)
 
 ## Repair in progress: head off (10/12/2026)
+
+**Why the head came off (Tim, 10/21/2026): burnt valve.**
+- Head to a machine shop: replace the burnt valve, cut or replace its seat, check every valve and seat (vacuum test), guides, and head flatness; pressure test for cracks. Ask for a full valve job while it's there. Budget about $300-700.
+- Check the piston and cylinder under the burnt valve for damage before reassembly.
+- Fix the cause or it burns again. Common 1.4T causes: running lean from a vacuum leak (the valve cover/PCV is a known failure), a bad injector or coil on that cylinder, overheating, or long misfire. Replace the valve cover with PCV, check that cylinder's injector and coil, and smoke-test for vacuum leaks after reassembly.
+- After it runs: compression and leak-down on all 4 cylinders. Hold the bigger turbo until those pass.
+
 Cylinder head removed. Block deck and pistons need cleaning before reassembly.
 
 Deck cleaning plan (iron block, aluminum head; same care on both):
