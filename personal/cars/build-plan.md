@@ -129,15 +129,15 @@ runs from DIY (low) to shop (high).
 | 2 Power | Transmission (4L80E), driveshaft | $1,400–3,300 |
 | 2 Power | Rear end that can take the power (stock 7.5 won't) | $1,500–3,500 |
 | 2 Power | Twin turbo kit, intercooler, boost fuel system, tune | $4,900–10,500 |
-| 2 Power | Headlight twin-turbo layout (Tim, 10/21), extra over the kit line: turbos in the inner headlight spots, core support cut and boxed, hot pipes and downpipes, slim radiator, inlet filters and shields, ceramic coating, scavenge pump and oil lines. Shop fab 25–45 hrs at $100–140/hr | $3,500–8,000 |
+| 2 Power | Under-hood twin-turbo fit (Tim, 10/21), extra over the kit line: turbos in the bay one per bank, custom hot pipes and downpipes beyond a kit, inner fender and core support mods (or tubular inner fenders), heat shielding, oil line hardware. Shop fab 10–25 hrs at $100–140/hr | $1,500–4,000 |
 | 2 Power | Full exhaust (Tim, 10/21): 3 inch 304 stainless duals from the turbo downpipes back, X-pipe, two mufflers, flex sections, hidden stainless hangers, twin square tips through the rear valance (tips moved here from the finish table), ceramic coating and floor heat shield. DIY low, custom shop high | $1,500–4,500 |
 | 2 Power | Switchable front dumps (Tim, 10/21): two 3 inch electric cutouts after the downpipes, dumping down and out right behind the front wheels; Y-pipes, heat shields, console toggle and relay, CO detector. Closed on public roads (G.S. 20-128(b)) | $700–2,500 |
 | 2 Safe | Catch cans, oil cooler, baffled oil pan, AN lines/fittings | $800–1,800 |
 | 2 Handling | Coilovers set a few inches lower, upgraded sway bars | $1,800–3,600 |
-| 3 Looks | New headlights and taillights | $300–800 |
+| 3 Looks | New headlights and taillights (LED: 2 rectangular headlights, 2 parking/turn lamps, taillights; stock locations) | $300–800 |
 | 3 Looks | Full-glass panoramic roof (Tim, 10/18): custom shop cuts out the roof center, adds steel framing back, fits fixed glass; done on the blasted shell during the frame-off, before paint | $6,000–15,000 |
 | 3 Safe | Body reinforcement for the cut roof: roof and pillar reinforcement plates | $300–800 |
-| | **Cutlass total** | **about $39,150–99,300** (before paint; a garage rental if needed is extra) |
+| | **Cutlass total** | **about $37,150–95,300** (before paint; a garage rental if needed is extra) |
 
 ### Cutlass optional: Roid Runner-level finish (Tim, 10/21)
 
@@ -176,8 +176,8 @@ where the work is shop work; low ends assume DIY.
 |---|---|---|
 | Cruze | $7,250 | $15,700 |
 | Charger | $23,550 | $48,250 |
-| Cutlass | $39,150 | $99,300 |
-| **Total** | **about $69,950** | **about $163,250** |
+| Cutlass | $37,150 | $95,300 |
+| **Total** | **about $67,950** | **about $159,250** |
 | Cutlass Roid Runner-level finish (optional, not in the total) | +$24,100 | +$91,100 |
 
 Biggest savings: doing the labor, buying used brake and suspension parts, and finding a

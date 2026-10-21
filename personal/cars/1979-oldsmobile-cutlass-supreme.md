@@ -1,9 +1,9 @@
 # 1979 Oldsmobile Cutlass Supreme
 
 **Goal:** high-performance street car, aggressive styling. Build plan: frame-off restoration (Tim, 10/20/2026), see below and `build-plan.md`.
-**Power plan (Tim, 10/12/2026):** LS swap with forged internals, twin turbo setup. Turbos in the inner headlight spots (Tim, 10/21), see below. Full 3 inch stainless dual exhaust with switchable front dumps (Tim, 10/21), see "Exhaust".
+**Power plan (Tim, 10/12/2026):** LS swap with forged internals, twin turbo setup. Turbos under the hood, one per bank, front-mount style (Tim, 10/21), see below. Full 3 inch stainless dual exhaust with switchable front dumps (Tim, 10/21), see "Exhaust".
 **Stance:** lowered a few inches (coilovers + tubular control arms; check turbo/exhaust and oil pan ground clearance).
-**Looks:** new lights (LED headlights and taillights). Full-glass panoramic roof (Tim, 10/18), custom, done with the roof rust repair. Style target: as clean as the Roid Runner (Tim, 10/21), see below.
+**Looks:** new lights (LED headlights and taillights; one rectangular headlight per side plus a parking/turn lamp by the grille, all stock locations). Full-glass panoramic roof (Tim, 10/18), custom, done with the roof rust repair. Style target: as clean as the Roid Runner (Tim, 10/21), see below.
 
 - Engine: (add)
 - VIN: (add)
@@ -154,124 +154,95 @@ firewall) goes in step 7-8 on the bare shell. Air ride or coilovers and wheel fi
 on the bare frame. Hard lines and engine bay finish at the step 11 drivetrain install. Paint,
 graphics, interior, trunk and dash last.
 
-## Headlight twin-turbo layout (Tim, 10/21)
+## Under-hood twin-turbo layout (Tim, 10/21)
 
-Tim approved, 10/21 (inspired by a twin-turbo Chevelle reel): one turbo in each inner headlight
-spot, symmetrical, compressor inlets facing forward and visible through the front as polished
-inlets behind mesh. It replaces the standard twin-turbo layout (turbos beside the engine), so the
-base twin turbo kit line stays and this is an adder for the relocation and fab.
+Tim, 10/21: "change the turbo location. We will keep them inside and not in the headlight." The
+turbos live in the engine bay, one per bank, front-mount style like the twin-turbo Chevelle reel
+Tim liked. This replaces the earlier headlight-turbo idea (dropped the same day). The headlights
+and parking lamps stay stock.
+
+### Front lights (from Tim's photos, 10/21)
+
+The '79 Supreme has one large rectangular headlight per side (2 total), plus a small
+parking/turn lamp next to the grille on each side. All four stay in the stock locations as LED
+units (the "new headlights" line already in the budget). Keep the dash high-beam indicator
+working. No lamp openings get cut.
 
 ### The design
 
-- **Lights.** The '79 Supreme has 4 rectangular headlamps. The inner pair are high beam only;
-  they come out and become the turbo inlet openings. The outer pair stay as working headlamps
-  wired for both low and high beam. On a factory 4-lamp system the outer lamps are already the
-  dual-filament low/high type, so the wiring mostly stays: confirm the outer lamp type, cap the
-  inner lamp leads, and keep the dash high-beam indicator working. LED 4x6 low/high units in the
-  outer spots get the light output back (fits the "new headlights" line already in the budget).
-- **Turbos.** One per side, mounted behind the inner headlight opening on a bracket tied to the
-  boxed core support and the frame horn, compressor inlet facing forward. The 4x6 lamp opening
-  (measure it: about 4 x 6.5 in.) limits the inlet to about 3-3.5 in. with a filter, which suits a
-  pair of 58-67 mm compressor turbos on an LS (plenty for the forged LS plan).
-- **Inlets.** Polished inlet pipe or velocity stack with a stainless mesh screen and a filter
-  element behind it, finished flush with a custom bezel.
-- **Hot side.** Stainless (321 or 304, 16 ga) hot pipes run forward from each LS bank's header,
-  along the inside of the frame rail, around the radiator to each turbo's turbine inlet. Downpipes
-  run from the turbos back under the car to join the exhaust. Long runs cost some spool; wrap or
-  coat them.
-- **Wastegates.** One external gate per side (38-45 mm) on the hot pipe right ahead of each
-  turbine, dumped back into the downpipe (no open screamer pipes: noise and heat on the paint).
-- **Intercooler and cold side.** Air-to-air intercooler low in the bumper/valance opening. Each
-  compressor outlet runs down into the cooler; one pipe comes out and back to a single throttle
-  body. Blow-off valve on that pipe close to the throttle body (vent to atmosphere, or recirculate
-  for a quieter, smoother tune).
-- **Engine and oil.** Oil feed lines (-4 AN with a restrictor if the turbos are ball bearing) from
-  the block to each turbo; drain lines back to the pan. These turbos sit low and forward, likely
-  at or below the oil level in the pan, so gravity drain may not work: plan on a scavenge pump
-  (electric or belt-driven) to pull oil from the turbos back to the pan. Check at mock-up.
+- **Turbos.** One per bank, mounted in the front corners of the bay, ahead of or beside the
+  engine, on brackets tied to the boxed frame horn and core support. A pair of 58-67 mm
+  compressor turbos suits the forged LS plan.
+- **Hot side.** Polished or ceramic coated stainless (321 or 304, 16 ga) hot pipes from each
+  bank's header forward to its turbo. Short runs, so spool is quicker than a long remote layout.
+- **Wastegates.** One external gate per side (38-45 mm) on each hot pipe ahead of the turbine,
+  plumbed back into the downpipe (no open screamer pipes: noise and heat on the paint).
+- **Intercooler and cold side.** Air-to-air intercooler behind the grille, in front of the
+  radiator. Each compressor outlet runs to the cooler; one pipe comes out to a single throttle
+  body. Blow-off valves on the cold side near the throttle body (vent to atmosphere, or
+  recirculate for a quieter, smoother tune).
+- **Air filters.** One filter per turbo inlet in the bay, with a shield to keep them out of the
+  header and hot pipe heat; feed them cool air from the grille area if room allows.
+- **Oil.** Feed lines (-4 AN, restrictor if the turbos are ball bearing) from the block to each
+  turbo; -10 AN drains back to the pan. Mounted up in the bay, the turbo centers sit above the
+  pan oil level, so gravity drains likely work and a scavenge pump is probably not needed.
+  Confirm drain angle at mock-up.
+- **Downpipes.** 3 inch 304 stainless from each turbine outlet down beside the frame horns and
+  back under the floor into the planned 3 inch dual exhaust. The switchable front dumps stay: one
+  cutout per side, 12-18 in. after each turbo and wastegate merge, exiting behind the front
+  wheels (see "Exhaust").
 
-### Required mods
+### What the G-body bay needs
 
-| Mod | Note |
+| Item | Note |
 |---|---|
-| Core support cut and boxed | Cut for the turbo bodies and hot pipes, then box it back for strength. Do it on the bare shell during the frame-off, before paint |
-| Radiator moved back, or a slimmer dual-pass / shorter core, plus electric fans | Turbos and pipes take the space ahead of it. Extra over the base radiator line |
-| Custom-cut grille and headlight bezels | Inner lamp openings opened for the inlets, edges finished clean to match the Roid Runner-level look |
-| Inlet filters and water/debris shields | The inlets face the road: rain, spray, bugs and rocks |
-| Ceramic coating, heat wrap and heat shields | Hot pipes and turbine housings sit next to the paint, lamps, bumper and grille |
-| Longer oil feed and drain lines, scavenge pump if needed | See above |
-| Longer downpipes and exhaust back under the car | Check ground clearance at the lowered stance |
-| Tune | Long pipes change spool and boost control; tune for it |
-
-### Parts list (extra over the base kit)
-
-- Stainless hot pipe tubing, V-bands and flanges (longer runs than a standard kit)
-- 2 external wastegates if the base kit is internally gated; 1 blow-off valve
-- 2 polished inlet pipes, mesh screens, filter elements, splash shields
-- Intercooler mounted low, cold-side tubing, couplers and clamps (cooler in the base kit; extra tubing here)
-- Slim dual-pass radiator and fans (extra over the base radiator line)
-- Oil feed and drain lines, AN fittings, scavenge pump
-- Ceramic coating for the hot side, heat wrap, aluminum heat shields
-- Sheet steel for boxing the core support and turbo brackets
+| Inner fender and core support clearance | The turbos sit where the inner fenders and core support corners are. Trim or notch them, or go tubular |
+| Tubular or shortened inner fenders (optional route) | Opens the most room for the turbos and hot pipes and fits the smoothed-bay look in "Style target" |
+| Steering shaft routing | The driver side turbo and hot pipe pass near the steering box and shaft. Plan the shaft path first; a heat sleeve on the shaft and rag joint |
+| A/C routing | Vintage Air lines and the condenser must clear the hot side and intercooler pipes. Route them on the cold side of the bay |
+| Heat shielding | Ceramic coat the hot pipes and turbine housings, turbo blankets, shields for the brake master cylinder, steering, wiring and the inner fender paint |
+| Battery to the trunk | Frees the battery tray corner for a turbo (already in the finish table) |
+| Radiator and fans | Base radiator line covers it; the intercooler sits ahead of the radiator, so run strong electric fans |
+| Tune | Boost control and fuel for the twin setup; in the kit line |
 
 ### DIY or shop
 
-Shop job unless Tim learns TIG welding. The hot side, wastegate flanges and V-band joints need
-TIG on stainless; MIG on the core support boxing is DIY-able. Tim can do the lamp wiring, inlet
-filters, oil lines, shields and the bolt-on parts. Get the shop to do the turbo mounts, hot pipes
-and downpipes with the engine and front clip mocked up on the frame.
+Shop job for the hot pipes, wastegate flanges, V-bands and downpipes unless Tim learns TIG on
+stainless. Tim can do the inner fender trimming (or bolt in tubular fenders), oil lines, filters,
+shields and the bolt-on parts. Mock up with the engine and front clip on the frame.
 
-**Cost adder: about $3,500-8,000** over a standard twin-turbo layout (base kit line not double
-counted). Fab is about 25-45 hours at NC custom fab rates of about $100-140 an hour
-($2,500-6,300), plus about $1,000-1,700 in extra parts (scavenge pump and lines, filters and
-shields, slim radiator over the base line, ceramic coating, extra tubing). Get two quotes from
-shops that build custom turbo hot sides before committing.
+**Cost.** The twin turbo kit line covers the turbos, intercooler, blow-off valves, wastegates
+and tune. Extra under-hood fit work is its own line: about **$1,500-4,000** for custom hot pipes
+and downpipes beyond a kit, inner fender and core support mods (or tubular inner fenders), heat
+shielding and the extra oil line hardware. Shop fab about 10-25 hrs at NC rates of about
+$100-140 an hour, plus about $500-1,000 in parts. Get two quotes from shops that build custom
+turbo hot sides.
 
 ### Risks
 
-- **Water ingestion.** Road-facing inlets low in front can pull in water from puddles and spray.
-  Enough water hydrolocks the engine (bent rods). Use shields and water-shedding filters, keep
-  the car out of standing water, and do not drive it hard in heavy rain.
-- **Debris.** Rocks and bugs hit the compressor wheel without a screen. The mesh and filter are
-  required, not optional.
-- **Heat.** Hot pipes and turbines next to the paint, the outer headlamps, the bumper and the
-  grille. Coat, wrap and shield everything; check for paint discoloring after the first hard runs.
-- **Oil drain.** A turbo that can't drain smokes and fails its seals. Confirm drain height at
-  mock-up; add the scavenge pump if the turbo center sits near or below the pan oil level.
-- **Crash damage.** The turbos are the first thing hit in a front collision, even a parking lot
-  bump. Expect a minor front hit to cost a turbo or two plus the hot pipes.
-- **Cooling.** Less room for the radiator plus turbo heat up front. Run a slim dual-pass core
-  with strong electric fans and watch coolant temps in NC summer traffic.
-- **Spool.** Long hot pipes lose some heat energy, so boost comes in a little later than a
-  close-mounted layout.
-
-### NC inspection and lighting law (checked 10/21)
-
-- G.S. 20-129(b): at least two headlamps in good working order, at least one on each side of the
-  front. G.S. 20-131: multiple-beam lamps (upper and lower beam) and a working high-beam indicator
-  on the dash. Two outer lamps with low and high beam meet this.
-- Safety inspection: a 1979 car qualifies for a Historic Vehicle plate (30 years or older,
-  G.S. 20-79.4(b)(94)), and historic vehicles are exempt from the NC safety inspection
-  (G.S. 20-183.2(a1)(1)). On a regular plate it still gets inspected. Emissions inspection does
-  not apply (older than 20 model years). The lighting law applies on the road either way.
-- Sources: ncleg.gov statute text for G.S. 20-129, 20-131, 20-183.2 and 20-79.4. Confirm with the
-  inspection station or Person County DMV before plating.
+- **Heat in a tight bay.** Coat, wrap and shield everything near the steering, brakes, wiring
+  and fender paint. Check temps and paint after the first hard runs.
+- **Service access.** Spark plugs, the starter and oil filter get harder to reach. Plan the
+  layout with plugs and filter changes in mind.
+- **Cooling.** Intercooler ahead of the radiator plus turbo heat. Strong electric fans and watch
+  coolant temps in NC summer traffic.
+- **Oil drain.** Confirm each drain runs downhill to the pan with no sags at mock-up.
 
 ### Where it fits in the frame-off
 
-Right after the frame-off body work, before paint:
-1. Step 7-8 (bare shell): cut and box the core support, cut the grille and bezel openings.
-2. Mock-up: set the LS, headers and front clip on the boxed frame, place the turbos, radiator and
-   intercooler, and check the oil drain height.
+1. Step 7-8 (bare shell): trim or replace the inner fenders, notch the core support if needed,
+   move the battery tray, before paint.
+2. Mock-up: set the LS, headers and front clip on the boxed frame; place the turbos, intercooler,
+   radiator, steering shaft and A/C lines; check the oil drain angle.
 3. Shop fabs the hot pipes, wastegate and turbo mounts, downpipes and cold side; then pull it all
    apart for ceramic coating.
-4. Paint the front clip and core support.
+4. Paint the bay and front clip.
 5. Step 11: final install with heat shields, oil lines, wiring and the tune.
 
 ## Exhaust (Tim, 10/21)
 
 **What was in the plan before 10/21:** only the rear tips through the valance (Roid Runner
-finish table) and the downpipes in the headlight twin-turbo adder. No mid-pipes, mufflers,
+finish table) and the downpipes in the twin-turbo layout (now the under-hood fit line). No mid-pipes, mufflers,
 X-pipe or hangers were budgeted. This section adds the full system and the switchable front
 dumps. The tips line moves out of the optional finish table into the full exhaust line, so
 it is counted once.
@@ -294,7 +265,7 @@ with room left. Step the downpipes to 3.5 inch only if the goal goes past about 
 
 | Part | Spec | Note |
 |---|---|---|
-| Downpipes (in the headlight turbo adder) | 3 inch 304 stainless, V-band at each turbine outlet; wastegate dumps tie back in | Run from the turbos down beside the frame horns, then back under the floor |
+| Downpipes (in the under-hood fit line) | 3 inch 304 stainless, V-band at each turbine outlet; wastegate dumps tie back in | Run from the turbos down beside the frame horns, then back under the floor |
 | Cutout Y-pipes (see below) | One per side, right behind the front wheels | The switchable dumps |
 | Mid-pipes | 3 inch 304 stainless mandrel bends, tucked along the tunnel, above the bottom of the frame rails | Flex section on each side (the engine moves on its mounts) |
 | X-pipe | 3 inch stainless X (smoother, raspier) or H (deeper, more old-school) right behind the 4L80E crossmember | X for a turbo LS; turbos already muffle a lot, so an X keeps it clean, not droning |
@@ -405,7 +376,7 @@ exhaust fab. Wiring, switch, relay and shields are DIY.
 ### Where it fits in the frame-off
 
 1. Step 9 (bare frame): route the brake and fuel lines on the rail away from the future dump spots.
-2. Mock-up with the turbos (headlight section step 2): place the downpipes, cutout Y-pipes and
+2. Mock-up with the turbos (under-hood section step 2): place the downpipes, cutout Y-pipes and
    dump outlets; tack the whole system with the chassis at ride height and the body on.
 3. Step 7-8 (bare shell): body shop cuts the rear valance tip openings and adds the rocker heat
    shield mounts, before paint.
