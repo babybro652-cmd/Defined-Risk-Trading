@@ -1,7 +1,7 @@
 # 1979 Oldsmobile Cutlass Supreme
 
 **Goal:** high-performance street car, aggressive styling. Build plan: frame-off restoration (Tim, 10/20/2026), see below and `build-plan.md`.
-**Power plan (Tim, 10/12/2026):** LS swap with forged internals, twin turbo setup.
+**Power plan (Tim, 10/12/2026):** LS swap with forged internals, twin turbo setup. Turbos in the inner headlight spots (Tim, 10/21), see below.
 **Stance:** lowered a few inches (coilovers + tubular control arms; check turbo/exhaust and oil pan ground clearance).
 **Looks:** new lights (LED headlights and taillights). Full-glass panoramic roof (Tim, 10/18), custom, done with the roof rust repair. Style target: as clean as the Roid Runner (Tim, 10/21), see below.
 
@@ -153,6 +153,120 @@ for the clean look, and some fight the plan:
 firewall) goes in step 7-8 on the bare shell. Air ride or coilovers and wheel fitment in step 9
 on the bare frame. Hard lines and engine bay finish at the step 11 drivetrain install. Paint,
 graphics, interior, trunk and dash last.
+
+## Headlight twin-turbo layout (Tim, 10/21)
+
+Tim approved, 10/21 (inspired by a twin-turbo Chevelle reel): one turbo in each inner headlight
+spot, symmetrical, compressor inlets facing forward and visible through the front as polished
+inlets behind mesh. It replaces the standard twin-turbo layout (turbos beside the engine), so the
+base twin turbo kit line stays and this is an adder for the relocation and fab.
+
+### The design
+
+- **Lights.** The '79 Supreme has 4 rectangular headlamps. The inner pair are high beam only;
+  they come out and become the turbo inlet openings. The outer pair stay as working headlamps
+  wired for both low and high beam. On a factory 4-lamp system the outer lamps are already the
+  dual-filament low/high type, so the wiring mostly stays: confirm the outer lamp type, cap the
+  inner lamp leads, and keep the dash high-beam indicator working. LED 4x6 low/high units in the
+  outer spots get the light output back (fits the "new headlights" line already in the budget).
+- **Turbos.** One per side, mounted behind the inner headlight opening on a bracket tied to the
+  boxed core support and the frame horn, compressor inlet facing forward. The 4x6 lamp opening
+  (measure it: about 4 x 6.5 in.) limits the inlet to about 3-3.5 in. with a filter, which suits a
+  pair of 58-67 mm compressor turbos on an LS (plenty for the forged LS plan).
+- **Inlets.** Polished inlet pipe or velocity stack with a stainless mesh screen and a filter
+  element behind it, finished flush with a custom bezel.
+- **Hot side.** Stainless (321 or 304, 16 ga) hot pipes run forward from each LS bank's header,
+  along the inside of the frame rail, around the radiator to each turbo's turbine inlet. Downpipes
+  run from the turbos back under the car to join the exhaust. Long runs cost some spool; wrap or
+  coat them.
+- **Wastegates.** One external gate per side (38-45 mm) on the hot pipe right ahead of each
+  turbine, dumped back into the downpipe (no open screamer pipes: noise and heat on the paint).
+- **Intercooler and cold side.** Air-to-air intercooler low in the bumper/valance opening. Each
+  compressor outlet runs down into the cooler; one pipe comes out and back to a single throttle
+  body. Blow-off valve on that pipe close to the throttle body (vent to atmosphere, or recirculate
+  for a quieter, smoother tune).
+- **Engine and oil.** Oil feed lines (-4 AN with a restrictor if the turbos are ball bearing) from
+  the block to each turbo; drain lines back to the pan. These turbos sit low and forward, likely
+  at or below the oil level in the pan, so gravity drain may not work: plan on a scavenge pump
+  (electric or belt-driven) to pull oil from the turbos back to the pan. Check at mock-up.
+
+### Required mods
+
+| Mod | Note |
+|---|---|
+| Core support cut and boxed | Cut for the turbo bodies and hot pipes, then box it back for strength. Do it on the bare shell during the frame-off, before paint |
+| Radiator moved back, or a slimmer dual-pass / shorter core, plus electric fans | Turbos and pipes take the space ahead of it. Extra over the base radiator line |
+| Custom-cut grille and headlight bezels | Inner lamp openings opened for the inlets, edges finished clean to match the Roid Runner-level look |
+| Inlet filters and water/debris shields | The inlets face the road: rain, spray, bugs and rocks |
+| Ceramic coating, heat wrap and heat shields | Hot pipes and turbine housings sit next to the paint, lamps, bumper and grille |
+| Longer oil feed and drain lines, scavenge pump if needed | See above |
+| Longer downpipes and exhaust back under the car | Check ground clearance at the lowered stance |
+| Tune | Long pipes change spool and boost control; tune for it |
+
+### Parts list (extra over the base kit)
+
+- Stainless hot pipe tubing, V-bands and flanges (longer runs than a standard kit)
+- 2 external wastegates if the base kit is internally gated; 1 blow-off valve
+- 2 polished inlet pipes, mesh screens, filter elements, splash shields
+- Intercooler mounted low, cold-side tubing, couplers and clamps (cooler in the base kit; extra tubing here)
+- Slim dual-pass radiator and fans (extra over the base radiator line)
+- Oil feed and drain lines, AN fittings, scavenge pump
+- Ceramic coating for the hot side, heat wrap, aluminum heat shields
+- Sheet steel for boxing the core support and turbo brackets
+
+### DIY or shop
+
+Shop job unless Tim learns TIG welding. The hot side, wastegate flanges and V-band joints need
+TIG on stainless; MIG on the core support boxing is DIY-able. Tim can do the lamp wiring, inlet
+filters, oil lines, shields and the bolt-on parts. Get the shop to do the turbo mounts, hot pipes
+and downpipes with the engine and front clip mocked up on the frame.
+
+**Cost adder: about $3,500-8,000** over a standard twin-turbo layout (base kit line not double
+counted). Fab is about 25-45 hours at NC custom fab rates of about $100-140 an hour
+($2,500-6,300), plus about $1,000-1,700 in extra parts (scavenge pump and lines, filters and
+shields, slim radiator over the base line, ceramic coating, extra tubing). Get two quotes from
+shops that build custom turbo hot sides before committing.
+
+### Risks
+
+- **Water ingestion.** Road-facing inlets low in front can pull in water from puddles and spray.
+  Enough water hydrolocks the engine (bent rods). Use shields and water-shedding filters, keep
+  the car out of standing water, and do not drive it hard in heavy rain.
+- **Debris.** Rocks and bugs hit the compressor wheel without a screen. The mesh and filter are
+  required, not optional.
+- **Heat.** Hot pipes and turbines next to the paint, the outer headlamps, the bumper and the
+  grille. Coat, wrap and shield everything; check for paint discoloring after the first hard runs.
+- **Oil drain.** A turbo that can't drain smokes and fails its seals. Confirm drain height at
+  mock-up; add the scavenge pump if the turbo center sits near or below the pan oil level.
+- **Crash damage.** The turbos are the first thing hit in a front collision, even a parking lot
+  bump. Expect a minor front hit to cost a turbo or two plus the hot pipes.
+- **Cooling.** Less room for the radiator plus turbo heat up front. Run a slim dual-pass core
+  with strong electric fans and watch coolant temps in NC summer traffic.
+- **Spool.** Long hot pipes lose some heat energy, so boost comes in a little later than a
+  close-mounted layout.
+
+### NC inspection and lighting law (checked 10/21)
+
+- G.S. 20-129(b): at least two headlamps in good working order, at least one on each side of the
+  front. G.S. 20-131: multiple-beam lamps (upper and lower beam) and a working high-beam indicator
+  on the dash. Two outer lamps with low and high beam meet this.
+- Safety inspection: a 1979 car qualifies for a Historic Vehicle plate (30 years or older,
+  G.S. 20-79.4(b)(94)), and historic vehicles are exempt from the NC safety inspection
+  (G.S. 20-183.2(a1)(1)). On a regular plate it still gets inspected. Emissions inspection does
+  not apply (older than 20 model years). The lighting law applies on the road either way.
+- Sources: ncleg.gov statute text for G.S. 20-129, 20-131, 20-183.2 and 20-79.4. Confirm with the
+  inspection station or Person County DMV before plating.
+
+### Where it fits in the frame-off
+
+Right after the frame-off body work, before paint:
+1. Step 7-8 (bare shell): cut and box the core support, cut the grille and bezel openings.
+2. Mock-up: set the LS, headers and front clip on the boxed frame, place the turbos, radiator and
+   intercooler, and check the oil drain height.
+3. Shop fabs the hot pipes, wastegate and turbo mounts, downpipes and cold side; then pull it all
+   apart for ceramic coating.
+4. Paint the front clip and core support.
+5. Step 11: final install with heat shields, oil lines, wiring and the tune.
 
 ## Maintenance log
 | Date | Mileage | Work | Cost |
