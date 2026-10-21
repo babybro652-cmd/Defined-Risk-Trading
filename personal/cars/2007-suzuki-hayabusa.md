@@ -4,14 +4,14 @@
 **Stance:** stretched swingarm with a 300 fat tire, lowered front and rear.
 **Looks:** chrome wheels, swingarm and trim; Harley Quinn inspired paint.
 **Audio:** speakers in the undertail and in the front inner fairing panels by the gauges (Tim calls them the front A-pillars).
-**Rendering:** Canva link to be added.
+**Rendering (10/21):** chosen paint, option B refined: side https://www.canva.com/M/MAHYm92Et2c , front 3/4 https://www.canva.com/M/MAHYm8M_oOI , rear 3/4 https://www.canva.com/M/MAHYm3XT89o . All versions: Drive doc "Hayabusa renderings (10/21)" https://docs.google.com/document/d/1U39vpCQ9uGyNEAYPdVpJsJO7DbyI7cCnjpwoCRSbeOo/edit
 
 - Model: GSX1300R, Gen 1 (1999-2007 body). 1299cc inline four, fuel injected, 6-speed, chain drive.
 - VIN: (add)
 - Mileage: (add)
 - Tag: NC temp tag in the rear photo (10/21). Finish title and registration before the plate expires.
 - Oil: 10W-40 motorcycle oil (JASO MA, wet-clutch safe), about 3.7 qt with filter. Do not use car oil with friction modifiers.
-- Google Drive: Cars > 2007 Suzuki Hayabusa (photos)
+- Google Drive: Cars > 2007 Suzuki Hayabusa (photos, renderings): https://drive.google.com/drive/folders/1hDYmLpHdwDLyZafGhi5e7B4ZivWUrjxA
 
 ## Condition from photos, 10/21/2026
 
@@ -81,7 +81,17 @@ Recommendation: real chrome on the wheels and swingarm (order the kit swingarm a
 
 ### 4. Paint: Harley Quinn inspired
 
-**Theme (from Tim's reference picture, described here instead of saved):** a red and blue split down the bike (red on one side, blue on the other, or red front / blue rear), black and gold diamond harlequin pattern on the tank and tail sections, gold pinstripes along the panel edges, and maybe "LOVE" / "HATE" style lettering on the tail or fairing sides.
+**Theme (from Tim's reference picture, described here instead of saved):** red and blue, black and gold diamond harlequin pattern, gold pinstripes, and maybe "LOVE" / "HATE" style lettering.
+
+**Chosen direction (Tim, 10/21): option B refined.**
+- Show-quality candy red fading to candy blue (front to rear), not a hard split.
+- Smoky black diamond (harlequin) pattern airbrushed into the fade, not hard-edged.
+- More gold: gold pinstripes and gold leaf accents, gold brake calipers.
+- Chrome as planned (wheels, swingarm, trim), stretched with the 300 rear tire.
+- Red and blue LED underglow.
+- **Emblems:** Suzuki emblems replaced with a custom diamond emblem: four quadrants in red and black with a gold outline (tank and fairing badge locations).
+- Tim's favorite reference builds: the white and red flames chrome stretched Busa, and the candy red chrome Busa with red underglow.
+- Candy plus gold leaf plus airbrush is the top of the custom paint range; plan on the high end of the paint line and get 2-3 quotes from custom painters with motorcycle candy work in their portfolio.
 
 - Fairings: the current ones are cracked and scuffed. Plastic welding and tab repair works for small cracks. A new aftermarket ABS Gen 1 fairing kit ($600-1,200) is often cheaper to paint than repairing worn plastics, and the old set stays as a spare.
 - Paint options: custom painter (best result for diamonds, pinstripes and lettering), vinyl wrap with printed graphics (cheaper, removable), or DIY.
@@ -122,14 +132,15 @@ Low ends assume Tim's labor; high ends assume shop labor or premium parts.
 | 3 Chrome | Swingarm chrome (ordered chromed or plated) | $600–1,500 |
 | 3 Chrome | Levers, mirrors, bar ends, pegs/rearsets, trim and bolt kit | $300–900 |
 | 4 Paint | Fairing repair, or a new aftermarket Gen 1 fairing kit | $300–1,200 |
-| 4 Paint | Harley Quinn custom paint: split colors, diamonds, gold pinstripes, lettering (wrap $900–2,000; DIY $400–900) | $2,000–5,000 |
+| 4 Paint | Custom paint, chosen option B: candy red to blue fade, smoky diamond airbrush, gold pinstripes and gold leaf, custom diamond emblems (wrap $900–2,000; DIY $400–900) | $2,000–5,000 |
+| 4 Paint | Gold calipers (powder or caliper paint) and red/blue LED underglow kit | $150–500 |
 | 5 Audio | Speakers: 2 front pods, 2 undertail | $150–500 |
 | 5 Audio | Amp | $150–400 |
 | 5 Audio | Bluetooth controller or head unit | $80–250 |
 | 5 Audio | Fabricated pods, painted to match | $150–600 |
 | 5 Audio | Wiring, fuses, relay, waterproofing | $80–200 |
 | 5 Audio | Charging: higher-output stator and/or second battery with isolator | $250–600 |
-| | **Hayabusa total** | **about $9,390–23,550** |
+| | **Hayabusa total** | **about $9,540–24,050** |
 
 **Optional, not in the total:**
 - Air ride instead of lowering links: +$1,200–2,500
@@ -141,7 +152,7 @@ Low ends assume Tim's labor; high ends assume shop labor or premium parts.
 2. **Real chrome vs powder "chrome"** on the wheels and swingarm.
 3. **Charging for audio:** higher-output stator, second battery, or both.
 4. **Oil drips:** find and fix before the build starts.
-5. **Paint vs wrap** for the Harley Quinn theme.
+5. **Paint quotes** for the chosen candy red to blue fade (custom painter; wrap only as a fallback).
 
 ## Maintenance log
 | Date | Mileage | Work | Cost |

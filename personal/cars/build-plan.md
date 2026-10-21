@@ -171,7 +171,7 @@ where the work is shop work; low ends assume DIY.
 
 ## 2007 Suzuki Hayabusa (Gen 1, added 10/21)
 
-Show bike build: 300 fat tire stretch, lowered, chrome, Harley Quinn inspired paint, speakers in
+Show bike build: 300 fat tire stretch, lowered, chrome, Harley Quinn inspired paint (chosen 10/21: candy red to blue fade, smoky diamond airbrush, gold accents, diamond emblems, red/blue underglow), speakers in
 the front inner fairing and undertail. Order: mechanical, stretch and lowering, chrome, paint,
 audio. Details, stretch length, chrome methods and charging notes: `2007-suzuki-hayabusa.md`.
 
@@ -188,11 +188,12 @@ audio. Details, stretch length, chrome methods and charging notes: `2007-suzuki-
 | 3 Chrome | Swingarm chrome (ordered chromed or plated) | $600–1,500 |
 | 3 Chrome | Levers, mirrors, bar ends, pegs/rearsets, trim and bolt kit | $300–900 |
 | 4 Paint | Fairing repair, or a new aftermarket Gen 1 fairing kit | $300–1,200 |
-| 4 Paint | Harley Quinn custom paint: split colors, diamonds, gold pinstripes, lettering (wrap $900–2,000; DIY $400–900) | $2,000–5,000 |
+| 4 Paint | Custom paint, chosen option B: candy red to blue fade, smoky diamond airbrush, gold pinstripes and gold leaf, custom diamond emblems (wrap $900–2,000; DIY $400–900) | $2,000–5,000 |
+| 4 Paint | Gold calipers (powder or caliper paint) and red/blue LED underglow kit | $150–500 |
 | 5 Audio | Speakers (2 front pods, 2 undertail), amp, Bluetooth control | $380–1,150 |
 | 5 Audio | Fabricated pods, wiring, waterproofing | $230–800 |
 | 5 Audio | Charging: higher-output stator and/or second battery with isolator | $250–600 |
-| | **Hayabusa total** | **about $9,390–23,550** |
+| | **Hayabusa total** | **about $9,540–24,050** |
 
 Optional, not in the total: air ride instead of lowering links (+$1,200–2,500), chrome frame
 rails (+$1,500–3,500).
@@ -206,8 +207,8 @@ rails (+$1,500–3,500).
 | Cruze | $7,250 | $15,700 |
 | Charger | $23,550 | $48,250 |
 | Cutlass | $37,150 | $95,300 |
-| Hayabusa | $9,390 | $23,550 |
-| **Total** | **about $77,340** | **about $182,800** |
+| Hayabusa | $9,540 | $24,050 |
+| **Total** | **about $77,490** | **about $183,300** |
 | Cutlass Roid Runner-level finish (optional, not in the total) | +$24,100 | +$91,100 |
 
 Biggest savings: doing the labor, buying used brake and suspension parts, and finding a
