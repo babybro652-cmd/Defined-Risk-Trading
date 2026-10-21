@@ -30,7 +30,7 @@ LAYOUT = {
             'c': {'pct': [4, 5, 6, 7], 'num1': [2, 3], 'center': [8], 'grad': [4, 5]},
             'd': {'pct': [4, 7, 11], 'num2': [2, 5], 'num1': [3, 6], 'num3': [9, 10], 'grad': [2]}},
     'nba': {'tips': {'pct': [3, 4]},
-            'a': {'pct': [11, 12, 13], 'grad': [11, 12, 13]},
+            'a': {'pct': [11, 12, 13, 17, 18], 'grad': [11, 12, 13, 18]},
             'b': {'pct': [6, 9, 10, 11], 'grad': [6, 9]},
             'c': {'pct': [4, 5, 6, 7, 9, 10, 11, 12], 'num1': [2, 3, 8], 'grad': [5, 6, 10, 11]},
             'd': {'pct': [5]}},
@@ -65,10 +65,11 @@ def main():
     sid = SHEET_ID[sport]
     d = json.load(open(os.path.join(HERE, sport, 'out', 'sheet_values.json')))
     meta = d['meta']; rows = d[sport.upper()]; n, w = meta['rows'], meta['width']
-    req = [{'unmergeCells': {'range': rng(sid, 0, 400, 0, 17)}},
-           fmt(sid, 0, 400, 0, 17, {}, 'userEnteredFormat'),
-           {'updateSheetProperties': {'properties': {'sheetId': sid, 'gridProperties': {'rowCount': max(400, n + 20),
-            'columnCount': max(17, w), 'frozenRowCount': 1, 'frozenColumnCount': 1}}, 'fields': 'gridProperties'}}]
+    R, C = max(400, n + 20), max(17, w)
+    req = [{'unmergeCells': {'range': rng(sid, 0, R, 0, C)}},
+           fmt(sid, 0, R, 0, C, {}, 'userEnteredFormat'),
+           {'updateSheetProperties': {'properties': {'sheetId': sid, 'gridProperties': {'rowCount': R,
+            'columnCount': C, 'frozenRowCount': 1, 'frozenColumnCount': 1}}, 'fields': 'gridProperties'}}]
     req.append(fmt(sid, 0, n, 0, w, {'textFormat': {'fontSize': 10}, 'verticalAlignment': 'TOP'},
                    'userEnteredFormat.textFormat,userEnteredFormat.verticalAlignment'))
     req.append(fmt(sid, 0, 1, 0, w, {'backgroundColor': NAVY, 'textFormat': {'bold': True, 'fontSize': 12,

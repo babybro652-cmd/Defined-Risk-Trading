@@ -2,18 +2,18 @@
 
 Tip winner scores first 64% (25-26).
 
-- **First basket: Ivica Zubac** (IND @ NO). Est 21% (fair +387): IND scores first 59% (tip edge), he had the team's first FG in 18/47 starts 25-26; game first basket 4/47
-- **First basket: Brandon Miller** (CHA @ BKN). Est 19% (fair +427): CHA scores first 53% (tip edge), he had the team's first FG in 25/65 starts 25-26; game first basket 13/65
-- **First basket: Jaren Jackson Jr.** (UTAH @ MEM). Est 19% (fair +439): UTAH scores first 60% (tip edge), he had the team's first FG in 16/48 starts 25-26; game first basket 7/48
-- **First basket: Michael Porter Jr.** (BKN vs CHA). Est 18% (fair +447): BKN scores first 47% (tip edge), he had the team's first FG in 22/52 starts 25-26; game first basket 10/52
-- **First basket: Lauri Markkanen** (UTAH @ MEM). Est 17% (fair +480): UTAH scores first 60% (tip edge), he had the team's first FG in 13/42 starts 25-26; game first basket 8/42
-- **First basket: Jalen Green** (PHX @ POR). Est 16% (fair +513): PHX scores first 50% (tip edge), he had the team's first FG in 10/27 starts 25-26; game first basket 4/27
-- **First basket: Pascal Siakam** (IND @ NO). Est 16% (fair +523): IND scores first 59% (tip edge), he had the team's first FG in 18/63 starts 25-26; game first basket 8/63
-- **First basket: Anthony Edwards** (MIN @ MIA). Est 15% (fair +560): MIN scores first 46% (tip edge), he had the team's first FG in 22/63 starts 25-26; game first basket 15/63
-- **Team first basket: Michael Porter Jr.** (BKN vs CHA). Took BKN's first FG in 39% of starts (shrunk); raw 25-26 22/52, first shot 21/52
-- **Team first basket: Brandon Miller** (CHA @ BKN). Took CHA's first FG in 36% of starts (shrunk); raw 25-26 25/65, first shot 29/65
-- **Team first basket: Ivica Zubac** (IND @ NO). Took IND's first FG in 35% of starts (shrunk); raw 25-26 18/47, first shot 12/47
-- **Team first basket: Anthony Edwards** (MIN @ MIA). Took MIN's first FG in 33% of starts (shrunk); raw 25-26 22/63, first shot 21/63
+- **First basket: Luka Doncic** (LAL vs GS 10:00). Est 22% (fair +365; old model 17%): LAL scores first 56%; first FG 20/65 and first shot 33/65 starts 25-26, FG 47%; GS vs G x1.02
+- **First basket: Brandon Miller** (CHA @ BKN 7:30). Est 19% (fair +421; old model 19%): CHA scores first 53%; first FG 25/65 and first shot 29/65 starts 25-26, FG 44%; BKN vs F x1.05
+- **First basket: Alperen Sengun** (HOU vs DAL 8:30). Est 16% (fair +525; old model 14%): HOU scores first 51%; first FG 20/72 and first shot 23/72 starts 25-26, FG 51%; DAL vs C x1.06
+- **First basket: Anthony Edwards** (MIN @ MIA 7:30). Est 16% (fair +539; old model 15%): MIN scores first 46%; first FG 22/63 and first shot 21/63 starts 25-26, FG 49%; MIA vs G x1.02
+- **First basket: Anthony Davis** (WSH vs MIL 7:00). Est 15% (fair +547; old model 14%): WSH scores first 54%; first FG 6/20 and first shot 7/20 starts 25-26, FG 50%; MIL vs F x0.98
+- **First basket: Ty Jerome** (MEM vs UTAH 8:00). Est 15% (fair +560; old model 15%): MEM scores first 55%; first FG 5/15 and first shot 7/15 starts 25-26, FG 47%; UTAH vs G x0.98
+- **First basket: Bam Adebayo** (MIA vs MIN 7:30). Est 15% (fair +567; old model 14%): MIA scores first 54%; first FG 20/73 and first shot 33/73 starts 25-26, FG 45%; MIN vs C x0.91
+- **First basket: Wendell Carter Jr.** (ORL vs ATL 7:00). Est 15% (fair +567; old model 13%): ORL scores first 57%; first FG 18/78 and first shot 21/78 starts 25-26, FG 50%; ATL vs C x1.12
+- **Team first basket: Luka Doncic** (LAL vs GS). Model share of LAL's first FG 38% (old 29%); raw 25-26 20/65, first shot 33/65, FG 47%
+- **Team first basket: Brandon Miller** (CHA @ BKN). Model share of CHA's first FG 36% (old 36%); raw 25-26 25/65, first shot 29/65, FG 44%
+- **Team first basket: Anthony Edwards** (MIN @ MIA). Model share of MIN's first FG 34% (old 33%); raw 25-26 22/63, first shot 21/63, FG 49%
+- **Team first basket: Alperen Sengun** (HOU vs DAL). Model share of HOU's first FG 31% (old 27%); raw 25-26 20/72, first shot 23/72, FG 51%
 - **Over 2.5 threes: Luka Doncic** (LAL vs GS). Over 2.5 in 78% of starts (blend); last 5 starts 25-26: 1 6 5 4 3
 - **Over 2.5 threes: Stephen Curry** (GS @ LAL). Over 2.5 in 76% of starts (blend); last 5 starts 25-26: 4 2 4 4 3
 - **Over 19.5 points: Kawhi Leonard** (TOR vs CHI). Over 19.5 in 93% of starts (blend); last 5 starts 25-26: 24 20 34 26 24
@@ -27,10 +27,10 @@ Tip winner scores first 64% (25-26).
 - MIL @ WSH 7:00 ET: Myles Turner vs Alex Sarr; away wins tip 37%, away scores first 46%
 - MIN @ MIA 7:30 ET: Rudy Gobert vs Bam Adebayo; away wins tip 36%, away scores first 46%
 - CHA @ BKN 7:30 ET: Moussa Diabate vs Day'Ron Sharpe; away wins tip 60%, away scores first 53%
-- CHI @ TOR 7:30 ET: Matas Buzelis vs Jakob Poeltl; away wins tip 38%, away scores first 47%
-- UTAH @ MEM 8:00 ET: Kyle Filipowski vs Olivier-Maxence Prosper; away wins tip 84%, away scores first 60%
-- IND @ NO 8:00 ET: Jay Huff vs Derik Queen; away wins tip 80%, away scores first 59%
+- CHI @ TOR 7:30 ET: Jalen Smith vs Jakob Poeltl; away wins tip 27%, away scores first 43%
+- UTAH @ MEM 8:00 ET: Jaxson Hayes vs Zach Edey; away wins tip 32%, away scores first 45%
+- IND @ NO 8:00 ET: Ivica Zubac vs Yves Missi; away wins tip 55%, away scores first 51%
 - DAL @ HOU 8:30 ET: Daniel Gafford vs Alperen Sengun; away wins tip 46%, away scores first 49%
-- GS @ LAL 10:00 ET: Draymond Green vs Kevon Looney; away wins tip 54%, away scores first 51%
-- PHX @ POR 10:00 ET: Oso Ighodaro vs Donovan Clingan; away wins tip 51%, away scores first 50%
-- SAC @ LAC 10:30 ET: Domantas Sabonis vs Brook Lopez; away wins tip 34%, away scores first 45%
+- GS @ LAL 10:00 ET: Charles Bassey vs Walker Kessler; away wins tip 27%, away scores first 44%
+- PHX @ POR 10:00 ET: Khaman Maluach vs Donovan Clingan; away wins tip 53%, away scores first 51%
+- SAC @ LAC 10:30 ET: Domantas Sabonis vs Isaiah Jackson; away wins tip 51%, away scores first 50%

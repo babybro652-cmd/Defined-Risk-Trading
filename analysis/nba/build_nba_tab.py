@@ -36,6 +36,46 @@ W_DEFAULT = 3       # one 2026-27 regular-season game counts as this many 2025-2
 UA = {'User-Agent': 'Mozilla/5.0'}
 PTS_LINES = (9.5, 14.5, 19.5, 24.5)
 THREE_LINES = (0.5, 1.5, 2.5, 3.5)
+POS = ('G', 'F', 'C')
+
+# ---------- first-basket model v2 (10/21/26; see README "How numbers are computed") ----------
+# Each knob was checked in backtest_fb.py (2025-26 walk-forward plus 10/20/26).
+V2 = {'w_shot': 0.5,      # share = (1 - w) x first-FG share + w x first-shot share x (his FG% / league FG%)
+      'fg_k': 150,        # FG% shrunk toward league with 150 pseudo attempts
+      'def_k': 120,       # defense-by-position rate shrunk toward league with 120 pseudo games
+      'def_cap': 0.15,    # defense multiplier kept within 0.85 to 1.15
+      'norm': 1.0,        # 1 = the five starters' shares are rescaled to sum to the league starter rate (injury ripple)
+      'starter_sum': 0.99}
+
+
+def v1_share(t1, gs):
+    return (t1 + 2) / (gs + 10)   # shrink toward 1 in 5 with 10 pseudo starts
+
+
+def v2_shares(players, allow, allow_n, lg, prm=V2):
+    """players: list of dicts with weighted counts gs, t1, sh1, fgm, fga and pos ('G'/'F'/'C').
+    allow / allow_n: the opponent's first FGs allowed by position and games counted. lg: {'fg': league FG%,
+    'pos': {pos: league share of team first FGs}}. Returns (shares, defense multipliers, raw v1 shares)."""
+    w, out, mults, raw = prm['w_shot'], [], [], []
+    for p in players:
+        p = {k: p.get(k, 0) for k in ('gs', 't1', 'sh1', 'fgm', 'fga')} | {'pos': p.get('pos', '')}
+        s1 = v1_share(p['t1'], p['gs'])
+        s2 = v1_share(p['sh1'], p['gs'])
+        fg = (p['fgm'] + prm['fg_k'] * lg['fg']) / (p['fga'] + prm['fg_k'])
+        a = (1 - w) * s1 + w * s2 * fg / lg['fg']
+        r = lg['pos'].get(p['pos'])
+        m = 1.0
+        if r and prm['def_k'] is not None:
+            m = ((allow.get(p['pos'], 0) + prm['def_k'] * r) / (allow_n + prm['def_k'])) / r
+            m = min(1 + prm['def_cap'], max(1 - prm['def_cap'], m))
+        raw.append(s1); mults.append(m); out.append(a * m)
+    tot = sum(out)
+    if tot and prm['norm']:
+        f = (prm['starter_sum'] / tot) ** prm['norm']
+        if prm.get('up_only'):
+            f = max(f, 1.0)
+        out = [x * f for x in out]
+    return out, mults, raw
 
 
 def get(url, tries=5):
@@ -123,10 +163,11 @@ def parse_game(ev):
             try:
                 mins = int(x.get('MIN') or 0); pts = int(x.get('PTS') or 0)
                 tpm = int((x.get('3PT') or '0-0').split('-')[0])
+                fgm, fga = (int(v) for v in (x.get('FG') or '0-0').split('-'))
             except ValueError:
                 continue
             pl.append([pid, ab, bool(a.get('starter')), mins, pts, tpm,
-                       (a['athlete'].get('position') or {}).get('abbreviation', '')])
+                       (a['athlete'].get('position') or {}).get('abbreviation', ''), fgm, fga])
     plays = s.get('plays', [])
     tip = None
     for p in plays:
@@ -136,7 +177,7 @@ def parse_game(ev):
             if len(parts) >= 2 and win:
                 tip = {'j': [[parts[0], team_of.get(parts[0])], [parts[1], team_of.get(parts[1])]], 'w': win}
             break
-    fb = fp = None; tfirst, tshot = {}, {}
+    fb = fp = None; tfirst, tshot, tsm, tfd = {}, {}, {}, {}
     for p in plays:
         tid = tm_by_id.get((p.get('team') or {}).get('id'))
         parts = [q['athlete']['id'] for q in p.get('participants', [])]
@@ -145,9 +186,13 @@ def parse_game(ev):
         if p.get('scoringPlay') and fp is None:
             fp = [parts[0], tid, p.get('scoreValue')]
         if p.get('shootingPlay') and not is_ft(p):
-            tshot.setdefault(tid, parts[0])
+            if tid not in tshot:
+                tshot[tid] = parts[0]; tsm[tid] = bool(p.get('scoringPlay'))
             if p.get('scoringPlay'):
-                tfirst.setdefault(tid, parts[0])
+                if tid not in tfirst:
+                    tfirst[tid] = parts[0]
+                    m = re.search(r'(\d+)-foot', p.get('text', ''))
+                    tfd[tid] = int(m.group(1)) if m else 0   # shot distance in feet (0 = dunk / at the rim)
                 if fb is None:
                     fb = [parts[0], tid, p.get('scoreValue')]
         if len(tfirst) == 2 and len(tshot) == 2 and fp:
@@ -156,7 +201,7 @@ def parse_game(ev):
     sc = {c['homeAway']: (c['team']['abbreviation'], int(c.get('score') or 0)) for c in hc}
     return {'id': ev['id'], 'date': et(ev['utc']).date().isoformat(), 'type': ev['type'],
             'away': sc['away'][0], 'home': sc['home'][0], 'as': sc['away'][1], 'hs': sc['home'][1],
-            'tip': tip, 'fb': fb, 'fp': fp, 'tf': tfirst, 'ts': tshot, 'pl': pl,
+            'tip': tip, 'fb': fb, 'fp': fp, 'tf': tfirst, 'ts': tshot, 'tsm': tsm, 'tfd': tfd, 'pl': pl, 'v': 2,
             'nm': {p[0]: nm[p[0]] for p in pl} | ({j[0]: nm.get(j[0], '?') for j in tip['j']} if tip else {})}
 
 
@@ -172,7 +217,7 @@ def refresh(season, sched, today, log):
     path = os.path.join(DATA, f'games_{season}.json')
     games = load(path, {})
     evs = [e for d, es in sched.items() if d < today.isoformat() for e in es
-           if e['type'] in (1, 2) and e['final'] and e['id'] not in games]
+           if e['type'] in (1, 2) and e['final'] and (e['id'] not in games or games[e['id']].get('v') != 2)]
     if season == LAST:
         evs = [e for e in evs if e['type'] == 2]
     log(f'{season}: {len(games)} cached, {len(evs)} to fetch')
@@ -188,16 +233,17 @@ def refresh(season, sched, today, log):
 
 # ---------- aggregates ----------
 def zero():
-    return {'gp': 0, 'gs': 0, 'fb': 0, 'fp': 0, 't1': 0, 'sh1': 0, 'tips': 0, 'tipw': 0, 'pts': 0, 'tpm': 0,
-            'min': 0, 'log': []}
+    return {'gp': 0, 'gs': 0, 'fb': 0, 'fp': 0, 't1': 0, 'sh1': 0, 'sh1m': 0, 'tips': 0, 'tipw': 0, 'pts': 0, 'tpm': 0,
+            'min': 0, 'fgm': 0, 'fga': 0, 'log': []}
 
 
 def player_stats(games):
     P = {}
     for g in sorted(games.values(), key=lambda x: (x['date'], x['id'])):
-        for pid, tm, st, mins, pts, tpm, pos in g['pl']:
+        for pid, tm, st, mins, pts, tpm, pos, fgm, fga in g['pl']:
             s = P.setdefault(pid, zero() | {'tm': tm, 'pos': pos, 'nm': g['nm'].get(pid, '?')})
             s['gp'] += 1; s['pts'] += pts; s['tpm'] += tpm; s['min'] += mins; s['tm'] = tm; s['pos'] = pos or s['pos']
+            s['fgm'] += fgm; s['fga'] += fga
             s['log'].append((g['date'], pts, tpm, st))
             if st:
                 s['gs'] += 1
@@ -205,6 +251,7 @@ def player_stats(games):
                 s['fp'] += bool(g['fp'] and g['fp'][0] == pid)
                 s['t1'] += g['tf'].get(tm) == pid
                 s['sh1'] += g['ts'].get(tm) == pid
+                s['sh1m'] += g['ts'].get(tm) == pid and bool(g.get('tsm', {}).get(tm))
         if g['tip']:
             for pid, tm in g['tip']['j']:
                 s = P.setdefault(pid, zero() | {'tm': tm, 'pos': '', 'nm': g['nm'].get(pid, '?')})
@@ -216,8 +263,13 @@ def team_stats(games):
     T = {}
     for g in games.values():
         first = g['fb'][1] if g['fb'] else None
-        for tm in (g['away'], g['home']):
-            t = T.setdefault(tm, {'gp': 0, 'tips': 0, 'tipw': 0, 'first': 0, 'w_first': 0, 'jumpers': {}, 'last': ''})
+        posof = {p[0]: p[6] for p in g['pl']}
+        for tm, opp in ((g['away'], g['home']), (g['home'], g['away'])):
+            t = T.setdefault(tm, {'gp': 0, 'tips': 0, 'tipw': 0, 'first': 0, 'w_first': 0, 'jumpers': {}, 'last': '',
+                                  'allow': {}, 'allow_n': 0})
+            ps = posof.get(g['tf'].get(opp))   # position of the opponent who scored their first FG against tm
+            if ps in POS:
+                t['allow'][ps] = t['allow'].get(ps, 0) + 1; t['allow_n'] += 1
             t['gp'] += 1; t['first'] += first == tm; t['last'] = max(t['last'], g['date'])
             if g['tip']:
                 t['tips'] += 1
@@ -294,13 +346,16 @@ def build(start, log):
         c, p, l = S(PC, pid), S(PP, pid), S(PL, pid)
         rc = sum(1 for x in c['log'][-5:] if x[3])
         return rc * 10 + sum(1 for x in p['log'] if x[3]) * 1.0 + (l['gs'] / max(l['gp'], 1)) * 3 + l['min'] / max(l['gp'], 1) / 12
-    starters = {}
+    starters, healthy5 = {}, {}
     for pid, r in roster.items():
-        if (inj.get(pid) or {}).get('status', '').lower() == 'out':
+        healthy5.setdefault(r['tm'], []).append(pid)
+        if (inj.get(pid) or {}).get('status', '').lower() in ('out', 'doubtful'):
             continue
         starters.setdefault(r['tm'], []).append(pid)
     for tm in starters:
         starters[tm] = sorted(starters[tm], key=lambda p: -starter_score(p))[:5]
+    for tm in healthy5:   # who would start if everyone were healthy (for the injury ripple note)
+        healthy5[tm] = sorted(healthy5[tm], key=lambda p: -starter_score(p))[:5]
     all_starters = [p for tm in sorted(starters) for p in starters[tm]]
     # players hurt (Out) who started a lot last season, listed but not in the probable five
     hurt = [pid for pid, r in roster.items() if (inj.get(pid) or {}).get('status', '').lower() == 'out'
@@ -316,19 +371,67 @@ def build(start, log):
         return (W * c['tipw'] + l['tipw'] + 3) / (W * c['tips'] + l['tips'] + 6)
 
     def main_jumper(tm):
+        # this season's games (preseason and regular) newest first: weights 3, 2, 1.5, then 1; regular season x2.
+        # Last season's tips count 0.05 each for any team, so traded bigs carry over but current roles win.
+        ok = lambda pid: (roster.get(pid, {}).get('tm') == tm
+                          and (inj.get(pid) or {}).get('status', '').lower() not in ('out', 'doubtful'))
         cands = {}
-        for src, wt in ((TC, W), (TP, 1), (TL, 1)):
-            for pid, n in src.get(tm, {'jumpers': {}})['jumpers'].items():
-                if roster.get(pid, {}).get('tm') == tm and (inj.get(pid) or {}).get('status', '').lower() != 'out':
-                    cands[pid] = cands.get(pid, 0) + n * wt
+        mine = sorted((g for g in g_cur_all.values() if g['tip'] and tm in (g['away'], g['home'])),
+                      key=lambda g: g['date'], reverse=True)
+        for i, g in enumerate(mine):
+            for pid, jt in g['tip']['j']:
+                if jt == tm and ok(pid):
+                    wt = (3, 2, 1.5)[i] if i < 3 else 1
+                    cands[pid] = cands.get(pid, 0) + wt * (2 if g['type'] == 2 else 1)
+        for pid, r in roster.items():
+            if r['tm'] == tm and ok(pid) and S(PL, pid)['tips']:
+                cands[pid] = cands.get(pid, 0) + 0.05 * S(PL, pid)['tips']
         if not cands:   # tallest proxy: a starting center
             cs = [p for p in starters.get(tm, []) if roster[p]['pos'] == 'C'] or starters.get(tm, [])[:1]
             return cs[0] if cs else None
         return max(cands, key=cands.get)
 
-    def share(pid):
+    # the main jumper is almost always a starter: if the estimate left him out, he replaces the 5th man
+    for tm in list(starters):
+        j = main_jumper(tm)
+        if j and j not in starters[tm]:
+            starters[tm] = starters[tm][:4] + [j]
+    all_starters = [p for tm in sorted(starters) for p in starters[tm]]
+
+    def share(pid):   # v1 (old model): shrunk share of team first FGs
         c, l = S(PC, pid), S(PL, pid)
-        return (W * c['t1'] + l['t1'] + 2) / (W * c['gs'] + l['gs'] + 10)   # shrink toward 1 in 5
+        return v1_share(W * c['t1'] + l['t1'], W * c['gs'] + l['gs'])
+
+    def wcounts(pid):
+        c, l = S(PC, pid), S(PL, pid)
+        return {k: W * c[k] + l[k] for k in ('gs', 't1', 'sh1', 'fgm', 'fga')} | {'pos': roster[pid]['pos']}
+
+    lg_fgm = sum(x['fgm'] for x in PL.values()) + W * sum(x['fgm'] for x in PC.values())
+    lg_fga = sum(x['fga'] for x in PL.values()) + W * sum(x['fga'] for x in PC.values())
+    pos_n = {p: sum(t['allow'].get(p, 0) for t in TL.values()) + W * sum(t['allow'].get(p, 0) for t in TC.values())
+             for p in POS}
+    LG = {'fg': lg_fgm / lg_fga, 'pos': {p: pos_n[p] / sum(pos_n.values()) for p in POS}}
+
+    def allow(tm):
+        a, b = TL.get(tm, {}), TC.get(tm, {})
+        return ({p: a.get('allow', {}).get(p, 0) + W * b.get('allow', {}).get(p, 0) for p in POS},
+                a.get('allow_n', 0) + W * b.get('allow_n', 0))
+
+    def fgpct(pid):
+        x = wcounts(pid)
+        return (x['fgm'] + V2['fg_k'] * LG['fg']) / (x['fga'] + V2['fg_k'])
+
+    def team_v2(tm, opp):
+        """v2 shares for tm's probable five against opp (opp=None: no defense term). pid -> (share, def mult)."""
+        five = starters.get(tm, [])
+        al, an = allow(opp) if opp else ({}, 0)
+        sh, mu, _ = v2_shares([wcounts(p) for p in five], al, an, LG, V2 if opp else dict(V2, def_k=None))
+        return {p: (a, m) for p, a, m in zip(five, sh, mu)}
+
+    def ripple_note(tm):
+        gone = [p for p in healthy5.get(tm, []) if p not in starters.get(tm, []) and share(p) >= 0.25
+                and S(PL, p)['gs'] + S(PC, p)['gs'] >= 20]
+        return ', '.join(f"{nm(p)} out ({round(100 * share(p))}% share spread to the rest)" for p in gone)
 
     # ---------- slate ----------
     slate_games = []
@@ -350,13 +453,18 @@ def build(start, log):
 
     cands = []
     for tm, (g, at, opp, pteam) in side.items():
+        tv = team_v2(tm, opp)
         for pid in starters.get(tm, []):
             st = (inj.get(pid) or {}).get('status', '')
-            if st.lower() in ('out', 'doubtful'):
-                continue
-            sh = share(pid)
+            sh, mu = tv[pid]
             cands.append({'pid': pid, 'tm': tm, 'at': at, 'opp': opp, 'pteam': pteam, 'share': sh, 'p': pteam * sh,
-                          'gid': g['id'], 'inj': st})
+                          'p1': pteam * share(pid), 'mult': mu, 'gid': g['id'], 'inj': st, 'rip': ripple_note(tm),
+                          'time': g['time']})
+    json.dump([{'player': nm(c['pid']), 'tm': c['tm'], 'opp': c['opp'], 'time': c['time'], 'p_v2': round(c['p'], 4),
+                'p_v1': round(c['p1'], 4), 'fair_v2': american(c['p']), 'fair_v1': american(c['p1']),
+                'def_mult': round(c['mult'], 3), 'ripple': c['rip'], 'inj': c['inj']}
+               for c in sorted(cands, key=lambda c: (c['time'], c['gid'], -c['p']))],
+              open(os.path.join(OUT, 'fb_candidates.json'), 'w'), indent=0)
     picks = []
     per_game = {}
     for c in sorted(cands, key=lambda c: -c['p']):
@@ -366,16 +474,20 @@ def build(start, log):
             continue
         per_game[c['gid']] = per_game.get(c['gid'], 0) + 1
         l, cu = S(PL, c['pid']), S(PC, c['pid'])
-        picks.append(['First basket', nm(c['pid']), f"{c['tm']} {c['at']} {c['opp']}",
-                      f"Est {round(100 * c['p'])}% (fair {american(c['p'])}): {c['tm']} scores first {round(100 * c['pteam'])}% "
-                      f"(tip edge), he had the team's first FG in {l['t1']}/{l['gs']} starts 25-26"
-                      + (f", {cu['t1']}/{cu['gs']} 26-27" if cu['gs'] else '') + f"; game first basket {l['fb']}/{l['gs']}"
-                      + (f"; {c['inj']}" if c['inj'] else ''), f"Better than {american(c['p'])}"])
+        pos = roster[c['pid']]['pos']
+        picks.append(['First basket', nm(c['pid']), f"{c['tm']} {c['at']} {c['opp']} {c['time']}",
+                      f"Est {round(100 * c['p'])}% (fair {american(c['p'])}; old model {round(100 * c['p1'])}%): "
+                      f"{c['tm']} scores first {round(100 * c['pteam'])}%; first FG {l['t1']}/{l['gs']} and first shot "
+                      f"{l['sh1']}/{l['gs']} starts 25-26" + (f", {cu['t1']}/{cu['gs']} 26-27" if cu['gs'] else '')
+                      + f", FG {round(100 * fgpct(c['pid']))}%; {c['opp']} vs {pos} x{c['mult']:.2f}"
+                      + (f"; {c['rip']}" if c['rip'] else '') + (f"; {c['inj']}" if c['inj'] else ''),
+                      f"Better than {american(c['p'])}"])
     for c in sorted(cands, key=lambda c: -c['share'])[:4]:
         l = S(PL, c['pid'])
         picks.append(['Team first basket', nm(c['pid']), f"{c['tm']} {c['at']} {c['opp']}",
-                      f"Took {c['tm']}'s first FG in {round(100 * c['share'])}% of starts (shrunk); raw 25-26 {l['t1']}/{l['gs']}, "
-                      f"first shot {l['sh1']}/{l['gs']}", f"Better than {american(c['share'])}"])
+                      f"Model share of {c['tm']}'s first FG {round(100 * c['share'])}% (old {round(100 * share(c['pid']))}%); "
+                      f"raw 25-26 {l['t1']}/{l['gs']}, first shot {l['sh1']}/{l['gs']}, FG {round(100 * fgpct(c['pid']))}%"
+                      + (f"; {c['rip']}" if c['rip'] else ''), f"Better than {american(c['share'])}"])
 
     def over_rate(pid, idx, k):
         lg = [x[idx] for x in S(PL, pid)['log'] if x[3]]
@@ -419,9 +531,13 @@ def build(start, log):
     R('Bet', 'Player', 'Game', 'Why', 'Look for')
     for p in picks:
         R(*p)
-    R('How picked', f'First basket = P(team scores first) x player share. P(team scores first) comes from the two main '
-      f'jumpers\' tip-win rates (log5) and the 25-26 league rate that the tip winner scores first ({round(100 * a_first)}%). '
-      'Share = his share of his team\'s first FGs as a starter, shrunk toward 1 in 5. Fair odds are the break-even price; '
+    R('How picked', f'First basket = P(team scores first) x player share (model v2, 10/21). P(team scores first) comes from the '
+      f'two main jumpers\' tip-win rates (log5) and the 25-26 league rate that the tip winner scores first ({round(100 * a_first)}%). '
+      'Share = half his share of team first FGs + half his share of team first shots x (his FG% / league FG%), each shrunk '
+      'toward 1 in 5; then x the opponent\'s rate of allowing the first FG to his position (G/F/C, shrunk hard, 0.85 to 1.15); '
+      'then the probable five are rescaled to sum to 99%, so an Out starter\'s share goes to the rest in proportion. '
+      'Backtest (936 games, Dec 25 to 10/20/26): log loss 2.283 vs 2.293 old, top pick 14.0% vs 13.9%; small but better. '
+      'Fair odds are the break-even price; '
       'only bet when the book pays more. Points / threes = highest line with a 70%+ blended hit rate as a starter. '
       'Recheck starting lineups 30 minutes before tip. '
       'Opening night 10/20: the value longer shots hit (Collins +1000, Vassell +800) while the book favorites '
@@ -451,19 +567,23 @@ def build(start, log):
     s = onhdr('First basket: probable starters, all 30 teams (estimate from recent starts)',
               ['Player', 'Tm', 'Pos', 'GS 26', 'FB 26', 'Team 1st 26', '1st shot 26', 'GS 25', 'FB 25', 'Team 1st 25',
                '1st shot 25', 'Blend FB%', 'Blend team 1st%', 'Blend 1st shot%', 'Pre 26 (GS / FB / T1 / S1)',
-               'First pts incl FT 25', 'Injury'])
+               'First pts incl FT 25', 'Injury', 'FG% (blend, shrunk)', 'Model share v2 (no opp)'])
     rowsA = sorted(all_starters + hurt, key=lambda p: -share(p) * (TL.get(roster[p]['tm'], {}).get('first', 0) + 1))
     e = s + len(rowsA) - 1
 
     def arr(num):   # one ARRAYFORMULA per blend column, in the first data row (reads B3)
         return (f'=ARRAYFORMULA(IF($B$3*D{s}:D{e}+H{s}:H{e}=0,"-",($B$3*{num[0]}{s}:{num[0]}{e}+{num[1]}{s}:{num[1]}{e})'
                 f'/($B$3*D{s}:D{e}+H{s}:H{e})))')
+    v2_all = {}
+    for tm in starters:
+        v2_all.update({k: v[0] for k, v in team_v2(tm, None).items()})
     for i, pid in enumerate(rowsA):
         c, l, p = S(PC, pid), S(PL, pid), S(PP, pid)
         first = i == 0
         R(nm(pid), roster[pid]['tm'], roster[pid]['pos'], c['gs'], c['fb'], c['t1'], c['sh1'], l['gs'], l['fb'], l['t1'], l['sh1'],
           arr('EI') if first else None, arr('FJ') if first else None, arr('GK') if first else None,
-          f"'{p['gs']} / {p['fb']} / {p['t1']} / {p['sh1']}", l['fp'], (inj.get(pid) or {}).get('status', ''))
+          f"'{p['gs']} / {p['fb']} / {p['t1']} / {p['sh1']}", l['fp'], (inj.get(pid) or {}).get('status', ''),
+          pct(fgpct(pid)), pct(v2_all.get(pid)) if pid in v2_all else '-')
     a_rng = (s, s + len(rowsA) - 1)
     R()
     # B: tip-off by team
@@ -530,8 +650,8 @@ def build(start, log):
     R('Sources', f'ESPN NBA scoreboard, game summaries (boxscore starters and play-by-play) for {nl} 2025-26 regular-season '
       f'games, {npre} 2026-27 preseason and {nc} 2026-27 regular-season games; ESPN rosters and injuries. '
       f'Pulled {dt.datetime.now(ET).strftime("%-m/%-d %-I:%M %p")} ET. Probable starters are an estimate from recent '
-      'starts, not official lineups. Main jumper = who took the opening tip most for that team. '
-      'Rebuilt by analysis/nba/build_nba_tab.py.')
+      'starts, not official lineups; the main jumper (most recent opening tips this season, weighted to the newest) is '
+      'always put in the probable five. Rebuilt by analysis/nba/build_nba_tab.py; model check in analysis/nba/backtest_fb.py.')
 
     width = max(len(r) for r in rows)
     rows = [[('' if v is None else v) for v in r] + [''] * (width - len(r)) for r in rows]
