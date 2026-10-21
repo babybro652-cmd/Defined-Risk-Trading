@@ -10,7 +10,7 @@ Launch date changed from Sat 10/10 (World Mental Health Day) to Fri 10/16, so th
 | When (ET) | Post | Link in text | Blotato schedule id |
 |---|---|---|---|
 | Fri 10/16 8:30 AM (published) | Launch post + 7-slide carousel | https://payhip.com/PeaceByPage | 5364160 |
-| Fri 10/23 8:30 AM | Launch post repost, slide 1 now "Now open \| October 23" (Tim deletes the 10/16 one in Facebook) | https://payhip.com/PeaceByPage | 5658678 |
+| Fri 10/23 8:30 AM | Launch post repost, slide 1 now "Now open \| October 23" (10/16 one deleted by Tim 10/21) | https://payhip.com/PeaceByPage | 5658678 |
 | Fri 10/23 4:45 PM | Reel V1, Calm Wings flip-through | https://payhip.com/b/ySCnJ | 5364170 |
 | Mon 10/26 6:30 PM | Reel V2, Calm Nights evening pages | https://payhip.com/b/NzAkL | 5364173 |
 | Wed 10/28 6:30 PM | Reel V3, Calm Petals coloring reveal | https://payhip.com/b/8QkY4 | 5364176 |
@@ -160,7 +160,9 @@ Board ids (for Blotato later): Anxiety Journal Prompts 1140184899352420443, Calm
 - **Description:** Seven free daily journal pages, a pocket SOS card and a page to color, from Peace by Page. Try it for a week and see if it fits your evenings. Free PDF in US Letter and A4. Supports, not replaces, professional care. US crisis line: call or text 988.
 - **Alt text:** Free printable 7-day journal sampler shown next to the Calm Nights journal cover
 
-## 3. Instagram + TikTok ready list (@peacebypage)
+## 3. Instagram + TikTok ready list (IG @peacebypage, TikTok @peace.by.page)
+
+TikTok has no clickable bio link until 1,000 followers. On TikTok, swap "Link in bio" for "Shop: payhip.com/PeaceByPage (link in bio on IG)" or put the URL in the bio text.
 
 Not connected to Blotato as of 10/21. Until then Tim posts by hand. Dates below follow the Facebook reels (moved for the 10/23 launch). Once Tim connects them, Jarvis schedules everything below dated after the connect day with these exact files and captions (IG: mediaType reel, share to feed; TikTok: PUBLIC_TO_EVERYONE, comments on, isAiGenerated false, isYourBrand true).
 Add a soft, quiet track from the app's music library when posting by hand (the videos have no audio). Covers: `launch/content/videos/<n>-...-cover.png`.

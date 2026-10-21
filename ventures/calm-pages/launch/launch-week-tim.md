@@ -5,7 +5,7 @@
 - Test purchase 10/20 passed: buyer download email and sale notification both arrived. Sampler download not tested yet (no Payhip email for it).
 - Facebook (Blotato): launch repost Fri 10/23 8:30 AM (slide 1 "October 23"), reels 10/23 4:45 PM, 10/26, 10/28, 10/30, 11/2 6:30 PM. All links right.
 - Pinterest: Tim scheduled the launch pin + 15 daily pins 10/21. Jarvis can't see scheduled pins (logged-in only); compare them with launch-schedule.md section 2. Profile website = payhip.com/PeaceByPage.
-- Instagram and TikTok @peacebypage: still not connected to Blotato. Tim posts launch day by hand. TikTok @peacebypage did not load publicly from Jarvis's side (same result as a handle that doesn't exist); check the handle on the phone.
+- Instagram and TikTok @peacebypage: still not connected to Blotato. Tim posts launch day by hand. TikTok handle is @peace.by.page (https://www.tiktok.com/@peace.by.page, Tim 10/21). TikTok bio links need 1,000 followers: use payhip.com/PeaceByPage as bio text and in captions.
 - Emails: N/A on Payhip's free plan (no email marketing). Payhip's own download email still goes to every buyer. Later option: a free MailerLite account with the Payhip customer list.
 
 ### Before Fri 10/23
@@ -13,9 +13,9 @@
 2. Delete the TEST100 coupon.
 3. Get the free sampler once from a private tab and open the PDF.
 4. Phone photo check (step 7).
-5. Instagram and TikTok: Website = https://payhip.com/PeaceByPage; confirm the TikTok handle.
+5. Instagram: Website = https://payhip.com/PeaceByPage. TikTok (@peace.by.page): no link until 1,000 followers; put payhip.com/PeaceByPage in the bio text.
 6. Pinterest: compare scheduled pins with the list.
-7. Fri: delete the 10/16 Facebook launch post, post the IG carousel + TikTok in the morning, reel V1 after work.
+7. Fri (10/16 FB post already deleted 10/21): post the IG carousel + TikTok in the morning, reel V1 after work.
 
 The rest of this page is the original 10/13 plan (dates were for 10/16).
 
