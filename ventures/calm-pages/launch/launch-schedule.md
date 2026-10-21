@@ -10,16 +10,20 @@ Launch date changed from Sat 10/10 (World Mental Health Day) to Fri 10/16, so th
 | When (ET) | Post | Link in text | Blotato schedule id |
 |---|---|---|---|
 | Fri 10/16 8:30 AM (published) | Launch post + 7-slide carousel | https://payhip.com/PeaceByPage | 5364160 |
-| Fri 10/23 8:30 AM | Launch post repost, slide 1 now "Now open \| October 23" (Tim deletes the 10/16 one in Facebook) | https://payhip.com/PeaceByPage | submission c3ccf6fc-675b-47ce-8076-789ad33ce1cb |
+| Fri 10/23 8:30 AM | Launch post repost, slide 1 now "Now open \| October 23" (Tim deletes the 10/16 one in Facebook) | https://payhip.com/PeaceByPage | 5658678 |
 | Fri 10/23 4:45 PM | Reel V1, Calm Wings flip-through | https://payhip.com/b/ySCnJ | 5364170 |
 | Mon 10/26 6:30 PM | Reel V2, Calm Nights evening pages | https://payhip.com/b/NzAkL | 5364173 |
 | Wed 10/28 6:30 PM | Reel V3, Calm Petals coloring reveal | https://payhip.com/b/8QkY4 | 5364176 |
 | Fri 10/30 6:30 PM | Reel V4, three editions | https://payhip.com/PeaceByPage | 5364179 |
 | Mon 11/2 6:30 PM | Reel V5, free sampler | https://payhip.com/b/yrk3j | 5364182 |
 
+Checked 10/21: all 6 still scheduled with these times, links and media (repost slide 1 is the "October 23" image). The 10/16 post still shows as published in Blotato; Blotato can't see whether Tim deleted it on Facebook.
+
 To change or cancel one: Blotato > Calendar, or ask Jarvis (blotato_update_schedule / blotato_delete_schedule with the id).
 
 ## 2. Pinterest: NOT in Blotato (blocked), pin by hand or with Pinterest's own scheduler
+
+**10/21: Tim scheduled the launch pin and all 15 daily pins by hand in Pinterest.** Jarvis can't see them: scheduled pins only show when logged in, Blotato has no Pinterest posts, and Pinterest sends no email for them. Public profile on 10/21: 4 boards, 0 published pins, website payhip.com/PeaceByPage. Compare each pin in Pinterest > Profile > Created > Scheduled pins against the list below (date, 7:45 PM time, image, board, link, title).
 
 Blotato refused the Pinterest post on 10/9: "Your Pinterest still looks pretty new. You MUST warm it up for 2 weeks before connecting to 3rd party posting tools... Once you get 100+ views per month, then reconnect your Pinterest account with Blotato." So Pinterest goes by hand for now, which also counts as the warm-up.
 Easiest: on a computer, pinterest.com > Create > Create Pin > upload the image, paste title, description, alt text (under "More options"), link and board > "Publish at a later date" > pick the date. One sitting can queue several. Or post each day from the phone app.
@@ -158,10 +162,10 @@ Board ids (for Blotato later): Anxiety Journal Prompts 1140184899352420443, Calm
 
 ## 3. Instagram + TikTok ready list (@peacebypage)
 
-Not connected to Blotato until about 10/18 (warm-up). Until then Tim posts by hand. Once Tim connects them, Jarvis schedules everything below dated 10/19 or later with these exact files and captions (IG: mediaType reel, share to feed; TikTok: PUBLIC_TO_EVERYONE, comments on, isAiGenerated false, isYourBrand true).
+Not connected to Blotato as of 10/21. Until then Tim posts by hand. Dates below follow the Facebook reels (moved for the 10/23 launch). Once Tim connects them, Jarvis schedules everything below dated after the connect day with these exact files and captions (IG: mediaType reel, share to feed; TikTok: PUBLIC_TO_EVERYONE, comments on, isAiGenerated false, isYourBrand true).
 Add a soft, quiet track from the app's music library when posting by hand (the videos have no audio). Covers: `launch/content/videos/<n>-...-cover.png`.
 
-### Launch day, Fri 10/16 morning (Tim, by hand)
+### Launch day, Fri 10/23 morning (Tim, by hand)
 **Instagram carousel** (7 slides: `launch/content/carousel/launch-1.png` to `launch-7.png`):
 
 Peace by Page is open.
@@ -182,27 +186,27 @@ Peace by Page is open today. We make printable journals for anyone who worries: 
 
 #anxietyjournal #journaling #printables #selfcare #mentalhealthawareness
 
-### V1. Fri 10/16, afternoon (Tim posts by hand: launch reel)
+### V1. Fri 10/23, afternoon (Tim posts by hand: launch reel)
 - **Video:** `launch/content/videos/1-wings-flip-through.mp4` (public copy: https://database.blotato.io/storage/v1/object/public/public_media/246c6cef-6cbe-4b5b-81a9-7bb84481df9c/28669cf2-9803-4094-bbb8-1d5b2211d6f1.mp4)
 - **Caption (IG and TikTok):** A flip through Calm Wings, our 90-day printable journal. One page a day, an SOS toolkit for hard moments, and a coloring page when you finish a week. Letter and A4, instant download. Link in bio. Supports, not replaces, professional care. In crisis in the US, call or text 988.
 - **Hashtags:** #anxietyjournal #guidedjournal #printablejournal #selfcareideas #journalingprompts #mentalhealthawareness
 
-### V2. Mon 10/19, 6:30 PM
+### V2. Mon 10/26, 6:30 PM
 - **Video:** `launch/content/videos/2-nights-evening-pages.mp4` (public copy: https://database.blotato.io/storage/v1/object/public/public_media/246c6cef-6cbe-4b5b-81a9-7bb84481df9c/3d38c77d-6e59-415c-943c-7242c4ddbd21.mp4)
 - **Caption (IG and TikTok):** If your mind gets busy at bedtime, Calm Nights was made with you in mind: a 90-day printable journal with an extra page for nights when your mind won't switch off, a wind-down list and moon and stars to color. Link in bio. Supports, not replaces, professional care. In crisis in the US, call or text 988.
 - **Hashtags:** #eveningroutine #anxietyjournal #bedtimeroutine #printablejournal #journaling #moonandstars
 
-### V3. Wed 10/21, 6:30 PM
+### V3. Wed 10/28, 6:30 PM
 - **Video:** `launch/content/videos/3-petals-coloring-reveal.mp4` (public copy: https://database.blotato.io/storage/v1/object/public/public_media/246c6cef-6cbe-4b5b-81a9-7bb84481df9c/94be3dfe-b06c-4095-a0bf-5040cd6a7206.mp4)
 - **Caption (IG and TikTok):** 18 botanical coloring pages for a quiet break. No rules and nothing to finish. Print your favorites as often as you like. Calm Petals coloring pack, $4.99, link in bio. Supports, not replaces, professional care. In crisis in the US, call or text 988.
 - **Hashtags:** #adultcoloring #coloringpages #botanicalart #mindfulcoloring #printables #selfcare
 
-### V4. Fri 10/23, 6:30 PM
+### V4. Fri 10/30, 6:30 PM
 - **Video:** `launch/content/videos/4-three-editions.mp4` (public copy: https://database.blotato.io/storage/v1/object/public/public_media/246c6cef-6cbe-4b5b-81a9-7bb84481df9c/143451d9-b324-4b91-b1d5-517235a65ac6.mp4)
 - **Caption (IG and TikTok):** Three editions, same gentle pages inside. Which one feels like you: Wings, Petals or Nights? Tell us in the comments. Link in bio, plus a free 7-day sampler. Supports, not replaces, professional care. In crisis in the US, call or text 988.
 - **Hashtags:** #anxietyjournal #printablejournal #guidedjournal #journalideas #selfcare #peacebypage
 
-### V5. Mon 10/26, 6:30 PM
+### V5. Mon 11/2, 6:30 PM
 - **Video:** `launch/content/videos/5-free-sampler.mp4` (public copy: https://database.blotato.io/storage/v1/object/public/public_media/246c6cef-6cbe-4b5b-81a9-7bb84481df9c/5609d12c-f6a9-49e5-9314-b4c48f729412.mp4)
 - **Caption (IG and TikTok):** Try a week before you buy: the free Peace by Page sampler has 7 daily pages, a pocket SOS card and a coloring page. Free PDF, link in bio. Supports, not replaces, professional care. In crisis in the US, call or text 988.
 - **Hashtags:** #freeprintable #journalingprompts #anxietyjournal #selfcaretips #printables #journaling

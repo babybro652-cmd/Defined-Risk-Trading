@@ -1,4 +1,23 @@
-# Peace by Page: Tim's launch-week checklist (launch Fri 10/16)
+# Peace by Page: Tim's launch-week checklist (launch moved to Fri 10/23)
+
+## Status Wed 10/21 (Jarvis re-check for the Fri 10/23 launch)
+- Store: all 10 product links used in posts and pins open the right product at the right price ($11.99 / $16.99 / $4.99, sampler free). Store name, 988 help block and disclaimer show. "On Sale" label still shows on every product page.
+- Test purchase 10/20 passed: buyer download email and sale notification both arrived. Sampler download not tested yet (no Payhip email for it).
+- Facebook (Blotato): launch repost Fri 10/23 8:30 AM (slide 1 "October 23"), reels 10/23 4:45 PM, 10/26, 10/28, 10/30, 11/2 6:30 PM. All links right.
+- Pinterest: Tim scheduled the launch pin + 15 daily pins 10/21. Jarvis can't see scheduled pins (logged-in only); compare them with launch-schedule.md section 2. Profile website = payhip.com/PeaceByPage.
+- Instagram and TikTok @peacebypage: still not connected to Blotato. Tim posts launch day by hand. TikTok @peacebypage did not load publicly from Jarvis's side (same result as a handle that doesn't exist); check the handle on the phone.
+- Emails: N/A on Payhip's free plan (no email marketing). Payhip's own download email still goes to every buyer. Later option: a free MailerLite account with the Payhip customer list.
+
+### Before Fri 10/23
+1. Product pages: turn off "On Sale" if Payhip shows a setting for it (step 5).
+2. Delete the TEST100 coupon.
+3. Get the free sampler once from a private tab and open the PDF.
+4. Phone photo check (step 7).
+5. Instagram and TikTok: Website = https://payhip.com/PeaceByPage; confirm the TikTok handle.
+6. Pinterest: compare scheduled pins with the list.
+7. Fri: delete the 10/16 Facebook launch post, post the IG carousel + TikTok in the morning, reel V1 after work.
+
+The rest of this page is the original 10/13 plan (dates were for 10/16).
 
 Written Tue 10/13 after Jarvis proofed the live store (payhip.com/PeaceByPage) and Blotato.
 Only the steps Tim has to do himself, in deadline order. Everything to paste is in a box. Phone copy (with the full pin list): Drive Doc "Peace by Page: Launch Week Checklist" https://docs.google.com/document/d/1krokPYnh-VLkPNI7HbbRPpS7a8HvAPx2gLeuKZOuaDc/edit
