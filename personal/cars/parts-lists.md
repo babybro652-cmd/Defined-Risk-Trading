@@ -223,7 +223,8 @@ job, then air ride, wheels and lights (the look), then the turbo only if the eng
 | Category | Part | Brand / model | Fits / notes | Est. price | DIY / shop | Req |
 |---|---|---|---|---|---|---|
 | Head job | Gaskets, bolts, machine | Elring or Fel-Pro head gasket set, new GM TTY head bolts, head check and resurface | Confirm engine code (LUJ or LUV) from the VIN | $300–700 | DIY plus machine shop | Req |
-| Head job | While apart | Timing chain kit (confirm by engine code; the 1.4T uses a chain) with water pump, thermostat housing, Dorman valve cover with PCV | Known 1.4T failures | $350–700 | DIY | Req |
+| Head job | While apart | Timing chain kit (confirm by engine code; the 1.4T uses a chain) with water pump, thermostat housing | Known 1.4T failures | $350–700 | DIY | Req |
+| Head job | Valve cover with built-in PCV (order now, before reassembly) | GM/ACDelco 55573746 (OE for the 1.4T) or a Dorman equivalent; confirm by engine code | Failed PCV diaphragm causes vacuum leaks and lean running, a likely cause of the burnt valve | $60–150 | DIY | Req |
 | Head job | Plugs, coils, fluids | NGK plugs gapped for boost, ACDelco coil pack, Dexos oil, Dex-Cool | | $100–200 | DIY | Req |
 | Oiling | Catch can, cooler, pan, AN | ZZP catch can, oil cooler kit, AN lines | Fit: confirm a baffled pan exists for the 1.4T; skip it if not | $650–1,500 | DIY | Req |
 | Brakes | Lines and front brakes | Braided lines; 4-piston front kit (no major-brand Cruze kit confirmed; generic kits exist) | Check for rear drums: many 1.4T LTs have them; LTZ rear discs swap in | $850–2,100 | DIY | Req |
