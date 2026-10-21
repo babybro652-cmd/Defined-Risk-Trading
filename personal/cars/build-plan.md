@@ -7,13 +7,14 @@ Costs are rough parts-only ranges (2026 prices) assuming Tim does the labor. Sho
 paint and surprises (rust, a bad bottom end) add on top. Get real quotes before buying.
 This is a list for later, paid from extra money, never from bill money.
 
-## Order across the three cars
+## Order across the four vehicles
 
 1. **Charger oil change now** (past due). It's the running car.
 2. **Cruze head back on** and the car running again.
 3. Charger and Cruze Phase 1 (reliable plus brakes and oiling).
 4. Power on the Charger and Cruze.
 5. Cutlass, the biggest build, once the other two are done or as cash allows.
+6. Hayabusa (added 10/21): find and fix the oil drips and service it now; build phases as cash allows.
 
 ---
 
@@ -168,16 +169,45 @@ where the work is shop work; low ends assume DIY.
 | Tilt column and steering wheel | $500–1,200 |
 | **Roid Runner-level finish total (optional)** | **about $24,100–91,100** |
 
+## 2007 Suzuki Hayabusa (Gen 1, added 10/21)
+
+Show bike build: 300 fat tire stretch, lowered, chrome, Harley Quinn inspired paint, speakers in
+the front inner fairing and undertail. Order: mechanical, stretch and lowering, chrome, paint,
+audio. Details, stretch length, chrome methods and charging notes: `2007-suzuki-hayabusa.md`.
+
+| Phase | Work | Cost |
+|---|---|---|
+| 1 Mechanical | Oil drip fix: countershaft seal, clutch slave, oil cooler line O-rings (DIY low, shop high) | $50–600 |
+| 1 Mechanical | Service: oil and filter, coolant, brake and clutch fluid, plugs, air filter, chain check | $150–300 |
+| 1 Mechanical | MOSFET regulator/rectifier and battery | $180–400 |
+| 1 Safe | Braided stainless brake lines, pads, front tire if old | $300–700 |
+| 2 Stretch | 300 fat tire kit: extended swingarm, 18 x 10.5 wheel, offset sprocket, chain, 300 tire | $3,500–6,500 |
+| 2 Stretch | Install, balance, chain and wheel alignment (DIY low, shop high) | $100–1,200 |
+| 2 Lower | Lowering links, front fork lowering, shortened kickstand | $250–700 |
+| 3 Chrome | Wheels chrome plated, front and rear (or ordered chromed with the kit) | $800–2,000 |
+| 3 Chrome | Swingarm chrome (ordered chromed or plated) | $600–1,500 |
+| 3 Chrome | Levers, mirrors, bar ends, pegs/rearsets, trim and bolt kit | $300–900 |
+| 4 Paint | Fairing repair, or a new aftermarket Gen 1 fairing kit | $300–1,200 |
+| 4 Paint | Harley Quinn custom paint: split colors, diamonds, gold pinstripes, lettering (wrap $900–2,000; DIY $400–900) | $2,000–5,000 |
+| 5 Audio | Speakers (2 front pods, 2 undertail), amp, Bluetooth control | $380–1,150 |
+| 5 Audio | Fabricated pods, wiring, waterproofing | $230–800 |
+| 5 Audio | Charging: higher-output stator and/or second battery with isolator | $250–600 |
+| | **Hayabusa total** | **about $9,390–23,550** |
+
+Optional, not in the total: air ride instead of lowering links (+$1,200–2,500), chrome frame
+rails (+$1,500–3,500).
+
 ---
 
-## All three cars
+## All four vehicles
 
-| Car | Low | High |
+| Vehicle | Low | High |
 |---|---|---|
 | Cruze | $7,250 | $15,700 |
 | Charger | $23,550 | $48,250 |
 | Cutlass | $37,150 | $95,300 |
-| **Total** | **about $67,950** | **about $159,250** |
+| Hayabusa | $9,390 | $23,550 |
+| **Total** | **about $77,340** | **about $182,800** |
 | Cutlass Roid Runner-level finish (optional, not in the total) | +$24,100 | +$91,100 |
 
 Biggest savings: doing the labor, buying used brake and suspension parts, and finding a
