@@ -91,7 +91,8 @@ def schedule(season, upto, log):
     cache = load(path, {})
     a, b = SEASONS[season]
     days = [a + dt.timedelta(i) for i in range((min(b, upto) - a).days + 1)]
-    todo = [d for d in days if d.isoformat() not in cache or (season == CUR and d >= upto - dt.timedelta(2))]
+    todo = [d for d in days if d.isoformat() not in cache
+            or (season == CUR and any(not e['final'] for e in cache[d.isoformat()]))]
     with ThreadPoolExecutor(10) as ex:
         for d, evs in zip(todo, ex.map(scoreboard, todo)):
             cache[d.isoformat()] = evs
@@ -422,7 +423,10 @@ def build(start, log):
       f'jumpers\' tip-win rates (log5) and the 25-26 league rate that the tip winner scores first ({round(100 * a_first)}%). '
       'Share = his share of his team\'s first FGs as a starter, shrunk toward 1 in 5. Fair odds are the break-even price; '
       'only bet when the book pays more. Points / threes = highest line with a 70%+ blended hit rate as a starter. '
-      'Recheck starting lineups 30 minutes before tip.')
+      'Recheck starting lineups 30 minutes before tip. '
+      'Opening night 10/20: the value longer shots hit (Collins +1000, Vassell +800) while the book favorites '
+      '(Wembanyama, Embiid) missed, and Queta did not start. Lean to role starters priced well past fair, '
+      'skip favorites priced under fair, and only bet a player once his start is confirmed.')
     R()
     R('Slate: tip-off matchups and injuries (ESPN)')
     R('Game (ET)', 'Away jumper (tip win%)', 'Home jumper (tip win%)', 'Away wins tip', 'Away scores first', 'Out / doubtful')

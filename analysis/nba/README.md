@@ -74,3 +74,11 @@ consistency (hit rate game to game). Small stakes, for fun.
 - ESPN `site.api.espn.com/apis/site/v2/sports/basketball/nba`: scoreboard, summary
   (boxscore starters and play-by-play), teams, rosters, injuries. Works from the container.
 - `cdn.nba.com` (403) and `stats.nba.com` (times out) are blocked here and not used.
+
+## Lessons log
+
+- 10/20/26 (opening night): the value first-basket picks hit (Collins +1000, Vassell +800); the book
+  favorites (Wembanyama, Embiid) missed; Queta was projected but did not start. Prefer confirmed
+  starters priced well past the fair line over short favorites. Tim bets $0.20 to $1 and likes longer shots.
+- Fixed 10/21: the schedule cache now refetches any day with games not yet final, so finished games
+  (like opening night) load into the 26-27 numbers on the next run.
