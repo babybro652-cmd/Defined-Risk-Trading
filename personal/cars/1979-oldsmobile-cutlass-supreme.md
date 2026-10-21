@@ -1,7 +1,7 @@
 # 1979 Oldsmobile Cutlass Supreme
 
 **Goal:** high-performance street car, aggressive styling. Build plan: frame-off restoration (Tim, 10/20/2026), see below and `build-plan.md`.
-**Power plan (Tim, 10/12/2026):** LS swap with forged internals, twin turbo setup. Turbos in the inner headlight spots (Tim, 10/21), see below.
+**Power plan (Tim, 10/12/2026):** LS swap with forged internals, twin turbo setup. Turbos in the inner headlight spots (Tim, 10/21), see below. Full 3 inch stainless dual exhaust with switchable front dumps (Tim, 10/21), see "Exhaust".
 **Stance:** lowered a few inches (coilovers + tubular control arms; check turbo/exhaust and oil pan ground clearance).
 **Looks:** new lights (LED headlights and taillights). Full-glass panoramic roof (Tim, 10/18), custom, done with the roof rust repair. Style target: as clean as the Roid Runner (Tim, 10/21), see below.
 
@@ -113,7 +113,7 @@ Prices are NC 2026, rough, parts plus shop labor where it says shop.
 | Paint | One deep metallic (pewter, gunmetal or dark charcoal), block-sanded, cut and buffed | Shop | Show-quality adder $6,000-15,000 over a driver job (a driver-quality job runs about $6,000-12,000 in NC; paint is outside both budgets) |
 | Graphics | One restrained graphic: a stripe fade on the quarters or a 442 or Hurst-style script in a darker shade of the body color | DIY vinyl (low); painted (high) | $400-3,000 |
 | Tail lights | Full-width LED tail panel across the back (custom panel, LED strip, smoked lens), extra over the taillight line already in the budget | DIY with sheet metal and an LED kit; shop for a finished panel | $600-2,500 |
-| Exhaust | Twin square or oval tips cut into the rear valance | DIY | $300-1,000 |
+| Exhaust | Twin square tips cut into the rear valance under the LED tail panel. Now part of the full exhaust line in the base budget (see "Exhaust (Tim, 10/21)") | Shop cuts the valance | in the base exhaust line |
 | Stance | The plan is coilovers (already budgeted). Air ride (RideTech-type G-body kit plus management) lays it on the ground parked and lifts it to drive, extra over coilovers. Check turbo, oil pan and downpipe clearance at full drop either way | DIY on the bare frame | $2,000-4,500 |
 | Tubs | Mini-tubs so a wider rear tire fits under the stock quarter | Shop or skilled DIY welding | $600-4,000 |
 | Wheels | Polished billet in G-body sizes: about 18x8 or 19x8 front, 20x10 rear (20x12 with tubs). Measure backspacing after the drop. 22/24 inch wheels need the Roid Runner's custom chassis: skip | Buy | $4,000-9,500 with tires |
@@ -126,7 +126,7 @@ Prices are NC 2026, rough, parts plus shop labor where it says shop.
 | A/C | Vintage Air Gen IV (the Roid Runner has it; NC summers) | DIY | $1,600-2,800 |
 | Steering | Tilt column and a wheel that matches the interior | DIY | $500-1,200 |
 
-**Optional "Roid Runner-level finish" adder: about $24,400-92,100** on top of the base Cutlass
+**Optional "Roid Runner-level finish" adder: about $24,100-91,100** on top of the base Cutlass
 budget (in `build-plan.md` as its own table, not in the base total). The low end is DIY metal
 work, vinyl graphics, coilovers kept, kit seats; the high end is shop metal, show paint and a
 trim shop interior. Biggest swings: paint and interior.
@@ -267,6 +267,151 @@ Right after the frame-off body work, before paint:
    apart for ceramic coating.
 4. Paint the front clip and core support.
 5. Step 11: final install with heat shields, oil lines, wiring and the tune.
+
+## Exhaust (Tim, 10/21)
+
+**What was in the plan before 10/21:** only the rear tips through the valance (Roid Runner
+finish table) and the downpipes in the headlight twin-turbo adder. No mid-pipes, mufflers,
+X-pipe or hangers were budgeted. This section adds the full system and the switchable front
+dumps. The tips line moves out of the optional finish table into the full exhaust line, so
+it is counted once.
+
+### The look (Roid Runner model)
+
+Nothing shows from the side or rear except two square stainless tips centered under the
+full-width LED tail panel, cut cleanly into the smoothed rear valance with a small gap all the
+way around. No visible hangers, clamps or pipe drops below the body line. Pipes tucked into the
+tunnel and up against the floor.
+
+### Pipe size
+
+Two 58-67 mm turbos on a forged LS put the plan in the 800-1,000 hp range on a full tune. A
+3 inch pipe per turbo (two 3 inch runs, about the flow of a single 4 to 4.25 inch) covers that
+with room left. Step the downpipes to 3.5 inch only if the goal goes past about 1,100 hp. Run
+3 inch the whole way: downpipe, mid-pipe, X-pipe, mufflers, tailpipes.
+
+### The system, front to back
+
+| Part | Spec | Note |
+|---|---|---|
+| Downpipes (in the headlight turbo adder) | 3 inch 304 stainless, V-band at each turbine outlet; wastegate dumps tie back in | Run from the turbos down beside the frame horns, then back under the floor |
+| Cutout Y-pipes (see below) | One per side, right behind the front wheels | The switchable dumps |
+| Mid-pipes | 3 inch 304 stainless mandrel bends, tucked along the tunnel, above the bottom of the frame rails | Flex section on each side (the engine moves on its mounts) |
+| X-pipe | 3 inch stainless X (smoother, raspier) or H (deeper, more old-school) right behind the 4L80E crossmember | X for a turbo LS; turbos already muffle a lot, so an X keeps it clean, not droning |
+| Mufflers | Two straight-through or chambered 3 inch (Borla XR-1 / Pro-XS, MagnaFlow, Flowmaster Super 44 for more sound) ahead of the rear axle, in the stock muffler spots | Pick the sound before welding; a turbo LS is quieter than an NA one |
+| Tailpipes | 3 inch over the rear axle, under the rear frame kick-up, back to the valance | Check axle travel at full bump on the coilovers or air ride |
+| Tips | Twin square stainless (about 3x5 or 4x4 in.) through the rear valance | Under the LED tail panel; body shop cuts and finishes the openings |
+| Hangers | Stainless rod hangers welded to the frame with poly or rubber isolators, hidden above the pipe | No hangers bolted to the floor pan (drone and rattles) |
+| Heat | Ceramic coat the downpipes and cutout Y-pipes; heat shield the floor over the X and mufflers; gold or aluminum heat reflective sheet on the floor and the transmission tunnel | Turbos make the front pipes much hotter than the rear |
+
+**Ground clearance at the lowered stance.** The lowest pipe must sit at or above the bottom of
+the frame rails, so the frame hits first. Aim for 3.5-4 in. of clearance at ride height. On
+air ride, check full drop parked: pipes resting on the ground crush and the frame should be the
+lowest point. Mock up the whole system with the chassis at ride height on the bare frame
+(frame-off step 9) and the body on, before ceramic coating and paint.
+
+**Catalytic converters.** G.S. 20-128(c) requires 1968 and newer cars to keep the emissions
+devices they were built with (a 1979 Cutlass left the factory with a cat). The historic plate
+skips inspection, but the statute still applies on the road. Two high-flow 3 inch cats in the
+mid-pipes cover it for about $300-800 more; Tim's call.
+
+### Switchable front dumps ("splitters")
+
+**What it is.** An electric exhaust cutout valve on each side, placed right after the turbo
+downpipes come back under the car, right behind the front wheels. A switch on the console opens
+both. Closed, everything goes through the mufflers and out the rear tips. Open, the exhaust
+leaves through short dump pipes right behind the front wheel wells. Each valve is a Y-pipe: the
+main pipe continues back, and the cutout branch has a motorized gate that opens or seals it.
+
+**Valves (prices checked 10/21; confirm before buying):**
+
+| Valve | Build | Price |
+|---|---|---|
+| Doug's Headers DEC300A 3 inch electric cutout | All 304 stainless, gear-reduction 12V motor, rotating gate. Best pick for the heat after a turbo | about $250-505 each (JEGS listing about $505; check Speedway, Summit) |
+| QTP QTEC60 dual 3 inch electric cutouts | Steel body, butterfly gate, wiring and switch included | about $431 for the pair (single QTEC30 about $218) |
+| Pypes HVE10 dual 3 inch electric cutout kit | Steel body, butterfly gate, wiring and switch included; HVE10K3 adds the Y-pipes | about $474 the pair; about $676 with Y-pipes |
+
+These are made for header-temperature gas, and gas after the turbine is cooler than header gas,
+so a 3 inch cutout works after a turbo downpipe. The weak spot is the motor and wiring, not the
+valve body. Do not put the valve on the turbine outlet or on the hot pipe; keep it on the
+downpipe at least 12-18 in. after the turbo and wastegate merge. Shield the motor with a
+stainless heat shield and heat sleeve the wires. No common turbo-specific "dump valve" fits
+here: wastegates and blow-off valves do different jobs. The Doug's stainless unit is the one
+to buy for this car.
+
+**Wiring.** Each valve motor runs off a fused 12V feed (10-15 A fuse) through a relay. Wire both
+to one momentary or 3-position toggle (open / hold / close) in the console or a hidden dash spot,
+matching the clean interior. Run the harness along the frame in heat sleeve, away from the
+downpipes. Optional: a dash indicator light that comes on when the valves are open, so they are
+never left open on the road by mistake.
+
+**Placement and the clean look.**
+- Side exit: the dump pipe turns down and out under the rocker pinch weld, right behind the
+  front wheel opening, ending flush with the bottom of the rocker. From the side the opening is
+  hidden or shows as a small finished port.
+- Point the outlet down and slightly out, never back toward the rear tire or up at the rocker.
+- Keep the outlet at least 6 in. behind the front tire at full lock and full bump.
+- Keep it well clear of the brake lines, fuel lines and fuel pump wiring, which run along the
+  frame (route those lines on the other side of the rail from the dump, or shield them).
+- Add a stainless heat shield on the rocker above the outlet and ceramic coat the dump pipe so
+  the rocker paint does not discolor. Turndown tips (Doug's DEC300ATD, about $58 each) do the
+  "point it down" part.
+
+**Carbon monoxide risk (the main safety point).** With the dumps open, hot exhaust exits ahead
+of the doors, right under the cabin. At low speed or parked with the engine running, it can be
+pulled into the car through door seals, the floor, the cowl or open windows. CO has no smell
+and can knock a driver out.
+- Point the dumps down and out, never under the floor or up toward the doors.
+- Seal the body: new door and window weatherstrip (in the reassembly kit), seal every floor and
+  firewall hole and the body mount holes during the frame-off, and seal the panoramic roof.
+- Never idle or sit in traffic with the dumps open. Open them only on a moving car on private
+  property or at the track, then close them.
+- Put a CO detector (12V plug-in or battery, about $25-50) in the cabin.
+
+**Install.** Shop welds the Y-pipes into the downpipes and builds the dump pipes during the
+exhaust fab. Wiring, switch, relay and shields are DIY.
+
+### Cost
+
+| Item | Cost |
+|---|---|
+| Full exhaust: 3 inch 304 stainless duals from the downpipes back, X-pipe, two mufflers, flex sections, stainless hangers and isolators, twin square tips through the rear valance (moved here from the finish table), ceramic coating on the front pipes, floor heat shield. DIY with a mandrel bend kit and tubing (low) to custom shop exhaust (high, 8-14 hrs at $100-140/hr) | $1,500-4,500 |
+| Switchable front dumps: two 3 inch electric cutouts (QTP or Pypes low, Doug's stainless high), Y-pipes, turndown dump pipes, V-bands, motor heat shields, rocker shields, relay, fuse, console toggle, indicator light, CO detector; shop welding 3-6 hrs | $700-2,500 |
+| Optional: two high-flow 3 inch cats (not in the totals) | $300-800 |
+
+### NC law (checked 10/21)
+
+- **G.S. 20-128(b):** "It shall be unlawful to use a muffler cut-out on any motor vehicle upon a
+  highway." In NC a highway is any road open to the public (G.S. 20-4.01). Opening the dumps on a
+  public road is illegal. Having the valves installed is not what the statute bans; using them is.
+- **G.S. 20-128(a):** a muffler "in good working order and in constant operation" to prevent
+  "excessive or unusual noise." With the valves closed, the car runs through the mufflers and
+  meets this.
+- **Penalty:** a Part 9 equipment violation is an infraction, up to $100 plus court costs
+  (G.S. 20-176(a) and (b)). Local noise ordinances can add to it.
+- **Inspection:** the NC safety inspection checks the "exhaust system and emissions control
+  devices, as required by G.S. 20-128" (G.S. 20-183.3). On a regular plate an inspector can fail
+  the car for cutouts. On a Historic Vehicle plate (30+ years old, G.S. 20-79.4(b)(94)) the car is
+  exempt from safety inspection (G.S. 20-183.2(a1)(1)), and it is past the emissions inspection
+  age either way. Exempt from inspection does not mean exempt from 20-128: the road rules still
+  apply.
+- **Bottom line:**
+  - Public roads: dumps closed, exhaust through the mufflers. Legal.
+  - Dumps open: legal only off the public roads (private property, a drag strip, a car show
+    lot with the owner's OK). Open them there, close them before pulling onto the road.
+- Sources: ncleg.gov statute text for G.S. 20-128, 20-176, 20-183.2, 20-183.3 and 20-79.4. A
+  Person County deputy or the inspection station can confirm local practice.
+
+### Where it fits in the frame-off
+
+1. Step 9 (bare frame): route the brake and fuel lines on the rail away from the future dump spots.
+2. Mock-up with the turbos (headlight section step 2): place the downpipes, cutout Y-pipes and
+   dump outlets; tack the whole system with the chassis at ride height and the body on.
+3. Step 7-8 (bare shell): body shop cuts the rear valance tip openings and adds the rocker heat
+   shield mounts, before paint.
+4. Pull the front pipes for ceramic coating with the hot side.
+5. Step 11: final weld-in, hangers, wiring and switch, CO detector, then test with the dumps
+   closed on the road and open off the road.
 
 ## Maintenance log
 | Date | Mileage | Work | Cost |
