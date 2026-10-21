@@ -2,7 +2,7 @@
 
 Google Doc: https://docs.google.com/document/d/1IwrI4JMbEzAdTAut1Am8f1Ouo3mKDzoN5GYYZnaBJ0I/edit
 
-**Bottom line:** $3,581 buys everything needed to run The Recruit, Centurion and Legionnaire on the first job, using the customer's water and outlet. The full kit, including Emperor correction and coating gear, engine bay, and a self-contained water and power setup, is $7,404. Nothing has been purchased.
+**Bottom line:** $3,681 buys everything needed to run The Recruit, Centurion and Legionnaire on the first job, using the customer's water and outlet. The full kit, including Emperor correction and coating gear, engine bay, and a self-contained water and power setup, is $7,719. Nothing has been purchased.
 
 Prices are estimated October 2026 street prices (tax and shipping not included) from retailer listings and recent deal posts. Check the listing before buying; Milwaukee and EcoFlow prices swing $50 to $100 with sales.
 
@@ -10,16 +10,16 @@ Prices are estimated October 2026 street prices (tax and shipping not included) 
 
 | | Amount |
 |---|---|
-| Day-1 minimum (Recruit, Centurion, Legionnaire) | $3,581 |
+| Day-1 minimum (Recruit, Centurion, Legionnaire) | $3,681 |
 | Self-contained water and power (Delta 2, tank, pump, reel) | $965 |
-| Full kit (everything below) | $7,404 |
+| Full kit (everything below) | $7,719 |
 | Business plan estimate | $3,365 to $4,009 |
 | Not in these totals: NC LLC filing $125, annual report $200/yr, general liability insurance about $55 to $90/mo (ask about garagekeepers coverage), Square fees 2.6% + 15 cents | |
 
 ### How this differs from the business plan
 
-- The Day-1 minimum ($3,581) lands inside the plan's $3,365 to $4,009, with a different mix. Out: both polishers, the ceramic and engine bay gear (the phased plan already gates them) and the Delta 2 (optional while customers supply water and power). In: evening lighting, PPE, PACKOUT storage, a drill, more towels and wash gear, and business supplies the plan left out.
-- The full kit ($7,404) is above the plan because the plan left out a water tank and pump, hose reel, canopy, lighting for evening jobs, PPE, a deionizer, a drill and business supplies.
+- The Day-1 minimum ($3,681) lands inside the plan's $3,365 to $4,009, with a different mix. Out: both polishers, the ceramic and engine bay gear (the phased plan already gates them) and the Delta 2 (optional while customers supply water and power). In: evening lighting, PPE, PACKOUT storage, a drill, more towels and wash gear, and business supplies the plan left out.
+- The full kit ($7,719) is above the plan because the plan left out a water tank and pump, hose reel, canopy, lighting for evening jobs, PPE, a deionizer, a drill and business supplies.
 - Some prices dropped: the Delta 2 now runs $399 to $430 (plan: $550). Milwaukee prices are close to plan.
 - The plan's pressure washer line ($253 to $298, "McKillans setup") is split here into an electric washer, McKillans gun, foam cannon and fittings (about $360).
 
@@ -28,8 +28,8 @@ Prices are estimated October 2026 street prices (tax and shipping not included) 
 - **Water and power on Day 1.** The Day-1 minimum assumes the customer's spigot and outlet, which the SOP already asks about on every inquiry. Going fully self-contained from the first job (EcoFlow Delta 2, water tank, 12V pump, hose reel) adds $965.
 - **Water tank size, if self-contained.** 60 gal low-profile fits an SUV or truck bed and weighs about 500 lb full (2 to 3 cars per fill). 100 gal is about 830 lb full and needs a truck bed. Which vehicle will carry the setup?
 - **Electric vs gas pressure washer.** Electric (listed, about $200) is quiet enough for early and evening jobs in neighborhoods and runs from a customer outlet. The Delta 2 can run it only in short bursts. Gas (Simpson MegaShot 2800 PSI, about $300 to $330) is fully self-contained with a tank but loud, smelly and heavier. Recommendation: electric now; gas only if you go tank-based and see many jobs with no outlet.
-- **What Emperor includes.** Still open on the to-do list. This list treats Emperor as correction + ceramic and puts that gear under Add later (about $1,320 for correction and coating). If Emperor is something lighter, it may need only the sealant and glass sealant.
-- **Milwaukee drill.** Listed at $100 in Day 1 for drill brushes and headlight kits. Skip it if you already own an M18 drill.
+- **What Emperor includes.** Still open on the to-do list. This list treats Emperor as correction + ceramic and puts that gear under Add later (about $1,668 for correction and coating). If Emperor is something lighter, it may need only the sealant and glass sealant.
+- **Milwaukee battery plan (Tim owns no M18 gear).** Day 1 buys 4 packs (2x XC5.0, 2x HIGH OUTPUT XC6.0) and a six-bay rapid charger, enough to run the vac, blower, drill and light through a 4 to 5 hour full detail and recharge overnight. Add 2x HIGH OUTPUT XC8.0 with the polishers. Buy bare tools after that; polisher kits with a battery cost more once you own packs. Watch Home Depot 'free bare tool with battery kit' promos to get the vac, blower or drill free.
 - **Towel colors.** The plans name olive (engine), black (polish) and purple (coating) but not the rest. The colors here are a proposal; swap them if you have already set a scheme.
 
 ## Tier key
@@ -42,10 +42,10 @@ Restock timing assumes about 4 jobs a week. "Day 1" means buy before the first p
 
 | Category | Day 1 | Full kit |
 |---|---|---|
-| Power and water | $445 | $1,425 |
+| Power and water | $545 | $1,695 |
 | Wash | $768 | $868 |
 | Decontamination | $140 | $265 |
-| Polish and paint correction (Emperor, correction add-on, headlights) | $0 | $1,168 |
+| Polish and paint correction (Emperor, correction add-on, headlights) | $0 | $1,213 |
 | Ceramic coating (Emperor, ceramic add-on) | $0 | $195 |
 | Interior | $1,074 | $1,174 |
 | Engine bay (Phase 2 add-on) | $0 | $65 |
@@ -55,7 +55,7 @@ Restock timing assumes about 4 jobs a week. "Day 1" means buy before the first p
 | PPE and safety | $125 | $215 |
 | Mobile setup, lighting and storage | $460 | $1,225 |
 | Business supplies | $134 | $299 |
-| **Total** | **$3,581** | **$7,404** |
+| **Total** | **$3,681** | **$7,719** |
 
 ## Power and water
 
@@ -63,8 +63,8 @@ Restock timing assumes about 4 jobs a week. "Day 1" means buy before the first p
 |---|---|---|---|---|---|---|---|---|
 | [ ] | Outdoor extension cord, 50 ft 12/3 | Southwire or Coleman Cable 12/3 SJTW | 1 | $60 | All | Day 1 | Replace if damaged | Lowe's or Walmart (Roxboro) |
 | [ ] | Portable GFCI adapter | Southwire 15A in-line GFCI | 1 | $30 | All | Day 1 | None | Lowe's (Roxboro) or Amazon |
-| [ ] | M18 battery starter kit | Milwaukee M18 HIGH OUTPUT XC6.0 2-pack + Rapid Charger | 2 batteries + charger | $300 | All | Day 1 | None | Home Depot (Durham) or Acme Tools; watch Home Depot 'free tool with battery kit' promos and pair with the vac or blower |
-| [ ] | Third M18 battery | Milwaukee M18 HIGH OUTPUT XC6.0 | 1 | $130 | All | Add later | None | Home Depot or Acme Tools (2-pack deals beat singles) |
+| [ ] | M18 batteries + multi-bay charger (Tim owns no M18 gear) | Home Depot bundle: 2x XC5.0 + 2x HIGH OUTPUT XC6.0 + PACKOUT six-bay rapid charger | 4 batteries + charger | $400 | All | Day 1 | None; 4 packs run vac, blower, drill and light through a full detail | Home Depot (Durham); this bundle has sold for $325 on sale. Cheaper start: M18 starter kit (2x HO 6.0 + charger, $228 to $349) during a 'free bare tool' promo, taking the vac or blower free |
+| [ ] | M18 batteries for the polishers | Milwaukee M18 HIGH OUTPUT XC8.0 | 2 | $300 | E | Add later | None; 8.0 packs keep a DA polisher at full speed about 40 to 60 min each | Home Depot or Acme Tools (2-packs beat singles; buy with the polishers during a battery promo) |
 | [ ] | Portable power station | EcoFlow Delta 2 (1024Wh, 1800W) | 1 | $430 | All | Add later | None (sale price has hit $399) | EcoFlow direct or Amazon (wait for a sale near $399) |
 | [ ] | Garden hose, 50 ft | Flexzilla 5/8 in | 1 | $55 | All | Day 1 | Replace if kinked or leaking | Lowe's or Tractor Supply (Roxboro) |
 | [ ] | Spot-free rinse deionizer | CR Spotless DIC-20 | 1 | $420 | R, L, E | Add later | Resin refill about $100 every 300 to 600 gal | CR Spotless direct or Autogeek |
@@ -103,15 +103,16 @@ Restock timing assumes about 4 jobs a week. "Day 1" means buy before the first p
 
 | Done | Item | Brand / model | Qty | Est. price | Tiers | When | Restock | Where to buy |
 |---|---|---|---|---|---|---|---|---|
-| [ ] | DA polisher, 21 mm throw | Milwaukee M18 FUEL 2685-20 (tool only) | 1 | $329 | E | Add later | None | Home Depot or Acme Tools (tool-only; uses your M18 batteries) |
+| [ ] | DA polisher, 21 mm throw | Milwaukee M18 FUEL 2685-20 (tool only) | 1 | $329 | E | Add later | None | Home Depot or Acme Tools; buy bare tool (kit versions add batteries you will already own) |
 | [ ] | DA polisher, 15 mm throw | Milwaukee M18 FUEL 2684-20 (tool only, 5 in plate) | 1 | $329 | E | Add later | None | Home Depot or Acme Tools (tool-only) |
 | [ ] | 3 in backing plate for tight areas | Buff and Shine 3 in, thread matched to 2684-20 | 1 | $25 | E | Add later | None | Buff and Shine direct or Autogeek |
-| [ ] | Foam cutting pads, 6.5 in (21 mm) | Lake Country HDO or Buff and Shine Uro-Tec | 4 | $40 | E | Add later | Every 10 to 15 cars | Autogeek (Lake Country) or Buff and Shine direct |
-| [ ] | Foam finishing pads, 6.5 in (21 mm) | Lake Country HDO or Buff and Shine Uro-Tec | 4 | $40 | E | Add later | Every 10 to 15 cars | Autogeek (Lake Country) or Buff and Shine direct |
-| [ ] | Foam cut + finish pads, 5.5 in (15 mm) | Buff and Shine Uro-Tec | 3 + 3 | $55 | E | Add later | Every 10 to 15 cars | Buff and Shine direct or Amazon |
-| [ ] | Microfiber cutting pads, 5.5 in | Buff and Shine or Lake Country | 4 | $30 | E | Add later | Every 8 to 10 cars | Buff and Shine direct or Autogeek |
-| [ ] | Compound | Koch Chemie Heavy Cut H9.02, 1 L (plan says F5.01; confirm code) | 1 | $50 | E | Add later | Every 8 to 12 cars | Detailed Image (authorized) or Car Supplies Warehouse |
-| [ ] | Finishing polish | Koch Chemie Micro Cut M3.02, 1 L | 1 | $50 | E | Add later | Every 10 to 15 cars | Detailed Image (authorized) or Car Supplies Warehouse |
+| [ ] | Heavy cut pads for H9.02, 6.5 in (21 mm) | Buff and Shine Uro-Tec maroon heavy cut foam or Lake Country HDO red | 4 | $45 | E | Add later | Every 10 to 15 cars | Autogeek (Lake Country) or Buff and Shine direct |
+| [ ] | Polishing pads for F5.01, 6.5 in (21 mm) | Buff and Shine Uro-Tec yellow polishing foam or Lake Country HDO blue | 4 | $40 | E | Add later | Every 10 to 15 cars | Autogeek (Lake Country) or Buff and Shine direct |
+| [ ] | Heavy cut pads for H9.02, 5.5 in (15 mm) | Buff and Shine Uro-Tec maroon heavy cut foam or Lake Country HDO red | 4 | $40 | E | Add later | Every 10 to 15 cars | Buff and Shine direct or Autogeek |
+| [ ] | Polishing pads for F5.01, 5.5 in (15 mm) | Buff and Shine Uro-Tec yellow polishing foam or Lake Country HDO blue | 4 | $35 | E | Add later | Every 10 to 15 cars | Buff and Shine direct or Autogeek |
+| [ ] | Heavy cut compound (heavy defects) | Koch Chemie Heavy Cut H9.02, 1 L | 1 | $50 | E | Add later | Every 8 to 12 cars | Detailed Image (authorized) or Car Supplies Warehouse |
+| [ ] | Fine cut and finish polish (fine to medium scratches) | Koch Chemie Fine Cut & Finish F5.01, 1 L | 1 | $50 | E | Add later | Every 8 to 12 cars | Detailed Image (authorized) or Car Supplies Warehouse |
+| [ ] | Optional jeweling polish (dark paint) | Koch Chemie Micro Cut M3.02, 1 L, on the F5.01 polishing pads | 1 | $50 | E | Add later | Every 15 to 20 cars | Detailed Image (authorized) or Car Supplies Warehouse |
 | [ ] | Pad cleaning brush | Lake Country pad brush | 1 | $12 | E | Add later | None | Autogeek or Amazon |
 | [ ] | Automotive masking tape, 3/4 in | 3M 233+ | 2 rolls | $18 | E | Add later | Every 3 to 4 cars | Roxboro auto parts stores (Advance, AutoZone, O'Reilly) or Amazon |
 | [ ] | Paint thickness gauge | GM200A-type coating gauge | 1 | $30 | E | Add later | None | Amazon |
@@ -136,7 +137,7 @@ Restock timing assumes about 4 jobs a week. "Day 1" means buy before the first p
 | [ ] | Compact blower (air purge, drying) | Milwaukee M18 Compact Blower 0884-20 | 1 | $100 | All | Day 1 | None | Home Depot or Acme Tools |
 | [ ] | Steam cleaner | Wagner Spraytech 915e On-Demand | 1 | $110 | C, L, E | Day 1 | None | Amazon or Walmart |
 | [ ] | Carpet and upholstery extractor | Bissell Little Green Pro 2505 | 1 | $150 | C, L, E | Day 1 | None | Walmart (Roxboro) or Amazon |
-| [ ] | Cordless drill for drill brushes and headlight kits | Milwaukee M18 2801-20 compact drill (skip if owned) | 1 | $100 | All | Day 1 | None | Home Depot (often free with a battery kit) |
+| [ ] | Cordless drill for drill brushes and headlight kits | Milwaukee M18 2801-20 compact drill (bare tool) | 1 | $100 | All | Day 1 | None | Home Depot (often free with a battery kit) |
 | [ ] | All-purpose cleaner (interior, tires, engine) | Koch Chemie Green Star, 1 L concentrate | 1 | $25 | All | Day 1 | Every 4 to 6 weeks; move to 10 L when busy | Detailed Image (authorized) or Car Supplies Warehouse |
 | [ ] | Interior cleaner and protectant (plastics, trim) | CarPro InnerQD, 1 L | 1 | $35 | C, L, E | Day 1 | Every 6 to 8 weeks | Detailed Image (authorized) or Autogeek |
 | [ ] | Carpet shampoo (extractor) | P&S Xpress Carpet Bomber, 1 gal | 1 | $30 | C, L, E | Day 1 | Every 2 to 3 months | Amazon or Autogeek |
@@ -295,7 +296,7 @@ The 37 steps are not written out in Drive. This is the sequence rebuilt from the
 | 29 | Final rinse | Pressure washer (deionizer later for spot-free) |
 | 30 | Dry | Gauntlet drying towels, M18 blower |
 | 31 | Inspect paint | Inspection penlight (swirl light later) |
-| 32 | Polish or correct (Emperor) | M18 FUEL 15 mm + 21 mm, pads, H9.02 + M3.02, tape, paint gauge |
+| 32 | Polish or correct (Emperor) | M18 FUEL 15 mm + 21 mm, H9.02 on heavy cut pads, F5.01 on polishing pads, tape, paint gauge |
 | 33 | IPA panel wipe (Emperor) | CarPro Eraser, purple towels |
 | 34 | Chrome polish | Autosol, black towels |
 | 35 | Protect | Gyeon WetCoat sealant (Legionnaire); CanCoat Evo ceramic (Emperor) |
