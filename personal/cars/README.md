@@ -16,3 +16,5 @@ Google Drive: 06 Personal & Money > Personal > Cars (https://drive.google.com/dr
 | 2007 Suzuki Hayabusa | [2007-suzuki-hayabusa.md](2007-suzuki-hayabusa.md) | Added 10/21/2026. Oil drips to fix. Plan: 300 fat tire stretch, lowered, chrome, Harley Quinn paint, audio |
 
 Phased plan with costs: [build-plan.md](build-plan.md)
+
+Parts lists with brands, prices and fitment for all four builds (10/21): [parts-lists.md](parts-lists.md)

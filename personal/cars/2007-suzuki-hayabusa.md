@@ -115,6 +115,11 @@ Recommendation: real chrome on the wheels and swingarm (order the kit swingarm a
 - Test the stator output (AC volts between the three yellow wires at 5,000 rpm, about 60-70 V each pair) and charging voltage (13.8-14.5 V at the battery).
 - Options: a higher-output aftermarket stator plus the MOSFET regulator; a second small battery for the amp on an isolator/relay so the starting battery stays full; or a lithium battery. Plan at least one of these before installing an amp over about 100 W RMS.
 
+## Parts list (10/21)
+
+Brand-level parts (300 kit, Shindengen FH020AA, Ricks stator, audio, paint supplies, seat) with prices and fitment notes: [parts-lists.md](parts-lists.md#2007-suzuki-hayabusa-gen-1).
+Drive: "2007 Suzuki Hayabusa parts list (10/21)" in the Hayabusa folder.
+
 ## Costs (rough, 2026, Roxboro NC area)
 
 Low ends assume Tim's labor; high ends assume shop labor or premium parts.
@@ -140,7 +145,8 @@ Low ends assume Tim's labor; high ends assume shop labor or premium parts.
 | 5 Audio | Fabricated pods, painted to match | $150–600 |
 | 5 Audio | Wiring, fuses, relay, waterproofing | $80–200 |
 | 5 Audio | Charging: higher-output stator and/or second battery with isolator | $250–600 |
-| | **Hayabusa total** | **about $9,540–24,050** |
+| 4 Paint | New 10/21: black diamond-stitched seat with gold stitching (Luimoto cover or upholsterer) | $150–600 |
+| | **Hayabusa total** (was $9,540–24,050) | **about $9,690–24,650** |
 
 **Optional, not in the total:**
 - Air ride instead of lowering links: +$1,200–2,500

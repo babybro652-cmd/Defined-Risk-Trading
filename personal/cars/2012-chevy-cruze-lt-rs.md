@@ -4,6 +4,7 @@
 **Power plan (Tim, 10/12/2026):** Upgraded turbo
 **Suspension:** air suspension (bags) instead of coilovers, plus sway bars.
 **Looks:** new lights (LED headlights and taillights).
+**Parts list (10/21):** [parts-lists.md](parts-lists.md#2012-chevy-cruze-lt-rs-14t-182995-miles). Air ride on Air Lift Performance 3P/3H with UAS bags or AirREX struts; ZZP Z04 turbo only if the engine tests healthy. Drive: "2012 Chevy Cruze LT RS parts list (10/21)".
 
 - Engine: 1.4L turbo Ecotec (aluminum block). Confirm the engine code (LUJ or LUV) from the VIN, 8th digit.
 - VIN: (add)

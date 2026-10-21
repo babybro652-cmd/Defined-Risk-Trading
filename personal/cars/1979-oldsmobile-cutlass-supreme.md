@@ -9,6 +9,11 @@
 - VIN: (add)
 - Mileage: n/a. Needs a new motor (10/12/2026); not running.
 
+## Parts list (10/21)
+
+Brand-level parts for the whole build: [parts-lists.md](parts-lists.md#1979-oldsmobile-cutlass-supreme-g-body-frame-off). Drive: "1979 Oldsmobile Cutlass Supreme parts list (10/21)" in the Cutlass folder.
+**Open decision:** the plan says 4L80E automatic, but the approved interior rendering shows a 6-speed stick (T-56 Magnum). T-56 route is $6,700–8,600 vs $2,800–5,000 for a built 4L80E.
+
 ## Frame-off restoration (Tim, 10/20/2026)
 
 **What frame-off means on this car.** The 1978-81 Cutlass Supreme is the downsized A-body

@@ -3,6 +3,11 @@
 Goal: high-performance street cars with aggressive styling. Order on every car:
 **1. Reliable and safe → 2. Power → 3. Looks.** Plan written 10/12/2026.
 
+**Parts lists (10/21):** brand-level parts for every build are in [parts-lists.md](parts-lists.md).
+The parts lists raised some lines; each changed line shows its old range as "was". Net change:
+Cruze +$2,700 to +$4,600, Charger +$3,500 to +$5,500, Cutlass +$5,100 to +$5,600, Hayabusa
++$150 to +$600. All four: $77,490–183,300 became $88,940–199,600.
+
 Costs are rough parts-only ranges (2026 prices) assuming Tim does the labor. Shop labor,
 paint and surprises (rust, a bad bottom end) add on top. Get real quotes before buying.
 This is a list for later, paid from extra money, never from bill money.
@@ -27,11 +32,13 @@ This is a list for later, paid from extra money, never from bill money.
 | 1 Reliable | Plugs, coils, fluids | $100–200 |
 | 1 Safe | Oil catch can, oil cooler, baffled oil pan, AN lines/fittings | $650–1,500 |
 | 1 Safe | Braided stainless lines, 4-piston front big brake kit | $850–2,100 |
-| 2 Power | Upgraded turbo | $900–1,800 |
+| 2 Power | Upgraded turbo (ZZP Z04, $1,999.99 checked 10/21; was $900–1,800). Only if the engine tests healthy at 183k | $1,800–2,200 |
 | 2 Power | Intercooler, intake, downpipe, injectors/fuel pump, tune | $1,000–2,300 |
 | 2 Handling | Air suspension (bags plus management), upgraded sway bars | $2,700–5,400 |
 | 3 Looks | New headlights and taillights | $400–1,000 |
-| | **Cruze total** | **about $7,250–15,700** |
+| 3 Looks | New 10/21: 18 inch gloss black wheels (5x105 or adapters), stretched tires, camber bolts and shims | $1,200–2,500 |
+| 3 Looks | New 10/21: front lip, side skirts, rear diffuser, black bowties, single tip cat-back | $600–1,700 |
+| | **Cruze total** (was $7,250–15,700) | **about $9,950–20,300** |
 
 ## 2016 Dodge Charger Pursuit (5.7 Hemi, ~188k)
 
@@ -45,8 +52,8 @@ This is a list for later, paid from extra money, never from bill money.
 | 1 If needed | Lifters/cam (Hemi tick is common at this mileage) | $1,500–3,000 |
 | 1 Safe | Catch cans, oil cooler, baffled oil pan, AN lines/fittings | $800–1,800 |
 | 1 Safe | Braided stainless lines, 6-piston Brembo swap (used SRT/Hellcat set) | $1,300–2,600 |
-| 2 Power | Supercharger kit | $6,000–8,500 |
-| 2 Power | Fuel upgrades and tune | $800–1,600 |
+| 2 Power | Supercharger kit: ProCharger HO intercooled complete kit, $8,399–8,724 checked 10/21 (was $6,000–8,500) | $7,500–8,800 |
+| 2 Power | Dyno tune and PCM unlock; fuel parts come in the complete kit (was $800–1,600) | $300–800 |
 | 2 Handling | Coilovers, upgraded sway bars | $1,600–3,200 |
 | 2 Drivetrain | 230mm limited-slip rear diff from a Scat Pack or Hellcat (bolts in) | $800–1,500 |
 | 2 Drivetrain | Transmission tune for the 8HP70 (firmer shifts, more line pressure) | $300–500 |
@@ -58,9 +65,10 @@ This is a list for later, paid from extra money, never from bill money.
 | 2 Handling | Performance alignment after the suspension work | $150–250 |
 | 3 Looks | Wide body kit | $2,000–6,000 |
 | 3 Looks | Body work and paint for the kit | $3,000–8,000 |
-| 3 Looks | Big wheels and tires | $2,500–5,000 |
+| 3 Looks | Dark bronze concave wheels (flow formed low, forged high) and wide tires (was $2,500–5,000) | $4,000–9,000 |
 | 3 Looks | New headlights and taillights | $600–1,500 |
-| | **Charger total** | **about $23,550–48,250** (plus $1,500–3,000 if lifters) |
+| 3 Looks | New 10/21: cat-back with quad tips | $1,000–2,000 |
+| | **Charger total** (was $23,550–48,250) | **about $27,050–53,750** (plus $1,500–3,000 if lifters) |
 
 If the compression test is weak, plan a built engine before the supercharger ($5,000–10,000).
 
@@ -127,18 +135,20 @@ runs from DIY (low) to shop (high).
 | 2 Power | LS engine (junkyard 5.3 or 6.0 truck motor) | $800–2,000 |
 | 2 Power | Forged rotating assembly plus machine work | $4,000–8,000 |
 | 2 Power | Swap mounts, headers, wiring harness and ECU | $1,400–3,000 |
-| 2 Power | Transmission (4L80E), driveshaft | $1,400–3,300 |
-| 2 Power | Rear end that can take the power (stock 7.5 won't) | $1,500–3,500 |
+| 2 Power | New 10/21: LS accessory drive with A/C compressor and alternator (Holley mid-mount) | $1,000–1,600 |
+| 2 Power | Transmission (4L80E, rebuilt with hard parts and a converter for the twin turbo), driveshaft (was $1,400–3,300). T-56 6-speed instead: $6,700–8,600, Tim to decide | $2,800–5,000 |
+| 2 Power | Rear end that can take the power (stock 7.5 won't): Currie G-body 9 inch, $1,925 housing checked 10/21, plus third member (was $1,500–3,500) | $2,800–4,000 |
 | 2 Power | Twin turbo kit, intercooler, boost fuel system, tune | $4,900–10,500 |
 | 2 Power | Under-hood twin-turbo fit (Tim, 10/21), extra over the kit line: turbos in the bay one per bank, custom hot pipes and downpipes beyond a kit, inner fender and core support mods (or tubular inner fenders), heat shielding, oil line hardware. Shop fab 10–25 hrs at $100–140/hr | $1,500–4,000 |
 | 2 Power | Full exhaust (Tim, 10/21): 3 inch 304 stainless duals from the turbo downpipes back, X-pipe, two mufflers, flex sections, hidden stainless hangers, twin square tips through the rear valance (tips moved here from the finish table), ceramic coating and floor heat shield. DIY low, custom shop high | $1,500–4,500 |
 | 2 Power | Switchable front dumps (Tim, 10/21): two 3 inch electric cutouts after the downpipes, dumping down and out right behind the front wheels; Y-pipes, heat shields, console toggle and relay, CO detector. Closed on public roads (G.S. 20-128(b)) | $700–2,500 |
 | 2 Safe | Catch cans, oil cooler, baffled oil pan, AN lines/fittings | $800–1,800 |
-| 2 Handling | Coilovers set a few inches lower, upgraded sway bars | $1,800–3,600 |
+| 2 Handling | Coilovers set a few inches lower, tubular control arms, upgraded sway bars (was $1,800–3,600) | $2,700–4,500 |
+| 1 Reliable | New 10/21: chassis wiring harness (Painless or American Autowire) | $500–900 |
 | 3 Looks | New headlights and taillights (LED: 2 rectangular headlights, 2 parking/turn lamps, taillights; stock locations) | $300–800 |
 | 3 Looks | Full-glass panoramic roof (Tim, 10/18): custom shop cuts out the roof center, adds steel framing back, fits fixed glass; done on the blasted shell during the frame-off, before paint | $6,000–15,000 |
 | 3 Safe | Body reinforcement for the cut roof: roof and pillar reinforcement plates | $300–800 |
-| | **Cutlass total** | **about $37,150–95,300** (before paint; a garage rental if needed is extra) |
+| | **Cutlass total** (was $37,150–95,300) | **about $42,250–100,900** (before paint; a garage rental if needed is extra; T-56 adds $3,600–3,900) |
 
 ### Cutlass optional: Roid Runner-level finish (Tim, 10/21)
 
@@ -158,7 +168,7 @@ where the work is shop work; low ends assume DIY.
 | Show-quality block-sanded body and paint, extra over a driver-quality job | $6,000–15,000 |
 | Restrained graphics: stripe fade or tone-on-tone script (vinyl low, painted high) | $400–3,000 |
 | LED full-width tail panel (custom panel, LED strip, lens), extra over the taillight line | $600–2,500 |
-| Air ride instead of coilovers (RideTech-type G-body kit plus management), extra over the coilover line | $2,000–4,500 |
+| Air ride instead of coilovers (Ridetech 11320298 complete G-body system, $5,635–5,802 checked 10/21, plus RidePro E5), extra over the coilover line (was $2,000–4,500) | $3,000–5,400 |
 | Mini-tubs for a wider rear tire | $600–4,000 |
 | Billet wheels sized for the G-body plus tires | $4,000–9,500 |
 | Engine covers (coil, valley, intake), coated turbo piping | $500–1,500 |
@@ -167,7 +177,7 @@ where the work is shop work; low ends assume DIY.
 | Digital dash (Dakota Digital RTX or Holley 12.3 Pro Dash) | $1,000–2,500 |
 | Vintage Air Gen IV A/C | $1,600–2,800 |
 | Tilt column and steering wheel | $500–1,200 |
-| **Roid Runner-level finish total (optional)** | **about $24,100–91,100** |
+| **Roid Runner-level finish total (optional)** (was $24,100–91,100) | **about $25,100–92,000** |
 
 ## 2007 Suzuki Hayabusa (Gen 1, added 10/21)
 
@@ -193,7 +203,8 @@ audio. Details, stretch length, chrome methods and charging notes: `2007-suzuki-
 | 5 Audio | Speakers (2 front pods, 2 undertail), amp, Bluetooth control | $380–1,150 |
 | 5 Audio | Fabricated pods, wiring, waterproofing | $230–800 |
 | 5 Audio | Charging: higher-output stator and/or second battery with isolator | $250–600 |
-| | **Hayabusa total** | **about $9,540–24,050** |
+| 4 Paint | New 10/21: black diamond-stitched seat with gold stitching (Luimoto cover or upholsterer) | $150–600 |
+| | **Hayabusa total** (was $9,540–24,050) | **about $9,690–24,650** |
 
 Optional, not in the total: air ride instead of lowering links (+$1,200–2,500), chrome frame
 rails (+$1,500–3,500).
@@ -204,12 +215,12 @@ rails (+$1,500–3,500).
 
 | Vehicle | Low | High |
 |---|---|---|
-| Cruze | $7,250 | $15,700 |
-| Charger | $23,550 | $48,250 |
-| Cutlass | $37,150 | $95,300 |
-| Hayabusa | $9,540 | $24,050 |
-| **Total** | **about $77,490** | **about $183,300** |
-| Cutlass Roid Runner-level finish (optional, not in the total) | +$24,100 | +$91,100 |
+| Cruze | $9,950 | $20,300 |
+| Charger | $27,050 | $53,750 |
+| Cutlass | $42,250 | $100,900 |
+| Hayabusa | $9,690 | $24,650 |
+| **Total** (was $77,490–183,300) | **about $88,940** | **about $199,600** |
+| Cutlass Roid Runner-level finish (optional, not in the total) | +$25,100 | +$92,000 |
 
 Biggest savings: doing the labor, buying used brake and suspension parts, and finding a
 cheap LS. Biggest risks: the Charger's engine at 188k under boost and rust on the Cutlass (10/15 videos: vinyl top, rear window and C-pillar rust; floors, trunk and frame still unseen). The frame-off plan (10/20) handles all of it; the swing is DIY vs shop welding.
