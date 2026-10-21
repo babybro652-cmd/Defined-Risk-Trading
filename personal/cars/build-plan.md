@@ -136,6 +136,36 @@ runs from DIY (low) to shop (high).
 | 3 Safe | Body reinforcement for the cut roof: roof and pillar reinforcement plates | $300–800 |
 | | **Cutlass total** | **about $33,450–84,300** (before paint; a garage rental if needed is extra) |
 
+### Cutlass optional: Roid Runner-level finish (Tim, 10/21)
+
+Separate from the base total. These are the moves that make the Roid Runner look clean, sized for
+the G-body; the $1M-only items (roof chop, dropped floors, custom chassis, 22/24 wheels) are
+skipped. Details and DIY vs shop: "Style target" in the Cutlass notes. Prices include shop labor
+where the work is shop work; low ends assume DIY.
+
+| Work | Cost |
+|---|---|
+| Body smoothing: shave drip rails, emblems, side markers and antenna hole; shaved or flush door handles with solenoid poppers | $500–6,000 |
+| Flush-mount windshield and rear glass (bonded, reveal moldings deleted) | $800–2,500 |
+| Tuck the bumpers: narrow brackets, smooth or delete the bumper fillers | $800–3,000 |
+| Panel gap work: shim, adjust and weld-fill to even gaps | $500–5,000 |
+| Smoothed firewall and engine bay, smooth inner fenders, battery to the trunk, wiring hidden | $700–6,000 |
+| Polished or coated hard lines in the bay, AN hardware | $300–900 |
+| Show-quality block-sanded body and paint, extra over a driver-quality job | $6,000–15,000 |
+| Restrained graphics: stripe fade or tone-on-tone script (vinyl low, painted high) | $400–3,000 |
+| LED full-width tail panel (custom panel, LED strip, lens), extra over the taillight line | $600–2,500 |
+| Exhaust tips through the rear valance | $300–1,000 |
+| Air ride instead of coilovers (RideTech-type G-body kit plus management), extra over the coilover line | $2,000–4,500 |
+| Mini-tubs for a wider rear tire | $600–4,000 |
+| Billet wheels sized for the G-body plus tires | $4,000–9,500 |
+| Engine covers (coil, valley, intake), coated turbo piping | $500–1,500 |
+| Custom interior in one leather color: seats, door panels, console, headliner, carpet (kit seats and DIY low, trim shop high) | $3,000–20,000 |
+| Trunk carpeted and trimmed to match | $300–1,200 |
+| Digital dash (Dakota Digital RTX or Holley 12.3 Pro Dash) | $1,000–2,500 |
+| Vintage Air Gen IV A/C | $1,600–2,800 |
+| Tilt column and steering wheel | $500–1,200 |
+| **Roid Runner-level finish total (optional)** | **about $24,400–92,100** |
+
 ---
 
 ## All three cars
@@ -146,6 +176,7 @@ runs from DIY (low) to shop (high).
 | Charger | $23,550 | $48,250 |
 | Cutlass | $33,450 | $84,300 |
 | **Total** | **about $64,250** | **about $148,250** |
+| Cutlass Roid Runner-level finish (optional, not in the total) | +$24,400 | +$92,100 |
 
 Biggest savings: doing the labor, buying used brake and suspension parts, and finding a
 cheap LS. Biggest risks: the Charger's engine at 188k under boost and rust on the Cutlass (10/15 videos: vinyl top, rear window and C-pillar rust; floors, trunk and frame still unseen). The frame-off plan (10/20) handles all of it; the swing is DIY vs shop welding.

@@ -3,7 +3,7 @@
 **Goal:** high-performance street car, aggressive styling. Build plan: frame-off restoration (Tim, 10/20/2026), see below and `build-plan.md`.
 **Power plan (Tim, 10/12/2026):** LS swap with forged internals, twin turbo setup.
 **Stance:** lowered a few inches (coilovers + tubular control arms; check turbo/exhaust and oil pan ground clearance).
-**Looks:** new lights (LED headlights and taillights). Full-glass panoramic roof (Tim, 10/18), custom, done with the roof rust repair.
+**Looks:** new lights (LED headlights and taillights). Full-glass panoramic roof (Tim, 10/18), custom, done with the roof rust repair. Style target: as clean as the Roid Runner (Tim, 10/21), see below.
 
 - Engine: (add)
 - VIN: (add)
@@ -74,6 +74,85 @@ quarter patches about $120 a pair (Restoparts, OPGI; those list 1981-88, so conf
 a 1979 Supreme before ordering); 1978-88 trunk floor about $425 (OPGI); floor pans from
 OER; rotisseries $900-2,600 (JEGS, Atlas). Blast and powder coat numbers are older forum quotes
 raised for 2026; get two local quotes (Durham, Greensboro, Danville VA) before booking.
+
+## Style target: Roid Runner level of clean (Tim, 10/21)
+
+Tim, 10/21: build the Cutlass "as clean looking as this Roid Runner." The Roid Runner is
+Nostalgia HotRods' (Dustin Hacker, Henderson NV) 1969 Plymouth Road Runner built for George
+Abittan: 6.2L HEMI with a Magnuson blower, T-56 6-speed, custom chassis and IFS, RideTech air
+ride, 22/24 inch billet wheels, chopped and narrowed roof, about 18,000 hours and $1M+.
+Reference photos with a "what to copy" line on each: Drive doc "Roid Runner reference" in
+Cutlass > Inspiration - Roid Runner (folder `1d1rO99dxZLwE1UufntAjPO2ipNThqOzw`, doc
+`1qmVb5Wu69Lm3z92KTqlvnFPoz4eqF9OExICi9slsJ34`). Source: Street Muscle,
+https://www.streetmusclemag.com/features/roid-runner-69-plymouth-road-runner-becomes-a-real-world-hot-wheel/
+(photos theirs, personal reference only).
+
+**Why it looks clean.** Most of it is subtraction, not money:
+- One deep metallic color (dark pewter), no chrome trim, and graphics in a darker shade of the
+  body color instead of a contrast color.
+- A smooth shell: no drip rails, flush door handles and flush glass, no emblems or seams.
+- Even, tight panel gaps, and bumpers pulled in tight to the body.
+- Low stance with the wheels filling the wells and almost no fender gap.
+- One signature light: a full-width lit tail panel, with the exhaust exiting through the valance.
+- An engine bay with nothing loose: covers on the engine, no visible wiring, polished hard lines,
+  a smooth firewall and inner fenders.
+- One interior color everywhere, carried into the trunk; a big digital dash.
+
+### How each move translates to the Cutlass
+
+1979 Cutlass Supreme coupe, G-body, frame-off. Every metal job here happens on the blasted shell
+during steps 7-8 of the frame-off, before epoxy and paint. Doing it later means stripping paint.
+Prices are NC 2026, rough, parts plus shop labor where it says shop.
+
+| Move | Cutlass version | DIY or shop | Cost (NC, 2026) |
+|---|---|---|---|
+| Smooth shell | Shave the drip rails (do it with the roof job), emblems, side marker holes and antenna hole; shaved door handles with solenoid poppers, or flush handles | DIY if Tim learns to MIG weld; shop otherwise | $500-6,000 |
+| Flush glass | Bond the windshield and rear glass flush with urethane and delete the reveal moldings; the coupe's door glass is already frameless | Shop (glass and body shop) | $800-2,500 |
+| Tucked bumpers | Narrow the bumper brackets to pull the bumpers in; smooth or delete the soft bumper fillers; or smoothed one-piece bumper covers | DIY brackets; shop for molding and fillers | $800-3,000 |
+| Panel gaps | Shim and adjust doors, fenders, hood and trunk lid; weld and file edges where gaps run wide | DIY with patience (low); shop gap work (high) | $500-5,000 |
+| Paint | One deep metallic (pewter, gunmetal or dark charcoal), block-sanded, cut and buffed | Shop | Show-quality adder $6,000-15,000 over a driver job (a driver-quality job runs about $6,000-12,000 in NC; paint is outside both budgets) |
+| Graphics | One restrained graphic: a stripe fade on the quarters or a 442 or Hurst-style script in a darker shade of the body color | DIY vinyl (low); painted (high) | $400-3,000 |
+| Tail lights | Full-width LED tail panel across the back (custom panel, LED strip, smoked lens), extra over the taillight line already in the budget | DIY with sheet metal and an LED kit; shop for a finished panel | $600-2,500 |
+| Exhaust | Twin square or oval tips cut into the rear valance | DIY | $300-1,000 |
+| Stance | The plan is coilovers (already budgeted). Air ride (RideTech-type G-body kit plus management) lays it on the ground parked and lifts it to drive, extra over coilovers. Check turbo, oil pan and downpipe clearance at full drop either way | DIY on the bare frame | $2,000-4,500 |
+| Tubs | Mini-tubs so a wider rear tire fits under the stock quarter | Shop or skilled DIY welding | $600-4,000 |
+| Wheels | Polished billet in G-body sizes: about 18x8 or 19x8 front, 20x10 rear (20x12 with tubs). Measure backspacing after the drop. 22/24 inch wheels need the Roid Runner's custom chassis: skip | Buy | $4,000-9,500 with tires |
+| Engine bay | Smooth the firewall (weld up unused holes), smooth inner fenders, battery to the trunk, harness run inside the fenders and under the cowl, coil and valley covers on the LS, powder coated or polished turbo piping | DIY | $700-6,000 bay; $500-1,500 covers and piping |
+| Hard lines | Polished stainless or coated aluminum lines in the bay with AN fittings, on top of the base brake and fuel lines | DIY | $300-900 |
+| Engine choice | Keep the LS twin turbo plan. A Gen III HEMI looks the part but costs about $3,000-8,000 more for the swap parts in a G-body and has fewer G-body swap kits | n/a | stay LS |
+| Interior | One leather color through seats, door panels, console, headliner and carpet. Budget route: kit or late-model buckets recovered, DIY carpet and panels. Trim shop route: full custom (Greensboro, Raleigh) | DIY (low) to shop (high) | $3,000-20,000 |
+| Trunk | Carpet and trim panels in the interior color; hide the battery, fuel pump wiring and turbo electronics behind panels | DIY | $300-1,200 |
+| Dash | Dakota Digital RTX for the G-body, or a Holley 12.3 Pro Dash if the LS runs a Holley ECU | DIY | $1,000-2,500 |
+| A/C | Vintage Air Gen IV (the Roid Runner has it; NC summers) | DIY | $1,600-2,800 |
+| Steering | Tilt column and a wheel that matches the interior | DIY | $500-1,200 |
+
+**Optional "Roid Runner-level finish" adder: about $24,400-92,100** on top of the base Cutlass
+budget (in `build-plan.md` as its own table, not in the base total). The low end is DIY metal
+work, vinyl graphics, coilovers kept, kit seats; the high end is shop metal, show paint and a
+trim shop interior. Biggest swings: paint and interior.
+
+**What fits with the panoramic glass roof (10/18).**
+- Shave the drip rails during the roof job: the shop is already cutting and framing the roof,
+  so the same visit costs less. Without drip rails, the glass seal has to be perfect; ask the roof
+  shop for a bonded flush glass panel with a hidden drain path.
+- Spec the roof glass flush with the roof skin, matching the flush windshield and rear glass.
+  That gives the one-piece look in photo 1 of the reference doc.
+- Pick a glass tint that goes with the paint (dark gray tint with a pewter or charcoal body).
+- The roof chop does not fit: the glass roof replaces it as the signature roof feature. Skip it.
+
+**Skip: $1M-build-only items.** These are what make the Roid Runner a one-off; none are needed
+for the clean look, and some fight the plan:
+- Roof chop and narrowing (conflicts with the glass roof), A-pillars laid back.
+- Floors dropped 2 inches, custom chassis and custom IFS (the boxed stock frame with tubular
+  arms and coilovers or air ride gets most of the stance).
+- Stretched quarters and fenders, hand-built inner fenders and tubs, custom deck lid and spoiler.
+- 22/24 inch wheels (need the custom chassis and stretched body).
+- The HEMI and supercharger (the LS twin turbo plan covers power).
+
+**Order in the frame-off.** Metal work (smoothing, gaps, tubs, tail panel, bumper brackets,
+firewall) goes in step 7-8 on the bare shell. Air ride or coilovers and wheel fitment in step 9
+on the bare frame. Hard lines and engine bay finish at the step 11 drivetrain install. Paint,
+graphics, interior, trunk and dash last.
 
 ## Maintenance log
 | Date | Mileage | Work | Cost |
