@@ -124,6 +124,8 @@ Include the first shot and first score for each game in the grading message to T
 - Fixed 10/21: the schedule cache now refetches any day with games not yet final, so finished games
   (like opening night) load into the 26-27 numbers on the next run.
 
+- 10/22 CLE @ PHI: Jarrett Allen (day-to-day, knee) started, won the tip and scored the first basket on CLE's first shot. A day-to-day center who jumps should keep his full first-basket share once he is confirmed in the lineup; recheck starters about 30 min before tip and rerun if a questionable big is in.
+
 ## Tim vs model log (first basket)
 
 On game days Tim sends the StarTool Analytics "Game Script" card for each game (tip %, player model %, star/bomb). Save it to out/startool/<date>-<game>.jpg, note the numbers in that day's run file, and when grading add a row per game here: who scored first, Tim's picks, StarTool's top, our model's picks, hits.
