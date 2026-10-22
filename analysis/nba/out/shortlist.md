@@ -1,36 +1,23 @@
-# NBA shortlist 2026-10-21 (not guaranteed)
+# NBA shortlist 2026-10-22 (not guaranteed)
 
 Tip winner scores first 64% (25-26).
 
-- **First basket: Luka Doncic** (LAL vs GS 10:00). Est 22% (fair +365; old model 17%): LAL scores first 56%; first FG 20/65 and first shot 33/65 starts 25-26, FG 47%; GS vs G x1.02
-- **First basket: Brandon Miller** (CHA @ BKN 7:30). Est 19% (fair +421; old model 19%): CHA scores first 53%; first FG 25/65 and first shot 29/65 starts 25-26, FG 44%; BKN vs F x1.05
-- **First basket: Alperen Sengun** (HOU vs DAL 8:30). Est 16% (fair +525; old model 14%): HOU scores first 51%; first FG 20/72 and first shot 23/72 starts 25-26, FG 51%; DAL vs C x1.06
-- **First basket: Anthony Edwards** (MIN @ MIA 7:30). Est 16% (fair +539; old model 15%): MIN scores first 46%; first FG 22/63 and first shot 21/63 starts 25-26, FG 49%; MIA vs G x1.02
-- **First basket: Anthony Davis** (WSH vs MIL 7:00). Est 15% (fair +547; old model 14%): WSH scores first 54%; first FG 6/20 and first shot 7/20 starts 25-26, FG 50%; MIL vs F x0.98
-- **First basket: Ty Jerome** (MEM vs UTAH 8:00). Est 15% (fair +560; old model 15%): MEM scores first 55%; first FG 5/15 and first shot 7/15 starts 25-26, FG 47%; UTAH vs G x0.98
-- **First basket: Bam Adebayo** (MIA vs MIN 7:30). Est 15% (fair +567; old model 14%): MIA scores first 54%; first FG 20/73 and first shot 33/73 starts 25-26, FG 45%; MIN vs C x0.91
-- **First basket: Wendell Carter Jr.** (ORL vs ATL 7:00). Est 15% (fair +567; old model 13%): ORL scores first 57%; first FG 18/78 and first shot 21/78 starts 25-26, FG 50%; ATL vs C x1.12
-- **Team first basket: Luka Doncic** (LAL vs GS). Model share of LAL's first FG 38% (old 29%); raw 25-26 20/65, first shot 33/65, FG 47%
-- **Team first basket: Brandon Miller** (CHA @ BKN). Model share of CHA's first FG 36% (old 36%); raw 25-26 25/65, first shot 29/65, FG 44%
-- **Team first basket: Anthony Edwards** (MIN @ MIA). Model share of MIN's first FG 34% (old 33%); raw 25-26 22/63, first shot 21/63, FG 49%
-- **Team first basket: Alperen Sengun** (HOU vs DAL). Model share of HOU's first FG 31% (old 27%); raw 25-26 20/72, first shot 23/72, FG 51%
-- **Over 2.5 threes: Luka Doncic** (LAL vs GS). Over 2.5 in 78% of starts (blend); last 5 starts 25-26: 1 6 5 4 3
-- **Over 2.5 threes: Stephen Curry** (GS @ LAL). Over 2.5 in 76% of starts (blend); last 5 starts 25-26: 4 2 4 4 3
-- **Over 19.5 points: Kawhi Leonard** (TOR vs CHI). Over 19.5 in 93% of starts (blend); last 5 starts 25-26: 24 20 34 26 24
-- **Over 19.5 points: Giannis Antetokounmpo** (MIA vs MIN). Over 19.5 in 89% of starts (blend); last 5 starts 25-26: 31 31 22 27 24
-- **Over 19.5 points: Anthony Edwards** (MIN @ MIA). Over 19.5 in 79% of starts (blend); last 5 starts 25-26: 22 8 19 42 36
-- **Over 19.5 points: Kevin Durant** (HOU vs DAL). Over 19.5 in 79% of starts (blend); last 5 starts 25-26: 33 29 24 31 25
+- **First basket: Evan Mobley** (CLE @ PHI 7:00). Est 16% (fair +534; old model 17%): CLE scores first 55%; first FG 21/63 and first shot 19/63 starts 25-26, FG 53%; PHI vs C x1.02
+- **First basket: Jamal Murray** (DEN @ OKC 9:30). Est 15% (fair +559; old model 14%): DEN scores first 51%; first FG 21/77 and first shot 21/77 starts 25-26, FG 48%; OKC vs G x1.10
+- **First basket: Nikola Jokic** (DEN @ OKC 9:30). Est 13% (fair +658; old model 15%): DEN scores first 51%; first FG 20/66 and first shot 18/66 starts 25-26, FG 56%; OKC vs C x0.85
+- **First basket: Jaylen Brown** (PHI vs CLE 7:00). Est 12% (fair +724; old model 10%): PHI scores first 45%; first FG 18/74 and first shot 31/74 starts 25-26, 0/1 26-27, FG 48%; CLE vs G x1.05
+- **Team first basket: Jamal Murray** (DEN @ OKC). Model share of DEN's first FG 30% (old 26%); raw 25-26 21/77, first shot 21/77, FG 48%
+- **Team first basket: Evan Mobley** (CLE @ PHI). Model share of CLE's first FG 29% (old 32%); raw 25-26 21/63, first shot 19/63, FG 53%
+- **Team first basket: Jaylen Brown** (PHI vs CLE). Model share of PHI's first FG 27% (old 23%); raw 25-26 18/74, first shot 31/74, FG 48%
+- **Team first basket: Cason Wallace** (OKC vs DEN). Model share of OKC's first FG 27% (old 23%); raw 25-26 14/58, first shot 20/58, FG 44%
+- **Over 24.5 points: Shai Gilgeous-Alexander** (OKC vs DEN). Over 24.5 in 83% of starts (blend); last 5 starts 25-26: 20 25 20 28 47
+- **Over 19.5 points: Tyrese Maxey** (PHI vs CLE). Over 19.5 in 87% of starts (blend); last 5 starts 25-26: 21 32 24 15 23
+- **Over 19.5 points: Nikola Jokic** (DEN @ OKC). Over 19.5 in 86% of starts (blend); last 5 starts 25-26: 23 14 35 40 15
+- **Over 19.5 points: Jaylen Brown** (PHI vs CLE). Over 19.5 in 83% of starts (blend); last 5 starts 25-26: 23 35 26 26 43
+- **Over 19.5 points: Joel Embiid** (PHI vs CLE). Over 19.5 in 80% of starts (blend); last 5 starts 25-26: 34 19 26 29 35
+- **Over 19.5 points: Donovan Mitchell** (CLE @ PHI). Over 19.5 in 79% of starts (blend); last 5 starts 25-26: 31 38 25 10 34
 
 ## Tip-off
 
-- ATL @ ORL 7:00 ET: Onyeka Okongwu vs Wendell Carter Jr.; away wins tip 24%, away scores first 43%
-- MIL @ WSH 7:00 ET: Myles Turner vs Alex Sarr; away wins tip 37%, away scores first 46%
-- MIN @ MIA 7:30 ET: Rudy Gobert vs Bam Adebayo; away wins tip 36%, away scores first 46%
-- CHA @ BKN 7:30 ET: Moussa Diabate vs Day'Ron Sharpe; away wins tip 60%, away scores first 53%
-- CHI @ TOR 7:30 ET: Jalen Smith vs Jakob Poeltl; away wins tip 27%, away scores first 43%
-- UTAH @ MEM 8:00 ET: Jaxson Hayes vs Zach Edey; away wins tip 32%, away scores first 45%
-- IND @ NO 8:00 ET: Ivica Zubac vs Yves Missi; away wins tip 55%, away scores first 51%
-- DAL @ HOU 8:30 ET: Daniel Gafford vs Alperen Sengun; away wins tip 46%, away scores first 49%
-- GS @ LAL 10:00 ET: Charles Bassey vs Walker Kessler; away wins tip 27%, away scores first 44%
-- PHX @ POR 10:00 ET: Khaman Maluach vs Donovan Clingan; away wins tip 53%, away scores first 51%
-- SAC @ LAC 10:30 ET: Domantas Sabonis vs Isaiah Jackson; away wins tip 51%, away scores first 50%
+- CLE @ PHI 7:00 ET: Jarrett Allen vs Joel Embiid; away wins tip 66%, away scores first 55%
+- DEN @ OKC 9:30 ET: Nikola Jokic vs Chet Holmgren; away wins tip 54%, away scores first 51%

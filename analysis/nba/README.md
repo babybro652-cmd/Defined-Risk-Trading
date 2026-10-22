@@ -106,5 +106,7 @@ consistency (hit rate game to game). Small stakes, for fun.
 - 10/21/26: model v2 (accuracy, defense by position, injury ripple). Jumper choice now follows this
   season's tips (Hayes for UTAH, Edey for MEM, Kessler for LAL) instead of last season's team counts.
   Game cache gained FG made/attempted per player and first-shot make (`v` 2); old caches are refetched.
+- 10/21/26 results: first basket 1-10 (Ty Jerome +560 fair hit); props 4-1 (Curry 3+ threes missed with 2).
+  First FGs went mostly to non-picks (Jalen Johnson, Jaquez, Randle, Missi, Clingan): role starters again.
 - Fixed 10/21: the schedule cache now refetches any day with games not yet final, so finished games
   (like opening night) load into the 26-27 numbers on the next run.
