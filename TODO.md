@@ -10,7 +10,7 @@ Newest decisions win; move finished items to Done with the date.
 - [x] Pay the light bill (my half $51.25 of $102.50) and internet ($50.77). Paid 10/22.
 - [ ] Verizon: $282.37 scheduled Thu 10/22; then call Verizon to remove the unused lines (Jarvis reminder Fri 10/23 10 AM).
 - [ ] Charger oil change (past due, ~188k miles): 5.7 Hemi, 7 qt 5W-20 high-mileage + MO-339 filter.
-- [ ] Google Workspace: downgrade Business Plus (~$26-28/mo) to Business Starter (~$8/mo) at admin.google.com > Billing > Subscriptions, then pay the balance and tell Jarvis the new amount. Payments failing since 9/20.
+- [x] Google Workspace: switched to Business Starter and paid, 10/22. Tell Jarvis the new monthly amount when the invoice comes.
 - [ ] Check the 5 Skool login codes from 9/29. If they weren't all you, change the Skool password.
 - [ ] Add a second sign-in method to Stripe.
 - [ ] Confirm the support@ recovery email change (8/23) was you.
@@ -42,7 +42,7 @@ Newest decisions win; move finished items to Done with the date.
 
 ### Peace by Page (Ventures)
 - [ ] Work through the launch build-out sheet, step by step (domain to first sales, 67 steps, launch moved to FRI 10/23 (Tim, 10/16); sheet dates still say 10/16): [Peace by Page: Launch Build-Out](https://docs.google.com/spreadsheets/d/1TLL394lyp_JITaeTmSNjxmjrJ_4T-Ie6UZMhja7xzOk/edit)
-- [ ] Buy peacebypage.com (~$11), Thu 10/15. Not needed for launch (all links use payhip.com); point it at the store + hello@ email after launch.
+- [x] Bought peacebypage.com at Cloudflare 10/22. Next: point it at the store + hello@ email after launch.
 - [ ] Store fixes, Wed 10/14 (steps in ventures/calm-pages/launch/launch-week-tim.md). Done 10/13: About, 988 help block, disclaimer, Home page. Done 10/20: tab name, product order, SOS Kit placeholder, TEST100 test purchase (Calm Wings, 7:26 PM). Still open (10/21 check): link in bio on IG (Pinterest already shows payhip.com/PeaceByPage; TikTok can't add a link until 1,000 followers, so put payhip.com/PeaceByPage as bio text). Files: [Launch Files page](https://claude.ai/artifact/81s4uPQAcfntqXDvALTWmN) + Drive Launch Docs > Launch Assets.
 - [ ] Launch day Fri 10/23 (moved from 10/16): post the IG carousel + TikTok in the morning, reel V1 after work (captions in launch-week-tim.md; carousel slide 1 remade to "October 23"). FB reels moved to 10/23-11/2 in Blotato and the FB launch repost is scheduled 10/23 8:30 AM. Old 10/16 FB launch post deleted (Tim, 10/21).
 - [ ] ~10/25: connect IG @peacebypage + TikTok @peace.by.page to Blotato (still not connected 10/21), then Jarvis schedules reels V2-V5.
