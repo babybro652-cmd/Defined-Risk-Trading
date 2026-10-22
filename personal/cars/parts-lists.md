@@ -156,6 +156,9 @@ Tuners or Diablo tune.
 | Engine | Lifters and cam (if tick) | Mopar MDS-delete lifters, Comp or Mopar cam | Only if needed | $1,500–3,000 | Shop | Opt |
 | Power | Supercharger | ProCharger HO intercooled P-1SC-1 complete kit, 2015-2023 5.7 Charger ($8,399–8,724 checked); tuner kit $7,474 | Complete kit includes fuel parts and a tune | $7,500–8,800 | Shop | Req |
 | Power | Dyno tune, PCM unlock | HP Tuners with unlocked PCM, custom dyno tune | | $300–800 | Shop | Req |
+| Power | Twin-screw blower instead of the ProCharger (option, 10/22) | Whipple 2.9L or 3.0L twin-screw kit for 2015+ 5.7 Charger, intercooled | Swap for the ProCharger line, not added on top. Instant low-RPM torque and the top-mount look; harder on the 188k engine, 8HP70 and axles, so pair it with the 392 and axle lines. Price est, not checked | $9,500–12,000 | Shop | Opt |
+| Engine | 392 swap (option, 10/22) | Mopar 6.4 / 392 crate or low-mile pull-out, forged pistons preferred under boost | If the 5.7 fails compression or leak-down, or if going twin-screw. Confirm kit and tune fit with ProCharger or Whipple first. Price est, not checked | $5,000–12,000 | Shop | Opt |
+| Drivetrain | 8HP90 transmission swap (option, 10/22) | ZF 8HP90 from a Hellcat or Scat Pack Widebody, with tune | Only past what the 8HP70 can hold (big boost or a 392 with a blower). Price est, not checked | $3,500–6,500 | Shop | Opt |
 | Oiling | Catch cans, cooler, pan, AN | Mishimoto or UPR catch cans, oil cooler if not factory, AN lines | Check the Pursuit's factory oil cooler first | $800–1,800 | DIY | Req |
 | Brakes | Big brakes | Used SRT/Hellcat 6-piston Brembo front, 4-piston rear with brackets, rotors | 20 inch wheels clear them | $1,300–2,600 | DIY | Req |
 | Brakes | Lines | Goodridge or StopTech braided lines | | in brake line | DIY | Req |
@@ -190,6 +193,7 @@ Tuners or Diablo tune.
 | Big wheels and tires | $2,500–5,000 | $4,000–9,000 | Bronze concave wheels as rendered, flow formed low, forged high |
 | Cat-back with quad tips (new) | n/a | $1,000–2,000 | Quad tips in the rendering |
 | Remote start and alarm (new, 10/21) | n/a | $650–950 | Compustar CS7900-AS with DroneMobile, installed |
+| Optional power upgrades (10/22) | n/a | not in total | Twin-screw blower (swap, +$2,000–3,200 over the ProCharger), 392 swap $5,000–12,000, 8HP90 swap $3,500–6,500. All optional |
 | **Charger total** | **$27,050–53,750** | **$27,700–54,700** | Remote start and alarm added 10/21. Before it: +$3,500 low, +$5,500 high over $23,550–48,250 (lifters still extra) |
 
 **Matching app on both cars (option, 10/21):** put the Cutlass on Compustar too: CS7900-AS brain, DroneMobile X2 LTE and a Digital Guard Dawg PBS-X push button start ($443 at DGD), which runs off the Compustar remote. Both cars then use one DroneMobile app and one style of 2-way remote; the Cutlass gives up the iKey hands-free walk-up unlock and costs about the same (about $1,000–1,300 with the same poppers, trunk release, relays and door pulls).
