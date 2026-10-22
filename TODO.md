@@ -7,7 +7,7 @@ Newest decisions win; move finished items to Done with the date.
 ## Open
 
 ### Personal
-- [x] Pay the light bill ($102.50) and internet ($50.77). Paid 10/22.
+- [x] Pay the light bill (my half $51.25 of $102.50) and internet ($50.77). Paid 10/22.
 - [ ] Verizon: $282.37 scheduled Thu 10/22; then call Verizon to remove the unused lines (Jarvis reminder Fri 10/23 10 AM).
 - [ ] Charger oil change (past due, ~188k miles): 5.7 Hemi, 7 qt 5W-20 high-mileage + MO-339 filter.
 - [ ] Google Workspace: downgrade Business Plus (~$26-28/mo) to Business Starter (~$8/mo) at admin.google.com > Billing > Subscriptions, then pay the balance and tell Jarvis the new amount. Payments failing since 9/20.
