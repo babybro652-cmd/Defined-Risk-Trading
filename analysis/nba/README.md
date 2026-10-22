@@ -110,3 +110,10 @@ consistency (hit rate game to game). Small stakes, for fun.
   First FGs went mostly to non-picks (Jalen Johnson, Jaquez, Randle, Missi, Clingan): role starters again.
 - Fixed 10/21: the schedule cache now refetches any day with games not yet final, so finished games
   (like opening night) load into the 26-27 numbers on the next run.
+
+## Tim vs model log (first basket)
+
+| Date | Game | Scored first | Tim | StarTool top | Our model | Tim hit | Model hit |
+|---|---|---|---|---|---|---|---|
+| 10/22 | CLE @ PHI | (grade) | Mobley, Mitchell | Mitchell | Mobley, Brown, Mitchell | | |
+| 10/22 | DEN @ OKC | (grade) | Gordon, Murray | SGA (Jokic for DEN) | Murray, Jokic, Wallace | | |
