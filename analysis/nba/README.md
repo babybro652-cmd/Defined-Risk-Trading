@@ -113,6 +113,8 @@ consistency (hit rate game to game). Small stakes, for fun.
 
 ## Tim vs model log (first basket)
 
+On game days Tim sends the StarTool Analytics "Game Script" card for each game (tip %, player model %, star/bomb). Save it to out/startool/<date>-<game>.jpg, note the numbers in that day's run file, and when grading add a row per game here: who scored first, Tim's picks, StarTool's top, our model's picks, hits.
+
 | Date | Game | Scored first | Tim | StarTool top | Our model | Tim hit | Model hit |
 |---|---|---|---|---|---|---|---|
 | 10/22 | CLE @ PHI | (grade) | Mobley, Mitchell | Mitchell | Mobley, Brown, Mitchell | | |
