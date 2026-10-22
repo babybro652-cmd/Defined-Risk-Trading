@@ -416,10 +416,10 @@ def build(slate, log):
     R()
     R('Tonight: probable goalies and key injuries (Daily Faceoff, ESPN)')
     R('Game (ET)', 'Away goalie', 'Home goalie', 'Out / IR (ESPN)')
+    def gtxt(tm):
+        n, s = dfo.get(tm, ('?', 'Unconfirmed'))
+        return f'{n} ({s})'
     for g in slate_games:
-        def gtxt(tm):
-            n, s = dfo.get(tm, ('?', 'Unconfirmed'))
-            return f'{n} ({s})'
         outs = []
         for tm in (g['away'], g['home']):
             names = [roster[pid]['name'] for pid in roster if roster[pid]['tm'] == tm and
@@ -510,7 +510,7 @@ def build(slate, log):
             f.write(f'- **{p[0]}: {p[1]}** ({p[2]}). {p[3]}\n')
         f.write('\n## Goalies\n\n')
         for g in slate_games:
-            f.write(f"- {g['away']} @ {g['home']} {g['time']} ET: {dfo.get(g['away'], ('?', '?'))} / {dfo.get(g['home'], ('?', '?'))}\n")
+            f.write(f"- {g['away']} @ {g['home']} {g['time']} ET: {gtxt(g['away'])} / {gtxt(g['home'])}\n")
     log(f'wrote {len(rows)} rows x {width} cols; picks {len(picks)}; meta {meta}')
 
 
