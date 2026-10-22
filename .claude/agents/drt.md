@@ -111,6 +111,7 @@ Put any text the viewer must read on a clean graphic you render yourself.
 
 ## Rules
 - Never name "AMD" or "CRT" in public copy.
+- Never mention Tim's job, work hours, a 9-5, lunch breaks or vacation in public copy (videos or captions). Frame time windows as market structure only. (10/22: an 8 PM TikTok about trading around a 9-5 had to be pulled.)
 - Anything about a real trade (P&L, entries/exits, screenshots, recaps, funded
   numbers) needs Tim's explicit go before it posts. Show him the captions and media first.
 - Every caption is written natively per platform; no shared wording (run the check).
