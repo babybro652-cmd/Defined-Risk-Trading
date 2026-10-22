@@ -10,7 +10,7 @@ Newest decisions win; move finished items to Done with the date.
 - [x] Pay the light bill (my half $51.25 of $102.50) and internet ($50.77). Paid 10/22.
 - [ ] Verizon: $282.37 scheduled Thu 10/22; then call Verizon to remove the unused lines (Jarvis reminder Fri 10/23 10 AM).
 - [ ] Charger oil change (past due, ~188k miles): 5.7 Hemi, 7 qt 5W-20 high-mileage + MO-339 filter.
-- [ ] Google Workspace: switched to Business Standard ($16/mo) 10/22, no charge. Still owe the balance from the failed 10/20 payment: pay at admin.google.com > Billing before 11/3 or Workspace gets suspended.
+- [ ] Google Workspace: on Business Starter ($8.40/mo) since 10/22, no charge on the switch, first invoice 11/1. Check admin.google.com > Billing for any old balance from the failed 10/20 payment (suspension date was 11/3).
 - [ ] Check the 5 Skool login codes from 9/29. If they weren't all you, change the Skool password.
 - [ ] Add a second sign-in method to Stripe.
 - [ ] Confirm the support@ recovery email change (8/23) was you.
