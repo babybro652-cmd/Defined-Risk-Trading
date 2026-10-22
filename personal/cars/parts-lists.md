@@ -141,6 +141,13 @@ Tuners or Diablo tune.
   fenders and quarters without cutting the quarters. Budget option: Vicrez Demon-style flares
   ($783 checked, 2015-2023 Charger; fit quality varies). Factory Hellcat widebody parts look the
   most OEM but the quarters must be cut; a Charger retrofit is Fit: confirm.
+  **What's in each kit (checked 10/22):** Clinched = full kit, not just flares: front and rear
+  fender flares, front bumper lip and bumper flares, side skirt add-ons, rear door add-ons;
+  unpainted black ABS, taped and screwed on, about 2 hrs. American Muscle lists it for 2015-2023
+  Charger SRT/Hellcat, so the bumper pieces may not fit the Pursuit's non-SRT front bumper: ask
+  Clinched before buying. Vicrez Demon style (American Muscle, 10/22): flares only with a chin
+  splitter $1,005 (vz102120); flares + front bumper + chin splitter $1,850 (vz102119); also sold
+  with side skirts (vz102191, vz102192). The $783 price was an older listing.
 - **Aero:** Function Factory ZL1 Addons R/T splitter, side skirts and rear extensions (2015-2021
   non-widebody styling; Fit: confirm with the widebody flares) plus a ducktail spoiler.
 - **Wheels:** Vossen HF-5 or a forged Vossen S17 / Forgeline in satin or dark bronze, 20x10.5
