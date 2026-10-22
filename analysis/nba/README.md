@@ -5,6 +5,19 @@ Builds the **NBA** tab in Tim's Bet Tracker sheet
 tab `sheetId` 9200). First basket (the main ask), opening tip, points and threes, built for
 consistency (hit rate game to game). Small stakes, for fun.
 
+## First shot log (Tim, 10/22)
+
+Tim wants to know who took the first shot in every game, even when they missed. When grading a
+date, run:
+
+```
+python3 analysis/first_events.py <YYYY-MM-DD> nba
+```
+
+It appends one row per game to `analysis/first_events/log.csv` (re-running a date replaces its
+rows): first shot of the game and its result, each team's first shot, the first basket (first made FG) and first points including free throws.
+Include the first shot and first score for each game in the grading message to Tim.
+
 ## Refresh (daily on game days, before about 5 PM ET)
 
 1. Build. `--date` is where to start looking for the slate (default: today, Eastern). The slate

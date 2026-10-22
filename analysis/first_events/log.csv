@@ -1,0 +1,14 @@
+date,sport,game,first_shot,first_shot_result,away_first_shot,home_first_shot,first_attempt_any,first_score,first_points_any,note
+2026-10-21,NBA,ATL @ ORL,Jalen Johnson (ATL),made,Jalen Johnson (ATL) made,Desmond Bane (ORL) made,,Jalen Johnson (ATL),Jalen Johnson (ATL),first_score = first made FG (first basket)
+2026-10-21,NBA,CHA @ BKN,Julius Randle (BKN),made,Naz Reid (CHA) missed,Julius Randle (BKN) made,,Julius Randle (BKN),Julius Randle (BKN),first_score = first made FG (first basket)
+2026-10-21,NBA,CHI @ TOR,RJ Barrett (TOR),made,Norman Powell (CHI) missed,RJ Barrett (TOR) made,,RJ Barrett (TOR),RJ Barrett (TOR),first_score = first made FG (first basket)
+2026-10-21,NBA,DAL @ HOU,P.J. Washington (DAL),made,P.J. Washington (DAL) made,Alperen Sengun (HOU) missed,,P.J. Washington (DAL),P.J. Washington (DAL),first_score = first made FG (first basket)
+2026-10-21,NBA,GS @ LAL,Walker Kessler (LAL),made,Stephen Curry (GS) made,Walker Kessler (LAL) made,,Walker Kessler (LAL),Walker Kessler (LAL),first_score = first made FG (first basket)
+2026-10-21,NBA,IND @ NO,Ivica Zubac (IND),missed,Ivica Zubac (IND) missed,Trey Murphy III (NO) missed,,Yves Missi (NO),Yves Missi (NO),first_score = first made FG (first basket)
+2026-10-21,NBA,MIL @ WSH,Jaime Jaquez Jr. (MIL),made,Jaime Jaquez Jr. (MIL) made,Alex Sarr (WSH) missed,,Jaime Jaquez Jr. (MIL),Jaime Jaquez Jr. (MIL),first_score = first made FG (first basket)
+2026-10-21,NBA,MIN @ MIA,Giannis Antetokounmpo (MIA),made,LaMelo Ball (MIN) made,Giannis Antetokounmpo (MIA) made,,Giannis Antetokounmpo (MIA),Giannis Antetokounmpo (MIA),first_score = first made FG (first basket)
+2026-10-21,NBA,PHX @ POR,Donovan Clingan (POR),made,Dillon Brooks (PHX) missed,Donovan Clingan (POR) made,,Donovan Clingan (POR),Donovan Clingan (POR),first_score = first made FG (first basket)
+2026-10-21,NBA,SAC @ LAC,Darius Garland (LAC),made,Domantas Sabonis (SAC) made,Darius Garland (LAC) made,,Darius Garland (LAC),Darius Garland (LAC),first_score = first made FG (first basket)
+2026-10-21,NBA,UTAH @ MEM,Ty Jerome (MEM),made,Keyonte George (UTAH) missed,Ty Jerome (MEM) made,,Ty Jerome (MEM),Ty Jerome (MEM),first_score = first made FG (first basket)
+2026-10-21,NHL,FLA @ OTT,Stephen Halliday (OTT) P1 05:00,saved,Brady Tkachuk (FLA) P1 10:00,Stephen Halliday (OTT) P1 05:00,Gustav Forsling (FLA) P1 01:48 (blocked-shot),Brady Tkachuk (FLA) P1 10:00,,first_shot = first shot on goal; shootout excluded
+2026-10-21,NHL,PHI @ BUF,Trevor Zegras (PHI) P1 00:54,saved,Trevor Zegras (PHI) P1 00:54,Jack Quinn (BUF) P1 02:33,Oliver Bonk (PHI) P1 00:42 (missed-shot),Cole Knuble (PHI) P1 14:49,,first_shot = first shot on goal; shootout excluded

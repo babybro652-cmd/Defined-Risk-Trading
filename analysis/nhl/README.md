@@ -5,6 +5,19 @@ Builds the **NHL** tab in Tim's Bet Tracker sheet
 tab `sheetId` 9100). Anytime goal, first goal and shots on goal, built for consistency
 (hit rate game to game). Small stakes, for fun.
 
+## First shot log (Tim, 10/22)
+
+Tim wants to know who took the first shot in every game, even when they missed. When grading a
+date, run:
+
+```
+python3 analysis/first_events.py <YYYY-MM-DD> nhl
+```
+
+It appends one row per game to `analysis/first_events/log.csv` (re-running a date replaces its
+rows): first shot of the game and its result, each team's first shot, first shot attempt of any kind (missed or blocked) and the first goal. "First shot" = first shot on goal.
+Include the first shot and first score for each game in the grading message to Tim.
+
 ## Refresh (weekly, or any game day for a new shortlist)
 
 1. Build. `--date` is the slate date (default: today, Eastern):
