@@ -73,3 +73,43 @@ function logAll_20261020() {
   logTrade_20261020_2();
   logTrade_20261020_3();
 }
+
+// Fri 10/23/2026 ES long #1, stopped. Times read from the fill markers on the
+// 1m chart (DRT Phone recording starts 10:28 with these fills already on it).
+// Stop/target orders not shown; risk assumed = the loss. Account assumed Paper
+// like 10/20: confirm with Tim before running.
+function logTrade_20261023() {
+  appendTimTrade_([
+    '2026-10-23', '~10:22', '~10:23', 'NY', 'ES', 'LONG', 2,
+    'Paper', 7660.25, '', '', 7656.75, 'SL', 3.50, -3.50,
+    -1, -350, 'DRT Phone Screen_Recording_20261023_104128_TradingView.mp4',
+    'Sold 2 @ 7656.75. Stop/target not visible; read from fill markers. Long against the day\'s sell bias. $ = -3.5 pts x $50 x 2, before commissions.',
+  ]);
+}
+
+// Fri 10/23/2026 ES long #2, stopped (exit 4.25 pts below entry).
+function logTrade_20261023_2() {
+  appendTimTrade_([
+    '2026-10-23', '~10:24', '~10:26', 'NY', 'ES', 'LONG', 2,
+    'Paper', 7655.25, '', '', 7651.00, 'SL', 4.25, -4.25,
+    -1, -425, 'DRT Phone Screen_Recording_20261023_104128_TradingView.mp4',
+    'Sold 2 @ 7651.00. Stop/target not visible; 4.25 pts is past the 4-pt hard stop (slippage or a wider stop?). $ = -4.25 pts x $50 x 2, before commissions.',
+  ]);
+}
+
+// Fri 10/23/2026 ES long #3, target hit at 10:41.
+function logTrade_20261023_3() {
+  appendTimTrade_([
+    '2026-10-23', '~10:28', '10:41', 'NY', 'ES', 'LONG', 2,
+    'Paper', 7649.75, 7645.75, 7672.25, 7672.25, 'TP', 4.00, 22.50,
+    5.63, 2250, 'DRT Phone Screen_Recording_20261023_104128_TradingView.mp4',
+    'Target filled 2 @ 7672.25. Lowest open P&L in the recording was +$75 (heat under 1 pt); open P&L dipped to about +$575 at 10:34 before the run. Third trade of the day (rule: 1-2). Day net +$1,475. $ = 22.5 pts x $50 x 2, before commissions.',
+  ]);
+}
+
+// Runs all three 10/23 trades in one go. Run this OR the three above, not both.
+function logAll_20261023() {
+  logTrade_20261023();
+  logTrade_20261023_2();
+  logTrade_20261023_3();
+}
