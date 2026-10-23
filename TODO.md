@@ -50,6 +50,10 @@ Newest decisions win; move finished items to Done with the date.
 - [x] Welcome emails / sequence (sheet #35, #37): N/A on Payhip's free plan (no email tools). Payhip's download email still goes to every buyer. Later option: free MailerLite with the Payhip customer list.
 - [ ] Optional: Systeme.io (Tim has an account, same one as PL) for a PbP welcome email / free-sampler email list later. Payhip free has no email tools (10/21).
 
+### Cars
+- [ ] Cruze machine shop: give them the question list (top of the Cruze build guide doc), get a written measurement sheet and a short-block quote. Forged pistons, built for the ZZP Z04 turbo + tune (decided 10/23).
+- [ ] Charger: get 2 engine builder quotes for a forged 392 (pull-out vs Mopar crate P5160617AA $6,995); ask ProCharger which kit/pulley for a 392 in a 5.7 car at 7-8 psi.
+
 ### Defined Risk Trading
 - [ ] Pink Out softball tournament (Sat 10/17-Sun 10/18): after it's over, Tim drops photos in DRT Phone and Jarvis drafts a DRT post plus a personal post (Tim approves before posting).
 - [x] Renew TradingView Essentials: renewed 10/8 at $18.99/mo, alerts back on.

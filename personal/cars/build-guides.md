@@ -537,7 +537,7 @@ code LUJ or LUV (confirm by VIN, 8th digit).
 - **Turbo: replace it.** At 183k, oil-fed turbos wear their shaft seals and bearings, and the
   wastegate rattle is common. A new OE-spec turbo (GM 55565353 type; GM, ACDelco, or a known
   maker, not a $170 no-name unit) with new lines. About $450-1,100.
-- **Tune: stock.** Run dexos1 Gen 2 or newer oil (formulated against pre-ignition).
+- **Tune: ZZP Z04 turbo kit and tune, installed with the engine (Tim decided 10/23 he will tune it).** Run dexos1 Gen 2 or newer oil (formulated against pre-ignition).
 - **Fix the cause of the burnt valve:** PCV, vacuum leak, injector or coil on that cylinder.
   Smoke test after assembly.
 
@@ -573,7 +573,7 @@ machine shop time.
 - Do: write why the valve burnt in the Cruze file. Tell the machine shop the full head spec
   above. Pull the engine (hoist and stand). Look at each piston top and ring land and the
   cylinder walls, then take the block to the shop.
-- Decide now: Z04 now or stock turbo (see the tune-later option).
+- Decided 10/23: Z04 now (Tim will tune it). Tell the machine shop the engine is built for the Z04.
 - Have on hand: engine hoist and stand (rent or borrow), bags and tags, photos of every harness.
 
 **2. Machine shop (2-4 weeks, runs while you gather parts)**
