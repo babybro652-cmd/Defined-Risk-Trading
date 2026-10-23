@@ -42,6 +42,7 @@ LINES = {
     "air": ((170, 178, 188), "braid", "Air ride lines"),
     "ac": ((255, 130, 200), "pipe", "A/C lines"),
     "vent": ((255, 178, 30), "thin", "Crankcase vent (PCV)"),
+    "ic": ((40, 210, 200), "pipe", "Intercooler coolant loop"),
 }
 
 
@@ -1169,7 +1170,7 @@ def cutlass_trunk():
 def charger_bay():
     cv = Cv(CHARGER)
     cv.grid()
-    cv.header("2016 Charger Pursuit: engine bay", "5.7 HEMI with a ProCharger HO intercooled P-1SC-1. White pearl, bronze accents.")
+    cv.header("2016 Charger Pursuit: engine bay", "Forged 392 HEMI, Whipple 3.0L twin-screw on top, 8HP90. White pearl, bronze accents.")
     b = dict(L=205, R=1325, top=200, cowl=1310, open=(305, 300, 1225, 1290), wheel=(600, 880), bulge=60, firewall=1240, tire_w=96)
     bay_body(cv, b)
     cx = 765
@@ -1177,116 +1178,130 @@ def charger_bay():
     for x in range(cx - 220, cx + 221, 14):
         cv.line([(x, 232), (x + 8, 274)], (60, 62, 68), 2)
     headlight_pair(cv, cx, 400, 226, 282, 110)
-    # intercooler, radiator, fans
-    finned(cv, 470, 300, 1060, 352, ((120, 128, 138), (190, 198, 208)), ALU, step=6, tw=30)
+    # front heat exchanger (intercooler loop), radiator, fans
+    finned(cv, 470, 300, 1060, 352, ((40, 120, 118), (110, 200, 196)), ALU, step=6, tw=30)
     finned(cv, 510, 368, 1020, 430, ((60, 70, 82), (120, 130, 144)), ((40, 44, 50), (90, 96, 106)), step=6, tw=30)
     cv.rect(550, 432, 980, 512, fill=(22, 24, 28), outline=(70, 76, 86), w=2, r=10)
     fan(cv, 655, 472, 33)
     fan(cv, 875, 472, 33)
-    e = v8(cv, cx, 620, 1160, half=195, hemi=True, cover=(hexc("1a1a1c"), hexc("4a4a50")), coil_col=(30, 30, 34))
-    # bronze accent stripes on covers
+    e = v8(cv, cx, 650, 1160, half=195, hemi=True, cover=(hexc("1a1a1c"), hexc("4a4a50")), coil_col=(30, 30, 34))
     for vx0, vx1 in (e["cover_l"], e["cover_r"]):
-        cv.line([((vx0 + vx1) / 2, 660), ((vx0 + vx1) / 2, 690)], (176, 135, 78), 4)
-    # accessory drive + ProCharger belt
-    belt(cv, [(cx, 612, 34), (cx, 560, 28), (468, 545, 26), (560, 520, 12), (900, 570, 28)])
-    pulley(cv, cx, 612, 34)
-    pulley(cv, cx, 560, 28)
-    pulley(cv, 900, 570, 28)
-    pulley(cv, 560, 520, 12)
-    # ProCharger head unit: gearcase + volute
-    cv.grad("rect", (420, 500, 520, 590), (120, 128, 138), (220, 226, 232), vertical=False, outline=(20, 22, 26), r=16)
-    pulley(cv, 468, 545, 26)
-    pc_out = snail(cv, 400, 440, 62, -math.pi / 2 + 0.55, ((150, 158, 168), (245, 248, 250)))
-    cv.ell(400, 440, 36, fill=(60, 66, 74), outline=(20, 22, 26), w=2)
-    wheel_face(cv, 400, 440, 30, (200, 206, 214), 12)
-    # inlet filter
-    cone_filter(cv, 355, 560, 90, 32, math.pi / 2, (176, 135, 78))
-    cv.route("intake", [(355, 556), (370, 500), (400, 440)], w=22, arrows=(0.4,))
-    # charge path
-    cv.route("charge", [pc_out, (450, 320), (471, 326)], w=20, arrows=(0.5,))
-    cv.route("charge", [(1059, 326), (1110, 380), (1100, 500), (980, 560), (860, 600), (cx + 34, 650)], w=22, arrows=(0.3, 0.75))
-    bov(cv, 1135, 470, 19)
-    cv.route("charge", [(1103, 470), (1116, 470)], w=10, arrows=(), smooth=False)
-    throttle_body(cv, cx, 652, 30)
+        cv.line([((vx0 + vx1) / 2, 690), ((vx0 + vx1) / 2, 720)], (176, 135, 78), 4)
     # exhaust manifolds to the rear
     for side in (-1, 1):
         ports = e["ports_l"] if side < 0 else e["ports_r"]
         mx = cx + side * 222
         for (px, py) in ports:
             cv.route("exhaust", [(px, py), (mx, py + 18)], w=12, arrows=(), smooth=False)
-        cv.route("exhaust", [(mx, ports[0][1]), (mx, ports[-1][1] + 30), (mx + side * 10, 1300), (mx + side * 10, 1420)], w=20, arrows=(0.35, 0.85), hidden=False)
-    cv.text(cx, 1372, "to Borla ATAK / Corsa cat-back", 22, True, (255, 180, 150), "mm")
-    # coolant
-    cv.route("coolant", [(cx + 30, 572), (900, 520), (990, 470), (1006, 430)], w=14, arrows=(0.5,))
-    cv.route("coolant", [(524, 420), (590, 520), (690, 560), (cx - 34, 570)], w=14, arrows=(0.5,))
+        cv.route("exhaust", [(mx, ports[0][1]), (mx, ports[-1][1] + 30), (mx + side * 10, 1300), (mx + side * 10, 1420)], w=20, arrows=(0.35, 0.85))
+    cv.text(cx, 1372, "to 6.4 midpipes + cat-back", 22, True, (255, 180, 150), "mm")
+    # Whipple blower: intake base, rotor case, intercooler lid
+    cv.grad("rect", (cx - 118, 668, cx + 118, 1136), (60, 64, 72), (120, 126, 136), vertical=False, outline=(20, 22, 26), w=2, r=22)
+    cv.grad("rect", (cx - 104, 690, cx + 104, 1112), ALU[0], (240, 244, 248), vertical=False, outline=(20, 22, 26), w=2, r=30)
+    finned(cv, cx - 84, 740, cx + 84, 1060, ((40, 120, 118), (120, 205, 200)), ((150, 158, 168), (230, 234, 240)), vertical_fins=False, step=8, tanks="tb", tw=30)
+    for xx in (cx - 86, cx - 30, cx + 30, cx + 86):
+        cv.ell(xx, 712, 4, fill=(60, 64, 72))
+    for xx in (cx - 86, cx + 86):
+        cv.ell(xx, 1090, 4, fill=(60, 64, 72))
+    cv.text(cx, 1086, "3.0L", 20, True, (60, 64, 72), "mm")
+    # billet fuel rails with Hellcat injectors, drawn beside the blower
+    for side in (-1, 1):
+        fx = cx + side * 132
+        cv.route("fuel", [(fx, 720), (fx, 1110)], w=9, arrows=(), smooth=False)
+        for y in e["cyl_y"]:
+            yy = y + (0 if side < 0 else 22)
+            cv.ell(fx, yy, 7, fill=(30, 30, 34), outline=(182, 110, 255), w=2)
+    cv.route("fuel", [(cx - 132, 1110), (cx, 1146), (cx + 132, 1110)], w=7, arrows=())
+    cv.route("fuel", [(700, 1300), (680, 1200), (cx - 132, 1112)], w=8, arrows=(0.4,))
+    # snout: inlet + throttle body (driver), drive pulley (passenger)
+    cv.grad("rect", (cx - 118, 600, cx - 28, 690), (110, 118, 128), (226, 230, 236), vertical=False, outline=(20, 22, 26), r=14)
+    cv.grad("rect", (cx + 40, 606, cx + 104, 690), (110, 118, 128), (226, 230, 236), vertical=False, outline=(20, 22, 26), r=12)
+    belt(cv, [(cx, 640, 30), (cx + 72, 590, 26), (cx + 160, 616, 14), (cx - 2, 560, 22)])
+    pulley(cv, cx - 2, 560, 22)
+    pulley(cv, cx, 640, 30)
+    pulley(cv, cx + 72, 590, 26)
+    pulley(cv, cx + 160, 616, 14)
+    throttle_body(cv, cx - 73, 598, 30)
+    # inlet filter, driver front corner, into the throttle body
+    cone_filter(cv, 430, 560, 90, 32, math.pi, (176, 135, 78))
+    cv.route("intake", [(432, 560), (520, 590), (600, 600), (cx - 112, 600)], w=24, arrows=(0.5,))
+    # intercooler coolant loop: heat exchanger -> reservoir -> pump -> lid -> back
+    reservoir(cv, 1060, 540, 1140, 650, (40, 210, 200))
+    cv.grad("rect", (1078, 690, 1122, 770), (30, 30, 34), (80, 84, 92), vertical=False, outline=(150, 156, 166), w=2, r=12)
+    cv.ell(1100, 704, 8, fill=(40, 210, 200), outline=(20, 22, 26), w=1.5)
+    cv.route("ic", [(1059, 326), (1110, 420), (1100, 540)], w=10, arrows=(0.5,))
+    cv.route("ic", [(1100, 650), (1100, 690)], w=10, arrows=(), smooth=False)
+    cv.route("ic", [(1100, 770), (1020, 810), (920, 820), (cx + 86, 900)], w=10, arrows=(0.5,))
+    cv.route("ic", [(cx - 86, 800), (640, 760), (540, 640), (500, 450), (471, 330)], w=10, arrows=(0.3, 0.75))
+    # engine coolant
+    cv.route("coolant", [(cx + 22, 556), (900, 520), (990, 470), (1006, 430)], w=14, arrows=(0.5,))
+    cv.route("coolant", [(524, 420), (590, 500), (690, 545), (cx - 22, 556)], w=14, arrows=(0.5,))
     reservoir(cv, 1080, 940, 1170, 1060, (255, 140, 180))
-    cv.route("coolant", [(1006, 380), (1150, 560), (1170, 800), (1130, 940)], w=7, arrows=(0.5,))
-    # oil cooler (factory check) passenger front
+    cv.route("coolant", [(1006, 380), (1170, 560), (1180, 800), (1130, 940)], w=7, arrows=(0.5,))
+    # oil cooler passenger front, braided lines
     cv.grad("rect", (1150, 300, 1210, 420), (120, 90, 30), (220, 170, 70), outline=(20, 22, 26), r=6)
     for y in range(306, 416, 6):
         cv.line([(1156, y), (1204, y)], (100, 70, 20), 1.5)
-    cv.route("oil", [(960, 760), (1060, 700), (1180, 560), (1190, 422)], w=8, arrows=(0.5,))
-    cv.route("oil", [(1160, 422), (1110, 600), (980, 800)], w=8, arrows=(0.5,))
+    cv.route("oil", [(960, 760), (1040, 700), (1190, 560), (1195, 422)], w=8, arrows=(0.5,))
+    cv.route("oil", [(1165, 422), (1150, 520), (1000, 680), (960, 780)], w=8, arrows=(0.5,))
     # catch cans
     for side in (-1, 1):
         ccx = cx + side * 250
         catch_can(cv, ccx, 1210, 24)
-        cv.route("vent", [(cx + side * 140, 1140), (cx + side * 200, 1200), (ccx - side * 22, 1208)], arrows=())
-    # fuel rails
-    for side in (-1, 1):
-        fx = cx + side * 80
-        cv.route("fuel", [(fx, 700), (fx, 1100)], w=7, arrows=(), smooth=False)
-    cv.route("fuel", [(700, 1300), (700, 1180), (cx - 80, 1100)], w=8, arrows=(0.4,))
-    cv.route("fuel", [(cx - 80, 700), (cx, 688), (cx + 80, 700)], w=7, arrows=())
+        cv.route("vent", [(cx + side * 150, 1140), (cx + side * 200, 1200), (ccx - side * 22, 1208)], arrows=())
     # PCM driver side
     box_module(cv, 385, 900, 495, 1010, base=(34, 34, 40), led=(60, 220, 120), fins=True)
     cv.text(440, 940, "PCM", 18, True, (176, 135, 78), "mm")
-    cv.route("wire", [(495, 950), (560, 1110), (980, 1110), (965, 700)], arrows=(0.7,))
-    cv.route("wire", [(440, 900), (430, 700), (520, 620), (600, 650)], arrows=(0.5,))
-    # power distribution center + jump post (passenger)
+    cv.route("wire", [(495, 950), (560, 1110), (980, 1110), (965, 720)], arrows=(0.7,))
+    cv.route("wire", [(440, 900), (420, 760), (500, 680), (cx - 110, 640)], arrows=(0.5,))
+    # power distribution center + jump post (battery in the trunk)
     box_module(cv, 1080, 1100, 1200, 1225, base=(26, 26, 30), conn=False)
     cv.rect(1095, 1115, 1185, 1160, outline=(90, 94, 100), w=1.5, r=4)
     cv.grad("ell", (1110, 1195, 14, 14), (150, 20, 20), (240, 70, 60), outline=(20, 22, 26))
     cv.route("wire", [(1200, 1190), (1215, 1290), (1250, 1420)], w=6, arrows=(0.5,))
     cv.text(1235, 1425, "power from trunk battery", 22, True, (230, 232, 236), "ra")
+    cv.route("wire", [(1080, 760), (1060, 900), (1080, 1100)], w=4, arrows=(0.5,))
     booster_master(cv, 420, 1190, 56)
-    cv.call(1, (110, 330), [(380, 420)])
-    cv.call(2, (cx + 330, 285), [(1040, 320)])
-    cv.call(3, (1420, 470), [(1154, 470)])
-    cv.call(4, (110, 600), [(330, 610)])
-    cv.call(5, (110, 470), [(470, 520)])
-    cv.call(6, (cx + 150, 655), [(cx + 38, 652)])
-    cv.call(7, (cx, 1060), [(cx, 1020)])
-    cv.call(8, (cx, 470), [(700, 410)])
-    cv.call(9, (110, 1250), [(cx - 274, 1210)])
-    cv.call(9, (1420, 1230), [(cx + 274, 1210)])
-    cv.call(10, (1420, 330), [(1210, 360)])
-    cv.call(11, (cx + 150, 1250), [(cx + 80, 1100)])
-    cv.call(12, (110, 760), [(cx - 222, 760)])
-    cv.call(13, (110, 960), [(385, 955)])
-    cv.call(14, (1420, 1160), [(1200, 1160)])
-    cv.call(15, (110, 1110), [(404, 1110)])
-    cv.call(16, (1420, 1000), [(1170, 1000)])
-    cv.call(17, (cx - 230, 165), [(cx - 400, 226)])
+    cv.call(1, (110, 330), [(cx - 100, 720)])
+    cv.call(2, (cx - 330, 880), [(cx - 40, 930)])
+    cv.call(3, (cx + 330, 255), [(1040, 326)])
+    cv.call(4, (1420, 600), [(1140, 600)])
+    cv.call(4, (1420, 730), [(1122, 730)])
+    cv.call(5, (110, 470), [(380, 560)])
+    cv.call(6, (cx - 190, 520), [(cx - 90, 585)])
+    cv.call(7, (1420, 470), [(cx + 168, 612)])
+    cv.call(8, (1420, 870), [(905, 870)])
+    cv.call(9, (cx + 150, 1250), [(cx + 132, 1100)])
+    cv.call(10, (cx, 470), [(700, 410)])
+    cv.call(11, (110, 1250), [(cx - 274, 1210)])
+    cv.call(11, (1420, 1230), [(cx + 274, 1210)])
+    cv.call(12, (1420, 330), [(1210, 360)])
+    cv.call(13, (110, 760), [(cx - 222, 760)])
+    cv.call(14, (110, 960), [(385, 955)])
+    cv.call(15, (1420, 1160), [(1200, 1160)])
+    cv.call(16, (110, 1110), [(404, 1110)])
+    cv.call(17, (1420, 1000), [(1170, 1000)])
+    cv.call(18, (cx - 230, 165), [(cx - 400, 226)])
     cv.key()
     cv.legend([
-        (1, "Supercharger", "ProCharger HO intercooled P-1SC-1, complete kit (2015-2023 5.7 Charger)"),
-        (2, "Intercooler", "ProCharger air-to-air, in the kit"),
-        (3, "Bypass / blow-off valve", "ProCharger valve, in the kit"),
-        (4, "Inlet filter", "ProCharger kit filter, driver front corner"),
-        (5, "Supercharger drive", "ProCharger bracket, pulley and belt off the crank"),
-        (6, "Throttle body", "Factory electronic"),
-        (7, "Engine", "5.7 HEMI, coil-on-plug; lifters only if it ticks"),
-        (8, "Radiator + fans", "Factory heavy-duty Pursuit cooling"),
-        (9, "Catch cans x2", "Mishimoto or UPR"),
-        (10, "Oil cooler", "Factory on most Pursuits: check first; add if missing"),
-        (11, "Fuel", "Kit fuel parts on the factory rails"),
-        (12, "Exhaust manifolds", "Factory, into a Borla ATAK or Corsa Xtreme cat-back"),
-        (13, "PCM", "Unlocked, HP Tuners custom dyno tune"),
-        (14, "Fuse box + jump post", "Factory; the H8 AGM battery is in the trunk"),
-        (15, "Brake booster + master", "Factory; SRT/Hellcat Brembos at the wheels"),
-        (16, "Coolant bottle", "Factory"),
-        (17, "Headlights", "Morimoto XB LED or AlphaRex NOVA LED"),
+        (1, "Supercharger", "Whipple Gen 6 3.0L twin-screw, top-mount, kit WK-3021-30 (blower + intake, about 7 psi)"),
+        (2, "Intercooler", "Dual-pass air-to-water core in the blower lid"),
+        (3, "Heat exchanger", "Whipple kit, front bumper opening"),
+        (4, "Intercooler pump + reservoir", "Whipple kit, passenger front"),
+        (5, "Inlet filter", "Kit filter, driver front corner, into the throttle body"),
+        (6, "Throttle body", "Whipple inlet, front of the blower"),
+        (7, "Supercharger drive", "Whipple pulley and belt off the crank"),
+        (8, "Engine", "Forged 6.4 / 392 HEMI; 8HP90 transmission behind it"),
+        (9, "Fuel", "Hellcat injectors on billet rails (kit); upgraded pump in the tank"),
+        (10, "Radiator + fans", "Factory heavy-duty Pursuit cooling"),
+        (11, "Catch cans x2", "Mishimoto or UPR"),
+        (12, "Oil cooler", "Braided lines"),
+        (13, "Exhaust manifolds", "Into 6.4 midpipes and a Borla ATAK or Corsa Xtreme cat-back"),
+        (14, "PCM", "6.4 calibration, HP Tuners custom tune"),
+        (15, "Fuse box + jump post", "Factory; the H8 AGM battery is in the trunk"),
+        (16, "Brake booster + master", "Factory; SRT/Hellcat Brembos at the wheels"),
+        (17, "Coolant bottle", "Factory"),
+        (18, "Headlights", "Morimoto XB LED or AlphaRex NOVA LED"),
     ])
     cv.footer()
     cv.save("charger-engine-bay-layout.png")
