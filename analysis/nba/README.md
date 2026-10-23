@@ -136,7 +136,7 @@ On game days Tim sends the StarTool Analytics "Game Script" card for each game (
 |---|---|---|---|---|---|---|---|
 | 10/22 | CLE @ PHI | Jarrett Allen (CLE won tip; first shot Allen, made) | Mobley, Mitchell | Mitchell | Mobley, Brown, Mitchell | No | No |
 | 10/22 | DEN @ OKC | Cason Wallace (OKC won tip; first shot Wallace three, made) | Gordon, Murray | SGA (Jokic for DEN) | Murray, Jokic, Wallace | No | Yes (Wallace +1100) |
-| 10/23 | CHI @ MIL 4:00 | (grade) | (grade) | Powell / Herro | Jaquez Jr. | (grade) | (grade) |
+| 10/23 | CHI @ MIL 4:00 | (grade) | Herro, Myles Turner | Powell / Herro | Jaquez Jr. | (grade) | (grade) |
 | 10/23 | NY @ BOS | (grade) | (grade) | Brunson / Tatum | Paul George | (grade) | (grade) |
 | 10/23 | ATL @ CHA | (grade) | (grade) | Alexander-Walker / Miller | Brandon Miller | (grade) | (grade) |
 | 10/23 | DAL @ IND | (grade) | (grade) | Flagg / Haliburton | Zubac | (grade) | (grade) |
