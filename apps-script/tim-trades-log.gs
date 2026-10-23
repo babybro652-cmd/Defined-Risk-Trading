@@ -93,7 +93,7 @@ function logTrade_20261023_2() {
     '2026-10-23', '~10:24', '~10:26', 'NY', 'ES', 'LONG', 2,
     'Paper', 7655.25, '', '', 7651.00, 'SL', 4.25, -4.25,
     -1, -425, 'DRT Phone Screen_Recording_20261023_104128_TradingView.mp4',
-    'Sold 2 @ 7651.00. Stop/target not visible; 4.25 pts is past the 4-pt hard stop (slippage or a wider stop?). $ = -4.25 pts x $50 x 2, before commissions.',
+    'Sold 2 @ 7651.00. 4 pt stop, filled 0.25 worse (slippage). $ = -4.25 pts x $50 x 2, before commissions.',
   ]);
 }
 
