@@ -125,6 +125,12 @@ Cutlass notes.
 
 ## 2016 Dodge Charger Pursuit (5.7 Hemi, RWD)
 
+**Updated 10/23: build once.** The final engine is the plan, not an option: a forged 6.4 / 392
+with the ProCharger HO at 7-8 psi (about 650-700 crank hp, about 600 lb-ft), the 8HP90, fuel,
+cooling, axles and driveshaft all sized for that from day one and installed together with one
+tune. Chassis and looks go first whenever money allows. The 5.7 gets oil changes only until
+the swap. Look, widebody and remote start unchanged. Order and reasons: build-guides.md.
+
 **Rendering:** white pearl widebody, flared fenders and quarters, front splitter, side skirts,
 rear diffuser, ducktail, stock full-width racetrack tail, quad tips, black badges and grille,
 LED headlights, slammed, dark bronze concave forged wheels, wide tires, big brakes.
@@ -157,15 +163,15 @@ Tuners or Diablo tune.
 
 | Category | Part | Brand / model | Fits / notes | Est. price | DIY / shop | Req |
 |---|---|---|---|---|---|---|
-| Maintenance | Oil and filter | 7 qt 5W-20 high mileage, Mopar MO-339 | Past due | $50–70 | DIY | Req |
-| Maintenance | Compression and leak-down | | Before boost at 188k | $0–150 | Shop | Req |
-| Maintenance | Cooling, plugs, trans service | Mopar water pump, thermostat, hoses, 16 NGK plugs, ZF 8HP fluid and pan filter | | $550–1,100 | DIY | Req |
-| Engine | Lifters and cam (if tick) | Mopar MDS-delete lifters, Comp or Mopar cam | Only if needed | $1,500–3,000 | Shop | Opt |
-| Power | Supercharger | ProCharger HO intercooled P-1SC-1 complete kit, 2015-2023 5.7 Charger ($8,399–8,724 checked); tuner kit $7,474 | Complete kit includes fuel parts and a tune | $7,500–8,800 | Shop | Req |
-| Power | Dyno tune, PCM unlock | HP Tuners with unlocked PCM, custom dyno tune | | $300–800 | Shop | Req |
-| Power | Twin-screw blower instead of the ProCharger (option, 10/22) | Whipple 2.9L or 3.0L twin-screw kit for 2015+ 5.7 Charger, intercooled | Swap for the ProCharger line, not added on top. Instant low-RPM torque and the top-mount look; harder on the 188k engine, 8HP70 and axles, so pair it with the 392 and axle lines. Price est, not checked | $9,500–12,000 | Shop | Opt |
-| Engine | 392 swap (option, 10/22) | Mopar 6.4 / 392 crate or low-mile pull-out, forged pistons preferred under boost | If the 5.7 fails compression or leak-down, or if going twin-screw. Confirm kit and tune fit with ProCharger or Whipple first. Price est, not checked | $5,000–12,000 | Shop | Opt |
-| Drivetrain | 8HP90 transmission swap (option, 10/22) | ZF 8HP90 from a Hellcat or Scat Pack Widebody, with tune | Only past what the 8HP70 can hold (big boost or a 392 with a blower). Price est, not checked | $3,500–6,500 | Shop | Opt |
+| Maintenance | Oil and filter, keep the 5.7 alive (10/23) | 7 qt 5W-20 high mileage, Mopar MO-339; safety repairs only until the swap | Past due. Replaces the old compression test, cooling/plugs/trans service and lifter lines: no money into an engine being replaced | $50–300 | DIY | Req |
+| Engine | Forged 6.4 / 392 (main plan, 10/23; was option) | Low-mile 6.4 pull-out (non-MDS preferred) or Mopar Direct Connection 392 long block P5160617AA ($6,995 listed SDPC and Mancini, checked 10/23), built by a HEMI builder with forged pistons (about 9.5-10:1), rings, bearings, ARP head studs, MDS delete if needed, cam approved by ProCharger and the builder | Finished-engine price est, not checked: get two builder quotes. Backup: forged 5.7 rebuild $6,000–9,000 est | $9,000–14,000 | Shop | Req |
+| Engine | 392 swap parts (10/23) | Intake, throttle body, fuel rails, gaskets, plugs, sensors, mounts, oil pan or pickup if different, 6.4 midpipes; PCM flashed to a 6.4 calibration | Price est, not checked. Shop install about $2,000–4,000 if not DIY (not in total) | $1,500–3,000 | DIY or shop | Req |
+| Power | Supercharger | ProCharger HO intercooled P-1SC-1 complete kit ($8,399–8,724 checked 10/21 and 10/23; listed for the 2015-2023 6.4 Charger); tuner kit $7,474 | Ask ProCharger which kit and pulley for a 392 swap in a 5.7 car at 7-8 psi | $7,500–8,800 | Shop | Req |
+| Power | Fuel for about 700 crank hp (10/23) | Larger injectors (ID1050x or similar) and an in-tank pump upgrade | Only what the complete kit doesn't cover at 7-8 psi on a 392. Price est, not checked | $600–1,500 | DIY | Req |
+| Power | Dyno tune, PCM unlock | HP Tuners with unlocked PCM, one custom dyno tune for engine and transmission | | $300–800 | Shop | Req |
+| Cooling | Cooling for the target (10/23) | New water pump and thermostat with the engine, trans cooler for the 8HP90; check the Pursuit heavy-duty radiator | Price est, not checked | $500–1,100 | DIY | Req |
+| Power | Twin-screw blower instead of the ProCharger (option) | Whipple 2.9L or 3.0L twin-screw kit, intercooled | Swap for the ProCharger line, not added on top. The forged 392 and 8HP90 are now in the plan, so only the blower changes. Same 650-700 hp target. Price est, not checked | $9,500–12,000 | Shop | Opt |
+| Drivetrain | 8HP90 transmission swap (main plan, 10/23; was option) | ZF 8HP90 from a Hellcat, with TCM programming | Target torque (about 600 lb-ft) is past the 8HP70's rating (about 516 lb-ft / 700 Nm). Line: under about 500 whp the tuned 8HP70 is fine; past it, 8HP90. Price est, not checked | $3,500–6,500 | Shop | Req |
 | Oiling | Catch cans, cooler, pan, AN | Mishimoto or UPR catch cans, oil cooler if not factory, AN lines | Check the Pursuit's factory oil cooler first | $800–1,800 | DIY | Req |
 | Brakes | Big brakes | Used SRT/Hellcat 6-piston Brembo front, 4-piston rear with brackets, rotors | 20 inch wheels clear them | $1,300–2,600 | DIY | Req |
 | Brakes | Lines | Goodridge or StopTech braided lines | | in brake line | DIY | Req |
@@ -176,8 +182,7 @@ Tuners or Diablo tune.
 | Suspension | Tension struts, end links, brace | BMR or SPL front tension rods, adjustable end links, strut tower brace | | $600–1,300 | DIY | Req |
 | Suspension | Alignment | Performance alignment | | $150–250 | Shop | Req |
 | Drivetrain | Rear diff | 230 mm limited slip from a Scat Pack or Hellcat | Bolt-in | $800–1,500 | DIY | Req |
-| Drivetrain | Trans tune | 8HP70 tune (HP Tuners) | | $300–500 | Shop | Req |
-| Drivetrain | Axles, driveshaft | The Driveshaft Shop LX axles, one-piece aluminum or carbon driveshaft | Past about 650 hp | $1,900–3,800 | DIY | Req |
+| Drivetrain | Axles, driveshaft | The Driveshaft Shop LX axles, one-piece aluminum or carbon driveshaft | Sized for 650-700 hp; order the driveshaft after the 8HP90 is in and measured. (8HP70 tune line removed 10/23) | $1,900–3,800 | DIY | Req |
 | Exhaust | Cat-back with quad tips | Borla ATAK or Corsa Xtreme cat-back for 2015+ 5.7 Charger, quad tips | New line: not in the old budget; the diffuser needs the quad tip cutouts | $1,000–2,000 | DIY | Req |
 | Body | Widebody kit | Clinched Flares ($4,000) or Vicrez Demon-style flares ($783) | See closest match | $800–4,000 | Shop | Req |
 | Body | Splitter, skirts, diffuser, ducktail | Function Factory ZL1 Addons R/T set, diffuser with quad cutouts, ducktail spoiler | Fit: confirm with flares | $800–2,000 | DIY | Req |
@@ -200,8 +205,10 @@ Tuners or Diablo tune.
 | Big wheels and tires | $2,500–5,000 | $4,000–9,000 | Bronze concave wheels as rendered, flow formed low, forged high |
 | Cat-back with quad tips (new) | n/a | $1,000–2,000 | Quad tips in the rendering |
 | Remote start and alarm (new, 10/21) | n/a | $650–950 | Compustar CS7900-AS with DroneMobile, installed |
-| Optional power upgrades (10/22) | n/a | not in total | Twin-screw blower (swap, +$2,000–3,200 over the ProCharger), 392 swap $5,000–12,000, 8HP90 swap $3,500–6,500. All optional |
-| **Charger total** | **$27,050–53,750** | **$27,700–54,700** | Remote start and alarm added 10/21. Before it: +$3,500 low, +$5,500 high over $23,550–48,250 (lifters still extra) |
+| Optional power upgrades (10/22) | not in total | moved into the plan 10/23 | 392 and 8HP90 are now required lines (below). Twin-screw stays optional, +$2,000–3,200 over the ProCharger |
+| Build once (10/23): removed | $900–1,820 | $0 | Compression test, cooling/plugs/trans service, 8HP70 tune, old oil line. Lifters (was extra) dropped |
+| Build once (10/23): added | n/a | $15,150–26,400 | Keep-alive oil $50–300, forged 392 $9,000–14,000, swap parts $1,500–3,000, fuel $600–1,500, cooling $500–1,100, 8HP90 $3,500–6,500 |
+| **Charger total** | **$27,700–54,700** | **$41,950–79,280** | Build once 10/23 (+$14,250 low, +$24,580 high). Selling the 5.7 and 8HP70 gets some back. Before: $27,050–53,750 before the 10/21 remote start |
 
 **Matching app on both cars (option, 10/21):** put the Cutlass on Compustar too: CS7900-AS brain, DroneMobile X2 LTE and a Digital Guard Dawg PBS-X push button start ($443 at DGD), which runs off the Compustar remote. Both cars then use one DroneMobile app and one style of 2-way remote; the Cutlass gives up the iKey hands-free walk-up unlock and costs about the same (about $1,000–1,300 with the same poppers, trunk release, relays and door pulls).
 
@@ -217,11 +224,15 @@ diffuser, single large tip, black bowties and grille, upgraded turbo.
 in the build and the budget (wrap chosen, paint priced as the option). Interior accents change
 from red to burnt orange: stitching, trim accents, ambient lighting. Smoked taillights: yes.
 
-**What 182,995 miles changes:** the head is off now, so finish the head job first and have the
-machine shop check the head and deck. Before a bigger turbo, run compression and leak-down after
-the rebuild and check for oil burning; the 1.4T's cast pistons and ringlands are the weak point
-under more boost. A bigger turbo on a tired bottom end risks the engine. Sensible order: head
-job, then air ride, wheels and lights (the look), then the turbo only if the engine tests healthy.
+**Updated 10/23: build once.** The engine is apart, so it gets built once now: pull it, full
+valve job, bottom end refreshed with forged pistons (removes the 1.4T's cracked ring land
+weak point), every known weak point replaced, new turbo, stock tune. Tune later (ZZP Z04 kit,
+about $2,800–4,500) bolts on with no teardown; if Tim might ever tune it, buy the Z04 now instead
+of the new stock turbo. Order and machine shop list: build-guides.md.
+
+**What 182,995 miles changes (10/21, replaced 10/23):** the old plan finished the head only and
+let a post-rebuild compression test decide the turbo. Now the bottom end is done in the same
+teardown, so the engine is ready either way.
 
 ### Closest match to the rendering
 
@@ -239,15 +250,18 @@ job, then air ride, wheels and lights (the look), then the turbo only if the eng
 
 | Category | Part | Brand / model | Fits / notes | Est. price | DIY / shop | Req |
 |---|---|---|---|---|---|---|
-| Head job | Gaskets, bolts, machine | Elring or Fel-Pro head gasket set, new GM TTY head bolts, head check and resurface | Confirm engine code (LUJ or LUV) from the VIN | $300–700 | DIY plus machine shop | Req |
-| Head job | While apart | Timing chain kit (confirm by engine code; the 1.4T uses a chain) with water pump, thermostat housing | Known 1.4T failures | $350–700 | DIY | Req |
+| Head job | Full valve job (10/23, was head check $300–700) | Machine shop: pressure test, flatness, full valve job, all new exhaust valves (intakes if worn), guides as needed, new stem seals, springs checked, minimum cut | Confirm engine code (LUJ or LUV) from the VIN. Price est, not checked: get the shop's quote | $600–1,300 | Machine shop | Req |
+| Bottom end | Forged-piston refresh (new 10/23) | Pull the engine. Machine: clean, measure, torque-plate hone or about 0.5 mm bore, crank polish. Forged 4032 pistons and rings at stock compression (Wiseco, JE or Diamond through the shop; no online price found 10/23), rod and main bearings, rod bolts, full gasket set with new GM TTY head bolts and seals | Cracked ring lands are the 1.4T killer even stock; forged costs about $500–800 more than OE cast once it's apart. Price est, not checked | $1,700–3,000 | DIY plus machine shop | Req |
+| Bottom end | Forged rods | ZZP LUJ/LUV 4340 rod set ($549.99 checked 10/23) | Only past about 250 hp; stock rods are fine at stock and Z04 power | $550 | Shop | Opt |
+| Head job | While apart, every known weak point (10/23, was $350–700) | Timing chain kit (chain, guides, tensioner), water pump, thermostat housing, oil cooler housing seals (or the cooler), turbo oil feed and return lines, turbo coolant lines, injectors flow-tested or replaced | Known 1.4T failures; one teardown. Price est, not checked | $600–1,200 | DIY | Req |
+| Turbo | New stock-spec turbo (10/23) | GM 55565353-type 1.4T turbo from GM, ACDelco or a known maker (no-name units list for $170–470) | At 183k oil-fed turbos wear seals and the wastegate rattles. Skip this line if buying the Z04 now | $450–1,100 | DIY | Req |
 | Head job | Valve cover with built-in PCV (order now, before reassembly) | GM/ACDelco 55573746 (OE for the 1.4T) or a Dorman equivalent; confirm by engine code | Failed PCV diaphragm causes vacuum leaks and lean running, a likely cause of the burnt valve | $60–150 | DIY | Req |
 | Head job | PCV fix kit (pair with the new valve cover) | CruzeKits.com 1.4T PCV fix kit (external check valve, bypasses the intake manifold check valve that fails and lets boost into the crankcase); a BNR throttle body spacer may be needed for the vacuum source | Fixes the root cause the cover alone doesn't; confirm current price and fitment for the 2012 LT RS on cruzekits.com | about $75 (unconfirmed) | DIY | Req |
 | Head job | Plugs, coils, fluids | NGK plugs gapped for boost, ACDelco coil pack, Dexos oil, Dex-Cool | | $100–200 | DIY | Req |
 | Oiling | Catch can, cooler, pan, AN | ZZP catch can, oil cooler kit, AN lines | Fit: confirm a baffled pan exists for the 1.4T; skip it if not | $650–1,500 | DIY | Req |
 | Brakes | Lines and front brakes | Braided lines; 4-piston front kit (no major-brand Cruze kit confirmed; generic kits exist) | Check for rear drums: many 1.4T LTs have them; LTZ rear discs swap in | $850–2,100 | DIY | Req |
-| Power | Upgraded turbo | ZZP Z04 bolt-on turbo kit ($1,999.99 checked) | Only after the engine tests healthy | $1,800–2,200 | DIY | Opt |
-| Power | Supporting mods and tune | ZZP downpipe, front mount intercooler, intake, injectors, Trifecta or ZZP tune | | $1,000–2,300 | DIY | Req with turbo |
+| Power | Upgraded turbo (tune-later option, 10/23) | ZZP Z04 bolt-on turbo kit ($1,999.99 checked 10/21) | Forged pistons make it bolt-on later with no teardown. If Tim might tune, buy it now instead of the stock turbo | $1,800–2,200 | DIY | Opt |
+| Power | Supporting mods and tune (with the Z04) | ZZP downpipe, front mount intercooler, intake, injectors, Trifecta or ZZP tune | One install, one tune with the Z04 | $1,000–2,300 | DIY | Opt |
 | Suspension | Air ride | UAS bags and Ksport struts or AirREX struts, Air Lift Performance 3P (or 3H for height sensors), tank, compressor | See closest match | $2,700–5,400 | DIY | Req |
 | Suspension | Camber | Front camber bolts or camber plates, rear torsion beam camber shims | For the rendered camber; wears tires | $80–300 | DIY | Req |
 | Wheels | 18 inch gloss black | 18x9 or 18x9.5 gloss black (5x105, or 5x112 with adapters) | Stretch look | $700–1,500 | Buy | Req |
@@ -272,7 +286,9 @@ job, then air ride, wheels and lights (the look), then the turbo only if the eng
 | Lip, skirts, diffuser, badges, single tip cat-back (new) | n/a | $600–1,700 | Not in the old budget |
 | Gloss black wrap (new, 10/21) | not in total | $2,500–3,800 | Car is white; wrap chosen over paint |
 | Burnt orange interior accents (new, 10/21) | n/a | $400–2,400 | Stitching, trim accents, ambient lighting |
-| **Cruze total** | **$7,250–15,700** | **$12,850–26,500** | Parts list +$2,700 low, +$4,600 high ($9,950–20,300); 10/21 wrap and interior +$2,900 low, +$6,200 high |
+| Build once (10/23): removed | $3,450–5,900 | $0 | Head check $300–700, while-apart $350–700, Z04 $1,800–2,200 and supporting/tune $1,000–2,300 (now the tune-later option) |
+| Build once (10/23): added | n/a | $3,350–6,600 | Valve job $600–1,300, forged bottom end $1,700–3,000, weak points $600–1,200, stock-spec turbo $450–1,100 |
+| **Cruze total** | **$12,850–26,500** | **$12,750–27,200** | Build once 10/23 (-$100 low, +$700 high). Tune later adds $2,800–4,500; Z04 now instead of the stock turbo adds $2,350–3,400. Before 10/21: $7,250–15,700 |
 
 ---
 
@@ -345,14 +361,14 @@ speakers in the undertail and inner front fairing, amp and Bluetooth.
 
 | Vehicle | Was | Now |
 |---|---|---|
-| Cruze | $7,250–15,700 | $12,850–26,500 |
-| Charger | $23,550–48,250 | $27,700–54,700 |
+| Cruze | $7,250–15,700 | $12,750–27,200 (build once 10/23; was $12,850–26,500) |
+| Charger | $23,550–48,250 | $41,950–79,280 (build once 10/23; was $27,700–54,700) |
 | Cutlass | $37,150–95,300 | $47,050–106,600 |
 | Hayabusa | $9,540–24,050 | $9,690–24,650 |
-| **Total** | **$77,490–183,300** | **$97,290–212,450** |
+| **Total** | **$77,490–183,300** | **$111,440–237,730** (was $97,290–212,450 before the 10/23 build-once plans) |
 
 Totals include Tim's 10/21 decisions and the 10/21 Cutlass and Charger security systems (before the decisions: $88,940–199,600; before the security systems: $95,590–210,150). Not in the totals: Cutlass
-Roid Runner finish table (now $22,700–86,600), Charger lifters. The Cutlass T-56 and air ride
+Roid Runner finish table (now $22,700–86,600), Charger engine install labor if a shop does it, Cruze tune-later option. The Cutlass T-56 and air ride
 are not chosen (10/21).
 
 ## Decisions and fitment checks for Tim
@@ -360,7 +376,7 @@ are not chosen (10/21).
 1. Decided 10/21: Cutlass keeps the 4L80E with a console shifter (T-56 not chosen).
 2. Decided 10/21: Cutlass coilovers (air ride not chosen), RestoMod Air A/C.
 3. Decided 10/21: Cruze is white; gloss black wrap, burnt orange interior accents, smoked
-   taillights. Turbo only if the engine tests healthy.
+   taillights. (10/23: engine built once now with forged pistons; turbo decision in item 9.)
 4. Cruze: rear drums or discs? Pick 5x105 wheels or adapters.
 5. Charger: Clinched Flares ($4,000) or budget Vicrez flares ($783).
 6. Hayabusa: stretch length, then call C&S Customs and DSC to confirm a Gen 1 300 kit is in stock.
@@ -369,3 +385,6 @@ are not chosen (10/21).
    aero and smoked taillights, Busa Ricks Hot Shot part number and 300 tire size.
 8. Charger remote start: have the installer scan the Pursuit BCM and run the VIN before buying (fleet settings).
    Cutlass: call Digital Guard Dawg (877-246-5395) for the iKey remote start upgrade price.
+9. Decided 10/23: build once. Charger: forged 392, ProCharger 7-8 psi, 8HP90, all in the plan;
+   pick a pull-out 392 or the Mopar crate after two builder quotes. Cruze: forged-piston
+   refresh at stock power; Tim decides Z04 now or a new stock turbo (if never tuning).

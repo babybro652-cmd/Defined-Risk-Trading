@@ -3,6 +3,16 @@
 Goal: high-performance street cars with aggressive styling. Order on every car:
 **1. Reliable and safe → 2. Power → 3. Looks.** Plan written 10/12/2026.
 
+**Updated 10/23: build once (Charger and Cruze).** Tim wants reliability and no building now
+and redoing later. Order on those two: chassis items first (brakes, suspension, body, interior,
+wheels) whenever money allows, then the engine and every part tied to power (fuel, cooling,
+tune, transmission, axles, driveshaft) all at once, sized for the final power from day one.
+One tune, one install. A fresh engine at moderate boost beats boosting a high-mile engine.
+Charger: forged 392, ProCharger at 7-8 psi (about 650-700 crank hp), 8HP90, all in the plan.
+Cruze: engine is apart, so it is built once now (full valve job, forged-piston refresh, every
+weak point, new turbo). Details: [build-guides.md](build-guides.md). All four:
+$97,290–212,450 became $111,440–237,730.
+
 **Parts lists (10/21):** brand-level parts for every build are in [parts-lists.md](parts-lists.md).
 The parts lists raised some lines; each changed line shows its old range as "was". Net change:
 Cruze +$2,700 to +$4,600, Charger +$3,500 to +$5,500, Cutlass +$5,100 to +$5,600, Hayabusa
@@ -19,8 +29,8 @@ This is a list for later, paid from extra money, never from bill money.
 
 1. **Charger oil change now** (past due). It's the running car.
 2. **Cruze head back on** and the car running again.
-3. Charger and Cruze Phase 1 (reliable plus brakes and oiling).
-4. Power on the Charger and Cruze.
+3. Charger and Cruze brakes, oiling and chassis (10/23: Cruze engine is built once in step 2).
+4. Charger power package, all at once, once it is paid for (10/23).
 5. Cutlass, the biggest build, once the other two are done or as cash allows.
 6. Hayabusa (added 10/21): find and fix the oil drips and service it now; build phases as cash allows.
 
@@ -30,20 +40,22 @@ This is a list for later, paid from extra money, never from bill money.
 
 | Phase | Work | Cost |
 |---|---|---|
-| 1 Reliable | Head job: gasket set, new TTY head bolts, machine shop check/resurface | $300–700 |
-| 1 Reliable | While apart: timing belt kit, water pump, thermostat housing, PCV/valve cover (known 1.4T failures) | $350–700 |
+| 1 Reliable | Build once (10/23): full valve job, new exhaust valves, guides, seals (was head check $300–700) | $600–1,300 |
+| 1 Reliable | Build once (10/23): pull the engine, forged-piston bottom end refresh, bearings, rings, gaskets, TTY head bolts | $1,700–3,000 |
+| 1 Reliable | While apart: timing chain kit, water pump, thermostat housing, oil cooler seals, turbo oil and coolant lines, injectors (was $350–700) | $600–1,200 |
+| 1 Reliable | Valve cover with PCV (GM 55573746) and CruzeKits PCV fix kit (in the parts list) | in parts list |
+| 1 Reliable | New stock-spec turbo (10/23); skip if buying the Z04 now | $450–1,100 |
 | 1 Reliable | Plugs, coils, fluids | $100–200 |
 | 1 Safe | Oil catch can, oil cooler, baffled oil pan, AN lines/fittings | $650–1,500 |
 | 1 Safe | Braided stainless lines, 4-piston front big brake kit | $850–2,100 |
-| 2 Power | Upgraded turbo (ZZP Z04, $1,999.99 checked 10/21; was $900–1,800). Only if the engine tests healthy at 183k | $1,800–2,200 |
-| 2 Power | Intercooler, intake, downpipe, injectors/fuel pump, tune | $1,000–2,300 |
+| Tune later (option, not in total) | ZZP Z04 turbo plus intercooler, intake, downpipe, injectors, tune; bolts on with no teardown thanks to the forged pistons. Z04 now instead of the stock turbo: +$2,350–3,400 | $2,800–4,500 |
 | 2 Handling | Air suspension (bags plus management), upgraded sway bars | $2,700–5,400 |
 | 3 Looks | New headlights and smoked LED taillights (smoked: yes, Tim 10/21) | $400–1,000 |
 | 3 Looks | New 10/21: 18 inch gloss black wheels (5x105 or adapters), stretched tires, camber bolts and shims | $1,200–2,500 |
 | 3 Looks | New 10/21: front lip, side skirts, rear diffuser, black bowties, single tip cat-back | $600–1,700 |
 | 3 Looks | New 10/21: white to gloss black. Chosen: 3M 2080 or Avery SW900 gloss black wrap at an NC certified shop (reversible, cheaper than a good paint job). Paint instead: $1,500–2,500 budget shop, $5,000–8,000 quality shop | $2,500–3,800 |
 | 3 Looks | New 10/21: burnt orange interior accents (was red): stitching, trim accents, ambient lighting | $400–2,400 |
-| | **Cruze total** (was $9,950–20,300 before the 10/21 decisions) | **about $12,850–26,500** |
+| | **Cruze total** (build once 10/23; was $12,850–26,500; $9,950–20,300 before the 10/21 decisions) | **about $12,750–27,200** |
 
 ## 2016 Dodge Charger Pursuit (5.7 Hemi, ~188k)
 
@@ -51,18 +63,19 @@ This is a list for later, paid from extra money, never from bill money.
 
 | Phase | Work | Cost |
 |---|---|---|
-| 1 Reliable | Oil change: 7 qt 5W-20 high-mileage + MO-339 | $50–70 |
-| 1 Reliable | Compression/leak-down test before boost (188k miles) | $0–150 |
-| 1 Reliable | Cooling (water pump, thermostat, hoses), trans service, 16 plugs | $550–1,100 |
-| 1 If needed | Lifters/cam (Hemi tick is common at this mileage) | $1,500–3,000 |
+| 1 Reliable | Oil change now, then keep the 5.7 alive on oil changes and safety repairs only (10/23; replaces the compression test, cooling/plugs/trans service and lifter lines) | $50–300 |
 | 1 Safe | Catch cans, oil cooler, baffled oil pan, AN lines/fittings | $800–1,800 |
 | 1 Safe | Braided stainless lines, 6-piston Brembo swap (used SRT/Hellcat set) | $1,300–2,600 |
-| 2 Power | Supercharger kit: ProCharger HO intercooled complete kit, $8,399–8,724 checked 10/21 (was $6,000–8,500) | $7,500–8,800 |
-| 2 Power | Dyno tune and PCM unlock; fuel parts come in the complete kit (was $800–1,600) | $300–800 |
+| 4 Power package | Build once (10/23): forged 6.4 / 392 (low-mile pull-out or Mopar P5160617AA long block, $6,995 listed, built with forged pistons) | $9,000–14,000 |
+| 4 Power package | 392 swap parts: intake, throttle body, rails, gaskets, sensors, mounts, 6.4 midpipes | $1,500–3,000 |
+| 4 Power package | Supercharger kit: ProCharger HO intercooled complete kit at 7-8 psi, $8,399–8,724 checked 10/21 and 10/23 (was $6,000–8,500) | $7,500–8,800 |
+| 4 Power package | Fuel for about 700 crank hp: injectors, in-tank pump (10/23) | $600–1,500 |
+| 4 Power package | Cooling: water pump and thermostat with the engine, 8HP90 trans cooler (10/23) | $500–1,100 |
+| 4 Power package | 8HP90 from a Hellcat with TCM programming (10/23; target torque is past the 8HP70's 516 lb-ft) | $3,500–6,500 |
+| 4 Power package | One dyno tune and PCM unlock (was $800–1,600) | $300–800 |
 | 2 Handling | Coilovers, upgraded sway bars | $1,600–3,200 |
 | 2 Drivetrain | 230mm limited-slip rear diff from a Scat Pack or Hellcat (bolts in) | $800–1,500 |
-| 2 Drivetrain | Transmission tune for the 8HP70 (firmer shifts, more line pressure) | $300–500 |
-| 2 Drivetrain | Past ~650 hp: stronger rear axles and a one-piece aluminum or carbon driveshaft | $1,900–3,800 |
+| 4 Power package | Axles and one-piece driveshaft sized for 650-700 hp; driveshaft measured after the 8HP90 is in (8HP70 tune line removed 10/23) | $1,900–3,800 |
 | 2 Handling | Adjustable rear camber arms and toe links (fix alignment once it's lowered) | $400–900 |
 | 2 Handling | Rear cradle/subframe bushing inserts (stops wheel hop) | $200–500 |
 | 2 Handling | Adjustable front tension struts or poly bushings (caster, sharper steering) | $300–700 |
@@ -74,9 +87,11 @@ This is a list for later, paid from extra money, never from bill money.
 | 3 Looks | New headlights and taillights | $600–1,500 |
 | 3 Looks | New 10/21: cat-back with quad tips | $1,000–2,000 |
 | 1 Safe | New 10/21: remote start and alarm, Compustar CS7900-AS 2-way with DroneMobile X2, push-to-start T-harness, installed (Fit: confirm on the Pursuit) | $650–950 |
-| | **Charger total** (was $27,050–53,750 before the 10/21 remote start; $23,550–48,250 before the parts list) | **about $27,700–54,700** (plus $1,500–3,000 if lifters) |
+| | **Charger total** (build once 10/23; was $27,700–54,700; $27,050–53,750 before the 10/21 remote start) | **about $41,950–79,280** (shop install of the engine, if not DIY, about $2,000–4,000 extra) |
 
-If the compression test is weak, plan a built engine before the supercharger ($5,000–10,000).
+Build order (10/23): phases 1 and 2 (brakes, chassis, diff, exhaust), then 3 (looks: body,
+paint, wheels, interior), then the whole phase 4 power package at once when it is paid for.
+Selling the 5.7 and 8HP70 afterward gets some money back.
 
 ### Charger AWD option (reference only, not the plan)
 
@@ -222,12 +237,12 @@ rails (+$1,500–3,500).
 
 | Vehicle | Low | High |
 |---|---|---|
-| Cruze | $12,850 | $26,500 |
-| Charger | $27,700 | $54,700 |
+| Cruze (build once 10/23; was $12,850–26,500) | $12,750 | $27,200 |
+| Charger (build once 10/23; was $27,700–54,700) | $41,950 | $79,280 |
 | Cutlass | $47,050 | $106,600 |
 | Hayabusa | $9,690 | $24,650 |
-| **Total** (was $95,590–210,150 before the 10/21 security systems) | **about $97,290** | **about $212,450** |
+| **Total** (was $97,290–212,450 before the 10/23 build-once plans; $95,590–210,150 before the 10/21 security systems) | **about $111,440** | **about $237,730** |
 | Cutlass Roid Runner-level finish (optional, not in the total) | +$22,700 | +$86,600 |
 
 Biggest savings: doing the labor, buying used brake and suspension parts, and finding a
-cheap LS. Biggest risks: the Charger's engine at 188k under boost and rust on the Cutlass (10/15 videos: vinyl top, rear window and C-pillar rust; floors, trunk and frame still unseen). The frame-off plan (10/20) handles all of it; the swing is DIY vs shop welding.
+cheap LS. Biggest risks: rust on the Cutlass (10/15 videos: vinyl top, rear window and C-pillar rust; floors, trunk and frame still unseen). The frame-off plan (10/20) handles all of it; the swing is DIY vs shop welding. The Charger's 188k engine risk is gone: it gets replaced by the forged 392 (10/23).

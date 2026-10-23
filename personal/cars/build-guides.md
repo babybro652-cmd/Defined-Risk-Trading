@@ -3,6 +3,14 @@
 Tim asked (10/21): a step-by-step guide for each build, in the order that gives the cleanest,
 lowest-hassle build, plus the biggest engine he could build for each one if he builds his own.
 
+**Updated 10/23: build once (Charger and Cruze).** Tim wants reliability and doesn't want to
+build now and redo later. Both guides now follow one order where nothing gets thrown away:
+chassis items first (brakes, suspension, body, interior, wheels) whenever money allows, then the
+engine and every part tied to power (fuel, cooling, tune, transmission, axles, driveshaft) all
+at once, sized for the final power from day one. One tune, one install. A fresh engine at
+moderate boost beats boosting a high-mile engine. The Cruze engine is already apart, so its
+engine gets built once now.
+
 Each phase lists: **Do** (the work), **Have on hand** (buy before you start the phase, so the
 car never sits apart waiting on parts), **DIY / shop**, **Mistakes to avoid**, **Checkpoint**
 (do not start the next phase until it passes) and **Time**. Times assume weekends only: one
@@ -22,12 +30,13 @@ Google Docs (one per vehicle folder under Cars):
 ## Rules for every build
 
 1. **Baseline before buying.** Test and measure what you have (compression, leak-down,
-   charging, frame) before spending on power parts.
+   charging, frame) before spending on power parts. (Charger and Cruze, 10/23: the final
+   engine is decided up front, so the test no longer decides the engine.)
 2. **One car apart at a time.** Cruze back together and running first, then the Charger, then
    the Cutlass. The Busa drips get fixed now because they are small.
 3. **Parts on the shelf before the wrench comes out.** Every phase lists what to have on hand.
-4. **Mechanical and safety before power, power before looks.** Brakes and oiling go in before
-   boost.
+4. **Mechanical and safety before power.** Brakes and oiling go in before boost. (Charger
+   10/23: chassis and looks come before the power package, so the power parts go in once.)
 5. **All cutting, welding and drilling before paint, wrap or powder coat.** Then test-fit
    everything (lights, trim, glass, wheels, aero, pods) before final paint.
 6. **Wiring planned before interior.** Draw the diagram, drill the pass-throughs, run the wires,
@@ -301,69 +310,113 @@ built 4L80E (rated by builders around 800-1,000 hp) is the next limit, not the e
 
 ---
 
-## 2016 Dodge Charger Pursuit (5.7 HEMI, stays RWD, ProCharger)
+## 2016 Dodge Charger Pursuit (5.7 HEMI now, forged 392 final, stays RWD, ProCharger)
 
-**The build:** 188k miles, RWD, ProCharger HO intercooled, widebody (Clinched Flares or Vicrez),
-white pearl paint, dark bronze concave wheels, Brembo 6-piston swap, 230 mm LSD rear, axles and
-driveshaft, cradle and suspension bushings, camber and toe arms, coilovers, quad-tip cat-back,
-black and bronze interior, trunk audio. Oil change past due.
+**Updated 10/23: build once.** Tim's call: reliability first, and no building now and redoing
+later. So the final engine is the plan, not an option.
 
-**Total time:** about 6-12 months of weekends, mostly waiting on paint and wheels. The car stays
-drivable between phases except during paint.
+**Build-once rules for this car:**
+1. Build in an order where nothing gets thrown away.
+2. Chassis first, whenever money allows: brakes, suspension, rear diff, exhaust, body, paint,
+   lights, wheels, interior. None of it changes when the engine does.
+3. Then the engine and every part tied to power go in together, sized for the final power from
+   day one: engine, supercharger, fuel, cooling, transmission, axles, driveshaft, tune.
+4. One tune, one install. No "tune the 5.7 now, retune the 392 later".
+5. A fresh engine at moderate boost beats boosting a 188k engine.
+6. No money into the old 5.7 past oil changes and safety repairs. It is the daily driver until
+   the power package goes in, then it gets sold.
+
+No changes to the look, the widebody or the remote start (Tim, 10/23).
+
+**The build:** forged 6.4 / 392, ProCharger HO intercooled at 7-8 psi, 8HP90 transmission,
+upgraded fuel, Driveshaft Shop axles and a one-piece driveshaft, 230 mm LSD rear. Widebody
+(Clinched Flares or Vicrez), white pearl paint, dark bronze concave wheels, Brembo 6-piston
+swap, cradle and suspension bushings, camber and toe arms, coilovers, quad-tip cat-back, black
+and bronze interior, trunk audio, remote start.
+
+### Final engine spec (decided 10/23)
+
+**Primary: a 6.4 / 392 HEMI built with forged pistons.** Two ways to get one:
+- Low-mile 6.4 pull-out (non-MDS preferred) taken to a HEMI engine builder for forged pistons
+  (about 9.5-10:1 compression), new rings and bearings, ARP head studs, MDS delete if it has
+  MDS, and a cam the builder and ProCharger agree on. Usually the cheaper path.
+- Mopar Direct Connection 392 long block P5160617AA ($6,995 listed at SDPC and Mancini,
+  checked 10/23), with the builder swapping in forged pistons before it goes in. Newest parts.
+- Budget either way: about $9,000-14,000 for the finished engine (estimate; get two builder
+  quotes).
+
+**Why the 392 over a forged 5.7 rebuild (reliability first):**
+- More torque at the same boost: the same power takes 2-3 psi less, so less heat and less
+  stress on everything.
+- It starts from new or low-mile parts. A forged 5.7 still uses the 188k block, and the 5.7
+  bore only takes about 0.020 in of overbore (thin walls).
+- Same outside size and mounts, bolts to the same transmission, and ProCharger lists the HO
+  kit for the 2015-2023 6.4 Charger.
+- Backup: a forged 5.7 rebuild (about $6,000-9,000, estimate) if a builder finds a good 392
+  too pricey. Same boost and parts plan, about 60-80 hp less.
+
+**Target power: about 650-700 hp at the crank, about 575-600 at the wheels, about 600 lb-ft,
+on 7-8 psi with 93 octane.** That is moderate boost on a forged engine: room to spare, built to
+drive every day. Do not chase more boost later without redoing the math on the transmission
+and axles.
+
+**Transmission line (decided by target power):**
+- Up to about 500 hp at the wheels and under about 516 lb-ft (the 8HP70's rating, about
+  700 Nm): the stock 8HP70 with a tune is fine.
+- Past that: the 8HP90 (rated about 900-1,000 Nm, 664-738 lb-ft) from a Hellcat.
+- The target here is about 600 lb-ft, past the 8HP70, so **the 8HP90 goes in with the
+  engine.** No 8HP70 tune money gets spent.
+
+**Sized for the target from day one:**
+- Fuel: bigger injectors and an in-tank pump upgrade for about 700 crank hp (confirm with
+  ProCharger what the complete kit covers at 8 psi on a 392).
+- Cooling: new water pump and thermostat with the engine, the Pursuit's heavy-duty radiator
+  (check it), trans cooler for the 8HP90, engine oil cooler.
+- Axles and one-piece driveshaft: The Driveshaft Shop LX axles; driveshaft measured after the
+  8HP90 is in.
+- Rear: 230 mm LSD (the Hellcat size).
+- Tune: unlocked PCM, HP Tuners, one custom dyno tune for engine and transmission.
+
+**Whipple stays optional:** a twin-screw instead of the ProCharger (not on top) is about
+$2,000-3,200 more. The forged 392 and 8HP90 are already in the plan, so the engine side is
+covered; keep the same 650-700 hp target if Tim ever picks it.
+
+**Total time:** about 9-18 months of weekends, mostly saving for the power package and waiting
+on paint and wheels. The car stays drivable on the 5.7 until the swap.
 
 ### Step by step
 
-**1. Baseline and catch up (1 weekend)**
-- Do: oil change now (7 qt 5W-20, MO-339). Scan for codes. Check engine hours in the cluster if
-  shown (police cars idle for hours; heavy idle time wears the engine like extra miles). Listen
-  for the HEMI lifter tick. Check trans fluid condition and confirm which transmission it has
-  (see Corrections above). Check for the factory engine oil cooler. Pull the VIN build sheet.
-- Then the most important test: **compression and leak-down** on all 8 cylinders, engine warm.
-- Have on hand: oil and filter, compression tester and leak-down tester (or $0-150 at a shop),
-  scan tool.
-- Checkpoint: cylinders within 10% of each other on compression; leak-down under about 10% is
-  good, 10-20% watch it, over 20% fix before boost. If weak: plan a built engine (see the
-  engine section) before buying the supercharger.
+**1. Baseline and keep the 5.7 alive (1 weekend)**
+- Do: oil change now (7 qt 5W-20, MO-339). Scan for codes. Confirm which transmission it has
+  (see Corrections above). Check for the factory engine oil cooler and heavy-duty radiator.
+  Pull the VIN build sheet.
+- No compression test gate any more: the 5.7 is being replaced. Do one only if it acts sick,
+  to know how long it lasts as a daily.
+- Spend on the 5.7: oil changes and safety repairs only. No plugs, lifters, cam or trans service
+  unless it is needed to keep driving.
+- Have on hand: oil and filter, scan tool.
 
-**2. Maintenance and repairs (2-4 weekends)**
-- Do: water pump, thermostat, hoses, 16 plugs, trans service (fluid and pan filter). If the
-  lifters tick: MDS-delete lifters and a cam that works with a ProCharger, done once.
-- Have on hand: Mopar water pump and thermostat, hoses, NGK plugs, ZF fluid and filter pan.
-- DIY / shop: DIY; lifters and cam can go to a shop.
-- Mistakes: picking a cam without asking ProCharger or the tuner what works under boost.
-- Checkpoint: 300 miles with no leaks, no codes, steady temps.
-
-**3. Stop before go: brakes and oiling (1-2 weekends)**
+**2. Stop before go: brakes (1-2 weekends)**
 - Do: used SRT/Hellcat 6-piston Brembo front and 4-piston rear, braided lines, fresh fluid.
-  Catch cans and oil cooler (skip the cooler if the factory one is there), AN lines.
 - Have on hand: complete brake set with brackets, rotors, pads, lines, DOT 4 fluid.
 - Mistakes: buying wheels that do not clear the Brembos (20 inch clears them).
 - Checkpoint: firm pedal, straight stops, no leaks.
 
-**4. Drivetrain and chassis (2-4 weekends)**
+**3. Chassis and rear diff (2-4 weekends)**
 - Do: 230 mm LSD rear, cradle bushing inserts, front tension struts, rear camber and toe arms,
-  end links, strut brace, sway bars, coilovers. Do all the bushings in one pass. Axles and a
-  one-piece driveshaft now if the plan goes past about 650 hp.
+  end links, strut brace, sway bars, coilovers. All the bushings in one pass. Catch cans and
+  the oil cooler (skip the cooler if the factory one is there), AN lines.
 - Have on hand: all suspension parts in one order, diff fluid, torque wrench.
 - Mistakes: setting the final ride height now. Leave the coilovers near stock height until the
   widebody and wheels are on.
 - Checkpoint: temporary alignment; no clunks.
 
-**5. Power (2-3 weekends plus a dyno day)**
-- Do: unlock the PCM (2015+ Mopar PCMs must be unlocked before HP Tuners), install the ProCharger
-  complete kit (fuel parts included), base tune from the kit, transmission tune. Then the dyno
-  tune after about 200 miles.
-- Have on hand: the complete kit, 91-93 octane, the dyno appointment.
-- Mistakes: running boost on the old fuel pump or without the tune; skipping the 8HP70 tune
-  (line pressure).
-- Checkpoint: datalogs show safe air-fuel ratio, no knock retard, intake air temps under
-  control. Repeat the leak-down after 500 miles.
+**4. Exhaust (1 weekend)**
+- Do: quad-tip cat-back (Borla ATAK or Corsa Xtreme). Hang it now so the diffuser is fitted
+  around the real tip location. Ask Borla or Corsa which cat-back fits the 6.4 midpipes, so
+  only the midpipes change at the engine swap.
 
-**6. Exhaust (1 weekend)**
-- Do: quad-tip cat-back (Borla ATAK or Corsa Xtreme). Hang it now so the diffuser in step 7 is
-  fitted around the real tip location.
-
-**7. Widebody and aero test fit (2-4 weekends)**
+**5. Widebody and aero test fit (2-4 weekends)**
 - Do: set the ride height you plan to run, then mount the flares with the final wheels and tires
   (or same-size mock-ups) on the car. Check tire-to-flare clearance at full lock and with the
   suspension compressed. Fit the splitter, skirts, diffuser and ducktail. Mark and drill every
@@ -374,106 +427,181 @@ drivable between phases except during paint.
 - Mistakes: ordering wheels before the flares are on; drilling after paint.
 - Checkpoint: every panel fits with even gaps and no rubbing.
 
-**8. Paint (shop, 4-8 weeks)**
+**6. Paint, lights and final assembly (shop 4-8 weeks, then 1-2 weekends)**
 - Do: white pearl tri-coat on the whole car and kit, holes filled. Black grille and badges.
+  LED headlights (check the Pursuit halogen harness) while the bumper is off. Set the final
+  ride height, then a performance alignment.
 - Mistakes: painting only the kit (tri-coat white is hard to match panel to panel).
-
-**9. Lights, final assembly and ride height (1-2 weekends)**
-- Do: LED headlights (check the Pursuit halogen harness) go in while the bumper is off. Set the
-  final ride height, then a performance alignment.
 - Checkpoint: alignment printout in spec; headlights aimed.
 
-**10. Interior and trunk audio (2-4 weekends)**
+**7. Interior, trunk audio and remote start (2-4 weekends)**
 - Do: plan the audio wiring first (power wire from the battery, fuse at the battery, ground,
   remote turn-on). Pull the police equipment wiring leftovers. Black and bronze interior, then
-  the trunk build.
+  the trunk build. Remote start any time (installer scans the BCM first).
 - Checkpoint: charging voltage stays above about 13.5 V with the audio up.
 
-**11. Final dyno check and shakedown**
-- Recheck the tune with the final exhaust and tires; 500 miles; recheck bolts and fluids.
+**8. Power package, all at once (shop or 4-6 weekends, plus a dyno day)**
+- Start only when the whole package is paid for and on the shelf: forged 392, ProCharger
+  kit, fuel parts, 8HP90 with its TCM programming, trans cooler, water pump and thermostat,
+  axles, and the driveshaft ordered once the 8HP90 is in and measured.
+- Do: unlock the PCM (2015+ Mopar PCMs must be unlocked before HP Tuners), pull the 5.7 and
+  8HP70, install the 392, 8HP90, fuel, cooling, axles and driveshaft, then the ProCharger.
+  Fender covers on the fresh paint the whole time.
+- Break-in on the base tune with no boost load per the builder's steps (usually about 500
+  miles and an oil change), then the one dyno tune at 7-8 psi.
+- Mistakes: running boost before break-in; turning the boost up past the target; skipping the
+  TCM programming for the 8HP90.
+- Checkpoint: datalogs show safe air-fuel ratio, no knock retard, intake air temps under
+  control, trans temps normal. Leak-down after 500 miles on boost as the new baseline.
+
+**9. Shakedown**
+- 500 miles; recheck bolts, fluids, ride height and alignment (the blower adds front weight).
+  Sell the 5.7 and 8HP70 to pay back part of the package.
 
 ### Don't do this before that (Charger)
 
-- Don't buy the supercharger before compression and leak-down pass.
-- Don't add boost before the brakes, LSD and fuel parts are in and the PCM is unlocked.
+- Don't spend on the 5.7 past oil changes and safety repairs.
+- Don't buy power parts one at a time: the engine, blower, fuel, 8HP90, axles and driveshaft go
+  in together, with one tune.
+- Don't tune the 8HP70; the 8HP90 is in the plan.
+- Don't order the driveshaft before the 8HP90 is in and measured.
 - Don't buy wheels before the flares are mounted and measured.
 - Don't set the final ride height or alignment before the widebody and wheels are on.
 - Don't paint before every kit hole is drilled and every Pursuit hole is filled.
-- Don't launch hard past about 650 hp on the stock axles and two-piece driveshaft.
+- Don't run boost before the engine is broken in.
 - Don't put the interior back before the audio power and signal wires are run.
 
 ### Biggest engine for the Charger (Gen III HEMI)
 
 | Engine | Bore x stroke (in) | Size | Notes | Price |
 |---|---|---|---|---|
-| **Stock 5.7 Eagle** | 3.917 x 3.578 | 345 ci, 5.7 L | Overbore limited to about 0.020 in (thin walls) | in the car |
+| Stock 5.7 Eagle | 3.917 x 3.578 | 345 ci, 5.7 L | Overbore limited to about 0.020 in (thin walls). Daily driver until the swap | in the car |
 | 5.7 stroker | 3.937 x 4.050 | about 394 ci, 6.5 L | Forged crank and pistons in the 5.7 block | $3,500-6,000 rotating assembly plus machine work (estimate) |
 | 6.2 Hellcat | 4.090 x 3.580 | 376 ci, 6.2 L | Factory supercharged; needs 8HP90, wiring, cooling; too much swap for this car | crate prices vary widely; confirm |
-| **6.4 / 392** | 4.090 x 3.720 | 392 ci, 6.4 L | Same outside size as the 5.7; bolts to the same trans | Mopar P5160617AA 392 long block $6,995 listed (SDPC); used bare block about $1,140 |
+| **6.4 / 392, forged (the plan, 10/23)** | 4.090 x 3.720 | 392 ci, 6.4 L | Same outside size as the 5.7; bolts to the same trans | Mopar P5160617AA 392 long block $6,995 listed (SDPC, Mancini, checked 10/23); finished forged engine about $9,000-14,000 (estimate) |
 | 426 stroker (392 block) | 4.090 x 4.050 | 426 ci, 7.0 L | Biggest common build | American Powertrain 426 long block $14,299 listed; Edelbrock 426 $24,367 listed |
 | Dart Iron Eagle Gen III block | up to 4.250 bore | about 460 ci (4.050 stroke), up to about 480 ci if Dart allows a 4.250 stroke (not confirmed) | Race-level block; Dart claims 2,000+ hp | confirm price with Dart |
 
 **Biggest:** about 460-480 ci on a Dart Iron Eagle block. **Biggest common:** 426 ci (7.0 L).
 
-**What limits it first is the drivetrain, not the engine.** The 8HP70 holds roughly 600-650 hp
-at the wheels with a tune (rough community figure; confirm with the trans builder); past that it
-needs an 8HP90 swap or a built unit. The stock axles and driveshaft are the next limit.
-
-**Recommendation: keep the 5.7 if it passes compression and leak-down, and run the ProCharger
-at the kit's boost.** That is the cheapest, most reliable path to the goal. If the engine tests
-weak at 188k, replace it with a **6.4 / 392** (forged pistons preferred under boost), which bolts
-in, adds 47 ci and stays inside what the 8HP70 can take. Confirm with ProCharger which kit and
-tune fit a 392 swap in a 5.7 car before buying. A 426 only makes sense with the 8HP90 and the
-axles and driveshaft already done.
+**The plan (10/23): forged 392, ProCharger at 7-8 psi, 8HP90, about 650-700 crank hp.** A 426
+only makes sense past about 800 hp, which is past what this street car needs and past the
+8HP90's comfort zone.
 
 ---
 
-## 2012 Chevy Cruze LT RS (1.4T, head off)
+## 2012 Chevy Cruze LT RS (1.4T, head off, build-once engine)
 
-**The build:** white car going gloss black wrap (3M 2080 or Avery SW900), burnt orange interior
+**Updated 10/23: build once.** Tim's call: reliability is the goal, and no building now and
+redoing later. The engine is already apart, so the final engine gets defined and built now.
+
+**Build-once rules for this car:**
+1. Build in an order where nothing gets thrown away.
+2. The engine is apart now, so do the engine once: every known 1.4T weak point and the bottom
+   end in this one teardown, sized for the most power Tim might ever run.
+3. Then chassis and looks whenever money allows: brakes, air ride, wheels, exterior, wrap,
+   interior.
+4. Any power parts (turbo, fuel, tune) go in together with one tune, not piece by piece.
+5. A fresh engine at moderate boost beats boosting a 183k engine.
+
+**The build:** freshened 1.4T with forged pistons, full valve job, all weak points replaced,
+new turbo. White car going gloss black wrap (3M 2080 or Avery SW900), burnt orange interior
 accents, smoked LED taillights, LED halo projector headlights, Air Lift 3P/3H air ride, 18 inch
-gloss black wheels, lip, skirts and diffuser, single tip, black bowties. Upgraded turbo (ZZP
-Z04) only if the engine tests healthy. 182,995 miles; engine code LUJ or LUV (confirm by VIN,
-8th digit).
+gloss black wheels, lip, skirts and diffuser, single tip, black bowties. 182,995 miles; engine
+code LUJ or LUV (confirm by VIN, 8th digit).
 
-**Total time:** about 4-8 months of weekends. Getting it running is 3-6 weekends.
+### Final engine spec (decided 10/23)
+
+**Recommendation: pull the engine and do a full refresh with forged pistons, at stock power.**
+
+- **Head (at the machine shop now):** full valve job with all new exhaust valves (intakes too
+  if any measure worn), new guides where out of spec, new valve stem seals, seats cut, springs
+  checked, pressure test for cracks, flatness check and only the cut it needs.
+- **Bottom end:** at 183k with the head off, this is the cheapest moment it will ever be. Pull
+  the engine; the machine shop measures the bores and crank, hones (or bores about 0.5 mm if
+  needed) to fit new pistons, and checks bearing clearances. New rings, rod and main bearings,
+  rod bolts.
+- **Forged pistons, not stock cast:** the 1.4T's known killer is cracked ring lands from
+  low-speed pre-ignition, and it happens on stock engines too. Forged pistons remove that
+  failure. Once the block is out and at the shop, forged pistons cost about $500-800 more
+  than OE cast ones. Ask for a 4032-alloy forged piston (tighter fit, quiet when cold, built
+  for street life) at stock compression.
+- **Rods:** the stock rods are fine at stock power and a Z04-level tune. ZZP 4340 rods
+  ($549.99, checked 10/23) only if Tim ever goes past about 250 hp.
+- **Every known 1.4T weak point, replaced in the same teardown:** valve cover with PCV (GM
+  55573746) plus the CruzeKits PCV fix kit; water pump; thermostat housing (plastic, leaks);
+  oil cooler and its housing seals (known to leak oil into coolant); turbo oil feed and return
+  lines and the turbo coolant lines (known leakers); timing chain, guides, tensioner;
+  new TTY head bolts and head gasket; rear main and front seals; injectors flow-tested or
+  replaced (a bad injector is a common cause of a burnt valve).
+- **Turbo: replace it.** At 183k, oil-fed turbos wear their shaft seals and bearings, and the
+  wastegate rattle is common. A new OE-spec turbo (GM 55565353 type; GM, ACDelco, or a known
+  maker, not a $170 no-name unit) with new lines. About $450-1,100.
+- **Tune: stock.** Run dexos1 Gen 2 or newer oil (formulated against pre-ignition).
+- **Fix the cause of the burnt valve:** PCV, vacuum leak, injector or coil on that cylinder.
+  Smoke test after assembly.
+
+**Tune-later option (and the one decision for Tim):** with forged pistons the engine is ready
+for the ZZP Z04 turbo, downpipe, intercooler, intake, injectors and a Trifecta or ZZP tune
+(about 220-250 hp), no teardown. Cost later: about $2,800-4,500. **If Tim thinks he will ever
+tune it, buy the Z04 kit now instead of the new stock turbo** (about $2,350-3,400 more now) so
+the stock turbo isn't bought and thrown away. If never: the new stock turbo, and done.
+
+**Stock-spec refresh instead of forged (not recommended):** OE cast pistons save about
+$500-800 but keep the ring land weak point.
+
+**Total time:** about 5-9 months of weekends. Getting it running is 6-10 weekends, mostly
+machine shop time.
+
+### Machine shop: what to ask for
+
+1. Head: pressure test, flatness, full valve job, new exhaust valves (quote all 16 too), guides
+   as needed, new seals, springs checked. Minimum cut.
+2. Block: hot tank or clean, deck flatness, bore measurements (taper and out-of-round) written
+   down, torque-plate hone or bore to fit the pistons they order, piston-to-wall clearance to
+   the piston maker's spec.
+3. Crank: measure journals, polish (grind only if needed), check end play.
+4. Rods: check size and straightness; new rod bolts.
+5. Bearings: new rod and main bearings, clearances measured and written down.
+6. Pistons: which forged 1.4T piston they can get (Wiseco, JE or Diamond, 4032 alloy, stock
+   compression) and the price; or they assemble the short block for you (quote it).
+7. A written sheet of every measurement for the Cruze log.
 
 ### Step by step
 
-**1. Finish the head job right (2-4 weekends plus 1-2 weeks at the machine shop)**
-- Do: find out why the head came off and write it in the Cruze file. Look at each piston top
-  and ring land for cracks (the 1.4T is known for cracked pistons from detonation) and the
-  cylinder walls for scoring. Clean the deck per the Cruze file. Machine shop checks the head for
-  warp and leak-tests the valves. Replace the timing parts (chain kit; see Corrections above), water
-  pump, thermostat housing and the valve cover with the PCV. New TTY head bolts, new gasket
-  installed dry.
-- Have on hand: gasket set, TTY bolts, timing kit, water pump, thermostat housing, valve cover,
-  plugs, coolant (Dex-Cool), dexos oil, torque wrench and angle gauge.
-- Mistakes: abrasive discs on the deck; reusing head bolts; skipping the timing alignment tools.
-- **Checkpoint:** if a piston is cracked or a wall is scored, stop: the bottom end needs work
-  (see the engine section) before the car goes back together.
+**1. Decide the spec and pull the engine (1-2 weekends, now)**
+- Do: write why the valve burnt in the Cruze file. Tell the machine shop the full head spec
+  above. Pull the engine (hoist and stand). Look at each piston top and ring land and the
+  cylinder walls, then take the block to the shop.
+- Decide now: Z04 now or stock turbo (see the tune-later option).
+- Have on hand: engine hoist and stand (rent or borrow), bags and tags, photos of every harness.
 
-**2. First start and proof run (2 weekends)**
-- Do: start, check leaks, bleed the cooling system. Drive 500-1,000 miles normally. Mark the
-  dipstick and track oil use.
+**2. Machine shop (2-4 weeks, runs while you gather parts)**
+- Head and block work per the list above. Order every part in the next step during this wait.
+
+**3. Assemble and install (3-5 weekends)**
+- Do: short block (or the shop does it), head with new TTY bolts and a dry gasket, timing chain
+  kit with the alignment tools, water pump, thermostat housing, oil cooler and seals, valve
+  cover with PCV and the CruzeKits fix, new turbo with new oil and coolant lines, injectors,
+  plugs gapped, coil pack. Install the engine.
+- Have on hand: full gasket set, TTY head bolts, timing kit and tools, water pump, thermostat
+  housing, oil cooler seals, valve cover, PCV kit, turbo and lines, plugs, coil, Dex-Cool,
+  dexos oil, assembly lube, torque wrench and angle gauge.
+- Mistakes: abrasive discs on the deck; reusing head bolts; skipping the timing alignment
+  tools; reusing old turbo lines.
+
+**4. First start, break-in and proof (2 weekends)**
+- Do: prime oil, start, check leaks, bleed the cooling system, smoke test for vacuum leaks.
+  Break in per the piston maker (no full boost for about 500 miles), oil change at about 500.
 - **Checkpoint:** compression and leak-down on all 4 cylinders (within 10%; under about 10%
-  leak-down), cooling system pressure test, no coolant in the oil, oil use under about 1 quart
-  per 2,000 miles.
+  leak-down) as the new baseline, cooling system pressure test, no coolant in the oil.
 
-**3. Reliability and safety (2-3 weekends)**
-- Do: check the turbo oil feed and return lines (known leakers), coils, plugs gapped for boost.
-  Brakes: check if the rear is drum or disc; braided lines and the front brake upgrade. Catch can
-  and oil cooler.
-- Use a dexos1 Gen 2 or newer oil: it is formulated against low-speed pre-ignition, which is
-  what cracks 1.4T pistons.
+**5. Reliability and safety (2-3 weekends)**
+- Do: check if the rear is drum or disc; braided lines and the front brake upgrade. Catch can
+  and oil cooler kit. If the Z04 was bought, it went in at step 3; the one tune happens after
+  break-in.
 
-**4. Turbo decision gate**
-- **Pass** (healthy tests, no oil use): ZZP Z04 turbo, downpipe, intercooler, intake, fuel
-  parts, then the tune (Trifecta or ZZP). Dyno or datalog tune after install.
-- **Fail:** keep the stock turbo and skip the power phase, or put in a forged long block first
-  (engine section). Do not put a bigger turbo on a tired 183k engine with cast pistons.
-
-**5. Air ride and wheels (2-3 weekends)**
+**6. Air ride and wheels (2-3 weekends)**
 - Do: struts and bags, Air Lift 3P (or 3H with height sensors), tank and compressor in the
   trunk, lines routed away from the exhaust and sharp edges. Plan the controller and switch
   wiring now. Mount the wheels (5x105 or adapters), air the car out, check fender lip and
@@ -482,54 +610,51 @@ Z04) only if the engine tests healthy. 182,995 miles; engine code LUJ or LUV (co
   the film).
 - Checkpoint: soapy water leak test on every fitting; car holds pressure overnight; alignment.
 
-**6. Exterior parts on the white car (1-2 weekends)**
+**7. Exterior parts on the white car (1-2 weekends)**
 - Do: LED halo headlights and smoked taillights (SW-0126A-BRB; check the listing says sedan),
   front lip, side skirts, diffuser, single tip exhaust, remove the chrome bowties. Drill every
   hole now.
 - Checkpoint: everything mounted; the car looks finished except the color.
 
-**7. Gloss black wrap (shop, 3-5 days)**
+**8. Gloss black wrap (shop, 3-5 days)**
 - Do: wrap last on the outside, after every part is drilled and mounted. Ask the shop to remove
   lights and handles for tucked edges; add door jambs if budget allows (about $500 more).
-  Decide whether the lip, skirts and diffuser get wrapped or stay their own black.
-- Mistakes: wrapping before parts are mounted (cutting film later lifts the edges); waxing or
-  pressure washing the edges in the first week.
+- Mistakes: wrapping before parts are mounted; waxing or pressure washing the edges in the
+  first week.
 
-**8. Burnt orange interior (2-3 weekends)**
+**9. Burnt orange interior (2-3 weekends)**
 - Do: run the ambient LED and air management wiring first, then the seat covers or upholstery
   with burnt orange stitching, steering wheel stitching and trim accents.
 
-**9. Final tune and alignment**
-- Recheck the tune at final ride height and with the final exhaust; alignment at the height you
-  drive at.
+**10. Final alignment**
+- Alignment at the height you drive at. If the Z04 is on, recheck the tune with the final
+  exhaust.
 
 ### Don't do this before that (Cruze)
 
-- Don't put the engine back together before checking the pistons and walls.
-- Don't buy the bigger turbo before the post-rebuild tests and the oil-use check pass.
+- Don't put the head back on a 183k bottom end: refresh it while it is apart.
+- Don't buy a new stock turbo if Tim might tune it; buy the Z04 once.
+- Don't reuse turbo oil or coolant lines, head bolts, or the old valve cover.
+- Don't run boost before break-in.
 - Don't buy stretched tires before the wheels are test-fit aired out.
 - Don't wrap before the lights, aero, exhaust and fender rolling are done.
 - Don't install interior trim before the air ride controller and ambient lighting wires are run.
-- Don't reuse the head bolts or use abrasive pads on the deck.
+- Don't use abrasive pads on the deck.
 
 ### Biggest engine for the Cruze
 
 | Engine | Bore x stroke (mm) | Size | Notes | Price |
 |---|---|---|---|---|
-| **Stock 1.4T (LUJ/LUV)** | 72.5 x 82.6 | 1,364 cc, 83 ci | Iron block; cast (hypereutectic) pistons, forged rods | in the car |
+| **Stock 1.4T (LUJ/LUV)** | 72.5 x 82.6 | 1,364 cc, 83 ci | Iron block; cast (hypereutectic) pistons stock. The plan (10/23): forged pistons in this block | in the car |
 | 1.4T bored 1 mm with forged pistons | 73.5 x 82.6 | 1,402 cc, 86 ci | About the most the block takes; ZZP 1.4L forged long block (4340 rods, Diamond forged pistons, torque-plate hone) | $6,899.98 listed (ZZP), core required |
 | 1.8 (2H0, from the Cruze LS) | 80.5 x 88.2 | 1,796 cc, 110 ci | Bolts into the car but it is not a turbo engine: no turbo oil feed, high-compression cast pistons, different ECU and harness | used engines are cheap; turbo conversion is all custom |
 | 1.4T LE2 (2016+ Cruze) | 74 x 81.3 | 1,399 cc, 85 ci | Aluminum block; different electronics; no gain in size | not worth it |
 | 2.0T LTG | 86 x 86 | 1,998 cc, 122 ci | No kits for a 1st-gen Cruze; custom mounts, wiring, ECU | well over $8,000 (estimate) |
 
-**Biggest in its own block:** 1,402 cc (86 ci). **Biggest that bolts in:** the 1.8 (110 ci),
-but it makes less power than a tuned 1.4T unless he builds a custom turbo system for it.
-
-**Recommendation: keep the 1.4T at 1,364 cc.** No bigger engine is practical in this car: the
-bigger options are either not turbo engines or need custom wiring and mounts that cost more than
-the whole power budget. Power comes from the Z04 turbo and the tune. If the engine fails the
-tests or he wants to go past about 250 hp, the move is a forged 1.4 (ZZP long block or the same
-parts from a local machine shop), not a bigger engine.
+**The plan (10/23): keep the 1.4T at 1,364 cc, rebuilt with forged pistons by a local machine
+shop.** No bigger engine is practical in this car. The ZZP forged long block ($6,899.98) is the
+same idea at about twice the cost; the local refresh uses Tim's own block, which is already
+apart.
 
 ---
 
@@ -636,9 +761,10 @@ tune: modest gain, still pump gas and streetable. Skip sleeved and stroker build
 
 ## Top "do this first" items
 
-1. **Charger:** oil change now, then compression and leak-down before buying the supercharger.
-2. **Cruze:** inspect pistons and cylinder walls and find why the head came off, before it goes
-   back together; then the post-rebuild compression test decides the turbo.
+1. **Charger:** oil change now; keep the 5.7 alive on oil changes only; brakes and chassis
+   first; save for the full power package (forged 392, ProCharger, 8HP90, fuel, axles).
+2. **Cruze:** give the machine shop the full build-once spec, pull the engine for the forged
+   piston refresh, and decide Z04 now or stock turbo (10/23).
 3. **Cutlass:** the 10-minute flashlight check for frame and floor rot, then brace the door
    openings before the body comes off.
 4. **Hayabusa:** find and fix the oil drip and swap in the MOSFET regulator before riding far.
@@ -647,3 +773,9 @@ Sources checked 10/21: Chevrolet Performance LSX block listings (JEGS, Brian Too
 SDPC), Dartheads LS Next and Iron Eagle Gen III HEMI listings, Mopar 392 long block (SDPC),
 American Powertrain and Edelbrock 426 listings, Dodge Pursuit 8-speed announcement, ZZP 1.4L
 forged long block, Orient Express and Wiseco/JE Hayabusa piston listings.
+
+Sources checked 10/23 (build once): Mopar P5160617AA 392 long block $6,995 (SDPC, Mancini
+Racing); ProCharger HO intercooled P-1SC-1 Charger kit $8,399-8,724 listed for 2015-2023 6.4
+Charger (American Muscle); 8HP70 rating about 700 Nm / 516 lb-ft and 8HP90 about 900-1,000 Nm
+(Jalopnik, Ram Forum); ZZP 1.4 4340 rod set $549.99; 1.4T turbo 55565353 listings $170-470
+(no-name units at the low end). No forged 1.4T piston price found online: ask the machine shop.
