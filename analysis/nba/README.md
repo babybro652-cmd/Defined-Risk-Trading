@@ -143,6 +143,8 @@ Include the first shot and first score for each game in the grading message to T
   51%. Picks that changed tonight: LAC@LAL Doncic over Kessler, POR@SAC Morant over Sabonis, TOR@WSH Leonard
   over Barrett.
 
+- 10/23 CHI @ MIL: Jalen Smith (CHI's jumper) won the tip and scored the first basket on CHI's first shot, the second straight game a tip-winning center scored first (Allen 10/22). Turner, MIL's jumper, scored MIL's first basket. Check whether the model underrates centers who win the tip on the first possession.
+
 ## Tim vs model log (first basket)
 
 Tim's picks come from his own read of the StarTool card (not just its star), so the Tim column tests how he uses StarTool's data; the StarTool column is its star/bomb as printed.
@@ -153,7 +155,7 @@ On game days Tim sends the StarTool Analytics "Game Script" card for each game (
 |---|---|---|---|---|---|---|---|
 | 10/22 | CLE @ PHI | Jarrett Allen (CLE won tip; first shot Allen, made) | Mobley, Mitchell | Mitchell | Mobley, Brown, Mitchell | No | No |
 | 10/22 | DEN @ OKC | Cason Wallace (OKC won tip; first shot Wallace three, made) | Gordon, Murray | SGA (Jokic for DEN) | Murray, Jokic, Wallace | No | Yes (Wallace +1100) |
-| 10/23 | CHI @ MIL 4:00 | (grade) | Rollins, Kuzma (changed from Herro, Turner) | Powell / Herro | Jaquez Jr. | (grade) | (grade) |
+| 10/23 | CHI @ MIL 4:00 | Jalen Smith CHI (CHI won tip; first shot Smith layup, made). MIL first: Myles Turner | Rollins, Kuzma (changed from Herro, Turner) | Powell / Herro | Jaquez Jr. | No | No |
 | 10/23 | NY @ BOS | (grade) | (grade) | Brunson / Tatum | Paul George | (grade) | (grade) |
 | 10/23 | ATL @ CHA | (grade) | (grade) | Alexander-Walker / Miller | Brandon Miller | (grade) | (grade) |
 | 10/23 | DAL @ IND | (grade) | (grade) | Flagg / Haliburton | Zubac | (grade) | (grade) |
