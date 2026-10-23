@@ -81,7 +81,10 @@ Include the first shot and first score for each game in the grading message to T
 - Share, step by step (code: `V2` and `v2_shares` in build_nba_tab.py):
   1. Accuracy blend: 0.5 x first-FG share + 0.5 x first-shot share x (his FG% / league FG% 47%).
      Both shares are shrunk toward 1 in 5 with 10 pseudo starts; FG% is shrunk toward league with 150
-     pseudo attempts. A player who takes the first shot a lot but misses often is discounted.
+     pseudo attempts. Since 10/23: a player with fewer than 10 starts in the data (both seasons, any team)
+     gets up to 10 more pseudo starts (20 at 0 starts, fading to 10 at 10 starts), and his 26-27 games count
+     1x at 0 starts for his current team, ramping to the full B3 weight at 5 (`cur_weight`, `ramp_n`,
+     `k_new`, `settle_n` in V2). A player who takes the first shot a lot but misses often is discounted.
   2. Opponent defense: x (opponent's rate of allowing the first FG to his position G/F/C, 2025-26 plus
      2026-27 x weight, shrunk toward the league rate with 120 pseudo games) / league rate, kept within
      0.85 to 1.15. These rates match the public @nbafirstbasket "allowed by position" table closely
@@ -99,6 +102,11 @@ Include the first shot and first score for each game in the grading message to T
   pick hit 13.9% vs 14.0%. Accuracy was the biggest gain; defense was neutral (kept modest at k=120); the
   ripple alone was neutral to slightly better. First basket is mostly noise, so treat the edge as small.
   `out/fb_candidates.json` lists every starter with v2 and old-model (v1) chances side by side.
+- 10/23 fix backtest (`python3 analysis/nba/backtest_fb.py --team`, applies W like the build): 2025-26 (933
+  games) log loss 2.2828 old vs 2.2826 new, top pick 14.0% both; 2026-27 (16 games through 10/22) 2.2902 vs
+  2.2861, top pick 1 of 16 both. Top pick changed in 27 of 948 games (3 right each way). Too small to call a
+  real gain; it stops one-start players from taking the pick. Counting only starts with the current team for
+  the extra shrink was worse (2.2830, top pick 13.7%): it discards traded regulars' real history (Herro).
 - Not added: home/away (the tip winner scores first 65.3% at home vs 63.0% away, within noise of 2.7
   points, and home is already inside the tip rates) and pace (who scores first is settled in the first one
   or two trips; a team-accuracy factor on P(team scores first) was tested and did not help).
@@ -127,6 +135,13 @@ Include the first shot and first score for each game in the grading message to T
 - 10/22 lesson (applied from 10/23): a questionable big who is confirmed starting keeps his full first-basket
   share. Do not discount him for the tag; recheck lineups about 30 min before tip and rerun if he is in.
 - 10/22 CLE @ PHI: Jarrett Allen (day-to-day, knee) started, won the tip and scored the first basket on CLE's first shot. A day-to-day center who jumps should keep his full first-basket share once he is confirmed in the lineup; recheck starters about 30 min before tip and rerun if a questionable big is in.
+
+- 10/23: Jaquez Jr. got 36% of MIL's first FG and the CHI@MIL pick off one 26-27 start (1/1) at weight 3,
+  with 1 start in 25-26. Fix: 26-27 weight ramps 1x to B3 over his first 5 starts with his current team, and
+  players with under 10 starts get extra shrink toward 1 in 5. Jaquez fell to 27% share (fair +643 from +462)
+  but still edges Rollins (22%): CHI allows forwards more often (x1.06 vs x0.93 for guards) and Jaquez shoots
+  51%. Picks that changed tonight: LAC@LAL Doncic over Kessler, POR@SAC Morant over Sabonis, TOR@WSH Leonard
+  over Barrett.
 
 ## Tim vs model log (first basket)
 
