@@ -133,4 +133,4 @@ On game days Tim sends the StarTool Analytics "Game Script" card for each game (
 | Date | Game | Scored first | Tim | StarTool top | Our model | Tim hit | Model hit |
 |---|---|---|---|---|---|---|---|
 | 10/22 | CLE @ PHI | Jarrett Allen (CLE won tip; first shot Allen, made) | Mobley, Mitchell | Mitchell | Mobley, Brown, Mitchell | No | No |
-| 10/22 | DEN @ OKC | (grade) | Gordon, Murray | SGA (Jokic for DEN) | Murray, Jokic, Wallace | | |
+| 10/22 | DEN @ OKC | Cason Wallace (OKC won tip; first shot Wallace three, made) | Gordon, Murray | SGA (Jokic for DEN) | Murray, Jokic, Wallace | No | Yes (Wallace +1100) |
