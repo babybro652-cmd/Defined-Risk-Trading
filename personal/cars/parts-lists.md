@@ -126,7 +126,8 @@ Cutlass notes.
 ## 2016 Dodge Charger Pursuit (5.7 Hemi, RWD)
 
 **Updated 10/23: build once.** The final engine is the plan, not an option: a forged 6.4 / 392
-with the ProCharger HO at 7-8 psi (about 650-700 crank hp, about 600 lb-ft), the 8HP90, fuel,
+with a Whipple 3.0L twin-screw at about 7 psi (about 650-700 crank hp, about 620-660 lb-ft; traditional
+supercharger, no ProCharger, Tim 10/23), the 8HP90, fuel,
 cooling, axles and driveshaft all sized for that from day one and installed together with one
 tune. Chassis and looks go first whenever money allows. The 5.7 gets oil changes only until
 the swap. Look, widebody and remote start unchanged. Order and reasons: build-guides.md.
@@ -164,13 +165,14 @@ Tuners or Diablo tune.
 | Category | Part | Brand / model | Fits / notes | Est. price | DIY / shop | Req |
 |---|---|---|---|---|---|---|
 | Maintenance | Oil and filter, keep the 5.7 alive (10/23) | 7 qt 5W-20 high mileage, Mopar MO-339; safety repairs only until the swap | Past due. Replaces the old compression test, cooling/plugs/trans service and lifter lines: no money into an engine being replaced | $50–300 | DIY | Req |
-| Engine | Forged 6.4 / 392 (main plan, 10/23; was option) | Low-mile 6.4 pull-out (non-MDS preferred) or Mopar Direct Connection 392 long block P5160617AA ($6,995 listed SDPC and Mancini, checked 10/23), built by a HEMI builder with forged pistons (about 9.5-10:1), rings, bearings, ARP head studs, MDS delete if needed, cam approved by ProCharger and the builder | Finished-engine price est, not checked: get two builder quotes. Backup: forged 5.7 rebuild $6,000–9,000 est | $9,000–14,000 | Shop | Req |
+| Engine | Forged 6.4 / 392 (main plan, 10/23; was option) | Low-mile 6.4 pull-out (non-MDS preferred) or Mopar Direct Connection 392 long block P5160617AA ($6,995 listed SDPC and Mancini, checked 10/23), built by a HEMI builder with forged pistons (about 9.5-10:1), rings, bearings, ARP head studs, MDS delete if needed, cam approved by Whipple and the builder | Finished-engine price est, not checked: get two builder quotes. Backup: forged 5.7 rebuild $6,000–9,000 est | $9,000–14,000 | Shop | Req |
 | Engine | 392 swap parts (10/23) | Intake, throttle body, fuel rails, gaskets, plugs, sensors, mounts, oil pan or pickup if different, 6.4 midpipes; PCM flashed to a 6.4 calibration | Price est, not checked. Shop install about $2,000–4,000 if not DIY (not in total) | $1,500–3,000 | DIY or shop | Req |
-| Power | Supercharger | ProCharger HO intercooled P-1SC-1 complete kit ($8,399–8,724 checked 10/21 and 10/23; listed for the 2015-2023 6.4 Charger); tuner kit $7,474 | Ask ProCharger which kit and pulley for a 392 swap in a 5.7 car at 7-8 psi | $7,500–8,800 | Shop | Req |
-| Power | Fuel for about 700 crank hp (10/23) | Larger injectors (ID1050x or similar) and an in-tank pump upgrade | Only what the complete kit doesn't cover at 7-8 psi on a 392. Price est, not checked | $600–1,500 | DIY | Req |
+| Power | Supercharger (traditional, 10/23) | Whipple Gen 6 3.0L twin-screw, WK-3021-30, 2015-2017 6.4 Charger ($8,999.99 Whipple, $8,899.99 American Muscle, checked 10/23): blower, intake, dual-pass intercooler, heat exchanger, pump, Hellcat injectors, billet rails, HP Tuners RTD | Ask Whipple: full kit or tuner kit for a 392 in a 5.7 car, pulley for about 7 psi, stock Pursuit hood clearance. Backup: Magnuson TVS2650 $8,465–8,995 checked. ProCharger not chosen | $8,900–9,300 | Shop | Req |
+| Power | Fuel pump for about 700 crank hp (10/23) | In-tank pump upgrade or booster | Whipple kit includes the injectors and rails. Price est, not checked | $300–800 | DIY | Req |
 | Power | Dyno tune, PCM unlock | HP Tuners with unlocked PCM, one custom dyno tune for engine and transmission | | $300–800 | Shop | Req |
 | Cooling | Cooling for the target (10/23) | New water pump and thermostat with the engine, trans cooler for the 8HP90; check the Pursuit heavy-duty radiator | Price est, not checked | $500–1,100 | DIY | Req |
-| Power | Twin-screw blower instead of the ProCharger (option) | Whipple 2.9L or 3.0L twin-screw kit, intercooled | Swap for the ProCharger line, not added on top. The forged 392 and 8HP90 are now in the plan, so only the blower changes. Same 650-700 hp target. Price est, not checked | $9,500–12,000 | Shop | Opt |
+| Power | Heat exchanger and pump upgrade (option) | Larger front heat exchanger, higher-flow intercooler pump | Only if datalogs show heat soak. Price est, not checked; not in total | $400–900 | DIY | Opt |
+| Body | SRT/Hellcat-style vented hood (option) | Only if the Whipple doesn't clear the stock Pursuit hood | Price est, not checked; plus paint; not in total | $600–1,500 | Shop | Opt |
 | Drivetrain | 8HP90 transmission swap (main plan, 10/23; was option) | ZF 8HP90 from a Hellcat, with TCM programming | Target torque (about 600 lb-ft) is past the 8HP70's rating (about 516 lb-ft / 700 Nm). Line: under about 500 whp the tuned 8HP70 is fine; past it, 8HP90. Price est, not checked | $3,500–6,500 | Shop | Req |
 | Oiling | Catch cans, cooler, pan, AN | Mishimoto or UPR catch cans, oil cooler if not factory, AN lines | Check the Pursuit's factory oil cooler first | $800–1,800 | DIY | Req |
 | Brakes | Big brakes | Used SRT/Hellcat 6-piston Brembo front, 4-piston rear with brackets, rotors | 20 inch wheels clear them | $1,300–2,600 | DIY | Req |
@@ -200,15 +202,16 @@ Tuners or Diablo tune.
 
 | Line | Was | Now | Why |
 |---|---|---|---|
-| Supercharger kit | $6,000–8,500 | $7,500–8,800 | ProCharger complete kit checked at $8,399–8,724; tuner kit $7,474 |
+| Supercharger kit | $7,500–8,800 (ProCharger) | $8,900–9,300 | Whipple 3.0L WK-3021-30 checked at $8,899.99–8,999.99 (10/23). Traditional blower, no ProCharger. Before 10/21: $6,000–8,500 |
+| Fuel for 700 hp (10/23) | $600–1,500 | $300–800 | Whipple kit includes Hellcat injectors and rails; pump only |
 | Fuel upgrades and tune | $800–1,600 | $300–800 | The complete kit includes fuel parts; this line is the dyno tune and PCM unlock |
 | Big wheels and tires | $2,500–5,000 | $4,000–9,000 | Bronze concave wheels as rendered, flow formed low, forged high |
 | Cat-back with quad tips (new) | n/a | $1,000–2,000 | Quad tips in the rendering |
 | Remote start and alarm (new, 10/21) | n/a | $650–950 | Compustar CS7900-AS with DroneMobile, installed |
-| Optional power upgrades (10/22) | not in total | moved into the plan 10/23 | 392 and 8HP90 are now required lines (below). Twin-screw stays optional, +$2,000–3,200 over the ProCharger |
+| Optional power upgrades (10/22) | not in total | moved into the plan 10/23 | 392 and 8HP90 are now required lines (below). Twin-screw is now the plan (Whipple line above) |
 | Build once (10/23): removed | $900–1,820 | $0 | Compression test, cooling/plugs/trans service, 8HP70 tune, old oil line. Lifters (was extra) dropped |
 | Build once (10/23): added | n/a | $15,150–26,400 | Keep-alive oil $50–300, forged 392 $9,000–14,000, swap parts $1,500–3,000, fuel $600–1,500, cooling $500–1,100, 8HP90 $3,500–6,500 |
-| **Charger total** | **$27,700–54,700** | **$41,950–79,280** | Build once 10/23 (+$14,250 low, +$24,580 high). Selling the 5.7 and 8HP70 gets some back. Before: $27,050–53,750 before the 10/21 remote start |
+| **Charger total** | **$27,700–54,700** | **$43,050–79,080** | Whipple 10/23 (+$1,100 low, -$200 high from $41,950–79,280). Build once 10/23 (+$14,250 low, +$24,580 high). Selling the 5.7 and 8HP70 gets some back. Before: $27,050–53,750 before the 10/21 remote start |
 
 **Matching app on both cars (option, 10/21):** put the Cutlass on Compustar too: CS7900-AS brain, DroneMobile X2 LTE and a Digital Guard Dawg PBS-X push button start ($443 at DGD), which runs off the Compustar remote. Both cars then use one DroneMobile app and one style of 2-way remote; the Cutlass gives up the iKey hands-free walk-up unlock and costs about the same (about $1,000–1,300 with the same poppers, trunk release, relays and door pulls).
 
@@ -362,10 +365,10 @@ speakers in the undertail and inner front fairing, amp and Bluetooth.
 | Vehicle | Was | Now |
 |---|---|---|
 | Cruze | $7,250–15,700 | $12,750–27,200 (build once 10/23; was $12,850–26,500) |
-| Charger | $23,550–48,250 | $41,950–79,280 (build once 10/23; was $27,700–54,700) |
+| Charger | $23,550–48,250 | $43,050–79,080 (Whipple 10/23; was $41,950–79,280; $27,700–54,700 before build once) |
 | Cutlass | $37,150–95,300 | $47,050–106,600 |
 | Hayabusa | $9,540–24,050 | $9,690–24,650 |
-| **Total** | **$77,490–183,300** | **$111,440–237,730** (was $97,290–212,450 before the 10/23 build-once plans) |
+| **Total** | **$77,490–183,300** | **$112,540–237,530** (was $111,440–237,730 before the Whipple swap 10/23; $97,290–212,450 before the 10/23 build-once plans) |
 
 Totals include Tim's 10/21 decisions and the 10/21 Cutlass and Charger security systems (before the decisions: $88,940–199,600; before the security systems: $95,590–210,150). Not in the totals: Cutlass
 Roid Runner finish table (now $22,700–86,600), Charger engine install labor if a shop does it, Cruze tune-later option. The Cutlass T-56 and air ride
@@ -385,6 +388,6 @@ are not chosen (10/21).
    aero and smoked taillights, Busa Ricks Hot Shot part number and 300 tire size.
 8. Charger remote start: have the installer scan the Pursuit BCM and run the VIN before buying (fleet settings).
    Cutlass: call Digital Guard Dawg (877-246-5395) for the iKey remote start upgrade price.
-9. Decided 10/23: build once. Charger: forged 392, ProCharger 7-8 psi, 8HP90, all in the plan;
+9. Decided 10/23: build once. Charger: forged 392, Whipple 3.0L about 7 psi (no ProCharger), 8HP90, all in the plan;
    pick a pull-out 392 or the Mopar crate after two builder quotes. Cruze: forged-piston
    refresh at stock power; Tim decides Z04 now or a new stock turbo (if never tuning).

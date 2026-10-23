@@ -310,7 +310,7 @@ built 4L80E (rated by builders around 800-1,000 hp) is the next limit, not the e
 
 ---
 
-## 2016 Dodge Charger Pursuit (5.7 HEMI now, forged 392 final, stays RWD, ProCharger)
+## 2016 Dodge Charger Pursuit (5.7 HEMI now, forged 392 final, stays RWD, Whipple)
 
 **Updated 10/23: build once.** Tim's call: reliability first, and no building now and redoing
 later. So the final engine is the plan, not an option.
@@ -328,7 +328,10 @@ later. So the final engine is the plan, not an option.
 
 No changes to the look, the widebody or the remote start (Tim, 10/23).
 
-**The build:** forged 6.4 / 392, ProCharger HO intercooled at 7-8 psi, 8HP90 transmission,
+**Updated 10/23 (later): traditional supercharger, no ProCharger (Tim's call).** The blower is
+a top-mount Whipple 3.0L twin-screw. ProCharger is not chosen.
+
+**The build:** forged 6.4 / 392, Whipple 3.0L twin-screw intercooled at about 7 psi, 8HP90 transmission,
 upgraded fuel, Driveshaft Shop axles and a one-piece driveshaft, 230 mm LSD rear. Widebody
 (Clinched Flares or Vicrez), white pearl paint, dark bronze concave wheels, Brembo 6-piston
 swap, cradle and suspension bushings, camber and toe arms, coilovers, quad-tip cat-back, black
@@ -339,7 +342,7 @@ and bronze interior, trunk audio, remote start.
 **Primary: a 6.4 / 392 HEMI built with forged pistons.** Two ways to get one:
 - Low-mile 6.4 pull-out (non-MDS preferred) taken to a HEMI engine builder for forged pistons
   (about 9.5-10:1 compression), new rings and bearings, ARP head studs, MDS delete if it has
-  MDS, and a cam the builder and ProCharger agree on. Usually the cheaper path.
+  MDS, and a cam the builder and Whipple agree on. Usually the cheaper path.
 - Mopar Direct Connection 392 long block P5160617AA ($6,995 listed at SDPC and Mancini,
   checked 10/23), with the builder swapping in forged pistons before it goes in. Newest parts.
 - Budget either way: about $9,000-14,000 for the finished engine (estimate; get two builder
@@ -350,13 +353,13 @@ and bronze interior, trunk audio, remote start.
   stress on everything.
 - It starts from new or low-mile parts. A forged 5.7 still uses the 188k block, and the 5.7
   bore only takes about 0.020 in of overbore (thin walls).
-- Same outside size and mounts, bolts to the same transmission, and ProCharger lists the HO
-  kit for the 2015-2023 6.4 Charger.
+- Same outside size and mounts, bolts to the same transmission, and Whipple lists its 3.0L kit
+  for the 2015-2017 6.4 Charger (WK-3021-30).
 - Backup: a forged 5.7 rebuild (about $6,000-9,000, estimate) if a builder finds a good 392
   too pricey. Same boost and parts plan, about 60-80 hp less.
 
-**Target power: about 650-700 hp at the crank, about 575-600 at the wheels, about 600 lb-ft,
-on 7-8 psi with 93 octane.** That is moderate boost on a forged engine: room to spare, built to
+**Target power: about 650-700 hp at the crank, about 575-600 at the wheels, about 620-660
+lb-ft, on about 7 psi with 93 octane.** That is moderate boost on a forged engine: room to spare, built to
 drive every day. Do not chase more boost later without redoing the math on the transmission
 and axles.
 
@@ -364,12 +367,16 @@ and axles.
 - Up to about 500 hp at the wheels and under about 516 lb-ft (the 8HP70's rating, about
   700 Nm): the stock 8HP70 with a tune is fine.
 - Past that: the 8HP90 (rated about 900-1,000 Nm, 664-738 lb-ft) from a Hellcat.
-- The target here is about 600 lb-ft, past the 8HP70, so **the 8HP90 goes in with the
+- The target here is about 620-660 lb-ft, past the 8HP70, so **the 8HP90 goes in with the
   engine.** No 8HP70 tune money gets spent.
+- Twin-screw torque: it makes full boost from low rpm, so peak torque is about 20-60 lb-ft
+  higher than the ProCharger plan and it arrives by about 2,500-3,000 rpm. Still inside the
+  8HP90 (664-738 lb-ft) and the Driveshaft Shop axles. Have the tuner keep torque management
+  on in 1st and 2nd. This is why the boost stays at about 7 psi and not higher.
 
 **Sized for the target from day one:**
-- Fuel: bigger injectors and an in-tank pump upgrade for about 700 crank hp (confirm with
-  ProCharger what the complete kit covers at 8 psi on a 392).
+- Fuel: the Whipple kit includes Hellcat injectors and billet rails; add an in-tank pump
+  upgrade for about 700 crank hp (the 5.7 car's pump is smaller; confirm with Whipple).
 - Cooling: new water pump and thermostat with the engine, the Pursuit's heavy-duty radiator
   (check it), trans cooler for the 8HP90, engine oil cooler.
 - Axles and one-piece driveshaft: The Driveshaft Shop LX axles; driveshaft measured after the
@@ -377,9 +384,54 @@ and axles.
 - Rear: 230 mm LSD (the Hellcat size).
 - Tune: unlocked PCM, HP Tuners, one custom dyno tune for engine and transmission.
 
-**Whipple stays optional:** a twin-screw instead of the ProCharger (not on top) is about
-$2,000-3,200 more. The forged 392 and 8HP90 are already in the plan, so the engine side is
-covered; keep the same 650-700 hp target if Tim ever picks it.
+### Supercharger choice (decided 10/23: traditional blower, Whipple)
+
+**Primary: Whipple Gen 6 3.0L twin-screw kit, WK-3021-30, for the 2015-2017 6.4 Charger and
+Challenger.** $8,999.99 at Whipple, $8,899.99 at American Muscle (checked 10/23). Rated up to
+710 hp and 650 lb-ft on 93. Kit includes the blower and intake manifold, dual-pass bar-and-plate
+intercooler, front heat exchanger, intercooler pump, Hellcat injectors, billet fuel rails and an
+HP Tuners RTD flash tool. No fuel pump. Built to order (10-14 business days, VIN at order).
+Warranty listed as 1 year at American Muscle: confirm with Whipple.
+
+**Why Whipple (reliability first):**
+- Twin-screw runs cooler than a roots-type at 7 psi, so less heat soak and less knock risk.
+- The kit is made for the 6.4, the engine going in. Same LX body, so it fits the car.
+- Hellcat injectors and rails come in the box; only the pump is extra.
+- A 2016 Scat Pack (stock 392) made about 677 whp and 621 lb-ft at the wheels on 7.5 psi with
+  this blower (National Speed). The target here is lower, on a forged engine: room to spare.
+
+**Backup: Magnuson TVS2650 Magnum** (Eaton TVS roots, 2011-2024 Charger 5.7 and 6.4). $8,995 at
+SDPC, $8,465 at Lingenfelter (checked 10/23). 3-year/36,000-mile warranty, PCM unlock included,
+listed to fit under every factory hood except the Shaker. Stock pulley is about 5.5 psi on a
+6.4 (613 crank hp claimed), so it needs a smaller pulley to reach the target, and a roots-type
+makes more heat at that boost. Pick it if Whipple says the stock Pursuit hood won't clear.
+Edelbrock E-Force 15172 ($10,447 at Speedway) lists 2015-2018 6.4 only and needs the ECM
+sent in: not chosen.
+
+**ProCharger: not chosen (Tim, 10/23).**
+
+**Boost and pulley:** about 7 psi on the forged 392 at 9.5-10:1 and 93 octane. Whipple and the
+tuner pick the pulley for that; do not go smaller later. Run the kit's belt and tensioner and
+keep a spare belt in the car.
+
+**Heat soak:** a positive-displacement blower heats up in traffic and on back-to-back pulls.
+Plan: the kit intercooler plus a larger heat exchanger and pump upgrade if intake air temps
+climb past about 130-140 F on datalogs (about $400-900, estimate, not checked; not in the
+total). Keep the Pursuit's heavy-duty radiator.
+
+**Hood (flag):** Whipple doesn't list hood clearance for the Charger. The Pursuit has the flat
+R/T-style hood. Magnuson says its kit fits every factory hood but the Shaker, and top-mount
+kits on the LX are sold as stock-hood kits, but confirm with Whipple before buying. If it
+doesn't clear, an SRT/Hellcat-style vented hood fits the widebody look (about $600-1,500 plus
+paint, estimate, not checked; not in the total). The widebody look stays either way.
+
+**Ask Whipple (before buying):**
+1. Which kit for a 392 swapped into a 5.7 car: WK-3021-30 full kit, or the tuner kit with our
+   own custom tune (the VIN is a 5.7, so the canned calibration won't match).
+2. Stock Pursuit hood clearance.
+3. Pulley for about 7 psi on a forged 392 at 9.5-10:1.
+4. Fuel pump needed at about 700 crank hp in a 5.7 car.
+5. Any 5.7-car differences: heat exchanger mount, wiring, intake air temp sensor.
 
 **Total time:** about 9-18 months of weekends, mostly saving for the power package and waiting
 on paint and wheels. The car stays drivable on the 5.7 until the swap.
@@ -441,18 +493,18 @@ on paint and wheels. The car stays drivable on the 5.7 until the swap.
 - Checkpoint: charging voltage stays above about 13.5 V with the audio up.
 
 **8. Power package, all at once (shop or 4-6 weekends, plus a dyno day)**
-- Start only when the whole package is paid for and on the shelf: forged 392, ProCharger
-  kit, fuel parts, 8HP90 with its TCM programming, trans cooler, water pump and thermostat,
+- Start only when the whole package is paid for and on the shelf: forged 392, Whipple
+  kit, fuel pump, 8HP90 with its TCM programming, trans cooler, water pump and thermostat,
   axles, and the driveshaft ordered once the 8HP90 is in and measured.
 - Do: unlock the PCM (2015+ Mopar PCMs must be unlocked before HP Tuners), pull the 5.7 and
-  8HP70, install the 392, 8HP90, fuel, cooling, axles and driveshaft, then the ProCharger.
+  8HP70, install the 392, 8HP90, fuel, cooling, axles and driveshaft, then the Whipple.
   Fender covers on the fresh paint the whole time.
 - Break-in on the base tune with no boost load per the builder's steps (usually about 500
-  miles and an oil change), then the one dyno tune at 7-8 psi.
+  miles and an oil change), then the one dyno tune at about 7 psi.
 - Mistakes: running boost before break-in; turning the boost up past the target; skipping the
   TCM programming for the 8HP90.
 - Checkpoint: datalogs show safe air-fuel ratio, no knock retard, intake air temps under
-  control, trans temps normal. Leak-down after 500 miles on boost as the new baseline.
+  control (watch heat soak), trans temps normal. Leak-down after 500 miles on boost as the new baseline.
 
 **9. Shakedown**
 - 500 miles; recheck bolts, fluids, ride height and alignment (the blower adds front weight).
@@ -484,7 +536,7 @@ on paint and wheels. The car stays drivable on the 5.7 until the swap.
 
 **Biggest:** about 460-480 ci on a Dart Iron Eagle block. **Biggest common:** 426 ci (7.0 L).
 
-**The plan (10/23): forged 392, ProCharger at 7-8 psi, 8HP90, about 650-700 crank hp.** A 426
+**The plan (10/23): forged 392, Whipple 3.0L at about 7 psi, 8HP90, about 650-700 crank hp.** A 426
 only makes sense past about 800 hp, which is past what this street car needs and past the
 8HP90's comfort zone.
 
@@ -762,7 +814,7 @@ tune: modest gain, still pump gas and streetable. Skip sleeved and stroker build
 ## Top "do this first" items
 
 1. **Charger:** oil change now; keep the 5.7 alive on oil changes only; brakes and chassis
-   first; save for the full power package (forged 392, ProCharger, 8HP90, fuel, axles).
+   first; save for the full power package (forged 392, Whipple, 8HP90, fuel, axles).
 2. **Cruze:** give the machine shop the full build-once spec, pull the engine for the forged
    piston refresh, and decide Z04 now or stock turbo (10/23).
 3. **Cutlass:** the 10-minute flashlight check for frame and floor rot, then brace the door
@@ -775,7 +827,8 @@ American Powertrain and Edelbrock 426 listings, Dodge Pursuit 8-speed announceme
 forged long block, Orient Express and Wiseco/JE Hayabusa piston listings.
 
 Sources checked 10/23 (build once): Mopar P5160617AA 392 long block $6,995 (SDPC, Mancini
-Racing); ProCharger HO intercooled P-1SC-1 Charger kit $8,399-8,724 listed for 2015-2023 6.4
-Charger (American Muscle); 8HP70 rating about 700 Nm / 516 lb-ft and 8HP90 about 900-1,000 Nm
+Racing); Whipple WK-3021-30 Gen 6 3.0L kit $8,999.99 (Whipple) and $8,899.99 (American
+Muscle) for 2015-2017 6.4 Charger; Magnuson TVS2650 $8,995 (SDPC), $8,465 (Lingenfelter);
+Edelbrock E-Force 15172 $10,447 (Speedway); National Speed 2016 Scat Pack Whipple 3.0L dyno; 8HP70 rating about 700 Nm / 516 lb-ft and 8HP90 about 900-1,000 Nm
 (Jalopnik, Ram Forum); ZZP 1.4 4340 rod set $549.99; 1.4T turbo 55565353 listings $170-470
 (no-name units at the low end). No forged 1.4T piston price found online: ask the machine shop.

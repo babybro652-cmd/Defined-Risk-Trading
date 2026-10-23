@@ -8,10 +8,11 @@ and redoing later. Order on those two: chassis items first (brakes, suspension, 
 wheels) whenever money allows, then the engine and every part tied to power (fuel, cooling,
 tune, transmission, axles, driveshaft) all at once, sized for the final power from day one.
 One tune, one install. A fresh engine at moderate boost beats boosting a high-mile engine.
-Charger: forged 392, ProCharger at 7-8 psi (about 650-700 crank hp), 8HP90, all in the plan.
+Charger: forged 392, Whipple 3.0L twin-screw at about 7 psi (about 650-700 crank hp), 8HP90, all
+in the plan. Traditional supercharger, no ProCharger (Tim, later 10/23).
 Cruze: engine is apart, so it is built once now (full valve job, forged-piston refresh, every
 weak point, new turbo). Details: [build-guides.md](build-guides.md). All four:
-$97,290–212,450 became $111,440–237,730.
+$97,290–212,450 became $111,440–237,730, then $112,540–237,530 with the Whipple.
 
 **Parts lists (10/21):** brand-level parts for every build are in [parts-lists.md](parts-lists.md).
 The parts lists raised some lines; each changed line shows its old range as "was". Net change:
@@ -68,8 +69,8 @@ This is a list for later, paid from extra money, never from bill money.
 | 1 Safe | Braided stainless lines, 6-piston Brembo swap (used SRT/Hellcat set) | $1,300–2,600 |
 | 4 Power package | Build once (10/23): forged 6.4 / 392 (low-mile pull-out or Mopar P5160617AA long block, $6,995 listed, built with forged pistons) | $9,000–14,000 |
 | 4 Power package | 392 swap parts: intake, throttle body, rails, gaskets, sensors, mounts, 6.4 midpipes | $1,500–3,000 |
-| 4 Power package | Supercharger kit: ProCharger HO intercooled complete kit at 7-8 psi, $8,399–8,724 checked 10/21 and 10/23 (was $6,000–8,500) | $7,500–8,800 |
-| 4 Power package | Fuel for about 700 crank hp: injectors, in-tank pump (10/23) | $600–1,500 |
+| 4 Power package | Supercharger kit: Whipple Gen 6 3.0L twin-screw WK-3021-30 at about 7 psi, $8,899.99–8,999.99 checked 10/23, includes Hellcat injectors and rails (was ProCharger $7,500–8,800; ProCharger not chosen) | $8,900–9,300 |
+| 4 Power package | Fuel pump for about 700 crank hp (injectors come with the Whipple; was $600–1,500) | $300–800 |
 | 4 Power package | Cooling: water pump and thermostat with the engine, 8HP90 trans cooler (10/23) | $500–1,100 |
 | 4 Power package | 8HP90 from a Hellcat with TCM programming (10/23; target torque is past the 8HP70's 516 lb-ft) | $3,500–6,500 |
 | 4 Power package | One dyno tune and PCM unlock (was $800–1,600) | $300–800 |
@@ -87,7 +88,7 @@ This is a list for later, paid from extra money, never from bill money.
 | 3 Looks | New headlights and taillights | $600–1,500 |
 | 3 Looks | New 10/21: cat-back with quad tips | $1,000–2,000 |
 | 1 Safe | New 10/21: remote start and alarm, Compustar CS7900-AS 2-way with DroneMobile X2, push-to-start T-harness, installed (Fit: confirm on the Pursuit) | $650–950 |
-| | **Charger total** (build once 10/23; was $27,700–54,700; $27,050–53,750 before the 10/21 remote start) | **about $41,950–79,280** (shop install of the engine, if not DIY, about $2,000–4,000 extra) |
+| | **Charger total** (Whipple 10/23; was $41,950–79,280; $27,700–54,700 before build once; $27,050–53,750 before the 10/21 remote start) | **about $43,050–79,080** (shop install of the engine, if not DIY, about $2,000–4,000 extra) |
 
 Build order (10/23): phases 1 and 2 (brakes, chassis, diff, exhaust), then 3 (looks: body,
 paint, wheels, interior), then the whole phase 4 power package at once when it is paid for.
@@ -238,10 +239,10 @@ rails (+$1,500–3,500).
 | Vehicle | Low | High |
 |---|---|---|
 | Cruze (build once 10/23; was $12,850–26,500) | $12,750 | $27,200 |
-| Charger (build once 10/23; was $27,700–54,700) | $41,950 | $79,280 |
+| Charger (Whipple 10/23; was $41,950–79,280; $27,700–54,700 before build once) | $43,050 | $79,080 |
 | Cutlass | $47,050 | $106,600 |
 | Hayabusa | $9,690 | $24,650 |
-| **Total** (was $97,290–212,450 before the 10/23 build-once plans; $95,590–210,150 before the 10/21 security systems) | **about $111,440** | **about $237,730** |
+| **Total** (was $111,440–237,730 before the Whipple; $97,290–212,450 before the 10/23 build-once plans; $95,590–210,150 before the 10/21 security systems) | **about $112,540** | **about $237,530** |
 | Cutlass Roid Runner-level finish (optional, not in the total) | +$22,700 | +$86,600 |
 
 Biggest savings: doing the labor, buying used brake and suspension parts, and finding a

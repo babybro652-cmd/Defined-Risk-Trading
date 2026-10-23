@@ -52,7 +52,7 @@ Newest decisions win; move finished items to Done with the date.
 
 ### Cars
 - [ ] Cruze machine shop: give them the question list (top of the Cruze build guide doc), get a written measurement sheet and a short-block quote. Forged pistons, built for the ZZP Z04 turbo + tune (decided 10/23).
-- [ ] Charger: get 2 engine builder quotes for a forged 392 (pull-out vs Mopar crate P5160617AA $6,995); ask ProCharger which kit/pulley for a 392 in a 5.7 car at 7-8 psi.
+- [ ] Charger: get 2 engine builder quotes for a forged 392 (pull-out vs Mopar crate P5160617AA $6,995); ask Whipple which 3.0L kit (WK-3021-30 full or tuner kit) and pulley fit a 392 in a 5.7 car at about 7 psi, and if it clears the stock Pursuit hood.
 
 ### Defined Risk Trading
 - [ ] Pink Out softball tournament (Sat 10/17-Sun 10/18): after it's over, Tim drops photos in DRT Phone and Jarvis drafts a DRT post plus a personal post (Tim approves before posting).
