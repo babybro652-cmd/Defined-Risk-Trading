@@ -29,7 +29,7 @@ If anything fails, tell Jarvis which line.
 | 10 AM lunch | Check the FB post went out; glance at comments | Tim |
 | 4:45 PM | Facebook Reel V1 goes live | Blotato (automatic, schedule 5364170) |
 | After work | Reel V1 on Instagram and TikTok | Tim, by hand |
-| 7:45 PM | Pin 1 (Calm Wings inside pages) goes live | Pinterest scheduler (automatic) |
+| 7:30 PM | Pin 1 (Calm Wings inside pages) goes live | Pinterest scheduler (automatic) |
 | Evening | Share text to friends and family (optional); answer comments and DMs | Tim |
 
 ### Media (tap, open full size, save)
