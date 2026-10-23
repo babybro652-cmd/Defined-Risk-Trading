@@ -45,11 +45,19 @@ V2 = {'w_shot': 0.5,      # share = (1 - w) x first-FG share + w x first-shot sh
       'def_k': 120,       # defense-by-position rate shrunk toward league with 120 pseudo games
       'def_cap': 0.15,    # defense multiplier kept within 0.85 to 1.15
       'norm': 1.0,        # 1 = the five starters' shares are rescaled to sum to the league starter rate (injury ripple)
-      'starter_sum': 0.99}
+      'starter_sum': 0.99,
+      'ramp_n': 5,        # 26-27 weight ramps from 1x at 0 starts with his current team to the full B3 weight at 5
+      'k_new': 10,        # extra pseudo starts for a player with few starts in the data (any team) ...
+      'settle_n': 10}     # ... fading to 0 at 10 starts, both seasons (a team-only count hurt traded regulars)
 
 
-def v1_share(t1, gs):
-    return (t1 + 2) / (gs + 10)   # shrink toward 1 in 5 with 10 pseudo starts
+def cur_weight(w, n_cur, prm=V2):
+    """26-27 game weight for one player: full weight only after prm['ramp_n'] 26-27 starts with his current team."""
+    return 1 + (w - 1) * min(n_cur, prm['ramp_n']) / prm['ramp_n']
+
+
+def v1_share(t1, gs, k=10):
+    return (t1 + k / 5) / (gs + k)   # shrink toward 1 in 5 with k pseudo starts (10 by default)
 
 
 def v2_shares(players, allow, allow_n, lg, prm=V2):
@@ -58,9 +66,12 @@ def v2_shares(players, allow, allow_n, lg, prm=V2):
     'pos': {pos: league share of team first FGs}}. Returns (shares, defense multipliers, raw v1 shares)."""
     w, out, mults, raw = prm['w_shot'], [], [], []
     for p in players:
+        kp = 10   # few starts in the data (new starter): shrink harder toward 1 in 5
+        if 'n_starts' in p and prm.get('k_new'):
+            kp += prm['k_new'] * max(0, 1 - p['n_starts'] / prm['settle_n'])
         p = {k: p.get(k, 0) for k in ('gs', 't1', 'sh1', 'fgm', 'fga')} | {'pos': p.get('pos', '')}
-        s1 = v1_share(p['t1'], p['gs'])
-        s2 = v1_share(p['sh1'], p['gs'])
+        s1 = v1_share(p['t1'], p['gs'], kp)
+        s2 = v1_share(p['sh1'], p['gs'], kp)
         fg = (p['fgm'] + prm['fg_k'] * lg['fg']) / (p['fga'] + prm['fg_k'])
         a = (1 - w) * s1 + w * s2 * fg / lg['fg']
         r = lg['pos'].get(p['pos'])
@@ -234,7 +245,7 @@ def refresh(season, sched, today, log):
 # ---------- aggregates ----------
 def zero():
     return {'gp': 0, 'gs': 0, 'fb': 0, 'fp': 0, 't1': 0, 'sh1': 0, 'sh1m': 0, 'tips': 0, 'tipw': 0, 'pts': 0, 'tpm': 0,
-            'min': 0, 'fgm': 0, 'fga': 0, 'log': []}
+            'min': 0, 'fgm': 0, 'fga': 0, 'log': [], 'gs_by': {}}
 
 
 def player_stats(games):
@@ -246,7 +257,7 @@ def player_stats(games):
             s['fgm'] += fgm; s['fga'] += fga
             s['log'].append((g['date'], pts, tpm, st))
             if st:
-                s['gs'] += 1
+                s['gs'] += 1; s['gs_by'][tm] = s['gs_by'].get(tm, 0) + 1
                 s['fb'] += bool(g['fb'] and g['fb'][0] == pid)
                 s['fp'] += bool(g['fp'] and g['fp'][0] == pid)
                 s['t1'] += g['tf'].get(tm) == pid
@@ -402,9 +413,11 @@ def build(start, log):
         c, l = S(PC, pid), S(PL, pid)
         return v1_share(W * c['t1'] + l['t1'], W * c['gs'] + l['gs'])
 
-    def wcounts(pid):
-        c, l = S(PC, pid), S(PL, pid)
-        return {k: W * c[k] + l[k] for k in ('gs', 't1', 'sh1', 'fgm', 'fga')} | {'pos': roster[pid]['pos']}
+    def wcounts(pid):   # 26-27 weight ramps up with his starts for his current team (10/23 fix)
+        c, l, tm = S(PC, pid), S(PL, pid), roster[pid]['tm']
+        w = cur_weight(W, c['gs_by'].get(tm, 0))
+        return ({k: w * c[k] + l[k] for k in ('gs', 't1', 'sh1', 'fgm', 'fga')}
+                | {'pos': roster[pid]['pos'], 'n_starts': c['gs'] + l['gs']})
 
     lg_fgm = sum(x['fgm'] for x in PL.values()) + W * sum(x['fgm'] for x in PC.values())
     lg_fga = sum(x['fga'] for x in PL.values()) + W * sum(x['fga'] for x in PC.values())
