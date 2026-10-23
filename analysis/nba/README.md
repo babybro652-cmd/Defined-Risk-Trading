@@ -124,6 +124,8 @@ Include the first shot and first score for each game in the grading message to T
 - Fixed 10/21: the schedule cache now refetches any day with games not yet final, so finished games
   (like opening night) load into the 26-27 numbers on the next run.
 
+- 10/22 lesson (applied from 10/23): a questionable big who is confirmed starting keeps his full first-basket
+  share. Do not discount him for the tag; recheck lineups about 30 min before tip and rerun if he is in.
 - 10/22 CLE @ PHI: Jarrett Allen (day-to-day, knee) started, won the tip and scored the first basket on CLE's first shot. A day-to-day center who jumps should keep his full first-basket share once he is confirmed in the lineup; recheck starters about 30 min before tip and rerun if a questionable big is in.
 
 ## Tim vs model log (first basket)
@@ -134,3 +136,15 @@ On game days Tim sends the StarTool Analytics "Game Script" card for each game (
 |---|---|---|---|---|---|---|---|
 | 10/22 | CLE @ PHI | Jarrett Allen (CLE won tip; first shot Allen, made) | Mobley, Mitchell | Mitchell | Mobley, Brown, Mitchell | No | No |
 | 10/22 | DEN @ OKC | Cason Wallace (OKC won tip; first shot Wallace three, made) | Gordon, Murray | SGA (Jokic for DEN) | Murray, Jokic, Wallace | No | Yes (Wallace +1100) |
+| 10/23 | CHI @ MIL 4:00 | (grade) | (grade) | Powell / Herro | Jaquez Jr. | (grade) | (grade) |
+| 10/23 | NY @ BOS | (grade) | (grade) | Brunson / Tatum | Paul George | (grade) | (grade) |
+| 10/23 | ATL @ CHA | (grade) | (grade) | Alexander-Walker / Miller | Brandon Miller | (grade) | (grade) |
+| 10/23 | DAL @ IND | (grade) | (grade) | Flagg / Haliburton | Zubac | (grade) | (grade) |
+| 10/23 | MIN @ ORL | (grade) | (grade) | Edwards / Banchero | Bane | (grade) | (grade) |
+| 10/23 | TOR @ WSH | (grade) | (grade) | Leonard / Davis | RJ Barrett | (grade) | (grade) |
+| 10/23 | DET @ MIA | (grade) | (grade) | Cunningham / Giannis | Adebayo | (grade) | (grade) |
+| 10/23 | HOU @ SA | (grade) | (grade) | Durant / Wembanyama | Wembanyama | (grade) | (grade) |
+| 10/23 | NO @ UTAH | (grade) | (grade) | Murphy / Markkanen | Jaren Jackson Jr. | (grade) | (grade) |
+| 10/23 | MEM @ GS | (grade) | (grade) | Jerome / Curry | Ty Jerome | (grade) | (grade) |
+| 10/23 | LAC @ LAL | (grade) | (grade) | Garland / Doncic | Kessler, Doncic | (grade) | (grade) |
+| 10/23 | POR @ SAC | (grade) | (grade) | Lillard / LaVine | Sabonis | (grade) | (grade) |
