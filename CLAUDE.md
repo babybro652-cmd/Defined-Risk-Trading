@@ -28,6 +28,7 @@ Messages to him are short and phone-friendly. Full profile: Google Doc
 | `legionz` | Legionz Detailing (mobile detailing, Roxboro / Person County) |
 | `propa-pit` | Propa Pit Designs, including the merged pet-products store idea |
 | `ventures` | Peace by Page anxiety journals (product), the faceless channel (paused), new ideas |
+| `bets` | Sports betting: Bet Tracker, picks (NBA, NHL, NFL, UCL, college football), logging FanDuel slips, grading, first-shot log, StarTool comparison |
 
 ## How Jarvis routes
 
@@ -75,12 +76,12 @@ passes the result to Tim (with a push notification when the routine asks for one
 | Monthly net worth check-in | 1st, 8:12 PM | wealth |
 | Rent reminder ($675, due 1st, latest 5th) | 28th, 7:47 PM | personal |
 | Plan the week | Sun 6:48 PM | Jarvis (all areas) |
-| NFL tracker weekly update (scorers, red zone, defenses; grade pending bets) | Tue 9:52 AM | general-purpose |
-| NFL Saturday injury recheck + final shortlist | Sat 10:47 AM | general-purpose |
-| NHL tab weekly refresh (goals, first goal, SOG; grade NHL bets) | Wed 9:41 AM | general-purpose |
-| NBA first-basket refresh (skips days with no regular-season games; season starts 10/20) | Daily 10:07 AM | general-purpose |
-| UCL refresh, eve of matchday (goals, shots, BTTS, corners; skips if no matches tomorrow) | Mon/Tue 7:37 PM | general-purpose |
-| UCL refresh, matchday morning (lineups; skips if no matches today) | Tue/Wed 9:37 AM | general-purpose |
+| NFL tracker weekly update (scorers, red zone, defenses; grade pending bets) | Tue 9:52 AM | bets |
+| NFL Saturday injury recheck + final shortlist | Sat 10:47 AM | bets |
+| NHL tab weekly refresh (goals, first goal, SOG; grade NHL bets) | Wed 9:41 AM | bets |
+| NBA first-basket refresh (skips days with no regular-season games; season starts 10/20) | Daily 10:07 AM | bets |
+| UCL refresh, eve of matchday (goals, shots, BTTS, corners; skips if no matches tomorrow) | Mon/Tue 7:37 PM | bets |
+| UCL refresh, matchday morning (lineups; skips if no matches today) | Tue/Wed 9:37 AM | bets |
 | Loan spam cleanup (delete + unsubscribe; replaces the old label-only check) | Mon 8:56 AM | personal |
 | Paycheck amount for the Weekly Money Plan (Tim Money workbook) | Mon 6:22 PM | Jarvis |
 | Work: week 1 surveys reminder (push) | Fri 6:52 AM and 12:57 PM | Jarvis |
