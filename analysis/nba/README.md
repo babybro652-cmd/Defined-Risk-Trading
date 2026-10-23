@@ -156,11 +156,11 @@ On game days Tim sends the StarTool Analytics "Game Script" card for each game (
 | 10/22 | CLE @ PHI | Jarrett Allen (CLE won tip; first shot Allen, made) | Mobley, Mitchell | Mitchell | Mobley, Brown, Mitchell | No | No |
 | 10/22 | DEN @ OKC | Cason Wallace (OKC won tip; first shot Wallace three, made) | Gordon, Murray | SGA (Jokic for DEN) | Murray, Jokic, Wallace | No | Yes (Wallace +1100) |
 | 10/23 | CHI @ MIL 4:00 | Jalen Smith CHI (CHI won tip; first shot Smith layup, made). MIL first: Myles Turner | Rollins, Kuzma (changed from Herro, Turner) | Powell / Herro | Jaquez Jr. | No | No |
-| 10/23 | NY @ BOS | (grade) | (grade) | Brunson / Tatum | Paul George | (grade) | (grade) |
-| 10/23 | ATL @ CHA | (grade) | (grade) | Alexander-Walker / Miller | Brandon Miller | (grade) | (grade) |
-| 10/23 | DAL @ IND | (grade) | (grade) | Flagg / Haliburton | Zubac | (grade) | (grade) |
-| 10/23 | MIN @ ORL | (grade) | (grade) | Edwards / Banchero | Bane | (grade) | (grade) |
-| 10/23 | TOR @ WSH | (grade) | (grade) | Leonard / Davis | RJ Barrett | (grade) | (grade) |
+| 10/23 | NY @ BOS | Jayson Tatum BOS (NY won tip; first shot Bridges, missed) | (none sent) | Brunson / Tatum | Paul George | - | No (StarTool star hit) |
+| 10/23 | ATL @ CHA | Moussa Diabate CHA, center (ATL won tip; Diabate first shot, made) | (none sent) | Alexander-Walker / Miller | Brandon Miller | - | No |
+| 10/23 | DAL @ IND | Daniel Gafford DAL, center (IND won tip; first shot Nembhard, missed) | (none sent) | Flagg / Haliburton | Zubac | - | No |
+| 10/23 | MIN @ ORL | Jaden McDaniels MIN (ORL won tip; first shot F. Wagner, missed) | (none sent) | Edwards / Banchero | Bane | - | No |
+| 10/23 | TOR @ WSH | RJ Barrett TOR (WSH won tip; first shot Young, missed) | (none sent) | Leonard / Davis (bomb Barrett hit) | RJ Barrett (pre-fix; post-fix top was Leonard) | - | Yes, Barrett +800 |
 | 10/23 | DET @ MIA | (grade) | (grade) | Cunningham / Giannis | Adebayo | (grade) | (grade) |
 | 10/23 | HOU @ SA | (grade) | (grade) | Durant / Wembanyama | Wembanyama | (grade) | (grade) |
 | 10/23 | NO @ UTAH | (grade) | (grade) | Murphy / Markkanen | Jaren Jackson Jr. | (grade) | (grade) |
