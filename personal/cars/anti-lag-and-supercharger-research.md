@@ -224,6 +224,8 @@ Nothing else changes: same kit, same budget.
 
 ## What Tim decides
 
+**Answered 10/24:** 1. Z04 (keep). 2. Both options written up; manual recommended (build-guides.md). 3. Yes to the 2-step; now in the plan. 4. Superseded: Tim raised the Charger to 800 whp (build-guides.md).
+
 1. **Cruze turbo:** keep the Z04 (most power, spools 500-700 rpm later) or switch to the ZZP V3.2
    (about stock spool, less power, about $1,100 less, easier on the engine).
 2. **Cruze transmission:** manual or automatic? (No-lift shift only exists for a manual.)

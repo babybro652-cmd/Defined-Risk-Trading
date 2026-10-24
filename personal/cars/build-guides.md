@@ -3,6 +3,11 @@
 Tim asked (10/21): a step-by-step guide for each build, in the order that gives the cleanest,
 lowest-hassle build, plus the biggest engine he could build for each one if he builds his own.
 
+**Updated 10/24: Charger target is now 800 whp (forged 426, Whipple 3.8L, E85 flex fuel,
+built 8HP90, Demon-spec diff); Cruze keeps the Z04 and gets an auto vs manual comparison
+(manual recommended); Cutlass 2-step is in the plan.** Details in each car's "Updated 10/24"
+section.
+
 **Updated 10/23: build once (Charger and Cruze).** Tim wants reliability and doesn't want to
 build now and redo later. Both guides now follow one order where nothing gets thrown away:
 chassis items first (brakes, suspension, body, interior, wheels) whenever money allows, then the
@@ -273,6 +278,26 @@ and 2nd), 2-step and launch retard only for the track behind an arm switch, no d
 Converter about 3,000-3,200 stall (tell Circle D or Yank the turbo size and gear). Optional: Holley
 557-202 dual solenoid ($134.95 checked 10/24) for dome control. Cats stay on the road (G.S. 20-128(c)).
 
+### Updated 10/24: 2-step for track days is in the plan (Tim: yes)
+
+**Terminator X Max supports it: confirmed.** Holley lists multiple 2-step strategies, launch
+boost targets, launch timing retard, and boost by time, gear, rpm and speed on the Terminator X
+(Holley blog and the 550-933 page; $1,999.95, checked 10/24). What it does not have is Holley's
+"Boost Builder" (a line-boost and anti-lag strategy), which is on the Dominator and HP only.
+Tim does not need it: the 2-step plus launch boost target and a 3,000-3,200 stall converter
+builds boost on the line. No ECU change.
+
+**Moved from optional into the plan (+$305-595):**
+- Holley 557-202 high-flow dual boost solenoid, $134.95 (EFI System Pro, checked 10/24): the
+  Terminator X runs the CompGate40 domes (boost by gear, launch boost target).
+- Console arm switch for the 2-step, $20-60 (estimate): launch control only works when armed.
+- EGT probes, one per bank, K-type with an EGT amplifier into spare Terminator X analog inputs
+  (confirm the input count) or a gauge, $150-400 (estimate).
+
+**How it's used:** arm switch on only at the track. 2-step about 2,500-3,500 rpm, modest launch
+boost, retard only as needed, times out after a few seconds, then boost by time and gear.
+Watch EGT per bank. Cutlass total: $47,355-107,195 (was $47,050-106,600).
+
 ### Don't do this before that (Cutlass)
 
 - Don't powder coat the frame before every tab and bracket is welded (turbo mounts, hangers,
@@ -336,6 +361,125 @@ later. So the final engine is the plan, not an option.
 
 No changes to the look, the widebody or the remote start (Tim, 10/23).
 
+### Updated 10/24: 800 hp at the wheels (Tim's new target)
+
+Tim raised the target from about 575-600 whp to **800 whp**. That is about 920-950 hp at the
+crank and roughly 750-850 lb-ft (estimates, automatic, twin-screw torque curve). It changes every
+part tied to power. The 10/23 sections below (engine, Whipple 3.0L at 7 psi, stock 8HP90, 230 mm
+diff) are the old 600 whp plan and are kept for reference only. Chassis-first order, the look,
+the widebody and the remote start do not change.
+
+**Honest reliability note.** 800 whp is Hellcat Redeye to Demon territory on a street car. It
+can be reliable only if every part is sized past it and the car runs two tunes:
+- **Street tune (93 or any ethanol mix): about 650-700 whp**, torque limited in 1st and 2nd. This
+  is what the car runs every day.
+- **Race tune (E85, about 70%+ ethanol): about 800 whp**, for the track or a planned pull.
+Compared with the 600 whp plan, expect: belts, plugs and fluids changed about twice as often;
+the transmission, diff and axles wearing faster (full-power launches on drag radials are the
+biggest wear item); more heat soak in traffic; and an engine that lives a long time only if it
+mostly runs the street tune. Fuel economy and insurance both get worse. A 600 whp car is a
+"drive it anywhere" car; an 800 whp car is a "drive it on the street tune and save the race tune"
+car.
+
+**1. Engine: forged 426 stroker (recommended) or a fully forged 392**
+- At 800 whp the 10/23 plan (factory crank and rods, forged pistons only) is not enough. It needs
+  a forged crank, forged H-beam or I-beam rods, forged pistons at about 9.5:1, ARP head studs (2000
+  or better), MLS head gaskets, upgraded oil pump, coated bearings, and a blower cam.
+- **Recommended: 426 stroker on a 392 block (4.090 x 4.050).** More cubic inches make the same
+  power on less boost, so less heat and less knock risk. Build once. American Powertrain 426 long
+  block $14,299 listed (10/21); a local HEMI builder quote is the other route.
+- Cheaper: fully forged 392 (same parts, stock stroke), needs 1-2 psi more boost for the same
+  power.
+- Budget: **$14,000-22,000** for the finished engine (estimate; get two builder quotes).
+
+**2. Blower and boost: Whipple 3.8L twin-screw, top-mount (pick)**
+- The Whipple 3.0L kit (WK-3021-30) is rated up to 710 hp on 93. It can reach about 800 whp, but
+  only near its limit: about 13-15 psi on E85 with a small pulley (owner reports on 5.0 Coyotes:
+  about 700 whp at about 11 psi on 93, about 800 whp on E85 at about 14 psi; not a 392 dyno sheet).
+  At that boost the 3.0L spins hard and runs hot. That is the opposite of reliability first.
+- **Pick: Whipple 3.8L (W235 class) at about 9-11 psi on the 426** (estimate). Bigger blower,
+  lower rotor speed, cooler air for the same power. Whipple lists the 3.8L only for the 6.2 Hellcat
+  (WK-3500-S2-38 tuner kit, $9,299.99 at American Muscle, checked 10/24), not for the 6.4.
+  **Ask Whipple** to configure a 3.8L on a 6.4 intake for a 426 (custom order). Budget
+  **$10,500-14,000** (estimate).
+- **Fallback if Whipple won't build it:** the WK-3021-30 3.0L kit ($8,899.99-8,999.99, checked
+  10/23) on the 426 with a smaller pulley, about 12-14 psi on E85, plus the larger heat exchanger.
+  Works, runs hotter, about $1,500-5,000 cheaper.
+- Compared (Tim wants a top-mount, so these are reference only): ProCharger F-1 class
+  centrifugal makes 800+ whp easily and runs cooler, but it is not a traditional top-mount and was
+  ruled out 10/23. Kong: no Hemi kit found 10/24. Magnuson TVS2650 is roots-type and smaller:
+  not enough for 800 whp.
+- **Hood:** a 3.8L top-mount will likely not clear the flat Pursuit hood. A cowl or vented SRT
+  style hood is now part of the plan (was an option): $600-1,500 plus paint.
+
+**3. Fuel: E85 flex fuel, return-style**
+- 800 whp on 93 alone needs boost and timing near the knock limit: not reliable. **Flex fuel**
+  (ethanol content sensor) lets the tune pull boost and timing on 93 and run full power only on
+  E85.
+- Return-style dual-pump system: Fore Innovations LX dual-pump billet module, listed as 1000+
+  rwhp on E85, return style only (base module price low; pumps, filter and fittings are options;
+  confirm with Fore). Plus -8 AN feed and -6 AN return lines, boost-referenced regulator, larger
+  injectors (Injector Dynamics ID1300x or ID1700x class; the Hellcat injectors in the Whipple kit
+  are too small for E85 at 800 whp), flex fuel sensor kit.
+- Budget: **$2,500-4,500** (estimate).
+
+**4. Cooling and ignition**
+- Larger blower heat exchanger and higher-flow intercooler pump, Hellcat-size or aftermarket
+  aluminum radiator, engine oil cooler, 8HP trans cooler. **$1,500-3,000** (estimate).
+- Colder plugs gapped for boost, coils checked. **$200-500** (estimate).
+
+**5. Transmission: built 8HP90 (pick)**
+- The stock 8HP90 is rated about 664-738 lb-ft. 800 whp is about 750-850 lb-ft at the crank:
+  past it.
+- **Pick: built 8HP90.** Example: Pure Drivetrain Stage 1 build, rated 1,300 hp and 1,100 lb-ft
+  (Pure stages run $5,999-14,999; Jalopnik, 10/24), plus a used Hellcat 8HP90 core, a higher-stall
+  converter (Mopar Redeye converter 77072542AB, $1,029.99 at SDPC, checked 10/24; Circle D does not
+  list an 8HP converter), and TCM programming with raised torque limits. Budget **$9,000-15,000**
+  (estimate). Keeps the paddle shifters, push-to-start and the remote start working.
+- **TR6060 or Magnum 6-speed manual: not recommended.** Silver Sport sells an LX Tremec Magnum
+  conversion kit (quote only), but the Magnum is rated about 700 lb-ft, under this target, and it
+  means a clutch pedal, hydraulics, tunnel and crossmember work, a new driveshaft, and remote
+  start that no longer works on a manual. Twin-disc clutch on top. Same money or more for less
+  margin.
+- **Built 4L80E: no.** No bolt-in for the LX, no factory electronics, and it gives up two gears.
+
+**6. Driveshaft, axles and rear end**
+- One-piece carbon or aluminum driveshaft rated 1,000+ hp, measured after the 8HP90 is in.
+- The Driveshaft Shop Level 5 axles, 1,400 hp rated (LX listings $1,422-1,598 per side, checked
+  10/24; confirm the 2015+ part numbers).
+- **Rear diff:** the 230 mm from the 10/23 plan is the weak link at 800 whp on sticky tires.
+  Pick a Demon-spec 230 mm (heat-treated housing, about 30% more torque capacity per Dodge, 41-spline
+  half shafts) or a built 230 mm with a diff brace and cradle lockout. Budget **$2,000-4,000**
+  (estimate). A solid-axle Dana 60 or 9 inch does not fit the LX independent rear without a custom
+  rear end: not worth it.
+- Axles and driveshaft together: **$3,500-6,000** (estimate).
+
+**7. Traction, brakes, chassis**
+- Rear tires: 315/35R20 street tires under the widebody flares (was 305). Optional, not in the
+  total: a second set of 18 inch rear wheels with drag radials (Mickey Thompson ET Street R or
+  Nitto NT555RII) for track days, about $2,000-3,500.
+- Brakes: the used SRT/Hellcat 6-piston Brembo front, 4-piston rear plan stays; add high-temp
+  pads and DOT 4 racing fluid (**$200-500**).
+- Chassis: the cradle lockout, camber/toe arms, tension struts and coilovers already in the plan
+  are right for this power. Have the alignment shop check for wheel hop after the first launches.
+
+**8. Tune**
+- HP Tuners on the unlocked PCM, flex fuel, two maps (street about 650-700 whp, race about 800
+  whp on E85), torque management in 1st and 2nd, boost/IAT/knock safeties, TCM torque limits
+  raised to the built 8HP90. One dyno session, about **$800-1,500**.
+
+**Charger budget (10/24):** about **$62,650-113,780** (was $43,050-79,080 at 600 whp). The power
+package went up about $19,600-34,700. Line changes are in [parts-lists.md](parts-lists.md) and
+[build-plan.md](build-plan.md).
+
+**Ask the builder and Whipple before buying (10/24):**
+1. Whipple: will they build a 3.8L on a 6.4 intake for a 426, and what pulley for about 800 whp
+   on E85 and about 650-700 on 93? Hood clearance?
+2. Engine builder: 426 vs fully forged 392 quote, cam for the 3.8L, compression for flex fuel.
+3. Transmission: Pure (or another 8HP builder) price for a Stage 1 8HP90 with your core, and the
+   converter they pair with it.
+4. Fore Innovations: complete LX return kit price with E85 pumps.
+
 **Updated 10/23 (later): traditional supercharger, no ProCharger (Tim's call).** The blower is
 a top-mount Whipple 3.0L twin-screw. ProCharger is not chosen.
 
@@ -345,7 +489,7 @@ upgraded fuel, Driveshaft Shop axles and a one-piece driveshaft, 230 mm LSD rear
 swap, cradle and suspension bushings, camber and toe arms, coilovers, quad-tip cat-back, black
 and bronze interior, trunk audio, remote start.
 
-### Final engine spec (decided 10/23)
+### Final engine spec (decided 10/23; replaced 10/24 by the 800 whp plan above)
 
 **Primary: a 6.4 / 392 HEMI built with forged pistons.** Two ways to get one:
 - Low-mile 6.4 pull-out (non-MDS preferred) taken to a HEMI engine builder for forged pistons
@@ -392,7 +536,7 @@ and axles.
 - Rear: 230 mm LSD (the Hellcat size).
 - Tune: unlocked PCM, HP Tuners, one custom dyno tune for engine and transmission.
 
-### Supercharger choice (decided 10/23: traditional blower, Whipple)
+### Supercharger choice (decided 10/23: traditional blower, Whipple; 10/24: 3.8L pick for 800 whp, see above)
 
 **Primary: Whipple Gen 6 3.0L twin-screw kit, WK-3021-30, for the 2015-2017 6.4 Charger and
 Challenger.** $8,999.99 at Whipple, $8,899.99 at American Muscle (checked 10/23). Rated up to
@@ -551,9 +695,10 @@ pulley that hits 575-600 whp, likely about 5.5-6.5 psi (estimate). A stock 392 w
 
 **Biggest:** about 460-480 ci on a Dart Iron Eagle block. **Biggest common:** 426 ci (7.0 L).
 
-**The plan (10/23): forged 392, Whipple 3.0L at about 7 psi, 8HP90, about 650-700 crank hp.** A 426
-only makes sense past about 800 hp, which is past what this street car needs and past the
-8HP90's comfort zone.
+**The plan (10/24): forged 426 stroker (or fully forged 392), Whipple 3.8L, built 8HP90, about
+800 whp on E85.** The 426 now makes sense: 800 whp is about 920-950 crank hp, and more cubic
+inches mean less boost and heat for it. (10/23 plan was a forged 392, 3.0L at 7 psi, about
+650-700 crank hp.)
 
 ---
 
@@ -703,6 +848,57 @@ See [anti-lag-and-supercharger-research.md](anti-lag-and-supercharger-research.m
 and no crackle tune. The ZZP tune handles boost and torque management. If lag matters more than
 peak power, the ZZP V3.2 ($899.99 checked 10/24) spools about like stock; the Z04 spools about
 500-700 rpm later. Keep the Z04's high-flow cat.
+
+### Updated 10/24: Z04 kept, transmission auto vs manual
+
+**Turbo: Z04 (Tim, 10/24, keep).** The ZZP Z04 kit ($1,999.99, checked 10/24) plus downpipe,
+intercooler, intake, injectors and the tune are now in the plan and the budget, and the new stock
+turbo line is removed. The V3.2 stays not chosen.
+
+**What transmission the car has now: unknown.** The Cruze file and the 10/21 notes don't say.
+A 2012 LT came with either the 6T40 6-speed automatic or the M32 6-speed manual; the RS package
+doesn't change it. Check: two pedals or three, and the Service Parts ID label in the glovebox
+or trunk. If it is already a manual, Option B shrinks to a clutch, flywheel and bearing kit.
+
+**Torque check (why it matters):** ZZP doesn't publish Z04 torque. Estimate about 250-290 lb-ft
+at the crank on 93 with the tune. GM's SAE paper rates the 6T40 at about 240 Nm (177 lb-ft) of
+gas engine torque. The M32's name means 320 Nm (about 236 lb-ft). Both are below the Z04, so
+the tune's torque management matters either way; the manual has more margin and has no clutch
+packs to burn.
+
+| | Option A: keep the 6T40 automatic | Option B: swap to the M32 6-speed manual |
+|---|---|---|
+| Rated torque | About 177 lb-ft (240 Nm, SAE) | About 236 lb-ft (320 Nm) |
+| Known weak points | 3-5-R wave plate cracks and the 3-5-R snap ring lets go (can take out several gears at once); torque converter clutch shudder from worn friction material; clutch packs slip under a tuned torque curve | Bearing on top of 6th gear (output shaft bearing) wears: whine in 5th and 6th, lever moves on launch. Fix: later-type end case with an extra oil feed and larger bearings (62 mm vs 55 mm) |
+| What to do while the engine is out | Rebuild: Sonnax 3-5-R drum saver kit 144555K (about $67.90 at JEGS, checked 10/24), new clutch packs and seals, new or reman torque converter, external trans cooler, fresh Dexron VI. ZZP or Trifecta tune holds torque down in 1st and 2nd and firms shifts | Used M32, rebuilt with the later-type bearing kit and end case (Courtenay Sport in the UK sells kits; price not checked), SPEC Stage 2 clutch with steel billet flywheel (SC172S $463.50 + steel flywheel $377.10 = $840.60, checked 10/24; listed for 2010-2016 Cruze 1.4T) |
+| Parts | Rebuild kit, Sonnax kit, converter, cooler, fluid | M32 trans, clutch and flywheel, clutch pedal (or manual pedal box), clutch master, line and slave (concentric), shifter and both cables, manual-car axles if different, manual trans mount, ECM manual calibration and BCM configuration (dealer, ZZP or Trifecta), cluster check (PRNDL display), fluids |
+| Cost, parts | **about $1,200-2,800** (estimate) | **about $2,650-5,750** (estimate; DIY) |
+| Labor | Trans rebuild at a shop $800-1,500 if not DIY (estimate) | Most of it is easy now because the engine is out and the trans comes out with it. Pedal box, cables and programming add 1-2 weekends. Shop: $1,500-3,000 (estimate) |
+| How hard | Easy to moderate (bolt-in rebuild) | Moderate. GM swap with factory parts, but wiring and programming must be right or you get codes and no cruise |
+| Drivability | Two pedals, easy in traffic and for Tim's daily commute. Z04 lag hides behind the converter | Three pedals in traffic. More fun, more control of boost, lighter |
+| Boost tools | Torque management and shift tables only. No 2-step | **Trifecta lists No-Lift-Shift on manual cars** (keeps boost through shifts). Launch control: not listed by Trifecta or ZZP; ask ZZP about a launch rpm limiter in a custom tune |
+| Long-term risk with the Z04 | Higher: the 6T40 is the weakest part of a Z04 car | Lower: clutch is a wear item, the bearing fix is known |
+
+**Not recommended: the F40.** It is stronger (rated 400 Nm, 295 lb-ft) but it was built for the
+bigger Family II engines (Saab, Opel Signum, Pontiac G6). No direct bolt-up to the 1.4T was
+found; it would need a custom adapter, axles and mounts. Also, the U.S. Cruze diesel was
+automatic only, so there is no Cruze F40 donor. Too much custom work for this car.
+
+**Recommendation for reliability: Option B, the manual (M32 with the later bearing end case and
+the SPEC Stage 2 clutch).** It has more torque margin, no clutch packs to burn, and its one
+weak point has a known fix. It also enables no-lift shift.
+**Cheaper overall: Option A**, by about $1,450-2,950 in parts (more with shop labor). The catch
+is the 6T40 is the part most likely to fail behind a Z04, and a second rebuild later wipes out
+the savings.
+
+**Do now while the engine is out (either option):**
+1. Find out which trans it has (pedals, Service Parts ID label).
+2. If manual: buy the clutch, flywheel and bearing kit now so the engine and trans go in once.
+3. If auto and Tim keeps it: pull and rebuild it now with the Sonnax kit, converter and cooler;
+   don't reinstall a 183k 6T40 behind a fresh Z04 engine.
+4. If swapping: source a complete donor (trans, pedal box, shifter and cables, axles, mount)
+   from one manual Cruze so every part matches; then book the ECM and BCM programming.
+5. Upgraded rear trans mount either way (ZZP recommends it with the Z04).
 
 ### Don't do this before that (Cruze)
 

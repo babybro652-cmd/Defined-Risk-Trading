@@ -2,6 +2,7 @@
 
 **Goal:** high-performance street car, aggressive styling. Build plan: frame-off restoration (Tim, 10/20/2026), see below and `build-plan.md`.
 **Power plan (Tim, 10/12/2026):** LS swap with forged internals, twin turbo setup. Turbos under the hood, one per bank, front-mount style (Tim, 10/21), see below. Full 3 inch stainless dual exhaust with switchable front dumps (Tim, 10/21), see "Exhaust".
+**2-step (Tim, 10/24): yes, for track days.** In the plan: Holley 557-202 dual boost solenoid ($134.95), console arm switch, EGT probe per bank (+$305-595). The Terminator X Max supports 2-step, launch boost target and launch retard; Boost Builder (Dominator/HP only) is not needed. Cutlass budget $47,355-107,195. See `build-guides.md`.
 **Stance (Tim, 10/21):** coilovers, not air ride. Ridetech G-body coil-over system with StrongArms tubular arms, lowered a few inches; check turbo/exhaust and oil pan ground clearance.
 **Looks:** new lights (LED headlights and taillights; one rectangular headlight per side, 7x6 inch (H6054 size), plus a parking/turn lamp by the grille, all stock locations). Full-glass panoramic roof (Tim, 10/18), custom, done with the roof rust repair. Style target: as clean as the Roid Runner (Tim, 10/21), see below.
 

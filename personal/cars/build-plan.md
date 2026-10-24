@@ -3,6 +3,13 @@
 Goal: high-performance street cars with aggressive styling. Order on every car:
 **1. Reliable and safe → 2. Power → 3. Looks.** Plan written 10/12/2026.
 
+**Updated 10/24 (Tim's decisions):** Cruze keeps the Z04 (now in the total) and gets an auto vs
+manual comparison (manual recommended for reliability, auto rebuild is cheaper; total carries the
+manual). Charger target is now 800 whp: forged 426 stroker, Whipple 3.8L top-mount (custom order;
+3.0L at higher boost is the fallback), E85 flex fuel, built 8HP90, Demon-spec diff, 1,400 hp axles.
+Cutlass 2-step for track days is in the plan. Details: [build-guides.md](build-guides.md).
+All four: $112,540–237,530 became **$137,445–281,975**.
+
 **Updated 10/23: build once (Charger and Cruze).** Tim wants reliability and no building now
 and redoing later. Order on those two: chassis items first (brakes, suspension, body, interior,
 wheels) whenever money allows, then the engine and every part tied to power (fuel, cooling,
@@ -45,18 +52,18 @@ This is a list for later, paid from extra money, never from bill money.
 | 1 Reliable | Build once (10/23): pull the engine, forged-piston bottom end refresh, bearings, rings, gaskets, TTY head bolts | $1,700–3,000 |
 | 1 Reliable | While apart: timing chain kit, water pump, thermostat housing, oil cooler seals, turbo oil and coolant lines, injectors (was $350–700) | $600–1,200 |
 | 1 Reliable | Valve cover with PCV (GM 55573746) and CruzeKits PCV fix kit (in the parts list) | in parts list |
-| 1 Reliable | New stock-spec turbo (10/23); skip if buying the Z04 now | $450–1,100 |
 | 1 Reliable | Plugs, coils, fluids | $100–200 |
 | 1 Safe | Oil catch can, oil cooler, baffled oil pan, AN lines/fittings | $650–1,500 |
 | 1 Safe | Braided stainless lines, 4-piston front big brake kit | $850–2,100 |
-| Tune later (option, not in total) | ZZP Z04 turbo plus intercooler, intake, downpipe, injectors, tune; bolts on with no teardown thanks to the forged pistons. Z04 now instead of the stock turbo: +$2,350–3,400 | $2,800–4,500 |
+| 1 Power (10/24, in the plan) | ZZP Z04 turbo plus intercooler, intake, downpipe, injectors, tune, installed with the engine (replaces the new stock turbo line, $450–1,100) | $2,800–4,500 |
+| 1 Reliable (10/24) | Transmission, Option B (recommended): M32 6-speed manual swap with later bearing end case, SPEC Stage 2 clutch and flywheel, pedals, hydraulics, shifter, cables, mount, programming. Option A instead: rebuild the 6T40 with the Sonnax 3-5-R kit, converter and cooler, $1,200–2,800 | $2,650–5,750 |
 | 2 Handling | Air suspension (bags plus management), upgraded sway bars | $2,700–5,400 |
 | 3 Looks | New headlights and smoked LED taillights (smoked: yes, Tim 10/21) | $400–1,000 |
 | 3 Looks | New 10/21: 18 inch gloss black wheels (5x105 or adapters), stretched tires, camber bolts and shims | $1,200–2,500 |
 | 3 Looks | New 10/21: front lip, side skirts, rear diffuser, black bowties, single tip cat-back | $600–1,700 |
 | 3 Looks | New 10/21: white to gloss black. Chosen: 3M 2080 or Avery SW900 gloss black wrap at an NC certified shop (reversible, cheaper than a good paint job). Paint instead: $1,500–2,500 budget shop, $5,000–8,000 quality shop | $2,500–3,800 |
 | 3 Looks | New 10/21: burnt orange interior accents (was red): stitching, trim accents, ambient lighting | $400–2,400 |
-| | **Cruze total** (build once 10/23; was $12,850–26,500; $9,950–20,300 before the 10/21 decisions) | **about $12,750–27,200** |
+| | **Cruze total** (10/24 Z04 and manual; $16,300–33,400 with the auto rebuild; was $12,750–27,200 build once 10/23) | **about $17,750–36,350** |
 
 ## 2016 Dodge Charger Pursuit (5.7 Hemi, ~188k)
 
@@ -67,16 +74,19 @@ This is a list for later, paid from extra money, never from bill money.
 | 1 Reliable | Oil change now, then keep the 5.7 alive on oil changes and safety repairs only (10/23; replaces the compression test, cooling/plugs/trans service and lifter lines) | $50–300 |
 | 1 Safe | Catch cans, oil cooler, baffled oil pan, AN lines/fittings | $800–1,800 |
 | 1 Safe | Braided stainless lines, 6-piston Brembo swap (used SRT/Hellcat set) | $1,300–2,600 |
-| 4 Power package | Build once (10/23): forged 6.4 / 392 (low-mile pull-out or Mopar P5160617AA long block, $6,995 listed, built with forged pistons) | $9,000–14,000 |
+| 4 Power package | 800 whp (10/24): forged 426 stroker on a 392 block (or fully forged 392): forged crank, rods, pistons, ARP 2000 studs (was forged-piston 392 $9,000–14,000) | $14,000–22,000 |
 | 4 Power package | 392 swap parts: intake, throttle body, rails, gaskets, sensors, mounts, 6.4 midpipes | $1,500–3,000 |
-| 4 Power package | Supercharger kit: Whipple Gen 6 3.0L twin-screw WK-3021-30 at about 7 psi, $8,899.99–8,999.99 checked 10/23, includes Hellcat injectors and rails (was ProCharger $7,500–8,800; ProCharger not chosen) | $8,900–9,300 |
-| 4 Power package | Fuel pump for about 700 crank hp (injectors come with the Whipple; was $600–1,500) | $300–800 |
-| 4 Power package | Cooling: water pump and thermostat with the engine, 8HP90 trans cooler (10/23) | $500–1,100 |
-| 4 Power package | 8HP90 from a Hellcat with TCM programming (10/23; target torque is past the 8HP70's 516 lb-ft) | $3,500–6,500 |
-| 4 Power package | One dyno tune and PCM unlock (was $800–1,600) | $300–800 |
+| 4 Power package | Supercharger (10/24): Whipple 3.8L twin-screw top-mount at about 9-11 psi, custom order for the 426 (fallback: 3.0L WK-3021-30 at about 12-14 psi on E85; was 3.0L at 7 psi $8,900–9,300) | $10,500–14,000 |
+| 4 Power package | Cowl or vented hood for blower clearance (10/24, was an option) | $600–1,500 |
+| 4 Power package | E85 flex fuel, return-style: Fore dual-pump module, AN feed and return, ID1300x/1700x injectors, flex sensor (10/24; was pump only $300–800) | $2,500–4,500 |
+| 4 Power package | Ignition: colder plugs, coils (10/24) | $200–500 |
+| 4 Power package | Cooling (10/24): bigger heat exchanger and pump, radiator, oil and trans coolers (was $500–1,100) | $1,500–3,000 |
+| 4 Power package | Built 8HP90 (10/24): Hellcat core built to about 1,100 lb-ft (Pure Stage 1 class), Redeye converter, TCM programming (was stock 8HP90 $3,500–6,500) | $9,000–15,000 |
+| 4 Power package | Dyno tune, flex fuel, street map about 650-700 whp and race map about 800 whp (10/24; was $300–800) | $800–1,500 |
 | 2 Handling | Coilovers, upgraded sway bars | $1,600–3,200 |
-| 2 Drivetrain | 230mm limited-slip rear diff from a Scat Pack or Hellcat (bolts in) | $800–1,500 |
-| 4 Power package | Axles and one-piece driveshaft sized for 650-700 hp; driveshaft measured after the 8HP90 is in (8HP70 tune line removed 10/23) | $1,900–3,800 |
+| 2 Drivetrain | Demon-spec or built 230 mm diff with brace (10/24; was plain 230 mm $800–1,500) | $2,000–4,000 |
+| 4 Power package | Driveshaft Shop Level 5 1,400 hp axles and a 1,000+ hp one-piece driveshaft (10/24; was $1,900–3,800) | $3,500–6,000 |
+| 1 Safe | High-temp pads and DOT 4 racing fluid for 800 whp (10/24) | $200–500 |
 | 2 Handling | Adjustable rear camber arms and toe links (fix alignment once it's lowered) | $400–900 |
 | 2 Handling | Rear cradle/subframe bushing inserts (stops wheel hop) | $200–500 |
 | 2 Handling | Adjustable front tension struts or poly bushings (caster, sharper steering) | $300–700 |
@@ -88,7 +98,7 @@ This is a list for later, paid from extra money, never from bill money.
 | 3 Looks | New headlights and taillights | $600–1,500 |
 | 3 Looks | New 10/21: cat-back with quad tips | $1,000–2,000 |
 | 1 Safe | New 10/21: remote start and alarm, Compustar CS7900-AS 2-way with DroneMobile X2, push-to-start T-harness, installed (Fit: confirm on the Pursuit) | $650–950 |
-| | **Charger total** (Whipple 10/23; was $41,950–79,280; $27,700–54,700 before build once; $27,050–53,750 before the 10/21 remote start) | **about $43,050–79,080** (shop install of the engine, if not DIY, about $2,000–4,000 extra) |
+| | **Charger total** (800 whp 10/24; was $43,050–79,080 at 600 whp; $27,700–54,700 before build once) | **about $62,650–113,780** (shop install of the engine, if not DIY, about $2,000–4,000 extra) |
 
 Build order (10/23): phases 1 and 2 (brakes, chassis, diff, exhaust), then 3 (looks: body,
 paint, wheels, interior), then the whole phase 4 power package at once when it is paid for.
@@ -166,13 +176,14 @@ runs from DIY (low) to shop (high).
 | 2 Power | Full exhaust (Tim, 10/21): 3 inch 304 stainless duals from the turbo downpipes back, X-pipe, two mufflers, flex sections, hidden stainless hangers, twin square tips through the rear valance (tips moved here from the finish table), ceramic coating and floor heat shield. DIY low, custom shop high | $1,500–4,500 |
 | 2 Power | Switchable front dumps (Tim, 10/21): two 3 inch electric cutouts after the downpipes, dumping down and out right behind the front wheels; Y-pipes, heat shields, console toggle and relay, CO detector. Closed on public roads (G.S. 20-128(b)) | $700–2,500 |
 | 2 Safe | Catch cans, oil cooler, baffled oil pan, AN lines/fittings | $800–1,800 |
+| 2 Power | 2-step for track days (Tim, 10/24): Holley 557-202 dual solenoid ($134.95 checked), console arm switch, EGT probes per bank. Terminator X Max supports 2-step and launch control | $305–595 |
 | 2 Handling | Coilovers (Tim, 10/21; air ride not chosen): Ridetech 11320301 G-body coil-over system with StrongArms tubular arms and MuscleBars, $7,560 checked; 11320201 about $5,420. Set a few inches lower (was $2,700–4,500) | $5,400–7,600 |
 | 1 Reliable | New 10/21: chassis wiring harness (Painless or American Autowire) | $500–900 |
 | 3 Looks | New headlights and taillights (LED: 2 rectangular 7x6 headlights, Holley RetroBright LFRB150 about $250 each or JW Speaker 8910 $350 each; 2 parking/turn lamps, taillights; stock locations) (was $300–800) | $650–1,050 |
 | 3 Looks | Full-glass panoramic roof (Tim, 10/18): custom shop cuts out the roof center, adds steel framing back, fits fixed glass; done on the blasted shell during the frame-off, before paint | $6,000–15,000 |
 | 3 Safe | Body reinforcement for the cut roof: roof and pillar reinforcement plates | $300–800 |
 | 3 Safe | New 10/21: Digital Guard Dawg iKey Premier (keyless entry for the shaved doors, push start, alarm) with remote start upgrade, trunk release, siren, relays, hidden door pulls | $1,050–1,350 |
-| | **Cutlass total** (was $46,000–105,250 before the 10/21 security system; $42,250–100,900 before the 10/21 decisions) | **about $47,050–106,600** (before paint; a garage rental if needed is extra) |
+| | **Cutlass total** (2-step 10/24; was $47,050–106,600; $46,000–105,250 before the 10/21 security system) | **about $47,355–107,195** (before paint; a garage rental if needed is extra) |
 
 ### Cutlass optional: Roid Runner-level finish (Tim, 10/21)
 
@@ -238,11 +249,11 @@ rails (+$1,500–3,500).
 
 | Vehicle | Low | High |
 |---|---|---|
-| Cruze (build once 10/23; was $12,850–26,500) | $12,750 | $27,200 |
-| Charger (Whipple 10/23; was $41,950–79,280; $27,700–54,700 before build once) | $43,050 | $79,080 |
-| Cutlass | $47,050 | $106,600 |
+| Cruze (Z04 and manual 10/24; was $12,750–27,200) | $17,750 | $36,350 |
+| Charger (800 whp 10/24; was $43,050–79,080) | $62,650 | $113,780 |
+| Cutlass (2-step 10/24; was $47,050–106,600) | $47,355 | $107,195 |
 | Hayabusa | $9,690 | $24,650 |
-| **Total** (was $111,440–237,730 before the Whipple; $97,290–212,450 before the 10/23 build-once plans; $95,590–210,150 before the 10/21 security systems) | **about $112,540** | **about $237,530** |
+| **Total** (10/24; was $112,540–237,530; $97,290–212,450 before the 10/23 build-once plans) | **about $137,445** | **about $281,975** |
 | Cutlass Roid Runner-level finish (optional, not in the total) | +$22,700 | +$86,600 |
 
 Biggest savings: doing the labor, buying used brake and suspension parts, and finding a

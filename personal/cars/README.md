@@ -10,9 +10,9 @@ Google Drive: 06 Personal & Money > Personal > Cars (https://drive.google.com/dr
 
 | Vehicle | File | Notes |
 |---|---|---|
-| 2012 Chevy Cruze LT RS | [2012-chevy-cruze-lt-rs.md](2012-chevy-cruze-lt-rs.md) | Head off as of 10/12/2026. Build once (10/23): forged-piston refresh and full valve job now, stock turbo or Z04; white to gloss black wrap, burnt orange interior (10/21) |
-| 2016 Dodge Charger Pursuit | [2016-dodge-charger-pursuit.md](2016-dodge-charger-pursuit.md) | ~188k miles, oil change past due. Build once (10/23): chassis and looks first, then forged 392, Whipple 3.0L twin-screw about 7 psi (no ProCharger), 8HP90 all at once |
-| 1979 Oldsmobile Cutlass Supreme | [1979-oldsmobile-cutlass-supreme.md](1979-oldsmobile-cutlass-supreme.md) | Needs a new motor. Plan: LS swap, forged internals, twin turbo; 4L80E with console shifter, coilovers, RestoMod Air (10/21) |
+| 2012 Chevy Cruze LT RS | [2012-chevy-cruze-lt-rs.md](2012-chevy-cruze-lt-rs.md) | Head off as of 10/12/2026. Build once (10/23): forged-piston refresh and full valve job now, Z04 kept (10/24), auto vs manual write-up (manual recommended, 10/24); white to gloss black wrap, burnt orange interior (10/21) |
+| 2016 Dodge Charger Pursuit | [2016-dodge-charger-pursuit.md](2016-dodge-charger-pursuit.md) | ~188k miles, oil change past due. Build once (10/23): chassis and looks first, then the power package all at once. 10/24: 800 whp target: forged 426, Whipple 3.8L, E85 flex fuel, built 8HP90 |
+| 1979 Oldsmobile Cutlass Supreme | [1979-oldsmobile-cutlass-supreme.md](1979-oldsmobile-cutlass-supreme.md) | Needs a new motor. Plan: LS swap, forged internals, twin turbo; 4L80E with console shifter, coilovers, RestoMod Air (10/21); 2-step for track days (10/24) |
 | 2007 Suzuki Hayabusa | [2007-suzuki-hayabusa.md](2007-suzuki-hayabusa.md) | Added 10/21/2026. Oil drips to fix. Plan: 300 fat tire stretch, lowered, chrome, Harley Quinn paint, audio |
 
 Phased plan with costs: [build-plan.md](build-plan.md)

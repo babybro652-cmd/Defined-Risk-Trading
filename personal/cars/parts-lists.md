@@ -8,6 +8,9 @@ checked online on 10/21 say "checked". Everything else is a typical range: confi
 Columns: **Req** = required for the build as rendered; **Opt** = optional or one of two choices.
 **DIY** = Tim can do it with hand tools; **Shop** = needs a shop, welder, paint booth or machine work.
 
+**Updated 10/24:** Charger 800 whp parts, Cruze Z04 plus auto vs manual, Cutlass 2-step: see each
+car's "Updated 10/24" section. All four: $137,445–281,975 (was $112,540–237,530).
+
 Budget effects are at the end of each section and in `build-plan.md` (changed lines show "was").
 
 Google Docs (one per vehicle folder under Cars):
@@ -136,6 +139,13 @@ retard for the track only. Spec the 4L80E converter at about 3,000-3,200 stall f
 | Turbo | EGT probes, one per bank (option, 10/24) | K-type probes plus Holley input | Watch turbo heat on launches | $150–400 | DIY | Opt |
 | Turbo | Faster-spool twins (option, 10/24) | Garrett G25-660 pair instead of 62 mm | Price est, not checked; only if response matters more than top end | $3,800–4,800 | Shop fab | Opt |
 
+### Updated 10/24: 2-step in the plan (Tim: yes, for track days)
+
+The three options above (557-202 dual solenoid, arm switch, EGT probes) are now **Req**.
+Terminator X Max supports 2-step, launch boost target and launch retard (Holley); Boost
+Builder is Dominator/HP only and not needed. Cutlass total **$47,355–107,195** (was
+$47,050–106,600; +$305–595). The 557-201 kit and the G25-660 twins stay optional.
+
 ---
 
 ## 2016 Dodge Charger Pursuit (5.7 Hemi, RWD)
@@ -230,6 +240,45 @@ Tuners or Diablo tune.
 
 **Matching app on both cars (option, 10/21):** put the Cutlass on Compustar too: CS7900-AS brain, DroneMobile X2 LTE and a Digital Guard Dawg PBS-X push button start ($443 at DGD), which runs off the Compustar remote. Both cars then use one DroneMobile app and one style of 2-way remote; the Cutlass gives up the iKey hands-free walk-up unlock and costs about the same (about $1,000–1,300 with the same poppers, trunk release, relays and door pulls).
 
+
+### Updated 10/24: 800 whp parts (Tim's new target)
+
+Target raised from about 575-600 whp to 800 whp (about 920-950 crank hp). Street tune about
+650-700 whp on 93, race tune about 800 whp on E85 (flex fuel). Reasons and the reliability
+trade-off: [build-guides.md](build-guides.md). These lines replace the matching 10/23 lines above.
+
+| Category | Part | Brand / model | Fits / notes | Est. price | DIY / shop | Req |
+|---|---|---|---|---|---|---|
+| Engine | Forged 426 stroker (or fully forged 392) | 392 block, forged crank (4.050 stroke), forged H-beam rods, forged pistons about 9.5:1, ARP 2000 head studs, MLS gaskets, upgraded oil pump, coated bearings, blower cam. American Powertrain 426 long block $14,299 listed (10/21) or a local HEMI builder | Replaces "forged 392 with forged pistons" ($9,000-14,000): stock crank and rods won't live at 800 whp. Price est: two builder quotes | $14,000–22,000 | Shop | Req |
+| Power | Supercharger | Whipple 3.8L twin-screw, top-mount, configured for a 6.4 intake on the 426 (custom order; the catalog 3.8L, WK-3500-S2-38, is a Hellcat 6.2 kit, $9,299.99 tuner kit at American Muscle checked 10/24) at about 9-11 psi | Ask Whipple. Fallback: WK-3021-30 3.0L kit ($8,899.99-8,999.99 checked 10/23) at about 12-14 psi on E85, runs hotter. Replaces the 3.0L line ($8,900-9,300). Price est | $10,500–14,000 | Shop | Req |
+| Body | Cowl or vented hood (now required) | SRT-style vented or cowl hood for blower clearance | Was an option; a 3.8L top-mount likely won't clear the flat Pursuit hood. Price est, plus paint | $600–1,500 | Shop | Req |
+| Fuel | Return-style flex fuel system | Fore Innovations LX dual-pump billet module (listed 1000+ rwhp on E85, return style; pumps, filter, fittings are options), -8 AN feed, -6 AN return, boost-referenced regulator, Injector Dynamics ID1300x or ID1700x, flex fuel sensor kit | Replaces "fuel pump for about 700 crank hp" ($300-800). Hellcat injectors in the Whipple kit are too small for E85 at 800 whp. Price est | $2,500–4,500 | DIY | Req |
+| Cooling | Cooling for 800 whp | Larger blower heat exchanger and higher-flow intercooler pump (was an option), aluminum radiator, engine oil cooler, 8HP trans cooler | Replaces cooling $500-1,100. Price est | $1,500–3,000 | DIY | Req |
+| Engine | Ignition | Colder plugs gapped for boost, coils checked | Price est | $200–500 | DIY | Req |
+| Drivetrain | Built 8HP90 | Used Hellcat 8HP90 core built to Pure Drivetrain Stage 1 or equal (rated 1,300 hp, 1,100 lb-ft; Pure stages $5,999-14,999 per Jalopnik), Mopar Redeye converter 77072542AB ($1,029.99 at SDPC, checked 10/24), TCM programming with raised torque limits | Replaces stock 8HP90 ($3,500-6,500, rated about 664-738 lb-ft). TR6060/Magnum manual not chosen (about 700 lb-ft rating). Price est | $9,000–15,000 | Shop | Req |
+| Drivetrain | Axles and driveshaft | The Driveshaft Shop Level 5 axles, 1,400 hp rated (LX $1,422-1,598 per side checked 10/24; confirm 2015+ part numbers), one-piece carbon or aluminum driveshaft rated 1,000+ hp | Replaces $1,900-3,800. Price est | $3,500–6,000 | DIY | Req |
+| Drivetrain | Rear diff | Demon-spec 230 mm (heat-treated housing, about 30% more torque capacity, 41-spline half shafts) or a built 230 mm with a diff brace | Replaces the plain 230 mm ($800-1,500). Price est | $2,000–4,000 | DIY or shop | Req |
+| Brakes | Pads and fluid | High-temp pads, DOT 4 racing fluid on the SRT/Hellcat Brembos | New. Price est | $200–500 | DIY | Req |
+| Power | Dyno tune, two maps | HP Tuners, unlocked PCM, flex fuel, street and race maps, TCM | Replaces $300-800. Price est | $800–1,500 | Shop | Req |
+| Tires | Rear tires | 315/35R20 rear (was 305) under the flares | Same tire line budget | in tire line | Shop mount | Req |
+| Tires | Drag radial set (option) | 18 inch rear wheels with Mickey Thompson ET Street R or Nitto NT555RII | Track days only; not in total | $2,000–3,500 | Buy | Opt |
+
+**Budget changes (Charger, 10/24):**
+
+| Line | Was (600 whp) | Now (800 whp) | Change |
+|---|---|---|---|
+| Engine | $9,000–14,000 | $14,000–22,000 | +$5,000 / +$8,000 |
+| Supercharger | $8,900–9,300 | $10,500–14,000 | +$1,600 / +$4,700 |
+| Hood (was option) | not in total | $600–1,500 | +$600 / +$1,500 |
+| Fuel | $300–800 | $2,500–4,500 | +$2,200 / +$3,700 |
+| Cooling | $500–1,100 | $1,500–3,000 | +$1,000 / +$1,900 |
+| Ignition (new) | n/a | $200–500 | +$200 / +$500 |
+| Transmission | $3,500–6,500 | $9,000–15,000 | +$5,500 / +$8,500 |
+| Axles, driveshaft | $1,900–3,800 | $3,500–6,000 | +$1,600 / +$2,200 |
+| Rear diff | $800–1,500 | $2,000–4,000 | +$1,200 / +$2,500 |
+| Brake pads and fluid (new) | n/a | $200–500 | +$200 / +$500 |
+| Tune | $300–800 | $800–1,500 | +$500 / +$700 |
+| **Charger total** | **$43,050–79,080** | **$62,650–113,780** | **+$19,600 / +$34,700** |
 
 ### Options (10/24): supercharger type and boost
 
@@ -330,6 +379,40 @@ later than stock; the V3.2 spools about like stock. Totals unchanged.
 | Power | Low-lag turbo instead of the Z04 (option, 10/24) | ZZP V3.2 Big Wheel ($899.99 checked 10/24) | About 30-50 whp over stock, spool about like stock; needs the tune and about 42 lb/hr injectors. Saves about $1,100 vs the Z04 | $900 | DIY | Opt |
 | Power | Upgraded rear trans mount (option, 10/24) | ZZP or equivalent | ZZP strongly recommends it with the Z04. Price est | $60–150 | DIY | Opt |
 
+### Updated 10/24: Z04 in the plan, transmission options
+
+**Z04 (Tim, 10/24: keep).** The Z04 kit and its supporting mods and tune move into the total;
+the new stock-spec turbo line ($450–1,100) comes out. Net +$2,350 low, +$3,400 high.
+
+**Transmission:** the car's current transmission is not recorded (check pedals and the Service
+Parts ID label). Side-by-side comparison and reasons: [build-guides.md](build-guides.md).
+**Recommended for reliability: Option B, manual.** Cheaper: Option A, keep the automatic.
+The totals below carry Option B (Tim's lean); Option A is $1,450–2,950 less.
+
+| Category | Part | Brand / model | Fits / notes | Est. price | DIY / shop | Req |
+|---|---|---|---|---|---|---|
+| Power | Upgraded turbo (now in the plan) | ZZP Z04 kit ($1,999.99 checked 10/24) | Replaces the new stock-spec turbo line | $1,800–2,200 | DIY | Req |
+| Power | Supporting mods and tune (now in the plan) | ZZP downpipe, front mount intercooler, intake, 42 lb/hr injectors, ZZP ($724.99 checked 10/24) or Trifecta tune (Advantage+ $549, Elite $749 listed) | One install, one tune | $1,000–2,300 | DIY | Req |
+| Trans (A) | Keep the 6T40 automatic: rebuild now | Rebuild kit and clutch packs, Sonnax 3-5-R drum saver 144555K (about $67.90 JEGS, checked 10/24), new or reman converter, external cooler, Dexron VI; tune limits torque in 1st and 2nd | 6T40 rated about 177 lb-ft (240 Nm, GM SAE paper). Shop rebuild labor $800–1,500 extra if not DIY. Price est | $1,200–2,800 | DIY or shop | Opt (A) |
+| Trans (B) | M32 6-speed manual (recommended) | Used M32 from a 1.4T manual Cruze or Sonic | About 236 lb-ft (320 Nm). Price est | $500–1,200 | DIY | Req (B) |
+| Trans (B) | M32 bearing fix | Later-type bearing kit with end case (62 mm bearings, extra oil feed), e.g. Courtenay Sport (UK) | Fixes the 6th-gear bearing failure. Price est, not checked | $250–600 | Shop | Req (B) |
+| Trans (B) | Clutch and flywheel | SPEC Stage 2 SC172S ($463.50) with steel billet flywheel (+$377.10), checked 10/24, listed for 2010–2016 Cruze 1.4T; or a South Bend if one is listed for the Cruze (ZZP's South Bend page covers Cobalt/HHR only) | Kit requires a billet single-mass flywheel | $840–1,300 | DIY | Req (B) |
+| Trans (B) | Pedals and hydraulics | Manual pedal box or clutch pedal, clutch master, line, concentric slave | From a manual Cruze donor. Price est | $300–700 | DIY | Req (B) |
+| Trans (B) | Shifter and cables | Manual Cruze shifter, both cables, boot | Price est | $200–500 | DIY | Req (B) |
+| Trans (B) | Axles, mount | Manual-car axles if different, manual trans mount, upgraded rear mount | Price est | $300–800 | DIY | Req (B) |
+| Trans (B) | Programming | ECM manual calibration and BCM configuration (dealer, ZZP or Trifecta), cluster check | Price est | $150–400 | Shop | Req (B) |
+| Trans (B) | Fluids, hardware | Gear oil, clips, bolts | Price est | $100–250 | DIY | Req (B) |
+| Trans | F40 (not chosen) | GM F40, 400 Nm | Built for Family II engines; no bolt-up to the 1.4T found | n/a | Custom | Not chosen |
+
+**Budget changes (Cruze, 10/24):**
+
+| Line | Was | Now |
+|---|---|---|
+| New stock-spec turbo | $450–1,100 | removed |
+| Z04 kit plus supporting mods and tune | option, not in total | $2,800–4,500 |
+| Manual swap, Option B (new) | n/a | $2,650–5,750 (Option A instead: $1,200–2,800) |
+| **Cruze total** | **$12,750–27,200** | **$17,750–36,350** with the manual ($16,300–33,400 with the auto rebuild) |
+
 ---
 
 ## 2007 Suzuki Hayabusa (Gen 1)
@@ -401,14 +484,14 @@ speakers in the undertail and inner front fairing, amp and Bluetooth.
 
 | Vehicle | Was | Now |
 |---|---|---|
-| Cruze | $7,250–15,700 | $12,750–27,200 (build once 10/23; was $12,850–26,500) |
-| Charger | $23,550–48,250 | $43,050–79,080 (Whipple 10/23; was $41,950–79,280; $27,700–54,700 before build once) |
-| Cutlass | $37,150–95,300 | $47,050–106,600 |
+| Cruze | $7,250–15,700 | $17,750–36,350 (10/24: Z04 and manual swap; was $12,750–27,200) |
+| Charger | $23,550–48,250 | $62,650–113,780 (800 whp 10/24; was $43,050–79,080 at 600 whp) |
+| Cutlass | $37,150–95,300 | $47,355–107,195 (2-step 10/24; was $47,050–106,600) |
 | Hayabusa | $9,540–24,050 | $9,690–24,650 |
-| **Total** | **$77,490–183,300** | **$112,540–237,530** (was $111,440–237,730 before the Whipple swap 10/23; $97,290–212,450 before the 10/23 build-once plans) |
+| **Total** | **$77,490–183,300** | **$137,445–281,975** (10/24: Charger 800 whp, Cruze Z04 and manual, Cutlass 2-step; was $112,540–237,530) |
 
 Totals include Tim's 10/21 decisions and the 10/21 Cutlass and Charger security systems (before the decisions: $88,940–199,600; before the security systems: $95,590–210,150). Not in the totals: Cutlass
-Roid Runner finish table (now $22,700–86,600), Charger engine install labor if a shop does it, Cruze tune-later option. The Cutlass T-56 and air ride
+Roid Runner finish table (now $22,700–86,600), Charger engine install labor if a shop does it, Cruze manual swap shop labor, Charger drag radial set. The Cutlass T-56 and air ride
 are not chosen (10/21).
 
 ## Decisions and fitment checks for Tim
@@ -428,3 +511,7 @@ are not chosen (10/21).
 9. Decided 10/23: build once. Charger: forged 392, Whipple 3.0L about 7 psi (no ProCharger), 8HP90, all in the plan;
    pick a pull-out 392 or the Mopar crate after two builder quotes. Cruze: forged-piston
    refresh at stock power; Tim decides Z04 now or a new stock turbo (if never tuning).
+10. Decided 10/24: Cruze keeps the Z04 (in the total). Cruze transmission: manual (M32) recommended,
+    auto rebuild is cheaper; Tim confirms which trans the car has now and picks. Charger: 800 whp
+    (forged 426, Whipple 3.8L if Whipple will build it, E85 flex fuel, built 8HP90, Demon-spec diff).
+    Cutlass: 2-step in the plan.
