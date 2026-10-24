@@ -19,6 +19,7 @@ from build_nba_tab import V2, POS, W_DEFAULT, cur_weight, v1_share, v2_shares  #
 
 START = '2025-12-01'
 PREV = {'2026-27': '2025-26'}
+REC = []   # per-game predictions (filled by run(); used by center_check.py)
 
 
 def season_of(d):
@@ -101,6 +102,7 @@ def run(variants, team=False):
                     win = g['fb'][0]
                     if win not in probs:   # a bench player scored first (rare); skipped for every model alike
                         continue
+                    REC.append(dict(k=k, d=d, g=g, probs=dict(probs), pt=dict(pt_k), st=st))
                     pw = probs[win] / sum(probs.values())   # proper: renormalized over the 10 starters
                     tops[(d, g['away'], g['home'])][k] = (max(probs, key=probs.get), win, g['nm'])
                     for r in (res[k]['all'], res[k][season_of(d)]):

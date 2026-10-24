@@ -152,6 +152,16 @@ Include the first shot and first score for each game in the grading message to T
   scored after the other side won the tip and missed. Our center picks (Adebayo, Kessler, Zubac, Wembanyama) all missed.
   Check the center share in the build against these 13 games (Allen 10/22 + 5 of 12 on 10/23) before the next slate.
 
+- 10/24 center check (`python3 analysis/nba/center_check.py`, walk-forward, current model, 1,922 jumper-games 25-26 + 26-27):
+  the jumper (almost always the starting center) is underrated when his team wins the tip. Won tip: model 14.1%, actual
+  17.0% (163 of 961, about 2.5 standard errors); his share of his team's first FG when the team scores first is 26.5%
+  actual vs 21.8% model. Lost tip: model 7.6%, actual 7.3% (fine). Before the tip (what we price): 10.9% model vs 12.1%
+  actual. Other starters are slightly overrated after a tip win (12.3% vs 11.7%). 26-27 so far: jumpers 9 of 56 (16.1%)
+  vs 10.8% model. Likely cause: the model treats share as independent of the tip, but a tip win gives the jumper the
+  first possession's lob or post-up. Candidate fix (not applied): a jumper-specific share boost x about 1.2 when his
+  team wins the tip (and x about 0.95 when it loses), fit in backtest_fb.py before switching. 10/24 picks flag the center
+  option with that adjustment as "center check".
+
 ## Tim vs model log (first basket)
 
 Tim's picks come from his own read of the StarTool card (not just its star), so the Tim column tests how he uses StarTool's data; the StarTool column is its star/bomb as printed.
