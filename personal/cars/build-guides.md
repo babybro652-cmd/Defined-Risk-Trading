@@ -265,6 +265,14 @@ This is the most important step for a clean build. Everything bolts on in bare m
 - Have on hand: $600-1,200 for the dyno tune, alignment.
 - Checkpoint: no leaks, no codes, temps stable in summer traffic, brakes pull straight.
 
+### Options (10/24): anti-lag
+
+See [anti-lag-and-supercharger-research.md](anti-lag-and-supercharger-research.md). No true
+anti-lag. Tune order on the dyno after break-in: boost safeties first, boost by gear (low in 1st
+and 2nd), 2-step and launch retard only for the track behind an arm switch, no decel pop map.
+Converter about 3,000-3,200 stall (tell Circle D or Yank the turbo size and gear). Optional: Holley
+557-202 dual solenoid ($134.95 checked 10/24) for dome control. Cats stay on the road (G.S. 20-128(c)).
+
 ### Don't do this before that (Cutlass)
 
 - Don't powder coat the frame before every tab and bracket is welded (turbo mounts, hangers,
@@ -510,6 +518,13 @@ on paint and wheels. The car stays drivable on the 5.7 until the swap.
 - 500 miles; recheck bolts, fluids, ride height and alignment (the blower adds front weight).
   Sell the 5.7 and 8HP70 to pay back part of the package.
 
+### Options (10/24): supercharger type
+
+See [anti-lag-and-supercharger-research.md](anti-lag-and-supercharger-research.md). Twin-screw
+stays: better for this street car than a centrifugal. One change: ask Whipple and the tuner for the
+pulley that hits 575-600 whp, likely about 5.5-6.5 psi (estimate). A stock 392 with the 3.0L made
+677 whp and 621 lb-ft at the wheels on about 7.5 psi (National Speed), near the top of the 8HP90.
+
 ### Don't do this before that (Charger)
 
 - Don't spend on the 5.7 past oil changes and safety repairs.
@@ -681,6 +696,13 @@ machine shop time.
 **10. Final alignment**
 - Alignment at the height you drive at. If the Z04 is on, recheck the tune with the final
   exhaust.
+
+### Options (10/24): anti-lag
+
+See [anti-lag-and-supercharger-research.md](anti-lag-and-supercharger-research.md). No anti-lag
+and no crackle tune. The ZZP tune handles boost and torque management. If lag matters more than
+peak power, the ZZP V3.2 ($899.99 checked 10/24) spools about like stock; the Z04 spools about
+500-700 rpm later. Keep the Z04's high-flow cat.
 
 ### Don't do this before that (Cruze)
 

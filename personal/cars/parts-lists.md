@@ -121,6 +121,21 @@ Cutlass notes.
 | Finish table: A/C | $1,600–2,800 (Vintage Air) | $2,200–2,800 (RestoMod Air) | Tim's pick (10/21) |
 | Finish table total | $25,100–92,000 | $22,700–86,600 | Air ride out, RestoMod Air in |
 
+
+### Options (10/24): anti-lag and boost control
+
+Research: [anti-lag-and-supercharger-research.md](anti-lag-and-supercharger-research.md). No true
+anti-lag (it burns cats, valves and turbos; not street legal with cats). Use the Terminator X Max
+soft features already in the plan: boost by gear and speed, boost safeties, 2-step with launch
+retard for the track only. Spec the 4L80E converter at about 3,000-3,200 stall for spool. Totals unchanged.
+
+| Category | Part | Brand / model | Fits / notes | Est. price | DIY / shop | Req |
+|---|---|---|---|---|---|---|
+| Turbo | Dome control solenoid (option, 10/24) | Holley 557-202 high-flow dual solenoid ($134.95 checked 10/24) or 557-201 kit ($460.95 listed) | Lets the Terminator X run the CompGate domes (boost by gear); spring pressure only without it | $135–460 | DIY | Opt |
+| Turbo | 2-step arm switch (option, 10/24) | Console toggle wired to the Terminator X 2-step input | Launch control never active unless armed | $20–60 | DIY | Opt |
+| Turbo | EGT probes, one per bank (option, 10/24) | K-type probes plus Holley input | Watch turbo heat on launches | $150–400 | DIY | Opt |
+| Turbo | Faster-spool twins (option, 10/24) | Garrett G25-660 pair instead of 62 mm | Price est, not checked; only if response matters more than top end | $3,800–4,800 | Shop fab | Opt |
+
 ---
 
 ## 2016 Dodge Charger Pursuit (5.7 Hemi, RWD)
@@ -215,6 +230,15 @@ Tuners or Diablo tune.
 
 **Matching app on both cars (option, 10/21):** put the Cutlass on Compustar too: CS7900-AS brain, DroneMobile X2 LTE and a Digital Guard Dawg PBS-X push button start ($443 at DGD), which runs off the Compustar remote. Both cars then use one DroneMobile app and one style of 2-way remote; the Cutlass gives up the iKey hands-free walk-up unlock and costs about the same (about $1,000–1,300 with the same poppers, trunk release, relays and door pulls).
 
+
+### Options (10/24): supercharger type and boost
+
+Research: [anti-lag-and-supercharger-research.md](anti-lag-and-supercharger-research.md). Verdict:
+keep the Whipple twin-screw (better street torque at low boost, one complete kit, no front-mount
+piping in the widebody bumper). Change: pulley for the 575-600 whp target, likely about 5.5-6.5 psi
+(estimate), not a fixed 7 psi; dyno data shows a 392 with this blower at 7-7.5 psi makes about
+618-677 whp. Same parts, same total. ProCharger (from $7,149, checked 10/24) stays not chosen.
+
 ---
 
 ## 2012 Chevy Cruze LT RS (1.4T, 182,995 miles)
@@ -292,6 +316,19 @@ teardown, so the engine is ready either way.
 | Build once (10/23): removed | $3,450–5,900 | $0 | Head check $300–700, while-apart $350–700, Z04 $1,800–2,200 and supporting/tune $1,000–2,300 (now the tune-later option) |
 | Build once (10/23): added | n/a | $3,350–6,600 | Valve job $600–1,300, forged bottom end $1,700–3,000, weak points $600–1,200, stock-spec turbo $450–1,100 |
 | **Cruze total** | **$12,850–26,500** | **$12,750–27,200** | Build once 10/23 (-$100 low, +$700 high). Tune later adds $2,800–4,500; Z04 now instead of the stock turbo adds $2,350–3,400. Before 10/21: $7,250–15,700 |
+
+
+### Options (10/24): anti-lag and turbo choice
+
+Research: [anti-lag-and-supercharger-research.md](anti-lag-and-supercharger-research.md). No
+anti-lag of any kind on this car (valve, turbo and cat killer; it already burnt a valve). The ZZP
+tune controls boost and torque by itself. Lag is set by the turbo: the Z04 spools about 500-700 rpm
+later than stock; the V3.2 spools about like stock. Totals unchanged.
+
+| Category | Part | Brand / model | Fits / notes | Est. price | DIY / shop | Req |
+|---|---|---|---|---|---|---|
+| Power | Low-lag turbo instead of the Z04 (option, 10/24) | ZZP V3.2 Big Wheel ($899.99 checked 10/24) | About 30-50 whp over stock, spool about like stock; needs the tune and about 42 lb/hr injectors. Saves about $1,100 vs the Z04 | $900 | DIY | Opt |
+| Power | Upgraded rear trans mount (option, 10/24) | ZZP or equivalent | ZZP strongly recommends it with the Z04. Price est | $60–150 | DIY | Opt |
 
 ---
 

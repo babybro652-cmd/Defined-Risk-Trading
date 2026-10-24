@@ -20,3 +20,5 @@ Phased plan with costs: [build-plan.md](build-plan.md)
 Parts lists with brands, prices and fitment for all four builds (10/21): [parts-lists.md](parts-lists.md)
 
 Build guides (step-by-step order, "don't do this before that" lists, biggest engine per vehicle) (10/21; Charger and Cruze rewritten 10/23 to build the final engine once): [build-guides.md](build-guides.md)
+
+Anti-lag (Cutlass, Cruze) and centrifugal vs twin-screw supercharger (Charger) research, with one recommended setup per car (10/24): [anti-lag-and-supercharger-research.md](anti-lag-and-supercharger-research.md)
