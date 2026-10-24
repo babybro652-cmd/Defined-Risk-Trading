@@ -1,19 +1,29 @@
-# NHL shortlist 2026-10-23 (not guaranteed)
+# NHL shortlist 2026-10-24 (not guaranteed)
 
-- **Anytime goal: Cole Caufield** (MTL @ CHI). Scored in 45% of games (blend); 26-27: 6 G in 9 GP; CHI allows 3.5 GA/G; faces Spencer Knight (unconfirmed, SV .900)
-- **Anytime goal: Nathan MacKinnon** (COL vs TBL). Scored in 46% of games (blend); 26-27: 6 G in 10 GP; TBL allows 2.7 GA/G; faces Andrei Vasilevskiy (unconfirmed, SV .911)
-- **Anytime goal: Connor Bedard** (CHI vs MTL). Scored in 36% of games (blend); 26-27: 1 G in 3 GP; MTL allows 3.2 GA/G; faces Jacob Fowler (unconfirmed, SV .907)
-- **Anytime goal: Brandon Hagel** (TBL @ COL). Scored in 43% of games (blend); 26-27: 7 G in 9 GP; COL allows 2.6 GA/G; faces Mackenzie Blackwood (unconfirmed, SV .901)
-- **First goal: Martin Necas** (COL vs TBL). Scored first in 9/78 games in 25-26, 0/10 in 26-27; 0.49 goals/G (blend); COL scores first 61%; Top 6 PP1
-- **First goal: Artturi Lehkonen** (COL vs TBL). Scored first in 4/70 games in 25-26, 1/10 in 26-27; 0.45 goals/G (blend); COL scores first 61%; Top 6 PP2
-- **First goal: Nikita Kucherov** (TBL @ COL). Scored first in 5/77 games in 25-26, 0/9 in 26-27; 0.54 goals/G (blend); TBL scores first 49%; Top 6 PP1
-- **SOG over 2.5: Nathan MacKinnon** (COL vs TBL). Over 2.5 in 71% of games (blend); 4.4 SOG/G; L5: 5 1 9 4 2; TBL allows 26.1 SA/G
-- **SOG over 1.5: Cole Caufield** (MTL @ CHI). Over 1.5 in 79% of games (blend); 3.3 SOG/G; L5: 3 5 0 5 6; CHI allows 30.1 SA/G
-- **SOG over 1.5: Connor Bedard** (CHI vs MTL). Over 1.5 in 82% of games (blend); 3.2 SOG/G; L5: 2 3 3 0 0; MTL allows 27.5 SA/G
-- **SOG over 1.5: Nazem Kadri** (COL vs TBL). Over 1.5 in 83% of games (blend); 2.7 SOG/G; L5: 2 1 4 2 3; TBL allows 26.1 SA/G
-- **SOG over 1.5: Brandon Hagel** (TBL @ COL). Over 1.5 in 82% of games (blend); 3.4 SOG/G; L5: 3 5 6 1 6; COL allows 26.4 SA/G
+- **Anytime goal: Leon Draisaitl** (EDM vs TOR). Scored in 52% of games (blend); 26-27: 10 G in 10 GP; TOR allows 3.5 GA/G; faces Anthony Stolarz (unconfirmed, SV .893)
+- **Anytime goal: Connor McDavid** (EDM vs TOR). Scored in 46% of games (blend); 26-27: 8 G in 10 GP; TOR allows 3.5 GA/G; faces Anthony Stolarz (unconfirmed, SV .893)
+- **Anytime goal: Auston Matthews** (TOR @ EDM). Scored in 46% of games (blend); 26-27: 8 G in 12 GP; EDM allows 3.2 GA/G; faces Tristan Jarry (confirmed, SV .881)
+- **Anytime goal: Kirill Kaprizov** (MIN @ SEA). Scored in 52% of games (blend); 26-27: 11 G in 11 GP; SEA allows 3.2 GA/G; faces Philipp Grubauer (unconfirmed, SV .908)
+- **First goal: Zach Hyman** (EDM vs TOR). Scored first in 4/58 games in 25-26, 0/4 in 26-27; 0.49 goals/G (blend); EDM scores first 52%; Top 6 PP1
+- **First goal: Matt Boldy** (MIN @ SEA). Scored first in 8/76 games in 25-26, 2/11 in 26-27; 0.52 goals/G (blend); MIN scores first 55%; Top 6 PP1
+- **First goal: David Pastrnak** (BOS vs SJS). Scored first in 6/77 games in 25-26, 0/11 in 26-27; 0.43 goals/G (blend); BOS scores first 54%; Top 6 PP1
+- **SOG over 2.5: Alex DeBrincat** (DET @ CGY). Over 2.5 in 77% of games (blend); 3.6 SOG/G; L5: 4 5 2 4 6; CGY allows 30.1 SA/G
+- **SOG over 2.5: Kirill Kaprizov** (MIN @ SEA). Over 2.5 in 72% of games (blend); 3.5 SOG/G; L5: 4 3 5 6 3; SEA allows 30.0 SA/G
+- **SOG over 2.5: Matt Boldy** (MIN @ SEA). Over 2.5 in 72% of games (blend); 3.7 SOG/G; L5: 7 3 6 8 1; SEA allows 30.0 SA/G
+- **SOG over 1.5: Connor McDavid** (EDM vs TOR). Over 1.5 in 82% of games (blend); 3.4 SOG/G; L5: 3 4 2 2 2; TOR allows 31.6 SA/G
+- **SOG over 1.5: Leon Draisaitl** (EDM vs TOR). Over 1.5 in 80% of games (blend); 3.1 SOG/G; L5: 4 4 1 3 3; TOR allows 31.6 SA/G
 
 ## Goalies
 
-- MTL @ CHI 8:00 ET: Jacob Fowler (Unconfirmed) / Spencer Knight (Unconfirmed)
-- TBL @ COL 9:00 ET: Andrei Vasilevskiy (Unconfirmed) / Mackenzie Blackwood (Unconfirmed)
+- ANA @ PHI 1:00 ET: Lukas Dostal (Unconfirmed) / Joseph Woll (Unconfirmed)
+- LAK @ NJD 3:30 ET: Darcy Kuemper (Unconfirmed) / Jake Allen (Unconfirmed)
+- SJS @ BOS 7:00 ET: Yaroslav Askarov (Unconfirmed) / Jeremy Swayman (Unconfirmed)
+- NYR @ OTT 7:00 ET: Dylan Garand (Unconfirmed) / Samuel Ersson (Unconfirmed)
+- NSH @ PIT 7:00 ET: Juuse Saros (Unconfirmed) / Arturs Silovs (Unconfirmed)
+- BUF @ WSH 7:00 ET: Ukko-Pekka Luukkonen (Unconfirmed) / Charlie Lindgren (Unconfirmed)
+- VGK @ CBJ 7:00 ET: Carter Hart (Unconfirmed) / Jet Greaves (Unconfirmed)
+- CAR @ STL 7:00 ET: Pyotr Kochetkov (Unconfirmed) / Joel Hofer (Unconfirmed)
+- TOR @ EDM 7:00 ET: Anthony Stolarz (Unconfirmed) / Tristan Jarry (Confirmed)
+- TBL @ UTA 9:00 ET: Andrei Vasilevskiy (Unconfirmed) / Karel Vejmelka (Unconfirmed)
+- DET @ CGY 10:00 ET: Michal Postava (Unconfirmed) / Devin Cooley (Unconfirmed)
+- MIN @ SEA 10:00 ET: Jesper Wallstedt (Unconfirmed) / Philipp Grubauer (Unconfirmed)

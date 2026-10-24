@@ -7,3 +7,5 @@ Balance snapshots from Tim's FanDuel screenshots. Newest at the bottom. Deposits
 | 10/23/26 | 7:54-7:56 AM | $51.09 | after placing 10/23 bets ($7.40 staked: CFB $2.60, NHL $4.80) |
 | 10/23/26 | 11:31-11:32 AM | $44.74 | after placing 10/23 NBA bets ($6.20 staked: 12 first baskets at $0.10, 5 props at $1.00; plus $0.15 Bet Protect+ on the props) |
 | 2026-10-23 | 11:44 AM | $32.74 | after $12 more on CHI@MIL first basket (Herro, Kuzma, Jaquez $4 each) |
+| 10/24/26 | ~9:50 AM | $50.14 | after 10/23 bets settled (expected $46.59 from grading; +$3.55 likely Bet Protect+ refunds on Kawhi and Doncic) |
+| 10/24/26 | ~9:50 AM | $30.14 | after a $20 withdrawal (logged in Tim Money 'Budget: Transactions' as income) |
