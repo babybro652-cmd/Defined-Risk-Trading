@@ -184,3 +184,11 @@ On game days Tim sends the StarTool Analytics "Game Script" card for each game (
 | 10/23 | MEM @ GS | Zach Edey MEM, center (MEM won tip; Edey first shot, dunk off Jerome assist) | (none sent) | Jerome / Curry (bombs Coward, Podziemski missed) | Ty Jerome | - | No |
 | 10/23 | LAC @ LAL | Austin Reaves LAL (LAL won tip; first shot Kessler, blocked) | (none sent) | Garland / Doncic (bomb Reaves hit) | Kessler, Doncic | - | No |
 | 10/23 | POR @ SAC | Keegan Murray SAC (POR won tip; first shot Lillard, missed) | (none sent) | Lillard / LaVine (bombs Avdija, Sabonis missed) | Sabonis (pre-fix), Morant (post-fix) | - | No |
+| 10/24 | MIA @ CHA 6:00 | (grade) | (none sent) | Giannis / Miller (bombs Adebayo, Knueppel) | Adebayo | (grade) | (grade) |
+| 10/24 | BKN @ CLE 7:30 | (grade) | (none sent) | Porter Jr. / Mitchell | Mobley (center: Allen) | (grade) | (grade) |
+| 10/24 | MIL @ PHI 7:30 | (grade) | (none sent) | Herro / Maxey | Jaylen Brown | (grade) | (grade) |
+| 10/24 | WSH @ CHI 8:00 | (grade) | (none sent) | Davis / Powell | Jalen Smith | (grade) | (grade) |
+| 10/24 | SA @ DAL 8:00 | (grade) | (none sent) | Wembanyama / Flagg (out) | Wembanyama | (grade) | (grade) |
+| 10/24 | HOU @ ATL 8:30 | (grade) | (none sent) | Durant / Alexander-Walker | Sengun | (grade) | (grade) |
+| 10/24 | NO @ DEN 9:00 | (grade) | (none sent) | Murphy / Jokic | Murray (center: Jokic) | (grade) | (grade) |
+| 10/24 | GS @ PHX 10:00 | (grade) | (none sent) | Curry / Booker | Jalen Green | (grade) | (grade) |
