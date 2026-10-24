@@ -26,3 +26,17 @@ date,sport,game,first_shot,first_shot_result,away_first_shot,home_first_shot,fir
 2026-10-22,NHL,UTA @ SEA,Kaapo Kakko (SEA) P1 00:06,saved,Kailer Yamamoto (UTA) P1 02:59,Kaapo Kakko (SEA) P1 00:06,Kaapo Kakko (SEA) P1 00:06 (shot-on-goal),Jordan Eberle (SEA) P1 03:38,,first_shot = first shot on goal; shootout excluded
 2026-10-22,NHL,VGK @ STL,Justin Barron (STL) P1 01:15,saved,Tomas Hertl (VGK) P1 02:14,Justin Barron (STL) P1 01:15,Alexander Holtz (VGK) P1 00:58 (missed-shot),Pavel Buchnevich (STL) P1 10:00,,first_shot = first shot on goal; shootout excluded
 2026-10-22,NHL,WPG @ DAL,Jamie Benn (DAL) P1 01:35,saved,Neal Pionk (WPG) P1 03:16,Jamie Benn (DAL) P1 01:35,Jamie Benn (DAL) P1 01:35 (shot-on-goal),Wyatt Johnston (DAL) P2 01:17,,first_shot = first shot on goal; shootout excluded
+2026-10-23,NBA,ATL @ CHA,Moussa Diabate (CHA),made,Dyson Daniels (ATL) missed,Moussa Diabate (CHA) made,,Moussa Diabate (CHA),Moussa Diabate (CHA),first_score = first made FG (first basket)
+2026-10-23,NBA,CHI @ MIL,Jalen Smith (CHI),made,Jalen Smith (CHI) made,Myles Turner (MIL) made,,Jalen Smith (CHI),Jalen Smith (CHI),first_score = first made FG (first basket)
+2026-10-23,NBA,DAL @ IND,Andrew Nembhard (IND),missed,Daniel Gafford (DAL) made,Andrew Nembhard (IND) missed,,Daniel Gafford (DAL),Daniel Gafford (DAL),first_score = first made FG (first basket)
+2026-10-23,NBA,DET @ MIA,Klay Thompson (MIA),missed,John Collins (DET) made,Klay Thompson (MIA) missed,,John Collins (DET),John Collins (DET),first_score = first made FG (first basket)
+2026-10-23,NBA,HOU @ SA,Dylan Harper (SA),missed,Alperen Sengun (HOU) made,Dylan Harper (SA) missed,,Alperen Sengun (HOU),Alperen Sengun (HOU),first_score = first made FG (first basket)
+2026-10-23,NBA,LAC @ LAL,Walker Kessler (LAL),missed,Darius Garland (LAC) missed,Walker Kessler (LAL) missed,,Austin Reaves (LAL),Austin Reaves (LAL),first_score = first made FG (first basket)
+2026-10-23,NBA,MEM @ GS,Zach Edey (MEM),made,Zach Edey (MEM) made,Draymond Green (GS) made,,Zach Edey (MEM),Zach Edey (MEM),first_score = first made FG (first basket)
+2026-10-23,NBA,MIN @ ORL,Franz Wagner (ORL),missed,LaMelo Ball (MIN) missed,Franz Wagner (ORL) missed,,Jaden McDaniels (MIN),Jaden McDaniels (MIN),first_score = first made FG (first basket)
+2026-10-23,NBA,NO @ UTAH,Ace Bailey (UTAH),missed,Trey Murphy III (NO) missed,Ace Bailey (UTAH) missed,,Ace Bailey (UTAH),Ace Bailey (UTAH),first_score = first made FG (first basket)
+2026-10-23,NBA,NY @ BOS,Mikal Bridges (NY),missed,Mikal Bridges (NY) missed,Jayson Tatum (BOS) missed,,Jayson Tatum (BOS),Jayson Tatum (BOS),first_score = first made FG (first basket)
+2026-10-23,NBA,POR @ SAC,Damian Lillard (POR),missed,Damian Lillard (POR) missed,De'Andre Hunter (SAC) missed,,Keegan Murray (SAC),Domantas Sabonis (SAC),first_score = first made FG (first basket)
+2026-10-23,NBA,TOR @ WSH,Trae Young (WSH),missed,Scottie Barnes (TOR) missed,Trae Young (WSH) missed,,RJ Barrett (TOR),RJ Barrett (TOR),first_score = first made FG (first basket)
+2026-10-23,NHL,MTL @ CHI,Patrick Kane (CHI) P1 01:16,saved,Cole Caufield (MTL) P1 03:31,Patrick Kane (CHI) P1 01:16,Patrick Kane (CHI) P1 01:16 (shot-on-goal),Connor Bedard (CHI) P1 04:23,,first_shot = first shot on goal; shootout excluded
+2026-10-23,NHL,TBL @ COL,Jake Guentzel (TBL) P1 00:24,saved,Jake Guentzel (TBL) P1 00:24,Devon Toews (COL) P1 01:08,Jake Guentzel (TBL) P1 00:24 (shot-on-goal),Devon Toews (COL) P1 01:08,,first_shot = first shot on goal; shootout excluded

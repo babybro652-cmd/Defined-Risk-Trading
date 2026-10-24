@@ -145,6 +145,13 @@ Include the first shot and first score for each game in the grading message to T
 
 - 10/23 CHI @ MIL: Jalen Smith (CHI's jumper) won the tip and scored the first basket on CHI's first shot, the second straight game a tip-winning center scored first (Allen 10/22). Turner, MIL's jumper, scored MIL's first basket. Check whether the model underrates centers who win the tip on the first possession.
 
+- 10/23 full slate: first basket 1-12 for our picks (Barrett +800 hit, pre-fix pick; the post-fix picks Leonard, Doncic,
+  Morant all missed). StarTool stars 1 of 24 (Tatum); bombs 3 (Barrett, Sengun, Reaves). Starting centers scored
+  5 of the 12 first baskets: Jalen Smith CHI, Diabate CHA, Gafford DAL, Sengun HOU, Edey MEM (Smith, Gafford and
+  Diabate are listed F by ESPN but play the 5). Only Edey and Smith were on a tip-winning team; Sengun and Gafford
+  scored after the other side won the tip and missed. Our center picks (Adebayo, Kessler, Zubac, Wembanyama) all missed.
+  Check the center share in the build against these 13 games (Allen 10/22 + 5 of 12 on 10/23) before the next slate.
+
 ## Tim vs model log (first basket)
 
 Tim's picks come from his own read of the StarTool card (not just its star), so the Tim column tests how he uses StarTool's data; the StarTool column is its star/bomb as printed.
@@ -161,9 +168,9 @@ On game days Tim sends the StarTool Analytics "Game Script" card for each game (
 | 10/23 | DAL @ IND | Daniel Gafford DAL, center (IND won tip; first shot Nembhard, missed) | (none sent) | Flagg / Haliburton | Zubac | - | No |
 | 10/23 | MIN @ ORL | Jaden McDaniels MIN (ORL won tip; first shot F. Wagner, missed) | (none sent) | Edwards / Banchero | Bane | - | No |
 | 10/23 | TOR @ WSH | RJ Barrett TOR (WSH won tip; first shot Young, missed) | (none sent) | Leonard / Davis (bomb Barrett hit) | RJ Barrett (pre-fix; post-fix top was Leonard) | - | Yes, Barrett +800 |
-| 10/23 | DET @ MIA | (grade) | (grade) | Cunningham / Giannis | Adebayo | (grade) | (grade) |
-| 10/23 | HOU @ SA | (grade) | (grade) | Durant / Wembanyama | Wembanyama | (grade) | (grade) |
-| 10/23 | NO @ UTAH | (grade) | (grade) | Murphy / Markkanen | Jaren Jackson Jr. | (grade) | (grade) |
-| 10/23 | MEM @ GS | (grade) | (grade) | Jerome / Curry | Ty Jerome | (grade) | (grade) |
-| 10/23 | LAC @ LAL | (grade) | (grade) | Garland / Doncic | Kessler, Doncic | (grade) | (grade) |
-| 10/23 | POR @ SAC | (grade) | (grade) | Lillard / LaVine | Sabonis | (grade) | (grade) |
+| 10/23 | DET @ MIA | John Collins DET (MIA won tip; first shot Klay Thompson, missed) | (none sent) | Cunningham / Giannis (bombs Duren, Adebayo missed) | Adebayo | - | No |
+| 10/23 | HOU @ SA | Alperen Sengun HOU, center (SA won tip; first shot Harper, missed) | (none sent) | Durant / Wembanyama (bomb Sengun hit) | Wembanyama | - | No |
+| 10/23 | NO @ UTAH | Ace Bailey UTAH (UTAH won tip; first shot Bailey, missed; scored on UTAH's second shot) | (none sent) | Murphy / Markkanen (bombs Zion, K. George missed) | Jaren Jackson Jr. | - | No |
+| 10/23 | MEM @ GS | Zach Edey MEM, center (MEM won tip; Edey first shot, dunk off Jerome assist) | (none sent) | Jerome / Curry (bombs Coward, Podziemski missed) | Ty Jerome | - | No |
+| 10/23 | LAC @ LAL | Austin Reaves LAL (LAL won tip; first shot Kessler, blocked) | (none sent) | Garland / Doncic (bomb Reaves hit) | Kessler, Doncic | - | No |
+| 10/23 | POR @ SAC | Keegan Murray SAC (POR won tip; first shot Lillard, missed) | (none sent) | Lillard / LaVine (bombs Avdija, Sabonis missed) | Sabonis (pre-fix), Morant (post-fix) | - | No |
