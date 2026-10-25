@@ -10,3 +10,4 @@ Balance snapshots from Tim's FanDuel screenshots. Newest at the bottom. Deposits
 | 10/24/26 | ~9:50 AM | $50.14 | after 10/23 bets settled (expected $46.59 from grading; +$3.55 likely Bet Protect+ refunds on Kawhi and Doncic) |
 | 10/24/26 | ~9:50 AM | $30.14 | after a $20 withdrawal (logged in Tim Money 'Budget: Transactions' as income) |
 | 10/24/26 | 1:13 PM | $2.29 | after CFB ($2.60), NBA first-basket round robins ($1.60 + $2.40 + $1.00) and a $0.10 5-leg parlay, plus other bets placed since 9:50 AM |
+| 10/25/26 | ~8 AM (estimate) | ~$10.70 | $2.29 + returns from 10/24: NBA round robin 2's $4.80 (Adebayo + Fox both hit), CFB 5 spread wins at -110 (~$1.91) and 5 TD wins (odds not recorded, ~$1.67 est). Confirm in FanDuel |

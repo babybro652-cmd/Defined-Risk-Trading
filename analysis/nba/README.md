@@ -162,6 +162,8 @@ Include the first shot and first score for each game in the grading message to T
   team wins the tip (and x about 0.95 when it loses), fit in backtest_fb.py before switching. 10/24 picks flag the center
   option with that adjustment as "center check".
 
+- 10/24: center pattern cooled. Only 1 of 8 first baskets was a starting center (Adebayo). Running total 7 of 22 (10/22-10/24). StarTool bombs hit 4 of 16 (Adebayo, Young, Fox, Lendeborg); stars 0 of 16. Hold the 1.2x jumper fix until it's backtested.
+
 ## Tim vs model log (first basket)
 
 Tim's picks come from his own read of the StarTool card (not just its star), so the Tim column tests how he uses StarTool's data; the StarTool column is its star/bomb as printed.
@@ -184,11 +186,11 @@ On game days Tim sends the StarTool Analytics "Game Script" card for each game (
 | 10/23 | MEM @ GS | Zach Edey MEM, center (MEM won tip; Edey first shot, dunk off Jerome assist) | (none sent) | Jerome / Curry (bombs Coward, Podziemski missed) | Ty Jerome | - | No |
 | 10/23 | LAC @ LAL | Austin Reaves LAL (LAL won tip; first shot Kessler, blocked) | (none sent) | Garland / Doncic (bomb Reaves hit) | Kessler, Doncic | - | No |
 | 10/23 | POR @ SAC | Keegan Murray SAC (POR won tip; first shot Lillard, missed) | (none sent) | Lillard / LaVine (bombs Avdija, Sabonis missed) | Sabonis (pre-fix), Morant (post-fix) | - | No |
-| 10/24 | MIA @ CHA 6:00 | (grade) | Giannis, Adebayo (from StarTool allow ranks) | Giannis / Miller (bombs Adebayo, Knueppel) | Adebayo | (grade) | (grade) |
-| 10/24 | BKN @ CLE 7:30 | (grade) | Mitchell, Allen (from StarTool allow ranks) | Porter Jr. / Mitchell | Mobley (center: Allen) | (grade) | (grade) |
-| 10/24 | MIL @ PHI 7:30 | (grade) | (none sent) | Herro / Maxey | Jaylen Brown | (grade) | (grade) |
-| 10/24 | WSH @ CHI 8:00 | (grade) | Kyshawn George, Sarr, Powell (from StarTool allow ranks) | Davis / Powell | Jalen Smith | (grade) | (grade) |
-| 10/24 | SA @ DAL 8:00 | (grade) | Wembanyama, Fox (from StarTool allow ranks) | Wembanyama / Flagg (out) | Wembanyama | (grade) | (grade) |
-| 10/24 | HOU @ ATL 8:30 | (grade) | Okongwu, Jabari Smith, Sengun (from StarTool allow ranks) | Durant / Alexander-Walker | Sengun | (grade) | (grade) |
-| 10/24 | NO @ DEN 9:00 | (grade) | Murray, Jokic (from StarTool allow ranks) | Murphy / Jokic | Murray (center: Jokic) | (grade) | (grade) |
-| 10/24 | GS @ PHX 10:00 | (grade) | Booker, Miles Bridges (from StarTool allow ranks) | Curry / Booker | Jalen Green | (grade) | (grade) |
+| 10/24 | MIA @ CHA 6:00 | Bam Adebayo MIA (center) | Giannis, Adebayo (from StarTool allow ranks) | Giannis / Miller (bombs Adebayo, Knueppel) | Adebayo | Yes (Adebayo) / StarTool star No (bomb Adebayo hit) | Yes |
+| 10/24 | BKN @ CLE 7:30 | Peyton Watson CLE | Mitchell, Allen (from StarTool allow ranks) | Porter Jr. / Mitchell | Mobley (center: Allen) | No / StarTool star No | No |
+| 10/24 | MIL @ PHI 7:30 | Dean Wade PHI | (none sent) | Herro / Maxey | Jaylen Brown | - / StarTool star No | No |
+| 10/24 | WSH @ CHI 8:00 | Trae Young WSH | Kyshawn George, Sarr, Powell (from StarTool allow ranks) | Davis / Powell | Jalen Smith | No / StarTool star No (bomb Young hit) | No |
+| 10/24 | SA @ DAL 8:00 | De'Aaron Fox SA | Wembanyama, Fox (from StarTool allow ranks) | Wembanyama / Flagg (out) | Wembanyama | Yes (Fox) / StarTool star No (bomb Fox hit) | No |
+| 10/24 | HOU @ ATL 8:30 | Dyson Daniels ATL | Okongwu, Jabari Smith, Sengun (from StarTool allow ranks) | Durant / Alexander-Walker | Sengun | No / StarTool star No | No |
+| 10/24 | NO @ DEN 9:00 | Aaron Gordon DEN | Murray, Jokic (from StarTool allow ranks) | Murphy / Jokic | Murray (center: Jokic) | No / StarTool star No | No |
+| 10/24 | GS @ PHX 10:00 | Yaxel Lendeborg GS | Booker, Miles Bridges (from StarTool allow ranks) | Curry / Booker | Jalen Green | No / StarTool star No (bomb Lendeborg hit) | No |
