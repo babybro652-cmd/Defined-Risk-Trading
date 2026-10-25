@@ -1,0 +1,234 @@
+
+=== eng.1  league: 75 games, home 1.57 away 1.27 goals, corners 9.5
+
+10:00 AM Newcastle United @ Crystal Palace  xG 1.85-1.86  A/D/H 39%/22%/40%  BTTS 71% (-247)  O2.5 72% (-252)
+   NEW: 7gp GF 10 GA 14 BTTS 5/7 O2.5 5/7 corners 4.6 for 5.3 ag  form DLWLL
+   CRY: 7gp GF 9 GA 17 BTTS 4/7 O2.5 5/7 corners 3.1 for 5.7 ag  form WLDWL
+   corners exp 9.2  model o8.5 57% o9.5 44% o10.5 32% | hist o8.5 50% o9.5 36% o10.5 29%
+   AGS Tyrick Mitchell         CRY LM  2g/7st sh 6 sot 3  P(goal) 26% (+279)  1+SOT 37% (raw 29%)
+   AGS Jørgen Strand Larsen    CRY F   1g/5st sh 8 sot 5  P(goal) 19% (+413)  1+SOT 61% (raw 60%)
+   AGS Joe Willock             NEW AM  1g/5st sh 13 sot 1  P(goal) 18% (+469)  1+SOT 29% (raw 20%)
+   AGS Yéremy Pino             CRY CF-L 1g/6st sh 6 sot 2  P(goal) 18% (+471)  1+SOT 41% (raw 33%)
+   AGS Anan Khalaili           CRY RM  1g/6st sh 11 sot 2  P(goal) 18% (+471)  1+SOT 41% (raw 33%)
+   AGS Daichi Kamada           CRY CF-R 1g/7st sh 5 sot 2  P(goal) 16% (+528)  1+SOT 37% (raw 29%)
+   SOT Jørgen Strand Larsen    CRY  1+SOT 61% (-156) raw 60% 5sot/5st
+   SOT Yoane Wissa             NEW  1+SOT 57% (-135) raw 57% 4sot/7st
+   SOT Harvey Barnes           NEW  1+SOT 57% (-135) raw 57% 5sot/7st
+
+10:00 AM Brentford @ Hull City  xG 1.23-1.21  A/D/H 37%/27%/36%  BTTS 50% (+102)  O2.5 44% (+127)
+   BRE: 7gp GF 13 GA 8 BTTS 5/7 O2.5 5/7 corners 3.9 for 5.1 ag  form DDWDL
+   HUL: 7gp GF 8 GA 7 BTTS 3/7 O2.5 3/7 corners 3.7 for 6.7 ag  form DDLDL
+   corners exp 9.6  model o8.5 62% o9.5 49% o10.5 37% | hist o8.5 57% o9.5 57% o10.5 50%
+   AGS Mohamed Belloumi        HUL RM  2g/6st sh 16 sot 5  P(goal) 22% (+355)  1+SOT 46% (raw 50%)
+   AGS Keane Lewis-Potter      BRE LB  2g/7st sh 12 sot 3  P(goal) 13% (+665)  1+SOT 33% (raw 43%)
+   AGS Vitaly Janelt           BRE LM  2g/7st sh 4 sot 2  P(goal) 13% (+665)  1+SOT 25% (raw 29%)
+   AGS Semi Ajayi              HUL CD-R 1g/7st sh 3 sot 1  P(goal) 12% (+743)  1+SOT 21% (raw 14%)
+   AGS Yehor Yarmoliuk         BRE RM  1g/4st sh 2 sot 2  P(goal) 11% (+835)  1+SOT 35% (raw 50%)
+   AGS Jaidon Anthony          BRE AM-L 1g/5st sh 9 sot 3  P(goal) 9% (+961)  1+SOT 41% (raw 60%)
+   SOT Mohamed Belloumi        HUL  1+SOT 46% (+116) raw 50% 5sot/6st
+   SOT Jaidon Anthony          BRE  1+SOT 41% (+143) raw 60% 3sot/5st
+   SOT Yehor Yarmoliuk         BRE  1+SOT 35% (+182) raw 50% 2sot/4st
+
+10:00 AM Brighton & Hove Albion @ Liverpool  xG 2.04-1.01  A/D/H 61%/21%/18%  BTTS 55% (-124)  O2.5 59% (-142)
+   BHA: 7gp GF 23 GA 5 BTTS 2/7 O2.5 5/7 corners 5.7 for 5.0 ag  form DWWWW
+   LIV: 7gp GF 9 GA 8 BTTS 3/7 O2.5 4/7 corners 4.9 for 4.4 ag  form WDWLW
+   corners exp 10.1  model o8.5 68% o9.5 56% o10.5 43% | hist o8.5 57% o9.5 57% o10.5 57%
+   AGS Alexander Isak          LIV F   5g/6st sh 17 sot 8  P(goal) 35% (+188)  1+SOT 69% (raw 100%)
+   AGS Charalambos Kostoulas   BHA F   3g/6st sh 16 sot 7  P(goal) 19% (+430)  1+SOT 53% (raw 83%)
+   AGS Víctor Muñoz            LIV AM-R 2g/5st sh 10 sot 5  P(goal) 19% (+433)  1+SOT 56% (raw 80%)
+   AGS Pascal Gross            BHA RM  3g/7st sh 13 sot 3  P(goal) 17% (+483)  1+SOT 32% (raw 43%)
+   AGS Yasin Ayari             BHA AM  2g/6st sh 16 sot 5  P(goal) 14% (+637)  1+SOT 35% (raw 50%)
+   AGS Maxim De Cuyper         BHA AM-L 2g/7st sh 8 sot 2  P(goal) 12% (+713)  1+SOT 24% (raw 29%)
+   SOT Alexander Isak          LIV  1+SOT 69% (-227) raw 100% 8sot/6st
+   SOT Víctor Muñoz            LIV  1+SOT 56% (-127) raw 80% 5sot/5st
+   SOT Charalambos Kostoulas   BHA  1+SOT 53% (-112) raw 83% 7sot/6st
+
+10:00 AM AFC Bournemouth @ Manchester United  xG 1.20-1.89  A/D/H 24%/22%/54%  BTTS 59% (-145)  O2.5 60% (-147)
+   BOU: 7gp GF 9 GA 13 BTTS 5/7 O2.5 4/7 corners 4.7 for 3.9 ag  form DDLLW
+   MAN: 7gp GF 10 GA 10 BTTS 5/7 O2.5 2/7 corners 6.1 for 3.6 ag  form DLDDD
+   corners exp 8.9  model o8.5 54% o9.5 41% o10.5 29% | hist o8.5 36% o9.5 36% o10.5 36%
+   AGS Bryan Mbeumo            MAN F   4g/7st sh 24 sot 10  P(goal) 41% (+146)  1+SOT 93% (raw 100%)
+   AGS Bruno Fernandes         MAN AM-L 3g/7st sh 23 sot 6  P(goal) 33% (+202)  1+SOT 58% (raw 57%)
+   AGS Marcus Tavernier        BOU LM  4g/7st sh 16 sot 10  P(goal) 31% (+225)  1+SOT 49% (raw 57%)
+   AGS Evanilson               BOU F   2g/7st sh 17 sot 4  P(goal) 18% (+460)  1+SOT 39% (raw 43%)
+   AGS Diogo Dalot             MAN LB  0g/5st sh 8 sot 1  P(goal) 4% (+2143)  1+SOT 29% (raw 20%)
+   AGS Lewis Cook              BOU CM-L 0g/3st sh 1 sot 0  P(goal) 4% (+2289)  1+SOT 17% (raw 0%)
+   SOT Bryan Mbeumo            MAN  1+SOT 93% (-1245) raw 100% 10sot/7st
+   SOT Rayan                   BOU  1+SOT 58% (-140) raw 71% 8sot/7st
+   SOT Bruno Fernandes         MAN  1+SOT 58% (-138) raw 57% 6sot/7st
+
+12:30 PM Leeds United @ Sunderland  xG 1.50-0.88  A/D/H 52%/26%/22%  BTTS 45% (+120)  O2.5 42% (+135)
+   LEE: 7gp GF 9 GA 6 BTTS 5/7 O2.5 2/7 corners 4.0 for 4.3 ag  form DWDLD
+   SUN: 7gp GF 6 GA 14 BTTS 3/7 O2.5 2/7 corners 4.3 for 4.3 ag  form DLLLL
+   corners exp 8.2  model o8.5 43% o9.5 31% o10.5 20% | hist o8.5 36% o9.5 36% o10.5 29%
+   AGS Dominic Calvert-Lewin   LEE F   3g/7st sh 14 sot 7  P(goal) 30% (+235)  1+SOT 65% (raw 71%)
+   AGS Jayden Bogle            LEE RM  2g/7st sh 8 sot 6  P(goal) 22% (+357)  1+SOT 55% (raw 57%)
+   AGS Noah Okafor             LEE CF-L 1g/6st sh 7 sot 1  P(goal) 14% (+596)  1+SOT 25% (raw 17%)
+   AGS Anton Stach             LEE CF-R 1g/7st sh 11 sot 3  P(goal) 13% (+668)  1+SOT 44% (raw 43%)
+   AGS James Justin            LEE CD-R 1g/7st sh 7 sot 3  P(goal) 13% (+668)  1+SOT 44% (raw 43%)
+   AGS Enzo Le Fée             SUN AM-L 1g/7st sh 12 sot 3  P(goal) 12% (+766)  1+SOT 41% (raw 43%)
+   SOT Dominic Calvert-Lewin   LEE  1+SOT 65% (-189) raw 71% 7sot/7st
+   SOT Jayden Bogle            LEE  1+SOT 55% (-120) raw 57% 6sot/7st
+   SOT Anton Stach             LEE  1+SOT 44% (+129) raw 43% 3sot/7st
+
+=== esp.1  league: 94 games, home 1.69 away 1.35 goals, corners 9.9
+
+9:00 AM Getafe @ Athletic Club  xG 0.63-1.13  A/D/H 20%/32%/48%  BTTS 31% (+218)  O2.5 26% (+289)
+   GET: 9gp GF 5 GA 11 BTTS 3/9 O2.5 2/9 corners 4.3 for 6.0 ag  form DLWLD
+   ATH: 8gp GF 8 GA 9 BTTS 3/8 O2.5 3/8 corners 6.5 for 4.2 ag  form WDDDL
+   corners exp 11.0  model o8.5 77% o9.5 66% o10.5 54% | hist o8.5 59% o9.5 59% o10.5 53%
+   AGS Álex Berenguer          ATH AM-R 2g/4st sh 9 sot 4  P(goal) 29% (+246)  1+SOT 61% (raw 75%)
+   AGS Robert Navarro          ATH AM  2g/6st sh 11 sot 7  P(goal) 23% (+329)  1+SOT 71% (raw 83%)
+   AGS Martín Satriano         GET LM  2g/8st sh 19 sot 6  P(goal) 19% (+413)  1+SOT 49% (raw 50%)
+   AGS Enes Ünal               GET CF-L 1g/6st sh 10 sot 3  P(goal) 14% (+619)  1+SOT 48% (raw 50%)
+   AGS Ramón Terrats           GET CF-R 1g/8st sh 19 sot 6  P(goal) 12% (+768)  1+SOT 49% (raw 50%)
+   AGS Hugo Rincón             ATH RB  0g/3st sh 2 sot 0  P(goal) 5% (+1879)  1+SOT 19% (raw 0%)
+   SOT Robert Navarro          ATH  1+SOT 71% (-249) raw 83% 7sot/6st
+   SOT Álex Berenguer          ATH  1+SOT 61% (-159) raw 75% 4sot/4st
+   SOT Martín Satriano         GET  1+SOT 49% (+105) raw 50% 6sot/8st
+
+11:15 AM Real Betis @ Celta Vigo  xG 1.00-1.40  A/D/H 27%/27%/46%  BTTS 48% (+110)  O2.5 43% (+133)
+   BET: 9gp GF 16 GA 14 BTTS 5/9 O2.5 4/9 corners 4.8 for 6.6 ag  form WWDWL
+   CEL: 9gp GF 10 GA 7 BTTS 4/9 O2.5 3/9 corners 2.8 for 4.7 ag  form DDWDW
+   corners exp 8.9  model o8.5 53% o9.5 40% o10.5 28% | hist o8.5 50% o9.5 44% o10.5 39%
+   AGS Ferran Jutglà           CEL F   2g/7st sh 10 sot 4  P(goal) 23% (+328)  1+SOT 45% (raw 43%)
+   AGS Javi Rodríguez          CEL CD-R 1g/4st sh 2 sot 2  P(goal) 19% (+417)  1+SOT 49% (raw 50%)
+   AGS Abde Ezzalzouli         BET AM-L 3g/5st sh 9 sot 5  P(goal) 19% (+421)  1+SOT 57% (raw 100%)
+   AGS Ilaix Moriba            CEL CM-L 1g/8st sh 5 sot 1  P(goal) 13% (+683)  1+SOT 21% (raw 12%)
+   AGS Cucho Hernández         BET F   2g/7st sh 16 sot 7  P(goal) 11% (+793)  1+SOT 38% (raw 57%)
+   AGS Valentín Gómez          BET CD-L 1g/3st sh 1 sot 1  P(goal) 11% (+844)  1+SOT 26% (raw 33%)
+   SOT Abde Ezzalzouli         BET  1+SOT 57% (-131) raw 100% 5sot/5st
+   SOT Javi Rodríguez          CEL  1+SOT 49% (+105) raw 50% 2sot/4st
+   SOT Ferran Jutglà           CEL  1+SOT 45% (+120) raw 43% 4sot/7st
+
+1:30 PM Levante @ Real Sociedad  xG 1.68-2.30  A/D/H 28%/20%/52%  BTTS 73% (-274)  O2.5 76% (-316)
+   LEV: 9gp GF 15 GA 17 BTTS 6/9 O2.5 6/9 corners 3.6 for 5.6 ag  form LLDDW
+   RSO: 9gp GF 17 GA 17 BTTS 6/9 O2.5 7/9 corners 7.0 for 4.9 ag  form WLWWW
+   corners exp 10.9  model o8.5 76% o9.5 65% o10.5 52% | hist o8.5 72% o9.5 61% o10.5 50%
+   AGS Roger Brugué            LEV RM  5g/8st sh 19 sot 8  P(goal) 36% (+177)  1+SOT 46% (raw 50%)
+   AGS Orri Óskarsson          RSO CF-L 2g/4st sh 11 sot 5  P(goal) 31% (+224)  1+SOT 64% (raw 75%)
+   AGS Mikel Oyarzabal         RSO CF-R 2g/7st sh 16 sot 8  P(goal) 23% (+339)  1+SOT 67% (raw 71%)
+   AGS Takefusa Kubo           RSO RM  1g/4st sh 3 sot 1  P(goal) 19% (+431)  1+SOT 32% (raw 25%)
+   AGS Dani Requena            LEV CM-L 1g/3st sh 5 sot 3  P(goal) 18% (+449)  1+SOT 51% (raw 67%)
+   AGS Ifeanyi Ndukwe          LEV CD-L 1g/3st sh 1 sot 1  P(goal) 18% (+449)  1+SOT 34% (raw 33%)
+   SOT Mikel Oyarzabal         RSO  1+SOT 67% (-201) raw 71% 8sot/7st
+   SOT Orri Óskarsson          RSO  1+SOT 64% (-177) raw 75% 5sot/4st
+   SOT Iván Romero             LEV  1+SOT 55% (-123) raw 62% 7sot/8st
+
+4:00 PM Real Madrid @ Barcelona  xG 1.52-2.94  A/D/H 17%/16%/67%  BTTS 74% (-282)  O2.5 82% (-457)
+   RMA: 9gp GF 23 GA 9 BTTS 6/9 O2.5 7/9 corners 6.4 for 3.8 ag  form WWLWW
+   BAR: 9gp GF 39 GA 9 BTTS 5/9 O2.5 8/9 corners 7.3 for 2.6 ag  form WWWWW
+   corners exp 9.5  model o8.5 61% o9.5 48% o10.5 36% | hist o8.5 50% o9.5 50% o10.5 50%
+   AGS Lamine Yamal            BAR AM-R 8g/9st sh 48 sot 16  P(goal) 35% (+185)  1+SOT 55% (raw 78%)
+   AGS Kylian Mbappé           RMA F   9g/9st sh 49 sot 27  P(goal) 34% (+190)  1+SOT 58% (raw 89%)
+   AGS Fermín López            BAR AM  4g/6st sh 11 sot 9  P(goal) 26% (+288)  1+SOT 46% (raw 67%)
+   AGS Yan Diomande            RMA AM-L 2g/4st sh 8 sot 2  P(goal) 16% (+509)  1+SOT 34% (raw 50%)
+   AGS Jude Bellingham         RMA AM  3g/8st sh 17 sot 7  P(goal) 15% (+562)  1+SOT 35% (raw 50%)
+   AGS Karim Adeyemi           BAR AM-L 1g/3st sh 9 sot 2  P(goal) 13% (+690)  1+SOT 42% (raw 67%)
+   SOT Kylian Mbappé           RMA  1+SOT 58% (-139) raw 89% 27sot/9st
+   SOT Lamine Yamal            BAR  1+SOT 55% (-124) raw 78% 16sot/9st
+   SOT Fermín López            BAR  1+SOT 46% (+116) raw 67% 9sot/6st
+
+=== ita.1  league: 75 games, home 1.59 away 1.41 goals, corners 9.5
+
+10:00 AM Frosinone @ Atalanta  xG 1.68-1.40  A/D/H 44%/24%/32%  BTTS 61% (-158)  O2.5 59% (-146)
+   FRO: 7gp GF 13 GA 9 BTTS 3/7 O2.5 4/7 corners 5.4 for 6.9 ag  form WDWLW
+   ATA: 7gp GF 10 GA 11 BTTS 5/7 O2.5 5/7 corners 3.4 for 5.0 ag  form LLLWL
+   corners exp 10.4  model o8.5 71% o9.5 59% o10.5 46% | hist o8.5 64% o9.5 50% o10.5 43%
+   AGS Antonio Raimondo        FRO F   7g/7st sh 24 sot 10  P(goal) 45% (+120)  1+SOT 48% (raw 57%)
+   AGS Nikola Krstovic         ATA F   3g/3st sh 12 sot 5  P(goal) 39% (+156)  1+SOT 50% (raw 67%)
+   AGS Giorgi Kvernadze        FRO AM-L 3g/7st sh 22 sot 6  P(goal) 24% (+317)  1+SOT 48% (raw 57%)
+   AGS Giacomo Calo            FRO RM  2g/7st sh 15 sot 5  P(goal) 17% (+475)  1+SOT 48% (raw 57%)
+   AGS Éderson                 ATA CM  1g/7st sh 8 sot 5  P(goal) 11% (+805)  1+SOT 40% (raw 43%)
+   AGS Gabriele Bracaglia      FRO LB  1g/7st sh 8 sot 5  P(goal) 10% (+877)  1+SOT 48% (raw 57%)
+   SOT Nikola Krstovic         ATA  1+SOT 50% (-101) raw 67% 5sot/3st
+   SOT Antonio Raimondo        FRO  1+SOT 48% (+108) raw 57% 10sot/7st
+   SOT Giorgi Kvernadze        FRO  1+SOT 48% (+108) raw 57% 6sot/7st
+
+10:00 AM Venezia @ Genoa  xG 1.18-1.41  A/D/H 32%/26%/42%  BTTS 52% (-110)  O2.5 48% (+108)
+   VEN: 7gp GF 6 GA 16 BTTS 3/7 O2.5 3/7 corners 3.7 for 5.1 ag  form LLLLW
+   GEN: 7gp GF 5 GA 13 BTTS 4/7 O2.5 3/7 corners 4.4 for 4.7 ag  form LDLWL
+   corners exp 8.9  model o8.5 53% o9.5 39% o10.5 28% | hist o8.5 43% o9.5 29% o10.5 21%
+   AGS Milutin Osmajic         GEN F   3g/5st sh 11 sot 4  P(goal) 53% (-112)  1+SOT 89% (raw 80%)
+   AGS Junior Messias          GEN CF-R 1g/3st sh 7 sot 4  P(goal) 33% (+207)  1+SOT 71% (raw 67%)
+   AGS Antoine Hainaut         VEN RM  2g/7st sh 8 sot 3  P(goal) 25% (+295)  1+SOT 48% (raw 43%)
+   AGS Akor Adams              VEN CF-L 2g/7st sh 27 sot 10  P(goal) 25% (+295)  1+SOT 83% (raw 86%)
+   AGS Johan Vásquez           GEN CD-L 1g/6st sh 4 sot 1  P(goal) 23% (+333)  1+SOT 32% (raw 17%)
+   AGS Redouane Halhal         VEN CD-R 0g/3st sh 2 sot 0  P(goal) 6% (+1525)  1+SOT 21% (raw 0%)
+   SOT Milutin Osmajic         GEN  1+SOT 89% (-785) raw 80% 4sot/5st
+   SOT Akor Adams              VEN  1+SOT 83% (-483) raw 86% 10sot/7st
+   SOT Junior Messias          GEN  1+SOT 71% (-250) raw 67% 4sot/3st
+
+1:00 PM Juventus @ Lecce  xG 1.40-1.22  A/D/H 41%/26%/33%  BTTS 53% (-114)  O2.5 49% (+105)
+   JUV: 7gp GF 9 GA 8 BTTS 3/7 O2.5 2/7 corners 8.1 for 3.1 ag  form DLWDL
+   LEC: 7gp GF 9 GA 12 BTTS 2/7 O2.5 5/7 corners 4.4 for 3.6 ag  form LWLLW
+   corners exp 9.4  model o8.5 59% o9.5 46% o10.5 34% | hist o8.5 64% o9.5 57% o10.5 43%
+   AGS Bremer                  JUV CD-R 2g/7st sh 5 sot 2  P(goal) 21% (+385)  1+SOT 32% (raw 29%)
+   AGS Lassana Coulibaly       LEC RM  2g/7st sh 9 sot 4  P(goal) 18% (+448)  1+SOT 40% (raw 43%)
+   AGS Konan N’Dri             LEC RF  1g/3st sh 6 sot 4  P(goal) 17% (+479)  1+SOT 33% (raw 33%)
+   AGS Kialonda Gaspar         LEC CD-R 1g/5st sh 3 sot 3  P(goal) 13% (+654)  1+SOT 49% (raw 60%)
+   AGS Tiago Gabriel           LEC CD-L 1g/5st sh 3 sot 1  P(goal) 13% (+654)  1+SOT 25% (raw 20%)
+   AGS Randal Kolo Muani       JUV F   1g/7st sh 16 sot 4  P(goal) 12% (+718)  1+SOT 53% (raw 57%)
+   SOT Randal Kolo Muani       JUV  1+SOT 53% (-112) raw 57% 4sot/7st
+   SOT Willem Geubbels         LEC  1+SOT 50% (+102) raw 67% 4sot/3st
+   SOT Kialonda Gaspar         LEC  1+SOT 49% (+102) raw 60% 3sot/5st
+
+3:45 PM AC Milan @ Udinese  xG 2.28-1.14  A/D/H 63%/19%/18%  BTTS 61% (-156)  O2.5 66% (-198)
+   MIL: 7gp GF 14 GA 7 BTTS 5/7 O2.5 4/7 corners 3.0 for 3.1 ag  form DDWDW
+   UDI: 7gp GF 9 GA 16 BTTS 5/7 O2.5 5/7 corners 3.9 for 5.7 ag  form LLLLL
+   corners exp 7.4  model o8.5 32% o9.5 21% o10.5 13% | hist o8.5 29% o9.5 29% o10.5 21%
+   AGS Adrien Rabiot           MIL CF-R 3g/5st sh 7 sot 3  P(goal) 35% (+184)  1+SOT 54% (raw 60%)
+   AGS Jurgen Ekkelenkamp      UDI CF-R 3g/7st sh 20 sot 5  P(goal) 24% (+325)  1+SOT 47% (raw 57%)
+   AGS Gonçalo Ramos           MIL F   2g/7st sh 21 sot 9  P(goal) 21% (+366)  1+SOT 54% (raw 57%)
+   AGS Christian Pulisic       MIL CF-L 1g/3st sh 3 sot 1  P(goal) 20% (+391)  1+SOT 37% (raw 33%)
+   AGS Hassane Kamara          UDI LM  2g/7st sh 9 sot 5  P(goal) 17% (+486)  1+SOT 38% (raw 43%)
+   AGS Mario Gila              MIL CD-R 1g/7st sh 2 sot 2  P(goal) 13% (+683)  1+SOT 33% (raw 29%)
+   SOT Samuel Chukwueze        MIL  1+SOT 60% (-150) raw 67% 4sot/6st
+   SOT Adrien Rabiot           MIL  1+SOT 54% (-118) raw 60% 3sot/5st
+   SOT Gonçalo Ramos           MIL  1+SOT 54% (-117) raw 57% 9sot/7st
+
+=== ger.1  league: 61 games, home 2.20 away 1.36 goals, corners 10.7
+
+10:30 AM Bayer Leverkusen @ TSG Hoffenheim  xG 2.10-2.03  A/D/H 41%/20%/38%  BTTS 76% (-320)  O2.5 78% (-354)
+   B04: 6gp GF 16 GA 9 BTTS 4/6 O2.5 5/6 corners 7.3 for 3.3 ag  form WDWWW
+   TSG: 6gp GF 11 GA 14 BTTS 6/6 O2.5 6/6 corners 6.7 for 4.7 ag  form LWLLW
+   corners exp 10.8  model o8.5 75% o9.5 64% o10.5 51% | hist o8.5 75% o9.5 67% o10.5 58%
+   AGS Patrik Schick           B04 F   5g/5st sh 19 sot 9  P(goal) 38% (+162)  1+SOT 67% (raw 100%)
+   AGS Bambasé Conté           TSG AM-R 2g/5st sh 13 sot 3  P(goal) 25% (+294)  1+SOT 53% (raw 60%)
+   AGS Adam Hlozek             TSG AM-L 2g/5st sh 16 sot 7  P(goal) 25% (+294)  1+SOT 53% (raw 60%)
+   AGS Tim Lemperle            TSG F   1g/4st sh 12 sot 4  P(goal) 17% (+481)  1+SOT 61% (raw 75%)
+   AGS Ibrahim Maza            B04 AM  2g/6st sh 20 sot 4  P(goal) 17% (+492)  1+SOT 30% (raw 33%)
+   AGS Leon Avdullahu          TSG RM  1g/6st sh 3 sot 1  P(goal) 14% (+632)  1+SOT 24% (raw 17%)
+   SOT Patrik Schick           B04  1+SOT 67% (-204) raw 100% 9sot/5st
+   SOT Tim Lemperle            TSG  1+SOT 61% (-155) raw 75% 4sot/4st
+   SOT Bambasé Conté           TSG  1+SOT 53% (-114) raw 60% 3sot/5st
+
+12:30 PM Bayern Munich @ SC Freiburg  xG 1.64-1.86  A/D/H 34%/22%/43%  BTTS 68% (-213)  O2.5 68% (-212)
+   MUN: 6gp GF 22 GA 5 BTTS 4/6 O2.5 5/6 corners 9.7 for 2.7 ag  form DWWDW
+   SCF: 6gp GF 15 GA 6 BTTS 4/6 O2.5 5/6 corners 5.2 for 3.5 ag  form WWDWL
+   corners exp 10.0  model o8.5 66% o9.5 54% o10.5 41% | hist o8.5 75% o9.5 58% o10.5 58%
+   AGS Michael Olise           MUN AM-R 5g/5st sh 26 sot 15  P(goal) 24% (+319)  1+SOT 51% (raw 100%)
+   AGS Maximilian Eggestein    SCF RM  3g/6st sh 12 sot 5  P(goal) 22% (+350)  1+SOT 58% (raw 83%)
+   AGS Igor Matanovic          SCF F   3g/6st sh 20 sot 10  P(goal) 22% (+350)  1+SOT 58% (raw 83%)
+   AGS Harry Kane              MUN F   4g/5st sh 26 sot 8  P(goal) 20% (+403)  1+SOT 42% (raw 80%)
+   AGS Luis Díaz               MUN AM-L 4g/5st sh 17 sot 8  P(goal) 20% (+403)  1+SOT 42% (raw 80%)
+   AGS Yannick Engelhardt      SCF LM  2g/6st sh 8 sot 3  P(goal) 16% (+523)  1+SOT 20% (raw 17%)
+   SOT Maximilian Eggestein    SCF  1+SOT 58% (-138) raw 83% 5sot/6st
+   SOT Igor Matanovic          SCF  1+SOT 58% (-138) raw 83% 10sot/6st
+   SOT Michael Olise           MUN  1+SOT 51% (-102) raw 100% 15sot/5st
+
+=== usa.1  league: 466 games, home 1.84 away 1.41 goals, corners 10.1
+
+9:00 PM LA Galaxy @ LAFC  xG 0.85-1.81  A/D/H 17%/23%/60%  BTTS 48% (+108)  O2.5 50% (+101)
+   LA: 31gp GF 43 GA 52 BTTS 23/31 O2.5 20/31 corners 5.1 for 4.0 ag  form WWLWD
+   LAFC: 31gp GF 48 GA 33 BTTS 15/31 O2.5 15/31 corners 6.1 for 5.3 ag  form DLDWD
+   corners exp 10.3  model o8.5 70% o9.5 57% o10.5 45% | hist o8.5 63% o9.5 58% o10.5 56%
+   AGS Denis Bouanga           LAFCF   17g/28st sh 88 sot 44  P(goal) 45% (+121)  1+SOT 77% (raw 75%)
+   AGS Son Heung-Min           LAFCAM  9g/27st sh 102 sot 31  P(goal) 28% (+252)  1+SOT 76% (raw 74%)
+   AGS João Klauss             LA  F   7g/10st sh 27 sot 15  P(goal) 27% (+267)  1+SOT 55% (raw 80%)
+   AGS Marco Reus              LA  AM  7g/22st sh 40 sot 19  P(goal) 15% (+557)  1+SOT 38% (raw 50%)
+   AGS Mark Delgado            LAFCRM  2g/22st sh 13 sot 4  P(goal) 9% (+961)  1+SOT 22% (raw 18%)
+   AGS Robert Taylor           LA  AM-R 2g/12st sh 13 sot 5  P(goal) 8% (+1103)  1+SOT 26% (raw 33%)
+   SOT Denis Bouanga           LAFC 1+SOT 77% (-334) raw 75% 44sot/28st
+   SOT Son Heung-Min           LAFC 1+SOT 76% (-315) raw 74% 31sot/27st
+   SOT João Klauss             LA   1+SOT 55% (-120) raw 80% 15sot/10st
