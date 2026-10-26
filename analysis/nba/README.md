@@ -194,3 +194,10 @@ On game days Tim sends the StarTool Analytics "Game Script" card for each game (
 | 10/24 | HOU @ ATL 8:30 | Dyson Daniels ATL | Okongwu, Jabari Smith, Sengun (from StarTool allow ranks) | Durant / Alexander-Walker | Sengun | No / StarTool star No | No |
 | 10/24 | NO @ DEN 9:00 | Aaron Gordon DEN | Murray, Jokic (from StarTool allow ranks) | Murphy / Jokic | Murray (center: Jokic) | No / StarTool star No | No |
 | 10/24 | GS @ PHX 10:00 | Yaxel Lendeborg GS | Booker, Miles Bridges (from StarTool allow ranks) | Curry / Booker | Jalen Green | No / StarTool star No (bomb Lendeborg hit) | No |
+| 10/25 | LAL @ UTAH | Luka Doncic (first shot, made) | Doncic, Ziaire Williams | Doncic / Markkanen | Kessler, Doncic | Yes (Doncic) | Yes (Doncic) |
+| 10/25 | IND @ BKN | Ivica Zubac IND, center (first shot Siakam, missed) | Siakam, Nembhard, Randle | Siakam / Porter Jr. | Porter Jr., Zubac | No | Yes (Zubac) |
+| 10/25 | ORL @ NY | Jalen Brunson NY (first shot W. Carter, missed) | F. Wagner, Suggs | Banchero / Brunson (StarTool star hit) | - | No | - |
+| 10/25 | TOR @ MIN | Rudy Gobert MIN, center (first shot Barnes, missed) | Leonard (DNP), Barrett | Leonard / Edwards | Edwards | No | No |
+| 10/25 | LAC @ OKC | Isaiah Jackson LAC, center (first shot, made) | SGA, Jalen Williams, Hachimura | Garland / SGA | Cason Wallace | No | No |
+| 10/25 | DET @ PHI | John Collins DET (first shot Robinson, missed) | Ausar Thompson, Edgecombe, Jaylen Brown | Cunningham / Embiid | Jaylen Brown | No | No |
+| 10/25 | MEM @ SAC | Zach LaVine SAC (first shot, made; StarTool bomb hit) | Sabonis, Hunter | Jerome / Acuff Jr. | Ty Jerome | No | No |
