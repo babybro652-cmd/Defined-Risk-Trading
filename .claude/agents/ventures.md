@@ -19,7 +19,7 @@ Each edition has 5 products (journal, bundle, coloring pack, SOS kit, mood track
 is one parameter. Sekora's personal PDF is frozen: never rebuild or replace it.
 Evidence base: CBT thought records, worry time, expressive writing, positive affect journaling, grounding,
 structured coloring. Always keep the "supports, not replaces, professional care" note and crisis resources
-(988). Never market it as treatment or make medical claims. Store: moving to Payhip (Etsy is out); new
+(988). Never market it as treatment or make medical claims. Store: Payhip. NEVER suggest Etsy: Tim is banned from Etsy (said again 10/26). New
 listing copy is platform-neutral. Prices: journal $11.99, bundle $16.99, coloring $4.99, SOS $3.99, mood $2.99.
 All three editions show the brand on covers and listing images (Wings since 10/2); personal copies stay unbranded.
 Brand to-dos for Tim: buy peacebypage.com, claim @peacebypage handles. USPTO checked 10/2: no "Peace by Page" mark; closest is a pending "PEACE BY PIECE: MICRO-WELLNESS TOOLKIT" (Class 16/44, filed 12/9/2025). Keep copy from echoing "peace by piece" and avoid "micro-wellness toolkit" wording.
