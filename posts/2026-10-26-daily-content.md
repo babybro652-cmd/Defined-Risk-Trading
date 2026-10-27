@@ -14,3 +14,8 @@ education keep leading; lean that way this week. IG reach 7-103, FB still ~0-1 l
 |---|---|---|---|
 | 5:00 PM | Facebook | Bad size, not bad entry: size from the stop (community/risk) | 2e157a76-49a3-46c6-b41a-25f2adfeca4c / 6067384 |
 | 8:00 PM | TikTok | Point of control (education) | 7f85c9dc-1369-4ee4-a253-b92678d2ff99 / 6067385 |
+
+## Monday IG carousel (7:15 PM ET)
+Topic: thin/holiday sessions (volume). 4 text slides 1080x1350, 0 credits (posts/media/2026-10-26/make_carousel.py).
+QA: all 4 slides read; clean text, no dates or prices. PASS. Uniqueness OK after CTA rewrite.
+Submission aeb70390-38fb-495e-92dd-03e367aa3b8c, scheduled 2026-10-26T23:15Z.

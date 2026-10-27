@@ -212,3 +212,18 @@ Peace by Page is open today. We make printable journals for anyone who worries: 
 - **Video:** `launch/content/videos/5-free-sampler.mp4` (public copy: https://database.blotato.io/storage/v1/object/public/public_media/246c6cef-6cbe-4b5b-81a9-7bb84481df9c/5609d12c-f6a9-49e5-9314-b4c48f729412.mp4)
 - **Caption (IG and TikTok):** Try a week before you buy: the free Peace by Page sampler has 7 daily pages, a pocket SOS card and a coloring page. Free PDF, link in bio. Supports, not replaces, professional care. In crisis in the US, call or text 988.
 - **Hashtags:** #freeprintable #journalingprompts #anxietyjournal #selfcaretips #printables #journaling
+
+## 4. Week 2 reels V6-V12 (built 10/27 by make_week2_reels.py; QA contact sheets PASS)
+Daily 6:30 PM ET (23:30Z) 11/3-11/9 on IG 81296, TikTok 65985 and the PbP Facebook page (50185 / 1255582607649321).
+IG says "link in bio", TikTok uses payhip.com/PeaceByPage, Facebook uses the product link. 5 hashtags each.
+
+| Date | Reel | Media |
+|---|---|---|
+| Tue 11/3 | V6 box breathing (Wings) | 01b129ee-858d-4d4e-b9c2-0c01267b3eb5.mp4 |
+| Wed 11/4 | V7 5-4-3-2-1 grounding (Petals) | 484a3770-cfec-405a-8d6f-1c0c68567042.mp4 |
+| Thu 11/5 | V8 balanced thought (Wings) | 949a5a3c-4e8b-4597-82be-c0b839e43270.mp4 |
+| Fri 11/6 | V9 I handled it (Nights) | 0f38b327-4489-4fe2-86f9-98d9037140da.mp4 |
+| Sat 11/7 | V10 mood petals tracker | 51599327-f424-4fad-b5a4-838036d88317.mp4 |
+| Sun 11/8 | V11 three good things + free sampler | f2e0d6e0-2799-4591-b785-3c472d52768c.mp4 |
+| Mon 11/9 | V12 worry time (Nights) | 102c0dd2-de71-4666-a846-71d880a14f16.mp4 |
+(media prefix https://database.blotato.io/storage/v1/object/public/public_media/246c6cef-6cbe-4b5b-81a9-7bb84481df9c/)
