@@ -68,6 +68,48 @@ def kdp_about_page(J, c, F, product="journal"):
             C["muted"])
 
 
+SAFE_OUT, SAFE_IN = 0.3, 0.6   # in: KDP minimums are 0.25 outside/top/bottom and 0.5 inside (151-300 pages)
+
+
+def ink_box(page):
+    """Visible content box in points (rendered, so clipped art doesn't count)."""
+    import numpy as np
+    pix = page.get_pixmap(dpi=72, colorspace=pymupdf.csGRAY)
+    a = np.frombuffer(pix.samples, dtype=np.uint8).reshape(pix.h, pix.w)
+    ys, xs = np.where(a < 245)
+    if not len(xs):
+        return None
+    return pymupdf.Rect(xs.min(), ys.min(), xs.max() + 1, ys.max() + 1)
+
+
+def fit_margins(path):
+    """Shrink any page whose art reaches into KDP's no-print zone; returns the page numbers fixed."""
+    src = pymupdf.open(path)
+    out = pymupdf.open()
+    fixed = []
+    for i, pg in enumerate(src):
+        W, H = pg.rect.width, pg.rect.height
+        box = ink_box(pg)
+        right_hand = i % 2 == 0                      # page 1 is a right-hand page: gutter on the left
+        left_m, right_m = (SAFE_IN, SAFE_OUT) if right_hand else (SAFE_OUT, SAFE_IN)
+        safe = pymupdf.Rect(left_m * 72, SAFE_OUT * 72, W - right_m * 72, H - SAFE_OUT * 72)
+        if box is None or safe.contains(box):
+            out.insert_pdf(src, from_page=i, to_page=i)
+            continue
+        k = min(1.0, safe.width / box.width, safe.height / box.height)
+        cx = min(max((box.x0 + box.x1) / 2, safe.x0 + box.width * k / 2), safe.x1 - box.width * k / 2)
+        cy = min(max((box.y0 + box.y1) / 2, safe.y0 + box.height * k / 2), safe.y1 - box.height * k / 2)
+        # place the whole page scaled by k so the ink box lands centered at (cx, cy) inside the safe area
+        x0 = cx - ((box.x0 + box.x1) / 2) * k
+        y0 = cy - ((box.y0 + box.y1) / 2) * k
+        np_ = out.new_page(width=W, height=H)
+        np_.show_pdf_page(pymupdf.Rect(x0, y0, x0 + W * k, y0 + H * k), src, i)
+        fixed.append(i + 1)
+    out.save(path + ".tmp")
+    os.replace(path + ".tmp", path)
+    return fixed
+
+
 def interior(theme, out):
     bj.register_fonts()
     bj.set_theme(theme)
@@ -82,6 +124,9 @@ def interior(theme, out):
         d.save(out + ".tmp")
         os.replace(out + ".tmp", out)
         n += 1
+    fixed = fit_margins(out)
+    if fixed:
+        print("shrunk to fit KDP margins: pages", fixed)
     return n
 
 
