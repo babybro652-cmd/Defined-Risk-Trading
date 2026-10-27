@@ -45,7 +45,7 @@ Newest decisions win; move finished items to Done with the date.
 - [x] Bought peacebypage.com at Cloudflare 10/22. Next: point it at the store + hello@ email after launch.
 - [ ] Store fixes, Wed 10/14 (steps in ventures/calm-pages/launch/launch-week-tim.md). Done 10/13: About, 988 help block, disclaimer, Home page. Done 10/20: tab name, product order, SOS Kit placeholder, TEST100 test purchase (Calm Wings, 7:26 PM). Still open (10/21 check): link in bio on IG (Pinterest already shows payhip.com/PeaceByPage; TikTok can't add a link until 1,000 followers, so put payhip.com/PeaceByPage as bio text). Files: [Launch Files page](https://claude.ai/artifact/81s4uPQAcfntqXDvALTWmN) + Drive Launch Docs > Launch Assets.
 - [x] Launch day Fri 10/23 done: FB launch post + reel, IG carousel + reel, TikTok slides + reel, Pinterest launch pin and pin 1. No sales yet on launch day.
-- [ ] ~10/25: connect IG @peacebypage + TikTok @peace.by.page to Blotato (still not connected 10/21), then Jarvis schedules reels V2-V5.
+- [x] Connected IG @peacebypage (81296) + TikTok @peace.by.page (65985) to Blotato 10/26; reels V2-V5 scheduled on both.
 - [x] Pinterest: launch pin + 15 daily pins (10/23-11/6) scheduled by hand by Tim 10/21. Jarvis can't see scheduled pins; Tim compares them in Pinterest > Created > Scheduled pins with ventures/calm-pages/launch/launch-schedule.md section 2.
 - [x] Welcome emails / sequence (sheet #35, #37): N/A on Payhip's free plan (no email tools). Payhip's download email still goes to every buyer. Later option: free MailerLite with the Payhip customer list.
 - [ ] Optional: Systeme.io (Tim has an account, same one as PL) for a PbP welcome email / free-sampler email list later. Payhip free has no email tools (10/21).
