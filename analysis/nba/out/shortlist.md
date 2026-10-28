@@ -1,29 +1,37 @@
-# NBA shortlist 2026-10-27 (not guaranteed)
+# NBA shortlist 2026-10-28 (not guaranteed)
 
 Tip winner scores first 64% (25-26).
 
-- **First basket: Victor Wembanyama** (SA vs SAC 8:00). Est 20% (fair +399; old model 23%): SA scores first 61%; first FG 24/57 and first shot 22/57 starts 25-26, 1/3 26-27, FG 50%; SAC vs F x1.03
-- **First basket: Paul George** (BOS vs BKN 7:30). Est 19% (fair +431; old model 17%): BOS scores first 59%; first FG 11/37 and first shot 12/37 starts 25-26, 1/3 26-27, FG 45%; BKN vs F x1.03
-- **First basket: Luka Doncic** (LAL vs POR 11:00). Est 18% (fair +456; old model 17%): LAL scores first 59%; first FG 20/65 and first shot 33/65 starts 25-26, 1/3 26-27, FG 47%; POR vs G x0.97
-- **First basket: Walker Kessler** (LAL vs POR 11:00). Est 17% (fair +474; old model 15%): LAL scores first 59%; first FG 1/5 and first shot 1/5 starts 25-26, 1/3 26-27, FG 59%; POR vs C x1.09
-- **First basket: Jayson Tatum** (BOS vs BKN 7:30). Est 16% (fair +518; old model 17%): BOS scores first 59%; first FG 2/16 and first shot 2/16 starts 25-26, 2/3 26-27, FG 43%; BKN vs F x1.03
-- **First basket: Jalen Brunson** (NY vs DET 8:00). Est 14% (fair +622; old model 14%): NY scores first 51%; first FG 21/78 and first shot 22/78 starts 25-26, 1/3 26-27, FG 46%; DET vs G x1.01
-- **First basket: John Collins** (DET @ NY 8:00). Est 14% (fair +633; old model 18%): DET scores first 49%; first FG 17/56 and first shot 13/56 starts 25-26, 3/3 26-27, FG 53%; NY vs F x0.96; Jalen Duren out (26% share spread to the rest)
-- **First basket: Devin Vassell** (SA vs SAC 8:00). Est 12% (fair +727; old model 17%): SA scores first 61%; first FG 18/66 and first shot 14/66 starts 25-26, 1/3 26-27, FG 44%; SAC vs G x0.95
-- **Team first basket: Victor Wembanyama** (SA vs SAC). Model share of SA's first FG 33% (old 38%); raw 25-26 24/57, first shot 22/57, FG 50%
-- **Team first basket: Paul George** (BOS vs BKN). Model share of BOS's first FG 32% (old 29%); raw 25-26 11/37, first shot 12/37, FG 45%
-- **Team first basket: Luka Doncic** (LAL vs POR). Model share of LAL's first FG 31% (old 30%); raw 25-26 20/65, first shot 33/65, FG 47%
-- **Team first basket: Walker Kessler** (LAL vs POR). Model share of LAL's first FG 30% (old 25%); raw 25-26 1/5, first shot 1/5, FG 59%
-- **Over 2.5 threes: Luka Doncic** (LAL vs POR). Over 2.5 in 77% of starts (blend); last 5 starts 25-26: 1 6 5 4 3
-- **Over 19.5 points: Jalen Brunson** (NY vs DET). Over 19.5 in 76% of starts (blend); last 5 starts 25-26: 29 25 30 17 12
-- **Over 19.5 points: Michael Porter Jr.** (BKN @ BOS). Over 19.5 in 70% of starts (blend); last 5 starts 25-26: 19 30 27 9 26
-- **Over 19.5 points: Deni Avdija** (POR @ LAL). Over 19.5 in 70% of starts (blend); last 5 starts 25-26: 25 35 29 26 26
-- **Over 1.5 threes: Duncan Robinson** (DET @ NY). Over 1.5 in 80% of starts (blend); last 5 starts 25-26: 1 3 4 3 3
-- **Over 1.5 threes: Toumani Camara** (POR @ LAL). Over 1.5 in 77% of starts (blend); last 5 starts 25-26: 3 1 4 8 6
+- **First basket: Luka Doncic** (LAL @ LAC 10:30). Est 20% (fair +399; old model 18%): LAL scores first 63%; first FG 20/65 and first shot 33/65 starts 25-26, 1/4 26-27, FG 48%; LAC vs G x0.93
+- **First basket: Victor Wembanyama** (SA @ UTAH 9:00). Est 20% (fair +403; old model 25%): SA scores first 62%; first FG 24/57 and first shot 22/57 starts 25-26, 2/4 26-27, FG 50%; UTAH vs F x0.95
+- **First basket: Walker Kessler** (LAL @ LAC 10:30). Est 18% (fair +468; old model 14%): LAL scores first 63%; first FG 1/5 and first shot 1/5 starts 25-26, 1/4 26-27, FG 61%; LAC vs C x0.99
+- **First basket: Bam Adebayo** (MIA @ ATL 7:00). Est 17% (fair +472; old model 15%): MIA scores first 58%; first FG 20/73 and first shot 33/73 starts 25-26, 1/4 26-27, FG 44%; ATL vs C x1.05
+- **First basket: Brandon Miller** (CHA @ DET 7:00). Est 17% (fair +483; old model 17%): CHA scores first 50%; first FG 25/65 and first shot 29/65 starts 25-26, 1/4 26-27, FG 43%; DET vs F x1.01
+- **First basket: Jamal Murray** (DEN @ NO 8:00). Est 16% (fair +510; old model 15%): DEN scores first 55%; first FG 21/77 and first shot 21/77 starts 25-26, 1/3 26-27, FG 48%; NO vs G x1.04
+- **First basket: Ajay Mitchell** (OKC @ DAL 9:30). Est 16% (fair +525; old model 15%): OKC scores first 55%; first FG 6/16 and first shot 5/16 starts 25-26, 0/1 26-27, FG 48%; DAL vs G x0.99; Day-To-Day
+- **First basket: Paul Reed** (DET vs CHA 7:00). Est 16% (fair +536; old model 18%): DET scores first 50%; first FG 5/11 and first shot 3/11 starts 25-26, 1/2 26-27, FG 58%; CHA vs F x1.08; Jalen Duren out (26% share spread to the rest)
+- **Team first basket: Brandon Miller** (CHA @ DET). Model share of CHA's first FG 34% (old 34%); raw 25-26 25/65, first shot 29/65, FG 43%
+- **Team first basket: Victor Wembanyama** (SA @ UTAH). Model share of SA's first FG 32% (old 41%); raw 25-26 24/57, first shot 22/57, FG 50%
+- **Team first basket: Luka Doncic** (LAL @ LAC). Model share of LAL's first FG 32% (old 29%); raw 25-26 20/65, first shot 33/65, FG 48%
+- **Team first basket: Jalen Smith** (CHI vs NY). Model share of CHI's first FG 32% (old 42%); raw 25-26 7/21, first shot 6/21, FG 48%
+- **Over 2.5 threes: Luka Doncic** (LAL @ LAC). Over 2.5 in 78% of starts (blend); last 5 starts 25-26: 1 6 5 4 3
+- **Over 2.5 threes: Stephen Curry** (GS @ MIN). Over 2.5 in 74% of starts (blend); last 5 starts 25-26: 4 2 4 4 3
+- **Over 24.5 points: Shai Gilgeous-Alexander** (OKC @ DAL). Over 24.5 in 81% of starts (blend); last 5 starts 25-26: 20 25 20 28 47
+- **Over 24.5 points: Tyrese Maxey** (PHI @ IND). Over 24.5 in 71% of starts (blend); last 5 starts 25-26: 21 32 24 15 23
+- **Over 19.5 points: Giannis Antetokounmpo** (MIA @ ATL). Over 19.5 in 85% of starts (blend); last 5 starts 25-26: 31 31 22 27 24
+- **Over 19.5 points: Joel Embiid** (PHI @ IND). Over 19.5 in 83% of starts (blend); last 5 starts 25-26: 34 19 26 29 35
 
 ## Tip-off
 
-- BKN @ BOS 7:30 ET: Day'Ron Sharpe vs Mitchell Robinson; away wins tip 17%, away scores first 41%
-- DET @ NY 8:00 ET: Paul Reed vs Karl-Anthony Towns; away wins tip 48%, away scores first 49%
-- SAC @ SA 8:00 ET: Domantas Sabonis vs Victor Wembanyama; away wins tip 10%, away scores first 39%
-- POR @ LAL 11:00 ET: Donovan Clingan vs Walker Kessler; away wins tip 19%, away scores first 41%
+- MIA @ ATL 7:00 ET: Bam Adebayo vs Onyeka Okongwu; away wins tip 79%, away scores first 58%
+- WSH @ CLE 7:00 ET: Anthony Davis vs Jarrett Allen; away wins tip 48%, away scores first 49%
+- CHA @ DET 7:00 ET: Moussa Diabate vs Paul Reed; away wins tip 51%, away scores first 50%
+- PHI @ IND 7:00 ET: Joel Embiid vs Jay Huff; away wins tip 47%, away scores first 49%
+- ORL @ TOR 7:30 ET: Wendell Carter Jr. vs Jakob Poeltl; away wins tip 63%, away scores first 54%
+- NY @ CHI 8:00 ET: Karl-Anthony Towns vs Jalen Smith; away wins tip 60%, away scores first 53%
+- HOU @ MIL 8:00 ET: Clint Capela vs Myles Turner; away wins tip 63%, away scores first 54%
+- GS @ MIN 8:00 ET: Draymond Green vs Rudy Gobert; away wins tip 31%, away scores first 44%
+- DEN @ NO 8:00 ET: Nikola Jokic vs DeAndre Jordan; away wins tip 69%, away scores first 55%
+- SA @ UTAH 9:00 ET: Victor Wembanyama vs Jaxson Hayes; away wins tip 91%, away scores first 62%
+- OKC @ DAL 9:30 ET: Isaiah Hartenstein vs Daniel Gafford; away wins tip 68%, away scores first 55%
+- LAL @ LAC 10:30 ET: Walker Kessler vs Isaiah Jackson; away wins tip 95%, away scores first 63%
