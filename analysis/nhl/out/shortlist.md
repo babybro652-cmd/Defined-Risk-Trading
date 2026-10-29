@@ -1,21 +1,28 @@
-# NHL shortlist 2026-10-28 (not guaranteed)
+# NHL shortlist 2026-10-29 (not guaranteed)
 
-- **Anytime goal: Leon Draisaitl** (EDM vs CGY). Scored in 51% of games (blend); 26-27: 12 G in 12 GP; CGY allows 3.3 GA/G; faces Devin Cooley (unconfirmed, SV .910)
-- **Anytime goal: Auston Matthews** (TOR @ SEA). Scored in 46% of games (blend); 26-27: 9 G in 14 GP; SEA allows 3.2 GA/G; faces Philipp Grubauer (unconfirmed, SV .908)
-- **Anytime goal: Nathan MacKinnon** (COL vs NJD). Scored in 47% of games (blend); 26-27: 7 G in 12 GP; NJD allows 3.0 GA/G; faces Jake Allen (confirmed, SV .901)
-- **Anytime goal: Connor McDavid** (EDM vs CGY). Scored in 44% of games (blend); 26-27: 8 G in 12 GP; CGY allows 3.3 GA/G; faces Devin Cooley (unconfirmed, SV .910)
-- **First goal: Martin Necas** (COL vs NJD). Scored first in 9/78 games in 25-26, 0/12 in 26-27; 0.49 goals/G (blend); COL scores first 60%; Top 6 PP1
-- **First goal: Artturi Lehkonen** (COL vs NJD). Scored first in 4/70 games in 25-26, 1/12 in 26-27; 0.48 goals/G (blend); COL scores first 60%; Top 6 PP2
-- **First goal: Alex Tuch** (WSH vs PHI). Scored first in 5/79 games in 25-26, 1/10 in 26-27; 0.50 goals/G (blend); WSH scores first 55%; Top 6 PP2
-- **SOG over 1.5: Connor McDavid** (EDM vs CGY). Over 1.5 in 83% of games (blend); 3.4 SOG/G; L5: 2 3 3 4 2; CGY allows 30.0 SA/G
-- **SOG over 1.5: Jack Hughes** (NJD @ COL). Over 1.5 in 92% of games (blend); 3.7 SOG/G; L5: 6 2 2 3 4; COL allows 26.9 SA/G
-- **SOG over 1.5: Auston Matthews** (TOR @ SEA). Over 1.5 in 81% of games (blend); 3.4 SOG/G; L5: 1 2 4 3 3; SEA allows 30.2 SA/G
-- **SOG over 1.5: Leon Draisaitl** (EDM vs CGY). Over 1.5 in 81% of games (blend); 3.2 SOG/G; L5: 3 7 4 4 1; CGY allows 30.0 SA/G
-- **SOG over 1.5: Brandon Montour** (SEA vs TOR). Over 1.5 in 73% of games (blend); 2.4 SOG/G; L5: 2 2 3 2 3; TOR allows 31.7 SA/G
+- **Anytime goal: Macklin Celebrini** (SJS vs VAN). Scored in 41% of games (blend); 26-27: 5 G in 11 GP; VAN allows 4.1 GA/G; faces Leevi Merilainen (unconfirmed, SV .872)
+- **Anytime goal: Tage Thompson** (BUF @ ANA). Scored in 43% of games (blend); 26-27: 5 G in 12 GP; ANA allows 3.5 GA/G; faces Lukas Dostal (unconfirmed, SV .886)
+- **Anytime goal: Kirill Kaprizov** (MIN vs NYI). Scored in 56% of games (blend); 26-27: 14 G in 14 GP; NYI allows 2.8 GA/G; faces Ilya Sorokin (unconfirmed, SV .907)
+- **Anytime goal: Tim Stützle** (OTT @ LAK). Scored in 43% of games (blend); 26-27: 8 G in 13 GP; LAK allows 3.0 GA/G; faces Darcy Kuemper (unconfirmed, SV .891)
+- **First goal: Alex Tuch** (WSH @ NSH). Scored first in 5/79 games in 25-26, 2/11 in 26-27; 0.54 goals/G (blend); WSH scores first 57%; Top 6 PP2
+- **First goal: Brandon Hagel** (TBL vs WPG). Scored first in 7/71 games in 25-26, 1/11 in 26-27; 0.55 goals/G (blend); TBL scores first 49%; Top 6 PP1
+- **First goal: Jake Guentzel** (TBL vs WPG). Scored first in 6/81 games in 25-26, 2/11 in 26-27; 0.52 goals/G (blend); TBL scores first 49%; Top 6 PP1
+- **SOG over 2.5: Alex DeBrincat** (DET vs CHI). Over 2.5 in 75% of games (blend); 3.6 SOG/G; L5: 2 3 4 5 2; CHI allows 30.1 SA/G
+- **SOG over 2.5: Kirill Kaprizov** (MIN vs NYI). Over 2.5 in 72% of games (blend); 3.4 SOG/G; L5: 4 2 4 4 3; NYI allows 27.3 SA/G
+- **SOG over 2.5: Matt Boldy** (MIN vs NYI). Over 2.5 in 71% of games (blend); 3.7 SOG/G; L5: 2 3 5 7 3; NYI allows 27.3 SA/G
+- **SOG over 1.5: Macklin Celebrini** (SJS vs VAN). Over 1.5 in 83% of games (blend); 3.6 SOG/G; L5: 4 1 2 6 5; VAN allows 30.8 SA/G
+- **SOG over 1.5: Jason Robertson** (DAL vs MTL). Over 1.5 in 91% of games (blend); 3.5 SOG/G; L5: 3 3 4 3 7; MTL allows 27.9 SA/G
 
 ## Goalies
 
-- PHI @ WSH 7:30 ET: Joseph Woll (Unconfirmed) / Logan Thompson (Unconfirmed)
-- CGY @ EDM 8:30 ET: Devin Cooley (Unconfirmed) / Tristan Jarry (Unconfirmed)
-- NJD @ COL 9:00 ET: Jake Allen (Confirmed) / Mackenzie Blackwood (Unconfirmed)
-- TOR @ SEA 10:00 ET: Anthony Stolarz (Unconfirmed) / Philipp Grubauer (Unconfirmed)
+- WPG @ TBL 7:00 ET: Stuart Skinner (Unconfirmed) / Andrei Vasilevskiy (Unconfirmed)
+- UTA @ PIT 7:00 ET: Karel Vejmelka (Unconfirmed) / Arturs Silovs (Unconfirmed)
+- CBJ @ CAR 7:00 ET: Jet Greaves (Unconfirmed) / Pyotr Kochetkov (Unconfirmed)
+- CHI @ DET 7:30 ET: Spencer Knight (Unconfirmed) / John Gibson (Unconfirmed)
+- BOS @ STL 8:00 ET: Jeremy Swayman (Unconfirmed) / Joel Hofer (Unconfirmed)
+- WSH @ NSH 8:00 ET: Logan Thompson (Unconfirmed) / Juuse Saros (Unconfirmed)
+- MTL @ DAL 8:00 ET: Jakub Dobes (Confirmed) / Jake Oettinger (Unconfirmed)
+- NYI @ MIN 8:00 ET: Ilya Sorokin (Unconfirmed) / Jesper Wallstedt (Unconfirmed)
+- BUF @ ANA 10:00 ET: Ukko-Pekka Luukkonen (Unconfirmed) / Lukas Dostal (Unconfirmed)
+- OTT @ LAK 10:00 ET: Samuel Ersson (Unconfirmed) / Darcy Kuemper (Unconfirmed)
+- VAN @ SJS 10:00 ET: Leevi Merilainen (Unconfirmed) / Alex Nedeljkovic (Unconfirmed)

@@ -164,6 +164,12 @@ Include the first shot and first score for each game in the grading message to T
 
 - 10/24: center pattern cooled. Only 1 of 8 first baskets was a starting center (Adebayo). Running total 7 of 22 (10/22-10/24). StarTool bombs hit 4 of 16 (Adebayo, Young, Fox, Lendeborg); stars 0 of 16. Hold the 1.2x jumper fix until it's backtested.
 
+- 10/28: our first basket picks 2 of 7 graded (Adebayo, Murray; Doncic DNP, void). StarTool stars 3 of 24 (Siakam, Herro,
+  Flagg); bombs 4 (Adebayo, C. Wilson, Murray, Fox). Starting centers scored 2 of 12 (Adebayo, Carter). 5 of 12 first baskets
+  came on the game's first shot. Tim's round robin cashed one combo: Adebayo + Murray with the Doncic leg voided.
+- 10/29 rule (Tim): skip props priced shorter than about -300; offer the next line up (25+ points instead of 20+,
+  3+ threes instead of 2+, 3+ SOG instead of 2+).
+
 ## Tim vs model log (first basket)
 
 Tim's picks come from his own read of the StarTool card (not just its star), so the Tim column tests how he uses StarTool's data; the StarTool column is its star/bomb as printed.
@@ -201,3 +207,15 @@ On game days Tim sends the StarTool Analytics "Game Script" card for each game (
 | 10/25 | LAC @ OKC | Isaiah Jackson LAC, center (first shot, made) | SGA, Jalen Williams, Hachimura | Garland / SGA | Cason Wallace | No | No |
 | 10/25 | DET @ PHI | John Collins DET (first shot Robinson, missed) | Ausar Thompson, Edgecombe, Jaylen Brown | Cunningham / Embiid | Jaylen Brown | No | No |
 | 10/25 | MEM @ SAC | Zach LaVine SAC (first shot, made; StarTool bomb hit) | Sabonis, Hunter | Jerome / Acuff Jr. | Ty Jerome | No | No |
+| 10/28 | MIA @ ATL | Bam Adebayo MIA, center (first shot, made) | Adebayo (placed our list) | Giannis / Alexander-Walker (bomb Adebayo hit) | Adebayo | Yes | Yes |
+| 10/28 | WSH @ CLE | Alex Sarr WSH (first shot Watson CLE, missed) | - | Davis / Mitchell | - | - | - |
+| 10/28 | CHA @ DET | Naz Reid CHA (first shot Collins DET, missed) | Miller, Reed | Miller / Cunningham | Miller, Reed | No | No |
+| 10/28 | PHI @ IND | Pascal Siakam IND (first shot Edgecombe, missed) | - | J. Brown / Siakam (StarTool star hit) | - | - | - |
+| 10/28 | ORL @ TOR | Wendell Carter Jr. ORL, center (first shot, made) | - | Bane / Barrett | - | - | - |
+| 10/28 | NY @ CHI | Caleb Wilson CHI (first shot Brunson, missed) | - | Brunson / Powell (bomb C. Wilson hit) | - | - | - |
+| 10/28 | HOU @ MIL | Tyler Herro MIL (first shot VanVleet, missed) | - | Durant / Herro (StarTool star hit) | - | - | - |
+| 10/28 | GS @ MIN | Jaden McDaniels MIN (first shot Green, missed) | - | Curry / LaMelo | - | - | - |
+| 10/28 | DEN @ NO | Jamal Murray DEN (first shot, made) | Murray | Jokic / Murphy (bomb Murray hit) | Murray | Yes | Yes |
+| 10/28 | SA @ UTAH | De'Aaron Fox SA (first shot, made) | Wembanyama | Wembanyama / Markkanen (bomb Fox hit) | Wembanyama | No | No |
+| 10/28 | OKC @ DAL | Cooper Flagg DAL (first shot A. Mitchell, missed) | Ajay Mitchell | SGA / Flagg (StarTool star hit) | Ajay Mitchell | No | No |
+| 10/28 | LAL @ LAC | Matisse Thybulle LAL (first shot, made); Doncic DNP | Doncic (void), Kessler | Doncic / Garland | Doncic (void), Kessler | No | No |
