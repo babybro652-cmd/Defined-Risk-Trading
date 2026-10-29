@@ -1,6 +1,6 @@
 # DRT Wednesday TikTok market commentary, Wed 10/28/2026
 
-**Status: HELD. Not uploaded or scheduled. Tim's Blotato subscription is expired (every call returns "Subscription expired", 10/28 23:22Z). Post when Blotato is reactivated.**
+**Status: SCHEDULED Thu 10/29 7:15 PM ET (Blotato id 6191598), after Blotato was renewed 10/29. Media QA re-run 10/29: PASS. Uniqueness vs 10/22-10/28 OK.**
 
 - Account: TikTok @definedrisktrading `58063`, privacyLevel PUBLIC_TO_EVERYONE, isAiGenerated false (text-card reel rendered in-house, no AI media), comments/duet/stitch on.
 - Topic: Why patience is the most profitable skill in futures trading.

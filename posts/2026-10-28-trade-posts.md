@@ -8,7 +8,19 @@ Facts (recordings + Tim):
 Media (QA PASS: status bar/nav cropped, notification shade and home-screen frames dropped, the 10/27 recording's
 last frames show Tim's son on the home screen and are cut; first 7 min of 10/27 cut to drop the indicator panel):
 posts/media/2026-10-28/es-short-1027.mp4 (45 s), es-short-1028.mp4 (33 s). Script: make_trade_reels.py.
-NOT POSTED: Blotato subscription expired 10/28 ~11:40 AM ET. Post once reactivated (or by hand).
+**SCHEDULED Thu 10/29** (Blotato renewed 10/29, credits 2085). Media QA re-run 10/29: contact sheets read (90/67 frames), ES chart, entry/stop/target lines and end cards match the captions, no dates, no home screen. PASS.
+Wording updated for a 10/29 post date: FB 10/27 "Yesterday's" -> "Tuesday's"; IG 10/28 "this morning" -> "Wednesday morning"; FB 10/28 "Yesterday's/Today's" -> "Tuesday's/Wednesday's".
+Uniqueness reruns vs 38 DRT posts 10/22-10/28 found 4 overlaps, rewritten: IG 10/27 CTA, FB 10/27 fill line (also dropped "Just"), FB 10/28 opener and fill line. Re-check OK.
+
+| Time ET (10/29) | Platform | Post | Blotato id |
+|---|---|---|---|
+| 4:45 PM | TikTok | 10/27 trade | 6191586 |
+| 5:15 PM | Instagram reel | 10/27 trade | 6191590 |
+| 5:45 PM | Facebook reel | 10/27 trade | 6191596 |
+| 8:30 PM | TikTok | 10/28 trade | 6191600 |
+| 8:45 PM | Instagram reel | 10/28 trade | 6191601 |
+| 9:15 PM | Facebook reel | 10/28 trade | 6191602 |
+The captions below are the final scheduled text.
 
 ## 10/27 trade
 
@@ -29,20 +41,20 @@ The trade went my way, came back toward my entry, and I left the stop alone. The
 
 The pullback is where most traders bail or move the stop. The plan already said what I'd do there.
 
-Save this for the next time a winner pulls back on you.
+Keep this one for the day a winner pulls back on you.
 
 #MyHobbyismyFREEDOM #definedrisktrading #esfutures #daytrading #riskmanagement
 ```
 
 ### Facebook (50185, page 993318963868124, reel)
 ```
-Yesterday's ES short paid 7 times what it risked, and the hardest part came in the middle.
+Tuesday's ES short paid 7 times what it risked, and the hardest part came in the middle.
 
 I sold 2 contracts at 7,746.00 with the stop at 7,750.00 and the target at 7,718.00. $400 on the line, decided before I entered.
 
 Price dropped about 14 points, then turned and climbed back up close to my entry. Most of the open profit was gone. That's the moment people grab what's left or pull the stop in tight.
 
-I left it alone. Just after 10 AM, ES broke down and filled the target at 7,718.00. +28 points a contract, +$2,800 before commissions, on a paper account.
+I left it alone. A little after 10 AM, ES broke down and filled 7,718.00. That's +28 points per contract, +$2,800 before commissions, on a paper account.
 
 The plan is easy to follow when a trade goes straight to target. It's worth something when it doesn't.
 
@@ -60,7 +72,7 @@ Second ES short in 2 days. 4 pt stop at 7,776.25, target 7,759.50 filled. +12.75
 
 ### Instagram (reel)
 ```
-Another short on ES this morning, same rules.
+Another short on ES Wednesday morning, same rules.
 
 Sold 2 at 7,772.25. Stop at 7,776.25, 4 points. Target at 7,759.50.
 
@@ -75,11 +87,11 @@ Keep this saved for the days a smaller target feels not worth taking.
 
 ### Facebook (reel)
 ```
-2 days, 2 ES shorts, the same 4-point stop.
+Two ES shorts in 2 days, both with a 4-point stop.
 
-Yesterday's short risked 4 points and made 28. Today's risked the same 4 points and made 12.75.
+Tuesday's short risked 4 points and made 28. Wednesday's risked the same 4 points and made 12.75.
 
-Today I sold 2 contracts at 7,772.25, stop at 7,776.25, target at 7,759.50. $400 at risk. Price worked lower for about 10 minutes and filled the target. +$1,275 before commissions, 3.2R, paper account.
+On Wednesday I sold 2 contracts at 7,772.25, stop at 7,776.25, target at 7,759.50. $400 at risk. About 10 minutes later the target filled. +$1,275 before commissions, 3.2R, paper account.
 
 The risk didn't change. The target did, because it comes from the chart, not from how much I want to make that day.
 
