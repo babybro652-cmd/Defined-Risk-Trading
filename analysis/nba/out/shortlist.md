@@ -19,6 +19,25 @@ Tip winner scores first 64% (25-26).
 - **Over 1.5 threes: Trey Murphy III** (NO vs SAC). Over 1.5 in 79% of starts (blend); last 5 starts 25-26: 1 1 4 2 5
 - **Over 1.5 threes: Toumani Camara** (POR vs MEM). Over 1.5 in 78% of starts (blend); last 5 starts 25-26: 3 1 4 8 6
 
+## First basket method
+
+Dunk/layup includes tip-ins and putbacks; 2pt jumper includes floaters and hooks (book rules vary). First points counts free throws; first basket is the first made FG (FanDuel). Sample: 1235 games 25-26, 68 games 26-27.
+
+- CLE @ ATL 8:00: first points Dunk/layup 33% (+207), 2pt jumper 31% (+224), 3-pointer 24% (+313), Free throw 12% (+711); first basket Dunk/layup 37% (+172), 2pt jumper 34% (+198), 3-pointer 30% (+238)
+- SAC @ NO 8:00: first points Dunk/layup 39% (+159), 2pt jumper 30% (+237), 3-pointer 23% (+337), Free throw 9% (+1033); first basket Dunk/layup 41% (+142), 2pt jumper 32% (+216), 3-pointer 27% (+269)
+- MEM @ POR 10:00: first points Dunk/layup 32% (+212), 2pt jumper 25% (+307), 3-pointer 30% (+236), Free throw 14% (+636); first basket Dunk/layup 37% (+174), 2pt jumper 29% (+239), 3-pointer 34% (+194)
+
+Best player + method (fair price; bet only if the book pays more):
+
+- **Domantas Sabonis first basket: Dunk/layup** (SAC @ NO 8:00). Est 9.8% (fair +924) = FB 14% x 70% if he scores first; his first-FG sample 9, made FGs 213
+- **Ty Jerome first basket: 2pt jumper** (MEM @ POR 10:00). Est 8.8% (fair +1032) = FB 16% x 54% if he scores first; his first-FG sample 8, made FGs 222
+- **Jarrett Allen first basket: Dunk/layup** (CLE @ ATL 8:00). Est 8.8% (fair +1039) = FB 16% x 56% if he scores first; his first-FG sample 20, made FGs 394
+- **Zion Williamson first basket: Dunk/layup** (NO vs SAC 8:00). Est 7.7% (fair +1195) = FB 9% x 82% if he scores first; his first-FG sample 12, made FGs 580
+- **Evan Mobley first basket: Dunk/layup** (CLE @ ATL 8:00). Est 7.5% (fair +1237) = FB 15% x 49% if he scores first; his first-FG sample 21, made FGs 553
+- **Zach Edey first basket: Dunk/layup** (MEM @ POR 10:00). Est 7.0% (fair +1320) = FB 12% x 60% if he scores first; his first-FG sample 4, made FGs 83
+- **Jarrett Allen first basket: 2pt jumper** (CLE @ ATL 8:00). Est 6.8% (fair +1372) = FB 16% x 43% if he scores first; his first-FG sample 20, made FGs 394
+- **DeAndre Jordan first basket: Dunk/layup** (NO vs SAC 8:00). Est 6.4% (fair +1461) = FB 8% x 82% if he scores first; his first-FG sample 1, made FGs 33
+
 ## Tip-off
 
 - CLE @ ATL 8:00 ET: Jarrett Allen vs Onyeka Okongwu; away wins tip 73%, away scores first 56%

@@ -39,7 +39,9 @@ Include the first shot and first score for each game in the grading message to T
    The first run downloads all 1,230 2025-26 games (about 2 minutes); later runs take seconds.
 
 2. Push with the Google Sheets connector:
-   - `batch_clear_values` on `'NBA'!A1:S460` (19 columns since 10/21)
+   - `batch_clear_values` on `'NBA'!A1:S480` (19 columns since 10/21; about 467 rows since the method
+     sections were added 10/29). If the tab has fewer rows than the grid, first `appendDimension` rows
+     (the formatting step then sets rowCount to rows + 20).
    - `update_formulas` on `'NBA'!A1` with the `NBA` array (split it in two calls if it is large)
    - Formatting: `python3 analysis/tab_format.py nba` prints the batchUpdate requests (header
      colors, number formats, gradients, widths) for the current row positions; pass them to
@@ -113,6 +115,43 @@ Include the first shot and first score for each game in the grading message to T
 - Probable starters are an estimate (recent regular-season starts once the season begins,
   otherwise preseason starts plus last season's starter share). Players listed Out or Doubtful are left out.
 
+## First basket method (added 10/29/26)
+
+How the first points are scored, for "first basket method" markets and player + method props
+("Ty Jerome first basket: 3-pointer"). Code: `fb_method.py` (imported by the build). Cache:
+`data/methods_<season>.json`, one ESPN summary parse per game (first points method, first FG method,
+each team's first points / first FG method and scorer, every player's made FGs by type).
+
+- Methods from the ESPN play type: **rim** = dunk, layup, tip-in, putback, finger roll, alley-oop;
+  **j2** = every other 2 (jump shots, floaters, hooks, fadeaways); **3**; **ft** (first points only).
+  Book rules vary (some group hooks or floaters with layups); check the market's rules.
+- League base rates, 2025-26 (1,235 games): first points rim 35.9%, j2 28.1%, 3 27.0%, FT 9.0%.
+  First basket (FG only) rim 39.5%, j2 29.9%, 3 30.6%. 2026-27 so far (68 games): first points rim 30.9%,
+  j2 29.4%, 3 29.4%, FT 10.3%; first basket rim 36.8%, j2 29.4%, 3 33.8%.
+- By position, share of team first FGs (both seasons): G rim 30 / j2 30 / 3 40; F 41 / 28 / 30;
+  C 52 / 30 / 18 (%). ESPN lists some centers as F (Sabonis, Gafford, Diabate).
+- Game market: P(method) = P(away scores first) x away split + P(home first) x home split. A team's split
+  = league rate x (team offense rate / league) x (opponent's allowed rate / league), each team rate
+  shrunk toward the league with `K_TEAM` = 80 pseudo games, renormalized. Team first points and team
+  first FG (both teams per game) are the sample, 26-27 games x B3 weight.
+- Player prop: P(first basket) (model v2) x P(method | he scores first). P(method | first) = his own team-first
+  FG methods (weighted counts) shrunk with `K_PLAYER` = 40 toward a prior = position first-FG mix x
+  (his made-FG mix / position made-FG mix), his made mix shrunk toward the position with `K_MIX` = 10 makes.
+- Check (`python3 analysis/nba/fb_method.py --base`): fit on 2025-26 games before 2/1/26, scored on the
+  rest plus 2026-27 (1,146 team first FGs). Player method log loss: league 1.094, position 1.078, mix prior
+  0.948, model 0.947. His overall shot mix is the real signal; his first-FG history adds almost nothing
+  (samples are 5 to 25 first FGs), so it is weighted lightly. Team game split: first points 1.324 league vs
+  1.315 model, first FG 1.094 vs 1.086. Small gain; game-level method is mostly the league rate.
+- Output: the tab gets "First basket method: game level" (each slate game: P away first, first points
+  split incl FT, first FG split, fair odds) and "First basket method: player props" (top 24 candidates:
+  P(FB), the method split if he scores first, P and fair odds for FB dunk/layup, FB 2pt jumper, FB 3PT,
+  and the weighted samples). `out/shortlist.md` has a "First basket method" section with the game
+  splits and the 8 best player + method combos (max 3 per game).
+- Minimum price: we log fair plus a 10% cushion (fair probability / 1.1) as "take X or better". These are
+  long shots stacked on a noisy market; 0.20 to 0.50 stakes.
+- first_events log: columns `first_basket_method` and `first_points_method` since 10/29 (backfilled for
+  every NBA row from the cache with `python3 analysis/first_events.py --backfill-methods`).
+
 ## Sources
 
 - ESPN `site.api.espn.com/apis/site/v2/sports/basketball/nba`: scoreboard, summary
@@ -167,6 +206,7 @@ Include the first shot and first score for each game in the grading message to T
 - 10/28: our first basket picks 2 of 7 graded (Adebayo, Murray; Doncic DNP, void). StarTool stars 3 of 24 (Siakam, Herro,
   Flagg); bombs 4 (Adebayo, C. Wilson, Murray, Fox). Starting centers scored 2 of 12 (Adebayo, Carter). 5 of 12 first baskets
   came on the game's first shot. Tim's round robin cashed one combo: Adebayo + Murray with the Doncic leg voided.
+- 10/29: first basket method added (see section above). Logged 5 player + method picks for 10/29 (Bets rows 506-510).
 - 10/29 rule (Tim): skip props priced shorter than about -300; offer the next line up (25+ points instead of 20+,
   3+ threes instead of 2+, 3+ SOG instead of 2+).
 

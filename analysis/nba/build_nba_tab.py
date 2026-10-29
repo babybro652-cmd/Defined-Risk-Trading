@@ -502,6 +502,26 @@ def build(start, log):
                       f"raw 25-26 {l['t1']}/{l['gs']}, first shot {l['sh1']}/{l['gs']}, FG {round(100 * fgpct(c['pid']))}%"
                       + (f"; {c['rip']}" if c['rip'] else ''), f"Better than {american(c['share'])}"])
 
+    # ---------- first basket method (10/29; fb_method.py) ----------
+    import fb_method as FM
+    MM = FM.Model([(LAST, g_last, FM.cache(LAST, list(g_last), log), 1), (CUR, g_cur, FM.cache(CUR, list(g_cur), log), W)])
+    msplit = {}
+    for g in slate_games:
+        g['m_pts'] = MM.game_split(g['away'], g['home'], g['pfirst'])
+        g['m_fg'] = MM.game_split(g['away'], g['home'], g['pfirst'], fg_only=True)
+    for c in cands:
+        post, n_f, n_mix, _ = MM.player_split(c['pid'], roster[c['pid']]['pos'])
+        c['msplit'], c['m_n'], c['m_mix'] = post, n_f, n_mix
+    mbets = sorted(((c['p'] * c['msplit'][m], m, c) for c in cands for m in FM.METHODS), key=lambda x: -x[0])
+    mpicks, mper = [], {}
+    for pm, m, c in mbets:
+        if len(mpicks) >= 8:
+            break
+        if mper.get(c['gid'], 0) >= 3:
+            continue
+        mper[c['gid']] = mper.get(c['gid'], 0) + 1
+        mpicks.append((pm, m, c))
+
     def over_rate(pid, idx, k):
         lg = [x[idx] for x in S(PL, pid)['log'] if x[3]]
         cg = [x[idx] for x in S(PC, pid)['log'] if x[3]]
@@ -571,6 +591,29 @@ def build(start, log):
         R(f"{g['away']} @ {g['home']} {g['time']}", jt(g['ja']), jt(g['jh']), pct(g['ptip']), pct(g['pfirst']),
           '; '.join(outs) or 'none of note')
     tip_rng = (len(rows) - len(slate_games) + 1, len(rows))
+    R()
+    R('First basket method: game level (first points incl FT, and first basket = first made FG)')
+    R('Game (ET)', 'Away scores first', 'Pts: dunk/layup', 'Pts: 2pt jumper', 'Pts: 3-pointer', 'Pts: free throw',
+      'FG: dunk/layup', 'FG: 2pt jumper', 'FG: 3-pointer', 'Fair odds, first points (rim / jumper / 3 / FT)',
+      'Fair odds, first basket (rim / jumper / 3)')
+    for g in slate_games:
+        a, b = g['m_pts'], g['m_fg']
+        R(f"{g['away']} @ {g['home']} {g['time']}", pct(g['pfirst']), *[pct(a[m]) for m in FM.METHODS_FT],
+          *[pct(b[m]) for m in FM.METHODS], ' / '.join(american(a[m]) for m in FM.METHODS_FT),
+          ' / '.join(american(b[m]) for m in FM.METHODS))
+    mg_rng = (len(rows) - len(slate_games) + 1, len(rows))
+    R()
+    R('First basket method: player props (P first basket x P method if he scores first; fair = break-even)')
+    R('Player', 'Tm', 'Game', 'P first basket', 'Fair FB', 'Dunk/layup if first', '2pt jumper if first', '3PT if first',
+      'P FB dunk/layup', 'Fair dunk/layup', 'P FB 2pt jumper', 'Fair 2pt jumper', 'P FB 3PT', 'Fair 3PT',
+      'Team first FGs in data (method sample)', 'Made FGs in data (mix sample)')
+    for c in sorted(cands, key=lambda c: -c['p'])[:24]:
+        sp = c['msplit']
+        R(nm(c['pid']), c['tm'], f"{c['tm']} {c['at']} {c['opp']} {c['time']}", pct(c['p']), american(c['p']),
+          *[pct(sp[m]) for m in FM.METHODS], pct(c['p'] * sp['rim']), american(c['p'] * sp['rim']),
+          pct(c['p'] * sp['j2']), american(c['p'] * sp['j2']), pct(c['p'] * sp['3']), american(c['p'] * sp['3']),
+          round(c['m_n'], 1), round(c['m_mix'], 1))
+    mp_rng = (len(rows) - min(24, len(cands)) + 1, len(rows))
     R()
 
     def onhdr(title, cols):
@@ -668,7 +711,7 @@ def build(start, log):
 
     width = max(len(r) for r in rows)
     rows = [[('' if v is None else v) for v in r] + [''] * (width - len(r)) for r in rows]
-    meta = {'short': hdr_short, 'n_picks': len(picks), 'tips': tip_rng, 'a': a_rng, 'b': b_rng, 'c': c_rng, 'd': d_rng,
+    meta = {'short': hdr_short, 'n_picks': len(picks), 'tips': tip_rng, 'mg': mg_rng, 'mp': mp_rng, 'a': a_rng, 'b': b_rng, 'c': c_rng, 'd': d_rng,
             'width': width, 'rows': len(rows), 'slate': slate_day}
     os.makedirs(OUT, exist_ok=True)
     json.dump({'NBA': rows, 'meta': meta}, open(os.path.join(OUT, 'sheet_values.json'), 'w'))
@@ -678,6 +721,21 @@ def build(start, log):
         f.write(f'# NBA shortlist {slate_day} (not guaranteed)\n\nTip winner scores first {round(100 * a_first)}% (25-26).\n\n')
         for p in picks:
             f.write(f'- **{p[0]}: {p[1]}** ({p[2]}). {p[3]}\n')
+        f.write('\n## First basket method\n\n'
+                'Dunk/layup includes tip-ins and putbacks; 2pt jumper includes floaters and hooks (book rules vary). '
+                'First points counts free throws; first basket is the first made FG (FanDuel). Sample: '
+                f"{MM.raw[LAST]['n']} games 25-26, {MM.raw[CUR]['n']} games 26-27.\n\n")
+        for g in slate_games:
+            a, b = g['m_pts'], g['m_fg']
+            f.write(f"- {g['away']} @ {g['home']} {g['time']}: first points " +
+                    ', '.join(f"{FM.SHORT[m]} {round(100 * a[m])}% ({american(a[m])})" for m in FM.METHODS_FT) +
+                    '; first basket ' + ', '.join(f"{FM.SHORT[m]} {round(100 * b[m])}% ({american(b[m])})" for m in FM.METHODS) + '\n')
+        f.write('\nBest player + method (fair price; bet only if the book pays more):\n\n')
+        for pm, m, c in mpicks:
+            sp = c['msplit']
+            f.write(f"- **{nm(c['pid'])} first basket: {FM.SHORT[m]}** ({c['tm']} {c['at']} {c['opp']} {c['time']}). "
+                    f"Est {100 * pm:.1f}% (fair {american(pm)}) = FB {round(100 * c['p'])}% x {round(100 * sp[m])}% "
+                    f"if he scores first; his first-FG sample {round(c['m_n'])}, made FGs {round(c['m_mix'])}\n")
         f.write('\n## Tip-off\n\n')
         for g in slate_games:
             f.write(f"- {g['away']} @ {g['home']} {g['time']} ET: {nm(g['ja'])} vs {nm(g['jh'])}; away wins tip "

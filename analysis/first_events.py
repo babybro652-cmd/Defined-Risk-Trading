@@ -7,7 +7,9 @@ analysis/first_events/log.csv (re-running a date replaces that date's rows):
 
 NBA (ESPN play-by-play): first field goal attempt of the game (shooter, made or
 missed), each team's first FGA, first basket (first made FG, how books grade it)
-and first points (any score, free throws count).
+and first points (any score, free throws count), plus the METHOD of each (since 10/29/26):
+rim (dunk/layup/tip/putback), j2 (other 2: jumpers, floaters, hooks), 3, ft. Same classes as
+analysis/nba/fb_method.py. `--backfill-methods` fills the method columns for old NBA rows.
 NHL (NHL API play-by-play): first shot on goal of the game, each team's first
 SOG, first shot attempt of any kind (missed and blocked count), first goal.
 """
@@ -20,7 +22,9 @@ import urllib.request
 HERE = os.path.dirname(os.path.abspath(__file__))
 LOG = os.path.join(HERE, 'first_events', 'log.csv')
 COLS = ['date', 'sport', 'game', 'first_shot', 'first_shot_result', 'away_first_shot',
-        'home_first_shot', 'first_attempt_any', 'first_score', 'first_points_any', 'note']
+        'home_first_shot', 'first_attempt_any', 'first_score', 'first_points_any', 'note',
+        'first_basket_method', 'first_points_method']
+sys.path.insert(0, os.path.join(HERE, 'nba'))
 
 
 def get(url):
@@ -57,6 +61,7 @@ def nba(date):
         first = fga[0] if fga else None
         team_first = {tid: next((p for p in fga if p['team']['id'] == tid), None) for tid in (away, home)}
         made = next((p for p in fga if p.get('scoringPlay')), None)
+        from fb_method import classify
         rows.append({
             'date': date, 'sport': 'NBA', 'game': ev['shortName'],
             'first_shot': who(first) if first else '',
@@ -67,6 +72,8 @@ def nba(date):
             'first_score': who(made) if made else '',
             'first_points_any': who(pts[0]) if pts else '',
             'note': 'first_score = first made FG (first basket)',
+            'first_basket_method': classify(made) if made else '',
+            'first_points_method': classify(pts[0]) if pts else '',
         })
     return rows
 
@@ -117,7 +124,36 @@ def nhl(date):
     return rows
 
 
+def backfill_methods():
+    """Fill method columns of old NBA rows from the cached ESPN parse (analysis/nba/data/methods_*.json)."""
+    nd = os.path.join(HERE, 'nba', 'data')
+    idx = {}
+    for season in ('2025-26', '2026-27'):
+        try:
+            games = json.load(open(os.path.join(nd, f'games_{season}.json')))
+            meth = json.load(open(os.path.join(nd, f'methods_{season}.json')))
+        except FileNotFoundError:
+            continue
+        for gid, g in games.items():
+            if gid in meth:
+                idx[(g['date'], f"{g['away']} @ {g['home']}")] = meth[gid]
+    with open(LOG) as fh:
+        rows = list(csv.DictReader(fh))
+    n = 0
+    for r in rows:
+        x = idx.get((r['date'], r['game']))
+        if r['sport'] == 'NBA' and x and not r.get('first_basket_method'):
+            r['first_basket_method'], r['first_points_method'] = x['fbm'] or '', x['fpm'] or ''; n += 1
+    with open(LOG, 'w', newline='') as fh:
+        w = csv.DictWriter(fh, fieldnames=COLS)
+        w.writeheader()
+        w.writerows([{k: r.get(k, '') or '' for k in COLS} for r in rows])
+    print(f'backfilled methods on {n} NBA rows; {sum(1 for r in rows if r["sport"] == "NBA" and not r.get("first_basket_method"))} NBA rows still blank')
+
+
 def main():
+    if sys.argv[1] == '--backfill-methods':
+        return backfill_methods()
     date = sys.argv[1]
     which = sys.argv[2] if len(sys.argv) > 2 else 'both'
     new = []
@@ -134,10 +170,11 @@ def main():
     with open(LOG, 'w', newline='') as fh:
         w = csv.DictWriter(fh, fieldnames=COLS)
         w.writeheader()
-        w.writerows(sorted(old + new, key=lambda r: (r['date'], r['sport'], r['game'])))
+        w.writerows([{k: r.get(k, '') or '' for k in COLS} for r in sorted(old + new, key=lambda r: (r['date'], r['sport'], r['game']))])
     for r in new:
         print(f"{r['sport']} {r['game']}: first shot {r['first_shot']} {r['first_shot_result']} | "
-              f"{r['away_first_shot']} / {r['home_first_shot']} | first score {r['first_score']}")
+              f"{r['away_first_shot']} / {r['home_first_shot']} | first score {r['first_score']}"
+              + (f" ({r['first_basket_method']}; first points {r['first_points_method']})" if r['sport'] == 'NBA' else ''))
 
 
 if __name__ == '__main__':
