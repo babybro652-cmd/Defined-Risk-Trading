@@ -107,6 +107,23 @@ weekends included. It's Step 6b of the daily content routine (prompt stored in t
 - Blotato can't set the Shorts "related video" link (YouTube API limit); Tim adds it in
   YouTube Studio once long-form videos exist.
 - Growth and monetization plan: `drt/youtube/2026-10-30-youtube-monetization-plan.md`.
+- **Audio on every Short (Tim approved 10/30).** Never post a silent Short. Run
+  `python3 drt/audio/add_audio.py IN.mp4 -o OUT.mp4 --sheet SHEET.png` (needs numpy, pyloudnorm,
+  soundfile, faster-whisper, piper-tts; here they're on `/usr/bin/python3`). Music comes only from
+  `drt/audio/music/` (CC0, sources in `LICENSES.md`), rotated by date: bed about -19 LUFS, ducked
+  about 25 dB under voice, fade in 0.5 s / out 1 s, final -14 LUFS with voice, -18 LUFS music only,
+  AAC 192k. `--music synth` renders an original pad if a track can't be used.
+  - Trade Shorts: Tim's voice memo when he sends one (DRT Phone or chat): `--voice MEMO --captions`
+    (captions from faster-whisper; `--voice-offset S` to sync; `--caption-text` fallback). No memo =
+    music only. Never AI voice on a trade Short.
+  - Education Shorts: AI voice `--tts-text "SCRIPT" --captions` (local Piper en_US-norman-medium,
+    public-domain training data, 0 credits; Blotato's AI video templates cost credits and are
+    paused). About 2.5 words per second of video, fact-checked like a caption.
+    `containsSyntheticMedia: true`.
+  - Audio QA: script must print `AUDIO QA: PASS` (audio stream, loudness on target, no clipping,
+    length matches, voice 15+ dB over music, 80%+ of voice words recovered by speech-to-text), then
+    Read the sheet (captions spelled right, not covering on-screen text; `--caption-margin PX`).
+    Upload OUT.mp4 via presigned URL. Prompt store: Step 6b item 3b of `trig_01NkNxxc7neQATLrTifB42kv`.
 
 ## Blotato AI visuals paused (10/20)
 blotato_create_visual has been unavailable or stalling since 10/15 and charged credits twice (about 250 on 10/19, 75 on 10/20) without returning media. Don't call it until Tim or Jarvis says it works again. Use Tim's non-trade DRT Phone clips, else ffmpeg/PIL text-card reels and slides you render yourself (0 credits).
