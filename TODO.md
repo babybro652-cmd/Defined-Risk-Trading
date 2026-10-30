@@ -6,6 +6,9 @@ Newest decisions win; move finished items to Done with the date.
 
 ## Open
 
+### Grants
+- [ ] Grants prep (10/30): decide which venture to register first (Legionz is the best grant fit). Form the NC LLC ($125 at sosnc.gov), get a free EIN at irs.gov, open a business bank account. Then contact Piedmont CC Small Business Center about BOOST, and get ready for Progressive (spring 2027). Research: ventures/grants/2026-10-30-grants-research.md
+
 ### Personal
 - [x] Pay the light bill (my half $51.25 of $102.50) and internet ($50.77). Paid 10/22.
 - [ ] Charger oil change (past due, ~188k miles): 5.7 Hemi, 7 qt 5W-20 high-mileage + MO-339 filter.

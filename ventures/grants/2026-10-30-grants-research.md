@@ -144,3 +144,11 @@ small business grant for Person County. Comcast RISE: NC not confirmed in 2026 r
 4. Revenue so far in 2026 for each venture (DRT/Skool, Peace by Page, Propa Pit)?
 5. For Legionz: what vehicle and equipment would you buy, and the rough cost?
 6. Open to paid memberships (NASE) to unlock member-only grants?
+
+## Tim's answers (10/30)
+1. Registered LLCs/EINs: none yet.
+2. Veteran or veteran family: no (Warrior Rising is out).
+3. 2026 revenue: nothing yet across ventures.
+4. Legionz needs: a vehicle and all equipment.
+
+Implication: most grants need a registered, operating business. First step is forming one (Legionz is the best grant fit), then a free EIN, then apply locally (Piedmont CC BOOST) and line up Progressive for spring 2027.
