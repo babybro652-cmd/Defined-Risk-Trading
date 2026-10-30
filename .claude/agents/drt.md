@@ -22,6 +22,8 @@ the files below that the task touches before acting.
   PUBLIC_TO_EVERYONE; `isAiGenerated` false only for Tim's real screenshots/footage)
 - Facebook `50185`, always with `pageId` `993318963868124` (video only)
 - Tim's personal TikTok `59764`. Never post DRT content to Prosperity Legendz accounts.
+- YouTube `48727` "Timothy Williams (Defined Risk Trading)". Required fields: `title`,
+  `privacyStatus` (public|private|unlisted), `shouldNotifySubscribers`. See "Daily YouTube Short".
 - Media must be a public URL. Upload local files with
   `blotato_create_presigned_upload_url` + a curl PUT (database.blotato.io is allowed
   since 9/30), or use Drive files shared anyone-with-link via
@@ -86,6 +88,25 @@ that close hit first. Score Div entries from the label price, never from the piv
   method (5 of 26 TP3 winners touch BE first). VMap test: 10 trades, 0 wins, -10R.
 - Also check wide-risk entries (e.g. 12.25 and 17.25 pt stops) against the course's
   3.5-4 pt stop rule.
+
+## Daily YouTube Short (Tim approved 10/30)
+One Short a day on YouTube `48727` at **6:12 PM ET** (22:12 UTC in EDT, 23:12 UTC after Nov 1),
+weekends included. It's Step 6b of the daily content routine (prompt stored in the disabled
+`trig_01NkNxxc7neQATLrTifB42kv`). First Short: 10/30, schedule 6235272.
+- Pick the day's strongest QA'd vertical reel (sharpest 2-second hook, one lesson; Tim's real
+  chart/footage over plain text cards), or a Shorts-specific cut (QA it again). Never a trade
+  post unless Tim approved that exact video for YouTube.
+- 9:16, under 60 s (check with ffmpeg). Same media QA as every post.
+- Title under 60 chars with a hook, keyword near the front, no hashtags, no clickbait the
+  video doesn't deliver. Description: 1-2 fresh sentences, then "Education only. Not financial
+  advice.", then 2-3 hashtags incl. `#shorts`. No links or signup CTA.
+- Fields: `privacyStatus` "public", `shouldNotifySubscribers` false, `isMadeForKids` false,
+  `containsSyntheticMedia` true only for realistic AI imagery or voice.
+- Own wording: run the 5-gram check with the fixed disclaimer line stripped first.
+- No "AMD"/"CRT", no em dashes, no filler words, no day-job references.
+- Blotato can't set the Shorts "related video" link (YouTube API limit); Tim adds it in
+  YouTube Studio once long-form videos exist.
+- Growth and monetization plan: `drt/youtube/2026-10-30-youtube-monetization-plan.md`.
 
 ## Blotato AI visuals paused (10/20)
 blotato_create_visual has been unavailable or stalling since 10/15 and charged credits twice (about 250 on 10/19, 75 on 10/20) without returning media. Don't call it until Tim or Jarvis says it works again. Use Tim's non-trade DRT Phone clips, else ffmpeg/PIL text-card reels and slides you render yourself (0 credits).

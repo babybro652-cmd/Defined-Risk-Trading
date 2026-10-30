@@ -59,7 +59,7 @@ Write each from scratch. Don't write one and trim it into the others.
 | **TikTok** | `58063` (@definedrisktrading) | Short caption: **under 150 chars**, keyword in the first 30. Talks like a person, not a post. Max 5 hashtags, always including `#definedrisktrading`. Video or photo carousel (the top TikTok so far was a carousel). `privacyLevel: PUBLIC_TO_EVERYONE` for live posts, `isAiGenerated: false`, `isBrandedContent: false`, `isYourBrand: false`. |
 | **Facebook** | `50185`, **pageId `993318963868124`** (Defined Risk Trading page) | Story-first and conversational. Can run longer than IG. **No hashtags.** **Every post needs a video (reel). No text-only posts.** CTA that drives **saves or shares**. ⚠️ The account's default page is Prosperity Legendz, so **always pass `pageId: 993318963868124` explicitly.** |
 
-YouTube is connected but has no posts yet. Skip it unless Tim asks.
+YouTube (`48727`) gets one Short a day from the daily content routine (6:12 PM ET, rules in `.claude/agents/drt.md` under "Daily YouTube Short"). Write its title and description fresh, like any other platform.
 
 Voice (from `brand-brief.md`): calm, disciplined, real. A trader working a 9-5 who defines risk first. Use contractions and digits for numbers. No em dashes. No hype ("to the moon", "easy money"). Never promise returns. No filler words: actually, really, just, simply, truly, genuinely.
 
