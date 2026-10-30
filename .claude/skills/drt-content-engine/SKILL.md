@@ -75,7 +75,7 @@ Voice (from `brand-brief.md`): calm, disciplined, real. A trader working a full-
 
 Open with the result or the concept, not with a confession. Proof posts are trade posts, so they still go through the approval gate.
 
-**Day job (Tim, 10/30):** mentions are allowed when accurate. Use only the facts in `.claude/agents/drt.md` under "Day job facts" (full-time W-2, 6:00 AM to 4:30 PM ET Mon-Fri, distribution center, trains order pickers, still working it). Never name the employer, never invent lunch-break or before-work trading, break times or coworker stories, and never imply he trades on company time.
+**Day job (Tim, 10/30):** mentions are allowed when accurate. Use only the facts in `.claude/agents/drt.md` under "Day job facts" (full-time W-2, 6:00 AM to 4:30 PM ET Mon-Fri, distribution center, trains order pickers, still working it). Never name the employer, He sometimes trades on his lunch break (about 10 AM ET). When the break ends, he's off the phone: phones aren't allowed on the floor. That's a good discipline angle (a hard stop on screen time), never a hint of trading on company time. Never invent before-work trading, other break times or coworker stories, and never imply he trades while working the floor or on company time.
 
 ### Step 3: Fact-check, then grade
 

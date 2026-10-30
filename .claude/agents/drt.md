@@ -139,8 +139,12 @@ Put any text the viewer must read on a clean graphic you render yourself.
     internal context only. Never name the site or the employer.)
   - Still working it. Never say he quit, left, or "made it". Dad (son born April 2026). Trades ES,
     New York session focus.
-  - Never invent specifics he hasn't confirmed: no "I traded on my lunch break", "before work",
-    exact break times, coworker stories, salary or employer details.
+  - He sometimes trades on his lunch break (about 10 AM ET). When the break ends, he's off the
+    phone: phones aren't allowed on the floor. That's a good discipline angle (a hard stop on
+    screen time), never a hint of trading on company time. (Tim, 10/30; his words 10/13: "My
+    lunch break ended and phones aren't allowed on the floor at work.")
+  - Never invent other specifics he hasn't confirmed: no "before work" trading, exact break
+    times beyond "about 10 AM", coworker stories, salary or employer details.
   - The NY open (9:30 AM ET) falls inside his work hours, so any claim about when he trades must
     match what he told us. When unsure, keep it general ("I work a full-time job and trade around
     it"). Never post anything that could look like he trades on company time.
