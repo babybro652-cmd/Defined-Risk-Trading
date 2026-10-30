@@ -21,7 +21,7 @@ Most trading "gurus" skip risk management entirely. They sell entries and strate
 Second wedge: most traders don't have a strategy problem, they have a discipline problem. They have a workable system and override it.
 
 ## Story Vault
-- Tim still works a full-time 9-5. He trades on his lunch break and before work, and runs the community at night. He hasn't "made it" and doesn't pretend to. The proof is that the process works alongside a day job. Never frame him as having quit his job.
+- Tim still works a full-time W-2 job, 6:00 AM to 4:30 PM ET, Monday to Friday, at a distribution center, where he also trains order picker skills and has traveled to sister DCs to train teams. He trades ES with a New York session focus and runs the community at night. Day-job mentions are fine when accurate (Tim, 10/30); never name the employer, never invent when he trades (no lunch-break or before-work claims), and never imply he trades on company time. When unsure: "I work a full-time job and trade around it." He hasn't "made it" and doesn't pretend to. The proof is that the process works alongside a day job. Never frame him as having quit his job.
 - He posts every trade publicly, wins and losses, and does a weekly recap.
 - The paper trading bar: 20 trades minimum, 2 weeks minimum, 1-2 trades/day max, every one following the full checklist with defined risk. It's not about being profitable yet. It's about proving the process holds without skipping steps.
 - Real risk rules used in the program: never risk more than $1,000 total in a day, and no more than $200 during the early session (3:00-9:29 AM ET).
@@ -50,4 +50,4 @@ Calm confidence, mentor energy with blunt honesty. Short sentences, clean struct
 - Specific details over generic statements
 - Every platform gets its own caption. Never reuse the same wording across platforms.
 - No filler words: actually, really, just, simply, truly, genuinely
-- Lead with the result or the concept, not a confession. 9-5 proof posts and education posts perform best
+- Lead with the result or the concept, not a confession. Day-job proof posts and education posts perform best

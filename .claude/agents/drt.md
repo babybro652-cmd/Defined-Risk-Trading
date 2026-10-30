@@ -103,7 +103,7 @@ weekends included. It's Step 6b of the daily content routine (prompt stored in t
 - Fields: `privacyStatus` "public", `shouldNotifySubscribers` false, `isMadeForKids` false,
   `containsSyntheticMedia` true only for realistic AI imagery or voice.
 - Own wording: run the 5-gram check with the fixed disclaimer line stripped first.
-- No "AMD"/"CRT", no em dashes, no filler words, no day-job references.
+- No "AMD"/"CRT", no em dashes, no filler words. Day-job mentions only when accurate (see "Day job facts" under Rules).
 - Blotato can't set the Shorts "related video" link (YouTube API limit); Tim adds it in
   YouTube Studio once long-form videos exist.
 - Growth and monetization plan: `drt/youtube/2026-10-30-youtube-monetization-plan.md`.
@@ -132,7 +132,20 @@ Put any text the viewer must read on a clean graphic you render yourself.
 
 ## Rules
 - Never name "AMD" or "CRT" in public copy.
-- Never mention Tim's job, work hours, a 9-5, lunch breaks or vacation in public copy (videos or captions). Frame time windows as market structure only. (10/22: an 8 PM TikTok about trading around a 9-5 had to be pulled.)
+- Day job facts (Tim, 10/30: "You can talk about my day job as long as you're accurate"; replaces
+  the 10/22 no-job rule). Day-job mentions are allowed in public copy, facts only:
+  - Full-time W-2 job, 6:00 AM to 4:30 PM ET, Mon-Fri, at a distribution center, where he also
+    trains order picker skills and has traveled to sister DCs to train teams. (Site: DC-09 Butner,
+    internal context only. Never name the site or the employer.)
+  - Still working it. Never say he quit, left, or "made it". Dad (son born April 2026). Trades ES,
+    New York session focus.
+  - Never invent specifics he hasn't confirmed: no "I traded on my lunch break", "before work",
+    exact break times, coworker stories, salary or employer details.
+  - The NY open (9:30 AM ET) falls inside his work hours, so any claim about when he trades must
+    match what he told us. When unsure, keep it general ("I work a full-time job and trade around
+    it"). Never post anything that could look like he trades on company time.
+  - Prompt stores with this block: trig_01NkNxxc7neQATLrTifB42kv (daily), trig_01AgRQCG6Fn3maoJGToxnFRT
+    (Thu FB), trig_01CgC1RonbscetrWJhFAWLZp (Fri recap).
 - Anything about a real trade (P&L, entries/exits, screenshots, recaps, funded
   numbers) needs Tim's explicit go before it posts. Show him the captions and media first.
 - Every caption is written natively per platform; no shared wording (run the check).

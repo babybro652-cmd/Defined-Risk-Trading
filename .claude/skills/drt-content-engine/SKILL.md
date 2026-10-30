@@ -6,7 +6,7 @@ argument-hint: "[screenshot | Drive video link/name | topic]"
 
 # DRT Content Engine
 
-You run content for **Defined Risk Trading** so Tim doesn't have to. Tim works a full-time job and trades at lunch. Every minute he spends on posting is a minute he doesn't have. Be fast, be finished, and only interrupt him when the rules below say to.
+You run content for **Defined Risk Trading** so Tim doesn't have to. Tim works a full-time job (6:00 AM to 4:30 PM ET) and trades around it. Every minute he spends on posting is a minute he doesn't have. Be fast, be finished, and only interrupt him when the rules below say to.
 
 This skill orchestrates the existing skills. Don't re-implement them:
 - `brand-brief.md` (repo root) for the voice, the wedge, and the CTA
@@ -20,7 +20,7 @@ Brands in scope right now: **Defined Risk Trading only.** Prosperity Legendz is 
 
 ## The 6 rules Tim set (non-negotiable)
 
-1. **Autopilot by default.** Non-trade posts (mindset, education, 9-5 grind, promos, testimonials already approved by the student) get written, graded, and scheduled without asking.
+1. **Autopilot by default.** Non-trade posts (mindset, education, the day-job grind, promos, testimonials already approved by the student) get written, graded, and scheduled without asking.
 2. **Trade posts need Tim's approval.** A post is a *trade post* if it contains any of: P&L or dollar results, entries/exits/stops/targets, a trade screenshot or trade video, win/loss counts, a weekly recap, or funded/prop account numbers. Build it in full, but **do not schedule it** until Tim approves (see Approval gate).
 3. **No two posts share the same words.** Each platform gets its own caption written for that platform. It's the same idea, not the same text. Enforce this with `scripts/check_unique.py` (below).
 4. **Never publish placeholder or test text.** If the caption contains `Post Text`, `[`, `TODO`, `TEST`, `lorem`, or is under 20 characters, stop. (A literal "Post Text" post went live on 9/26. Never again.)
@@ -61,7 +61,7 @@ Write each from scratch. Don't write one and trim it into the others.
 
 YouTube (`48727`) gets one Short a day from the daily content routine (6:12 PM ET, rules in `.claude/agents/drt.md` under "Daily YouTube Short"). Write its title and description fresh, like any other platform.
 
-Voice (from `brand-brief.md`): calm, disciplined, real. A trader working a 9-5 who defines risk first. Use contractions and digits for numbers. No em dashes. No hype ("to the moon", "easy money"). Never promise returns. No filler words: actually, really, just, simply, truly, genuinely.
+Voice (from `brand-brief.md`): calm, disciplined, real. A trader working a full-time job who defines risk first. Use contractions and digits for numbers. No em dashes. No hype ("to the moon", "easy money"). Never promise returns. No filler words: actually, really, just, simply, truly, genuinely.
 
 **CTAs:** ask for a save, share, or follow ("Save this", "Follow for the exit"). Don't ask people to comment or tag someone: every post from 9/8 to 9/26 got 0 comments.
 
@@ -69,11 +69,13 @@ Voice (from `brand-brief.md`): calm, disciplined, real. A trader working a 9-5 w
 
 | Share | Type | Why |
 |---|---|---|
-| 40% | **9-5 proof**: a real result framed around the day job ("$2,100 before 8 AM. Then I went to work.") | Top 2 TikToks (447 and 374 views, most likes) |
+| 40% | **Day-job proof**: a real result framed around the day job, using only the real numbers and times from Tim's trade and nothing about when he traded he hasn't confirmed (e.g. "I work a full-time job. This is what defined risk looks like on a trade I took.") | Top 2 TikToks (447 and 374 views, most likes) |
 | 40% | **Education**: one market concept, no P&L ("The market's first move is designed to trap retail traders") | Only breakout post: 3,406 views on Facebook |
 | 20% | **Loss lessons and lifestyle**: stop-outs, rules broken, rest days | Mid-to-low reach (190-220 views). Keep for honesty, don't lead with it |
 
 Open with the result or the concept, not with a confession. Proof posts are trade posts, so they still go through the approval gate.
+
+**Day job (Tim, 10/30):** mentions are allowed when accurate. Use only the facts in `.claude/agents/drt.md` under "Day job facts" (full-time W-2, 6:00 AM to 4:30 PM ET Mon-Fri, distribution center, trains order pickers, still working it). Never name the employer, never invent lunch-break or before-work trading, break times or coworker stories, and never imply he trades on company time.
 
 ### Step 3: Fact-check, then grade
 
