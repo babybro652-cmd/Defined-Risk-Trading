@@ -1,0 +1,2365 @@
+{
+ "jumper_grid": {
+  "1.0/1.0": [
+   2.2826,
+   2.2844
+  ],
+  "1.0/0.95": [
+   2.283,
+   2.2853
+  ],
+  "1.0/0.9": [
+   2.2835,
+   2.2864
+  ],
+  "1.1/1.0": [
+   2.2812,
+   2.2818
+  ],
+  "1.1/0.95": [
+   2.2812,
+   2.2825
+  ],
+  "1.1/0.9": [
+   2.2814,
+   2.2833
+  ],
+  "1.2/1.0": [
+   2.281,
+   2.281
+  ],
+  "1.2/0.95": [
+   2.2808,
+   2.2813
+  ],
+  "1.2/0.9": [
+   2.2807,
+   2.2818
+  ],
+  "1.3/1.0": [
+   2.282,
+   2.2816
+  ],
+  "1.3/0.95": [
+   2.2815,
+   2.2818
+  ],
+  "1.3/0.9": [
+   2.2811,
+   2.282
+  ],
+  "1.4/1.0": [
+   2.284,
+   2.2838
+  ],
+  "1.4/0.95": [
+   2.2833,
+   2.2837
+  ],
+  "1.4/0.9": [
+   2.2827,
+   2.2836
+  ]
+ },
+ "n_games": {
+  "25-26": 933,
+  "26-27": 68
+ },
+ "model_26": {
+  "label": "current model, 26-27",
+  "games": 68,
+  "top_hit": 9,
+  "top_pred": 10.88,
+  "mean_rank": 4.85,
+  "calibration": {
+   "0%-8%": {
+    "n": 184,
+    "pred": 0.064,
+    "hits": 15,
+    "hit_rate": 0.082
+   },
+   "8%-11%": {
+    "n": 299,
+    "pred": 0.095,
+    "hits": 24,
+    "hit_rate": 0.08
+   },
+   "11%-14%": {
+    "n": 122,
+    "pred": 0.123,
+    "hits": 18,
+    "hit_rate": 0.148
+   },
+   "14%-17%": {
+    "n": 57,
+    "pred": 0.154,
+    "hits": 7,
+    "hit_rate": 0.123
+   },
+   "17%-100%": {
+    "n": 18,
+    "pred": 0.19,
+    "hits": 4,
+    "hit_rate": 0.222
+   }
+  },
+  "jumper": {
+   "n": 136,
+   "pred": 15.3,
+   "act": 19
+  }
+ },
+ "model_25": {
+  "label": "current model, 25-26 Dec-Apr",
+  "games": 933,
+  "top_hit": 131,
+  "top_pred": 140.25,
+  "mean_rank": 4.94,
+  "calibration": {
+   "0%-8%": {
+    "n": 2481,
+    "pred": 0.067,
+    "hits": 191,
+    "hit_rate": 0.077
+   },
+   "8%-11%": {
+    "n": 3871,
+    "pred": 0.095,
+    "hits": 364,
+    "hit_rate": 0.094
+   },
+   "11%-14%": {
+    "n": 2203,
+    "pred": 0.123,
+    "hits": 270,
+    "hit_rate": 0.123
+   },
+   "14%-17%": {
+    "n": 628,
+    "pred": 0.151,
+    "hits": 86,
+    "hit_rate": 0.137
+   },
+   "17%-100%": {
+    "n": 147,
+    "pred": 0.185,
+    "hits": 22,
+    "hit_rate": 0.15
+   }
+  },
+  "jumper": {
+   "n": 1866,
+   "pred": 201.0,
+   "act": 224
+  }
+ },
+ "model_26_j12": {
+  "label": "jumper x1.2/x0.95, 26-27",
+  "games": 68,
+  "top_hit": 10,
+  "top_pred": 11.4,
+  "mean_rank": 4.81,
+  "calibration": {
+   "0%-8%": {
+    "n": 198,
+    "pred": 0.064,
+    "hits": 16,
+    "hit_rate": 0.081
+   },
+   "8%-11%": {
+    "n": 286,
+    "pred": 0.094,
+    "hits": 25,
+    "hit_rate": 0.087
+   },
+   "11%-14%": {
+    "n": 115,
+    "pred": 0.123,
+    "hits": 13,
+    "hit_rate": 0.113
+   },
+   "14%-17%": {
+    "n": 52,
+    "pred": 0.153,
+    "hits": 8,
+    "hit_rate": 0.154
+   },
+   "17%-100%": {
+    "n": 29,
+    "pred": 0.195,
+    "hits": 6,
+    "hit_rate": 0.207
+   }
+  },
+  "jumper": {
+   "n": 136,
+   "pred": 17.0,
+   "act": 19
+  }
+ },
+ "tip": {
+  "games": 68,
+  "tip_winner_scored_first": 41,
+  "fb_by_espn_pos": {
+   "F": 29,
+   "G": 23,
+   "C": 16
+  },
+  "fb_by_jumper": 19
+ },
+ "blend": {
+  "floor0.02_w0.0": 2.3069,
+  "floor0.02_w0.1": 2.294,
+  "floor0.02_w0.2": 2.2849,
+  "floor0.02_w0.3": 2.2787,
+  "floor0.02_w0.4": 2.2749,
+  "floor0.02_w0.5": 2.2732,
+  "floor0.02_w0.6": 2.2736,
+  "floor0.02_w0.7": 2.2761,
+  "floor0.02_w0.8": 2.2808,
+  "floor0.02_w0.9": 2.2878,
+  "floor0.02_w1.0": 2.2977,
+  "floor0.03_w0.0": 2.3034,
+  "floor0.03_w0.1": 2.2933,
+  "floor0.03_w0.2": 2.2857,
+  "floor0.03_w0.3": 2.2804,
+  "floor0.03_w0.4": 2.2771,
+  "floor0.03_w0.5": 2.2756,
+  "floor0.03_w0.6": 2.2759,
+  "floor0.03_w0.7": 2.2781,
+  "floor0.03_w0.8": 2.2823,
+  "floor0.03_w0.9": 2.2887,
+  "floor0.03_w1.0": 2.2977,
+  "floor0.04_w0.0": 2.3042,
+  "floor0.04_w0.1": 2.2951,
+  "floor0.04_w0.2": 2.2882,
+  "floor0.04_w0.3": 2.2831,
+  "floor0.04_w0.4": 2.2798,
+  "floor0.04_w0.5": 2.2781,
+  "floor0.04_w0.6": 2.2782,
+  "floor0.04_w0.7": 2.28,
+  "floor0.04_w0.8": 2.2837,
+  "floor0.04_w0.9": 2.2895,
+  "floor0.04_w1.0": 2.2977
+ },
+ "boot_st_minus_ours": [
+  -0.1189,
+  0.0059,
+  0.1273
+ ],
+ "startool": {
+  "cards": 53,
+  "with_model": 50,
+  "st_top_hits": 7,
+  "st_top_pred": 8.25,
+  "our_top_hits_same_games": 6,
+  "our_top_pred_same_games": 7.98,
+  "st_top_hits_same_games": 6,
+  "st_mean_rank_all": 5.25,
+  "st_unlisted": 2,
+  "st_mean_rank_same": 5.34,
+  "our_mean_rank_same": 4.98,
+  "rank_compare": {
+   "ours": 28,
+   "tie": 7,
+   "startool": 15
+  },
+  "st_in_top2": 12,
+  "our_in_top2": 16,
+  "st_in_top4": 22,
+  "our_in_top4": 26,
+  "st_sum_listed": 1.002,
+  "games": [
+   {
+    "date": "2026-10-22",
+    "game": "CLE @ PHI",
+    "scorer": "Jarrett Allen",
+    "st_rank": 8,
+    "st_top": "Donovan Mitchell",
+    "st_top_p": 0.14,
+    "st_top_hit": false,
+    "st_p_scorer": 0.08,
+    "our_rank": 2,
+    "our_top": "Evan Mobley",
+    "our_top_p": 0.162,
+    "our_top_hit": false,
+    "our_p_scorer": 0.124,
+    "st_listed_starters": 10
+   },
+   {
+    "date": "2026-10-22",
+    "game": "DEN @ OKC",
+    "scorer": "Cason Wallace",
+    "st_rank": 10,
+    "st_top": "Shai Gilgeous-Alexander",
+    "st_top_p": 0.19,
+    "st_top_hit": false,
+    "st_p_scorer": 0.05,
+    "our_rank": 2,
+    "our_top": "Jamal Murray",
+    "our_top_p": 0.149,
+    "our_top_hit": false,
+    "our_p_scorer": 0.135,
+    "st_listed_starters": 10
+   },
+   {
+    "date": "2026-10-23",
+    "game": "ATL @ CHA",
+    "scorer": "Moussa Diabate",
+    "st_rank": 9,
+    "st_top": "Brandon Miller",
+    "st_top_p": 0.17,
+    "st_top_hit": false,
+    "st_p_scorer": 0.07,
+    "our_rank": 6,
+    "our_top": "Brandon Miller",
+    "our_top_p": 0.174,
+    "our_top_hit": false,
+    "our_p_scorer": 0.091,
+    "st_listed_starters": 10
+   },
+   {
+    "date": "2026-10-23",
+    "game": "CHI @ MIL",
+    "scorer": "Jalen Smith",
+    "st_rank": 10,
+    "st_top": "Norman Powell",
+    "st_top_p": 0.13,
+    "st_top_hit": false,
+    "st_p_scorer": 0.07,
+    "our_rank": 3,
+    "our_top": "Norman Powell",
+    "our_top_p": 0.135,
+    "our_top_hit": false,
+    "our_p_scorer": 0.128,
+    "st_listed_starters": 10
+   },
+   {
+    "date": "2026-10-23",
+    "game": "DAL @ IND",
+    "scorer": "Daniel Gafford",
+    "st_rank": 10,
+    "st_top": "Cooper Flagg",
+    "st_top_p": 0.15,
+    "st_top_hit": false,
+    "st_p_scorer": 0.07,
+    "our_rank": 8,
+    "our_top": "Ivica Zubac",
+    "our_top_p": 0.162,
+    "our_top_hit": false,
+    "our_p_scorer": 0.08,
+    "st_listed_starters": 9
+   },
+   {
+    "date": "2026-10-23",
+    "game": "DET @ MIA",
+    "scorer": "John Collins",
+    "st_rank": 5,
+    "st_top": "Giannis Antetokounmpo",
+    "st_top_p": 0.16,
+    "st_top_hit": false,
+    "st_p_scorer": 0.09,
+    "our_rank": 3,
+    "our_top": "Bam Adebayo",
+    "our_top_p": 0.158,
+    "our_top_hit": false,
+    "our_p_scorer": 0.115,
+    "st_listed_starters": 10
+   },
+   {
+    "date": "2026-10-23",
+    "game": "HOU @ SA",
+    "scorer": "Alperen Sengun",
+    "st_rank": 3,
+    "st_top": "Kevin Durant",
+    "st_top_p": 0.15,
+    "st_top_hit": false,
+    "st_p_scorer": 0.12,
+    "our_rank": 3,
+    "our_top": "Victor Wembanyama",
+    "our_top_p": 0.199,
+    "our_top_hit": false,
+    "our_p_scorer": 0.121,
+    "st_listed_starters": 10
+   },
+   {
+    "date": "2026-10-23",
+    "game": "LAC @ LAL",
+    "scorer": "Austin Reaves",
+    "st_rank": 3,
+    "st_top": "Luka Doncic",
+    "st_top_p": 0.19,
+    "st_top_hit": false,
+    "st_p_scorer": 0.13,
+    "our_rank": 3,
+    "our_top": "Luka Doncic",
+    "our_top_p": 0.181,
+    "our_top_hit": false,
+    "our_p_scorer": 0.095,
+    "st_listed_starters": 10
+   },
+   {
+    "date": "2026-10-23",
+    "game": "MEM @ GS",
+    "scorer": "Zach Edey",
+    "st_rank": 4,
+    "st_top": "Stephen Curry",
+    "st_top_p": 0.19,
+    "st_top_hit": false,
+    "st_p_scorer": 0.1,
+    "our_rank": 10,
+    "our_top": "Ty Jerome",
+    "our_top_p": 0.198,
+    "our_top_hit": false,
+    "our_p_scorer": 0.071,
+    "st_listed_starters": 8
+   },
+   {
+    "date": "2026-10-23",
+    "game": "MIN @ ORL",
+    "scorer": "Jaden McDaniels",
+    "st_rank": 6,
+    "st_top": "Anthony Edwards",
+    "st_top_p": 0.16,
+    "st_top_hit": false,
+    "st_p_scorer": 0.09,
+    "our_rank": 7,
+    "our_top": "Anthony Edwards",
+    "our_top_p": 0.141,
+    "our_top_hit": false,
+    "our_p_scorer": 0.082,
+    "st_listed_starters": 10
+   },
+   {
+    "date": "2026-10-23",
+    "game": "NO @ UTAH",
+    "scorer": "Ace Bailey",
+    "st_rank": 11,
+    "st_top": "Lauri Markkanen",
+    "st_top_p": 0.15,
+    "st_top_hit": false,
+    "st_p_scorer": null,
+    "our_rank": 2,
+    "our_top": "Jaren Jackson Jr.",
+    "our_top_p": 0.134,
+    "our_top_hit": false,
+    "our_p_scorer": 0.11,
+    "st_listed_starters": 9
+   },
+   {
+    "date": "2026-10-23",
+    "game": "NY @ BOS",
+    "scorer": "Jayson Tatum",
+    "st_rank": 1,
+    "st_top": "Jayson Tatum",
+    "st_top_p": 0.16,
+    "st_top_hit": true,
+    "st_p_scorer": 0.16,
+    "our_rank": 3,
+    "our_top": "Paul George",
+    "our_top_p": 0.169,
+    "our_top_hit": false,
+    "our_p_scorer": 0.115,
+    "st_listed_starters": 10
+   },
+   {
+    "date": "2026-10-23",
+    "game": "POR @ SAC",
+    "scorer": "Keegan Murray",
+    "st_rank": 7,
+    "st_top": "Damian Lillard",
+    "st_top_p": 0.13,
+    "st_top_hit": false,
+    "st_p_scorer": 0.09,
+    "our_rank": 10,
+    "our_top": "Ja Morant",
+    "our_top_p": 0.14,
+    "our_top_hit": false,
+    "our_p_scorer": 0.058,
+    "st_listed_starters": 10
+   },
+   {
+    "date": "2026-10-23",
+    "game": "TOR @ WSH",
+    "scorer": "RJ Barrett",
+    "st_rank": 3,
+    "st_top": "Kawhi Leonard",
+    "st_top_p": 0.15,
+    "st_top_hit": false,
+    "st_p_scorer": 0.11,
+    "our_rank": 2,
+    "our_top": "Kawhi Leonard",
+    "our_top_p": 0.131,
+    "our_top_hit": false,
+    "our_p_scorer": 0.125,
+    "st_listed_starters": 10
+   },
+   {
+    "date": "2026-10-24",
+    "game": "BKN @ CLE",
+    "scorer": "Peyton Watson",
+    "st_rank": 8,
+    "st_top": "Michael Porter Jr.",
+    "st_top_p": 0.17,
+    "st_top_hit": false,
+    "st_p_scorer": 0.07,
+    "our_rank": 6,
+    "our_top": "Evan Mobley",
+    "our_top_p": 0.185,
+    "our_top_hit": false,
+    "our_p_scorer": 0.078,
+    "st_listed_starters": 9
+   },
+   {
+    "date": "2026-10-24",
+    "game": "GS @ PHX",
+    "scorer": "Yaxel Lendeborg",
+    "st_rank": 5,
+    "st_top": "Stephen Curry",
+    "st_top_p": 0.18,
+    "st_top_hit": false,
+    "st_p_scorer": 0.1,
+    "our_rank": 8,
+    "our_top": "Jalen Green",
+    "our_top_p": 0.14,
+    "our_top_hit": false,
+    "our_p_scorer": 0.089,
+    "st_listed_starters": 7
+   },
+   {
+    "date": "2026-10-24",
+    "game": "HOU @ ATL",
+    "scorer": "Dyson Daniels",
+    "st_rank": 9,
+    "st_top": "Kevin Durant",
+    "st_top_p": 0.14,
+    "st_top_hit": false,
+    "st_p_scorer": 0.07,
+    "our_rank": 9,
+    "our_top": "Alperen Sengun",
+    "our_top_p": 0.162,
+    "our_top_hit": false,
+    "our_p_scorer": 0.066,
+    "st_listed_starters": 9
+   },
+   {
+    "date": "2026-10-24",
+    "game": "MIA @ CHA",
+    "scorer": "Bam Adebayo",
+    "st_rank": 3,
+    "st_top": "Giannis Antetokounmpo",
+    "st_top_p": 0.16,
+    "st_top_hit": false,
+    "st_p_scorer": 0.12,
+    "our_rank": 1,
+    "our_top": "Bam Adebayo",
+    "our_top_p": 0.156,
+    "our_top_hit": true,
+    "our_p_scorer": 0.156,
+    "st_listed_starters": 8
+   },
+   {
+    "date": "2026-10-24",
+    "game": "MIL @ PHI",
+    "scorer": "Dean Wade",
+    "st_rank": 11,
+    "st_top": "Tyler Herro",
+    "st_top_p": 0.13,
+    "st_top_hit": false,
+    "st_p_scorer": null,
+    "our_rank": 10,
+    "our_top": "Jaylen Brown",
+    "our_top_p": 0.163,
+    "our_top_hit": false,
+    "our_p_scorer": 0.044,
+    "st_listed_starters": 9
+   },
+   {
+    "date": "2026-10-24",
+    "game": "NO @ DEN",
+    "scorer": "Aaron Gordon",
+    "st_rank": 7,
+    "st_top": "Nikola Jokic",
+    "st_top_p": 0.15,
+    "st_top_hit": false,
+    "st_p_scorer": 0.08,
+    "our_rank": 4,
+    "our_top": "Jamal Murray",
+    "our_top_p": 0.148,
+    "our_top_hit": false,
+    "our_p_scorer": 0.104,
+    "st_listed_starters": 8
+   },
+   {
+    "date": "2026-10-24",
+    "game": "SA @ DAL",
+    "scorer": "De'Aaron Fox",
+    "st_rank": 4,
+    "st_top": "Victor Wembanyama",
+    "st_top_p": 0.14,
+    "st_top_hit": false,
+    "st_p_scorer": 0.1,
+    "our_rank": 3,
+    "our_top": "Victor Wembanyama",
+    "our_top_p": 0.202,
+    "our_top_hit": false,
+    "our_p_scorer": 0.108,
+    "st_listed_starters": 7
+   },
+   {
+    "date": "2026-10-24",
+    "game": "WSH @ CHI",
+    "scorer": "Trae Young",
+    "st_rank": 3,
+    "st_top": "Norman Powell",
+    "st_top_p": 0.13,
+    "st_top_hit": false,
+    "st_p_scorer": 0.11,
+    "our_rank": 8,
+    "our_top": "Jalen Smith",
+    "our_top_p": 0.138,
+    "our_top_hit": false,
+    "our_p_scorer": 0.072,
+    "st_listed_starters": 9
+   },
+   {
+    "date": "2026-10-25",
+    "game": "DET @ PHI",
+    "scorer": "John Collins",
+    "st_rank": 6,
+    "st_top": "Cade Cunningham",
+    "st_top_p": 0.15,
+    "st_top_hit": false,
+    "st_p_scorer": 0.09,
+    "our_rank": 2,
+    "our_top": "Jaylen Brown",
+    "our_top_p": 0.153,
+    "our_top_hit": false,
+    "our_p_scorer": 0.129,
+    "st_listed_starters": 6
+   },
+   {
+    "date": "2026-10-25",
+    "game": "IND @ BKN",
+    "scorer": "Ivica Zubac",
+    "st_rank": 7,
+    "st_top": "Michael Porter Jr.",
+    "st_top_p": 0.17,
+    "st_top_hit": false,
+    "st_p_scorer": 0.08,
+    "our_rank": 1,
+    "our_top": "Ivica Zubac",
+    "our_top_p": 0.159,
+    "our_top_hit": true,
+    "our_p_scorer": 0.159,
+    "st_listed_starters": 10
+   },
+   {
+    "date": "2026-10-25",
+    "game": "LAC @ OKC",
+    "scorer": "Isaiah Jackson",
+    "st_rank": 8,
+    "st_top": "Shai Gilgeous-Alexander",
+    "st_top_p": 0.19,
+    "st_top_hit": false,
+    "st_p_scorer": 0.06,
+    "our_rank": 8,
+    "our_top": "Cason Wallace",
+    "our_top_p": 0.156,
+    "our_top_hit": false,
+    "our_p_scorer": 0.073,
+    "st_listed_starters": 10
+   },
+   {
+    "date": "2026-10-25",
+    "game": "LAL @ UTAH",
+    "scorer": "Luka Doncic",
+    "st_rank": 1,
+    "st_top": "Luka Doncic",
+    "st_top_p": 0.18,
+    "st_top_hit": true,
+    "st_p_scorer": 0.18,
+    "our_rank": 2,
+    "our_top": "Walker Kessler",
+    "our_top_p": 0.168,
+    "our_top_hit": false,
+    "our_p_scorer": 0.164,
+    "st_listed_starters": 10
+   },
+   {
+    "date": "2026-10-25",
+    "game": "MEM @ SAC",
+    "scorer": "Zach LaVine",
+    "st_rank": 3,
+    "st_top": "Ty Jerome",
+    "st_top_p": 0.14,
+    "st_top_hit": false,
+    "st_p_scorer": 0.11,
+    "our_rank": 6,
+    "our_top": "Ty Jerome",
+    "our_top_p": 0.153,
+    "our_top_hit": false,
+    "our_p_scorer": 0.097,
+    "st_listed_starters": 7
+   },
+   {
+    "date": "2026-10-25",
+    "game": "ORL @ NY",
+    "scorer": "Jalen Brunson",
+    "st_rank": 1,
+    "st_top": "Jalen Brunson",
+    "st_top_p": 0.14,
+    "st_top_hit": true,
+    "st_p_scorer": 0.14,
+    "our_rank": 6,
+    "our_top": "Desmond Bane",
+    "our_top_p": 0.131,
+    "our_top_hit": false,
+    "our_p_scorer": 0.104,
+    "st_listed_starters": 9
+   },
+   {
+    "date": "2026-10-25",
+    "game": "TOR @ MIN",
+    "scorer": "Rudy Gobert",
+    "st_rank": 10,
+    "st_top": "Anthony Edwards",
+    "st_top_p": 0.16,
+    "st_top_hit": false,
+    "st_p_scorer": 0.06,
+    "our_rank": 9,
+    "our_top": "Anthony Edwards",
+    "our_top_p": 0.156,
+    "our_top_hit": false,
+    "our_p_scorer": 0.067,
+    "st_listed_starters": 9
+   },
+   {
+    "date": "2026-10-26",
+    "game": "ATL @ HOU",
+    "scorer": "Amen Thompson",
+    "st_rank": 6,
+    "st_top": "Kevin Durant",
+    "st_top_p": 0.14,
+    "st_top_hit": false,
+    "st_p_scorer": 0.1,
+    "our_rank": 7,
+    "our_top": "Alperen Sengun",
+    "our_top_p": 0.165,
+    "our_top_hit": false,
+    "our_p_scorer": 0.083,
+    "st_listed_starters": 10
+   },
+   {
+    "date": "2026-10-26",
+    "game": "CHI @ BOS",
+    "scorer": "Paul George",
+    "st_rank": 3,
+    "st_top": "Jayson Tatum",
+    "st_top_p": 0.17,
+    "st_top_hit": false,
+    "st_p_scorer": 0.13,
+    "our_rank": 1,
+    "our_top": "Paul George",
+    "our_top_p": 0.17,
+    "our_top_hit": true,
+    "our_p_scorer": 0.17,
+    "st_listed_starters": 10
+   },
+   {
+    "date": "2026-10-26",
+    "game": "DAL @ MIA",
+    "scorer": "Davion Mitchell",
+    "st_rank": 10,
+    "st_top": "Giannis Antetokounmpo",
+    "st_top_p": 0.16,
+    "st_top_hit": false,
+    "st_p_scorer": 0.06,
+    "our_rank": 9,
+    "our_top": "Bam Adebayo",
+    "our_top_p": 0.184,
+    "our_top_hit": false,
+    "our_p_scorer": 0.071,
+    "st_listed_starters": 8
+   },
+   {
+    "date": "2026-10-26",
+    "game": "GS @ DEN",
+    "scorer": "Nikola Jokic",
+    "st_rank": 2,
+    "st_top": "Stephen Curry",
+    "st_top_p": 0.17,
+    "st_top_hit": false,
+    "st_p_scorer": 0.15,
+    "our_rank": 2,
+    "our_top": "Jamal Murray",
+    "our_top_p": 0.163,
+    "our_top_hit": false,
+    "our_p_scorer": 0.151,
+    "st_listed_starters": 9
+   },
+   {
+    "date": "2026-10-26",
+    "game": "IND @ MIL",
+    "scorer": "Aaron Nesmith",
+    "st_rank": 7,
+    "st_top": "Pascal Siakam",
+    "st_top_p": 0.13,
+    "st_top_hit": false,
+    "st_p_scorer": 0.08,
+    "our_rank": 2,
+    "our_top": "Kelly Oubre Jr.",
+    "our_top_p": 0.148,
+    "our_top_hit": false,
+    "our_p_scorer": 0.115,
+    "st_listed_starters": 8
+   },
+   {
+    "date": "2026-10-26",
+    "game": "MEM @ UTAH",
+    "scorer": "Cedric Coward",
+    "st_rank": 6,
+    "st_top": "Ty Jerome",
+    "st_top_p": 0.15,
+    "st_top_hit": false,
+    "st_p_scorer": 0.09,
+    "our_rank": 3,
+    "our_top": "Ty Jerome",
+    "our_top_p": 0.169,
+    "our_top_hit": false,
+    "our_p_scorer": 0.119,
+    "st_listed_starters": 9
+   },
+   {
+    "date": "2026-10-26",
+    "game": "MIN @ CLE",
+    "scorer": "Jarrett Allen",
+    "st_rank": 7,
+    "st_top": "Anthony Edwards",
+    "st_top_p": 0.16,
+    "st_top_hit": false,
+    "st_p_scorer": 0.08,
+    "our_rank": 4,
+    "our_top": "Anthony Edwards",
+    "our_top_p": 0.143,
+    "our_top_hit": false,
+    "our_p_scorer": 0.118,
+    "st_listed_starters": 10
+   },
+   {
+    "date": "2026-10-26",
+    "game": "PHX @ OKC",
+    "scorer": "Shai Gilgeous-Alexander",
+    "st_rank": 1,
+    "st_top": "Shai Gilgeous-Alexander",
+    "st_top_p": 0.19,
+    "st_top_hit": true,
+    "st_p_scorer": 0.19,
+    "our_rank": 9,
+    "our_top": "Ajay Mitchell",
+    "our_top_p": 0.152,
+    "our_top_hit": false,
+    "our_p_scorer": 0.066,
+    "st_listed_starters": 7
+   },
+   {
+    "date": "2026-10-26",
+    "game": "WSH @ CHA",
+    "scorer": "Brandon Miller",
+    "st_rank": 1,
+    "st_top": "Brandon Miller",
+    "st_top_p": 0.17,
+    "st_top_hit": true,
+    "st_p_scorer": 0.17,
+    "our_rank": 1,
+    "our_top": "Brandon Miller",
+    "our_top_p": 0.152,
+    "our_top_hit": true,
+    "our_p_scorer": 0.152,
+    "st_listed_starters": 10
+   },
+   {
+    "date": "2026-10-28",
+    "game": "CHA @ DET",
+    "scorer": "Naz Reid",
+    "st_rank": 6,
+    "st_top": "Cade Cunningham",
+    "st_top_p": 0.15,
+    "st_top_hit": false,
+    "st_p_scorer": 0.09,
+    "our_rank": 5,
+    "our_top": "Brandon Miller",
+    "our_top_p": 0.169,
+    "our_top_hit": false,
+    "our_p_scorer": 0.1,
+    "st_listed_starters": 7
+   },
+   {
+    "date": "2026-10-28",
+    "game": "DEN @ NO",
+    "scorer": "Jamal Murray",
+    "st_rank": 2,
+    "st_top": "Nikola Jokic",
+    "st_top_p": 0.15,
+    "st_top_hit": false,
+    "st_p_scorer": 0.13,
+    "our_rank": 1,
+    "our_top": "Jamal Murray",
+    "our_top_p": 0.153,
+    "our_top_hit": true,
+    "our_p_scorer": 0.153,
+    "st_listed_starters": 8
+   },
+   {
+    "date": "2026-10-28",
+    "game": "GS @ MIN",
+    "scorer": "Jaden McDaniels",
+    "st_rank": 5,
+    "st_top": "Stephen Curry",
+    "st_top_p": 0.16,
+    "st_top_hit": false,
+    "st_p_scorer": 0.1,
+    "our_rank": 2,
+    "our_top": "LaMelo Ball",
+    "our_top_p": 0.138,
+    "our_top_hit": false,
+    "our_p_scorer": 0.123,
+    "st_listed_starters": 9
+   },
+   {
+    "date": "2026-10-28",
+    "game": "HOU @ MIL",
+    "scorer": "Tyler Herro",
+    "st_rank": 2,
+    "st_top": "Kevin Durant",
+    "st_top_p": 0.14,
+    "st_top_hit": false,
+    "st_p_scorer": 0.13,
+    "our_rank": 10,
+    "our_top": "Kevin Durant",
+    "our_top_p": 0.149,
+    "our_top_hit": false,
+    "our_p_scorer": 0.055,
+    "st_listed_starters": 9
+   },
+   {
+    "date": "2026-10-28",
+    "game": "LAL @ LAC",
+    "scorer": "Matisse Thybulle",
+    "st_rank": 10,
+    "st_top": "Luka Doncic",
+    "st_top_p": 0.19,
+    "st_top_hit": false,
+    "st_p_scorer": 0.04,
+    "our_rank": 7,
+    "our_top": "Walker Kessler",
+    "our_top_p": 0.219,
+    "our_top_hit": false,
+    "our_p_scorer": 0.08,
+    "st_listed_starters": 7
+   },
+   {
+    "date": "2026-10-28",
+    "game": "MIA @ ATL",
+    "scorer": "Bam Adebayo",
+    "st_rank": 2,
+    "st_top": "Giannis Antetokounmpo",
+    "st_top_p": 0.16,
+    "st_top_hit": false,
+    "st_p_scorer": 0.12,
+    "our_rank": 1,
+    "our_top": "Bam Adebayo",
+    "our_top_p": 0.176,
+    "our_top_hit": true,
+    "our_p_scorer": 0.176,
+    "st_listed_starters": 10
+   },
+   {
+    "date": "2026-10-28",
+    "game": "NY @ CHI",
+    "scorer": "Caleb Wilson",
+    "st_rank": 2,
+    "st_top": "Jalen Brunson",
+    "st_top_p": 0.14,
+    "st_top_hit": false,
+    "st_p_scorer": 0.12,
+    "our_rank": 10,
+    "our_top": "Jalen Smith",
+    "our_top_p": 0.152,
+    "our_top_hit": false,
+    "our_p_scorer": 0.049,
+    "st_listed_starters": 9
+   },
+   {
+    "date": "2026-10-28",
+    "game": "OKC @ DAL",
+    "scorer": "Cooper Flagg",
+    "st_rank": 2,
+    "st_top": "Shai Gilgeous-Alexander",
+    "st_top_p": 0.2,
+    "st_top_hit": false,
+    "st_p_scorer": 0.14,
+    "our_rank": 9,
+    "our_top": "Ajay Mitchell",
+    "our_top_p": 0.161,
+    "our_top_hit": false,
+    "our_p_scorer": 0.08,
+    "st_listed_starters": 9
+   },
+   {
+    "date": "2026-10-28",
+    "game": "ORL @ TOR",
+    "scorer": "Wendell Carter Jr.",
+    "st_rank": 7,
+    "st_top": "Desmond Bane",
+    "st_top_p": 0.13,
+    "st_top_hit": false,
+    "st_p_scorer": 0.08,
+    "our_rank": 2,
+    "our_top": "RJ Barrett",
+    "our_top_p": 0.137,
+    "our_top_hit": false,
+    "our_p_scorer": 0.126,
+    "st_listed_starters": 8
+   },
+   {
+    "date": "2026-10-28",
+    "game": "PHI @ IND",
+    "scorer": "Pascal Siakam",
+    "st_rank": 1,
+    "st_top": "Pascal Siakam",
+    "st_top_p": 0.13,
+    "st_top_hit": true,
+    "st_p_scorer": 0.13,
+    "our_rank": 9,
+    "our_top": "Andrew Nembhard",
+    "our_top_p": 0.123,
+    "our_top_hit": false,
+    "our_p_scorer": 0.085,
+    "st_listed_starters": 8
+   },
+   {
+    "date": "2026-10-28",
+    "game": "SA @ UTAH",
+    "scorer": "De'Aaron Fox",
+    "st_rank": 4,
+    "st_top": "Lauri Markkanen",
+    "st_top_p": 0.15,
+    "st_top_hit": false,
+    "st_p_scorer": 0.1,
+    "our_rank": 3,
+    "our_top": "Victor Wembanyama",
+    "our_top_p": 0.2,
+    "our_top_hit": false,
+    "our_p_scorer": 0.119,
+    "st_listed_starters": 9
+   },
+   {
+    "date": "2026-10-28",
+    "game": "WSH @ CLE",
+    "scorer": "Alex Sarr",
+    "st_rank": 5,
+    "st_top": "Donovan Mitchell",
+    "st_top_p": 0.14,
+    "st_top_hit": false,
+    "st_p_scorer": 0.1,
+    "our_rank": 5,
+    "our_top": "Evan Mobley",
+    "our_top_p": 0.156,
+    "our_top_hit": false,
+    "our_p_scorer": 0.094,
+    "st_listed_starters": 10
+   },
+   {
+    "date": "2026-10-29",
+    "game": "CLE @ ATL",
+    "scorer": "James Harden",
+    "st_rank": 2,
+    "st_top": "Donovan Mitchell",
+    "st_top_p": 0.13,
+    "st_top_hit": false,
+    "st_p_scorer": 0.12
+   },
+   {
+    "date": "2026-10-29",
+    "game": "MEM @ POR",
+    "scorer": "Zach Edey",
+    "st_rank": 8,
+    "st_top": "Ty Jerome",
+    "st_top_p": 0.15,
+    "st_top_hit": false,
+    "st_p_scorer": 0.08
+   },
+   {
+    "date": "2026-10-29",
+    "game": "SAC @ NO",
+    "scorer": "Trey Murphy III",
+    "st_rank": 1,
+    "st_top": "Trey Murphy III",
+    "st_top_p": 0.14,
+    "st_top_hit": true,
+    "st_p_scorer": 0.14
+   }
+  ]
+ },
+ "cats": {
+  "CFB anytime TD": {
+   "n": 9,
+   "w": 8,
+   "void": 0,
+   "pl": 0.02,
+   "slip": 4,
+   "fair": 0,
+   "none": 5,
+   "pl_slip": 0.02,
+   "n_slip": 4,
+   "exp": 0
+  },
+  "CFB sides/totals": {
+   "n": 12,
+   "w": 7,
+   "void": 0,
+   "pl": 0.29,
+   "slip": 4,
+   "fair": 8,
+   "none": 0,
+   "pl_slip": -0.02,
+   "n_slip": 4,
+   "exp": 0
+  },
+  "NBA FB method": {
+   "n": 5,
+   "w": 0,
+   "void": 0,
+   "pl": -1.0,
+   "slip": 0,
+   "fair": 5,
+   "none": 0,
+   "pl_slip": 0.0,
+   "n_slip": 0,
+   "n_p": 5,
+   "exp": 0.4,
+   "w_p": 0
+  },
+  "NBA first basket": {
+   "n": 80,
+   "w": 12,
+   "void": 1,
+   "pl": 1.21,
+   "slip": 23,
+   "fair": 57,
+   "none": 0,
+   "pl_slip": 1.5,
+   "n_slip": 23,
+   "n_p": 75,
+   "exp": 11.8,
+   "w_p": 11
+  },
+  "NBA points": {
+   "n": 29,
+   "w": 21,
+   "void": 2,
+   "pl": -0.63,
+   "slip": 6,
+   "fair": 17,
+   "none": 6,
+   "pl_slip": -0.44,
+   "n_slip": 6,
+   "n_p": 23,
+   "exp": 18.78,
+   "w_p": 16
+  },
+  "NBA team FB": {
+   "n": 1,
+   "w": 0,
+   "void": 0,
+   "pl": -0.2,
+   "slip": 0,
+   "fair": 1,
+   "none": 0,
+   "pl_slip": 0.0,
+   "n_slip": 0,
+   "n_p": 1,
+   "exp": 0.39,
+   "w_p": 0
+  },
+  "NBA threes": {
+   "n": 14,
+   "w": 12,
+   "void": 2,
+   "pl": 0.58,
+   "slip": 4,
+   "fair": 6,
+   "none": 4,
+   "pl_slip": -0.05,
+   "n_slip": 4,
+   "n_p": 10,
+   "exp": 7.15,
+   "w_p": 9
+  },
+  "NFL 2+ TDs": {
+   "n": 1,
+   "w": 0,
+   "void": 0,
+   "pl": -0.2,
+   "slip": 1,
+   "fair": 0,
+   "none": 0,
+   "pl_slip": -0.2,
+   "n_slip": 1,
+   "exp": 0
+  },
+  "NFL anytime TD": {
+   "n": 39,
+   "w": 18,
+   "void": 1,
+   "pl": -0.72,
+   "slip": 22,
+   "fair": 7,
+   "none": 10,
+   "pl_slip": -0.62,
+   "n_slip": 22,
+   "n_p": 7,
+   "exp": 4.32,
+   "w_p": 4
+  },
+  "NFL first TD": {
+   "n": 4,
+   "w": 1,
+   "void": 0,
+   "pl": 0.0,
+   "slip": 0,
+   "fair": 0,
+   "none": 4,
+   "pl_slip": 0.0,
+   "n_slip": 0,
+   "exp": 0
+  },
+  "NFL parlay/RR": {
+   "n": 1,
+   "w": 1,
+   "void": 0,
+   "pl": 0.0,
+   "slip": 0,
+   "fair": 0,
+   "none": 1,
+   "pl_slip": 0.0,
+   "n_slip": 0,
+   "exp": 0
+  },
+  "NFL receptions": {
+   "n": 32,
+   "w": 22,
+   "void": 1,
+   "pl": 0.36,
+   "slip": 4,
+   "fair": 7,
+   "none": 21,
+   "pl_slip": 0.07,
+   "n_slip": 4,
+   "n_p": 7,
+   "exp": 5.84,
+   "w_p": 7
+  },
+  "NFL sides/totals": {
+   "n": 12,
+   "w": 6,
+   "void": 0,
+   "pl": -0.11,
+   "slip": 12,
+   "fair": 0,
+   "none": 0,
+   "pl_slip": -0.11,
+   "n_slip": 12,
+   "exp": 0
+  },
+  "NFL yards": {
+   "n": 4,
+   "w": 2,
+   "void": 0,
+   "pl": 0.0,
+   "slip": 0,
+   "fair": 0,
+   "none": 4,
+   "pl_slip": 0.0,
+   "n_slip": 0,
+   "exp": 0
+  },
+  "NHL SOG 2+": {
+   "n": 32,
+   "w": 24,
+   "void": 0,
+   "pl": -0.56,
+   "slip": 0,
+   "fair": 10,
+   "none": 22,
+   "pl_slip": 0.0,
+   "n_slip": 0,
+   "n_p": 10,
+   "exp": 8.18,
+   "w_p": 6
+  },
+  "NHL SOG 3+": {
+   "n": 22,
+   "w": 14,
+   "void": 0,
+   "pl": -0.1,
+   "slip": 9,
+   "fair": 11,
+   "none": 2,
+   "pl_slip": 0.14,
+   "n_slip": 9,
+   "n_p": 19,
+   "exp": 13.59,
+   "w_p": 13
+  },
+  "NHL anytime goal": {
+   "n": 52,
+   "w": 19,
+   "void": 0,
+   "pl": -1.39,
+   "slip": 16,
+   "fair": 21,
+   "none": 15,
+   "pl_slip": -0.09,
+   "n_slip": 16,
+   "n_p": 25,
+   "exp": 11.55,
+   "w_p": 9
+  },
+  "NHL first goal": {
+   "n": 28,
+   "w": 3,
+   "void": 0,
+   "pl": 1.5,
+   "slip": 8,
+   "fair": 6,
+   "none": 14,
+   "pl_slip": 2.7,
+   "n_slip": 8,
+   "n_p": 7,
+   "exp": 0.64,
+   "w_p": 0
+  },
+  "NHL parlay/RR": {
+   "n": 3,
+   "w": 1,
+   "void": 0,
+   "pl": 0.0,
+   "slip": 0,
+   "fair": 0,
+   "none": 3,
+   "pl_slip": 0.0,
+   "n_slip": 0,
+   "exp": 0
+  },
+  "Soccer SOT": {
+   "n": 11,
+   "w": 10,
+   "void": 3,
+   "pl": 0.41,
+   "slip": 0,
+   "fair": 6,
+   "none": 5,
+   "pl_slip": 0.0,
+   "n_slip": 0,
+   "n_p": 7,
+   "exp": 5.3,
+   "w_p": 6
+  },
+  "Soccer goals/sides": {
+   "n": 28,
+   "w": 15,
+   "void": 2,
+   "pl": 0.15,
+   "slip": 0,
+   "fair": 19,
+   "none": 9,
+   "pl_slip": 0.0,
+   "n_slip": 0,
+   "n_p": 16,
+   "exp": 11.44,
+   "w_p": 9
+  }
+ },
+ "tim": {
+  "Mixed | Mixed parlay/RR | ours": {
+   "n": 3,
+   "w": 0,
+   "stake": 3.0,
+   "pl": -3.0,
+   "est": 0
+  },
+  "Multi | Multi parlay/RR | ours": {
+   "n": 1,
+   "w": 0,
+   "stake": 1.0,
+   "pl": -1.0,
+   "est": 0
+  },
+  "NBA | NBA first basket | ours": {
+   "n": 38,
+   "w": 7,
+   "stake": 11.2,
+   "pl": 1.24,
+   "est": 4
+  },
+  "NBA | NBA first basket | own": {
+   "n": 17,
+   "w": 0,
+   "stake": 9.5,
+   "pl": -9.5,
+   "est": 0
+  },
+  "NBA | NBA parlay/RR | ours": {
+   "n": 8,
+   "w": 1,
+   "stake": 8.14,
+   "pl": -0.57,
+   "est": 0
+  },
+  "NBA | NBA parlay/RR | own": {
+   "n": 3,
+   "w": 2,
+   "stake": 5.1,
+   "pl": 3.19,
+   "est": 2
+  },
+  "NBA | NBA points | ours": {
+   "n": 9,
+   "w": 5,
+   "stake": 6.6,
+   "pl": -2.26,
+   "est": 2
+  },
+  "NBA | NBA points | own": {
+   "n": 3,
+   "w": 1,
+   "stake": 0.6,
+   "pl": -0.34,
+   "est": 0
+  },
+  "NBA | NBA threes | ours": {
+   "n": 4,
+   "w": 3,
+   "stake": 4.0,
+   "pl": -0.24,
+   "est": 0
+  },
+  "NBA | NBA threes | own": {
+   "n": 0,
+   "w": 0,
+   "stake": 0.0,
+   "pl": 0.0,
+   "est": 0
+  },
+  "NCAAF | CFB anytime TD | ours": {
+   "n": 9,
+   "w": 8,
+   "stake": 1.8,
+   "pl": 0.34,
+   "est": 5
+  },
+  "NCAAF | CFB first TD | own": {
+   "n": 4,
+   "w": 2,
+   "stake": 0.8,
+   "pl": 0.74,
+   "est": 0
+  },
+  "NCAAF | CFB sides/totals | ours": {
+   "n": 12,
+   "w": 7,
+   "stake": 2.4,
+   "pl": 0.29,
+   "est": 5
+  },
+  "NCAAF | NCAAF parlay/RR | ours": {
+   "n": 2,
+   "w": 0,
+   "stake": 0.2,
+   "pl": -0.2,
+   "est": 0
+  },
+  "NFL | NFL 2+ TDs | ours": {
+   "n": 1,
+   "w": 0,
+   "stake": 1.0,
+   "pl": -1.0,
+   "est": 0
+  },
+  "NFL | NFL anytime TD | ours": {
+   "n": 13,
+   "w": 8,
+   "stake": 5.1,
+   "pl": -0.67,
+   "est": 4
+  },
+  "NFL | NFL parlay/RR | ours": {
+   "n": 10,
+   "w": 2,
+   "stake": 6.4,
+   "pl": -4.15,
+   "est": 0
+  },
+  "NFL | NFL receptions | ours": {
+   "n": 11,
+   "w": 10,
+   "stake": 3.9,
+   "pl": 0.24,
+   "est": 7
+  },
+  "NFL | NFL sides/totals | ours": {
+   "n": 2,
+   "w": 1,
+   "stake": 1.5,
+   "pl": 0.41,
+   "est": 0
+  },
+  "NHL | NHL SOG 3+ | ours": {
+   "n": 9,
+   "w": 7,
+   "stake": 4.2,
+   "pl": 0.23,
+   "est": 0
+  },
+  "NHL | NHL SOG 3+ | own": {
+   "n": 5,
+   "w": 2,
+   "stake": 1.0,
+   "pl": -0.45,
+   "est": 0
+  },
+  "NHL | NHL anytime goal | ours": {
+   "n": 20,
+   "w": 8,
+   "stake": 6.4,
+   "pl": -0.09,
+   "est": 2
+  },
+  "NHL | NHL anytime goal | own": {
+   "n": 3,
+   "w": 1,
+   "stake": 0.6,
+   "pl": -0.02,
+   "est": 0
+  },
+  "NHL | NHL first goal | ours": {
+   "n": 11,
+   "w": 3,
+   "stake": 3.1,
+   "pl": 6.35,
+   "est": 1
+  },
+  "NHL | NHL first goal | own": {
+   "n": 3,
+   "w": 1,
+   "stake": 0.6,
+   "pl": 1.8,
+   "est": 0
+  },
+  "NHL | NHL parlay/RR | ours": {
+   "n": 14,
+   "w": 3,
+   "stake": 10.88,
+   "pl": 4.14,
+   "est": 0
+  },
+  "NHL | NHL parlay/RR | own": {
+   "n": 1,
+   "w": 0,
+   "stake": 0.2,
+   "pl": -0.2,
+   "est": 0
+  }
+ },
+ "fb_logged": [
+  {
+   "row": "166",
+   "date": "10/20/26",
+   "pick": "Victor Wembanyama first basket (fair +32",
+   "est": null,
+   "odds": 329.0,
+   "src": "fair",
+   "res": "L"
+  },
+  {
+   "row": "167",
+   "date": "10/20/26",
+   "pick": "Joel Embiid first basket (fair +537, bet",
+   "est": null,
+   "odds": 537.0,
+   "src": "fair",
+   "res": "L"
+  },
+  {
+   "row": "168",
+   "date": "10/20/26",
+   "pick": "Neemias Queta first basket (fair +581, b",
+   "est": null,
+   "odds": 581.0,
+   "src": "fair",
+   "res": "L"
+  },
+  {
+   "row": "193",
+   "date": "10/20/26",
+   "pick": "Devin Vassell first basket",
+   "est": null,
+   "odds": 850.0,
+   "src": "slip",
+   "res": "W"
+  },
+  {
+   "row": "194",
+   "date": "10/20/26",
+   "pick": "Cason Wallace first basket",
+   "est": null,
+   "odds": 1400.0,
+   "src": "slip",
+   "res": "L"
+  },
+  {
+   "row": "195",
+   "date": "10/20/26",
+   "pick": "Victor Wembanyama first basket",
+   "est": null,
+   "odds": 370.0,
+   "src": "slip",
+   "res": "L"
+  },
+  {
+   "row": "196",
+   "date": "10/20/26",
+   "pick": "Shai Gilgeous-Alexander first basket",
+   "est": null,
+   "odds": 650.0,
+   "src": "slip",
+   "res": "L"
+  },
+  {
+   "row": "197",
+   "date": "10/21/26",
+   "pick": "Wendell Carter Jr. first basket, 7:00 PM",
+   "est": null,
+   "odds": 567.0,
+   "src": "fair",
+   "res": "L"
+  },
+  {
+   "row": "198",
+   "date": "10/21/26",
+   "pick": "Anthony Davis first basket, 7:00 PM ET (",
+   "est": null,
+   "odds": 547.0,
+   "src": "fair",
+   "res": "L"
+  },
+  {
+   "row": "199",
+   "date": "10/21/26",
+   "pick": "Anthony Edwards first basket, 7:30 PM ET",
+   "est": null,
+   "odds": 539.0,
+   "src": "fair",
+   "res": "L"
+  },
+  {
+   "row": "200",
+   "date": "10/21/26",
+   "pick": "Brandon Miller first basket, 7:30 PM ET ",
+   "est": null,
+   "odds": 421.0,
+   "src": "fair",
+   "res": "L"
+  },
+  {
+   "row": "201",
+   "date": "10/21/26",
+   "pick": "Kawhi Leonard first basket, 7:30 PM ET (",
+   "est": null,
+   "odds": 611.0,
+   "src": "fair",
+   "res": "L"
+  },
+  {
+   "row": "202",
+   "date": "10/21/26",
+   "pick": "Ty Jerome first basket, 8:00 PM ET (fair",
+   "est": null,
+   "odds": 560.0,
+   "src": "fair",
+   "res": "W"
+  },
+  {
+   "row": "203",
+   "date": "10/21/26",
+   "pick": "Ivica Zubac first basket, 8:00 PM ET (fa",
+   "est": null,
+   "odds": 687.0,
+   "src": "fair",
+   "res": "L"
+  },
+  {
+   "row": "204",
+   "date": "10/21/26",
+   "pick": "Alperen Sengun first basket, 8:30 PM ET ",
+   "est": null,
+   "odds": 525.0,
+   "src": "fair",
+   "res": "L"
+  },
+  {
+   "row": "205",
+   "date": "10/21/26",
+   "pick": "Luka Doncic first basket, 10:00 PM ET (f",
+   "est": null,
+   "odds": 365.0,
+   "src": "fair",
+   "res": "L"
+  },
+  {
+   "row": "206",
+   "date": "10/21/26",
+   "pick": "Jalen Green first basket, 10:00 PM ET (f",
+   "est": null,
+   "odds": 635.0,
+   "src": "fair",
+   "res": "L"
+  },
+  {
+   "row": "207",
+   "date": "10/21/26",
+   "pick": "De'Andre Hunter first basket, 10:30 PM E",
+   "est": null,
+   "odds": 694.0,
+   "src": "fair",
+   "res": "L"
+  },
+  {
+   "row": "233",
+   "date": "10/22/26",
+   "pick": "Evan Mobley first basket, 7:00 PM ET (es",
+   "est": 0.16,
+   "odds": 550.0,
+   "src": "slip",
+   "res": "L"
+  },
+  {
+   "row": "234",
+   "date": "10/22/26",
+   "pick": "Jaylen Brown first basket, 7:00 PM ET (e",
+   "est": 0.12,
+   "odds": 800.0,
+   "src": "slip",
+   "res": "L"
+  },
+  {
+   "row": "235",
+   "date": "10/22/26",
+   "pick": "Donovan Mitchell first basket, 7:00 PM E",
+   "est": 0.12,
+   "odds": 600.0,
+   "src": "slip",
+   "res": "L"
+  },
+  {
+   "row": "236",
+   "date": "10/22/26",
+   "pick": "Jamal Murray first basket, 9:30 PM ET (e",
+   "est": 0.15,
+   "odds": 600.0,
+   "src": "slip",
+   "res": "L"
+  },
+  {
+   "row": "237",
+   "date": "10/22/26",
+   "pick": "Nikola Jokic first basket, 9:30 PM ET (e",
+   "est": 0.13,
+   "odds": 550.0,
+   "src": "slip",
+   "res": "L"
+  },
+  {
+   "row": "238",
+   "date": "10/22/26",
+   "pick": "Cason Wallace first basket, 9:30 PM ET (",
+   "est": 0.13,
+   "odds": 1100.0,
+   "src": "slip",
+   "res": "W"
+  },
+  {
+   "row": "274",
+   "date": "10/23/26",
+   "pick": "Jaime Jaquez Jr. first basket, 4:00 PM E",
+   "est": 0.135,
+   "odds": 950.0,
+   "src": "slip",
+   "res": "L"
+  },
+  {
+   "row": "275",
+   "date": "10/23/26",
+   "pick": "Paul George first basket, 7:00 PM ET (es",
+   "est": 0.16899999999999998,
+   "odds": 550.0,
+   "src": "slip",
+   "res": "L"
+  },
+  {
+   "row": "276",
+   "date": "10/23/26",
+   "pick": "Brandon Miller first basket, 7:00 PM ET ",
+   "est": 0.172,
+   "odds": 550.0,
+   "src": "slip",
+   "res": "L"
+  },
+  {
+   "row": "277",
+   "date": "10/23/26",
+   "pick": "Ivica Zubac first basket, 7:00 PM ET (es",
+   "est": 0.156,
+   "odds": 470.0,
+   "src": "slip",
+   "res": "L"
+  },
+  {
+   "row": "278",
+   "date": "10/23/26",
+   "pick": "Desmond Bane first basket, 7:00 PM ET (e",
+   "est": 0.14,
+   "odds": 650.0,
+   "src": "slip",
+   "res": "L"
+  },
+  {
+   "row": "279",
+   "date": "10/23/26",
+   "pick": "RJ Barrett first basket, 7:00 PM ET (est",
+   "est": 0.128,
+   "odds": 800.0,
+   "src": "slip",
+   "res": "W"
+  },
+  {
+   "row": "280",
+   "date": "10/23/26",
+   "pick": "Bam Adebayo first basket, 8:00 PM ET (es",
+   "est": 0.158,
+   "odds": 550.0,
+   "src": "slip",
+   "res": "L"
+  },
+  {
+   "row": "281",
+   "date": "10/23/26",
+   "pick": "Victor Wembanyama first basket, 9:30 PM ",
+   "est": 0.20199999999999999,
+   "odds": 300.0,
+   "src": "slip",
+   "res": "L"
+  },
+  {
+   "row": "282",
+   "date": "10/23/26",
+   "pick": "Jaren Jackson Jr. first basket, 9:30 PM ",
+   "est": 0.14,
+   "odds": 650.0,
+   "src": "slip",
+   "res": "L"
+  },
+  {
+   "row": "283",
+   "date": "10/23/26",
+   "pick": "Ty Jerome first basket, 10:00 PM ET (est",
+   "est": 0.201,
+   "odds": 550.0,
+   "src": "slip",
+   "res": "L"
+  },
+  {
+   "row": "284",
+   "date": "10/23/26",
+   "pick": "Walker Kessler first basket, 10:00 PM ET",
+   "est": 0.14,
+   "odds": 500.0,
+   "src": "slip",
+   "res": "L"
+  },
+  {
+   "row": "285",
+   "date": "10/23/26",
+   "pick": "Luka Doncic first basket, 10:00 PM ET (e",
+   "est": 0.183,
+   "odds": 446.0,
+   "src": "fair",
+   "res": "L"
+  },
+  {
+   "row": "286",
+   "date": "10/23/26",
+   "pick": "Domantas Sabonis first basket, 10:00 PM ",
+   "est": 0.124,
+   "odds": 700.0,
+   "src": "slip",
+   "res": "L"
+  },
+  {
+   "row": "294",
+   "date": "10/23/26",
+   "pick": "Jaime Jaquez Jr. first basket, 4:00 PM E",
+   "est": null,
+   "odds": 950.0,
+   "src": "slip",
+   "res": "L"
+  },
+  {
+   "row": "295",
+   "date": "10/23/26",
+   "pick": "Ja Morant first basket, 10:00 PM ET (est",
+   "est": 0.139,
+   "odds": 620.0,
+   "src": "fair",
+   "res": "L"
+  },
+  {
+   "row": "296",
+   "date": "10/23/26",
+   "pick": "Kawhi Leonard first basket, 7:00 PM ET (",
+   "est": 0.134,
+   "odds": 646.0,
+   "src": "fair",
+   "res": "L"
+  },
+  {
+   "row": "297",
+   "date": "10/24/26",
+   "pick": "Bam Adebayo first basket, 6:00 PM ET (es",
+   "est": 0.156,
+   "odds": 541.0,
+   "src": "fair",
+   "res": "W"
+  },
+  {
+   "row": "298",
+   "date": "10/24/26",
+   "pick": "Brandon Miller first basket, 6:00 PM ET ",
+   "est": 0.14800000000000002,
+   "odds": 573.0,
+   "src": "fair",
+   "res": "L"
+  },
+  {
+   "row": "299",
+   "date": "10/24/26",
+   "pick": "Evan Mobley first basket, 7:30 PM ET (es",
+   "est": 0.18,
+   "odds": 455.0,
+   "src": "fair",
+   "res": "L"
+  },
+  {
+   "row": "300",
+   "date": "10/24/26",
+   "pick": "Jarrett Allen first basket, 7:30 PM ET (",
+   "est": null,
+   "odds": 558.0,
+   "src": "fair",
+   "res": "L"
+  },
+  {
+   "row": "301",
+   "date": "10/24/26",
+   "pick": "Jaylen Brown first basket, 7:30 PM ET (e",
+   "est": 0.14800000000000002,
+   "odds": 575.0,
+   "src": "fair",
+   "res": "L"
+  },
+  {
+   "row": "302",
+   "date": "10/24/26",
+   "pick": "Jalen Smith first basket, 8:00 PM ET (ce",
+   "est": 0.152,
+   "odds": 560.0,
+   "src": "fair",
+   "res": "L"
+  },
+  {
+   "row": "303",
+   "date": "10/24/26",
+   "pick": "Victor Wembanyama first basket, 8:00 PM ",
+   "est": 0.20600000000000002,
+   "odds": 386.0,
+   "src": "fair",
+   "res": "L"
+  },
+  {
+   "row": "304",
+   "date": "10/24/26",
+   "pick": "Alperen Sengun first basket, 8:30 PM ET ",
+   "est": 0.163,
+   "odds": 514.0,
+   "src": "fair",
+   "res": "L"
+  },
+  {
+   "row": "305",
+   "date": "10/24/26",
+   "pick": "Jamal Murray first basket, 9:00 PM ET (e",
+   "est": 0.157,
+   "odds": 538.0,
+   "src": "fair",
+   "res": "L"
+  },
+  {
+   "row": "306",
+   "date": "10/24/26",
+   "pick": "Nikola Jokic first basket, 9:00 PM ET (c",
+   "est": null,
+   "odds": 627.0,
+   "src": "fair",
+   "res": "L"
+  },
+  {
+   "row": "307",
+   "date": "10/24/26",
+   "pick": "Jalen Green first basket, 10:00 PM ET (e",
+   "est": 0.138,
+   "odds": 625.0,
+   "src": "fair",
+   "res": "L"
+  },
+  {
+   "row": "371",
+   "date": "10/25/26",
+   "pick": "Walker Kessler first basket, 5:00 PM ET ",
+   "est": 0.18,
+   "odds": 454.0,
+   "src": "fair",
+   "res": "L"
+  },
+  {
+   "row": "372",
+   "date": "10/25/26",
+   "pick": "Luka Doncic first basket, 5:00 PM ET (es",
+   "est": 0.17,
+   "odds": 481.0,
+   "src": "fair",
+   "res": "W"
+  },
+  {
+   "row": "373",
+   "date": "10/25/26",
+   "pick": "Michael Porter Jr. first basket, 6:00 PM",
+   "est": 0.16,
+   "odds": 541.0,
+   "src": "fair",
+   "res": "L"
+  },
+  {
+   "row": "374",
+   "date": "10/25/26",
+   "pick": "Ivica Zubac first basket, 6:00 PM ET (ce",
+   "est": 0.14,
+   "odds": 598.0,
+   "src": "fair",
+   "res": "W"
+  },
+  {
+   "row": "375",
+   "date": "10/25/26",
+   "pick": "Cason Wallace first basket, 7:00 PM ET (",
+   "est": 0.16,
+   "odds": 520.0,
+   "src": "fair",
+   "res": "L"
+  },
+  {
+   "row": "376",
+   "date": "10/25/26",
+   "pick": "Anthony Edwards first basket, 7:00 PM ET",
+   "est": 0.16,
+   "odds": 544.0,
+   "src": "fair",
+   "res": "L"
+  },
+  {
+   "row": "377",
+   "date": "10/25/26",
+   "pick": "Jaylen Brown first basket, 7:30 PM ET (e",
+   "est": 0.14,
+   "odds": 599.0,
+   "src": "fair",
+   "res": "L"
+  },
+  {
+   "row": "378",
+   "date": "10/25/26",
+   "pick": "Ty Jerome first basket, 9:00 PM ET (est ",
+   "est": 0.15,
+   "odds": 551.0,
+   "src": "fair",
+   "res": "L"
+  },
+  {
+   "row": "417",
+   "date": "10/26/26",
+   "pick": "Bam Adebayo first basket, 7:30 PM ET (es",
+   "est": 0.19,
+   "odds": 421.0,
+   "src": "fair",
+   "res": "L"
+  },
+  {
+   "row": "418",
+   "date": "10/26/26",
+   "pick": "Ty Jerome first basket, 9:00 PM ET (est ",
+   "est": 0.18,
+   "odds": 460.0,
+   "src": "fair",
+   "res": "L"
+  },
+  {
+   "row": "419",
+   "date": "10/26/26",
+   "pick": "Paul George first basket, 7:30 PM ET (es",
+   "est": 0.17,
+   "odds": 480.0,
+   "src": "fair",
+   "res": "W"
+  },
+  {
+   "row": "420",
+   "date": "10/26/26",
+   "pick": "Jamal Murray first basket, 10:00 PM ET (",
+   "est": 0.17,
+   "odds": 499.0,
+   "src": "fair",
+   "res": "L"
+  },
+  {
+   "row": "421",
+   "date": "10/26/26",
+   "pick": "Nikola Jokic first basket, 10:00 PM ET (",
+   "est": 0.17,
+   "odds": 502.0,
+   "src": "fair",
+   "res": "W"
+  },
+  {
+   "row": "422",
+   "date": "10/26/26",
+   "pick": "Alperen Sengun first basket, 8:30 PM ET ",
+   "est": 0.16,
+   "odds": 512.0,
+   "src": "fair",
+   "res": "L"
+  },
+  {
+   "row": "423",
+   "date": "10/26/26",
+   "pick": "Brandon Miller first basket, 7:00 PM ET ",
+   "est": 0.16,
+   "odds": 512.0,
+   "src": "fair",
+   "res": "W"
+  },
+  {
+   "row": "424",
+   "date": "10/26/26",
+   "pick": "Jayson Tatum first basket, 7:30 PM ET (e",
+   "est": 0.16,
+   "odds": 518.0,
+   "src": "fair",
+   "res": "L"
+  },
+  {
+   "row": "444",
+   "date": "10/28/26",
+   "pick": "Victor Wembanyama first basket, 9:00 PM ",
+   "est": 0.2,
+   "odds": 403.0,
+   "src": "fair",
+   "res": "L"
+  },
+  {
+   "row": "445",
+   "date": "10/28/26",
+   "pick": "Walker Kessler first basket, 10:30 PM ET",
+   "est": 0.18,
+   "odds": 468.0,
+   "src": "fair",
+   "res": "L"
+  },
+  {
+   "row": "446",
+   "date": "10/28/26",
+   "pick": "Bam Adebayo first basket, 7:00 PM ET (es",
+   "est": 0.17,
+   "odds": 472.0,
+   "src": "fair",
+   "res": "W"
+  },
+  {
+   "row": "447",
+   "date": "10/28/26",
+   "pick": "Brandon Miller first basket, 7:00 PM ET ",
+   "est": 0.17,
+   "odds": 483.0,
+   "src": "fair",
+   "res": "L"
+  },
+  {
+   "row": "448",
+   "date": "10/28/26",
+   "pick": "Jamal Murray first basket, 8:00 PM ET (e",
+   "est": 0.16,
+   "odds": 510.0,
+   "src": "fair",
+   "res": "W"
+  },
+  {
+   "row": "449",
+   "date": "10/28/26",
+   "pick": "Ajay Mitchell first basket, 9:30 PM ET (",
+   "est": 0.16,
+   "odds": 525.0,
+   "src": "fair",
+   "res": "L"
+  },
+  {
+   "row": "450",
+   "date": "10/28/26",
+   "pick": "Paul Reed first basket, 7:00 PM ET (cent",
+   "est": 0.16,
+   "odds": 536.0,
+   "src": "fair",
+   "res": "L"
+  },
+  {
+   "row": "483",
+   "date": "10/29/26",
+   "pick": "Ty Jerome first basket, 10:00 PM ET (est",
+   "est": 0.16,
+   "odds": 509.0,
+   "src": "fair",
+   "res": "L"
+  },
+  {
+   "row": "484",
+   "date": "10/29/26",
+   "pick": "Jarrett Allen first basket, 8:00 PM ET (",
+   "est": 0.16,
+   "odds": 535.0,
+   "src": "fair",
+   "res": "L"
+  },
+  {
+   "row": "485",
+   "date": "10/29/26",
+   "pick": "Evan Mobley first basket, 8:00 PM ET (es",
+   "est": 0.15,
+   "odds": 555.0,
+   "src": "fair",
+   "res": "L"
+  },
+  {
+   "row": "486",
+   "date": "10/29/26",
+   "pick": "Cedric Coward first basket, 10:00 PM ET ",
+   "est": 0.14,
+   "odds": 608.0,
+   "src": "fair",
+   "res": "L"
+  },
+  {
+   "row": "487",
+   "date": "10/29/26",
+   "pick": "Domantas Sabonis first basket, 8:00 PM E",
+   "est": 0.14,
+   "odds": 616.0,
+   "src": "fair",
+   "res": "L"
+  },
+  {
+   "row": "488",
+   "date": "10/29/26",
+   "pick": "Zach LaVine first basket, 8:00 PM ET (es",
+   "est": 0.12,
+   "odds": 732.0,
+   "src": "fair",
+   "res": "L"
+  }
+ ],
+ "fb_slip_median_odds": 600.0,
+ "fb_slip_n": 23,
+ "star_bomb": {
+  "star": {
+   "n": 102,
+   "hits": 10,
+   "expected": 14.8,
+   "roi_at_median_slip": -0.314
+  },
+  "bomb": {
+   "n": 102,
+   "hits": 14,
+   "expected": 12.0,
+   "roi_at_median_slip": -0.039
+  }
+ },
+ "fb_logged_summary": {
+  "n": 80,
+  "hits": 12,
+  "expected": 12.42,
+  "slip_n": 23,
+  "slip_w": 3,
+  "slip_roi": 0.326,
+  "roi_at_median_slip_all": 0.05
+ },
+ "top_pick_roi": {
+  "ours": {
+   "n": 50,
+   "hits": 6,
+   "roi": -0.16
+  },
+  "startool": {
+   "n": 50,
+   "hits": 6,
+   "roi": -0.16
+  },
+  "blend50": {
+   "n": 50,
+   "hits": 4,
+   "roi": -0.44
+  }
+ },
+ "blend_cv": {
+  "ll": 2.2945,
+  "weights_by_fold": [
+   0.4,
+   0.4,
+   0.6,
+   0.5,
+   0.6,
+   0.8
+  ],
+  "ours_only": 2.2977,
+  "st_only": 2.3034,
+  "uniform": 2.3026
+ },
+ "boot_ours_minus_blend50": [
+  -0.0379,
+  0.0224,
+  0.0899
+ ],
+ "jumper_detail": {
+  "games_tipwin": 68,
+  "jumper_fb_team_lost_tip": 6,
+  "jumper_fb_on_team_first_shot": 16,
+  "jumper_fb_team_won_tip": 13
+ }
+}

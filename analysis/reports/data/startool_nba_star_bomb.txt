@@ -1,0 +1,51 @@
+2026-10-23|CHI @ MIL|Norman Powell,Tyler Herro|Matas Buzelis,Ryan Rollins
+2026-10-23|NY @ BOS|Jalen Brunson,Jayson Tatum|Karl-Anthony Towns,Paul George
+2026-10-23|ATL @ CHA|Nickeil Alexander-Walker,Brandon Miller|Jalen Johnson,Naz Reid
+2026-10-23|DAL @ IND|Cooper Flagg,Tyrese Haliburton|Kyrie Irving,Pascal Siakam
+2026-10-23|MIN @ ORL|Anthony Edwards,Paolo Banchero|LaMelo Ball,Franz Wagner
+2026-10-23|TOR @ WSH|Kawhi Leonard,Anthony Davis|RJ Barrett,Trae Young
+2026-10-23|DET @ MIA|Cade Cunningham,Giannis Antetokounmpo|Jalen Duren,Bam Adebayo
+2026-10-23|HOU @ SA|Kevin Durant,Victor Wembanyama|Alperen Sengun,De'Aaron Fox
+2026-10-23|NO @ UTAH|Trey Murphy III,Lauri Markkanen|Zion Williamson,Keyonte George
+2026-10-23|MEM @ GS|Ty Jerome,Stephen Curry|Cedric Coward,Brandin Podziemski
+2026-10-23|LAC @ LAL|Darius Garland,Luka Doncic|Rui Hachimura,Austin Reaves
+2026-10-23|POR @ SAC|Damian Lillard,Zach LaVine|Deni Avdija,Domantas Sabonis
+2026-10-24|MIA @ CHA|Giannis Antetokounmpo,Brandon Miller|Bam Adebayo,Kon Knueppel
+2026-10-24|BKN @ CLE|Michael Porter Jr.,Donovan Mitchell|Julius Randle,James Harden
+2026-10-24|MIL @ PHI|Tyler Herro,Tyrese Maxey|Ryan Rollins,Jaylen Brown
+2026-10-24|WSH @ CHI|Anthony Davis,Norman Powell|Trae Young,Caleb Wilson
+2026-10-24|SA @ DAL|Victor Wembanyama,Cooper Flagg|De'Aaron Fox,Kyrie Irving
+2026-10-24|HOU @ ATL|Kevin Durant,Nickeil Alexander-Walker|Alperen Sengun,Jalen Johnson
+2026-10-24|NO @ DEN|Trey Murphy III,Nikola Jokic|Zion Williamson,Jamal Murray
+2026-10-24|GS @ PHX|Stephen Curry,Devin Booker|Yaxel Lendeborg,Dillon Brooks
+2026-10-25|LAL @ UTAH|Luka Doncic,Lauri Markkanen|Austin Reaves,Keyonte George
+2026-10-25|IND @ BKN|Pascal Siakam,Michael Porter Jr.|Tyrese Haliburton,Julius Randle
+2026-10-25|LAC @ OKC|Darius Garland,Shai Gilgeous-Alexander|Rui Hachimura,Jalen Williams
+2026-10-25|TOR @ MIN|Kawhi Leonard,Anthony Edwards|RJ Barrett,LaMelo Ball
+2026-10-25|ORL @ NY|Paolo Banchero,Jalen Brunson|Franz Wagner,Karl-Anthony Towns
+2026-10-25|DET @ PHI|Cade Cunningham,Joel Embiid|Jalen Duren,Jaylen Brown
+2026-10-25|MEM @ SAC|Ty Jerome,Darius Acuff Jr.|Cameron Boozer,Zach LaVine
+2026-10-26|WSH @ CHA|Anthony Davis,Brandon Miller|Trae Young,Naz Reid
+2026-10-26|MIN @ CLE|Anthony Edwards,Donovan Mitchell|LaMelo Ball,James Harden
+2026-10-26|CHI @ BOS|Caleb Wilson,Jayson Tatum|Norman Powell,Paul George
+2026-10-26|DAL @ MIA|Naji Marshall,Giannis Antetokounmpo|P.J. Washington,Bam Adebayo
+2026-10-26|IND @ MIL|Pascal Siakam,Tyler Herro|Tyrese Haliburton,Ryan Rollins
+2026-10-26|PHX @ OKC|Devin Booker,Shai Gilgeous-Alexander|Dillon Brooks,Jalen Williams
+2026-10-26|ATL @ HOU|Nickeil Alexander-Walker,Kevin Durant|Jalen Johnson,Alperen Sengun
+2026-10-26|MEM @ UTAH|Ty Jerome,Lauri Markkanen|Cameron Boozer,Keyonte George
+2026-10-26|GS @ DEN|Stephen Curry,Nikola Jokic|Yaxel Lendeborg,Jamal Murray
+2026-10-28|MIA @ ATL|Giannis Antetokounmpo,Nickeil Alexander-Walker|Bam Adebayo,Jalen Johnson
+2026-10-28|WSH @ CLE|Anthony Davis,Donovan Mitchell|Trae Young,James Harden
+2026-10-28|CHA @ DET|Brandon Miller,Cade Cunningham|Kon Knueppel,Jalen Duren
+2026-10-28|PHI @ IND|Jaylen Brown,Pascal Siakam|Joel Embiid,Tyrese Haliburton
+2026-10-28|ORL @ TOR|Desmond Bane,RJ Barrett|Franz Wagner,Immanuel Quickley
+2026-10-28|NY @ CHI|Jalen Brunson,Norman Powell|Karl-Anthony Towns,Caleb Wilson
+2026-10-28|HOU @ MIL|Kevin Durant,Tyler Herro|Amen Thompson,Ryan Rollins
+2026-10-28|GS @ MIN|Stephen Curry,LaMelo Ball|Yaxel Lendeborg,Ayo Dosunmu
+2026-10-28|DEN @ NO|Nikola Jokic,Trey Murphy III|Jamal Murray,Zion Williamson
+2026-10-28|SA @ UTAH|Victor Wembanyama,Lauri Markkanen|De'Aaron Fox,Keyonte George
+2026-10-28|OKC @ DAL|Shai Gilgeous-Alexander,Cooper Flagg|Chet Holmgren,Kyrie Irving
+2026-10-28|LAL @ LAC|Luka Doncic,Darius Garland|Austin Reaves,Rui Hachimura
+2026-10-29|CLE @ ATL|Donovan Mitchell,Nickeil Alexander-Walker|James Harden,Jalen Johnson
+2026-10-29|MEM @ POR|Ty Jerome,Deni Avdija|Cameron Boozer,Damian Lillard
+2026-10-29|SAC @ NO|Darius Acuff Jr.,Trey Murphy III|Zach LaVine,Zion Williamson

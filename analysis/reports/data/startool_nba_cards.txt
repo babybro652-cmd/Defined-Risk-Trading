@@ -1,0 +1,53 @@
+2026-10-22|CLE @ PHI|88|38|Donovan Mitchell 14,James Harden 12,Evan Mobley 9,Jarrett Allen 8,Peyton Watson 7|Jaylen Brown 12,Joel Embiid 12,Tyrese Maxey 12,LeBron James 9,VJ Edgecombe 7
+2026-10-22|DEN @ OKC|63|50|Nikola Jokic 15,Jamal Murray 13,Aaron Gordon 9,Cameron Johnson 7,Christian Braun 6|Shai Gilgeous-Alexander 19,Chet Holmgren 10,Jalen Williams 10,Isaiah Hartenstein 6,Cason Wallace 5
+2026-10-23|ATL @ CHA|25|25|Jalen Johnson 12,Nickeil Alexander-Walker 12,CJ McCollum 11,Onyeka Okongwu 8,Dyson Daniels 7|Brandon Miller 17,Naz Reid 12,Dennis Schroder 9,Moussa Diabate 7,Sion James 5
+2026-10-23|CHI @ MIL|38|50|Norman Powell 13,Caleb Wilson 10,Josh Giddey 10,Matas Buzelis 10,Jalen Smith 7|Tyler Herro 13,Ryan Rollins 11,Jaime Jaquez Jr. 10,Kyle Kuzma 8,Myles Turner 8
+2026-10-23|DAL @ IND|0|63|Cooper Flagg 15,Kyrie Irving 10,P.J. Washington 10,Max Christie 8,Daniel Gafford 7|Pascal Siakam 13,Tyrese Haliburton 13,Andrew Nembhard 9,Aaron Nesmith 8,Ivica Zubac 8
+2026-10-23|DET @ MIA|50|75|Cade Cunningham 15,Jalen Duren 12,John Collins 9,Duncan Robinson 8,Ausar Thompson 6|Giannis Antetokounmpo 16,Bam Adebayo 12,Andrew Wiggins 9,Klay Thompson 7,Davion Mitchell 6
+2026-10-23|HOU @ SA|38|88|Kevin Durant 15,Alperen Sengun 12,Amen Thompson 11,Jabari Smith Jr. 9,Fred VanVleet 4|Victor Wembanyama 14,De'Aaron Fox 11,Stephon Castle 10,Devin Vassell 8,Dylan Harper 7
+2026-10-23|LAC @ LAL|38|75|Darius Garland 17,Rui Hachimura 10,Derrick Jones Jr. 9,Kris Dunn 7,Isaiah Jackson 6|Luka Doncic 19,Austin Reaves 13,Walker Kessler 9,Ziaire Williams 6,Matisse Thybulle 3
+2026-10-23|MEM @ GS|25|38|Ty Jerome 16,Cedric Coward 10,Zach Edey 10,Jaylen Wells 9,Cameron Boozer 5|Stephen Curry 19,Brandin Podziemski 10,Yaxel Lendeborg 9,Gui Santos 7,Draymond Green 6
+2026-10-23|MIN @ ORL|50|88|Anthony Edwards 16,LaMelo Ball 12,Jaden McDaniels 9,Jonathan Kuminga 7,Rudy Gobert 6|Paolo Banchero 13,Franz Wagner 12,Desmond Bane 11,Jalen Suggs 8,Wendell Carter Jr. 7
+2026-10-23|NO @ UTAH|25|50|Trey Murphy III 13,Zion Williamson 13,Dejounte Murray 11,Jeremiah Fears 9,Yves Missi 4|Lauri Markkanen 15,Keyonte George 14,Jaren Jackson Jr. 11,Darryn Peterson 5,Jaxson Hayes 4
+2026-10-23|NY @ BOS|38|63|Jalen Brunson 14,Karl-Anthony Towns 11,OG Anunoby 9,Mikal Bridges 8,Josh Hart 7|Jayson Tatum 16,Paul George 13,Derrick White 12,Jordan Walsh 4,Mitchell Robinson 4
+2026-10-23|POR @ SAC|63|63|Damian Lillard 13,Deni Avdija 13,Ja Morant 10,Donovan Clingan 7,Toumani Camara 7|Zach LaVine 13,Domantas Sabonis 11,De'Andre Hunter 9,Keegan Murray 9,Darius Acuff Jr. 8
+2026-10-23|TOR @ WSH|75|38|Kawhi Leonard 15,RJ Barrett 11,Scottie Barnes 10,Immanuel Quickley 9,Jakob Poeltl 6|Anthony Davis 13,Trae Young 11,Alex Sarr 10,Kyshawn George 9,Bilal Coulibaly 7
+2026-10-24|BKN @ CLE|38|88|Michael Porter Jr. 17,Julius Randle 15,Egor Demin 7,Day'Ron Sharpe 6,Mikel Brown Jr. 4|Donovan Mitchell 14,James Harden 12,Evan Mobley 9,Jarrett Allen 8,Peyton Watson 7
+2026-10-24|GS @ PHX|38|50|Stephen Curry 18,Brandin Podziemski 10,Yaxel Lendeborg 10,Draymond Green 6,Graham Ike 6|Devin Booker 15,Dillon Brooks 12,Jalen Green 10,Miles Bridges 10,Khaman Maluach 2
+2026-10-24|HOU @ ATL|25|38|Kevin Durant 14,Alperen Sengun 11,Amen Thompson 10,Jabari Smith Jr. 9,Fred VanVleet 6|Jalen Johnson 12,Nickeil Alexander-Walker 12,CJ McCollum 11,Onyeka Okongwu 8,Dyson Daniels 7
+2026-10-24|MIA @ CHA|75|25|Giannis Antetokounmpo 16,Bam Adebayo 12,Andrew Wiggins 9,Klay Thompson 7,Davion Mitchell 6|Brandon Miller 13,Kon Knueppel 12,Coby White 11,Naz Reid 9,Moussa Diabate 5
+2026-10-24|MIL @ PHI|50|25|Tyler Herro 13,Ryan Rollins 11,Jaime Jaquez Jr. 10,Kyle Kuzma 8,Myles Turner 8|Jaylen Brown 12,Joel Embiid 12,Tyrese Maxey 12,LeBron James 9,VJ Edgecombe 7
+2026-10-24|NO @ DEN|13|50|Trey Murphy III 13,Zion Williamson 13,Dejounte Murray 11,Jeremiah Fears 9,Yves Missi 4|Nikola Jokic 15,Jamal Murray 13,Aaron Gordon 8,Cameron Johnson 7,Christian Braun 7
+2026-10-24|SA @ DAL|88|0|Victor Wembanyama 14,De'Aaron Fox 10,Stephon Castle 10,Devin Vassell 8,Tobias Harris 8|Cooper Flagg 14,Kyrie Irving 13,P.J. Washington 9,Max Christie 8,Daniel Gafford 6
+2026-10-24|WSH @ CHI|50|50|Anthony Davis 12,Trae Young 11,Alex Sarr 10,Kyshawn George 9,AJ Dybantsa 8|Norman Powell 13,Caleb Wilson 11,Josh Giddey 10,Matas Buzelis 10,Jalen Smith 6
+2026-10-25|DET @ PHI|50|38|Cade Cunningham 15,Jalen Duren 12,John Collins 9,Duncan Robinson 8,Ausar Thompson 6|Jaylen Brown 13,Joel Embiid 13,Tyrese Maxey 13,VJ Edgecombe 8,Dean Wade 3
+2026-10-25|IND @ BKN|63|38|Pascal Siakam 13,Tyrese Haliburton 12,Andrew Nembhard 10,Aaron Nesmith 8,Ivica Zubac 8|Michael Porter Jr. 17,Julius Randle 15,Egor Demin 7,Day'Ron Sharpe 6,Keon Ellis 5
+2026-10-25|LAC @ OKC|||Darius Garland 18,Rui Hachimura 10,Derrick Jones Jr. 9,Kris Dunn 7,Isaiah Jackson 6|Shai Gilgeous-Alexander 19,Jalen Williams 11,Chet Holmgren 10,Isaiah Hartenstein 6,Cason Wallace 5
+2026-10-25|LAL @ UTAH|88|63|Luka Doncic 18,Austin Reaves 13,Walker Kessler 10,Ziaire Williams 6,Matisse Thybulle 3|Lauri Markkanen 14,Keyonte George 12,Jaren Jackson Jr. 10,Ace Bailey 7,Darryn Peterson 6
+2026-10-25|MEM @ SAC|38|50|Ty Jerome 14,Cameron Boozer 10,Zach Edey 9,GG Jackson 8,Jaylen Wells 8|Darius Acuff Jr. 13,Zach LaVine 11,Domantas Sabonis 10,De'Andre Hunter 8,Keegan Murray 8
+2026-10-25|ORL @ NY|88|38|Paolo Banchero 13,Desmond Bane 11,Franz Wagner 11,Jalen Suggs 8,Wendell Carter Jr. 7|Jalen Brunson 14,Karl-Anthony Towns 11,OG Anunoby 10,Mikal Bridges 8,Josh Hart 7
+2026-10-25|TOR @ MIN|63|50|Kawhi Leonard 15,RJ Barrett 11,Scottie Barnes 10,Immanuel Quickley 9,Jakob Poeltl 6|Anthony Edwards 16,LaMelo Ball 12,Jaden McDaniels 9,Jonathan Kuminga 7,Rudy Gobert 6
+2026-10-26|ATL @ HOU|38|38|Jalen Johnson 12,Nickeil Alexander-Walker 12,CJ McCollum 11,Onyeka Okongwu 8,Dyson Daniels 7|Kevin Durant 14,Alperen Sengun 11,Amen Thompson 10,Jabari Smith Jr. 9,Fred VanVleet 6
+2026-10-26|CHI @ BOS|50|75|Caleb Wilson 13,Norman Powell 12,Josh Giddey 9,Matas Buzelis 9,Jalen Smith 6|Jayson Tatum 17,Paul George 13,Derrick White 12,Jordan Walsh 4,Mitchell Robinson 4
+2026-10-26|DAL @ MIA|0|75|Naji Marshall 13,P.J. Washington 12,Max Christie 10,Daniel Gafford 8,Zaccharie Risacher 8|Giannis Antetokounmpo 16,Bam Adebayo 12,Andrew Wiggins 9,Klay Thompson 7,Davion Mitchell 6
+2026-10-26|GS @ DEN|38|63|Stephen Curry 17,Yaxel Lendeborg 12,Brandin Podziemski 9,Gui Santos 6,Draymond Green 5|Nikola Jokic 15,Jamal Murray 14,Aaron Gordon 8,Cameron Johnson 7,Christian Braun 6
+2026-10-26|IND @ MIL|63|50|Pascal Siakam 13,Tyrese Haliburton 12,Andrew Nembhard 10,Aaron Nesmith 8,Ivica Zubac 8|Tyler Herro 13,Ryan Rollins 11,Jaime Jaquez Jr. 10,Kyle Kuzma 8,Myles Turner 8
+2026-10-26|MEM @ UTAH|38|63|Ty Jerome 15,Cameron Boozer 11,Cedric Coward 9,Jaylen Wells 9,Isaiah Stewart 7|Lauri Markkanen 14,Keyonte George 13,Jaren Jackson Jr. 10,Ace Bailey 8,Darryn Peterson 6
+2026-10-26|MIN @ CLE|38|75|Anthony Edwards 16,LaMelo Ball 11,Jaden McDaniels 9,Jonathan Kuminga 7,Rudy Gobert 6|Donovan Mitchell 14,James Harden 12,Evan Mobley 9,Jarrett Allen 8,Peyton Watson 8
+2026-10-26|PHX @ OKC|63|63|Devin Booker 15,Dillon Brooks 12,Jalen Green 11,Miles Bridges 10,Khaman Maluach 2|Shai Gilgeous-Alexander 19,Chet Holmgren 10,Jalen Williams 10,Isaiah Hartenstein 6,Cason Wallace 5
+2026-10-26|WSH @ CHA|63|25|Anthony Davis 12,Trae Young 11,Alex Sarr 10,Kyshawn George 9,Bilal Coulibaly 7|Brandon Miller 17,Naz Reid 12,Dennis Schroder 9,Moussa Diabate 7,Sion James 4
+2026-10-28|CHA @ DET|25|25|Brandon Miller 13,Kon Knueppel 12,Coby White 11,Naz Reid 9,Moussa Diabate 5|Cade Cunningham 15,Jalen Duren 12,John Collins 9,Duncan Robinson 8,Ausar Thompson 6
+2026-10-28|DEN @ NO|63|13|Nikola Jokic 15,Jamal Murray 13,Aaron Gordon 8,Cameron Johnson 7,Christian Braun 7|Trey Murphy III 13,Zion Williamson 13,Dejounte Murray 11,Jeremiah Fears 9,Yves Missi 4
+2026-10-28|GS @ MIN|25|38|Stephen Curry 16,Yaxel Lendeborg 14,Brandin Podziemski 9,Gui Santos 6,Draymond Green 5|LaMelo Ball 14,Ayo Dosunmu 10,Jaden McDaniels 10,Jonathan Kuminga 8,Rudy Gobert 8
+2026-10-28|HOU @ MIL|50|50|Kevin Durant 14,Alperen Sengun 11,Amen Thompson 11,Jabari Smith Jr. 9,Fred VanVleet 5|Tyler Herro 13,Ryan Rollins 11,Jaime Jaquez Jr. 10,Kyle Kuzma 8,Myles Turner 8
+2026-10-28|LAL @ LAC|88||Luka Doncic 19,Austin Reaves 13,Walker Kessler 8,Ziaire Williams 6,Matisse Thybulle 4|Darius Garland 18,Rui Hachimura 10,Derrick Jones Jr. 9,Kris Dunn 7,Isaiah Jackson 6
+2026-10-28|MIA @ ATL|75|25|Giannis Antetokounmpo 16,Bam Adebayo 12,Andrew Wiggins 9,Klay Thompson 7,Davion Mitchell 6|Jalen Johnson 12,Nickeil Alexander-Walker 12,CJ McCollum 11,Onyeka Okongwu 8,Dyson Daniels 7
+2026-10-28|NY @ CHI|25|50|Jalen Brunson 14,Karl-Anthony Towns 11,OG Anunoby 10,Mikal Bridges 8,Josh Hart 7|Caleb Wilson 12,Norman Powell 12,Josh Giddey 9,Matas Buzelis 9,Nic Claxton 7
+2026-10-28|OKC @ DAL|63|0|Shai Gilgeous-Alexander 20,Chet Holmgren 10,Ajay Mitchell 9,Isaiah Hartenstein 6,Jared McCain 6|Cooper Flagg 14,Kyrie Irving 13,P.J. Washington 9,Max Christie 8,Daniel Gafford 6
+2026-10-28|ORL @ TOR|88|63|Desmond Bane 13,Franz Wagner 13,Jalen Suggs 9,Wendell Carter Jr. 8,Tristan da Silva 7|RJ Barrett 13,Immanuel Quickley 12,Scottie Barnes 12,Jakob Poeltl 7,Ja'Kobe Walter 6
+2026-10-28|PHI @ IND|50|63|Jaylen Brown 12,Joel Embiid 12,Tyrese Maxey 11,LeBron James 9,VJ Edgecombe 7|Pascal Siakam 13,Tyrese Haliburton 12,Andrew Nembhard 10,Aaron Nesmith 8,Ivica Zubac 8
+2026-10-28|SA @ UTAH|100|50|Victor Wembanyama 14,De'Aaron Fox 10,Stephon Castle 10,Devin Vassell 8,Dylan Harper 7|Lauri Markkanen 15,Keyonte George 14,Ace Bailey 9,Darryn Peterson 7,Jaxson Hayes 5
+2026-10-28|WSH @ CLE|75|75|Anthony Davis 12,Trae Young 11,Alex Sarr 10,Kyshawn George 9,AJ Dybantsa 8|Donovan Mitchell 14,James Harden 12,Evan Mobley 9,Jarrett Allen 8,Peyton Watson 8
+2026-10-29|CLE @ ATL|63|13|Donovan Mitchell 13,James Harden 12,Evan Mobley 9,Jarrett Allen 8,Peyton Watson 8|Jalen Johnson 12,Nickeil Alexander-Walker 12,CJ McCollum 11,Onyeka Okongwu 8,Dyson Daniels 7
+2026-10-29|MEM @ POR|50|63|Ty Jerome 15,Cameron Boozer 10,Cedric Coward 9,Jaylen Wells 9,Zach Edey 8|Deni Avdija 13,Damian Lillard 12,Ja Morant 10,Toumani Camara 8,Donovan Clingan 7
+2026-10-29|SAC @ NO|50|13|Darius Acuff Jr. 13,Zach LaVine 11,Domantas Sabonis 10,De'Andre Hunter 8,Keegan Murray 8|Trey Murphy III 14,Zion Williamson 13,Dejounte Murray 11,Jeremiah Fears 9,Yves Missi 4
