@@ -1,91 +1,86 @@
-# DRT Phone video, Fri 10/30/2026: ES long (TRADE POST, HELD for Tim's go)
+# DRT Phone video, Fri 10/30/2026: ES long (TRADE POST, Tim gave the go 10/30, SCHEDULED)
 
 Source: Drive "DRT Phone" `Screen_Recording_20261030_110252_TradingView.mp4` (id 1gVJu7jkLbgwSBWWL_GqX-obaxLGvpH9f,
 126 MB, 19:07, 1080x2340). TradingView mobile, ES1! 1m. Status-bar clock 10:32 to 10:52 AM ET.
 
-## What the recording shows
-- Long 2 ES @ 7,635.25 (fill marker "2 @ 7635.25", entry about 10:31 ET).
-- Stop 7,631.25 (4 pts, bracket shows -400.00 USD). Target 7,669.75 (+34.5 pts, bracket +3,450.00 USD, 8.6R).
-- Worst point about 7,633.50 (-1.75 pts, -175 USD) in the first minute, then ES rallied to about 7,658.
-- Recording ends at 10:52 with the trade OPEN at about 7,654.50, +1,850 USD (+18.5 pts). Target and stop still working.
-  Outcome is NOT on video. The last second shows a tap on the position ("Close Position" tooltip): cut.
-- Earlier fills from today are on the chart labels: 2 @ 7653.00 (buy), 2 @ 7649.00, 7645.25, 7639.75 (sells),
-  2 @ 7649.00 (buy), 2 @ 7644.00, and 2 @ 7668.25 in the zoomed-out view. They stay visible in the reel (chart labels).
-- No account name, broker or paper/live tag visible. Indicator list collapsed ("4"); no indicator names on screen.
-- Contract scroller shows "ESZ2026" (correct year). No notifications shade, home screen, family or account numbers seen.
+## Facts (recording + Tim)
+- Long 2 ES @ 7,635.25 (entry about 10:31 ET). Stop 7,631.25 (4 pts, $400). Target on the bracket 7,669.75 (+34.5 pts).
+- Worst point about 7,633.50 (-1.75 pts) in the first minute, then a rally to about 7,658. Recording ends with the trade open, +$1,850.
+- Tim closed it by hand at 7,649.00 after the recording: +13.75 pts x 2 = +$1,375 gross, about 3.4R. Paper account.
+  His reason: "forgot today was Friday so my target is out of reach in my opinion. A lot of people selling off." Captions frame it as his read.
+- Earlier fills on the chart (7653 buy, 7649/7645.25/7639.75 sells, 7649 buy, 7644, 7668.25) = 2 losses at $400 each. Day net about +$575 paper.
+  Tim: leave them visible; captions state the 2 losses and the net.
+- Tim OK'd posting a trade from that time of day; captions still carry no time-of-day or day-job lines.
+- No account name, broker or paper/live tag on screen. Indicator list collapsed; no indicator names. "ESZ2026" contract year correct.
 
 ## Cuts (posts/media/2026-10-30/phone/make_trade_reel.py)
-Status bar (clock, screen-recorder icon, X/Pinterest/notification icons) and nav bar cropped (1080x1920 from y=98);
-20.5-28 s cut (phone rotated to landscape + recorder toolbar); everything after 1140 s cut (the tap on the position);
-bright-frame filter dropped 0 frames. Speed about 28x.
+Status bar (clock, recorder icon, notification icons) and nav bar cropped (1080x1920 from y=98); 20.5-28 s cut (landscape rotation +
+recorder toolbar); everything after 1140 s cut (tap on the position, "Close Position" tooltip). Bright-frame filter dropped 0. About 28x speed.
 
-Reel: `posts/media/2026-10-30/phone/es-long-1030.mp4`, 43.5 s, 9:16, 1080x1920, silent track.
-End card currently says "Still running ... +18.5 pts open, not closed yet". Change `CARD` in the script once Tim gives the
-outcome (e.g. "Target filled ... +34.5 pts | 8.6R | paper") and rerun.
-QA: 87-frame contact sheet (2 fps) read, plus first and last frames full size. ES chart throughout; entry/stop/target lines match
-the captions; no wrong dates; no invented numbers. PASS for media. Captions below assume the TARGET FILLED; rewrite if not.
+Reel: `posts/media/2026-10-30/phone/es-long-1030.mp4`, 43.5 s, 9:16. End card: "Closed manually / ES long 2 @ 7,635.25 /
+Stop 7,631.25 (4 pts) | Out at 7,649.00 / +13.75 pts | 3.4R | paper".
+QA: 87-frame contact sheet (2 fps) + end card read full size; ES chart throughout, lines match captions, no wrong dates, no invented numbers. PASS.
+Uploaded once (byte-identical check), https://database.blotato.io/storage/v1/object/public/public_media/246c6cef-6cbe-4b5b-81a9-7bb84481df9c/b632e112-67a7-4d86-9b7c-97fd1d25aea8.mp4
+Uniqueness (5-gram) vs 37 DRT captions 10/23-10/30 and each other: OK after 4 rewrites. No em dashes, filler, AMD/CRT. TikTok 139 chars.
 
-Uniqueness (5-gram) vs 37 DRT captions 10/23-10/30: OK after 5 rewrites. No em dashes or filler words. TikTok 134 chars.
-No time-of-day or day-job lines on purpose (entry about 10:31 ET falls in work hours; see questions).
+## Scheduled (Tim's call: all 4 today, past the usual caps; uses the Friday recap FB/TikTok slots)
+| Time ET 10/30 | Platform | Submission id | Schedule id |
+|---|---|---|---|
+| 5:00 PM | Facebook reel (50185, page 993318963868124) | 03540d29-8165-4541-bef4-f9c19e49d54c | 6246043 |
+| 6:45 PM | Instagram reel (68887), 3rd IG post today | 285da7e7-152b-438f-8c9e-941b7e7c1dca | 6246049 |
+| 7:30 PM | YouTube Short (48727), 2nd Short today | d30612bd-0b29-45b0-b31b-54983e642c32 | 6246053 |
+| 8:00 PM | TikTok (58063, isAiGenerated false) | 1c84a9d0-8144-4072-b007-918aa7059049 | 6246061 |
+Confirmed with list_schedules. Credits 2085.
 
-## Proposed slots (today is full except the Friday recap holds)
-- Facebook 5:00 PM ET tonight (recap slot) and TikTok 8:00 PM ET tonight (recap slot).
-- Instagram: IG is full today, so Sat 10/31 (e.g. 12:30 PM ET).
-- YouTube Short: today's 6:12 PM slot already has the paper-trading Short; Sat 10/31 6:12 PM ET if Tim approves this video for YouTube.
-
-## TikTok (58063, isAiGenerated false, PUBLIC_TO_EVERYONE)
+## TikTok
 ```
-ES long at 7,635.25, stop 4 pts under. Opened red, I left it alone, and it ran to the 7,669.75 target. +34.5 pts, 8.6R, paper account.
+ES long, 4 pt stop. It was Friday, so I closed by hand at +13.75 pts instead of waiting on the target. Day net +$575 after 2 losses. Paper.
 
 #definedrisktrading #esfutures #daytrading #futurestrading #riskmanagement
 ```
 
-## Instagram (68887, reel)
+## Instagram
 ```
-4 points of risk. 34.5 points of target.
+I didn't wait for my target. Here's why.
 
 Bought 2 ES at 7,635.25 with the stop 4 points under at 7,631.25 and the target up at 7,669.75. $400 on the line, set before I clicked buy.
 
-The first minutes went against me, about 2 points down with the stop close by. I didn't touch it. Then ES turned and climbed almost 20 points off the entry.
+It opened red, about 2 points against me. The stop stayed put, and ES turned and climbed.
 
-Target filled at 7,669.75. +34.5 points a contract, 8.6R, +$3,450 before commissions. Paper account.
+Then I remembered it was Friday. In my read, a 34-point target was out of reach for the day, and the selling looked heavy to me. So I closed at 7,649.00. +13.75 points a contract, about 3.4R, +$1,375 before commissions. Paper account.
 
-A tight stop has two jobs: get you out fast when you're wrong, and keep you in when you're right.
+Full honesty: my 2 trades before this one were losses, $400 each. The day finished about +$575.
 
-Worth a save for the next trade that opens red.
+Risk gets set before the entry. The exit can change when your read of the day changes.
+
+Worth a save for the next time a target stops making sense.
 
 #MyHobbyismyFREEDOM #definedrisktrading #esfutures #daytrading #riskmanagement
 ```
 
-## Facebook (50185, pageId 993318963868124, reel)
+## Facebook
 ```
-Friday's ES long started red, and that's the part worth talking about.
+Friday's ES trade, plus the 2 that came before it.
 
-I bought 2 contracts at 7,635.25. Stop at 7,631.25, 4 points under. Target at 7,669.75. $400 risked, all of it planned before I entered.
+Both earlier trades today hit their stops. $400 each, $800 down.
 
-Right after the fill, price slipped toward the stop. Close to half my risk was already showing as a loss. That's where a lot of traders pull the plug early or drag the stop lower.
+The third was a long: 2 contracts at 7,635.25, stop 4 points under at 7,631.25, target at 7,669.75. It slipped toward the stop right after the fill, then turned and climbed.
 
-I did neither. ES turned, and 20 minutes later the position was up more than 18 points. Then it kept going and filled 7,669.75: +34.5 points per contract and +$3,450 gross, paper account.
+Partway up I realized it was Friday. My read was that the target was too far for a Friday session and that sellers were stepping in, so I stopped waiting on a target I no longer believed in. I closed at 7,649.00: +13.75 points per contract and +$1,375 gross, paper account.
 
-Small stop, big target, and no touching either one once the trade is live.
+Net for the day: about +$575.
 
-Pass this along to a trader who bails the moment a position goes red.
+Same 4-point stop on all 3 trades. A red start doesn't have to mean a red day if the risk stays the same size.
+
+Pass this along to a trader who sizes up after a loss.
 ```
 
-## YouTube Short (48727) only if Tim approves this video for YouTube
-Title (54 chars): `ES Long, 4 Point Stop: Started Red, Then Ran 34 Points`
-Description:
+## YouTube Short
+Title (43 chars): `ES Long: Why I Took Profit Before My Target`. public, no subscriber notify, not for kids, no synthetic media.
 ```
-A 4 point stop on ES, a target 34.5 points away, and a trade that went against me before it turned. Stop never moved, target filled on a paper account.
+Friday session, a 4 point stop and a target 34.5 points away. My read of the day changed, and I exited manually for +13.75 points on a paper account, after 2 losing trades earlier.
 
 Education only. Not financial advice.
 
 #shorts #esfutures #daytrading
 ```
-Fields: privacyStatus public, shouldNotifySubscribers false, isMadeForKids false, containsSyntheticMedia false.
-
-## Questions for Tim
-1. Did the 7,669.75 target fill, did the 7,631.25 stop hit, or did you close it by hand (at what price)?
-2. Paper or live/eval account?
-3. The chart shows earlier fills today (7653 buy, 7649/7645.25/7639.75 sells, 7649 buy, 7644). OK to show those, or crop the reel tighter?
-4. OK to post: FB 5 PM + TikTok 8 PM tonight, IG Sat, and the YouTube Short Sat 6:12 PM?

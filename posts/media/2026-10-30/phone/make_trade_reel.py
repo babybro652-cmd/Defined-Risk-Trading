@@ -4,7 +4,7 @@ Same approach as posts/media/2026-10-28/make_trade_reels.py: speed-up, crop off 
 status bar (clock, recorder icon, notification icons) and nav bar, drop bright frames
 (notification shade / home screen), skip the landscape rotation + recorder toolbar (20.5-28 s)
 and the final tap on the position (after 1140 s), then end on a result card.
-Set CARD below once Tim confirms the outcome, then rerun.
+CARD holds the result Tim confirmed (manual exit at 7,649.00).
 Usage: python3 make_trade_reel.py SRC.mp4 OUT.mp4"""
 import subprocess, sys
 import numpy as np
@@ -15,9 +15,9 @@ W, H, FPS, TOP = 1080, 1920, 30, 98
 B = "/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf"; R = "/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf"
 GOLD = (232, 178, 92); CREAM = (245, 236, 220); MUTED = (170, 150, 130); GREEN = (90, 200, 140)
 SEGMENTS = [(0, 20.5, 2), (28, 1140, 38)]  # (start s, end s, output seconds)
-# Outcome not confirmed yet: the recording stops with the trade open at +1,850 USD (+18.5 pts).
-CARD = ("Still running", "ES long 2 @ 7,635.25", "Stop 7,631.25 (4 pts)  |  Target 7,669.75",
-        "+18.5 pts open, not closed yet")
+# Tim 10/30: closed by hand at 7,649.00 (Friday, target out of reach in his read). Paper account.
+CARD = ("Closed manually", "ES long 2 @ 7,635.25", "Stop 7,631.25 (4 pts)  |  Out at 7,649.00",
+        "+13.75 pts  |  3.4R  |  paper")
 
 
 def frames(src, start, end, n):
