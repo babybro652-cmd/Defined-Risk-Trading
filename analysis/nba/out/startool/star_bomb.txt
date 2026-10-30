@@ -49,3 +49,13 @@
 2026-10-29|CLE @ ATL|Donovan Mitchell,Nickeil Alexander-Walker|James Harden,Jalen Johnson
 2026-10-29|MEM @ POR|Ty Jerome,Deni Avdija|Cameron Boozer,Damian Lillard
 2026-10-29|SAC @ NO|Darius Acuff Jr.,Trey Murphy III|Zach LaVine,Zion Williamson
+2026-10-30|DEN @ PHX|Nikola Jokic,Devin Booker|Jamal Murray,Dillon Brooks
+2026-10-30|LAL @ GS|Luka Doncic,Stephen Curry|Austin Reaves,Yaxel Lendeborg
+2026-10-30|LAC @ MIN|Darius Garland,LaMelo Ball|Rui Hachimura,Ayo Dosunmu
+2026-10-30|HOU @ DAL|Kevin Durant,Cooper Flagg|Alperen Sengun,Kyrie Irving
+2026-10-30|IND @ MIA|Pascal Siakam,Giannis Antetokounmpo|Tyrese Haliburton,Bam Adebayo
+2026-10-30|ORL @ TOR|Desmond Bane,RJ Barrett|Franz Wagner,Immanuel Quickley
+2026-10-30|NY @ PHI|Jalen Brunson,Jaylen Brown|Karl-Anthony Towns,Joel Embiid
+2026-10-30|DET @ BKN|Cade Cunningham,Michael Porter Jr.|Jalen Duren,Julius Randle
+2026-10-30|CHI @ BOS|Norman Powell,Jayson Tatum|Caleb Wilson,Paul George
+2026-10-30|CHA @ WSH|Brandon Miller,Anthony Davis|Kon Knueppel,Trae Young

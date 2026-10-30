@@ -49,7 +49,16 @@ Best player + method (fair price; bet only if the book pays more):
 
 ## StarTool check (side by side, no blend)
 
-- No StarTool cards saved for this slate yet. Add lines to out/startool/star_bomb.txt (date|AWAY @ HOME|star,star|bomb,bomb) and rerun.
+- CHA @ WSH: our top Anthony Davis (16%): agree (StarTool star)
+- CHI @ BOS: our top Paul George (19%): agree (StarTool bomb)
+- DET @ BKN: our top Paul Reed (15%): differs (StarTool stars Cade Cunningham, Michael Porter Jr.; bombs Jalen Duren, Julius Randle)
+- NY @ PHI: our top Jaylen Brown (13%): agree (StarTool star)
+- ORL @ TOR: our top Wendell Carter Jr. (16%): differs (StarTool stars Desmond Bane, RJ Barrett; bombs Franz Wagner, Immanuel Quickley)
+- IND @ MIA: our top Bam Adebayo (19%): agree (StarTool bomb)
+- HOU @ DAL: our top Alperen Sengun (19%): agree (StarTool bomb)
+- LAC @ MIN: our top Jaden McDaniels (14%): differs (StarTool stars Darius Garland, LaMelo Ball; bombs Rui Hachimura, Ayo Dosunmu)
+- LAL @ GS: our top Walker Kessler (17%): differs (StarTool stars Luka Doncic, Stephen Curry; bombs Austin Reaves, Yaxel Lendeborg)
+- DEN @ PHX: our top Nikola Jokic (16%): agree (StarTool star)
 
 ## Tip-off
 
