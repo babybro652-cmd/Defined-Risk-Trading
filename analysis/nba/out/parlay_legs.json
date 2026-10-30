@@ -3,14 +3,6 @@
  "sport": "NBA",
  "legs": [
   {
-   "player": "Brandon Miller",
-   "team": "CHA",
-   "game": "CHA @ WSH",
-   "market": "3+ threes",
-   "p": 0.637,
-   "note": "70 starts"
-  },
-  {
    "player": "Dennis Schroder",
    "team": "CHA",
    "game": "CHA @ WSH",
@@ -27,12 +19,12 @@
    "note": "24 starts"
   },
   {
-   "player": "Kyshawn George",
-   "team": "WSH",
+   "player": "Brandon Miller",
+   "team": "CHA",
    "game": "CHA @ WSH",
    "market": "3+ threes",
-   "p": 0.302,
-   "note": "53 starts"
+   "p": 0.637,
+   "note": "70 starts"
   },
   {
    "player": "Trae Young",
@@ -41,6 +33,14 @@
    "market": "3+ threes",
    "p": 0.333,
    "note": "20 starts"
+  },
+  {
+   "player": "Kyshawn George",
+   "team": "WSH",
+   "game": "CHA @ WSH",
+   "market": "3+ threes",
+   "p": 0.302,
+   "note": "53 starts"
   },
   {
    "player": "Anthony Davis",
@@ -57,14 +57,6 @@
    "market": "3+ threes",
    "p": 0.063,
    "note": "53 starts"
-  },
-  {
-   "player": "Bilal Coulibaly",
-   "team": "WSH",
-   "game": "CHA @ WSH",
-   "market": "3+ threes",
-   "p": 0.103,
-   "note": "60 starts"
   },
   {
    "player": "Josh Giddey",
@@ -227,14 +219,6 @@
    "note": "78 starts"
   },
   {
-   "player": "Jaylen Brown",
-   "team": "PHI",
-   "game": "NY @ PHI",
-   "market": "3+ threes",
-   "p": 0.236,
-   "note": "79 starts"
-  },
-  {
    "player": "VJ Edgecombe",
    "team": "PHI",
    "game": "NY @ PHI",
@@ -257,6 +241,14 @@
    "market": "3+ threes",
    "p": 0.14,
    "note": "42 starts"
+  },
+  {
+   "player": "Dean Wade",
+   "team": "PHI",
+   "game": "NY @ PHI",
+   "market": "3+ threes",
+   "p": 0.136,
+   "note": "40 starts"
   },
   {
    "player": "Wendell Carter Jr.",
@@ -321,46 +313,6 @@
    "market": "3+ threes",
    "p": 0.56,
    "note": "21 starts"
-  },
-  {
-   "player": "Pascal Siakam",
-   "team": "IND",
-   "game": "IND @ MIA",
-   "market": "3+ threes",
-   "p": 0.295,
-   "note": "68 starts"
-  },
-  {
-   "player": "Andrew Nembhard",
-   "team": "IND",
-   "game": "IND @ MIA",
-   "market": "3+ threes",
-   "p": 0.261,
-   "note": "61 starts"
-  },
-  {
-   "player": "Kelly Oubre Jr.",
-   "team": "IND",
-   "game": "IND @ MIA",
-   "market": "3+ threes",
-   "p": 0.3,
-   "note": "44 starts"
-  },
-  {
-   "player": "Aaron Nesmith",
-   "team": "IND",
-   "game": "IND @ MIA",
-   "market": "3+ threes",
-   "p": 0.471,
-   "note": "45 starts"
-  },
-  {
-   "player": "Jay Huff",
-   "team": "IND",
-   "game": "IND @ MIA",
-   "market": "3+ threes",
-   "p": 0.208,
-   "note": "49 starts"
   },
   {
    "player": "Andrew Wiggins",
@@ -505,6 +457,14 @@
    "market": "3+ threes",
    "p": 0.779,
    "note": "69 starts"
+  },
+  {
+   "player": "Quentin Grimes",
+   "team": "LAL",
+   "game": "LAL @ GS",
+   "market": "3+ threes",
+   "p": 0.136,
+   "note": "20 starts"
   },
   {
    "player": "Stephen Curry",

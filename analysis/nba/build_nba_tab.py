@@ -344,7 +344,9 @@ def american(p):
     return f'+{round((1 - p) / p * 100)}' if p < 0.5 else f'-{round(p / (1 - p) * 100)}'
 
 
-def build(start, log):
+def build(start, log, lineups=None):
+    """lineups: optional {TEAM: {'five': [names], 'jumper': name}} from confirmed lineups (overrides the estimate)."""
+    lineups = lineups or {}
     os.makedirs(DATA, exist_ok=True)
     sched_cur = schedule(CUR, start + dt.timedelta(14), log)
     sched_last = schedule(LAST, SEASONS[LAST][1], log)
@@ -418,7 +420,21 @@ def build(start, log):
         # shrink toward 50% with 6 pseudo tips
         return (W * c['tipw'] + l['tipw'] + 3) / (W * c['tips'] + l['tips'] + 6)
 
+    by_name = {(r['tm'], r['name']): pid for pid, r in roster.items()}
+
+    def lineup_pid(tm, name):
+        pid = by_name.get((tm, name))
+        if not pid:
+            raise SystemExit(f'lineups: {name} not on the {tm} roster')
+        return pid
+
+    for tm, lu in lineups.items():   # confirmed starters replace the estimate
+        if lu.get('five'):
+            starters[tm] = [lineup_pid(tm, n) for n in lu['five']]
+
     def main_jumper(tm):
+        if lineups.get(tm, {}).get('jumper'):
+            return lineup_pid(tm, lineups[tm]['jumper'])
         # this season's games (preseason and regular) newest first: weights 3, 2, 1.5, then 1; regular season x2.
         # Last season's tips count 0.05 each for any team, so traded bigs carry over but current roles win.
         ok = lambda pid: (roster.get(pid, {}).get('tm') == tm
@@ -480,6 +496,7 @@ def build(start, log):
 
     def ripple_note(tm):
         gone = [p for p in healthy5.get(tm, []) if p not in starters.get(tm, []) and share(p) >= 0.25
+                and (inj.get(p) or {}).get('status', '').lower() in ('out', 'doubtful')
                 and S(PL, p)['gs'] + S(PC, p)['gs'] >= 20]
         return ', '.join(f"{nm(p)} out ({round(100 * share(p))}% share spread to the rest)" for p in gone)
 
@@ -831,9 +848,11 @@ def build(start, log):
 def main():
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument('--date', help='start looking for the slate on this date, YYYY-MM-DD (default today ET)')
+    ap.add_argument('--lineups', help='JSON file of confirmed lineups: {"WSH": {"five": [names], "jumper": name}}')
     a = ap.parse_args()
+    lu = json.load(open(a.lineups)) if a.lineups else None
     d = dt.date.fromisoformat(a.date) if a.date else dt.datetime.now(ET).date()
-    build(d, lambda m: print(m, file=sys.stderr))
+    build(d, lambda m: print(m, file=sys.stderr), lu)
 
 
 if __name__ == '__main__':

@@ -29,6 +29,10 @@ Include the first shot and first score for each game in the grading message to T
    python3 analysis/nba/build_nba_tab.py --date 2026-10-21
    ```
 
+   Confirmed lineups (since 10/30): put them in `data/lineups_<date>.json`
+   (`{"WSH": {"five": [names as on the ESPN roster], "jumper": "Anthony Davis"}}`) and add
+   `--lineups analysis/nba/data/lineups_<date>.json`. Listed teams use those five and that jumper instead of the estimate.
+
    It downloads only new final games (parsed games are cached in `data/games_<season>.json`,
    the schedule in `data/schedule_<season>.json`), then pulls current rosters and ESPN injuries,
    and writes:
