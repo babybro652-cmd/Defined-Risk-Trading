@@ -8,7 +8,6 @@ Newest decisions win; move finished items to Done with the date.
 
 ### Personal
 - [x] Pay the light bill (my half $51.25 of $102.50) and internet ($50.77). Paid 10/22.
-- [ ] Verizon: $282.37 scheduled Thu 10/22; then call Verizon to remove the unused lines (Jarvis reminder Fri 10/23 10 AM).
 - [ ] Charger oil change (past due, ~188k miles): 5.7 Hemi, 7 qt 5W-20 high-mileage + MO-339 filter.
 - [ ] Google Workspace: on Business Starter ($8.40/mo) since 10/22, no charge on the switch, first invoice 11/1. Check admin.google.com > Billing for any old balance from the failed 10/20 payment (suspension date was 11/3).
 - [ ] Check the 5 Skool login codes from 9/29. If they weren't all you, change the Skool password.
@@ -73,6 +72,8 @@ Newest decisions win; move finished items to Done with the date.
 - [ ] FUTURE UPGRADE (after CRT Pro hit rate improves): position-tool style boxes on CRT Pro. Red box entry→SL, green box entry→TP3 with TP1/TP2 dashed inside, label with risk pts / $ at 2 ES and R:R per TP. Boxes run until the trade closes; replaces the plain lines. Sheet unchanged; needs a new alert after pasting.
 
 ## Done
+- 10/30 Verizon unused lines removed (Tim).
+- 10/30 Lucid Trading $80.50 on 10/29 confirmed by Tim: LucidFlex 50K eval reset.
 - 10/21 Cruze mileage: 182,995.
 - 10/13 Peace by Page decisions: no launch sale (no LAUNCH25), emails signed "The Peace by Page team", counselor/group license later. Email copy updated.
 - 10/5: Payhip account, payouts and tax settings set up (#17–19). @peacebypage claimed on Instagram, TikTok and Pinterest. Facebook Page + Pinterest connected to Blotato; IG + TikTok wait until ~10/18.
