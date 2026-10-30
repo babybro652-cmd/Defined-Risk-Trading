@@ -7,3 +7,6 @@
 2026-10-28|CGY @ EDM|Suniev,Draisaitl|Frost,McDavid
 2026-10-28|NJD @ COL|Hischier,MacKinnon|J. Hughes,Lehkonen
 2026-10-28|TOR @ SEA|Matthews,Eberle|Nylander,Beniers
+2026-10-30|NJD @ VGK|Hischier,Stone|J. Hughes,Eichel
+2026-10-30|WPG @ FLA|Connor,B. Tkachuk|Perfetti,M. Tkachuk
+2026-10-30|SEA @ CGY|Eberle,Frost|McMann,Backlund
