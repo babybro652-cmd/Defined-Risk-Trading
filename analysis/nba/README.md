@@ -259,3 +259,6 @@ On game days Tim sends the StarTool Analytics "Game Script" card for each game (
 | 10/28 | SA @ UTAH | De'Aaron Fox SA (first shot, made) | Wembanyama | Wembanyama / Markkanen (bomb Fox hit) | Wembanyama | No | No |
 | 10/28 | OKC @ DAL | Cooper Flagg DAL (first shot A. Mitchell, missed) | Ajay Mitchell | SGA / Flagg (StarTool star hit) | Ajay Mitchell | No | No |
 | 10/28 | LAL @ LAC | Matisse Thybulle LAL (first shot, made); Doncic DNP | Doncic (void), Kessler | Doncic / Garland | Doncic (void), Kessler | No | No |
+| 10/29 | CLE @ ATL | James Harden CLE, driving layup (rim) at 10:27 (first shot Watson three, missed; first points Mobley FTs) | (none sent) | Mitchell / NAW (bomb Harden hit) | Allen, Mobley; method Allen rim | - | No |
+| 10/29 | SAC @ NO | Trey Murphy III NO, running dunk (rim) (first shot Hunter, missed) | (none sent) | Acuff / Murphy (StarTool star hit) | Sabonis, LaVine; method Sabonis rim, Zion rim | - | No |
+| 10/29 | MEM @ POR | Zach Edey MEM, center, dunk (rim) off Boozer (first shot Camara three, missed) | (none sent) | Jerome / Avdija | Jerome, Coward; method Jerome j2, Coward 3 | - | No |
