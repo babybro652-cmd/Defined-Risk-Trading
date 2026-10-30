@@ -315,12 +315,44 @@
    "note": "21 starts"
   },
   {
-   "player": "Andrew Wiggins",
-   "team": "MIA",
+   "player": "Andrew Nembhard",
+   "team": "IND",
    "game": "IND @ MIA",
    "market": "3+ threes",
-   "p": 0.301,
-   "note": "73 starts"
+   "p": 0.261,
+   "note": "61 starts"
+  },
+  {
+   "player": "Kelly Oubre Jr.",
+   "team": "IND",
+   "game": "IND @ MIA",
+   "market": "3+ threes",
+   "p": 0.3,
+   "note": "44 starts"
+  },
+  {
+   "player": "Aaron Nesmith",
+   "team": "IND",
+   "game": "IND @ MIA",
+   "market": "3+ threes",
+   "p": 0.471,
+   "note": "45 starts"
+  },
+  {
+   "player": "Pascal Siakam",
+   "team": "IND",
+   "game": "IND @ MIA",
+   "market": "3+ threes",
+   "p": 0.295,
+   "note": "68 starts"
+  },
+  {
+   "player": "Jay Huff",
+   "team": "IND",
+   "game": "IND @ MIA",
+   "market": "3+ threes",
+   "p": 0.208,
+   "note": "49 starts"
   },
   {
    "player": "Davion Mitchell",
@@ -331,20 +363,20 @@
    "note": "75 starts"
   },
   {
+   "player": "Andrew Wiggins",
+   "team": "MIA",
+   "game": "IND @ MIA",
+   "market": "3+ threes",
+   "p": 0.301,
+   "note": "73 starts"
+  },
+  {
    "player": "Bam Adebayo",
    "team": "MIA",
    "game": "IND @ MIA",
    "market": "3+ threes",
    "p": 0.205,
    "note": "78 starts"
-  },
-  {
-   "player": "Jabari Smith Jr.",
-   "team": "HOU",
-   "game": "HOU @ DAL",
-   "market": "3+ threes",
-   "p": 0.391,
-   "note": "82 starts"
   },
   {
    "player": "Kevin Durant",
@@ -355,20 +387,20 @@
    "note": "86 starts"
   },
   {
-   "player": "Alperen Sengun",
+   "player": "Tari Eason",
    "team": "HOU",
    "game": "HOU @ DAL",
    "market": "3+ threes",
-   "p": 0.036,
-   "note": "76 starts"
+   "p": 0.162,
+   "note": "35 starts"
   },
   {
-   "player": "P.J. Washington",
-   "team": "DAL",
+   "player": "Jabari Smith Jr.",
+   "team": "HOU",
    "game": "HOU @ DAL",
    "market": "3+ threes",
-   "p": 0.162,
-   "note": "58 starts"
+   "p": 0.391,
+   "note": "82 starts"
   },
   {
    "player": "Max Christie",
@@ -387,20 +419,20 @@
    "note": "74 starts"
   },
   {
+   "player": "P.J. Washington",
+   "team": "DAL",
+   "game": "HOU @ DAL",
+   "market": "3+ threes",
+   "p": 0.162,
+   "note": "58 starts"
+  },
+  {
    "player": "Darius Garland",
    "team": "LAC",
    "game": "LAC @ MIN",
    "market": "3+ threes",
    "p": 0.509,
    "note": "47 starts"
-  },
-  {
-   "player": "Derrick Jones Jr.",
-   "team": "LAC",
-   "game": "LAC @ MIN",
-   "market": "3+ threes",
-   "p": 0.246,
-   "note": "49 starts"
   },
   {
    "player": "Kris Dunn",
@@ -419,12 +451,12 @@
    "note": "44 starts"
   },
   {
-   "player": "Jaden McDaniels",
-   "team": "MIN",
+   "player": "Derrick Jones Jr.",
+   "team": "LAC",
    "game": "LAC @ MIN",
    "market": "3+ threes",
-   "p": 0.182,
-   "note": "78 starts"
+   "p": 0.246,
+   "note": "49 starts"
   },
   {
    "player": "LaMelo Ball",
@@ -441,6 +473,14 @@
    "market": "3+ threes",
    "p": 0.5,
    "note": "20 starts"
+  },
+  {
+   "player": "Jaden McDaniels",
+   "team": "MIN",
+   "game": "LAC @ MIN",
+   "market": "3+ threes",
+   "p": 0.182,
+   "note": "78 starts"
   },
   {
    "player": "Austin Reaves",

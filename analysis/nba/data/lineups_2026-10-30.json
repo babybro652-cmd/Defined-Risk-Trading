@@ -1,4 +1,10 @@
 {
   "CHA": {"five": ["Dennis Schroder", "Sion James", "Brandon Miller", "Naz Reid", "Moussa Diabate"], "jumper": "Moussa Diabate"},
-  "WSH": {"five": ["Trae Young", "Kyshawn George", "AJ Dybantsa", "Anthony Davis", "Alex Sarr"], "jumper": "Anthony Davis"}
+  "WSH": {"five": ["Trae Young", "Kyshawn George", "AJ Dybantsa", "Anthony Davis", "Alex Sarr"], "jumper": "Anthony Davis"},
+  "IND": {"five": ["Andrew Nembhard", "Kelly Oubre Jr.", "Aaron Nesmith", "Pascal Siakam", "Jay Huff"], "jumper": "Jay Huff"},
+  "MIA": {"five": ["Davion Mitchell", "Klay Thompson", "Andrew Wiggins", "Giannis Antetokounmpo", "Bam Adebayo"], "jumper": "Bam Adebayo"},
+  "HOU": {"five": ["Fred VanVleet", "Amen Thompson", "Kevin Durant", "Tari Eason", "Jabari Smith Jr."], "jumper": "Jabari Smith Jr."},
+  "DAL": {"five": ["Kyrie Irving", "Max Christie", "Cooper Flagg", "P.J. Washington", "Daniel Gafford"], "jumper": "Daniel Gafford"},
+  "LAC": {"five": ["Darius Garland", "Kris Dunn", "Rui Hachimura", "Derrick Jones Jr.", "Isaiah Jackson"], "jumper": "Isaiah Jackson"},
+  "MIN": {"five": ["LaMelo Ball", "Ayo Dosunmu", "Jonathan Kuminga", "Jaden McDaniels", "Rudy Gobert"], "jumper": "Rudy Gobert"}
 }
