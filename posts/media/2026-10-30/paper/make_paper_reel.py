@@ -44,8 +44,8 @@ def chart_card():
 CARDS=[
  card(None,"Paper trading isn't only for beginners."),
  chart_card(),
- card("SO I PAPER TRADED","No live trades forced into chop.","Same rules, same stop, same patience. No real money at risk.",red=False),
- card("WHAT IT TRAINS","The skill and the emotions.","Sitting through chop without itching to click buy is a rep too."),
+ card("SO I SAT OUT","No live trades forced into chop.","Hands off the button. No trade was the trade."),
+ card("WHERE PAPER EARNS ITS KEEP","Days like this are practice days.","Run your rules on paper. Train the skill and your emotions, with no money at risk."),
  card(None,"Define your risk. Wait for your setup.","Let's have a disciplined day."),
 ]
 DUR=[3.5,6.0,4.5,4.5,4.0]
