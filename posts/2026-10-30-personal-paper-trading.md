@@ -26,3 +26,10 @@ That's the whole point. Paper isn't only practice for the skill. It's practice f
 I'd rather paper trade a bad day than blow a good account trying to force it.
 
 Define your risk. Wait for your setup. If it's not there, it's not there.
+
+## Status (10/30)
+- #2 SCHEDULED to Tim's personal TikTok (Blotato 59764, @timothywilliams9902), Fri 10/30 12:15 PM ET (16:15 UTC). Blotato schedule id 6233463, submission 9169a766-3a49-426f-bb55-637e8d03cb5c. Tim approved.
+- Media: `posts/media/2026-10-30/personal/paper-trading-personal.mp4` (1080x1920, 19.8 s, 8 text cards incl. Tim's 10/29 ES 15m chart, silent track). Built by `make_personal_reel.py` (0 credits). QA contact sheet `contact_sheet.png`, cards `cards_sheet.png`: text matches post #2, only date shown is "29" on the real chart (correct), no invented numbers, no DRT branding.
+- Caption: "Paper trading isn't real trading." Cool. Neither is gambling your rent on a setup that isn't there. Ego blows more accounts than bad charts. (141 chars) + #papertrading #daytrading #tradingpsychology #futurestrading
+- Settings: PUBLIC_TO_EVERYONE, isAiGenerated false, isYourBrand false, isBrandedContent false, comments/duet/stitch on.
+- #1 and #3 not scheduled.
