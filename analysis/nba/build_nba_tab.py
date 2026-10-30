@@ -51,6 +51,43 @@ V2 = {'w_shot': 0.5,      # share = (1 - w) x first-FG share + w x first-shot sh
       'settle_n': 10}     # ... fading to 0 at 10 starts, both seasons (a team-only count hurt traded regulars)
 
 
+# Jumper fix (10/30/26, Tim approved; report analysis/reports/2026-10-30-picks-vs-startool.md): the tip jumper's share of
+# his team's first FG x1.2 when his team wins the tip, x0.95 when it loses (the other four rescaled so the team total
+# holds), priced pregame through our tip chance. Backtest: python3 analysis/nba/backtest_fb.py --jumper
+JB = {'win': 1.2, 'lose': 0.95, 'cap': 0.9}
+# Top-end shrink (10/30/26): starters' final chances in a game are raised to the power TOP['temp'] and rescaled to the
+# same total, which pulls 15%+ chances in (they ran 1-3 points hot) and lifts the under-8% names. 0.8 is the 2025-26
+# log-loss optimum (flat from 0.75 to 0.8; the report's guess was about 0.9). Set from the --jumper backtest.
+TOP = {'temp': 0.8}
+
+
+def jumper_split(sh, j, ptip, af, jb=JB):
+    """sh: pid -> share of his team's first FG (sums to about 0.99). j: the team's tip jumper. ptip: chance the team
+    wins the tip. af: chance the tip winner scores first. Returns pid -> chance he makes the game's first FG."""
+    S = sum(sh.values())
+    out = dict.fromkeys(sh, 0.0)
+    for p_scen, b in ((ptip * af, jb['win']), ((1 - ptip) * (1 - af), jb['lose'])):
+        s2 = sh
+        if j in sh and S > sh[j]:
+            sj = min(sh[j] * b, S * jb['cap'])
+            k = (S - sj) / (S - sh[j])
+            s2 = {p: (sj if p == j else v * k) for p, v in sh.items()}
+        for p, v in s2.items():
+            out[p] += p_scen * v
+    return out
+
+
+def shrink_top(probs, temp=None):
+    """probs: pid -> first-FG chance for one game's starters. Power temp (< 1 flattens), same total."""
+    t = TOP['temp'] if temp is None else temp
+    if t == 1 or not probs:
+        return dict(probs)
+    tot = sum(probs.values())
+    pw = {p: v ** t for p, v in probs.items()}
+    f = tot / sum(pw.values())
+    return {p: v * f for p, v in pw.items()}
+
+
 def cur_weight(w, n_cur, prm=V2):
     """26-27 game weight for one player: full weight only after prm['ramp_n'] 26-27 starts with his current team."""
     return 1 + (w - 1) * min(n_cur, prm['ramp_n']) / prm['ramp_n']
@@ -467,13 +504,22 @@ def build(start, log):
     cands = []
     for tm, (g, at, opp, pteam) in side.items():
         tv = team_v2(tm, opp)
+        j = main_jumper(tm)
+        ptip = g['ptip'] if tm == g['away'] else 1 - g['ptip']
+        pj = jumper_split({p: tv[p][0] for p in starters.get(tm, [])}, j, ptip, a_first)   # 10/30 jumper fix
         for pid in starters.get(tm, []):
             st = (inj.get(pid) or {}).get('status', '')
             sh, mu = tv[pid]
-            cands.append({'pid': pid, 'tm': tm, 'at': at, 'opp': opp, 'pteam': pteam, 'share': sh, 'p': pteam * sh,
+            cands.append({'pid': pid, 'tm': tm, 'at': at, 'opp': opp, 'pteam': pteam, 'share': pj[pid] / pteam,
+                          'p': pj[pid], 'p_raw': pteam * sh, 'jumper': pid == j,
                           'p1': pteam * share(pid), 'mult': mu, 'gid': g['id'], 'inj': st, 'rip': ripple_note(tm),
                           'time': g['time']})
-    json.dump([{'player': nm(c['pid']), 'tm': c['tm'], 'opp': c['opp'], 'time': c['time'], 'p_v2': round(c['p'], 4),
+    for gid in {c['gid'] for c in cands}:   # 10/30 top-end shrink across the game's starters
+        cg = [c for c in cands if c['gid'] == gid]
+        adj = shrink_top({c['pid']: c['p'] for c in cg})
+        for c in cg:
+            c['p'] = adj[c['pid']]
+    json.dump([{'player': nm(c['pid']), 'tm': c['tm'], 'opp': c['opp'], 'time': c['time'], 'p_v2': round(c['p'], 4), 'p_before_10_30_fix': round(c['p_raw'], 4), 'tip_jumper': c['jumper'],
                 'p_v1': round(c['p1'], 4), 'fair_v2': american(c['p']), 'fair_v1': american(c['p1']),
                 'def_mult': round(c['mult'], 3), 'ripple': c['rip'], 'inj': c['inj']}
                for c in sorted(cands, key=lambda c: (c['time'], c['gid'], -c['p']))],
@@ -489,7 +535,8 @@ def build(start, log):
         l, cu = S(PL, c['pid']), S(PC, c['pid'])
         pos = roster[c['pid']]['pos']
         picks.append(['First basket', nm(c['pid']), f"{c['tm']} {c['at']} {c['opp']} {c['time']}",
-                      f"Est {round(100 * c['p'])}% (fair {american(c['p'])}; old model {round(100 * c['p1'])}%): "
+                      f"Est {round(100 * c['p'])}% (fair {american(c['p'])}; old model {round(100 * c['p1'])}%"
+                      + ("; tip jumper x1.2 if his team wins the tip" if c['jumper'] else '') + "): "
                       f"{c['tm']} scores first {round(100 * c['pteam'])}%; first FG {l['t1']}/{l['gs']} and first shot "
                       f"{l['sh1']}/{l['gs']} starts 25-26" + (f", {cu['t1']}/{cu['gs']} 26-27" if cu['gs'] else '')
                       + f", FG {round(100 * fgpct(c['pid']))}%; {c['opp']} vs {pos} x{c['mult']:.2f}"
@@ -540,9 +587,42 @@ def build(start, log):
             continue
         seen.add(c['pid'])
         lg = [x for x in S(PL, c['pid'])['log'] if x[3]][-5:]
+        up = ''
+        if r > 0.75:   # -300 rule (10/29): a fair price shorter than -300 means take the next line up
+            lines = PTS_LINES if lab == 'points' else THREE_LINES
+            if k != lines[-1]:
+                k2 = lines[lines.index(k) + 1]
+                r2, _ = over_rate(c['pid'], 1 if lab == 'points' else 2, k2)
+                up = (f"; fair {american(r)} is shorter than -300, so take over {k2} instead "
+                      f"({round(100 * r2)}%, fair {american(r2)})")
         picks.append([f'Over {k} {lab}', nm(c['pid']), f"{c['tm']} {c['at']} {c['opp']}",
                       f"Over {k} in {round(100 * r)}% of starts (blend); last 5 starts 25-26: "
-                      f"{' '.join(str(x[1 if lab == 'points' else 2]) for x in reversed(lg))}", f'Over {k}'])
+                      f"{' '.join(str(x[1 if lab == 'points' else 2]) for x in reversed(lg))}{up}"
+                      + ('; singles only, never in a parlay' if lab == 'points' else ''), f'Over {k}'])
+
+    # ---------- parlay legs (10/30; analysis/parlays.py): NBA 3+ threes only, never points ----------
+    sys.path.insert(0, os.path.dirname(HERE))
+    import parlays as PAR
+    legs = []
+    for c in cands:
+        if c['inj'] and c['inj'] != 'Day-To-Day':
+            continue
+        r, n = over_rate(c['pid'], 2, 2.5)
+        if r and n >= 20:
+            g = side[c['tm']][0]
+            legs.append({'player': nm(c['pid']), 'team': c['tm'], 'game': f"{g['away']} @ {g['home']}",
+                         'market': '3+ threes', 'p': round(r, 3), 'note': f'{n} starts'})
+    PAR.write_legs('nba', slate_day, 'NBA', legs)
+
+    # ---------- StarTool agree flag (10/30; no blend) ----------
+    st_flags = []
+    for g in slate_games:
+        cg = [c for c in cands if c['gid'] == g['id']]
+        if cg:
+            top = max(cg, key=lambda c: c['p'])
+            fl = PAR.agree_flag('nba', slate_day, g['away'], g['home'], nm(top['pid']))
+            if fl:
+                st_flags.append(f"- {g['away']} @ {g['home']}: our top {nm(top['pid'])} ({round(100 * top['p'])}%): {fl}")
 
     # ---------- grid ----------
     rows = []
@@ -736,10 +816,15 @@ def build(start, log):
             f.write(f"- **{nm(c['pid'])} first basket: {FM.SHORT[m]}** ({c['tm']} {c['at']} {c['opp']} {c['time']}). "
                     f"Est {100 * pm:.1f}% (fair {american(pm)}) = FB {round(100 * c['p'])}% x {round(100 * sp[m])}% "
                     f"if he scores first; his first-FG sample {round(c['m_n'])}, made FGs {round(c['m_mix'])}\n")
+        f.write('\n## StarTool check (side by side, no blend)\n\n'
+                + ('\n'.join(st_flags) if st_flags else
+                   '- No StarTool cards saved for this slate yet. Add lines to out/startool/star_bomb.txt '
+                   '(date|AWAY @ HOME|star,star|bomb,bomb) and rerun.') + '\n')
         f.write('\n## Tip-off\n\n')
         for g in slate_games:
             f.write(f"- {g['away']} @ {g['home']} {g['time']} ET: {nm(g['ja'])} vs {nm(g['jh'])}; away wins tip "
                     f"{round(100 * g['ptip'])}%, away scores first {round(100 * g['pfirst'])}%\n")
+    PAR.write_sections(slate_day)
     log(f'wrote {len(rows)} rows x {width} cols; picks {len(picks)}; meta {meta}')
 
 

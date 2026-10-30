@@ -80,6 +80,7 @@ Include the first shot and first score for each game in the grading message to T
 - Estimated FB chance (model v2, 10/21/26) = P(team scores first) x the player's share of his team's
   first FG. P(team scores first) comes from the two main jumpers' tip rates (log5, each shrunk toward 50%
   with 6 pseudo tips) and the 2025-26 league rate that the tip winner scores first (64%).
+  Since 10/30: the jumper split and top-end shrink below ("Model changes 10/30/26").
 - Share, step by step (code: `V2` and `v2_shares` in build_nba_tab.py):
   1. Accuracy blend: 0.5 x first-FG share + 0.5 x first-shot share x (his FG% / league FG% 47%).
      Both shares are shrunk toward 1 in 5 with 10 pseudo starts; FG% is shrunk toward league with 150
@@ -152,6 +153,47 @@ each team's first points / first FG method and scorer, every player's made FGs b
 - first_events log: columns `first_basket_method` and `first_points_method` since 10/29 (backfilled for
   every NBA row from the cache with `python3 analysis/first_events.py --backfill-methods`).
 
+## Model changes 10/30/26 (Tim approved, from `analysis/reports/2026-10-30-picks-vs-startool.md`)
+
+Backtest: `python3 analysis/nba/backtest_fb.py --jumper` (walk-forward, current model V2 + ramp, actual starters and
+jumpers, priced pregame through our tip chance; log loss renormalized over the 10 starters, uniform 2.303).
+
+1. **Jumper split** (`JB`, `jumper_split` in build_nba_tab.py). The tip jumper's share of his team's first FG is
+   x1.2 when his team wins the tip and x0.95 when it loses; the other four are rescaled so the team total holds.
+   P(FB) = P(win tip) x 64% x boosted share + P(lose tip) x 36% x cut share.
+2. **Top-end shrink** (`TOP`, `shrink_top`). Each game's 10 final chances are raised to the power 0.8 and rescaled to
+   the same total. It pulls 15%+ chances in and lifts the under-8% names (they ran hot and cold). 0.8 is the 2025-26
+   optimum (0.75 to 0.8 is flat); the report's guess was 0.9, which also helps but less.
+
+| Model | 25-26 log loss (933) | 25-26 top pick hits | 26-27 log loss (71) | 26-27 top pick hits | Jumper FB expected / actual (25-26; 26-27) |
+|---|---|---|---|---|---|
+| Before (10/23 model) | 2.2826 | 131 | 2.2912 | 9 | 201.0 / 224; 16.0 / 20 |
+| + jumper 1.2 / 0.95 | 2.2808 | 136 | 2.2875 | 10 | 223.1 / 224; 17.8 / 20 |
+| + temp 0.9 | 2.2789 | 136 | 2.2838 | 10 | 219.0 / 224; 17.4 / 20 |
+| **+ temp 0.8 (used)** | **2.2778** | 136 | **2.2813** | 10 | 215.0 / 224; 17.0 / 20 |
+
+Calibration, 25-26, 15%+ chances: before 466 at 16.6% predicted vs 15.0% hit; after 280 at 16.5% vs 14.3%; 17%+ before
+18.5% vs 15.0%. Under 8%: 6.6% vs 7.7% before, 6.9% vs 7.4% after. Brier 0.8958 to 0.8947. The 26-27 numbers through 10/29
+are 71 games (the report's 68 plus 10/29). Gains are small; first basket is still mostly noise. Pick text marks the jumper
+("tip jumper x1.2 if his team wins the tip"). `out/fb_candidates.json` keeps the pre-fix chance (`p_before_10_30_fix`).
+
+3. **No StarTool blend.** Tim rejected it 10/30 (the gain could be zero). StarTool stays side by side only.
+   Save each card's star/bomb in `out/startool/star_bomb.txt` (`date|AWAY @ HOME|star,star|bomb,bomb`, names as printed)
+   and rerun the build: the shortlist's "StarTool check" section flags each game "agree (StarTool star)", "agree (StarTool
+   bomb)" or "differs" when our top first basket pick is (or is not) one of its stars or bombs. Code: `agree_flag` in
+   `analysis/parlays.py`. The NHL build does the same with our top anytime goal pick per game.
+4. **Parlays** (`analysis/parlays.py`, a combined "## Parlays" section written into this shortlist and the NHL one, and the
+   UCL one on matchdays). Legs only from categories that beat their price season to date: NBA 3+ threes, NHL 3+ SOG,
+   NFL receptions, soccer 1+ shot on target. Never NBA points overs (singles only, at a higher alt line), never first
+   basket, first goal or anytime goal. Each build writes `out/parlay_legs.json`; NFL receptions have no build, so write
+   `analysis/nfl/out/parlay_legs.json` by hand (same format: date, sport "NFL", legs with player, team, game "AWAY @ HOME",
+   market "4+ receptions", p) and run `python3 analysis/parlays.py <date>`. Rules: 2 or 3 legs, leg chance 55% to 88%,
+   different games first (a same-game combo is marked correlated; its fair price is the plain product, so it is
+   optimistic), each leg in at most two parlays. Fair = product of the leg chances. Minimum FanDuel price = fair chance /
+   1.1 (10% cushion). Stake $0.10 to $0.20.
+5. **-300 rule in the build** (Tim 10/29). Points and threes picks over 75% (fair shorter than -300) now say "take over X
+   instead" with the next line's rate and fair price. Points picks say "singles only, never in a parlay".
+
 ## Sources
 
 - ESPN `site.api.espn.com/apis/site/v2/sports/basketball/nba`: scoreboard, summary
@@ -209,6 +251,9 @@ each team's first points / first FG method and scorer, every player's made FGs b
 - 10/29: first basket method added (see section above). Logged 5 player + method picks for 10/29 (Bets rows 506-510).
 - 10/29 rule (Tim): skip props priced shorter than about -300; offer the next line up (25+ points instead of 20+,
   3+ threes instead of 2+, 3+ SOG instead of 2+).
+- 10/30 (Tim approved the 10/30 report): jumper split x1.2 / x0.95 and top-end shrink (power 0.8) applied; StarTool
+  blend rejected (side by side plus an agree flag only); daily parlays only from 3+ threes, 3+ SOG, receptions and soccer
+  SOT; NHL anytime goal x0.77 and only at +150 or longer. See "Model changes 10/30/26".
 
 ## Tim vs model log (first basket)
 

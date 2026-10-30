@@ -1,0 +1,910 @@
+{
+ "date": "2026-10-30",
+ "sport": "NHL",
+ "legs": [
+  {
+   "player": "Ryker Evans",
+   "team": "SEA",
+   "game": "SEA @ CGY",
+   "market": "3+ SOG",
+   "p": 0.019,
+   "note": "0.8 SOG/G"
+  },
+  {
+   "player": "Niko Mikkola",
+   "team": "FLA",
+   "game": "WPG @ FLA",
+   "market": "3+ SOG",
+   "p": 0.131,
+   "note": "1.2 SOG/G"
+  },
+  {
+   "player": "Brayden McNabb",
+   "team": "VGK",
+   "game": "NJD @ VGK",
+   "market": "3+ SOG",
+   "p": 0.114,
+   "note": "1.3 SOG/G"
+  },
+  {
+   "player": "Matthew Tkachuk",
+   "team": "FLA",
+   "game": "WPG @ FLA",
+   "market": "3+ SOG",
+   "p": 0.414,
+   "note": "2.4 SOG/G"
+  },
+  {
+   "player": "Brett Howden",
+   "team": "VGK",
+   "game": "NJD @ VGK",
+   "market": "3+ SOG",
+   "p": 0.24,
+   "note": "1.3 SOG/G"
+  },
+  {
+   "player": "Josh Mahura",
+   "team": "SEA",
+   "game": "SEA @ CGY",
+   "market": "3+ SOG",
+   "p": 0.019,
+   "note": "0.7 SOG/G"
+  },
+  {
+   "player": "Brad Lambert",
+   "team": "WPG",
+   "game": "WPG @ FLA",
+   "market": "3+ SOG",
+   "p": 0.052,
+   "note": "0.7 SOG/G"
+  },
+  {
+   "player": "Simon Nemec",
+   "team": "CGY",
+   "game": "SEA @ CGY",
+   "market": "3+ SOG",
+   "p": 0.202,
+   "note": "1.5 SOG/G"
+  },
+  {
+   "player": "Jani Nyman",
+   "team": "SEA",
+   "game": "SEA @ CGY",
+   "market": "3+ SOG",
+   "p": 0.161,
+   "note": "1.2 SOG/G"
+  },
+  {
+   "player": "Jesper Bratt",
+   "team": "NJD",
+   "game": "NJD @ VGK",
+   "market": "3+ SOG",
+   "p": 0.306,
+   "note": "2.2 SOG/G"
+  },
+  {
+   "player": "Elias Salomonsson",
+   "team": "WPG",
+   "game": "WPG @ FLA",
+   "market": "3+ SOG",
+   "p": 0.073,
+   "note": "1.3 SOG/G"
+  },
+  {
+   "player": "Shane Wright",
+   "team": "SEA",
+   "game": "SEA @ CGY",
+   "market": "3+ SOG",
+   "p": 0.177,
+   "note": "1.4 SOG/G"
+  },
+  {
+   "player": "Nic Dowd",
+   "team": "VGK",
+   "game": "NJD @ VGK",
+   "market": "3+ SOG",
+   "p": 0.034,
+   "note": "0.7 SOG/G"
+  },
+  {
+   "player": "Marc Gatcomb",
+   "team": "VGK",
+   "game": "NJD @ VGK",
+   "market": "3+ SOG",
+   "p": 0.165,
+   "note": "1.4 SOG/G"
+  },
+  {
+   "player": "Ben Meyers",
+   "team": "SEA",
+   "game": "SEA @ CGY",
+   "market": "3+ SOG",
+   "p": 0.129,
+   "note": "1.1 SOG/G"
+  },
+  {
+   "player": "Adam Klapka",
+   "team": "CGY",
+   "game": "SEA @ CGY",
+   "market": "3+ SOG",
+   "p": 0.13,
+   "note": "1.1 SOG/G"
+  },
+  {
+   "player": "Brenden Dillon",
+   "team": "NJD",
+   "game": "NJD @ VGK",
+   "market": "3+ SOG",
+   "p": 0.019,
+   "note": "0.5 SOG/G"
+  },
+  {
+   "player": "Radko Gudas",
+   "team": "FLA",
+   "game": "WPG @ FLA",
+   "market": "3+ SOG",
+   "p": 0.036,
+   "note": "0.9 SOG/G"
+  },
+  {
+   "player": "Amadeus Lombardi",
+   "team": "NJD",
+   "game": "NJD @ VGK",
+   "market": "3+ SOG",
+   "p": 0.364,
+   "note": "1.9 SOG/G"
+  },
+  {
+   "player": "Sandis Vilmanis",
+   "team": "FLA",
+   "game": "WPG @ FLA",
+   "market": "3+ SOG",
+   "p": 0.109,
+   "note": "1.2 SOG/G"
+  },
+  {
+   "player": "Braeden Bowman",
+   "team": "VGK",
+   "game": "NJD @ VGK",
+   "market": "3+ SOG",
+   "p": 0.188,
+   "note": "1.3 SOG/G"
+  },
+  {
+   "player": "Nino Niederreiter",
+   "team": "WPG",
+   "game": "WPG @ FLA",
+   "market": "3+ SOG",
+   "p": 0.188,
+   "note": "1.3 SOG/G"
+  },
+  {
+   "player": "Mario Ferraro",
+   "team": "WPG",
+   "game": "WPG @ FLA",
+   "market": "3+ SOG",
+   "p": 0.116,
+   "note": "1.2 SOG/G"
+  },
+  {
+   "player": "Cale Fleury",
+   "team": "SEA",
+   "game": "SEA @ CGY",
+   "market": "3+ SOG",
+   "p": 0.053,
+   "note": "0.9 SOG/G"
+  },
+  {
+   "player": "Cody Glass",
+   "team": "NJD",
+   "game": "NJD @ VGK",
+   "market": "3+ SOG",
+   "p": 0.257,
+   "note": "1.5 SOG/G"
+  },
+  {
+   "player": "Nico Hischier",
+   "team": "NJD",
+   "game": "NJD @ VGK",
+   "market": "3+ SOG",
+   "p": 0.521,
+   "note": "2.5 SOG/G"
+  },
+  {
+   "player": "Jesper Boqvist",
+   "team": "NJD",
+   "game": "NJD @ VGK",
+   "market": "3+ SOG",
+   "p": 0.075,
+   "note": "1.1 SOG/G"
+  },
+  {
+   "player": "Mark Stone",
+   "team": "VGK",
+   "game": "NJD @ VGK",
+   "market": "3+ SOG",
+   "p": 0.412,
+   "note": "2.1 SOG/G"
+  },
+  {
+   "player": "Gabriel Vilardi",
+   "team": "WPG",
+   "game": "WPG @ FLA",
+   "market": "3+ SOG",
+   "p": 0.223,
+   "note": "1.8 SOG/G"
+  },
+  {
+   "player": "Morgan Frost",
+   "team": "CGY",
+   "game": "SEA @ CGY",
+   "market": "3+ SOG",
+   "p": 0.237,
+   "note": "1.8 SOG/G"
+  },
+  {
+   "player": "Dylan Samberg",
+   "team": "WPG",
+   "game": "WPG @ FLA",
+   "market": "3+ SOG",
+   "p": 0.171,
+   "note": "1.3 SOG/G"
+  },
+  {
+   "player": "Alex Iafallo",
+   "team": "WPG",
+   "game": "WPG @ FLA",
+   "market": "3+ SOG",
+   "p": 0.203,
+   "note": "1.4 SOG/G"
+  },
+  {
+   "player": "Aydar Suniev",
+   "team": "CGY",
+   "game": "SEA @ CGY",
+   "market": "3+ SOG",
+   "p": 0.333,
+   "note": "1.7 SOG/G"
+  },
+  {
+   "player": "Neal Pionk",
+   "team": "WPG",
+   "game": "WPG @ FLA",
+   "market": "3+ SOG",
+   "p": 0.344,
+   "note": "2.0 SOG/G"
+  },
+  {
+   "player": "Eetu Luostarinen",
+   "team": "FLA",
+   "game": "WPG @ FLA",
+   "market": "3+ SOG",
+   "p": 0.152,
+   "note": "1.4 SOG/G"
+  },
+  {
+   "player": "Johnathan Kovacevic",
+   "team": "NJD",
+   "game": "NJD @ VGK",
+   "market": "3+ SOG",
+   "p": 0.036,
+   "note": "0.9 SOG/G"
+  },
+  {
+   "player": "Uvis Balinskis",
+   "team": "FLA",
+   "game": "WPG @ FLA",
+   "market": "3+ SOG",
+   "p": 0.093,
+   "note": "1.0 SOG/G"
+  },
+  {
+   "player": "Ben Jones",
+   "team": "CGY",
+   "game": "SEA @ CGY",
+   "market": "3+ SOG",
+   "p": 0.088,
+   "note": "0.8 SOG/G"
+  },
+  {
+   "player": "Morgan Barron",
+   "team": "WPG",
+   "game": "WPG @ FLA",
+   "market": "3+ SOG",
+   "p": 0.077,
+   "note": "1.2 SOG/G"
+  },
+  {
+   "player": "Dylan DeMelo",
+   "team": "WPG",
+   "game": "WPG @ FLA",
+   "market": "3+ SOG",
+   "p": 0.066,
+   "note": "0.9 SOG/G"
+  },
+  {
+   "player": "Adam Lowry",
+   "team": "WPG",
+   "game": "WPG @ FLA",
+   "market": "3+ SOG",
+   "p": 0.092,
+   "note": "1.0 SOG/G"
+  },
+  {
+   "player": "William Karlsson",
+   "team": "VGK",
+   "game": "NJD @ VGK",
+   "market": "3+ SOG",
+   "p": 0.25,
+   "note": "1.8 SOG/G"
+  },
+  {
+   "player": "Adam Larsson",
+   "team": "SEA",
+   "game": "SEA @ CGY",
+   "market": "3+ SOG",
+   "p": 0.132,
+   "note": "1.2 SOG/G"
+  },
+  {
+   "player": "Ryan Strome",
+   "team": "CGY",
+   "game": "SEA @ CGY",
+   "market": "3+ SOG",
+   "p": 0.261,
+   "note": "1.7 SOG/G"
+  },
+  {
+   "player": "Mark Scheifele",
+   "team": "WPG",
+   "game": "WPG @ FLA",
+   "market": "3+ SOG",
+   "p": 0.355,
+   "note": "2.1 SOG/G"
+  },
+  {
+   "player": "Dougie Hamilton",
+   "team": "NJD",
+   "game": "NJD @ VGK",
+   "market": "3+ SOG",
+   "p": 0.517,
+   "note": "2.6 SOG/G"
+  },
+  {
+   "player": "Stefan Noesen",
+   "team": "NJD",
+   "game": "NJD @ VGK",
+   "market": "3+ SOG",
+   "p": 0.17,
+   "note": "1.3 SOG/G"
+  },
+  {
+   "player": "Zayne Parekh",
+   "team": "CGY",
+   "game": "SEA @ CGY",
+   "market": "3+ SOG",
+   "p": 0.205,
+   "note": "1.6 SOG/G"
+  },
+  {
+   "player": "Berkly Catton",
+   "team": "SEA",
+   "game": "SEA @ CGY",
+   "market": "3+ SOG",
+   "p": 0.19,
+   "note": "1.4 SOG/G"
+  },
+  {
+   "player": "Trevor Connelly",
+   "team": "VGK",
+   "game": "NJD @ VGK",
+   "market": "3+ SOG",
+   "p": 0.214,
+   "note": "1.7 SOG/G"
+  },
+  {
+   "player": "Zach Whitecloud",
+   "team": "CGY",
+   "game": "SEA @ CGY",
+   "market": "3+ SOG",
+   "p": 0.035,
+   "note": "0.9 SOG/G"
+  },
+  {
+   "player": "Matvei Gridin",
+   "team": "CGY",
+   "game": "SEA @ CGY",
+   "market": "3+ SOG",
+   "p": 0.301,
+   "note": "2.0 SOG/G"
+  },
+  {
+   "player": "Joel Farabee",
+   "team": "CGY",
+   "game": "SEA @ CGY",
+   "market": "3+ SOG",
+   "p": 0.288,
+   "note": "1.9 SOG/G"
+  },
+  {
+   "player": "Brady Tkachuk",
+   "team": "FLA",
+   "game": "WPG @ FLA",
+   "market": "3+ SOG",
+   "p": 0.697,
+   "note": "3.4 SOG/G"
+  },
+  {
+   "player": "Kevin Bahl",
+   "team": "CGY",
+   "game": "SEA @ CGY",
+   "market": "3+ SOG",
+   "p": 0.08,
+   "note": "0.8 SOG/G"
+  },
+  {
+   "player": "Maxim Tsyplakov",
+   "team": "CGY",
+   "game": "SEA @ CGY",
+   "market": "3+ SOG",
+   "p": 0.03,
+   "note": "0.8 SOG/G"
+  },
+  {
+   "player": "Curtis Douglas",
+   "team": "SEA",
+   "game": "SEA @ CGY",
+   "market": "3+ SOG",
+   "p": 0.038,
+   "note": "0.6 SOG/G"
+  },
+  {
+   "player": "Tomas Hertl",
+   "team": "VGK",
+   "game": "NJD @ VGK",
+   "market": "3+ SOG",
+   "p": 0.411,
+   "note": "2.4 SOG/G"
+  },
+  {
+   "player": "Declan Chisholm",
+   "team": "NJD",
+   "game": "NJD @ VGK",
+   "market": "3+ SOG",
+   "p": 0.051,
+   "note": "0.5 SOG/G"
+  },
+  {
+   "player": "Chandler Stephenson",
+   "team": "SEA",
+   "game": "SEA @ CGY",
+   "market": "3+ SOG",
+   "p": 0.05,
+   "note": "1.0 SOG/G"
+  },
+  {
+   "player": "Martin Pospisil",
+   "team": "CGY",
+   "game": "SEA @ CGY",
+   "market": "3+ SOG",
+   "p": 0.138,
+   "note": "1.4 SOG/G"
+  },
+  {
+   "player": "Cole Koepke",
+   "team": "WPG",
+   "game": "WPG @ FLA",
+   "market": "3+ SOG",
+   "p": 0.188,
+   "note": "1.1 SOG/G"
+  },
+  {
+   "player": "Yegor Sharangovich",
+   "team": "CGY",
+   "game": "SEA @ CGY",
+   "market": "3+ SOG",
+   "p": 0.254,
+   "note": "1.7 SOG/G"
+  },
+  {
+   "player": "Connor Brown",
+   "team": "NJD",
+   "game": "NJD @ VGK",
+   "market": "3+ SOG",
+   "p": 0.156,
+   "note": "1.5 SOG/G"
+  },
+  {
+   "player": "Cole Reinhardt",
+   "team": "FLA",
+   "game": "WPG @ FLA",
+   "market": "3+ SOG",
+   "p": 0.097,
+   "note": "0.8 SOG/G"
+  },
+  {
+   "player": "Carter Verhaeghe",
+   "team": "FLA",
+   "game": "WPG @ FLA",
+   "market": "3+ SOG",
+   "p": 0.448,
+   "note": "2.2 SOG/G"
+  },
+  {
+   "player": "Raphael Lavoie",
+   "team": "VGK",
+   "game": "NJD @ VGK",
+   "market": "3+ SOG",
+   "p": 0.097,
+   "note": "1.1 SOG/G"
+  },
+  {
+   "player": "Shea Theodore",
+   "team": "VGK",
+   "game": "NJD @ VGK",
+   "market": "3+ SOG",
+   "p": 0.33,
+   "note": "2.0 SOG/G"
+  },
+  {
+   "player": "Kaapo Kakko",
+   "team": "SEA",
+   "game": "SEA @ CGY",
+   "market": "3+ SOG",
+   "p": 0.077,
+   "note": "1.0 SOG/G"
+  },
+  {
+   "player": "Jack Hughes",
+   "team": "NJD",
+   "game": "NJD @ VGK",
+   "market": "3+ SOG",
+   "p": 0.65,
+   "note": "3.7 SOG/G"
+  },
+  {
+   "player": "Brett Pesce",
+   "team": "NJD",
+   "game": "NJD @ VGK",
+   "market": "3+ SOG",
+   "p": 0.092,
+   "note": "1.1 SOG/G"
+  },
+  {
+   "player": "Seth Jones",
+   "team": "FLA",
+   "game": "WPG @ FLA",
+   "market": "3+ SOG",
+   "p": 0.363,
+   "note": "2.2 SOG/G"
+  },
+  {
+   "player": "Anthony Mantha",
+   "team": "NJD",
+   "game": "NJD @ VGK",
+   "market": "3+ SOG",
+   "p": 0.217,
+   "note": "1.7 SOG/G"
+  },
+  {
+   "player": "Cole Schwindt",
+   "team": "FLA",
+   "game": "WPG @ FLA",
+   "market": "3+ SOG",
+   "p": 0.098,
+   "note": "0.8 SOG/G"
+  },
+  {
+   "player": "Arseny Gritsyuk",
+   "team": "NJD",
+   "game": "NJD @ VGK",
+   "market": "3+ SOG",
+   "p": 0.305,
+   "note": "2.2 SOG/G"
+  },
+  {
+   "player": "Joel Hanley",
+   "team": "CGY",
+   "game": "SEA @ CGY",
+   "market": "3+ SOG",
+   "p": 0.042,
+   "note": "0.6 SOG/G"
+  },
+  {
+   "player": "Garnet Hathaway",
+   "team": "FLA",
+   "game": "WPG @ FLA",
+   "market": "3+ SOG",
+   "p": 0.01,
+   "note": "0.4 SOG/G"
+  },
+  {
+   "player": "Frederick Gaudreau",
+   "team": "SEA",
+   "game": "SEA @ CGY",
+   "market": "3+ SOG",
+   "p": 0.075,
+   "note": "1.0 SOG/G"
+  },
+  {
+   "player": "Aaron Ekblad",
+   "team": "FLA",
+   "game": "WPG @ FLA",
+   "market": "3+ SOG",
+   "p": 0.181,
+   "note": "1.3 SOG/G"
+  },
+  {
+   "player": "Sam Reinhart",
+   "team": "FLA",
+   "game": "WPG @ FLA",
+   "market": "3+ SOG",
+   "p": 0.456,
+   "note": "2.7 SOG/G"
+  },
+  {
+   "player": "Sam Bennett",
+   "team": "FLA",
+   "game": "WPG @ FLA",
+   "market": "3+ SOG",
+   "p": 0.496,
+   "note": "2.6 SOG/G"
+  },
+  {
+   "player": "Haydn Fleury",
+   "team": "WPG",
+   "game": "WPG @ FLA",
+   "market": "3+ SOG",
+   "p": 0.081,
+   "note": "0.8 SOG/G"
+  },
+  {
+   "player": "Ivan Barbashev",
+   "team": "VGK",
+   "game": "NJD @ VGK",
+   "market": "3+ SOG",
+   "p": 0.226,
+   "note": "1.5 SOG/G"
+  },
+  {
+   "player": "Brandon Montour",
+   "team": "SEA",
+   "game": "SEA @ CGY",
+   "market": "3+ SOG",
+   "p": 0.45,
+   "note": "2.4 SOG/G"
+  },
+  {
+   "player": "Dawson Mercer",
+   "team": "WPG",
+   "game": "WPG @ FLA",
+   "market": "3+ SOG",
+   "p": 0.322,
+   "note": "2.0 SOG/G"
+  },
+  {
+   "player": "Anton Lundell",
+   "team": "FLA",
+   "game": "WPG @ FLA",
+   "market": "3+ SOG",
+   "p": 0.447,
+   "note": "2.3 SOG/G"
+  },
+  {
+   "player": "Luke Evangelista",
+   "team": "NJD",
+   "game": "NJD @ VGK",
+   "market": "3+ SOG",
+   "p": 0.414,
+   "note": "2.3 SOG/G"
+  },
+  {
+   "player": "Cole Perfetti",
+   "team": "WPG",
+   "game": "WPG @ FLA",
+   "market": "3+ SOG",
+   "p": 0.43,
+   "note": "2.3 SOG/G"
+  },
+  {
+   "player": "Gustav Forsling",
+   "team": "FLA",
+   "game": "WPG @ FLA",
+   "market": "3+ SOG",
+   "p": 0.155,
+   "note": "1.4 SOG/G"
+  },
+  {
+   "player": "Yan Kuznetsov",
+   "team": "CGY",
+   "game": "SEA @ CGY",
+   "market": "3+ SOG",
+   "p": 0.067,
+   "note": "1.1 SOG/G"
+  },
+  {
+   "player": "Victor Olofsson",
+   "team": "VGK",
+   "game": "NJD @ VGK",
+   "market": "3+ SOG",
+   "p": 0.244,
+   "note": "1.9 SOG/G"
+  },
+  {
+   "player": "Jake Middleton",
+   "team": "CGY",
+   "game": "SEA @ CGY",
+   "market": "3+ SOG",
+   "p": 0.036,
+   "note": "0.9 SOG/G"
+  },
+  {
+   "player": "Bokondji Imama",
+   "team": "FLA",
+   "game": "WPG @ FLA",
+   "market": "3+ SOG",
+   "p": 0.073,
+   "note": "0.6 SOG/G"
+  },
+  {
+   "player": "Bobby McMann",
+   "team": "SEA",
+   "game": "SEA @ CGY",
+   "market": "3+ SOG",
+   "p": 0.504,
+   "note": "2.4 SOG/G"
+  },
+  {
+   "player": "Mikael Backlund",
+   "team": "CGY",
+   "game": "SEA @ CGY",
+   "market": "3+ SOG",
+   "p": 0.393,
+   "note": "2.4 SOG/G"
+  },
+  {
+   "player": "Lars Eller",
+   "team": "FLA",
+   "game": "WPG @ FLA",
+   "market": "3+ SOG",
+   "p": 0.084,
+   "note": "0.9 SOG/G"
+  },
+  {
+   "player": "Noah Hanifin",
+   "team": "VGK",
+   "game": "NJD @ VGK",
+   "market": "3+ SOG",
+   "p": 0.248,
+   "note": "1.6 SOG/G"
+  },
+  {
+   "player": "Rasmus Andersson",
+   "team": "VGK",
+   "game": "NJD @ VGK",
+   "market": "3+ SOG",
+   "p": 0.301,
+   "note": "2.0 SOG/G"
+  },
+  {
+   "player": "Kyle Connor",
+   "team": "WPG",
+   "game": "WPG @ FLA",
+   "market": "3+ SOG",
+   "p": 0.702,
+   "note": "3.6 SOG/G"
+  },
+  {
+   "player": "Jonas Siegenthaler",
+   "team": "NJD",
+   "game": "NJD @ VGK",
+   "market": "3+ SOG",
+   "p": 0.041,
+   "note": "0.6 SOG/G"
+  },
+  {
+   "player": "Jack Eichel",
+   "team": "VGK",
+   "game": "NJD @ VGK",
+   "market": "3+ SOG",
+   "p": 0.612,
+   "note": "3.2 SOG/G"
+  },
+  {
+   "player": "Vince Dunn",
+   "team": "SEA",
+   "game": "SEA @ CGY",
+   "market": "3+ SOG",
+   "p": 0.308,
+   "note": "2.1 SOG/G"
+  },
+  {
+   "player": "Timo Meier",
+   "team": "NJD",
+   "game": "NJD @ VGK",
+   "market": "3+ SOG",
+   "p": 0.638,
+   "note": "3.5 SOG/G"
+  },
+  {
+   "player": "Jeremy Lauzon",
+   "team": "VGK",
+   "game": "NJD @ VGK",
+   "market": "3+ SOG",
+   "p": 0.127,
+   "note": "1.2 SOG/G"
+  },
+  {
+   "player": "Mitch Marner",
+   "team": "VGK",
+   "game": "NJD @ VGK",
+   "market": "3+ SOG",
+   "p": 0.376,
+   "note": "2.2 SOG/G"
+  },
+  {
+   "player": "Evan Rodrigues",
+   "team": "NJD",
+   "game": "NJD @ VGK",
+   "market": "3+ SOG",
+   "p": 0.324,
+   "note": "2.0 SOG/G"
+  },
+  {
+   "player": "Matty Beniers",
+   "team": "SEA",
+   "game": "SEA @ CGY",
+   "market": "3+ SOG",
+   "p": 0.248,
+   "note": "1.6 SOG/G"
+  },
+  {
+   "player": "Matt Coronato",
+   "team": "CGY",
+   "game": "SEA @ CGY",
+   "market": "3+ SOG",
+   "p": 0.466,
+   "note": "2.4 SOG/G"
+  },
+  {
+   "player": "Luke Hughes",
+   "team": "NJD",
+   "game": "NJD @ VGK",
+   "market": "3+ SOG",
+   "p": 0.402,
+   "note": "2.4 SOG/G"
+  },
+  {
+   "player": "Mackie Samoskevich",
+   "team": "SEA",
+   "game": "SEA @ CGY",
+   "market": "3+ SOG",
+   "p": 0.31,
+   "note": "1.9 SOG/G"
+  },
+  {
+   "player": "Ryan Winterton",
+   "team": "SEA",
+   "game": "SEA @ CGY",
+   "market": "3+ SOG",
+   "p": 0.159,
+   "note": "1.3 SOG/G"
+  },
+  {
+   "player": "Isak Rosen",
+   "team": "WPG",
+   "game": "WPG @ FLA",
+   "market": "3+ SOG",
+   "p": 0.079,
+   "note": "1.1 SOG/G"
+  },
+  {
+   "player": "Jordan Eberle",
+   "team": "SEA",
+   "game": "SEA @ CGY",
+   "market": "3+ SOG",
+   "p": 0.37,
+   "note": "2.2 SOG/G"
+  }
+ ]
+}

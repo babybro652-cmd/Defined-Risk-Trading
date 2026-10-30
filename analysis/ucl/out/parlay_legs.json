@@ -1,0 +1,337 @@
+{
+ "date": [
+  "2026-11-03",
+  "2026-11-04"
+ ],
+ "sport": "UCL",
+ "legs": [
+  {
+   "player": "Mat\u00ecas Soul\u00e8",
+   "team": "ROMA",
+   "market": "1+ shot on target",
+   "p": 0.667,
+   "game": "ROMA @ MAN",
+   "note": "0.9 SOT per start"
+  },
+  {
+   "player": "Anis Hadj Moussa",
+   "team": "FEY",
+   "market": "1+ shot on target",
+   "p": 0.889,
+   "game": "INT @ FEY",
+   "note": "1.7 SOT per start"
+  },
+  {
+   "player": "Michael Olise",
+   "team": "MUN",
+   "market": "1+ shot on target",
+   "p": 0.875,
+   "game": "MUN @ ATM",
+   "note": "2.0 SOT per start"
+  },
+  {
+   "player": "Rayan Cherki",
+   "team": "MNC",
+   "market": "1+ shot on target",
+   "p": 0.737,
+   "game": "MNC @ RBL",
+   "note": "1.1 SOT per start"
+  },
+  {
+   "player": "Marcus Thuram",
+   "team": "INT",
+   "market": "1+ shot on target",
+   "p": 0.714,
+   "game": "INT @ FEY",
+   "note": "1.2 SOT per start"
+  },
+  {
+   "player": "Anastasios Douvikas",
+   "team": "COMO",
+   "market": "1+ shot on target",
+   "p": 0.786,
+   "game": "COMO @ RCL",
+   "note": "1.5 SOT per start"
+  },
+  {
+   "player": "Harry Kane",
+   "team": "MUN",
+   "market": "1+ shot on target",
+   "p": 0.926,
+   "game": "MUN @ ATM",
+   "note": "2.0 SOT per start"
+  },
+  {
+   "player": "Kylian Mbapp\u00e9",
+   "team": "RMA",
+   "market": "1+ shot on target",
+   "p": 0.931,
+   "game": "RMA @ AEK",
+   "note": "3.1 SOT per start"
+  },
+  {
+   "player": "Luk\u00e1s Provod",
+   "team": "SLP",
+   "market": "1+ shot on target",
+   "p": 0.714,
+   "game": "ARS @ SLP",
+   "note": "1.4 SOT per start"
+  },
+  {
+   "player": "Raphinha",
+   "team": "BAR",
+   "market": "1+ shot on target",
+   "p": 0.95,
+   "game": "AVL @ BAR",
+   "note": "1.8 SOT per start"
+  },
+  {
+   "player": "Luis Su\u00e1rez",
+   "team": "SCP",
+   "market": "1+ shot on target",
+   "p": 0.92,
+   "game": "SCP @ SHK",
+   "note": "1.8 SOT per start"
+  },
+  {
+   "player": "Carlos Augusto",
+   "team": "INT",
+   "market": "1+ shot on target",
+   "p": 0.643,
+   "game": "INT @ FEY",
+   "note": "0.7 SOT per start"
+  },
+  {
+   "player": "Erling Haaland",
+   "team": "MNC",
+   "market": "1+ shot on target",
+   "p": 0.913,
+   "game": "MNC @ RBL",
+   "note": "2.4 SOT per start"
+  },
+  {
+   "player": "Serhou Guirassy",
+   "team": "DOR",
+   "market": "1+ shot on target",
+   "p": 0.818,
+   "game": "BET @ DOR",
+   "note": "1.9 SOT per start"
+  },
+  {
+   "player": "Ferm\u00edn L\u00f3pez",
+   "team": "BAR",
+   "market": "1+ shot on target",
+   "p": 0.7,
+   "game": "AVL @ BAR",
+   "note": "1.2 SOT per start"
+  },
+  {
+   "player": "Nicolo Tresoldi",
+   "team": "BRU",
+   "market": "1+ shot on target",
+   "p": 0.75,
+   "game": "BRU @ PSV",
+   "note": "1.6 SOT per start"
+  },
+  {
+   "player": "Alexis Mac Allister",
+   "team": "LIV",
+   "market": "1+ shot on target",
+   "p": 0.619,
+   "game": "LIV @ FEN",
+   "note": "1.0 SOT per start"
+  },
+  {
+   "player": "Nicolas Jackson",
+   "team": "AVL",
+   "market": "1+ shot on target",
+   "p": 0.842,
+   "game": "AVL @ BAR",
+   "note": "2.1 SOT per start"
+  },
+  {
+   "player": "Maghnes Akliouche",
+   "team": "PSG",
+   "market": "1+ shot on target",
+   "p": 0.667,
+   "game": "PSG @ VIL",
+   "note": "1.0 SOT per start"
+  },
+  {
+   "player": "Hugo Vetlesen",
+   "team": "BRU",
+   "market": "1+ shot on target",
+   "p": 0.647,
+   "game": "BRU @ PSV",
+   "note": "1.1 SOT per start"
+  },
+  {
+   "player": "Ferran Torres",
+   "team": "PSG",
+   "market": "1+ shot on target",
+   "p": 0.75,
+   "game": "PSG @ VIL",
+   "note": "1.7 SOT per start"
+  },
+  {
+   "player": "Juli\u00e1n \u00c1lvarez",
+   "team": "ATM",
+   "market": "1+ shot on target",
+   "p": 0.68,
+   "game": "MUN @ ATM",
+   "note": "1.4 SOT per start"
+  },
+  {
+   "player": "Anthony Gordon",
+   "team": "BAR",
+   "market": "1+ shot on target",
+   "p": 0.636,
+   "game": "AVL @ BAR",
+   "note": "1.5 SOT per start"
+  },
+  {
+   "player": "Mason Greenwood",
+   "team": "FEN",
+   "market": "1+ shot on target",
+   "p": 0.76,
+   "game": "LIV @ FEN",
+   "note": "1.4 SOT per start"
+  },
+  {
+   "player": "Florian Thauvin",
+   "team": "RCL",
+   "market": "1+ shot on target",
+   "p": 0.857,
+   "game": "COMO @ RCL",
+   "note": "1.9 SOT per start"
+  },
+  {
+   "player": "Achraf Hakimi",
+   "team": "PSG",
+   "market": "1+ shot on target",
+   "p": 0.607,
+   "game": "PSG @ VIL",
+   "note": "0.6 SOT per start"
+  },
+  {
+   "player": "Ermedin Demirovic",
+   "team": "VFB",
+   "market": "1+ shot on target",
+   "p": 1.0,
+   "game": "VFB @ GAL",
+   "note": "2.2 SOT per start"
+  },
+  {
+   "player": "Bryan Mbeumo",
+   "team": "MAN",
+   "market": "1+ shot on target",
+   "p": 0.824,
+   "game": "ROMA @ MAN",
+   "note": "1.0 SOT per start"
+  },
+  {
+   "player": "Antony",
+   "team": "BET",
+   "market": "1+ shot on target",
+   "p": 0.75,
+   "game": "BET @ DOR",
+   "note": "1.1 SOT per start"
+  },
+  {
+   "player": "Victor Osimhen",
+   "team": "GAL",
+   "market": "1+ shot on target",
+   "p": 0.727,
+   "game": "VFB @ GAL",
+   "note": "2.2 SOT per start"
+  },
+  {
+   "player": "Alexander Isak",
+   "team": "LIV",
+   "market": "1+ shot on target",
+   "p": 0.714,
+   "game": "LIV @ FEN",
+   "note": "0.9 SOT per start"
+  },
+  {
+   "player": "Fabi\u00e1n Ruiz",
+   "team": "PSG",
+   "market": "1+ shot on target",
+   "p": 0.714,
+   "game": "PSG @ VIL",
+   "note": "1.0 SOT per start"
+  },
+  {
+   "player": "Cody Gakpo",
+   "team": "LIV",
+   "market": "1+ shot on target",
+   "p": 0.692,
+   "game": "LIV @ FEN",
+   "note": "0.9 SOT per start"
+  },
+  {
+   "player": "D\u00e9sir\u00e9 Dou\u00e9",
+   "team": "PSG",
+   "market": "1+ shot on target",
+   "p": 0.75,
+   "game": "PSG @ VIL",
+   "note": "1.1 SOT per start"
+  },
+  {
+   "player": "Abde Ezzalzouli",
+   "team": "BET",
+   "market": "1+ shot on target",
+   "p": 1.0,
+   "game": "BET @ DOR",
+   "note": "1.5 SOT per start"
+  },
+  {
+   "player": "Peter Christiansen",
+   "team": "VFK",
+   "market": "1+ shot on target",
+   "p": 0.789,
+   "game": "SAB @ VFK",
+   "note": "1.3 SOT per start"
+  },
+  {
+   "player": "Carlos Forbs",
+   "team": "BRU",
+   "market": "1+ shot on target",
+   "p": 0.692,
+   "game": "BRU @ PSV",
+   "note": "0.8 SOT per start"
+  },
+  {
+   "player": "Serge Gnabry",
+   "team": "MUN",
+   "market": "1+ shot on target",
+   "p": 0.727,
+   "game": "MUN @ ATM",
+   "note": "0.9 SOT per start"
+  },
+  {
+   "player": "Mikel Merino",
+   "team": "ARS",
+   "market": "1+ shot on target",
+   "p": 0.692,
+   "game": "ARS @ SLP",
+   "note": "1.0 SOT per start"
+  },
+  {
+   "player": "Jens Petter Hauge",
+   "team": "BODO",
+   "market": "1+ shot on target",
+   "p": 0.818,
+   "game": "LILL @ BODO",
+   "note": "1.0 SOT per start"
+  },
+  {
+   "player": "Lamine Yamal",
+   "team": "BAR",
+   "market": "1+ shot on target",
+   "p": 0.724,
+   "game": "AVL @ BAR",
+   "note": "1.4 SOT per start"
+  }
+ ]
+}

@@ -65,6 +65,25 @@ Include the first shot and first score for each game in the grading message to T
   plus PP TOI rank on the team (PP1 = top 5, PP2 = next 5). This is a proxy for line charts.
 - Shortlist rules are written on the tab under the picks.
 
+## Anytime goal calibration (10/30/26, Tim approved)
+
+The blended goal hit% ran hot for the players we pick (top of the list regresses). Est = `GOAL_F` x blend, with
+`GOAL_F` = 0.77 in build_nhl_tab.py, from `python3 analysis/nhl/calibrate_goal.py` (walk-forward, top 4 a night by blend):
+
+| Sample | Picks | Predicted (raw blend) | Scored | Factor |
+|---|---|---|---|---|
+| 25-26, from 11/15 (season to date only) | 508 | 47.0% | 36.4% | 0.775 |
+| 26-27 through 10/29 (W = 3 blend) | 112 | 45.3% | 33.0% | 0.729 |
+| Logged Bets picks with a % | 25 | 46.4% | 36.0% | 0.776 |
+| Pooled | 645 | 46.7% | 35.8% | 0.767 |
+
+The shrink is stronger at the top (blend 45%+ scores about 36 to 39%) than for 35-45% names (factor 0.87 to 0.91), so
+0.77 is set for shortlist picks. Shortlist text gives Est, fair, and "bet only at +X or longer", X = the larger of +150
+and fair with a 10% cushion. Anytime goal is never a parlay leg. SOG picks over 75% name the next line up (-300 rule).
+Parlays: 3+ SOG legs only (`analysis/parlays.py`; see the NBA README "Model changes 10/30/26"). StarTool: star/bomb lines
+in `out/startool/star_bomb.txt` (`date|AWAY @ HOME|star,star|bomb,bomb`; last names as printed are fine) give an
+"agree" or "differs" flag for our top anytime goal pick per game. No blend.
+
 ## Sources
 
 - NHL API `api-web.nhle.com`: boxscores, game landing (goal order), schedule, rosters, standings.

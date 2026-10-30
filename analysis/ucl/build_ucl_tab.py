@@ -565,6 +565,15 @@ def build(start, log):
         f.write('\n## Matches\n\n')
         for g in slate_games:
             f.write(f"- {g['time']} ET: {g['away_name']} @ {g['home_name']}\n")
+    # parlay legs (10/30; analysis/parlays.py): 1+ shot on target only, starters with a 60%+ blended rate
+    sys.path.insert(0, os.path.dirname(HERE))
+    import parlays as PAR
+    PAR.write_legs('ucl', slate_days, 'UCL', [
+        {'player': names[p], 'team': cur_tm[p], 'market': '1+ shot on target', 'p': round(bl('sot1', p), 3),
+         'game': (f"{cur_tm[p]} @ {opp_of[cur_tm[p]][0]}" if opp_of[cur_tm[p]][1] == '@'
+                  else f"{opp_of[cur_tm[p]][0]} @ {cur_tm[p]}"), 'note': f"{bl('sot', p):.1f} SOT per start"}
+        for p in tonight if (bl('sot1', p) or 0) >= 0.6 and shr('sot1', p) >= 0.55])
+    PAR.write_sections(slate_days[0], targets=('ucl',))
     log(f'wrote {len(rows)} rows x {width} cols; picks {len(picks)}; meta {meta}')
 
 

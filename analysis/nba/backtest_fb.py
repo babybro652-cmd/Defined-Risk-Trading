@@ -6,6 +6,7 @@ actual ones (both models get the same), so this tests the share model, not lineu
 
   python3 analysis/nba/backtest_fb.py           # summary table
   python3 analysis/nba/backtest_fb.py --team    # 10/23 fix: 26-27 weight ramp + extra shrink for new-to-team starters
+  python3 analysis/nba/backtest_fb.py --jumper  # 10/30 fix: jumper share x1.2 / x0.95 by tip, plus top-end shrink
 Metrics: log loss of the actual first-FG scorer, probabilities renormalized over the 10 starters (games where a bench player
 scored first are skipped for all models),
 Brier over the 10 starters, and the hit rate of each game's top pick.
@@ -15,7 +16,7 @@ from collections import defaultdict
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, HERE)
-from build_nba_tab import V2, POS, W_DEFAULT, cur_weight, v1_share, v2_shares  # noqa: E402
+from build_nba_tab import V2, POS, W_DEFAULT, JB, cur_weight, v1_share, v2_shares, jumper_split, shrink_top  # noqa: E402
 
 START = '2025-12-01'
 PREV = {'2026-27': '2025-26'}
@@ -102,7 +103,8 @@ def run(variants, team=False):
                     win = g['fb'][0]
                     if win not in probs:   # a bench player scored first (rare); skipped for every model alike
                         continue
-                    REC.append(dict(k=k, d=d, g=g, probs=dict(probs), pt=dict(pt_k), st=st))
+                    REC.append(dict(k=k, d=d, g=g, probs=dict(probs), pt=dict(pt_k), st=st, af=af,
+                                    ptip={g['away']: pt, g['home']: 1 - pt}))
                     pw = probs[win] / sum(probs.values())   # proper: renormalized over the 10 starters
                     tops[(d, g['away'], g['home'])][k] = (max(probs, key=probs.get), win, g['nm'])
                     for r in (res[k]['all'], res[k][season_of(d)]):
@@ -189,5 +191,86 @@ def main():
         print(f"{k:28} {r['n']:5d} {r['ll'] / r['n']:8.4f} {r['br'] / r['n']:7.4f} {r['hit'] / r['n']:8.3f}")
 
 
+def adjust(r, jb=None, temp=1.0, knee=None):
+    """Re-price one REC game: jumper split (jb = {'win','lose','cap'} or None), then a top-end shrink
+    (temp: power on the 10 chances, same total; knee = (cut, c): chances above cut pulled to cut + c x excess)."""
+    out = {}
+    jm = {tm: pid for pid, tm in r['g']['tip']['j']}
+    for tm, five in r['st'].items():
+        sh = {p[0]: r['probs'][p[0]] / r['pt'][tm] for p in five}
+        if jb:
+            out.update(jumper_split(sh, jm.get(tm), r['ptip'][tm], r['af'], jb))
+        else:
+            out.update({p: v * r['pt'][tm] for p, v in sh.items()})
+    out = shrink_top(out, temp)
+    if knee:
+        cut, c = knee
+        tot = sum(out.values())
+        out = {p: (cut + c * (v - cut) if v > cut else v) for p, v in out.items()}
+        f = tot / sum(out.values())
+        out = {p: v * f for p, v in out.items()}
+    return out
+
+
+def score(recs, fn):
+    bins = [(0, .08), (.08, .11), (.11, .14), (.14, .17), (.17, 1), (.15, 1)]
+    cal = {b: [0, 0.0, 0] for b in bins}
+    o = {'n': len(recs), 'll': 0, 'br': 0, 'top': 0, 'jn': 0, 'jp': 0, 'ja': 0}
+    for r in recs:
+        pr = fn(r)
+        w = r['g']['fb'][0]
+        o['ll'] -= math.log(max(pr[w] / sum(pr.values()), 1e-6))
+        o['br'] += sum((v - (p == w)) ** 2 for p, v in pr.items())
+        o['top'] += max(pr, key=pr.get) == w
+        jset = {pid for pid, tm in r['g']['tip']['j']}
+        for p, v in pr.items():
+            for b in bins:
+                if b[0] <= v < b[1]:
+                    c = cal[b]; c[0] += 1; c[1] += v; c[2] += p == w
+            if p in jset:
+                o['jn'] += 1; o['jp'] += v; o['ja'] += p == w
+    o['ll'] /= o['n']; o['br'] /= o['n']; o['cal'] = cal
+    return o
+
+
+def main_jumper():
+    """10/30 fix: jumper share boost by tip result, then a top-end shrink. Same records as --team (V2 + ramp)."""
+    run({'cur': dict(V2, ramp=True)}, team=True)
+    recs = [r for r in REC if r['k'] == 'cur']
+    print('Under-8% bin, pred/hit: current', *(f"{x[1] / x[0]:.1%}/{x[2] / x[0]:.1%}" for x in
+          [score(recs, lambda r: adjust(r))['cal'][(0, .08)]]), '| jumper + temp 0.8',
+          *(f"{x[1] / x[0]:.1%}/{x[2] / x[0]:.1%}" for x in [score(recs, lambda r: adjust(r, jb=JB, temp=0.8))['cal'][(0, .08)]]))
+    parts = {'2025-26': [r for r in recs if r['d'] < '2026-07-01'], '2026-27': [r for r in recs if r['d'] >= '2026-07-01']}
+    J = dict(JB, win=1.2, lose=0.95)
+    variants = {'current (no jumper fix)': {},
+                'jumper 1.1 / 1.0': dict(jb=dict(J, win=1.1, lose=1.0)),
+                'jumper 1.2 / 1.0': dict(jb=dict(J, lose=1.0)),
+                'jumper 1.2 / 0.95': dict(jb=J),
+                'jumper 1.3 / 1.0': dict(jb=dict(J, win=1.3, lose=1.0)),
+                'j1.2/0.95 + temp 0.95': dict(jb=J, temp=0.95),
+                'j1.2/0.95 + temp 0.9': dict(jb=J, temp=0.9),
+                'j1.2/0.95 + temp 0.85': dict(jb=J, temp=0.85),
+                'j1.2/0.95 + temp 0.8 (used)': dict(jb=J, temp=0.8),
+                'j1.2/0.95 + temp 0.75': dict(jb=J, temp=0.75),
+                'j1.2/0.95 + temp 0.7': dict(jb=J, temp=0.7),
+                'j1.2/0.95 + knee 15% x0.75': dict(jb=J, knee=(.15, .75)),
+                'j1.2/0.95 + knee 15% x0.5': dict(jb=J, knee=(.15, .5)),
+                'j1.2/0.95 + knee 14% x0.5': dict(jb=J, knee=(.14, .5))}
+    for part, rs in parts.items():
+        print(f"\n{part} ({len(rs)} games)\n{'model':28} {'logloss':>8} {'brier':>7} {'top':>4} {'jumper exp/act':>15} "
+              f"{'14-17% pred/hit':>16} {'17%+ pred/hit':>16} {'15%+ n pred/hit':>20}")
+        for k, kw in variants.items():
+            o = score(rs, lambda r: adjust(r, **kw))
+            c = o['cal']
+            f = lambda b: f"{c[b][1] / c[b][0]:.1%}/{c[b][2] / c[b][0]:.1%}" if c[b][0] else '-'
+            print(f"{k:28} {o['ll']:8.4f} {o['br']:7.4f} {o['top']:4d} {o['jp']:7.1f}/{o['ja']:<7d} {f((.14, .17)):>16} "
+                  f"{f((.17, 1)):>16} {c[(.15, 1)][0]:5d} {f((.15, 1)):>14}")
+
+
 if __name__ == '__main__':
-    main_team() if '--team' in sys.argv else main()
+    if '--jumper' in sys.argv:
+        main_jumper()
+    elif '--team' in sys.argv:
+        main_team()
+    else:
+        main()

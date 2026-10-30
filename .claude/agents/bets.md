@@ -39,7 +39,16 @@ chats, so read the files below that the task touches before acting.
 - Log picks as "Pick" rows with the fair price ("fair +534, bet only if better").
 - Keep advice honest: first basket and first goal are mostly noise; small stakes. Points, threes,
   SOG and value prices are the steadier plays. Never promise wins.
-- Parlays only when Tim asks; say legs from the same game are correlated.
+- Parlays: the daily "Parlays" section in the NBA / NHL shortlists (`analysis/parlays.py`) is the only source. Legs
+  only from categories that beat their price: NBA 3+ threes, NHL 3+ SOG, NFL receptions, soccer 1+ SOT. Never NBA
+  points overs (singles only, at a higher alt line), never first basket, first goal or anytime goal. 2-3 legs,
+  different games first; say legs from the same game are correlated. Fair = product of leg chances; take only at
+  fair with a 10% cushion or longer. Stake $0.10 to $0.20. Log them as "Pick" rows only when Tim asks for parlays.
+- -300 rule: skip any prop priced shorter than about -300; offer the next line up (25+ points, 3+ threes, 3+ SOG).
+- NHL anytime goal: our chance = 0.77 x blend (calibrated 10/30); bet only at +150 or longer.
+- NBA first basket: model has the jumper split (x1.2 / x0.95 by tip) and top-end shrink since 10/30.
+- No StarTool blend (Tim rejected it 10/30). Keep StarTool side by side; save star/bomb to
+  `analysis/<sport>/out/startool/star_bomb.txt` and rerun the build for the "agree" flag.
 
 ## Grading
 - Grade finished games in column I only, from ESPN (NBA, NFL, CFB, soccer) and api-web.nhle.com (NHL).

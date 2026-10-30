@@ -27,6 +27,17 @@ OUT = os.path.join(HERE, 'out')
 CUR, LAST = '20262027', '20252026'
 CUR_START = dt.date(2026, 9, 20)
 W_DEFAULT = 3          # one 2026-27 game counts as this many 2025-26 games in the blend
+# 10/30/26 (Tim approved): anytime goal chance = GOAL_F x blended goal hit%. The raw blend ran hot for the players we
+# pick: walk-forward top 4 a night 25-26 0.775 and 26-27 0.729, logged Bets picks 9 of 25 vs 11.6 (0.776); pooled 645
+# picks 0.767 (python3 analysis/nhl/calibrate_goal.py). Bet anytime goal only at +150 or longer.
+GOAL_F = 0.77
+GOAL_MIN_PRICE = 150
+
+
+def american(p):
+    if not p or p <= 0 or p >= 1:
+        return '-'
+    return f'+{round((1 - p) / p * 100)}' if p < 0.5 else f'-{round(p / (1 - p) * 100)}'
 N_FWD, N_D = 34, 6     # players in the main tables
 UA = {'User-Agent': 'Mozilla/5.0'}
 
@@ -358,9 +369,13 @@ def build(slate, log):
     goal = sorted(tonight, key=lambda p: -(p['hit'] * gfac(p)))[:4]
     for p in goal:
         o = p['opp']
+        est = GOAL_F * p['hit']
+        take = max(GOAL_MIN_PRICE, round((1 - est / 1.1) / (est / 1.1) * 100))
         picks.append(['Anytime goal', p['name'], f"{p['tm']} {o['at']} {o['opp']}",
-                      f"Scored in {fmt_pct(p['hit'])} of games (blend); 26-27: {p['c']['g']} G in {p['c']['gp']} GP; "
-                      f"{o['opp']} allows {o['ga']:.1f} GA/G; faces {gl_txt(p)}", 'Anytime goal'])
+                      f"Est {round(100 * est)}% (fair {american(est)}) = {GOAL_F} x {fmt_pct(p['hit'])} blend; "
+                      f"26-27: {p['c']['g']} G in {p['c']['gp']} GP; "
+                      f"{o['opp']} allows {o['ga']:.1f} GA/G; faces {gl_txt(p)}; bet only at +{take} or longer (never shorter than +150)",
+                      f'Anytime goal, +{take} or longer'])
     def tfirst(tm):
         c, l, tc, tl = team_row(tm)
         return blend(tc['first'], tc['gp'], tl['first'], tl['gp'], W) or 0.5
@@ -385,9 +400,39 @@ def build(slate, log):
         if p['pid'] in seen or len(seen) >= 5:
             continue
         seen.add(p['pid'])
+        up = ''
+        if p['over'][k] > 0.75 and k < 4.5:   # -300 rule (10/29): fair shorter than -300 means take the next line up
+            k2 = k + 1
+            up = (f"; fair {american(p['over'][k])} is shorter than -300, so take over {k2} instead "
+                  f"({fmt_pct(p['over'][k2])}, fair {american(p['over'][k2])})")
         picks.append([f'SOG over {k}', p['name'], f"{p['tm']} {p['opp']['at']} {p['opp']['opp']}",
                       f"Over {k} in {fmt_pct(p['over'][k])} of games (blend); {p['sogpg']:.1f} SOG/G; L5: "
-                      f"{' '.join(map(str, p['l5']))}; {p['opp']['opp']} allows {p['opp']['sa']:.1f} SA/G", f'Over {k} SOG'])
+                      f"{' '.join(map(str, p['l5']))}; {p['opp']['opp']} allows {p['opp']['sa']:.1f} SA/G{up}", f'Over {k} SOG'])
+
+    # ---------- parlay legs (10/30; analysis/parlays.py): NHL 3+ SOG only ----------
+    sys.path.insert(0, os.path.dirname(HERE))
+    import parlays as PAR
+    legs = []
+    for p in tonight:
+        r = p['over'][2.5]
+        if r and (p['c']['gp'] * W + p['l']['gp']) >= 30:
+            o = p['opp']
+            game = f"{p['tm']} @ {o['opp']}" if o['at'] == '@' else f"{o['opp']} @ {p['tm']}"
+            legs.append({'player': p['name'], 'team': p['tm'], 'game': game, 'market': '3+ SOG', 'p': round(r, 3),
+                         'note': f"{p['sogpg']:.1f} SOG/G"})
+    PAR.write_legs('nhl', today.isoformat(), 'NHL', legs)
+
+    # ---------- StarTool agree flag (10/30; no blend): our top anytime goal pick per game vs its star/bomb ----------
+    st_flags = []
+    for p in goal + [x for x in tonight if x['pid'] not in {g['pid'] for g in goal}]:
+        o = p['opp']
+        a, h = (p['tm'], o['opp']) if o['at'] == '@' else (o['opp'], p['tm'])
+        if any(f'{a} @ {h}' in x for x in st_flags):
+            continue
+        top = max([x for x in tonight if x['tm'] in (a, h)], key=lambda x: x['hit'] * gfac(x))
+        fl = PAR.agree_flag('nhl', today.isoformat(), a, h, top['name'])
+        if fl:
+            st_flags.append(f"- {a} @ {h}: our top goal pick {top['name']} ({round(100 * GOAL_F * top['hit'])}%): {fl}")
 
     # make sure shortlist players are in the tables
     ids = {p['pid'] for p in fwd + dmen}
@@ -410,7 +455,8 @@ def build(slate, log):
     R('Bet', 'Player', 'Game', 'Why', 'Look for')
     for p in picks:
         R(*p)
-    R('How picked', 'Goal = blended goal hit% x opponent GA/G x goalie SV%. First goal = blended goals per game x team scores-first '
+    R('How picked', f'Goal = ranked by blended goal hit% x opponent GA/G x goalie SV%; Est = {GOAL_F} x blend (calibrated 10/30), '
+      'bet only at +150 or longer. First goal = blended goals per game x team scores-first '
       'rate (first-goal counts are too small to rank on). SOG = highest line with a 70%+ blended hit rate, then rate x opponent '
       'shots allowed. Players with no 2026-27 game or listed Out/IR are skipped. Recheck lines and goalies before puck drop.')
     R()
@@ -511,6 +557,11 @@ def build(slate, log):
         f.write('\n## Goalies\n\n')
         for g in slate_games:
             f.write(f"- {g['away']} @ {g['home']} {g['time']} ET: {gtxt(g['away'])} / {gtxt(g['home'])}\n")
+        f.write('\n## StarTool check (side by side, no blend)\n\n'
+                + ('\n'.join(st_flags) if st_flags else
+                   '- No StarTool cards saved for this slate yet. Add lines to out/startool/star_bomb.txt '
+                   '(date|AWAY @ HOME|star,star|bomb,bomb) and rerun.') + '\n')
+    PAR.write_sections(today.isoformat())
     log(f'wrote {len(rows)} rows x {width} cols; picks {len(picks)}; meta {meta}')
 
 

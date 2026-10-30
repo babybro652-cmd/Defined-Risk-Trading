@@ -1,184 +1,193 @@
-"UCL props: goalscorers, shots, goals, corners (as of 10/21)",,,,,,,,,,,,,,,,
-Legend,"UCL 26 = Champions League 2026-27 so far, UCL 25 = 2025-26, Lg 26 = domestic league this season (since 8/1). Player rates are per START (bench minutes ignored). Blend = all starts pooled, each UCL 26 start counts as many starts as the weight in B3. Team goals and corners use every 2026-27 match we have (UCL + domestic). Sample: 45 UCL 2026-27 matches, 224 domestic matches, 189 UCL 2025-26 matches. Own goals do not count for any player. Nothing here is guaranteed. Small stakes.",,,,,,,,,,,,,,,
+"UCL props: goalscorers, shots, goals, corners (as of 10/30)",,,,,,,,,,,,,,,,
+Legend,"UCL 26 = Champions League 2026-27 so far, UCL 25 = 2025-26, Lg 26 = domestic league this season (since 8/1). Player rates are per START (bench minutes ignored). Blend = all starts pooled, each UCL 26 start counts as many starts as the weight in B3. Team goals and corners use every 2026-27 match we have (UCL + domestic). Sample: 54 UCL 2026-27 matches, 255 domestic matches, 189 UCL 2025-26 matches. Own goals do not count for any player. Nothing here is guaranteed. Small stakes.",,,,,,,,,,,,,,,
 UCL 26 start weight,3,Input. Change it and the Blend columns update.,,,,,,,,,,,,,,
 ,,,,,,,,,,,,,,,,
-Next matchday Wed 10/21: shortlist (not guaranteed),,,,,,,,,,,,,,,,
+Next matchday Tue 11/3 and Wed 11/4: shortlist (not guaranteed),,,,,,,,,,,,,,,,
 Bet,Player / match,Game,Why,Look for,,,,,,,,,,,,
-Anytime goal,Kylian Mbappé,RMA vs RBL,"Scored in 72% of starts (blend); this season UCL 2 G in 2 starts, league 9 G in 9 starts; RBL concede 1.9/G this season",Anytime goal,,,,,,,,,,,,
-Anytime goal,Luis Suárez,SCP vs LAS,"Scored in 67% of starts (blend); this season UCL 2 G in 2 starts, league 6 G in 5 starts; LAS concede 1.6/G this season",Anytime goal,,,,,,,,,,,,
-Anytime goal,Nicolo Tresoldi,BRU vs RCL,"Scored in 65% of starts (blend); this season UCL 4 G in 2 starts, league 4 G in 7 starts; RCL concede 1.7/G this season",Anytime goal,,,,,,,,,,,,
-Anytime goal,Abde Ezzalzouli,BET vs FEY,"Scored in 75% of starts (blend); this season UCL 1 G in 1 starts, league 3 G in 5 starts; FEY concede 1.5/G this season",Anytime goal,,,,,,,,,,,,
-Anytime goal,Nicolas Jackson,AVL vs VFK,"Scored in 67% of starts (blend); this season UCL 3 G in 2 starts, league 2 G in 6 starts; VFK concede 1.3/G this season",Anytime goal,,,,,,,,,,,,
-First goal,Harry Kane,MUN vs ARS,1.13 goals per start (blend); first goal of the match in 4 games; MUN scored first in 60% this season,First goal (long odds),,,,,,,,,,,,
-First goal,Victor Osimhen,GAL @ LILL,0.72 goals per start (blend); first goal of the match in 5 games; GAL scored first in 75% this season,First goal (long odds),,,,,,,,,,,,
-First goal,Anis Hadj Moussa,FEY @ BET,0.57 goals per start (blend); first goal of the match in 1 games; FEY scored first in 69% this season,First goal (long odds),,,,,,,,,,,,
-1+ shot on target,Kylian Mbappé,RMA vs RBL,1+ SOT in 92% of starts; 5.1 shots and 3.2 SOT per start,Over 0.5 SOT,,,,,,,,,,,,
-1+ shot on target,Luis Suárez,SCP vs LAS,1+ SOT in 90% of starts; 2.7 shots and 1.6 SOT per start,Over 0.5 SOT,,,,,,,,,,,,
-1+ shot on target,Anis Hadj Moussa,FEY @ BET,1+ SOT in 86% of starts; 3.1 shots and 1.5 SOT per start,Over 0.5 SOT,,,,,,,,,,,,
-1+ shot on target,Abde Ezzalzouli,BET vs FEY,1+ SOT in 100% of starts; 3.0 shots and 1.4 SOT per start,Over 0.5 SOT,,,,,,,,,,,,
-Over 2.5 goals,RCL @ BRU,Wed 10/21 3:00 PM,Over 2.5 in 79% of both teams' games this season (avg); BTTS 64%,Over 2.5,,,,,,,,,,,,
-Over 2.5 goals,RBL @ RMA,Wed 10/21 3:00 PM,Over 2.5 in 78% of both teams' games this season (avg); BTTS 55%,Over 2.5,,,,,,,,,,,,
-BTTS,SHK @ INT,Wed 10/21 3:00 PM,Both scored in 89% of both teams' games this season (avg),BTTS yes,,,,,,,,,,,,
-BTTS,MAN @ COMO,Wed 10/21 12:45 PM,Both scored in 67% of both teams' games this season (avg),BTTS yes,,,,,,,,,,,,
-Match corners,RCL @ BRU,Wed 10/21 3:00 PM,"Expected 10.7 corners (RCL 5.1, BRU 5.6); over 9.5 in 63% of their games, over 8.5 in 79%",Over 8.5 / 9.5 corners,,,,,,,,,,,,
-Match corners,RBL @ RMA,Wed 10/21 3:00 PM,"Expected 11.8 corners (RBL 5.1, RMA 6.7); over 9.5 in 63% of their games, over 8.5 in 76%",Over 8.5 / 9.5 corners,,,,,,,,,,,,
-Team corners,RMA,RBL @ RMA,"RMA expected 6.7 corners (6.5 won per game, RBL concede 6.9); RMA over 4.5 in 64% of games",RMA over 4.5 corners,,,,,,,,,,,,
-Team corners,MUN,ARS @ MUN,"MUN expected 6.5 corners (9.9 won per game, ARS concede 3.1); MUN over 4.5 in 100% of games",MUN over 4.5 corners,,,,,,,,,,,,
+Anytime goal,Erling Haaland,MNC @ RBL,"Scored in 87% of starts (blend); this season UCL 4 G in 2 starts, league 9 G in 8 starts; RBL concede 1.9/G this season",Anytime goal,,,,,,,,,,,,
+Anytime goal,Peter Christiansen,VFK vs SAB,"Scored in 68% of starts (blend); this season UCL 2 G in 3 starts, league 8 G in 10 starts; SAB concede 2.0/G this season",Anytime goal,,,,,,,,,,,,
+Anytime goal,Anastasios Douvikas,COMO @ RCL,"Scored in 71% of starts (blend); this season UCL 2 G in 2 starts, league 5 G in 8 starts; RCL concede 1.7/G this season",Anytime goal,,,,,,,,,,,,
+Anytime goal,Kylian Mbappé,RMA @ AEK,"Scored in 76% of starts (blend); this season UCL 3 G in 3 starts, league 11 G in 10 starts; AEK concede 1.1/G this season",Anytime goal,,,,,,,,,,,,
+Anytime goal,Luis Suárez,SCP @ SHK,"Scored in 72% of starts (blend); this season UCL 4 G in 3 starts, league 7 G in 6 starts; SHK concede 1.0/G this season",Anytime goal,,,,,,,,,,,,
+First goal,Ferran Torres,PSG @ VIL,1.08 goals per start (blend); first goal of the match in 2 games; PSG scored first in 69% this season,First goal (long odds),,,,,,,,,,,,
+First goal,Ermedin Demirovic,VFB @ GAL,1.38 goals per start (blend); first goal of the match in 2 games; VFB scored first in 58% this season,First goal (long odds),,,,,,,,,,,,
+First goal,Victor Osimhen,GAL vs VFB,0.82 goals per start (blend); first goal of the match in 6 games; GAL scored first in 79% this season,First goal (long odds),,,,,,,,,,,,
+1+ shot on target,Erling Haaland,MNC @ RBL,1+ SOT in 91% of starts; 4.5 shots and 2.4 SOT per start,Over 0.5 SOT,,,,,,,,,,,,
+1+ shot on target,Ermedin Demirovic,VFB @ GAL,1+ SOT in 100% of starts; 3.8 shots and 2.2 SOT per start,Over 0.5 SOT,,,,,,,,,,,,
+1+ shot on target,Rayan Cherki,MNC @ RBL,1+ SOT in 74% of starts; 2.3 shots and 1.1 SOT per start,Over 0.5 SOT,,,,,,,,,,,,
+1+ shot on target,Peter Christiansen,VFK vs SAB,1+ SOT in 79% of starts; 2.4 shots and 1.3 SOT per start,Over 0.5 SOT,,,,,,,,,,,,
+Over 2.5 goals,SLB @ LAS,Tue 11/3 3:00 PM,Over 2.5 in 88% of both teams' games this season (avg); BTTS 46%,Over 2.5,,,,,,,,,,,,
+Over 2.5 goals,AVL @ BAR,Tue 11/3 3:00 PM,Over 2.5 in 83% of both teams' games this season (avg); BTTS 62%,Over 2.5,,,,,,,,,,,,
+BTTS,PSG @ VIL,Tue 11/3 3:00 PM,Both scored in 79% of both teams' games this season (avg),BTTS yes,,,,,,,,,,,,
+BTTS,COMO @ RCL,Wed 11/4 3:00 PM,Both scored in 74% of both teams' games this season (avg),BTTS yes,,,,,,,,,,,,
+Match corners,SAB @ VFK,Wed 11/4 3:00 PM,"Expected 12.1 corners (SAB 5.1, VFK 7.0); over 9.5 in 76% of their games, over 8.5 in 96%",Over 8.5 / 9.5 corners,,,,,,,,,,,,
+Match corners,BET @ DOR,Wed 11/4 3:00 PM,"Expected 10.8 corners (BET 4.5, DOR 6.3); over 9.5 in 67% of their games, over 8.5 in 71%",Over 8.5 / 9.5 corners,,,,,,,,,,,,
+Team corners,VFK,SAB @ VFK,"VFK expected 7.0 corners (6.7 won per game, SAB concede 7.3); VFK over 4.5 in 85% of games",VFK over 4.5 corners,,,,,,,,,,,,
+Team corners,MNC,MNC @ RBL,"MNC expected 6.6 corners (6.4 won per game, RBL concede 6.8); MNC over 4.5 in 82% of games",MNC over 4.5 corners,,,,,,,,,,,,
 How picked,Anytime goal = blended share of starts with a goal (shrunk toward a typical starter so 1-2 hot games do not top the list) x opponent goals conceded per game vs the UCL-club average (capped at +35%). First goal = goals per start x team scores-first rate x same opponent factor. SOT = 1+ shot on target in 60%+ of starts. Goals and corners angles average the two teams' 2026-27 rates. Only players who started their team's latest match are picked; check lineups an hour before kickoff (ESPN has no soccer injury feed).,,,,,,,,,,,,,,,
 ,,,,,,,,,,,,,,,,
 Next matchday: games and angles,,,,,,,,,,,,,,,,
 Kickoff (ET),Match,Away GF/G,Away GA/G,Home GF/G,Home GA/G,BTTS% (avg),O2.5% (avg),Exp corners,Match O9.5 corners%,Away form,Home form,,,,,
-Wed 10/21 12:45 PM,MAN @ COMO,1.56,1.33,2.0,1.22,0.667,0.5,9.9,0.389,'LDDLD,'WLDLW,,,,,
-Wed 10/21 12:45 PM,GAL @ LILL,1.9,1.8,1.33,1.22,0.522,0.622,9.0,0.317,'WLWLW,'WLWLD,,,,,
-Wed 10/21 3:00 PM,VFK @ AVL,2.64,1.27,1.78,1.44,0.586,0.742,11.2,0.52,'WWWDW,'LWDWW,,,,,
-Wed 10/21 3:00 PM,ARS @ MUN,1.67,0.56,3.75,1.0,0.424,0.715,10.8,0.604,'WLWWW,'WWDDW,,,,,
-Wed 10/21 3:00 PM,RCL @ BRU,1.89,1.67,2.5,1.0,0.639,0.789,10.7,0.633,'DLWLW,'LWWWW,,,,,
-Wed 10/21 3:00 PM,SHK @ INT,2.0,1.0,2.78,1.67,0.889,0.694,8.1,0.222,'DW,'WDWLW,,,,,
-Wed 10/21 3:00 PM,FEY @ BET,3.18,1.55,2.0,1.64,0.636,0.682,10.3,0.591,'WWWWW,'WDWWL,,,,,
-Wed 10/21 3:00 PM,RBL @ RMA,2.25,1.88,2.64,1.18,0.551,0.784,11.8,0.631,'WLWWL,'WLWWW,,,,,
-Wed 10/21 3:00 PM,LAS @ SCP,2.3,1.6,2.5,1.0,0.6,0.7,6.8,0.25,'LDLLW,'WDDWW,,,,,
+Tue 11/3 12:45 PM,VFB @ GAL,1.7,1.5,2.08,1.75,0.633,0.717,10.8,0.517,'WWLDL,'WLWWW,,,,,
+Tue 11/3 12:45 PM,SCP @ SHK,2.33,1.25,1.33,1.0,0.708,0.542,7.7,0.125,'DWWLL,'DWL,,,,,
+Tue 11/3 3:00 PM,MUN @ ATM,3.5,1.1,1.85,0.85,0.581,0.758,10.9,0.631,'DDWDW,'WWWDW,,,,,
+Tue 11/3 3:00 PM,AVL @ BAR,1.91,1.36,3.92,1.31,0.619,0.825,9.2,0.374,'DWWWW,'WWWLL,,,,,
+Tue 11/3 3:00 PM,LILL @ BODO,1.36,1.45,1.91,1.73,0.591,0.591,9.1,0.364,'WLDLD,'WWWLL,,,,,
+Tue 11/3 3:00 PM,INT @ FEY,2.5,1.33,2.77,1.46,0.641,0.721,9.6,0.436,'LWWWW,'WWWLD,,,,,
+Tue 11/3 3:00 PM,SLB @ LAS,0.33,4.33,2.25,1.75,0.458,0.875,7.5,0.208,'LLL,'LLWWL,,,,,
+Tue 11/3 3:00 PM,ROMA @ MAN,2.58,1.08,1.36,1.73,0.523,0.561,9.0,0.303,'LWWDW,'DLDLL,,,,,
+Tue 11/3 3:00 PM,PSG @ VIL,2.73,1.27,1.77,1.69,0.794,0.794,10.0,0.528,'WWWWW,'LWDLW,,,,,
+Wed 11/4 12:45 PM,RMA @ AEK,2.69,1.15,2.4,1.1,0.635,0.773,9.9,0.585,'WWWWW,'WWLLW,,,,,
+Wed 11/4 12:45 PM,LIV @ FEN,2.09,1.36,2.17,1.42,0.523,0.693,10.0,0.523,'LWWWW,'WLWDL,,,,,
+Wed 11/4 3:00 PM,BET @ DOR,1.77,1.38,1.7,0.8,0.469,0.481,10.8,0.669,'WWLWD,'DLDWW,,,,,
+Wed 11/4 3:00 PM,NAP @ FCP,1.83,1.5,1.92,0.83,0.5,0.542,9.4,0.5,'LLWDW,'WWLLW,,,,,
+Wed 11/4 3:00 PM,COMO @ RCL,2.25,1.08,1.73,1.73,0.739,0.742,10.0,0.523,'LWWWW,'WLWLW,,,,,
+Wed 11/4 3:00 PM,BRU @ PSV,2.58,1.0,2.31,1.15,0.635,0.724,10.0,0.558,'WWWWW,'WLLWD,,,,,
+Wed 11/4 3:00 PM,MNC @ RBL,2.64,1.27,2.3,1.9,0.518,0.764,10.9,0.618,'WLWWL,'WWLLW,,,,,
+Wed 11/4 3:00 PM,ARS @ SLP,1.73,0.64,1.33,2.33,0.47,0.606,10.0,0.515,'WWWDW,'LLD,,,,,
+Wed 11/4 3:00 PM,SAB @ VFK,1.0,2.0,2.54,1.38,0.551,0.756,12.1,0.756,'LWL,'WDWLW,,,,,
 ,,,,,,,,,,,,,,,,
 Goalscorers: top 60 by blended goal rate per start (UCL clubs only),,,,,,,,,,,,,,,,
 Player,Tm,Pos,Starts UCL 26,Games w/ G UCL 26,Starts UCL 25,Games w/ G UCL 25,Starts Lg 26,Games w/ G Lg 26,Blend goal%,Goals/start,Shots/start,SOT/start,1+ SOT%,2+ shots%,First goals (all),Next
-Erling Haaland,MNC,F,2,2,9,7,7,6,"=IF($B$3*D43+F43+H43=0,""-"",($B$3*E43+G43+I43)/($B$3*D43+F43+H43))",1.273,4.55,2.41,0.909,0.955,9,
-Harry Kane,MUN,F,2,2,12,9,5,3,"=IF($B$3*D44+F44+H44=0,""-"",($B$3*E44+G44+I44)/($B$3*D44+F44+H44))",1.13,4.48,2.13,0.913,0.913,4,vs ARS
-Abde Ezzalzouli,BET,AM-L,1,1,0,0,5,3,"=IF($B$3*D45+F45+H45=0,""-"",($B$3*E45+G45+I45)/($B$3*D45+F45+H45))",0.75,3.0,1.38,1.0,0.625,2,vs FEY
-Kylian Mbappé,RMA,F,2,2,10,7,9,5,"=IF($B$3*D46+F46+H46=0,""-"",($B$3*E46+G46+I46)/($B$3*D46+F46+H46))",1.2,5.12,3.24,0.92,0.96,6,vs RBL
-Jamal Musiala,MUN,AM,1,1,3,1,1,1,"=IF($B$3*D47+F47+H47=0,""-"",($B$3*E47+G47+I47)/($B$3*D47+F47+H47))",0.714,2.29,1.29,0.857,0.857,3,vs ARS
-Nicolas Jackson,AVL,F,2,2,3,2,6,2,"=IF($B$3*D48+F48+H48=0,""-"",($B$3*E48+G48+I48)/($B$3*D48+F48+H48))",0.867,3.47,1.93,0.8,0.8,0,vs VFK
-Anastasios Douvikas,COMO,SUB,1,1,0,0,6,3,"=IF($B$3*D49+F49+H49=0,""-"",($B$3*E49+G49+I49)/($B$3*D49+F49+H49))",0.667,2.33,1.33,0.778,0.667,0,vs MAN
-Luis Suárez,SCP,F,2,2,10,3,5,5,"=IF($B$3*D50+F50+H50=0,""-"",($B$3*E50+G50+I50)/($B$3*D50+F50+H50))",0.762,2.71,1.62,0.905,0.81,4,vs LAS
-Nicolo Tresoldi,BRU,F,2,2,7,3,7,4,"=IF($B$3*D51+F51+H51=0,""-"",($B$3*E51+G51+I51)/($B$3*D51+F51+H51))",0.95,3.65,1.6,0.7,0.75,4,vs RCL
-Assane Diao,COMO,AM-R,2,2,0,0,5,1,"=IF($B$3*D52+F52+H52=0,""-"",($B$3*E52+G52+I52)/($B$3*D52+F52+H52))",0.727,1.55,0.82,0.727,0.545,1,vs MAN
-Ferran Torres,PSG,SUB,1,1,4,3,4,1,"=IF($B$3*D53+F53+H53=0,""-"",($B$3*E53+G53+I53)/($B$3*D53+F53+H53))",1.182,3.18,1.55,0.727,0.727,2,
-Lamine Yamal,BAR,AM-R,3,2,10,6,9,5,"=IF($B$3*D54+F54+H54=0,""-"",($B$3*E54+G54+I54)/($B$3*D54+F54+H54))",0.714,4.36,1.43,0.75,0.964,3,
-Donyell Malen,ROMA,F,3,2,0,0,6,3,"=IF($B$3*D55+F55+H55=0,""-"",($B$3*E55+G55+I55)/($B$3*D55+F55+H55))",1.0,4.07,1.87,0.733,1.0,3,
-Peter Christiansen,VFK,RF,2,1,0,0,9,6,"=IF($B$3*D56+F56+H56=0,""-"",($B$3*E56+G56+I56)/($B$3*D56+F56+H56))",0.667,2.53,1.27,0.733,0.733,1,@ AVL
-Ayase Ueda,LILL,F,2,1,0,0,6,4,"=IF($B$3*D57+F57+H57=0,""-"",($B$3*E57+G57+I57)/($B$3*D57+F57+H57))",0.583,2.42,1.17,0.75,0.5,1,vs GAL
-Raphinha,BAR,F,2,1,6,2,7,6,"=IF($B$3*D58+F58+H58=0,""-"",($B$3*E58+G58+I58)/($B$3*D58+F58+H58))",1.105,3.11,1.79,0.947,0.947,4,
-Carlos Augusto,INT,LM,1,1,4,1,2,1,"=IF($B$3*D59+F59+H59=0,""-"",($B$3*E59+G59+I59)/($B$3*D59+F59+H59))",0.556,1.44,0.78,0.667,0.333,0,vs SHK
-Karim Adeyemi,BAR,SUB,1,1,5,2,3,1,"=IF($B$3*D60+F60+H60=0,""-"",($B$3*E60+G60+I60)/($B$3*D60+F60+H60))",0.545,2.36,0.82,0.727,0.636,1,
-Serhou Guirassy,DOR,CF-R,2,2,9,3,6,2,"=IF($B$3*D61+F61+H61=0,""-"",($B$3*E61+G61+I61)/($B$3*D61+F61+H61))",0.857,3.71,1.86,0.81,0.81,4,
-Flávio Gonçalves,SCP,SUB,0,0,0,0,6,3,"=IF($B$3*D62+F62+H62=0,""-"",($B$3*E62+G62+I62)/($B$3*D62+F62+H62))",0.5,1.67,1.0,0.833,0.5,2,vs LAS
-Julián Álvarez,ATM,CF-L,3,1,15,9,0,0,"=IF($B$3*D63+F63+H63=0,""-"",($B$3*E63+G63+I63)/($B$3*D63+F63+H63))",0.542,2.92,1.42,0.667,0.875,4,
-Abdallah Sima,RCL,CF-L,1,1,0,0,5,1,"=IF($B$3*D64+F64+H64=0,""-"",($B$3*E64+G64+I64)/($B$3*D64+F64+H64))",0.5,1.5,0.75,0.75,0.5,0,@ BRU
-Andreas Helmersen,BODO,CF-L,3,1,0,0,5,4,"=IF($B$3*D65+F65+H65=0,""-"",($B$3*E65+G65+I65)/($B$3*D65+F65+H65))",0.643,2.86,1.07,0.714,1.0,2,
-Ousmane Dembélé,PSG,F,3,2,11,5,3,0,"=IF($B$3*D66+F66+H66=0,""-"",($B$3*E66+G66+I66)/($B$3*D66+F66+H66))",0.696,3.52,1.35,0.826,0.565,3,
-Luis Díaz,MUN,AM-L,2,1,12,6,5,2,"=IF($B$3*D67+F67+H67=0,""-"",($B$3*E67+G67+I67)/($B$3*D67+F67+H67))",0.609,2.65,1.39,0.87,0.739,3,vs ARS
-Anthony Gordon,BAR,AM-L,2,1,9,6,6,1,"=IF($B$3*D68+F68+H68=0,""-"",($B$3*E68+G68+I68)/($B$3*D68+F68+H68))",0.667,2.48,1.43,0.619,0.667,3,
-Fermín López,BAR,SUB,1,1,10,3,6,3,"=IF($B$3*D69+F69+H69=0,""-"",($B$3*E69+G69+I69)/($B$3*D69+F69+H69))",0.684,2.05,1.26,0.737,0.579,1,
-Lautaro Martínez,INT,CF-L,2,1,7,3,4,2,"=IF($B$3*D70+F70+H70=0,""-"",($B$3*E70+G70+I70)/($B$3*D70+F70+H70))",0.824,5.53,2.0,0.824,0.882,2,vs SHK
-Gjivai Zechiël,FEY,RM,2,1,0,0,9,4,"=IF($B$3*D71+F71+H71=0,""-"",($B$3*E71+G71+I71)/($B$3*D71+F71+H71))",0.533,2.2,0.93,0.667,0.6,3,@ BET
-Lennart Karl,MUN,AM,1,0,6,4,2,1,"=IF($B$3*D72+F72+H72=0,""-"",($B$3*E72+G72+I72)/($B$3*D72+F72+H72))",0.455,2.55,1.09,0.636,0.727,2,vs ARS
-Martin Baturina,COMO,AM,2,1,0,0,5,2,"=IF($B$3*D73+F73+H73=0,""-"",($B$3*E73+G73+I73)/($B$3*D73+F73+H73))",0.455,1.82,0.91,0.818,0.545,2,vs MAN
-Matheus Cunha,MAN,SUB,1,1,0,0,6,1,"=IF($B$3*D74+F74+H74=0,""-"",($B$3*E74+G74+I74)/($B$3*D74+F74+H74))",0.444,2.89,1.44,0.667,0.889,1,@ COMO
-Georges Mikautadze,VIL,F,3,2,5,1,4,1,"=IF($B$3*D75+F75+H75=0,""-"",($B$3*E75+G75+I75)/($B$3*D75+F75+H75))",0.444,1.89,0.83,0.556,0.611,2,
-Victor Osimhen,GAL,F,1,0,10,4,5,4,"=IF($B$3*D76+F76+H76=0,""-"",($B$3*E76+G76+I76)/($B$3*D76+F76+H76))",0.722,4.83,2.39,0.667,0.722,5,@ LILL
-Rayan Cherki,MNC,AM,3,1,4,2,5,3,"=IF($B$3*D77+F77+H77=0,""-"",($B$3*E77+G77+I77)/($B$3*D77+F77+H77))",0.5,2.33,1.11,0.722,0.611,0,
-Rodrigo Zalazar,SCP,AM,1,1,0,0,6,1,"=IF($B$3*D78+F78+H78=0,""-"",($B$3*E78+G78+I78)/($B$3*D78+F78+H78))",0.444,1.44,0.67,0.556,0.444,1,vs LAS
-Kai Havertz,ARS,SUB,0,0,2,2,7,2,"=IF($B$3*D79+F79+H79=0,""-"",($B$3*E79+G79+I79)/($B$3*D79+F79+H79))",0.444,2.0,1.0,0.889,0.667,2,@ MUN
-Gabri Veiga,FCP,LM,3,1,0,0,7,4,"=IF($B$3*D80+F80+H80=0,""-"",($B$3*E80+G80+I80)/($B$3*D80+F80+H80))",0.438,2.12,0.62,0.5,0.5,2,
-Michael Olise,MUN,AM-R,2,1,12,4,5,3,"=IF($B$3*D81+F81+H81=0,""-"",($B$3*E81+G81+I81)/($B$3*D81+F81+H81))",0.696,4.26,2.04,0.87,0.957,0,vs ARS
-Dominik Szoboszlai,LIV,RM,1,1,12,5,6,1,"=IF($B$3*D82+F82+H82=0,""-"",($B$3*E82+G82+I82)/($B$3*D82+F82+H82))",0.429,2.24,1.05,0.667,0.619,3,
-Jens Petter Hauge,BODO,LM,2,1,11,5,4,1,"=IF($B$3*D83+F83+H83=0,""-"",($B$3*E83+G83+I83)/($B$3*D83+F83+H83))",0.476,2.19,1.0,0.81,0.714,3,
-Brajan Gruda,RBL,AM-R,1,1,0,0,4,0,"=IF($B$3*D84+F84+H84=0,""-"",($B$3*E84+G84+I84)/($B$3*D84+F84+H84))",0.429,2.86,1.71,0.714,0.857,1,@ RMA
-Ross Barkley,AVL,LM,1,1,0,0,4,0,"=IF($B$3*D85+F85+H85=0,""-"",($B$3*E85+G85+I85)/($B$3*D85+F85+H85))",0.857,2.29,1.0,0.571,0.571,0,vs VFK
-Ermedin Demirovic,VFB,SUB,1,1,0,0,4,0,"=IF($B$3*D86+F86+H86=0,""-"",($B$3*E86+G86+I86)/($B$3*D86+F86+H86))",1.286,3.71,2.29,1.0,0.857,1,
-Anis Hadj Moussa,FEY,RF,2,1,0,0,8,3,"=IF($B$3*D87+F87+H87=0,""-"",($B$3*E87+G87+I87)/($B$3*D87+F87+H87))",0.571,3.14,1.5,0.857,0.857,1,@ BET
-Désiré Doué,PSG,RF,2,2,9,2,4,0,"=IF($B$3*D88+F88+H88=0,""-"",($B$3*E88+G88+I88)/($B$3*D88+F88+H88))",0.474,2.63,1.11,0.737,0.684,3,
-Fotis Ioannidis,SCP,SUB,0,0,2,0,3,2,"=IF($B$3*D89+F89+H89=0,""-"",($B$3*E89+G89+I89)/($B$3*D89+F89+H89))",0.4,1.6,0.8,0.4,0.2,0,vs LAS
-Romeo Vermant,BRU,SUB,0,0,3,2,2,0,"=IF($B$3*D90+F90+H90=0,""-"",($B$3*E90+G90+I90)/($B$3*D90+F90+H90))",0.4,2.8,1.0,0.8,0.8,0,vs RCL
-Xavi Espart,BAR,RB,1,1,0,0,7,1,"=IF($B$3*D91+F91+H91=0,""-"",($B$3*E91+G91+I91)/($B$3*D91+F91+H91))",0.4,1.1,0.5,0.5,0.2,1,
-Alexis Mac Allister,LIV,RM,2,2,9,2,5,0,"=IF($B$3*D92+F92+H92=0,""-"",($B$3*E92+G92+I92)/($B$3*D92+F92+H92))",0.6,2.55,1.0,0.65,0.7,2,
-Oguz Aydin,FEN,AM-R,2,1,0,0,4,1,"=IF($B$3*D93+F93+H93=0,""-"",($B$3*E93+G93+I93)/($B$3*D93+F93+H93))",0.4,3.4,0.7,0.6,0.8,1,
-Olivier Giroud,LILL,SUB,0,0,0,0,5,2,"=IF($B$3*D94+F94+H94=0,""-"",($B$3*E94+G94+I94)/($B$3*D94+F94+H94))",0.4,1.0,0.8,0.6,0.4,1,vs GAL
-Marc Bartra,BET,CD-R,2,1,0,0,4,1,"=IF($B$3*D95+F95+H95=0,""-"",($B$3*E95+G95+I95)/($B$3*D95+F95+H95))",0.7,1.0,0.8,0.5,0.4,0,vs FEY
-Emiliano Buendía,AVL,AM,1,1,0,0,7,1,"=IF($B$3*D96+F96+H96=0,""-"",($B$3*E96+G96+I96)/($B$3*D96+F96+H96))",0.4,2.9,0.8,0.4,0.7,0,vs VFK
-Víctor Muñoz,LIV,SUB,0,0,0,0,5,2,"=IF($B$3*D97+F97+H97=0,""-"",($B$3*E97+G97+I97)/($B$3*D97+F97+H97))",0.4,2.0,1.0,0.8,0.6,0,
-Jurriën Timber,ARS,RB,1,1,6,1,1,0,"=IF($B$3*D98+F98+H98=0,""-"",($B$3*E98+G98+I98)/($B$3*D98+F98+H98))",0.4,0.7,0.5,0.5,0.0,2,@ MUN
-Zlatko Tripic,VFK,LF,2,1,0,0,7,2,"=IF($B$3*D99+F99+H99=0,""-"",($B$3*E99+G99+I99)/($B$3*D99+F99+H99))",0.385,1.77,0.54,0.462,0.615,1,@ AVL
-Florian Thauvin,RCL,CF-R,2,1,0,0,7,2,"=IF($B$3*D100+F100+H100=0,""-"",($B$3*E100+G100+I100)/($B$3*D100+F100+H100))",0.462,3.92,2.0,0.846,0.846,2,@ BRU
-Alphonso Davies,MUN,SUB,1,1,1,0,4,0,"=IF($B$3*D101+F101+H101=0,""-"",($B$3*E101+G101+I101)/($B$3*D101+F101+H101))",0.375,0.5,0.38,0.375,0.0,0,vs ARS
-Hugo Vetlesen,BRU,CM-R,2,1,2,0,8,3,"=IF($B$3*D102+F102+H102=0,""-"",($B$3*E102+G102+I102)/($B$3*D102+F102+H102))",0.438,2.12,1.06,0.625,0.688,3,vs RCL
+Erling Haaland,MNC,F,2,2,9,7,8,7,"=IF($B$3*D52+F52+H52=0,""-"",($B$3*E52+G52+I52)/($B$3*D52+F52+H52))",1.261,4.48,2.39,0.913,0.957,9,@ RBL
+Harry Kane,MUN,F,3,3,12,9,6,3,"=IF($B$3*D53+F53+H53=0,""-"",($B$3*E53+G53+I53)/($B$3*D53+F53+H53))",1.074,4.33,1.96,0.926,0.926,4,@ ATM
+Kylian Mbappé,RMA,F,3,3,10,7,10,6,"=IF($B$3*D54+F54+H54=0,""-"",($B$3*E54+G54+I54)/($B$3*D54+F54+H54))",1.207,4.93,3.07,0.931,0.966,7,@ AEK
+Luis Suárez,SCP,F,3,3,10,3,6,6,"=IF($B$3*D55+F55+H55=0,""-"",($B$3*E55+G55+I55)/($B$3*D55+F55+H55))",0.92,3.32,1.76,0.92,0.84,5,@ SHK
+Anastasios Douvikas,COMO,F,2,2,0,0,8,4,"=IF($B$3*D56+F56+H56=0,""-"",($B$3*E56+G56+I56)/($B$3*D56+F56+H56))",0.786,2.57,1.5,0.786,0.786,1,@ RCL
+Niccolò Pisilli,ROMA,CM-L,1,1,0,0,4,2,"=IF($B$3*D57+F57+H57=0,""-"",($B$3*E57+G57+I57)/($B$3*D57+F57+H57))",0.714,1.86,0.86,0.857,0.571,0,@ MAN
+Johan Manzambi,AVL,AM,1,1,0,0,4,2,"=IF($B$3*D58+F58+H58=0,""-"",($B$3*E58+G58+I58)/($B$3*D58+F58+H58))",0.714,3.0,1.0,0.857,0.857,3,@ BAR
+Jamal Musiala,MUN,AM,1,1,3,1,1,1,"=IF($B$3*D59+F59+H59=0,""-"",($B$3*E59+G59+I59)/($B$3*D59+F59+H59))",0.714,2.29,1.29,0.857,0.857,3,@ ATM
+Peter Christiansen,VFK,RM,3,2,0,0,10,7,"=IF($B$3*D60+F60+H60=0,""-"",($B$3*E60+G60+I60)/($B$3*D60+F60+H60))",0.737,2.42,1.26,0.789,0.789,2,vs SAB
+Assane Diao,COMO,AM-R,2,2,0,0,5,1,"=IF($B$3*D61+F61+H61=0,""-"",($B$3*E61+G61+I61)/($B$3*D61+F61+H61))",0.727,1.55,0.82,0.727,0.545,1,@ RCL
+Raphinha,BAR,F,2,1,6,2,8,7,"=IF($B$3*D62+F62+H62=0,""-"",($B$3*E62+G62+I62)/($B$3*D62+F62+H62))",1.1,3.25,1.75,0.95,0.95,4,vs AVL
+Ross Barkley,AVL,LM,2,2,0,0,4,0,"=IF($B$3*D63+F63+H63=0,""-"",($B$3*E63+G63+I63)/($B$3*D63+F63+H63))",0.9,1.9,1.0,0.7,0.4,1,@ BAR
+Lamine Yamal,BAR,AM-R,3,2,10,6,10,5,"=IF($B$3*D64+F64+H64=0,""-"",($B$3*E64+G64+I64)/($B$3*D64+F64+H64))",0.69,4.38,1.38,0.724,0.966,3,vs AVL
+Ayase Ueda,LILL,F,2,1,0,0,6,4,"=IF($B$3*D65+F65+H65=0,""-"",($B$3*E65+G65+I65)/($B$3*D65+F65+H65))",0.583,2.42,1.17,0.75,0.5,1,@ BODO
+Nicolo Tresoldi,BRU,F,3,2,7,3,8,5,"=IF($B$3*D66+F66+H66=0,""-"",($B$3*E66+G66+I66)/($B$3*D66+F66+H66))",0.917,3.46,1.58,0.75,0.792,5,@ PSV
+Ferran Torres,PSG,SUB,1,1,4,3,5,1,"=IF($B$3*D67+F67+H67=0,""-"",($B$3*E67+G67+I67)/($B$3*D67+F67+H67))",1.083,3.25,1.67,0.75,0.75,2,@ VIL
+Nicolas Jackson,AVL,F,3,2,3,2,7,3,"=IF($B$3*D68+F68+H68=0,""-"",($B$3*E68+G68+I68)/($B$3*D68+F68+H68))",0.789,3.53,2.11,0.842,0.842,1,@ BAR
+Carlos Augusto,INT,CD-L,2,2,4,1,4,1,"=IF($B$3*D69+F69+H69=0,""-"",($B$3*E69+G69+I69)/($B$3*D69+F69+H69))",0.571,1.57,0.71,0.643,0.357,1,@ FEY
+Donyell Malen,ROMA,F,3,2,0,0,7,3,"=IF($B$3*D70+F70+H70=0,""-"",($B$3*E70+G70+I70)/($B$3*D70+F70+H70))",0.938,4.06,1.81,0.75,1.0,3,@ MAN
+Alphonso Davies,MUN,AM-L,2,2,1,0,4,0,"=IF($B$3*D71+F71+H71=0,""-"",($B$3*E71+G71+I71)/($B$3*D71+F71+H71))",0.545,0.91,0.55,0.545,0.273,0,@ ATM
+Karim Adeyemi,BAR,SUB,1,1,5,2,3,1,"=IF($B$3*D72+F72+H72=0,""-"",($B$3*E72+G72+I72)/($B$3*D72+F72+H72))",0.545,2.36,0.82,0.727,0.636,1,vs AVL
+Victor Osimhen,GAL,F,2,1,10,4,6,5,"=IF($B$3*D73+F73+H73=0,""-"",($B$3*E73+G73+I73)/($B$3*D73+F73+H73))",0.818,4.82,2.23,0.727,0.773,6,vs VFB
+Emiliano Buendía,AVL,AM,2,2,0,0,7,1,"=IF($B$3*D74+F74+H74=0,""-"",($B$3*E74+G74+I74)/($B$3*D74+F74+H74))",0.538,3.85,1.31,0.538,0.769,0,@ BAR
+Julián Álvarez,ATM,CF-L,3,1,15,9,1,1,"=IF($B$3*D75+F75+H75=0,""-"",($B$3*E75+G75+I75)/($B$3*D75+F75+H75))",0.56,2.96,1.44,0.68,0.88,5,vs MUN
+Abdallah Sima,RCL,CF-L,1,1,0,0,5,1,"=IF($B$3*D76+F76+H76=0,""-"",($B$3*E76+G76+I76)/($B$3*D76+F76+H76))",0.5,1.5,0.75,0.75,0.5,0,vs COMO
+Andreas Helmersen,BODO,CF-L,3,1,0,0,5,4,"=IF($B$3*D77+F77+H77=0,""-"",($B$3*E77+G77+I77)/($B$3*D77+F77+H77))",0.643,2.86,1.07,0.714,1.0,2,vs LILL
+Serhou Guirassy,DOR,CF-R,2,2,9,3,7,2,"=IF($B$3*D78+F78+H78=0,""-"",($B$3*E78+G78+I78)/($B$3*D78+F78+H78))",0.818,3.77,1.86,0.818,0.818,4,vs BET
+Ermedin Demirovic,VFB,SUB,1,1,0,0,5,1,"=IF($B$3*D79+F79+H79=0,""-"",($B$3*E79+G79+I79)/($B$3*D79+F79+H79))",1.375,3.75,2.25,1.0,0.875,2,@ GAL
+Abde Ezzalzouli,BET,AM-L,2,1,0,0,6,3,"=IF($B$3*D80+F80+H80=0,""-"",($B$3*E80+G80+I80)/($B$3*D80+F80+H80))",0.5,4.25,1.5,1.0,0.75,2,@ DOR
+Luis Díaz,MUN,SUB,2,1,12,6,5,2,"=IF($B$3*D81+F81+H81=0,""-"",($B$3*E81+G81+I81)/($B$3*D81+F81+H81))",0.609,2.65,1.39,0.87,0.739,3,@ ATM
+Ousmane Dembélé,PSG,F,3,2,11,5,3,0,"=IF($B$3*D82+F82+H82=0,""-"",($B$3*E82+G82+I82)/($B$3*D82+F82+H82))",0.696,3.52,1.35,0.826,0.565,3,@ VIL
+Lautaro Martínez,INT,CF-L,2,1,7,3,4,2,"=IF($B$3*D83+F83+H83=0,""-"",($B$3*E83+G83+I83)/($B$3*D83+F83+H83))",0.824,5.53,2.0,0.824,0.882,2,@ FEY
+Isco,BET,AM,3,2,0,0,6,1,"=IF($B$3*D84+F84+H84=0,""-"",($B$3*E84+G84+I84)/($B$3*D84+F84+H84))",0.533,2.53,0.93,0.533,0.8,2,@ DOR
+Alexey Batrakov,GAL,AM,3,2,0,0,4,0,"=IF($B$3*D85+F85+H85=0,""-"",($B$3*E85+G85+I85)/($B$3*D85+F85+H85))",0.462,0.85,0.62,0.615,0.154,1,vs VFB
+Michael Olise,MUN,AM-R,2,1,12,4,6,4,"=IF($B$3*D86+F86+H86=0,""-"",($B$3*E86+G86+I86)/($B$3*D86+F86+H86))",0.708,4.21,2.04,0.875,0.958,0,@ ATM
+Anthony Gordon,BAR,AM-L,2,1,9,6,7,1,"=IF($B$3*D87+F87+H87=0,""-"",($B$3*E87+G87+I87)/($B$3*D87+F87+H87))",0.636,2.5,1.5,0.636,0.682,3,vs AVL
+Fermín López,BAR,SUB,1,1,10,3,7,3,"=IF($B$3*D88+F88+H88=0,""-"",($B$3*E88+G88+I88)/($B$3*D88+F88+H88))",0.65,2.0,1.2,0.7,0.55,1,vs AVL
+Georges Mikautadze,VIL,F,3,2,5,1,4,1,"=IF($B$3*D89+F89+H89=0,""-"",($B$3*E89+G89+I89)/($B$3*D89+F89+H89))",0.444,1.89,0.83,0.556,0.611,2,vs PSG
+Rodrigo Zalazar,SCP,AM,1,1,0,0,6,1,"=IF($B$3*D90+F90+H90=0,""-"",($B$3*E90+G90+I90)/($B$3*D90+F90+H90))",0.444,1.44,0.67,0.556,0.444,1,@ SHK
+Florian Thauvin,RCL,SUB,2,1,0,0,8,3,"=IF($B$3*D91+F91+H91=0,""-"",($B$3*E91+G91+I91)/($B$3*D91+F91+H91))",0.5,3.79,1.93,0.857,0.857,2,vs COMO
+Flávio Gonçalves,SCP,SUB,0,0,0,0,7,3,"=IF($B$3*D92+F92+H92=0,""-"",($B$3*E92+G92+I92)/($B$3*D92+F92+H92))",0.429,1.71,0.86,0.714,0.571,2,@ SHK
+Samuel Adeniran,LAS,SUB,1,0,0,0,4,3,"=IF($B$3*D93+F93+H93=0,""-"",($B$3*E93+G93+I93)/($B$3*D93+F93+H93))",0.571,1.0,0.29,0.143,0.286,1,vs SLB
+Dominik Szoboszlai,LIV,RM,1,1,12,5,6,1,"=IF($B$3*D94+F94+H94=0,""-"",($B$3*E94+G94+I94)/($B$3*D94+F94+H94))",0.429,2.24,1.05,0.667,0.619,3,@ FEN
+Rayan Cherki,MNC,AM,3,1,4,2,6,3,"=IF($B$3*D95+F95+H95=0,""-"",($B$3*E95+G95+I95)/($B$3*D95+F95+H95))",0.474,2.26,1.11,0.737,0.579,0,@ RBL
+Lennart Karl,MUN,SUB,1,0,6,4,3,1,"=IF($B$3*D96+F96+H96=0,""-"",($B$3*E96+G96+I96)/($B$3*D96+F96+H96))",0.417,2.42,1.0,0.583,0.667,2,@ ATM
+Gabri Veiga,FCP,LM,3,1,0,0,8,4,"=IF($B$3*D97+F97+H97=0,""-"",($B$3*E97+G97+I97)/($B$3*D97+F97+H97))",0.412,2.06,0.59,0.471,0.471,2,vs NAP
+Jens Petter Hauge,BODO,LM,2,1,11,5,5,1,"=IF($B$3*D98+F98+H98=0,""-"",($B$3*E98+G98+I98)/($B$3*D98+F98+H98))",0.455,2.32,1.0,0.818,0.727,3,vs LILL
+Romeo Vermant,BRU,SUB,0,0,3,2,2,0,"=IF($B$3*D99+F99+H99=0,""-"",($B$3*E99+G99+I99)/($B$3*D99+F99+H99))",0.4,2.8,1.0,0.8,0.8,0,@ PSV
+Olivier Giroud,LILL,SUB,0,0,0,0,5,2,"=IF($B$3*D100+F100+H100=0,""-"",($B$3*E100+G100+I100)/($B$3*D100+F100+H100))",0.4,1.0,0.8,0.6,0.4,1,@ BODO
+Krystof Danek,LAS,CF-R,2,1,0,0,4,1,"=IF($B$3*D101+F101+H101=0,""-"",($B$3*E101+G101+I101)/($B$3*D101+F101+H101))",0.4,1.2,0.8,0.7,0.4,0,vs SLB
+Fotis Ioannidis,SCP,SUB,0,0,2,0,3,2,"=IF($B$3*D102+F102+H102=0,""-"",($B$3*E102+G102+I102)/($B$3*D102+F102+H102))",0.4,1.6,0.8,0.4,0.2,0,@ SHK
+Víctor Muñoz,LIV,SUB,0,0,0,0,5,2,"=IF($B$3*D103+F103+H103=0,""-"",($B$3*E103+G103+I103)/($B$3*D103+F103+H103))",0.4,2.0,1.0,0.8,0.6,0,@ FEN
+Désiré Doué,PSG,RF,2,2,9,2,5,0,"=IF($B$3*D104+F104+H104=0,""-"",($B$3*E104+G104+I104)/($B$3*D104+F104+H104))",0.45,2.7,1.1,0.75,0.7,3,@ VIL
+Anis Hadj Moussa,FEY,RF,3,1,0,0,9,4,"=IF($B$3*D105+F105+H105=0,""-"",($B$3*E105+G105+I105)/($B$3*D105+F105+H105))",0.5,3.39,1.72,0.889,0.889,1,vs INT
+Alexis Mac Allister,LIV,RM,2,2,9,2,6,0,"=IF($B$3*D106+F106+H106=0,""-"",($B$3*E106+G106+I106)/($B$3*D106+F106+H106))",0.571,2.48,0.95,0.619,0.667,2,@ FEN
+Gjivai Zechiël,FEY,RM,3,1,0,0,10,4,"=IF($B$3*D107+F107+H107=0,""-"",($B$3*E107+G107+I107)/($B$3*D107+F107+H107))",0.421,2.05,0.74,0.526,0.632,3,vs INT
+Scott McTominay,NAP,LM,2,1,8,3,5,1,"=IF($B$3*D108+F108+H108=0,""-"",($B$3*E108+G108+I108)/($B$3*D108+F108+H108))",0.632,3.11,0.95,0.526,0.737,3,@ FCP
+Oguz Aydin,FEN,AM-R,2,1,0,0,5,1,"=IF($B$3*D109+F109+H109=0,""-"",($B$3*E109+G109+I109)/($B$3*D109+F109+H109))",0.364,3.09,0.64,0.545,0.727,1,vs LIV
+Xavi Espart,BAR,RB,1,1,0,0,8,1,"=IF($B$3*D110+F110+H110=0,""-"",($B$3*E110+G110+I110)/($B$3*D110+F110+H110))",0.364,1.0,0.45,0.455,0.182,1,vs AVL
+Alexander Isak,LIV,SUB,1,0,4,0,7,5,"=IF($B$3*D111+F111+H111=0,""-"",($B$3*E111+G111+I111)/($B$3*D111+F111+H111))",0.429,2.29,0.93,0.714,0.857,2,@ FEN
 ,,,,,,,,,,,,,,,,
 "Teams: goals (2026-27 all comps; UCL 25-26 for reference), sorted by goals conceded",,,,,,,,,,,,,,,,
 Team,GP 26,GF/G 26,GA/G 26,BTTS% 26,O2.5% 26,Scores 1st% 26,UCL GP 26,UCL GF/G 26,UCL GA/G 26,UCL GP 25,UCL GF/G 25,UCL GA/G 25,UCL BTTS% 25,UCL O2.5% 25,Form (last 5),Next
-SLB Slovan Bratislava,3,0.33,4.33,0.333,1.0,0.0,3,0.33,4.33,0,-,-,-,-,'LLL,
-SLP Slavia Prague,3,1.33,2.33,0.667,0.667,0.333,3,1.33,2.33,8,0.62,2.38,0.375,0.75,'LLD,
-SAB Sabah FK,3,1.0,2.0,0.333,0.667,0.333,3,1.0,2.0,0,-,-,-,-,'LWL,
-RBL RB Leipzig,8,2.25,1.88,0.375,0.75,0.5,2,1.0,2.0,0,-,-,-,-,'WLWWL,@ RMA
-BODO Bodo/Glimt,10,2.1,1.8,0.7,0.8,0.7,3,1.33,3.0,12,1.83,1.83,0.75,0.917,'LWWWL,
-GAL Galatasaray,10,1.9,1.8,0.6,0.8,0.8,2,1.0,3.5,12,1.42,1.67,0.417,0.5,'WLWLW,@ LILL
-VIL Villarreal,12,1.75,1.75,0.75,0.75,0.333,3,2.67,2.67,8,0.62,2.25,0.375,0.625,'WLWDL,
-INT Internazionale,9,2.78,1.67,0.778,0.889,0.333,2,2.0,3.0,10,1.7,1.2,0.5,0.7,'WDWLW,vs SHK
-RCL Lens,9,1.89,1.67,0.778,0.778,0.444,2,1.5,2.0,0,-,-,-,-,'DLWLW,@ BRU
-BET Real Betis,11,2.0,1.64,0.636,0.545,0.636,2,3.0,2.0,0,-,-,-,-,'WDWWL,vs FEY
-LAS LASK Linz,10,2.3,1.6,0.5,0.7,0.4,2,1.5,3.5,0,-,-,-,-,'LDLLW,@ SCP
-FEY Feyenoord Rotterdam,11,3.18,1.55,0.636,0.818,0.727,2,2.0,3.5,0,-,-,-,-,'WWWWW,@ BET
-LIV Liverpool,10,2.1,1.5,0.6,0.7,0.3,3,4.0,2.33,12,2.0,1.08,0.25,0.5,'WLWWW,
-AVL Aston Villa,9,1.78,1.44,0.444,0.667,0.444,2,4.5,1.0,0,-,-,-,-,'LWDWW,vs VFK
-NAP Napoli,10,1.5,1.4,0.5,0.5,0.7,3,1.67,2.33,8,1.12,1.88,0.5,0.375,'DWLLW,
-PSG Paris Saint-Germain,10,2.8,1.4,0.9,0.9,0.7,3,4.67,1.67,17,2.65,1.35,0.706,0.647,'WWWWW,
-FEN Fenerbahce,11,2.27,1.36,0.455,0.727,0.727,3,1.0,3.0,0,-,-,-,-,'WWLWD,
-MAN Manchester United,9,1.56,1.33,0.556,0.333,0.444,2,2.0,1.0,0,-,-,-,-,'LDDLD,@ COMO
-VFB VfB Stuttgart,9,1.67,1.33,0.556,0.556,0.556,3,2.33,0.67,0,-,-,-,-,'LWWLD,
-VFK Viking FK,11,2.64,1.27,0.727,0.818,0.636,2,2.0,3.0,0,-,-,-,-,'WWWDW,@ AVL
-BAR Barcelona,12,4.17,1.25,0.667,0.917,0.667,3,3.67,2.0,12,2.67,1.67,0.833,0.833,'WWWWL,
-AEK AEK Athens,9,2.11,1.22,0.556,0.667,0.889,3,1.0,2.67,0,-,-,-,-,'DWWLL,
-COMO Como,9,2.0,1.22,0.778,0.667,0.556,2,3.0,2.0,0,-,-,-,-,'WLDLW,vs MAN
-LILL Lille,9,1.33,1.22,0.444,0.444,0.667,2,1.0,3.0,0,-,-,-,-,'WLWLD,vs GAL
-MNC Manchester City,10,2.8,1.2,0.6,0.7,0.8,3,3.0,1.67,10,1.6,1.4,0.5,0.6,'WWLWW,
-RMA Real Madrid,11,2.64,1.18,0.727,0.818,0.727,2,3.0,2.0,14,2.36,1.43,0.643,0.786,'WLWWW,vs RBL
-PSV PSV Eindhoven,12,2.42,1.17,0.75,0.667,0.417,3,0.67,0.67,8,2.0,2.0,0.875,0.75,'LWLLW,
-BRU Club Brugge,10,2.5,1.0,0.5,0.8,0.8,2,3.0,3.0,10,1.9,2.4,0.6,1.0,'LWWWW,vs RCL
-MUN Bayern Munich,8,3.75,1.0,0.625,0.875,0.625,2,4.0,1.5,14,3.07,1.43,0.857,0.857,'WWDDW,vs ARS
-SCP Sporting CP,10,2.5,1.0,0.7,0.7,0.8,2,2.5,0.5,12,1.83,1.25,0.583,0.75,'WDDWW,vs LAS
-SHK Shakhtar Donetsk,2,2.0,1.0,1.0,0.5,0.5,2,2.0,1.0,0,-,-,-,-,'DW,@ INT
-ATM Atlético Madrid,12,1.92,0.92,0.5,0.667,0.833,3,1.33,1.0,16,2.19,1.75,0.812,0.75,'WWWWD,
-FCP FC Porto,11,2.0,0.91,0.455,0.545,0.455,3,0.67,2.0,0,-,-,-,-,'WWWLL,
-DOR Borussia Dortmund,9,1.78,0.89,0.444,0.556,0.667,3,1.67,1.33,10,2.2,2.1,0.6,0.7,'WDLDW,
-ROMA AS Roma,10,2.4,0.8,0.4,0.6,0.8,3,2.67,1.67,0,-,-,-,-,'DDLWW,
-ARS Arsenal,9,1.67,0.56,0.222,0.556,0.667,2,2.0,0.0,15,2.0,0.47,0.4,0.4,'WLWWW,@ MUN
+SLB Slovan Bratislava,3,0.33,4.33,0.333,1.0,0.0,3,0.33,4.33,0,-,-,-,-,'LLL,@ LAS
+SLP Slavia Prague,3,1.33,2.33,0.667,0.667,0.333,3,1.33,2.33,8,0.62,2.38,0.375,0.75,'LLD,vs ARS
+SAB Sabah FK,3,1.0,2.0,0.333,0.667,0.333,3,1.0,2.0,0,-,-,-,-,'LWL,@ VFK
+RBL RB Leipzig,10,2.3,1.9,0.4,0.8,0.5,3,1.0,2.67,0,-,-,-,-,'WWLLW,vs MNC
+GAL Galatasaray,12,2.08,1.75,0.667,0.833,0.833,3,2.0,3.0,12,1.42,1.67,0.417,0.5,'WLWWW,vs VFB
+LAS LASK Linz,12,2.25,1.75,0.583,0.75,0.417,3,2.0,3.0,0,-,-,-,-,'LLWWL,vs SLB
+BODO Bodo/Glimt,11,1.91,1.73,0.636,0.727,0.636,3,1.33,3.0,12,1.83,1.83,0.75,0.917,'WWWLL,vs LILL
+MAN Manchester United,11,1.36,1.73,0.545,0.455,0.364,3,1.67,2.0,0,-,-,-,-,'DLDLL,vs ROMA
+RCL Lens,11,1.73,1.73,0.727,0.818,0.364,3,1.0,2.33,0,-,-,-,-,'WLWLW,vs COMO
+VIL Villarreal,13,1.77,1.69,0.769,0.769,0.308,3,2.67,2.67,8,0.62,2.25,0.375,0.625,'LWDLW,vs PSG
+NAP Napoli,12,1.83,1.5,0.583,0.583,0.75,3,1.67,2.33,8,1.12,1.88,0.5,0.375,'LLWDW,@ FCP
+VFB VfB Stuttgart,10,1.7,1.5,0.6,0.6,0.6,3,2.33,0.67,0,-,-,-,-,'WWLDL,@ GAL
+FEY Feyenoord Rotterdam,13,2.77,1.46,0.615,0.692,0.615,3,1.33,2.67,0,-,-,-,-,'WWWLD,vs INT
+LILL Lille,11,1.36,1.45,0.545,0.455,0.636,3,1.33,3.33,0,-,-,-,-,'WLDLD,@ BODO
+FEN Fenerbahce,12,2.17,1.42,0.5,0.75,0.667,3,1.0,3.0,0,-,-,-,-,'WLWDL,vs LIV
+BET Real Betis,13,1.77,1.38,0.538,0.462,0.615,3,2.33,1.33,0,-,-,-,-,'WWLWD,@ DOR
+VFK Viking FK,13,2.54,1.38,0.769,0.846,0.615,3,1.67,3.0,0,-,-,-,-,'WDWLW,vs SAB
+AVL Aston Villa,11,1.91,1.36,0.545,0.727,0.545,3,4.0,1.0,0,-,-,-,-,'DWWWW,@ BAR
+LIV Liverpool,11,2.09,1.36,0.545,0.636,0.364,3,4.0,2.33,12,2.0,1.08,0.25,0.5,'LWWWW,@ FEN
+INT Internazionale,12,2.5,1.33,0.667,0.75,0.417,3,1.67,2.0,10,1.7,1.2,0.5,0.7,'LWWWW,@ FEY
+BAR Barcelona,13,3.92,1.31,0.692,0.923,0.615,3,3.67,2.0,12,2.67,1.67,0.833,0.833,'WWWLL,vs AVL
+MNC Manchester City,11,2.64,1.27,0.636,0.727,0.727,3,3.0,1.67,10,1.6,1.4,0.5,0.6,'WLWWL,@ RBL
+PSG Paris Saint-Germain,11,2.73,1.27,0.818,0.818,0.727,3,4.67,1.67,17,2.65,1.35,0.706,0.647,'WWWWW,@ VIL
+SCP Sporting CP,12,2.33,1.25,0.75,0.75,0.75,3,2.33,1.33,12,1.83,1.25,0.583,0.75,'DWWLL,@ SHK
+PSV PSV Eindhoven,13,2.31,1.15,0.769,0.615,0.462,3,0.67,0.67,8,2.0,2.0,0.875,0.75,'WLLWD,vs BRU
+RMA Real Madrid,13,2.69,1.15,0.769,0.846,0.769,3,3.33,1.67,14,2.36,1.43,0.643,0.786,'WWWWW,@ AEK
+AEK AEK Athens,10,2.4,1.1,0.5,0.7,0.9,3,1.0,2.67,0,-,-,-,-,'WWLLW,vs RMA
+MUN Bayern Munich,10,3.5,1.1,0.7,0.9,0.6,3,3.33,1.67,14,3.07,1.43,0.857,0.857,'DDWDW,@ ATM
+COMO Como,12,2.25,1.08,0.75,0.667,0.583,3,3.33,1.67,0,-,-,-,-,'LWWWW,@ RCL
+ROMA AS Roma,12,2.58,1.08,0.5,0.667,0.667,3,2.67,1.67,0,-,-,-,-,'LWWDW,@ MAN
+BRU Club Brugge,12,2.58,1.0,0.5,0.833,0.833,3,3.0,2.0,10,1.9,2.4,0.6,1.0,'WWWWW,@ PSV
+SHK Shakhtar Donetsk,3,1.33,1.0,0.667,0.333,0.333,3,1.33,1.0,0,-,-,-,-,'DWL,vs SCP
+ATM Atlético Madrid,13,1.85,0.85,0.462,0.615,0.846,3,1.33,1.0,16,2.19,1.75,0.812,0.75,'WWWDW,vs MUN
+FCP FC Porto,12,1.92,0.83,0.417,0.5,0.5,3,0.67,2.0,0,-,-,-,-,'WWLLW,vs NAP
+DOR Borussia Dortmund,10,1.7,0.8,0.4,0.5,0.7,3,1.67,1.33,10,2.2,2.1,0.6,0.7,'DLDWW,vs BET
+ARS Arsenal,11,1.73,0.64,0.273,0.545,0.727,3,2.0,0.67,15,2.0,0.47,0.4,0.4,'WWWDW,@ SLP
 VIK Viking FK,0,-,-,-,-,-,0,-,-,0,-,-,-,-,,
 ,,,,,,,,,,,,,,,,
 Corners by team (2026-27 all comps; 1H from ESPN commentary),,,,,,,,,,,,,,,,
 Team,Games,Won/G,Conceded/G,Match total/G,Match O8.5%,Match O9.5%,Match O10.5%,Team O4.5%,Team O5.5%,1H total/G,1H O4.5%,1H games,UCL 25 won/G,UCL 25 total/G,Next,
-VFK Viking FK,11,7.0,6.91,13.91,0.909,0.818,0.818,0.909,0.636,5.0,0.5,2,-,-,@ AVL,
-MUN Bayern Munich,8,9.88,3.25,13.12,1.0,0.875,0.875,1.0,1.0,6.12,0.75,8,5.43,9.29,vs ARS,
-RBL RB Leipzig,8,5.62,6.88,12.5,0.875,0.625,0.625,0.75,0.625,5.12,0.625,8,-,-,@ RMA,
-VFB VfB Stuttgart,9,6.78,5.11,11.89,0.889,0.667,0.667,0.778,0.667,5.0,0.667,9,-,-,,
-VIL Villarreal,12,6.42,5.08,11.5,0.667,0.667,0.583,0.667,0.667,6.08,0.917,12,3.38,6.75,,
-DOR Borussia Dortmund,9,6.33,4.78,11.11,0.778,0.778,0.556,0.667,0.556,4.56,0.333,9,4.1,7.3,,
-RMA Real Madrid,11,6.45,4.55,11.0,0.636,0.636,0.636,0.636,0.545,4.91,0.636,11,5.79,11.86,vs RBL,
-SLP Slavia Prague,3,5.67,5.33,11.0,0.667,0.667,0.333,1.0,0.667,4.67,0.333,3,3.38,9.25,,
-BRU Club Brugge,10,7.5,3.4,10.9,0.7,0.6,0.4,0.7,0.6,5.0,1.0,2,3.0,8.2,vs RCL,
-BET Real Betis,11,4.82,5.91,10.73,0.727,0.636,0.455,0.545,0.273,5.55,0.364,11,-,-,vs FEY,
-SAB Sabah FK,3,3.33,7.33,10.67,1.0,0.667,0.333,0.0,0.0,7.0,0.667,3,-,-,,
-COMO Como,9,5.89,4.67,10.56,0.667,0.444,0.444,0.667,0.556,4.89,0.556,9,-,-,vs MAN,
-RCL Lens,9,6.78,3.78,10.56,0.889,0.667,0.444,0.778,0.778,5.11,0.667,9,-,-,@ BRU,
-LIV Liverpool,10,6.0,4.1,10.1,0.6,0.6,0.5,0.7,0.5,5.8,0.8,10,6.58,10.33,,
-BODO Bodo/Glimt,10,6.3,3.7,10.0,0.6,0.4,0.4,0.8,0.4,3.67,0.333,3,3.42,12.0,,
-FEN Fenerbahce,11,5.64,4.27,9.91,0.545,0.455,0.364,0.636,0.636,4.67,0.333,3,-,-,,
-MNC Manchester City,10,6.3,3.6,9.9,0.7,0.6,0.6,0.8,0.7,4.6,0.7,10,6.3,9.6,,
-FEY Feyenoord Rotterdam,11,5.82,4.0,9.82,0.636,0.545,0.545,0.727,0.636,4.45,0.455,11,-,-,@ BET,
-INT Internazionale,9,6.22,3.56,9.78,0.556,0.444,0.444,0.556,0.556,4.22,0.444,9,6.1,9.6,vs SHK,
-GAL Galatasaray,10,6.5,3.2,9.7,0.5,0.3,0.3,0.7,0.5,3.0,0.0,2,4.0,9.5,@ LILL,
-PSV PSV Eindhoven,12,6.58,3.08,9.67,0.583,0.583,0.417,0.583,0.5,4.33,0.5,12,5.0,11.25,,
-NAP Napoli,10,5.1,4.5,9.6,0.7,0.5,0.2,0.6,0.3,4.8,0.5,10,6.12,9.38,,
-ATM Atlético Madrid,12,5.67,3.83,9.5,0.5,0.5,0.417,0.583,0.417,4.42,0.417,12,5.31,9.69,,
-MAN Manchester United,9,6.11,3.22,9.33,0.444,0.333,0.333,0.667,0.556,3.67,0.444,9,-,-,@ COMO,
-FCP FC Porto,11,5.36,3.82,9.18,0.455,0.455,0.364,0.545,0.545,4.18,0.455,11,-,-,,
-SLB Slovan Bratislava,3,1.33,7.67,9.0,1.0,0.0,0.0,0.0,0.0,4.33,0.333,3,-,-,,
-BAR Barcelona,12,6.58,2.25,8.83,0.333,0.333,0.333,0.583,0.417,4.67,0.333,12,4.92,8.33,,
-AEK AEK Athens,8,4.38,4.25,8.62,0.5,0.5,0.375,0.5,0.25,4.0,0.333,3,-,-,,
-AVL Aston Villa,9,4.0,4.56,8.56,0.444,0.222,0.222,0.444,0.222,5.0,0.667,9,-,-,vs VFK,
-ARS Arsenal,9,5.33,3.11,8.44,0.333,0.333,0.222,0.667,0.556,3.56,0.222,9,5.27,9.0,@ MUN,
-LILL Lille,9,3.11,5.11,8.22,0.444,0.333,0.111,0.333,0.111,3.44,0.222,9,-,-,vs GAL,
-ROMA AS Roma,10,5.2,2.9,8.1,0.4,0.2,0.2,0.5,0.3,3.6,0.3,10,-,-,,
-PSG Paris Saint-Germain,10,5.1,2.9,8.0,0.5,0.3,0.1,0.6,0.5,3.5,0.3,10,5.94,9.29,,
-SCP Sporting CP,10,4.1,3.3,7.4,0.3,0.1,0.1,0.2,0.1,3.6,0.2,10,4.58,9.75,vs LAS,
-SHK Shakhtar Donetsk,2,4.0,2.5,6.5,0.0,0.0,0.0,0.5,0.0,3.0,0.0,2,-,-,@ INT,
-LAS LASK Linz,10,4.1,2.1,6.2,0.4,0.4,0.3,0.3,0.3,7.0,0.5,2,-,-,@ SCP,
+VFK Viking FK,13,6.69,6.92,13.62,0.923,0.846,0.769,0.846,0.615,5.67,0.667,3,-,-,vs SAB,
+MUN Bayern Munich,10,8.8,3.6,12.4,0.9,0.8,0.8,0.9,0.9,5.7,0.7,10,5.43,9.29,@ ATM,
+RBL RB Leipzig,10,5.0,6.8,11.8,0.8,0.6,0.5,0.6,0.5,5.1,0.6,10,-,-,vs MNC,
+VFB VfB Stuttgart,10,6.7,5.1,11.8,0.9,0.7,0.7,0.8,0.7,5.0,0.7,10,-,-,@ GAL,
+VIL Villarreal,13,6.62,5.15,11.77,0.692,0.692,0.615,0.692,0.692,6.23,0.923,13,3.38,6.75,vs PSG,
+DOR Borussia Dortmund,10,7.0,4.4,11.4,0.8,0.8,0.6,0.7,0.6,4.9,0.4,10,4.1,7.3,vs BET,
+SLP Slavia Prague,3,5.67,5.33,11.0,0.667,0.667,0.333,1.0,0.667,4.67,0.333,3,3.38,9.25,vs ARS,
+RMA Real Madrid,13,6.46,4.38,10.85,0.615,0.615,0.615,0.692,0.615,4.77,0.538,13,5.79,11.86,@ AEK,
+SAB Sabah FK,3,3.33,7.33,10.67,1.0,0.667,0.333,0.0,0.0,7.0,0.667,3,-,-,@ VFK,
+BODO Bodo/Glimt,11,6.64,3.64,10.27,0.636,0.455,0.455,0.818,0.455,3.67,0.333,3,3.42,12.0,vs LILL,
+BRU Club Brugge,12,6.67,3.58,10.25,0.583,0.5,0.333,0.583,0.5,4.33,0.667,3,3.0,8.2,@ PSV,
+FEN Fenerbahce,12,5.5,4.75,10.25,0.583,0.5,0.417,0.583,0.583,4.67,0.333,3,-,-,vs LIV,
+BET Real Betis,13,4.69,5.54,10.23,0.615,0.538,0.385,0.462,0.231,5.08,0.308,13,-,-,@ DOR,
+COMO Como,12,5.5,4.58,10.08,0.667,0.5,0.417,0.667,0.583,4.75,0.583,12,-,-,@ RCL,
+MNC Manchester City,11,6.36,3.64,10.0,0.727,0.636,0.636,0.818,0.727,4.91,0.727,11,6.3,9.6,@ RBL,
+RCL Lens,11,6.55,3.27,9.82,0.727,0.545,0.364,0.818,0.727,4.55,0.545,11,-,-,vs COMO,
+FEY Feyenoord Rotterdam,13,5.62,4.15,9.77,0.615,0.538,0.538,0.692,0.538,4.38,0.462,13,-,-,vs INT,
+PSV PSV Eindhoven,13,6.54,3.23,9.77,0.615,0.615,0.462,0.615,0.538,4.46,0.538,13,5.0,11.25,vs BRU,
+GAL Galatasaray,12,6.5,3.25,9.75,0.5,0.333,0.333,0.667,0.5,2.33,0.0,3,4.0,9.5,vs VFB,
+LIV Liverpool,11,5.82,3.91,9.73,0.545,0.545,0.455,0.636,0.455,5.36,0.727,11,6.58,10.33,@ FEN,
+INT Internazionale,12,6.08,3.33,9.42,0.583,0.333,0.333,0.667,0.583,4.08,0.417,12,6.1,9.6,@ FEY,
+NAP Napoli,12,4.58,4.83,9.42,0.667,0.5,0.25,0.5,0.25,4.58,0.417,12,6.12,9.38,@ FCP,
+FCP FC Porto,12,5.58,3.75,9.33,0.5,0.5,0.417,0.583,0.583,4.58,0.5,12,-,-,vs NAP,
+ATM Atlético Madrid,13,5.46,3.85,9.31,0.462,0.462,0.385,0.538,0.385,4.38,0.385,13,5.31,9.69,vs MUN,
+AVL Aston Villa,11,4.36,4.91,9.27,0.545,0.364,0.364,0.455,0.273,5.45,0.727,11,-,-,@ BAR,
+BAR Barcelona,13,6.54,2.54,9.08,0.385,0.385,0.385,0.615,0.462,4.62,0.308,13,4.92,8.33,vs AVL,
+ROMA AS Roma,12,5.83,3.25,9.08,0.5,0.333,0.333,0.583,0.417,4.0,0.333,12,-,-,@ MAN,
+AEK AEK Athens,9,4.89,4.11,9.0,0.556,0.556,0.444,0.556,0.333,4.0,0.333,3,-,-,vs RMA,
+ARS Arsenal,11,5.91,3.09,9.0,0.364,0.364,0.273,0.727,0.545,4.55,0.364,11,5.27,9.0,@ SLP,
+SLB Slovan Bratislava,3,1.33,7.67,9.0,1.0,0.0,0.0,0.0,0.0,4.33,0.333,3,-,-,@ LAS,
+MAN Manchester United,11,5.82,3.09,8.91,0.455,0.273,0.273,0.636,0.455,3.64,0.455,11,-,-,vs ROMA,
+PSG Paris Saint-Germain,11,5.27,3.0,8.27,0.545,0.364,0.182,0.636,0.545,3.91,0.364,11,5.94,9.29,@ VIL,
+SCP Sporting CP,12,4.92,3.08,8.0,0.417,0.25,0.25,0.333,0.25,3.92,0.333,12,4.58,9.75,@ SHK,
+LILL Lille,11,2.91,5.0,7.91,0.364,0.273,0.091,0.273,0.091,3.0,0.182,11,-,-,@ BODO,
+SHK Shakhtar Donetsk,3,4.0,3.33,7.33,0.333,0.0,0.0,0.333,0.0,4.0,0.333,3,-,-,vs SCP,
+LAS LASK Linz,12,3.75,2.33,6.08,0.417,0.417,0.333,0.25,0.25,6.67,0.667,3,-,-,vs SLB,
 VIK Viking FK,0,-,-,-,-,-,-,-,-,-,-,-,-,-,,
 ,,,,,,,,,,,,,,,,
 UCL 2026-27 fixtures (league phase),,,,,,,,,,,,,,,,
@@ -228,15 +237,15 @@ Tue 10/20/26,3:00 PM,AEK @ MNC,'1-5,'3-8,Elliot Anderson (MNC),,,,,,,,,,,
 Tue 10/20/26,3:00 PM,BODO @ NAP,'3-4,'5-2,Matteo Politano (NAP),,,,,,,,,,,
 Tue 10/20/26,3:00 PM,BAR @ PSG,'2-4,'3-2,Désiré Doué (PSG),,,,,,,,,,,
 Tue 10/20/26,3:00 PM,ATM @ VFB,'1-1,'4-9,Jamie Leweling (VFB),,,,,,,,,,,
-Wed 10/21/26,12:45 PM,MAN @ COMO,,,,,,,,,,,,,,
-Wed 10/21/26,12:45 PM,GAL @ LILL,,,,,,,,,,,,,,
-Wed 10/21/26,3:00 PM,VFK @ AVL,,,,,,,,,,,,,,
-Wed 10/21/26,3:00 PM,ARS @ MUN,,,,,,,,,,,,,,
-Wed 10/21/26,3:00 PM,RCL @ BRU,,,,,,,,,,,,,,
-Wed 10/21/26,3:00 PM,SHK @ INT,,,,,,,,,,,,,,
-Wed 10/21/26,3:00 PM,FEY @ BET,,,,,,,,,,,,,,
-Wed 10/21/26,3:00 PM,RBL @ RMA,,,,,,,,,,,,,,
-Wed 10/21/26,3:00 PM,LAS @ SCP,,,,,,,,,,,,,,
+Wed 10/21/26,12:45 PM,MAN @ COMO,'1-4,'4-1,Nico Paz (COMO),,,,,,,,,,,
+Wed 10/21/26,12:45 PM,GAL @ LILL,'4-2,'3-3,Yunus Akgün (GAL),,,,,,,,,,,
+Wed 10/21/26,3:00 PM,VFK @ AVL,'1-3,'6-8,Ross Barkley (AVL),,,,,,,,,,,
+Wed 10/21/26,3:00 PM,ARS @ MUN,'2-2,'5-3,Eberechi Eze (ARS),,,,,,,,,,,
+Wed 10/21/26,3:00 PM,RCL @ BRU,'0-3,'5-1,Hans Vanaken (BRU),,,,,,,,,,,
+Wed 10/21/26,3:00 PM,SHK @ INT,'0-1,'4-5,Carlos Augusto (INT),,,,,,,,,,,
+Wed 10/21/26,3:00 PM,FEY @ BET,'0-1,'4-4,Isco (BET),,,,,,,,,,,
+Wed 10/21/26,3:00 PM,RBL @ RMA,'1-4,'1-7,Bernardo Silva (RMA),,,,,,,,,,,
+Wed 10/21/26,3:00 PM,LAS @ SCP,'3-2,'4-7,Luis Suárez (SCP),,,,,,,,,,,
 Tue 11/3/26,12:45 PM,VFB @ GAL,,,,,,,,,,,,,,
 Tue 11/3/26,12:45 PM,SCP @ SHK,,,,,,,,,,,,,,
 Tue 11/3/26,3:00 PM,MUN @ ATM,,,,,,,,,,,,,,
@@ -329,4 +338,4 @@ Wed 1/27/27,3:00 PM,INT @ SLB,,,,,,,,,,,,,,
 Wed 1/27/27,3:00 PM,MAN @ VIL,,,,,,,,,,,,,,
 ,,,,,,,,,,,,,,,,
 Matchdays,9/8; 9/9; 9/10; 10/13; 10/14; 10/20; 10/21; 11/3; 11/4; 11/24; 11/25; 12/8; 12/9; 1/19; 1/20; 1/27,,,,,,,,,,,,,,,
-Sources,"ESPN soccer scoreboard and match summaries (uefa.champions, plus eng.1, esp.1, ita.1, ger.1, fra.1, por.1, ned.1, bel.1, tur.1, aut.1, gre.1, nor.1 for UCL clubs). Domestic data is missing for clubs whose league ESPN does not carry (Shakhtar, Slavia, Slovan, Sabah). Pulled 10/21 11:03 AM ET. Rebuilt by analysis/ucl/build_ucl_tab.py.",,,,,,,,,,,,,,,
+Sources,"ESPN soccer scoreboard and match summaries (uefa.champions, plus eng.1, esp.1, ita.1, ger.1, fra.1, por.1, ned.1, bel.1, tur.1, aut.1, gre.1, nor.1 for UCL clubs). Domestic data is missing for clubs whose league ESPN does not carry (Shakhtar, Slavia, Slovan, Sabah). Pulled 10/30 4:50 AM ET. Rebuilt by analysis/ucl/build_ucl_tab.py.",,,,,,,,,,,,,,,
