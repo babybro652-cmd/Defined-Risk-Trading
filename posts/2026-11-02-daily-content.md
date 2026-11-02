@@ -55,3 +55,11 @@ The first push after 9:30 on ES is where I see the most traps. I let it run, the
 
 #definedrisktrading #esfutures #daytrading #marketopen #futurestrading
 ```
+
+## TikTok music pass (Tim approved 11/2: music on every DRT TikTok reel)
+- 7:40 PM weekly recap (6381558): already has a CC0 bed (add_audio.py, -19.7 dB mean). Skipped.
+- 8:00 PM education (6380926): already has happy_sadie.mp3 + voice. Skipped.
+- Tue 11/3 1:00 PM 10/28-short repost (6381887): was silent (-91 dB). Added `soft_as_a_dry_pillow.mp3`, AUDIO QA: PASS
+  (-17.9 LUFS, true peak -4.0 dBFS, 33.39 s), video stream copied (decoded MD5 identical). Media replaced with
+  blotato_update_schedule, caption/settings unchanged, isAiGenerated false. Blotato's copy 02c9408b-... verified (sha256 match, AAC).
+  IG 6381889 / FB use their own media, left as is.

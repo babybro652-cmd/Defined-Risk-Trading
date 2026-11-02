@@ -97,3 +97,16 @@ Education only. Not financial advice.
 
 #shorts #esfutures #daytrading
 ```
+
+## Personal TikTok (59764), added 11/2 per the new trade-upload rule (Tim approved the trade 11/2)
+Media: `posts/media/2026-11-02/phone/es-short-1102-personal.mp4`, same picture as the DRT reel (decoded video MD5 identical),
+music swapped to `traveling_in_your_mind.mp3` (CC0) so it differs from the 9:00 PM personal recap. AUDIO QA: PASS (-18.0 LUFS,
+true peak -2.3 dBFS, 45.00 s). Sheet `posts/media/2026-11-02/phone/es-short-1102-personal-sheet.png` read.
+Uniqueness: 5-gram OK vs the 4 captions above and both 11/2 recap TikToks. 141 chars before hashtags.
+Scheduled 9:30 PM ET 11/2 (02:30 UTC 11/3), submission 1d7461e8-aea4-4728-9c85-7c8c68dc83f8, schedule 6393386, isAiGenerated false.
+Blotato's hosted copy (e9fcd701-...) downloaded: sha256 matches, AAC audio present.
+```
+Break ended mid-trade, so I covered my ES short at +8.5 pts. It fell about 11 more points after I left. Still green after a $400 loss. Paper.
+
+#MyHobbyismyFREEDOM #esfutures #papertrading
+```
