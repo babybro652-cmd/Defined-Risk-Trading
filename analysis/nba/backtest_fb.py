@@ -7,6 +7,7 @@ actual ones (both models get the same), so this tests the share model, not lineu
   python3 analysis/nba/backtest_fb.py           # summary table
   python3 analysis/nba/backtest_fb.py --team    # 10/23 fix: 26-27 weight ramp + extra shrink for new-to-team starters
   python3 analysis/nba/backtest_fb.py --jumper  # 10/30 fix: jumper share x1.2 / x0.95 by tip, plus top-end shrink
+  python3 analysis/nba/backtest_fb.py --first3  # 11/2 test: first-3-FGA share as a blend component (needs first3.py cache)
 Metrics: log loss of the actual first-FG scorer, probabilities renormalized over the 10 starters (games where a bench player
 scored first are skipped for all models),
 Brier over the 10 starters, and the hit rate of each game's top pick.
@@ -35,7 +36,7 @@ def counts(PS, pid, tm, season, prm):
     w = 1
     if season in PREV:
         w = cur_weight(W_DEFAULT, c.get(('gs', tm), 0), prm) if prm.get('ramp') else prm.get('W', W_DEFAULT)
-    out = {f: w * c.get(f, 0) + l.get(f, 0) for f in ('gs', 't1', 'sh1', 'fgm', 'fga')}
+    out = {f: w * c.get(f, 0) + l.get(f, 0) for f in ('gs', 't1', 'sh1', 'fgm', 'fga', 'f3', 'gs3')}
     if prm.get('k_new'):
         out['n_starts'] = (c.get(('gs', tm), 0) + l.get(('gs', tm), 0) if prm.get('team_only')
                            else c.get('gs', 0) + l.get('gs', 0))
@@ -43,10 +44,14 @@ def counts(PS, pid, tm, season, prm):
 
 
 def run(variants, team=False):
-    games = []
+    games, F3 = [], {}
     for s in ('2025-26', '2026-27'):
         g = json.load(open(os.path.join(HERE, 'data', f'games_{s}.json')))
         games += [x for x in g.values() if x['type'] == 2]
+        try:
+            F3.update(json.load(open(os.path.join(HERE, 'data', f'first3_{s}.json'))))
+        except FileNotFoundError:
+            pass
     games.sort(key=lambda x: (x['date'], x['id']))
     P = defaultdict(lambda: defaultdict(float))
     T = defaultdict(lambda: {'allow': defaultdict(float), 'n': 0})
@@ -92,7 +97,7 @@ def run(variants, team=False):
                         else:
                             pl = [dict(P[p[0]], pos=p[6]) for p in st[tm]]
                         for x in pl:
-                            for f in ('gs', 't1', 'sh1', 'fgm', 'fga'):
+                            for f in ('gs', 't1', 'sh1', 'fgm', 'fga', 'f3', 'gs3'):
                                 x.setdefault(f, 0)
                         if prm is None:
                             sh = [v1_share(x['t1'], x['gs']) for x in pl]
@@ -118,10 +123,13 @@ def run(variants, team=False):
                 PS[season_of(d)][pid]['fgm'] += fgm; PS[season_of(d)][pid]['fga'] += fga; lg['fgm'] += fgm; lg['fga'] += fga
                 if stt:
                     z = PS[season_of(d)][pid]
+                    f3 = F3.get(g['id'], {}).get(tm)
                     for f, v in (('gs', 1), (('gs', tm), 1), ('t1', g['tf'].get(tm) == pid),
-                                 ('sh1', g['ts'].get(tm) == pid)):
+                                 ('sh1', g['ts'].get(tm) == pid), ('gs3', f3 is not None), ('f3', (f3 or []).count(pid))):
                         z[f] += v
                     q['gs'] += 1; q['t1'] += g['tf'].get(tm) == pid; q['sh1'] += g['ts'].get(tm) == pid
+                    if f3 is not None:
+                        q['gs3'] += 1; q['f3'] += f3.count(pid)
             for tm, opp in ((g['away'], g['home']), (g['home'], g['away'])):
                 ps = posof.get(g['tf'].get(opp))
                 if ps in POS:
@@ -267,8 +275,27 @@ def main_jumper():
                   f"{f((.17, 1)):>16} {c[(.15, 1)][0]:5d} {f((.15, 1)):>14}")
 
 
+def main_first3():
+    """11/2 test: blend weight w3 on the first-3-FGA share (@nbafirstbasket "# of 1st 3 shot attempts"), on top of the
+    current model (V2 + ramp, jumper split, top-end shrink 0.8). Pick w3 on 2025-26, check on 2026-27."""
+    cur = dict(V2, ramp=True, w3=0)
+    variants = {'before (w3=0)': cur}
+    for w in (0.15, 0.25, 0.35, 0.5):
+        variants[f'w3={w}'] = dict(cur, w3=w)
+        variants[f'w3={w} x FG%'] = dict(cur, w3=w, f3_fg=True)
+    run(variants, team=True)
+    for part, lo, hi in (('2025-26', '', '2026-07-01'), ('2026-27', '2026-07-01', '9999')):
+        print(f"\n{part}\n{'model':22} {'games':>5} {'logloss':>8} {'brier':>7} {'top':>4} {'top%':>6}")
+        for k in variants:
+            rs = [r for r in REC if r['k'] == k and lo <= r['d'] < hi]
+            o = score(rs, lambda r: adjust(r, jb=JB, temp=0.8))
+            print(f"{k:22} {o['n']:5d} {o['ll']:8.4f} {o['br']:7.4f} {o['top']:4d} {o['top'] / o['n']:6.1%}")
+
+
 if __name__ == '__main__':
-    if '--jumper' in sys.argv:
+    if '--first3' in sys.argv:
+        main_first3()
+    elif '--jumper' in sys.argv:
         main_jumper()
     elif '--team' in sys.argv:
         main_team()

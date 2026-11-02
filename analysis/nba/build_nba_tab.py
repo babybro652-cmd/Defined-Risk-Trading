@@ -48,7 +48,9 @@ V2 = {'w_shot': 0.5,      # share = (1 - w) x first-FG share + w x first-shot sh
       'starter_sum': 0.99,
       'ramp_n': 5,        # 26-27 weight ramps from 1x at 0 starts with his current team to the full B3 weight at 5
       'k_new': 10,        # extra pseudo starts for a player with few starts in the data (any team) ...
-      'settle_n': 10}     # ... fading to 0 at 10 starts, both seasons (a team-only count hurt traded regulars)
+      'settle_n': 10,     # ... fading to 0 at 10 starts, both seasons (a team-only count hurt traded regulars)
+      'w3': 0.5}          # 11/2/26: share = 0.5 x the above + 0.5 x first-3-FGA share (his share of his team's first 3
+                          # FGA per start, shrunk toward 1 in 5 like the others). first3.py; backtest_fb.py --first3
 
 
 # Jumper fix (10/30/26, Tim approved; report analysis/reports/2026-10-30-picks-vs-startool.md): the tip jumper's share of
@@ -106,11 +108,14 @@ def v2_shares(players, allow, allow_n, lg, prm=V2):
         kp = 10   # few starts in the data (new starter): shrink harder toward 1 in 5
         if 'n_starts' in p and prm.get('k_new'):
             kp += prm['k_new'] * max(0, 1 - p['n_starts'] / prm['settle_n'])
-        p = {k: p.get(k, 0) for k in ('gs', 't1', 'sh1', 'fgm', 'fga')} | {'pos': p.get('pos', '')}
+        p = {k: p.get(k, 0) for k in ('gs', 't1', 'sh1', 'fgm', 'fga', 'f3', 'gs3')} | {'pos': p.get('pos', '')}
         s1 = v1_share(p['t1'], p['gs'], kp)
         s2 = v1_share(p['sh1'], p['gs'], kp)
         fg = (p['fgm'] + prm['fg_k'] * lg['fg']) / (p['fga'] + prm['fg_k'])
         a = (1 - w) * s1 + w * s2 * fg / lg['fg']
+        if prm.get('w3'):   # first-3-FGA share test (11/2/26, backtest_fb.py --first3)
+            s3 = v1_share(p['f3'] / 3, p['gs3'], kp)
+            a = (1 - prm['w3']) * a + prm['w3'] * s3 * (fg / lg['fg'] if prm.get('f3_fg') else 1)
         r = lg['pos'].get(p['pos'])
         m = 1.0
         if r and prm['def_k'] is not None:
@@ -282,11 +287,12 @@ def refresh(season, sched, today, log):
 # ---------- aggregates ----------
 def zero():
     return {'gp': 0, 'gs': 0, 'fb': 0, 'fp': 0, 't1': 0, 'sh1': 0, 'sh1m': 0, 'tips': 0, 'tipw': 0, 'pts': 0, 'tpm': 0,
-            'min': 0, 'fgm': 0, 'fga': 0, 'log': [], 'gs_by': {}}
+            'min': 0, 'fgm': 0, 'fga': 0, 'f3': 0, 'gs3': 0, 'log': [], 'gs_by': {}}
 
 
-def player_stats(games):
-    P = {}
+def player_stats(games, f3=None):
+    """f3: optional first3.py cache (game id -> {team: first 3 FGA shooters}) for the first-3-FGA counts."""
+    P, f3 = {}, f3 or {}
     for g in sorted(games.values(), key=lambda x: (x['date'], x['id'])):
         for pid, tm, st, mins, pts, tpm, pos, fgm, fga in g['pl']:
             s = P.setdefault(pid, zero() | {'tm': tm, 'pos': pos, 'nm': g['nm'].get(pid, '?')})
@@ -300,6 +306,9 @@ def player_stats(games):
                 s['t1'] += g['tf'].get(tm) == pid
                 s['sh1'] += g['ts'].get(tm) == pid
                 s['sh1m'] += g['ts'].get(tm) == pid and bool(g.get('tsm', {}).get(tm))
+                x3 = f3.get(g['id'], {}).get(tm)
+                if x3 is not None:
+                    s['gs3'] += 1; s['f3'] += x3.count(pid)
         if g['tip']:
             for pid, tm in g['tip']['j']:
                 s = P.setdefault(pid, zero() | {'tm': tm, 'pos': '', 'nm': g['nm'].get(pid, '?')})
@@ -365,7 +374,9 @@ def build(start, log, lineups=None):
     g_cur_all = refresh(CUR, sched_cur, today, log)
     g_cur = {k: v for k, v in g_cur_all.items() if v['type'] == 2}
     g_pre = {k: v for k, v in g_cur_all.items() if v['type'] == 1}
-    PL, PC, PP = player_stats(g_last), player_stats(g_cur), player_stats(g_pre)
+    import first3
+    PL = player_stats(g_last, first3.cache(LAST, list(g_last), log))
+    PC, PP = player_stats(g_cur, first3.cache(CUR, list(g_cur), log)), player_stats(g_pre)
     TL, TC, TP = team_stats(g_last), team_stats(g_cur), team_stats(g_pre)
     W = W_DEFAULT
 
@@ -469,7 +480,7 @@ def build(start, log, lineups=None):
     def wcounts(pid):   # 26-27 weight ramps up with his starts for his current team (10/23 fix)
         c, l, tm = S(PC, pid), S(PL, pid), roster[pid]['tm']
         w = cur_weight(W, c['gs_by'].get(tm, 0))
-        return ({k: w * c[k] + l[k] for k in ('gs', 't1', 'sh1', 'fgm', 'fga')}
+        return ({k: w * c[k] + l[k] for k in ('gs', 't1', 'sh1', 'fgm', 'fga', 'f3', 'gs3')}
                 | {'pos': roster[pid]['pos'], 'n_starts': c['gs'] + l['gs']})
 
     lg_fgm = sum(x['fgm'] for x in PL.values()) + W * sum(x['fgm'] for x in PC.values())
@@ -556,6 +567,7 @@ def build(start, log, lineups=None):
                       + ("; tip jumper x1.2 if his team wins the tip" if c['jumper'] else '') + "): "
                       f"{c['tm']} scores first {round(100 * c['pteam'])}%; first FG {l['t1']}/{l['gs']} and first shot "
                       f"{l['sh1']}/{l['gs']} starts 25-26" + (f", {cu['t1']}/{cu['gs']} 26-27" if cu['gs'] else '')
+                      + f", first 3 FGA {(l['f3'] + cu['f3']) / max(1, l['gs3'] + cu['gs3']):.2f} per start"
                       + f", FG {round(100 * fgpct(c['pid']))}%; {c['opp']} vs {pos} x{c['mult']:.2f}"
                       + (f"; {c['rip']}" if c['rip'] else '') + (f"; {c['inj']}" if c['inj'] else ''),
                       f"Better than {american(c['p'])}"])

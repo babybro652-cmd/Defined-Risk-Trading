@@ -84,7 +84,8 @@ Include the first shot and first score for each game in the grading message to T
 - Estimated FB chance (model v2, 10/21/26) = P(team scores first) x the player's share of his team's
   first FG. P(team scores first) comes from the two main jumpers' tip rates (log5, each shrunk toward 50%
   with 6 pseudo tips) and the 2025-26 league rate that the tip winner scores first (64%).
-  Since 10/30: the jumper split and top-end shrink below ("Model changes 10/30/26").
+  Since 10/30: the jumper split and top-end shrink below ("Model changes 10/30/26"). Since 11/2: the first-3-FGA share
+  (half the share, "Model change 11/2/26").
 - Share, step by step (code: `V2` and `v2_shares` in build_nba_tab.py):
   1. Accuracy blend: 0.5 x first-FG share + 0.5 x first-shot share x (his FG% / league FG% 47%).
      Both shares are shrunk toward 1 in 5 with 10 pseudo starts; FG% is shrunk toward league with 150
@@ -198,6 +199,34 @@ are 71 games (the report's 68 plus 10/29). Gains are small; first basket is stil
 5. **-300 rule in the build** (Tim 10/29). Points and threes picks over 75% (fair shorter than -300) now say "take over X
    instead" with the next line's rate and fair price. Points picks say "singles only, never in a parlay".
 
+## Model change 11/2/26: first-3-FGA share (Tim approved the test)
+
+Idea from the @nbafirstbasket sheet's "# of 1st 3 shot attempts": how many of his team's first 3 field-goal attempts a
+starter takes per start (early shot volume). Code: `first3.py` (cache `data/first3_<season>.json`, game id -> each team's
+first 3 FGA shooters, FTs excluded; checked: the first entry matches the cached first shot in all 2,654 team-games) and
+`w3` in `V2` / `v2_shares`. Step 1 of the share is now: 0.5 x (old accuracy blend) + 0.5 x first-3 share, where first-3
+share = (his first-3 FGA / 3 + k / 5) / (starts + k), the same shrink toward 1 in 5 with the same pseudo starts (10, more
+for new starters) and the same 26-27 weight ramp. Defense, ripple, jumper split and top-end shrink (0.8) are unchanged.
+
+Backtest `python3 analysis/nba/backtest_fb.py --first3` (walk-forward, current model, log loss over the 10 starters):
+
+| w3 | 25-26 log loss (933) | Brier | top pick hits | 26-27 log loss (92) | Brier | top pick hits |
+|---|---|---|---|---|---|---|
+| 0 (before) | 2.2778 | 0.8947 | 136 | 2.2894 | 0.8958 | 13 |
+| 0.15 | 2.2760 | 0.8944 | 134 | 2.2840 | 0.8948 | 13 |
+| 0.25 | 2.2750 | 0.8942 | 133 | 2.2808 | 0.8943 | 13 |
+| 0.35 | 2.2742 | 0.8940 | 136 | 2.2779 | 0.8937 | 14 |
+| **0.5 (used)** | **2.2734** | 0.8938 | **140** | **2.2741** | 0.8930 | 13 |
+| 0.65 | 2.2730 | 0.8937 | 137 | 2.2709 | 0.8924 | 13 |
+| 1.0 | 2.2739 | 0.8939 | 137 | 2.2653 | 0.8914 | 13 |
+
+The gain kept growing past the planned 0.35, so 0.5 was picked on 2025-26 (0.5 to 0.65 is flat in log loss; 0.5 has the
+best top pick). Multiplying the first-3 share by FG% lowers 25-26 log loss a bit more (0.5: 2.2727) but costs top-pick hits
+(135; 127 at 0.8), so it is off. Paired per game, w3 = 0.5 vs before: 25-26 log loss down 0.0045 (SE 0.0023), 26-27 down
+0.0152 (SE 0.0084), about 1.9 SE each. A bigger gain than the 10/30 changes, still small: first basket is mostly noise.
+Retuning the top-end shrink with it in was flat (0.9 helps 25-26 by 0.0005, hurts 26-27), so 0.8 stays.
+Top pick changed in 157 of 933 25-26 games. Pick text now shows "first 3 FGA x.xx per start".
+
 ## Sources
 
 - ESPN `site.api.espn.com/apis/site/v2/sports/basketball/nba`: scoreboard, summary
@@ -265,6 +294,9 @@ are 71 games (the report's 68 plus 10/29). Gains are small; first basket is stil
   90%+ (LAL 96% vs Green, DAL won with Gafford vs Capela, a jumper change). Tim had no first basket picks logged.
 - 10/31 to 11/2: Jarvis offline Fri evening to Mon noon; no picks logged for 10/31 or 11/1, first events logged only.
 - 11/2: daylight saving ended 11/1 (ET = UTC-5). The NBA build already uses America/New_York; the NHL build had a fixed UTC-4 and now uses zoneinfo too. 11/2 picks: Bets rows 544-574.
+- 11/2: first-3-FGA share added (w3 = 0.5, see "Model change 11/2/26"). Rebuilt the 11/2 tab: first basket top 8 swaps
+  Jokic and Jalen Green (logged rows 549 and 551) for Ty Jerome (fair +519) and LaMelo Ball (+551); game top picks changed
+  in CHA@DET (Reed to Collins), CHI@PHI (Smith to Embiid), DAL@SAC (Sabonis to Hunter). Bets rows left as logged.
 
 ## Tim vs model log (first basket)
 
