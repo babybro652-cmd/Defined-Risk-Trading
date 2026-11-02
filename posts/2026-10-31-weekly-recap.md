@@ -1,6 +1,19 @@
-# Weekly trade recap, week of Mon 10/26 to Fri 10/30/2026 (HELD for Tim's go, posts Sat 10/31)
+# Weekly trade recap, week of Mon 10/26 to Fri 10/30/2026 (APPROVED by Tim 11/2, SCHEDULED Mon 11/2 as "last week")
 
-Moved to Saturday: the Friday 10/30 slots went to the 10/30 ES long post. Nothing is scheduled. Step 6 waits for Tim.
+Tim, 11/2 about 1:30 PM ET: "Post it as 'last week'." Saturday 10/31 plan dropped; captions and video reworded to last week.
+Rule angle (1-2 trades / daily max) left out per Tim. Friday losses have no entry/exit on file; captions don't need them.
+
+| Time ET 11/2 (EST) | UTC | Platform | Submission id | Schedule id |
+|---|---|---|---|---|
+| 7:15 PM | 00:15 11/3 | Facebook reel (50185, page 993318963868124) | ff907c59-2940-4141-87e1-106738513aad | 6381548 |
+| 7:40 PM | 00:40 11/3 | TikTok DRT (58063, isAiGenerated false) | e2ef0b75-1c85-48c4-aedd-e8121a0d9762 | 6381558 |
+| 8:30 PM | 01:30 11/3 | Instagram reel (68887) | 60cd6f8e-d39a-4342-99fc-04f4031ca053 | 6381562 |
+| 9:00 PM | 02:00 11/3 | TikTok personal (59764, isAiGenerated false) | ccc1ab88-c028-45ae-a9bc-d8c74b2c3d0e | 6381565 |
+All 4 confirmed with list_schedules. Video uploaded once: https://database.blotato.io/storage/v1/object/public/public_media/246c6cef-6cbe-4b5b-81a9-7bb84481df9c/1a984b8b-526d-45c4-ba2f-66f126d202e9.mp4 (bytes verified).
+Re-render 11/2: hook card "LAST WEEK, 10/26-10/30" (was "WEEKLY RECAP"), net card "NET FOR LAST WEEK" (was "NET FOR THE WEEK"). AUDIO QA PASS, contact sheet re-read, flash scan clean.
+Uniqueness 11/2: 5-gram OK vs 79 captions (posts/2026-10-26..30, 2026-11-02-daily-content.md, Blotato 10/24-11/2 incl. today's FB 5 PM, YouTube 6:12, TikTok 8 PM). The 6:52 PM IG carousel wasn't written yet, so not checked.
+
+## Original Saturday draft (superseded)
 All trades PAPER account, ES, 2 contracts. Sources: posts/2026-10-28-trade-posts.md, posts/2026-10-30-drt-phone-video.md,
 Blotato post history 10/24-10/30, Drive "DRT Phone" recordings (10/27, 10/28, 10/30 only), Tim Trades tab (only 10/20 rows logged).
 
@@ -26,10 +39,9 @@ Clips come from Tim's own QA'd trade reels (10/27 30.5-35 s, 10/28 24-28.5 s, 10
 Music: CC0 bed from drt/audio/music (date rotation), AUDIO QA: PASS (-18.0 LUFS, true peak -3.2 dBFS, 36.00 s). No voice.
 QA: 72-frame contact sheet `posts/media/2026-10-31/contact_sheet.png` read; flash/notification scan clean; numbers match the table;
 no dates or years; no invented prices; no AMD/CRT. Fits all 4 captions. PASS.
-Hosted (not scheduled): https://database.blotato.io/storage/v1/object/public/public_media/246c6cef-6cbe-4b5b-81a9-7bb84481df9c/c674a8f8-fbff-43a9-9640-aa17c441fd1e.mp4 (bytes verified)
 TikTok isAiGenerated false: real chart footage plus our own cards, no AI imagery or voice.
 
-## Planned Saturday 10/31 times (EDT, clear of the daily routine's usual 7 AM / 9 AM / 12 PM / 12:30 PM / 5 PM / 8 PM slots and the 6:12 PM Short)
+## Old Saturday 10/31 plan (dropped) (EDT, clear of the daily routine's usual 7 AM / 9 AM / 12 PM / 12:30 PM / 5 PM / 8 PM slots and the 6:12 PM Short)
 | Time ET | UTC | Platform |
 |---|---|---|
 | 4:15 PM | 20:15 | Facebook reel (50185, page 993318963868124) |
@@ -40,16 +52,16 @@ TikTok isAiGenerated false: real chart footage plus our own cards, no AI imagery
 Checks: 5-gram uniqueness OK across the 4 and vs 48 DRT/personal captions 10/24-10/30 (2 overlaps found and rewritten).
 No em dashes, filler, AMD/CRT or signup CTA. TikTok DRT 117 chars, personal 123 before hashtags. Day-by-day list only in Facebook.
 
-## Instagram (68887, reel)
+## Instagram (68887, reel), final
 ```
-5 trades. 2 losers. Still +$4,650 on the week.
+Last week: 5 trades, 2 losers, and still +$4,650.
 
 ES, 2 contracts, paper account, before commissions.
 3 wins: +54.50 pts
 2 losses: -8 pts
 Net: +46.50 pts, about +11.6R
 
-Every stop was 4 points and went in before the entry. I sat out Thursday because the chop didn't fit my setup.
+Every stop was 4 points and went in before the entry. I sat out last Thursday because the chop didn't fit my setup.
 
 A small, fixed loss is what lets a 60% win rate pay like this.
 
@@ -58,18 +70,18 @@ Worth saving for a day that opens with 2 red trades.
 #MyHobbyismyFREEDOM #definedrisktrading #esfutures #riskmanagement #tradingrecap
 ```
 
-## TikTok DRT (58063)
+## TikTok DRT (58063), final
 ```
-5 ES trades, 3 green, 2 red. Losers cost 8 pts, winners made 54.50. +$4,650 on paper. Thursday I didn't trade at all.
+Last week on ES: 5 trades, 3 green, 2 red. Losers cost 8 pts, winners made 54.50. +$4,650 on paper. Thursday I didn't trade at all.
 
 #definedrisktrading #esfutures #tradingrecap #daytrading #futurestrading
 ```
 
-## Facebook DRT (50185, page 993318963868124)
+## Facebook DRT (50185, page 993318963868124), final
 ```
-Friday started with 2 losing trades in a row. My week still finished up $4,650.
+Last Friday started with 2 losing trades in a row. My week still finished up $4,650.
 
-Tuesday I shorted ES from 7,746.00 with a 4-point stop. Price pulled back near my entry, I left the stop where it was, and it reached the 7,718.00 target for 28 points.
+Last Tuesday I shorted ES from 7,746.00 with a 4-point stop. Price pulled back near my entry, I left the stop where it was, and it reached the 7,718.00 target for 28 points.
 
 Wednesday was another short, 7,772.25 down to 7,759.50, for 12.75 points.
 
@@ -77,16 +89,16 @@ Thursday the market chopped sideways. Nothing fit my setup, so I didn't place a 
 
 Friday opened with 2 stop-outs, $400 each. The third trade was a long from 7,635.25. I closed it by hand at 7,649.00 for 13.75 points, because I didn't expect a Friday session to reach my target. The day ended about +$575.
 
-5 trades, 3 wins, 2 losses. +46.50 points, about +11.6R, 2 contracts in my paper account, before commissions. Every stop was sized before I entered.
+Last week in total: 5 trades, 3 wins, 2 losses. +46.50 points, about +11.6R, 2 contracts in my paper account, before commissions. Every stop was sized before I entered.
 
 I work a full-time job and trade around it, so a fixed stop matters more to me than a perfect entry.
 
 Share this with a trader who thinks a red Friday ruins the week.
 ```
 
-## TikTok personal (59764)
+## TikTok personal (59764), final
 ```
-Started Friday down $800 and still closed the week +$4,650 on paper. 5 trades, 2 losses, and I skipped Thursday on purpose.
+Last Friday I started down $800 and still closed the week +$4,650 on paper. 5 trades, 2 losses, and I skipped Thursday on purpose.
 
 #MyHobbyismyFREEDOM #esfutures #tradingjournal
 ```

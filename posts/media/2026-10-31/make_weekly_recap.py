@@ -1,4 +1,4 @@
-"""Weekly recap reel, week ending Fri 10/30/2026 (0 Blotato credits).
+"""Weekly recap reel for 10/26-10/30/2026, posted Mon 11/2 as "last week" (0 Blotato credits).
 Text cards (PIL) + short clips of Tim's own QA'd trade reels, silent; music added after with drt/audio/add_audio.py.
 Usage: python3 make_weekly_recap.py OUT.mp4"""
 import subprocess, sys, os
@@ -28,7 +28,7 @@ def c(d, y, t, font, fill=WHITE):
 
 def card_hook():
     im, d = base()
-    c(d, 600, "WEEKLY RECAP", f(B, 64), GOLD)
+    c(d, 600, "LAST WEEK, 10/26-10/30", f(B, 64), GOLD)
     c(d, 780, "5 ES trades", f(B, 120))
     c(d, 920, "3 wins. 2 losses.", f(B, 84))
     c(d, 1060, "2 contracts each, paper account", f(R, 46), MUTED)
@@ -69,7 +69,7 @@ def card_list():
 
 def card_net():
     im, d = base()
-    c(d, 560, "NET FOR THE WEEK", f(B, 64), GOLD)
+    c(d, 560, "NET FOR LAST WEEK", f(B, 64), GOLD)
     c(d, 740, "+46.50 pts", f(B, 130), GREEN)
     c(d, 910, "+$4,650", f(B, 120))
     c(d, 1060, "about +11.6R", f(B, 72))
