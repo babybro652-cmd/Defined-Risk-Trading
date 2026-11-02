@@ -59,3 +59,18 @@
 2026-10-30|DET @ BKN|Cade Cunningham,Michael Porter Jr.|Jalen Duren,Julius Randle
 2026-10-30|CHI @ BOS|Norman Powell,Jayson Tatum|Caleb Wilson,Paul George
 2026-10-30|CHA @ WSH|Brandon Miller,Anthony Davis|Kon Knueppel,Trae Young
+2026-11-02|MIA @ LAL|Giannis Antetokounmpo,Luka Doncic|Bam Adebayo,Austin Reaves
+2026-11-02|TOR @ LAC|RJ Barrett,Darius Garland|Scottie Barnes,Rui Hachimura
+2026-11-02|PHX @ GS|Devin Booker,Yaxel Lendeborg|Dillon Brooks,Brandin Podziemski
+2026-11-02|UTAH @ SA|Lauri Markkanen,Victor Wembanyama|Keyonte George,De'Aaron Fox
+2026-11-02|POR @ DEN|Deni Avdija,Nikola Jokic|Damian Lillard,Jamal Murray
+2026-11-02|BOS @ HOU|Jayson Tatum,Kevin Durant|Paul George,Alperen Sengun
+2026-11-02|MIL @ MIN|Tyler Herro,LaMelo Ball|Ryan Rollins,Ayo Dosunmu
+2026-11-02|NO @ MEM|Zion Williamson,Ty Jerome|Trey Murphy III,Cameron Boozer
+2026-11-02|SAC @ DAL|Darius Acuff Jr.,Kyrie Irving|Zach LaVine,Cooper Flagg
+2026-11-02|CHI @ PHI|Caleb Wilson,Tyrese Maxey|Norman Powell,Jaylen Brown
+2026-11-02|WSH @ ORL|Anthony Davis,Franz Wagner|Trae Young,Desmond Bane
+2026-11-02|BKN @ NY|Michael Porter Jr.,Jalen Brunson|Julius Randle,Karl-Anthony Towns
+2026-11-02|ATL @ IND|Nickeil Alexander-Walker,Pascal Siakam|Jalen Johnson,Andrew Nembhard
+2026-11-02|DET @ CHA|Cade Cunningham,Brandon Miller|John Collins,Naz Reid
+2026-11-02|OKC @ CLE|Shai Gilgeous-Alexander,Donovan Mitchell|Ajay Mitchell,James Harden
