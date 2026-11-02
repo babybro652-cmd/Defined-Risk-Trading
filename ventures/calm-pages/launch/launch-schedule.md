@@ -227,3 +227,26 @@ IG says "link in bio", TikTok uses payhip.com/PeaceByPage, Facebook uses the pro
 | Sun 11/8 | V11 three good things + free sampler | f2e0d6e0-2799-4591-b785-3c472d52768c.mp4 |
 | Mon 11/9 | V12 worry time (Nights) | 102c0dd2-de71-4666-a846-71d880a14f16.mp4 |
 (media prefix https://database.blotato.io/storage/v1/object/public/public_media/246c6cef-6cbe-4b5b-81a9-7bb84481df9c/)
+
+## 5. Music added to V5-V12 (11/2, Tim approved)
+The rendered reels were silent. On 11/2 (about 50 min before V5 went out) each one got a CC0 instrumental bed from `drt/audio/music/` (licenses: `drt/audio/music/LICENSES.md`) via `drt/audio/add_audio.py --music NAME`. Music only, the tool's music-only default of -18 LUFS, fade in 0.5 s and out 1 s. Every file printed `AUDIO QA: PASS`, and the video frames are unchanged (stream copy; decoded frame hashes identical to the originals). Files: `launch/content/videos/<n>-...-music.mp4`.
+
+| Reel | Date (6:30 PM ET) | Track | LUFS / true peak | Uploaded file |
+|---|---|---|---|---|
+| V5 free sampler | Mon 11/2 | Sugar and coffee (Loyalty Freak Music) | -18.0 / -6.3 | 85603632-0fb9-4261-a949-5e53f3919fbf.mp4 |
+| V6 box breathing | Tue 11/3 | Old Key (Loyalty Freak Music) | -17.9 / -2.2 | fb5efacc-96c6-4adc-94b0-4404f919edf0.mp4 |
+| V7 5-4-3-2-1 grounding | Wed 11/4 | Soft as a dry pillow (Loyalty Freak Music) | -18.0 / -4.9 | c57771e5-fb3a-46d2-a8c2-e898d3806ac8.mp4 |
+| V8 balanced thought | Thu 11/5 | Traveling in your mind (Loyalty Freak Music) | -17.8 / -5.2 | cbce533f-306d-4b1d-bd73-2ec8efe0f622.mp4 |
+| V9 I handled it | Fri 11/6 | Aeroplane (Loyalty Freak Music) | -17.9 / -2.9 | 74397f76-98cf-4e1f-97b4-3092fd6123b9.mp4 |
+| V10 mood petals | Sat 11/7 | Cliff Road Chill (Komiku) | -17.8 / -4.2 | 9d1eba73-e03f-46e6-8cf7-8407950dd786.mp4 |
+| V11 three good things | Sun 11/8 | Waiting TTTT (Loyalty Freak Music) | -19.4 / -1.7 | 159618c4-dd50-4cfe-b9b1-afbb9dc5a14c.mp4 |
+| V12 worry time | Mon 11/9 | This pain is soft but here (Loyalty Freak Music) | -18.0 / -3.7 | 8202dfcc-17d4-480b-9e04-f0b6c94e358f.mp4 |
+
+Each file was uploaded once and swapped into all 3 posts of that day with blotato_update_schedule (time, caption and settings kept). Blotato copies media per post, so the scheduled URLs differ from the upload URLs; all 24 scheduled copies were downloaded and are byte-identical to the music files, with an AAC audio track.
+
+Schedule ids (IG 81296 / TikTok 65985 / FB page 1255582607649321):
+V5 6082653 / 6082656 / 5364182; V6 6084107 / 6084110 / 6084111; V7 6084112 / 6084113 / 6084114; V8 6084115 / 6084116 / 6084117; V9 6084119 / 6084120 / 6084121; V10 6084122 / 6084123 / 6084126; V11 6084128 / 6084129 / 6084130; V12 6084131 / 6084132 / 6084134.
+
+Caption fixes 11/2:
+- V6 (all 3): #anxietyrelief replaced with #mindfulbreathing.
+- V10 Facebook: NOT changed. The Calm Petals mood tracker's Payhip product link isn't recorded anywhere (repo, Drive, Build-Out sheet), and payhip.com blocks the container (Cloudflare). It still links to https://payhip.com/PeaceByPage. Tim: send the payhip.com/b/... link for "Calm Petals Mood Flower Tracker" and Jarvis swaps it in before Sat 11/7 6:30 PM (schedule 6084126).
