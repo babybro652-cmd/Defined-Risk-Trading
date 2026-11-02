@@ -66,3 +66,6 @@ chats, so read the files below that the task touches before acting.
 - Commit and push repo changes to `claude/custom-jarvis-claude-8t99na` and `main`
   (`git fetch origin main && git merge origin/main` first).
 - No em dashes or filler words in anything Tim reads.
+
+## Confirmed-lineup reruns (Tim, 11/2)
+When lineups confirm (about 30 min before tip), rerun first basket with the confirmed starters and report per game: the projected tip-winning team (jumper vs jumper, tip win %) and THAT team's top 2 first basket picks with fair price, plus the overall top pick if it's on the other team. Coin-flip tips (about 45-55%): give both teams' top 2.
