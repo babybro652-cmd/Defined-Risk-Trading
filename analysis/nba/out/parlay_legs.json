@@ -11,12 +11,12 @@
    "note": "74 starts"
   },
   {
-   "player": "Evan Mobley",
+   "player": "James Harden",
    "team": "CLE",
    "game": "OKC @ CLE",
    "market": "3+ threes",
-   "p": 0.222,
-   "note": "69 starts"
+   "p": 0.614,
+   "note": "76 starts"
   },
   {
    "player": "Donovan Mitchell",
@@ -27,20 +27,12 @@
    "note": "76 starts"
   },
   {
-   "player": "James Harden",
+   "player": "Evan Mobley",
    "team": "CLE",
    "game": "OKC @ CLE",
    "market": "3+ threes",
-   "p": 0.614,
-   "note": "76 starts"
-  },
-  {
-   "player": "Peyton Watson",
-   "team": "CLE",
-   "game": "OKC @ CLE",
-   "market": "3+ threes",
-   "p": 0.155,
-   "note": "46 starts"
+   "p": 0.222,
+   "note": "69 starts"
   },
   {
    "player": "Duncan Robinson",
@@ -107,14 +99,6 @@
    "note": "70 starts"
   },
   {
-   "player": "Jalen Johnson",
-   "team": "ATL",
-   "game": "ATL @ IND",
-   "market": "3+ threes",
-   "p": 0.183,
-   "note": "79 starts"
-  },
-  {
    "player": "CJ McCollum",
    "team": "ATL",
    "game": "ATL @ IND",
@@ -123,28 +107,12 @@
    "note": "67 starts"
   },
   {
-   "player": "Pascal Siakam",
-   "team": "IND",
+   "player": "Luguentz Dort",
+   "team": "ATL",
    "game": "ATL @ IND",
    "market": "3+ threes",
-   "p": 0.274,
-   "note": "70 starts"
-  },
-  {
-   "player": "Andrew Nembhard",
-   "team": "IND",
-   "game": "ATL @ IND",
-   "market": "3+ threes",
-   "p": 0.32,
-   "note": "63 starts"
-  },
-  {
-   "player": "Aaron Nesmith",
-   "team": "IND",
-   "game": "ATL @ IND",
-   "market": "3+ threes",
-   "p": 0.421,
-   "note": "47 starts"
+   "p": 0.304,
+   "note": "69 starts"
   },
   {
    "player": "Kelly Oubre Jr.",
@@ -161,6 +129,14 @@
    "market": "3+ threes",
    "p": 0.237,
    "note": "51 starts"
+  },
+  {
+   "player": "Jarace Walker",
+   "team": "IND",
+   "game": "ATL @ IND",
+   "market": "3+ threes",
+   "p": 0.273,
+   "note": "42 starts"
   },
   {
    "player": "Julius Randle",
@@ -249,14 +225,6 @@
    "market": "3+ threes",
    "p": 0.079,
    "note": "26 starts"
-  },
-  {
-   "player": "Alex Sarr",
-   "team": "WSH",
-   "game": "WSH @ ORL",
-   "market": "3+ threes",
-   "p": 0.061,
-   "note": "54 starts"
   },
   {
    "player": "Bilal Coulibaly",
@@ -419,6 +387,14 @@
    "note": "74 starts"
   },
   {
+   "player": "Zaccharie Risacher",
+   "team": "DAL",
+   "game": "SAC @ DAL",
+   "market": "3+ threes",
+   "p": 0.224,
+   "note": "47 starts"
+  },
+  {
    "player": "Trey Murphy III",
    "team": "NO",
    "game": "NO @ MEM",
@@ -433,6 +409,14 @@
    "market": "3+ threes",
    "p": 0.134,
    "note": "55 starts"
+  },
+  {
+   "player": "Herbert Jones",
+   "team": "NO",
+   "game": "NO @ MEM",
+   "market": "3+ threes",
+   "p": 0.177,
+   "note": "58 starts"
   },
   {
    "player": "Ty Jerome",
@@ -537,14 +521,6 @@
    "market": "3+ threes",
    "p": 0.324,
    "note": "22 starts"
-  },
-  {
-   "player": "Paul George",
-   "team": "BOS",
-   "game": "BOS @ HOU",
-   "market": "3+ threes",
-   "p": 0.545,
-   "note": "43 starts"
   },
   {
    "player": "Jordan Walsh",
@@ -795,28 +771,20 @@
    "note": "49 starts"
   },
   {
-   "player": "Derrick Jones Jr.",
-   "team": "LAC",
-   "game": "TOR @ LAC",
-   "market": "3+ threes",
-   "p": 0.222,
-   "note": "51 starts"
-  },
-  {
-   "player": "Rui Hachimura",
-   "team": "LAC",
-   "game": "TOR @ LAC",
-   "market": "3+ threes",
-   "p": 0.321,
-   "note": "46 starts"
-  },
-  {
    "player": "Kris Dunn",
    "team": "LAC",
    "game": "TOR @ LAC",
    "market": "3+ threes",
    "p": 0.093,
    "note": "74 starts"
+  },
+  {
+   "player": "Brook Lopez",
+   "team": "LAC",
+   "game": "TOR @ LAC",
+   "market": "3+ threes",
+   "p": 0.25,
+   "note": "40 starts"
   },
   {
    "player": "Andrew Wiggins",
@@ -857,14 +825,6 @@
    "market": "3+ threes",
    "p": 0.379,
    "note": "52 starts"
-  },
-  {
-   "player": "Jake LaRavia",
-   "team": "LAL",
-   "game": "MIA @ LAL",
-   "market": "3+ threes",
-   "p": 0.154,
-   "note": "46 starts"
   }
  ]
 }
