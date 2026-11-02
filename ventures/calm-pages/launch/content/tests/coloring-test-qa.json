@@ -1,10 +1,12 @@
 {
   "music": "soft_as_a_dry_pillow",
-  "music_under_foley_db": 7.0,
-  "file": "coloring-test.mp4",
+  "foley_rms_db_active": -16.4,
+  "music_rms_db_after_gain": -10.4,
+  "music_under_foley_db": -6.0,
+  "file": "/home/user/Defined-Risk-Trading/ventures/calm-pages/launch/content/tests/coloring-test.mp4",
   "duration_s": 10.0,
-  "integrated_lufs": -16.3,
-  "true_peak_dbtp": -5.3,
+  "integrated_lufs": -15.9,
+  "true_peak_dbtp": -7.4,
   "checks": [
     {
       "check": "9:16 1080x1920",
@@ -24,12 +26,12 @@
     {
       "check": "loudness -16 +/-1.5 LUFS",
       "pass": true,
-      "detail": "-16.3 LUFS"
+      "detail": "-15.9 LUFS"
     },
     {
       "check": "true peak <= -1 dBTP, no clipping",
       "pass": true,
-      "detail": "-5.3 dBTP, 0 clipped"
+      "detail": "-7.4 dBTP, 0 clipped"
     },
     {
       "check": "no dead air (<10%% quiet windows)",
@@ -37,7 +39,7 @@
       "detail": "0% quiet"
     }
   ],
-  "contact_sheet": "coloring-test-sheet.png",
-  "audio_sheet": "coloring-test-audio.png",
+  "contact_sheet": "/home/user/Defined-Risk-Trading/ventures/calm-pages/launch/content/tests/coloring-test-sheet.png",
+  "audio_sheet": "/home/user/Defined-Risk-Trading/ventures/calm-pages/launch/content/tests/coloring-test-audio.png",
   "qa": "PASS"
 }

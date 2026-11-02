@@ -656,7 +656,7 @@ def build(which):
         pen = pencil_track(active, 5.0)
         foley = np.stack([pen * 0.98, pen * 1.0], 1)
         out = os.path.join(HERE, "coloring-test.mp4")
-        info = finish_audio(silent, foley, out, "soft_as_a_dry_pillow", music_db_under=7.0)
+        info = finish_audio(silent, foley, out, "soft_as_a_dry_pillow", music_db_under=-6.0)
         return qa(out, os.path.join(HERE, "coloring-test-sheet.png"), os.path.join(HERE, "coloring-test-audio.png"), info)
     if which == "pageflip":
         silent = os.path.join(TMP, "pageflip-silent.mp4")
@@ -675,7 +675,7 @@ def build(which):
             fol[i0: i0 + L] += b.astype(np.float32)
         foley = np.stack([fol * 0.95, fol], 1)
         out = os.path.join(HERE, "pageflip-test.mp4")
-        info = finish_audio(silent, foley, out, "this_pain_is_soft", music_db_under=6.0)
+        info = finish_audio(silent, foley, out, "this_pain_is_soft", music_db_under=-9.0)
         return qa(out, os.path.join(HERE, "pageflip-test-sheet.png"), os.path.join(HERE, "pageflip-test-audio.png"), info)
 
 

@@ -1,12 +1,12 @@
 {
   "music": "this_pain_is_soft",
   "foley_rms_db_active": -21.4,
-  "music_rms_db_after_gain": -27.4,
-  "music_under_foley_db": 6.0,
+  "music_rms_db_after_gain": -12.4,
+  "music_under_foley_db": -9.0,
   "file": "/home/user/Defined-Risk-Trading/ventures/calm-pages/launch/content/tests/pageflip-test.mp4",
   "duration_s": 9.6,
-  "integrated_lufs": -16.7,
-  "true_peak_dbtp": -1.9,
+  "integrated_lufs": -15.8,
+  "true_peak_dbtp": -5.1,
   "checks": [
     {
       "check": "9:16 1080x1920",
@@ -26,12 +26,12 @@
     {
       "check": "loudness -16 +/-1.5 LUFS",
       "pass": true,
-      "detail": "-16.7 LUFS"
+      "detail": "-15.8 LUFS"
     },
     {
       "check": "true peak <= -1 dBTP, no clipping",
       "pass": true,
-      "detail": "-1.9 dBTP, 0 clipped"
+      "detail": "-5.1 dBTP, 0 clipped"
     },
     {
       "check": "no dead air (<10%% quiet windows)",
