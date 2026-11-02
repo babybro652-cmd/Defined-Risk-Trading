@@ -250,3 +250,37 @@ V5 6082653 / 6082656 / 5364182; V6 6084107 / 6084110 / 6084111; V7 6084112 / 608
 Caption fixes 11/2:
 - V6 (all 3): #anxietyrelief replaced with #mindfulbreathing.
 - V10 Facebook: NOT changed. The Calm Petals mood tracker's Payhip product link isn't recorded anywhere (repo, Drive, Build-Out sheet), and payhip.com blocks the container (Cloudflare). It still links to https://payhip.com/PeaceByPage. Tim: send the payhip.com/b/... link for "Calm Petals Mood Flower Tracker" and Jarvis swaps it in before Sat 11/7 6:30 PM (schedule 6084126).
+
+## 6. Re-leveled to -23 LUFS (11/2, about 5:20 PM ET, Tim approved the PbP audio standard)
+Tim's standard (see `.claude/agents/ventures.md`): serene, about -23 LUFS integrated. V5-V12 `-music.mp4` files got a linear two-pass loudnorm gain to -23 LUFS (TP -2), video stream copied (decoded video identical). New files: `launch/content/videos/<n>-...-quiet.mp4`. Each was uploaded once and swapped into all 3 posts of its day (time, caption and settings kept). On 11/2 list_schedules showed all 24 posts at their times, and every scheduled media copy was downloaded and is byte-identical to the `-quiet.mp4` file.
+
+| Reel | LUFS / true peak | Uploaded file |
+|---|---|---|
+| V5 free sampler | -23.0 / -11.2 | b9444e9b-1d63-4ca8-9904-142da0b01b93.mp4 |
+| V6 box breathing | -22.9 / -7.2 | f2dfb548-c818-400c-9834-aa0b17e7b962.mp4 |
+| V7 grounding | -23.0 / -9.9 | 3026ff51-7ccc-4a8a-a63b-8477aaa1a59f.mp4 |
+| V8 balanced thought | -22.8 / -10.1 | 6f9888e6-a99b-4e78-92bb-7f7000aafdef.mp4 |
+| V9 I handled it | -22.9 / -7.9 | 2ef704b1-aa91-4d4a-b6ec-f55c66ec1234.mp4 |
+| V10 mood petals | -22.8 / -8.8 | 50c4c094-7174-4442-8d7a-2f3c574eb5f6.mp4 |
+| V11 three good things | -22.5 / -4.8 | 75f1db1c-e1e3-420b-bcc7-9efb958d2648.mp4 |
+| V12 worry time | -23.0 / -8.6 | c8bd8927-ee5e-439e-9f2e-0e54235e4d00.mp4 |
+
+## 7. Animated tests on all 3 platforms (Tim approved 11/2)
+Built from the real PDFs by `launch/content/tests/make_test_animations.py` (no AI imagery; -23 LUFS, foley under CC0 music). TikTok isYourBrand true, isAiGenerated false. Captions passed a 5-gram check against every PbP caption and each other (the support/988 line excluded).
+
+| When (ET) | Video | IG 81296 | TikTok 65985 | FB page | Uploaded file |
+|---|---|---|---|---|---|
+| Tue 11/3 8:45 PM | Coloring time-lapse (Calm Petals mandala, 10 s) | 6393764 | 6393757 | 6393767 | 00649760-a03f-4975-9d3b-c64fb41a7ea6.mp4 |
+| Thu 11/5 8:45 PM | Page flip (Calm Wings Day 1, mood tracker, box breathing, mandala, 9.6 s) | 6393772 | 6393769 | 6393778 | 0ffa4546-6882-405f-b905-3760e6636d46.mp4 |
+
+Compare these against the 6:30 PM rendered reels the same days and against Tim's real-paper footage.
+
+### Coloring test captions
+- **TikTok:** Color with me: one petal for every feeling you had today. Soft pink for the good parts, sage for the tired ones, and no rules about the rest. Want a page to try? Grab the 7-day sampler, free, at payhip.com/PeaceByPage. Supports, not replaces, professional care. In crisis in the US, call or text 988. / #colorwithme #mandalacoloring #coloringforadults #coloringtimelapse #calmingactivities
+- **Instagram:** Ten quiet seconds of coloring. Pick a shade for each feeling and give it a petal: warm peach for something kind, lavender for something heavy. Nothing has to match. This botanical mandala comes from Calm Petals, and a free sampler with its own coloring page is waiting at the link in bio. Supports, not replaces, professional care. In crisis in the US, call or text 988. / #mandalaart #adultcoloringbook #mindfulcoloring #coloringasmr #slowliving
+- **Facebook:** A slow way to check in with yourself tonight: color one petal for each feeling from your day. The mandala in this time-lapse is the first page in our Calm Petals coloring set. Want to start smaller? The free 7-day Peace by Page sampler includes a coloring page: https://payhip.com/b/yrk3j / Supports, not replaces, professional care. In crisis in the US, call or text 988. / #adultcoloring #mandalacoloring #colorwithme #eveningroutine #printables
+
+### Page flip test captions
+- **TikTok:** Flipping through printable anxiety journal pages: Day 1 of 90, a butterfly mood tracker, box breathing you trace with a finger, and a mandala for when words run out. The first seven days are free in the sampler at payhip.com/PeaceByPage. Supports, not replaces, professional care. In crisis in the US, call or text 988. / #journalflipthrough #printablejournal #anxietyjournal #journalwithme #paperasmr
+- **Instagram:** What one evening page asks of you: a quick mood check, a few good moments, one worry rewritten more gently. Flip back to the SOS pages for the box-breathing square and a butterfly mandala; the mood butterfly tracker in this clip is a separate printable. The first week is free through the link in bio. Supports, not replaces, professional care. In crisis in the US, call or text 988. / #journalflipthrough #guidedjournal #journalinspo #printableplanner #eveningroutine
+- **Facebook:** Inside Calm Wings, page by page: Day 1 of 90, box breathing to trace and a butterfly mandala to color, with the mood butterfly tracker from the same series (sold on its own) in the mix. Curious whether a daily page fits your evenings? Begin with a week of pages, free: https://payhip.com/b/yrk3j / Supports, not replaces, professional care. In crisis in the US, call or text 988. / #journalflipthrough #anxietyjournal #printablejournal #calmwings #selfcare
