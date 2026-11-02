@@ -20,6 +20,8 @@ Output:
 """
 import argparse, csv, datetime as dt, json, os, re, sys, time, unicodedata, urllib.request
 from concurrent.futures import ThreadPoolExecutor
+from zoneinfo import ZoneInfo
+ET = ZoneInfo('America/New_York')  # DST-aware (was a fixed UTC-4 until 11/2/26)
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 DATA = os.path.join(HERE, 'data')
@@ -235,7 +237,7 @@ def build(slate, log):
         if w['date'] == today.isoformat():
             for g in w['games']:
                 if g['gameType'] == 2:
-                    t = dt.datetime.fromisoformat(g['startTimeUTC'].replace('Z', '+00:00')) - dt.timedelta(hours=4)
+                    t = dt.datetime.fromisoformat(g['startTimeUTC'].replace('Z', '+00:00')).astimezone(ET)
                     slate_games.append({'away': g['awayTeam']['abbrev'], 'home': g['homeTeam']['abbrev'],
                                         'time': t.strftime('%-I:%M')})
     dfo = {}
@@ -539,7 +541,7 @@ def build(slate, log):
     R()
     R('Sources', f'NHL API boxscores and game summaries (api-web.nhle.com), {nl} 2025-26 and {nc} 2026-27 regular-season games; '
       'NHL stats API (api.nhle.com) for GA/G, SA/G, PK%, SV%, PP time on ice; Daily Faceoff starting goalies; ESPN injuries. '
-      f'Pulled {(dt.datetime.utcnow() - dt.timedelta(hours=4)).strftime("%-m/%-d %-I:%M %p")} ET. Role = TOI rank on team (Top 6 F, Top pair D) and PP time rank '
+      f'Pulled {dt.datetime.now(ET).strftime("%-m/%-d %-I:%M %p")} ET. Role = TOI rank on team (Top 6 F, Top pair D) and PP time rank '
       '(PP1 = top 5 on team), a proxy for line charts, not the official lines. Rebuilt weekly by analysis/nhl/build_nhl_tab.py.')
 
     width = max(len(r) for r in rows)
@@ -569,7 +571,7 @@ def main():
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument('--date', help='slate date YYYY-MM-DD (default today ET)')
     a = ap.parse_args()
-    d = dt.date.fromisoformat(a.date) if a.date else (dt.datetime.utcnow() - dt.timedelta(hours=4)).date()
+    d = dt.date.fromisoformat(a.date) if a.date else dt.datetime.now(ET).date()
     build(d, lambda m: print(m, file=sys.stderr))
 
 

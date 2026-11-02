@@ -259,6 +259,13 @@ are 71 games (the report's 68 plus 10/29). Gains are small; first basket is stil
   blend rejected (side by side plus an agree flag only); daily parlays only from 3+ threes, 3+ SOG, receptions and soccer
   SOT; NHL anytime goal x0.77 and only at +150 or longer. See "Model changes 10/30/26".
 
+- 10/30 results: first basket 1-6 plus Sengun void (Adebayo +416 fair hit); points 2-1; threes 3-1 (Doncic 6, Curry 8,
+  Miller 3; MPJ 2); method props 0-4. StarTool stars 2 of 20 (Porter Jr., LaMelo), bombs 1 (Adebayo). Tip jumpers scored
+  1 of 10 first baskets (Adebayo); 6 of 10 first baskets came from the tip-winning team. Our tip favorites lost twice at
+  90%+ (LAL 96% vs Green, DAL won with Gafford vs Capela, a jumper change). Tim had no first basket picks logged.
+- 10/31 to 11/2: Jarvis offline Fri evening to Mon noon; no picks logged for 10/31 or 11/1, first events logged only.
+- 11/2: daylight saving ended 11/1 (ET = UTC-5). The NBA build already uses America/New_York; the NHL build had a fixed UTC-4 and now uses zoneinfo too. 11/2 picks: Bets rows 544-574.
+
 ## Tim vs model log (first basket)
 
 Tim's picks come from his own read of the StarTool card (not just its star), so the Tim column tests how he uses StarTool's data; the StarTool column is its star/bomb as printed.
@@ -311,3 +318,13 @@ On game days Tim sends the StarTool Analytics "Game Script" card for each game (
 | 10/29 | CLE @ ATL | James Harden CLE, driving layup (rim) at 10:27 (first shot Watson three, missed; first points Mobley FTs) | (none sent) | Mitchell / NAW (bomb Harden hit) | Allen, Mobley; method Allen rim | - | No |
 | 10/29 | SAC @ NO | Trey Murphy III NO, running dunk (rim) (first shot Hunter, missed) | (none sent) | Acuff / Murphy (StarTool star hit) | Sabonis, LaVine; method Sabonis rim, Zion rim | - | No |
 | 10/29 | MEM @ POR | Zach Edey MEM, center, dunk (rim) off Boozer (first shot Camara three, missed) | (none sent) | Jerome / Avdija | Jerome, Coward; method Jerome j2, Coward 3 | - | No |
+| 10/30 | CHA @ WSH | Dennis Schroder CHA, 3 (CHA won tip; first shot Schroder, made) | - | Miller / Davis | Anthony Davis | - | No |
+| 10/30 | CHI @ BOS | Jayson Tatum BOS, rim (BOS won tip; first shot Tatum, made) | - | Powell / Tatum (StarTool star hit) | Paul George | - | No |
+| 10/30 | DET @ BKN | Michael Porter Jr. BKN, rim (BKN won tip; first shot, made) | - | Cunningham / Porter Jr. (StarTool star hit) | Paul Reed | - | No |
+| 10/30 | NY @ PHI | OG Anunoby NY, 3 (NY won tip; first shot Towns, missed; first points Embiid FTs) | - | Brunson / J. Brown | Tyrese Maxey | - | No |
+| 10/30 | ORL @ TOR | Scottie Barnes TOR, j2 (TOR won tip; Barnes missed first shot, scored next) | - | Bane / Barrett | Wendell Carter Jr. | - | No |
+| 10/30 | IND @ MIA | Bam Adebayo MIA, center, rim (MIA won tip; first shot, made) | - | Siakam / Giannis (bomb Adebayo hit) | Bam Adebayo | - | Yes (fair +416) |
+| 10/30 | HOU @ DAL | Fred VanVleet HOU, j2 (DAL won tip; Capela jumped for HOU, Sengun out) | - | Durant / Flagg | Kevin Durant (Sengun void) | - | No |
+| 10/30 | LAC @ MIN | LaMelo Ball MIN, 3 (MIN won tip; first shot, made) | - | Garland / LaMelo (StarTool star hit) | Jaden McDaniels | - | No |
+| 10/30 | LAL @ GS | Brandin Podziemski GS, rim (GS won tip, our LAL 96% missed; first shot, made) | - | Doncic / Curry | Walker Kessler | - | No |
+| 10/30 | DEN @ PHX | Miles Bridges PHX, j2 (PHX won tip; first shot Brooks, missed) | - | Jokic / Booker | Nikola Jokic | - | No |
