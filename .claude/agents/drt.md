@@ -125,6 +125,28 @@ weekends included. It's Step 6b of the daily content routine (prompt stored in t
     Read the sheet (captions spelled right, not covering on-screen text; `--caption-margin PX`).
     Upload OUT.mp4 via presigned URL. Prompt store: Step 6b item 3b of `trig_01NkNxxc7neQATLrTifB42kv`.
 
+## Music on every TikTok reel (Tim approved 11/2)
+Every video going to TikTok @definedrisktrading `58063` gets music before it's scheduled, trade
+reels included (Tim's approval of the trade post still applies; the music doesn't change it).
+- Run `python3 drt/audio/add_audio.py IN.mp4 -o OUT.mp4 --sheet SHEET.png` (music only). Pick a
+  calm/lo-fi CC0 track from `drt/audio/music/` with `--music NAME`, different from the TikToks
+  around it (same day and the day before); date rotation is the default. A video with its own
+  narration keeps it (`--video-audio auto` ducks the music under it). Tim's voice memo on a trade
+  reel: `--voice MEMO --captions`, as for Shorts. Never AI voice on a trade reel.
+- Skip a video that already has a music bed (made with add_audio.py, or audible music when you
+  check with `ffmpeg -af volumedetect`). Silent audio track (mean about -91 dB) = no music.
+- `AUDIO QA: PASS` required, then Read SHEET.png. Music-only runs copy the video stream, so the
+  picture is unchanged. Upload OUT.mp4 once (presigned URL) and use that publicUrl.
+- IG/FB: keep their media as is, unless they share the TikTok's video, then the music version
+  can go everywhere.
+- Photo carousels: `autoAddMusic: true` (Blotato adds a TikTok sound; photo posts only).
+- No chart/trending songs baked into our files (not licensed). A trending sound can only be
+  added in the TikTok app: Blotato's `isDraft: true` sends the video to Tim's TikTok inbox
+  (notifications), caption NOT carried over, so he re-pastes it, picks a sound (Business accounts
+  only see the Commercial Music Library) and publishes. Only when Tim asks for that flow.
+- Prompt stores: Step 5b of trig_01NkNxxc7neQATLrTifB42kv (daily), Step 3c of
+  trig_01Td2366YryxzXU8BPrxUv1Z (Wed TikTok), Step 3c of trig_01CgC1RonbscetrWJhFAWLZp (Fri recap).
+
 ## Blotato AI visuals paused (10/20)
 blotato_create_visual has been unavailable or stalling since 10/15 and charged credits twice (about 250 on 10/19, 75 on 10/20) without returning media. Don't call it until Tim or Jarvis says it works again. Use Tim's non-trade DRT Phone clips, else ffmpeg/PIL text-card reels and slides you render yourself (0 credits).
 
@@ -169,6 +191,8 @@ Put any text the viewer must read on a clean graphic you render yourself.
     (Thu FB), trig_01CgC1RonbscetrWJhFAWLZp (Fri recap).
 - Anything about a real trade (P&L, entries/exits, screenshots, recaps, funded
   numbers) needs Tim's explicit go before it posts. Show him the captions and media first.
+  Trade reels for TikTok get music first (see "Music on every TikTok reel"), so Tim approves
+  the version with music.
 - Every caption is written natively per platform; no shared wording (run the check).
 - No em dashes, no filler words, no "comment/tag" CTAs. Hashtags: IG 3-5 incl.
   #MyHobbyismyFREEDOM and #definedrisktrading; TikTok max 5 incl. #definedrisktrading

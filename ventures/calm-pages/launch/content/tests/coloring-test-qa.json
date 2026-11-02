@@ -1,0 +1,43 @@
+{
+  "music": "soft_as_a_dry_pillow",
+  "music_under_foley_db": 7.0,
+  "file": "coloring-test.mp4",
+  "duration_s": 10.0,
+  "integrated_lufs": -16.3,
+  "true_peak_dbtp": -5.3,
+  "checks": [
+    {
+      "check": "9:16 1080x1920",
+      "pass": true,
+      "detail": "1080x1920"
+    },
+    {
+      "check": "7-12 s",
+      "pass": true,
+      "detail": "10.00 s"
+    },
+    {
+      "check": "audio stream present",
+      "pass": true,
+      "detail": "aac"
+    },
+    {
+      "check": "loudness -16 +/-1.5 LUFS",
+      "pass": true,
+      "detail": "-16.3 LUFS"
+    },
+    {
+      "check": "true peak <= -1 dBTP, no clipping",
+      "pass": true,
+      "detail": "-5.3 dBTP, 0 clipped"
+    },
+    {
+      "check": "no dead air (<10%% quiet windows)",
+      "pass": true,
+      "detail": "0% quiet"
+    }
+  ],
+  "contact_sheet": "coloring-test-sheet.png",
+  "audio_sheet": "coloring-test-audio.png",
+  "qa": "PASS"
+}
