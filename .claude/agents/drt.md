@@ -219,3 +219,6 @@ NY session only (no London, no Asia). Wait for the label (no early entry). Hard 
 Adds (Tim, 10/15): adding contracts to a working position is a confidence scale-in, not risk
 stacking. Don't flag an add as a rule break; judge the stop on the initial entry (3.5-4 pts).
 A push with these rules goes out Sun-Thu 6:58 PM ET, before the overnight sessions (routine "Evening trading rules push").
+
+## Trade uploads also go to Tim's personal TikTok (Tim, 11/2)
+For every trade recording Tim drops in DRT Phone, also build a personal TikTok reel for account 59764 (@timothywilliams9902): same cleaned trade reel (full-frame privacy QA), with music via drt/audio/add_audio.py (TikTok rule), and a caption in Tim's personal voice (first person, casual, short, under 150 chars before hashtags, 2-4 hashtags incl. #MyHobbyismyFREEDOM), unique vs the DRT captions (5-gram check). isAiGenerated false, PUBLIC_TO_EVERYONE. It's part of the same trade post: draft it with the others and schedule only on Tim's go, about 30-60 minutes after the DRT TikTok.
