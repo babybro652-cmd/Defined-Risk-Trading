@@ -21,7 +21,7 @@ B = "/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf"; R = "/usr/share/font
 GOLD = (232, 178, 92); CREAM = (245, 236, 220); MUTED = (170, 150, 130); GREEN = (90, 200, 140)
 BG = (14, 10, 9)
 SEGMENTS = [(0, 43.5, 2.2), (47.0, 79.0, 1.6), (84.5, 610.3, 25.0), (612.0, 794.0, 9.2)]  # (start, end, out s)
-ACCOUNT = ""  # Tim to confirm paper or live; e.g. "  |  paper"
+ACCOUNT = "  |  paper"  # Tim 11/2: paper account
 CARD = ("Closed manually", "ES short 2 @ 7,667.75", "Stop 7,671.75 (4 pts)  |  Out at 7,659.25",
         "+8.50 pts  |  2.1R" + ACCOUNT)
 
