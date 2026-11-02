@@ -257,6 +257,35 @@ def even_chunks(text, start, end):
     return out
 
 
+def align_text(text, words):
+    """Time the supplied caption text with the speech-to-text word timings, so captions show the
+    approved wording (not mishearings) in sync with the voice. Unmatched words are interpolated."""
+    import difflib
+    ref = text.split()
+    rn = [("".join(norm_words(w)) or w.lower()) for w in ref]
+    hn = [("".join(norm_words(w[2])) or w[2].lower()) for w in words]
+    t = [None] * len(ref)
+    for blk in difflib.SequenceMatcher(None, rn, hn, autojunk=False).get_matching_blocks():
+        for k in range(blk.size):
+            st, en, _ = words[blk.b + k]
+            t[blk.a + k] = (st, en)
+    s0, s1 = words[0][0], words[-1][1]
+    known = [i for i, v in enumerate(t) if v]
+    for i in range(len(ref)):
+        if t[i]:
+            continue
+        lo = max([j for j in known if j < i], default=None)
+        hi = min([j for j in known if j > i], default=None)
+        a0 = t[lo][1] if lo is not None else s0
+        b0 = t[hi][0] if hi is not None else s1
+        gap = (hi if hi is not None else len(ref)) - (lo if lo is not None else -1)
+        pos = i - (lo if lo is not None else -1)
+        st = a0 + (b0 - a0) * (pos - 1) / gap
+        en = a0 + (b0 - a0) * pos / gap
+        t[i] = (st, en)
+    return [(t[i][0], t[i][1], ref[i]) for i in range(len(ref))]
+
+
 def norm_words(t):
     return re.findall(r"[a-z0-9']+", t.lower().replace("-", " "))
 
@@ -288,7 +317,7 @@ def main():
     ap.add_argument("--music", default="auto", help="auto (date rotation) | synth | none | file or library name")
     ap.add_argument("--music-start", type=float, default=0.0)
     ap.add_argument("--captions", action="store_true", help="burn captions from the voice")
-    ap.add_argument("--caption-text", help="fallback caption text if speech-to-text isn't available")
+    ap.add_argument("--caption-text", help="caption text to burn in (timed by speech-to-text when available, else spread evenly); use it to keep approved wording")
     ap.add_argument("--caption-margin", type=int, default=None, help="caption distance from bottom (px)")
     ap.add_argument("--target", type=float, default=None, help="final integrated LUFS (default -14 voice, -18 music only)")
     ap.add_argument("--date", help="YYYY-MM-DD for music rotation (default today)")
@@ -383,7 +412,12 @@ def main():
     vf = None
     if a.captions and voice is not None:
         words = whisper_words(to16k(voice))
-        if words:
+        if words and a.caption_text:
+            chunks = chunk_words(align_text(a.caption_text, words))
+            report["captions"] = "supplied text timed by speech-to-text"
+            if ref_text is None:
+                ref_text = " ".join(w[2] for w in words)
+        elif words:
             chunks = chunk_words(words)
             report["captions"] = "speech-to-text (faster-whisper)"
             if ref_text is None:
