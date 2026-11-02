@@ -5,8 +5,8 @@
   "music_under_foley_db": -9.0,
   "file": "/home/user/Defined-Risk-Trading/ventures/calm-pages/launch/content/tests/pageflip-test.mp4",
   "duration_s": 9.6,
-  "integrated_lufs": -15.8,
-  "true_peak_dbtp": -5.1,
+  "integrated_lufs": -22.8,
+  "true_peak_dbtp": -12.1,
   "checks": [
     {
       "check": "9:16 1080x1920",
@@ -24,19 +24,19 @@
       "detail": "aac"
     },
     {
-      "check": "loudness -16 +/-1.5 LUFS",
+      "check": "loudness -23 +/-1.5 LUFS",
       "pass": true,
-      "detail": "-15.8 LUFS"
+      "detail": "-22.8 LUFS"
     },
     {
       "check": "true peak <= -1 dBTP, no clipping",
       "pass": true,
-      "detail": "-5.1 dBTP, 0 clipped"
+      "detail": "-12.1 dBTP, 0 clipped"
     },
     {
       "check": "no dead air (<10%% quiet windows)",
       "pass": true,
-      "detail": "0% quiet"
+      "detail": "1% quiet"
     }
   ],
   "contact_sheet": "/home/user/Defined-Risk-Trading/ventures/calm-pages/launch/content/tests/pageflip-test-sheet.png",

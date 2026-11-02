@@ -5,8 +5,8 @@
   "music_under_foley_db": -14.0,
   "file": "/home/user/Defined-Risk-Trading/ventures/calm-pages/launch/content/tests/coloring-test.mp4",
   "duration_s": 10.0,
-  "integrated_lufs": -15.6,
-  "true_peak_dbtp": -9.8,
+  "integrated_lufs": -22.6,
+  "true_peak_dbtp": -16.5,
   "checks": [
     {
       "check": "9:16 1080x1920",
@@ -24,14 +24,14 @@
       "detail": "aac"
     },
     {
-      "check": "loudness -16 +/-1.5 LUFS",
+      "check": "loudness -23 +/-1.5 LUFS",
       "pass": true,
-      "detail": "-15.6 LUFS"
+      "detail": "-22.6 LUFS"
     },
     {
       "check": "true peak <= -1 dBTP, no clipping",
       "pass": true,
-      "detail": "-9.8 dBTP, 0 clipped"
+      "detail": "-16.5 dBTP, 0 clipped"
     },
     {
       "check": "no dead air (<10%% quiet windows)",

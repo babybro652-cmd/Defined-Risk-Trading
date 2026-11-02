@@ -215,7 +215,7 @@ def rms_db(x):
     return 20 * np.log10(np.sqrt(np.mean(np.square(x))) + 1e-12)
 
 
-def finish_audio(silent_mp4, foley, out_mp4, music_name, music_db_under=9.0, target=-16.0):
+def finish_audio(silent_mp4, foley, out_mp4, music_name, music_db_under=9.0, target=-23.0):
     """Music bed via drt/audio/add_audio.py (CC0 library, its own QA), then foley on top."""
     bed_mp4 = os.path.join(TMP, "bed.mp4")
     r = subprocess.run([sys.executable, ADD_AUDIO, silent_mp4, "-o", bed_mp4, "--music", music_name, "--target", "-18"],
@@ -269,7 +269,7 @@ def qa(out_mp4, sheet_png, audio_png, extra):
         ("9:16 1080x1920", v["width"] == W and v["height"] == H, "%sx%s" % (v["width"], v["height"])),
         ("7-12 s", 7 <= dur <= 12, "%.2f s" % dur),
         ("audio stream present", bool(a), a[0]["codec_name"] if a else "none"),
-        ("loudness -16 +/-1.5 LUFS", abs(I + 16) <= 1.5, "%.1f LUFS" % I),
+        ("loudness -23 +/-1.5 LUFS", abs(I + 23) <= 1.5, "%.1f LUFS" % I),
         ("true peak <= -1 dBTP, no clipping", tp <= -1.0 and clipped == 0, "%.1f dBTP, %d clipped" % (tp, clipped)),
         ("no dead air (<10%% quiet windows)", quiet < 0.10, "%.0f%% quiet" % (quiet * 100)),
     ]
