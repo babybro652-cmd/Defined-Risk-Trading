@@ -84,3 +84,32 @@ Education only. Not financial advice.
 
 #shorts #esfutures #daytrading
 ```
+
+## REPOST 11/2 (Tim: "repost both"): Facebook only
+Only the Facebook copy went out flawed (published 10/30 5:01 PM with the "Melly" text-notification flash, frames 524-528, plus rotation/
+toolbar flashes). IG, YouTube and TikTok published 10/30 with the clean media (swapped 10/30 before they went out).
+Repost uses es-long-1030-clean.mp4 (already hosted, bytes re-verified 11/2):
+https://database.blotato.io/storage/v1/object/public/public_media/246c6cef-6cbe-4b5b-81a9-7bb84481df9c/268b7747-ff53-4421-84b4-6245b139e752.mp4
+Caption reworded for a late post ("Last Friday"); 5-gram OK vs 83 captions since 10/26.
+
+| Time ET | Platform | Submission id | Schedule id |
+|---|---|---|---|
+| Tue 11/3 12:15 PM | Facebook reel 50185 / 993318963868124 | b5193db7-98a9-44de-8e8e-4dc58b5688b4 | 6381886 |
+Confirmed with list_schedules. Tim deletes the original by hand: Facebook page, 10/30 5:01 PM, "Friday's ES trade, plus the 2 that came before it."
+
+### Repost Facebook
+```
+Last Friday's ES long, and the 2 trades before it.
+
+The first 2 trades that day both stopped out, $400 apiece. $800 in the hole.
+
+Trade 3 was a 2-contract long from 7,635.25. Stop 4 points lower, 7,631.25. Target 7,669.75. Right after the fill it dipped toward the stop, then reversed and climbed.
+
+On the way up it hit me that the day was Friday. I didn't think a target that far was in reach on a Friday, and I saw sellers coming in, so I took the trade off by hand at 7,649.00. That's +13.75 points a contract, +$1,375 gross, paper money.
+
+The day closed about +$575.
+
+All 3 trades carried the same 4-point stop. Starting red doesn't decide the day when the risk size never changes.
+
+Share this with someone who doubles up after a loss.
+```

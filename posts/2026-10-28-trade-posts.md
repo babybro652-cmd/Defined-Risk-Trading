@@ -97,3 +97,63 @@ The risk didn't change. The target did, because it comes from the chart, not fro
 
 Pass this to someone who sets targets by feel.
 ```
+
+## REPOST 11/2 (Tim: "repost both"), clean media, scheduled Tue 11/3 and Wed 11/4 (EST)
+The 10/28 reel as posted 10/29 had flash frames: recorder toolbar (249), landscape-rotation flash (250) and the notification shade
+showing "9:40 Wed, Oct 28" and the carrier (253-254, about 8.4 s). Fixed with posts/media/2026-10-30/phone/freeze_fix.py (bad frames
+replaced by the previous frame, frames 248-255 held; 998 frames, silent track kept like the original). Re-scanned (neighbor + median-window
+detectors), 2 fps contact sheet posts/media/2026-10-28/contact_1028_clean.png and every frame 244-259 read. PASS.
+Clean file: posts/media/2026-10-28/es-short-1028-clean.mp4, uploaded once:
+https://database.blotato.io/storage/v1/object/public/public_media/246c6cef-6cbe-4b5b-81a9-7bb84481df9c/8cd2089b-7717-49b0-9064-be090991081e.mp4 (bytes verified)
+Captions reworded for a late post ("Last Wednesday"); 5-gram OK vs 83 captions since 10/26 (post files 10/26-11/2 incl. the originals, Blotato 10/24-11/2).
+Facebook moved to Wed 11/4 to keep Tue FB at 3 (daily 9 AM + 5 PM + the 10/30 repost).
+
+| Time ET | Platform | Submission id | Schedule id |
+|---|---|---|---|
+| Tue 11/3 1:00 PM | TikTok 58063 (isAiGenerated false) | 24fb5071-a11a-4796-8c2e-f9a5b3439b36 | 6381887 |
+| Tue 11/3 1:30 PM | Instagram reel 68887 | e6142091-580f-49d9-b0d7-e56d41a15df2 | 6381889 |
+| Wed 11/4 12:15 PM | Facebook reel 50185 / 993318963868124 | 7ebe817f-563d-4ac3-8e5d-414b09233642 | 6381891 |
+Confirmed with list_schedules.
+
+Tim deletes the flawed originals by hand (Blotato has no delete for published posts):
+TikTok 10/29 8:30 PM "Second ES short in 2 days...", Instagram 10/29 8:45 PM "Another short on ES Wednesday morning...",
+Facebook 10/29 9:15 PM "Two ES shorts in 2 days, both with a 4-point stop."
+
+10/27 reel (NOT reposted, needs Tim): frame scan 11/2 found an indicator-legend flash at frames 901-905 (about 30.1 s) with the
+indicator name visible ("CRT Pr..."), a "Trading account / Paper Trading" popup (82), recorder toolbar (84, 388) and a rotation flash (868).
+Clean copy ready: posts/media/2026-10-28/es-short-1027-clean.mp4 (same freeze fix, re-scanned clean).
+
+### Repost TikTok
+```
+Last Wednesday's ES short: 4 pt stop at 7,776.25, target 7,759.50 hit. +12.75 pts, 3.2R on paper. Identical rules to Tuesday.
+
+#definedrisktrading #esfutures #daytrading #tradingrules #futurestrading
+```
+
+### Repost Instagram
+```
+Last Wednesday's ES short, same rules as the day before.
+
+2 contracts sold at 7,772.25. Stop 4 points above at 7,776.25. Target down at 7,759.50.
+
+ES stepped lower for about 10 minutes until the target filled, good for +12.75 points per contract, 3.2R, +$1,275 before commissions, on my paper account.
+
+Tuesday and Wednesday both used a 4-point stop. The targets were different because the chart levels were different.
+
+Save it for a day when a smaller target looks too small to bother with.
+
+#MyHobbyismyFREEDOM #definedrisktrading #esfutures #daytrading #tradingdiscipline
+```
+
+### Repost Facebook
+```
+Last week I took 2 ES shorts on back-to-back days, and each one had a 4-point stop.
+
+Last Tuesday's risked 4 points and made 28. Last Wednesday's risked the same 4 and made 12.75.
+
+The Wednesday trade: 2 contracts sold at 7,772.25 with a 7,776.25 stop and a 7,759.50 target, and $400 on the line. The target filled roughly 10 minutes in. 3.2R and +$1,275 before commissions on paper.
+
+My risk stayed fixed. The target moved, because the chart sets it, not what I'd like to earn that day.
+
+Pass it on to anyone who picks targets by feel.
+```
