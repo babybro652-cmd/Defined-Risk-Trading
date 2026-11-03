@@ -635,14 +635,6 @@
    "note": "71 starts"
   },
   {
-   "player": "Dillon Brooks",
-   "team": "PHX",
-   "game": "PHX @ GS",
-   "market": "3+ threes",
-   "p": 0.382,
-   "note": "60 starts"
-  },
-  {
    "player": "Devin Booker",
    "team": "PHX",
    "game": "PHX @ GS",
@@ -657,6 +649,14 @@
    "market": "3+ threes",
    "p": 0.308,
    "note": "31 starts"
+  },
+  {
+   "player": "Dillon Brooks",
+   "team": "PHX",
+   "game": "PHX @ GS",
+   "market": "3+ threes",
+   "p": 0.382,
+   "note": "60 starts"
   },
   {
    "player": "Miles Bridges",
@@ -675,14 +675,6 @@
    "note": "46 starts"
   },
   {
-   "player": "Draymond Green",
-   "team": "GS",
-   "game": "PHX @ GS",
-   "market": "3+ threes",
-   "p": 0.157,
-   "note": "73 starts"
-  },
-  {
    "player": "Brandin Podziemski",
    "team": "GS",
    "game": "PHX @ GS",
@@ -691,20 +683,20 @@
    "note": "48 starts"
   },
   {
+   "player": "Draymond Green",
+   "team": "GS",
+   "game": "PHX @ GS",
+   "market": "3+ threes",
+   "p": 0.157,
+   "note": "73 starts"
+  },
+  {
    "player": "Immanuel Quickley",
    "team": "TOR",
    "game": "TOR @ LAC",
    "market": "3+ threes",
    "p": 0.58,
    "note": "76 starts"
-  },
-  {
-   "player": "Scottie Barnes",
-   "team": "TOR",
-   "game": "TOR @ LAC",
-   "market": "3+ threes",
-   "p": 0.071,
-   "note": "86 starts"
   },
   {
    "player": "RJ Barrett",
@@ -721,6 +713,14 @@
    "market": "3+ threes",
    "p": 0.645,
    "note": "23 starts"
+  },
+  {
+   "player": "Scottie Barnes",
+   "team": "TOR",
+   "game": "TOR @ LAC",
+   "market": "3+ threes",
+   "p": 0.071,
+   "note": "86 starts"
   },
   {
    "player": "Darius Garland",
@@ -747,20 +747,20 @@
    "note": "40 starts"
   },
   {
-   "player": "Andrew Wiggins",
-   "team": "MIA",
-   "game": "MIA @ LAL",
-   "market": "3+ threes",
-   "p": 0.291,
-   "note": "74 starts"
-  },
-  {
    "player": "Davion Mitchell",
    "team": "MIA",
    "game": "MIA @ LAL",
    "market": "3+ threes",
    "p": 0.216,
    "note": "76 starts"
+  },
+  {
+   "player": "Andrew Wiggins",
+   "team": "MIA",
+   "game": "MIA @ LAL",
+   "market": "3+ threes",
+   "p": 0.291,
+   "note": "74 starts"
   },
   {
    "player": "Bam Adebayo",

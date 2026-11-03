@@ -260,5 +260,71 @@
     ],
     "jumper": "Nikola Jokic",
     "status": "expected (Rotowire 8:30 PM)"
+  },
+  "PHX": {
+    "five": [
+      "Devin Booker",
+      "Jalen Green",
+      "Dillon Brooks",
+      "Miles Bridges",
+      "Khaman Maluach"
+    ],
+    "jumper": "Khaman Maluach",
+    "status": "expected (Rotowire 9:30 PM)"
+  },
+  "GS": {
+    "five": [
+      "Stephen Curry",
+      "Brandin Podziemski",
+      "Yaxel Lendeborg",
+      "Georges Niang",
+      "Draymond Green"
+    ],
+    "jumper": "Draymond Green",
+    "status": "expected (Rotowire 9:30 PM)"
+  },
+  "TOR": {
+    "five": [
+      "Immanuel Quickley",
+      "RJ Barrett",
+      "Ja'Kobe Walter",
+      "Scottie Barnes",
+      "Trayce Jackson-Davis"
+    ],
+    "jumper": "Trayce Jackson-Davis",
+    "status": "expected (Rotowire 9:30 PM); Poeltl out"
+  },
+  "LAC": {
+    "five": [
+      "Darius Garland",
+      "Kris Dunn",
+      "Gradey Dick",
+      "Kobe Sanders",
+      "Brook Lopez"
+    ],
+    "jumper": "Brook Lopez",
+    "status": "expected (Rotowire 9:30 PM)"
+  },
+  "MIA": {
+    "five": [
+      "Davion Mitchell",
+      "Klay Thompson",
+      "Andrew Wiggins",
+      "Giannis Antetokounmpo",
+      "Bam Adebayo"
+    ],
+    "jumper": "Bam Adebayo",
+    "status": "expected (Rotowire 9:30 PM)"
+  },
+  "LAL": {
+    "five": [
+      "Luka Doncic",
+      "Austin Reaves",
+      "Matisse Thybulle",
+      "Ziaire Williams",
+      "Walker Kessler"
+    ],
+    "jumper": "Walker Kessler",
+    "status": "expected (Rotowire 9:30 PM)"
   }
 }
