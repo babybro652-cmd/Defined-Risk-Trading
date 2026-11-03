@@ -1,0 +1,4 @@
+Know your stop in dollars before you click. On E S, each point is worth 50 dollars per contract, and each tick is worth 12 dollars and 50 cents. So a 4 point stop is 16 ticks, 200 dollars per contract. 2 contracts, 400 dollars. On the micro, those same 4 points cost 20 dollars. If that dollar number scares you, the size is wrong. Fix the size. Keep the stop. Define your risk. Wait for your setup.
+
+CAPTIONS:
+Know your stop in dollars before you click. On ES, each point is worth $50 per contract, and each tick is worth $12.50. So a 4-point stop is 16 ticks, $200 per contract. 2 contracts, $400. On the micro, those same 4 points cost $20. If that dollar number scares you, the size is wrong. Fix the size. Keep the stop. Define your risk. Wait for your setup.
