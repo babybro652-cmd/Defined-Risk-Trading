@@ -1,4 +1,4 @@
-# DRT Phone video, Tue 11/3/2026 (2nd upload): ES short (TRADE POST, DRAFT, Tim verifying videos, then his go)
+# DRT Phone video, Tue 11/3/2026 (2nd upload): ES short (TRADE POST, Tim gave the go 11/3, POSTED)
 
 Tim 11/3 ~11 AM: "New video in drt. Goes to drt as first trade today and personal as second trade."
 Source (Drive "DRT Phone"): `Screen_Recording_20261103_114846_TradingView.mp4` (id 1HcMknWt1AmbjHykQ5g22G3ARq1w-we7D,
@@ -88,4 +88,13 @@ Caps today before these: TikTok 3 (7 AM, 1 PM repost, 8 PM), FB 2, IG 1, YouTube
 - NO MUSIC (silent track): https://database.blotato.io/storage/v1/object/public/public_media/246c6cef-6cbe-4b5b-81a9-7bb84481df9c/42d6691f-9d11-4ad3-8d97-d5024b6a131f.mp4
 - LOW MUSIC (CC0 bed, -29.7 LUFS, peak -13.5 dBFS): https://database.blotato.io/storage/v1/object/public/public_media/246c6cef-6cbe-4b5b-81a9-7bb84481df9c/0368a049-34c5-4162-832c-2c6c81e41282.mp4
 (The earlier 30-minute normal-speed uploads 5ebf2784-... and 31eaa7a4-... are superseded.)
-All Blotato uploads sha256-match the local files. NOTHING scheduled; waiting on Tim's go after he checks the 4 videos.
+All Blotato uploads sha256-match the local files. 
+
+## Posted 11/3 (Tim: "Go ahead and post them now"), immediate, all with the paper time-lapse media
+| Platform | Submission id | Live URL |
+|---|---|---|
+| Facebook reel (50185, page 993318963868124) | 2267de10-0dd9-4e8f-9767-f115a7b2c2f9 | https://facebook.com/reel/1748763399558435/ |
+| Instagram reel (68887) | 377bb41e-811e-424b-b7cd-88ce92fbcab2 | https://www.instagram.com/reel/DfSbyokCnQ2/ |
+| TikTok (58063, isAiGenerated false) | 255a5811-2bfc-44dd-a22c-095104e1f925 | https://www.tiktok.com/@definedrisktrading/video/7704000658575281439 |
+| YouTube Short (48727, notify false per drt.md, not for kids, no synthetic) | 16c6d6f0-9fd4-421f-892f-306647095024 | https://www.youtube.com/watch?v=D1iAa-hpIq0 |
+| Personal TikTok (59764) | d4dba395-7329-4c6f-9bb4-54230d5f676b | PERSONAL_URL |
