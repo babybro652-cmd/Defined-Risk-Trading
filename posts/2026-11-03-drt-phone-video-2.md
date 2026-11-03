@@ -149,3 +149,15 @@ Education only. Not financial advice.
 #shorts #esfutures #tradingprocess
 ```
 Proposed Wed 11/4 slots: FB 5:00 PM, IG 5:20 PM, DRT TikTok 5:45 PM, YouTube 6:40 PM (pending Tim's go).
+
+## Voiceover rebuild (Tim 11/3: "First delete music from video and do a voiceover"), supersedes the music version above
+No music. Local Piper voice en_US-norman-medium reads the on-screen captions (numbers spoken: "seventy-six fourteen",
+"plus sixteen and a quarter points", "one to four"). `make_breakdown_voiceover.py` (voice track + timing.json) ->
+`make_breakdown_captions.py --timing` -> `add_audio.py --voice voice.wav --music none --target -16 --video-audio drop`.
+82.9 s (was 75.0). Each line starts at its old action anchor or 0.6 s after the previous line, whichever is later; the
+fill line starts on the fill marker (65.1 s); last frame held 67.7-82.9 s. Timings in `es-short-1103-breakdown-voiceover-timing.json`.
+AUDIO QA: PASS (-16.2 LUFS, 0 clipped, peak -1.9 dBFS, 100% words recovered). All voiced audio falls inside a caption window.
+Privacy scan 2,486 frames: 0 flagged. 2 fps sheets `es-short-1103-breakdown-voiceover-sheet-2fps-1/-2.png` read.
+Blotato (sha256 match): https://database.blotato.io/storage/v1/object/public/public_media/246c6cef-6cbe-4b5b-81a9-7bb84481df9c/73b2401a-584a-483a-937e-1f77cce976cf.mp4
+AI voice: TikTok isAiGenerated true, YouTube containsSyntheticMedia true. drt.md says "never AI voice on a trade reel/Short";
+Tim asked for this one, so confirm with him before it posts. Draft captions above still apply.

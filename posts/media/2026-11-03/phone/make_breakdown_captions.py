@@ -3,9 +3,10 @@ Base: the --breakdown time-lapse from make_trade_reel_2.py (67.7 s, already priv
 42d6691f-9d11-4ad3-8d97-d5024b6a131f.mp4). Captions burn into the empty chart band at y 215-418 (above the
 "2 @ 7614.00" entry label at y 433+, below the symbol header), x 40-900 (clear of the price scale and the
 right-edge app buttons), nothing in the bottom 20%. The last frame is held to END_S so the closing lines read.
-Music is added afterwards with drt/audio/add_audio.py (--target -23).
-Usage: python3 make_breakdown_captions.py BASE.mp4 OUT_SILENT.mp4"""
-import subprocess, sys
+Music version: add_audio.py --target -23 afterwards. Voiceover version (Tim 11/3): --timing timing.json from
+make_breakdown_voiceover.py replaces CAPS and END_S so the cards follow the voice.
+Usage: python3 make_breakdown_captions.py BASE.mp4 OUT_SILENT.mp4 [--timing timing.json]"""
+import json, subprocess, sys
 import numpy as np
 from PIL import Image, ImageDraw, ImageFont
 import imageio_ffmpeg
@@ -74,7 +75,11 @@ def overlay(lines, handle=False):
 
 
 def main():
+    global CAPS, END_S
     src, out = sys.argv[1], sys.argv[2]
+    if "--timing" in sys.argv:
+        tj = json.load(open(sys.argv[sys.argv.index("--timing") + 1]))
+        CAPS = [tuple(c) for c in tj["caps"]]; END_S = tj["end"]
     ovs = [overlay(l, handle=(i == len(CAPS) - 1)) for i, (_, _, l) in enumerate(CAPS)]
     dec = subprocess.Popen([FF, "-loglevel", "error", "-i", src, "-f", "rawvideo", "-pix_fmt", "rgb24", "-"],
                            stdout=subprocess.PIPE)
@@ -89,7 +94,7 @@ def main():
         if len(b) == sz:
             last = Image.fromarray(np.frombuffer(b, dtype=np.uint8).reshape(H, W, 3))
         t = n / FPS
-        idx = next((i for i, (s, e, _) in enumerate(CAPS) if s <= t < e), None)
+        idx = next((i for i in range(len(CAPS) - 1, -1, -1) if CAPS[i][0] <= t < CAPS[i][1]), None)
         key = (idx, len(b) == sz)
         if len(b) == sz or key not in cache:
             fr = last.convert("RGBA")
