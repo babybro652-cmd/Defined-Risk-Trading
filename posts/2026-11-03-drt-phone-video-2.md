@@ -112,5 +112,40 @@ Blotato (sha256 match): https://database.blotato.io/storage/v1/object/public/pub
 Draft captions (5-gram OK vs every caption above, today's daily and personal posts, and the on-screen text):
 - TikTok DRT (136 chars): `How I planned this ES short before the fill: where price sat, where I'd be wrong, where I'd get paid. Then I stopped touching it. Paper.`
   `#definedrisktrading #esfutures #daytrading #tradingprocess`
-- IG, FB, YouTube: see the Jarvis report 11/3 (same text kept in this session's scratch caps.json).
+- Instagram (68887, reel):
+```
+The thinking behind a 4.1R paper short, told in captions.
+
+Step one was context. Where was price sitting compared with the bigger picture? It had run up into a zone I already had marked and was losing steam.
+
+Step two was waiting. A high price alone is no reason to sell, so I held off until my confirmation showed up, then sold 2 ES at 7,614.00.
+
+Step three was the exit plan, written before the fill. Stop at 7,618.00, the spot where the idea fails. Target at 7,598.00. Bracket on.
+
+My target order filled at 7,597.75. +16.25 points per contract.
+
+Watch the captions, then keep this one for your next prep session.
+
+#MyHobbyismyFREEDOM #definedrisktrading #esfutures #tradingpsychology #daytrading
+```
+- Facebook (50185, page 993318963868124):
+```
+Here's the thinking behind Tuesday's ES short, told on screen over the chart.
+
+Price had climbed into a zone I marked earlier and was starting to stall. I didn't sell because it looked expensive. I waited for confirmation, then shorted 2 contracts at 7,614.00.
+
+The exit was decided before the order went in: a 4 point stop at 7,618.00 and a 16 point target at 7,598.00. Once that bracket was working, there was nothing left to manage.
+
+It filled at 7,597.75 for +16.25 points a contract on a paper account.
+
+The video walks through each step on the chart.
+```
+- YouTube (48727): title `ES Short Breakdown: How I Planned a 4R Trade` (44 chars). Description:
+```
+Context first, confirmation second, and the bracket set before the fill. A paper ES short that reached its 16 point target.
+
+Education only. Not financial advice.
+
+#shorts #esfutures #tradingprocess
+```
 Proposed Wed 11/4 slots: FB 5:00 PM, IG 5:20 PM, DRT TikTok 5:45 PM, YouTube 6:40 PM (pending Tim's go).
