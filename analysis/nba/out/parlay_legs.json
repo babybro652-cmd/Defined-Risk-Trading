@@ -339,6 +339,14 @@
    "note": "61 starts"
   },
   {
+   "player": "Max Christie",
+   "team": "DAL",
+   "game": "SAC @ DAL",
+   "market": "3+ threes",
+   "p": 0.419,
+   "note": "74 starts"
+  },
+  {
    "player": "Cooper Flagg",
    "team": "DAL",
    "game": "SAC @ DAL",
@@ -355,20 +363,12 @@
    "note": "59 starts"
   },
   {
-   "player": "Max Christie",
-   "team": "DAL",
-   "game": "SAC @ DAL",
+   "player": "Jeremiah Fears",
+   "team": "NO",
+   "game": "NO @ MEM",
    "market": "3+ threes",
-   "p": 0.419,
-   "note": "74 starts"
-  },
-  {
-   "player": "Zaccharie Risacher",
-   "team": "DAL",
-   "game": "SAC @ DAL",
-   "market": "3+ threes",
-   "p": 0.224,
-   "note": "47 starts"
+   "p": 0.134,
+   "note": "55 starts"
   },
   {
    "player": "Trey Murphy III",
@@ -377,14 +377,6 @@
    "market": "3+ threes",
    "p": 0.5,
    "note": "72 starts"
-  },
-  {
-   "player": "Jeremiah Fears",
-   "team": "NO",
-   "game": "NO @ MEM",
-   "market": "3+ threes",
-   "p": 0.134,
-   "note": "55 starts"
   },
   {
    "player": "Herbert Jones",
@@ -427,14 +419,6 @@
    "note": "73 starts"
   },
   {
-   "player": "Myles Turner",
-   "team": "MIL",
-   "game": "MIL @ MIN",
-   "market": "3+ threes",
-   "p": 0.281,
-   "note": "77 starts"
-  },
-  {
    "player": "Tyler Herro",
    "team": "MIL",
    "game": "MIL @ MIN",
@@ -451,12 +435,12 @@
    "note": "49 starts"
   },
   {
-   "player": "Jaden McDaniels",
-   "team": "MIN",
+   "player": "Myles Turner",
+   "team": "MIL",
    "game": "MIL @ MIN",
    "market": "3+ threes",
-   "p": 0.17,
-   "note": "80 starts"
+   "p": 0.281,
+   "note": "77 starts"
   },
   {
    "player": "LaMelo Ball",
@@ -467,6 +451,14 @@
    "note": "76 starts"
   },
   {
+   "player": "Ayo Dosunmu",
+   "team": "MIN",
+   "game": "MIL @ MIN",
+   "market": "3+ threes",
+   "p": 0.5,
+   "note": "22 starts"
+  },
+  {
    "player": "Jonathan Kuminga",
    "team": "MIN",
    "game": "MIL @ MIN",
@@ -475,12 +467,12 @@
    "note": "21 starts"
   },
   {
-   "player": "Ayo Dosunmu",
+   "player": "Jaden McDaniels",
    "team": "MIN",
    "game": "MIL @ MIN",
    "market": "3+ threes",
-   "p": 0.5,
-   "note": "22 starts"
+   "p": 0.17,
+   "note": "80 starts"
   },
   {
    "player": "Derrick White",

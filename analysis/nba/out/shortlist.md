@@ -46,7 +46,7 @@ Best player + method (fair price; bet only if the book pays more):
 - **Victor Wembanyama first basket: Dunk/layup** (SA vs UTAH 8:30). Est 10.9% (fair +815) = FB 19% x 56% if he scores first; his first-FG sample 33, made FGs 762
 - **Neemias Queta first basket: Dunk/layup** (BOS @ HOU 8:30). Est 10.4% (fair +865) = FB 14% x 76% if he scores first; his first-FG sample 23, made FGs 380
 - **LaMelo Ball first basket: 3-pointer** (MIN vs MIL 8:00). Est 9.8% (fair +922) = FB 15% x 64% if he scores first; his first-FG sample 22, made FGs 611
-- **Domantas Sabonis first basket: Dunk/layup** (SAC @ DAL 8:00). Est 8.9% (fair +1025) = FB 12% x 71% if he scores first; his first-FG sample 9, made FGs 234
+- **Domantas Sabonis first basket: Dunk/layup** (SAC @ DAL 8:00). Est 8.9% (fair +1024) = FB 12% x 71% if he scores first; his first-FG sample 9, made FGs 234
 - **Ty Jerome first basket: 2pt jumper** (MEM vs NO 8:00). Est 8.6% (fair +1056) = FB 16% x 54% if he scores first; his first-FG sample 8, made FGs 231
 - **Joel Embiid first basket: 2pt jumper** (PHI vs CHI 7:30). Est 8.3% (fair +1104) = FB 13% x 65% if he scores first; his first-FG sample 13, made FGs 437
 - **Paul Reed first basket: Dunk/layup** (DET @ CHA 7:30). Est 8.3% (fair +1108) = FB 13% x 63% if he scores first; his first-FG sample 8, made FGs 311

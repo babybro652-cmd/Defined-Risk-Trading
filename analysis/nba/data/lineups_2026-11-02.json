@@ -10,5 +10,11 @@
   "WSH": {"five": ["Trae Young", "Kyshawn George", "AJ Dybantsa", "Anthony Davis", "Deandre Ayton"], "jumper": "Deandre Ayton", "status": "confirmed"},
   "ORL": {"five": ["Jase Richardson", "Jamal Cain", "Desmond Bane", "Franz Wagner", "Wendell Carter Jr."], "jumper": "Wendell Carter Jr.", "status": "confirmed"},
   "CHI": {"five": ["Josh Giddey", "Norman Powell", "Matas Buzelis", "Caleb Wilson", "Jalen Smith"], "jumper": "Jalen Smith", "status": "confirmed"},
-  "PHI": {"five": ["Tyrese Maxey", "VJ Edgecombe", "Jaylen Brown", "LeBron James", "Joel Embiid"], "jumper": "Joel Embiid", "status": "confirmed"}
+  "PHI": {"five": ["Tyrese Maxey", "VJ Edgecombe", "Jaylen Brown", "LeBron James", "Joel Embiid"], "jumper": "Joel Embiid", "status": "confirmed"},
+  "SAC": {"five": ["Darius Acuff Jr.", "Zach LaVine", "De'Andre Hunter", "Precious Achiuwa", "Domantas Sabonis"], "jumper": "Domantas Sabonis", "status": "expected (Rotowire 7:30 PM)"},
+  "DAL": {"five": ["Marcus Sasser", "Max Christie", "Cooper Flagg", "P.J. Washington", "Daniel Gafford"], "jumper": "Daniel Gafford", "status": "expected (Rotowire 7:30 PM)"},
+  "MIL": {"five": ["Ryan Rollins", "Tyler Herro", "Jaime Jaquez Jr.", "Kyle Kuzma", "Myles Turner"], "jumper": "Myles Turner", "status": "expected (Rotowire 7:30 PM)"},
+  "MIN": {"five": ["LaMelo Ball", "Ayo Dosunmu", "Jonathan Kuminga", "Jaden McDaniels", "Rudy Gobert"], "jumper": "Rudy Gobert", "status": "expected (Rotowire 7:30 PM)"},
+  "NO": {"five": ["Jeremiah Fears", "Trey Murphy III", "Herbert Jones", "Zion Williamson", "Karlo Matkovic"], "jumper": "Karlo Matkovic", "status": "expected (Rotowire 7:30 PM)"},
+  "MEM": {"five": ["Ty Jerome", "Cedric Coward", "Jaylen Wells", "Cameron Boozer", "Zach Edey"], "jumper": "Zach Edey", "status": "expected (Rotowire 7:30 PM)"}
 }
