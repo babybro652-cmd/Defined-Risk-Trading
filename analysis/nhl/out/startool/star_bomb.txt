@@ -10,3 +10,14 @@
 2026-10-30|NJD @ VGK|Hischier,Stone|J. Hughes,Eichel
 2026-10-30|WPG @ FLA|Connor,B. Tkachuk|Perfetti,M. Tkachuk
 2026-10-30|SEA @ CGY|Eberle,Frost|McMann,Backlund
+2026-11-03|ANA @ VAN|Sennecke,DeBrusk|Carlsson,Boeser
+2026-11-03|CAR @ NSH|Aho,Stamkos|Stankoven,O'Reilly
+2026-11-03|EDM @ NJD|Draisaitl,Hischier|McDavid,J. Hughes
+2026-11-03|DAL @ WSH|Robertson,Tuch|Johnston,Wilson
+2026-11-03|COL @ CBJ|MacKinnon,Fantilli|Necas,K. Johnson
+2026-11-03|VGK @ PIT|Stone,Malkin|Eichel,Crosby
+2026-11-03|MIN @ PHI|Kaprizov,Zegras|Eriksson Ek,Knuble
+2026-11-03|STL @ NYR|McTavish,Lafreniere|Holloway,Zibanejad
+2026-11-03|DET @ TBL|Arvidsson,Guentzel|Raymond,Hagel
+2026-11-03|WPG @ MTL|Connor,Slafkovsky|Perfetti,L. Hutson
+2026-11-03|UTA @ TOR|Schmaltz,Matthews|Guenther,Nylander
