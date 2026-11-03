@@ -50,7 +50,7 @@ def card(account):
     tag = f"  |  {account}" if account else ""
     im = Image.new("RGB", (W, H), BG); d = ImageDraw.Draw(im)
     d.rectangle([100, 640, 180, 648], fill=GOLD)
-    d.text((100, 690), "Closed for a loss", font=ImageFont.truetype(B, 80), fill=RED)
+    d.text((100, 690), "Stopped out", font=ImageFont.truetype(B, 80), fill=RED)
     y = 830
     for t, f, c in [("ES long 2 @ 7,571.00", ImageFont.truetype(B, 56), CREAM),
                     ("Stop 7,567.00 (4 pts)  |  Out at 7,567.25", ImageFont.truetype(R, 42), MUTED),
