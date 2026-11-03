@@ -8,7 +8,8 @@ Cut (found with a full-frame-rate scan of all 22,192 frames):
   1556.5-1559.0 s screen-recorder toolbar + landscape rotation (1557.0-1558.2)
 Status bar (clock, recorder icon, app icons) and nav bar cropped from every frame. The chart's time axis is
 blurred by default (the recording is inside Tim's work hours); --show-times keeps it.
-Usage: python3 make_trade_reel_2.py SRC.mp4 OUT.mp4 [--account paper|live] [--show-times]"""
+--breakdown: ~67 s time-lapse for Tim's own breakdown video (real speed on the entry and the target fill, no card).
+Usage: python3 make_trade_reel_2.py SRC.mp4 OUT.mp4 [--account paper|live] [--show-times] [--breakdown]"""
 import subprocess, sys
 import numpy as np
 from PIL import Image, ImageDraw, ImageFont, ImageFilter
@@ -20,7 +21,10 @@ B = "/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf"; R = "/usr/share/font
 GOLD = (232, 178, 92); CREAM = (245, 236, 220); MUTED = (170, 150, 130); RED = (225, 95, 85); GREEN = (90, 200, 140)
 BG = (14, 10, 9)
 SEGMENTS = [(0, 5.0, 1.5), (30.0, 804.0, 20.0), (810.0, 1194.0, 11.0), (1199.5, 1556.5, 10.0), (1559.0, 1820.0, 6.0),
-            (1820.0, 1861.5, 4.5)]  # (start, end, out s)
+            (1820.0, 1861.5, 4.5)]
+# breakdown: real speed 0-2 s (entry fill marker) and 1838.5-1840.5 s (target fill at 7,597.75)
+BREAKDOWN = [(0, 2.0, 2.0), (2.0, 5.0, 0.3), (30.0, 804.0, 26.0), (810.0, 1194.0, 13.0), (1199.5, 1556.5, 12.0),
+             (1559.0, 1838.5, 10.0), (1838.5, 1840.5, 2.0), (1840.5, 1861.5, 2.0)]  # (start, end, out s)
 
 
 def frames(src, start, end, n):
@@ -75,7 +79,8 @@ def main():
                           "-movflags", "+faststart", out], stdin=subprocess.PIPE)
     kept = dropped = 0
     last = None
-    for s, e, secs in SEGMENTS:
+    breakdown = "--breakdown" in sys.argv
+    for s, e, secs in (BREAKDOWN if breakdown else SEGMENTS):
         for a in frames(src, s, e, round(secs * FPS)):
             if bad(a):
                 dropped += 1
@@ -83,6 +88,8 @@ def main():
             if not show_times:
                 a = np.array(hide(Image.fromarray(a), *AXIS))
             p.stdin.write(a.tobytes()); kept += 1; last = a
+    if breakdown:
+        p.stdin.close(); p.wait(); print("kept", kept, "dropped", dropped); return
     for _ in range(int(1.0 * FPS)):  # hold the exit frame
         p.stdin.write(last.tobytes())
     img = card(account)
