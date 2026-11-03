@@ -491,20 +491,20 @@
    "note": "30 starts"
   },
   {
-   "player": "Jabari Smith Jr.",
-   "team": "HOU",
-   "game": "BOS @ HOU",
-   "market": "3+ threes",
-   "p": 0.429,
-   "note": "84 starts"
-  },
-  {
    "player": "Kevin Durant",
    "team": "HOU",
    "game": "BOS @ HOU",
    "market": "3+ threes",
    "p": 0.353,
    "note": "88 starts"
+  },
+  {
+   "player": "Jabari Smith Jr.",
+   "team": "HOU",
+   "game": "BOS @ HOU",
+   "market": "3+ threes",
+   "p": 0.429,
+   "note": "84 starts"
   },
   {
    "player": "Alperen Sengun",
@@ -523,6 +523,14 @@
    "note": "60 starts"
   },
   {
+   "player": "Ace Bailey",
+   "team": "UTAH",
+   "game": "UTAH @ SA",
+   "market": "3+ threes",
+   "p": 0.329,
+   "note": "66 starts"
+  },
+  {
    "player": "Lauri Markkanen",
    "team": "UTAH",
    "game": "UTAH @ SA",
@@ -531,12 +539,12 @@
    "note": "47 starts"
   },
   {
-   "player": "Ace Bailey",
-   "team": "UTAH",
+   "player": "De'Aaron Fox",
+   "team": "SA",
    "game": "UTAH @ SA",
    "market": "3+ threes",
-   "p": 0.329,
-   "note": "66 starts"
+   "p": 0.22,
+   "note": "79 starts"
   },
   {
    "player": "Stephon Castle",
@@ -561,14 +569,6 @@
    "market": "3+ threes",
    "p": 0.293,
    "note": "63 starts"
-  },
-  {
-   "player": "De'Aaron Fox",
-   "team": "SA",
-   "game": "UTAH @ SA",
-   "market": "3+ threes",
-   "p": 0.22,
-   "note": "79 starts"
   },
   {
    "player": "Toumani Camara",

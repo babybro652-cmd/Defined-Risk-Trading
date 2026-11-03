@@ -194,5 +194,49 @@
     ],
     "jumper": "Zach Edey",
     "status": "confirmed (Rotowire 7:50 PM)"
+  },
+  "BOS": {
+    "five": [
+      "Derrick White",
+      "Hugo Gonzalez",
+      "Jayson Tatum",
+      "Jordan Walsh",
+      "Mitchell Robinson"
+    ],
+    "jumper": "Mitchell Robinson",
+    "status": "expected (Rotowire 8:00 PM; PG out per ESPN)"
+  },
+  "HOU": {
+    "five": [
+      "Fred VanVleet",
+      "Amen Thompson",
+      "Kevin Durant",
+      "Jabari Smith Jr.",
+      "Alperen Sengun"
+    ],
+    "jumper": "Alperen Sengun",
+    "status": "expected (Rotowire 8:00 PM)"
+  },
+  "UTAH": {
+    "five": [
+      "Keyonte George",
+      "Darryn Peterson",
+      "Ace Bailey",
+      "Lauri Markkanen",
+      "Jaxson Hayes"
+    ],
+    "jumper": "Jaxson Hayes",
+    "status": "expected (Rotowire 8:00 PM)"
+  },
+  "SA": {
+    "five": [
+      "De'Aaron Fox",
+      "Stephon Castle",
+      "Dylan Harper",
+      "Devin Vassell",
+      "Victor Wembanyama"
+    ],
+    "jumper": "Victor Wembanyama",
+    "status": "expected (Rotowire 8:00 PM)"
   }
 }
