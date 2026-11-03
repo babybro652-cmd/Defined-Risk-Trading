@@ -75,6 +75,8 @@ Newest decisions win; move finished items to Done with the date.
 - [ ] FUTURE UPGRADE (after CRT Pro hit rate improves): position-tool style boxes on CRT Pro. Red box entry→SL, green box entry→TP3 with TP1/TP2 dashed inside, label with risk pts / $ at 2 ES and R:R per TP. Boxes run until the trade closes; replaces the plain lines. Sheet unchanged; needs a new alert after pasting.
 
 ## Done
+- 11/3 KDP paperback ink: black and white interior, no color (Tim).
+- 11/3 Calm Petals Payhip link (https://payhip.com/b/9lw73) added to the Sat 11/7 6:30 PM PbP FB reel (schedule 6084126).
 - 10/30 Verizon unused lines removed (Tim).
 - 10/30 Lucid Trading $80.50 on 10/29 confirmed by Tim: LucidFlex 50K eval reset.
 - 10/21 Cruze mileage: 182,995.
