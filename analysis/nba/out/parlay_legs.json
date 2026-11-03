@@ -595,12 +595,12 @@
    "note": "82 starts"
   },
   {
-   "player": "Nikola Jokic",
+   "player": "Jamal Murray",
    "team": "DEN",
    "game": "POR @ DEN",
    "market": "3+ threes",
-   "p": 0.247,
-   "note": "71 starts"
+   "p": 0.576,
+   "note": "82 starts"
   },
   {
    "player": "Christian Braun",
@@ -611,12 +611,12 @@
    "note": "49 starts"
   },
   {
-   "player": "Jamal Murray",
+   "player": "Cameron Johnson",
    "team": "DEN",
    "game": "POR @ DEN",
    "market": "3+ threes",
-   "p": 0.576,
-   "note": "82 starts"
+   "p": 0.283,
+   "note": "56 starts"
   },
   {
    "player": "Aaron Gordon",
@@ -627,12 +627,12 @@
    "note": "38 starts"
   },
   {
-   "player": "Cameron Johnson",
+   "player": "Nikola Jokic",
    "team": "DEN",
    "game": "POR @ DEN",
    "market": "3+ threes",
-   "p": 0.283,
-   "note": "56 starts"
+   "p": 0.247,
+   "note": "71 starts"
   },
   {
    "player": "Dillon Brooks",

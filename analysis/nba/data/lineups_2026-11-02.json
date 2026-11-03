@@ -238,5 +238,27 @@
     ],
     "jumper": "Victor Wembanyama",
     "status": "confirmed (Rotowire 8:20 PM)"
+  },
+  "POR": {
+    "five": [
+      "Damian Lillard",
+      "Scoot Henderson",
+      "Toumani Camara",
+      "Deni Avdija",
+      "Donovan Clingan"
+    ],
+    "jumper": "Donovan Clingan",
+    "status": "expected (Rotowire 8:30 PM)"
+  },
+  "DEN": {
+    "five": [
+      "Jamal Murray",
+      "Christian Braun",
+      "Cameron Johnson",
+      "Aaron Gordon",
+      "Nikola Jokic"
+    ],
+    "jumper": "Nikola Jokic",
+    "status": "expected (Rotowire 8:30 PM)"
   }
 }
