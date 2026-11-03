@@ -1,4 +1,4 @@
-"UCL props: goalscorers, shots, goals, corners (as of 11/2)",,,,,,,,,,,,,,,,
+"UCL props: goalscorers, shots, goals, corners (as of 11/3)",,,,,,,,,,,,,,,,
 Legend,"UCL 26 = Champions League 2026-27 so far, UCL 25 = 2025-26, Lg 26 = domestic league this season (since 8/1). Player rates are per START (bench minutes ignored). Blend = all starts pooled, each UCL 26 start counts as many starts as the weight in B3. Team goals and corners use every 2026-27 match we have (UCL + domestic). Sample: 54 UCL 2026-27 matches, 283 domestic matches, 189 UCL 2025-26 matches. Own goals do not count for any player. Nothing here is guaranteed. Small stakes.",,,,,,,,,,,,,,,
 UCL 26 start weight,3,Input. Change it and the Blend columns update.,,,,,,,,,,,,,,
 ,,,,,,,,,,,,,,,,
@@ -52,18 +52,18 @@ Player,Tm,Pos,Starts UCL 26,Games w/ G UCL 26,Starts UCL 25,Games w/ G UCL 25,St
 Erling Haaland,MNC,F,2,2,9,7,9,7,"=IF($B$3*D52+F52+H52=0,""-"",($B$3*E52+G52+I52)/($B$3*D52+F52+H52))",1.208,4.46,2.33,0.917,0.958,9,@ RBL
 Kylian Mbappé,RMA,F,3,3,10,7,11,7,"=IF($B$3*D53+F53+H53=0,""-"",($B$3*E53+G53+I53)/($B$3*D53+F53+H53))",1.2,4.97,3.0,0.933,0.967,8,@ AEK
 Harry Kane,MUN,F,3,3,12,9,7,3,"=IF($B$3*D54+F54+H54=0,""-"",($B$3*E54+G54+I54)/($B$3*D54+F54+H54))",1.036,4.39,1.89,0.893,0.929,4,@ ATM
-Jamal Musiala,MUN,AM,1,1,3,1,1,1,"=IF($B$3*D55+F55+H55=0,""-"",($B$3*E55+G55+I55)/($B$3*D55+F55+H55))",0.714,2.29,1.29,0.857,0.857,3,@ ATM
-Niccolò Pisilli,ROMA,CM-L,1,1,0,0,4,2,"=IF($B$3*D56+F56+H56=0,""-"",($B$3*E56+G56+I56)/($B$3*D56+F56+H56))",0.714,1.86,0.86,0.857,0.571,0,@ MAN
+Niccolò Pisilli,ROMA,CM-L,1,1,0,0,4,2,"=IF($B$3*D55+F55+H55=0,""-"",($B$3*E55+G55+I55)/($B$3*D55+F55+H55))",0.714,1.86,0.86,0.857,0.571,0,@ MAN
+Jamal Musiala,MUN,AM,1,1,3,1,1,1,"=IF($B$3*D56+F56+H56=0,""-"",($B$3*E56+G56+I56)/($B$3*D56+F56+H56))",0.714,2.29,1.29,0.857,0.857,3,@ ATM
 Luis Suárez,SCP,F,3,3,10,3,7,6,"=IF($B$3*D57+F57+H57=0,""-"",($B$3*E57+G57+I57)/($B$3*D57+F57+H57))",0.885,3.38,1.73,0.923,0.846,5,@ SHK
 Anastasios Douvikas,COMO,F,2,2,0,0,9,4,"=IF($B$3*D58+F58+H58=0,""-"",($B$3*E58+G58+I58)/($B$3*D58+F58+H58))",0.733,2.6,1.4,0.733,0.8,1,@ RCL
 Peter Christiansen,VFK,RM,3,2,0,0,11,7,"=IF($B$3*D59+F59+H59=0,""-"",($B$3*E59+G59+I59)/($B$3*D59+F59+H59))",0.7,2.45,1.2,0.75,0.8,2,vs SAB
 Assane Diao,COMO,AM-R,2,2,0,0,5,1,"=IF($B$3*D60+F60+H60=0,""-"",($B$3*E60+G60+I60)/($B$3*D60+F60+H60))",0.727,1.55,0.82,0.727,0.545,1,@ RCL
 Johan Manzambi,AVL,AM,1,1,0,0,5,2,"=IF($B$3*D61+F61+H61=0,""-"",($B$3*E61+G61+I61)/($B$3*D61+F61+H61))",0.625,2.88,1.0,0.875,0.875,3,@ BAR
 Raphinha,BAR,F,2,1,6,2,9,8,"=IF($B$3*D62+F62+H62=0,""-"",($B$3*E62+G62+I62)/($B$3*D62+F62+H62))",1.143,3.24,1.76,0.952,0.952,5,vs AVL
-Nicolo Tresoldi,BRU,F,3,2,7,3,9,6,"=IF($B$3*D63+F63+H63=0,""-"",($B$3*E63+G63+I63)/($B$3*D63+F63+H63))",0.92,3.48,1.64,0.76,0.8,5,@ PSV
-Lamine Yamal,BAR,AM-R,3,2,10,6,11,6,"=IF($B$3*D64+F64+H64=0,""-"",($B$3*E64+G64+I64)/($B$3*D64+F64+H64))",0.733,4.43,1.43,0.733,0.967,3,vs AVL
-Nicolas Jackson,AVL,F,3,2,3,2,8,4,"=IF($B$3*D65+F65+H65=0,""-"",($B$3*E65+G65+I65)/($B$3*D65+F65+H65))",0.8,3.45,2.1,0.85,0.85,2,@ BAR
-Ross Barkley,AVL,LM,2,2,0,0,4,0,"=IF($B$3*D66+F66+H66=0,""-"",($B$3*E66+G66+I66)/($B$3*D66+F66+H66))",0.9,1.9,1.0,0.7,0.4,1,@ BAR
+Lamine Yamal,BAR,AM-R,3,2,10,6,11,6,"=IF($B$3*D63+F63+H63=0,""-"",($B$3*E63+G63+I63)/($B$3*D63+F63+H63))",0.733,4.43,1.43,0.733,0.967,3,vs AVL
+Nicolo Tresoldi,BRU,F,3,2,7,3,9,6,"=IF($B$3*D64+F64+H64=0,""-"",($B$3*E64+G64+I64)/($B$3*D64+F64+H64))",0.92,3.48,1.64,0.76,0.8,5,@ PSV
+Ross Barkley,AVL,LM,2,2,0,0,4,0,"=IF($B$3*D65+F65+H65=0,""-"",($B$3*E65+G65+I65)/($B$3*D65+F65+H65))",0.9,1.9,1.0,0.7,0.4,1,@ BAR
+Nicolas Jackson,AVL,F,3,2,3,2,8,4,"=IF($B$3*D66+F66+H66=0,""-"",($B$3*E66+G66+I66)/($B$3*D66+F66+H66))",0.8,3.45,2.1,0.85,0.85,2,@ BAR
 Donyell Malen,ROMA,F,3,2,0,0,8,4,"=IF($B$3*D67+F67+H67=0,""-"",($B$3*E67+G67+I67)/($B$3*D67+F67+H67))",0.941,4.12,1.88,0.765,1.0,3,@ MAN
 Ayase Ueda,LILL,F,2,1,0,0,6,4,"=IF($B$3*D68+F68+H68=0,""-"",($B$3*E68+G68+I68)/($B$3*D68+F68+H68))",0.583,2.42,1.17,0.75,0.5,1,@ BODO
 Victor Osimhen,GAL,F,2,1,10,4,7,6,"=IF($B$3*D69+F69+H69=0,""-"",($B$3*E69+G69+I69)/($B$3*D69+F69+H69))",0.826,4.83,2.26,0.739,0.783,7,vs VFB
@@ -73,42 +73,42 @@ Ferran Torres,PSG,SUB,1,1,4,3,6,1,"=IF($B$3*D72+F72+H72=0,""-"",($B$3*E72+G72+I7
 Andreas Helmersen,BODO,CF-L,3,1,0,0,6,5,"=IF($B$3*D73+F73+H73=0,""-"",($B$3*E73+G73+I73)/($B$3*D73+F73+H73))",0.667,3.0,1.07,0.733,1.0,2,vs LILL
 Carlos Augusto,INT,CD-L,2,2,4,1,5,1,"=IF($B$3*D74+F74+H74=0,""-"",($B$3*E74+G74+I74)/($B$3*D74+F74+H74))",0.533,1.67,0.67,0.6,0.4,1,@ FEY
 Serhou Guirassy,DOR,CF-R,2,2,9,3,8,3,"=IF($B$3*D75+F75+H75=0,""-"",($B$3*E75+G75+I75)/($B$3*D75+F75+H75))",0.826,3.65,1.83,0.826,0.783,4,vs BET
-Alexey Batrakov,GAL,AM,3,2,0,0,5,1,"=IF($B$3*D76+F76+H76=0,""-"",($B$3*E76+G76+I76)/($B$3*D76+F76+H76))",0.5,0.93,0.64,0.643,0.214,1,vs VFB
-Abdallah Sima,RCL,CF-L,1,1,0,0,5,1,"=IF($B$3*D77+F77+H77=0,""-"",($B$3*E77+G77+I77)/($B$3*D77+F77+H77))",0.5,1.5,0.75,0.75,0.5,0,vs COMO
-Karim Adeyemi,BAR,SUB,1,1,5,2,4,1,"=IF($B$3*D78+F78+H78=0,""-"",($B$3*E78+G78+I78)/($B$3*D78+F78+H78))",0.5,2.25,0.75,0.667,0.583,1,vs AVL
-Alphonso Davies,MUN,AM-L,2,2,1,0,5,0,"=IF($B$3*D79+F79+H79=0,""-"",($B$3*E79+G79+I79)/($B$3*D79+F79+H79))",0.5,0.83,0.5,0.5,0.25,0,@ ATM
-Julián Álvarez,ATM,CF-L,3,1,15,9,2,1,"=IF($B$3*D80+F80+H80=0,""-"",($B$3*E80+G80+I80)/($B$3*D80+F80+H80))",0.538,2.88,1.42,0.692,0.846,5,vs MUN
+Alphonso Davies,MUN,AM-L,2,2,1,0,5,0,"=IF($B$3*D76+F76+H76=0,""-"",($B$3*E76+G76+I76)/($B$3*D76+F76+H76))",0.5,0.83,0.5,0.5,0.25,0,@ ATM
+Karim Adeyemi,BAR,SUB,1,1,5,2,4,1,"=IF($B$3*D77+F77+H77=0,""-"",($B$3*E77+G77+I77)/($B$3*D77+F77+H77))",0.5,2.25,0.75,0.667,0.583,1,vs AVL
+Julián Álvarez,ATM,CF-L,3,1,15,9,2,1,"=IF($B$3*D78+F78+H78=0,""-"",($B$3*E78+G78+I78)/($B$3*D78+F78+H78))",0.538,2.88,1.42,0.692,0.846,5,vs MUN
+Alexey Batrakov,GAL,AM,3,2,0,0,5,1,"=IF($B$3*D79+F79+H79=0,""-"",($B$3*E79+G79+I79)/($B$3*D79+F79+H79))",0.5,0.93,0.64,0.643,0.214,1,vs VFB
+Abdallah Sima,RCL,CF-L,1,1,0,0,5,1,"=IF($B$3*D80+F80+H80=0,""-"",($B$3*E80+G80+I80)/($B$3*D80+F80+H80))",0.5,1.5,0.75,0.75,0.5,0,vs COMO
 Luis Díaz,MUN,SUB,2,1,12,6,5,2,"=IF($B$3*D81+F81+H81=0,""-"",($B$3*E81+G81+I81)/($B$3*D81+F81+H81))",0.609,2.65,1.39,0.87,0.739,3,@ ATM
 Ousmane Dembélé,PSG,F,3,2,11,5,3,0,"=IF($B$3*D82+F82+H82=0,""-"",($B$3*E82+G82+I82)/($B$3*D82+F82+H82))",0.696,3.52,1.35,0.826,0.565,3,@ VIL
 Fermín López,BAR,SUB,1,1,10,3,8,4,"=IF($B$3*D83+F83+H83=0,""-"",($B$3*E83+G83+I83)/($B$3*D83+F83+H83))",0.667,2.0,1.19,0.714,0.571,1,vs AVL
 Lautaro Martínez,INT,CF-L,2,1,7,3,4,2,"=IF($B$3*D84+F84+H84=0,""-"",($B$3*E84+G84+I84)/($B$3*D84+F84+H84))",0.824,5.53,2.0,0.824,0.882,2,@ FEY
 Abde Ezzalzouli,BET,AM-L,2,1,0,0,7,3,"=IF($B$3*D85+F85+H85=0,""-"",($B$3*E85+G85+I85)/($B$3*D85+F85+H85))",0.462,4.31,1.38,0.923,0.769,2,@ DOR
 Anthony Gordon,BAR,AM-L,2,1,9,6,7,1,"=IF($B$3*D86+F86+H86=0,""-"",($B$3*E86+G86+I86)/($B$3*D86+F86+H86))",0.636,2.5,1.5,0.636,0.682,3,vs AVL
-Rodrigo Zalazar,SCP,AM,1,1,0,0,6,1,"=IF($B$3*D87+F87+H87=0,""-"",($B$3*E87+G87+I87)/($B$3*D87+F87+H87))",0.444,1.44,0.67,0.556,0.444,1,@ SHK
-Gabri Veiga,FCP,LM,3,1,0,0,9,5,"=IF($B$3*D88+F88+H88=0,""-"",($B$3*E88+G88+I88)/($B$3*D88+F88+H88))",0.444,2.06,0.67,0.5,0.5,2,vs NAP
-Jamie Leweling,VFB,AM-R,2,1,0,0,3,1,"=IF($B$3*D89+F89+H89=0,""-"",($B$3*E89+G89+I89)/($B$3*D89+F89+H89))",0.444,1.89,0.56,0.556,0.889,1,@ GAL
+Jamie Leweling,VFB,AM-R,2,1,0,0,3,1,"=IF($B$3*D87+F87+H87=0,""-"",($B$3*E87+G87+I87)/($B$3*D87+F87+H87))",0.444,1.89,0.56,0.556,0.889,1,@ GAL
+Rodrigo Zalazar,SCP,AM,1,1,0,0,6,1,"=IF($B$3*D88+F88+H88=0,""-"",($B$3*E88+G88+I88)/($B$3*D88+F88+H88))",0.444,1.44,0.67,0.556,0.444,1,@ SHK
+Gabri Veiga,FCP,LM,3,1,0,0,9,5,"=IF($B$3*D89+F89+H89=0,""-"",($B$3*E89+G89+I89)/($B$3*D89+F89+H89))",0.444,2.06,0.67,0.5,0.5,2,vs NAP
 Michael Olise,MUN,AM-R,2,1,12,4,7,4,"=IF($B$3*D90+F90+H90=0,""-"",($B$3*E90+G90+I90)/($B$3*D90+F90+H90))",0.68,4.24,1.96,0.84,0.96,0,@ ATM
 Isco,BET,AM,3,2,0,0,7,1,"=IF($B$3*D91+F91+H91=0,""-"",($B$3*E91+G91+I91)/($B$3*D91+F91+H91))",0.5,2.5,1.0,0.562,0.812,2,@ DOR
 Jens Petter Hauge,BODO,LM,2,1,11,5,6,2,"=IF($B$3*D92+F92+H92=0,""-"",($B$3*E92+G92+I92)/($B$3*D92+F92+H92))",0.478,2.35,1.0,0.826,0.739,3,vs LILL
-Flávio Gonçalves,SCP,SUB,0,0,0,0,7,3,"=IF($B$3*D93+F93+H93=0,""-"",($B$3*E93+G93+I93)/($B$3*D93+F93+H93))",0.429,1.71,0.86,0.714,0.571,2,@ SHK
+Lucas Hernández,PSG,LB,1,1,0,0,4,0,"=IF($B$3*D93+F93+H93=0,""-"",($B$3*E93+G93+I93)/($B$3*D93+F93+H93))",0.429,0.57,0.43,0.429,0.0,0,@ VIL
 Dominik Szoboszlai,LIV,RM,1,1,12,5,6,1,"=IF($B$3*D94+F94+H94=0,""-"",($B$3*E94+G94+I94)/($B$3*D94+F94+H94))",0.429,2.24,1.05,0.667,0.619,3,@ FEN
-Lucas Hernández,PSG,LB,1,1,0,0,4,0,"=IF($B$3*D95+F95+H95=0,""-"",($B$3*E95+G95+I95)/($B$3*D95+F95+H95))",0.429,0.57,0.43,0.429,0.0,0,@ VIL
+Flávio Gonçalves,SCP,SUB,0,0,0,0,7,3,"=IF($B$3*D95+F95+H95=0,""-"",($B$3*E95+G95+I95)/($B$3*D95+F95+H95))",0.429,1.71,0.86,0.714,0.571,2,@ SHK
 Rayan Cherki,MNC,AM,3,1,4,2,6,3,"=IF($B$3*D96+F96+H96=0,""-"",($B$3*E96+G96+I96)/($B$3*D96+F96+H96))",0.474,2.26,1.11,0.737,0.579,0,@ RBL
 Georges Mikautadze,VIL,F,3,2,5,1,5,1,"=IF($B$3*D97+F97+H97=0,""-"",($B$3*E97+G97+I97)/($B$3*D97+F97+H97))",0.421,1.95,0.89,0.579,0.632,2,vs PSG
 Lennart Karl,MUN,SUB,1,0,6,4,3,1,"=IF($B$3*D98+F98+H98=0,""-"",($B$3*E98+G98+I98)/($B$3*D98+F98+H98))",0.417,2.42,1.0,0.583,0.667,2,@ ATM
-Florian Thauvin,RCL,SUB,2,1,0,0,9,3,"=IF($B$3*D99+F99+H99=0,""-"",($B$3*E99+G99+I99)/($B$3*D99+F99+H99))",0.467,3.6,1.8,0.8,0.8,2,vs COMO
-Olivier Giroud,LILL,SUB,0,0,0,0,5,2,"=IF($B$3*D100+F100+H100=0,""-"",($B$3*E100+G100+I100)/($B$3*D100+F100+H100))",0.4,1.0,0.8,0.6,0.4,1,@ BODO
-Romeo Vermant,BRU,SUB,0,0,3,2,2,0,"=IF($B$3*D101+F101+H101=0,""-"",($B$3*E101+G101+I101)/($B$3*D101+F101+H101))",0.4,2.8,1.0,0.8,0.8,0,@ PSV
+Fotis Ioannidis,SCP,SUB,0,0,2,0,3,2,"=IF($B$3*D99+F99+H99=0,""-"",($B$3*E99+G99+I99)/($B$3*D99+F99+H99))",0.4,1.6,0.8,0.4,0.2,0,@ SHK
+Víctor Muñoz,LIV,SUB,0,0,0,0,5,2,"=IF($B$3*D100+F100+H100=0,""-"",($B$3*E100+G100+I100)/($B$3*D100+F100+H100))",0.4,2.0,1.0,0.8,0.6,0,@ FEN
+Florian Thauvin,RCL,SUB,2,1,0,0,9,3,"=IF($B$3*D101+F101+H101=0,""-"",($B$3*E101+G101+I101)/($B$3*D101+F101+H101))",0.467,3.6,1.8,0.8,0.8,2,vs COMO
 Désiré Doué,PSG,RF,2,2,9,2,5,0,"=IF($B$3*D102+F102+H102=0,""-"",($B$3*E102+G102+I102)/($B$3*D102+F102+H102))",0.45,2.7,1.1,0.75,0.7,3,@ VIL
-Fotis Ioannidis,SCP,SUB,0,0,2,0,3,2,"=IF($B$3*D103+F103+H103=0,""-"",($B$3*E103+G103+I103)/($B$3*D103+F103+H103))",0.4,1.6,0.8,0.4,0.2,0,@ SHK
-Víctor Muñoz,LIV,SUB,0,0,0,0,5,2,"=IF($B$3*D104+F104+H104=0,""-"",($B$3*E104+G104+I104)/($B$3*D104+F104+H104))",0.4,2.0,1.0,0.8,0.6,0,@ FEN
+Olivier Giroud,LILL,SUB,0,0,0,0,5,2,"=IF($B$3*D103+F103+H103=0,""-"",($B$3*E103+G103+I103)/($B$3*D103+F103+H103))",0.4,1.0,0.8,0.6,0.4,1,@ BODO
+Romeo Vermant,BRU,SUB,0,0,3,2,2,0,"=IF($B$3*D104+F104+H104=0,""-"",($B$3*E104+G104+I104)/($B$3*D104+F104+H104))",0.4,2.8,1.0,0.8,0.8,0,@ PSV
 Krystof Danek,LAS,CF-R,2,1,0,0,4,1,"=IF($B$3*D105+F105+H105=0,""-"",($B$3*E105+G105+I105)/($B$3*D105+F105+H105))",0.4,1.2,0.8,0.7,0.4,0,vs SLB
 Hugo Vetlesen,BRU,SUB,2,1,2,0,10,4,"=IF($B$3*D106+F106+H106=0,""-"",($B$3*E106+G106+I106)/($B$3*D106+F106+H106))",0.444,2.17,1.06,0.667,0.722,4,@ PSV
 Kai Havertz,ARS,F,1,0,2,2,8,3,"=IF($B$3*D107+F107+H107=0,""-"",($B$3*E107+G107+I107)/($B$3*D107+F107+H107))",0.385,1.69,0.77,0.692,0.462,3,@ SLP
 Samuel Adeniran,LAS,SUB,1,0,0,0,5,3,"=IF($B$3*D108+F108+H108=0,""-"",($B$3*E108+G108+I108)/($B$3*D108+F108+H108))",0.5,0.88,0.25,0.125,0.25,1,vs SLB
 Guus Til,PSV,F,3,1,7,2,11,5,"=IF($B$3*D109+F109+H109=0,""-"",($B$3*E109+G109+I109)/($B$3*D109+F109+H109))",0.444,1.48,0.63,0.444,0.407,4,vs BRU
 Anis Hadj Moussa,FEY,RF,3,1,0,0,10,4,"=IF($B$3*D110+F110+H110=0,""-"",($B$3*E110+G110+I110)/($B$3*D110+F110+H110))",0.474,3.32,1.68,0.895,0.895,1,vs INT
-Bryan Cristante,ROMA,CM-L,1,1,0,0,8,1,"=IF($B$3*D111+F111+H111=0,""-"",($B$3*E111+G111+I111)/($B$3*D111+F111+H111))",0.364,1.64,0.55,0.455,0.545,2,@ MAN
+Xavi Espart,BAR,RB,1,1,0,0,8,1,"=IF($B$3*D111+F111+H111=0,""-"",($B$3*E111+G111+I111)/($B$3*D111+F111+H111))",0.364,1.0,0.45,0.455,0.182,1,vs AVL
 Martin Baturina,COMO,AM-L,3,1,0,0,7,2,"=IF($B$3*D112+F112+H112=0,""-"",($B$3*E112+G112+I112)/($B$3*D112+F112+H112))",0.312,1.81,0.94,0.875,0.5,2,@ RCL
 ,,,,,,,,,,,,,,,,
 "Teams: goals (2026-27 all comps; UCL 25-26 for reference), sorted by goals conceded",,,,,,,,,,,,,,,,
@@ -339,4 +339,4 @@ Wed 1/27/27,3:00 PM,INT @ SLB,,,,,,,,,,,,,,
 Wed 1/27/27,3:00 PM,MAN @ VIL,,,,,,,,,,,,,,
 ,,,,,,,,,,,,,,,,
 Matchdays,9/8; 9/9; 9/10; 10/13; 10/14; 10/20; 10/21; 11/3; 11/4; 11/24; 11/25; 12/8; 12/9; 1/19; 1/20; 1/27,,,,,,,,,,,,,,,
-Sources,"ESPN soccer scoreboard and match summaries (uefa.champions, plus eng.1, esp.1, ita.1, ger.1, fra.1, por.1, ned.1, bel.1, tur.1, aut.1, gre.1, nor.1 for UCL clubs). Domestic data is missing for clubs whose league ESPN does not carry (Shakhtar, Slavia, Slovan, Sabah). Pulled 11/2 7:38 PM ET. Rebuilt by analysis/ucl/build_ucl_tab.py.",,,,,,,,,,,,,,,
+Sources,"ESPN soccer scoreboard and match summaries (uefa.champions, plus eng.1, esp.1, ita.1, ger.1, fra.1, por.1, ned.1, bel.1, tur.1, aut.1, gre.1, nor.1 for UCL clubs). Domestic data is missing for clubs whose league ESPN does not carry (Shakhtar, Slavia, Slovan, Sabah). Pulled 11/3 9:38 AM ET. Rebuilt by analysis/ucl/build_ucl_tab.py.",,,,,,,,,,,,,,,
