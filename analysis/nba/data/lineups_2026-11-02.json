@@ -1,14 +1,14 @@
 {
   "OKC": {"five": ["Shai Gilgeous-Alexander", "Jared McCain", "Ajay Mitchell", "Kenrich Williams", "Isaiah Hartenstein"], "jumper": "Isaiah Hartenstein"},
   "CLE": {"five": ["James Harden", "Donovan Mitchell", "Meleek Thomas", "Evan Mobley", "Jarrett Allen"], "jumper": "Jarrett Allen"},
-  "DET": {"five": ["Cade Cunningham", "Duncan Robinson", "Ausar Thompson", "John Collins", "Paul Reed"], "jumper": "Paul Reed", "status": "expected"},
-  "CHA": {"five": ["Dennis Schroder", "Coby White", "Brandon Miller", "Naz Reid", "Moussa Diabate"], "jumper": "Moussa Diabate", "status": "expected"},
-  "ATL": {"five": ["CJ McCollum", "Nickeil Alexander-Walker", "Dyson Daniels", "Aaron Wiggins", "Onyeka Okongwu"], "jumper": "Onyeka Okongwu", "status": "expected"},
-  "IND": {"five": ["Braden Smith", "Kelly Oubre Jr.", "Jarace Walker", "Kobe Brown", "Jay Huff"], "jumper": "Jay Huff", "status": "expected"},
-  "BKN": {"five": ["Mikel Brown Jr.", "Nolan Traore", "Michael Porter Jr.", "Julius Randle", "Day'Ron Sharpe"], "jumper": "Day'Ron Sharpe", "status": "expected"},
-  "NY": {"five": ["Jalen Brunson", "Mikal Bridges", "Josh Hart", "OG Anunoby", "Karl-Anthony Towns"], "jumper": "Karl-Anthony Towns", "status": "expected"},
-  "WSH": {"five": ["Trae Young", "Kyshawn George", "AJ Dybantsa", "Anthony Davis", "Deandre Ayton"], "jumper": "Deandre Ayton", "status": "expected"},
-  "ORL": {"five": ["Jase Richardson", "Jamal Cain", "Desmond Bane", "Franz Wagner", "Wendell Carter Jr."], "jumper": "Wendell Carter Jr.", "status": "expected"},
-  "CHI": {"five": ["Josh Giddey", "Norman Powell", "Matas Buzelis", "Caleb Wilson", "Jalen Smith"], "jumper": "Jalen Smith", "status": "expected"},
-  "PHI": {"five": ["Tyrese Maxey", "VJ Edgecombe", "Jaylen Brown", "LeBron James", "Joel Embiid"], "jumper": "Joel Embiid", "status": "expected (Embiid questionable)"}
+  "DET": {"five": ["Cade Cunningham", "Duncan Robinson", "Ausar Thompson", "John Collins", "Paul Reed"], "jumper": "Paul Reed", "status": "confirmed"},
+  "CHA": {"five": ["Coby White", "Brandon Miller", "Sion James", "Naz Reid", "Moussa Diabate"], "jumper": "Moussa Diabate", "status": "confirmed"},
+  "ATL": {"five": ["CJ McCollum", "Nickeil Alexander-Walker", "Dyson Daniels", "Luguentz Dort", "Onyeka Okongwu"], "jumper": "Onyeka Okongwu", "status": "confirmed"},
+  "IND": {"five": ["Braden Smith", "Quenton Jackson", "Jarace Walker", "Jalen Slawson", "Jay Huff"], "jumper": "Jay Huff", "status": "confirmed"},
+  "BKN": {"five": ["Nolan Traore", "Michael Porter Jr.", "Chaney Johnson", "Julius Randle", "Day'Ron Sharpe"], "jumper": "Day'Ron Sharpe", "status": "confirmed"},
+  "NY": {"five": ["Jalen Brunson", "Mikal Bridges", "Josh Hart", "OG Anunoby", "Karl-Anthony Towns"], "jumper": "Karl-Anthony Towns", "status": "confirmed"},
+  "WSH": {"five": ["Trae Young", "Kyshawn George", "AJ Dybantsa", "Anthony Davis", "Deandre Ayton"], "jumper": "Deandre Ayton", "status": "confirmed"},
+  "ORL": {"five": ["Jase Richardson", "Jamal Cain", "Desmond Bane", "Franz Wagner", "Wendell Carter Jr."], "jumper": "Wendell Carter Jr.", "status": "confirmed"},
+  "CHI": {"five": ["Josh Giddey", "Norman Powell", "Matas Buzelis", "Caleb Wilson", "Jalen Smith"], "jumper": "Jalen Smith", "status": "confirmed"},
+  "PHI": {"five": ["Tyrese Maxey", "VJ Edgecombe", "Jaylen Brown", "LeBron James", "Joel Embiid"], "jumper": "Joel Embiid", "status": "confirmed"}
 }

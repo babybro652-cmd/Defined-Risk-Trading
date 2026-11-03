@@ -49,15 +49,15 @@ Best player + method (fair price; bet only if the book pays more):
 - **Domantas Sabonis first basket: Dunk/layup** (SAC @ DAL 8:00). Est 8.9% (fair +1025) = FB 12% x 71% if he scores first; his first-FG sample 9, made FGs 234
 - **Ty Jerome first basket: 2pt jumper** (MEM vs NO 8:00). Est 8.6% (fair +1056) = FB 16% x 54% if he scores first; his first-FG sample 8, made FGs 231
 - **Joel Embiid first basket: 2pt jumper** (PHI vs CHI 7:30). Est 8.3% (fair +1104) = FB 13% x 65% if he scores first; his first-FG sample 13, made FGs 437
-- **Paul Reed first basket: Dunk/layup** (DET @ CHA 7:30). Est 8.2% (fair +1113) = FB 13% x 63% if he scores first; his first-FG sample 8, made FGs 311
+- **Paul Reed first basket: Dunk/layup** (DET @ CHA 7:30). Est 8.3% (fair +1108) = FB 13% x 63% if he scores first; his first-FG sample 8, made FGs 311
 - **Zach Edey first basket: Dunk/layup** (MEM vs NO 8:00). Est 8.0% (fair +1146) = FB 12% x 65% if he scores first; his first-FG sample 7, made FGs 107
 
 ## StarTool check (side by side, no blend)
 
 - OKC @ CLE: our top Ajay Mitchell (13%): agree (StarTool bomb)
 - DET @ CHA: our top John Collins (14%): agree (StarTool bomb)
-- ATL @ IND: our top Onyeka Okongwu (13%): differs (StarTool stars Nickeil Alexander-Walker, Pascal Siakam; bombs Jalen Johnson, Andrew Nembhard)
-- BKN @ NY: our top Karl-Anthony Towns (13%): agree (StarTool bomb)
+- ATL @ IND: our top Onyeka Okongwu (14%): differs (StarTool stars Nickeil Alexander-Walker, Pascal Siakam; bombs Jalen Johnson, Andrew Nembhard)
+- BKN @ NY: our top Michael Porter Jr. (13%): agree (StarTool star)
 - WSH @ ORL: our top Wendell Carter Jr. (15%): differs (StarTool stars Anthony Davis, Franz Wagner; bombs Trae Young, Desmond Bane)
 - CHI @ PHI: our top Joel Embiid (13%): differs (StarTool stars Caleb Wilson, Tyrese Maxey; bombs Norman Powell, Jaylen Brown)
 - SAC @ DAL: our top De'Andre Hunter (13%): differs (StarTool stars Darius Acuff Jr., Kyrie Irving; bombs Zach LaVine, Cooper Flagg)

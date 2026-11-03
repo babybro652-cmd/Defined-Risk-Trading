@@ -59,14 +59,6 @@
    "note": "62 starts"
   },
   {
-   "player": "Dennis Schroder",
-   "team": "CHA",
-   "game": "DET @ CHA",
-   "market": "3+ threes",
-   "p": 0.211,
-   "note": "24 starts"
-  },
-  {
    "player": "Coby White",
    "team": "CHA",
    "game": "DET @ CHA",
@@ -81,6 +73,14 @@
    "market": "3+ threes",
    "p": 0.663,
    "note": "72 starts"
+  },
+  {
+   "player": "Sion James",
+   "team": "CHA",
+   "game": "DET @ CHA",
+   "market": "3+ threes",
+   "p": 0.05,
+   "note": "26 starts"
   },
   {
    "player": "CJ McCollum",
@@ -99,12 +99,12 @@
    "note": "78 starts"
   },
   {
-   "player": "Aaron Wiggins",
+   "player": "Luguentz Dort",
    "team": "ATL",
    "game": "ATL @ IND",
    "market": "3+ threes",
-   "p": 0.333,
-   "note": "21 starts"
+   "p": 0.304,
+   "note": "69 starts"
   },
   {
    "player": "Onyeka Okongwu",
@@ -113,14 +113,6 @@
    "market": "3+ threes",
    "p": 0.31,
    "note": "70 starts"
-  },
-  {
-   "player": "Kelly Oubre Jr.",
-   "team": "IND",
-   "game": "ATL @ IND",
-   "market": "3+ threes",
-   "p": 0.268,
-   "note": "46 starts"
   },
   {
    "player": "Jarace Walker",
