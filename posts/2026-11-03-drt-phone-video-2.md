@@ -21,7 +21,7 @@ Status bar (clock, recorder, app icons) and nav bar cropped from every frame; ch
 
 ## Media
 Script `posts/media/2026-11-03/phone/make_trade_reel_2.py` (~33x speed, exit held 1 s, card 3.5 s). Card: "Target filled /
-ES short 2 @ 7,614.00 / Stop 7,618.00 (4 pts) | Out at 7,597.75 / +16.25 pts | 4.1R" | paper" + @definedrisktrading (rebuilt 11/3 with --account paper).
+ES short 2 @ 7,614.00 / Stop 7,618.00 (4 pts) | Out at 7,597.75 / +16.25 pts | 4.1R | paper" + @definedrisktrading (rebuilt 11/3 with --account paper).
 - DRT: `es-short-1103.mp4` 57.5 s, 1080x1920, music once_more_with_you.mp3 (CC0), AUDIO QA: PASS.
   https://database.blotato.io/storage/v1/object/public/public_media/246c6cef-6cbe-4b5b-81a9-7bb84481df9c/f8985fa4-ef0a-4594-9795-410c0acac747.mp4 (paper build)
 - Personal: `es-short-1103-personal.mp4` same picture, music this_pain_is_soft.mp3 (CC0), AUDIO QA: PASS.
