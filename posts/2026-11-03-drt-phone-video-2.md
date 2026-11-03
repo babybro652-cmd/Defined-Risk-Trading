@@ -99,3 +99,18 @@ All Blotato uploads sha256-match the local files.
 | YouTube Short (48727, notify false per drt.md, not for kids, no synthetic) | 16c6d6f0-9fd4-421f-892f-306647095024 | https://www.youtube.com/watch?v=D1iAa-hpIq0 |
 | Personal TikTok (59764) | d4dba395-7329-4c6f-9bb4-54230d5f676b | https://www.tiktok.com/@timothywilliams9902/video/7704000779635428622 |
 Credits after posting: 2085.
+
+## Captioned breakdown video (built 11/3 evening, NOT posted or scheduled)
+`posts/media/2026-11-03/phone/make_breakdown_captions.py` on the no-music breakdown clip (42d6691f...), then
+`drt/audio/add_audio.py --music waiting_tttt --target -23` (CC0; not on any TikTok 11/2-11/3). 75.0 s, 1080x1920, 30 fps.
+Captions burned into the empty chart band y 215-418 (above the "2 @ 7614.00" label at y 433+, x 40-900, clear of the price
+scale, right-edge buttons and bottom 20%). Fill marker "2 @ 7597.75" appears at 65.1 s (y ~1308); last frame held 67.7-75.0 s.
+AUDIO QA: PASS (-22.9 LUFS, peak -7.2 dBFS). Privacy scan of all 2,250 output frames: 0 flagged. Sheets
+`es-short-1103-breakdown-captions-sheet-2fps-1.png` / `-2.png` read. Script changes per Tim: "Is it stretched?" dropped, no times.
+Blotato (sha256 match): https://database.blotato.io/storage/v1/object/public/public_media/246c6cef-6cbe-4b5b-81a9-7bb84481df9c/e78b9669-3c28-4c08-bc1a-6f9a7e2eb6a9.mp4
+
+Draft captions (5-gram OK vs every caption above, today's daily and personal posts, and the on-screen text):
+- TikTok DRT (136 chars): `How I planned this ES short before the fill: where price sat, where I'd be wrong, where I'd get paid. Then I stopped touching it. Paper.`
+  `#definedrisktrading #esfutures #daytrading #tradingprocess`
+- IG, FB, YouTube: see the Jarvis report 11/3 (same text kept in this session's scratch caps.json).
+Proposed Wed 11/4 slots: FB 5:00 PM, IG 5:20 PM, DRT TikTok 5:45 PM, YouTube 6:40 PM (pending Tim's go).
