@@ -35,20 +35,20 @@
    "note": "69 starts"
   },
   {
-   "player": "Duncan Robinson",
-   "team": "DET",
-   "game": "DET @ CHA",
-   "market": "3+ threes",
-   "p": 0.621,
-   "note": "83 starts"
-  },
-  {
    "player": "Cade Cunningham",
    "team": "DET",
    "game": "DET @ CHA",
    "market": "3+ threes",
    "p": 0.294,
    "note": "73 starts"
+  },
+  {
+   "player": "Duncan Robinson",
+   "team": "DET",
+   "game": "DET @ CHA",
+   "market": "3+ threes",
+   "p": 0.621,
+   "note": "83 starts"
   },
   {
    "player": "John Collins",
@@ -59,14 +59,6 @@
    "note": "62 starts"
   },
   {
-   "player": "Brandon Miller",
-   "team": "CHA",
-   "game": "DET @ CHA",
-   "market": "3+ threes",
-   "p": 0.663,
-   "note": "72 starts"
-  },
-  {
    "player": "Dennis Schroder",
    "team": "CHA",
    "game": "DET @ CHA",
@@ -75,28 +67,20 @@
    "note": "24 starts"
   },
   {
-   "player": "Sion James",
+   "player": "Coby White",
    "team": "CHA",
    "game": "DET @ CHA",
    "market": "3+ threes",
-   "p": 0.05,
+   "p": 0.423,
    "note": "26 starts"
   },
   {
-   "player": "Nickeil Alexander-Walker",
-   "team": "ATL",
-   "game": "ATL @ IND",
+   "player": "Brandon Miller",
+   "team": "CHA",
+   "game": "DET @ CHA",
    "market": "3+ threes",
-   "p": 0.62,
-   "note": "78 starts"
-  },
-  {
-   "player": "Onyeka Okongwu",
-   "team": "ATL",
-   "game": "ATL @ IND",
-   "market": "3+ threes",
-   "p": 0.31,
-   "note": "70 starts"
+   "p": 0.663,
+   "note": "72 starts"
   },
   {
    "player": "CJ McCollum",
@@ -107,12 +91,28 @@
    "note": "67 starts"
   },
   {
-   "player": "Luguentz Dort",
+   "player": "Nickeil Alexander-Walker",
    "team": "ATL",
    "game": "ATL @ IND",
    "market": "3+ threes",
-   "p": 0.304,
-   "note": "69 starts"
+   "p": 0.62,
+   "note": "78 starts"
+  },
+  {
+   "player": "Aaron Wiggins",
+   "team": "ATL",
+   "game": "ATL @ IND",
+   "market": "3+ threes",
+   "p": 0.333,
+   "note": "21 starts"
+  },
+  {
+   "player": "Onyeka Okongwu",
+   "team": "ATL",
+   "game": "ATL @ IND",
+   "market": "3+ threes",
+   "p": 0.31,
+   "note": "70 starts"
   },
   {
    "player": "Kelly Oubre Jr.",
@@ -123,14 +123,6 @@
    "note": "46 starts"
   },
   {
-   "player": "Jay Huff",
-   "team": "IND",
-   "game": "ATL @ IND",
-   "market": "3+ threes",
-   "p": 0.237,
-   "note": "51 starts"
-  },
-  {
    "player": "Jarace Walker",
    "team": "IND",
    "game": "ATL @ IND",
@@ -139,20 +131,12 @@
    "note": "42 starts"
   },
   {
-   "player": "Julius Randle",
-   "team": "BKN",
-   "game": "BKN @ NY",
+   "player": "Jay Huff",
+   "team": "IND",
+   "game": "ATL @ IND",
    "market": "3+ threes",
-   "p": 0.247,
-   "note": "85 starts"
-  },
-  {
-   "player": "Michael Porter Jr.",
-   "team": "BKN",
-   "game": "BKN @ NY",
-   "market": "3+ threes",
-   "p": 0.643,
-   "note": "58 starts"
+   "p": 0.237,
+   "note": "51 starts"
   },
   {
    "player": "Nolan Traore",
@@ -163,20 +147,28 @@
    "note": "34 starts"
   },
   {
+   "player": "Michael Porter Jr.",
+   "team": "BKN",
+   "game": "BKN @ NY",
+   "market": "3+ threes",
+   "p": 0.643,
+   "note": "58 starts"
+  },
+  {
+   "player": "Julius Randle",
+   "team": "BKN",
+   "game": "BKN @ NY",
+   "market": "3+ threes",
+   "p": 0.247,
+   "note": "85 starts"
+  },
+  {
    "player": "Jalen Brunson",
    "team": "NY",
    "game": "BKN @ NY",
    "market": "3+ threes",
    "p": 0.427,
    "note": "84 starts"
-  },
-  {
-   "player": "OG Anunoby",
-   "team": "NY",
-   "game": "BKN @ NY",
-   "market": "3+ threes",
-   "p": 0.36,
-   "note": "74 starts"
   },
   {
    "player": "Mikal Bridges",
@@ -187,14 +179,6 @@
    "note": "89 starts"
   },
   {
-   "player": "Karl-Anthony Towns",
-   "team": "NY",
-   "game": "BKN @ NY",
-   "market": "3+ threes",
-   "p": 0.253,
-   "note": "83 starts"
-  },
-  {
    "player": "Josh Hart",
    "team": "NY",
    "game": "BKN @ NY",
@@ -203,12 +187,20 @@
    "note": "59 starts"
   },
   {
-   "player": "Kyshawn George",
-   "team": "WSH",
-   "game": "WSH @ ORL",
+   "player": "OG Anunoby",
+   "team": "NY",
+   "game": "BKN @ NY",
    "market": "3+ threes",
-   "p": 0.333,
-   "note": "54 starts"
+   "p": 0.36,
+   "note": "74 starts"
+  },
+  {
+   "player": "Karl-Anthony Towns",
+   "team": "NY",
+   "game": "BKN @ NY",
+   "market": "3+ threes",
+   "p": 0.253,
+   "note": "83 starts"
   },
   {
    "player": "Trae Young",
@@ -219,36 +211,20 @@
    "note": "21 starts"
   },
   {
+   "player": "Kyshawn George",
+   "team": "WSH",
+   "game": "WSH @ ORL",
+   "market": "3+ threes",
+   "p": 0.333,
+   "note": "54 starts"
+  },
+  {
    "player": "Anthony Davis",
    "team": "WSH",
    "game": "WSH @ ORL",
    "market": "3+ threes",
    "p": 0.079,
    "note": "26 starts"
-  },
-  {
-   "player": "Bilal Coulibaly",
-   "team": "WSH",
-   "game": "WSH @ ORL",
-   "market": "3+ threes",
-   "p": 0.103,
-   "note": "60 starts"
-  },
-  {
-   "player": "Wendell Carter Jr.",
-   "team": "ORL",
-   "game": "WSH @ ORL",
-   "market": "3+ threes",
-   "p": 0.062,
-   "note": "84 starts"
-  },
-  {
-   "player": "Franz Wagner",
-   "team": "ORL",
-   "game": "WSH @ ORL",
-   "market": "3+ threes",
-   "p": 0.16,
-   "note": "38 starts"
   },
   {
    "player": "Desmond Bane",
@@ -259,12 +235,20 @@
    "note": "88 starts"
   },
   {
-   "player": "Nikola Vucevic",
+   "player": "Franz Wagner",
    "team": "ORL",
    "game": "WSH @ ORL",
    "market": "3+ threes",
-   "p": 0.224,
-   "note": "49 starts"
+   "p": 0.16,
+   "note": "38 starts"
+  },
+  {
+   "player": "Wendell Carter Jr.",
+   "team": "ORL",
+   "game": "WSH @ ORL",
+   "market": "3+ threes",
+   "p": 0.062,
+   "note": "84 starts"
   },
   {
    "player": "Josh Giddey",
@@ -275,20 +259,20 @@
    "note": "57 starts"
   },
   {
-   "player": "Matas Buzelis",
-   "team": "CHI",
-   "game": "CHI @ PHI",
-   "market": "3+ threes",
-   "p": 0.305,
-   "note": "83 starts"
-  },
-  {
    "player": "Norman Powell",
    "team": "CHI",
    "game": "CHI @ PHI",
    "market": "3+ threes",
    "p": 0.486,
    "note": "58 starts"
+  },
+  {
+   "player": "Matas Buzelis",
+   "team": "CHI",
+   "game": "CHI @ PHI",
+   "market": "3+ threes",
+   "p": 0.305,
+   "note": "83 starts"
   },
   {
    "player": "Jalen Smith",
