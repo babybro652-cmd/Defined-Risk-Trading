@@ -35,6 +35,30 @@ wide and 5.6 in tall.
 **Render note:** the interior render shows a 6-speed stick. The build is the 4L80E with the
 console shifter; a future re-render will show the console shifter.
 
+## Show car upgrades (11/2/2026)
+
+Ideas from a 1969 Charger show car Tim saw (Art Morrison chassis, 15 inch rotors with 6-piston
+calipers, race interior, orange engine covers). The Cutlass keeps the 4L80E (no T56), Currie 9
+inch, Ridetech coilovers and the 3 inch stainless ceramic-coated exhaust already planned.
+Cutlass budget $47,355-107,195 became **$52,805-118,345**. Prices and sources: `build-plan.md`
+and `parts-lists.md`.
+
+| Upgrade | Part | Cost | Notes |
+|---|---|---|---|
+| Brakes (changed) | Wilwood Narrow Superlite 6R 14 inch 6-piston front 140-12299 ($2,478-2,605 checked); Baer 14 inch Pro+ front ($3,550) as the upgrade; 4-piston rear on the 9 inch (or Baer 14 inch 6P rear, $2,795); master and booster | $3,900-6,950 (was $1,600-3,200) | Needs 1979+ spindles (fine on a 1979). 14 inch clears the 19 inch fronts. No 15 inch kit made for the G-body |
+| Race seats (new) | Corbeau A4 reclining pair ($899-1,299 checked), custom brackets and sliders | $1,050-1,700 | Burgundy diamond-stitch inserts keep the render look. Reclining keeps rear seat access |
+| Roll bar (new) | Rhodes Race Cars G-body 8-point ($374.95) or Competition Engineering hoop plus struts, SFI padding, harness bar | $600-1,800 | Weld in during the frame-off, before paint and carpet. Padded and with 3-point belts it's fine on the street. Check a child seat still fits in back |
+| Digital dash (moved into the base) | Holley 12.3 Pro Dash 553-111 ($1,979-2,200) or 6.86 553-112 ($1,214-1,371), or Dakota Digital VHX-78O-CUT ($1,021) | $1,100-2,600 | The 12.3 matches the render and reads the Terminator X |
+| Accent engine covers (new) | Holley LS 2-piece valve covers with coil covers (241-182 / 241-184, $375-750) or powder-coated stock covers; intake painted or powder coated | $400-1,300 | Pick one accent color; burgundy ties to the interior |
+
+**Full aftermarket chassis (option, not in the total).** Roadster Shop makes 1978-88 G-body
+chassis: SPEC from $15,690, Fast Track from $22,695 (both with a 9 inch, 4-bar rear and
+coilovers). Schwartz G-Machine by quote. No Art Morrison G-body chassis found. Net about
++$7,900-10,600 over repairing the stock frame, because it replaces the frame repair, powder coat,
+chassis rebuild, Ridetech system and Currie housing. Best if the frame turns out rotted; if the
+frame is solid, the stock frame plus Ridetech is the better value. Pros, cons and the math:
+`build-plan.md`.
+
 ## Frame-off restoration (Tim, 10/20/2026)
 
 **What frame-off means on this car.** The 1978-81 Cutlass Supreme is the downsized A-body

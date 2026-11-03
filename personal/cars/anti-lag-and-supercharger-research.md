@@ -7,6 +7,8 @@ reliability first, build once, no redo later.
 Prices marked "checked 10/24" came from a retailer or maker listing that day. Everything else is
 an estimate: confirm before buying. Sources are listed at the end.
 
+**Added 11/2:** Hellephant crate engine vs the built 426 for the Charger (option only): [hellephant-vs-built-426.md](hellephant-vs-built-426.md).
+
 ---
 
 ## Short answers

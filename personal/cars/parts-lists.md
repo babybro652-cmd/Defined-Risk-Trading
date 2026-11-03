@@ -11,6 +11,11 @@ Columns: **Req** = required for the build as rendered; **Opt** = optional or one
 **Updated 10/24:** Charger 800 whp parts, Cruze Z04 plus auto vs manual, Cutlass 2-step: see each
 car's "Updated 10/24" section. All four: $137,445–281,975 (was $112,540–237,530).
 
+**Updated 11/2 (show car ideas):** Cutlass 14 inch 6-piston brakes, race seats, padded roll bar,
+digital dash in the base, accent engine covers, aftermarket chassis option; Charger Hellephant
+option ([hellephant-vs-built-426.md](hellephant-vs-built-426.md), not the plan). All four:
+$142,895–293,125 (was $137,445–281,975).
+
 Budget effects are at the end of each section and in `build-plan.md` (changed lines show "was").
 
 Google Docs (one per vehicle folder under Cars):
@@ -79,7 +84,7 @@ Cutlass notes.
 | Suspension | Sway bars | Ridetech MuscleBars, in the coilover system | | in system | DIY | Req |
 | Suspension | Air ride: not chosen (10/21) | Ridetech complete G-body system 11320298 ($5,635–5,802 checked) plus RidePro E5 management | Tim picked coilovers | $7,500–8,100 | DIY | Not chosen |
 | Body | Mini-tubs | No prefab G-body kit found; custom tubs plus frame notch kit (JEGS 555-64530, $92 checked) | Shop job | $600–4,000 | Shop | Opt |
-| Brakes | Front and rear big brakes | Wilwood 6-piston front, 4-piston rear on the 9 inch ends (Currie sells the 9 inch with Wilwood rear discs, $3,400 bundle checked) | Fit: confirm wheel clearance with 19 inch fronts | $1,600–3,200 | DIY | Req |
+| Brakes | Front and rear big brakes (changed 11/2, was $1,600–3,200) | Front: Wilwood Forged Narrow Superlite 6R 14 inch, 140-12299 for 1979-87 G-body ($2,477.60 at NLP, $2,478.99 at OPGI as L240704, checked 11/3); upgrade Baer 14 inch Pro+ front ($3,549.95 at Baer, checked). Rear: Wilwood 4-piston on the 9 inch ends (Currie sells the 9 inch with Wilwood rear discs, $3,400 bundle checked 10/21), or Baer 14 inch 6P rear 4302359B ($2,794.95 listed). Wilwood tandem master and booster | 1979+ spindles only (OPGI). 14 inch clears the 19 inch fronts. No 15 inch G-body kit found; Wilwood wants 19 inch wheels for its 15 inch kits | $3,900–6,950 | DIY | Req |
 | Brakes | Lines | Stainless hard line kit, braided flex hoses (Inline Tube) | | $250–500 | DIY | Req |
 | Wheels | Billet wheels | Billet Specialties, Schott or Intro polished billet, 19x8 front, 20x10 rear, 5x4.75 | Measure backspacing at ride height | $3,000–7,000 | Buy | Req |
 | Tires | Tires | Nitto NT555 G2 or Michelin Pilot Sport 4S: 245/35R19 front, 295/35R20 rear | | $1,000–1,800 | Shop mount | Req |
@@ -99,9 +104,12 @@ Cutlass notes.
 | Interior | Seats and trim | Late-model buckets recovered in burgundy diamond-stitched leather; door panels, console, headliner by a trim shop | | $3,000–20,000 | Shop | Req |
 | Interior | Carpet, sound | ACC G-body cutpile carpet (burgundy), Dynamat or Kilmat | | $300–600 | DIY | Req |
 | Interior | Trunk | Carpet and panels in burgundy to hide the battery and fuel wiring | | $300–1,200 | DIY | Req |
-| Interior | Dash | Holley 12.3 Pro Dash (render match) or Dakota Digital VHX-78O-CUT ($1,021 checked) | Holley needs a custom panel | $1,000–2,500 | DIY | Req |
+| Interior | Dash (in the base table 11/2) | Holley 12.3 Pro Dash 553-111 ($1,978.95–2,199.95 at Holley, checked 11/3; render match), Holley 6.86 Pro Dash 553-112 ($1,213.95–1,370.99, checked 11/3), or Dakota Digital VHX-78O-CUT ($1,021 checked) | Holley needs a custom panel; shares data with the Terminator X | $1,100–2,600 | DIY | Req |
+| Interior | Race seats (new 11/2) | Corbeau A4 reclining, sold as a pair ($899–1,299 at NGP Racing and Hawks, checked 11/3) | No G-body bracket listed: custom or universal brackets and sliders. Trim shop can add burgundy diamond-stitch inserts | $1,050–1,700 | DIY | Req |
+| Safety | Roll bar (new 11/2) | Rhodes Race Cars 8-point G-body bar ($374.95, 1-3/4 x .134, weld-in, checked) or Competition Engineering 1978-87 G-body main hoop ($87.99 mild, $259.99 chromoly, checked) plus strut kit 247-3000; SFI roll bar padding; harness bar and 4 or 5-point harnesses for the track | Street-legal when padded; keep the 3-point belts on the street. Weld floor plates during the frame-off. Check the rear seat and a child seat still fit with the rear struts | $600–1,800 | DIY weld / shop | Req |
 | Interior | A/C | RestoMod Air Vapir 3-S kit ($1,399 checked), custom condenser kit ($449 checked), remote ($149) or Diablo vent controls ($350), engine bay hoses, drier, charge | Chosen 10/21 over Vintage Air. No brand lists a bolt-in kit for a 1979; call RestoMod Air (866-784-4278) to confirm under-dash fit | $2,200–2,800 | DIY | Req |
 | Interior | Column and wheel | ididit G-body tilt column, Billet Specialties wheel | | $500–1,200 | DIY | Req |
+| Engine | Accent engine covers (new 11/2) | Holley 2-piece LS valve covers with built-in coil covers: 241-182 satin black ($599.95) or 241-184 gloss red ($374.95–749.95), checked 11/3; or powder coat the stock coil covers. Intake painted or powder coated in the accent color | Show car had orange; burgundy matches the interior | $400–1,300 | DIY / powder shop | Req |
 | Paint | Supplies | Epoxy primer, 2K high-build, dark pewter metallic base and clear (PPG or Axalta), seam sealer | Paint labor not in budget | $1,200–2,500 | Shop | Req |
 | Hardware | Fluids, fasteners | ARP bolts, AN fittings, gaskets, fluids, coolant, hose clamps | | $400–900 | DIY | Req |
 
@@ -124,6 +132,22 @@ Cutlass notes.
 | Finish table: A/C | $1,600–2,800 (Vintage Air) | $2,200–2,800 (RestoMod Air) | Tim's pick (10/21) |
 | Finish table total | $25,100–92,000 | $22,700–86,600 | Air ride out, RestoMod Air in |
 
+
+### Updated 11/2: show car upgrades
+
+| Line | Was | Now | Why |
+|---|---|---|---|
+| Big brakes | $1,600–3,200 | $3,900–6,950 | Locked to 14 inch rotors and 6-piston fronts |
+| Race seats (new) | n/a | $1,050–1,700 | Corbeau A4 pair plus brackets |
+| Padded roll bar (new) | n/a | $600–1,800 | 8-point G-body bar, padding, harness bar |
+| Digital dash (moved from the finish table) | $1,000–2,500 (finish) | $1,100–2,600 (base) | Holley 6.86 or 12.3, or Dakota Digital |
+| Accent engine covers (new in base) | $500–1,500 (finish, with turbo piping) | $400–1,300 (base); finish keeps coated turbo piping $300–900 | Show car look |
+| **Cutlass base total** | **$47,355–107,195** | **$52,805–118,345** | +$5,450 low, +$11,150 high |
+| Finish table total | $22,700–86,600 | $21,500–83,500 | Dash and covers moved to the base |
+
+**Chassis option (not in the total):** Roadster Shop SPEC 1978-88 G-body from $15,690 and Fast
+Track from $22,695 (checked 11/3), Schwartz G-Machine by quote, no Art Morrison G-body found. Net
+about +$7,900 to +$10,600 over repairing the stock frame. Details and pros/cons: `build-plan.md`.
 
 ### Options (10/24): anti-lag and boost control
 
@@ -287,6 +311,17 @@ keep the Whipple twin-screw (better street torque at low boost, one complete kit
 piping in the widebody bumper). Change: pulley for the 575-600 whp target, likely about 5.5-6.5 psi
 (estimate), not a fixed 7 psi; dyno data shows a 392 with this blower at 7-7.5 psi makes about
 618-677 whp. Same parts, same total. ProCharger (from $7,149, checked 10/24) stays not chosen.
+
+### Option (11/2): Hellephant crate engine (not the plan)
+
+| Category | Part | Brand / model | Fits / notes | Est. price | DIY / shop | Req |
+|---|---|---|---|---|---|---|
+| Engine | Hellephant A30 426 | Direct Connection P5160194AD: 1,000 hp, 950 lb-ft, premium pump gas, IHI 3.0L blower, ID1050 injectors ($34,995 plus $500 freight, checked 11/3) | Built for pre-1976 cars. Engine kit 77072500AE ($2,325) is a standalone PCM; in the Charger use a Hellcat PCM and harness with a custom tune and body computer programming instead | $35,495 | Shop | Opt |
+| Engine | Hellephant C170 | 68660541AB: 1,025 hp on E85, about 900 hp on pump ($27,695 MSRP; $27,675 listed) | Demon 170 engine; confirm still sold | $28,175–28,195 | Shop | Opt |
+
+Route totals and the line-by-line swap: [hellephant-vs-built-426.md](hellephant-vs-built-426.md).
+Charger total with the A30 about $75,245–118,175; with the C170 about $68,925–112,375 (plan
+$62,650–113,780).
 
 ---
 
@@ -486,12 +521,12 @@ speakers in the undertail and inner front fairing, amp and Bluetooth.
 |---|---|---|
 | Cruze | $7,250–15,700 | $17,750–36,350 (10/24: Z04 and manual swap; was $12,750–27,200) |
 | Charger | $23,550–48,250 | $62,650–113,780 (800 whp 10/24; was $43,050–79,080 at 600 whp) |
-| Cutlass | $37,150–95,300 | $47,355–107,195 (2-step 10/24; was $47,050–106,600) |
+| Cutlass | $37,150–95,300 | $52,805–118,345 (11/2 show car lines; was $47,355–107,195) |
 | Hayabusa | $9,540–24,050 | $9,690–24,650 |
-| **Total** | **$77,490–183,300** | **$137,445–281,975** (10/24: Charger 800 whp, Cruze Z04 and manual, Cutlass 2-step; was $112,540–237,530) |
+| **Total** | **$77,490–183,300** | **$142,895–293,125** (11/2: Cutlass show car lines; was $137,445–281,975; $112,540–237,530 before 10/24) |
 
 Totals include Tim's 10/21 decisions and the 10/21 Cutlass and Charger security systems (before the decisions: $88,940–199,600; before the security systems: $95,590–210,150). Not in the totals: Cutlass
-Roid Runner finish table (now $22,700–86,600), Charger engine install labor if a shop does it, Cruze manual swap shop labor, Charger drag radial set. The Cutlass T-56 and air ride
+Roid Runner finish table (now $21,500–83,500), Cutlass aftermarket chassis option (+$7,900–10,600), Charger Hellephant option, Charger engine install labor if a shop does it, Cruze manual swap shop labor, Charger drag radial set. The Cutlass T-56 and air ride
 are not chosen (10/21).
 
 ## Decisions and fitment checks for Tim

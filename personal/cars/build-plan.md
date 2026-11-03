@@ -3,6 +3,14 @@
 Goal: high-performance street cars with aggressive styling. Order on every car:
 **1. Reliable and safe → 2. Power → 3. Looks.** Plan written 10/12/2026.
 
+**Updated 11/2 (show car ideas):** Tim saw a 1969 Charger show car (Hellephant, T56, Art Morrison
+chassis, 15 inch rotors with 6-piston calipers, race interior, orange engine covers). Charger: the
+Hellephant is priced as an option only; the plan stays the built 426 and Whipple
+([hellephant-vs-built-426.md](hellephant-vs-built-426.md)). Cutlass: 14 inch 6-piston brakes, race
+seats, padded roll bar, digital dash and accent engine covers are in the base table; a full
+aftermarket chassis is an option. Cutlass $47,355–107,195 became **$52,805–118,345**. All four:
+$137,445–281,975 became **$142,895–293,125**.
+
 **Updated 10/24 (Tim's decisions):** Cruze keeps the Z04 (now in the total) and gets an auto vs
 manual comparison (manual recommended for reliability, auto rebuild is cheaper; total carries the
 manual). Charger target is now 800 whp: forged 426 stroker, Whipple 3.8L top-mount (custom order;
@@ -138,6 +146,21 @@ Weak points: the transfer case and front diff. The front and rear diff ratios mu
 | Shop labor for fabrication and install | | $5,000–12,000 |
 | **Path B total** | | **about $17,700–37,200** on top of the rest of the build |
 
+### Charger Hellephant option (11/2, not the plan)
+
+Tim's call. Full write-up: [hellephant-vs-built-426.md](hellephant-vs-built-426.md).
+
+| Route | Power package | Charger total |
+|---|---|---|
+| Current plan: built 426, Whipple 3.8L, E85 | $40,600–65,000 | $62,650–113,780 |
+| Hellephant A30 ($34,995 checked 11/3, pump gas, 1,000 hp / 950 lb-ft) | $53,195–69,395 | $75,245–118,175 |
+| Hellephant C170 ($27,695 MSRP, E85, 1,025 hp; confirm still sold) | $46,875–63,595 | $68,925–112,375 |
+
+It replaces the 426, Whipple, ignition and tune lines and part of the 392 swap parts line. Still
+needed: custom PCM and body computer integration (it's built for pre-1976 cars), hood, accessory
+drive, flexplate, fuel, cooling and the built 8HP90. Recommendation: keep the plan; get a C170
+quote only if Tim wants a factory-built engine.
+
 Bottom line: Path A caps the power; Path B costs about as much as the supercharger, wide body and paint combined. RWD with the parts above holds more power for far less.
 
 ## 1979 Oldsmobile Cutlass Supreme (needs a motor)
@@ -163,7 +186,7 @@ runs from DIY (low) to shop (high).
 | 1 Reliable | Radiator and electric fans for the LS | $500–900 |
 | 1 Reliable | Chassis on the bare frame: ball joints, tie rods, steering box, rear bushings, hardware | $600–1,500 |
 | 1 Safe | Stainless brake hard lines (on the bare frame) | $150–350 |
-| 1 Safe | Braided stainless lines, multi-piston front and rear big brakes | $1,600–3,200 |
+| 1 Safe | Changed 11/2: braided stainless lines, Wilwood Narrow Superlite 6R 14 inch 6-piston front (140-12299, $2,478–2,605 checked; Baer 14 inch Pro+ $3,550 checked is the upgrade), 4-piston rear on the 9 inch (Baer 14 inch 6-piston rear $2,795 checked at the high end), master cylinder and booster for the bigger calipers. 14 inch, not 15: no 15 inch G-body kit found (was multi-piston front and rear, $1,600–3,200) | $3,900–6,950 |
 | 2 Power | LS engine (junkyard 5.3 or 6.0 truck motor) | $800–2,000 |
 | 2 Power | Forged rotating assembly plus machine work | $4,000–8,000 |
 | 2 Power | Swap mounts, headers, wiring harness and ECU | $1,400–3,000 |
@@ -182,8 +205,36 @@ runs from DIY (low) to shop (high).
 | 3 Looks | New headlights and taillights (LED: 2 rectangular 7x6 headlights, Holley RetroBright LFRB150 about $250 each or JW Speaker 8910 $350 each; 2 parking/turn lamps, taillights; stock locations) (was $300–800) | $650–1,050 |
 | 3 Looks | Full-glass panoramic roof (Tim, 10/18): custom shop cuts out the roof center, adds steel framing back, fits fixed glass; done on the blasted shell during the frame-off, before paint | $6,000–15,000 |
 | 3 Safe | Body reinforcement for the cut roof: roof and pillar reinforcement plates | $300–800 |
+| 3 Interior | New 11/2: race seats, Corbeau A4 reclining pair ($899–1,299 checked), custom or universal G-body brackets and sliders (no G-body bracket listed); burgundy diamond-stitch inserts by the trim shop optional | $1,050–1,700 |
+| 3 Safe | New 11/2: padded street roll bar: Rhodes Race Cars G-body 8-point ($374.95 checked, weld-in, 1-3/4 in) or Competition Engineering main hoop ($88 mild, $260 chromoly, checked) plus strut kit; SFI padding on every tube near a head; harness bar and harnesses for the track (keep the 3-point belts for the street). Weld to the floor during the frame-off | $600–1,800 |
+| 3 Interior | New 11/2 (moved from the finish table): digital dash, Holley 6.86 Pro Dash 553-112 ($1,214–1,371 checked) or 12.3 Pro Dash 553-111 ($1,979–2,200 checked; render match), or Dakota Digital VHX-78O-CUT ($1,021); custom panel | $1,100–2,600 |
+| 2 Looks | New 11/2: accent-color engine covers: Holley 2-piece LS valve covers with built-in coil covers (241-182 satin black $600, 241-184 gloss red $375–750, checked) or powder coat the stock coil covers; paint or powder coat the intake in the accent color (burgundy to match the interior, or Tim's pick) | $400–1,300 |
 | 3 Safe | New 10/21: Digital Guard Dawg iKey Premier (keyless entry for the shaved doors, push start, alarm) with remote start upgrade, trunk release, siren, relays, hidden door pulls | $1,050–1,350 |
-| | **Cutlass total** (2-step 10/24; was $47,050–106,600; $46,000–105,250 before the 10/21 security system) | **about $47,355–107,195** (before paint; a garage rental if needed is extra) |
+| | **Cutlass total** (11/2 show car lines; was $47,355–107,195 with the 2-step 10/24; $47,050–106,600 before it) | **about $52,805–118,345** (before paint; a garage rental if needed is extra) |
+
+### Cutlass option: full aftermarket chassis (11/2, not in the total)
+
+Instead of repairing and coating the stock frame. Tim decides after the frame is seen.
+
+| Maker | Chassis for 1978-88 G-body | Price |
+|---|---|---|
+| Roadster Shop SPEC | Yes: SPEC IFS with coilovers, forged knuckles, power rack and pinion, parallel 4-bar rear with adjustable coilovers, Ford 9 inch housing with 31-spline axles, drop-out trans mount, stock body mounts. LS mounts are an option | From $15,690 (product page; $16,690 on the category page; Summit from $15,471), checked 11/3 |
+| Roadster Shop Fast Track | Yes: fully CNC, Fast Track front suspension, Strange 9 inch with 31-spline axles, parallel 4-bar, 10-gauge boxed rails | From $22,695, checked 11/3 |
+| Schwartz Performance G-Machine | Yes, 1978-88. Base price has no brakes, shocks or rear end | Price by quote; a forum post says $20,000+ optioned (not verified) |
+| Art Morrison | No G-body chassis found (GT Sport covers other GM cars) | n/a |
+
+| | Cost |
+|---|---|
+| Chassis with LS mounts, 4L80E trans mount, brake package and freight (SPEC low, Fast Track high) | $17,000–26,000 |
+| Lines it replaces: frame blast and powder coat, frame rust repair, bare-frame chassis rebuild, Ridetech coilover system, Currie housing (keep the third member) | -$9,125 to -$15,400 |
+| **Net extra over the base plan** | **about +$7,900 to +$10,600** (Cutlass with it: about $60,705–128,945) |
+
+Pros: much stiffer, modern geometry, rack and pinion, lower stance with more tire room, 9 inch and
+4-link already in it, no frame rust repair, a fixed price instead of surprises. Fits the twin turbo
+power. Cons: costs $7,900–10,600 more than repairing a good frame, long lead times, the 14 inch
+Wilwood kit for stock spindles won't fit (buy the maker's brake package), confirm the 4L80E mount,
+turbo and exhaust routing, and Holley 302-2 pan clearance with the maker. If the stock frame is
+rotted, the gap shrinks (a used frame is $500–1,500).
 
 ### Cutlass optional: Roid Runner-level finish (Tim, 10/21)
 
@@ -205,13 +256,12 @@ where the work is shop work; low ends assume DIY.
 | LED full-width tail panel (custom panel, LED strip, lens), extra over the taillight line | $600–2,500 |
 | Mini-tubs for a wider rear tire | $600–4,000 |
 | Billet wheels sized for the G-body plus tires | $4,000–9,500 |
-| Engine covers (coil, valley, intake), coated turbo piping | $500–1,500 |
+| Coated turbo piping (engine covers moved to the base table 11/2; was $500–1,500 with covers) | $300–900 |
 | Custom interior in one leather color: seats, door panels, console, headliner, carpet (kit seats and DIY low, trim shop high) | $3,000–20,000 |
 | Trunk carpeted and trimmed to match | $300–1,200 |
-| Digital dash (Dakota Digital RTX or Holley 12.3 Pro Dash) | $1,000–2,500 |
 | RestoMod Air Vapir 3-S A/C with condenser kit and controls (Tim, 10/21; was Vintage Air $1,600–2,800) | $2,200–2,800 |
 | Tilt column and steering wheel | $500–1,200 |
-| **Roid Runner-level finish total (optional)** (was $25,100–92,000; air ride not chosen 10/21) | **about $22,700–86,600** |
+| **Roid Runner-level finish total (optional)** (11/2: dash and engine covers moved to the base table; was $22,700–86,600; $25,100–92,000 before air ride was dropped 10/21) | **about $21,500–83,500** |
 
 ## 2007 Suzuki Hayabusa (Gen 1, added 10/21)
 
@@ -251,10 +301,12 @@ rails (+$1,500–3,500).
 |---|---|---|
 | Cruze (Z04 and manual 10/24; was $12,750–27,200) | $17,750 | $36,350 |
 | Charger (800 whp 10/24; was $43,050–79,080) | $62,650 | $113,780 |
-| Cutlass (2-step 10/24; was $47,050–106,600) | $47,355 | $107,195 |
+| Cutlass (11/2 show car lines; was $47,355–107,195) | $52,805 | $118,345 |
 | Hayabusa | $9,690 | $24,650 |
-| **Total** (10/24; was $112,540–237,530; $97,290–212,450 before the 10/23 build-once plans) | **about $137,445** | **about $281,975** |
-| Cutlass Roid Runner-level finish (optional, not in the total) | +$22,700 | +$86,600 |
+| **Total** (11/2; was $137,445–281,975; $112,540–237,530 before 10/24) | **about $142,895** | **about $293,125** |
+| Cutlass Roid Runner-level finish (optional, not in the total; was $22,700–86,600) | +$21,500 | +$83,500 |
+| Cutlass full aftermarket chassis (optional, not in the total) | +$7,900 | +$10,600 |
+| Charger Hellephant A30 instead of the built 426 (optional, not in the total) | +$12,595 | +$4,395 |
 
 Biggest savings: doing the labor, buying used brake and suspension parts, and finding a
 cheap LS. Biggest risks: rust on the Cutlass (10/15 videos: vinyl top, rear window and C-pillar rust; floors, trunk and frame still unseen). The frame-off plan (10/20) handles all of it; the swing is DIY vs shop welding. The Charger's 188k engine risk is gone: it gets replaced by the forged 392 (10/23).
