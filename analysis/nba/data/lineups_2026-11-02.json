@@ -199,12 +199,12 @@
     "five": [
       "Derrick White",
       "Hugo Gonzalez",
+      "Baylor Scheierman",
       "Jayson Tatum",
-      "Jordan Walsh",
-      "Mitchell Robinson"
+      "Neemias Queta"
     ],
-    "jumper": "Mitchell Robinson",
-    "status": "expected (Rotowire 8:00 PM; PG out per ESPN)"
+    "jumper": "Neemias Queta",
+    "status": "confirmed (Rotowire 8:20 PM; Queta, Scheierman in for Robinson, Walsh)"
   },
   "HOU": {
     "five": [
@@ -215,7 +215,7 @@
       "Alperen Sengun"
     ],
     "jumper": "Alperen Sengun",
-    "status": "expected (Rotowire 8:00 PM)"
+    "status": "confirmed (Rotowire 8:20 PM)"
   },
   "UTAH": {
     "five": [
@@ -226,7 +226,7 @@
       "Jaxson Hayes"
     ],
     "jumper": "Jaxson Hayes",
-    "status": "expected (Rotowire 8:00 PM)"
+    "status": "confirmed (Rotowire 8:20 PM)"
   },
   "SA": {
     "five": [
@@ -237,6 +237,6 @@
       "Victor Wembanyama"
     ],
     "jumper": "Victor Wembanyama",
-    "status": "expected (Rotowire 8:00 PM)"
+    "status": "confirmed (Rotowire 8:20 PM)"
   }
 }

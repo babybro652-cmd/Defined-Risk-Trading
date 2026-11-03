@@ -475,20 +475,20 @@
    "note": "83 starts"
   },
   {
+   "player": "Baylor Scheierman",
+   "team": "BOS",
+   "game": "BOS @ HOU",
+   "market": "3+ threes",
+   "p": 0.3,
+   "note": "20 starts"
+  },
+  {
    "player": "Jayson Tatum",
    "team": "BOS",
    "game": "BOS @ HOU",
    "market": "3+ threes",
    "p": 0.324,
    "note": "22 starts"
-  },
-  {
-   "player": "Jordan Walsh",
-   "team": "BOS",
-   "game": "BOS @ HOU",
-   "market": "3+ threes",
-   "p": 0.125,
-   "note": "30 starts"
   },
   {
    "player": "Kevin Durant",

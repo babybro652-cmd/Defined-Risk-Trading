@@ -3,17 +3,17 @@
 Tip winner scores first 64% (25-26).
 
 - **First basket: Victor Wembanyama** (SA vs UTAH 8:30). Est 19% (fair +416; old model 26%; tip jumper x1.2 if his team wins the tip): SA scores first 63%; first FG 24/57 and first shot 22/57 starts 25-26, 3/6 26-27, first 3 FGA 1.06 per start, FG 50%; UTAH vs F x0.93
-- **First basket: Jayson Tatum** (BOS @ HOU 8:30). Est 17% (fair +502; old model 18%): BOS scores first 61%; first FG 2/16 and first shot 2/16 starts 25-26, 3/6 26-27, first 3 FGA 0.68 per start, FG 43%; HOU vs F x1.00; Paul George out (29% share spread to the rest)
 - **First basket: Ty Jerome** (MEM vs NO 8:00). Est 16% (fair +519; old model 15%): MEM scores first 61%; first FG 5/15 and first shot 7/15 starts 25-26, 1/5 26-27, first 3 FGA 1.20 per start, FG 47%; NO vs G x1.07
 - **First basket: Luka Doncic** (LAL vs MIA 10:00). Est 16% (fair +525; old model 16%): LAL scores first 49%; first FG 20/65 and first shot 33/65 starts 25-26, 3/6 26-27, first 3 FGA 1.11 per start, FG 48%; MIA vs G x1.08
 - **First basket: LaMelo Ball** (MIN vs MIL 8:00). Est 15% (fair +551; old model 13%): MIN scores first 56%; first FG 16/69 and first shot 12/69 starts 25-26, 2/7 26-27, first 3 FGA 0.97 per start, FG 41%; MIL vs G x1.07; Anthony Edwards out (28% share spread to the rest)
+- **First basket: Alperen Sengun** (HOU vs BOS 8:30). Est 15% (fair +571; old model 15%; tip jumper x1.2 if his team wins the tip): HOU scores first 50%; first FG 20/72 and first shot 23/72 starts 25-26, 2/5 26-27, first 3 FGA 0.84 per start, FG 52%; BOS vs C x1.07
 - **First basket: Wendell Carter Jr.** (ORL vs WSH 7:30). Est 15% (fair +574; old model 13%; tip jumper x1.2 if his team wins the tip): ORL scores first 53%; first FG 18/78 and first shot 21/78 starts 25-26, 2/6 26-27, first 3 FGA 0.69 per start, FG 52%; WSH vs C x1.15
 - **First basket: Bam Adebayo** (MIA @ LAL 10:00). Est 15% (fair +589; old model 16%; tip jumper x1.2 if his team wins the tip): MIA scores first 51%; first FG 20/73 and first shot 33/73 starts 25-26, 3/6 26-27, first 3 FGA 1.03 per start, FG 45%; LAL vs C x0.85
 - **First basket: RJ Barrett** (TOR @ LAC 10:00). Est 14% (fair +611; old model 14%): TOR scores first 61%; first FG 9/57 and first shot 14/57 starts 25-26, 3/6 26-27, first 3 FGA 0.63 per start, FG 49%; LAC vs F x1.03
 - **Team first basket: Luka Doncic** (LAL vs MIA). Model share of LAL's first FG 36% (old 33%); raw 25-26 20/65, first shot 33/65, FG 48%
 - **Team first basket: Victor Wembanyama** (SA vs UTAH). Model share of SA's first FG 36% (old 41%); raw 25-26 24/57, first shot 22/57, FG 50%
+- **Team first basket: Alperen Sengun** (HOU vs BOS). Model share of HOU's first FG 33% (old 29%); raw 25-26 20/72, first shot 23/72, FG 52%
 - **Team first basket: Wendell Carter Jr.** (ORL vs WSH). Model share of ORL's first FG 31% (old 25%); raw 25-26 18/78, first shot 21/78, FG 52%
-- **Team first basket: Bam Adebayo** (MIA @ LAL). Model share of MIA's first FG 31% (old 31%); raw 25-26 20/73, first shot 33/73, FG 45%
 - **Over 2.5 threes: Luka Doncic** (LAL vs MIA). Over 2.5 in 80% of starts (blend); last 5 starts 25-26: 1 6 5 4 3; fair -388 is shorter than -300, so take over 3.5 instead (61%, fair -159)
 - **Over 2.5 threes: Stephen Curry** (GS vs PHX). Over 2.5 in 77% of starts (blend); last 5 starts 25-26: 4 2 4 4 3; fair -331 is shorter than -300, so take over 3.5 instead (59%, fair -143)
 - **Over 24.5 points: Shai Gilgeous-Alexander** (OKC @ CLE). Over 24.5 in 79% of starts (blend); last 5 starts 25-26: 20 25 20 28 47; singles only, never in a parlay
@@ -34,7 +34,7 @@ Dunk/layup includes tip-ins and putbacks; 2pt jumper includes floaters and hooks
 - SAC @ DAL 8:00: first points Dunk/layup 37% (+172), 2pt jumper 34% (+198), 3-pointer 20% (+413), Free throw 10% (+880); first basket Dunk/layup 42% (+141), 2pt jumper 36% (+179), 3-pointer 23% (+344)
 - NO @ MEM 8:00: first points Dunk/layup 37% (+171), 2pt jumper 25% (+301), 3-pointer 28% (+252), Free throw 10% (+926); first basket Dunk/layup 39% (+153), 2pt jumper 28% (+255), 3-pointer 32% (+209)
 - MIL @ MIN 8:00: first points Dunk/layup 32% (+215), 2pt jumper 25% (+302), 3-pointer 33% (+206), Free throw 11% (+836); first basket Dunk/layup 35% (+182), 2pt jumper 29% (+240), 3-pointer 35% (+184)
-- BOS @ HOU 8:30: first points Dunk/layup 36% (+176), 2pt jumper 27% (+269), 3-pointer 30% (+228), Free throw 6% (+1510); first basket Dunk/layup 38% (+167), 2pt jumper 29% (+244), 3-pointer 33% (+199)
+- BOS @ HOU 8:30: first points Dunk/layup 35% (+185), 2pt jumper 27% (+266), 3-pointer 31% (+222), Free throw 7% (+1438); first basket Dunk/layup 36% (+175), 2pt jumper 29% (+240), 3-pointer 34% (+192)
 - UTAH @ SA 8:30: first points Dunk/layup 33% (+206), 2pt jumper 32% (+214), 3-pointer 24% (+320), Free throw 12% (+756); first basket Dunk/layup 37% (+167), 2pt jumper 35% (+183), 3-pointer 27% (+269)
 - POR @ DEN 9:00: first points Dunk/layup 30% (+235), 2pt jumper 20% (+412), 3-pointer 35% (+184), Free throw 15% (+550); first basket Dunk/layup 36% (+178), 2pt jumper 22% (+349), 3-pointer 42% (+140)
 - PHX @ GS 10:00: first points Dunk/layup 27% (+271), 2pt jumper 28% (+252), 3-pointer 36% (+181), Free throw 9% (+1011); first basket Dunk/layup 31% (+219), 2pt jumper 32% (+214), 3-pointer 37% (+171)
@@ -47,10 +47,10 @@ Best player + method (fair price; bet only if the book pays more):
 - **LaMelo Ball first basket: 3-pointer** (MIN vs MIL 8:00). Est 9.8% (fair +922) = FB 15% x 64% if he scores first; his first-FG sample 22, made FGs 611
 - **Domantas Sabonis first basket: Dunk/layup** (SAC @ DAL 8:00). Est 8.9% (fair +1025) = FB 12% x 71% if he scores first; his first-FG sample 9, made FGs 234
 - **Ty Jerome first basket: 2pt jumper** (MEM vs NO 8:00). Est 8.6% (fair +1056) = FB 16% x 54% if he scores first; his first-FG sample 8, made FGs 231
+- **Neemias Queta first basket: Dunk/layup** (BOS @ HOU 8:30). Est 8.3% (fair +1100) = FB 11% x 76% if he scores first; his first-FG sample 23, made FGs 380
 - **Joel Embiid first basket: 2pt jumper** (PHI vs CHI 7:30). Est 8.3% (fair +1104) = FB 13% x 65% if he scores first; his first-FG sample 13, made FGs 437
 - **Paul Reed first basket: Dunk/layup** (DET @ CHA 7:30). Est 8.3% (fair +1108) = FB 13% x 63% if he scores first; his first-FG sample 8, made FGs 311
 - **Zach Edey first basket: Dunk/layup** (MEM vs NO 8:00). Est 8.0% (fair +1146) = FB 12% x 65% if he scores first; his first-FG sample 7, made FGs 107
-- **Giannis Antetokounmpo first basket: Dunk/layup** (MIA @ LAL 10:00). Est 8.0% (fair +1147) = FB 10% x 79% if he scores first; his first-FG sample 15, made FGs 577
 
 ## StarTool check (side by side, no blend)
 
@@ -63,7 +63,7 @@ Best player + method (fair price; bet only if the book pays more):
 - SAC @ DAL: our top De'Andre Hunter (13%): differs (StarTool stars Darius Acuff Jr., Kyrie Irving; bombs Zach LaVine, Cooper Flagg)
 - NO @ MEM: our top Ty Jerome (16%): agree (StarTool star)
 - MIL @ MIN: our top LaMelo Ball (15%): agree (StarTool star)
-- BOS @ HOU: our top Jayson Tatum (17%): agree (StarTool star)
+- BOS @ HOU: our top Alperen Sengun (15%): agree (StarTool bomb)
 - UTAH @ SA: our top Victor Wembanyama (19%): agree (StarTool star)
 - POR @ DEN: our top Nikola Jokic (14%): agree (StarTool star)
 - PHX @ GS: our top Jalen Green (14%): differs (StarTool stars Devin Booker, Yaxel Lendeborg; bombs Dillon Brooks, Brandin Podziemski)
@@ -81,7 +81,7 @@ Best player + method (fair price; bet only if the book pays more):
 - SAC @ DAL 8:00 ET: Domantas Sabonis vs Daniel Gafford; away wins tip 70%, away scores first 56%
 - NO @ MEM 8:00 ET: Karlo Matkovic vs Zach Edey; away wins tip 12%, away scores first 39%
 - MIL @ MIN 8:00 ET: Myles Turner vs Rudy Gobert; away wins tip 31%, away scores first 44%
-- BOS @ HOU 8:30 ET: Mitchell Robinson vs Alperen Sengun; away wins tip 87%, away scores first 61%
+- BOS @ HOU 8:30 ET: Neemias Queta vs Alperen Sengun; away wins tip 49%, away scores first 50%
 - UTAH @ SA 8:30 ET: Jaxson Hayes vs Victor Wembanyama; away wins tip 5%, away scores first 37%
 - POR @ DEN 9:00 ET: Donovan Clingan vs Nikola Jokic; away wins tip 52%, away scores first 50%
 - PHX @ GS 10:00 ET: Khaman Maluach vs Draymond Green; away wins tip 83%, away scores first 59%
