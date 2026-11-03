@@ -683,6 +683,14 @@
    "note": "48 starts"
   },
   {
+   "player": "Will Richard",
+   "team": "GS",
+   "game": "PHX @ GS",
+   "market": "3+ threes",
+   "p": 0.208,
+   "note": "22 starts"
+  },
+  {
    "player": "Draymond Green",
    "team": "GS",
    "game": "PHX @ GS",
@@ -721,6 +729,14 @@
    "market": "3+ threes",
    "p": 0.071,
    "note": "86 starts"
+  },
+  {
+   "player": "Collin Murray-Boyles",
+   "team": "TOR",
+   "game": "TOR @ LAC",
+   "market": "3+ threes",
+   "p": 0.045,
+   "note": "22 starts"
   },
   {
    "player": "Darius Garland",
@@ -785,6 +801,14 @@
    "market": "3+ threes",
    "p": 0.379,
    "note": "52 starts"
+  },
+  {
+   "player": "Jake LaRavia",
+   "team": "LAL",
+   "game": "MIA @ LAL",
+   "market": "3+ threes",
+   "p": 0.154,
+   "note": "46 starts"
   }
  ]
 }

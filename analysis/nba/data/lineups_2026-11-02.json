@@ -270,18 +270,18 @@
       "Khaman Maluach"
     ],
     "jumper": "Khaman Maluach",
-    "status": "expected (Rotowire 9:30 PM)"
+    "status": "confirmed (Rotowire 9:50 PM)"
   },
   "GS": {
     "five": [
       "Stephen Curry",
       "Brandin Podziemski",
+      "Will Richard",
       "Yaxel Lendeborg",
-      "Georges Niang",
       "Draymond Green"
     ],
     "jumper": "Draymond Green",
-    "status": "expected (Rotowire 9:30 PM)"
+    "status": "confirmed (Rotowire 9:50 PM); Will Richard in for Niang"
   },
   "TOR": {
     "five": [
@@ -289,10 +289,10 @@
       "RJ Barrett",
       "Ja'Kobe Walter",
       "Scottie Barnes",
-      "Trayce Jackson-Davis"
+      "Collin Murray-Boyles"
     ],
-    "jumper": "Trayce Jackson-Davis",
-    "status": "expected (Rotowire 9:30 PM); Poeltl out"
+    "jumper": "Collin Murray-Boyles",
+    "status": "confirmed (Rotowire 9:50 PM); Murray-Boyles in for Jackson-Davis, Poeltl out"
   },
   "LAC": {
     "five": [
@@ -303,7 +303,7 @@
       "Brook Lopez"
     ],
     "jumper": "Brook Lopez",
-    "status": "expected (Rotowire 9:30 PM)"
+    "status": "confirmed (Rotowire 9:50 PM)"
   },
   "MIA": {
     "five": [
@@ -314,17 +314,17 @@
       "Bam Adebayo"
     ],
     "jumper": "Bam Adebayo",
-    "status": "expected (Rotowire 9:30 PM)"
+    "status": "confirmed (Rotowire 9:50 PM)"
   },
   "LAL": {
     "five": [
       "Luka Doncic",
       "Austin Reaves",
       "Matisse Thybulle",
-      "Ziaire Williams",
+      "Jake LaRavia",
       "Walker Kessler"
     ],
     "jumper": "Walker Kessler",
-    "status": "expected (Rotowire 9:30 PM)"
+    "status": "confirmed (Rotowire 9:50 PM); LaRavia in for Ziaire Williams"
   }
 }
