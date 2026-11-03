@@ -97,4 +97,5 @@ All Blotato uploads sha256-match the local files.
 | Instagram reel (68887) | 377bb41e-811e-424b-b7cd-88ce92fbcab2 | https://www.instagram.com/reel/DfSbyokCnQ2/ |
 | TikTok (58063, isAiGenerated false) | 255a5811-2bfc-44dd-a22c-095104e1f925 | https://www.tiktok.com/@definedrisktrading/video/7704000658575281439 |
 | YouTube Short (48727, notify false per drt.md, not for kids, no synthetic) | 16c6d6f0-9fd4-421f-892f-306647095024 | https://www.youtube.com/watch?v=D1iAa-hpIq0 |
-| Personal TikTok (59764) | d4dba395-7329-4c6f-9bb4-54230d5f676b | PERSONAL_URL |
+| Personal TikTok (59764) | d4dba395-7329-4c6f-9bb4-54230d5f676b | https://www.tiktok.com/@timothywilliams9902/video/7704000779635428622 |
+Credits after posting: 2085.
