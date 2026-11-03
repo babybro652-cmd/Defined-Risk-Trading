@@ -6,7 +6,7 @@ Tip winner scores first 64% (25-26).
 - **First basket: Jayson Tatum** (BOS @ HOU 8:30). Est 17% (fair +499; old model 18%): BOS scores first 61%; first FG 2/16 and first shot 2/16 starts 25-26, 3/6 26-27, first 3 FGA 0.68 per start, FG 43%; HOU vs F x1.00; Paul George out (29% share spread to the rest)
 - **First basket: Ty Jerome** (MEM vs NO 8:00). Est 16% (fair +519; old model 15%): MEM scores first 61%; first FG 5/15 and first shot 7/15 starts 25-26, 1/5 26-27, first 3 FGA 1.20 per start, FG 47%; NO vs G x1.07
 - **First basket: Luka Doncic** (LAL vs MIA 10:00). Est 16% (fair +525; old model 16%): LAL scores first 49%; first FG 20/65 and first shot 33/65 starts 25-26, 3/6 26-27, first 3 FGA 1.11 per start, FG 48%; MIA vs G x1.08
-- **First basket: LaMelo Ball** (MIN vs MIL 8:00). Est 15% (fair +551; old model 13%): MIN scores first 56%; first FG 16/69 and first shot 12/69 starts 25-26, 2/7 26-27, first 3 FGA 0.97 per start, FG 41%; MIL vs G x1.07; Anthony Edwards out (28% share spread to the rest); Day-To-Day
+- **First basket: LaMelo Ball** (MIN vs MIL 8:00). Est 15% (fair +551; old model 13%): MIN scores first 56%; first FG 16/69 and first shot 12/69 starts 25-26, 2/7 26-27, first 3 FGA 0.97 per start, FG 41%; MIL vs G x1.07; Anthony Edwards out (28% share spread to the rest)
 - **First basket: Wendell Carter Jr.** (ORL vs WSH 7:30). Est 15% (fair +574; old model 13%; tip jumper x1.2 if his team wins the tip): ORL scores first 53%; first FG 18/78 and first shot 21/78 starts 25-26, 2/6 26-27, first 3 FGA 0.69 per start, FG 52%; WSH vs C x1.15
 - **First basket: Bam Adebayo** (MIA @ LAL 10:00). Est 15% (fair +589; old model 16%; tip jumper x1.2 if his team wins the tip): MIA scores first 51%; first FG 20/73 and first shot 33/73 starts 25-26, 3/6 26-27, first 3 FGA 1.03 per start, FG 45%; LAL vs C x0.85
 - **First basket: RJ Barrett** (TOR @ LAC 10:00). Est 14% (fair +611; old model 14%): TOR scores first 61%; first FG 9/57 and first shot 14/57 starts 25-26, 3/6 26-27, first 3 FGA 0.63 per start, FG 49%; LAC vs F x1.03
@@ -46,7 +46,7 @@ Best player + method (fair price; bet only if the book pays more):
 - **Victor Wembanyama first basket: Dunk/layup** (SA vs UTAH 8:30). Est 10.9% (fair +815) = FB 19% x 56% if he scores first; his first-FG sample 33, made FGs 762
 - **Neemias Queta first basket: Dunk/layup** (BOS @ HOU 8:30). Est 10.4% (fair +865) = FB 14% x 76% if he scores first; his first-FG sample 23, made FGs 380
 - **LaMelo Ball first basket: 3-pointer** (MIN vs MIL 8:00). Est 9.8% (fair +922) = FB 15% x 64% if he scores first; his first-FG sample 22, made FGs 611
-- **Domantas Sabonis first basket: Dunk/layup** (SAC @ DAL 8:00). Est 8.9% (fair +1024) = FB 12% x 71% if he scores first; his first-FG sample 9, made FGs 234
+- **Domantas Sabonis first basket: Dunk/layup** (SAC @ DAL 8:00). Est 8.9% (fair +1025) = FB 12% x 71% if he scores first; his first-FG sample 9, made FGs 234
 - **Ty Jerome first basket: 2pt jumper** (MEM vs NO 8:00). Est 8.6% (fair +1056) = FB 16% x 54% if he scores first; his first-FG sample 8, made FGs 231
 - **Joel Embiid first basket: 2pt jumper** (PHI vs CHI 7:30). Est 8.3% (fair +1104) = FB 13% x 65% if he scores first; his first-FG sample 13, made FGs 437
 - **Paul Reed first basket: Dunk/layup** (DET @ CHA 7:30). Est 8.3% (fair +1108) = FB 13% x 63% if he scores first; his first-FG sample 8, made FGs 311

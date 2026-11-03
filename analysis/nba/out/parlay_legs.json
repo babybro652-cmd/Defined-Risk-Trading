@@ -339,20 +339,20 @@
    "note": "61 starts"
   },
   {
-   "player": "Max Christie",
-   "team": "DAL",
-   "game": "SAC @ DAL",
-   "market": "3+ threes",
-   "p": 0.419,
-   "note": "74 starts"
-  },
-  {
    "player": "Cooper Flagg",
    "team": "DAL",
    "game": "SAC @ DAL",
    "market": "3+ threes",
    "p": 0.082,
    "note": "75 starts"
+  },
+  {
+   "player": "Max Christie",
+   "team": "DAL",
+   "game": "SAC @ DAL",
+   "market": "3+ threes",
+   "p": 0.419,
+   "note": "74 starts"
   },
   {
    "player": "P.J. Washington",
@@ -409,14 +409,6 @@
    "market": "3+ threes",
    "p": 0.264,
    "note": "75 starts"
-  },
-  {
-   "player": "Ryan Rollins",
-   "team": "MIL",
-   "game": "MIL @ MIN",
-   "market": "3+ threes",
-   "p": 0.412,
-   "note": "73 starts"
   },
   {
    "player": "Tyler Herro",
