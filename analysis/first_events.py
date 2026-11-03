@@ -1,6 +1,10 @@
 """First shot / first score per game, NBA and NHL, for grading.
 
-Usage: python3 analysis/first_events.py 2026-10-22 [nba|nhl|both]
+Usage: python3 analysis/first_events.py 2026-10-22 [nba|nhl|both] [--live]
+       python3 analysis/first_events.py --backfill-shots
+--live also logs in-progress games (rerun after finals to refresh). Since 11/2/26 NBA rows also
+carry first_shot_method (rim/j2/3 of the first FGA, made or missed) and fga_to_first_make
+(FGAs by both teams up to and including the first made FG; 1 = first shot went in).
 
 Pulls finished games for the date (ET) and appends one row per game to
 analysis/first_events/log.csv (re-running a date replaces that date's rows):
@@ -19,11 +23,14 @@ import os
 import sys
 import urllib.request
 
+LIVE = '--live' in sys.argv  # also include in-progress games (first events are already set)
+if LIVE:
+    sys.argv.remove('--live')
 HERE = os.path.dirname(os.path.abspath(__file__))
 LOG = os.path.join(HERE, 'first_events', 'log.csv')
 COLS = ['date', 'sport', 'game', 'first_shot', 'first_shot_result', 'away_first_shot',
         'home_first_shot', 'first_attempt_any', 'first_score', 'first_points_any', 'note',
-        'first_basket_method', 'first_points_method']
+        'first_basket_method', 'first_points_method', 'first_shot_method', 'fga_to_first_make']
 sys.path.insert(0, os.path.join(HERE, 'nba'))
 
 
@@ -38,7 +45,8 @@ def nba(date):
     sb = get(f'https://site.api.espn.com/apis/site/v2/sports/basketball/nba/scoreboard?dates={ymd}')
     rows = []
     for ev in sb.get('events', []):
-        if ev['status']['type']['name'] != 'STATUS_FINAL':
+        st = ev['status']['type']
+        if st['name'] != 'STATUS_FINAL' and not (LIVE and st.get('state') == 'in'):
             continue
         g = get(f"https://site.api.espn.com/apis/site/v2/sports/basketball/nba/summary?event={ev['id']}")
         comp = ev['competitions'][0]['competitors']
@@ -74,6 +82,9 @@ def nba(date):
             'note': 'first_score = first made FG (first basket)',
             'first_basket_method': classify(made) if made else '',
             'first_points_method': classify(pts[0]) if pts else '',
+            # first FGA shot type (rim/j2/3) and how many FGAs (both teams) up to and including the first make
+            'first_shot_method': classify(first) if first else '',
+            'fga_to_first_make': (fga.index(made) + 1) if made else '',
         })
     return rows
 
@@ -151,9 +162,32 @@ def backfill_methods():
     print(f'backfilled methods on {n} NBA rows; {sum(1 for r in rows if r["sport"] == "NBA" and not r.get("first_basket_method"))} NBA rows still blank')
 
 
+def backfill_shots():
+    """Fill first_shot_method and fga_to_first_make on old NBA rows by refetching ESPN play-by-play."""
+    with open(LOG) as fh:
+        rows = list(csv.DictReader(fh))
+    dates = sorted({r['date'] for r in rows if r['sport'] == 'NBA' and not r.get('fga_to_first_make')})
+    got = {}
+    for d in dates:
+        for r in nba(d):
+            got[(d, r['game'])] = r
+    n = 0
+    for r in rows:
+        x = got.get((r['date'], r['game']))
+        if r['sport'] == 'NBA' and x:
+            r['first_shot_method'], r['fga_to_first_make'] = x['first_shot_method'], x['fga_to_first_make']; n += 1
+    with open(LOG, 'w', newline='') as fh:
+        w = csv.DictWriter(fh, fieldnames=COLS)
+        w.writeheader()
+        w.writerows([{k: r.get(k, '') or '' for k in COLS} for r in rows])
+    print(f'backfilled first-shot method / FGA-to-first-make on {n} NBA rows over {len(dates)} dates')
+
+
 def main():
     if sys.argv[1] == '--backfill-methods':
         return backfill_methods()
+    if sys.argv[1] == '--backfill-shots':
+        return backfill_shots()
     date = sys.argv[1]
     which = sys.argv[2] if len(sys.argv) > 2 else 'both'
     new = []
