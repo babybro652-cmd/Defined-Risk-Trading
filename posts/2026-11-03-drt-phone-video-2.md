@@ -161,3 +161,18 @@ Privacy scan 2,486 frames: 0 flagged. 2 fps sheets `es-short-1103-breakdown-voic
 Blotato (sha256 match): https://database.blotato.io/storage/v1/object/public/public_media/246c6cef-6cbe-4b5b-81a9-7bb84481df9c/73b2401a-584a-483a-937e-1f77cce976cf.mp4
 AI voice: TikTok isAiGenerated true, YouTube containsSyntheticMedia true. drt.md says "never AI voice on a trade reel/Short";
 Tim asked for this one, so confirm with him before it posts. Draft captions above still apply.
+
+## Breakdown voiceover POSTED 11/3 evening (Tim: "Post now yes"; AI voice OK; yes to the YouTube cut)
+FB caption used "today's ES short" instead of "Tuesday's". Media: voiceover build 73b2401a-... (82.9 s).
+| Platform | Submission id | Live URL |
+|---|---|---|
+| Facebook reel (50185, page 993318963868124) | 4808a4df-a084-46eb-ae49-79c64316cddf | https://facebook.com/reel/1456912823069906/ |
+| Instagram reel (68887) | fc863bd8-d840-4bc5-b9ed-e0b2202d8661 | https://www.instagram.com/reel/DfSyvxjETUi/ |
+| TikTok (58063, PUBLIC_TO_EVERYONE, isAiGenerated true) | 89dab84a-aeff-4081-961f-fe70b416e407 | https://www.tiktok.com/@definedrisktrading/video/7704052354961788190 |
+| YouTube Short (48727, public, notify false, not for kids, containsSyntheticMedia true) | 2eaf74d8-1883-4309-b2b8-fb9959839e2d | https://www.youtube.com/watch?v=LZB5ccIzA98 |
+
+YouTube cut `es-short-1103-breakdown-youtube.mp4`, 56.8 s: no Skool / "Link in bio" line, 0.35 s gaps, same voice takes,
+time-lapse base 2.0-63.1 s sped x1.52 (`make_breakdown_youtube.sh`) so the fill marker lands at 44.17 s on the fill line
+(44.15 s). Ends on "Let it work." + @definedrisktrading. AUDIO QA: PASS (-16.2 LUFS, peak -1.8 dBFS, 100% words);
+privacy scan 1,705 frames 0 flagged; sheet `es-short-1103-breakdown-youtube-sheet-2fps.png` read; voice all inside captions.
+https://database.blotato.io/storage/v1/object/public/public_media/246c6cef-6cbe-4b5b-81a9-7bb84481df9c/f6b93417-a3be-4a59-a3ef-75b45d8cd02b.mp4 (sha256 match)

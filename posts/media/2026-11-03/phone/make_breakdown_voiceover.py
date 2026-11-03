@@ -4,7 +4,10 @@ drt/audio/add_audio.py tts()). Each spoken unit starts at its action anchor (or 
 whichever is later); the fill line starts on the fill marker (65.1 s). Units that span two caption cards switch the
 card on the first word of the second card, using faster-whisper word timestamps.
 Writes OUT_DIR/voice.wav (48 kHz stereo, -16 LUFS) and OUT_DIR/timing.json for make_breakdown_captions.py --timing.
-Usage: /usr/bin/python3 make_breakdown_voiceover.py OUT_DIR"""
+--youtube: Shorts cut under 60 s. Drops the Skool / "Link in bio" line, 0.35 s gaps, every line back to back (no action
+anchors), and writes fill_out: make_breakdown_youtube.sh speeds the time-lapse so the fill marker lands on the fill line.
+Existing OUT_DIR/u##.wav files are reused (copy the 16:9 build's folder to keep the same takes).
+Usage: /usr/bin/python3 make_breakdown_voiceover.py OUT_DIR [--youtube]"""
 import json, os, sys
 import numpy as np
 sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), "../../../../drt/audio"))
@@ -51,10 +54,19 @@ def trim(x, thr=1e-3):
 
 
 def main():
+    global GAP, END_PAD
     out = sys.argv[1]; os.makedirs(out, exist_ok=True)
+    yt = "--youtube" in sys.argv
+    todo = UNITS[:-1] if yt else UNITS
+    if yt:
+        GAP, END_PAD = 0.35, 1.0
     clips, t, units = [], 0.0, []
-    for i, (text, anchor, cards, splits) in enumerate(UNITS):
-        w = A.tts(text, os.path.join(out, f"u{i:02d}.wav"))
+    for i, (text, anchor, cards, splits) in enumerate(todo):
+        if yt:
+            anchor = 0.3 if i == 0 else 0
+        w = os.path.join(out, f"u{i:02d}.wav")
+        if not os.path.exists(w):
+            A.tts(text, w)
         x = trim(A.decode(w))
         start = max(anchor, t)
         dur = len(x) / A.SR
@@ -81,7 +93,8 @@ def main():
             cs = max(bounds[c] - (0.15 if c == 0 else 0), 0)
             ce = bounds[c + 1] if c + 1 < len(cards) else stop
             caps.append([round(cs, 2), round(ce, 2), lines])
-    json.dump({"end": round(end, 2), "caps": caps, "spoken": [u[0] for u in UNITS],
+    fill_out = units[[u[0] for u in todo].index(UNITS[15][0])][0]
+    json.dump({"end": round(end, 2), "fill_out": round(fill_out, 2), "caps": caps, "spoken": [u[0] for u in todo],
                "units": [[round(s, 2), round(e, 2)] for s, e, _, _ in units]}, open(os.path.join(out, "timing.json"), "w"), indent=1)
     print("end", round(end, 2))
     for c in caps:
