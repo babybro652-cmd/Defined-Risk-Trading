@@ -297,6 +297,9 @@ Top pick changed in 157 of 933 25-26 games. Pick text now shows "first 3 FGA x.x
 - 11/2: first-3-FGA share added (w3 = 0.5, see "Model change 11/2/26"). Rebuilt the 11/2 tab: first basket top 8 swaps
   Jokic and Jalen Green (logged rows 549 and 551) for Ty Jerome (fair +519) and LaMelo Ball (+551); game top picks changed
   in CHA@DET (Reed to Collins), CHI@PHI (Smith to Embiid), DAL@SAC (Sabonis to Hunter). Bets rows left as logged.
+- 11/2 results: first basket 0-13 (Paul George void). 11/3 no games.
+- 11/4: 14-game slate, tab rebuilt (107 26-27 games). Bets rows 642-657: 8 first basket, 5 threes, 3 points. Top FB picks are mostly
+  tip-favorite centers and stars (Wembanyama, Adebayo); after 0-13 on 11/2 keep stakes at $0.20 to $0.50 and bet only past fair.
 
 ## Tim vs model log (first basket)
 
