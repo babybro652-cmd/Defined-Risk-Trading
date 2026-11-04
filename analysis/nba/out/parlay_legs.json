@@ -43,20 +43,20 @@
    "note": "44 starts"
   },
   {
-   "player": "Duncan Robinson",
-   "team": "DET",
-   "game": "PHI @ DET",
-   "market": "3+ threes",
-   "p": 0.633,
-   "note": "84 starts"
-  },
-  {
    "player": "Cade Cunningham",
    "team": "DET",
    "game": "PHI @ DET",
    "market": "3+ threes",
    "p": 0.318,
    "note": "74 starts"
+  },
+  {
+   "player": "Duncan Robinson",
+   "team": "DET",
+   "game": "PHI @ DET",
+   "market": "3+ threes",
+   "p": 0.633,
+   "note": "84 starts"
   },
   {
    "player": "John Collins",
@@ -67,11 +67,27 @@
    "note": "63 starts"
   },
   {
+   "player": "CJ McCollum",
+   "team": "ATL",
+   "game": "ATL @ WSH",
+   "market": "3+ threes",
+   "p": 0.393,
+   "note": "68 starts"
+  },
+  {
    "player": "Nickeil Alexander-Walker",
    "team": "ATL",
    "game": "ATL @ WSH",
    "market": "3+ threes",
    "p": 0.632,
+   "note": "79 starts"
+  },
+  {
+   "player": "Jalen Johnson",
+   "team": "ATL",
+   "game": "ATL @ WSH",
+   "market": "3+ threes",
+   "p": 0.183,
    "note": "79 starts"
   },
   {
@@ -83,20 +99,12 @@
    "note": "71 starts"
   },
   {
-   "player": "Jalen Johnson",
-   "team": "ATL",
+   "player": "Trae Young",
+   "team": "WSH",
    "game": "ATL @ WSH",
    "market": "3+ threes",
-   "p": 0.183,
-   "note": "79 starts"
-  },
-  {
-   "player": "CJ McCollum",
-   "team": "ATL",
-   "game": "ATL @ WSH",
-   "market": "3+ threes",
-   "p": 0.393,
-   "note": "68 starts"
+   "p": 0.278,
+   "note": "22 starts"
   },
   {
    "player": "Kyshawn George",
@@ -105,14 +113,6 @@
    "market": "3+ threes",
    "p": 0.362,
    "note": "55 starts"
-  },
-  {
-   "player": "Trae Young",
-   "team": "WSH",
-   "game": "ATL @ WSH",
-   "market": "3+ threes",
-   "p": 0.278,
-   "note": "22 starts"
   },
   {
    "player": "Anthony Davis",
