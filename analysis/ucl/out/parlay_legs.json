@@ -5,6 +5,22 @@
  "sport": "UCL",
  "legs": [
   {
+   "player": "Erling Haaland",
+   "team": "MNC",
+   "market": "1+ shot on target",
+   "p": 0.803,
+   "game": "MNC @ RBL",
+   "note": "2.3 SOT per start"
+  },
+  {
+   "player": "Abde Ezzalzouli",
+   "team": "BET",
+   "market": "1+ shot on target",
+   "p": 0.742,
+   "game": "BET @ DOR",
+   "note": "1.4 SOT per start"
+  },
+  {
    "player": "Kylian Mbapp\u00e9",
    "team": "RMA",
    "market": "1+ shot on target",
@@ -29,30 +45,6 @@
    "note": "1.2 SOT per start"
   },
   {
-   "player": "Nicolo Tresoldi",
-   "team": "BRU",
-   "market": "1+ shot on target",
-   "p": 0.681,
-   "game": "BRU @ PSV",
-   "note": "1.6 SOT per start"
-  },
-  {
-   "player": "Abde Ezzalzouli",
-   "team": "BET",
-   "market": "1+ shot on target",
-   "p": 0.742,
-   "game": "BET @ DOR",
-   "note": "1.4 SOT per start"
-  },
-  {
-   "player": "Erling Haaland",
-   "team": "MNC",
-   "market": "1+ shot on target",
-   "p": 0.803,
-   "game": "MNC @ RBL",
-   "note": "2.3 SOT per start"
-  },
-  {
    "player": "Serhou Guirassy",
    "team": "DOR",
    "market": "1+ shot on target",
@@ -67,6 +59,14 @@
    "p": 0.671,
    "game": "COMO @ RCL",
    "note": "1.8 SOT per start"
+  },
+  {
+   "player": "Nicolo Tresoldi",
+   "team": "BRU",
+   "market": "1+ shot on target",
+   "p": 0.681,
+   "game": "BRU @ PSV",
+   "note": "1.6 SOT per start"
   }
  ]
 }
