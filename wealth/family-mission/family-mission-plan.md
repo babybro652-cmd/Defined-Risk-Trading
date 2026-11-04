@@ -14,6 +14,8 @@ Started 11/4/2026 (from "What Would the Rockefellers Do?"). Owner: Tim. Jarvis d
    - Start a "family book" (Google Doc): mission, crest, lessons, stories, letters to his son.
 
 ## The 5 questions for Tim
+Tim's answer doc (Google Doc in Drive > 06 Personal & Money > Personal): https://docs.google.com/document/d/1W3Bc4H5ZEmZjjKCyvCSg9Yxh9yJEDKZjorcWGsr3Mho/edit (ID 1W3Bc4H5ZEmZjjKCyvCSg9Yxh9yJEDKZjorcWGsr3Mho). Read it when Tim says "answers are in".
+
 1. What 3 words do you want people to say about the Williams family in 50 years?
 2. What did you go through that you never want your son to go through?
 3. What do you want your son to know about money by age 18?
