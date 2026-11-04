@@ -34,7 +34,7 @@ Only categories that beat their price season to date: NBA 3+ threes, NHL 3+ SOG,
 - **2-leg #2:** Luka Doncic 3+ threes (80%, LAL @ SAC) + Michael Porter Jr. 3+ threes (66%, CHA @ BKN). Fair -112 (53%); take +108 or longer.
 - **2-leg #3:** Brandon Miller 3+ threes (67%, CHA @ BKN) + LaMelo Ball 3+ threes (63%, MIN @ HOU). Fair +134 (43%); take +157 or longer.
 - **3-leg #4:** Michael Porter Jr. 3+ threes (66%, CHA @ BKN) + LaMelo Ball 3+ threes (63%, MIN @ HOU) + Duncan Robinson 3+ threes (63%, PHI @ DET). Fair +279 (26%); take +317 or longer.
-- **3-leg #5:** Duncan Robinson 3+ threes (63%, PHI @ DET) + Nickeil Alexander-Walker 3+ threes (63%, ATL @ WSH) + James Harden 3+ threes (63%, CLE @ OKC). Fair +299 (25%); take +339 or longer.
+- **3-leg #5:** Kon Knueppel 3+ threes (65%, CHA @ BKN) + Duncan Robinson 3+ threes (63%, PHI @ DET) + Nickeil Alexander-Walker 3+ threes (63%, ATL @ WSH). Fair +285 (26%); take +323 or longer.
 
 ### NHL
 - **2-leg #1:** Tage Thompson 3+ SOG (69%, OTT @ BUF) + Brady Tkachuk 3+ SOG (69%, CHI @ FLA). Fair +111 (47%); take +132 or longer.
