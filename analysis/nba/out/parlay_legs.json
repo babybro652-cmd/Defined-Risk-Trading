@@ -83,12 +83,12 @@
    "note": "79 starts"
   },
   {
-   "player": "Jalen Johnson",
+   "player": "Luguentz Dort",
    "team": "ATL",
    "game": "ATL @ WSH",
    "market": "3+ threes",
-   "p": 0.183,
-   "note": "79 starts"
+   "p": 0.333,
+   "note": "70 starts"
   },
   {
    "player": "Onyeka Okongwu",
@@ -371,20 +371,20 @@
    "note": "67 starts"
   },
   {
-   "player": "Trey Murphy III",
-   "team": "NO",
-   "game": "UTAH @ NO",
-   "market": "3+ threes",
-   "p": 0.517,
-   "note": "73 starts"
-  },
-  {
    "player": "Jeremiah Fears",
    "team": "NO",
    "game": "UTAH @ NO",
    "market": "3+ threes",
    "p": 0.129,
    "note": "56 starts"
+  },
+  {
+   "player": "Herbert Jones",
+   "team": "NO",
+   "game": "UTAH @ NO",
+   "market": "3+ threes",
+   "p": 0.215,
+   "note": "59 starts"
   },
   {
    "player": "Evan Mobley",
