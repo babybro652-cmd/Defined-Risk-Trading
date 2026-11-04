@@ -53,7 +53,20 @@ Best player + method (fair price; bet only if the book pays more):
 
 ## StarTool check (side by side, no blend)
 
-- No StarTool cards saved for this slate yet. Add lines to out/startool/star_bomb.txt (date|AWAY @ HOME|star,star|bomb,bomb) and rerun.
+- PHI @ DET: our top John Collins (13%): differs (StarTool stars Tyrese Maxey, Cade Cunningham; bombs Jaylen Brown, Duncan Robinson)
+- ATL @ WSH: our top Anthony Davis (14%): agree (StarTool star)
+- MIL @ BOS: our top Paul George (17%): agree (StarTool bomb)
+- CHA @ BKN: our top Michael Porter Jr. (14%): agree (StarTool star)
+- CHI @ NY: our top Karl-Anthony Towns (13%): agree (StarTool bomb)
+- IND @ MEM: our top Zach Edey (13%): differs (StarTool stars Jarace Walker, Ty Jerome; bombs Jay Huff, Cameron Boozer)
+- UTAH @ NO: our top Ace Bailey (12%): differs (StarTool stars Lauri Markkanen, Zion Williamson; bombs Keyonte George, Trey Murphy III)
+- CLE @ OKC: our top Ajay Mitchell (13%): agree (StarTool bomb)
+- MIN @ HOU: our top LaMelo Ball (14%): agree (StarTool star)
+- TOR @ DEN: our top Jamal Murray (14%): agree (StarTool bomb)
+- POR @ PHX: our top Jalen Green (14%): differs (StarTool stars Deni Avdija, Devin Booker; bombs Damian Lillard, Dillon Brooks)
+- DAL @ SA: our top Victor Wembanyama (20%): agree (StarTool star)
+- LAL @ SAC: our top Luka Doncic (16%): agree (StarTool star)
+- MIA @ LAC: our top Bam Adebayo (19%): agree (StarTool bomb)
 
 ## Tip-off
 
