@@ -1,0 +1,64 @@
+date,scope,category,pick,pred,result,bets_row,note
+2026-10-20,UCL,anytime goal,Haaland AEK at MNC,,Void,159,
+2026-10-20,UCL,first goal,Ferran Torres BAR at PSG,,Void,160,
+2026-10-20,UCL,1+ SOT,Haaland AEK at MNC,,Void,161,
+2026-10-20,UCL,1+ SOT,Greenwood SLP at FEN,,W,162,no est logged
+2026-10-20,UCL,over 2.5,BAR at PSG,,W,163,no est logged
+2026-10-20,UCL,btts,BAR at PSG,,W,164,no est logged
+2026-10-20,UCL,corners,SLP at FEN o9.5 match,,L,165,no est logged
+2026-10-21,UCL,anytime goal,Mbappe RBL at RMA,0.72,W,175,raw tab rate
+2026-10-21,UCL,anytime goal,Suarez LAS at SCP,0.67,W,176,raw tab rate
+2026-10-21,UCL,anytime goal,Tresoldi RCL at BRU,0.65,L,177,raw tab rate
+2026-10-21,UCL,first goal,Kane ARS at MUN,0.20,L,178,approx goals share x scores first
+2026-10-21,UCL,1+ SOT,Mbappe RBL at RMA,0.92,W,179,raw tab rate
+2026-10-21,UCL,1+ SOT,Suarez LAS at SCP,0.90,W,180,raw tab rate
+2026-10-21,UCL,1+ SOT,Ezzalzouli FEY at BET,0.85,W,181,raw 100% in few starts; 0.85 used
+2026-10-21,UCL,over 2.5,RCL at BRU,0.79,W,182,raw tab rate
+2026-10-21,UCL,over 2.5,RBL at RMA,0.78,W,183,raw tab rate
+2026-10-21,UCL,btts,SHK at INT,0.89,L,184,raw tab rate
+2026-10-21,UCL,corners,RCL at BRU o8.5 match,0.79,L,185,raw tab rate
+2026-10-21,UCL,team corners,MUN o4.5,0.95,L,186,raw 100%; 0.95 used
+2026-11-03,UCL,anytime goal,Malen ROMA at MAN,0.58,W,581,
+2026-11-03,UCL,anytime goal,Osimhen VFB at GAL,0.53,L,582,
+2026-11-03,UCL,anytime goal,Suarez SCP at SHK,0.53,L,583,
+2026-11-03,UCL,first goal,Demirovic VFB at GAL,0.16,L,584,
+2026-11-03,UCL,first goal,Osimhen VFB at GAL,0.14,L,585,
+2026-11-03,UCL,2+ SOT,Jackson AVL at BAR,0.60,L,586,duplicate of row 595
+2026-11-03,UCL,2+ SOT,Suarez SCP at SHK,0.52,L,587,
+2026-11-03,UCL,2+ SOT,Demirovic VFB at GAL,0.51,L,588,
+2026-11-03,UCL,over 2.5,AVL at BAR,0.72,W,589,
+2026-11-03,UCL,over 2.5,SLB at LAS,0.78,W,590,
+2026-11-03,UCL,btts,PSG at VIL,0.70,L,591,
+2026-11-03,UCL,corners,VFB at GAL o8.5 match,0.74,W,592,
+2026-11-03,UCL,team corners,MUN o5.5,0.70,L,593,
+2026-11-03,UCL,2+ SOT,Osimhen VFB at GAL,0.60,L,594,
+2026-11-03,UCL,2+ SOT,Jackson AVL at BAR,0.58,DUP,595,same bet as row 586; counted once
+2026-11-03,UCL,2+ SOT,Malen ROMA at MAN,0.56,W,596,
+2026-11-03,UCL,parlay,Osimhen 2+ + Jackson 2+,0.35,L,597,2+ SOT legs broke the 1+ SOT-only parlay rule
+2026-11-03,UCL,parlay,Osimhen 2+ + Malen 2+,0.34,L,598,2+ SOT legs broke the 1+ SOT-only parlay rule
+2026-11-03,UCL,parlay,Osimhen 2+ + Jackson 2+ + Malen 2+,0.19,L,599,2+ SOT legs broke the 1+ SOT-only parlay rule
+2026-10-24,Domestic,other,Roma or draw,0.79,W,352,
+2026-10-24,Domestic,over 2.5,TOT at CHE,0.66,L,353,
+2026-10-24,Domestic,corners,TOT at CHE o9.5 match,0.71,W,354,
+2026-10-24,Domestic,1+ SOT,Joao Pedro,0.65,Void,355,
+2026-10-24,Domestic,other,Villarreal DNB,0.62,W,356,
+2026-10-24,Domestic,over 2.5,SGE at BVB,0.71,L,357,
+2026-10-24,Domestic,other,Dortmund ML,0.79,W,358,
+2026-10-24,Domestic,other,Lazio ML,0.76,W,359,
+2026-10-24,Domestic,1+ SOT,Zaccagni,0.64,W,360,
+2026-10-24,Domestic,1+ SOT,Jonathan David,0.70,Void,361,
+2026-10-24,Domestic,over 2.5,MIA at RBNY,0.74,L,362,
+2026-10-24,Domestic,btts,CIN at DC,0.74,L,363,
+2026-10-24,Domestic,anytime goal,Baribo,0.61,L,364,
+2026-10-24,Domestic,1+ SOT,Nicolas Fernandez,0.86,L,365,
+2026-10-24,Domestic,anytime goal,Musa,0.48,W,366,
+2026-10-25,Domestic,1+ SOT,Mbeumo,0.93,W,392,
+2026-10-25,Domestic,over 2.5,B04 at TSG,0.78,W,393,
+2026-10-25,Domestic,btts,B04 at TSG,0.76,L,394,
+2026-10-25,Domestic,btts,NEW at CRY,0.71,L,395,
+2026-10-25,Domestic,1+ SOT,Akor Adams,0.83,W,396,
+2026-10-25,Domestic,1+ SOT,Isak,0.69,W,397,
+2026-10-25,Domestic,over 2.5,LEV at RSO,0.76,W,398,
+2026-10-25,Domestic,over 2.5,RMA at BAR,0.82,W,399,
+2026-10-25,Domestic,1+ SOT,Mbappe,0.58,W,400,
+2026-10-25,Domestic,1+ SOT,Bouanga,0.77,W,401,

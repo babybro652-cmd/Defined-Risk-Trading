@@ -40,6 +40,23 @@ DOM_START = dt.date(2026, 8, 1)
 W_DEFAULT = 3   # one UCL 2026-27 start counts as this many 2025-26 UCL or domestic starts in the blend
 MATCH_CORNER_LINES = (8.5, 9.5, 10.5)
 TEAM_CORNER_LINES = (4.5, 5.5)
+# Calibration (11/4 review, analysis/ucl/review.py on picks_log.csv): our estimates ran hot on everything
+# but 1+ SOT and overs. Each est = raw model rate x factor below. 1+ SOT uses the shrunk rate unchanged.
+CAL = {'goal': 0.80,     # anytime and first goal: 4-4 vs 60% predicted, first goal 0-3
+       'sot2': 0.80,     # 2+ SOT: 1-4 vs 56%
+       'o25': 0.90,      # over 2.5: 8-3 vs 75% (domestic 3-3), mild trim
+       'btts': 0.80,     # BTTS: 1-5 vs 76%
+       'corners': 0.80}  # match corners: 2-2 vs 75%; team corners 0-2, dropped
+MIN_EST = {'btts': 0.55, 'corners': 0.55, 'sot2': 0.50}   # below this the angle is not listed
+SOT2_MIN_RATE, SOT2_MIN_STARTS = 2.0, 10   # 2+ SOT only for 2.0+ SOT per start over 10+ starts
+GOAL_CAP = 0.85          # cap on rate x opponent factor before the goal factor
+
+
+def fair(p):
+    """American fair price for probability p."""
+    if not p or p <= 0 or p >= 1:
+        return '-'
+    return f'-{round(100 * p / (1 - p))}' if p >= 0.5 else f'+{round(100 * (1 - p) / p)}'
 
 
 def get(url, tries=5):
@@ -377,25 +394,49 @@ def build(start, log):
     for p in sorted(tonight, key=lambda p: -(shr('gwg', p) * gfac(p)))[:5]:
         a, d = Z(P26, p), Z(PD, p)
         o = opp_of[cur_tm[p]][0]
+        est = CAL['goal'] * min(GOAL_CAP, shr('gwg', p) * gfac(p))
         picks.append(['Anytime goal', names[p], game_txt(p),
                       f"Scored in {round(100 * bl('gwg', p))}% of starts (blend); this season UCL {a['g']} G in {a['st']} starts, "
-                      f"league {d['g']} G in {d['st']} starts; {o} concede {TA[o]['ga'] / TA[o]['gp'] if TA.get(o) and TA[o]['gp'] else 0:.1f}/G this season", 'Anytime goal'])
+                      f"league {d['g']} G in {d['st']} starts; {o} concede {TA[o]['ga'] / TA[o]['gp'] if TA.get(o) and TA[o]['gp'] else 0:.1f}/G this season",
+                      'Anytime goal (confirmed XI only)', pct(est), fair(est)])
     used = {x[1] for x in picks}
 
     def tfirst(tm):
         t = TA.get(tm)
         return (t['first'] + 1) / (t['gp'] + 2) if t else 0.5
+    def tgf(tm):
+        t = TA.get(tm)
+        return max(1.0, t['gf'] / t['gp']) if t and t['gp'] else 1.5
     for p in sorted([p for p in tonight if names[p] not in used],
                     key=lambda p: -(shr('g', p) * tfirst(cur_tm[p]) * gfac(p)))[:3]:
+        # share of the team's goals x team scores first x 0.93 (no 0-0) x goal factor
+        est = CAL['goal'] * min(0.6, shr('g', p) / tgf(cur_tm[p])) * tfirst(cur_tm[p]) * 0.93
         picks.append(['First goal', names[p], game_txt(p),
                       f"{bl('g', p):.2f} goals per start (blend); first goal of the match in {Z(P26, p)['fg'] + Z(P25, p)['fg'] + Z(PD, p)['fg']} "
-                      f"games; {cur_tm[p]} scored first in {round(100 * tfirst(cur_tm[p]))}% this season", 'First goal (long odds)'])
-    sots = sorted([p for p in tonight if (bl('sot1', p) or 0) >= 0.6 and shr('sot1', p) >= 0.55],
+                      f"games; {cur_tm[p]} scored first in {round(100 * tfirst(cur_tm[p]))}% this season",
+                      'First goal (long odds, $0.10-0.25)', pct(est), fair(est)])
+    # -300 rule: skip 1+ SOT above 75% (shorter than -300); the 2+ SOT block offers the next line up
+    sots = sorted([p for p in tonight if (bl('sot1', p) or 0) >= 0.6 and 0.55 <= shr('sot1', p) <= 0.75],
                   key=lambda p: -(shr('sot1', p) * gfac(p)))[:4]
     for p in sots:
         picks.append(['1+ shot on target', names[p], game_txt(p),
                       f"1+ SOT in {round(100 * bl('sot1', p))}% of starts; {bl('sh', p):.1f} shots and {bl('sot', p):.1f} SOT per start",
-                      'Over 0.5 SOT'])
+                      'Over 0.5 SOT (confirmed XI only)', pct(shr('sot1', p)), fair(shr('sot1', p))])
+
+    def sot2(p):   # shrunk share of starts with 2+ SOT, from the per-start logs
+        n = d = 0
+        for src, w in ((P26, W), (PD, 1), (P25, 1)):
+            for x in Z(src, p)['log']:
+                n += w * (x[3] >= 2); d += w
+        return (n + 0.12 * 6) / (d + 6)
+    nst = lambda p: Z(P26, p)['st'] + Z(PD, p)['st'] + Z(P25, p)['st']
+    s2 = [p for p in tonight if (bl('sot', p) or 0) >= SOT2_MIN_RATE and nst(p) >= SOT2_MIN_STARTS
+          and CAL['sot2'] * sot2(p) >= MIN_EST['sot2']]
+    for p in sorted(s2, key=lambda p: -sot2(p))[:2]:
+        est = CAL['sot2'] * sot2(p)
+        picks.append(['2+ shots on target', names[p], game_txt(p),
+                      f"2+ SOT in {round(100 * sot2(p))}% of starts (shrunk, {nst(p)} starts); {bl('sot', p):.1f} SOT per start",
+                      'Over 1.5 SOT (confirmed XI only)', pct(est), fair(est)])
 
     def corner_view(g):
         a, h = TA.get(g['away']), TA.get(g['home'])
@@ -415,23 +456,35 @@ def build(start, log):
         gm.append((g, btts, o25, corner_view(g)))
     for g, btts, o25, cv in sorted(gm, key=lambda x: -x[2])[:2]:
         if o25 >= 0.6:
+            est = CAL['o25'] * o25
             picks.append(['Over 2.5 goals', f"{g['away']} @ {g['home']}", g['time'],
-                          f"Over 2.5 in {round(100 * o25)}% of both teams' games this season (avg); BTTS {round(100 * btts)}%", 'Over 2.5'])
-    for g, btts, o25, cv in sorted(gm, key=lambda x: -x[1])[:2]:
-        if btts >= 0.6:
+                          f"Over 2.5 in {round(100 * o25)}% of both teams' games this season (avg); BTTS {round(100 * btts)}%",
+                          'Over 2.5', pct(est), fair(est)])
+    for g, btts, o25, cv in sorted(gm, key=lambda x: -x[1])[:1]:   # max 1 BTTS a day (1-5 through 11/3)
+        est = CAL['btts'] * btts
+        if est >= MIN_EST['btts']:
             picks.append(['BTTS', f"{g['away']} @ {g['home']}", g['time'],
-                          f"Both scored in {round(100 * btts)}% of both teams' games this season (avg)", 'BTTS yes'])
+                          f"Both scored in {round(100 * btts)}% of both teams' games this season (avg)", 'BTTS yes ($0.25)',
+                          pct(est), fair(est)])
     cvs = [(g, cv) for g, _, _, cv in gm if cv]
     for g, cv in sorted(cvs, key=lambda x: -x[1]['o'][9.5])[:2]:
+        # highest line whose calibrated est clears MIN_EST and is not shorter than -300
+        line = next((k for k in sorted(MATCH_CORNER_LINES, reverse=True)
+                     if MIN_EST['corners'] <= CAL['corners'] * cv['o'][k] <= 0.75), None)
+        if line is None:
+            continue
+        est = CAL['corners'] * cv['o'][line]
         picks.append(['Match corners', f"{g['away']} @ {g['home']}", g['time'],
                       f"Expected {cv['tot']:.1f} corners ({g['away']} {cv['ea']:.1f}, {g['home']} {cv['eh']:.1f}); over 9.5 in "
-                      f"{round(100 * cv['o'][9.5])}% of their games, over 8.5 in {round(100 * cv['o'][8.5])}%", 'Over 8.5 / 9.5 corners'])
+                      f"{round(100 * cv['o'][9.5])}% of their games, over 8.5 in {round(100 * cv['o'][8.5])}%",
+                      f'Over {line} corners ($0.25)', pct(est), fair(est)])
+    TEAM_CORNER_PICKS = False   # 0-2 through 11/3; table still on the tab for reference
     tc = []
     for g, cv in cvs:
         for tm, opp, e in ((g['away'], g['home'], cv['ea']), (g['home'], g['away'], cv['eh'])):
             t = TA[tm]
             tc.append((e, tm, opp, g, t['to'][4.5] / t['cg']))
-    for e, tm, opp, g, r in sorted(tc, key=lambda x: -x[0])[:2]:
+    for e, tm, opp, g, r in (sorted(tc, key=lambda x: -x[0])[:2] if TEAM_CORNER_PICKS else []):
         picks.append(['Team corners', tm, f"{g['away']} @ {g['home']}",
                       f"{tm} expected {e:.1f} corners ({TA[tm]['cf'] / TA[tm]['cg']:.1f} won per game, {opp} concede "
                       f"{TA[opp]['ca'] / TA[opp]['cg']:.1f}); {tm} over 4.5 in {round(100 * r)}% of games", f'{tm} over 4.5 corners'])
@@ -449,13 +502,14 @@ def build(start, log):
     R()
     hdr_short = len(rows) + 1
     R(f"Next matchday {' and '.join(dt.date.fromisoformat(d).strftime('%a %-m/%-d') for d in slate_days)}: shortlist (not guaranteed)")
-    R('Bet', 'Player / match', 'Game', 'Why', 'Look for')
+    R('Bet', 'Player / match', 'Game', 'Why', 'Look for', 'Est %', 'Fair')
     for p in picks:
         R(*p)
     R('How picked', 'Anytime goal = blended share of starts with a goal (shrunk toward a typical starter so 1-2 hot games do not '
-      'top the list) x opponent goals conceded per game vs the UCL-club average (capped at +35%). First goal = goals per start x team scores-first rate x same opponent factor. SOT = 1+ shot on target in '
-      '60%+ of starts. Goals and corners angles average the two teams\' 2026-27 rates. Only players who started their '
-      'team\'s latest match are picked; check lineups an hour before kickoff (ESPN has no soccer injury feed).')
+      'top the list) x opponent goals conceded per game vs the UCL-club average (capped at +35%). First goal = share of team goals x team scores-first rate. SOT = 1+ shot on target in '
+      '60%+ of starts; 2+ SOT only for 2.0+ SOT per start over 10+ starts. Goals and corners angles average the two teams\' 2026-27 rates. '
+      'Est % = calibrated chance (11/4 review: goals x0.80, 2+ SOT x0.80, over 2.5 x0.90, BTTS x0.80, corners x0.80; team corners dropped). '
+      'Fair = no-vig price for Est %; bet only at fair or longer. Player props only once the XI is confirmed (about 1 hr before kickoff; ESPN has no soccer injury feed).')
     R()
     R('Next matchday: games and angles')
     R('Kickoff (ET)', 'Match', 'Away GF/G', 'Away GA/G', 'Home GF/G', 'Home GA/G', 'BTTS% (avg)', 'O2.5% (avg)',
@@ -561,7 +615,8 @@ def build(start, log):
     with open(os.path.join(OUT, 'shortlist.md'), 'w') as f:
         f.write(f"# UCL shortlist {', '.join(slate_days)} (not guaranteed)\n\n")
         for p in picks:
-            f.write(f'- **{p[0]}: {p[1]}** ({p[2]}). {p[3]}\n')
+            tail = f' Est {p[5]:.0%}, fair {p[6]}.' if len(p) > 6 and p[5] is not None else ''
+            f.write(f'- **{p[0]}: {p[1]}** ({p[2]}). {p[3]}.{tail}\n')
         f.write('\n## Matches\n\n')
         for g in slate_games:
             f.write(f"- {g['time']} ET: {g['away_name']} @ {g['home_name']}\n")
@@ -569,10 +624,10 @@ def build(start, log):
     sys.path.insert(0, os.path.dirname(HERE))
     import parlays as PAR
     PAR.write_legs('ucl', slate_days, 'UCL', [
-        {'player': names[p], 'team': cur_tm[p], 'market': '1+ shot on target', 'p': round(bl('sot1', p), 3),
+        {'player': names[p], 'team': cur_tm[p], 'market': '1+ shot on target', 'p': round(shr('sot1', p), 3),   # shrunk (11/4)
          'game': (f"{cur_tm[p]} @ {opp_of[cur_tm[p]][0]}" if opp_of[cur_tm[p]][1] == '@'
                   else f"{opp_of[cur_tm[p]][0]} @ {cur_tm[p]}"), 'note': f"{bl('sot', p):.1f} SOT per start"}
-        for p in tonight if (bl('sot1', p) or 0) >= 0.6 and shr('sot1', p) >= 0.55])
+        for p in tonight if (bl('sot1', p) or 0) >= 0.6 and shr('sot1', p) >= 0.65])
     PAR.write_sections(slate_days[0], targets=('ucl',))
     log(f'wrote {len(rows)} rows x {width} cols; picks {len(picks)}; meta {meta}')
 

@@ -46,6 +46,10 @@ chats, so read the files below that the task touches before acting.
   fair with a 10% cushion or longer. Stake $0.10 to $0.20. Log them as "Pick" rows only when Tim asks for parlays.
 - -300 rule: skip any prop priced shorter than about -300; offer the next line up (25+ points, 3+ threes, 3+ SOG).
 - NHL anytime goal: our chance = 0.77 x blend (calibrated 10/30); bet only at +150 or longer.
+- UCL / soccer (calibrated 11/4, `analysis/ucl/README.md`): log the shortlist's Est % and Fair, not raw rates.
+  Goals x0.80, 2+ SOT x0.80 (2.0+ SOT/start, 10+ starts, est 50%+, max 2), over 2.5 x0.90, BTTS x0.80
+  (est 55%+, max 1), match corners x0.80; no team corners. Player props only after the confirmed XI.
+  After grading, add rows to `analysis/ucl/picks_log.csv` and run `analysis/ucl/review.py`.
 - NBA first basket: model has the jumper split (x1.2 / x0.95 by tip) and top-end shrink since 10/30.
 - No StarTool blend (Tim rejected it 10/30). Keep StarTool side by side; save star/bomb to
   `analysis/<sport>/out/startool/star_bomb.txt` and rerun the build for the "agree" flag.

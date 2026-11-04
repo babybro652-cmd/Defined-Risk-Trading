@@ -99,6 +99,8 @@ def main():
     req.append(fmt(sid, p0, p1, 0, 1, {'textFormat': {'bold': True, 'fontSize': 10}}, 'userEnteredFormat.textFormat'))
     req.append(fmt(sid, p0, p1 + 1, 3, 4, {'wrapStrategy': 'WRAP'}, 'userEnteredFormat.wrapStrategy'))
     req.append(fmt(sid, p1, p1 + 1, 0, 1, {'textFormat': {'bold': True, 'italic': True, 'fontSize': 10}}, 'userEnteredFormat.textFormat'))
+    if sport == 'ucl':   # Est % column (F) added 11/4
+        req.append(fmt(sid, p0, p1, 5, 6, {'numberFormat': {'type': 'PERCENT', 'pattern': '0%'}}, 'userEnteredFormat.numberFormat'))
     # probable goalies / injuries block (NHL): title row = goalie_hdr - 1, data rows until the blank before 'a'
     if 'goalie_hdr' in meta:
         g = meta['goalie_hdr']

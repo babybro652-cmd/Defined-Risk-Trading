@@ -77,3 +77,28 @@ MD8 1/27. Knockout playoffs from 2/15. The script reads the dates from ESPN each
 - Domestic leagues used: eng.1, esp.1, ita.1, ger.1, fra.1, por.1, ned.1, bel.1, tur.1, aut.1,
   gre.1, nor.1. ESPN has no league feed for Shakhtar, Slavia Prague, Slovan Bratislava or Sabah,
   so those clubs use UCL matches only.
+
+## Calibration (11/4 review) and pick rules
+
+`python3 analysis/ucl/review.py [--scope UCL|Domestic|all]` prints hit rate vs average predicted
+chance and ROI at our own fair price per category, from `picks_log.csv` (one row per graded pick;
+add the matchday's rows after grading, with pred = the Bets row's est % as a decimal).
+
+Through 11/3 (UCL + domestic weekend picks, 53 with an estimate): 27-26, 51% hit vs 66% predicted.
+1+ SOT 10-1 (80% pred) and over 2.5 8-3 (75%) held up. Overconfident: anytime goal 4-4 (60%),
+first goal 0-3 (17%), 2+ SOT 1-4 (56%), BTTS 1-5 (76%), match corners 2-2 (75%), team corners
+0-2 (82%), parlays with 2+ SOT legs 0-3.
+
+Rules in `build_ucl_tab.py` since 11/4 (constants `CAL`, `MIN_EST`, `SOT2_*`, `GOAL_CAP`):
+- Every shortlist pick shows **Est %** (calibrated) and **Fair** (cols F:G). Log the Est and Fair
+  in the Bets row, not the raw tab rate.
+- Anytime and first goal: est x0.80 (rate x opponent factor capped at 85% first). First goal =
+  share of team goals x team scores first x 0.93. First goal stake $0.10 to $0.25.
+- 1+ SOT: shrunk rate, unchanged. Skip above 75% (shorter than -300).
+- 2+ SOT: only 2.0+ SOT per start over 10+ starts, est x0.80, listed only at 50%+, max 2 a day,
+  never as parlay legs.
+- Over 2.5: x0.90. BTTS: x0.80, max 1 a day, only at est 55%+, $0.25.
+- Match corners: x0.80, the highest line with est 55% to 75%, $0.25. Team corners: no longer picked.
+- Parlays: 1+ SOT legs only, using the shrunk rate, 65%+ legs.
+- Player props only after the confirmed XI (about 1 hr before kickoff).
+- Revisit the factors after 20+ more graded picks per category.
