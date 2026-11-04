@@ -131,14 +131,6 @@
    "note": "54 starts"
   },
   {
-   "player": "Myles Turner",
-   "team": "MIL",
-   "game": "MIL @ BOS",
-   "market": "3+ threes",
-   "p": 0.304,
-   "note": "78 starts"
-  },
-  {
    "player": "Tyler Herro",
    "team": "MIL",
    "game": "MIL @ BOS",
@@ -155,12 +147,12 @@
    "note": "50 starts"
   },
   {
-   "player": "Ryan Rollins",
+   "player": "Myles Turner",
    "team": "MIL",
    "game": "MIL @ BOS",
    "market": "3+ threes",
-   "p": 0.412,
-   "note": "73 starts"
+   "p": 0.304,
+   "note": "78 starts"
   },
   {
    "player": "Derrick White",
@@ -171,12 +163,12 @@
    "note": "84 starts"
   },
   {
-   "player": "Jayson Tatum",
+   "player": "Baylor Scheierman",
    "team": "BOS",
    "game": "MIL @ BOS",
    "market": "3+ threes",
-   "p": 0.297,
-   "note": "23 starts"
+   "p": 0.391,
+   "note": "21 starts"
   },
   {
    "player": "Paul George",
@@ -185,14 +177,6 @@
    "market": "3+ threes",
    "p": 0.545,
    "note": "43 starts"
-  },
-  {
-   "player": "Jordan Walsh",
-   "team": "BOS",
-   "game": "MIL @ BOS",
-   "market": "3+ threes",
-   "p": 0.125,
-   "note": "30 starts"
   },
   {
    "player": "Brandon Miller",
@@ -305,14 +289,6 @@
    "market": "3+ threes",
    "p": 0.245,
    "note": "84 starts"
-  },
-  {
-   "player": "Josh Hart",
-   "team": "NY",
-   "game": "CHI @ NY",
-   "market": "3+ threes",
-   "p": 0.216,
-   "note": "60 starts"
   },
   {
    "player": "Pascal Siakam",
