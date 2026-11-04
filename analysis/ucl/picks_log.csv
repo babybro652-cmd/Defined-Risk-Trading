@@ -62,3 +62,24 @@ date,scope,category,pick,pred,result,bets_row,note
 2026-10-25,Domestic,over 2.5,RMA at BAR,0.82,W,399,
 2026-10-25,Domestic,1+ SOT,Mbappe,0.58,W,400,
 2026-10-25,Domestic,1+ SOT,Bouanga,0.77,W,401,
+2026-11-04,UCL,anytime goal,Haaland MNC at RBL,0.67,W,610,raw 0.74
+2026-11-04,UCL,anytime goal,Mbappe RMA at AEK,0.48,W,611,raw 0.66
+2026-11-04,UCL,anytime goal,Christiansen SAB at VFK,0.52,L,612,raw 0.57; came off the bench
+2026-11-04,UCL,anytime goal,Douvikas COMO at RCL,0.49,W,613,raw 0.56; hat trick
+2026-11-04,UCL,anytime goal,Guirassy BET at DOR,0.36,L,614,raw 0.46
+2026-11-04,UCL,first goal,Haaland MNC at RBL,0.20,L,615,raw 0.25; first goal an OG then Baku
+2026-11-04,UCL,first goal,Mbappe RMA at AEK,0.22,L,616,raw 0.27
+2026-11-04,UCL,first goal,Tresoldi BRU at PSV,0.17,W,617,raw 0.16
+2026-11-04,UCL,1+ SOT,Baturina COMO at RCL,0.73,W,618,raw 0.73; did not start (sub) so XI rule would have skipped
+2026-11-04,UCL,1+ SOT,Guirassy BET at DOR,0.73,L,619,raw 0.73
+2026-11-04,UCL,1+ SOT,Tresoldi BRU at PSV,0.68,W,620,raw 0.68
+2026-11-04,UCL,1+ SOT,Christiansen SAB at VFK,0.66,W,621,raw 0.66; did not start (sub) so XI rule would have skipped
+2026-11-04,UCL,2+ SOT,Mbappe RMA at AEK,0.59,W,622,raw 0.74
+2026-11-04,UCL,2+ SOT,Haaland MNC at RBL,0.45,W,623,raw 0.56; flagged skip
+2026-11-04,UCL,over 2.5,SAB at VFK,0.69,W,624,raw 0.70
+2026-11-04,UCL,over 2.5,RMA at AEK,0.67,W,625,raw 0.68
+2026-11-04,UCL,btts,COMO at RCL,0.54,W,626,raw 0.60; flagged skip
+2026-11-04,UCL,btts,BRU at PSV,0.50,W,627,raw 0.58; flagged skip
+2026-11-04,UCL,corners,SAB at VFK o9.5 match,0.58,W,628,raw 0.66
+2026-11-04,UCL,team corners,MNC o4.5,0.72,L,629,raw 0.72; flagged skip (category dropped)
+2026-11-04,UCL,team corners,VFK o4.5,0.70,W,630,raw 0.70; flagged skip (category dropped)
