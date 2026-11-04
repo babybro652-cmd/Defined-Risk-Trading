@@ -74,3 +74,17 @@
 2026-11-02|ATL @ IND|Nickeil Alexander-Walker,Pascal Siakam|Jalen Johnson,Andrew Nembhard
 2026-11-02|DET @ CHA|Cade Cunningham,Brandon Miller|John Collins,Naz Reid
 2026-11-02|OKC @ CLE|Shai Gilgeous-Alexander,Donovan Mitchell|Ajay Mitchell,James Harden
+2026-11-04|PHI @ DET|Tyrese Maxey,Cade Cunningham|Jaylen Brown,Duncan Robinson
+2026-11-04|ATL @ WSH|Nickeil Alexander-Walker,Anthony Davis|Jalen Johnson,AJ Dybantsa
+2026-11-04|MIL @ BOS|Tyler Herro,Jayson Tatum|Jaime Jaquez Jr.,Paul George
+2026-11-04|CHA @ BKN|Brandon Miller,Michael Porter Jr.|Coby White,Julius Randle
+2026-11-04|CHI @ NY|Caleb Wilson,Jalen Brunson|Norman Powell,Karl-Anthony Towns
+2026-11-04|IND @ MEM|Jarace Walker,Ty Jerome|Jay Huff,Cameron Boozer
+2026-11-04|UTAH @ NO|Lauri Markkanen,Zion Williamson|Keyonte George,Trey Murphy III
+2026-11-04|CLE @ OKC|Donovan Mitchell,Shai Gilgeous-Alexander|James Harden,Ajay Mitchell
+2026-11-04|MIN @ HOU|LaMelo Ball,Kevin Durant|Ayo Dosunmu,Alperen Sengun
+2026-11-04|TOR @ DEN|RJ Barrett,Nikola Jokic|Immanuel Quickley,Jamal Murray
+2026-11-04|POR @ PHX|Deni Avdija,Devin Booker|Damian Lillard,Dillon Brooks
+2026-11-04|DAL @ SA|Cooper Flagg,Victor Wembanyama|P.J. Washington,De'Aaron Fox
+2026-11-04|LAL @ SAC|Luka Doncic,Darius Acuff Jr.|Austin Reaves,Zach LaVine
+2026-11-04|MIA @ LAC|Giannis Antetokounmpo,Darius Garland|Bam Adebayo,Rui Hachimura
