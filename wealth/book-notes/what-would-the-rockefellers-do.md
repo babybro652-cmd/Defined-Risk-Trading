@@ -28,5 +28,12 @@ Wealthy families stay wealthy for generations by running the family like a busin
 3. Cheap term life insurance to protect his son.
 4. Revisit whole life only once cash flow can carry the premium for 10+ years.
 
+## Is it true? (Jarvis review, 11/4)
+- Mindset parts (human capital, cash flow over net worth, family culture): mostly true. Real wealthy families use family offices, family meetings and money education. The Rockefellers ran a family office and set up trusts in 1934.
+- "The Rockefellers got rich with whole life": stretched. Their wealth came from Standard Oil, then trusts, foundations and tax planning. Wealthy families mostly use life insurance to pay estate taxes. "Rockefeller method" is a marketing name.
+- Whole life math: partly true, often misleading. You can borrow against cash value and it keeps earning, with legal protection and tax advantages. But loans charge interest, long-run returns run about 3 to 5% a year after 10+ years, early years are mostly fees and commissions, and many people cancel early and lose money.
+- 401(k) criticism: half true. Fees and lockups are real, but an employer match is free money, which the book downplays.
+- Use: family mission, money lessons for his son, building income streams. Skip whole life until the high-interest loans are gone and cash flow is steady.
+
 ## Tim's notes as he reads
 - (add here)
