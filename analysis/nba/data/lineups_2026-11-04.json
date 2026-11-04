@@ -64,5 +64,49 @@
     ],
     "jumper": "Anthony Davis",
     "note": "RotoWire expected 11/4; Sarr, Coulibaly questionable"
+  },
+  "CHA": {
+    "five": [
+      "Coby White",
+      "Kon Knueppel",
+      "Brandon Miller",
+      "Naz Reid",
+      "Moussa Diabate"
+    ],
+    "jumper": "Moussa Diabate",
+    "note": "RotoWire expected 11/4; White probable, G. Williams out"
+  },
+  "BKN": {
+    "five": [
+      "Nolan Traore",
+      "Chaney Johnson",
+      "Michael Porter Jr.",
+      "Julius Randle",
+      "Day'Ron Sharpe"
+    ],
+    "jumper": "Day'Ron Sharpe",
+    "note": "RotoWire expected 11/4; Demin out"
+  },
+  "CHI": {
+    "five": [
+      "Josh Giddey",
+      "Norman Powell",
+      "Matas Buzelis",
+      "Caleb Wilson",
+      "Nic Claxton"
+    ],
+    "jumper": "Nic Claxton",
+    "note": "RotoWire expected 11/4; Claxton questionable (Jalen Smith if he sits)"
+  },
+  "NY": {
+    "five": [
+      "Jalen Brunson",
+      "Mikal Bridges",
+      "Landry Shamet",
+      "OG Anunoby",
+      "Karl-Anthony Towns"
+    ],
+    "jumper": "Karl-Anthony Towns",
+    "note": "RotoWire expected 11/4; Hart out"
   }
 }

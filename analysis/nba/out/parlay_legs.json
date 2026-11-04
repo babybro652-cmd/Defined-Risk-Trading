@@ -179,44 +179,28 @@
    "note": "43 starts"
   },
   {
+   "player": "Coby White",
+   "team": "CHA",
+   "game": "CHA @ BKN",
+   "market": "3+ threes",
+   "p": 0.379,
+   "note": "27 starts"
+  },
+  {
+   "player": "Kon Knueppel",
+   "team": "CHA",
+   "game": "CHA @ BKN",
+   "market": "3+ threes",
+   "p": 0.65,
+   "note": "80 starts"
+  },
+  {
    "player": "Brandon Miller",
    "team": "CHA",
    "game": "CHA @ BKN",
    "market": "3+ threes",
    "p": 0.674,
    "note": "73 starts"
-  },
-  {
-   "player": "Sion James",
-   "team": "CHA",
-   "game": "CHA @ BKN",
-   "market": "3+ threes",
-   "p": 0.116,
-   "note": "27 starts"
-  },
-  {
-   "player": "Dennis Schroder",
-   "team": "CHA",
-   "game": "CHA @ BKN",
-   "market": "3+ threes",
-   "p": 0.211,
-   "note": "24 starts"
-  },
-  {
-   "player": "Julius Randle",
-   "team": "BKN",
-   "game": "CHA @ BKN",
-   "market": "3+ threes",
-   "p": 0.24,
-   "note": "86 starts"
-  },
-  {
-   "player": "Michael Porter Jr.",
-   "team": "BKN",
-   "game": "CHA @ BKN",
-   "market": "3+ threes",
-   "p": 0.658,
-   "note": "59 starts"
   },
   {
    "player": "Nolan Traore",
@@ -227,20 +211,28 @@
    "note": "35 starts"
   },
   {
+   "player": "Michael Porter Jr.",
+   "team": "BKN",
+   "game": "CHA @ BKN",
+   "market": "3+ threes",
+   "p": 0.658,
+   "note": "59 starts"
+  },
+  {
+   "player": "Julius Randle",
+   "team": "BKN",
+   "game": "CHA @ BKN",
+   "market": "3+ threes",
+   "p": 0.24,
+   "note": "86 starts"
+  },
+  {
    "player": "Josh Giddey",
    "team": "CHI",
    "game": "CHI @ NY",
    "market": "3+ threes",
    "p": 0.208,
    "note": "58 starts"
-  },
-  {
-   "player": "Matas Buzelis",
-   "team": "CHI",
-   "game": "CHI @ NY",
-   "market": "3+ threes",
-   "p": 0.296,
-   "note": "84 starts"
   },
   {
    "player": "Norman Powell",
@@ -251,12 +243,12 @@
    "note": "59 starts"
   },
   {
-   "player": "Jalen Smith",
+   "player": "Matas Buzelis",
    "team": "CHI",
    "game": "CHI @ NY",
    "market": "3+ threes",
-   "p": 0.19,
-   "note": "28 starts"
+   "p": 0.296,
+   "note": "84 starts"
   },
   {
    "player": "Jalen Brunson",
@@ -267,20 +259,20 @@
    "note": "85 starts"
   },
   {
-   "player": "OG Anunoby",
-   "team": "NY",
-   "game": "CHI @ NY",
-   "market": "3+ threes",
-   "p": 0.382,
-   "note": "75 starts"
-  },
-  {
    "player": "Mikal Bridges",
    "team": "NY",
    "game": "CHI @ NY",
    "market": "3+ threes",
    "p": 0.269,
    "note": "90 starts"
+  },
+  {
+   "player": "OG Anunoby",
+   "team": "NY",
+   "game": "CHI @ NY",
+   "market": "3+ threes",
+   "p": 0.382,
+   "note": "75 starts"
   },
   {
    "player": "Karl-Anthony Towns",
