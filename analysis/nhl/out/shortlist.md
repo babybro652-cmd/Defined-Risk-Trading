@@ -43,11 +43,4 @@ Only categories that beat their price season to date: NBA 3+ threes, NHL 3+ SOG,
 - **3-leg #4:** Connor Bedard 3+ SOG (67%, CHI @ FLA) + Macklin Celebrini 3+ SOG (64%, SJS @ LAK) + Rasmus Dahlin 3+ SOG (56%, OTT @ BUF). Fair +324 (24%); take +366 or longer.
 - **3-leg #5:** Artemi Panarin 3+ SOG (57%, SJS @ LAK) + Adrian Kempe 3+ SOG (56%, SJS @ LAK) + Rasmus Dahlin 3+ SOG (56%, OTT @ BUF). Fair +458 (18%); take +513 or longer; same game, correlated, fair price is optimistic.
 
-### UCL
-- **2-leg #1:** Kylian Mbappé 1+ shot on target (84%, RMA @ AEK) + Erling Haaland 1+ shot on target (80%, MNC @ RBL). Fair -204 (67%); take -157 or longer.
-- **2-leg #2:** Kylian Mbappé 1+ shot on target (84%, RMA @ AEK) + Abde Ezzalzouli 1+ shot on target (74%, BET @ DOR). Fair -163 (62%); take -129 or longer.
-- **2-leg #3:** Erling Haaland 1+ shot on target (80%, MNC @ RBL) + Abde Ezzalzouli 1+ shot on target (74%, BET @ DOR). Fair -147 (60%); take -118 or longer.
-- **3-leg #4:** Martin Baturina 1+ shot on target (73%, COMO @ RCL) + Serhou Guirassy 1+ shot on target (73%, BET @ DOR) + Nicolo Tresoldi 1+ shot on target (68%, BRU @ PSV). Fair +176 (36%); take +203 or longer.
-- **3-leg #5:** Martin Baturina 1+ shot on target (73%, COMO @ RCL) + Serhou Guirassy 1+ shot on target (73%, BET @ DOR) + Peter Christiansen 1+ shot on target (66%, SAB @ VFK). Fair +185 (35%); take +214 or longer.
-
 <!-- parlays:end -->
