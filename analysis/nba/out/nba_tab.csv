@@ -66,7 +66,7 @@ Luka Doncic,LAL,LAL @ SAC 10:00,0.161,+520,0.11,0.491,0.399,0.018,+5538,0.079,+1
 Michael Porter Jr.,BKN,BKN vs CHA 7:30,0.143,+601,0.372,0.256,0.372,0.053,+1786,0.037,+2634,0.053,+1783,28.0,591.0,,,
 Jamal Murray,DEN,DEN vs TOR 9:00,0.14,+614,0.314,0.299,0.388,0.044,+2177,0.042,+2292,0.054,+1743,30.0,813.0,,,
 LaMelo Ball,MIN,MIN @ HOU 8:30,0.139,+617,0.158,0.204,0.638,0.022,+4443,0.028,+3410,0.089,+1024,22.0,647.0,,,
-Anthony Davis,WSH,WSH vs ATL 7:00,0.139,+618,0.419,0.51,0.071,0.058,+1615,0.071,+1308,0.01,+10008,9.0,352.0,,,
+Anthony Davis,WSH,WSH vs ATL 7:00,0.139,+618,0.419,0.51,0.071,0.058,+1615,0.071,+1308,0.01,+10009,9.0,352.0,,,
 Jalen Green,PHX,PHX vs POR 9:00,0.138,+623,0.448,0.227,0.325,0.062,+1514,0.031,+3085,0.045,+2127,13.0,285.0,,,
 Norman Powell,CHI,CHI @ NY 7:30,0.136,+634,0.249,0.244,0.506,0.034,+2845,0.033,+2902,0.069,+1349,13.0,537.0,,,
 Ajay Mitchell,OKC,OKC vs CLE 8:00,0.134,+647,0.313,0.489,0.198,0.042,+2285,0.065,+1429,0.026,+3677,9.0,427.0,,,
@@ -144,7 +144,7 @@ Daniel Gafford,DAL,F,7,2,4,2,44,6,8,4,,,,'2 / 0 / 0 / 0,6,,0.627,0.209
 Pascal Siakam,IND,F,7,1,2,2,63,8,18,9,,,,'4 / 0 / 0 / 0,9,,0.487,0.21
 Stephen Curry,GS,G,6,0,2,1,41,5,9,8,,,,'5 / 0 / 1 / 1,5,,0.468,0.228
 Caleb Wilson,CHI,F,7,1,3,1,0,0,0,0,,,,'5 / 0 / 0 / 0,0,,0.442,0.206
-Onyeka Okongwu,ATL,F,8,0,1,1,63,8,19,15,,,,'4 / 0 / 0 / 0,8,,0.473,0.235
+Onyeka Okongwu,ATL,F,8,0,1,1,63,8,19,15,,,,'4 / 0 / 0 / 0,8,,0.473,0.234
 Domantas Sabonis,SAC,F,7,0,2,1,15,2,3,5,,,,'2 / 0 / 0 / 0,2,,0.58,0.196
 Moses Moody,GS,G,0,0,0,0,49,7,12,13,,,,'0 / 0 / 0 / 0,6,Out,0.446,-
 Cameron Boozer,MEM,F,7,0,2,0,0,0,0,0,,,,'4 / 0 / 1 / 0,0,,0.414,0.138
@@ -169,7 +169,7 @@ Kawhi Leonard,TOR,F,2,0,0,0,68,5,14,18,,,,'2 / 0 / 0 / 0,7,Out,0.494,-
 Zaccharie Risacher,DAL,F,1,0,0,0,46,4,13,11,,,,'4 / 0 / 1 / 1,4,,0.449,0.186
 Dillon Brooks,PHX,F,5,0,0,2,56,4,14,14,,,,'4 / 0 / 0 / 0,5,,0.446,0.22
 Immanuel Quickley,TOR,G,7,0,1,0,70,6,14,10,,,,'4 / 0 / 0 / 1,5,,0.438,0.192
-Coby White,CHA,G,1,0,0,0,26,3,6,5,,,,'0 / 0 / 0 / 0,3,Day-To-Day,0.449,0.185
+Coby White,CHA,G,1,0,0,0,26,3,6,5,,,,'0 / 0 / 0 / 0,3,,0.449,0.185
 Tyrese Maxey,PHI,G,8,1,2,3,73,10,15,21,,,,'3 / 0 / 0 / 0,10,,0.472,0.217
 Jay Huff,IND,C,5,0,1,1,47,6,12,8,,,,'0 / 0 / 0 / 0,7,,0.482,0.181
 Cameron Johnson,DEN,F,3,0,1,1,54,7,9,11,,,,'5 / 0 / 0 / 0,7,Day-To-Day,0.474,0.199
@@ -186,6 +186,7 @@ Amen Thompson,HOU,G,8,1,1,1,79,7,18,12,,,,'3 / 1 / 1 / 1,6,,0.526,0.17
 Aaron Gordon,DEN,F,6,1,1,0,33,3,6,7,,,,'4 / 2 / 3 / 2,3,,0.46,0.176
 Brandin Podziemski,GS,G,6,1,2,2,43,3,6,10,,,,'5 / 1 / 1 / 2,5,,0.458,0.233
 James Harden,CLE,G,7,1,2,0,70,5,8,5,,,,'2 / 0 / 1 / 0,6,,0.43,0.117
+Kingston Flemings,ATL,G,0,0,0,0,0,0,0,0,,,,'2 / 0 / 0 / 0,0,,0.47,0.196
 AJ Dybantsa,WSH,F,3,0,1,2,0,0,0,0,,,,'4 / 0 / 0 / 0,0,,0.48,0.237
 Rui Hachimura,LAC,F,5,1,1,1,41,3,8,10,,,,'3 / 0 / 1 / 1,3,,0.477,0.228
 Meleek Thomas,CLE,G,1,0,0,0,0,0,0,0,,,,'0 / 0 / 0 / 0,0,,0.475,0.18
@@ -213,7 +214,6 @@ Andrew Nembhard,IND,G,6,0,0,1,57,6,14,20,,,,'3 / 0 / 0 / 0,6,,0.447,0.251
 Hugo Gonzalez,BOS,G,2,0,0,1,3,0,1,1,,,,'1 / 0 / 0 / 0,0,,0.471,0.192
 Jaylon Tyson,CLE,G,0,0,0,0,42,3,5,6,,,,'1 / 1 / 1 / 0,3,Out,0.485,-
 Jakob Poeltl,TOR,C,5,0,0,0,44,3,8,5,,,,'4 / 0 / 0 / 0,3,Day-To-Day,0.615,0.15
-CJ McCollum,ATL,G,8,0,0,1,60,7,14,12,,,,'3 / 1 / 1 / 1,8,,0.456,0.194
 Ausar Thompson,DET,G,6,0,0,0,72,5,13,10,,,,'4 / 0 / 0 / 1,5,,0.52,0.127
 Spencer Jones,DEN,F,0,0,0,0,37,3,5,4,,,,'0 / 0 / 0 / 0,3,Out,0.491,-
 P.J. Washington,DAL,F,7,1,1,1,53,4,11,15,,,,'3 / 0 / 0 / 0,4,,0.441,0.187
@@ -344,7 +344,6 @@ Karl-Anthony Towns,NY,20.3,19.7,0.939,0.786,0.541,0.194,1.5,0.806,0.469,0.245,0.
 RJ Barrett,TOR,20.7,19.3,0.936,0.795,0.615,0.231,1.7,0.821,0.5,0.218,0.115,'26 22 9 25 20,'2 4 1 3 0,,,,
 Zach LaVine,SAC,23.4,19.2,0.897,0.759,0.552,0.31,2.5,0.897,0.741,0.586,0.241,'23 11 21 22 37,'5 0 3 3 3,,,,
 Darius Garland,LAC,20.1,18.8,0.953,0.828,0.469,0.219,2.7,0.953,0.641,0.484,0.297,'16 15 24 14 16,'1 1 4 1 2,,,,
-CJ McCollum,ATL,14.2,18.7,0.881,0.583,0.321,0.179,2.5,0.857,0.655,0.393,0.226,'13 14 5 13 20,'2 2 0 1 4,,,,
 Kon Knueppel,CHA,-,18.5,0.925,0.675,0.45,0.188,3.4,0.963,0.85,0.65,0.463,'14 10 13 11 20,'3 2 3 1 3,,,,
 Amen Thompson,HOU,16.0,18.3,0.903,0.709,0.379,0.097,0.3,0.272,0.029,0.0,0.0,'14 8 15 23 15,'0 0 0 0 0,,,,
 Evan Mobley,CLE,19.1,18.2,0.952,0.786,0.405,0.119,1.0,0.619,0.345,0.214,0.095,'16 27 11 24 18,'1 3 0 5 4,,,,
@@ -352,7 +351,7 @@ De'Aaron Fox,SA,15.9,17.9,0.926,0.585,0.362,0.202,1.8,0.809,0.521,0.213,0.096,'1
 Trae Young,WSH,19.9,17.9,0.917,0.778,0.611,0.167,1.8,0.806,0.417,0.278,0.222,'15 21 14 22 25,'2 1 1 1 4,,,,
 Jalen Green,PHX,11.0,17.8,0.81,0.524,0.452,0.214,2.2,0.762,0.476,0.286,0.119,'11 2 20 12 10,'0 0 1 1 2,,,,
 Scottie Barnes,TOR,24.4,17.6,0.921,0.733,0.455,0.228,0.8,0.485,0.188,0.069,0.02,'22 29 41 28 0,'0 0 1 0 0,,,,
-Coby White,CHA,7.0,17.4,0.828,0.655,0.552,0.103,2.3,0.897,0.517,0.379,0.207,'7 21 16 14 14,'1 2 0 2 1,Day-To-Day,,,
+Coby White,CHA,7.0,17.4,0.828,0.655,0.552,0.103,2.3,0.897,0.517,0.379,0.207,'7 21 16 14 14,'1 2 0 2 1,,,,
 Paul George,BOS,20.7,17.3,0.909,0.745,0.327,0.145,2.7,0.909,0.745,0.545,0.273,'17 18 20 16 15,'3 2 1 3 3,,,,
 Miles Bridges,PHX,17.2,17.1,0.848,0.641,0.337,0.152,1.9,0.783,0.543,0.348,0.13,'21 24 17 16 8,'3 2 2 2 0,,,,
 Josh Giddey,CHI,9.1,17.0,0.736,0.486,0.264,0.111,1.9,0.792,0.5,0.208,0.111,'13 13 10 11 9,'2 2 1 1 1,,,,
@@ -489,4 +488,4 @@ Tue 11/10,9:00 PM,MIA @ UTAH,Regular,Bam Adebayo vs Jaxson Hayes,0.881,,,,,,,,,,
 Tue 11/10,10:00 PM,ORL @ SAC,Regular,Wendell Carter Jr. vs Domantas Sabonis,0.731,,,,,,,,,,,,,
 Tue 11/10,11:00 PM,OKC @ POR,Regular,Isaiah Hartenstein vs Donovan Clingan,0.447,,,,,,,,,,,,,
 ,,,,,,,,,,,,,,,,,,
-Sources,"ESPN NBA scoreboard, game summaries (boxscore starters and play-by-play) for 1235 2025-26 regular-season games, 67 2026-27 preseason and 107 2026-27 regular-season games; ESPN rosters and injuries. Pulled 11/4 6:31 PM ET. Probable starters are an estimate from recent starts, not official lineups; the main jumper (most recent opening tips this season, weighted to the newest) is always put in the probable five. Rebuilt by analysis/nba/build_nba_tab.py; model check in analysis/nba/backtest_fb.py.",,,,,,,,,,,,,,,,,
+Sources,"ESPN NBA scoreboard, game summaries (boxscore starters and play-by-play) for 1235 2025-26 regular-season games, 67 2026-27 preseason and 107 2026-27 regular-season games; ESPN rosters and injuries. Pulled 11/4 6:52 PM ET. Probable starters are an estimate from recent starts, not official lineups; the main jumper (most recent opening tips this season, weighted to the newest) is always put in the probable five. Rebuilt by analysis/nba/build_nba_tab.py; model check in analysis/nba/backtest_fb.py.",,,,,,,,,,,,,,,,,
