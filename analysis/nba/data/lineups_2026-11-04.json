@@ -240,5 +240,27 @@
     ],
     "jumper": "Victor Wembanyama",
     "note": "RotoWire expected 9:00 PM; Harris out"
+  },
+  "LAL": {
+    "five": [
+      "Luka Doncic",
+      "Austin Reaves",
+      "Ziaire Williams",
+      "Matisse Thybulle",
+      "Walker Kessler"
+    ],
+    "jumper": "Walker Kessler",
+    "note": "RotoWire expected 9:30 PM; Thiero out"
+  },
+  "SAC": {
+    "five": [
+      "Darius Acuff Jr.",
+      "Zach LaVine",
+      "De'Andre Hunter",
+      "Precious Achiuwa",
+      "Domantas Sabonis"
+    ],
+    "jumper": "Domantas Sabonis",
+    "note": "RotoWire expected 9:30 PM; Achiuwa starts; Keegan Murray, Raynaud, Plowden out"
   }
 }

@@ -643,14 +643,6 @@
    "note": "53 starts"
   },
   {
-   "player": "Jake LaRavia",
-   "team": "LAL",
-   "game": "LAL @ SAC",
-   "market": "3+ threes",
-   "p": 0.145,
-   "note": "47 starts"
-  },
-  {
    "player": "Zach LaVine",
    "team": "SAC",
    "game": "LAL @ SAC",
@@ -659,20 +651,20 @@
    "note": "44 starts"
   },
   {
-   "player": "Precious Achiuwa",
-   "team": "SAC",
-   "game": "LAL @ SAC",
-   "market": "3+ threes",
-   "p": 0.042,
-   "note": "62 starts"
-  },
-  {
    "player": "De'Andre Hunter",
    "team": "SAC",
    "game": "LAL @ SAC",
    "market": "3+ threes",
    "p": 0.283,
    "note": "32 starts"
+  },
+  {
+   "player": "Precious Achiuwa",
+   "team": "SAC",
+   "game": "LAL @ SAC",
+   "market": "3+ threes",
+   "p": 0.042,
+   "note": "62 starts"
   },
   {
    "player": "Andrew Wiggins",
