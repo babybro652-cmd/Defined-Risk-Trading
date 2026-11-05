@@ -88,3 +88,5 @@
 2026-11-04|DAL @ SA|Cooper Flagg,Victor Wembanyama|P.J. Washington,De'Aaron Fox
 2026-11-04|LAL @ SAC|Luka Doncic,Darius Acuff Jr.|Austin Reaves,Zach LaVine
 2026-11-04|MIA @ LAC|Giannis Antetokounmpo,Darius Garland|Bam Adebayo,Rui Hachimura
+2026-11-05|ORL @ PHX|Desmond Bane,Devin Booker|Franz Wagner,Dillon Brooks
+2026-11-05|MIA @ GS|Giannis Antetokounmpo,Stephen Curry|Bam Adebayo,Yaxel Lendeborg

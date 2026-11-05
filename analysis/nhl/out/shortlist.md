@@ -25,22 +25,11 @@
 - No StarTool cards saved for this slate yet. Add lines to out/startool/star_bomb.txt (date|AWAY @ HOME|star,star|bomb,bomb) and rerun.
 
 <!-- parlays:begin -->
-## Parlays 2026-11-04 (2-3 legs, $0.10 to $0.20)
+## Parlays 2026-11-05 (2-3 legs, $0.10 to $0.20)
 
 Only categories that beat their price season to date: NBA 3+ threes, NHL 3+ SOG, NFL receptions, soccer 1+ shot on target. No points overs, no first basket / first goal / anytime goal legs. Fair = product of the leg chances (no correlation boost). Take only at the minimum price or longer (fair with a 10% cushion). Legs from the same game are correlated and marked.
 
 ### NBA
-- **2-leg #1:** Luka Doncic 3+ threes (80%, LAL @ SAC) + Brandon Miller 3+ threes (67%, CHA @ BKN). Fair -118 (54%); take +103 or longer.
-- **2-leg #2:** Luka Doncic 3+ threes (80%, LAL @ SAC) + Michael Porter Jr. 3+ threes (66%, CHA @ BKN). Fair -112 (53%); take +108 or longer.
-- **2-leg #3:** Brandon Miller 3+ threes (67%, CHA @ BKN) + LaMelo Ball 3+ threes (63%, MIN @ HOU). Fair +134 (43%); take +157 or longer.
-- **3-leg #4:** Michael Porter Jr. 3+ threes (66%, CHA @ BKN) + LaMelo Ball 3+ threes (63%, MIN @ HOU) + Duncan Robinson 3+ threes (63%, PHI @ DET). Fair +279 (26%); take +317 or longer.
-- **3-leg #5:** Duncan Robinson 3+ threes (63%, PHI @ DET) + Nickeil Alexander-Walker 3+ threes (63%, ATL @ WSH) + James Harden 3+ threes (63%, CLE @ OKC). Fair +299 (25%); take +339 or longer.
-
-### NHL
-- **2-leg #1:** Tage Thompson 3+ SOG (69%, OTT @ BUF) + Brady Tkachuk 3+ SOG (69%, CHI @ FLA). Fair +111 (47%); take +132 or longer.
-- **2-leg #2:** Tage Thompson 3+ SOG (69%, OTT @ BUF) + Connor Bedard 3+ SOG (67%, CHI @ FLA). Fair +117 (46%); take +139 or longer.
-- **2-leg #3:** Brady Tkachuk 3+ SOG (69%, CHI @ FLA) + Macklin Celebrini 3+ SOG (64%, SJS @ LAK). Fair +129 (44%); take +152 or longer.
-- **3-leg #4:** Connor Bedard 3+ SOG (67%, CHI @ FLA) + Macklin Celebrini 3+ SOG (64%, SJS @ LAK) + Rasmus Dahlin 3+ SOG (56%, OTT @ BUF). Fair +324 (24%); take +366 or longer.
-- **3-leg #5:** Artemi Panarin 3+ SOG (57%, SJS @ LAK) + Adrian Kempe 3+ SOG (56%, SJS @ LAK) + Rasmus Dahlin 3+ SOG (56%, OTT @ BUF). Fair +458 (18%); take +513 or longer; same game, correlated, fair price is optimistic.
+- Not enough qualifying legs.
 
 <!-- parlays:end -->
