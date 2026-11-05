@@ -271,6 +271,67 @@ Code: `FP` and the `fit_fp` / `w_shot3` branch of `v2_shares` in build_nba_tab.p
 `--fb-model fg` rebuilds with the 11/2 model. backtest_fix.py runs the adopted variants through the build's `v2_shares`
 (checked: same numbers as its own copy). Gains are small; first basket is still mostly noise.
 
+## Model change 11/5/26 (chain): first-possession chain + two-slot picks (Tim's idea, adopted)
+
+Tim: "Who takes the first shot is important only if they are hitting more than missing, and if they are missing then
+the second pick should be next in line." Example: Giannis took MIA's first shot 1 of 8 starts but scored MIA's first
+points 4 of 8 (2 FT trips, putbacks after misses).
+
+Model (`chain_model.py`, default `--fb-model chain`; `--fb-model fp` = the 11/5 morning model, `fg` = 11/2): the opening is
+played possession by possession until someone scores (exact Markov chain, no simulation).
+- Tip: jumper vs jumper tip chance decides who has the ball first. The tip winner's jumper gets x1.2 on his first-shot
+  share in that first possession (`jq`).
+- Each possession (or reset after an offensive rebound): turnover with the team's TO rate per possession end (offense x
+  opponent, shrunk; league 12.3%). Else one starter ends it: first possession by his first-FGA share, later ones by his
+  first-3-FGA share, both shrunk hard to his usage (FGA + FT trips per minute) with 50 pseudo starts (`k_sh1`, `k_f3`).
+- His event: FT trip with his trip share (trips / (trips + FGA), and-ones excluded; league 10%), scores with his trip
+  rate (94%); or an FGA that scores with his shot-type make rate (rim / j2 / 3 mix x make rates, as the 11/5 term).
+- Miss: offensive rebound with the team's rate vs the opponent (league 31% after a missed FG, team rebounds included).
+  Rebounder split by OREB per minute (shrunk to position). He takes a putback with his putback rate (league 53% of
+  OREBs, scores 60%), else a reset possession. Otherwise the other team's possession.
+- No top-end shrink (the chain is calibrated without it; temp 0.8 and 0.9 were worse once `k_sh1` was 50).
+
+Data: `chain_data.py` caches one ESPN summary per game in `data/chain_<season>.json`: per player OREB, DREB, turnovers,
+putback tries and makes, FT trips without and-ones, FGA; per team missed FG, OREB after a miss, turnovers; the opening
+event sequence up to the first points. The build fetches new games itself.
+
+Backtest `python3 analysis/nba/backtest_chain.py` (walk-forward, no lookahead, actual starters and jumpers, same games
+and same "current" numbers as backtest_fix.py; target = first points incl FT; log loss over the 10 starters; SE paired
+per game vs current). `--grid` runs the tuning grid; tuned on 25-26 only.
+
+| Model | LL 25-26 (933) | LL 26-27 (121) | Brier 25 / 26 | Top pick hits 25 / 26 |
+|---|---|---|---|---|
+| Current (11/5 first points + shot type) | 2.2679 | 2.2417 | .8925 / .8867 | 133 / 18 |
+| Chain, first-shot share k 8 | 2.2660 | 2.2378 | .8919 / .8860 | 146 / 19 |
+| **Chain, k 50 (used)** | **2.2552** (SE .0046) | **2.2204** (SE .0111) | .8897 / .8819 | 139 / 21 |
+| Blend 50/50 current + chain (k 8) | 2.2638 | 2.2364 | .8915 / .8856 | 142 / 19 |
+
+- Better on both seasons (-0.013 and -0.021, about 2.8 and 1.9 SE). The big gain came from shrinking the first-shot share
+  toward usage: who took the first shot in past games is mostly noise; who shoots, makes, draws fouls and rebounds is not.
+- Calibration by decile, 25-26 (pred / hit): current 6.3/6.6 ... 12.3/12.1, top 14.8/15.4; chain 5.6/5.9, 6.9/6.8, 7.8/7.9,
+  8.5/8.8, 9.2/9.8, 10.0/7.8, 10.8/11.0, 11.8/11.8, 13.1/14.1, top 16.3/16.1. Wider spread, still on the line.
+- Flat (within 0.0005): usage shrink k_u 50 to 400, OREB k 50 to 500, putback k 5 to 60, make-rate k 15 to 100, trip k 300.
+
+Two-slot pick rule (adopted for Tim's reports). Per team: **1st-shot pick** = most likely to score on the team's first
+shot event (takes it x makes it, or draws FTs and scores); **2nd-chance pick** = the other starter most likely to score
+the team's first points after a miss or turnover (team first points chance minus the first-event part). Pair coverage =
+the team's first points scorer is one of its two picks (2 teams per game); game = the game's first points scorer is one
+of the 4 picks.
+
+| Rule | Team pair 25-26 (1,866) | Team pair 26-27 (242) | Game 4 picks 25-26 | Game 4 picks 26-27 |
+|---|---|---|---|---|
+| Current model top 2 | 47.9% | 43.4% | 49.2% | 51.2% |
+| Chain top 2 | 47.7% | 48.8% | 50.1% | 57.0% |
+| **Two-slot (used)** | **48.2%** | **48.3%** | 49.9% | 57.0% |
+
+Slot 1 alone hit 26.2% / 20.2% of team first points, slot 2 alone 22.0% / 28.1%. Two-slot beats our old top 2 on both
+seasons; it ties the chain's own top 2 (pick either; the two-slot pair says why each name is there). Small gains: first
+basket is still mostly noise.
+
+Report format (Tim's reports, confirmed-lineup reruns): per game the projected tip winner and tip %, then per team (tip
+favorite first) "1st-shot pick" and "2nd-chance pick" with each one's chance to score the GAME's first points and fair
+price. The shortlist writes this in "First basket two-slot picks (chain model)". Bet only past fair.
+
 ## Sources
 
 - ESPN `site.api.espn.com/apis/site/v2/sports/basketball/nba`: scoreboard, summary
@@ -348,6 +409,7 @@ Code: `FP` and the `fit_fp` / `w_shot3` branch of `v2_shares` in build_nba_tab.p
   tip-favorite centers and stars (Wembanyama, Adebayo); after 0-13 on 11/2 keep stakes at $0.20 to $0.50 and bet only past fair.
 
 - 11/5: first points model (fix 1 + 3 above) is the default. Tested and dropped the recent opening-play share (fix 2).
+- 11/5 evening: chain model (Tim's idea) replaces it as the default, and reports use the two-slot picks (1st-shot pick, 2nd-chance pick per team). See "Model change 11/5/26 (chain)". Giannis moves to MIA's 2nd-chance pick (16%, fair +514 tonight vs 12% before).
 
 ## Tim vs model log (first basket)
 

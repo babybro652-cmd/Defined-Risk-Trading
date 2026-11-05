@@ -4,6 +4,7 @@
 Usage:
   python3 analysis/nba/build_nba_tab.py                  # slate = next game day from today (ET)
   python3 analysis/nba/build_nba_tab.py --date 2026-10-20
+  python3 analysis/nba/build_nba_tab.py --fb-model fp    # the 11/5 model (first points + shot type, no chain)
   python3 analysis/nba/build_nba_tab.py --fb-model fg    # the 11/2 model (first made FG target, no shot type)
 
 Slate rule: the first date on or after --date with NBA games. Before the regular season starts,
@@ -63,7 +64,11 @@ V2 = {'w_shot': 0.5,      # share = (1 - w) x first-FG share + w x first-shot sh
 #           rate there (shrunk to league, k_fg attempts) + FT trips per FGA (k_ftr FGA) x trip scoring rate (k_fts)]
 # opening.py caches each game's team first points scorer and the shot-type box (data/opening_<season>.json).
 FP = {'fit_fp': True, 'w_shot3': 0.7, 'k_mix': 30, 'k_fg': 40, 'k_ftr': 100, 'k_fts': 20}
-FB_MODEL = {'name': 'fp'}   # 'fg' = the 11/2 model (set by --fb-model)
+FB_MODEL = {'name': 'chain'}   # 'fp' = the 11/5 model, 'fg' = the 11/2 model (set by --fb-model)
+# Chain model (11/5/26 evening, Tim's idea; chain_model.py, backtest_chain.py, README "Model change 11/5/26 (chain)"):
+# the opening is played possession by possession (tip, shooter, make / FT trip, offensive rebound, putback,
+# turnover) until someone scores. Default since 11/5. Needs data/chain_<season>.json (chain_data.py).
+CHF = ('OR', 'PA', 'PM', 'trT', 'trS', 'cFGA')
 BX = ('rA', 'rM', 'jA', 'jM', 'tA', 'tM', 'ftT', 'ftS')   # rim / j2 / 3 attempts and makes, FT trips, trips scored
 CNT = ('gs', 't1', 'tp1', 'sh1', 'fgm', 'fga', 'f3', 'gs3') + BX
 
@@ -318,13 +323,13 @@ def refresh(season, sched, today, log):
 # ---------- aggregates ----------
 def zero():
     return {'gp': 0, 'gs': 0, 'fb': 0, 'fp': 0, 't1': 0, 'tp1': 0, **dict.fromkeys(BX, 0), 'sh1': 0, 'sh1m': 0, 'tips': 0, 'tipw': 0, 'pts': 0, 'tpm': 0,
-            'min': 0, 'fgm': 0, 'fga': 0, 'f3': 0, 'gs3': 0, 'log': [], 'gs_by': {}}
+            'min': 0, 'fgm': 0, 'fga': 0, 'f3': 0, 'gs3': 0, 'log': [], 'gs_by': {}, **dict.fromkeys(CHF, 0)}
 
 
-def player_stats(games, f3=None, op=None):
+def player_stats(games, f3=None, op=None, ch=None):
     """f3: optional first3.py cache (game id -> {team: first 3 FGA shooters}) for the first-3-FGA counts.
     op: optional opening.py cache (team first points scorer, shot-type box) for the first points model."""
-    P, f3, op = {}, f3 or {}, op or {}
+    P, f3, op, ch = {}, f3 or {}, op or {}, ch or {}
     for g in sorted(games.values(), key=lambda x: (x['date'], x['id'])):
         for pid, tm, st, mins, pts, tpm, pos, fgm, fga in g['pl']:
             s = P.setdefault(pid, zero() | {'tm': tm, 'pos': pos, 'nm': g['nm'].get(pid, '?')})
@@ -334,6 +339,11 @@ def player_stats(games, f3=None, op=None):
             o = op.get(g['id'], {})
             for f, v in zip(BX, o.get('bx', {}).get(pid, ())):
                 s[f] += v
+            cb = ch.get(g['id'], {}).get('pb', {}).get(pid)
+            if cb and mins:   # chain model counts (chain_data.py)
+                s['cmin'] = s.get('cmin', 0) + mins
+                for f, i in zip(CHF, (0, 3, 4, 5, 6, 7)):
+                    s[f] += cb[i]
             if st:
                 s['gs'] += 1; s['gs_by'][tm] = s['gs_by'].get(tm, 0) + 1
                 s['fb'] += bool(g['fb'] and g['fb'][0] == pid)
@@ -410,11 +420,13 @@ def build(start, log, lineups=None):
     g_cur_all = refresh(CUR, sched_cur, today, log)
     g_cur = {k: v for k, v in g_cur_all.items() if v['type'] == 2}
     g_pre = {k: v for k, v in g_cur_all.items() if v['type'] == 1}
-    import first3, opening
-    PL = player_stats(g_last, first3.cache(LAST, list(g_last), log), opening.cache(LAST, list(g_last), log))
-    PC = player_stats(g_cur, first3.cache(CUR, list(g_cur), log), opening.cache(CUR, list(g_cur), log))
+    import first3, opening, chain_data, chain_model as CM
+    CHL, CHC = chain_data.cache(LAST, list(g_last), log), chain_data.cache(CUR, list(g_cur), log)
+    PL = player_stats(g_last, first3.cache(LAST, list(g_last), log), opening.cache(LAST, list(g_last), log), CHL)
+    PC = player_stats(g_cur, first3.cache(CUR, list(g_cur), log), opening.cache(CUR, list(g_cur), log), CHC)
     PP = player_stats(g_pre)
-    FPM = FB_MODEL['name'] == 'fp'
+    CHAIN = FB_MODEL['name'] == 'chain'
+    FPM = FB_MODEL['name'] in ('fp', 'chain')
     PRM = V2 | FP if FPM else V2
     TL, TC, TP = team_stats(g_last), team_stats(g_cur), team_stats(g_pre)
     W = W_DEFAULT
@@ -578,12 +590,78 @@ def build(start, log, lineups=None):
     def nm(pid):
         return (roster.get(pid) or {}).get('name') or S(PL, pid).get('nm') or S(PP, pid).get('nm') or pid
 
+    # ---------- chain model (11/5/26 evening; chain_model.py) ----------
+    def chain_team_counts(chs, games):
+        out = {}
+        for gid, ch in chs.items():
+            g = games.get(gid)
+            if not g:
+                continue
+            tmof = {p[0]: p[1] for p in g['pl']}
+            for tm, (mf, orb, to) in ch['tm'].items():
+                opp = g['home'] if tm == g['away'] else g['away']
+                seg = to + sum(v[7] + v[5] for pid, v in ch['pb'].items() if tmof.get(pid) == tm)
+                for f, v in (('to', to), ('seg', seg), ('mf', mf), ('orb', orb)):
+                    out.setdefault(tm, {}).setdefault(f, 0); out[tm][f] += v
+                    out.setdefault(opp, {}).setdefault('d' + f, 0); out[opp]['d' + f] += v
+        return out
+    CTL, CTC = chain_team_counts(CHL, g_last), chain_team_counts(CHC, g_cur)
+    ctot = lambda f: sum(t.get(f, 0) for t in CTL.values()) + W * sum(t.get(f, 0) for t in CTC.values())
+    psum = lambda f, ps: (sum(x.get(f, 0) for x in PL.values() if x['pos'] == ps)
+                          + W * sum(x.get(f, 0) for x in PC.values() if x['pos'] == ps))
+    LC = {'upm': {ps: (psum('cFGA', ps) + psum('trT', ps)) / psum('cmin', ps) for ps in POS},
+          'orpm': {ps: psum('OR', ps) / psum('cmin', ps) for ps in POS},
+          'pa': {ps: psum('PA', ps) / psum('OR', ps) for ps in POS}, 'pm': {ps: psum('PM', ps) / psum('PA', ps) for ps in POS},
+          'tr': sum(psum('trT', ps) for ps in POS) / sum(psum('cFGA', ps) + psum('trT', ps) for ps in POS),
+          'trs': sum(psum('trS', ps) for ps in POS) / sum(psum('trT', ps) for ps in POS),
+          'to': ctot('to') / ctot('seg'), 'ob': ctot('orb') / ctot('mf')}
+    LC['cred'] = min(0.95, sum(psum('OR', ps) for ps in POS) / ctot('orb'))
+    LCH = dict(LG, **LC)
+
+    def chain_rates(tm, opp, c=CM.CH):
+        get_ = lambda t, f: W * CTC.get(t, {}).get(f, 0) + CTL.get(t, {}).get(f, 0)
+        lto, lob = LC['to'], LC['ob']
+        o_to = (get_(tm, 'to') + c['k_to'] * lto) / (get_(tm, 'seg') + c['k_to'])
+        d_to = (get_(opp, 'dto') + c['k_to'] * lto) / (get_(opp, 'dseg') + c['k_to'])
+        o_ob = (get_(tm, 'orb') + c['k_ob'] * lob) / (get_(tm, 'mf') + c['k_ob'])
+        d_ob = (get_(opp, 'dorb') + c['k_ob'] * lob) / (get_(opp, 'dmf') + c['k_ob'])
+        return lto * (o_to / lto) * (d_to / lto), min(0.6, max(0.1, o_ob + d_ob - lob))
+
+    def chain_team(tm, opp):
+        five = starters.get(tm, [])
+        Pp = []
+        for pid in five:
+            c, l, w = S(PC, pid), S(PL, pid), cur_weight(W, S(PC, pid)['gs_by'].get(tm, 0))
+            x = wcounts(pid) | {f: w * c.get(f, 0) + l.get(f, 0) for f in CHF}
+            x['mins'] = w * c.get('cmin', 0) + l.get('cmin', 0)
+            Pp.append(CM.player_params(x | {'pid': pid}, LCH))
+        j = main_jumper(tm)
+        to, ob = chain_rates(tm, opp)
+        return CM.Team(Pp, to, ob, LC['cred'], five.index(j) if j in five else None)
+
+    for g in slate_games:
+        if not CHAIN:
+            break
+        TT = [chain_team(g['away'], g['home']), chain_team(g['home'], g['away'])]
+        gp = CM.game_probs(TT, g['ptip'])
+        g['chain'] = {x['pid']: v for t in (0, 1) for x, v in zip(TT[t].P, gp[t])}
+        g['pfirst'] = sum(gp[0])
+        side[g['away']] = (g, '@', g['home'], g['pfirst'])
+        side[g['home']] = (g, 'vs', g['away'], 1 - g['pfirst'])
+        g['slots'] = {}
+        for t, tm in enumerate((g['away'], g['home'])):
+            s1, s2, tf, fe, sec = CM.two_slot(TT[t])
+            g['slots'][tm] = [(TT[t].P[i]['pid'], tf[i], fe[i], sec[i]) for i in (s1, s2)]
+
     cands = []
     for tm, (g, at, opp, pteam) in side.items():
         tv = team_v2(tm, opp)
         j = main_jumper(tm)
         ptip = g['ptip'] if tm == g['away'] else 1 - g['ptip']
-        pj = jumper_split({p: tv[p][0] for p in starters.get(tm, [])}, j, ptip, a_first)   # 10/30 jumper fix
+        if CHAIN:
+            pj = {p: g['chain'][p] for p in starters.get(tm, [])}
+        else:
+            pj = jumper_split({p: tv[p][0] for p in starters.get(tm, [])}, j, ptip, a_first)   # 10/30 jumper fix
         for pid in starters.get(tm, []):
             st = (inj.get(pid) or {}).get('status', '')
             sh, mu = tv[pid]
@@ -591,7 +669,7 @@ def build(start, log, lineups=None):
                           'p': pj[pid], 'p_raw': pteam * sh, 'jumper': pid == j,
                           'p1': pteam * share(pid), 'mult': mu, 'gid': g['id'], 'inj': st, 'rip': ripple_note(tm),
                           'time': g['time']})
-    for gid in {c['gid'] for c in cands}:   # 10/30 top-end shrink across the game's starters
+    for gid in ({c['gid'] for c in cands} if not CHAIN else ()):   # 10/30 top-end shrink (not with the chain)
         cg = [c for c in cands if c['gid'] == gid]
         adj = shrink_top({c['pid']: c['p'] for c in cg})
         for c in cg:
@@ -613,7 +691,8 @@ def build(start, log, lineups=None):
         pos = roster[c['pid']]['pos']
         picks.append(['First basket', nm(c['pid']), f"{c['tm']} {c['at']} {c['opp']} {c['time']}",
                       f"Est {round(100 * c['p'])}% (fair {american(c['p'])}; old model {round(100 * c['p1'])}%"
-                      + ("; tip jumper x1.2 if his team wins the tip" if c['jumper'] else '') + "): "
+                      + ("; tip jumper x1.2 if his team wins the tip" if c['jumper'] else '')
+                      + ("; chain model" if CHAIN else '') + "): "
                       f"{c['tm']} scores first {round(100 * c['pteam'])}%; {'first pts' if FPM else 'first FG'} {l[t1k]}/{l['gs']} and "
                       f"first shot {l['sh1']}/{l['gs']} starts 25-26" + (f", {cu[t1k]}/{cu['gs']} 26-27" if cu['gs'] else '')
                       + f", first 3 FGA {(l['f3'] + cu['f3']) / max(1, l['gs3'] + cu['gs3']):.2f} per start"
@@ -883,6 +962,24 @@ def build(start, log, lineups=None):
         f.write(f'# NBA shortlist {slate_day} (not guaranteed)\n\nTip winner scores first {round(100 * a_first)}% (25-26).\n\n')
         for p in picks:
             f.write(f'- **{p[0]}: {p[1]}** ({p[2]}). {p[3]}\n')
+        if CHAIN:   # two-slot report (Tim 11/5): 1st-shot pick and 2nd-chance pick per team
+            f.write('\n## First basket two-slot picks (chain model)\n\n'
+                    "1st-shot pick = most likely to take and make (or draw FTs on) his team's first shot. 2nd-chance pick = "
+                    "most likely to score his team's first points after a miss (rebound, putback, FTs). Fair = his chance "
+                    "to score the GAME's first points (FanDuel first basket, FT included).\n\n")
+            for g in slate_games:
+                fav = g['away'] if g['ptip'] >= 0.5 else g['home']
+                pt = max(g['ptip'], 1 - g['ptip'])
+                f.write(f"- {g['away']} @ {g['home']} {g['time']}: tip {fav} {round(100 * pt)}% "
+                        f"({nm(g['ja'])} vs {nm(g['jh'])}); {g['away']} scores first {round(100 * g['pfirst'])}%\n")
+                for tm in (fav, g['home'] if fav == g['away'] else g['away']):   # tip favorite first
+                    (a1, tf1, fe1, _), (a2, tf2, _, sc2) = g['slots'][tm]
+                    f.write(f"  - {tm}: 1st-shot pick {nm(a1)} {round(100 * g['chain'][a1])}% (fair {american(g['chain'][a1])}; "
+                            f"scores on {tm}'s first shot {round(100 * fe1)}%); 2nd-chance pick {nm(a2)} "
+                            f"{round(100 * g['chain'][a2])}% (fair {american(g['chain'][a2])}; after a miss {round(100 * sc2)}%)\n")
+                top = max(g['chain'], key=g['chain'].get)
+                if top not in [x[0] for t in g['slots'].values() for x in t]:
+                    f.write(f"  - overall top: {nm(top)} {round(100 * g['chain'][top])}% (fair {american(g['chain'][top])})\n")
         f.write('\n## First basket method\n\n'
                 'Dunk/layup includes tip-ins and putbacks; 2pt jumper includes floaters and hooks (book rules vary). '
                 'First points counts free throws; first basket is the first made FG (FanDuel). Sample: '
@@ -913,8 +1010,9 @@ def build(start, log, lineups=None):
 def main():
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument('--date', help='start looking for the slate on this date, YYYY-MM-DD (default today ET)')
-    ap.add_argument('--fb-model', choices=('fp', 'fg'), default='fp',
-                    help='fp (default since 11/5/26): first points incl FT + shot type; fg: the 11/2 first made FG model')
+    ap.add_argument('--fb-model', choices=('chain', 'fp', 'fg'), default='chain',
+                    help='chain (default since 11/5/26 evening): possession chain; fp: first points incl FT + shot type '
+                         '(11/5 morning); fg: the 11/2 first made FG model')
     ap.add_argument('--lineups', help='JSON file of confirmed lineups: {"WSH": {"five": [names], "jumper": name}}')
     a = ap.parse_args()
     FB_MODEL['name'] = a.fb_model

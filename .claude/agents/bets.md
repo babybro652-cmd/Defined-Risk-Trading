@@ -54,6 +54,14 @@ chats, so read the files below that the task touches before acting.
 - NBA first basket: model has the jumper split (x1.2 / x0.95 by tip) and top-end shrink since 10/30. Since 11/5 it
   prices first POINTS incl FT (FanDuel's rule) with a shot-type term (rim / 2 / 3 make rates + FT trips); backtest in
   `analysis/nba/README.md` "Model change 11/5/26". `--fb-model fg` rebuilds with the old model.
+- NBA first basket CHAIN model (default since 11/5 evening, Tim's idea; `analysis/nba/chain_model.py`, README "Model change
+  11/5/26 (chain)"): plays the opening possession by possession (tip, shooter, make / FT trip, offensive rebound, putback,
+  turnover) until someone scores. Beat the 11/5 morning model on log loss both seasons. `--fb-model fp` rebuilds the old one.
+- NBA first basket REPORT FORMAT (two-slot, adopted 11/5): per game the tip favorite and tip %, then per team (favorite
+  first) "1st-shot pick" (most likely to score on his team's first shot) and "2nd-chance pick" (most likely to score
+  after a miss: rebound, putback, FTs), each with his chance to score the game's first points and fair price. Copy them
+  from the shortlist section "First basket two-slot picks (chain model)". This replaces "top 2 per team" in the
+  confirmed-lineup reruns below.
 - No StarTool blend (Tim rejected it 10/30). Keep StarTool side by side; save star/bomb to
   `analysis/<sport>/out/startool/star_bomb.txt` and rerun the build for the "agree" flag.
 
@@ -75,4 +83,4 @@ chats, so read the files below that the task touches before acting.
 - No em dashes or filler words in anything Tim reads.
 
 ## Confirmed-lineup reruns (Tim, 11/2)
-When lineups confirm (about 30 min before tip), rerun first basket with the confirmed starters and report per game: the projected tip-winning team (jumper vs jumper, tip win %) and THAT team's top 2 first basket picks with fair price, plus the overall top pick if it's on the other team. Coin-flip tips (about 45-55%): give both teams' top 2.
+When lineups confirm (about 30 min before tip), rerun first basket with the confirmed starters and report per game: the projected tip-winning team (jumper vs jumper, tip win %), then for each team (tip favorite first) its "1st-shot pick" and "2nd-chance pick" with fair price (two-slot format since 11/5, from the shortlist's two-slot section), plus the overall top pick if it is neither.
