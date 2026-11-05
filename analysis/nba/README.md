@@ -292,6 +292,7 @@ Code: `FP` and the `fit_fp` / `w_shot3` branch of `v2_shares` in build_nba_tab.p
 
 - 10/22 lesson (applied from 10/23): a questionable big who is confirmed starting keeps his full first-basket
   share. Do not discount him for the tag; recheck lineups about 30 min before tip and rerun if he is in.
+- 11/5 team-change rule (Tim asked: score Giannis on Miami only): tested in `backtest_teamchange.py` (starts with other teams count `prior` x, optional ramp). Every setting made 26-27 log loss worse (base 2.2417; prior 0.5 2.2447, 0.25 2.2473, 0.25 ramp 10 2.2438) and 25-26 was flat (2.2679 vs 2.2678 best). Not adopted. Giannis with MIA: 4 of 8 MIA first points (2 FT, rim, jumper), 3 of 8 game first points, 1 of 8 MIA first FGA; the model has him at 19% of MIA's first points because he rarely takes the first shot. Watch it; revisit after 15+ MIA starts.
 - 11/5 grading rule: FanDuel settles first basket on the first points, free throws included (Bam 11/4 graded L when Giannis hit a FT first). Grade Tim's FB bets on `first_points_any` in analysis/first_events/log.csv. A free throw came first in 13 of 121 logged games (11%), 10/20 to 11/4. Regrade flipped row 286 (Sabonis 10/23) to W.
 - 10/22 CLE @ PHI: Jarrett Allen (day-to-day, knee) started, won the tip and scored the first basket on CLE's first shot. A day-to-day center who jumps should keep his full first-basket share once he is confirmed in the lineup; recheck starters about 30 min before tip and rerun if a questionable big is in.
 

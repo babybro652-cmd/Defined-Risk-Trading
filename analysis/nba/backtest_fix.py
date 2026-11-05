@@ -42,12 +42,20 @@ def load(name, s):
         return {}
 
 
-def counts(PS, pid, tm, season):
+def counts(PS, pid, tm, season, prior=1.0, ramp=0):
+    """Weighted counts for pid starting for tm. prior (team-change rule, 11/5/26): starts with OTHER teams (this season
+    or last) count prior x; ramp N fades that weight from 1 at 0 starts with tm to prior at N starts. prior=1 = as built."""
     c = PS[season][pid]
     l = PS['2025-26'][pid] if season == '2026-27' else {}
+    n_tm = c.get(('gs', tm), 0) + l.get(('gs', tm), 0)
+    q = prior if not ramp else 1 - (1 - prior) * min(n_tm, ramp) / ramp
     w = cur_weight(W_DEFAULT, c.get(('gs', tm), 0), V2) if season == '2026-27' else 1
-    out = {f: w * c.get(f, 0) + l.get(f, 0) for f in F}
+    out = {}
+    for f in F:
+        cc, ll = c.get((f, tm), 0), l.get((f, tm), 0)
+        out[f] = w * (cc + q * (c.get(f, 0) - cc)) + ll + q * (l.get(f, 0) - ll)
     out['n_starts'] = c.get('gs', 0) + l.get('gs', 0)
+    out['changer'] = (c.get('gs', 0) - c.get(('gs', tm), 0)) + (l.get('gs', 0) - l.get(('gs', tm), 0)) > 0
     return out
 
 
@@ -151,7 +159,11 @@ def run(variants):
                 if win not in {p[0] for v in st.values() for p in v}:
                     continue
                 s = season_of(d)
-                feats = {tm: [dict(counts(PS, p[0], tm, s), pos=p[6], pid=p[0]) for p in st[tm]] for tm in st}
+                fk = lambda prm: (prm.get('prior', 1.0), prm.get('ramp', 0))
+                FE = {key: {tm: [dict(counts(PS, p[0], tm, s, *key), pos=p[6], pid=p[0]) for p in st[tm]] for tm in st}
+                      for key in {fk(v) for v in variants.values()} | {(1.0, 0)}}
+                feats = FE[(1.0, 0)]
+                chg = any(x['changer'] for v in feats.values() for x in v)
                 # book view (value sim): plain season team-first-FG share x tip chance
                 book = {}
                 for tm in st:
@@ -169,21 +181,23 @@ def run(variants):
                         if prm.get('w_open'):
                             for x in feats[tm]:
                                 recent[x['pid']] = [t for team, t in RE[x['pid']] if team == tm][-prm['n_open']:]
-                        sh = shares(feats[tm], T[opp]['allow'], T[opp]['n'], L, prm, recent)
-                        probs.update(jumper_split({x['pid']: v for x, v in zip(feats[tm], sh)}, jm.get(tm), ptip[tm], af, JB))
+                        ft_ = FE[fk(prm)][tm]
+                        sh = shares(ft_, T[opp]['allow'], T[opp]['n'], L, prm, recent)
+                        probs.update(jumper_split({x['pid']: v for x, v in zip(ft_, sh)}, jm.get(tm), ptip[tm], af, JB))
                     out[k] = shrink_top(probs, 0.8)
                 tmof = {p[0]: p[1] for v in st.values() for p in v}
-                recs.append(dict(d=d, g=g, win=win, fb=(g['fb'] or [None])[0], probs=out, book=book, tmof=tmof))
+                recs.append(dict(d=d, g=g, chg=chg, win=win, fb=(g['fb'] or [None])[0], probs=out, book=book, tmof=tmof))
         for g in day:   # update with this day's results
             op = OP.get(g['id'], {})
             posof = {p[0]: p[6] for p in g['pl']}
             s = season_of(d)
             for pid, tm, stt, mins, pts, tpm, pos, fgm, fga in g['pl']:
                 z = PS[s][pid]; z['fgm'] += fgm; z['fga'] += fga; lg['fgm'] += fgm; lg['fga'] += fga
+                z[('fgm', tm)] += fgm; z[('fga', tm)] += fga
                 b = op.get('bx', {}).get(pid)
                 if b:
                     for f, v in zip(('rA', 'rM', 'jA', 'jM', 'tA', 'tM', 'ftT', 'ftS'), b):
-                        z[f] += v
+                        z[f] += v; z[(f, tm)] += v
                     for i in range(3):
                         lg[f'A{i}'] += b[2 * i]; lg[f'M{i}'] += b[2 * i + 1]
                         if pos in POS:
@@ -192,10 +206,10 @@ def run(variants):
                 if stt:
                     f3 = F3.get(g['id'], {}).get(tm)
                     took = g['ts'].get(tm) == pid
-                    for f, v in (('gs', 1), (('gs', tm), 1), ('t1', g['tf'].get(tm) == pid),
+                    for f, v in (('gs', 1), ('t1', g['tf'].get(tm) == pid),
                                  ('tp1', op.get('tp', {}).get(tm) == pid), ('sh1', took),
                                  ('gs3', f3 is not None), ('f3', (f3 or []).count(pid))):
-                        z[f] += v
+                        z[f] += v; z[(f, tm)] += v
                     RE[pid].append((tm, took))
             for tm, opp in ((g['away'], g['home']), (g['home'], g['away'])):
                 ps = posof.get(g['tf'].get(opp))
