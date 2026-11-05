@@ -667,20 +667,20 @@
    "note": "62 starts"
   },
   {
-   "player": "Andrew Wiggins",
-   "team": "MIA",
-   "game": "MIA @ LAC",
-   "market": "3+ threes",
-   "p": 0.281,
-   "note": "75 starts"
-  },
-  {
    "player": "Davion Mitchell",
    "team": "MIA",
    "game": "MIA @ LAC",
    "market": "3+ threes",
    "p": 0.242,
    "note": "77 starts"
+  },
+  {
+   "player": "Andrew Wiggins",
+   "team": "MIA",
+   "game": "MIA @ LAC",
+   "market": "3+ threes",
+   "p": 0.281,
+   "note": "75 starts"
   },
   {
    "player": "Bam Adebayo",
@@ -699,12 +699,12 @@
    "note": "50 starts"
   },
   {
-   "player": "Derrick Jones Jr.",
+   "player": "Kris Dunn",
    "team": "LAC",
    "game": "MIA @ LAC",
    "market": "3+ threes",
-   "p": 0.222,
-   "note": "51 starts"
+   "p": 0.09,
+   "note": "75 starts"
   },
   {
    "player": "Rui Hachimura",
@@ -715,12 +715,20 @@
    "note": "46 starts"
   },
   {
-   "player": "Kris Dunn",
+   "player": "Derrick Jones Jr.",
    "team": "LAC",
    "game": "MIA @ LAC",
    "market": "3+ threes",
-   "p": 0.09,
-   "note": "75 starts"
+   "p": 0.222,
+   "note": "51 starts"
+  },
+  {
+   "player": "Brook Lopez",
+   "team": "LAC",
+   "game": "MIA @ LAC",
+   "market": "3+ threes",
+   "p": 0.233,
+   "note": "41 starts"
   }
  ]
 }

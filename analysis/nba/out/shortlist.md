@@ -3,7 +3,7 @@
 Tip winner scores first 64% (25-26).
 
 - **First basket: Victor Wembanyama** (SA vs DAL 9:30). Est 20% (fair +391; old model 25%; tip jumper x1.2 if his team wins the tip): SA scores first 63%; first FG 24/57 and first shot 22/57 starts 25-26, 3/7 26-27, first 3 FGA 1.06 per start, FG 50%; DAL vs F x0.97
-- **First basket: Bam Adebayo** (MIA @ LAC 10:30). Est 19% (fair +436; old model 19%; tip jumper x1.2 if his team wins the tip): MIA scores first 62%; first FG 20/73 and first shot 33/73 starts 25-26, 3/7 26-27, first 3 FGA 1.01 per start, FG 45%; LAC vs C x0.95
+- **First basket: Bam Adebayo** (MIA @ LAC 10:30). Est 17% (fair +505; old model 17%; tip jumper x1.2 if his team wins the tip): MIA scores first 56%; first FG 20/73 and first shot 33/73 starts 25-26, 3/7 26-27, first 3 FGA 1.01 per start, FG 45%; LAC vs C x0.95
 - **First basket: Luka Doncic** (LAL @ SAC 10:00). Est 16% (fair +526; old model 18%): LAL scores first 55%; first FG 20/65 and first shot 33/65 starts 25-26, 3/7 26-27, first 3 FGA 1.11 per start, FG 48%; SAC vs G x0.91
 - **First basket: Michael Porter Jr.** (BKN vs CHA 7:30). Est 14% (fair +601; old model 20%): BKN scores first 55%; first FG 22/52 and first shot 21/52 starts 25-26, 2/7 26-27, first 3 FGA 1.07 per start, FG 46%; CHA vs F x1.05
 - **First basket: Jamal Murray** (DEN vs TOR 9:00). Est 14% (fair +614; old model 15%): DEN scores first 48%; first FG 21/77 and first shot 21/77 starts 25-26, 3/6 26-27, first 3 FGA 0.86 per start, FG 48%; TOR vs G x1.04
@@ -11,7 +11,7 @@ Tip winner scores first 64% (25-26).
 - **First basket: Anthony Davis** (WSH vs ATL 7:00). Est 14% (fair +618; old model 12%; tip jumper x1.2 if his team wins the tip): WSH scores first 56%; first FG 6/20 and first shot 7/20 starts 25-26, 1/7 26-27, first 3 FGA 0.89 per start, FG 49%; ATL vs F x0.95
 - **First basket: Jalen Green** (PHX vs POR 9:00). Est 14% (fair +623; old model 16%): PHX scores first 54%; first FG 10/27 and first shot 7/27 starts 25-26, 1/5 26-27, first 3 FGA 0.91 per start, FG 43%; POR vs G x1.01
 - **Team first basket: Victor Wembanyama** (SA vs DAL). Model share of SA's first FG 38% (old 40%); raw 25-26 24/57, first shot 22/57, FG 50%
-- **Team first basket: Bam Adebayo** (MIA @ LAC). Model share of MIA's first FG 34% (old 30%); raw 25-26 20/73, first shot 33/73, FG 45%
+- **Team first basket: Bam Adebayo** (MIA @ LAC). Model share of MIA's first FG 33% (old 30%); raw 25-26 20/73, first shot 33/73, FG 45%
 - **Team first basket: Luka Doncic** (LAL @ SAC). Model share of LAL's first FG 32% (old 32%); raw 25-26 20/65, first shot 33/65, FG 48%
 - **Team first basket: Jamal Murray** (DEN vs TOR). Model share of DEN's first FG 31% (old 30%); raw 25-26 21/77, first shot 21/77, FG 48%
 - **Over 2.5 threes: Luka Doncic** (LAL @ SAC). Over 2.5 in 80% of starts (blend); last 5 starts 25-26: 1 6 5 4 3; fair -406 is shorter than -300, so take over 3.5 instead (63%, fair -169)
@@ -38,18 +38,18 @@ Dunk/layup includes tip-ins and putbacks; 2pt jumper includes floaters and hooks
 - POR @ PHX 9:00: first points Dunk/layup 29% (+242), 2pt jumper 25% (+292), 3-pointer 32% (+210), Free throw 13% (+670); first basket Dunk/layup 34% (+192), 2pt jumper 29% (+243), 3-pointer 37% (+173)
 - DAL @ SA 9:30: first points Dunk/layup 37% (+172), 2pt jumper 29% (+245), 3-pointer 21% (+381), Free throw 13% (+645); first basket Dunk/layup 43% (+134), 2pt jumper 32% (+211), 3-pointer 25% (+300)
 - LAL @ SAC 10:00: first points Dunk/layup 33% (+200), 2pt jumper 32% (+211), 3-pointer 24% (+313), Free throw 10% (+869); first basket Dunk/layup 38% (+165), 2pt jumper 34% (+196), 3-pointer 29% (+251)
-- MIA @ LAC 10:30: first points Dunk/layup 33% (+204), 2pt jumper 25% (+294), 3-pointer 30% (+235), Free throw 12% (+744); first basket Dunk/layup 37% (+170), 2pt jumper 27% (+265), 3-pointer 36% (+181)
+- MIA @ LAC 10:30: first points Dunk/layup 33% (+203), 2pt jumper 26% (+288), 3-pointer 29% (+240), Free throw 12% (+745); first basket Dunk/layup 37% (+169), 2pt jumper 28% (+258), 3-pointer 35% (+187)
 
 Best player + method (fair price; bet only if the book pays more):
 
 - **Victor Wembanyama first basket: Dunk/layup** (SA vs DAL 9:30). Est 11.5% (fair +767) = FB 20% x 57% if he scores first; his first-FG sample 33, made FGs 777
-- **Giannis Antetokounmpo first basket: Dunk/layup** (MIA @ LAC 10:30). Est 9.4% (fair +959) = FB 12% x 79% if he scores first; his first-FG sample 15, made FGs 607
 - **Day'Ron Sharpe first basket: Dunk/layup** (BKN vs CHA 7:30). Est 9.1% (fair +999) = FB 13% x 70% if he scores first; his first-FG sample 12, made FGs 271
 - **Walker Kessler first basket: Dunk/layup** (LAL @ SAC 10:00). Est 9.0% (fair +1008) = FB 10% x 88% if he scores first; his first-FG sample 4, made FGs 176
 - **LaMelo Ball first basket: 3-pointer** (MIN @ HOU 8:30). Est 8.9% (fair +1024) = FB 14% x 64% if he scores first; his first-FG sample 22, made FGs 647
+- **Giannis Antetokounmpo first basket: Dunk/layup** (MIA @ LAC 10:30). Est 8.7% (fair +1047) = FB 11% x 79% if he scores first; his first-FG sample 15, made FGs 607
 - **Zach Edey first basket: Dunk/layup** (MEM vs IND 8:00). Est 8.4% (fair +1089) = FB 13% x 67% if he scores first; his first-FG sample 7, made FGs 113
 - **Neemias Queta first basket: Dunk/layup** (BOS vs MIL 7:30). Est 8.4% (fair +1097) = FB 11% x 76% if he scores first; his first-FG sample 23, made FGs 398
-- **Bam Adebayo first basket: 2pt jumper** (MIA @ LAC 10:30). Est 8.1% (fair +1134) = FB 19% x 43% if he scores first; his first-FG sample 29, made FGs 632
+- **Rudy Gobert first basket: Dunk/layup** (MIN @ HOU 8:30). Est 8.0% (fair +1148) = FB 8% x 96% if he scores first; his first-FG sample 20, made FGs 386
 
 ## StarTool check (side by side, no blend)
 
@@ -66,7 +66,7 @@ Best player + method (fair price; bet only if the book pays more):
 - POR @ PHX: our top Jalen Green (14%): differs (StarTool stars Deni Avdija, Devin Booker; bombs Damian Lillard, Dillon Brooks)
 - DAL @ SA: our top Victor Wembanyama (20%): agree (StarTool star)
 - LAL @ SAC: our top Luka Doncic (16%): agree (StarTool star)
-- MIA @ LAC: our top Bam Adebayo (19%): agree (StarTool bomb)
+- MIA @ LAC: our top Bam Adebayo (17%): agree (StarTool bomb)
 
 ## Tip-off
 
@@ -83,7 +83,7 @@ Best player + method (fair price; bet only if the book pays more):
 - POR @ PHX 9:00 ET: Donovan Clingan vs Khaman Maluach; away wins tip 35%, away scores first 46%
 - DAL @ SA 9:30 ET: Daniel Gafford vs Victor Wembanyama; away wins tip 5%, away scores first 37%
 - LAL @ SAC 10:00 ET: Walker Kessler vs Domantas Sabonis; away wins tip 68%, away scores first 55%
-- MIA @ LAC 10:30 ET: Bam Adebayo vs Isaiah Jackson; away wins tip 93%, away scores first 62%
+- MIA @ LAC 10:30 ET: Bam Adebayo vs Brook Lopez; away wins tip 70%, away scores first 56%
 
 <!-- parlays:begin -->
 ## Parlays 2026-11-04 (2-3 legs, $0.10 to $0.20)

@@ -262,5 +262,27 @@
     ],
     "jumper": "Domantas Sabonis",
     "note": "RotoWire expected 9:30 PM; Achiuwa starts; Keegan Murray, Raynaud, Plowden out"
+  },
+  "MIA": {
+    "five": [
+      "Davion Mitchell",
+      "Klay Thompson",
+      "Andrew Wiggins",
+      "Giannis Antetokounmpo",
+      "Bam Adebayo"
+    ],
+    "jumper": "Bam Adebayo",
+    "note": "RotoWire expected 10:00 PM; Giannis starts"
+  },
+  "LAC": {
+    "five": [
+      "Darius Garland",
+      "Kris Dunn",
+      "Rui Hachimura",
+      "Derrick Jones Jr.",
+      "Brook Lopez"
+    ],
+    "jumper": "Brook Lopez",
+    "note": "RotoWire CONFIRMED 10:00 PM; Beal, Ingram, J. Miller, Niederhauser out"
   }
 }
