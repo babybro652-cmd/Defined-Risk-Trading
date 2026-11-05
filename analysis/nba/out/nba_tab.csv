@@ -4,59 +4,59 @@ Legend,"26 = 2026-27 regular season so far, 25 = 2025-26 regular season, Pre = 2
 ,,,,,,,,,,,,,,,,,,
 Slate Thu 11/5: shortlist (not guaranteed),,,,,,,,,,,,,,,,,,
 Bet,Player,Game,Why,Look for,,,,,,,,,,,,,,
-First basket,Bam Adebayo,MIA @ GS 10:00,"Est 23% (fair +344; old model 21%; tip jumper x1.2 if his team wins the tip; chain model): MIA scores first 65%; first pts 23/73 and first shot 33/73 starts 25-26, 3/8 26-27, first 3 FGA 1.00 per start, FG 46%; GS vs C x1.04",Better than +344,,,,,,,,,,,,,,
-First basket,Giannis Antetokounmpo,MIA @ GS 10:00,"Est 16% (fair +514; old model 16%; chain model): MIA scores first 65%; first pts 11/36 and first shot 5/36 starts 25-26, 4/8 26-27, first 3 FGA 0.70 per start, FG 58%; GS vs F x0.97",Better than +514,,,,,,,,,,,,,,
+First basket,Bam Adebayo,MIA @ GS 10:00,"Est 25% (fair +293; old model 20%; tip jumper x1.2 if his team wins the tip; chain model): MIA scores first 63%; first pts 23/73 and first shot 33/73 starts 25-26, 3/8 26-27, first 3 FGA 1.00 per start, FG 46%; GS vs C x1.04",Better than +293,,,,,,,,,,,,,,
 First basket,Wendell Carter Jr.,ORL @ PHX 9:00,"Est 16% (fair +525; old model 13%; tip jumper x1.2 if his team wins the tip; chain model): ORL scores first 54%; first pts 18/78 and first shot 21/78 starts 25-26, 2/7 26-27, first 3 FGA 0.68 per start, FG 52%; PHX vs C x1.07",Better than +525,,,,,,,,,,,,,,
 First basket,Franz Wagner,ORL @ PHX 9:00,"Est 13% (fair +670; old model 15%; chain model): ORL scores first 54%; first pts 7/32 and first shot 8/32 starts 25-26, 3/7 26-27, first 3 FGA 0.79 per start, FG 46%; PHX vs F x0.95",Better than +670,,,,,,,,,,,,,,
-Team first basket,Bam Adebayo,MIA @ GS,"Model share of MIA's first points 35% (old 32%); raw 25-26 23/73, first shot 33/73, FG 46%",Better than +187,,,,,,,,,,,,,,
+First basket,Andrew Wiggins,MIA @ GS 10:00,"Est 12% (fair +708; old model 10%; chain model): MIA scores first 63%; first pts 11/68 and first shot 17/68 starts 25-26, 0/8 26-27, first 3 FGA 0.74 per start, FG 47%; GS vs F x0.97",Better than +708,,,,,,,,,,,,,,
+Team first basket,Bam Adebayo,MIA @ GS,"Model share of MIA's first points 40% (old 32%); raw 25-26 23/73, first shot 33/73, FG 46%",Better than +150,,,,,,,,,,,,,,
 Team first basket,Wendell Carter Jr.,ORL @ PHX,"Model share of ORL's first points 30% (old 24%); raw 25-26 18/78, first shot 21/78, FG 52%",Better than +237,,,,,,,,,,,,,,
-Team first basket,Giannis Antetokounmpo,MIA @ GS,"Model share of MIA's first points 25% (old 24%); raw 25-26 11/36, first shot 5/36, FG 58%",Better than +297,,,,,,,,,,,,,,
+Team first basket,Yaxel Lendeborg,GS vs MIA,"Model share of GS's first points 26% (old 15%); raw 25-26 0/0, first shot 0/0, FG 49%",Better than +286,,,,,,,,,,,,,,
 Team first basket,Franz Wagner,ORL @ PHX,"Model share of ORL's first points 24% (old 27%); raw 25-26 7/32, first shot 8/32, FG 46%",Better than +315,,,,,,,,,,,,,,
 Over 2.5 threes,Stephen Curry,GS vs MIA,"Over 2.5 in 78% of starts (blend); last 5 starts 25-26: 4 2 4 4 3; fair -354 is shorter than -300, so take over 3.5 instead (61%, fair -157)",Over 2.5,,,,,,,,,,,,,,
-Over 24.5 points,Giannis Antetokounmpo,MIA @ GS,"Over 24.5 in 70% of starts (blend); last 5 starts 25-26: 31 31 22 27 24; singles only, never in a parlay",Over 24.5,,,,,,,,,,,,,,
 Over 19.5 points,Devin Booker,PHX vs ORL,"Over 19.5 in 78% of starts (blend); last 5 starts 25-26: 37 31 30 22 34; fair -347 is shorter than -300, so take over 24.5 instead (53%, fair -112); singles only, never in a parlay",Over 19.5,,,,,,,,,,,,,,
 Over 14.5 points,Franz Wagner,ORL @ PHX,"Over 14.5 in 87% of starts (blend); last 5 starts 25-26: 20 25 17 11 18; fair -657 is shorter than -300, so take over 19.5 instead (60%, fair -152); singles only, never in a parlay",Over 14.5,,,,,,,,,,,,,,
 Over 14.5 points,Dillon Brooks,PHX vs ORL,"Over 14.5 in 80% of starts (blend); last 5 starts 25-26: 12 28 10 15 13; fair -393 is shorter than -300, so take over 19.5 instead (45%, fair +124); singles only, never in a parlay",Over 14.5,,,,,,,,,,,,,,
 Over 14.5 points,Bam Adebayo,MIA @ GS,"Over 14.5 in 77% of starts (blend); last 5 starts 25-26: 25 20 24 7 14; fair -341 is shorter than -300, so take over 19.5 instead (53%, fair -111); singles only, never in a parlay",Over 14.5,,,,,,,,,,,,,,
+Over 14.5 points,Desmond Bane,ORL @ PHX,"Over 14.5 in 76% of starts (blend); last 5 starts 25-26: 8 2 18 25 27; fair -312 is shorter than -300, so take over 19.5 instead (50%, fair +102); singles only, never in a parlay",Over 14.5,,,,,,,,,,,,,,
 How picked,"First basket = P(team scores first) x player share (model v2, 10/21). P(team scores first) comes from the two main jumpers' tip-win rates (log5) and the 25-26 league rate that the tip winner scores first (66%). Share = half his share of team first FGs + half his share of team first shots x (his FG% / league FG%), each shrunk toward 1 in 5; then x the opponent's rate of allowing the first FG to his position (G/F/C, shrunk hard, 0.85 to 1.15); then the probable five are rescaled to sum to 99%, so an Out starter's share goes to the rest in proportion. Since 11/5 (FanDuel settles on first points incl FT): shares count team first POINTS, and 70% of the share is shot type = early FGA share x (rim / 2pt / 3pt mix x his make rates + FT trips x trip scoring rate). Backtest on first points: log loss 2.2705 to 2.2679 (25-26), 2.2486 to 2.2294 (26-27). Backtest (936 games, Dec 25 to 10/20/26): log loss 2.283 vs 2.293 old, top pick 14.0% vs 13.9%; small but better. Fair odds are the break-even price; only bet when the book pays more. Points / threes = highest line with a 70%+ blended hit rate as a starter. Recheck starting lineups 30 minutes before tip. Opening night 10/20: the value longer shots hit (Collins +1000, Vassell +800) while the book favorites (Wembanyama, Embiid) missed, and Queta did not start. Lean to role starters priced well past fair, skip favorites priced under fair, and only bet a player once his start is confirmed.",,,,,,,,,,,,,,,,,
 ,,,,,,,,,,,,,,,,,,
 Slate: tip-off matchups and injuries (ESPN),,,,,,,,,,,,,,,,,,
 Game (ET),Away jumper (tip win%),Home jumper (tip win%),Away wins tip,Away scores first,Out / doubtful,,,,,,,,,,,,,
 ORL @ PHX 9:00,Wendell Carter Jr. (71%),Khaman Maluach (64%),0.581,0.539,"ORL: Paolo Banchero, Jonathan Isaac, Noah Penda, Jalen Suggs; PHX: Rasheer Fleming, Jordan Goodwin, Mark Williams",,,,,,,,,,,,,
-MIA @ GS 10:00,Bam Adebayo (77%),Draymond Green (28%),0.893,0.647,"GS: Jimmy Butler III, Moses Moody, Kristaps Porzingis, Gui Santos",,,,,,,,,,,,,
+MIA @ GS 10:00,Bam Adebayo (77%),Draymond Green (28%),0.893,0.635,"GS: Jimmy Butler III, Moses Moody, Kristaps Porzingis, Gui Santos",,,,,,,,,,,,,
 ,,,,,,,,,,,,,,,,,,
 "First basket method: game level (first points incl FT, and first basket = first made FG)",,,,,,,,,,,,,,,,,,
 Game (ET),Away scores first,Pts: dunk/layup,Pts: 2pt jumper,Pts: 3-pointer,Pts: free throw,FG: dunk/layup,FG: 2pt jumper,FG: 3-pointer,"Fair odds, first points (rim / jumper / 3 / FT)","Fair odds, first basket (rim / jumper / 3)",,,,,,,,
 ORL @ PHX 9:00,0.539,0.309,0.316,0.289,0.085,0.346,0.333,0.32,+223 / +216 / +246 / +1075,+189 / +200 / +212,,,,,,,,
-MIA @ GS 10:00,0.647,0.318,0.234,0.331,0.117,0.377,0.259,0.364,+215 / +327 / +202 / +754,+165 / +287 / +174,,,,,,,,
+MIA @ GS 10:00,0.635,0.317,0.233,0.334,0.117,0.376,0.257,0.367,+215 / +330 / +200 / +757,+166 / +289 / +173,,,,,,,,
 ,,,,,,,,,,,,,,,,,,
 First basket method: player props (P first basket x P method if he scores first; fair = break-even),,,,,,,,,,,,,,,,,,
 Player,Tm,Game,P first basket,Fair FB,Dunk/layup if first,2pt jumper if first,3PT if first,P FB dunk/layup,Fair dunk/layup,P FB 2pt jumper,Fair 2pt jumper,P FB 3PT,Fair 3PT,Team first FGs in data (method sample),Made FGs in data (mix sample),,,
-Bam Adebayo,MIA,MIA @ GS 10:00,0.225,+344,0.36,0.415,0.225,0.081,+1134,0.093,+971,0.051,+1875,32.0,674.0,,,
-Giannis Antetokounmpo,MIA,MIA @ GS 10:00,0.163,+514,0.781,0.183,0.036,0.127,+686,0.03,+3251,0.006,+16826,15.0,631.0,,,
+Bam Adebayo,MIA,MIA @ GS 10:00,0.254,+293,0.36,0.415,0.225,0.092,+992,0.106,+848,0.057,+1648,32.0,674.0,,,
 Wendell Carter Jr.,ORL,ORL @ PHX 9:00,0.16,+525,0.501,0.235,0.265,0.08,+1148,0.038,+2564,0.042,+2261,24.0,416.0,,,
 Franz Wagner,ORL,ORL @ PHX 9:00,0.13,+670,0.501,0.336,0.163,0.065,+1438,0.044,+2193,0.021,+4619,15.0,400.0,,,
+Andrew Wiggins,MIA,MIA @ GS 10:00,0.124,+708,0.359,0.252,0.389,0.044,+2154,0.031,+3107,0.048,+1975,14.0,480.0,,,
+Klay Thompson,MIA,MIA @ GS 10:00,0.114,+779,0.061,0.203,0.737,0.007,+14338,0.023,+4240,0.084,+1093,1.0,406.0,,,
 Devin Booker,PHX,PHX vs ORL 9:00,0.111,+801,0.177,0.649,0.173,0.02,+4984,0.072,+1287,0.019,+5094,25.0,698.0,,,
 Dillon Brooks,PHX,PHX vs ORL 9:00,0.107,+832,0.138,0.577,0.285,0.015,+6663,0.062,+1515,0.031,+3172,14.0,522.0,,,
-Andrew Wiggins,MIA,MIA @ GS 10:00,0.107,+837,0.359,0.252,0.389,0.038,+2514,0.027,+3620,0.042,+2307,14.0,480.0,,,
 Jalen Green,PHX,PHX vs ORL 9:00,0.103,+870,0.441,0.231,0.328,0.046,+2096,0.024,+4106,0.034,+2856,13.0,303.0,,,
-Klay Thompson,MIA,MIA @ GS 10:00,0.098,+920,0.061,0.203,0.737,0.006,+16663,0.02,+4939,0.072,+1285,1.0,406.0,,,
 Desmond Bane,ORL,ORL @ PHX 9:00,0.097,+926,0.385,0.265,0.35,0.038,+2566,0.026,+3778,0.034,+2830,24.0,700.0,,,
-Yaxel Lendeborg,GS,GS vs MIA 10:00,0.082,+1114,0.361,0.241,0.398,0.03,+3259,0.02,+4945,0.033,+2951,3.0,168.0,,,
+Yaxel Lendeborg,GS,GS vs MIA 10:00,0.095,+958,0.361,0.241,0.398,0.034,+2827,0.023,+4296,0.038,+2559,3.0,168.0,,,
+Stephen Curry,GS,GS vs MIA 10:00,0.084,+1084,0.218,0.252,0.53,0.018,+5335,0.021,+4601,0.045,+2132,15.0,527.0,,,
+Pelle Larsson,MIA,MIA @ GS 10:00,0.08,+1156,0.559,0.194,0.248,0.044,+2148,0.015,+6382,0.02,+4970,6.0,349.0,,,
 Anthony Black,ORL,ORL @ PHX 9:00,0.079,+1173,0.423,0.173,0.403,0.033,+2908,0.014,+7251,0.032,+3056,8.0,408.0,,,
-Stephen Curry,GS,GS vs MIA 10:00,0.075,+1240,0.218,0.252,0.53,0.016,+6050,0.019,+5220,0.04,+2426,15.0,527.0,,,
 Khaman Maluach,PHX,PHX vs ORL 9:00,0.074,+1242,0.677,0.224,0.099,0.05,+1881,0.017,+5901,0.007,+13481,0,107.0,,,
+Brandin Podziemski,GS,GS vs MIA 10:00,0.074,+1258,0.32,0.217,0.463,0.024,+4143,0.016,+6154,0.034,+2835,12.0,505.0,,,
 Jase Richardson,ORL,ORL @ PHX 9:00,0.073,+1271,0.288,0.364,0.348,0.021,+4652,0.027,+3669,0.025,+3842,0,137.0,,,
-Graham Ike,GS,GS vs MIA 10:00,0.071,+1309,0.547,0.135,0.317,0.039,+2475,0.01,+10314,0.023,+4343,0,39.0,,,
-Brandin Podziemski,GS,GS vs MIA 10:00,0.066,+1410,0.32,0.217,0.463,0.021,+4619,0.014,+6855,0.031,+3164,12.0,505.0,,,
 Miles Bridges,PHX,PHX vs ORL 9:00,0.065,+1431,0.411,0.309,0.28,0.027,+3625,0.02,+4848,0.018,+5377,8.0,596.0,,,
-Draymond Green,GS,GS vs MIA 10:00,0.059,+1597,0.367,0.132,0.501,0.022,+4528,0.008,+12741,0.03,+3287,18.0,226.0,,,
-Davion Mitchell,MIA,MIA @ GS 10:00,0.054,+1743,0.378,0.201,0.42,0.021,+4770,0.011,+9062,0.023,+4283,18.0,405.0,,,
+Draymond Green,GS,GS vs MIA 10:00,0.065,+1445,0.367,0.132,0.501,0.024,+4113,0.009,+11590,0.032,+2983,18.0,226.0,,,
+Davion Mitchell,MIA,MIA @ GS 10:00,0.063,+1480,0.378,0.201,0.42,0.024,+4076,0.013,+7756,0.027,+3658,18.0,405.0,,,
+Will Richard,GS,GS vs MIA 10:00,0.048,+1987,0.407,0.071,0.521,0.02,+5023,0.003,+29190,0.025,+3903,5.0,204.0,,,
 ,,,,,,,,,,,,,,,,,,
 "First basket: probable starters, all 30 teams (estimate from recent starts)",,,,,,,,,,,,,,,,,,
 Player,Tm,Pos,GS 26,FB 26,Team 1st 26,1st shot 26,GS 25,FB 25,Team 1st 25,1st shot 25,Blend FB%,Blend team 1st%,Blend 1st shot%,Pre 26 (GS / FB / T1 / S1),First pts incl FT 25,Injury,"FG% (blend, shrunk)",Model share v2 (no opp)
-Victor Wembanyama,SA,F,8,3,4,2,57,13,24,22,"=ARRAYFORMULA(IF($B$3*D58:D233+H58:H233=0,""-"",($B$3*E58:E233+I58:I233)/($B$3*D58:D233+H58:H233)))","=ARRAYFORMULA(IF($B$3*D58:D233+H58:H233=0,""-"",($B$3*F58:F233+J58:J233)/($B$3*D58:D233+H58:H233)))","=ARRAYFORMULA(IF($B$3*D58:D233+H58:H233=0,""-"",($B$3*G58:G233+K58:K233)/($B$3*D58:D233+H58:H233)))",'4 / 0 / 2 / 2,15,,0.502,0.339
-Bam Adebayo,MIA,C,8,4,4,3,73,14,20,33,,,,'2 / 0 / 0 / 1,17,,0.462,0.322
+Victor Wembanyama,SA,F,8,3,4,2,57,13,24,22,"=ARRAYFORMULA(IF($B$3*D58:D231+H58:H231=0,""-"",($B$3*E58:E231+I58:I231)/($B$3*D58:D231+H58:H231)))","=ARRAYFORMULA(IF($B$3*D58:D231+H58:H231=0,""-"",($B$3*F58:F231+J58:J231)/($B$3*D58:D231+H58:H231)))","=ARRAYFORMULA(IF($B$3*D58:D231+H58:H231=0,""-"",($B$3*G58:G231+K58:K231)/($B$3*D58:D231+H58:H231)))",'4 / 0 / 2 / 2,15,,0.502,0.339
+Bam Adebayo,MIA,C,8,4,4,3,73,14,20,33,,,,'2 / 0 / 0 / 1,17,,0.462,0.369
 Luka Doncic,LAL,G,8,1,3,4,65,11,20,33,,,,'3 / 1 / 1 / 2,10,,0.48,0.372
 Jarrett Allen,CLE,C,8,2,3,2,56,12,14,11,,,,'3 / 0 / 0 / 0,15,Day-To-Day,0.605,0.241
 Anthony Edwards,MIN,G,4,0,0,0,63,15,22,21,,,,'4 / 2 / 2 / 2,13,Out,0.487,-
@@ -74,13 +74,13 @@ LaMelo Ball,MIN,G,9,2,3,3,69,9,16,12,,,,'4 / 0 / 0 / 0,8,,0.418,0.26
 Brandon Miller,CHA,F,9,1,1,0,65,13,25,29,,,,'3 / 0 / 0 / 1,11,,0.413,0.261
 Ajay Mitchell,OKC,G,5,0,1,1,16,2,6,5,,,,'2 / 0 / 1 / 1,1,,0.489,0.274
 Ivica Zubac,IND,C,4,1,1,1,47,4,18,12,,,,'4 / 1 / 2 / 1,4,,0.559,0.232
-Paul George,BOS,F,7,2,2,2,37,6,11,12,,,,'2 / 0 / 0 / 2,7,,0.45,0.288
+Paul George,BOS,F,7,2,2,2,37,6,11,12,,,,'2 / 0 / 0 / 2,7,,0.45,0.264
 Jalen Green,PHX,G,6,0,1,2,27,4,10,7,,,,'4 / 1 / 3 / 3,4,,0.425,0.247
+Jayson Tatum,BOS,F,7,2,3,3,16,0,2,2,,,,'2 / 0 / 0 / 0,0,Day-To-Day,0.425,0.27
 Cameron Boozer,MEM,F,8,0,3,1,0,0,0,0,,,,'4 / 0 / 1 / 0,0,,0.402,0.142
 De'Andre Hunter,SAC,F,8,1,2,3,25,7,9,7,,,,'2 / 0 / 0 / 0,7,,0.429,0.23
 Domantas Sabonis,SAC,F,8,0,3,1,15,2,3,5,,,,'2 / 0 / 0 / 0,2,,0.576,0.226
-Neemias Queta,BOS,C,3,0,0,0,75,15,23,12,,,,'0 / 0 / 0 / 0,13,,0.607,0.234
-Giannis Antetokounmpo,MIA,F,8,1,2,1,36,6,9,5,,,,'3 / 1 / 1 / 0,4,,0.581,0.227
+Neemias Queta,BOS,C,3,0,0,0,75,15,23,12,,,,'0 / 0 / 0 / 0,13,,0.607,0.214
 Jalen Duren,DET,C,2,0,0,0,73,10,21,15,,,,'2 / 2 / 2 / 2,10,Out,0.621,-
 Paul Reed,DET,F,6,0,1,1,11,4,5,3,,,,'2 / 0 / 0 / 0,3,,0.574,0.207
 Michael Porter Jr.,BKN,F,8,2,2,2,52,10,22,21,,,,'3 / 0 / 2 / 0,10,,0.464,0.268
@@ -109,20 +109,20 @@ Fred VanVleet,HOU,G,7,1,2,4,0,0,0,0,,,,'2 / 1 / 1 / 0,0,,0.42,0.219
 Damian Lillard,POR,G,7,2,2,2,0,0,0,0,,,,'3 / 0 / 0 / 0,0,,0.436,0.232
 Cade Cunningham,DET,G,8,0,3,1,67,8,12,15,,,,'3 / 0 / 0 / 0,7,,0.464,0.206
 Moussa Diabate,CHA,F,9,2,3,2,47,4,9,6,,,,'3 / 1 / 2 / 2,3,,0.595,0.186
-Stephen Curry,GS,G,6,0,2,1,41,5,9,8,,,,'5 / 0 / 1 / 1,5,,0.468,0.195
-Kyrie Irving,DAL,G,6,0,2,1,0,0,0,0,,,,'2 / 1 / 1 / 1,0,,0.473,0.189
+Stephen Curry,GS,G,6,0,2,1,41,5,9,8,,,,'5 / 0 / 1 / 1,5,,0.468,0.202
+Kyrie Irving,DAL,G,6,0,2,1,0,0,0,0,,,,'2 / 1 / 1 / 1,0,,0.473,0.19
 Derrick Jones Jr.,LAC,F,7,0,2,1,45,9,11,9,,,,'3 / 0 / 0 / 0,9,,0.497,0.192
 Rudy Gobert,MIN,C,8,1,2,0,76,7,14,5,,,,'4 / 0 / 0 / 0,8,,0.595,0.137
 Ja'Kobe Walter,TOR,G,6,1,2,2,19,1,2,0,,,,'2 / 0 / 0 / 1,1,,0.449,0.202
 Pascal Siakam,IND,F,8,1,2,3,63,8,18,9,,,,'4 / 0 / 0 / 0,9,,0.49,0.202
-Daniel Gafford,DAL,F,8,2,4,2,44,6,8,4,,,,'2 / 0 / 0 / 0,6,,0.613,0.217
+Daniel Gafford,DAL,F,8,2,4,2,44,6,8,4,,,,'2 / 0 / 0 / 0,6,,0.613,0.218
 Jaylen Brown,PHI,G,8,0,2,0,74,9,18,31,,,,'3 / 0 / 0 / 1,11,,0.474,0.246
 Moses Moody,GS,G,0,0,0,0,49,7,12,13,,,,'0 / 0 / 0 / 0,6,Out,0.446,-
 Onyeka Okongwu,ATL,F,9,0,1,1,63,8,19,15,,,,'4 / 0 / 0 / 0,8,,0.475,0.226
 Maxime Raynaud,SAC,C,0,0,0,0,56,8,13,13,,,,'1 / 0 / 0 / 0,7,Out,0.552,-
 Rui Hachimura,LAC,F,6,1,2,1,41,3,8,10,,,,'3 / 0 / 1 / 1,3,,0.472,0.229
 Nickeil Alexander-Walker,ATL,G,9,2,3,1,71,7,14,18,,,,'4 / 0 / 2 / 2,7,,0.455,0.191
-Davion Mitchell,MIA,G,8,2,2,0,70,5,12,8,,,,'4 / 1 / 1 / 1,3,,0.489,0.097
+Davion Mitchell,MIA,G,8,2,2,0,70,5,12,8,,,,'4 / 1 / 1 / 1,3,,0.489,0.111
 Shaedon Sharpe,POR,G,0,0,0,0,42,3,10,5,,,,'0 / 0 / 0 / 0,1,Out,0.454,-
 Jalen Smith,CHI,F,8,1,3,2,21,1,7,6,,,,'4 / 2 / 2 / 2,1,Day-To-Day,0.477,0.241
 Trey Murphy III,NO,F,7,1,3,3,66,6,10,14,,,,'3 / 0 / 0 / 0,6,Day-To-Day,0.468,0.222
@@ -141,15 +141,13 @@ Naz Reid,CHA,C,9,1,2,5,3,0,0,1,,,,'4 / 0 / 0 / 1,0,,0.448,0.301
 Immanuel Quickley,TOR,G,8,0,1,0,70,6,14,10,,,,'4 / 0 / 0 / 1,5,,0.438,0.159
 Tyrese Maxey,PHI,G,9,1,2,3,73,10,15,21,,,,'3 / 0 / 0 / 0,10,,0.469,0.215
 Dillon Brooks,PHX,F,6,0,0,2,56,4,14,14,,,,'4 / 0 / 0 / 0,5,,0.447,0.218
-Draymond Green,GS,F,6,0,1,2,68,8,15,17,,,,'4 / 0 / 0 / 0,7,,0.426,0.202
+Draymond Green,GS,F,6,0,1,2,68,8,15,17,,,,'4 / 0 / 0 / 0,7,,0.426,0.208
 Kenrich Williams,OKC,G,5,1,1,1,2,0,0,0,,,,'1 / 0 / 1 / 0,0,,0.477,0.169
-Zaccharie Risacher,DAL,F,2,0,0,0,46,4,13,11,,,,'4 / 0 / 1 / 1,4,,0.445,0.166
-Derrick White,BOS,G,8,0,1,0,77,7,16,14,,,,'2 / 0 / 0 / 0,7,,0.407,0.153
-Kon Knueppel,CHA,G,1,0,0,0,80,10,16,20,,,,'0 / 0 / 0 / 0,9,Out,0.474,-
+Derrick White,BOS,G,8,0,1,0,77,7,16,14,,,,'2 / 0 / 0 / 0,7,,0.407,0.141
 Jalen Suggs,ORL,G,3,0,0,0,56,8,11,14,,,,'2 / 0 / 0 / 0,9,Out,0.435,-
 Cameron Johnson,DEN,F,4,0,1,1,54,7,9,11,,,,'5 / 0 / 0 / 0,7,,0.471,0.184
 Peyton Watson,CLE,G,6,1,1,4,40,2,6,7,,,,'3 / 0 / 0 / 1,1,Day-To-Day,0.463,0.221
-Brandin Podziemski,GS,G,6,1,2,2,43,3,6,10,,,,'5 / 1 / 1 / 2,5,,0.458,0.213
+Brandin Podziemski,GS,G,6,1,2,2,43,3,6,10,,,,'5 / 1 / 1 / 2,5,,0.458,0.22
 Deni Avdija,POR,F,7,0,1,1,68,6,15,10,,,,'4 / 2 / 2 / 2,8,,0.466,0.184
 Dennis Schroder,CHA,G,7,1,2,2,17,0,1,2,,,,'4 / 1 / 2 / 0,0,,0.405,0.162
 Ty Jerome,MEM,G,7,1,1,1,15,3,5,7,,,,'4 / 1 / 2 / 2,1,,0.488,0.289
@@ -158,12 +156,13 @@ Amen Thompson,HOU,G,9,1,1,1,79,7,18,12,,,,'3 / 1 / 1 / 1,6,,0.522,0.162
 Zach Edey,MEM,C,7,2,2,2,11,1,1,1,,,,'3 / 0 / 0 / 0,1,,0.539,0.198
 James Harden,CLE,G,8,1,2,0,70,5,8,5,,,,'2 / 0 / 1 / 0,6,,0.426,0.09
 Anthony Davis,WSH,F,8,0,2,3,20,3,6,7,,,,'3 / 1 / 1 / 2,3,,0.497,0.269
+Will Richard,GS,G,2,0,0,0,21,0,5,4,,,,'1 / 0 / 0 / 0,0,,0.463,0.146
 Aaron Gordon,DEN,F,7,1,1,0,33,3,6,7,,,,'4 / 2 / 3 / 2,3,,0.472,0.178
 Isaiah Jackson,LAC,F,6,1,1,1,14,1,3,1,,,,'2 / 0 / 0 / 0,1,,0.573,0.216
 Mark Williams,PHX,C,0,0,0,0,55,5,9,5,,,,'0 / 0 / 0 / 0,5,Out,0.599,-
-Andrew Wiggins,MIA,F,8,0,0,1,68,9,14,17,,,,'4 / 0 / 1 / 0,8,,0.466,0.181
+Andrew Wiggins,MIA,F,8,0,0,1,68,9,14,17,,,,'4 / 0 / 1 / 0,8,,0.466,0.208
 Dyson Daniels,ATL,G,9,1,3,4,76,5,10,6,,,,'4 / 0 / 1 / 1,4,,0.495,0.188
-Cooper Flagg,DAL,F,7,1,1,3,70,5,16,16,,,,'3 / 0 / 0 / 1,5,,0.468,0.231
+Cooper Flagg,DAL,F,7,1,1,3,70,5,16,16,,,,'3 / 0 / 0 / 1,5,,0.468,0.233
 Alex Sarr,WSH,C,7,1,2,2,48,5,11,13,,,,'3 / 1 / 1 / 0,6,,0.485,0.202
 Cedric Coward,MEM,F,7,1,1,1,47,5,10,15,,,,'4 / 1 / 1 / 1,4,,0.471,0.208
 Paolo Banchero,ORL,F,2,0,0,0,72,7,11,10,,,,'4 / 1 / 1 / 2,8,Out,0.467,-
@@ -182,17 +181,17 @@ Ryan Rollins,MIL,G,6,0,0,0,67,6,16,17,,,,'4 / 0 / 2 / 2,6,,0.449,0.18
 Ausar Thompson,DET,G,7,0,0,0,72,5,13,10,,,,'4 / 0 / 0 / 1,5,,0.516,0.13
 Nolan Traore,BKN,G,5,1,1,0,31,3,6,7,,,,'0 / 0 / 0 / 0,2,,0.426,0.148
 Dejounte Murray,NO,G,5,0,0,1,14,2,4,2,,,,'1 / 0 / 0 / 0,2,,0.477,0.168
-P.J. Washington,DAL,F,8,1,1,1,53,4,11,15,,,,'3 / 0 / 0 / 0,4,,0.438,0.187
+P.J. Washington,DAL,F,8,1,1,1,53,4,11,15,,,,'3 / 0 / 0 / 0,4,,0.438,0.189
 Toumani Camara,POR,F,7,0,1,1,82,5,13,17,,,,'4 / 1 / 1 / 1,5,,0.457,0.157
-Max Christie,DAL,G,7,0,0,1,68,7,16,14,,,,'2 / 0 / 2 / 0,7,Out,0.428,-
+Max Christie,DAL,G,7,0,0,1,68,7,16,14,,,,'2 / 0 / 2 / 0,7,Day-To-Day,0.428,0.16
 Jake LaRavia,LAL,F,5,1,1,0,43,3,4,5,,,,'2 / 0 / 0 / 0,3,,0.477,0.104
 Aaron Nesmith,IND,G,6,1,1,1,42,2,7,11,,,,'2 / 0 / 0 / 0,2,,0.42,0.149
 Shai Gilgeous-Alexander,OKC,G,8,1,1,1,68,3,9,7,,,,'3 / 1 / 1 / 1,5,,0.517,0.18
 Precious Achiuwa,SAC,F,6,0,1,1,57,6,8,13,,,,'4 / 0 / 2 / 0,5,,0.524,0.178
 Jalen Williams,OKC,G,3,0,0,1,33,4,5,6,,,,'3 / 0 / 0 / 1,4,Out,0.468,-
 Nic Claxton,CHI,C,0,0,0,0,68,5,15,12,,,,'0 / 0 / 0 / 0,6,Out,0.55,-
-Yaxel Lendeborg,GS,F,8,1,1,2,0,0,0,0,,,,'5 / 2 / 3 / 2,0,,0.49,0.207
-Hugo Gonzalez,BOS,G,3,0,0,1,3,0,1,1,,,,'1 / 0 / 0 / 0,0,,0.469,0.205
+Yaxel Lendeborg,GS,F,8,1,1,2,0,0,0,0,,,,'5 / 2 / 3 / 2,0,,0.49,0.214
+Pelle Larsson,MIA,G,0,0,0,0,54,3,6,4,,,,'1 / 0 / 0 / 0,4,,0.486,0.114
 Myles Turner,MIL,C,8,1,2,3,71,2,10,16,,,,'4 / 0 / 0 / 0,2,,0.439,0.235
 Jimmy Butler III,GS,F,0,0,0,0,38,1,5,4,,,,'0 / 0 / 0 / 0,1,Out,0.507,-
 Julius Randle,BKN,F,8,1,1,2,79,9,15,22,,,,'4 / 0 / 0 / 2,8,,0.469,0.234
@@ -208,7 +207,6 @@ Matas Buzelis,CHI,F,8,0,0,0,77,7,19,15,,,,'5 / 0 / 1 / 1,6,,0.454,0.165
 Stephon Castle,SA,G,8,0,0,1,68,6,10,11,,,,'4 / 1 / 1 / 0,8,,0.448,0.137
 Josh Giddey,CHI,G,8,0,2,2,51,3,8,7,,,,'5 / 0 / 0 / 0,2,,0.439,0.163
 Jabari Smith Jr.,HOU,F,9,0,1,1,77,5,10,6,,,,'3 / 0 / 1 / 0,5,,0.462,0.107
-Graham Ike,GS,F,2,0,0,0,0,0,0,0,,,,'0 / 0 / 0 / 0,0,,0.48,0.173
 Tyler Herro,MIL,G,8,1,1,2,28,2,4,1,,,,'4 / 1 / 1 / 2,4,,0.471,0.173
 Jalen Johnson,ATL,F,7,1,1,1,72,3,8,11,,,,'3 / 0 / 1 / 0,5,Day-To-Day,0.475,0.186
 Norman Powell,CHI,G,8,0,0,3,52,6,13,16,,,,'4 / 2 / 2 / 2,6,,0.453,0.276
@@ -222,8 +220,8 @@ Jase Richardson,ORL,G,5,0,0,1,0,0,0,0,,,,'2 / 0 / 0 / 0,0,,0.441,0.15
 Trae Young,WSH,G,8,1,1,1,15,0,1,2,,,,'4 / 0 / 1 / 0,0,,0.434,0.143
 Dylan Harper,SA,G,8,0,0,1,4,0,1,0,,,,'4 / 0 / 1 / 0,0,,0.498,0.128
 Karlo Matkovic,NO,F,4,0,0,1,2,0,0,0,,,,'1 / 0 / 0 / 0,0,,0.571,0.217
-Klay Thompson,MIA,G,8,0,0,3,8,0,1,2,,,,'4 / 0 / 0 / 1,1,,0.417,0.163
-Mitchell Robinson,BOS,C,5,0,0,0,16,1,1,0,,,,'2 / 1 / 2 / 0,1,,0.614,0.11
+Klay Thompson,MIA,G,8,0,0,3,8,0,1,2,,,,'4 / 0 / 0 / 1,1,,0.417,0.187
+Mitchell Robinson,BOS,C,5,0,0,0,16,1,1,0,,,,'2 / 1 / 2 / 0,1,,0.614,0.101
 Khaman Maluach,PHX,C,6,0,0,0,1,0,0,0,,,,'3 / 0 / 0 / 0,0,,0.509,0.137
 Jonathan Kuminga,MIN,F,9,0,0,4,14,0,1,1,,,,'3 / 1 / 1 / 1,0,,0.456,0.25
 Chaney Johnson,BKN,F,4,0,0,1,1,0,0,0,,,,'0 / 0 / 0 / 0,0,,0.446,0.14
@@ -234,7 +232,7 @@ Christian Braun,DEN,G,7,0,0,0,44,0,0,1,,,,'5 / 0 / 1 / 1,0,,0.518,0.06
 ,,,,,,,,,,,,,,,,,,
 Tip-off by team (opening jump ball only),,,,,,,,,,,,,,,,,,
 Team,Main jumper now,Jumper tips 26,Won 26,Jumper tips 25,Won 25,Jumper blend win%,Team tips 25,Team won 25,Team tip% 25,Team scores 1st% 25,1st when won tip 25,Pre 26 tips won,Next game,,,,,
-SA,Victor Wembanyama,8,7,56,51,"=ARRAYFORMULA(IF($B$3*C237:C266+E237:E266=0,""-"",($B$3*D237:D266+F237:F266)/($B$3*C237:C266+E237:E266)))",82,63,0.768,0.53,0.635,'4 of 5,11/6 @ SAC,,,,,
+SA,Victor Wembanyama,8,7,56,51,"=ARRAYFORMULA(IF($B$3*C235:C264+E235:E264=0,""-"",($B$3*D235:D264+F235:F264)/($B$3*C235:C264+E235:E264)))",82,63,0.768,0.53,0.635,'4 of 5,11/6 @ SAC,,,,,
 ORL,Wendell Carter Jr.,7,5,77,56,,82,60,0.732,0.573,0.65,'2 of 3,11/5 @ PHX,,,,,
 PHX,Khaman Maluach,6,4,1,1,,81,58,0.716,0.537,0.586,'2 of 5,11/5 vs ORL,,,,,
 LAL,Walker Kessler,9,6,5,5,,82,54,0.659,0.573,0.759,'2 of 5,11/6 vs POR,,,,,
@@ -270,7 +268,6 @@ Player,Tm,PPG 26,PPG 25,Over 9.5,Over 14.5,Over 19.5,Over 24.5,3PM/G 25,3PM 1+,3
 Luka Doncic,LAL,38.5,33.0,0.989,0.955,0.944,0.854,3.9,0.978,0.921,0.809,0.64,'40 42 45 37 41,'6 6 8 6 6,,,,
 Shai Gilgeous-Alexander,OKC,30.1,31.1,1.0,1.0,0.967,0.804,1.7,0.924,0.533,0.348,0.087,'42 43 26 21 26,'5 4 3 1 1,,,,
 Jaylen Brown,PHI,21.8,27.7,0.969,0.939,0.806,0.622,1.9,0.878,0.582,0.276,0.143,'30 25 16 20 16,'3 4 0 1 2,,,,
-Giannis Antetokounmpo,MIA,28.2,27.6,0.983,0.917,0.883,0.7,0.4,0.367,0.083,0.0,0.0,'27 30 31 24 29,'0 0 1 0 2,,,,
 Nikola Jokic,DEN,23.4,27.3,0.977,0.908,0.793,0.54,1.7,0.724,0.437,0.23,0.103,'32 26 18 21 19,'0 2 0 0 1,,,,
 Tyrese Maxey,PHI,28.0,27.3,0.96,0.92,0.87,0.72,3.0,0.95,0.8,0.55,0.37,'19 26 38 27 27,'3 1 4 3 3,,,,
 Donovan Mitchell,CLE,22.5,26.9,0.989,0.947,0.745,0.596,3.1,0.957,0.851,0.553,0.404,'27 17 15 22 19,'5 4 2 1 2,,,,
@@ -290,6 +287,7 @@ Pascal Siakam,IND,21.2,23.4,0.989,0.862,0.77,0.425,1.6,0.713,0.46,0.264,0.092,'2
 Austin Reaves,LAL,23.3,23.3,1.0,0.917,0.653,0.472,2.3,0.958,0.694,0.389,0.264,'21 27 19 21 16,'1 4 2 1 1,,,,
 Cade Cunningham,DET,24.0,23.1,0.945,0.846,0.681,0.516,1.9,0.857,0.582,0.308,0.154,'26 33 20 30 19,'1 4 1 4 2,,,,
 Jalen Johnson,ATL,18.3,21.8,0.968,0.817,0.591,0.323,1.6,0.753,0.495,0.183,0.097,'13 17 12 21 26,'1 2 2 1 2,Day-To-Day,,,
+Jayson Tatum,BOS,27.0,21.8,1.0,0.892,0.73,0.405,2.9,0.919,0.757,0.297,0.135,'19 32 26 40 23,'1 1 2 2 2,Day-To-Day,,,
 Trey Murphy III,NO,14.9,21.5,0.897,0.759,0.483,0.23,3.2,0.966,0.782,0.517,0.356,'18 15 19 6 26,'3 1 2 2 4,Day-To-Day,,,
 Julius Randle,BKN,21.0,21.1,0.981,0.816,0.563,0.262,1.4,0.728,0.437,0.233,0.068,'22 21 20 15 24,'2 0 4 3 0,,,,
 Norman Powell,CHI,19.2,21.1,0.974,0.908,0.579,0.329,2.6,0.908,0.711,0.447,0.289,'12 18 16 30 20,'0 1 1 4 4,,,,
@@ -362,6 +360,7 @@ Ajay Mitchell,OKC,17.8,13.6,0.839,0.645,0.484,0.194,1.1,0.71,0.323,0.0,0.0,'23 2
 Toumani Camara,POR,13.7,13.4,0.748,0.398,0.107,0.039,2.7,0.922,0.777,0.583,0.311,'11 9 14 13 12,'1 3 4 3 4,,,,
 Kyle Kuzma,MIL,9.5,13.0,0.657,0.328,0.09,0.06,1.2,0.627,0.343,0.149,0.09,'6 2 14 4 17,'1 0 2 0 4,,,,
 Jaylen Wells,MEM,11.1,12.5,0.688,0.355,0.075,0.022,1.9,0.796,0.613,0.28,0.118,'0 16 4 10 14,'0 3 0 2 2,,,,
+Max Christie,DAL,7.1,12.3,0.663,0.258,0.09,0.022,2.3,0.876,0.663,0.404,0.146,'0 2 11 11 5,'0 0 3 3 1,Day-To-Day,,,
 Cameron Johnson,DEN,9.0,12.2,0.606,0.333,0.061,0.015,2.0,0.879,0.545,0.303,0.197,'12 7 12 5 18,'4 1 2 1 2,,,,
 Duncan Robinson,DET,19.0,12.2,0.723,0.475,0.168,0.03,2.9,0.95,0.832,0.644,0.406,'27 24 17 13 12,'7 6 2 3 2,,,,
 Jonathan Kuminga,MIN,12.7,12.2,0.732,0.39,0.146,0.024,1.0,0.78,0.585,0.244,0.098,'16 8 19 5 20,'4 2 2 1 3,,,,
@@ -374,6 +373,7 @@ Dylan Harper,SA,18.6,11.9,1.0,0.679,0.464,0.107,0.9,0.75,0.357,0.107,0.0,'21 17 
 Wendell Carter Jr.,ORL,12.4,11.8,0.586,0.343,0.141,0.02,0.9,0.596,0.232,0.061,0.02,'6 7 20 3 9,'0 1 1 0 0,,,,
 Klay Thompson,MIA,14.1,11.7,0.594,0.281,0.188,0.188,2.9,1.0,0.781,0.531,0.375,'30 19 25 3 6,'8 4 7 1 2,,,,
 Rui Hachimura,LAC,14.7,11.5,0.78,0.407,0.203,0.017,1.7,0.915,0.695,0.305,0.085,'21 24 12 5 16,'1 4 2 1 3,,,,
+Pelle Larsson,MIA,10.9,11.4,0.704,0.444,0.13,0.019,0.9,0.556,0.296,0.093,0.0,'10 7 16 18 20,'2 1 0 2 0,,,,
 Rudy Gobert,MIN,7.5,10.9,0.49,0.17,0.04,0.01,0.0,0.0,0.0,0.0,0.0,'8 10 9 1 5,'0 0 0 0 0,,,,
 Dennis Schroder,CHA,10.2,10.8,0.5,0.368,0.184,0.132,1.1,0.5,0.342,0.211,0.026,'4 8 14 8 25,'0 1 2 0 3,,,,
 Jakob Poeltl,TOR,5.2,10.7,0.441,0.186,0.068,0.0,0.0,0.0,0.0,0.0,0.0,'12 2 0 6 3,'0 0 0 0 0,,,,
@@ -382,7 +382,6 @@ Jalen Smith,CHI,11.0,10.2,0.733,0.222,0.0,0.0,1.5,0.778,0.533,0.178,0.0,'3 13 5 
 Derrick Jones Jr.,LAC,11.6,10.1,0.636,0.258,0.03,0.0,1.1,0.727,0.439,0.212,0.03,'12 9 10 15 11,'2 1 2 3 3,,,,
 Precious Achiuwa,SAC,11.0,10.1,0.467,0.227,0.147,0.067,0.4,0.253,0.067,0.04,0.0,'7 6 6 24 4,'1 0 0 0 0,,,,
 Ausar Thompson,DET,9.9,9.9,0.538,0.108,0.011,0.0,0.1,0.065,0.0,0.0,0.0,'11 14 11 7 11,'0 0 0 0 0,,,,
-Zaccharie Risacher,DAL,7.4,9.6,0.538,0.231,0.038,0.019,1.4,0.692,0.327,0.212,0.096,'2 11 11 8 4,'0 1 1 1 1,,,,
 Daniel Gafford,DAL,9.1,9.5,0.441,0.235,0.118,0.0,0.0,0.044,0.0,0.0,0.0,'2 20 18 7 8,'0 0 0 1 0,,,,
 Davion Mitchell,MIA,15.4,9.3,0.617,0.255,0.074,0.0,1.3,0.702,0.468,0.234,0.053,'11 15 15 10 21,'0 4 3 0 2,,,,
 Isaiah Hartenstein,OKC,8.1,9.2,0.5,0.129,0.014,0.014,0.0,0.0,0.0,0.0,0.0,'3 5 10 10 15,'0 0 0 0 0,,,,
@@ -396,6 +395,7 @@ Ja'Kobe Walter,TOR,11.4,7.5,0.541,0.243,0.108,0.0,1.5,0.784,0.568,0.541,0.216,'8
 Jaxson Hayes,UTAH,7.3,7.5,0.208,0.167,0.042,0.0,0.0,0.083,0.0,0.0,0.0,'2 9 7 2 5,'0 0 0 0 0,,,,
 Kris Dunn,LAC,8.5,7.3,0.293,0.109,0.0,0.0,1.0,0.641,0.239,0.087,0.011,'5 12 12 5 5,'1 1 0 0 1,,,,
 Isaiah Jackson,LAC,8.6,6.7,0.406,0.062,0.031,0.0,0.0,0.0,0.0,0.0,0.0,'5 10 4 10 6,'0 0 0 0 0,,,,
+Will Richard,GS,4.6,6.4,0.333,0.111,0.074,0.037,1.0,0.815,0.481,0.185,0.037,'6 11 2 8 0,'2 3 0 2 0,,,,
 Mitchell Robinson,BOS,5.7,5.6,0.161,0.032,0.0,0.0,0.0,0.0,0.0,0.0,0.0,'11 7 7 4 4,'0 0 0 0 0,,,,
 Sion James,CHA,5.2,5.4,0.163,0.023,0.0,0.0,1.0,0.721,0.209,0.116,0.0,'11 4 6 5 5,'3 0 1 1 1,,,,
 ,,,,,,,,,,,,,,,,,,
@@ -451,4 +451,4 @@ Wed 11/11,9:00 PM,ORL @ UTAH,Regular,Wendell Carter Jr. vs Jaxson Hayes,0.81,,,,
 Wed 11/11,9:30 PM,GS @ HOU,Regular,Draymond Green vs Alperen Sengun,0.339,,,,,,,,,,,,,
 Wed 11/11,10:00 PM,OKC @ POR,Regular,Isaiah Hartenstein vs Donovan Clingan,0.435,,,,,,,,,,,,,
 ,,,,,,,,,,,,,,,,,,
-Sources,"ESPN NBA scoreboard, game summaries (boxscore starters and play-by-play) for 1235 2025-26 regular-season games, 67 2026-27 preseason and 121 2026-27 regular-season games; ESPN rosters and injuries. Pulled 11/5 10:09 AM ET. Probable starters are an estimate from recent starts, not official lineups; the main jumper (most recent opening tips this season, weighted to the newest) is always put in the probable five. Rebuilt by analysis/nba/build_nba_tab.py; model check in analysis/nba/backtest_fb.py.",,,,,,,,,,,,,,,,,
+Sources,"ESPN NBA scoreboard, game summaries (boxscore starters and play-by-play) for 1235 2025-26 regular-season games, 67 2026-27 preseason and 121 2026-27 regular-season games; ESPN rosters and injuries. Pulled 11/5 3:40 PM ET. Probable starters are an estimate from recent starts, not official lineups; the main jumper (most recent opening tips this season, weighted to the newest) is always put in the probable five. Rebuilt by analysis/nba/build_nba_tab.py; model check in analysis/nba/backtest_fb.py.",,,,,,,,,,,,,,,,,

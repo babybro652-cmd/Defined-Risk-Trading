@@ -67,6 +67,14 @@
    "note": "83 starts"
   },
   {
+   "player": "Davion Mitchell",
+   "team": "MIA",
+   "game": "MIA @ GS",
+   "market": "3+ threes",
+   "p": 0.234,
+   "note": "78 starts"
+  },
+  {
    "player": "Andrew Wiggins",
    "team": "MIA",
    "game": "MIA @ GS",
@@ -75,12 +83,12 @@
    "note": "76 starts"
   },
   {
-   "player": "Davion Mitchell",
+   "player": "Pelle Larsson",
    "team": "MIA",
    "game": "MIA @ GS",
    "market": "3+ threes",
-   "p": 0.234,
-   "note": "78 starts"
+   "p": 0.093,
+   "note": "54 starts"
   },
   {
    "player": "Bam Adebayo",
@@ -99,20 +107,28 @@
    "note": "47 starts"
   },
   {
-   "player": "Draymond Green",
-   "team": "GS",
-   "game": "MIA @ GS",
-   "market": "3+ threes",
-   "p": 0.151,
-   "note": "74 starts"
-  },
-  {
    "player": "Brandin Podziemski",
    "team": "GS",
    "game": "MIA @ GS",
    "market": "3+ threes",
    "p": 0.361,
    "note": "49 starts"
+  },
+  {
+   "player": "Will Richard",
+   "team": "GS",
+   "game": "MIA @ GS",
+   "market": "3+ threes",
+   "p": 0.185,
+   "note": "23 starts"
+  },
+  {
+   "player": "Draymond Green",
+   "team": "GS",
+   "game": "MIA @ GS",
+   "market": "3+ threes",
+   "p": 0.151,
+   "note": "74 starts"
   }
  ]
 }
