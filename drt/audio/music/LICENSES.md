@@ -43,3 +43,12 @@ and move the track to the bottom of the rotation.
 `add_audio.py --tts-text` uses Piper TTS (local, free) with voice **en_US-norman-medium**
 from https://huggingface.co/rhasspy/piper-voices (model card: dataset LibriVox recordings,
 public domain). AI voice means `containsSyntheticMedia: true` on YouTube.
+
+## Added 2026-11-05 (95-second excerpts, 2 s fade, -19 LUFS, MP3 160 kbps; faster-whisper found no vocals)
+| File | Title | Artist | Album / source item | License |
+|---|---|---|---|---|
+| im_glad_you_are_here.mp3 | I'm glad you are here with me | Loyalty Freak Music (made for Lack of Color) | LOFI AMBIENT SONGS ! https://archive.org/details/loyalty-freak-music-lofi-ambient-songs | CC0 1.0 |
+| drowning_in_your_smile.mp3 | Drowning in your smile | Loyalty Freak Music (made for Lack of Color) | LOFI AMBIENT SONGS ! https://archive.org/details/loyalty-freak-music-lofi-ambient-songs | CC0 1.0 |
+| one_cool_minute.mp3 | One Cool Minute | Loyalty Freak Music | MINIMAL AMBIENT BOUNCE https://archive.org/details/MINIMALAMBIENTBOUNCE | CC0 1.0 |
+| static_shoes.mp3 | Static Shoes | Loyalty Freak Music | MINIMAL AMBIENT BOUNCE https://archive.org/details/MINIMALAMBIENTBOUNCE | CC0 1.0 |
+(All 10 earlier tracks were used on 11/3-11/5, so these four were added for the 11/5 trade reels.)
