@@ -52,3 +52,9 @@ public domain). AI voice means `containsSyntheticMedia: true` on YouTube.
 | one_cool_minute.mp3 | One Cool Minute | Loyalty Freak Music | MINIMAL AMBIENT BOUNCE https://archive.org/details/MINIMALAMBIENTBOUNCE | CC0 1.0 |
 | static_shoes.mp3 | Static Shoes | Loyalty Freak Music | MINIMAL AMBIENT BOUNCE https://archive.org/details/MINIMALAMBIENTBOUNCE | CC0 1.0 |
 (All 10 earlier tracks were used on 11/3-11/5, so these four were added for the 11/5 trade reels.)
+
+## Added 2026-11-05 evening (same processing: 95 s excerpt from 0:10, 2 s fades, -19 LUFS, MP3 160 kbps; faster-whisper found no vocals)
+| File | Title | Artist | Album / source item | License |
+|---|---|---|---|---|
+| i_hope_youre_happy.mp3 | I hope you're happy | Loyalty Freak Music | LOFI AMBIENT SONGS ! https://archive.org/details/loyalty-freak-music-lofi-ambient-songs | CC0 1.0 |
+(All 14 library tracks were used 11/3-11/5; added for the 11/5 "called the drop" reel.)
