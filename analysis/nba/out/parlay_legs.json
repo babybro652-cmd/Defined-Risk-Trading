@@ -283,20 +283,20 @@
    "note": "84 starts"
   },
   {
-   "player": "Pascal Siakam",
-   "team": "IND",
-   "game": "IND @ MEM",
-   "market": "3+ threes",
-   "p": 0.274,
-   "note": "70 starts"
-  },
-  {
    "player": "Andrew Nembhard",
    "team": "IND",
    "game": "IND @ MEM",
    "market": "3+ threes",
    "p": 0.32,
    "note": "63 starts"
+  },
+  {
+   "player": "Kelly Oubre Jr.",
+   "team": "IND",
+   "game": "IND @ MEM",
+   "market": "3+ threes",
+   "p": 0.268,
+   "note": "46 starts"
   },
   {
    "player": "Aaron Nesmith",
@@ -307,20 +307,12 @@
    "note": "47 starts"
   },
   {
-   "player": "Jay Huff",
+   "player": "Pascal Siakam",
    "team": "IND",
    "game": "IND @ MEM",
    "market": "3+ threes",
-   "p": 0.226,
-   "note": "52 starts"
-  },
-  {
-   "player": "Kelly Oubre Jr.",
-   "team": "IND",
-   "game": "IND @ MEM",
-   "market": "3+ threes",
-   "p": 0.268,
-   "note": "46 starts"
+   "p": 0.274,
+   "note": "70 starts"
   },
   {
    "player": "Ty Jerome",
@@ -355,20 +347,20 @@
    "note": "61 starts"
   },
   {
-   "player": "Lauri Markkanen",
-   "team": "UTAH",
-   "game": "UTAH @ NO",
-   "market": "3+ threes",
-   "p": 0.5,
-   "note": "48 starts"
-  },
-  {
    "player": "Ace Bailey",
    "team": "UTAH",
    "game": "UTAH @ NO",
    "market": "3+ threes",
    "p": 0.316,
    "note": "67 starts"
+  },
+  {
+   "player": "Lauri Markkanen",
+   "team": "UTAH",
+   "game": "UTAH @ NO",
+   "market": "3+ threes",
+   "p": 0.5,
+   "note": "48 starts"
   },
   {
    "player": "Jeremiah Fears",
@@ -387,12 +379,12 @@
    "note": "59 starts"
   },
   {
-   "player": "Evan Mobley",
+   "player": "James Harden",
    "team": "CLE",
    "game": "CLE @ OKC",
    "market": "3+ threes",
-   "p": 0.214,
-   "note": "70 starts"
+   "p": 0.626,
+   "note": "77 starts"
   },
   {
    "player": "Donovan Mitchell",
@@ -403,12 +395,12 @@
    "note": "77 starts"
   },
   {
-   "player": "James Harden",
+   "player": "Evan Mobley",
    "team": "CLE",
    "game": "CLE @ OKC",
    "market": "3+ threes",
-   "p": 0.626,
-   "note": "77 starts"
+   "p": 0.214,
+   "note": "70 starts"
   },
   {
    "player": "Shai Gilgeous-Alexander",

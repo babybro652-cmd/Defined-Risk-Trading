@@ -30,7 +30,7 @@ Dunk/layup includes tip-ins and putbacks; 2pt jumper includes floaters and hooks
 - MIL @ BOS 7:30: first points Dunk/layup 33% (+199), 2pt jumper 24% (+317), 3-pointer 35% (+182), Free throw 7% (+1303); first basket Dunk/layup 36% (+177), 2pt jumper 26% (+290), 3-pointer 38% (+161)
 - CHA @ BKN 7:30: first points Dunk/layup 39% (+157), 2pt jumper 23% (+328), 3-pointer 28% (+253), Free throw 9% (+962); first basket Dunk/layup 42% (+141), 2pt jumper 24% (+323), 3-pointer 35% (+187)
 - CHI @ NY 7:30: first points Dunk/layup 34% (+197), 2pt jumper 22% (+363), 3-pointer 31% (+220), Free throw 14% (+637); first basket Dunk/layup 38% (+162), 2pt jumper 26% (+288), 3-pointer 36% (+178)
-- IND @ MEM 8:00: first points Dunk/layup 38% (+162), 2pt jumper 26% (+282), 3-pointer 27% (+270), Free throw 9% (+1057); first basket Dunk/layup 40% (+148), 2pt jumper 29% (+245), 3-pointer 31% (+227)
+- IND @ MEM 8:00: first points Dunk/layup 38% (+162), 2pt jumper 26% (+282), 3-pointer 27% (+270), Free throw 9% (+1054); first basket Dunk/layup 40% (+148), 2pt jumper 29% (+244), 3-pointer 31% (+227)
 - UTAH @ NO 8:00: first points Dunk/layup 36% (+176), 2pt jumper 29% (+240), 3-pointer 25% (+307), Free throw 10% (+919); first basket Dunk/layup 39% (+155), 2pt jumper 32% (+212), 3-pointer 29% (+248)
 - CLE @ OKC 8:00: first points Dunk/layup 29% (+242), 2pt jumper 26% (+292), 3-pointer 29% (+250), Free throw 17% (+500); first basket Dunk/layup 35% (+188), 2pt jumper 30% (+236), 3-pointer 36% (+181)
 - MIN @ HOU 8:30: first points Dunk/layup 35% (+188), 2pt jumper 30% (+236), 3-pointer 27% (+277), Free throw 9% (+1016); first basket Dunk/layup 36% (+175), 2pt jumper 35% (+186), 3-pointer 29% (+249)
@@ -47,7 +47,7 @@ Best player + method (fair price; bet only if the book pays more):
 - **Walker Kessler first basket: Dunk/layup** (LAL @ SAC 10:00). Est 9.1% (fair +997) = FB 10% x 88% if he scores first; his first-FG sample 4, made FGs 176
 - **Day'Ron Sharpe first basket: Dunk/layup** (BKN vs CHA 7:30). Est 9.1% (fair +999) = FB 13% x 70% if he scores first; his first-FG sample 12, made FGs 271
 - **LaMelo Ball first basket: 3-pointer** (MIN @ HOU 8:30). Est 8.9% (fair +1024) = FB 14% x 64% if he scores first; his first-FG sample 22, made FGs 647
-- **Zach Edey first basket: Dunk/layup** (MEM vs IND 8:00). Est 8.7% (fair +1047) = FB 13% x 67% if he scores first; his first-FG sample 7, made FGs 113
+- **Zach Edey first basket: Dunk/layup** (MEM vs IND 8:00). Est 8.4% (fair +1089) = FB 13% x 67% if he scores first; his first-FG sample 7, made FGs 113
 - **Neemias Queta first basket: Dunk/layup** (BOS vs MIL 7:30). Est 8.4% (fair +1097) = FB 11% x 76% if he scores first; his first-FG sample 23, made FGs 398
 - **Bam Adebayo first basket: 2pt jumper** (MIA @ LAC 10:30). Est 8.1% (fair +1134) = FB 19% x 43% if he scores first; his first-FG sample 29, made FGs 632
 
@@ -75,7 +75,7 @@ Best player + method (fair price; bet only if the book pays more):
 - MIL @ BOS 7:30 ET: Myles Turner vs Neemias Queta; away wins tip 37%, away scores first 46%
 - CHA @ BKN 7:30 ET: Moussa Diabate vs Day'Ron Sharpe; away wins tip 34%, away scores first 45%
 - CHI @ NY 7:30 ET: Jalen Smith vs Karl-Anthony Towns; away wins tip 35%, away scores first 46%
-- IND @ MEM 8:00 ET: Jay Huff vs Zach Edey; away wins tip 34%, away scores first 45%
+- IND @ MEM 8:00 ET: Ivica Zubac vs Zach Edey; away wins tip 40%, away scores first 47%
 - UTAH @ NO 8:00 ET: Jaxson Hayes vs Karlo Matkovic; away wins tip 44%, away scores first 48%
 - CLE @ OKC 8:00 ET: Jarrett Allen vs Isaiah Hartenstein; away wins tip 64%, away scores first 54%
 - MIN @ HOU 8:30 ET: Rudy Gobert vs Alperen Sengun; away wins tip 56%, away scores first 52%

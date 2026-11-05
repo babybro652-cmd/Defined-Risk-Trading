@@ -108,5 +108,71 @@
     ],
     "jumper": "Karl-Anthony Towns",
     "note": "RotoWire CONFIRMED 7:20 PM"
+  },
+  "IND": {
+    "five": [
+      "Andrew Nembhard",
+      "Kelly Oubre Jr.",
+      "Aaron Nesmith",
+      "Pascal Siakam",
+      "Ivica Zubac"
+    ],
+    "jumper": "Ivica Zubac",
+    "note": "RotoWire expected 7:30 PM; Zubac starts (ESPN had him out), Oubre questionable"
+  },
+  "MEM": {
+    "five": [
+      "Ty Jerome",
+      "Cedric Coward",
+      "Jaylen Wells",
+      "Cameron Boozer",
+      "Zach Edey"
+    ],
+    "jumper": "Zach Edey",
+    "note": "RotoWire expected 7:30 PM"
+  },
+  "UTAH": {
+    "five": [
+      "Keyonte George",
+      "Darryn Peterson",
+      "Ace Bailey",
+      "Lauri Markkanen",
+      "Jaxson Hayes"
+    ],
+    "jumper": "Jaxson Hayes",
+    "note": "RotoWire expected 7:30 PM; JJJ, Nurkic out"
+  },
+  "NO": {
+    "five": [
+      "Dejounte Murray",
+      "Jeremiah Fears",
+      "Herbert Jones",
+      "Zion Williamson",
+      "Karlo Matkovic"
+    ],
+    "jumper": "Karlo Matkovic",
+    "note": "RotoWire expected 7:30 PM; Murphy out"
+  },
+  "CLE": {
+    "five": [
+      "James Harden",
+      "Donovan Mitchell",
+      "Meleek Thomas",
+      "Evan Mobley",
+      "Jarrett Allen"
+    ],
+    "jumper": "Jarrett Allen",
+    "note": "RotoWire expected 7:30 PM"
+  },
+  "OKC": {
+    "five": [
+      "Shai Gilgeous-Alexander",
+      "Jared McCain",
+      "Ajay Mitchell",
+      "Kenrich Williams",
+      "Isaiah Hartenstein"
+    ],
+    "jumper": "Isaiah Hartenstein",
+    "note": "RotoWire expected 7:30 PM"
   }
 }
