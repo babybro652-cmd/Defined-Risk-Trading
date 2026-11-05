@@ -595,12 +595,12 @@
    "note": "60 starts"
   },
   {
-   "player": "Zaccharie Risacher",
-   "team": "DAL",
+   "player": "De'Aaron Fox",
+   "team": "SA",
    "game": "DAL @ SA",
    "market": "3+ threes",
-   "p": 0.224,
-   "note": "47 starts"
+   "p": 0.213,
+   "note": "80 starts"
   },
   {
    "player": "Stephon Castle",
@@ -625,14 +625,6 @@
    "market": "3+ threes",
    "p": 0.282,
    "note": "64 starts"
-  },
-  {
-   "player": "De'Aaron Fox",
-   "team": "SA",
-   "game": "DAL @ SA",
-   "market": "3+ threes",
-   "p": 0.213,
-   "note": "80 starts"
   },
   {
    "player": "Luka Doncic",

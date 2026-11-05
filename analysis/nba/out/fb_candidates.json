@@ -177,7 +177,7 @@
 "fair_v1": "+533",
 "def_mult": 1.049,
 "ripple": "",
-"inj": "Day-To-Day"
+"inj": ""
 },
 {
 "player": "Andrew Wiggins",
@@ -282,7 +282,7 @@
 "fair_v1": "+1290",
 "def_mult": 0.91,
 "ripple": "",
-"inj": "Day-To-Day"
+"inj": ""
 },
 {
 "player": "Kris Dunn",
@@ -867,7 +867,7 @@
 "fair_v1": "+974",
 "def_mult": 0.884,
 "ripple": "",
-"inj": ""
+"inj": "Day-To-Day"
 },
 {
 "player": "Kon Knueppel",
@@ -1377,7 +1377,7 @@
 "fair_v1": "+546",
 "def_mult": 0.851,
 "ripple": "",
-"inj": ""
+"inj": "Day-To-Day"
 },
 {
 "player": "Donovan Mitchell",
@@ -1954,7 +1954,7 @@
 "tm": "SA",
 "opp": "DAL",
 "time": "9:30",
-"p_v2": 0.2036,
+"p_v2": 0.2038,
 "p_before_10_30_fix": 0.2004,
 "tip_jumper": true,
 "p_v1": 0.2496,
@@ -1969,7 +1969,7 @@
 "tm": "SA",
 "opp": "DAL",
 "time": "9:30",
-"p_v2": 0.12,
+"p_v2": 0.1201,
 "p_before_10_30_fix": 0.1359,
 "tip_jumper": false,
 "p_v1": 0.1488,
@@ -1999,11 +1999,11 @@
 "tm": "DAL",
 "opp": "SA",
 "time": "9:30",
-"p_v2": 0.0831,
-"p_before_10_30_fix": 0.0774,
+"p_v2": 0.0865,
+"p_before_10_30_fix": 0.0813,
 "tip_jumper": false,
 "p_v1": 0.0798,
-"fair_v2": "+1103",
+"fair_v2": "+1056",
 "fair_v1": "+1153",
 "def_mult": 0.975,
 "ripple": "",
@@ -2014,13 +2014,28 @@
 "tm": "DAL",
 "opp": "SA",
 "time": "9:30",
-"p_v2": 0.0813,
-"p_before_10_30_fix": 0.078,
+"p_v2": 0.0845,
+"p_before_10_30_fix": 0.0818,
 "tip_jumper": true,
 "p_v1": 0.1092,
-"fair_v2": "+1131",
+"fair_v2": "+1083",
 "fair_v1": "+815",
 "def_mult": 0.975,
+"ripple": "",
+"inj": ""
+},
+{
+"player": "Kyrie Irving",
+"tm": "DAL",
+"opp": "SA",
+"time": "9:30",
+"p_v2": 0.0836,
+"p_before_10_30_fix": 0.0778,
+"tip_jumper": false,
+"p_v1": 0.0745,
+"fair_v2": "+1097",
+"fair_v1": "+1243",
+"def_mult": 0.964,
 "ripple": "",
 "inj": ""
 },
@@ -2040,46 +2055,16 @@
 "inj": ""
 },
 {
-"player": "Kyrie Irving",
-"tm": "DAL",
-"opp": "SA",
-"time": "9:30",
-"p_v2": 0.0803,
-"p_before_10_30_fix": 0.0742,
-"tip_jumper": false,
-"p_v1": 0.0745,
-"fair_v2": "+1145",
-"fair_v1": "+1243",
-"def_mult": 0.964,
-"ripple": "",
-"inj": ""
-},
-{
 "player": "P.J. Washington",
 "tm": "DAL",
 "opp": "SA",
 "time": "9:30",
-"p_v2": 0.0765,
-"p_before_10_30_fix": 0.0697,
+"p_v2": 0.0795,
+"p_before_10_30_fix": 0.0732,
 "tip_jumper": false,
 "p_v1": 0.0709,
-"fair_v2": "+1208",
+"fair_v2": "+1157",
 "fair_v1": "+1310",
-"def_mult": 0.975,
-"ripple": "",
-"inj": ""
-},
-{
-"player": "Zaccharie Risacher",
-"tm": "DAL",
-"opp": "SA",
-"time": "9:30",
-"p_v2": 0.0761,
-"p_before_10_30_fix": 0.0694,
-"tip_jumper": false,
-"p_v1": 0.0947,
-"fair_v2": "+1213",
-"fair_v1": "+956",
 "def_mult": 0.975,
 "ripple": "",
 "inj": ""
@@ -2093,9 +2078,24 @@
 "p_before_10_30_fix": 0.0736,
 "tip_jumper": false,
 "p_v1": 0.0761,
-"fair_v2": "+1261",
+"fair_v2": "+1260",
 "fair_v1": "+1215",
 "def_mult": 0.979,
+"ripple": "",
+"inj": ""
+},
+{
+"player": "Caleb Martin",
+"tm": "DAL",
+"opp": "SA",
+"time": "9:30",
+"p_v2": 0.0629,
+"p_before_10_30_fix": 0.0546,
+"tip_jumper": false,
+"p_v1": 0.0596,
+"fair_v2": "+1489",
+"fair_v1": "+1578",
+"def_mult": 0.975,
 "ripple": "",
 "inj": ""
 }

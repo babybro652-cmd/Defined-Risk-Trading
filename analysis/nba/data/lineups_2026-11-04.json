@@ -218,5 +218,27 @@
     ],
     "jumper": "Khaman Maluach",
     "note": "RotoWire expected 8:31 PM; Morant, Sharpe, Mark Williams out"
+  },
+  "DAL": {
+    "five": [
+      "Kyrie Irving",
+      "Caleb Martin",
+      "Cooper Flagg",
+      "P.J. Washington",
+      "Daniel Gafford"
+    ],
+    "jumper": "Daniel Gafford",
+    "note": "RotoWire expected 9:00 PM; Aldama, Christie, Lively, Biberovic, de Larrea out"
+  },
+  "SA": {
+    "five": [
+      "De'Aaron Fox",
+      "Stephon Castle",
+      "Dylan Harper",
+      "Devin Vassell",
+      "Victor Wembanyama"
+    ],
+    "jumper": "Victor Wembanyama",
+    "note": "RotoWire expected 9:00 PM; Harris out"
   }
 }
