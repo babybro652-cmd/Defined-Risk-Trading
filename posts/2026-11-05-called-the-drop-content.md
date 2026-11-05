@@ -1,4 +1,4 @@
-# "I called the drop" content, from the Thu 11/5 Skool bias post (DRAFT, needs Tim's go; NOT scheduled)
+# "I called the drop" content, from the Thu 11/5 Skool bias post (Tim approved 11/5 evening; TikTok/FB/YouTube published 11/5, IG carousel left to Tim)
 
 Source: posts/2026-11-05-market-bias-skool.md + Tim's two phone screenshots. Built by
 posts/media/2026-11-05/called-drop/make_called_drop.py (0 Blotato credits). Mentions Tim's trade ("it was a buy"), so it is
@@ -49,21 +49,21 @@ The bias picks the side. The setup picks the moment. Worth saving for your own p
 
 #definedrisktrading #MyHobbyismyFREEDOM #esfutures #daytrading #futurestrading
 ```
-TikTok 58063 (reel, isAiGenerated false, PUBLIC_TO_EVERYONE), 137 chars before hashtags:
+TikTok 58063 (reel, isAiGenerated false, PUBLIC_TO_EVERYONE), 134 chars before hashtags:
 ```
-Called Thursday's ES drop before the open. No trades before 10 AM is my rule. The drop came first, so I waited for the next setup: a buy.
+Called today's ES drop before the open. No trades before 10 AM is my rule. The drop came first, so I waited for the next setup: a buy.
 
 #definedrisktrading #esfutures #daytrading #tradingplan
 ```
 Facebook 50185, pageId 993318963868124 (reel):
 ```
-Thursday's plan, written before New York opened: sells only.
+Today's plan, written before New York opened: sells only.
 
 London had pushed through the overnight high from Asia, up near 7,738, while the Asia low around 7,690 was still sitting there. My targets were 7,712, then 7,704, then 7,690. If price broke and held above 7,738, the idea was dead.
 
 When the first 15-minute candle of New York closed, every target had been hit.
 
-If you saw my trade from Thursday, it was a buy, and here's why. I don't take trades before 10 AM. It's a rule I keep. The selling happened before then, so I missed it and stayed patient for my next setup. That setup was long.
+If you saw my trade today, it was a buy, and here's why. I don't take trades before 10 AM. It's a rule I keep. The selling happened before then, so I missed it and stayed patient for my next setup. That setup was long.
 
 A bias points you in a direction. Your setup tells you when to act. Full breakdowns are in our Skool group, linked on this page.
 ```
@@ -77,7 +77,17 @@ Education only. Not financial advice.
 #shorts #esfutures #daytrading
 ```
 
-## Proposed times, Fri 11/6 (EST, UTC-5); nothing DRT is scheduled for 11/6 yet
+## Published Thu 11/5 evening (Tim: post now, IG carousel he posts himself)
+TikTok/FB captions changed "Thursday" to "today" for same-day posting (5-gram check re-run, clean).
+
+| Platform | Submission id | Live URL |
+|---|---|---|
+| TikTok 58063 | 9a6a9fb5-aea2-4aab-9fbf-e7d5046bdaa0 | https://www.tiktok.com/@definedrisktrading/video/7704804184113024286 |
+| Facebook 50185 | 96fd47ae-e2e1-4ae5-a669-2902e828bfe8 | https://facebook.com/reel/1096402839853647/ |
+| YouTube 48727 | a9042a1c-69fc-4af6-a240-880db43c20f2 | https://www.youtube.com/watch?v=IG8zBFen3-U |
+| Instagram | not posted by us | Tim posts the carousel |
+
+## Earlier proposal (superseded), Fri 11/6 (EST, UTC-5); nothing DRT is scheduled for 11/6 yet
 | Time ET | UTC | Platform | Note |
 |---|---|---|---|
 | 5:30 PM | 22:30Z | Instagram carousel | 2nd IG post of the day (daily 12:30 PM); cap 2. If the Fri recap also goes to IG, hold one. |
