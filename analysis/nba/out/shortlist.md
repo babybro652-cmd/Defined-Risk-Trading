@@ -29,7 +29,7 @@ Dunk/layup includes tip-ins and putbacks; 2pt jumper includes floaters and hooks
 - ATL @ WSH 7:00: first points Dunk/layup 36% (+179), 2pt jumper 31% (+225), 3-pointer 22% (+347), Free throw 11% (+800); first basket Dunk/layup 41% (+145), 2pt jumper 33% (+206), 3-pointer 27% (+276)
 - MIL @ BOS 7:30: first points Dunk/layup 33% (+199), 2pt jumper 24% (+317), 3-pointer 35% (+182), Free throw 7% (+1303); first basket Dunk/layup 36% (+177), 2pt jumper 26% (+290), 3-pointer 38% (+161)
 - CHA @ BKN 7:30: first points Dunk/layup 39% (+157), 2pt jumper 23% (+328), 3-pointer 28% (+253), Free throw 9% (+962); first basket Dunk/layup 42% (+141), 2pt jumper 24% (+323), 3-pointer 35% (+187)
-- CHI @ NY 7:30: first points Dunk/layup 34% (+194), 2pt jumper 21% (+370), 3-pointer 31% (+220), Free throw 13% (+644); first basket Dunk/layup 38% (+161), 2pt jumper 25% (+298), 3-pointer 36% (+174)
+- CHI @ NY 7:30: first points Dunk/layup 34% (+197), 2pt jumper 22% (+363), 3-pointer 31% (+220), Free throw 14% (+637); first basket Dunk/layup 38% (+162), 2pt jumper 26% (+288), 3-pointer 36% (+178)
 - IND @ MEM 8:00: first points Dunk/layup 38% (+162), 2pt jumper 26% (+282), 3-pointer 27% (+270), Free throw 9% (+1057); first basket Dunk/layup 40% (+148), 2pt jumper 29% (+245), 3-pointer 31% (+227)
 - UTAH @ NO 8:00: first points Dunk/layup 36% (+176), 2pt jumper 29% (+240), 3-pointer 25% (+307), Free throw 10% (+919); first basket Dunk/layup 39% (+155), 2pt jumper 32% (+212), 3-pointer 29% (+248)
 - CLE @ OKC 8:00: first points Dunk/layup 29% (+242), 2pt jumper 26% (+292), 3-pointer 29% (+250), Free throw 17% (+500); first basket Dunk/layup 35% (+188), 2pt jumper 30% (+236), 3-pointer 36% (+181)
@@ -57,7 +57,7 @@ Best player + method (fair price; bet only if the book pays more):
 - ATL @ WSH: our top Anthony Davis (14%): agree (StarTool star)
 - MIL @ BOS: our top Paul George (13%): agree (StarTool bomb)
 - CHA @ BKN: our top Michael Porter Jr. (14%): agree (StarTool star)
-- CHI @ NY: our top Norman Powell (14%): agree (StarTool bomb)
+- CHI @ NY: our top Karl-Anthony Towns (13%): agree (StarTool bomb)
 - IND @ MEM: our top Zach Edey (13%): differs (StarTool stars Jarace Walker, Ty Jerome; bombs Jay Huff, Cameron Boozer)
 - UTAH @ NO: our top Ace Bailey (12%): differs (StarTool stars Lauri Markkanen, Zion Williamson; bombs Keyonte George, Trey Murphy III)
 - CLE @ OKC: our top Ajay Mitchell (13%): agree (StarTool bomb)
@@ -74,7 +74,7 @@ Best player + method (fair price; bet only if the book pays more):
 - ATL @ WSH 7:00 ET: Onyeka Okongwu vs Anthony Davis; away wins tip 29%, away scores first 44%
 - MIL @ BOS 7:30 ET: Myles Turner vs Neemias Queta; away wins tip 37%, away scores first 46%
 - CHA @ BKN 7:30 ET: Moussa Diabate vs Day'Ron Sharpe; away wins tip 34%, away scores first 45%
-- CHI @ NY 7:30 ET: Nic Claxton vs Karl-Anthony Towns; away wins tip 66%, away scores first 54%
+- CHI @ NY 7:30 ET: Jalen Smith vs Karl-Anthony Towns; away wins tip 35%, away scores first 46%
 - IND @ MEM 8:00 ET: Jay Huff vs Zach Edey; away wins tip 34%, away scores first 45%
 - UTAH @ NO 8:00 ET: Jaxson Hayes vs Karlo Matkovic; away wins tip 44%, away scores first 48%
 - CLE @ OKC 8:00 ET: Jarrett Allen vs Isaiah Hartenstein; away wins tip 64%, away scores first 54%
