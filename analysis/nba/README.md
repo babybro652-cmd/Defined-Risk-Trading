@@ -73,8 +73,10 @@ Include the first shot and first score for each game in the grading message to T
 
 ## How numbers are computed
 
-- First basket (FB) = first made field goal of the game (FanDuel's rule; free throws don't
-  count). "First pts incl FT" is the other rule, shown for books that count free throws.
+- First basket (FB) = first made field goal of the game. CORRECTION (Tim, 11/4): FanDuel
+  credited Giannis's free throw over Bam's layup in MIA@LAC, so FanDuel settles on the first
+  POINTS, free throws included. Grade Tim's FanDuel first basket bets on "First pts incl FT".
+  TODO: rebuild the model target on first points incl FT (helps FT-heavy players) and re-check past grades.
 - Team 1st = the player made his team's first field goal. 1st shot = he took the team's first
   field-goal attempt. All three count only games he started.
 - Opening tip = the first jump ball in the 1st quarter; the winner is the team that gains
