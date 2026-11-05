@@ -84,3 +84,6 @@ chats, so read the files below that the task touches before acting.
 
 ## Confirmed-lineup reruns (Tim, 11/2)
 When lineups confirm (about 30 min before tip), rerun first basket with the confirmed starters and report per game: the projected tip-winning team (jumper vs jumper, tip win %), then for each team (tip favorite first) its "1st-shot pick" and "2nd-chance pick" with fair price (two-slot format since 11/5, from the shortlist's two-slot section), plus the overall top pick if it is neither.
+
+## Price check before placing (Tim, 11/5)
+Tim sends a screenshot of the FanDuel board before placing. Mark each pick BET or SKIP: BET only if his price beats our fair (first basket/first goal/TD: at or longer than take-at = fair x1.2; props: longer than fair), never shorter than -300, anytime goal never under +150. Bet early (voids refund the stake); skip anything below fair instead of chasing later. Log the actual price in column F so we can track results vs closing lines.
