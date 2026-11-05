@@ -120,8 +120,9 @@ def card(kind, account):
                                ("Waiting for the proper entry paid.", 38, False, MUTED, 920)] + tag + end)
     both = P2
     return text_card([("Part 1: manual exit at 7,457.25, +$900", 38, True, GOLD, 170),
-                      ("Then impatient: 7,452.00 to 7,445.75, -$625", 38, True, RED, 230)] + both +
-                     [("Patience paid. Impatience cost.", 40, False, MUTED, 880)] + tag + end)
+                      ("Then impatient: 7,452.00 to 7,445.75, -$625", 35, True, RED, 230)] + both +
+                     [("Day total: +$3,125 gross", 46, True, CREAM, 880),
+                      ("Patience paid. Impatience cost.", 40, False, MUTED, 960)] + tag + end)
 
 
 def main():

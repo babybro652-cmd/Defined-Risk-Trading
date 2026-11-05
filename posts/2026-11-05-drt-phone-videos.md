@@ -1,4 +1,4 @@
-# DRT Phone videos, Thu 11/5/2026: ES longs, 2-part breakeven series (TRADE POST, DRAFT, needs Tim's go)
+# DRT Phone videos, Thu 11/5/2026: ES longs, 2-part breakeven series (TRADE POST, COMBINED version POSTED 11/5, see POSTED section)
 
 ## CURRENT BUILD (Tim ~11:50 AM: "I think I gave you the wrong videos. Upload 2 new ones to drt.")
 New uploads in Drive "DRT Phone" (created 16:50 UTC):
@@ -183,6 +183,52 @@ Took +$900, got impatient and gave back $625, then let the same setup form again
 Part 1 tonight Thu 11/5: FB 5:00 PM, IG 5:15 PM, DRT TikTok 5:30 PM, personal TikTok 6:15 PM, YouTube 6:45 PM (2nd Short today).
 Part 2 Fri 11/6: FB 5:30 PM, IG 5:45 PM, DRT TikTok 6:00 PM, personal TikTok 6:45 PM, YouTube 7:00 PM.
 Combined instead: tonight on the Part 1 times. Tim overrides caps for trade posts.
+
+## POSTED 11/5 (Tim: go. Paper account confirmed; COMBINED version only; include the +$3,125 day total)
+Combined rebuilt with `--account paper` and "Day total: +$3,125 gross" on the end card (58.3 s, 1080x1920). AUDIO QA: PASS both
+(one_cool_minute DRT, static_shoes personal, -18 LUFS). Output frame scan 0 chart frames flagged; 2 fps sheet and end card read.
+DRT: https://database.blotato.io/storage/v1/object/public/public_media/246c6cef-6cbe-4b5b-81a9-7bb84481df9c/43c44f3f-22a2-46b9-bfcb-3d8a8fee9672.mp4 | personal: https://database.blotato.io/storage/v1/object/public/public_media/246c6cef-6cbe-4b5b-81a9-7bb84481df9c/e7d0f157-d0d0-4169-aa82-695e99cf3dac.mp4 (sha256 match).
+These replace the combined uploads 538c560d / ffba2673 (no paper tag / day total). Part 1 / Part 2 uploads NOT posted.
+Final captions (5-gram OK vs each other and 71 blocks 10/28-11/5):
+TikTok DRT: ```No breakeven stops here. +$900 exit, an impatient re-entry for -$625, then a patient one for +$2,850. Day: +$3,125 on paper.
+
+#definedrisktrading #esfutures #daytrading #riskmanagement```
+Instagram: ```Breakeven stops cost money. Three ES trades show what I do instead, and where I slipped.
+
+Scratching a trade at entry still means paying commissions and fees on the round trip. It's a loss with a nicer name.
+
+Trade 1: bought 2 ES at 7,448.25, 4 point stop. Took my exit at 7,457.25 when the move faded. +$900.
+Trade 2: got impatient and re-entered too early at 7,452.00. Out at 7,445.75, -$625.
+Trade 3: the setup came back, and I was patient. Bought 2 at 7,442.75, stop 7,438.75. Target filled at 7,471.25, +$2,850, about 7.1R.
+
+Paper account, +$3,125 gross for the day.
+
+The setup didn't change. My patience did.
+
+#MyHobbyismyFREEDOM #definedrisktrading #esfutures #riskmanagement```
+Facebook: ```A viewer wanted to know why my stop stays put instead of going to breakeven. This video answers with three trades from one session.
+
+First, the cost: commissions and fees get charged whether a trade wins, loses or scratches, so breakeven still drains the account.
+
+My first ES long at 7,448.25 faded, so I got out at 7,457.25 for +$900. Then I rushed a re-entry at 7,452.00 and lost $625 at 7,445.75. When the setup returned at 7,442.75, I bought 2 with a 4 point stop and my target at 7,471.25 filled for +$2,850.
+
+That's +$3,125 gross for the day on a paper account, and the difference between the last two trades was my patience.```
+YouTube title `Why My Stop Never Moves to Breakeven: 3 ES Trades`; description: ```An exit in profit, an impatient re-entry that lost, then the same setup with a patient entry and a filled target. Breakeven exits still pay commissions and fees. +$3,125 gross on paper.
+
+Education only. Not financial advice.
+
+#shorts #esfutures #riskmanagement```
+Personal TikTok: ```Took +$900, got impatient and gave back $625, then let the same setup form again for +$2,850. +$3,125 day on paper.
+
+#MyHobbyismyFREEDOM #esfutures #futurestrading```
+| Platform | Submission id | Live URL |
+|---|---|---|
+| Facebook reel (50185, page 993318963868124) | 17adf82f-059b-4570-bfd8-3f16311fca62 | https://facebook.com/reel/28818943927798650/ |
+| Instagram reel (68887) | 22930685-781d-4e72-8206-0f2f0fdf30f9 | https://www.instagram.com/reel/DfXoN4uncWV/ |
+| TikTok DRT (58063, public, isAiGenerated false) | 46ed31a7-ff20-4fd6-ae54-ca06dca266d4 | https://www.tiktok.com/@definedrisktrading/video/7704749177506434335 |
+| YouTube Short (48727, public, notify false, not for kids, no synthetic) | a4f28441-767a-4740-8d19-30a9ed938c35 | https://www.youtube.com/watch?v=dapQ9G3w9lk |
+| Personal TikTok (59764) | 47ab6c40-c3e8-4f63-a439-d53a6fb1417f | https://www.tiktok.com/@timothywilliams9902/video/7704749202764598541 |
+Credits after posting: 2085.
 
 ---
 ## SUPERSEDED (first upload, wrong videos per Tim). Do NOT use these 8 Blotato uploads or captions:

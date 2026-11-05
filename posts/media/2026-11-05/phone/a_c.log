@@ -1,0 +1,33 @@
+{
+  "video": "es-1105-combined-base.mp4",
+  "duration_s": 58.3,
+  "music": "one_cool_minute.mp3",
+  "integrated_lufs": -18.0,
+  "true_peak_dbfs": -3.0,
+  "clipped_samples": 0,
+  "target_lufs": -18.0,
+  "checks": [
+    {
+      "check": "audio stream present",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "loudness near target",
+      "pass": true,
+      "detail": "-18.0 LUFS (target -18)"
+    },
+    {
+      "check": "no clipping",
+      "pass": true,
+      "detail": "0 clipped samples, true peak -3.0 dBFS"
+    },
+    {
+      "check": "length matches video",
+      "pass": true,
+      "detail": "58.30 s vs 58.30 s"
+    }
+  ],
+  "contact_sheet": "es-1105-combined-audio-sheet.png"
+}
+AUDIO QA: PASS
