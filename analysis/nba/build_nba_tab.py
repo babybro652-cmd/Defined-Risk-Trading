@@ -708,7 +708,7 @@ def build(start, log, lineups=None):
     nl, nc, npre = len(g_last), len(g_cur), len(g_pre)
     R(f'NBA props: first basket, tip-off, points, threes (as of {today.strftime("%-m/%-d")})')
     R('Legend', '26 = 2026-27 regular season so far, 25 = 2025-26 regular season, Pre = 2026-27 preseason (shown, not '
-      'in the blend). First basket (FB) = first made field goal of the game (FanDuel rule; free throws do not count). '
+      'in the blend). First basket (FB) = first points of the game, free throws included (FanDuel rule, confirmed 11/4). '
       "Team 1st = scored his team's first FG. 1st shot = took his team's first FG attempt. Blend = each 26-27 game counts "
       'as many 25-26 games as the weight in B3. '
       + (f'Regular season starts {dt.date.fromisoformat(reg_dates[0]).strftime("%-m/%-d")}: until then this is 2025-26 data '
