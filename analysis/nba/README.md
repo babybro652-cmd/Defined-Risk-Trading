@@ -76,7 +76,7 @@ Include the first shot and first score for each game in the grading message to T
 - First basket (FB) = first made field goal of the game. CORRECTION (Tim, 11/4): FanDuel
   credited Giannis's free throw over Bam's layup in MIA@LAC, so FanDuel settles on the first
   POINTS, free throws included. Grade Tim's FanDuel first basket bets on "First pts incl FT".
-  TODO: rebuild the model target on first points incl FT (helps FT-heavy players) and re-check past grades.
+  Since 11/5 the model's target is first points incl FT (see "Model change 11/5/26").
 - Team 1st = the player made his team's first field goal. 1st shot = he took the team's first
   field-goal attempt. All three count only games he started.
 - Opening tip = the first jump ball in the 1st quarter; the winner is the team that gains
@@ -229,6 +229,48 @@ best top pick). Multiplying the first-3 share by FG% lowers 25-26 log loss a bit
 Retuning the top-end shrink with it in was flat (0.9 helps 25-26 by 0.0005, hurts 26-27), so 0.8 stays.
 Top pick changed in 157 of 933 25-26 games. Pick text now shows "first 3 FGA x.xx per start".
 
+## Model change 11/5/26: first points target + shot type (Tim approved the backtest)
+
+Why: 11/2 and 11/4 our top picks went 1/15 and 3/14 (about the 14% we predict), but none took the game's first FGA on
+11/2, and 7 of 14 first baskets on 11/4 were 3s, often by role players. FanDuel settles on first POINTS incl FT (11/4).
+
+Data: `opening.py` caches one ESPN summary per game in `data/opening_<season>.json`: each team's first points scorer
+(FT included), its shooting events up to its first score, and every player's attempts and makes by rim / j2 / 3 plus FT
+trips (the build fetches new games itself). First points differ from the first made FG in 8% of 25-26 games (102 of 1,235).
+
+Backtest `python3 analysis/nba/backtest_fix.py` (walk-forward, no lookahead, actual starters and jumpers, jumper split
+and shrink 0.8 as built; target = first points incl FT; log loss over the 10 starters; SE = paired per game vs current):
+
+| Model | LL 25-26 (933) | LL 26-27 (107) | Brier 25 / 26 | Top pick hit 25 / 26 | Top pick took team 1st FGA 25 / 26 |
+|---|---|---|---|---|---|
+| Current (11/2) | 2.2705 | 2.2486 | .8931 / .8886 | 140 (15.0%) / 14 (13.1%) | 286 / 26 |
+| Fix 1: fit on first points | 2.2692 | 2.2447 | .8928 / .8876 | 140 / 16 | 285 / 28 |
+| Fix 2: recent opening share (best: last 20 starts, k 10, w 0.25) | 2.2727 | 2.2457 | .8935 / .8881 | 140 / 16 | 281 / 26 |
+| Fix 3: shot type w 0.7 | 2.2686 | 2.2317 | .8927 / .8856 | 133 / 17 | 266 / 26 |
+| **Fix 1 + 3 (used)** | **2.2679** (SE .0022) | **2.2294** (SE .0056) | .8925 / .8850 | 133 (14.3%) / 17 (15.9%) | 272 / 25 |
+| All three (fix 2 w 0.1) | 2.2706 | 2.2291 | .8929 / .8849 | 138 / 18 | 268 / 25 |
+
+- Fix 1: share counts his team's first POINTS (`tp1`), tip-winner-scores-first rate on first points (66% vs 64%). Better on both.
+- Fix 2: his share of his team's first FGA over his last N starts with this team (shrunk toward his season first-shot
+  share), x FG% / league. Worse on 25-26 at every setting (N 10/15/20, w 0.1 to 0.7, added or replacing the season
+  first-shot term); helps 26-27 a little. Not adopted: the season first-shot and first-3 shares already hold the signal and
+  a 15 to 20 start window is mostly noise.
+- Fix 3: event share x scoring chance. Early FGA share (half first shot, half first 3 FGA) x [his FGA mix rim / j2 / 3
+  (shrunk to his position, 30 attempts) x his make rates (shrunk to league 63% / 45% / 36%, 40 attempts) + FT trips per
+  FGA (shrunk, 100 FGA) x trips scored (91% league, 20 trips)], normalized per team, 70% of the share. Better on both at
+  every weight (25-26 flat from 0.55 to 1.0; 0.7 picked). The FT term helps (no-FT version 2.2696 / 2.2378).
+- Calibration by decile, 25-26 (pred / hit), current: 6.7/6.8 ... 12.0/12.5, top 14.1/16.2; new: 6.3/6.6 ... 12.3/12.1,
+  top 14.8/15.4. The top decile was underpriced and is now close.
+- Trade-off: top-pick hits drop on 25-26 (140 to 133) and rise on 26-27 (14 to 17); the top pick takes the team's first FGA
+  slightly less often (it leans to efficient finishers and FT drawers, less to volume first shooters).
+- Value sim (assumption, no Tim odds): FanDuel's view = the plain season model (team first FG share x tip chance) with a
+  30% overround on the starters (FanDuel first basket boards sum to about 125 to 140%). Bet only when the price beats our
+  fair by 20%+: current 2.1 bets/night (25-26) and 3.4 (26-27); new 2.8 and 3.9. Fewer than 3 or 4 a night either way.
+
+Code: `FP` and the `fit_fp` / `w_shot3` branch of `v2_shares` in build_nba_tab.py; default `--fb-model fp`, and
+`--fb-model fg` rebuilds with the 11/2 model. backtest_fix.py runs the adopted variants through the build's `v2_shares`
+(checked: same numbers as its own copy). Gains are small; first basket is still mostly noise.
+
 ## Sources
 
 - ESPN `site.api.espn.com/apis/site/v2/sports/basketball/nba`: scoreboard, summary
@@ -302,6 +344,8 @@ Top pick changed in 157 of 933 25-26 games. Pick text now shows "first 3 FGA x.x
 - 11/2 results: first basket 0-13 (Paul George void). 11/3 no games.
 - 11/4: 14-game slate, tab rebuilt (107 26-27 games). Bets rows 642-657: 8 first basket, 5 threes, 3 points. Top FB picks are mostly
   tip-favorite centers and stars (Wembanyama, Adebayo); after 0-13 on 11/2 keep stakes at $0.20 to $0.50 and bet only past fair.
+
+- 11/5: first points model (fix 1 + 3 above) is the default. Tested and dropped the recent opening-play share (fix 2).
 
 ## Tim vs model log (first basket)
 

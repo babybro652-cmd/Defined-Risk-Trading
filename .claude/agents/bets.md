@@ -51,7 +51,9 @@ chats, so read the files below that the task touches before acting.
   (est 55%+, max 1), match corners x0.80; no team corners. Player props only after the confirmed XI.
   After grading, add rows to `analysis/ucl/picks_log.csv` and run `analysis/ucl/review.py`.
 - NBA first basket GRADING (Tim, 11/4): FanDuel settles on the first points scored, free throws included (Giannis FT beat Bam's layup and got credit). Grade on first points incl FT, not first made FG.
-- NBA first basket: model has the jumper split (x1.2 / x0.95 by tip) and top-end shrink since 10/30.
+- NBA first basket: model has the jumper split (x1.2 / x0.95 by tip) and top-end shrink since 10/30. Since 11/5 it
+  prices first POINTS incl FT (FanDuel's rule) with a shot-type term (rim / 2 / 3 make rates + FT trips); backtest in
+  `analysis/nba/README.md` "Model change 11/5/26". `--fb-model fg` rebuilds with the old model.
 - No StarTool blend (Tim rejected it 10/30). Keep StarTool side by side; save star/bomb to
   `analysis/<sport>/out/startool/star_bomb.txt` and rerun the build for the "agree" flag.
 

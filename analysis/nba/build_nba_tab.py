@@ -4,6 +4,7 @@
 Usage:
   python3 analysis/nba/build_nba_tab.py                  # slate = next game day from today (ET)
   python3 analysis/nba/build_nba_tab.py --date 2026-10-20
+  python3 analysis/nba/build_nba_tab.py --fb-model fg    # the 11/2 model (first made FG target, no shot type)
 
 Slate rule: the first date on or after --date with NBA games. Before the regular season starts,
 preseason dates are skipped and the slate is opening night (preseason starters are not real).
@@ -51,6 +52,20 @@ V2 = {'w_shot': 0.5,      # share = (1 - w) x first-FG share + w x first-shot sh
       'settle_n': 10,     # ... fading to 0 at 10 starts, both seasons (a team-only count hurt traded regulars)
       'w3': 0.5}          # 11/2/26: share = 0.5 x the above + 0.5 x first-3-FGA share (his share of his team's first 3
                           # FGA per start, shrunk toward 1 in 5 like the others). first3.py; backtest_fb.py --first3
+
+
+# First points model (11/5/26, Tim approved the backtest; backtest_fix.py, README "Model change 11/5/26").
+# FanDuel settles first basket on the first POINTS, free throws included. Default since 11/5 (--fb-model fp):
+#  fit_fp   the first-score share counts his team's first POINTS (tp1) instead of its first made FG (t1), and the
+#           tip-winner-scores-first rate is taken on first points
+#  w_shot3  0.7 of the share comes from a shot-type term, normalized per team: early FGA share (0.5 first shot + 0.5
+#           first 3 FGA) x [sum over rim / j2 / 3 of his FGA mix (shrunk to his position, k_mix attempts) x his make
+#           rate there (shrunk to league, k_fg attempts) + FT trips per FGA (k_ftr FGA) x trip scoring rate (k_fts)]
+# opening.py caches each game's team first points scorer and the shot-type box (data/opening_<season>.json).
+FP = {'fit_fp': True, 'w_shot3': 0.7, 'k_mix': 30, 'k_fg': 40, 'k_ftr': 100, 'k_fts': 20}
+FB_MODEL = {'name': 'fp'}   # 'fg' = the 11/2 model (set by --fb-model)
+BX = ('rA', 'rM', 'jA', 'jM', 'tA', 'tM', 'ftT', 'ftS')   # rim / j2 / 3 attempts and makes, FT trips, trips scored
+CNT = ('gs', 't1', 'tp1', 'sh1', 'fgm', 'fga', 'f3', 'gs3') + BX
 
 
 # Jumper fix (10/30/26, Tim approved; report analysis/reports/2026-10-30-picks-vs-startool.md): the tip jumper's share of
@@ -102,26 +117,42 @@ def v1_share(t1, gs, k=10):
 def v2_shares(players, allow, allow_n, lg, prm=V2):
     """players: list of dicts with weighted counts gs, t1, sh1, fgm, fga and pos ('G'/'F'/'C').
     allow / allow_n: the opponent's first FGs allowed by position and games counted. lg: {'fg': league FG%,
-    'pos': {pos: league share of team first FGs}}. Returns (shares, defense multipliers, raw v1 shares)."""
-    w, out, mults, raw = prm['w_shot'], [], [], []
+    'pos': {pos: league share of team first FGs}}. Returns (shares, defense multipliers, raw v1 shares).
+    First points model (prm has FP's keys, 11/5/26): lg also needs 'kfg' (league make rate rim / j2 / 3), 'pmix'
+    ({pos: FGA mix rim / j2 / 3}), 'ftr' (FT trips per FGA) and 'fts' (share of trips that score)."""
+    w, out, mults, raw, shot = prm['w_shot'], [], [], [], []
     for p in players:
         kp = 10   # few starts in the data (new starter): shrink harder toward 1 in 5
         if 'n_starts' in p and prm.get('k_new'):
             kp += prm['k_new'] * max(0, 1 - p['n_starts'] / prm['settle_n'])
-        p = {k: p.get(k, 0) for k in ('gs', 't1', 'sh1', 'fgm', 'fga', 'f3', 'gs3')} | {'pos': p.get('pos', '')}
-        s1 = v1_share(p['t1'], p['gs'], kp)
+        p = {k: p.get(k, 0) for k in CNT} | {'pos': p.get('pos', '')}
+        s1 = v1_share(p['tp1' if prm.get('fit_fp') else 't1'], p['gs'], kp)
         s2 = v1_share(p['sh1'], p['gs'], kp)
         fg = (p['fgm'] + prm['fg_k'] * lg['fg']) / (p['fga'] + prm['fg_k'])
         a = (1 - w) * s1 + w * s2 * fg / lg['fg']
         if prm.get('w3'):   # first-3-FGA share test (11/2/26, backtest_fb.py --first3)
             s3 = v1_share(p['f3'] / 3, p['gs3'], kp)
             a = (1 - prm['w3']) * a + prm['w3'] * s3 * (fg / lg['fg'] if prm.get('f3_fg') else 1)
+        if prm.get('w_shot3'):   # shot-type term (11/5/26)
+            s3 = v1_share(p['f3'] / 3, p['gs3'], kp)
+            ps = p['pos'] if p['pos'] in POS else 'F'
+            A, M = (p['rA'], p['jA'], p['tA']), (p['rM'], p['jM'], p['tM'])
+            km, kf = prm['k_mix'], prm['k_fg']
+            mix = [(A[i] + km * lg['pmix'][ps][i]) / (sum(A) + km) for i in range(3)]
+            mk = [(M[i] + kf * lg['kfg'][i]) / (A[i] + kf) for i in range(3)]
+            ftr = (p['ftT'] + prm['k_ftr'] * lg['ftr']) / (sum(A) + prm['k_ftr'])
+            fts = (p['ftS'] + prm['k_fts'] * lg['fts']) / (p['ftT'] + prm['k_fts'])
+            shot.append((0.5 * s2 + 0.5 * s3) * (sum(x * y for x, y in zip(mix, mk)) + ftr * fts))
         r = lg['pos'].get(p['pos'])
         m = 1.0
         if r and prm['def_k'] is not None:
             m = ((allow.get(p['pos'], 0) + prm['def_k'] * r) / (allow_n + prm['def_k'])) / r
             m = min(1 + prm['def_cap'], max(1 - prm['def_cap'], m))
-        raw.append(s1); mults.append(m); out.append(a * m)
+        raw.append(s1); mults.append(m); out.append(a)
+    if shot:
+        sa, sw = sum(out), sum(shot)
+        out = [(1 - prm['w_shot3']) * a + prm['w_shot3'] * x / sw * sa for a, x in zip(out, shot)]
+    out = [a * m for a, m in zip(out, mults)]
     tot = sum(out)
     if tot and prm['norm']:
         f = (prm['starter_sum'] / tot) ** prm['norm']
@@ -286,24 +317,29 @@ def refresh(season, sched, today, log):
 
 # ---------- aggregates ----------
 def zero():
-    return {'gp': 0, 'gs': 0, 'fb': 0, 'fp': 0, 't1': 0, 'sh1': 0, 'sh1m': 0, 'tips': 0, 'tipw': 0, 'pts': 0, 'tpm': 0,
+    return {'gp': 0, 'gs': 0, 'fb': 0, 'fp': 0, 't1': 0, 'tp1': 0, **dict.fromkeys(BX, 0), 'sh1': 0, 'sh1m': 0, 'tips': 0, 'tipw': 0, 'pts': 0, 'tpm': 0,
             'min': 0, 'fgm': 0, 'fga': 0, 'f3': 0, 'gs3': 0, 'log': [], 'gs_by': {}}
 
 
-def player_stats(games, f3=None):
-    """f3: optional first3.py cache (game id -> {team: first 3 FGA shooters}) for the first-3-FGA counts."""
-    P, f3 = {}, f3 or {}
+def player_stats(games, f3=None, op=None):
+    """f3: optional first3.py cache (game id -> {team: first 3 FGA shooters}) for the first-3-FGA counts.
+    op: optional opening.py cache (team first points scorer, shot-type box) for the first points model."""
+    P, f3, op = {}, f3 or {}, op or {}
     for g in sorted(games.values(), key=lambda x: (x['date'], x['id'])):
         for pid, tm, st, mins, pts, tpm, pos, fgm, fga in g['pl']:
             s = P.setdefault(pid, zero() | {'tm': tm, 'pos': pos, 'nm': g['nm'].get(pid, '?')})
             s['gp'] += 1; s['pts'] += pts; s['tpm'] += tpm; s['min'] += mins; s['tm'] = tm; s['pos'] = pos or s['pos']
             s['fgm'] += fgm; s['fga'] += fga
             s['log'].append((g['date'], pts, tpm, st))
+            o = op.get(g['id'], {})
+            for f, v in zip(BX, o.get('bx', {}).get(pid, ())):
+                s[f] += v
             if st:
                 s['gs'] += 1; s['gs_by'][tm] = s['gs_by'].get(tm, 0) + 1
                 s['fb'] += bool(g['fb'] and g['fb'][0] == pid)
                 s['fp'] += bool(g['fp'] and g['fp'][0] == pid)
                 s['t1'] += g['tf'].get(tm) == pid
+                s['tp1'] += o.get('tp', {}).get(tm) == pid
                 s['sh1'] += g['ts'].get(tm) == pid
                 s['sh1m'] += g['ts'].get(tm) == pid and bool(g.get('tsm', {}).get(tm))
                 x3 = f3.get(g['id'], {}).get(tm)
@@ -374,9 +410,12 @@ def build(start, log, lineups=None):
     g_cur_all = refresh(CUR, sched_cur, today, log)
     g_cur = {k: v for k, v in g_cur_all.items() if v['type'] == 2}
     g_pre = {k: v for k, v in g_cur_all.items() if v['type'] == 1}
-    import first3
-    PL = player_stats(g_last, first3.cache(LAST, list(g_last), log))
-    PC, PP = player_stats(g_cur, first3.cache(CUR, list(g_cur), log)), player_stats(g_pre)
+    import first3, opening
+    PL = player_stats(g_last, first3.cache(LAST, list(g_last), log), opening.cache(LAST, list(g_last), log))
+    PC = player_stats(g_cur, first3.cache(CUR, list(g_cur), log), opening.cache(CUR, list(g_cur), log))
+    PP = player_stats(g_pre)
+    FPM = FB_MODEL['name'] == 'fp'
+    PRM = V2 | FP if FPM else V2
     TL, TC, TP = team_stats(g_last), team_stats(g_cur), team_stats(g_pre)
     W = W_DEFAULT
 
@@ -423,8 +462,9 @@ def build(start, log, lineups=None):
             and S(PL, pid)['gs'] >= 30]
 
     # league rates
-    tips = [g for g in g_last.values() if g['tip'] and g['fb']]
-    a_first = sum(g['tip']['w'] == g['fb'][1] for g in tips) / len(tips)
+    fk, t1k = ('fp', 'tp1') if FPM else ('fb', 't1')   # 11/5: tip winner scores the first POINTS (the FanDuel rule)
+    tips = [g for g in g_last.values() if g['tip'] and g[fk]]
+    a_first = sum(g['tip']['w'] == g[fk][1] for g in tips) / len(tips)
 
     def jump_rate(pid):
         c, l = S(PC, pid), S(PL, pid)
@@ -480,7 +520,7 @@ def build(start, log, lineups=None):
     def wcounts(pid):   # 26-27 weight ramps up with his starts for his current team (10/23 fix)
         c, l, tm = S(PC, pid), S(PL, pid), roster[pid]['tm']
         w = cur_weight(W, c['gs_by'].get(tm, 0))
-        return ({k: w * c[k] + l[k] for k in ('gs', 't1', 'sh1', 'fgm', 'fga', 'f3', 'gs3')}
+        return ({k: w * c[k] + l[k] for k in CNT}
                 | {'pos': roster[pid]['pos'], 'n_starts': c['gs'] + l['gs']})
 
     lg_fgm = sum(x['fgm'] for x in PL.values()) + W * sum(x['fgm'] for x in PC.values())
@@ -488,6 +528,15 @@ def build(start, log, lineups=None):
     pos_n = {p: sum(t['allow'].get(p, 0) for t in TL.values()) + W * sum(t['allow'].get(p, 0) for t in TC.values())
              for p in POS}
     LG = {'fg': lg_fgm / lg_fga, 'pos': {p: pos_n[p] / sum(pos_n.values()) for p in POS}}
+    bxs = {f: sum(x[f] for x in PL.values()) + W * sum(x[f] for x in PC.values()) for f in BX}
+    pmix = {}
+    for ps in POS:
+        v = [sum(x[f] for x in PL.values() if x['pos'] == ps) + W * sum(x[f] for x in PC.values() if x['pos'] == ps)
+             for f in ('rA', 'jA', 'tA')]
+        pmix[ps] = [y / max(1, sum(v)) for y in v]
+    fga3 = bxs['rA'] + bxs['jA'] + bxs['tA']
+    LG |= {'kfg': [bxs['rM'] / bxs['rA'], bxs['jM'] / bxs['jA'], bxs['tM'] / bxs['tA']], 'pmix': pmix,
+           'ftr': bxs['ftT'] / fga3, 'fts': bxs['ftS'] / bxs['ftT']}
 
     def allow(tm):
         a, b = TL.get(tm, {}), TC.get(tm, {})
@@ -502,7 +551,7 @@ def build(start, log, lineups=None):
         """v2 shares for tm's probable five against opp (opp=None: no defense term). pid -> (share, def mult)."""
         five = starters.get(tm, [])
         al, an = allow(opp) if opp else ({}, 0)
-        sh, mu, _ = v2_shares([wcounts(p) for p in five], al, an, LG, V2 if opp else dict(V2, def_k=None))
+        sh, mu, _ = v2_shares([wcounts(p) for p in five], al, an, LG, PRM if opp else dict(PRM, def_k=None))
         return {p: (a, m) for p, a, m in zip(five, sh, mu)}
 
     def ripple_note(tm):
@@ -565,8 +614,8 @@ def build(start, log, lineups=None):
         picks.append(['First basket', nm(c['pid']), f"{c['tm']} {c['at']} {c['opp']} {c['time']}",
                       f"Est {round(100 * c['p'])}% (fair {american(c['p'])}; old model {round(100 * c['p1'])}%"
                       + ("; tip jumper x1.2 if his team wins the tip" if c['jumper'] else '') + "): "
-                      f"{c['tm']} scores first {round(100 * c['pteam'])}%; first FG {l['t1']}/{l['gs']} and first shot "
-                      f"{l['sh1']}/{l['gs']} starts 25-26" + (f", {cu['t1']}/{cu['gs']} 26-27" if cu['gs'] else '')
+                      f"{c['tm']} scores first {round(100 * c['pteam'])}%; {'first pts' if FPM else 'first FG'} {l[t1k]}/{l['gs']} and "
+                      f"first shot {l['sh1']}/{l['gs']} starts 25-26" + (f", {cu[t1k]}/{cu['gs']} 26-27" if cu['gs'] else '')
                       + f", first 3 FGA {(l['f3'] + cu['f3']) / max(1, l['gs3'] + cu['gs3']):.2f} per start"
                       + f", FG {round(100 * fgpct(c['pid']))}%; {c['opp']} vs {pos} x{c['mult']:.2f}"
                       + (f"; {c['rip']}" if c['rip'] else '') + (f"; {c['inj']}" if c['inj'] else ''),
@@ -574,8 +623,8 @@ def build(start, log, lineups=None):
     for c in sorted(cands, key=lambda c: -c['share'])[:4]:
         l = S(PL, c['pid'])
         picks.append(['Team first basket', nm(c['pid']), f"{c['tm']} {c['at']} {c['opp']}",
-                      f"Model share of {c['tm']}'s first FG {round(100 * c['share'])}% (old {round(100 * share(c['pid']))}%); "
-                      f"raw 25-26 {l['t1']}/{l['gs']}, first shot {l['sh1']}/{l['gs']}, FG {round(100 * fgpct(c['pid']))}%"
+                      f"Model share of {c['tm']}'s {'first points' if FPM else 'first FG'} {round(100 * c['share'])}% "
+                      f"(old {round(100 * share(c['pid']))}%); raw 25-26 {l[t1k]}/{l['gs']}, first shot {l['sh1']}/{l['gs']}, FG {round(100 * fgpct(c['pid']))}%"
                       + (f"; {c['rip']}" if c['rip'] else ''), f"Better than {american(c['share'])}"])
 
     # ---------- first basket method (10/29; fb_method.py) ----------
@@ -678,6 +727,10 @@ def build(start, log, lineups=None):
       'Share = half his share of team first FGs + half his share of team first shots x (his FG% / league FG%), each shrunk '
       'toward 1 in 5; then x the opponent\'s rate of allowing the first FG to his position (G/F/C, shrunk hard, 0.85 to 1.15); '
       'then the probable five are rescaled to sum to 99%, so an Out starter\'s share goes to the rest in proportion. '
+      + ('Since 11/5 (FanDuel settles on first points incl FT): shares count team first POINTS, and 70% of the share is '
+         'shot type = early FGA share x (rim / 2pt / 3pt mix x his make rates + FT trips x trip scoring rate). '
+         'Backtest on first points: log loss 2.2705 to 2.2679 (25-26), 2.2486 to 2.2294 (26-27). ' if FPM else '')
+      + 
       'Backtest (936 games, Dec 25 to 10/20/26): log loss 2.283 vs 2.293 old, top pick 14.0% vs 13.9%; small but better. '
       'Fair odds are the break-even price; '
       'only bet when the book pays more. Points / threes = highest line with a 70%+ blended hit rate as a starter. '
@@ -860,8 +913,11 @@ def build(start, log, lineups=None):
 def main():
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument('--date', help='start looking for the slate on this date, YYYY-MM-DD (default today ET)')
+    ap.add_argument('--fb-model', choices=('fp', 'fg'), default='fp',
+                    help='fp (default since 11/5/26): first points incl FT + shot type; fg: the 11/2 first made FG model')
     ap.add_argument('--lineups', help='JSON file of confirmed lineups: {"WSH": {"five": [names], "jumper": name}}')
     a = ap.parse_args()
+    FB_MODEL['name'] = a.fb_model
     lu = json.load(open(a.lineups)) if a.lineups else None
     d = dt.date.fromisoformat(a.date) if a.date else dt.datetime.now(ET).date()
     build(d, lambda m: print(m, file=sys.stderr), lu)
