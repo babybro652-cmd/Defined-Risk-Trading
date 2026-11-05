@@ -48,7 +48,7 @@ Best player + method (fair price; bet only if the book pays more):
 - **Day'Ron Sharpe first basket: Dunk/layup** (BKN vs CHA 7:30). Est 9.1% (fair +999) = FB 13% x 70% if he scores first; his first-FG sample 12, made FGs 271
 - **LaMelo Ball first basket: 3-pointer** (MIN @ HOU 8:30). Est 8.9% (fair +1024) = FB 14% x 64% if he scores first; his first-FG sample 22, made FGs 647
 - **Zach Edey first basket: Dunk/layup** (MEM vs IND 8:00). Est 8.7% (fair +1047) = FB 13% x 67% if he scores first; his first-FG sample 7, made FGs 113
-- **Neemias Queta first basket: Dunk/layup** (BOS vs MIL 7:30). Est 8.1% (fair +1133) = FB 11% x 76% if he scores first; his first-FG sample 23, made FGs 398
+- **Neemias Queta first basket: Dunk/layup** (BOS vs MIL 7:30). Est 8.4% (fair +1097) = FB 11% x 76% if he scores first; his first-FG sample 23, made FGs 398
 - **Bam Adebayo first basket: 2pt jumper** (MIA @ LAC 10:30). Est 8.1% (fair +1134) = FB 19% x 43% if he scores first; his first-FG sample 29, made FGs 632
 
 ## StarTool check (side by side, no blend)

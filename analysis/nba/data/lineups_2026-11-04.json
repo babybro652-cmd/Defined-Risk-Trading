@@ -3,12 +3,12 @@
     "five": [
       "Derrick White",
       "Hugo Gonzalez",
-      "Baylor Scheierman",
+      "Sam Hauser",
       "Paul George",
       "Neemias Queta"
     ],
     "jumper": "Neemias Queta",
-    "note": "Tatum OUT (rest), Pritchard questionable; RotoWire expected lineup 11/4"
+    "note": "RotoWire CONFIRMED 7:20 PM; Tatum out"
   },
   "MIL": {
     "five": [
@@ -19,7 +19,7 @@
       "Myles Turner"
     ],
     "jumper": "Myles Turner",
-    "note": "RotoWire expected lineup 11/4"
+    "note": "RotoWire CONFIRMED 7:20 PM"
   },
   "PHI": {
     "five": [
@@ -74,7 +74,7 @@
       "Moussa Diabate"
     ],
     "jumper": "Moussa Diabate",
-    "note": "RotoWire expected 11/4; White probable, G. Williams out"
+    "note": "RotoWire CONFIRMED 7:20 PM"
   },
   "BKN": {
     "five": [
@@ -85,7 +85,7 @@
       "Day'Ron Sharpe"
     ],
     "jumper": "Day'Ron Sharpe",
-    "note": "RotoWire expected 11/4; Demin out"
+    "note": "RotoWire CONFIRMED 7:20 PM"
   },
   "CHI": {
     "five": [
@@ -96,7 +96,7 @@
       "Jalen Smith"
     ],
     "jumper": "Jalen Smith",
-    "note": "RotoWire expected 7:00 PM; Claxton out"
+    "note": "RotoWire CONFIRMED 7:20 PM"
   },
   "NY": {
     "five": [
@@ -107,6 +107,6 @@
       "Karl-Anthony Towns"
     ],
     "jumper": "Karl-Anthony Towns",
-    "note": "RotoWire expected 11/4; Hart out"
+    "note": "RotoWire CONFIRMED 7:20 PM"
   }
 }
