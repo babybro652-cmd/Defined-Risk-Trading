@@ -882,7 +882,7 @@
 "fair_v1": "+1002",
 "def_mult": 0.884,
 "ripple": "",
-"inj": ""
+"inj": "Out"
 },
 {
 "player": "Chaney Johnson",
@@ -942,7 +942,7 @@
 "fair_v1": "+532",
 "def_mult": 1.01,
 "ripple": "",
-"inj": ""
+"inj": "Day-To-Day"
 },
 {
 "player": "Norman Powell",
@@ -1122,7 +1122,7 @@
 "fair_v1": "+509",
 "def_mult": 0.85,
 "ripple": "",
-"inj": "Out"
+"inj": ""
 },
 {
 "player": "Pascal Siakam",
@@ -1167,7 +1167,7 @@
 "fair_v1": "+775",
 "def_mult": 1.063,
 "ripple": "",
-"inj": "Day-To-Day"
+"inj": "Out"
 },
 {
 "player": "Aaron Nesmith",
@@ -1752,7 +1752,7 @@
 "fair_v1": "+987",
 "def_mult": 0.933,
 "ripple": "",
-"inj": "Day-To-Day"
+"inj": ""
 },
 {
 "player": "Aaron Gordon",
@@ -1782,7 +1782,7 @@
 "fair_v1": "+1226",
 "def_mult": 0.863,
 "ripple": "",
-"inj": "Day-To-Day"
+"inj": ""
 },
 {
 "player": "Christian Braun",

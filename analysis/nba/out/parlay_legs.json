@@ -179,14 +179,6 @@
    "note": "27 starts"
   },
   {
-   "player": "Kon Knueppel",
-   "team": "CHA",
-   "game": "CHA @ BKN",
-   "market": "3+ threes",
-   "p": 0.65,
-   "note": "80 starts"
-  },
-  {
    "player": "Brandon Miller",
    "team": "CHA",
    "game": "CHA @ BKN",
@@ -289,14 +281,6 @@
    "market": "3+ threes",
    "p": 0.32,
    "note": "63 starts"
-  },
-  {
-   "player": "Kelly Oubre Jr.",
-   "team": "IND",
-   "game": "IND @ MEM",
-   "market": "3+ threes",
-   "p": 0.268,
-   "note": "46 starts"
   },
   {
    "player": "Aaron Nesmith",
@@ -475,14 +459,6 @@
    "note": "77 starts"
   },
   {
-   "player": "Scottie Barnes",
-   "team": "TOR",
-   "game": "TOR @ DEN",
-   "market": "3+ threes",
-   "p": 0.069,
-   "note": "87 starts"
-  },
-  {
    "player": "RJ Barrett",
    "team": "TOR",
    "game": "TOR @ DEN",
@@ -499,20 +475,12 @@
    "note": "24 starts"
   },
   {
-   "player": "Nikola Jokic",
-   "team": "DEN",
+   "player": "Scottie Barnes",
+   "team": "TOR",
    "game": "TOR @ DEN",
    "market": "3+ threes",
-   "p": 0.238,
-   "note": "72 starts"
-  },
-  {
-   "player": "Christian Braun",
-   "team": "DEN",
-   "game": "TOR @ DEN",
-   "market": "3+ threes",
-   "p": 0.161,
-   "note": "50 starts"
+   "p": 0.069,
+   "note": "87 starts"
   },
   {
    "player": "Jamal Murray",
@@ -523,12 +491,12 @@
    "note": "83 starts"
   },
   {
-   "player": "Aaron Gordon",
+   "player": "Christian Braun",
    "team": "DEN",
    "game": "TOR @ DEN",
    "market": "3+ threes",
-   "p": 0.196,
-   "note": "39 starts"
+   "p": 0.161,
+   "note": "50 starts"
   },
   {
    "player": "Cameron Johnson",
@@ -537,6 +505,22 @@
    "market": "3+ threes",
    "p": 0.27,
    "note": "57 starts"
+  },
+  {
+   "player": "Aaron Gordon",
+   "team": "DEN",
+   "game": "TOR @ DEN",
+   "market": "3+ threes",
+   "p": 0.196,
+   "note": "39 starts"
+  },
+  {
+   "player": "Nikola Jokic",
+   "team": "DEN",
+   "game": "TOR @ DEN",
+   "market": "3+ threes",
+   "p": 0.238,
+   "note": "72 starts"
   },
   {
    "player": "Toumani Camara",
@@ -563,14 +547,6 @@
    "note": "83 starts"
   },
   {
-   "player": "Dillon Brooks",
-   "team": "PHX",
-   "game": "POR @ PHX",
-   "market": "3+ threes",
-   "p": 0.366,
-   "note": "61 starts"
-  },
-  {
    "player": "Devin Booker",
    "team": "PHX",
    "game": "POR @ PHX",
@@ -585,6 +561,14 @@
    "market": "3+ threes",
    "p": 0.286,
    "note": "32 starts"
+  },
+  {
+   "player": "Dillon Brooks",
+   "team": "PHX",
+   "game": "POR @ PHX",
+   "market": "3+ threes",
+   "p": 0.366,
+   "note": "61 starts"
   },
   {
    "player": "Miles Bridges",

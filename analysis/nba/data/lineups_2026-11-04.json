@@ -174,5 +174,49 @@
     ],
     "jumper": "Isaiah Hartenstein",
     "note": "RotoWire expected 7:30 PM"
+  },
+  "TOR": {
+    "five": [
+      "Immanuel Quickley",
+      "RJ Barrett",
+      "Ja'Kobe Walter",
+      "Scottie Barnes",
+      "Jakob Poeltl"
+    ],
+    "jumper": "Jakob Poeltl",
+    "note": "RotoWire expected 8:31 PM; Kawhi, Bittle out; Poeltl starts"
+  },
+  "DEN": {
+    "five": [
+      "Jamal Murray",
+      "Christian Braun",
+      "Cameron Johnson",
+      "Aaron Gordon",
+      "Nikola Jokic"
+    ],
+    "jumper": "Nikola Jokic",
+    "note": "RotoWire expected 8:31 PM; Cam Johnson starts"
+  },
+  "POR": {
+    "five": [
+      "Damian Lillard",
+      "Scoot Henderson",
+      "Toumani Camara",
+      "Deni Avdija",
+      "Donovan Clingan"
+    ],
+    "jumper": "Donovan Clingan",
+    "note": "RotoWire expected 8:31 PM"
+  },
+  "PHX": {
+    "five": [
+      "Devin Booker",
+      "Jalen Green",
+      "Dillon Brooks",
+      "Miles Bridges",
+      "Khaman Maluach"
+    ],
+    "jumper": "Khaman Maluach",
+    "note": "RotoWire expected 8:31 PM; Morant, Sharpe, Mark Williams out"
   }
 }
