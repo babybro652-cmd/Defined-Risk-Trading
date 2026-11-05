@@ -62,4 +62,11 @@ Only categories that beat their price season to date: NBA 3+ threes, NHL 3+ SOG,
 ### NBA
 - Not enough qualifying legs.
 
+### NHL
+- **2-leg #1:** Alex DeBrincat 3+ SOG (78%, VGK @ DET) + David Pastrnak 3+ SOG (70%, BOS @ PIT). Fair -118 (54%); take +103 or longer.
+- **2-leg #2:** Alex DeBrincat 3+ SOG (78%, VGK @ DET) + Cutter Gauthier 3+ SOG (69%, ANA @ EDM). Fair -114 (53%); take +106 or longer.
+- **2-leg #3:** David Pastrnak 3+ SOG (70%, BOS @ PIT) + Cutter Gauthier 3+ SOG (69%, ANA @ EDM). Fair +109 (48%); take +130 or longer.
+- **3-leg #4:** Cole Caufield 3+ SOG (68%, UTA @ MTL) + Jason Robertson 3+ SOG (68%, DAL @ CBJ) + Connor Bedard 3+ SOG (68%, CHI @ TBL). Fair +219 (31%); take +251 or longer.
+- **3-leg #5:** Cole Caufield 3+ SOG (68%, UTA @ MTL) + Jason Robertson 3+ SOG (68%, DAL @ CBJ) + Kyle Connor 3+ SOG (68%, VAN @ WPG). Fair +219 (31%); take +251 or longer.
+
 <!-- parlays:end -->
