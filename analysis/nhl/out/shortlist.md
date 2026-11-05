@@ -1,24 +1,31 @@
-# NHL shortlist 2026-11-04 (not guaranteed)
+# NHL shortlist 2026-11-05 (not guaranteed)
 
-- **Anytime goal: Tage Thompson** (BUF vs OTT). Est 35% (fair +185) = 0.77 x 46% blend; 26-27: 10 G in 14 GP; OTT allows 3.1 GA/G; faces Samuel Ersson (unconfirmed, SV .869); bet only at +214 or longer (never shorter than +150)
-- **Anytime goal: Artemi Panarin** (LAK vs SJS). Est 30% (fair +238) = 0.77 x 38% blend; 26-27: 8 G in 13 GP; SJS allows 3.5 GA/G; faces Yaroslav Askarov (unconfirmed, SV .887); bet only at +271 or longer (never shorter than +150)
-- **Anytime goal: Sam Reinhart** (FLA vs CHI). Est 31% (fair +222) = 0.77 x 40% blend; 26-27: 8 G in 15 GP; CHI allows 3.5 GA/G; faces Spencer Knight (unconfirmed, SV .901); bet only at +254 or longer (never shorter than +150)
-- **Anytime goal: Connor Bedard** (CHI @ FLA). Est 30% (fair +237) = 0.77 x 39% blend; 26-27: 4 G in 9 GP; FLA allows 3.2 GA/G; faces Jacob Markstrom (unconfirmed, SV .884); bet only at +271 or longer (never shorter than +150)
-- **First goal: Tim Stützle** (OTT @ BUF). Scored first in 2/80 games in 25-26, 3/16 in 26-27; 0.48 goals/G (blend); OTT scores first 56%; Top 6 PP1
-- **First goal: Drake Batherson** (OTT @ BUF). Scored first in 8/79 games in 25-26, 2/16 in 26-27; 0.47 goals/G (blend); OTT scores first 56%; Top 6 PP1
-- **First goal: Roman Kantserov** (CHI @ FLA). Scored first in 0/0 games in 25-26, 0/15 in 26-27; 0.40 goals/G (blend); CHI scores first 54%; Top 6 PP1
-- **SOG over 1.5: Brady Tkachuk** (FLA vs CHI). Over 1.5 in 82% of games (blend); 3.5 SOG/G; L5: 2 6 1 1 3; CHI allows 30.1 SA/G; fair -453 is shorter than -300, so take over 2.5 instead (69%, fair -218)
-- **SOG over 1.5: Sam Reinhart** (FLA vs CHI). Over 1.5 in 79% of games (blend); 2.8 SOG/G; L5: 3 4 2 2 6; CHI allows 30.1 SA/G; fair -374 is shorter than -300, so take over 2.5 instead (49%, fair +106)
-- **SOG over 1.5: Artemi Panarin** (LAK vs SJS). Over 1.5 in 79% of games (blend); 3.0 SOG/G; L5: 3 7 0 3 3; SJS allows 29.9 SA/G; fair -368 is shorter than -300, so take over 2.5 instead (57%, fair -134)
-- **SOG over 1.5: Macklin Celebrini** (SJS @ LAK). Over 1.5 in 84% of games (blend); 3.6 SOG/G; L5: 2 2 6 4 1; LAK allows 27.5 SA/G; fair -520 is shorter than -300, so take over 2.5 instead (64%, fair -176)
-- **SOG over 1.5: Alex Laferriere** (LAK vs SJS). Over 1.5 in 75% of games (blend); 2.5 SOG/G; L5: 3 7 5 2 0; SJS allows 29.9 SA/G; fair -303 is shorter than -300, so take over 2.5 instead (43%, fair +133)
+- **Anytime goal: Kyle Connor** (WPG vs VAN). Est 37% (fair +168) = 0.77 x 48% blend; 26-27: 13 G in 16 GP; VAN allows 4.1 GA/G; faces Leevi Merilainen (likely, SV .873); bet only at +195 or longer (never shorter than +150)
+- **Anytime goal: Leon Draisaitl** (EDM vs ANA). Est 37% (fair +167) = 0.77 x 49% blend; 26-27: 13 G in 16 GP; ANA allows 3.6 GA/G; faces Laurent Brossoit (likely, SV .826); bet only at +194 or longer (never shorter than +150)
+- **Anytime goal: Connor McDavid** (EDM vs ANA). Est 33% (fair +207) = 0.77 x 42% blend; 26-27: 9 G in 16 GP; ANA allows 3.6 GA/G; faces Laurent Brossoit (likely, SV .826); bet only at +238 or longer (never shorter than +150)
+- **Anytime goal: Jake Guentzel** (TBL vs CHI). Est 31% (fair +219) = 0.77 x 41% blend; 26-27: 8 G in 14 GP; CHI allows 3.5 GA/G; faces Arvid Soderblom (likely, SV .875); bet only at +251 or longer (never shorter than +150)
+- **First goal: Cole Caufield** (MTL vs UTA). Scored first in 9/81 games in 25-26, 2/15 in 26-27; 0.64 goals/G (blend); MTL scores first 53%; Top 6 PP1
+- **First goal: Nathan MacKinnon** (COL vs NSH). Scored first in 7/80 games in 25-26, 1/16 in 26-27; 0.62 goals/G (blend); COL scores first 57%; Top 6 PP1
+- **First goal: Brandon Hagel** (TBL vs CHI). Scored first in 7/71 games in 25-26, 1/14 in 26-27; 0.53 goals/G (blend); TBL scores first 50%; Top 6 PP1
+- **SOG over 2.5: Alex DeBrincat** (DET vs VGK). Over 2.5 in 78% of games (blend); 3.6 SOG/G; L5: 4 4 3 4 2; VGK allows 24.9 SA/G; fair -348 is shorter than -300, so take over 3.5 instead (48%, fair +106)
+- **SOG over 1.5: Kyle Connor** (WPG vs VAN). Over 1.5 in 91% of games (blend); 3.7 SOG/G; L5: 8 2 2 3 3; VAN allows 30.4 SA/G; fair -983 is shorter than -300, so take over 2.5 instead (68%, fair -210)
+- **SOG over 1.5: Jack Hughes** (NJD vs STL). Over 1.5 in 92% of games (blend); 3.8 SOG/G; L5: 5 7 2 6 2; STL allows 27.9 SA/G; fair -1225 is shorter than -300, so take over 2.5 instead (67%, fair -203)
+- **SOG over 1.5: Nathan MacKinnon** (COL vs NSH). Over 1.5 in 87% of games (blend); 4.1 SOG/G; L5: 1 2 5 2 2; NSH allows 29.4 SA/G; fair -653 is shorter than -300, so take over 2.5 instead (66%, fair -191)
+- **SOG over 1.5: Jason Robertson** (DAL @ CBJ). Over 1.5 in 89% of games (blend); 3.5 SOG/G; L5: 5 1 4 3 3; CBJ allows 28.3 SA/G; fair -807 is shorter than -300, so take over 2.5 instead (68%, fair -210)
 
 ## Goalies
 
-- OTT @ BUF 7:30 ET: Samuel Ersson (Unconfirmed) / Colten Ellis (Unconfirmed)
-- CHI @ FLA 7:30 ET: Spencer Knight (Unconfirmed) / Jacob Markstrom (Unconfirmed)
-- SJS @ LAK 10:00 ET: Yaroslav Askarov (Unconfirmed) / Darcy Kuemper (Unconfirmed)
-- CGY @ SEA 10:00 ET: Dustin Wolf (Unconfirmed) / Joey Daccord (Unconfirmed)
+- UTA @ MTL 7:00 ET: Sebastian Cossa (Likely) / Jakub Dobes (Confirmed)
+- VGK @ DET 7:00 ET: Carter Hart (Unconfirmed) / Daniil Tarasov (Likely)
+- CHI @ TBL 7:00 ET: Arvid Soderblom (Likely) / Andrei Vasilevskiy (Likely)
+- STL @ NJD 7:00 ET: Jordan Binnington (Confirmed) / Connor Hellebuyck (Likely)
+- CAR @ NYI 7:00 ET: Brandon Bussi (Unconfirmed) / Semyon Varlamov (Confirmed)
+- PHI @ NYR 7:00 ET: Joseph Woll (Confirmed) / Dylan Garand (Confirmed)
+- BOS @ PIT 7:00 ET: Jeremy Swayman (Unconfirmed) / Arturs Silovs (Confirmed)
+- DAL @ CBJ 7:00 ET: Casey DeSmith (Confirmed) / Cam Talbot (Confirmed)
+- VAN @ WPG 7:00 ET: Leevi Merilainen (Likely) / Stuart Skinner (Confirmed)
+- ANA @ EDM 8:00 ET: Laurent Brossoit (Likely) / Matt Tomkins (Likely)
+- NSH @ COL 9:30 ET: Juuse Saros (Unconfirmed) / Mackenzie Blackwood (Confirmed)
 
 ## StarTool check (side by side, no blend)
 
@@ -31,5 +38,12 @@ Only categories that beat their price season to date: NBA 3+ threes, NHL 3+ SOG,
 
 ### NBA
 - Not enough qualifying legs.
+
+### NHL
+- **2-leg #1:** Alex DeBrincat 3+ SOG (78%, VGK @ DET) + David Pastrnak 3+ SOG (70%, BOS @ PIT). Fair -118 (54%); take +103 or longer.
+- **2-leg #2:** Alex DeBrincat 3+ SOG (78%, VGK @ DET) + Cutter Gauthier 3+ SOG (69%, ANA @ EDM). Fair -114 (53%); take +106 or longer.
+- **2-leg #3:** David Pastrnak 3+ SOG (70%, BOS @ PIT) + Cutter Gauthier 3+ SOG (69%, ANA @ EDM). Fair +109 (48%); take +130 or longer.
+- **3-leg #4:** Cole Caufield 3+ SOG (68%, UTA @ MTL) + Jason Robertson 3+ SOG (68%, DAL @ CBJ) + Connor Bedard 3+ SOG (68%, CHI @ TBL). Fair +219 (31%); take +251 or longer.
+- **3-leg #5:** Cole Caufield 3+ SOG (68%, UTA @ MTL) + Jason Robertson 3+ SOG (68%, DAL @ CBJ) + Kyle Connor 3+ SOG (68%, VAN @ WPG). Fair +219 (31%); take +251 or longer.
 
 <!-- parlays:end -->
