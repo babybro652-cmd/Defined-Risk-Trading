@@ -477,3 +477,4 @@ On game days Tim sends the StarTool Analytics "Game Script" card for each game (
 | 10/30 | DEN @ PHX | Miles Bridges PHX, j2 (PHX won tip; first shot Brooks, missed) | - | Jokic / Booker | Nikola Jokic | - | No |
 | 11/5 | ORL @ PHX | Devin Booker PHX, free throws (first shot Brooks, missed; first FG Bane) | Carter, Wagner (our list) | Bane / Booker (StarTool star Booker hit) | Carter, Wagner | No | No |
 | 11/5 | MIA @ GS | Andrew Wiggins MIA, j2 (first shot, made) | Bam, Wiggins (+750) | Giannis / Curry | Bam, Giannis (Wiggins third, fair +835) | Yes (Wiggins) | No |
+- 11/6: 10:07 refresh. Injury recheck at 10:10 AM ET: no changes (Davis, Jalen Johnson, Diabate, Allen, Watson, Barnes still questionable and in RotoWire's expected fives; Knueppel out). Rebuilt with the 6:25 AM lineups file, chain model; picks unchanged. Bets rows 690-703 (9 first basket, 3 threes, 2 points), all "Pick".
