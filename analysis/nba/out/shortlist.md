@@ -4,16 +4,16 @@ Tip winner scores first 66% (25-26).
 
 - **First basket: Victor Wembanyama** (SA @ SAC 10:00). Est 25% (fair +296; old model 28%; tip jumper x1.2 if his team wins the tip; chain model): SA scores first 66%; first pts 24/57 and first shot 22/57 starts 25-26, 4/8 26-27, first 3 FGA 1.06 per start, FG 50%; SAC vs F x1.13
 - **First basket: Luka Doncic** (LAL vs POR 10:00). Est 20% (fair +407; old model 17%; chain model): LAL scores first 55%; first pts 22/65 and first shot 33/65 starts 25-26, 3/8 26-27, first 3 FGA 1.10 per start, FG 48%; POR vs G x1.03
-- **First basket: Anthony Davis** (WSH @ ATL 7:00). Est 17% (fair +490; old model 14%; tip jumper x1.2 if his team wins the tip; chain model): WSH scores first 54%; first pts 5/20 and first shot 7/20 starts 25-26, 2/8 26-27, first 3 FGA 0.93 per start, FG 50%; ATL vs F x0.98; Day-To-Day
 - **First basket: Scottie Barnes** (TOR @ MIL 8:00). Est 16% (fair +519; old model 10%; chain model): TOR scores first 64%; first pts 12/80 and first shot 13/80 starts 25-26, 1/8 26-27, first 3 FGA 0.47 per start, FG 50%; MIL vs F x1.00; Day-To-Day
 - **First basket: Jarrett Allen** (CLE vs PHI 7:30). Est 16% (fair +531; old model 16%; tip jumper x1.2 if his team wins the tip; chain model): CLE scores first 59%; first pts 19/56 and first shot 11/56 starts 25-26, 4/8 26-27, first 3 FGA 0.61 per start, FG 61%; PHI vs C x1.07; Day-To-Day
 - **First basket: RJ Barrett** (TOR @ MIL 8:00). Est 16% (fair +538; old model 14%; chain model): TOR scores first 64%; first pts 9/57 and first shot 14/57 starts 25-26, 3/8 26-27, first 3 FGA 0.62 per start, FG 49%; MIL vs F x1.00
 - **First basket: Evan Mobley** (CLE vs PHI 7:30). Est 14% (fair +594; old model 16%; chain model): CLE scores first 59%; first pts 20/63 and first shot 19/63 starts 25-26, 2/8 26-27, first 3 FGA 0.79 per start, FG 54%; PHI vs C x1.07
 - **First basket: Jayson Tatum** (BOS @ CHA 7:00). Est 14% (fair +615; old model 15%; chain model): BOS scores first 54%; first pts 2/16 and first shot 2/16 starts 25-26, 3/7 26-27, first 3 FGA 0.70 per start, FG 42%; CHA vs F x1.03
+- **First basket: Alex Sarr** (WSH @ ATL 7:00). Est 14% (fair +619; old model 14%; chain model): WSH scores first 58%; first pts 10/48 and first shot 13/48 starts 25-26, 1/7 26-27, first 3 FGA 0.69 per start, FG 49%; ATL vs C x1.07
 - **Team first basket: Victor Wembanyama** (SA @ SAC). Model share of SA's first points 38% (old 42%); raw 25-26 24/57, first shot 22/57, FG 50%
 - **Team first basket: Luka Doncic** (LAL vs POR). Model share of LAL's first points 36% (old 31%); raw 25-26 22/65, first shot 33/65, FG 48%
-- **Team first basket: Anthony Davis** (WSH @ ATL). Model share of WSH's first points 31% (old 26%); raw 25-26 5/20, first shot 7/20, FG 50%
 - **Team first basket: Ty Jerome** (MEM vs OKC). Model share of MEM's first points 27% (old 22%); raw 25-26 5/15, first shot 7/15, FG 49%
+- **Team first basket: Naz Reid** (CHA vs BOS). Model share of CHA's first points 27% (old 20%); raw 25-26 0/3, first shot 1/3, FG 45%
 - **Over 2.5 threes: Luka Doncic** (LAL vs POR). Over 2.5 in 81% of starts (blend); last 5 starts 25-26: 1 6 5 4 3; fair -424 is shorter than -300, so take over 3.5 instead (64%, fair -178)
 - **Over 24.5 points: Shai Gilgeous-Alexander** (OKC @ MEM). Over 24.5 in 80% of starts (blend); last 5 starts 25-26: 20 25 20 28 47; singles only, never in a parlay
 - **Over 24.5 points: Tyrese Maxey** (PHI @ CLE). Over 24.5 in 72% of starts (blend); last 5 starts 25-26: 21 32 24 15 23; singles only, never in a parlay
@@ -25,9 +25,9 @@ Tip winner scores first 66% (25-26).
 
 1st-shot pick = most likely to take and make (or draw FTs on) his team's first shot. 2nd-chance pick = most likely to score his team's first points after a miss (rebound, putback, FTs). Fair = his chance to score the GAME's first points (FanDuel first basket, FT included).
 
-- WSH @ ATL 7:00: tip WSH 65% (Anthony Davis vs Onyeka Okongwu); WSH scores first 54%
-  - WSH: 1st-shot pick Anthony Davis 17% (fair +490; scores on WSH's first shot 13%); 2nd-chance pick Alex Sarr 12% (fair +743; after a miss 12%)
-  - ATL: 1st-shot pick Nickeil Alexander-Walker 9% (fair +987; scores on ATL's first shot 10%); 2nd-chance pick Onyeka Okongwu 10% (fair +856; after a miss 13%)
+- WSH @ ATL 7:00: tip WSH 70% (Deandre Ayton vs Onyeka Okongwu); WSH scores first 58%
+  - WSH: 1st-shot pick AJ Dybantsa 14% (fair +621; scores on WSH's first shot 12%); 2nd-chance pick Alex Sarr 14% (fair +619; after a miss 12%)
+  - ATL: 1st-shot pick Nickeil Alexander-Walker 9% (fair +1016; scores on ATL's first shot 10%); 2nd-chance pick Onyeka Okongwu 10% (fair +890; after a miss 14%)
 - BOS @ CHA 7:00: tip BOS 56% (Neemias Queta vs Moussa Diabate); BOS scores first 54%
   - BOS: 1st-shot pick Jayson Tatum 14% (fair +615; scores on BOS's first shot 13%); 2nd-chance pick Neemias Queta 13% (fair +688; after a miss 14%)
   - CHA: 1st-shot pick Naz Reid 13% (fair +697; scores on CHA's first shot 13%); 2nd-chance pick Brandon Miller 11% (fair +787; after a miss 14%)
@@ -57,7 +57,7 @@ Tip winner scores first 66% (25-26).
 
 Dunk/layup includes tip-ins and putbacks; 2pt jumper includes floaters and hooks (book rules vary). First points counts free throws; first basket is the first made FG (FanDuel). Sample: 1235 games 25-26, 123 games 26-27.
 
-- WSH @ ATL 7:00: first points Dunk/layup 35% (+189), 2pt jumper 32% (+217), 3-pointer 23% (+332), Free throw 11% (+836); first basket Dunk/layup 39% (+154), 2pt jumper 33% (+199), 3-pointer 27% (+267)
+- WSH @ ATL 7:00: first points Dunk/layup 35% (+190), 2pt jumper 32% (+213), 3-pointer 23% (+340), Free throw 11% (+826); first basket Dunk/layup 39% (+154), 2pt jumper 34% (+195), 3-pointer 27% (+274)
 - BOS @ CHA 7:00: first points Dunk/layup 34% (+192), 2pt jumper 27% (+272), 3-pointer 32% (+209), Free throw 7% (+1423); first basket Dunk/layup 36% (+174), 2pt jumper 27% (+267), 3-pointer 36% (+176)
 - PHI @ CLE 7:30: first points Dunk/layup 31% (+221), 2pt jumper 30% (+238), 3-pointer 24% (+324), Free throw 16% (+537); first basket Dunk/layup 37% (+173), 2pt jumper 33% (+207), 3-pointer 31% (+225)
 - UTAH @ DAL 8:00: first points Dunk/layup 34% (+191), 2pt jumper 33% (+201), 3-pointer 21% (+369), Free throw 11% (+809); first basket Dunk/layup 38% (+160), 2pt jumper 37% (+172), 3-pointer 25% (+304)
@@ -74,13 +74,13 @@ Best player + method (fair price; bet only if the book pays more):
 - **Neemias Queta first basket: Dunk/layup** (BOS @ CHA 7:00). Est 9.7% (fair +933) = FB 13% x 76% if he scores first; his first-FG sample 23, made FGs 410
 - **Luka Doncic first basket: 2pt jumper** (LAL vs POR 10:00). Est 9.6% (fair +940) = FB 20% x 49% if he scores first; his first-FG sample 29, made FGs 973
 - **Jarrett Allen first basket: Dunk/layup** (CLE vs PHI 7:30). Est 9.4% (fair +967) = FB 16% x 59% if he scores first; his first-FG sample 23, made FGs 460
-- **Anthony Davis first basket: 2pt jumper** (WSH @ ATL 7:00). Est 9.2% (fair +988) = FB 17% x 54% if he scores first; his first-FG sample 12, made FGs 388
 - **Scottie Barnes first basket: 2pt jumper** (TOR @ MIL 8:00). Est 8.9% (fair +1023) = FB 16% x 55% if he scores first; his first-FG sample 15, made FGs 799
 - **LaMelo Ball first basket: 3-pointer** (MIN @ NO 8:00). Est 8.6% (fair +1058) = FB 13% x 66% if he scores first; his first-FG sample 25, made FGs 665
+- **Rudy Gobert first basket: Dunk/layup** (MIN @ NO 8:00). Est 8.6% (fair +1062) = FB 9% x 96% if he scores first; his first-FG sample 20, made FGs 395
 
 ## StarTool check (side by side, no blend)
 
-- WSH @ ATL: our top Anthony Davis (17%): agree (StarTool star)
+- WSH @ ATL: our top Alex Sarr (14%): differs (StarTool stars Anthony Davis, Nickeil Alexander-Walker; bombs Trae Young, Jalen Johnson)
 - BOS @ CHA: our top Jayson Tatum (14%): agree (StarTool star)
 - PHI @ CLE: our top Jarrett Allen (16%): differs (StarTool stars Jaylen Brown, Donovan Mitchell; bombs Joel Embiid, James Harden)
 - UTAH @ DAL: our top Lauri Markkanen (12%): agree (StarTool star)
@@ -92,7 +92,7 @@ Best player + method (fair price; bet only if the book pays more):
 
 ## Tip-off
 
-- WSH @ ATL 7:00 ET: Anthony Davis vs Onyeka Okongwu; away wins tip 65%, away scores first 54%
+- WSH @ ATL 7:00 ET: Deandre Ayton vs Onyeka Okongwu; away wins tip 70%, away scores first 58%
 - BOS @ CHA 7:00 ET: Neemias Queta vs Moussa Diabate; away wins tip 56%, away scores first 54%
 - PHI @ CLE 7:30 ET: Joel Embiid vs Jarrett Allen; away wins tip 31%, away scores first 41%
 - UTAH @ DAL 8:00 ET: Jaxson Hayes vs Daniel Gafford; away wins tip 50%, away scores first 50%

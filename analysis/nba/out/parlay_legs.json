@@ -19,14 +19,6 @@
    "note": "56 starts"
   },
   {
-   "player": "Anthony Davis",
-   "team": "WSH",
-   "game": "WSH @ ATL",
-   "market": "3+ threes",
-   "p": 0.068,
-   "note": "28 starts"
-  },
-  {
    "player": "Alex Sarr",
    "team": "WSH",
    "game": "WSH @ ATL",
@@ -43,12 +35,12 @@
    "note": "80 starts"
   },
   {
-   "player": "Jalen Johnson",
+   "player": "Luguentz Dort",
    "team": "ATL",
    "game": "WSH @ ATL",
    "market": "3+ threes",
-   "p": 0.183,
-   "note": "79 starts"
+   "p": 0.32,
+   "note": "71 starts"
   },
   {
    "player": "Onyeka Okongwu",
