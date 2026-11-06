@@ -213,6 +213,8 @@ have a disciplined day." Use it in scripts and suggest it if a video ends on a p
 
 Tim is NOT a single dad (corrected 10/8). Say "dad" or "new dad" only; never "single dad" in content.
 
+Confirmed fact (Tim, 11/5): he reviews his trades at night after work and after his son's bedtime. OK to use in content.
+
 ## Tim's personal trading rules (restated 10/9, after losing 2 Lucid accounts trading London)
 NY session only (no London, no Asia). No trades before 10 AM ET (Tim, 11/5: if the move happens before 10, he misses it and waits for the next setup). Wait for the label (no early entry). Hard stop 3.5-4 pts.
 1-2 good trades, then done. Max $1,000 risk in a day. One last reset planned for Thu 10/15.
