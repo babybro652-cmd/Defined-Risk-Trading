@@ -58,3 +58,11 @@ public domain). AI voice means `containsSyntheticMedia: true` on YouTube.
 |---|---|---|---|---|
 | i_hope_youre_happy.mp3 | I hope you're happy | Loyalty Freak Music | LOFI AMBIENT SONGS ! https://archive.org/details/loyalty-freak-music-lofi-ambient-songs | CC0 1.0 |
 (All 14 library tracks were used 11/3-11/5; added for the 11/5 "called the drop" reel.)
+
+## Added 2026-11-06 (same processing: 95 s excerpt from 0:10, 2 s fades, -19 LUFS, MP3 160 kbps; faster-whisper found no vocals)
+| File | Title | Artist | Album / source item | License |
+|---|---|---|---|---|
+| dancing_in_the_street.mp3 | Dancing in the street | Loyalty Freak Music (made for Lack of Color) | LOFI AMBIENT SONGS ! https://archive.org/details/loyalty-freak-music-lofi-ambient-songs | CC0 1.0 |
+| lag.mp3 | Lag | Loyalty Freak Music | MINIMAL AMBIENT BOUNCE https://archive.org/details/MINIMALAMBIENTBOUNCE | CC0 1.0 |
+| coexistenz.mp3 | Coexistenz | Loyalty Freak Music | TO CHILL AND STAY AWAKE https://archive.org/details/LoyaltyFreakMusicTOCHILLANDSTAYAWAKE20170923132621469 | CC0 1.0 |
+(All 15 library tracks were used 11/3-11/5; added for the Keaira testimonial reel and the paper-to-live reel.)
