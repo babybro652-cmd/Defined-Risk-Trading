@@ -1,4 +1,4 @@
-# Fri 11/6: Keaira testimonial + "Paper to real money" (Tim GO 11/6, SCHEDULED, see bottom)
+# Fri 11/6: Keaira testimonial + "Paper to real money" (Tim GO, SCHEDULED Fri 11/6, see bottom)
 
 Built by posts/media/2026-11-06/make_1106.py (0 Blotato credits; credits 2085). Music via drt/audio/add_audio.py, AUDIO QA: PASS on all 4 videos
 (-18 LUFS music only). All 15 library tracks were used 11/3-11/5, so 3 new CC0 Loyalty Freak tracks were added (drt/audio/music/LICENSES.md):
@@ -148,20 +148,24 @@ Define your risk, wait for your setup.
 Piece 1, on Tim's go (testimonial counts as extra, like a trade post): Sat 11/7 TikTok 6:30 PM, IG reel 7:00 PM, FB 7:30 PM; YouTube Short takes the 6:12 PM daily Short slot that day.
 Piece 2, Mon 11/9: IG carousel as the Monday 6:52 PM carousel; TikTok 8:00 PM slot; FB 5:00 PM slot; YouTube Short as the 6:12 PM daily Short; Skool post that evening.
 
-## SCHEDULED (Tim GO 11/6 via Jarvis; all ET = EST, UTC-5). Confirmed in blotato_list_schedules.
+## SCHEDULED: moved to Fri 11/6 (Tim via Jarvis, 11/5 evening; blotato_update_schedule, times only). All ET = EST, UTC-5. Confirmed in blotato_list_schedules.
+(First booked for Sat 11/7 and Mon 11/9; same submissions and schedule IDs, only the times changed.)
 | Time ET | Platform | Submission / schedule |
 |---|---|---|
-| Sat 11/7 10:00 AM | TikTok 58063 (Keaira reel) | 7d8f50d9-420b-41bd-9f4e-b9ae6991dfd2 / 6537875 |
-| Sat 11/7 10:30 AM | Instagram 68887 reel (Keaira) | 93a0e241-2724-4718-8ae3-277834253ebb / 6537877 |
-| Sat 11/7 11:00 AM | Facebook 50185 / page 993318963868124 reel (Keaira) | 7071064c-7e0c-4bf3-b2b1-fe28012cd439 / 6537883 |
-| Sat 11/7 11:30 AM | YouTube 48727 Short (Keaira, no link card) | 10305c67-7c08-420a-b9c4-e2cb7e1e56a8 / 6537886 |
-| Mon 11/9 10:00 AM | TikTok 58063 (paper reel) | 4d3f44a1-803a-4e0e-95b3-2ffe3bb0d255 / 6537890 |
-| Mon 11/9 10:30 AM | Instagram 68887 carousel, 9 slides | c56924c1-45af-407a-bba7-55f06881a3d5 / 6537897 |
-| Mon 11/9 11:00 AM | Facebook 50185 / page 993318963868124 reel (paper) | ce90fa3a-ee3a-44fc-a779-df9631b87439 / 6537898 |
-| Mon 11/9 11:30 AM | YouTube 48727 Short (paper, no link card) | 751eb9d4-244b-446e-bfd4-3f1b088ff945 / 6537900 |
+| Fri 11/6 10:00 AM | TikTok 58063 (Keaira reel) | 7d8f50d9-420b-41bd-9f4e-b9ae6991dfd2 / 6537875 |
+| Fri 11/6 10:30 AM | Instagram 68887 reel (Keaira) | 93a0e241-2724-4718-8ae3-277834253ebb / 6537877 |
+| Fri 11/6 11:00 AM | Facebook 50185 / page 993318963868124 reel (Keaira) | 7071064c-7e0c-4bf3-b2b1-fe28012cd439 / 6537883 |
+| Fri 11/6 11:30 AM | YouTube 48727 Short (Keaira, no link card) | 10305c67-7c08-420a-b9c4-e2cb7e1e56a8 / 6537886 |
+| Fri 11/6 2:00 PM | TikTok 58063 (paper reel) | 4d3f44a1-803a-4e0e-95b3-2ffe3bb0d255 / 6537890 |
+| Fri 11/6 2:30 PM | Instagram 68887 carousel, 9 slides | c56924c1-45af-407a-bba7-55f06881a3d5 / 6537897 |
+| Fri 11/6 3:00 PM | Facebook 50185 / page 993318963868124 reel (paper) | ce90fa3a-ee3a-44fc-a779-df9631b87439 / 6537898 |
+| Fri 11/6 3:30 PM | YouTube 48727 Short (paper, no link card) | 751eb9d4-244b-446e-bfd4-3f1b088ff945 / 6537900 |
 
-No DRT clashes on 11/7 or 11/9 when booked. Notes for the routines:
-- Daily 5 AM content 11/7 and 11/9: 10:00-11:30 AM slots are taken on TikTok/IG/FB/YouTube; keep its own posts 30+ min away.
-  These already count as that day's YouTube Short, so skip the 6:12 PM Short on 11/7 and 11/9 (or Jarvis decides).
-- Monday IG carousel routine (Mon 11/9 6:52 PM): this paper-to-live carousel IS Monday's carousel. Do not add a second IG carousel 11/9.
-  Skool version (above) for Tim to post on 11/9.
+Other DRT posts on 11/6: FB lifestyle reel 12:15 PM (6537483). Spacing per platform is 30+ min.
+Notes for the routines on Fri 11/6:
+- 5 AM daily content: TikTok 7:00 AM / 12:00 PM / 8:00 PM, FB 9:00 AM / 5:00 PM and IG 12:30 PM slots stay 30+ min from these.
+  IG gets 3 posts that day (Keaira reel, carousel, daily 12:30 reel) and YouTube already has 2 Shorts; the daily routine should
+  skip its 6:12 PM Short and consider skipping its IG reel (Jarvis decides).
+- Friday trade recap (4:57 PM): FB at 5:00 PM daily slot plus the recap; keep the recap 30+ min from 3:00 PM FB and 3:30 PM YouTube.
+- Monday 11/9 IG carousel routine runs normally (this carousel posts Friday).
+- Skool version (above) can go up Friday afternoon with the paper post.
