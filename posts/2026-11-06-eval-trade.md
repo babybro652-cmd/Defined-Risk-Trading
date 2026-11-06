@@ -1,4 +1,4 @@
-# DRT Phone eval trade, Fri 11/6/2026: two ES shorts (TRADE POST, DRAFT, needs Tim's go)
+# DRT Phone eval trade, Fri 11/6/2026: two ES shorts (TRADE POST, SCHEDULED 11/6 on Tim's go)
 
 Tim's note: "Eval trade." Lucid eval account (LucidEval). Not posted, not scheduled.
 Account balance (down $1,227 since 11/5, ~$774 above the $48,000 floor before today) stays OUT of public copy.
@@ -130,12 +130,27 @@ Video is in the post.
 DISCUSSION
 Has a mental stop ever slipped on you, or has a winner reversed before your target? How did you handle it?
 
-Define your risk, wait for your setup. Let's have a disciplined day.
+Define your risk, wait for your setup. Have a good weekend.
 
 Education only, not financial advice. Futures trading involves substantial risk of loss.
 ```
 
-## Proposed slots (ET, EST = UTC-5), NOT scheduled
+## SCHEDULED 11/6 (Tim: "Go", ~1:25 PM ET; red day, "eval" in captions and the times approved)
+Revised videos: DRT 9662b876 (sha256 bfdef0fc...), personal 28d94fdb (8b1b8660...). Blotato re-hosted copies hash-match.
+Pre-publish checks: media QA (frame sheets, privacy cover, Bias cell, end card), AUDIO QA PASS, 5-gram OK, no em dashes/filler/AMD/CRT/
+time of day/balances/flip level/TP-SL limits, TikTok captions under 150 chars, IG 5 hashtags, FB none, YouTube fields set.
+| Time (ET) | Platform | Schedule id | Submission id |
+|---|---|---|---|
+| 4:05 PM | Facebook reel (50185, page 993318963868124) | 6570312 | 76753803-c672-4486-b59f-43ec8c1a5ee6 |
+| 4:40 PM | Instagram reel (68887) | 6570313 | e0acd8e6-472e-40f8-b408-cde611edff43 |
+| 5:35 PM | TikTok DRT (58063) | 6570314 | a0aa3ac3-39f2-40f2-9321-dd2344b41cac |
+| 6:20 PM | Personal TikTok (59764) | 6570315 | acc2360b-54ce-444e-b33b-d2db3ca93a84 |
+| 7:00 PM | YouTube Short (48727) | 6570316 | c5b4352a-73b2-41b0-98fa-553b97aec51b |
+Skool recap: Tim posts it (sign-off changed to "Have a good weekend.").
+
+**Friday recap routine (4:57 PM 11/6) must NOT repost this trade.** These two eval shorts are already scheduled on every platform above.
+
+## Proposed slots (ET, EST = UTC-5), superseded by SCHEDULED above
 Already today: TikTok 7:00, FB 9:00, Keaira 10:00-11:30, FB lifestyle 12:15, TikTok 12:45, IG 1:15, paper-to-real TikTok 2:00 / IG 2:30 /
 FB 3:00 / YouTube 3:30, Friday recap routine 4:57 PM (reserves FB 5:00 and TikTok 8:00), YouTube daily Short 6:12 PM.
 - Facebook 4:05 PM
