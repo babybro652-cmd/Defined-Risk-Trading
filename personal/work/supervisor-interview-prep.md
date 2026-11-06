@@ -1,5 +1,7 @@
 # Inventory Supervisor Interview Prep (started 11/5/2026)
 
+Practice session with Jarvis: Fri 11/6, 8:15 AM (15 minutes).
+
 Role: Inventory Supervisor at Tim's distribution center (internal promotion).
 Known facts: full-time 6 AM to 4:30 PM, trains order picker skills, has traveled to sister DCs to train teams.
 Fill in the [brackets] with your real numbers and names. Never guess a number in the room.
@@ -46,12 +48,22 @@ Keep each under 2 minutes. End with a number if you have one.
 - **Tell me about a mistake you made and what you learned.**
 - **Where do you see yourself in 3 to 5 years?**
 
-## 6. Questions to ask them (pick 2 or 3)
-- What's our inventory accuracy now, and where do you want it in 6 months?
-- What's the biggest cause of variances here?
-- How big is the inventory team, and what shifts do they cover?
-- How are cycle counts scheduled today, ABC or something else?
-- What does success look like in the first 90 days?
+## 6. Questions to ask them
+**Top 3 (if you only get a few minutes)**
+1. "What's our inventory accuracy now, and where do you want it in 6 months?" Shows you think in numbers.
+2. "What's the biggest cause of our variances right now?" Shows you the real problem, and you can answer it with your picker experience.
+3. "What would make someone a success in this role in the first 90 days?" Tells you exactly what they'll grade you on.
+
+**Extras if there's time**
+- How big is the inventory team, and which shifts does it cover?
+- How are cycle counts scheduled now? Do we count fast movers more often?
+- Who approves adjustments, and what's the dollar limit before a manager signs off?
+- What training do new supervisors get?
+- What did the last person in this role do well, and where did they struggle?
+
+**Always close with:** "Is there anything about my background that makes you hesitate? I'd like the chance to answer it." It gets their doubts out while you're still in the room.
+
+**Hold for the offer (or HR):** pay, schedule, time off.
 
 ## 7. Night before / day of
 - Know your numbers: your rate, accuracy, how many people you've trained, which sites you traveled to.
