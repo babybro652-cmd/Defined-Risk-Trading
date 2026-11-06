@@ -32,18 +32,15 @@
 - No StarTool cards saved for this slate yet. Add lines to out/startool/star_bomb.txt (date|AWAY @ HOME|star,star|bomb,bomb) and rerun.
 
 <!-- parlays:begin -->
-## Parlays 2026-11-05 (2-3 legs, $0.10 to $0.20)
+## Parlays 2026-11-06 (2-3 legs, $0.10 to $0.20)
 
 Only categories that beat their price season to date: NBA 3+ threes, NHL 3+ SOG, NFL receptions, soccer 1+ shot on target. No points overs, no first basket / first goal / anytime goal legs. Fair = product of the leg chances (no correlation boost). Take only at the minimum price or longer (fair with a 10% cushion). Legs from the same game are correlated and marked.
 
 ### NBA
-- Not enough qualifying legs.
-
-### NHL
-- **2-leg #1:** Alex DeBrincat 3+ SOG (78%, VGK @ DET) + David Pastrnak 3+ SOG (70%, BOS @ PIT). Fair -118 (54%); take +103 or longer.
-- **2-leg #2:** Alex DeBrincat 3+ SOG (78%, VGK @ DET) + Cutter Gauthier 3+ SOG (69%, ANA @ EDM). Fair -114 (53%); take +106 or longer.
-- **2-leg #3:** David Pastrnak 3+ SOG (70%, BOS @ PIT) + Cutter Gauthier 3+ SOG (69%, ANA @ EDM). Fair +109 (48%); take +130 or longer.
-- **3-leg #4:** Cole Caufield 3+ SOG (68%, UTA @ MTL) + Jason Robertson 3+ SOG (68%, DAL @ CBJ) + Connor Bedard 3+ SOG (68%, CHI @ TBL). Fair +219 (31%); take +251 or longer.
-- **3-leg #5:** Cole Caufield 3+ SOG (68%, UTA @ MTL) + Jason Robertson 3+ SOG (68%, DAL @ CBJ) + Kyle Connor 3+ SOG (68%, VAN @ WPG). Fair +219 (31%); take +251 or longer.
+- **2-leg #1:** Luka Doncic 3+ threes (81%, POR @ LAL) + Brandon Miller 3+ threes (65%, BOS @ CHA). Fair -112 (53%); take +109 or longer.
+- **2-leg #2:** Luka Doncic 3+ threes (81%, POR @ LAL) + LaMelo Ball 3+ threes (65%, MIN @ NO). Fair -109 (52%); take +110 or longer.
+- **2-leg #3:** Brandon Miller 3+ threes (65%, BOS @ CHA) + LaMelo Ball 3+ threes (65%, MIN @ NO). Fair +137 (42%); take +161 or longer.
+- **3-leg #4:** Nickeil Alexander-Walker 3+ threes (64%, WSH @ ATL) + James Harden 3+ threes (64%, PHI @ CLE) + Tyler Herro 3+ threes (64%, TOR @ MIL). Fair +284 (26%); take +322 or longer.
+- **3-leg #5:** Nickeil Alexander-Walker 3+ threes (64%, WSH @ ATL) + James Harden 3+ threes (64%, PHI @ CLE) + Zach LaVine 3+ threes (61%, SA @ SAC). Fair +302 (25%); take +342 or longer.
 
 <!-- parlays:end -->

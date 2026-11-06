@@ -73,7 +73,7 @@ Keep each under 2 minutes. End with a number if you have one.
 
 **Always close with:** "Is there anything about my background that makes you hesitate? I'd like the chance to answer it." It gets their doubts out while you're still in the room.
 
-**Hold for the offer (or HR):** pay, schedule, time off.
+**Pay (ask last, after you've made your case):** "What's the pay range for this role, and how does the schedule work?" Ask for the range, not a number. Know your answer first: your current hourly rate and the number you'd want. If they ask you first, give a range with your number at the low end.
 
 ## 7. Night before / day of
 - Know your numbers: your rate, accuracy, how many people you've trained, which sites you traveled to.
