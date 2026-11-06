@@ -1,4 +1,4 @@
-# Weekly trade recap, Mon 11/2 to Fri 11/6/2026 (TRADE POST, DRAFT, waiting for Tim's go; nothing scheduled)
+# Weekly trade recap, Mon 11/2 to Fri 11/6/2026 (TRADE POST, SCHEDULED on Tim's go, then ON HOLD for his review)
 
 Routine: DRT Friday recap (prompt in disabled trig_01CgC1RonbscetrWJhFAWLZp), fired 4:58 PM ET 11/6.
 Today's eval trade is already scheduled on its own (Blotato 6570312-6570316); this recap only counts it in the week.
@@ -89,3 +89,14 @@ My paper week: +$4,825 on 7 trades. Friday on the eval: -$250, with a stop that 
 
 #MyHobbyismyFREEDOM #esfutures #tradingjournal
 ```
+
+## SCHEDULED 11/6 ~5:25 PM ET (Tim via Jarvis: "Go"; Mon -$400 stays, no trades Wed, include the Tue long, slip line OK)
+Then Jarvis relayed HOLD (Tim wants to review first). The 4 schedules stay in place; none was due within 30 min (earliest 7:30 PM).
+Delete them with blotato_delete_schedule if Tim pulls it. Pre-publish checks: media QA PASS, AUDIO QA PASS, 5-gram OK, no em dashes/filler/AMD/CRT, isAiGenerated false.
+| Time ET | Platform | Schedule id | Submission id |
+|---|---|---|---|
+| 7:30 PM | Facebook reel (50185, page 993318963868124) | 6577131 | 166b726f-bdee-468b-981d-7413aef41c42 |
+| 8:00 PM | TikTok DRT (58063) | 6577132 | 952a14c5-057b-41ab-ba16-bcf7c743c992 |
+| 8:30 PM | Instagram reel (68887) | 6577133 | e79c04a1-e064-439a-9ee4-f1a922a42033 |
+| 9:00 PM | TikTok personal (59764) | 6577134 | 040ba834-f17f-4f1f-ac45-b5f8c53958c1 |
+All 4 confirmed in list_schedules with the drafted captions (Blotato re-hosted the video per post).
