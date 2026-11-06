@@ -228,3 +228,6 @@ For every trade recording Tim drops in DRT Phone, also build a personal TikTok r
 ## Pre-scheduled posts to respect (updated 11/5 evening)
 - Fri 11/6: Keaira testimonial at 10:00 TikTok, 10:30 IG, 11:00 FB, 11:30 YouTube Short; paper-to-real-money at 2:00 TikTok, 2:30 IG carousel, 3:00 FB, 3:30 YouTube Short; FB lifestyle reel 12:15 PM. Daily routine 11/6: run it FULLY as normal, including the 6:12 PM YouTube Short (Tim, 11/5: don't skip). These extra posts don't count against its caps; just keep its posts 30+ min from these slots.
 - Sat 11/7 and Mon 11/9: run normally (the earlier overrides for those days are cancelled).
+
+## Skool link (Tim, 11/6)
+Skool community: https://www.skool.com/defined-risk-trading-6797/about. Use this for bio links (DRT TikTok website field once available, IG, FB). Captions still carry no signup CTA unless the routine allows it.

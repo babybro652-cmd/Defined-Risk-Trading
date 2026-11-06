@@ -51,3 +51,5 @@ Calm confidence, mentor energy with blunt honesty. Short sentences, clean struct
 - Every platform gets its own caption. Never reuse the same wording across platforms.
 - No filler words: actually, really, just, simply, truly, genuinely
 - Lead with the result or the concept, not a confession. Day-job proof posts and education posts perform best
+
+- Skool link: https://www.skool.com/defined-risk-trading-6797/about (Tim, 11/6)
