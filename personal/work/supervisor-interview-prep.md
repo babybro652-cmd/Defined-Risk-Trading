@@ -91,7 +91,7 @@ Keep each under 2 minutes. End with a number if you have one.
 
 
 ## 9. ROUND 2: Director of Operations, Rose Simpson
-Passed round 1 on 11/6. Roles: Night Inventory Supervisor and Day Production Supervisor (Freezer). Feedback: brush up on STAR.
+Interview: Wed 11/11, 2:30 PM. Passed round 1 on 11/6. Roles: Night Inventory Supervisor and Day Production Supervisor (Freezer). Feedback: brush up on STAR.
 
 HOW STAR WORKS (about 1 to 2 minutes per story)
 S - Situation: where, when, what was wrong. One or two sentences.
