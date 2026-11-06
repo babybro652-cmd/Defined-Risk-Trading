@@ -3,7 +3,7 @@
 Practice session with Jarvis: Fri 11/6, 8:15 AM (15 minutes).
 
 Role: Inventory Supervisor at Tim's distribution center (internal promotion).
-Known facts: full-time 6 AM to 4:30 PM, trains order picker skills, has traveled to sister DCs to train teams.
+Source: Tim's resume (Drive: Timothy Williams Resume.docx). Admin II Training & Development since 9/21; past supervisor/manager roles at Allegiance, Papa John's, Domino's; forklift at UPS (Sentech).
 Fill in the [brackets] with your real numbers and names. Never guess a number in the room.
 
 ## 1. What an inventory supervisor owns (know this cold)
@@ -23,10 +23,20 @@ Fill in the [brackets] with your real numbers and names. Never guess a number in
 picks, product in the wrong slot, cases keyed as eaches. I want to own fixing that at the source:
 accurate counts, real root cause on variances, and training people so the errors stop coming back."
 
-## 3. Your link from order picking to inventory (your strongest angle)
-- Most inventory errors show up at the pick face. You've seen them firsthand: [examples: short picks, wrong item in slot, overflow not in the system].
-- You train pickers, so you can train counters and fix the habits that cause variances (scanning the location, not grabbing from the next slot, reporting damage).
-- Training at other sites shows you can set up a process and get people to follow it.
+## 3. Your angle: records, inventory and training (your strongest card)
+Inventory accuracy comes down to two things: clean records and people doing it right. Your resume shows both.
+
+Say this in the room: "Inventory accuracy comes down to records and people. I've kept compliance records for OSHA and federal waste rules, I've managed inventory and reconciled the drawer every day as a manager, and right now I train and qualify every new associate who comes through here. I know where errors start, and I know how to train them out."
+
+1. Records and audits. As Admin II Training & Development (since 9/21) you document, record and analyze all training for OSHA and safety compliance. At Allegiance you kept hazardous waste records required by local, state and federal law. Inventory control is the same discipline: if it isn't recorded right, it didn't happen.
+
+2. Inventory and reconciliation. At Papa John's you handled inventory and daily cash reconciliation and bank deposits. At Domino's you managed inventory levels and used P&L analysis to find where money was leaking. That is variance research and shrink control, the core of this job.
+
+3. You know the floor and the equipment. Forklift driver at UPS (Sentech), and now you qualify and test associates on the equipment here. You know how product moves and where errors start: picks, putaways, a missed scan.
+
+4. You've led teams. Supervisor of a 15-person team across several sites at Allegiance, 8 to 10 at Papa John's (scheduling and KPI reviews), manager at Domino's. Here you onboard 10+ new hires a week and get them working with their teams within 2 weeks.
+
+5. Training fixes the root cause. Most variances are people errors: mispicks, mis-putaways, not scanning, damage not reported. Counting finds the error. Training stops it from coming back, and training is what you do every day. Your trips to train teams at sister DCs prove the company trusts you to set a standard and get people to follow it.
 
 ## 4. Your 5 stories (STAR: Situation, Task, Action, Result)
 Keep each under 2 minutes. End with a number if you have one.
