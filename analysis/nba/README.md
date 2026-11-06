@@ -411,6 +411,8 @@ price. The shortlist writes this in "First basket two-slot picks (chain model)".
 - 11/5: first points model (fix 1 + 3 above) is the default. Tested and dropped the recent opening-play share (fix 2).
 - 11/5 evening: chain model (Tim's idea) replaces it as the default, and reports use the two-slot picks (1st-shot pick, 2nd-chance pick per team). See "Model change 11/5/26 (chain)". Giannis moves to MIA's 2nd-chance pick (16%, fair +514 tonight vs 12% before).
 
+- 11/5 results: placed 10-19, net -$0.48 on $0.20 stakes. Wiggins FB hit at +750 (fair +835, below fair); Bam, Carter, Wagner missed. Booker scored ORL@PHX's first points on FTs (the FT rule again). NHL 3+ SOG 2-2 plus DeBrincat 4+ hit, both SOG parlays hit; NFL JAX@BAL receptions 0-4 with a 3rd-string QB.
+
 ## Tim vs model log (first basket)
 
 Tim's picks come from his own read of the StarTool card (not just its star), so the Tim column tests how he uses StarTool's data; the StarTool column is its star/bomb as printed.
@@ -473,3 +475,5 @@ On game days Tim sends the StarTool Analytics "Game Script" card for each game (
 | 10/30 | LAC @ MIN | LaMelo Ball MIN, 3 (MIN won tip; first shot, made) | - | Garland / LaMelo (StarTool star hit) | Jaden McDaniels | - | No |
 | 10/30 | LAL @ GS | Brandin Podziemski GS, rim (GS won tip, our LAL 96% missed; first shot, made) | - | Doncic / Curry | Walker Kessler | - | No |
 | 10/30 | DEN @ PHX | Miles Bridges PHX, j2 (PHX won tip; first shot Brooks, missed) | - | Jokic / Booker | Nikola Jokic | - | No |
+| 11/5 | ORL @ PHX | Devin Booker PHX, free throws (first shot Brooks, missed; first FG Bane) | Carter, Wagner (our list) | Bane / Booker (StarTool star Booker hit) | Carter, Wagner | No | No |
+| 11/5 | MIA @ GS | Andrew Wiggins MIA, j2 (first shot, made) | Bam, Wiggins (+750) | Giannis / Curry | Bam, Giannis (Wiggins third, fair +835) | Yes (Wiggins) | No |

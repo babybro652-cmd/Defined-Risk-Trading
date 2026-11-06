@@ -1,0 +1,182 @@
+{
+ "WSH": {
+  "five": [
+   "Trae Young",
+   "Kyshawn George",
+   "AJ Dybantsa",
+   "Anthony Davis",
+   "Alex Sarr"
+  ],
+  "jumper": "Anthony Davis"
+ },
+ "ATL": {
+  "five": [
+   "Kingston Flemings",
+   "Nickeil Alexander-Walker",
+   "Dyson Daniels",
+   "Jalen Johnson",
+   "Onyeka Okongwu"
+  ],
+  "jumper": "Onyeka Okongwu"
+ },
+ "BOS": {
+  "five": [
+   "Derrick White",
+   "Hugo Gonzalez",
+   "Paul George",
+   "Jayson Tatum",
+   "Neemias Queta"
+  ],
+  "jumper": "Neemias Queta"
+ },
+ "CHA": {
+  "five": [
+   "Coby White",
+   "Sion James",
+   "Brandon Miller",
+   "Naz Reid",
+   "Moussa Diabate"
+  ],
+  "jumper": "Moussa Diabate"
+ },
+ "PHI": {
+  "five": [
+   "Tyrese Maxey",
+   "VJ Edgecombe",
+   "Jaylen Brown",
+   "LeBron James",
+   "Joel Embiid"
+  ],
+  "jumper": "Joel Embiid"
+ },
+ "CLE": {
+  "five": [
+   "James Harden",
+   "Donovan Mitchell",
+   "Peyton Watson",
+   "Evan Mobley",
+   "Jarrett Allen"
+  ],
+  "jumper": "Jarrett Allen"
+ },
+ "MIN": {
+  "five": [
+   "LaMelo Ball",
+   "Ayo Dosunmu",
+   "Jonathan Kuminga",
+   "Jaden McDaniels",
+   "Rudy Gobert"
+  ],
+  "jumper": "Rudy Gobert"
+ },
+ "NO": {
+  "five": [
+   "Dejounte Murray",
+   "Jeremiah Fears",
+   "Trey Murphy III",
+   "Zion Williamson",
+   "Karlo Matkovic"
+  ],
+  "jumper": "Karlo Matkovic"
+ },
+ "UTAH": {
+  "five": [
+   "Keyonte George",
+   "Darryn Peterson",
+   "Ace Bailey",
+   "Lauri Markkanen",
+   "Jaxson Hayes"
+  ],
+  "jumper": "Jaxson Hayes"
+ },
+ "DAL": {
+  "five": [
+   "Kyrie Irving",
+   "Max Christie",
+   "Cooper Flagg",
+   "P.J. Washington",
+   "Daniel Gafford"
+  ],
+  "jumper": "Daniel Gafford"
+ },
+ "TOR": {
+  "five": [
+   "Immanuel Quickley",
+   "RJ Barrett",
+   "Ja'Kobe Walter",
+   "Scottie Barnes",
+   "Jakob Poeltl"
+  ],
+  "jumper": "Jakob Poeltl"
+ },
+ "MIL": {
+  "five": [
+   "Brayden Burries",
+   "Tyler Herro",
+   "Jaime Jaquez Jr.",
+   "Kyle Kuzma",
+   "Myles Turner"
+  ],
+  "jumper": "Myles Turner"
+ },
+ "OKC": {
+  "five": [
+   "Shai Gilgeous-Alexander",
+   "Ajay Mitchell",
+   "Kenrich Williams",
+   "Aday Mara",
+   "Isaiah Hartenstein"
+  ],
+  "jumper": "Isaiah Hartenstein"
+ },
+ "MEM": {
+  "five": [
+   "Ty Jerome",
+   "Cedric Coward",
+   "Jaylen Wells",
+   "Cameron Boozer",
+   "Zach Edey"
+  ],
+  "jumper": "Zach Edey"
+ },
+ "POR": {
+  "five": [
+   "Damian Lillard",
+   "Scoot Henderson",
+   "Toumani Camara",
+   "Deni Avdija",
+   "Donovan Clingan"
+  ],
+  "jumper": "Donovan Clingan"
+ },
+ "LAL": {
+  "five": [
+   "Luka Doncic",
+   "Austin Reaves",
+   "Ziaire Williams",
+   "Matisse Thybulle",
+   "Walker Kessler"
+  ],
+  "jumper": "Walker Kessler"
+ },
+ "SA": {
+  "five": [
+   "De'Aaron Fox",
+   "Stephon Castle",
+   "Dylan Harper",
+   "Devin Vassell",
+   "Victor Wembanyama"
+  ],
+  "jumper": "Victor Wembanyama"
+ },
+ "SAC": {
+  "five": [
+   "Darius Acuff Jr.",
+   "Zach LaVine",
+   "De'Andre Hunter",
+   "Precious Achiuwa",
+   "Domantas Sabonis"
+  ],
+  "jumper": "Domantas Sabonis"
+ }
+}
