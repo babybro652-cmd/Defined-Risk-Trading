@@ -88,3 +88,91 @@ Keep each under 2 minutes. End with a number if you have one.
 - Don't bring up side businesses or trading.
 - Don't say "I'll just adjust it to match." Always: recount, research, then adjust.
 - Don't guess numbers. "I don't have the exact number, but it was around X" is fine.
+
+
+## 9. ROUND 2: Director of Operations, Rose Simpson
+Passed round 1 on 11/6. Roles: Night Inventory Supervisor and Day Production Supervisor (Freezer). Feedback: brush up on STAR.
+
+HOW STAR WORKS (about 1 to 2 minutes per story)
+S - Situation: where, when, what was wrong. One or two sentences.
+T - Task: what YOU were responsible for.
+A - Action: what YOU did, step by step. This is the longest part. Say "I," not "we."
+R - Result: how it ended. A number if you can (days, %, people, errors). Then one line on what you learned.
+Tip: if you get stuck, say "Let me give you a specific example," then walk S, T, A, R in order.
+
+YOUR 8 STORIES (fill in the brackets with real details)
+
+1. Training someone who struggled (ADUSA)
+S: A new associate was failing qualification on [equipment] and was close to being let go.
+T: As the trainer, my job was to get them qualified safely.
+A: I sat down with them one-on-one to find the real problem. It was [nerves / the controls / reading the screen]. I got to know how they learn best and tied the training to things they already understood. I broke the skill into small steps, gave extra reps, and documented each session.
+R: They passed in [X days] and are still here [X months later]. I learned that most "slow" trainees just need it taught a different way.
+
+2. Onboarding at volume (ADUSA)
+S: We bring in 10+ new hires a week.
+T: Get them trained, documented for OSHA, and working with their teams within 2 weeks.
+A: I set a routine: [day 1 safety and walkthrough, equipment training, testing, hand-off to the team lead]. I track every step so compliance records are always complete.
+R: New hires are working with their teams within 2 weeks, and our training records [pass audits / stay complete].
+
+3. Training a sister DC (ADUSA)
+S: [Sister DC name] was having trouble with [rate / safety / new equipment].
+T: I was sent to train their team.
+A: I [watched how they worked first, found the gaps, trained in small groups, left them a checklist].
+R: [Their numbers after / they asked for me back]. It shows I can set a standard and get people to follow it.
+
+4. Accurate records under strict rules (Allegiance)
+S: At Allegiance I handled biohazard and medical waste under OSHA, EPA and state rules.
+T: Make sure every item was segregated, packaged and recorded correctly.
+A: I followed the process exactly, kept disposal records for every pickup, and checked my team's work.
+R: [No violations / passed every inspection]. Same discipline as inventory: if it isn't recorded right, it didn't happen.
+
+5. Leading a team across sites (Allegiance)
+S: I supervised a 15-person team spread across several sites.
+T: Get every project done on time and to standard.
+A: I [built the schedule around each site's needs, set priorities each morning, checked in at each site, moved people where they were needed].
+R: Projects were completed [on time / by the deadline]. [Add one example project.]
+
+6. Finding where money was leaking (Domino's)
+S: As manager, our numbers were [down / off].
+T: Find out why.
+A: I went through the P&L line by line and found the leak points: [waste / comps / sales].
+R: I fixed it by [redesigning the sales materials / tightening portioning], and [result]. That's variance research, the same thing inventory control does every day.
+
+7. Correcting a coworker or handling conflict
+S: [A coworker skipped a safety step / two people on my team didn't get along].
+T: Fix it without making it worse.
+A: I talked to them privately, explained why it mattered, listened, and followed up.
+R: [It stopped / they got along / the person thanked me later].
+
+8. A pressure day (short staffed or a volume spike)
+S: [We were X people short / volume spiked].
+T: Get the work out safely.
+A: I [re-balanced people by skill, jumped in myself, kept the team updated].
+R: [Trucks shipped on time / no injuries / no overtime].
+
+FREEZER PRODUCTION SUPERVISOR: KNOW THIS
+- Cold safety first: proper freezer gear (PPE) checked daily, warm-up breaks on schedule, watch for frostbite and fatigue, ice on floors and docks, and equipment that behaves differently in the cold (batteries drain faster).
+- Production numbers: rate (cases per hour), accuracy, on-time loads, safety incidents, attendance.
+- Product care: temperature control, rotation (first in, first out by date), damaged product reported, no product left sitting on the dock.
+- People: the freezer is hard work, so turnover is high. Training and recognition keep people.
+- Likely question: "How do you keep rate up in the freezer without cutting corners on safety?" Answer: plan breaks into the schedule instead of fighting them, cross-train so breaks don't stop the line, and track rate by hour so you see problems early.
+
+DIRECTOR-LEVEL QUESTIONS (bigger picture)
+- Why you over the other candidates? (Training plus records plus supervising. You already do part of both jobs.)
+- Which role do you want, and why? (Decide before the interview. See below.)
+- What would you do in your first 90 days? (Listen and learn the numbers first 30 days, fix the top problem by 60, have a clear standard and training plan by 90.)
+- How do you measure success on a shift?
+- Tell me about a mistake you made and what you changed.
+- Where do you see yourself in 3 to 5 years?
+
+DECIDE BEFORE ROUND 2: night inventory vs day freezer production
+- Night inventory: fits your records and variance strengths best. Think about sleep and family with a newborn.
+- Day freezer production: your training and people strengths. Physical, cold environment, closer to your current hours.
+- Saying "I'd be strong in either, and here's why" is fine, but have a first choice and a reason ready.
+
+QUESTIONS FOR ROSE (pick 2 or 3)
+- What does a great first year look like for whoever gets this role?
+- What's the biggest challenge in operations right now?
+- How do the inventory and freezer teams work together, and where does it break down?
+- What do the best supervisors here do differently?
+- What's the pay range, and how does the schedule work?
