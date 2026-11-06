@@ -114,4 +114,11 @@ Only categories that beat their price season to date: NBA 3+ threes, NHL 3+ SOG,
 - **3-leg #4:** Nickeil Alexander-Walker 3+ threes (64%, WSH @ ATL) + James Harden 3+ threes (64%, PHI @ CLE) + Tyler Herro 3+ threes (64%, TOR @ MIL). Fair +284 (26%); take +322 or longer.
 - **3-leg #5:** Nickeil Alexander-Walker 3+ threes (64%, WSH @ ATL) + James Harden 3+ threes (64%, PHI @ CLE) + Zach LaVine 3+ threes (61%, SA @ SAC). Fair +302 (25%); take +342 or longer.
 
+### NHL
+- **2-leg #1:** Matt Boldy 3+ SOG (73%, SJS @ MIN) + Cutter Gauthier 3+ SOG (69%, ANA @ CGY). Fair -103 (51%); take +117 or longer.
+- **2-leg #2:** Matt Boldy 3+ SOG (73%, SJS @ MIN) + Tage Thompson 3+ SOG (68%, CBJ @ BUF). Fair +102 (49%); take +123 or longer.
+- **2-leg #3:** Cutter Gauthier 3+ SOG (69%, ANA @ CGY) + Kirill Kaprizov 3+ SOG (69%, SJS @ MIN). Fair +109 (48%); take +130 or longer.
+- **3-leg #4:** Kirill Kaprizov 3+ SOG (69%, SJS @ MIN) + Tage Thompson 3+ SOG (68%, CBJ @ BUF) + Macklin Celebrini 3+ SOG (65%, SJS @ MIN). Fair +232 (30%); take +266 or longer; same game, correlated, fair price is optimistic.
+- **3-leg #5:** Macklin Celebrini 3+ SOG (65%, SJS @ MIN) + Zach Werenski 3+ SOG (62%, CBJ @ BUF) + Joel Eriksson Ek 3+ SOG (61%, SJS @ MIN). Fair +305 (25%); take +346 or longer; same game, correlated, fair price is optimistic.
+
 <!-- parlays:end -->
