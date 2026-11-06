@@ -1,10 +1,10 @@
 """Time-lapse eval-trade reel from Tim's 11/6/2026 TradingView recordings (Drive DRT Phone, uploaded 16:36 UTC,
 note "Eval trade."), 1080x2340, ES1! 1m, silent audio track (-91 dB):
 V1 Screen_Recording_20261106_111503_TradingView.mp4 (1TLu0TWaZvMIOvwNMuNB0tVzMzwErr8nA, 1:46.0, ~19 fps), ~11:13:17-11:15:03 ET.
-  Short 2 @ 7,430.75 (filled before the recording, 11:13 bar). No stop order on the chart. Manual close (tap on the
+  Short 2 @ 7,430.75 (filled before the recording, 11:13 bar). 4 pt mental stop (Tim: account type allows no TP/SL orders); price jumped before the close filled. Manual close (tap on the
   position's X at ~102.8 s), bought 2 @ 7,435.75: -5.00 pts x 2 = -$500.
 V2 Screen_Recording_20261106_112200_TradingView.mp4 (11c_OcLaD-LYWNFtXoAMlPP6wQ-FH7mok, 6:01.0, ~13.5 fps), ~11:15:59-11:22:00 ET.
-  Short 2 @ 7,436.25 (11:15 bar, before the recording). No stop order on the chart. Open P&L peaked +$1,275 at ~290 s
+  Short 2 @ 7,436.25 (11:15 bar, before the recording). Target 7,406.25 (drawn line, Tim). Open P&L peaked +$1,275 at ~290 s
   (7,423.50). Manual close (tap on X at ~332.5 s, ~11:21:31 ET), bought 2 @ 7,433.75: +2.50 pts x 2 = +$250.
 Cut (10 fps scan + 1 fps / 0.5 fps full-frame sheets): V1 14.7-27.2 s (OHLC legend, drawing toolbar, horizontal-line
 menus incl. an alert item naming the indicator), V1 68.1-70.8 s (indicator legend expanded with indicator names);
@@ -95,7 +95,7 @@ def card(account):
              ("Open profit hit +$1,275", 38, False, MUTED, 765),
              ("Closed 7,433.75  |  +2.50 pts  |  +$250", 38, True, GREEN, 820),
              ("Day: -$250 gross", 46, True, CREAM, 940),
-             ("Plan the exit before you're in profit.", 38, False, MUTED, 1030)]
+             ("Mental stop slipped. Kept what was left.", 38, False, MUTED, 1030)]
     if account == "eval":
         lines.append(("Evaluation account", 36, False, MUTED, 1180))
     lines.append(("Define your risk. Wait for your setup.", 42, True, CREAM, 1300))
