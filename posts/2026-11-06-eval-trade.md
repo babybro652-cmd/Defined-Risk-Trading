@@ -22,7 +22,14 @@ Account balance (down $1,227 since 11/5, ~$774 above the $48,000 floor before to
   Trade 1 lost 5 pts, more than the 3.5-4 pt hard stop. No bracket on the chart. Trades ran ~11:13-11:21 AM ET, inside work hours and
   not the ~10 AM lunch, so no time of day anywhere in public copy (the video shows no clock: status bar and time axis are covered).
 
-## Questions for Tim
+## Tim's answers (via Jarvis, 11/6)
+- His account type doesn't allow TP or SL orders, so no order lines on the chart. Not for public copy; say "mental stop".
+- Trade 1: 4 pt mental stop; price jumped before the close went through, filled at -5. Lesson: a mental stop can slip in a fast move.
+- Trade 2: target was the 7,406.25 line. Not looking for a full reversal; got out once price reversed back toward his entry.
+- Flip-level (7,428) line removed from the Skool recap and all captions.
+- STILL OPEN: red day OK to post? "eval" OK in captions and on the end card? Posting times.
+
+## Questions for Tim (original)
 1. Was there a stop (bracket at the broker, or a mental stop)? None shows on the chart. If it was 4 pts, why -5 on trade 1?
 2. Both exits look manual (tap on X). Confirm, and why trade 2 at +$250 after +$1,275 open (target, fear, rule)?
 3. Is 7,406.25 (green line) your target? Captions don't claim one.
@@ -42,19 +49,19 @@ full-res frames (Bias cell, title band, cover, end card). 56.5 s, 1080x1920, 30 
 
 ## Media (script `posts/media/2026-11-06/phone/make_trade_reel_1106.py [--account eval|none]`)
 Time-lapse: V1 ~16 s (real speed on the exit), V2 ~31 s (real speed on the exit), title band "Trade 1 / Short 2 ES with the sell bias",
-"Trade 2 / Same idea, second entry", end card with both trades, open profit +$1,275, "Day: -$250 gross", "Plan the exit before you're
-in profit.", "Evaluation account", "Define your risk. Wait for your setup."
+"Trade 2 / Same idea, second entry", end card with both trades, open profit +$1,275, "Day: -$250 gross", "Mental stop slipped. Kept
+what was left." (revised; first uploads c7840dbd / b0ba8752 had "Plan the exit before you're in profit.", do NOT use), "Evaluation account", "Define your risk. Wait for your setup."
 Music (not used by any 11/5-11/6 post): DRT this_pain_is_soft, personal waiting_tttt. AUDIO QA: PASS both, -17.9 LUFS, no clipping.
 | File | Blotato URL | sha256 match |
 |---|---|---|
-| es-1106-eval.mp4 (DRT TikTok, IG, FB, YouTube) | https://database.blotato.io/storage/v1/object/public/public_media/246c6cef-6cbe-4b5b-81a9-7bb84481df9c/c7840dbd-9876-48c8-a895-f8e68a5ba0a3.mp4 | yes |
-| es-1106-eval-personal.mp4 (personal TikTok) | https://database.blotato.io/storage/v1/object/public/public_media/246c6cef-6cbe-4b5b-81a9-7bb84481df9c/b0ba8752-586b-42b1-a64a-787c516cf451.mp4 | yes |
+| es-1106-eval.mp4 (DRT TikTok, IG, FB, YouTube) | https://database.blotato.io/storage/v1/object/public/public_media/246c6cef-6cbe-4b5b-81a9-7bb84481df9c/9662b876-c024-432e-a13e-94fa0e583381.mp4 | yes |
+| es-1106-eval-personal.mp4 (personal TikTok) | https://database.blotato.io/storage/v1/object/public/public_media/246c6cef-6cbe-4b5b-81a9-7bb84481df9c/28d94fdb-5c2d-4ed8-a4f6-ca4ad3296d75.mp4 | yes |
 
-## Captions (5-gram OK vs each other and 119 caption blocks 10/28-11/6; no em dashes, filler, AMD/CRT, time of day, balances)
+## Captions (REVISED 11/6 after Tim's answers; 5-gram OK vs each other and 119 caption blocks 10/28-11/6; no em dashes, filler, AMD/CRT, time of day, balances, flip level, no mention of TP/SL order limits)
 
-TikTok DRT (58063), 135 chars before hashtags, isAiGenerated false, PUBLIC_TO_EVERYONE
+TikTok DRT (58063), 139 chars before hashtags, isAiGenerated false, PUBLIC_TO_EVERYONE
 ```
-Sell bias was right. First ES short lost $500. Shorted again, open profit hit +$1,275, and I closed it at +$250. Day: -$250 on an eval.
+Right bias, red day. My 4 pt mental stop slipped in a fast move: -$500. Next short hit +$1,275 open, then reversed. Kept +$250, not a loss.
 
 #definedrisktrading #esfutures #daytrading #propfirm
 ```
@@ -64,10 +71,11 @@ Right direction, red day. Here's how that happens.
 
 My read before the open was sells, and ES did sell. I still finished the day on my eval account down $250.
 
-Trade 1: short 2 ES at 7,430.75. Price pushed against me, so I bailed at 7,435.75. -5.00 points a contract, -$500.
-Trade 2: shorted again at 7,436.25. This one worked. Open profit reached +$1,275, then the bounce came and I settled for 7,433.75, +$250.
+Trade 1: short 2 ES at 7,430.75. My mental stop was 4 points. The market leapt past it before the close order executed, and I got out at 7,435.75. -5.00 points a contract, -$500. A mental stop can slip when the market moves fast.
 
-A good read doesn't pay by itself. I gave back most of the winner because the exit wasn't decided ahead of time. The fix: know where you're taking profit before you click sell.
+Trade 2: shorted again at 7,436.25, aiming for 7,406.25. Open profit reached +$1,275, then price retraced nearly to where I got in. I took the +$250 that was left instead of letting a winner turn red.
+
+Two lessons: size your risk with room for slippage, and when a trade comes back on you, protect what's left.
 
 #MyHobbyismyFREEDOM #definedrisktrading #esfutures #propfirm #tradingdiscipline
 ```
@@ -75,23 +83,23 @@ Facebook (50185, page 993318963868124)
 ```
 I called sells this morning and ES sold off. I still closed my eval account $250 red. Here's the honest breakdown.
 
-My first short was 2 ES at 7,430.75. It went against me, and I exited at 7,435.75, down $500.
+My first short was 2 ES at 7,430.75, with a mental stop 4 points away. Price spiked through it before my exit filled, so I was out at 7,435.75, down $500. That's the catch with a mental stop: in a fast market it can slip.
 
-I took the idea again at 7,436.25. That one moved my way, about 13 points at its best, which showed +$1,275 in open profit. Price bounced before I locked any of it in, and the trade ended at 7,433.75, +$250.
+I took the idea again at 7,436.25 with my target at 7,406.25. It moved my way, about 13 points at its best, +$1,275 in open profit. Then the move turned and came all the way back toward my entry. Rather than watch a winner become a loser, I closed at 7,433.75 for +$250.
 
-Being right on direction isn't the same as a green day. Profit taking has to be planned before you're in the trade, not decided once the money is on the screen.
+Being right on direction isn't the same as a green day. Risk can slip and winners can come back, so know ahead of time what you'll do when they do.
 ```
 YouTube Short (48727). Title (43 chars): `Right Bias, Red Day: 2 ES Shorts on an Eval`. privacyStatus public, shouldNotifySubscribers false, isMadeForKids false, containsSyntheticMedia false.
 ```
-The sell read was correct, yet the day closed at -$250. A losing short for -$500, then a second short that reached +$1,275 open and ended at +$250.
+The sell read was correct, yet the day closed at -$250. A 4 point mental stop slipped to -$500 in a fast move, then a second short reached +$1,275 open, reversed, and closed at +$250.
 
 Education only. Not financial advice.
 
 #shorts #esfutures #propfirm
 ```
-Personal TikTok (59764), 127 chars, isAiGenerated false
+Personal TikTok (59764), 136 chars, isAiGenerated false
 ```
-Called sells and the market sold. Still went red. Lost $500, then watched +$1,275 shrink to +$250. Lesson: plan the exit first.
+Called sells, market sold, still went red. Mental stop slipped for -$500. Next one was up $1,275, gave nearly all of it back, kept $250.
 
 #MyHobbyismyFREEDOM #esfutures #propfirm
 ```
@@ -102,25 +110,25 @@ TITLE
 Friday 11/6 Recap: Right on Direction, Red on the Day
 
 POST
-Today's plan was sells only. London poked through the Asia high into the thin area around 7,414 to 7,428 and got rejected, so I was waiting on a New York short.
+Today's plan was sells only. London poked through the Asia high into the thin area above it and got rejected, so I was waiting on a New York short.
 
-ES did sell, and I still finished my eval account $250 red. I'm posting it anyway because this is the lesson I needed.
+The market went my way, and I still ended the day $250 down on the eval.
 
 My two trades:
-- Short 2 ES at 7,430.75. It ran up against me, so I covered at 7,435.75. Down 5 points per contract, -$500.
-- Second short, 2 ES at 7,436.25, and it moved my way. It dropped about 13 points at its best, +$1,275 open. Then it bounced, and I covered at 7,433.75 for +2.5 on each, +$250.
+- Short 2 ES at 7,430.75, mental stop 4 points above. ES spiked and my exit filled a point late at 7,435.75. Down 5 points per contract, -$500.
+- Second short, 2 ES at 7,436.25, target 7,406.25. Best point was roughly 13 points in my favor, +$1,275 open. Price then retraced most of the move, and I covered at 7,433.75 for +2.5 on each, +$250.
 
 Net: -$250 before fees.
 
 What I'm taking from it:
 - A correct bias doesn't pay you. Your entry and your exit do.
-- Both entries sat above 7,428, the level I said kills the sell idea if price holds there. Price didn't hold, but I was early.
-- On the winner I never decided where I'd take profit. The first target, about 7,388, was 40+ points away, and I gave back $1,000 of open profit waiting.
+- Mental stops slip in fast moves. My 4 points turned into 5, so size for an extra point or two.
+- I had a target. When price reversed on me instead, I took what was left rather than let a winner turn into a loss.
 
 Video is in the post.
 
 DISCUSSION
-Have you ever been right on direction and still lost money on the day? What was missing: the entry, the stop or the exit?
+Has a mental stop ever slipped on you, or has a winner reversed before your target? How did you handle it?
 
 Define your risk, wait for your setup. Let's have a disciplined day.
 
