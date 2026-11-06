@@ -21,3 +21,6 @@
 2026-11-03|DET @ TBL|Arvidsson,Guentzel|Raymond,Hagel
 2026-11-03|WPG @ MTL|Connor,Slafkovsky|Perfetti,L. Hutson
 2026-11-03|UTA @ TOR|Schmaltz,Matthews|Guenther,Nylander
+2026-11-06|CBJ @ BUF|Kent Johnson,Tage Thompson|Adam Fantilli,Jack Quinn
+2026-11-06|SJS @ MIN|Macklin Celebrini,Kirill Kaprizov|Will Smith,Matt Boldy
+2026-11-06|ANA @ CGY|Cutter Gauthier,Joel Farabee|Beckett Sennecke,William Stromgren
