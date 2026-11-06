@@ -224,3 +224,7 @@ A push with these rules goes out Sun-Thu 6:58 PM ET, before the overnight sessio
 
 ## Trade uploads also go to Tim's personal TikTok (Tim, 11/2)
 For every trade recording Tim drops in DRT Phone, also build a personal TikTok reel for account 59764 (@timothywilliams9902): same cleaned trade reel (full-frame privacy QA), with music via drt/audio/add_audio.py (TikTok rule), and a caption in Tim's personal voice (first person, casual, short, under 150 chars before hashtags, 2-4 hashtags incl. #MyHobbyismyFREEDOM), unique vs the DRT captions (5-gram check). isAiGenerated false, PUBLIC_TO_EVERYONE. It's part of the same trade post: draft it with the others and schedule only on Tim's go, about 30-60 minutes after the DRT TikTok.
+
+## Pre-scheduled posts to respect (added 11/5)
+- Sat 11/7: Keaira testimonial at 10:00 TikTok, 10:30 IG, 11:00 FB, 11:30 YouTube Short. Daily routine: SKIP the 6:12 PM YouTube Short that day; keep other posts 30+ min from these slots; count them in the caps.
+- Mon 11/9: Paper-to-real-money at 10:00 TikTok, 10:30 IG carousel, 11:00 FB, 11:30 YouTube Short. Daily routine: SKIP the 6:12 PM Short. Monday IG carousel routine (6:52 PM): SKIP, the 10:30 carousel is Monday's carousel (see posts/2026-11-09-monday-ig-carousel.md).
