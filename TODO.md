@@ -12,7 +12,7 @@ Newest decisions win; move finished items to Done with the date.
 ### Personal
 - [x] Pay the light bill (my half $51.25 of $102.50) and internet ($50.77). Paid 10/22.
 - [ ] Charger oil change (past due, ~188k miles): 5.7 Hemi, 7 qt 5W-20 high-mileage + MO-339 filter.
-- [ ] Google Workspace: PAY NOW. Business Starter ($8.40/mo) since 10/22. 11/1 charge on card 2460 DECLINED (insufficient funds); invoice 5723568933 posted 11/2. Suspension now Dec 3. Pay or update card at https://admin.google.com/ac/billing/accounts and check for any leftover 10/20 balance.
+- [ ] Google Workspace: moved to Thu 11/12 (Tim, 11/6) with the other failed payments (Canva, PayPal card, Bison Green). Business Starter ($8.40/mo) since 10/22. 11/1 charge on card 2460 DECLINED (insufficient funds); invoice 5723568933 posted 11/2. Suspension now Dec 3. Pay or update card at https://admin.google.com/ac/billing/accounts and check for any leftover 10/20 balance.
 - [ ] Check the 5 Skool login codes from 9/29. If they weren't all you, change the Skool password.
 - [ ] Add a second sign-in method to Stripe.
 - [ ] Confirm the support@ recovery email change (8/23) was you.
@@ -87,6 +87,7 @@ Newest decisions win; move finished items to Done with the date.
 - 10/19 401(k) withdrawal: received and spent (Tim). Paycheck split: 80% to main account, 20% to Chime.
 - 10/1 Verizon past-due paid.
 - 10/1 October rent ($675) paid.
+- 11/5 November rent paid: $850 (Tim covered $175 extra; spouse was short).
 - 9/30 Faceless channel: paused (theme-page research verified; skip paid coaching; a $0 30-day Reddit-story test is ready if revisited).
 - 9/30 support@definedrisktrading.com forwards to babybro652@gmail.com (confirmed).
 - 9/30 Install CRT Pro logging (Pine code + tracker + alert), then Entry/SL/TP1-3 added and reinstalled.
