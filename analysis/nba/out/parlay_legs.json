@@ -3,20 +3,12 @@
  "sport": "NBA",
  "legs": [
   {
-   "player": "Wendell Carter Jr.",
+   "player": "Anthony Black",
    "team": "ORL",
    "game": "ORL @ PHX",
    "market": "3+ threes",
-   "p": 0.061,
-   "note": "85 starts"
-  },
-  {
-   "player": "Franz Wagner",
-   "team": "ORL",
-   "game": "ORL @ PHX",
-   "market": "3+ threes",
-   "p": 0.151,
-   "note": "39 starts"
+   "p": 0.306,
+   "note": "43 starts"
   },
   {
    "player": "Desmond Bane",
@@ -27,20 +19,20 @@
    "note": "89 starts"
   },
   {
-   "player": "Anthony Black",
+   "player": "Franz Wagner",
    "team": "ORL",
    "game": "ORL @ PHX",
    "market": "3+ threes",
-   "p": 0.306,
-   "note": "43 starts"
+   "p": 0.151,
+   "note": "39 starts"
   },
   {
-   "player": "Dillon Brooks",
-   "team": "PHX",
+   "player": "Wendell Carter Jr.",
+   "team": "ORL",
    "game": "ORL @ PHX",
    "market": "3+ threes",
-   "p": 0.351,
-   "note": "62 starts"
+   "p": 0.061,
+   "note": "85 starts"
   },
   {
    "player": "Devin Booker",
@@ -57,6 +49,14 @@
    "market": "3+ threes",
    "p": 0.267,
    "note": "33 starts"
+  },
+  {
+   "player": "Dillon Brooks",
+   "team": "PHX",
+   "game": "ORL @ PHX",
+   "market": "3+ threes",
+   "p": 0.351,
+   "note": "62 starts"
   },
   {
    "player": "Miles Bridges",
