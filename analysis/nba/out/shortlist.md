@@ -4,9 +4,9 @@ Tip winner scores first 66% (25-26).
 
 - **First basket: Victor Wembanyama** (SA @ SAC 10:00). Est 25% (fair +296; old model 28%; tip jumper x1.2 if his team wins the tip; chain model): SA scores first 66%; first pts 24/57 and first shot 22/57 starts 25-26, 4/8 26-27, first 3 FGA 1.06 per start, FG 50%; SAC vs F x1.13
 - **First basket: Luka Doncic** (LAL vs POR 10:00). Est 20% (fair +407; old model 17%; chain model): LAL scores first 55%; first pts 22/65 and first shot 33/65 starts 25-26, 3/8 26-27, first 3 FGA 1.10 per start, FG 48%; POR vs G x1.03
-- **First basket: Scottie Barnes** (TOR @ MIL 8:00). Est 16% (fair +519; old model 10%; chain model): TOR scores first 64%; first pts 12/80 and first shot 13/80 starts 25-26, 1/8 26-27, first 3 FGA 0.47 per start, FG 50%; MIL vs F x1.00; Day-To-Day
+- **First basket: RJ Barrett** (TOR @ MIL 8:00). Est 16% (fair +528; old model 14%; chain model): TOR scores first 65%; first pts 9/57 and first shot 14/57 starts 25-26, 3/8 26-27, first 3 FGA 0.62 per start, FG 49%; MIL vs F x1.00
+- **First basket: Collin Murray-Boyles** (TOR @ MIL 8:00). Est 16% (fair +529; old model 15%; chain model): TOR scores first 65%; first pts 4/22 and first shot 6/22 starts 25-26, 1/2 26-27, first 3 FGA 0.67 per start, FG 54%; MIL vs F x1.00
 - **First basket: Jarrett Allen** (CLE vs PHI 7:30). Est 16% (fair +531; old model 16%; tip jumper x1.2 if his team wins the tip; chain model): CLE scores first 59%; first pts 19/56 and first shot 11/56 starts 25-26, 4/8 26-27, first 3 FGA 0.61 per start, FG 61%; PHI vs C x1.07; Day-To-Day
-- **First basket: RJ Barrett** (TOR @ MIL 8:00). Est 16% (fair +538; old model 14%; chain model): TOR scores first 64%; first pts 9/57 and first shot 14/57 starts 25-26, 3/8 26-27, first 3 FGA 0.62 per start, FG 49%; MIL vs F x1.00
 - **First basket: Evan Mobley** (CLE vs PHI 7:30). Est 14% (fair +594; old model 16%; chain model): CLE scores first 59%; first pts 20/63 and first shot 19/63 starts 25-26, 2/8 26-27, first 3 FGA 0.79 per start, FG 54%; PHI vs C x1.07
 - **First basket: Jayson Tatum** (BOS @ CHA 7:00). Est 14% (fair +615; old model 15%; chain model): BOS scores first 54%; first pts 2/16 and first shot 2/16 starts 25-26, 3/7 26-27, first 3 FGA 0.70 per start, FG 42%; CHA vs F x1.03
 - **First basket: Alex Sarr** (WSH @ ATL 7:00). Est 14% (fair +619; old model 14%; chain model): WSH scores first 58%; first pts 10/48 and first shot 13/48 starts 25-26, 1/7 26-27, first 3 FGA 0.69 per start, FG 49%; ATL vs C x1.07
@@ -40,9 +40,9 @@ Tip winner scores first 66% (25-26).
 - OKC @ MEM 8:00: tip MEM 59% (Isaiah Hartenstein vs Zach Edey); OKC scores first 49%
   - MEM: 1st-shot pick Ty Jerome 14% (fair +620; scores on MEM's first shot 13%); 2nd-chance pick Zach Edey 12% (fair +749; after a miss 11%)
   - OKC: 1st-shot pick Ajay Mitchell 11% (fair +777; scores on OKC's first shot 12%); 2nd-chance pick Shai Gilgeous-Alexander 10% (fair +877; after a miss 12%)
-- TOR @ MIL 8:00: tip TOR 78% (Jakob Poeltl vs Myles Turner); TOR scores first 64%
-  - TOR: 1st-shot pick Scottie Barnes 16% (fair +519; scores on TOR's first shot 13%); 2nd-chance pick RJ Barrett 16% (fair +538; after a miss 12%)
-  - MIL: 1st-shot pick Jaime Jaquez Jr. 8% (fair +1171; scores on MIL's first shot 10%); 2nd-chance pick Tyler Herro 7% (fair +1394; after a miss 12%)
+- TOR @ MIL 8:00: tip TOR 78% (Jakob Poeltl vs Myles Turner); TOR scores first 65%
+  - TOR: 1st-shot pick Collin Murray-Boyles 16% (fair +529; scores on TOR's first shot 13%); 2nd-chance pick RJ Barrett 16% (fair +528; after a miss 12%)
+  - MIL: 1st-shot pick Jaime Jaquez Jr. 8% (fair +1190; scores on MIL's first shot 10%); 2nd-chance pick Tyler Herro 7% (fair +1419; after a miss 12%)
 - MIN @ NO 8:00: tip MIN 72% (Rudy Gobert vs Karlo Matkovic); MIN scores first 57%
   - MIN: 1st-shot pick Jonathan Kuminga 14% (fair +622; scores on MIN's first shot 12%); 2nd-chance pick LaMelo Ball 13% (fair +664; after a miss 14%)
   - NO: 1st-shot pick Trey Murphy III 9% (fair +985; scores on NO's first shot 11%); 2nd-chance pick Zion Williamson 9% (fair +996; after a miss 12%)
@@ -62,7 +62,7 @@ Dunk/layup includes tip-ins and putbacks; 2pt jumper includes floaters and hooks
 - PHI @ CLE 7:30: first points Dunk/layup 31% (+221), 2pt jumper 30% (+238), 3-pointer 24% (+324), Free throw 16% (+537); first basket Dunk/layup 37% (+173), 2pt jumper 33% (+207), 3-pointer 31% (+225)
 - UTAH @ DAL 8:00: first points Dunk/layup 34% (+191), 2pt jumper 33% (+201), 3-pointer 21% (+369), Free throw 11% (+809); first basket Dunk/layup 38% (+160), 2pt jumper 37% (+172), 3-pointer 25% (+304)
 - OKC @ MEM 8:00: first points Dunk/layup 31% (+219), 2pt jumper 26% (+288), 3-pointer 31% (+219), Free throw 12% (+769); first basket Dunk/layup 35% (+189), 2pt jumper 30% (+230), 3-pointer 35% (+184)
-- TOR @ MIL 8:00: first points Dunk/layup 38% (+166), 2pt jumper 22% (+359), 3-pointer 34% (+193), Free throw 6% (+1447); first basket Dunk/layup 41% (+146), 2pt jumper 23% (+329), 3-pointer 36% (+178)
+- TOR @ MIL 8:00: first points Dunk/layup 38% (+166), 2pt jumper 22% (+359), 3-pointer 34% (+192), Free throw 6% (+1454); first basket Dunk/layup 41% (+146), 2pt jumper 23% (+330), 3-pointer 36% (+178)
 - MIN @ NO 8:00: first points Dunk/layup 36% (+180), 2pt jumper 26% (+287), 3-pointer 27% (+266), Free throw 11% (+801); first basket Dunk/layup 39% (+159), 2pt jumper 30% (+236), 3-pointer 32% (+216)
 - POR @ LAL 10:00: first points Dunk/layup 31% (+222), 2pt jumper 25% (+304), 3-pointer 31% (+225), Free throw 13% (+645); first basket Dunk/layup 35% (+183), 2pt jumper 27% (+264), 3-pointer 37% (+169)
 - SA @ SAC 10:00: first points Dunk/layup 38% (+162), 2pt jumper 28% (+257), 3-pointer 21% (+366), Free throw 12% (+712); first basket Dunk/layup 44% (+129), 2pt jumper 30% (+230), 3-pointer 26% (+285)
@@ -70,11 +70,11 @@ Dunk/layup includes tip-ins and putbacks; 2pt jumper includes floaters and hooks
 Best player + method (fair price; bet only if the book pays more):
 
 - **Victor Wembanyama first basket: Dunk/layup** (SA @ SAC 10:00). Est 14.9% (fair +573) = FB 25% x 59% if he scores first; his first-FG sample 36, made FGs 825
+- **Collin Murray-Boyles first basket: Dunk/layup** (TOR @ MIL 8:00). Est 11.9% (fair +739) = FB 16% x 75% if he scores first; his first-FG sample 7, made FGs 288
 - **Walker Kessler first basket: Dunk/layup** (LAL vs POR 10:00). Est 11.9% (fair +743) = FB 13% x 89% if he scores first; his first-FG sample 4, made FGs 194
 - **Neemias Queta first basket: Dunk/layup** (BOS @ CHA 7:00). Est 9.7% (fair +933) = FB 13% x 76% if he scores first; his first-FG sample 23, made FGs 410
 - **Luka Doncic first basket: 2pt jumper** (LAL vs POR 10:00). Est 9.6% (fair +940) = FB 20% x 49% if he scores first; his first-FG sample 29, made FGs 973
 - **Jarrett Allen first basket: Dunk/layup** (CLE vs PHI 7:30). Est 9.4% (fair +967) = FB 16% x 59% if he scores first; his first-FG sample 23, made FGs 460
-- **Scottie Barnes first basket: 2pt jumper** (TOR @ MIL 8:00). Est 8.9% (fair +1023) = FB 16% x 55% if he scores first; his first-FG sample 15, made FGs 799
 - **LaMelo Ball first basket: 3-pointer** (MIN @ NO 8:00). Est 8.6% (fair +1058) = FB 13% x 66% if he scores first; his first-FG sample 25, made FGs 665
 - **Rudy Gobert first basket: Dunk/layup** (MIN @ NO 8:00). Est 8.6% (fair +1062) = FB 9% x 96% if he scores first; his first-FG sample 20, made FGs 395
 
@@ -85,7 +85,7 @@ Best player + method (fair price; bet only if the book pays more):
 - PHI @ CLE: our top Jarrett Allen (16%): differs (StarTool stars Jaylen Brown, Donovan Mitchell; bombs Joel Embiid, James Harden)
 - UTAH @ DAL: our top Lauri Markkanen (12%): agree (StarTool star)
 - OKC @ MEM: our top Ty Jerome (14%): agree (StarTool star)
-- TOR @ MIL: our top Scottie Barnes (16%): differs (StarTool stars RJ Barrett, Tyler Herro; bombs Immanuel Quickley, Jaime Jaquez Jr.)
+- TOR @ MIL: our top RJ Barrett (16%): agree (StarTool star)
 - MIN @ NO: our top Jonathan Kuminga (14%): differs (StarTool stars LaMelo Ball, Zion Williamson; bombs Ayo Dosunmu, Dejounte Murray)
 - POR @ LAL: our top Luka Doncic (20%): agree (StarTool star)
 - SA @ SAC: our top Victor Wembanyama (25%): agree (StarTool star)
@@ -97,7 +97,7 @@ Best player + method (fair price; bet only if the book pays more):
 - PHI @ CLE 7:30 ET: Joel Embiid vs Jarrett Allen; away wins tip 31%, away scores first 41%
 - UTAH @ DAL 8:00 ET: Jaxson Hayes vs Daniel Gafford; away wins tip 50%, away scores first 50%
 - OKC @ MEM 8:00 ET: Isaiah Hartenstein vs Zach Edey; away wins tip 41%, away scores first 49%
-- TOR @ MIL 8:00 ET: Jakob Poeltl vs Myles Turner; away wins tip 78%, away scores first 64%
+- TOR @ MIL 8:00 ET: Jakob Poeltl vs Myles Turner; away wins tip 78%, away scores first 65%
 - MIN @ NO 8:00 ET: Rudy Gobert vs Karlo Matkovic; away wins tip 72%, away scores first 57%
 - POR @ LAL 10:00 ET: Donovan Clingan vs Walker Kessler; away wins tip 41%, away scores first 45%
 - SA @ SAC 10:00 ET: Victor Wembanyama vs Domantas Sabonis; away wins tip 89%, away scores first 66%
