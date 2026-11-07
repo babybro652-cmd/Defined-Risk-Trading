@@ -231,3 +231,6 @@ For every trade recording Tim drops in DRT Phone, also build a personal TikTok r
 
 ## Skool link (Tim, 11/6)
 Skool community: https://www.skool.com/defined-risk-trading-6797/about. Use this for bio links (DRT TikTok website field once available, IG, FB). Captions still carry no signup CTA unless the routine allows it.
+
+## Micros (MES) in education posts (Tim, 11/6-11/7)
+Tim kept two education posts that suggest MES for small accounts. OK in general education posts. Never say or imply Tim himself trades micros (he trades ES); his "cut the micros" (11/5) applies to posts about his own trading.
