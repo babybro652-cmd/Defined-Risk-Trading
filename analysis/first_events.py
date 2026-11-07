@@ -30,7 +30,8 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 LOG = os.path.join(HERE, 'first_events', 'log.csv')
 COLS = ['date', 'sport', 'game', 'first_shot', 'first_shot_result', 'away_first_shot',
         'home_first_shot', 'first_attempt_any', 'first_score', 'first_points_any', 'note',
-        'first_basket_method', 'first_points_method', 'first_shot_method', 'fga_to_first_make']
+        'first_basket_method', 'first_points_method', 'first_shot_method', 'fga_to_first_make',
+        'tip_jumpers', 'tip_winner', 'tip_winner_scored_first']
 sys.path.insert(0, os.path.join(HERE, 'nba'))
 
 
@@ -70,7 +71,19 @@ def nba(date):
         team_first = {tid: next((p for p in fga if p['team']['id'] == tid), None) for tid in (away, home)}
         made = next((p for p in fga if p.get('scoringPlay')), None)
         from fb_method import classify
+        # opening jump ball: jumpers, winning team, and whether that team scored the game's first points (FT counts)
+        jb = next((p for p in g.get('plays', []) if p['period']['number'] == 1 and p['type']['text'].lower().startswith('jump')), None)
+        tipj = tipw = tipsf = ''
+        if jb:
+            jp = [names.get(q['athlete']['id'], '?') for q in (jb.get('participants') or [])[:2]]
+            tipj = ' vs '.join(jp)
+            wt = (jb.get('team') or {}).get('id')
+            if wt:
+                tipw = team_abbr.get(wt, '')
+                if pts:
+                    tipsf = 'yes' if pts[0]['team']['id'] == wt else 'no'
         rows.append({
+            'tip_jumpers': tipj, 'tip_winner': tipw, 'tip_winner_scored_first': tipsf,
             'date': date, 'sport': 'NBA', 'game': ev['shortName'],
             'first_shot': who(first) if first else '',
             'first_shot_result': ('made' if first.get('scoringPlay') else 'missed') if first else '',
@@ -183,7 +196,50 @@ def backfill_shots():
     print(f'backfilled first-shot method / FGA-to-first-make on {n} NBA rows over {len(dates)} dates')
 
 
+def backfill_tips():
+    """Fill tip_jumpers / tip_winner / tip_winner_scored_first on old NBA rows from the model's game files
+    (analysis/nba/data/games_*.json, built from the same ESPN play-by-play); no network needed."""
+    ddir = os.path.join(HERE, 'nba', 'data')
+    names = {k: v['name'] for k, v in json.load(open(os.path.join(ddir, 'rosters.json'))).items()}
+    games = {}
+    for fn in sorted(os.listdir(ddir)):
+        if fn.startswith('games_') and fn.endswith('.json'):
+            d = json.load(open(os.path.join(ddir, fn)))
+            for x in (d.values() if isinstance(d, dict) else d):
+                if isinstance(x, dict) and x.get('tip'):
+                    games[(x['date'], x['away'], x['home'])] = x
+    for x in games.values():
+        for pr in x.get('pl', []):
+            names.setdefault(pr[0], pr[0])
+    with open(LOG) as fh:
+        rows = list(csv.DictReader(fh))
+    n = 0
+    for r in rows:
+        if r['sport'] != 'NBA' or r.get('tip_winner'):
+            continue
+        try:
+            a, h = [t.strip() for t in r['game'].split('@')]
+        except ValueError:
+            continue
+        x = games.get((r['date'], a, h))
+        if not x:
+            continue
+        t = x['tip']
+        r['tip_jumpers'] = ' vs '.join(names.get(j[0], j[0]) for j in t['j'])
+        r['tip_winner'] = t['w']
+        if x.get('fp'):
+            r['tip_winner_scored_first'] = 'yes' if x['fp'][1] == t['w'] else 'no'
+        n += 1
+    with open(LOG, 'w', newline='') as fh:
+        w = csv.DictWriter(fh, fieldnames=COLS)
+        w.writeheader()
+        w.writerows([{k: r.get(k, '') or '' for k in COLS} for r in rows])
+    print(f'backfilled tip columns on {n} NBA rows')
+
+
 def main():
+    if sys.argv[1] == '--backfill-tips':
+        return backfill_tips()
     if sys.argv[1] == '--backfill-methods':
         return backfill_methods()
     if sys.argv[1] == '--backfill-shots':

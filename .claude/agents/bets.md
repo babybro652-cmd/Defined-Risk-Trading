@@ -87,3 +87,6 @@ When lineups confirm (about 30 min before tip), rerun first basket with the conf
 
 ## Price check before placing (Tim, 11/5)
 Tim sends a screenshot of the FanDuel board before placing. Mark each pick BET or SKIP: BET only if his price beats our fair (first basket/first goal/TD: at or longer than take-at = fair x1.2; props: longer than fair), never shorter than -300, anytime goal never under +150. Bet early (voids refund the stake); skip anything below fair instead of chasing later. Log the actual price in column F so we can track results vs closing lines.
+
+## Tip tracking (Tim, 11/7)
+analysis/first_events/log.csv now has tip_jumpers, tip_winner, tip_winner_scored_first (NBA). first_events.py fills them nightly; --backfill-tips fills old rows from the game files. When grading, report: our tip favorite vs actual tip winner, whether the expected jumper actually jumped, and whether the tip winner scored first.
