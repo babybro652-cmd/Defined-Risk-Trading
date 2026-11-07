@@ -424,6 +424,24 @@ def build(slate, log):
                          'note': f"{p['sogpg']:.1f} SOG/G"})
     PAR.write_legs('nhl', today.isoformat(), 'NHL', legs)
 
+    # ---------- per-game dump (11/7): every slate player, for per-game top plays ----------
+    # fg = share of team goals x team scores first x 0.94 (trim for games with no first goal, empty-net and
+    # depth scoring); same method as the 11/5 first goal fair prices.
+    def tgf(tm):
+        c, l, tc, tl = team_row(tm)
+        return blend(c.get('goalsFor', 0), c.get('gamesPlayed', 0), l.get('goalsFor', 0), l.get('gamesPlayed', 0), W) or 3.0
+    dump = []
+    for p in tonight:
+        o = p['opp']
+        game = f"{p['tm']} @ {o['opp']}" if o['at'] == '@' else f"{o['opp']} @ {p['tm']}"
+        fg = (p['gpg'] or 0) / tgf(p['tm']) * tfirst(p['tm']) * 0.94
+        dump.append({'player': p['name'], 'tm': p['tm'], 'pos': p['pos'], 'role': p.get('role', ''), 'game': game,
+                     'hit': p['hit'], 'goal_est': GOAL_F * (p['hit'] or 0), 'gfac': gfac(p), 'gpg': p['gpg'], 'fg': fg,
+                     'tfirst': tfirst(p['tm']), 'over': p['over'], 'sogpg': p['sogpg'], 'l5': p['l5'],
+                     'gp26': p['c']['gp'], 'g26': p['c']['g'], 'opp_goalie': o['g'], 'gstat': o['gstat'], 'gsv': o['gsv'],
+                     'opp_sa': o['sa'], 'opp_ga': o['ga'], 'inj': (p['inj'] or {}).get('status', '')})
+    save(os.path.join(HERE, 'out', 'tonight.json'), {'date': today.isoformat(), 'games': slate_games, 'players': dump})
+
     # ---------- StarTool agree flag (10/30; no blend): our top anytime goal pick per game vs its star/bomb ----------
     st_flags = []
     for p in goal + [x for x in tonight if x['pid'] not in {g['pid'] for g in goal}]:

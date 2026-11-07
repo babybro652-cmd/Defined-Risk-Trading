@@ -1,29 +1,58 @@
-# NHL shortlist 2026-11-06 (not guaranteed)
+# NHL shortlist 2026-11-07 (not guaranteed)
 
-- **Anytime goal: Kirill Kaprizov** (MIN vs SJS). Est 42% (fair +139) = 0.77 x 54% blend; 26-27: 15 G in 17 GP; SJS allows 3.5 GA/G; faces Yaroslav Askarov (unconfirmed, SV .884); bet only at +163 or longer (never shorter than +150)
-- **Anytime goal: Matt Boldy** (MIN vs SJS). Est 30% (fair +237) = 0.77 x 39% blend; 26-27: 7 G in 17 GP; SJS allows 3.5 GA/G; faces Yaroslav Askarov (unconfirmed, SV .884); bet only at +270 or longer (never shorter than +150)
-- **Anytime goal: Tage Thompson** (BUF vs CBJ). Est 34% (fair +192) = 0.77 x 44% blend; 26-27: 10 G in 15 GP; CBJ allows 3.0 GA/G; faces Cam Talbot (unconfirmed, SV .888); bet only at +221 or longer (never shorter than +150)
-- **Anytime goal: Cutter Gauthier** (ANA @ CGY). Est 31% (fair +227) = 0.77 x 40% blend; 26-27: 11 G in 15 GP; CGY allows 3.2 GA/G; faces Dustin Wolf (unconfirmed, SV .895); bet only at +260 or longer (never shorter than +150)
-- **First goal: Joel Eriksson Ek** (MIN vs SJS). Scored first in 4/70 games in 25-26, 3/17 in 26-27; 0.31 goals/G (blend); MIN scores first 61%; Top 6 PP1
-- **First goal: Beckett Sennecke** (ANA @ CGY). Scored first in 3/82 games in 25-26, 2/16 in 26-27; 0.41 goals/G (blend); ANA scores first 48%; Top 6 PP1
-- **First goal: Jack Quinn** (BUF vs CBJ). Scored first in 5/82 games in 25-26, 2/15 in 26-27; 0.35 goals/G (blend); BUF scores first 56%; Top 6 PP1
-- **SOG over 2.5: Matt Boldy** (MIN vs SJS). Over 2.5 in 73% of games (blend); 3.7 SOG/G; L5: 4 3 4 2 3; SJS allows 29.8 SA/G
-- **SOG over 1.5: Cutter Gauthier** (ANA @ CGY). Over 1.5 in 88% of games (blend); 3.9 SOG/G; L5: 3 6 5 10 4; CGY allows 29.9 SA/G; fair -707 is shorter than -300, so take over 2.5 instead (69%, fair -227)
-- **SOG over 1.5: Joel Eriksson Ek** (MIN vs SJS). Over 1.5 in 86% of games (blend); 3.0 SOG/G; L5: 4 3 2 4 5; SJS allows 29.8 SA/G; fair -612 is shorter than -300, so take over 2.5 instead (61%, fair -157)
-- **SOG over 1.5: Kirill Kaprizov** (MIN vs SJS). Over 1.5 in 84% of games (blend); 3.3 SOG/G; L5: 1 2 3 4 2; SJS allows 29.8 SA/G; fair -545 is shorter than -300, so take over 2.5 instead (69%, fair -222)
-- **SOG over 1.5: Macklin Celebrini** (SJS @ MIN). Over 1.5 in 84% of games (blend); 3.7 SOG/G; L5: 5 2 2 6 4; MIN allows 27.8 SA/G; fair -535 is shorter than -300, so take over 2.5 instead (65%, fair -182)
+- **Anytime goal: Leon Draisaitl** (EDM vs VAN). Est 38% (fair +160) = 0.77 x 50% blend; 26-27: 14 G in 17 GP; VAN allows 4.1 GA/G; faces Kevin Lankinen (unconfirmed, SV .865); bet only at +186 or longer (never shorter than +150)
+- **Anytime goal: Connor McDavid** (EDM vs VAN). Est 34% (fair +198) = 0.77 x 44% blend; 26-27: 10 G in 17 GP; VAN allows 4.1 GA/G; faces Kevin Lankinen (unconfirmed, SV .865); bet only at +228 or longer (never shorter than +150)
+- **Anytime goal: Cole Caufield** (MTL @ TOR). Est 35% (fair +189) = 0.77 x 45% blend; 26-27: 11 G in 16 GP; TOR allows 3.5 GA/G; faces Sergei Bobrovsky (unconfirmed, SV .879); bet only at +218 or longer (never shorter than +150)
+- **Anytime goal: Kirill Kaprizov** (MIN vs TBL). Est 43% (fair +135) = 0.77 x 55% blend; 26-27: 16 G in 18 GP; TBL allows 2.9 GA/G; faces Andrei Vasilevskiy (unconfirmed, SV .908); bet only at +158 or longer (never shorter than +150)
+- **First goal: Nathan MacKinnon** (COL vs DET). Scored first in 7/80 games in 25-26, 1/17 in 26-27; 0.61 goals/G (blend); COL scores first 56%; Top 6 PP1
+- **First goal: Jason Robertson** (DAL vs SJS). Scored first in 6/82 games in 25-26, 2/16 in 26-27; 0.53 goals/G (blend); DAL scores first 53%; Top 6 PP1
+- **First goal: Evan Bouchard** (EDM vs VAN). Scored first in 2/82 games in 25-26, 1/17 in 26-27; 0.38 goals/G (blend); EDM scores first 55%; Top pair PP1
+- **SOG over 2.5: Alex DeBrincat** (DET @ COL). Over 2.5 in 78% of games (blend); 3.6 SOG/G; L5: 5 4 4 3 4; COL allows 26.6 SA/G; fair -359 is shorter than -300, so take over 3.5 instead (50%, fair +102)
+- **SOG over 2.5: Matt Boldy** (MIN vs TBL). Over 2.5 in 74% of games (blend); 3.8 SOG/G; L5: 7 4 3 4 2; TBL allows 26.0 SA/G
+- **SOG over 1.5: Jason Robertson** (DAL vs SJS). Over 1.5 in 89% of games (blend); 3.5 SOG/G; L5: 3 5 1 4 3; SJS allows 29.8 SA/G; fair -829 is shorter than -300, so take over 2.5 instead (68%, fair -217)
+- **SOG over 1.5: Jack Hughes** (NJD @ NYI). Over 1.5 in 93% of games (blend); 3.9 SOG/G; L5: 6 5 7 2 6; NYI allows 27.5 SA/G; fair -1262 is shorter than -300, so take over 2.5 instead (68%, fair -211)
+- **SOG over 1.5: Leon Draisaitl** (EDM vs VAN). Over 1.5 in 84% of games (blend); 3.2 SOG/G; L5: 6 4 3 2 2; VAN allows 30.4 SA/G; fair -511 is shorter than -300, so take over 2.5 instead (65%, fair -183)
+
+## Per game, 11/7 morning run (Bets rows 715-729)
+
+Lines: Daily Faceoff line combos 11/5-11/7. Goalies mostly unconfirmed at 8 AM; MIN Pickard confirmed. DFO lists
+Joel Eriksson Ek in MIN's injury group (still on line 1); recheck. Tavares (TOR) on IR. No pick is on the ESPN injury list.
+Prop rule: bet only if longer than fair. Anytime goal: take-at = max(+150, fair with 10% cushion). First goal: take-at = fair x1.2.
+First goal est = share of team goals x team scores first x 0.94 (`out/tonight.json`, field `fg`).
+
+| Game (ET) | Lead SOG play | Anytime goal | First goal |
+|---|---|---|---|
+| FLA @ WSH 12:30 | B. Tkachuk 3+ 69% (-223) | Reinhart 32% (+209, take +241) | Tuch 8% (+1183, take +1439) |
+| STL @ NSH 1:00 | none over 55% | Stamkos 32% (+213, take +245) | pass |
+| NYR @ SEA 5:00 | none over 55% | pass | pass |
+| MTL @ TOR 7:00 | Caufield 3+ 69% (-223); Matthews 4+ 48% (+108) | Caufield 35% (+189, take +218) | Caufield 9% (+983, take +1199) |
+| UTA @ OTT 7:00 | Guenther 3+ 55% (-122), thin | Stutzle 32% (+215, take +247) | pass |
+| NJD @ NYI 7:00 | J. Hughes 4+ 50% (+100); Horvat 3+ 65% | Horvat 29% (+241) | pass |
+| CHI @ CAR 8:00 | Bedard 3+ 69%, but CAR allows 23.4 SA/G | Aho 28% (+260) | pass |
+| SJS @ DAL 8:00 | Robertson 3+ 68% (-213); Celebrini 4+ 50% (+100) | Robertson 31% (+225, take +257) | Robertson 8.5% (+1076, take +1312) |
+| TBL @ MIN 8:00 | Boldy 3+ 74% (-285); Kaprizov 3+ 70% (-233) | Kaprizov 43% (+135, take +158) | Kaprizov 12% (+705, take +866) |
+| DET @ COL 9:00 | DeBrincat 4+ 50% (+100); MacKinnon 4+ 58% (-138) | MacKinnon 35% (+184, take +213) | MacKinnon 8.5% (+1082, take +1318) |
+| PIT @ LAK 9:00 | Panarin 3+ 58% (-138), thin | Panarin 29% (+246) | pass |
+| VAN @ EDM 10:00 | McDavid / Draisaitl 3+ 65% (-186) | Draisaitl 38% (+160, take +186); McDavid 34% (+198, take +228) | Draisaitl 9% (+980, take +1196) |
 
 ## Goalies
 
-- CBJ @ BUF 7:00 ET: Cam Talbot (Unconfirmed) / Colten Ellis (Unconfirmed)
-- SJS @ MIN 8:00 ET: Yaroslav Askarov (Unconfirmed) / Jesper Wallstedt (Unconfirmed)
-- ANA @ CGY 8:00 ET: Lukas Dostal (Unconfirmed) / Dustin Wolf (Unconfirmed)
+- FLA @ WSH 12:30 ET: Akira Schmid (Unconfirmed) / Logan Thompson (Unconfirmed)
+- STL @ NSH 1:00 ET: Joel Hofer (Unconfirmed) / Juuse Saros (Unconfirmed)
+- NYR @ SEA 5:00 ET: Dylan Garand (Unconfirmed) / Joey Daccord (Unconfirmed)
+- MTL @ TOR 7:00 ET: Jacob Fowler (Unconfirmed) / Sergei Bobrovsky (Unconfirmed)
+- UTA @ OTT 7:00 ET: Karel Vejmelka (Unconfirmed) / Linus Ullmark (Unconfirmed)
+- NJD @ NYI 7:00 ET: Jake Allen (Unconfirmed) / Ilya Sorokin (Likely)
+- CHI @ CAR 8:00 ET: Spencer Knight (Unconfirmed) / Pyotr Kochetkov (Unconfirmed)
+- SJS @ DAL 8:00 ET: Alex Nedeljkovic (Unconfirmed) / Jake Oettinger (Unconfirmed)
+- TBL @ MIN 8:00 ET: Andrei Vasilevskiy (Unconfirmed) / Calvin Pickard (Confirmed)
+- DET @ COL 9:00 ET: Daniil Tarasov (Unconfirmed) / Mackenzie Blackwood (Unconfirmed)
+- PIT @ LAK 9:00 ET: Sergei Murashov (Unconfirmed) / Darcy Kuemper (Unconfirmed)
+- VAN @ EDM 10:00 ET: Kevin Lankinen (Unconfirmed) / Tristan Jarry (Unconfirmed)
 
 ## StarTool check (side by side, no blend)
 
-- SJS @ MIN: our top goal pick Kirill Kaprizov (42%): agree (StarTool star)
-- CBJ @ BUF: our top goal pick Tage Thompson (34%): agree (StarTool star)
-- ANA @ CGY: our top goal pick Cutter Gauthier (31%): agree (StarTool star)
+- No StarTool cards saved for this slate yet. Add lines to out/startool/star_bomb.txt (date|AWAY @ HOME|star,star|bomb,bomb) and rerun.
 
 <!-- parlays:begin -->
 ## Parlays 2026-11-07 (2-3 legs, $0.10 to $0.20)
@@ -35,5 +64,12 @@ Only categories that beat their price season to date: NBA 3+ threes, NHL 3+ SOG,
 - **2-leg #2:** Stephen Curry 3+ threes (79%, ORL @ GS) + Nickeil Alexander-Walker 3+ threes (65%, BKN @ ATL). Fair -107 (52%); take +113 or longer.
 - **2-leg #3:** Michael Porter Jr. 3+ threes (67%, BKN @ ATL) + James Harden 3+ threes (65%, NY @ CLE). Fair +130 (44%); take +153 or longer.
 - **3-leg #4:** Nickeil Alexander-Walker 3+ threes (65%, BKN @ ATL) + James Harden 3+ threes (65%, NY @ CLE) + Toumani Camara 3+ threes (59%, SA @ POR). Fair +297 (25%); take +337 or longer.
+
+### NHL
+- **2-leg #1:** Alex DeBrincat 3+ SOG (78%, DET @ COL) + Matt Boldy 3+ SOG (74%, TBL @ MIN). Fair -136 (58%); take -110 or longer.
+- **2-leg #2:** Alex DeBrincat 3+ SOG (78%, DET @ COL) + Kirill Kaprizov 3+ SOG (70%, TBL @ MIN). Fair -120 (55%); take +102 or longer.
+- **2-leg #3:** Matt Boldy 3+ SOG (74%, TBL @ MIN) + Brady Tkachuk 3+ SOG (69%, FLA @ WSH). Fair -105 (51%); take +115 or longer.
+- **3-leg #4:** Kirill Kaprizov 3+ SOG (70%, TBL @ MIN) + Brady Tkachuk 3+ SOG (69%, FLA @ WSH) + Cole Caufield 3+ SOG (69%, MTL @ TOR). Fair +200 (33%); take +230 or longer.
+- **3-leg #5:** Cole Caufield 3+ SOG (69%, MTL @ TOR) + Connor Bedard 3+ SOG (69%, CHI @ CAR) + Jason Robertson 3+ SOG (68%, SJS @ DAL). Fair +208 (32%); take +239 or longer.
 
 <!-- parlays:end -->

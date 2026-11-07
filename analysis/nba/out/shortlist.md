@@ -101,4 +101,11 @@ Only categories that beat their price season to date: NBA 3+ threes, NHL 3+ SOG,
 - **2-leg #3:** Michael Porter Jr. 3+ threes (67%, BKN @ ATL) + James Harden 3+ threes (65%, NY @ CLE). Fair +130 (44%); take +153 or longer.
 - **3-leg #4:** Nickeil Alexander-Walker 3+ threes (65%, BKN @ ATL) + James Harden 3+ threes (65%, NY @ CLE) + Toumani Camara 3+ threes (59%, SA @ POR). Fair +297 (25%); take +337 or longer.
 
+### NHL
+- **2-leg #1:** Alex DeBrincat 3+ SOG (78%, DET @ COL) + Matt Boldy 3+ SOG (74%, TBL @ MIN). Fair -136 (58%); take -110 or longer.
+- **2-leg #2:** Alex DeBrincat 3+ SOG (78%, DET @ COL) + Kirill Kaprizov 3+ SOG (70%, TBL @ MIN). Fair -120 (55%); take +102 or longer.
+- **2-leg #3:** Matt Boldy 3+ SOG (74%, TBL @ MIN) + Brady Tkachuk 3+ SOG (69%, FLA @ WSH). Fair -105 (51%); take +115 or longer.
+- **3-leg #4:** Kirill Kaprizov 3+ SOG (70%, TBL @ MIN) + Brady Tkachuk 3+ SOG (69%, FLA @ WSH) + Cole Caufield 3+ SOG (69%, MTL @ TOR). Fair +200 (33%); take +230 or longer.
+- **3-leg #5:** Cole Caufield 3+ SOG (69%, MTL @ TOR) + Connor Bedard 3+ SOG (69%, CHI @ CAR) + Jason Robertson 3+ SOG (68%, SJS @ DAL). Fair +208 (32%); take +239 or longer.
+
 <!-- parlays:end -->
