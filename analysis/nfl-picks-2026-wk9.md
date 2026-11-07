@@ -3,7 +3,7 @@
 Prepared Sat 11/7/2026 from `analysis/nfl/build_tracker.py --week 9 --slate 9` (2025 + 2026 Weeks 1 to 8 + TNF JAX @ BAL).
 ESPN injuries feed 11/7 10:48 AM ET. Defense rank #1 = allows the most to that position (softest).
 Byes: PIT, TEN. CIN vs ATL is Sunday 9:30 AM (Madrid). BUF @ MIN is Monday.
-No Sunday NFL picks were on the Bet Tracker before this recheck. Logged as Pick rows 744 to 759.
+No Sunday NFL picks were on the Bet Tracker before this recheck. Not logged on the Bet Tracker (write blocked 11/7); next empty Bets row is 744.
 
 Lesson from TNF 11/5 (0-5, BAL on 3rd-string QB Fagnano): raw hit rates overstate the chance.
 Estimates below are shaded about 10% from the raw rate (catches: 2026 hits with one hit and one miss added, then x0.9),
