@@ -2,11 +2,11 @@
 
 Tip winner scores first 66% (25-26).
 
-- **First basket: Victor Wembanyama** (SA @ SAC 10:00). Est 25% (fair +296; old model 28%; tip jumper x1.2 if his team wins the tip; chain model): SA scores first 66%; first pts 24/57 and first shot 22/57 starts 25-26, 4/8 26-27, first 3 FGA 1.06 per start, FG 50%; SAC vs F x1.13
+- **First basket: Victor Wembanyama** (SA @ SAC 10:00). Est 25% (fair +297; old model 28%; tip jumper x1.2 if his team wins the tip; chain model): SA scores first 66%; first pts 24/57 and first shot 22/57 starts 25-26, 4/8 26-27, first 3 FGA 1.06 per start, FG 50%; SAC vs F x1.13
 - **First basket: Luka Doncic** (LAL vs POR 10:00). Est 20% (fair +407; old model 17%; chain model): LAL scores first 55%; first pts 22/65 and first shot 33/65 starts 25-26, 3/8 26-27, first 3 FGA 1.10 per start, FG 48%; POR vs G x1.03
 - **First basket: RJ Barrett** (TOR @ MIL 8:00). Est 16% (fair +528; old model 14%; chain model): TOR scores first 65%; first pts 9/57 and first shot 14/57 starts 25-26, 3/8 26-27, first 3 FGA 0.62 per start, FG 49%; MIL vs F x1.00
 - **First basket: Collin Murray-Boyles** (TOR @ MIL 8:00). Est 16% (fair +529; old model 15%; chain model): TOR scores first 65%; first pts 4/22 and first shot 6/22 starts 25-26, 1/2 26-27, first 3 FGA 0.67 per start, FG 54%; MIL vs F x1.00
-- **First basket: Jarrett Allen** (CLE vs PHI 7:30). Est 16% (fair +531; old model 16%; tip jumper x1.2 if his team wins the tip; chain model): CLE scores first 59%; first pts 19/56 and first shot 11/56 starts 25-26, 4/8 26-27, first 3 FGA 0.61 per start, FG 61%; PHI vs C x1.07; Day-To-Day
+- **First basket: Jarrett Allen** (CLE vs PHI 7:30). Est 16% (fair +531; old model 16%; tip jumper x1.2 if his team wins the tip; chain model): CLE scores first 59%; first pts 19/56 and first shot 11/56 starts 25-26, 4/8 26-27, first 3 FGA 0.61 per start, FG 61%; PHI vs C x1.07; Out
 - **First basket: Evan Mobley** (CLE vs PHI 7:30). Est 14% (fair +594; old model 16%; chain model): CLE scores first 59%; first pts 20/63 and first shot 19/63 starts 25-26, 2/8 26-27, first 3 FGA 0.79 per start, FG 54%; PHI vs C x1.07
 - **First basket: Ty Jerome** (MEM vs OKC 8:00). Est 14% (fair +606; old model 11%; chain model): MEM scores first 52%; first pts 5/15 and first shot 7/15 starts 25-26, 1/7 26-27, first 3 FGA 1.18 per start, FG 49%; OKC vs G x1.12
 - **First basket: Naz Reid** (CHA vs BOS 7:00). Est 14% (fair +607; old model 10%; chain model): CHA scores first 51%; first pts 0/3 and first shot 1/3 starts 25-26, 2/9 26-27, first 3 FGA 0.83 per start, FG 45%; BOS vs C x1.06
@@ -50,8 +50,8 @@ Tip winner scores first 66% (25-26).
   - LAL: 1st-shot pick Luka Doncic 20% (fair +407; scores on LAL's first shot 19%); 2nd-chance pick Austin Reaves 10% (fair +941; after a miss 11%)
   - POR: 1st-shot pick Scoot Henderson 10% (fair +916; scores on POR's first shot 11%); 2nd-chance pick Donovan Clingan 10% (fair +918; after a miss 14%)
 - SA @ SAC 10:00: tip SA 89% (Victor Wembanyama vs Domantas Sabonis); SA scores first 66%
-  - SA: 1st-shot pick Victor Wembanyama 25% (fair +296; scores on SA's first shot 15%); 2nd-chance pick De'Aaron Fox 12% (fair +745; after a miss 9%)
-  - SAC: 1st-shot pick Zach LaVine 7% (fair +1345; scores on SAC's first shot 10%); 2nd-chance pick Domantas Sabonis 8% (fair +1214; after a miss 12%)
+  - SA: 1st-shot pick Victor Wembanyama 25% (fair +297; scores on SA's first shot 15%); 2nd-chance pick De'Aaron Fox 12% (fair +746; after a miss 9%)
+  - SAC: 1st-shot pick Zach LaVine 7% (fair +1279; scores on SAC's first shot 11%); 2nd-chance pick Domantas Sabonis 8% (fair +1152; after a miss 13%)
 
 ## First basket method
 
@@ -65,11 +65,11 @@ Dunk/layup includes tip-ins and putbacks; 2pt jumper includes floaters and hooks
 - TOR @ MIL 8:00: first points Dunk/layup 38% (+166), 2pt jumper 22% (+359), 3-pointer 34% (+192), Free throw 6% (+1454); first basket Dunk/layup 41% (+146), 2pt jumper 23% (+330), 3-pointer 36% (+178)
 - MIN @ NO 8:00: first points Dunk/layup 36% (+180), 2pt jumper 26% (+287), 3-pointer 27% (+266), Free throw 11% (+801); first basket Dunk/layup 39% (+159), 2pt jumper 30% (+236), 3-pointer 32% (+216)
 - POR @ LAL 10:00: first points Dunk/layup 31% (+222), 2pt jumper 25% (+304), 3-pointer 31% (+225), Free throw 13% (+645); first basket Dunk/layup 35% (+183), 2pt jumper 27% (+264), 3-pointer 37% (+169)
-- SA @ SAC 10:00: first points Dunk/layup 38% (+162), 2pt jumper 28% (+257), 3-pointer 21% (+366), Free throw 12% (+712); first basket Dunk/layup 44% (+129), 2pt jumper 30% (+230), 3-pointer 26% (+285)
+- SA @ SAC 10:00: first points Dunk/layup 38% (+162), 2pt jumper 28% (+257), 3-pointer 21% (+366), Free throw 12% (+712); first basket Dunk/layup 44% (+129), 2pt jumper 30% (+229), 3-pointer 26% (+285)
 
 Best player + method (fair price; bet only if the book pays more):
 
-- **Victor Wembanyama first basket: Dunk/layup** (SA @ SAC 10:00). Est 14.9% (fair +573) = FB 25% x 59% if he scores first; his first-FG sample 36, made FGs 825
+- **Victor Wembanyama first basket: Dunk/layup** (SA @ SAC 10:00). Est 14.8% (fair +574) = FB 25% x 59% if he scores first; his first-FG sample 36, made FGs 825
 - **Collin Murray-Boyles first basket: Dunk/layup** (TOR @ MIL 8:00). Est 11.9% (fair +739) = FB 16% x 75% if he scores first; his first-FG sample 7, made FGs 288
 - **Walker Kessler first basket: Dunk/layup** (LAL vs POR 10:00). Est 11.9% (fair +743) = FB 13% x 89% if he scores first; his first-FG sample 4, made FGs 194
 - **Luka Doncic first basket: 2pt jumper** (LAL vs POR 10:00). Est 9.6% (fair +940) = FB 20% x 49% if he scores first; his first-FG sample 29, made FGs 973
