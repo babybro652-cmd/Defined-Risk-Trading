@@ -26,22 +26,14 @@
 - ANA @ CGY: our top goal pick Cutter Gauthier (31%): agree (StarTool star)
 
 <!-- parlays:begin -->
-## Parlays 2026-11-06 (2-3 legs, $0.10 to $0.20)
+## Parlays 2026-11-07 (2-3 legs, $0.10 to $0.20)
 
 Only categories that beat their price season to date: NBA 3+ threes, NHL 3+ SOG, NFL receptions, soccer 1+ shot on target. No points overs, no first basket / first goal / anytime goal legs. Fair = product of the leg chances (no correlation boost). Take only at the minimum price or longer (fair with a 10% cushion). Legs from the same game are correlated and marked.
 
 ### NBA
-- **2-leg #1:** Luka Doncic 3+ threes (81%, POR @ LAL) + Brandon Miller 3+ threes (65%, BOS @ CHA). Fair -112 (53%); take +109 or longer.
-- **2-leg #2:** Luka Doncic 3+ threes (81%, POR @ LAL) + LaMelo Ball 3+ threes (65%, MIN @ NO). Fair -109 (52%); take +110 or longer.
-- **2-leg #3:** Brandon Miller 3+ threes (65%, BOS @ CHA) + LaMelo Ball 3+ threes (65%, MIN @ NO). Fair +137 (42%); take +161 or longer.
-- **3-leg #4:** Nickeil Alexander-Walker 3+ threes (64%, WSH @ ATL) + James Harden 3+ threes (64%, PHI @ CLE) + Tyler Herro 3+ threes (64%, TOR @ MIL). Fair +284 (26%); take +322 or longer.
-- **3-leg #5:** Nickeil Alexander-Walker 3+ threes (64%, WSH @ ATL) + James Harden 3+ threes (64%, PHI @ CLE) + Zach LaVine 3+ threes (61%, SA @ SAC). Fair +302 (25%); take +342 or longer.
-
-### NHL
-- **2-leg #1:** Matt Boldy 3+ SOG (73%, SJS @ MIN) + Cutter Gauthier 3+ SOG (69%, ANA @ CGY). Fair -103 (51%); take +117 or longer.
-- **2-leg #2:** Matt Boldy 3+ SOG (73%, SJS @ MIN) + Tage Thompson 3+ SOG (68%, CBJ @ BUF). Fair +102 (49%); take +123 or longer.
-- **2-leg #3:** Cutter Gauthier 3+ SOG (69%, ANA @ CGY) + Kirill Kaprizov 3+ SOG (69%, SJS @ MIN). Fair +109 (48%); take +130 or longer.
-- **3-leg #4:** Kirill Kaprizov 3+ SOG (69%, SJS @ MIN) + Tage Thompson 3+ SOG (68%, CBJ @ BUF) + Macklin Celebrini 3+ SOG (65%, SJS @ MIN). Fair +232 (30%); take +266 or longer; same game, correlated, fair price is optimistic.
-- **3-leg #5:** Macklin Celebrini 3+ SOG (65%, SJS @ MIN) + Zach Werenski 3+ SOG (62%, CBJ @ BUF) + Joel Eriksson Ek 3+ SOG (61%, SJS @ MIN). Fair +305 (25%); take +346 or longer; same game, correlated, fair price is optimistic.
+- **2-leg #1:** Stephen Curry 3+ threes (79%, ORL @ GS) + Michael Porter Jr. 3+ threes (67%, BKN @ ATL). Fair -113 (53%); take +108 or longer.
+- **2-leg #2:** Stephen Curry 3+ threes (79%, ORL @ GS) + Nickeil Alexander-Walker 3+ threes (65%, BKN @ ATL). Fair -107 (52%); take +113 or longer.
+- **2-leg #3:** Michael Porter Jr. 3+ threes (67%, BKN @ ATL) + James Harden 3+ threes (65%, NY @ CLE). Fair +130 (44%); take +153 or longer.
+- **3-leg #4:** Nickeil Alexander-Walker 3+ threes (65%, BKN @ ATL) + James Harden 3+ threes (65%, NY @ CLE) + Toumani Camara 3+ threes (59%, SA @ POR). Fair +297 (25%); take +337 or longer.
 
 <!-- parlays:end -->

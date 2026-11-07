@@ -1,0 +1,142 @@
+{
+ "DEN": {
+  "five": [
+   "Jamal Murray",
+   "Christian Braun",
+   "Cameron Johnson",
+   "Aaron Gordon",
+   "Nikola Jokic"
+  ],
+  "jumper": "Nikola Jokic"
+ },
+ "IND": {
+  "five": [
+   "Andrew Nembhard",
+   "Kelly Oubre Jr.",
+   "Aaron Nesmith",
+   "Pascal Siakam",
+   "Ivica Zubac"
+  ],
+  "jumper": "Ivica Zubac"
+ },
+ "BKN": {
+  "five": [
+   "Nolan Traore",
+   "Michael Porter Jr.",
+   "Chaney Johnson",
+   "Julius Randle",
+   "Day'Ron Sharpe"
+  ],
+  "jumper": "Day'Ron Sharpe"
+ },
+ "ATL": {
+  "five": [
+   "Kingston Flemings",
+   "Nickeil Alexander-Walker",
+   "Dyson Daniels",
+   "Luguentz Dort",
+   "Onyeka Okongwu"
+  ],
+  "jumper": "Onyeka Okongwu"
+ },
+ "NY": {
+  "five": [
+   "Jalen Brunson",
+   "Mikal Bridges",
+   "Landry Shamet",
+   "OG Anunoby",
+   "Karl-Anthony Towns"
+  ],
+  "jumper": "Karl-Anthony Towns"
+ },
+ "CLE": {
+  "five": [
+   "James Harden",
+   "Donovan Mitchell",
+   "Peyton Watson",
+   "Tyrese Proctor",
+   "Evan Mobley"
+  ],
+  "jumper": "Evan Mobley"
+ },
+ "WSH": {
+  "five": [
+   "Trae Young",
+   "Kyshawn George",
+   "AJ Dybantsa",
+   "Alex Sarr",
+   "Deandre Ayton"
+  ],
+  "jumper": "Alex Sarr"
+ },
+ "OKC": {
+  "five": [
+   "Shai Gilgeous-Alexander",
+   "Ajay Mitchell",
+   "Alex Caruso",
+   "Kenrich Williams",
+   "Isaiah Hartenstein"
+  ],
+  "jumper": "Isaiah Hartenstein"
+ },
+ "ORL": {
+  "five": [
+   "Jase Richardson",
+   "Anthony Black",
+   "Desmond Bane",
+   "Franz Wagner",
+   "Wendell Carter Jr."
+  ],
+  "jumper": "Wendell Carter Jr."
+ },
+ "GS": {
+  "five": [
+   "Stephen Curry",
+   "Brandin Podziemski",
+   "Yaxel Lendeborg",
+   "Gui Santos",
+   "Draymond Green"
+  ],
+  "jumper": "Draymond Green"
+ },
+ "HOU": {
+  "five": [
+   "Fred VanVleet",
+   "Amen Thompson",
+   "Kevin Durant",
+   "Jabari Smith Jr.",
+   "Alperen Sengun"
+  ],
+  "jumper": "Alperen Sengun"
+ },
+ "PHX": {
+  "five": [
+   "Devin Booker",
+   "Jalen Green",
+   "Dillon Brooks",
+   "Miles Bridges",
+   "Khaman Maluach"
+  ],
+  "jumper": "Khaman Maluach"
+ },
+ "SA": {
+  "five": [
+   "De'Aaron Fox",
+   "Stephon Castle",
+   "Dylan Harper",
+   "Devin Vassell",
+   "Victor Wembanyama"
+  ],
+  "jumper": "Victor Wembanyama"
+ },
+ "POR": {
+  "five": [
+   "Damian Lillard",
+   "Scoot Henderson",
+   "Toumani Camara",
+   "Deni Avdija",
+   "Donovan Clingan"
+  ],
+  "jumper": "Donovan Clingan"
+ }
+}
