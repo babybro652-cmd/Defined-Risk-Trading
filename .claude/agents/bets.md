@@ -96,3 +96,7 @@ analysis/first_events/log.csv now has tip_jumpers, tip_winner, tip_winner_scored
 - Price check: BET only at take-at or longer, $0.20.
 - Caution (11/8 report): our team-level top-2 hit rate is about random (42% vs 40%), so lean only on teams where the first basket is concentrated and the model has been consistent (UTAH Markkanen, SA Wemby/Fox, MIL Jaquez, DEN, TOR); skip POR, CHA, CHI, DET, IND, LAC until that changes. Recheck weekly with analysis/reports/model_consistency_by_team.py.
 - FanDuel team first basket counts free throws (Tim confirmed 11/8): grade on the team's first points.
+
+## NFL TD model check (11/8, Weeks 5-9 Bet Tracker rows)
+Anytime TD singles 18-22 (placed 8-6). RB/QB 16-10; WR/TE 2-12. Favorites (minus odds) 9-4; plus odds 2-8. Flat $1 on the 23 rows with odds: -$4.08. First TD 1-3; 2+ TDs 0-1; long TD parlays 0-6.
+Rule from here (Tim to confirm): TD bets on RBs/goal-line QBs only; WR/TE TDs only at +250 or longer and small stake; no TD parlays over 2 legs. Javonte Williams 3-0, McCaffrey 2-0; Henry 2-3 and slowing (BAL QB issues).
