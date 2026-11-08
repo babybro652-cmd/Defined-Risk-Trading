@@ -7,6 +7,7 @@ Newest decisions win; move finished items to Done with the date.
 ## Open
 
 ### Grants
+- [ ] (Jarvis, auto) Wed 11/11 5:05 PM: backtest blending team first-basket share into the NBA chain model (Kuminga problem). Scheduled; Tim does not need to ask.
 - [ ] DRT TikTok: add Skool link (Edit profile > Links/Website; if missing, switch to Business account, category Education). Then reply to Cameron Wright.
 - [ ] Round 2 interview Wed 11/11 2:30 PM with Rose Simpson (Director of Ops). Fill in STAR brackets in the prep doc; pick first-choice role (night inventory vs day freezer).
 - [ ] Grants prep (10/30): decide which venture to register first (Legionz is the best grant fit). Form the NC LLC ($125 at sosnc.gov), get a free EIN at irs.gov, open a business bank account. Then contact Piedmont CC Small Business Center about BOOST, and get ready for Progressive (spring 2027). Research: ventures/grants/2026-10-30-grants-research.md
