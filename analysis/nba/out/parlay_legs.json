@@ -51,14 +51,6 @@
    "note": "64 starts"
   },
   {
-   "player": "Kelly Oubre Jr.",
-   "team": "IND",
-   "game": "DEN @ IND",
-   "market": "3+ threes",
-   "p": 0.268,
-   "note": "46 starts"
-  },
-  {
    "player": "Aaron Nesmith",
    "team": "IND",
    "game": "DEN @ IND",
@@ -107,12 +99,12 @@
    "note": "81 starts"
   },
   {
-   "player": "Luguentz Dort",
+   "player": "Jalen Johnson",
    "team": "ATL",
    "game": "BKN @ ATL",
    "market": "3+ threes",
-   "p": 0.346,
-   "note": "72 starts"
+   "p": 0.183,
+   "note": "79 starts"
   },
   {
    "player": "Onyeka Okongwu",
@@ -235,12 +227,12 @@
    "note": "44 starts"
   },
   {
-   "player": "Desmond Bane",
+   "player": "Tristan da Silva",
    "team": "ORL",
    "game": "ORL @ GS",
    "market": "3+ threes",
-   "p": 0.434,
-   "note": "90 starts"
+   "p": 0.353,
+   "note": "34 starts"
   },
   {
    "player": "Franz Wagner",
