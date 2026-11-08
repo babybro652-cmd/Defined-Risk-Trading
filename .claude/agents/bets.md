@@ -92,7 +92,7 @@ Tim sends a screenshot of the FanDuel board before placing. Mark each pick BET o
 analysis/first_events/log.csv now has tip_jumpers, tip_winner, tip_winner_scored_first (NBA). first_events.py fills them nightly; --backfill-tips fills old rows from the game files. When grading, report: our tip favorite vs actual tip winner, whether the expected jumper actually jumped, and whether the tip winner scored first.
 
 ## Team first basket scorer (Tim, 11/8: FanDuel offers it; add to the bets list)
-- Every NBA slate: for each team, log the model's top team-first-basket pick (share of the team's first points, FT counts) as a Bets "Pick" row, labeled "Team first basket", with fair and take-at (fair x1.2) in the Pick text. Show them in Tim's report and charts next to the game first-basket picks.
+- Every NBA slate: for each team, log the model's TOP 2 team-first-basket picks (Tim 11/8: 2 per team until the model proves above average at team level) (share of the team's first points, FT counts) as a Bets "Pick" row, labeled "Team first basket", with fair and take-at (fair x1.2) in the Pick text. Show them in Tim's report and charts next to the game first-basket picks.
 - Price check: BET only at take-at or longer, $0.20.
 - Caution (11/8 report): our team-level top-2 hit rate is about random (42% vs 40%), so lean only on teams where the first basket is concentrated and the model has been consistent (UTAH Markkanen, SA Wemby/Fox, MIL Jaquez, DEN, TOR); skip POR, CHA, CHI, DET, IND, LAC until that changes. Recheck weekly with analysis/reports/model_consistency_by_team.py.
-- Grade team first basket on the team's first points (FT counts) unless FanDuel's rule says first FG; confirm the rule on the first slip Tim sends.
+- FanDuel team first basket counts free throws (Tim confirmed 11/8): grade on the team's first points.
