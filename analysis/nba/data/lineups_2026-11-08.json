@@ -1,0 +1,142 @@
+{
+ "PHI": {
+  "five": [
+   "Tyrese Maxey",
+   "VJ Edgecombe",
+   "Jaylen Brown",
+   "LeBron James",
+   "Joel Embiid"
+  ],
+  "jumper": "Joel Embiid"
+ },
+ "CHI": {
+  "five": [
+   "Josh Giddey",
+   "Norman Powell",
+   "Matas Buzelis",
+   "Caleb Wilson",
+   "Jalen Smith"
+  ],
+  "jumper": "Jalen Smith"
+ },
+ "LAL": {
+  "five": [
+   "Luka Doncic",
+   "Austin Reaves",
+   "Ziaire Williams",
+   "Matisse Thybulle",
+   "Walker Kessler"
+  ],
+  "jumper": "Walker Kessler"
+ },
+ "DET": {
+  "five": [
+   "Cade Cunningham",
+   "Duncan Robinson",
+   "Ausar Thompson",
+   "John Collins",
+   "Paul Reed"
+  ],
+  "jumper": "Paul Reed"
+ },
+ "UTAH": {
+  "five": [
+   "Keyonte George",
+   "Darryn Peterson",
+   "Ace Bailey",
+   "Lauri Markkanen",
+   "Jaxson Hayes"
+  ],
+  "jumper": "Jaxson Hayes"
+ },
+ "MIN": {
+  "five": [
+   "LaMelo Ball",
+   "Ayo Dosunmu",
+   "Jonathan Kuminga",
+   "Jaden McDaniels",
+   "Rudy Gobert"
+  ],
+  "jumper": "Rudy Gobert"
+ },
+ "BKN": {
+  "five": [
+   "Nolan Traore",
+   "Michael Porter Jr.",
+   "Chaney Johnson",
+   "Julius Randle",
+   "Day'Ron Sharpe"
+  ],
+  "jumper": "Day'Ron Sharpe"
+ },
+ "DAL": {
+  "five": [
+   "Kyrie Irving",
+   "Max Christie",
+   "Cooper Flagg",
+   "P.J. Washington",
+   "Daniel Gafford"
+  ],
+  "jumper": "Daniel Gafford"
+ },
+ "BOS": {
+  "five": [
+   "Derrick White",
+   "Hugo Gonzalez",
+   "Jayson Tatum",
+   "Paul George",
+   "Neemias Queta"
+  ],
+  "jumper": "Neemias Queta"
+ },
+ "MIL": {
+  "five": [
+   "Brayden Burries",
+   "Tyler Herro",
+   "Jaime Jaquez Jr.",
+   "Kyle Kuzma",
+   "Myles Turner"
+  ],
+  "jumper": "Myles Turner"
+ },
+ "NO": {
+  "five": [
+   "Dejounte Murray",
+   "Jeremiah Fears",
+   "Trey Murphy III",
+   "Zion Williamson",
+   "Karlo Matkovic"
+  ],
+  "jumper": "Karlo Matkovic"
+ },
+ "LAC": {
+  "five": [
+   "Darius Garland",
+   "Kris Dunn",
+   "Derrick Jones Jr.",
+   "Rui Hachimura",
+   "Brook Lopez"
+  ],
+  "jumper": "Brook Lopez"
+ },
+ "MIA": {
+  "five": [
+   "Davion Mitchell",
+   "Klay Thompson",
+   "Andrew Wiggins",
+   "Giannis Antetokounmpo",
+   "Bam Adebayo"
+  ],
+  "jumper": "Bam Adebayo"
+ },
+ "SAC": {
+  "five": [
+   "Darius Acuff Jr.",
+   "Zach LaVine",
+   "De'Andre Hunter",
+   "Precious Achiuwa",
+   "Domantas Sabonis"
+  ],
+  "jumper": "Domantas Sabonis"
+ }
+}

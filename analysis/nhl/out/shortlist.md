@@ -55,21 +55,14 @@ First goal est = share of team goals x team scores first x 0.94 (`out/tonight.js
 - No StarTool cards saved for this slate yet. Add lines to out/startool/star_bomb.txt (date|AWAY @ HOME|star,star|bomb,bomb) and rerun.
 
 <!-- parlays:begin -->
-## Parlays 2026-11-07 (2-3 legs, $0.10 to $0.20)
+## Parlays 2026-11-08 (2-3 legs, $0.10 to $0.20)
 
 Only categories that beat their price season to date: NBA 3+ threes, NHL 3+ SOG, NFL receptions, soccer 1+ shot on target. No points overs, no first basket / first goal / anytime goal legs. Fair = product of the leg chances (no correlation boost). Take only at the minimum price or longer (fair with a 10% cushion). Legs from the same game are correlated and marked.
 
 ### NBA
-- **2-leg #1:** Stephen Curry 3+ threes (79%, ORL @ GS) + Michael Porter Jr. 3+ threes (67%, BKN @ ATL). Fair -113 (53%); take +108 or longer.
-- **2-leg #2:** Stephen Curry 3+ threes (79%, ORL @ GS) + Nickeil Alexander-Walker 3+ threes (65%, BKN @ ATL). Fair -107 (52%); take +113 or longer.
-- **2-leg #3:** Michael Porter Jr. 3+ threes (67%, BKN @ ATL) + James Harden 3+ threes (65%, NY @ CLE). Fair +130 (44%); take +153 or longer.
-- **3-leg #4:** Nickeil Alexander-Walker 3+ threes (65%, BKN @ ATL) + James Harden 3+ threes (65%, NY @ CLE) + Toumani Camara 3+ threes (59%, SA @ POR). Fair +297 (25%); take +337 or longer.
-
-### NHL
-- **2-leg #1:** Alex DeBrincat 3+ SOG (78%, DET @ COL) + Matt Boldy 3+ SOG (74%, TBL @ MIN). Fair -136 (58%); take -110 or longer.
-- **2-leg #2:** Alex DeBrincat 3+ SOG (78%, DET @ COL) + Kirill Kaprizov 3+ SOG (70%, TBL @ MIN). Fair -120 (55%); take +102 or longer.
-- **2-leg #3:** Matt Boldy 3+ SOG (74%, TBL @ MIN) + Brady Tkachuk 3+ SOG (69%, FLA @ WSH). Fair -105 (51%); take +115 or longer.
-- **3-leg #4:** Kirill Kaprizov 3+ SOG (70%, TBL @ MIN) + Brady Tkachuk 3+ SOG (69%, FLA @ WSH) + Cole Caufield 3+ SOG (69%, MTL @ TOR). Fair +200 (33%); take +230 or longer.
-- **3-leg #5:** Cole Caufield 3+ SOG (69%, MTL @ TOR) + Connor Bedard 3+ SOG (69%, CHI @ CAR) + Jason Robertson 3+ SOG (68%, SJS @ DAL). Fair +208 (32%); take +239 or longer.
+- **2-leg #1:** Luka Doncic 3+ threes (82%, LAL @ DET) + Michael Porter Jr. 3+ threes (68%, BKN @ DAL). Fair -126 (56%); take -103 or longer.
+- **2-leg #2:** Luka Doncic 3+ threes (82%, LAL @ DET) + LaMelo Ball 3+ threes (66%, UTAH @ MIN). Fair -115 (54%); take +105 or longer.
+- **2-leg #3:** Michael Porter Jr. 3+ threes (68%, BKN @ DAL) + LaMelo Ball 3+ threes (66%, UTAH @ MIN). Fair +123 (45%); take +145 or longer.
+- **3-leg #4:** Duncan Robinson 3+ threes (64%, LAL @ DET) + Tyler Herro 3+ threes (60%, BOS @ MIL) + Zach LaVine 3+ threes (58%, MIA @ SAC). Fair +348 (22%); take +393 or longer.
 
 <!-- parlays:end -->

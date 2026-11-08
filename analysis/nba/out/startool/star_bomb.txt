@@ -106,3 +106,10 @@
 2026-11-07|ORL @ GS|Desmond Bane,Stephen Curry|Franz Wagner,Yaxel Lendeborg
 2026-11-07|HOU @ PHX|Kevin Durant,Devin Booker|Alperen Sengun,Dillon Brooks
 2026-11-07|SA @ POR|Victor Wembanyama,Deni Avdija|De'Aaron Fox,Damian Lillard
+2026-11-08|PHI @ CHI|Jaylen Brown,Norman Powell|Joel Embiid,Caleb Wilson
+2026-11-08|LAL @ DET|Luka Doncic,Cade Cunningham|Austin Reaves,Duncan Robinson
+2026-11-08|UTAH @ MIN|Lauri Markkanen,LaMelo Ball|Keyonte George,Ayo Dosunmu
+2026-11-08|BKN @ DAL|Michael Porter Jr.,Kyrie Irving|Julius Randle,Cooper Flagg
+2026-11-08|BOS @ MIL|Jayson Tatum,Tyler Herro|Paul George,Jaime Jaquez Jr.
+2026-11-08|NO @ LAC|Zion Williamson,Darius Garland|Trey Murphy III,Rui Hachimura
+2026-11-08|MIA @ SAC|Giannis Antetokounmpo,Darius Acuff Jr.|Bam Adebayo,Zach LaVine
