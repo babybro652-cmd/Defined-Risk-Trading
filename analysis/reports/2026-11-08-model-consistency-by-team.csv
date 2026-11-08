@@ -1,0 +1,113 @@
+date,team,opp,tip,tipwin,top,team_first,hit_team,hit_game,first_points,proj_known,missing
+2026-10-30,LAL,GS,96,GS,Walker Kessler / Luka Doncic,Luka Doncic,True,False,Brandin Podziemski (GS),False,
+2026-10-30,GS,LAL,4,GS,Stephen Curry / Brandin Podziemski,Brandin Podziemski,True,True,Brandin Podziemski (GS),False,
+2026-10-30,DEN,PHX,46,PHX,Nikola Jokic / Jamal Murray,Cameron Johnson,False,False,Miles Bridges (PHX),False,
+2026-10-30,PHX,DEN,54,PHX,Jalen Green / Dillon Brooks,Miles Bridges,False,False,Miles Bridges (PHX),False,
+2026-10-30,WSH,CHA,83,CHA,Anthony Davis / Alex Sarr,AJ Dybantsa,False,False,Dennis Schroder (CHA),True,
+2026-10-30,CHA,WSH,17,CHA,Naz Reid / Brandon Miller,Dennis Schroder,False,False,Dennis Schroder (CHA),True,
+2026-10-30,BOS,CHI,92,BOS,Paul George / Jayson Tatum,Jayson Tatum,True,True,Jayson Tatum (BOS),False,
+2026-10-30,CHI,BOS,8,BOS,Jalen Smith / Norman Powell,Caleb Wilson,False,False,Jayson Tatum (BOS),False,
+2026-10-30,DET,BKN,50,BKN,Paul Reed / John Collins,Cade Cunningham,False,False,Michael Porter Jr. (BKN),False,
+2026-10-30,BKN,DET,50,BKN,Day'Ron Sharpe / Michael Porter Jr.,Michael Porter Jr.,True,True,Michael Porter Jr. (BKN),False,
+2026-10-30,PHI,NY,60,NY,Tyrese Maxey / Joel Embiid,Tyrese Maxey,True,True,Joel Embiid (PHI),False,
+2026-10-30,NY,PHI,40,NY,Jalen Brunson / Karl-Anthony Towns,OG Anunoby,False,False,Joel Embiid (PHI),False,
+2026-10-30,ORL,TOR,67,TOR,Wendell Carter Jr. / Desmond Bane,Franz Wagner,False,False,Scottie Barnes (TOR),False,
+2026-10-30,TOR,ORL,33,TOR,RJ Barrett / Scottie Barnes,Scottie Barnes,True,True,Scottie Barnes (TOR),False,
+2026-10-30,MIA,IND,74,MIA,Bam Adebayo / Giannis Antetokounmpo,Bam Adebayo,True,True,Bam Adebayo (MIA),True,
+2026-10-30,IND,MIA,26,MIA,Andrew Nembhard / Kelly Oubre Jr.,Jay Huff,False,False,Bam Adebayo (MIA),True,
+2026-10-30,HOU,DAL,80,DAL,Kevin Durant / Amen Thompson,Fred VanVleet,False,False,Fred VanVleet (HOU),True,Tari Eason
+2026-10-30,DAL,HOU,20,DAL,Kyrie Irving / Cooper Flagg,Daniel Gafford,False,False,Fred VanVleet (HOU),True,
+2026-10-30,MIN,LAC,76,MIN,Jaden McDaniels / LaMelo Ball,LaMelo Ball,True,True,LaMelo Ball (MIN),True,
+2026-10-30,LAC,MIN,24,MIN,Darius Garland / Isaiah Jackson,Derrick Jones Jr.,False,False,LaMelo Ball (MIN),True,
+2026-11-02,PHX,GS,83,PHX,Jalen Green / Devin Booker,Devin Booker,True,True,Devin Booker (PHX),True,
+2026-11-02,GS,PHX,17,PHX,Draymond Green / Brandin Podziemski,Stephen Curry,False,False,Devin Booker (PHX),True,
+2026-11-02,LAC,TOR,74,LAC,Brook Lopez / Darius Garland,Kobe Sanders,False,False,Kobe Sanders (LAC),True,
+2026-11-02,TOR,LAC,26,LAC,Collin Murray-Boyles / RJ Barrett,Collin Murray-Boyles,True,False,Kobe Sanders (LAC),True,
+2026-11-02,LAL,MIA,46,MIA,Luka Doncic / Austin Reaves,Matisse Thybulle,False,False,Giannis Antetokounmpo (MIA),True,
+2026-11-02,MIA,LAL,54,MIA,Bam Adebayo / Giannis Antetokounmpo,Davion Mitchell,False,True,Giannis Antetokounmpo (MIA),True,
+2026-11-02,OKC,CLE,45,CLE,Ajay Mitchell / Isaiah Hartenstein,Ajay Mitchell,True,False,Evan Mobley (CLE),True,Jared McCain
+2026-11-02,CLE,OKC,55,CLE,Jarrett Allen / Donovan Mitchell,Evan Mobley,False,False,Evan Mobley (CLE),True,
+2026-11-02,DET,CHA,54,DET,John Collins / Paul Reed,Cade Cunningham,False,False,Moussa Diabate (CHA),True,
+2026-11-02,CHA,DET,46,DET,Naz Reid / Brandon Miller,Moussa Diabate,False,False,Moussa Diabate (CHA),True,
+2026-11-02,ATL,IND,45,ATL,Onyeka Okongwu / CJ McCollum,Nickeil Alexander-Walker,False,False,Nickeil Alexander-Walker (ATL),True,
+2026-11-02,IND,ATL,55,ATL,Jay Huff / Braden Smith,Quenton Jackson,False,False,Nickeil Alexander-Walker (ATL),True,
+2026-11-02,BKN,NY,56,NY,Michael Porter Jr. / Day'Ron Sharpe,Michael Porter Jr.,True,True,Michael Porter Jr. (BKN),True,
+2026-11-02,NY,BKN,44,NY,Karl-Anthony Towns / Jalen Brunson,OG Anunoby,False,False,Michael Porter Jr. (BKN),True,
+2026-11-02,ORL,WSH,59,WSH,Wendell Carter Jr. / Franz Wagner,Franz Wagner,True,True,Franz Wagner (ORL),True,
+2026-11-02,WSH,ORL,41,WSH,Anthony Davis / AJ Dybantsa,Anthony Davis,True,False,Franz Wagner (ORL),True,
+2026-11-02,PHI,CHI,74,CHI,Joel Embiid / Jaylen Brown,LeBron James,False,True,Jaylen Brown (PHI),True,
+2026-11-02,CHI,PHI,26,CHI,Jalen Smith / Norman Powell,Caleb Wilson,False,False,Jaylen Brown (PHI),True,
+2026-11-02,SAC,DAL,70,DAL,De'Andre Hunter / Domantas Sabonis,De'Andre Hunter,True,False,Daniel Gafford (DAL),True,
+2026-11-02,DAL,SAC,30,DAL,Daniel Gafford / Cooper Flagg,Daniel Gafford,True,True,Daniel Gafford (DAL),True,
+2026-11-02,MEM,NO,88,NO,Ty Jerome / Cedric Coward,Cameron Boozer,False,False,Zion Williamson (NO),True,
+2026-11-02,NO,MEM,12,NO,Jeremiah Fears / Trey Murphy III,Zion Williamson,False,False,Zion Williamson (NO),True,
+2026-11-02,MIN,MIL,69,MIN,LaMelo Ball / Jaden McDaniels,Rudy Gobert,False,False,Jaime Jaquez Jr. (MIL),True,
+2026-11-02,MIL,MIN,31,MIN,Myles Turner / Brayden Burries,Jaime Jaquez Jr.,False,False,Jaime Jaquez Jr. (MIL),True,
+2026-11-02,HOU,BOS,51,HOU,Alperen Sengun / Kevin Durant,Kevin Durant,True,True,Kevin Durant (HOU),True,
+2026-11-02,BOS,HOU,49,HOU,Jayson Tatum / Neemias Queta,Baylor Scheierman,False,False,Kevin Durant (HOU),True,
+2026-11-02,SA,UTAH,95,SA,Victor Wembanyama / Devin Vassell,De'Aaron Fox,False,False,Lauri Markkanen (UTAH),True,
+2026-11-02,UTAH,SA,5,SA,Ace Bailey / Lauri Markkanen,Lauri Markkanen,True,True,Lauri Markkanen (UTAH),True,
+2026-11-02,DEN,POR,48,POR,Nikola Jokic / Jamal Murray,Jamal Murray,True,True,Jamal Murray (DEN),True,
+2026-11-02,POR,DEN,52,POR,Scoot Henderson / Damian Lillard,Deni Avdija,False,False,Jamal Murray (DEN),True,
+2026-11-04,LAL,SAC,68,LAL,Luka Doncic / Walker Kessler,Jake LaRavia,False,False,Jake LaRavia (LAL),True,Ziaire Williams
+2026-11-04,SAC,LAL,32,LAL,Zach LaVine / De'Andre Hunter,Domantas Sabonis,False,False,Jake LaRavia (LAL),True,
+2026-11-04,MIA,LAC,70,MIA,Bam Adebayo / Giannis Antetokounmpo,Bam Adebayo,True,True,Giannis Antetokounmpo (MIA),True,
+2026-11-04,LAC,MIA,30,MIA,Brook Lopez / Darius Garland,Rui Hachimura,False,False,Giannis Antetokounmpo (MIA),True,
+2026-11-04,DET,PHI,45,PHI,John Collins / Paul Reed,Duncan Robinson,False,False,Duncan Robinson (DET),True,
+2026-11-04,PHI,DET,55,PHI,Joel Embiid / Jaylen Brown,Jaylen Brown,True,False,Duncan Robinson (DET),True,
+2026-11-04,WSH,ATL,71,ATL,Anthony Davis / Alex Sarr,Anthony Davis,True,False,Kingston Flemings (ATL),True,
+2026-11-04,ATL,WSH,29,ATL,Onyeka Okongwu / Kingston Flemings,Kingston Flemings,True,True,Kingston Flemings (ATL),True,
+2026-11-04,BOS,MIL,63,MIL,Paul George / Neemias Queta,Sam Hauser,False,False,Sam Hauser (BOS),True,
+2026-11-04,MIL,BOS,37,MIL,Myles Turner / Jaime Jaquez Jr.,Jaime Jaquez Jr.,True,False,Sam Hauser (BOS),True,
+2026-11-04,BKN,CHA,66,CHA,Michael Porter Jr. / Day'Ron Sharpe,Nolan Traore,False,False,Nolan Traore (BKN),True,
+2026-11-04,CHA,BKN,34,CHA,Brandon Miller / Naz Reid,Coby White,False,False,Nolan Traore (BKN),True,
+2026-11-04,NY,CHI,65,NY,Karl-Anthony Towns / Jalen Brunson,Landry Shamet,False,False,Landry Shamet (NY),True,
+2026-11-04,CHI,NY,35,NY,Jalen Smith / Norman Powell,Josh Giddey,False,False,Landry Shamet (NY),True,
+2026-11-04,MEM,IND,60,MEM,Zach Edey / Ty Jerome,Cameron Boozer,False,False,Braden Smith (IND),True,
+2026-11-04,IND,MEM,40,MEM,Andrew Nembhard / Ivica Zubac,Braden Smith,False,False,Braden Smith (IND),True,Kelly Oubre Jr.
+2026-11-04,UTAH,NO,44,UTAH,Ace Bailey / Lauri Markkanen,Lauri Markkanen,True,True,Lauri Markkanen (UTAH),True,
+2026-11-04,NO,UTAH,56,UTAH,Jeremiah Fears / Karlo Matkovic,Jeremiah Fears,True,False,Lauri Markkanen (UTAH),True,
+2026-11-04,OKC,CLE,36,CLE,Ajay Mitchell / Isaiah Hartenstein,Kenrich Williams,False,False,Kenrich Williams (OKC),True,Jared McCain
+2026-11-04,CLE,OKC,64,CLE,Jarrett Allen / Donovan Mitchell,Tyrese Proctor,False,False,Kenrich Williams (OKC),True,Meleek Thomas
+2026-11-04,MIN,HOU,56,MIN,LaMelo Ball / Jonathan Kuminga,LaMelo Ball,True,True,LaMelo Ball (MIN),False,
+2026-11-04,HOU,MIN,44,MIN,Alperen Sengun / Kevin Durant,Fred VanVleet,False,False,LaMelo Ball (MIN),False,
+2026-11-04,DEN,TOR,43,TOR,Jamal Murray / Nikola Jokic,Nikola Jokic,True,True,Nikola Jokic (DEN),True,
+2026-11-04,TOR,DEN,57,TOR,RJ Barrett / Scottie Barnes,Ja'Kobe Walter,False,False,Nikola Jokic (DEN),True,Jakob Poeltl
+2026-11-04,PHX,POR,65,POR,Jalen Green / Devin Booker,Devin Booker,True,False,Damian Lillard (POR),True,
+2026-11-04,POR,PHX,35,POR,Scoot Henderson / Donovan Clingan,Damian Lillard,False,False,Damian Lillard (POR),True,
+2026-11-04,SA,DAL,95,DAL,Victor Wembanyama / Devin Vassell,Victor Wembanyama,True,True,Victor Wembanyama (SA),True,
+2026-11-04,DAL,SA,5,DAL,Cooper Flagg / Daniel Gafford,Kyrie Irving,False,False,Victor Wembanyama (SA),True,Caleb Martin
+2026-11-05,MIA,GS,89,MIA,Bam Adebayo / Giannis Antetokounmpo,Andrew Wiggins,False,False,Andrew Wiggins (MIA),True,
+2026-11-05,GS,MIA,11,MIA,Yaxel Lendeborg / Stephen Curry,Will Richard,False,False,Andrew Wiggins (MIA),True,
+2026-11-05,ORL,PHX,58,ORL,Wendell Carter Jr. / Franz Wagner,Desmond Bane,False,True,Franz Wagner (ORL),True,
+2026-11-05,PHX,ORL,42,ORL,Devin Booker / Dillon Brooks,Devin Booker,True,False,Franz Wagner (ORL),True,Khaman Maluach
+2026-11-06,LAL,POR,59,LAL,Luka Doncic / Walker Kessler,Luka Doncic,True,True,Luka Doncic (LAL),True,Ziaire Williams
+2026-11-06,POR,LAL,41,LAL,Scoot Henderson / Donovan Clingan,Deni Avdija,False,False,Luka Doncic (LAL),True,
+2026-11-06,SA,SAC,89,SA,Victor Wembanyama / De'Aaron Fox,De'Aaron Fox,True,True,De'Aaron Fox (SA),True,
+2026-11-06,SAC,SA,11,SA,Domantas Sabonis / Zach LaVine,Domantas Sabonis,True,False,De'Aaron Fox (SA),True,Malik Monk
+2026-11-06,WSH,ATL,70,WSH,Alex Sarr / AJ Dybantsa,Alex Sarr,True,False,Nickeil Alexander-Walker (ATL),True,
+2026-11-06,ATL,WSH,30,WSH,Onyeka Okongwu / Nickeil Alexander-Walker,Nickeil Alexander-Walker,True,True,Nickeil Alexander-Walker (ATL),True,
+2026-11-06,CHA,BOS,57,CHA,Naz Reid / Brandon Miller,Ryan Kalkbrenner,False,False,Jayson Tatum (BOS),True,Sion James
+2026-11-06,BOS,CHA,43,CHA,Jayson Tatum / Paul George,Jayson Tatum,True,True,Jayson Tatum (BOS),True,Hugo Gonzalez
+2026-11-06,CLE,PHI,69,CLE,Jarrett Allen / Evan Mobley,Donovan Mitchell,False,False,VJ Edgecombe (PHI),True,Jarrett Allen
+2026-11-06,PHI,CLE,31,CLE,Joel Embiid / Jaylen Brown,VJ Edgecombe,False,False,VJ Edgecombe (PHI),True,
+2026-11-06,UTAH,DAL,50,DAL,Lauri Markkanen / Ace Bailey,Lauri Markkanen,True,True,Lauri Markkanen (UTAH),True,
+2026-11-06,DAL,UTAH,50,DAL,Cooper Flagg / Daniel Gafford,P.J. Washington,False,False,Lauri Markkanen (UTAH),True,Max Christie
+2026-11-06,MEM,OKC,59,MEM,Ty Jerome / Zach Edey,Zach Edey,True,False,Jared McCain (OKC),True,
+2026-11-06,OKC,MEM,41,MEM,Isaiah Hartenstein / Ajay Mitchell,Jared McCain,False,False,Jared McCain (OKC),True,Alex Caruso
+2026-11-06,TOR,MIL,78,TOR,RJ Barrett / Collin Murray-Boyles,Collin Murray-Boyles,True,False,Jaime Jaquez Jr. (MIL),True,Immanuel Quickley
+2026-11-06,MIL,TOR,22,TOR,Myles Turner / Jaime Jaquez Jr.,Jaime Jaquez Jr.,True,True,Jaime Jaquez Jr. (MIL),True,
+2026-11-06,MIN,NO,72,NO,Jonathan Kuminga / LaMelo Ball,Ayo Dosunmu,False,False,Karlo Matkovic (NO),True,
+2026-11-06,NO,MIN,28,NO,Trey Murphy III / Zion Williamson,Karlo Matkovic,False,False,Karlo Matkovic (NO),True,
+2026-11-07,SA,POR,83,SA,Victor Wembanyama / De'Aaron Fox,Victor Wembanyama,True,True,Victor Wembanyama (SA),True,
+2026-11-07,POR,SA,17,SA,Scoot Henderson / Donovan Clingan,Toumani Camara,False,False,Victor Wembanyama (SA),True,
+2026-11-07,BKN,ATL,50,ATL,Michael Porter Jr. / Julius Randle,Nolan Traore,False,False,Nolan Traore (BKN),True,Chaney Johnson
+2026-11-07,ATL,BKN,50,ATL,Onyeka Okongwu / Nickeil Alexander-Walker,Jalen Johnson,False,False,Nolan Traore (BKN),True,
+2026-11-07,CLE,NY,62,CLE,Evan Mobley / Peyton Watson,Peyton Watson,True,True,Evan Mobley (CLE),True,
+2026-11-07,NY,CLE,38,CLE,Karl-Anthony Towns / Jalen Brunson,Jalen Brunson,True,False,Evan Mobley (CLE),True,
+2026-11-07,OKC,WSH,54,OKC,Ajay Mitchell / Isaiah Hartenstein,Aday Mara,False,False,Aday Mara (OKC),True,Alex Caruso
+2026-11-07,WSH,OKC,46,OKC,Alex Sarr / AJ Dybantsa,Kyshawn George,False,False,Aday Mara (OKC),True,Deandre Ayton
+2026-11-07,ORL,GS,88,ORL,Wendell Carter Jr. / Franz Wagner,Franz Wagner,True,False,Stephen Curry (GS),True,
+2026-11-07,GS,ORL,12,ORL,Yaxel Lendeborg / Stephen Curry,Stephen Curry,True,True,Stephen Curry (GS),True,
+2026-11-07,HOU,PHX,43,HOU,Alperen Sengun / Kevin Durant,Alperen Sengun,True,True,Alperen Sengun (HOU),True,
+2026-11-07,PHX,HOU,57,HOU,Dillon Brooks / Devin Booker,Jalen Green,False,False,Alperen Sengun (HOU),True,
