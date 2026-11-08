@@ -20,6 +20,9 @@ from concurrent.futures import ThreadPoolExecutor
 from datetime import datetime, timezone
 from zoneinfo import ZoneInfo
 
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+import td_model  # noqa: E402
+
 ET = ZoneInfo('America/New_York')
 
 HERE = os.path.dirname(os.path.abspath(__file__))
@@ -29,6 +32,8 @@ SITE = 'https://site.api.espn.com/apis/site/v2/sports/football/nfl'
 WEB = 'https://site.web.api.espn.com/apis/common/v3/sports/football/nfl'
 SKILL = ('RB', 'WR', 'TE', 'QB', 'FB')
 MAXWK = 18
+CORE = 'https://sports.core.api.espn.com/v2/sports/football/leagues/nfl'
+SCHEMA = 3  # cached game schema: 3 adds inside-5 opps, RZ targets, QBs, game odds
 PENDING = []  # 2026 games inside --week that are not final yet
 
 # Players named in the Week 4 consistency report (kept even without a 2026 TD).
@@ -98,7 +103,7 @@ def parse_game(d, season, week):
             for a in s['athletes']:
                 aid = a['athlete']['id']; nm = a['athlete']['displayName']
                 r = pg.setdefault(aid, dict(id=aid, name=nm, team=ta, opp=opp, rec=0, tgt=0, recyd=0, rectd=0, car=0,
-                                            rushyd=0, rushtd=0, rz=0, rzt=0, rzc=0, i10=0))
+                                            rushyd=0, rushtd=0, rz=0, rzt=0, rzc=0, i10=0, i5=0, i5t=0, att=0))
                 st = dict(zip(s['keys'], a['stats']))
 
                 def f(k):
@@ -109,6 +114,11 @@ def parse_game(d, season, week):
                         return 0
                 if s['name'] == 'receiving':
                     r.update(rec=f('receptions'), recyd=f('receivingYards'), rectd=f('receivingTouchdowns'), tgt=f('receivingTargets'))
+                elif s['name'] == 'passing':
+                    try:
+                        r['att'] = int(str(st.get('completions/passingAttempts', '0/0')).split('/')[1])
+                    except (ValueError, IndexError):
+                        r['att'] = 0
                 elif s['name'] == 'rushing':
                     r.update(car=f('rushingAttempts'), rushyd=f('rushingYards'), rushtd=f('rushingTouchdowns'))
                 nm2 = SUFFIX.sub('', nm)
@@ -157,14 +167,49 @@ def parse_game(d, season, week):
             r['rzt' if kind == 't' else 'rzc'] += 1
             if ytg <= 10:
                 r['i10'] += 1
+            if ytg <= 5:
+                r['i5'] += 1
+                if kind == 't':
+                    r['i5t'] += 1
         res = (dr.get('result') or '').upper()
         drives.append([ta, int(in_rz), int(res == 'TD')])
+    qbs = {}
+    for r in pg.values():
+        if r['att'] > 0:
+            qbs.setdefault(r['team'], []).append([r['id'], r['name'], r['att']])
+    for v in qbs.values():
+        v.sort(key=lambda q: -q[2])
     rows = [r for r in pg.values() if r['rec'] or r['tgt'] or r['car'] or r['rectd'] or r['rushtd']]
     for r in rows:
-        r.pop('rzt'); r.pop('rzc')
+        r.pop('att')
     home = [c['team']['abbreviation'] for c in comp['competitors'] if c.get('homeAway') == 'home']
-    return dict(season=season, week=week, teams=abbrs, home=home[0] if home else '', rows=rows,
-                drives=drives, unresolved=unresolved)
+    return dict(v=SCHEMA, season=season, week=week, teams=abbrs, home=home[0] if home else '', rows=rows,
+                drives=drives, unresolved=unresolved, qbs=qbs, odds=game_odds(d, comp['id'], ids))
+
+
+def game_odds(d, eid, ids):
+    """Pregame spread (home perspective, negative = home favored) and total from ESPN. None if no line."""
+    cands = list(d.get('pickcenter') or [])
+    if not any(c.get('spread') is not None and c.get('overUnder') for c in cands):
+        try:
+            cands = get(f'{CORE}/events/{eid}/competitions/{eid}/odds').get('items', [])
+        except Exception:  # noqa
+            cands = []
+    for c in cands:
+        if 'live' in (c.get('provider', {}).get('name', '')).lower():
+            continue
+        sp, tot = c.get('spread'), c.get('overUnder')
+        if sp is None or not tot:
+            continue
+        hf = (c.get('homeTeamOdds') or {}).get('favorite')
+        af = (c.get('awayTeamOdds') or {}).get('favorite')
+        sp = float(sp)
+        if hf is True and af is not True:
+            sp = -abs(sp)
+        elif af is True and hf is not True:
+            sp = abs(sp)
+        return dict(spread=sp, total=float(tot))
+    return None
 
 
 def refresh_games(season, last_week, log):
@@ -179,7 +224,7 @@ def refresh_games(season, last_week, log):
                 PENDING.append(f'{e["shortName"]} (Wk{wk})')
                 log(f'  {season} wk{wk} {e["shortName"]}: not final yet, skipped')
                 continue
-            if e['id'] not in games:
+            if e['id'] not in games or games[e['id']].get('v') != SCHEMA:
                 todo.append((e['id'], wk))
     log(f'{season}: {len(games)} cached, {len(todo)} to download')
 
@@ -263,7 +308,7 @@ def build(week, log, injuries_only=False, slate=None):
     now = datetime.now(timezone.utc)
     g25 = load(os.path.join(DATA, 'games_2025.json'), {})
     if not injuries_only:
-        if len(g25) < 272:
+        if len(g25) < 272 or any(g.get('v') != SCHEMA for g in g25.values()):
             g25 = refresh_games(2025, MAXWK, log)
         g26 = refresh_games(2026, week, log)
     else:
@@ -413,48 +458,119 @@ def build(week, log, injuries_only=False, slate=None):
                    k25['RB_td'].get(t, 'n/a'), k25['WR_td'].get(t, 'n/a'), k25['TE_td'].get(t, 'n/a'), k25['rz_pct'].get(t, 'n/a')])
     tabs['Defense'] = df
 
-    # ---- Week Shortlist
+    # ---- Week Shortlist (new TD model v2 from td_model.py; old hit-rate rule kept as a comparison column)
     nxt = slate or week + 1
-    opp_of, game_of, played = {}, {}, set()
+    opp_of, game_of, played, started, tid_of, game_odds_of, imp_of = {}, {}, set(), set(), {}, {}, {}
     try:
         sb = scoreboard(2026, nxt)
         for e in sb.get('events', []):
             c = e['competitions'][0]
             home = [x['team']['abbreviation'] for x in c['competitors'] if x['homeAway'] == 'home'][0]
             away = [x['team']['abbreviation'] for x in c['competitors'] if x['homeAway'] == 'away'][0]
+            for x in c['competitors']:
+                tid_of[x['team']['abbreviation']] = x['team']['id']
             kt = datetime.fromisoformat(e['date'].replace('Z', '+00:00')).astimezone(ET)
             day = kt.strftime('%a %-I:%M %p ET')
             opp_of[home], opp_of[away] = away, home
             game_of[home] = game_of[away] = f"{e.get('shortName', away + ' @ ' + home)} ({day})"
-            if c.get('status', e.get('status', {})).get('type', {}).get('completed'):
+            stt = c.get('status', e.get('status', {})).get('type', {})
+            if stt.get('completed'):
                 played.update((home, away))
+            elif stt.get('state') == 'in':
+                started.update((home, away))
+            try:
+                od = game_odds({'pickcenter': c.get('odds') or []}, e['id'], {})
+            except Exception:  # noqa
+                od = None
+            game_odds_of[home] = game_odds_of[away] = od
+            imp_of[home] = td_model.implied(od, home, home)
+            imp_of[away] = td_model.implied(od, away, home)
     except Exception as ex:  # noqa
         log(f'Week {nxt} schedule unavailable: {ex}')
+
+    # TD model v2: history up to --week, walk-forward state, final logistic fit
+    mgames = {k: v for k, v in games.items() if not (v['season'] == 2026 and v['week'] > week)}
+    hist, st = td_model.build_history(mgames, pos)
+    mw = td_model.fit_final(hist)
+    qb_status = {a: status(a)['status'] for a in inj}
+    qb_names = {}
+    for g in mgames.values():
+        for qs in g.get('qbs', {}).values():
+            for q in qs:
+                qb_names[q[0]] = q[1]
+    qbflag = {}
+    for t in opp_of:
+        depth = []
+        try:
+            dc = get(f'{CORE}/seasons/2026/teams/{tid_of[t]}/depthcharts')
+            for it in dc.get('items', []):
+                if 'qb' in it.get('positions', {}):
+                    for a in it['positions']['qb']['athletes']:
+                        m = re.search(r'/athletes/(\d+)', a['athlete']['$ref'])
+                        if m and m.group(1) not in depth:
+                            depth.append(m.group(1))
+                    break
+        except Exception as ex:  # noqa
+            log(f'depth chart {t}: {ex}')
+        qbflag[t] = td_model.live_qb(st, t, depth, qb_status, qb_names)
+
     key_of = {'RB': 'RB_td', 'FB': 'RB_td', 'WR': 'WR_td', 'TE': 'TE_td', 'QB': 'QB_rush'}
     ws = [['Player', 'Team', 'Pos', f'Week {nxt} game', 'Opponent', 'Opp rank vs pos (2026)', 'Opp rank vs pos (2025)',
-           'Opp RZ TD% rank', 'Hit % 25+26', '2026 games w/ TD', 'RZ opps/g 2026', 'Injury status', 'Verdict', 'Why']]
-    cands = [a for a in tracked if P[a]['h6'] >= 2 or P[a]['name'] in REPORT_PLAYERS[:15]]
-    for aid in sorted(cands, key=lambda a: -P[a]['comb']):
-        x = P[aid]; t = x['team']; opp = opp_of.get(t); s = status(aid)['status']
-        k = key_of.get(x['pos'])
-        rk = k26[k].get(opp) if (opp and k) else None
-        rk25 = k25[k].get(opp, 'n/a') if (opp and k) else 'n/a'
+           'Opp RZ TD% rank', 'Hit % 25+26', '2026 games w/ TD', 'RZ opps/g 2026', 'Injury status', 'Verdict', 'Why',
+           'Team implied total', 'Opp implied total', 'Goal-line share (inside 5)', 'Inside-5 opps/g', 'RZ share', 'RZ target share (WR/TE)',
+           'Shrunk hit %', 'New TD chance', 'Fair price', 'Take-at (fair x1.2)', 'QB flag', 'Old rule verdict']]
+    oldcands = {a for a in tracked if P[a]['h6'] >= 2 or P[a]['name'] in REPORT_PLAYERS[:15]}
+    avgimp = st.avg_imp()
+    rowsout = []
+    for aid, x in P.items():
+        t = x['team']; opp = opp_of.get(t)
+        if not opp or x['pos'] not in SKILL or x['gp5'] + x['gp6'] < 3:
+            continue
+        s = status(aid)['status']
+        imp = imp_of.get(t)
+        f = st.features(aid, t, imp)
+        qf, qnote = qbflag.get(t, (False, ''))
+        f['bqb'] = int(qf)
+        pnew = td_model.chance(mw, f)
+        pos_ = x['pos']
+        k = key_of.get(pos_)
+        rk = k26[k].get(opp) if k else None
+        rk25 = k25[k].get(opp, 'n/a') if k else 'n/a'
         c = x['comb']
-        if not opp:
-            v, why = 'Skip', 'Bye week'
-        elif t in played:
+        # old rule verdict (kept for comparison)
+        if t in played or t in started or s in td_model.OUT_STATUSES:
+            ov = 'Skip'
+        elif c >= 0.55 and rk is not None and rk <= 16:
+            ov = 'Play'
+        elif c >= 0.55 or (c >= 0.45 and rk is not None and rk <= 12):
+            ov = 'Small stake'
+        else:
+            ov = 'Skip'
+        # new verdict
+        grp = td_model.pg(pos_)
+        fair, take = td_model.fair_american(pnew), td_model.take_at(pnew)
+        if t in played:
             v, why = 'Skip', 'Game already played'
-        elif s in ('Out', 'Out (inactive)', 'IR', 'Doubtful', 'Suspension'):
+        elif t in started:
+            v, why = 'Skip', 'Game already started'
+        elif s in td_model.OUT_STATUSES:
             v, why = 'Skip', f'Injury status: {s}'
         else:
-            if c >= 0.55 and rk <= 16:
-                v, why = 'Play', f'{round(c*100)}% hit rate, opp #{rk} softest'
-            elif c >= 0.55:
-                v, why = 'Small stake', f'{round(c*100)}% hit rate, tough opp (#{rk})'
-            elif c >= 0.45 and rk <= 12:
-                v, why = 'Small stake', f'{round(c*100)}% hit rate, soft opp (#{rk})'
+            if grp in ('RB', 'QB'):
+                v = 'Play' if pnew >= 0.45 else 'Small stake' if pnew >= 0.30 else 'Skip'
             else:
-                v, why = 'Skip', f'{round(c*100)}% hit rate, opp #{rk}'
+                v = 'Small stake' if pnew >= 0.30 else 'Skip'
+            why = f"{round(pnew*100)}% chance (shrunk hit {round(f['p_sh']*100)}%, team implied {imp:.1f}" if imp else f"{round(pnew*100)}% chance (shrunk hit {round(f['p_sh']*100)}%, no line"
+            why += f", GL share {round(f['gls']*100)}%"
+            if grp in ('WR', 'TE'):
+                why += f", RZ tgt share {round(f['rzts']*100)}%"
+            why += ')'
+            if grp in ('WR', 'TE') and v != 'Skip':
+                why += f"; WR/TE: only at {td_model.fmt_price(max(take, 250))} or longer"
+            if qf:
+                why += f'; QB CUT: {qnote}'
+            elif qnote:
+                why += f'; {qnote}'
             if x['gp6'] >= 4 and x['h6'] / x['gp6'] <= 0.25 and v != 'Skip':
                 v = {'Play': 'Small stake', 'Small stake': 'Skip'}[v]
                 why += f"; cold in 2026 ({x['h6']}/{x['gp6']})"
@@ -464,12 +580,21 @@ def build(week, log, injuries_only=False, slate=None):
             if x['gp5'] + x['gp6'] < 8:
                 v = 'Small stake' if v == 'Play' else v
                 why += '; small sample'
-        ws.append([x['name'], t, x['pos'], game_of.get(t, 'BYE'), opp or '-', rk if rk else '-', rk25,
-                   k26['rz_pct'].get(opp, '-') if opp else '-', f"{round(c*100)}%", f"{x['h6']}/{x['gp6']}",
-                   r1(x['rz6'] / x['gp6']), s, v, why])
+        if not (pnew >= 0.22 or aid in oldcands):
+            continue
+        rowsout.append([x['name'], t, pos_, game_of.get(t, 'BYE'), opp, rk if rk else '-', rk25,
+                        k26['rz_pct'].get(opp, '-'), f"{round(c*100)}%", f"{x['h6']}/{x['gp6']}",
+                        r1(x['rz6'] / x['gp6']), s, v, why,
+                        round(imp, 1) if imp else '-', round(imp_of.get(opp), 1) if imp_of.get(opp) else '-',
+                        f"{round(f['gls']*100)}%", r1(f['i5g']), f"{round(f['rzs']*100)}%",
+                        f"{round(f['rzts']*100)}%" if grp in ('WR', 'TE') else '-',
+                        f"{round(f['p_sh']*100)}%", f'{pnew*100:.1f}%', td_model.fmt_price(fair), td_model.fmt_price(take),
+                        'backup QB' if qf else '', ov, pnew])
     order = {'Play': 0, 'Small stake': 1, 'Skip': 2}
-    ws[1:] = sorted(ws[1:], key=lambda r: (order[r[12]], -int(r[8].rstrip('%'))))
+    rowsout.sort(key=lambda r: (order[r[12]], -r[-1]))
+    ws += [r[:-1] for r in rowsout]
     tabs['Week Shortlist'] = ws
+    log(f"Week {nxt} shortlist: {len(rowsout)} rows; QB flags: " + ', '.join(f'{t}: {n}' for t, (fl, n) in qbflag.items() if fl or n))
 
     # ---- Notes
     pending = PENDING if not injuries_only else []
@@ -483,7 +608,8 @@ def build(week, log, injuries_only=False, slate=None):
         ['Red Zone', 'Wk cell = RZ opps / inside-10 opps. RZ opp = target or carry on a play that started inside the opponent 20; i10 = inside the 10. Counted from ESPN play-by-play text; plays wiped out by penalty excluded. Estimates, not official counts.'],
         ['Team RZ share', "Player RZ opps / all RZ opps (targets + carries) by his team in the games he played."],
         ['Defense', 'TDs and catches allowed to each position, 2026 per game. Rank #1 = allows the most (softest), #32 = allows the least. Ties share a rank. RZ TD% allowed = opponent drives that ran a play inside the 20 and ended in a TD / those drives. 2025 ranks shown as a second look.'],
-        ['Week Shortlist', 'Mechanical rule: Play = 55%+ hit rate (2025+2026) and opponent top 16 softest vs the position; Small stake = 55%+ vs a tough defense, or 45%+ vs a top 12 soft defense; Questionable, a cold 2026 (TD in 25% or fewer of 4+ games) and a small sample (under 8 games) each drop one level; Out/IR/Doubtful/bye = Skip. Small stakes only, for fun.'],
+        ['Week Shortlist', 'TD model v2 (analysis/nfl/td_model.py, backtest in README): shrunk hit rate toward a position + usage prior, Vegas implied team total vs league average, goal-line (inside 5) share, red-zone and WR/TE red-zone-target share, fit by logistic regression on earlier games, then a cut when a backup QB starts. New TD chance -> Fair price -> Take-at (profit x1.2; bet only at take-at or longer). Verdict: RB/QB Play 45%+, Small stake 30-44%; WR/TE Small stake only at 30%+ and a price of +250 or longer; Questionable, a cold 2026 (TD in 25% or fewer of 4+ games) and a small sample (under 8 games) each drop one level; Out/IR/Doubtful/bye/started = Skip. Old hit-rate rule shown in the last column for comparison. Small stakes only, for fun.'],
+        ['QB change', 'Backup-QB flag: the QB expected to start (ESPN depth chart, skipping anyone Out/Doubtful/IR on the injuries feed) is not the team primary (most pass attempts over its last 17 games) and has under 150 prior pass attempts in 2025-26. Cuts the chance by the factor the model fit on 2025-26 backup starts (about 9% on the chance, on top of the lower implied total).'],
         ['Injuries', 'Status from the ESPN injuries feed. "Out (inactive)" = listed inactive as a coach decision. Not on the report = Active. "Out" with note "inactive" right after a Sunday means he sat that game; the status for the next game comes with the Wed-Fri practice reports, so recheck Saturday before betting.'],
         ['Not available', 'Routes run %, snap counts and official red-zone splits (Pro-Football-Reference blocks requests). Left out rather than guessed.'],
         ['Name matches', f'Play-by-play names are matched to the box score by team + last name + first initials. Unresolved RZ plays in 2026 so far: {unresolved}.'],

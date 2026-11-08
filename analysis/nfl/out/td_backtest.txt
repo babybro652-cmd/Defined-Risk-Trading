@@ -1,0 +1,51 @@
+2026 Weeks 2-9 (trained on 2025 + earlier 2026): 1828 player-games, base TD rate 22.9%, backup-QB rows 240
+  log-loss  old hit rate 0.5255   shrink only 0.5057   + implied total 0.5024   + goal-line share 0.5007   + RZ shares 0.4981   full (v2, + QB cut) 0.4981
+  Brier     old hit rate 0.1702   shrink only 0.1644   + implied total 0.1630   + goal-line share 0.1623   + RZ shares 0.1614   full (v2, + QB cut) 0.1614
+  calibration (new):
+       0-10% n=  61 predicted  8.9% actual  8.2%
+      10-20% n= 816 predicted 15.2% actual 13.5%
+      20-30% n= 587 predicted 24.4% actual 24.7%
+      30-40% n= 243 predicted 34.4% actual 39.5%
+      40-50% n=  57 predicted 44.9% actual 33.3%
+      50-60% n=  52 predicted 54.2% actual 63.5%
+     60-100% n=  12 predicted 64.0% actual 83.3%
+  calibration (old hit rate):
+       0-10% n= 447 predicted  2.5% actual 11.9%
+      10-20% n= 404 predicted 14.1% actual 17.3%
+      20-30% n= 388 predicted 24.2% actual 25.3%
+      30-40% n= 289 predicted 34.0% actual 26.3%
+      40-50% n= 136 predicted 43.3% actual 30.1%
+      50-60% n= 105 predicted 53.5% actual 45.7%
+     60-100% n=  59 predicted 64.1% actual 54.2%
+  picks at 40%+ chance (n, hits, avg predicted):
+    new: RB/QB 101 bets, 55 hit (52% avg est)   WR/TE 20 bets, 7 hit (46% avg est)
+    old: RB/QB 142 bets, 69 hit (54% avg est)   WR/TE 158 bets, 52 hit (49% avg est)
+  weekly top 10 by chance: new: 50/80 (62%, est 53%)   old: 43/80 (54%, est 61%)
+
+  backup-QB rows: n=240, model with flag 18.8%, without flag 20.6%, actual 18.8%
+2025 Weeks 7-18 (trained on earlier 2025 only): 3061 player-games, base TD rate 22.1%, backup-QB rows 652
+  log-loss  old hit rate 0.5558   shrink only 0.5058   + implied total 0.5041   + goal-line share 0.5032   + RZ shares 0.4997   full (v2, + QB cut) 0.4999
+  Brier     old hit rate 0.1784   shrink only 0.1639   + implied total 0.1631   + goal-line share 0.1628   + RZ shares 0.1616   full (v2, + QB cut) 0.1617
+  calibration (new):
+       0-10% n= 140 predicted  8.4% actual  9.3%
+      10-20% n=1188 predicted 15.6% actual 14.1%
+      20-30% n= 996 predicted 24.3% actual 21.8%
+      30-40% n= 500 predicted 34.4% actual 33.4%
+      40-50% n= 145 predicted 44.5% actual 41.4%
+      50-60% n=  83 predicted 53.5% actual 54.2%
+     60-100% n=   9 predicted 63.5% actual 55.6%
+  calibration (old hit rate):
+       0-10% n= 884 predicted  1.2% actual 14.5%
+      10-20% n= 618 predicted 14.1% actual 17.3%
+      20-30% n= 584 predicted 23.9% actual 21.7%
+      30-40% n= 351 predicted 33.8% actual 24.8%
+      40-50% n= 211 predicted 42.7% actual 29.9%
+      50-60% n= 252 predicted 52.7% actual 40.1%
+     60-100% n= 161 predicted 67.2% actual 38.5%
+  picks at 40%+ chance (n, hits, avg predicted):
+    new: RB/QB 181 bets, 90 hit (49% avg est)   WR/TE 56 bets, 20 hit (46% avg est)
+    old: RB/QB 318 bets, 133 hit (54% avg est)   WR/TE 306 bets, 93 hit (52% avg est)
+  weekly top 10 by chance: new: 63/120 (52%, est 53%)   old: 40/120 (33%, est 68%)
+
+  backup-QB rows: n=652, model with flag 19.0%, without flag 20.3%, actual 17.6%
+QB-change factor (all 2025-26 backup-QB team games): {"n_backup": 127, "n_norm": 663, "ALL": 0.863, "raw": 0.851, "act": 232, "exp": 272.724, "RB": 0.866, "RB_raw": 0.854, "RB_act": 86, "RB_exp": 100.688, "WR": 0.755, "WR_raw": 0.733, "WR_act": 74, "WR_exp": 101.009, "TE": 1.011, "TE_raw": 1.013, "TE_act": 50, "TE_exp": 49.382, "QB": 1.029, "QB_raw": 1.032, "QB_act": 22, "QB_exp": 21.324, "factor": 0.863}
