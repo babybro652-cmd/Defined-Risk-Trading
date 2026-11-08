@@ -83,17 +83,17 @@ date,scope,category,pick,pred,result,bets_row,note
 2026-11-04,UCL,corners,SAB at VFK o9.5 match,0.58,W,628,raw 0.66
 2026-11-04,UCL,team corners,MNC o4.5,0.72,L,629,raw 0.72; flagged skip (category dropped)
 2026-11-04,UCL,team corners,VFK o4.5,0.70,W,630,raw 0.70; flagged skip (category dropped)
-2026-11-07,Domestic,1+ SOT,Guirassy ELV at DOR,0.74,,730,pending XI
-2026-11-07,Domestic,over 2.5,MUN at M05,0.72,,731,raw 0.80
-2026-11-07,Domestic,btts,MUN at M05,0.61,,732,raw 0.76
-2026-11-07,Domestic,1+ SOT,Havertz HUL at ARS,0.71,,733,pending XI
-2026-11-07,Domestic,1+ SOT,Josh King NEW at FUL,0.70,,734,pending XI
-2026-11-07,Domestic,1+ SOT,Haaland MNC at NFO,0.73,,735,pending XI
-2026-11-07,Domestic,anytime goal,Haaland MNC at NFO,0.34,,736,raw 0.42
-2026-11-07,Domestic,1+ SOT,Fullkrug SVW at VFB,0.72,,737,pending XI
-2026-11-07,Domestic,over 2.5,SVW at VFB,0.66,,738,raw 0.73
-2026-11-07,Domestic,2+ SOT,Mbappe RMA at VAL,0.58,,739,raw 0.73
-2026-11-07,Domestic,anytime goal,Mbappe RMA at VAL,0.38,,740,raw 0.47
-2026-11-07,Domestic,2+ SOT,Messi CLT at MIA,0.54,,741,raw 0.68; MLS
-2026-11-07,Domestic,anytime goal,Messi CLT at MIA,0.43,,742,raw 0.54; MLS
-2026-11-07,Domestic,corners,LAFC at SEA o9.5 match,0.60,,743,raw 0.75; MLS
+2026-11-07,Domestic,1+ SOT,Guirassy ELV at DOR,0.74,Void,730,did not play
+2026-11-07,Domestic,over 2.5,MUN at M05,0.72,W,731,raw 0.80; 2-1
+2026-11-07,Domestic,btts,MUN at M05,0.61,W,732,raw 0.76; 2-1
+2026-11-07,Domestic,1+ SOT,Havertz HUL at ARS,0.71,L,733,0 SOT
+2026-11-07,Domestic,1+ SOT,Josh King NEW at FUL,0.70,W,734,1 SOT
+2026-11-07,Domestic,1+ SOT,Haaland MNC at NFO,0.73,W,735,2 SOT
+2026-11-07,Domestic,anytime goal,Haaland MNC at NFO,0.34,L,736,raw 0.42; 0 G
+2026-11-07,Domestic,1+ SOT,Fullkrug SVW at VFB,0.72,W,737,1 SOT
+2026-11-07,Domestic,over 2.5,SVW at VFB,0.66,L,738,raw 0.73; 1-0
+2026-11-07,Domestic,2+ SOT,Mbappe RMA at VAL,0.58,W,739,raw 0.73; 4 SOT
+2026-11-07,Domestic,anytime goal,Mbappe RMA at VAL,0.38,W,740,raw 0.47; 1 G
+2026-11-07,Domestic,2+ SOT,Messi CLT at MIA,0.54,W,741,raw 0.68; MLS; 2 SOT
+2026-11-07,Domestic,anytime goal,Messi CLT at MIA,0.43,L,742,raw 0.54; MLS; 0 G, 3-3
+2026-11-07,Domestic,corners,LAFC at SEA o9.5 match,0.60,W,743,raw 0.75; MLS; 14 corners
