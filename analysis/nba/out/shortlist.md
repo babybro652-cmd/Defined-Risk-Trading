@@ -7,9 +7,9 @@ Tip winner scores first 66% (25-26).
 - **First basket: Nikola Jokic** (DEN @ IND 5:00). Est 18% (fair +457; old model 16%; tip jumper x1.2 if his team wins the tip; chain model): DEN scores first 54%; first pts 20/66 and first shot 18/66 starts 25-26, 2/7 26-27, first 3 FGA 0.67 per start, FG 54%; IND vs C x1.15
 - **First basket: Evan Mobley** (CLE vs NY 8:00). Est 17% (fair +492; old model 14%; tip jumper x1.2 if his team wins the tip; chain model): CLE scores first 54%; first pts 20/63 and first shot 19/63 starts 25-26, 2/9 26-27, first 3 FGA 0.78 per start, FG 54%; NY vs C x0.85; Jarrett Allen out (28% share spread to the rest)
 - **First basket: Franz Wagner** (ORL @ GS 8:30). Est 16% (fair +530; old model 17%; chain model): ORL scores first 64%; first pts 7/32 and first shot 8/32 starts 25-26, 4/8 26-27, first 3 FGA 0.80 per start, FG 46%; GS vs F x0.99; Desmond Bane out (25% share spread to the rest)
+- **First basket: Alperen Sengun** (HOU @ PHX 9:00). Est 15% (fair +568; old model 13%; tip jumper x1.2 if his team wins the tip; chain model): HOU scores first 48%; first pts 20/72 and first shot 23/72 starts 25-26, 2/7 26-27, first 3 FGA 0.85 per start, FG 52%; PHX vs C x1.05
 - **First basket: Jamal Murray** (DEN @ IND 5:00). Est 14% (fair +602; old model 16%; chain model): DEN scores first 54%; first pts 23/77 and first shot 21/77 starts 25-26, 2/7 26-27, first 3 FGA 0.85 per start, FG 48%; IND vs G x0.85
-- **First basket: Dillon Brooks** (PHX vs HOU 9:00). Est 14% (fair +629; old model 10%; chain model): PHX scores first 56%; first pts 12/56 and first shot 14/56 starts 25-26, 1/7 26-27, first 3 FGA 0.70 per start, FG 45%; HOU vs F x0.97
-- **First basket: Alperen Sengun** (HOU @ PHX 9:00). Est 13% (fair +647; old model 12%; tip jumper x1.2 if his team wins the tip; chain model): HOU scores first 44%; first pts 20/72 and first shot 23/72 starts 25-26, 2/7 26-27, first 3 FGA 0.85 per start, FG 52%; PHX vs C x1.05
+- **First basket: Michael Porter Jr.** (BKN @ ATL 7:30). Est 13% (fair +662; old model 17%; chain model): BKN scores first 50%; first pts 21/52 and first shot 21/52 starts 25-26, 2/8 26-27, first 3 FGA 1.05 per start, FG 46%; ATL vs F x0.96
 - **Team first basket: Victor Wembanyama** (SA @ POR). Model share of SA's first points 38% (old 40%); raw 25-26 24/57, first shot 22/57, FG 50%
 - **Team first basket: Nikola Jokic** (DEN @ IND). Model share of DEN's first points 33% (old 29%); raw 25-26 20/66, first shot 18/66, FG 54%
 - **Team first basket: Wendell Carter Jr.** (ORL @ GS). Model share of ORL's first points 32% (old 23%); raw 25-26 18/78, first shot 21/78, FG 53%; Desmond Bane out (25% share spread to the rest)
@@ -40,9 +40,9 @@ Tip winner scores first 66% (25-26).
 - ORL @ GS 8:30: tip ORL 88% (Wendell Carter Jr. vs Draymond Green); ORL scores first 64%
   - ORL: 1st-shot pick Wendell Carter Jr. 21% (fair +387; scores on ORL's first shot 13%); 2nd-chance pick Franz Wagner 16% (fair +530; after a miss 14%)
   - GS: 1st-shot pick Yaxel Lendeborg 9% (fair +992; scores on GS's first shot 11%); 2nd-chance pick Stephen Curry 8% (fair +1112; after a miss 13%)
-- HOU @ PHX 9:00: tip PHX 70% (Alperen Sengun vs Khaman Maluach); HOU scores first 44%
-  - PHX: 1st-shot pick Dillon Brooks 14% (fair +629; scores on PHX's first shot 12%); 2nd-chance pick Devin Booker 13% (fair +650; after a miss 14%)
-  - HOU: 1st-shot pick Alperen Sengun 13% (fair +647; scores on HOU's first shot 13%); 2nd-chance pick Kevin Durant 10% (fair +896; after a miss 12%)
+- HOU @ PHX 9:00: tip PHX 57% (Alperen Sengun vs Oso Ighodaro); HOU scores first 48%
+  - PHX: 1st-shot pick Dillon Brooks 12% (fair +716; scores on PHX's first shot 12%); 2nd-chance pick Devin Booker 12% (fair +734; after a miss 14%)
+  - HOU: 1st-shot pick Alperen Sengun 15% (fair +568; scores on HOU's first shot 13%); 2nd-chance pick Kevin Durant 11% (fair +814; after a miss 12%)
 - SA @ POR 10:00: tip SA 83% (Victor Wembanyama vs Donovan Clingan); SA scores first 64%
   - SA: 1st-shot pick Victor Wembanyama 24% (fair +317; scores on SA's first shot 15%); 2nd-chance pick De'Aaron Fox 12% (fair +723; after a miss 9%)
   - POR: 1st-shot pick Scoot Henderson 9% (fair +1065; scores on POR's first shot 12%); 2nd-chance pick Donovan Clingan 8% (fair +1220; after a miss 14%)
@@ -56,7 +56,7 @@ Dunk/layup includes tip-ins and putbacks; 2pt jumper includes floaters and hooks
 - NY @ CLE 8:00: first points Dunk/layup 28% (+259), 2pt jumper 27% (+269), 3-pointer 31% (+224), Free throw 14% (+603); first basket Dunk/layup 32% (+216), 2pt jumper 31% (+221), 3-pointer 37% (+169)
 - WSH @ OKC 8:00: first points Dunk/layup 31% (+218), 2pt jumper 28% (+256), 3-pointer 29% (+240), Free throw 11% (+802); first basket Dunk/layup 36% (+180), 2pt jumper 31% (+223), 3-pointer 33% (+199)
 - ORL @ GS 8:30: first points Dunk/layup 33% (+199), 2pt jumper 27% (+266), 3-pointer 29% (+241), Free throw 10% (+916); first basket Dunk/layup 37% (+169), 2pt jumper 29% (+247), 3-pointer 34% (+194)
-- HOU @ PHX 9:00: first points Dunk/layup 30% (+238), 2pt jumper 32% (+217), 3-pointer 32% (+215), Free throw 7% (+1319); first basket Dunk/layup 33% (+207), 2pt jumper 34% (+191), 3-pointer 33% (+202)
+- HOU @ PHX 9:00: first points Dunk/layup 30% (+237), 2pt jumper 32% (+217), 3-pointer 32% (+214), Free throw 7% (+1341); first basket Dunk/layup 33% (+207), 2pt jumper 34% (+192), 3-pointer 33% (+201)
 - SA @ POR 10:00: first points Dunk/layup 35% (+187), 2pt jumper 24% (+322), 3-pointer 25% (+297), Free throw 16% (+517); first basket Dunk/layup 42% (+141), 2pt jumper 27% (+266), 3-pointer 31% (+221)
 
 Best player + method (fair price; bet only if the book pays more):
@@ -66,9 +66,9 @@ Best player + method (fair price; bet only if the book pays more):
 - **Isaiah Hartenstein first basket: Dunk/layup** (OKC vs WSH 8:00). Est 9.3% (fair +975) = FB 13% x 71% if he scores first; his first-FG sample 16, made FGs 265
 - **Evan Mobley first basket: Dunk/layup** (CLE vs NY 8:00). Est 9.0% (fair +1014) = FB 17% x 53% if he scores first; his first-FG sample 24, made FGs 661
 - **Nikola Jokic first basket: 2pt jumper** (DEN @ IND 5:00). Est 8.7% (fair +1055) = FB 18% x 48% if he scores first; his first-FG sample 26, made FGs 837
-- **Devin Booker first basket: 2pt jumper** (PHX vs HOU 9:00). Est 8.3% (fair +1112) = FB 13% x 62% if he scores first; his first-FG sample 28, made FGs 731
 - **Franz Wagner first basket: Dunk/layup** (ORL @ GS 8:30). Est 8.1% (fair +1141) = FB 16% x 51% if he scores first; his first-FG sample 15, made FGs 421
-- **Dillon Brooks first basket: 2pt jumper** (PHX vs HOU 9:00). Est 7.8% (fair +1179) = FB 14% x 57% if he scores first; his first-FG sample 14, made FGs 549
+- **Day'Ron Sharpe first basket: Dunk/layup** (BKN @ ATL 7:30). Est 7.6% (fair +1209) = FB 11% x 70% if he scores first; his first-FG sample 12, made FGs 277
+- **Devin Booker first basket: 2pt jumper** (PHX vs HOU 9:00). Est 7.4% (fair +1247) = FB 12% x 62% if he scores first; his first-FG sample 28, made FGs 731
 
 ## StarTool check (side by side, no blend)
 
@@ -77,7 +77,7 @@ Best player + method (fair price; bet only if the book pays more):
 - NY @ CLE: our top Evan Mobley (17%): differs (StarTool stars Jalen Brunson, Donovan Mitchell; bombs Karl-Anthony Towns, James Harden)
 - WSH @ OKC: our top Ajay Mitchell (13%): agree (StarTool bomb)
 - ORL @ GS: our top Wendell Carter Jr. (21%): differs (StarTool stars Desmond Bane, Stephen Curry; bombs Franz Wagner, Yaxel Lendeborg)
-- HOU @ PHX: our top Dillon Brooks (14%): agree (StarTool bomb)
+- HOU @ PHX: our top Alperen Sengun (15%): agree (StarTool bomb)
 - SA @ POR: our top Victor Wembanyama (24%): agree (StarTool star)
 
 ## Tip-off
@@ -87,7 +87,7 @@ Best player + method (fair price; bet only if the book pays more):
 - NY @ CLE 8:00 ET: Karl-Anthony Towns vs Evan Mobley; away wins tip 38%, away scores first 46%
 - WSH @ OKC 8:00 ET: Alex Sarr vs Isaiah Hartenstein; away wins tip 46%, away scores first 47%
 - ORL @ GS 8:30 ET: Wendell Carter Jr. vs Draymond Green; away wins tip 88%, away scores first 64%
-- HOU @ PHX 9:00 ET: Alperen Sengun vs Khaman Maluach; away wins tip 30%, away scores first 44%
+- HOU @ PHX 9:00 ET: Alperen Sengun vs Oso Ighodaro; away wins tip 43%, away scores first 48%
 - SA @ POR 10:00 ET: Victor Wembanyama vs Donovan Clingan; away wins tip 83%, away scores first 64%
 
 <!-- parlays:begin -->
