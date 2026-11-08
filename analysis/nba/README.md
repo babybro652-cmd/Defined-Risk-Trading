@@ -415,6 +415,8 @@ price. The shortlist writes this in "First basket two-slot picks (chain model)".
 
 - 11/7 (7 games): StarTool cards logged 7:55 AM; chain model with RotoWire expected lineups. Bets rows 704-714 (7 first basket, one per game, plus Curry 4+ threes, Porter Jr. 3+ threes, NAW 3+ threes, Brunson 25+). The 10:07 AM daily refresh should rebuild the tab only and NOT re-log these picks.
 
+- 11/8 (7 games): StarTool cards logged 8:10 AM; chain model with RotoWire expected lineups (CHI J. Smith over Claxton, NO D. Murray over DeAndre Jordan, SAC Achiuwa over K. Murray). Bets rows 761-772 (745-760 left for NFL): 7 first basket, Doncic 4+ threes, Porter Jr. 3+, LaMelo 3+, Maxey 25+, Giannis 25+. Charts `out/charts/fb_2026-11-08.png` and `fb_tipteam_3way_2026-11-08.png` (cheat sheet not sent yet). The 10:07 AM refresh should rebuild the tab only and NOT re-log these picks.
+
 ## Tim vs model log (first basket)
 
 Tim's picks come from his own read of the StarTool card (not just its star), so the Tim column tests how he uses StarTool's data; the StarTool column is its star/bomb as printed.
