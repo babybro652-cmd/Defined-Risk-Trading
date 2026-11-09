@@ -76,7 +76,14 @@ Best player + method (fair price; bet only if the book pays more):
 
 ## StarTool check (side by side, no blend)
 
-- No StarTool cards saved for this slate yet. Add lines to out/startool/star_bomb.txt (date|AWAY @ HOME|star,star|bomb,bomb) and rerun.
+- LAL @ ATL: our top Luka Doncic (22%): differs (StarTool stars Austin Reaves, Nickeil Alexander-Walker; bombs Walker Kessler, Jalen Johnson)
+- CLE @ CHA: our top Jarrett Allen (16%): differs (StarTool stars Donovan Mitchell, Brandon Miller; bombs James Harden, Grayson Allen)
+- WSH @ DET: our top Paul Reed (13%): differs (StarTool stars Anthony Davis, Cade Cunningham; bombs Trae Young, Duncan Robinson)
+- MEM @ TOR: our top Zach Edey (13%): differs (StarTool stars Ty Jerome, RJ Barrett; bombs Cameron Boozer, Immanuel Quickley)
+- IND @ DAL: our top Ivica Zubac (14%): differs (StarTool stars Pascal Siakam, Kyrie Irving; bombs Andrew Nembhard, Cooper Flagg)
+- DEN @ HOU: our top Nikola Jokic (18%): agree (StarTool star)
+- SA @ PHX: our top Victor Wembanyama (27%): agree (StarTool star)
+- NO @ GS: our top Trey Murphy III (12%): agree (StarTool star)
 
 ## Tip-off
 
@@ -100,5 +107,10 @@ Only categories that beat their price season to date: NBA 3+ threes, NHL 3+ SOG,
 - **2-leg #3:** Stephen Curry 3+ threes (80%, NO @ GS) + Duncan Robinson 3+ threes (65%, WSH @ DET). Fair -110 (52%); take +110 or longer.
 - **3-leg #4:** Nickeil Alexander-Walker 3+ threes (64%, LAL @ ATL) + James Harden 3+ threes (63%, CLE @ CHA) + Jamal Murray 3+ threes (55%, DEN @ HOU). Fair +351 (22%); take +396 or longer.
 - **3-leg #5:** Nickeil Alexander-Walker 3+ threes (64%, LAL @ ATL) + Jamal Murray 3+ threes (55%, DEN @ HOU) + Donovan Mitchell 3+ threes (55%, CLE @ CHA). Fair +417 (19%); take +469 or longer.
+
+### NHL
+- **2-leg #1:** Macklin Celebrini 3+ SOG (66%, NYI @ SJS) + Connor McDavid 3+ SOG (66%, NYR @ EDM). Fair +128 (44%); take +151 or longer.
+- **2-leg #2:** Macklin Celebrini 3+ SOG (66%, NYI @ SJS) + Leon Draisaitl 3+ SOG (66%, NYR @ EDM). Fair +131 (43%); take +154 or longer.
+- **2-leg #3:** Connor McDavid 3+ SOG (66%, NYR @ EDM) + Bo Horvat 3+ SOG (64%, NYI @ SJS). Fair +137 (42%); take +160 or longer.
 
 <!-- parlays:end -->

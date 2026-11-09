@@ -113,3 +113,11 @@
 2026-11-08|BOS @ MIL|Jayson Tatum,Tyler Herro|Paul George,Jaime Jaquez Jr.
 2026-11-08|NO @ LAC|Zion Williamson,Darius Garland|Trey Murphy III,Rui Hachimura
 2026-11-08|MIA @ SAC|Giannis Antetokounmpo,Darius Acuff Jr.|Bam Adebayo,Zach LaVine
+2026-11-09|LAL @ ATL|Austin Reaves,Nickeil Alexander-Walker|Walker Kessler,Jalen Johnson
+2026-11-09|CLE @ CHA|Donovan Mitchell,Brandon Miller|James Harden,Grayson Allen
+2026-11-09|WSH @ DET|Anthony Davis,Cade Cunningham|Trae Young,Duncan Robinson
+2026-11-09|MEM @ TOR|Ty Jerome,RJ Barrett|Cameron Boozer,Immanuel Quickley
+2026-11-09|IND @ DAL|Pascal Siakam,Kyrie Irving|Andrew Nembhard,Cooper Flagg
+2026-11-09|DEN @ HOU|Nikola Jokic,Kevin Durant|Jamal Murray,Alperen Sengun
+2026-11-09|SA @ PHX|Victor Wembanyama,Devin Booker|De'Aaron Fox,Dillon Brooks
+2026-11-09|NO @ GS|Trey Murphy III,Stephen Curry|Zion Williamson,Yaxel Lendeborg
