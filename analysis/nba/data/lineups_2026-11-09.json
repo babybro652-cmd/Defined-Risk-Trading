@@ -1,0 +1,162 @@
+{
+ "LAL": {
+  "five": [
+   "Luka Doncic",
+   "Austin Reaves",
+   "Matisse Thybulle",
+   "Jake LaRavia",
+   "Walker Kessler"
+  ],
+  "jumper": "Walker Kessler"
+ },
+ "ATL": {
+  "five": [
+   "Kingston Flemings",
+   "Nickeil Alexander-Walker",
+   "Dyson Daniels",
+   "Jalen Johnson",
+   "Onyeka Okongwu"
+  ],
+  "jumper": "Onyeka Okongwu"
+ },
+ "WSH": {
+  "five": [
+   "Trae Young",
+   "Kyshawn George",
+   "AJ Dybantsa",
+   "Anthony Davis",
+   "Alex Sarr"
+  ],
+  "jumper": "Alex Sarr"
+ },
+ "DET": {
+  "five": [
+   "Cade Cunningham",
+   "Duncan Robinson",
+   "Ausar Thompson",
+   "John Collins",
+   "Paul Reed"
+  ],
+  "jumper": "Paul Reed"
+ },
+ "CLE": {
+  "five": [
+   "James Harden",
+   "Donovan Mitchell",
+   "Peyton Watson",
+   "Evan Mobley",
+   "Jarrett Allen"
+  ],
+  "jumper": "Jarrett Allen"
+ },
+ "CHA": {
+  "five": [
+   "Coby White",
+   "Grayson Allen",
+   "Sion James",
+   "Naz Reid",
+   "Ryan Kalkbrenner"
+  ],
+  "jumper": "Ryan Kalkbrenner"
+ },
+ "MEM": {
+  "five": [
+   "Ty Jerome",
+   "Cedric Coward",
+   "Jaylen Wells",
+   "Cameron Boozer",
+   "Zach Edey"
+  ],
+  "jumper": "Zach Edey"
+ },
+ "TOR": {
+  "five": [
+   "Immanuel Quickley",
+   "RJ Barrett",
+   "Ja'Kobe Walter",
+   "Scottie Barnes",
+   "Jakob Poeltl"
+  ],
+  "jumper": "Jakob Poeltl"
+ },
+ "IND": {
+  "five": [
+   "Andrew Nembhard",
+   "Kelly Oubre Jr.",
+   "Aaron Nesmith",
+   "Pascal Siakam",
+   "Ivica Zubac"
+  ],
+  "jumper": "Ivica Zubac"
+ },
+ "DAL": {
+  "five": [
+   "Kyrie Irving",
+   "Caleb Martin",
+   "Cooper Flagg",
+   "P.J. Washington",
+   "Daniel Gafford"
+  ],
+  "jumper": "Daniel Gafford"
+ },
+ "DEN": {
+  "five": [
+   "Jamal Murray",
+   "Christian Braun",
+   "Cameron Johnson",
+   "Aaron Gordon",
+   "Nikola Jokic"
+  ],
+  "jumper": "Nikola Jokic"
+ },
+ "HOU": {
+  "five": [
+   "Fred VanVleet",
+   "Amen Thompson",
+   "Kevin Durant",
+   "Jabari Smith Jr.",
+   "Alperen Sengun"
+  ],
+  "jumper": "Alperen Sengun"
+ },
+ "SA": {
+  "five": [
+   "De'Aaron Fox",
+   "Stephon Castle",
+   "Dylan Harper",
+   "Julian Champagnie",
+   "Victor Wembanyama"
+  ],
+  "jumper": "Victor Wembanyama"
+ },
+ "PHX": {
+  "five": [
+   "Devin Booker",
+   "Jalen Green",
+   "Dillon Brooks",
+   "Miles Bridges",
+   "Oso Ighodaro"
+  ],
+  "jumper": "Oso Ighodaro"
+ },
+ "NO": {
+  "five": [
+   "Dejounte Murray",
+   "Jeremiah Fears",
+   "Trey Murphy III",
+   "Zion Williamson",
+   "Karlo Matkovic"
+  ],
+  "jumper": "Karlo Matkovic"
+ },
+ "GS": {
+  "five": [
+   "Stephen Curry",
+   "Brandin Podziemski",
+   "Yaxel Lendeborg",
+   "Gui Santos",
+   "Draymond Green"
+  ],
+  "jumper": "Draymond Green"
+ }
+}
