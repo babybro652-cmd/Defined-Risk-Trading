@@ -11,14 +11,6 @@
    "note": "74 starts"
   },
   {
-   "player": "Austin Reaves",
-   "team": "LAL",
-   "game": "LAL @ ATL",
-   "market": "3+ threes",
-   "p": 0.397,
-   "note": "56 starts"
-  },
-  {
    "player": "Jake LaRavia",
    "team": "LAL",
    "game": "LAL @ ATL",
@@ -187,14 +179,6 @@
    "note": "78 starts"
   },
   {
-   "player": "Immanuel Quickley",
-   "team": "TOR",
-   "game": "MEM @ TOR",
-   "market": "3+ threes",
-   "p": 0.543,
-   "note": "78 starts"
-  },
-  {
    "player": "RJ Barrett",
    "team": "TOR",
    "game": "MEM @ TOR",
@@ -209,14 +193,6 @@
    "market": "3+ threes",
    "p": 0.5,
    "note": "26 starts"
-  },
-  {
-   "player": "Scottie Barnes",
-   "team": "TOR",
-   "game": "MEM @ TOR",
-   "market": "3+ threes",
-   "p": 0.067,
-   "note": "88 starts"
   },
   {
    "player": "Andrew Nembhard",
@@ -411,12 +387,20 @@
    "note": "59 starts"
   },
   {
-   "player": "Trey Murphy III",
+   "player": "Saddiq Bey",
    "team": "NO",
    "game": "NO @ GS",
    "market": "3+ threes",
-   "p": 0.516,
-   "note": "75 starts"
+   "p": 0.453,
+   "note": "64 starts"
+  },
+  {
+   "player": "Herbert Jones",
+   "team": "NO",
+   "game": "NO @ GS",
+   "market": "3+ threes",
+   "p": 0.206,
+   "note": "60 starts"
   },
   {
    "player": "Stephen Curry",
