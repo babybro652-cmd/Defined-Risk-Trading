@@ -31,6 +31,13 @@
 
 Only categories that beat their price season to date: NBA 3+ threes, NHL 3+ SOG, NFL receptions, soccer 1+ shot on target. No points overs, no first basket / first goal / anytime goal legs. Fair = product of the leg chances (no correlation boost). Take only at the minimum price or longer (fair with a 10% cushion). Legs from the same game are correlated and marked.
 
+### NBA
+- **2-leg #1:** Luka Doncic 3+ threes (82%, LAL @ MIL) + Stephen Curry 3+ threes (81%, GS @ HOU). Fair -198 (66%); take -152 or longer.
+- **2-leg #2:** Luka Doncic 3+ threes (82%, LAL @ MIL) + Michael Porter Jr. 3+ threes (70%, BKN @ NO). Fair -133 (57%); take -108 or longer.
+- **2-leg #3:** Stephen Curry 3+ threes (81%, GS @ HOU) + Michael Porter Jr. 3+ threes (70%, BKN @ NO). Fair -128 (56%); take -105 or longer.
+- **3-leg #4:** James Harden 3+ threes (61%, CLE @ NY) + Paul George 3+ threes (58%, BOS @ TOR) + Tyler Herro 3+ threes (57%, LAL @ MIL). Fair +393 (20%); take +443 or longer.
+- **3-leg #5:** James Harden 3+ threes (61%, CLE @ NY) + Paul George 3+ threes (58%, BOS @ TOR) + Jamal Murray 3+ threes (57%, DEN @ MEM). Fair +395 (20%); take +445 or longer.
+
 ### NHL
 - **2-leg #1:** Cutter Gauthier 3+ SOG (71%, NSH @ ANA) + Macklin Celebrini 3+ SOG (67%, PIT @ SJS). Fair +111 (47%); take +132 or longer.
 - **2-leg #2:** Cutter Gauthier 3+ SOG (71%, NSH @ ANA) + Connor McDavid 3+ SOG (67%, PHI @ EDM). Fair +111 (47%); take +132 or longer.
