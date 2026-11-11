@@ -1,43 +1,41 @@
-# NHL shortlist 2026-11-09 (not guaranteed)
+# NHL shortlist 2026-11-11 (not guaranteed)
 
-- **Anytime goal: Bo Horvat** (NYI @ SJS). Est 29% (fair +250) = 0.77 x 37% blend; 26-27: 7 G in 16 GP; SJS allows 3.6 GA/G; faces Yaroslav Askarov (unconfirmed, SV .884); bet only at +285 or longer (never shorter than +150)
-- **Anytime goal: Leon Draisaitl** (EDM vs NYR). Est 39% (fair +153) = 0.77 x 51% blend; 26-27: 16 G in 18 GP; NYR allows 3.0 GA/G; faces Dylan Garand (confirmed, SV .914); bet only at +179 or longer (never shorter than +150)
-- **Anytime goal: Matvei Michkov** (PHI @ VAN). Est 23% (fair +337) = 0.77 x 30% blend; 26-27: 10 G in 19 GP; VAN allows 4.1 GA/G; faces Leevi Merilainen (likely, SV .871); bet only at +381 or longer (never shorter than +150)
-- **Anytime goal: Travis Konecny** (PHI @ VAN). Est 20% (fair +400) = 0.77 x 26% blend; 26-27: 1 G in 9 GP; VAN allows 4.1 GA/G; faces Leevi Merilainen (likely, SV .871); bet only at +450 or longer (never shorter than +150)
-- **First goal: Connor McDavid** (EDM vs NYR). Scored first in 7/82 games in 25-26, 2/18 in 26-27; 0.57 goals/G (blend); EDM scores first 56%; Top 6 PP1
-- **First goal: Pavel Dorofeyev** (NYR @ EDM). Scored first in 3/82 games in 25-26, 0/18 in 26-27; 0.40 goals/G (blend); NYR scores first 51%; Top 6 PP1
-- **First goal: Zach Hyman** (EDM vs NYR). Scored first in 4/58 games in 25-26, 0/7 in 26-27; 0.43 goals/G (blend); EDM scores first 56%; Top 6 PP1
-- **SOG over 1.5: Bo Horvat** (NYI @ SJS). Over 1.5 in 91% of games (blend); 3.2 SOG/G; L5: 2 3 3 3 2; SJS allows 29.8 SA/G; fair -955 is shorter than -300, so take over 2.5 instead (64%, fair -176)
-- **SOG over 1.5: Macklin Celebrini** (SJS vs NYI). Over 1.5 in 85% of games (blend); 3.8 SOG/G; L5: 6 6 5 2 2; NYI allows 28.0 SA/G; fair -565 is shorter than -300, so take over 2.5 instead (66%, fair -196)
-- **SOG over 1.5: Kyle Palmieri** (NYI @ SJS). Over 1.5 in 79% of games (blend); 2.4 SOG/G; L5: 2 2 4 2 3; SJS allows 29.8 SA/G; fair -387 is shorter than -300, so take over 2.5 instead (44%, fair +128)
-- **SOG over 1.5: Matthew Schaefer** (NYI @ SJS). Over 1.5 in 79% of games (blend); 3.0 SOG/G; L5: 3 2 2 6 2; SJS allows 29.8 SA/G; fair -381 is shorter than -300, so take over 2.5 instead (54%, fair -117)
-- **SOG over 1.5: Leon Draisaitl** (EDM vs NYR). Over 1.5 in 84% of games (blend); 3.3 SOG/G; L5: 7 6 4 3 2; NYR allows 27.9 SA/G; fair -526 is shorter than -300, so take over 2.5 instead (66%, fair -190)
+- **Anytime goal: Steven Stamkos** (NSH @ ANA). Est 32% (fair +210) = 0.77 x 42% blend; 26-27: 10 G in 18 GP; ANA allows 3.6 GA/G; faces Laurent Brossoit (unconfirmed, SV .858); bet only at +241 or longer (never shorter than +150)
+- **Anytime goal: Leon Draisaitl** (EDM vs PHI). Est 40% (fair +148) = 0.77 x 52% blend; 26-27: 18 G in 19 GP; PHI allows 3.1 GA/G; faces Dan Vladar (unconfirmed, SV .901); bet only at +172 or longer (never shorter than +150)
+- **Anytime goal: Filip Forsberg** (NSH @ ANA). Est 28% (fair +260) = 0.77 x 36% blend; 26-27: 7 G in 18 GP; ANA allows 3.6 GA/G; faces Laurent Brossoit (unconfirmed, SV .858); bet only at +297 or longer (never shorter than +150)
+- **Anytime goal: Mark Stone** (VGK vs UTA). Est 31% (fair +223) = 0.77 x 40% blend; 26-27: 10 G in 19 GP; UTA allows 3.2 GA/G; faces Sebastian Cossa (unconfirmed, SV .871); bet only at +256 or longer (never shorter than +150)
+- **First goal: Connor McDavid** (EDM vs PHI). Scored first in 7/82 games in 25-26, 3/19 in 26-27; 0.58 goals/G (blend); EDM scores first 57%; Top 6 PP1
+- **First goal: Cutter Gauthier** (ANA vs NSH). Scored first in 8/76 games in 25-26, 2/17 in 26-27; 0.68 goals/G (blend); ANA scores first 49%; Top 6 PP1
+- **First goal: Tage Thompson** (BUF vs TBL). Scored first in 3/81 games in 25-26, 1/17 in 26-27; 0.53 goals/G (blend); BUF scores first 56%; Top 6 PP1
+- **SOG over 2.5: Cutter Gauthier** (ANA vs NSH). Over 2.5 in 71% of games (blend); 3.9 SOG/G; L5: 6 4 3 6 5; NSH allows 29.4 SA/G
+- **SOG over 1.5: Macklin Celebrini** (SJS vs PIT). Over 1.5 in 85% of games (blend); 3.8 SOG/G; L5: 6 6 6 5 2; PIT allows 27.4 SA/G; fair -580 is shorter than -300, so take over 2.5 instead (67%, fair -202)
+- **SOG over 1.5: Pavel Dorofeyev** (NYR @ CGY). Over 1.5 in 78% of games (blend); 2.9 SOG/G; L5: 6 3 4 1 1; CGY allows 30.0 SA/G; fair -348 is shorter than -300, so take over 2.5 instead (54%, fair -117)
+- **SOG over 1.5: Rickard Rakell** (PIT @ SJS). Over 1.5 in 77% of games (blend); 2.6 SOG/G; L5: 3 0 3 2 2; SJS allows 29.9 SA/G; fair -338 is shorter than -300, so take over 2.5 instead (47%, fair +111)
+- **SOG over 1.5: Roman Josi** (NSH @ ANA). Over 1.5 in 82% of games (blend); 2.7 SOG/G; L5: 3 2 2 3 5; ANA allows 27.9 SA/G; fair -455 is shorter than -300, so take over 2.5 instead (47%, fair +114)
 
 ## Goalies
 
-- NYR @ EDM 8:00 ET: Dylan Garand (Confirmed) / Devon Levi (Confirmed)
-- PHI @ VAN 9:30 ET: Joseph Woll (Likely) / Leevi Merilainen (Likely)
-- NYI @ SJS 10:00 ET: Ilya Sorokin (Unconfirmed) / Yaroslav Askarov (Unconfirmed)
+- TBL @ BUF 7:00 ET: Andrei Vasilevskiy (Unconfirmed) / Ukko-Pekka Luukkonen (Unconfirmed)
+- NYR @ CGY 7:30 ET: Joonas Korpisalo (Unconfirmed) / Devin Cooley (Unconfirmed)
+- PHI @ EDM 9:00 ET: Dan Vladar (Unconfirmed) / Tristan Jarry (Unconfirmed)
+- UTA @ VGK 9:30 ET: Sebastian Cossa (Unconfirmed) / Carter Hart (Unconfirmed)
+- NSH @ ANA 10:00 ET: Justus Annunen (Unconfirmed) / Laurent Brossoit (Unconfirmed)
+- PIT @ SJS 10:00 ET: Sergei Murashov (Unconfirmed) / Yaroslav Askarov (Unconfirmed)
 
 ## StarTool check (side by side, no blend)
 
 - No StarTool cards saved for this slate yet. Add lines to out/startool/star_bomb.txt (date|AWAY @ HOME|star,star|bomb,bomb) and rerun.
 
 <!-- parlays:begin -->
-## Parlays 2026-11-09 (2-3 legs, $0.10 to $0.20)
+## Parlays 2026-11-11 (2-3 legs, $0.10 to $0.20)
 
 Only categories that beat their price season to date: NBA 3+ threes, NHL 3+ SOG, NFL receptions, soccer 1+ shot on target. No points overs, no first basket / first goal / anytime goal legs. Fair = product of the leg chances (no correlation boost). Take only at the minimum price or longer (fair with a 10% cushion). Legs from the same game are correlated and marked.
 
-### NBA
-- **2-leg #1:** Luka Doncic 3+ threes (82%, LAL @ ATL) + Stephen Curry 3+ threes (80%, NO @ GS). Fair -187 (65%); take -146 or longer.
-- **2-leg #2:** Luka Doncic 3+ threes (82%, LAL @ ATL) + Duncan Robinson 3+ threes (65%, WSH @ DET). Fair -114 (53%); take +106 or longer.
-- **2-leg #3:** Stephen Curry 3+ threes (80%, NO @ GS) + Duncan Robinson 3+ threes (65%, WSH @ DET). Fair -110 (52%); take +110 or longer.
-- **3-leg #4:** Nickeil Alexander-Walker 3+ threes (64%, LAL @ ATL) + James Harden 3+ threes (63%, CLE @ CHA) + Jamal Murray 3+ threes (55%, DEN @ HOU). Fair +351 (22%); take +396 or longer.
-- **3-leg #5:** Nickeil Alexander-Walker 3+ threes (64%, LAL @ ATL) + Jamal Murray 3+ threes (55%, DEN @ HOU) + Donovan Mitchell 3+ threes (55%, CLE @ CHA). Fair +417 (19%); take +469 or longer.
-
 ### NHL
-- **2-leg #1:** Macklin Celebrini 3+ SOG (66%, NYI @ SJS) + Connor McDavid 3+ SOG (66%, NYR @ EDM). Fair +128 (44%); take +151 or longer.
-- **2-leg #2:** Macklin Celebrini 3+ SOG (66%, NYI @ SJS) + Leon Draisaitl 3+ SOG (66%, NYR @ EDM). Fair +131 (43%); take +154 or longer.
-- **2-leg #3:** Connor McDavid 3+ SOG (66%, NYR @ EDM) + Bo Horvat 3+ SOG (64%, NYI @ SJS). Fair +137 (42%); take +160 or longer.
+- **2-leg #1:** Cutter Gauthier 3+ SOG (71%, NSH @ ANA) + Macklin Celebrini 3+ SOG (67%, PIT @ SJS). Fair +111 (47%); take +132 or longer.
+- **2-leg #2:** Cutter Gauthier 3+ SOG (71%, NSH @ ANA) + Connor McDavid 3+ SOG (67%, PHI @ EDM). Fair +111 (47%); take +132 or longer.
+- **2-leg #3:** Macklin Celebrini 3+ SOG (67%, PIT @ SJS) + Connor McDavid 3+ SOG (67%, PHI @ EDM). Fair +123 (45%); take +146 or longer.
+- **3-leg #4:** Tage Thompson 3+ SOG (67%, TBL @ BUF) + Leon Draisaitl 3+ SOG (66%, PHI @ EDM) + Jack Eichel 3+ SOG (59%, UTA @ VGK). Fair +284 (26%); take +322 or longer.
+- **3-leg #5:** Brandon Hagel 3+ SOG (66%, TBL @ BUF) + Leon Draisaitl 3+ SOG (66%, PHI @ EDM) + Jack Eichel 3+ SOG (59%, UTA @ VGK). Fair +286 (26%); take +324 or longer.
 
 <!-- parlays:end -->

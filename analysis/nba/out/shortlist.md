@@ -97,20 +97,15 @@ Best player + method (fair price; bet only if the book pays more):
 - NO @ GS 10:00 ET: Karlo Matkovic vs Draymond Green; away wins tip 61%, away scores first 54%
 
 <!-- parlays:begin -->
-## Parlays 2026-11-09 (2-3 legs, $0.10 to $0.20)
+## Parlays 2026-11-11 (2-3 legs, $0.10 to $0.20)
 
 Only categories that beat their price season to date: NBA 3+ threes, NHL 3+ SOG, NFL receptions, soccer 1+ shot on target. No points overs, no first basket / first goal / anytime goal legs. Fair = product of the leg chances (no correlation boost). Take only at the minimum price or longer (fair with a 10% cushion). Legs from the same game are correlated and marked.
 
-### NBA
-- **2-leg #1:** Luka Doncic 3+ threes (82%, LAL @ ATL) + Stephen Curry 3+ threes (80%, NO @ GS). Fair -187 (65%); take -146 or longer.
-- **2-leg #2:** Luka Doncic 3+ threes (82%, LAL @ ATL) + Duncan Robinson 3+ threes (65%, WSH @ DET). Fair -114 (53%); take +106 or longer.
-- **2-leg #3:** Stephen Curry 3+ threes (80%, NO @ GS) + Duncan Robinson 3+ threes (65%, WSH @ DET). Fair -110 (52%); take +110 or longer.
-- **3-leg #4:** Nickeil Alexander-Walker 3+ threes (64%, LAL @ ATL) + James Harden 3+ threes (63%, CLE @ CHA) + Jamal Murray 3+ threes (55%, DEN @ HOU). Fair +351 (22%); take +396 or longer.
-- **3-leg #5:** Nickeil Alexander-Walker 3+ threes (64%, LAL @ ATL) + Jamal Murray 3+ threes (55%, DEN @ HOU) + Donovan Mitchell 3+ threes (55%, CLE @ CHA). Fair +417 (19%); take +469 or longer.
-
 ### NHL
-- **2-leg #1:** Macklin Celebrini 3+ SOG (66%, NYI @ SJS) + Connor McDavid 3+ SOG (66%, NYR @ EDM). Fair +128 (44%); take +151 or longer.
-- **2-leg #2:** Macklin Celebrini 3+ SOG (66%, NYI @ SJS) + Leon Draisaitl 3+ SOG (66%, NYR @ EDM). Fair +131 (43%); take +154 or longer.
-- **2-leg #3:** Connor McDavid 3+ SOG (66%, NYR @ EDM) + Bo Horvat 3+ SOG (64%, NYI @ SJS). Fair +137 (42%); take +160 or longer.
+- **2-leg #1:** Cutter Gauthier 3+ SOG (71%, NSH @ ANA) + Macklin Celebrini 3+ SOG (67%, PIT @ SJS). Fair +111 (47%); take +132 or longer.
+- **2-leg #2:** Cutter Gauthier 3+ SOG (71%, NSH @ ANA) + Connor McDavid 3+ SOG (67%, PHI @ EDM). Fair +111 (47%); take +132 or longer.
+- **2-leg #3:** Macklin Celebrini 3+ SOG (67%, PIT @ SJS) + Connor McDavid 3+ SOG (67%, PHI @ EDM). Fair +123 (45%); take +146 or longer.
+- **3-leg #4:** Tage Thompson 3+ SOG (67%, TBL @ BUF) + Leon Draisaitl 3+ SOG (66%, PHI @ EDM) + Jack Eichel 3+ SOG (59%, UTA @ VGK). Fair +284 (26%); take +322 or longer.
+- **3-leg #5:** Brandon Hagel 3+ SOG (66%, TBL @ BUF) + Leon Draisaitl 3+ SOG (66%, PHI @ EDM) + Jack Eichel 3+ SOG (59%, UTA @ VGK). Fair +286 (26%); take +324 or longer.
 
 <!-- parlays:end -->
