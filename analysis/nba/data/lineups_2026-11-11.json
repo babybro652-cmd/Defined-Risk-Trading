@@ -32,8 +32,8 @@
  "NY": {
   "five": [
    "Jalen Brunson",
-   "Landry Shamet",
    "Mikal Bridges",
+   "Josh Hart",
    "OG Anunoby",
    "Karl-Anthony Towns"
   ],
@@ -43,8 +43,8 @@
   "five": [
    "Derrick White",
    "Jordan Walsh",
+   "Baylor Scheierman",
    "Jayson Tatum",
-   "Paul George",
    "Neemias Queta"
   ],
   "jumper": "Neemias Queta"
@@ -61,7 +61,7 @@
  },
  "BKN": {
   "five": [
-   "Nolan Traore",
+   "Egor Demin",
    "Michael Porter Jr.",
    "Danny Wolf",
    "Julius Randle",
@@ -71,9 +71,9 @@
  },
  "NO": {
   "five": [
-   "Dejounte Murray",
    "Jeremiah Fears",
-   "Trey Murphy III",
+   "Dejounte Murray",
+   "Saddiq Bey",
    "Zion Williamson",
    "Karlo Matkovic"
   ],
@@ -84,7 +84,7 @@
    "De'Aaron Fox",
    "Stephon Castle",
    "Dylan Harper",
-   "Devin Vassell",
+   "Julian Champagnie",
    "Victor Wembanyama"
   ],
   "jumper": "Victor Wembanyama"
@@ -92,7 +92,7 @@
  "CHI": {
   "five": [
    "Josh Giddey",
-   "Norman Powell",
+   "Isaac Okoro",
    "Matas Buzelis",
    "Caleb Wilson",
    "Jalen Smith"
@@ -115,9 +115,9 @@
    "Tyler Herro",
    "Jaime Jaquez Jr.",
    "Kyle Kuzma",
-   "Myles Turner"
+   "Kel'el Ware"
   ],
-  "jumper": "Myles Turner"
+  "jumper": "Kel'el Ware"
  },
  "DEN": {
   "five": [
@@ -151,10 +151,10 @@
  },
  "UTAH": {
   "five": [
-   "Isaiah Collier",
+   "Keyonte George",
    "Darryn Peterson",
+   "Josh Green",
    "Ace Bailey",
-   "Lauri Markkanen",
    "Jaxson Hayes"
   ],
   "jumper": "Jaxson Hayes"
@@ -183,7 +183,7 @@
   "five": [
    "Shai Gilgeous-Alexander",
    "Jared McCain",
-   "Ajay Mitchell",
+   "Alex Caruso",
    "Kenrich Williams",
    "Isaiah Hartenstein"
   ],

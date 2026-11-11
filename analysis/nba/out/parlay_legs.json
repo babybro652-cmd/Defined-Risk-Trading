@@ -107,6 +107,14 @@
    "note": "93 starts"
   },
   {
+   "player": "Josh Hart",
+   "team": "NY",
+   "game": "CLE @ NY",
+   "market": "3+ threes",
+   "p": 0.216,
+   "note": "60 starts"
+  },
+  {
    "player": "OG Anunoby",
    "team": "NY",
    "game": "CLE @ NY",
@@ -139,20 +147,20 @@
    "note": "32 starts"
   },
   {
+   "player": "Baylor Scheierman",
+   "team": "BOS",
+   "game": "BOS @ TOR",
+   "market": "3+ threes",
+   "p": 0.391,
+   "note": "21 starts"
+  },
+  {
    "player": "Jayson Tatum",
    "team": "BOS",
    "game": "BOS @ TOR",
    "market": "3+ threes",
    "p": 0.435,
    "note": "26 starts"
-  },
-  {
-   "player": "Paul George",
-   "team": "BOS",
-   "game": "BOS @ TOR",
-   "market": "3+ threes",
-   "p": 0.582,
-   "note": "47 starts"
   },
   {
    "player": "Immanuel Quickley",
@@ -203,12 +211,12 @@
    "note": "79 starts"
   },
   {
-   "player": "Devin Vassell",
+   "player": "Julian Champagnie",
    "team": "SA",
    "game": "SA @ CHI",
    "market": "3+ threes",
-   "p": 0.354,
-   "note": "76 starts"
+   "p": 0.451,
+   "note": "69 starts"
   },
   {
    "player": "Victor Wembanyama",
@@ -227,12 +235,12 @@
    "note": "60 starts"
   },
   {
-   "player": "Norman Powell",
+   "player": "Isaac Okoro",
    "team": "CHI",
    "game": "SA @ CHI",
    "market": "3+ threes",
-   "p": 0.447,
-   "note": "60 starts"
+   "p": 0.138,
+   "note": "63 starts"
   },
   {
    "player": "Matas Buzelis",
@@ -355,20 +363,20 @@
    "note": "54 starts"
   },
   {
-   "player": "Myles Turner",
+   "player": "Kel'el Ware",
    "team": "MIL",
    "game": "LAL @ MIL",
    "market": "3+ threes",
-   "p": 0.298,
-   "note": "82 starts"
+   "p": 0.147,
+   "note": "34 starts"
   },
   {
-   "player": "Nolan Traore",
+   "player": "Egor Demin",
    "team": "BKN",
    "game": "BKN @ NO",
    "market": "3+ threes",
-   "p": 0.173,
-   "note": "38 starts"
+   "p": 0.368,
+   "note": "49 starts"
   },
   {
    "player": "Michael Porter Jr.",
@@ -387,14 +395,6 @@
    "note": "89 starts"
   },
   {
-   "player": "Dejounte Murray",
-   "team": "NO",
-   "game": "BKN @ NO",
-   "market": "3+ threes",
-   "p": 0.053,
-   "note": "22 starts"
-  },
-  {
    "player": "Jeremiah Fears",
    "team": "NO",
    "game": "BKN @ NO",
@@ -403,12 +403,20 @@
    "note": "60 starts"
   },
   {
-   "player": "Trey Murphy III",
+   "player": "Dejounte Murray",
    "team": "NO",
    "game": "BKN @ NO",
    "market": "3+ threes",
-   "p": 0.516,
-   "note": "75 starts"
+   "p": 0.053,
+   "note": "22 starts"
+  },
+  {
+   "player": "Saddiq Bey",
+   "team": "NO",
+   "game": "BKN @ NO",
+   "market": "3+ threes",
+   "p": 0.433,
+   "note": "65 starts"
   },
   {
    "player": "Anthony Black",
@@ -443,20 +451,20 @@
    "note": "88 starts"
   },
   {
+   "player": "Keyonte George",
+   "team": "UTAH",
+   "game": "ORL @ UTAH",
+   "market": "3+ threes",
+   "p": 0.393,
+   "note": "64 starts"
+  },
+  {
    "player": "Ace Bailey",
    "team": "UTAH",
    "game": "ORL @ UTAH",
    "market": "3+ threes",
    "p": 0.308,
    "note": "71 starts"
-  },
-  {
-   "player": "Lauri Markkanen",
-   "team": "UTAH",
-   "game": "ORL @ UTAH",
-   "market": "3+ threes",
-   "p": 0.545,
-   "note": "50 starts"
   },
   {
    "player": "Stephen Curry",
@@ -521,14 +529,6 @@
    "market": "3+ threes",
    "p": 0.376,
    "note": "79 starts"
-  },
-  {
-   "player": "Ajay Mitchell",
-   "team": "OKC",
-   "game": "OKC @ POR",
-   "market": "3+ threes",
-   "p": 0.075,
-   "note": "24 starts"
   },
   {
    "player": "Sidy Cissoko",
