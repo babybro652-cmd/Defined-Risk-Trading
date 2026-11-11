@@ -137,8 +137,9 @@ reels included (Tim's approval of the trade post still applies; the music doesn'
   check with `ffmpeg -af volumedetect`). Silent audio track (mean about -91 dB) = no music.
 - `AUDIO QA: PASS` required, then Read SHEET.png. Music-only runs copy the video stream, so the
   picture is unchanged. Upload OUT.mp4 once (presigned URL) and use that publicUrl.
-- IG/FB: keep their media as is, unless they share the TikTok's video, then the music version
-  can go everywhere.
+- IG/FB: music test 11/12-11/25 (Tim, 11/11): every FB and IG video gets music too (same script,
+  same QA; reuse the TikTok's music version when they share the video). Log each in
+  `analysis/socials/music-test-fb-ig.md`. See "Socials decisions (Tim, 11/11)".
 - Photo carousels: `autoAddMusic: true` (Blotato adds a TikTok sound; photo posts only).
 - No chart/trending songs baked into our files (not licensed). A trending sound can only be
   added in the TikTok app: Blotato's `isDraft: true` sends the video to Tim's TikTok inbox
@@ -194,7 +195,7 @@ Put any text the viewer must read on a clean graphic you render yourself.
   Trade reels for TikTok get music first (see "Music on every TikTok reel"), so Tim approves
   the version with music.
 - Every caption is written natively per platform; no shared wording (run the check).
-- No em dashes, no filler words, no "comment/tag" CTAs. Hashtags: IG 3-5 incl.
+- No em dashes, no filler words, no "comment/tag" CTAs (one exception: "comment SKOOL", see Skool link). Hashtags: IG 3-5 incl.
   #MyHobbyismyFREEDOM and #definedrisktrading; TikTok max 5 incl. #definedrisktrading
   and caption under 150 characters before hashtags; Facebook none.
 - Cohort CLOSED (9/28): no signup CTAs, no $49.
@@ -230,7 +231,17 @@ For every trade recording Tim drops in DRT Phone, also build a personal TikTok r
 - Sat 11/7 and Mon 11/9: run normally (the earlier overrides for those days are cancelled).
 
 ## Skool link (Tim, 11/6)
-Skool community: https://www.skool.com/defined-risk-trading-6797/about. Use this for bio links (DRT TikTok website field once available, IG, FB). Captions still carry no signup CTA unless the routine allows it.
+Skool community: https://www.skool.com/defined-risk-trading-6797/about. Use it in DMs, comment replies, the YouTube channel About page and in Blotato DM automations. Captions still carry no signup CTA unless the routine allows it.
+**Never write "link in bio" or point to a bio link (Tim, 11/11: not enough followers for a link).** When copy points to Skool, write "Skool: Defined Risk Trading" as text, or "comment SKOOL". Use "comment SKOOL" on IG/FB only while a Blotato comment-keyword automation for SKOOL is active there (check `blotato_list_automations`); on TikTok only when Tim says he'll answer those comments.
+
+## Socials decisions (Tim, 11/11; from analysis/socials/drt-deep-dive-2026-11-11.md)
+1. **Cut:** FB 9 AM post, TikTok 12 PM text card, IG carousels (the Mon IG carousel routine is disabled). TikTok carousels are still fine.
+2. **Replicate what works:** Tim's real chart footage, trade reels, the "thinking behind the trade" caption cut, loss/mistake stories, TikTok 7 AM education. Hooks state the concrete situation (instrument, direction, stop, the twist); don't default to "X isn't Y" openers.
+3. **Music test on FB and IG videos, 11/12-11/25.** Every FB/IG video gets a music bed (add_audio.py, AUDIO QA: PASS). Log schedule id, platform, audio yes/no, track, and views at 7 days in `analysis/socials/music-test-fb-ig.md`; compare with the silent baseline (10/1-11/1 silent FB/IG videos) and any silent post in the window. Read it out on 12/2, once the 7-day snapshots are in.
+4. **Approval scope.** Education posts that follow every rule post without a second go. That covers education cuts of a trade Tim already approved and "why I passed" clips (a setup he watched and skipped), as long as they show no P&L, no dollar results, no account balances or funded numbers, and pass full-frame privacy QA. New trade posts (P&L, entries/exits, recaps, screenshots) still need Tim's go.
+5. **No "link in bio"** (see Skool link above).
+6. Cameron's reply and the other comment replies are done (11/11).
+Content plan for 11/12-11/25 and the Skool growth plan: `posts/plans/2026-11-11-content-plan.md`.
 
 ## Micros (MES) in education posts (Tim, 11/6-11/7)
 Tim kept two education posts that suggest MES for small accounts. OK in general education posts. Never say or imply Tim himself trades micros (he trades ES); his "cut the micros" (11/5) applies to posts about his own trading.

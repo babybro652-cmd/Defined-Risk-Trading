@@ -123,13 +123,15 @@ For AI image prompts add "no text, no numbers, no dates, no calendars, no screen
 2. Send a phone notification with `PushNotification`: under 200 chars, leading with the action. Example: `Approve trade post: ES short +$1,075 (IG/TT/FB). Reply "go" or send edits.`
 3. Wait. Schedule only after Tim says go (or approves an edited version). If he edits one platform, re-run Step 4 before scheduling.
 
-**Posting cadence (per day): TikTok 3, Facebook 2, Instagram 1.** TikTok is the growth platform. Instagram reels reach 12-64 views, so 1 repurposed reel a day is enough there. The daily routine "Master Content Agent — Daily" (5:00 AM ET) fills these slots with non-trade posts:
+**Posting cadence (per day, updated 11/11): TikTok 2 (+1 optional footage cut), Facebook 1, Instagram 1.** Tim cut the FB 9 AM post, the TikTok 12 PM text card and IG carousels on 11/11 (see `.claude/agents/drt.md`, "Socials decisions"). The daily routine (5:02 AM ET) fills these slots with non-trade posts:
 
 | Platform | Slots (ET) |
 |---|---|
-| TikTok | 7:00 AM, 12:00 PM, 8:00 PM |
-| Facebook | 9:00 AM, 5:00 PM |
-| Instagram | 12:30 PM |
+| TikTok | 7:00 AM, 8:00 PM; 12:00 PM only for an education cut of Tim's real footage (no text cards) |
+| Facebook | 5:00 PM |
+| Instagram | 12:30 PM (reel only, no carousels) |
+
+Every FB/IG video gets music during the 11/12-11/25 test. Never write "link in bio"; point to Skool as "Skool: Defined Risk Trading" or "comment SKOOL" (rules in drt.md).
 
 Trade posts from this skill are extra on top of those, with a daily cap of TikTok 4, Facebook 3, Instagram 2. Before scheduling, check `blotato_list_schedules`. If a platform is already at its cap today, replace (`blotato_update_schedule`) the next upcoming non-trade post on that platform instead of adding another. Approved trade posts usually go out right away ("post now"); otherwise use the next open slot at least 30 minutes from any other post on that platform.
 
