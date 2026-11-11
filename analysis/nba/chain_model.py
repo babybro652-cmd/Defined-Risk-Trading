@@ -21,7 +21,11 @@ the team's first points), P(he scores on the team's first shot event) and the se
 """
 KINDS = 3
 CH = {'k_sh1': 50, 'k_f3': 50, 'k_u': 150, 'k_mix': 30, 'k_fg': 40, 'k_tr': 100, 'k_trs': 20, 'k_or': 150,
-      'k_pa': 15, 'k_pm': 15, 'k_to': 3000, 'k_ob': 1500, 'jq': 1.2, 'temp': 1.0, 'steps': 80}
+      'k_pa': 15, 'k_pm': 15, 'k_to': 3000, 'k_ob': 1500, 'jq': 1.2, 'temp': 1.0, 'steps': 80,
+      'w_tp': 0.0, 'k_tp': 20, 'tp_q2': False}
+# w_tp (11/11 test, README "Test 11/11/26"): blend his past share of the TEAM's first points (tp1 / gs, shrunk to 1/5
+# with k_tp pseudo starts) into the first-possession shooter share: q1 = (1 - w_tp) q1 + w_tp share. tp_q2 also
+# blends it into the later-possession share. 0 = off.
 
 
 def player_params(p, L, c=CH):
@@ -39,7 +43,7 @@ def player_params(p, L, c=CH):
     pa = (p['PA'] + c['k_pa'] * L['pa'][pos]) / (p['OR'] + c['k_pa'])
     pm = (p['PM'] + c['k_pm'] * L['pm'][pos]) / (p['PA'] + c['k_pm'])
     return {'pid': p['pid'], 'fg': fg, 'tr': tr, 'trs': trs, 'upm': upm, 'orpm': orpm, 'pa': pa, 'pm': pm,
-            'sh1': p['sh1'], 'gs': p['gs'], 'f3': p['f3'], 'gs3': p['gs3']}
+            'sh1': p['sh1'], 'gs': p['gs'], 'f3': p['f3'], 'gs3': p['gs3'], 'tp1': p.get('tp1', 0)}
 
 
 def shares(P, c=CH):
@@ -47,7 +51,16 @@ def shares(P, c=CH):
     q1 = [(x['sh1'] + c['k_sh1'] * x['upm'] / U) / (x['gs'] + c['k_sh1']) for x in P]
     q2 = [(x['f3'] / 3 + c['k_f3'] * x['upm'] / U) / (x['gs3'] + c['k_f3']) for x in P]
     s1, s2 = sum(q1), sum(q2)
-    return [v / s1 for v in q1], [v / s2 for v in q2]
+    q1, q2 = [v / s1 for v in q1], [v / s2 for v in q2]
+    w = c.get('w_tp', 0)
+    if w:
+        h = [(x['tp1'] + c['k_tp'] / 5) / (x['gs'] + c['k_tp']) for x in P]
+        sh = sum(h)
+        h = [v / sh for v in h]
+        q1 = [(1 - w) * a + w * b for a, b in zip(q1, h)]
+        if c.get('tp_q2'):
+            q2 = [(1 - w) * a + w * b for a, b in zip(q2, h)]
+    return q1, q2
 
 
 def boosted(q, j, jq):

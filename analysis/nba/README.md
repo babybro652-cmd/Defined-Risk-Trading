@@ -332,6 +332,37 @@ Report format (Tim's reports, confirmed-lineup reruns): per game the projected t
 favorite first) "1st-shot pick" and "2nd-chance pick" with each one's chance to score the GAME's first points and fair
 price. The shortlist writes this in "First basket two-slot picks (chain model)". Bet only past fair.
 
+## Test 11/11/26: blend past team-first-points share into the chain (Tim, 11/8). Not adopted
+
+Idea (the @NBAFirstBasket "1st Bsk" column, computed from our game data): blend each starter's past share of his
+TEAM's first points (FT count, FanDuel rule) into the chain's first-possession shooter share, to cut players who take
+the first shot often but rarely score first (Kuminga). `chain_model.py` `w_tp` (0 = off, the default): q1 = (1 - w) q1 +
+w share, share = (team first points + k/5) / (starts + k), normalized over the five. `tp_q2` also blends the later
+possessions. Backtest `python3 analysis/nba/backtest_tpshare.py` (same walk-forward games as backtest_chain.py, 933 +
+160; out of sample: pick w and k on 2025-26, read 2026-27; deltas vs the default chain, paired SE in brackets).
+
+| Variant | Game LL 25-26 | Team LL 25-26 | Game LL 26-27 | Team LL 26-27 | Top 2 25-26 / 26-27 |
+|---|---|---|---|---|---|
+| Chain (default, w 0) | 2.2552 | 1.5851 | 2.2259 | 1.5876 | 48.2% / 50.5% |
+| w 0.15, k 20 | +.0005 (.0008) | +.0000 (.0004) | +.0006 (.0022) | -.0013 (.0011) | 48.1% / 50.2% |
+| w 0.3, k 20 | +.0017 (.0016) | +.0003 (.0008) | +.0020 (.0043) | -.0023 (.0023) | 48.1% / 48.9% |
+| w 0.5, k 20 | +.0040 (.0026) | +.0011 (.0013) | +.0050 (.0072) | -.0029 (.0037) | 48.9% / 48.6% |
+| w 0.7, k 20 | +.0074 (.0037) | +.0024 (.0018) | +.0093 (.0100) | -.0028 (.0052) | 48.2% / 48.3% |
+| w 0.5, k 40 | +.0038 (.0025) | +.0008 (.0012) | +.0037 (.0065) | -.0034 (.0034) | 47.9% / 49.8% |
+| w 0.3, k 20, later possessions too | +.0029 (.0021) | +.0017 (.0014) | +.0041 (.0057) | -.0014 (.0043) | 48.6% / 49.5% |
+
+k 10 and k 40 track k 20. Team LL = log loss of each team's own first points scorer over its five (team_first, other
+team ignored); top 2 = team first points scorer in the team's two highest team-first chances (random 40%).
+
+- 2025-26 (fit season): every weight is worse on both log losses, so the chosen weight is 0.
+- 2026-27: team LL a little better (-.001 to -.004, under 1 SE), game LL worse; top 2 no better. Fails the adoption
+  rule (better on both, or better on team without hurting game). Default stays w 0.
+- Why: past team-first share is noisy (a starter has 5 to 20 tries a season) and the chain already carries what drives
+  it (usage, make rate, FT trips, rebounds). Kuminga's team-first chance moves only from 23% to 20% at w 0.3.
+- Sanity check vs `analysis/reports/2026-11-08-model-consistency-by-team.csv` (112 team-games, live top 2 hit 42%):
+  the backtest chain on the same team-games with actual starters hits 46% (52), w 0.3 hits 49% (55). Three hits, noise.
+  Part of the live 42% is projected lineups that changed. Recheck when 2026-27 has 400+ games.
+
 ## Sources
 
 - ESPN `site.api.espn.com/apis/site/v2/sports/basketball/nba`: scoreboard, summary

@@ -102,7 +102,8 @@ def run(chain_variants):
                     sh = bf.shares(feats[tm], T[opp]['allow'], T[opp]['n'], L, cur_prm, {})
                     cur.update(jumper_split({x['pid']: v for x, v in zip(feats[tm], sh)}, jm.get(tm), ptip[tm], af_fp, JB))
                 probs['current'] = shrink_top(cur, 0.8)
-                extra = {}
+                extra = {'team': {'current': {p: v / sum(u for q, u in cur.items() if q in {y[0] for y in st[tm]})
+                                              for tm in st for p, v in cur.items() if p in {y[0] for y in st[tm]}}}}
                 for k, c in chain_variants.items():
                     c = dict(cm.CH, **c)
                     TT = []
@@ -119,11 +120,18 @@ def run(chain_variants):
                         cs = sum(pr.values())
                         pr = {p: (1 - c['blend']) * probs['current'][p] + c['blend'] * v / cs * tot for p, v in pr.items()}
                     probs[k] = pr
-                    if k == 'chain':   # pick rules on the default chain
-                        slots = {}
-                        for t, tm in enumerate((g['away'], g['home'])):
-                            s1, s2, tf, fe, sec = cm.two_slot(TT[t], c)
-                            slots[tm] = (TT[t].P[s1]['pid'], TT[t].P[s2]['pid'])
+                    tpr = {}
+                    for t in (0, 1):
+                        tf = cm.team_first(TT[t], c)[0]
+                        z = sum(tf)
+                        tpr.update({x['pid']: v / z for x, v in zip(TT[t].P, tf)})
+                    extra.setdefault('team', {})[k] = tpr
+                    slots = {}   # two-slot pick rule per variant (extra['slots'] = the default chain)
+                    for t, tm in enumerate((g['away'], g['home'])):
+                        s1, s2, tf, fe, sec = cm.two_slot(TT[t], c)
+                        slots[tm] = (TT[t].P[s1]['pid'], TT[t].P[s2]['pid'])
+                    extra.setdefault('slotsv', {})[k] = slots
+                    if k == 'chain':
                         extra['slots'] = slots
                 tmof = {p[0]: p[1] for v in st.values() for p in v}
                 recs.append(dict(d=d, g=g, win=win, probs=probs, book=book, tmof=tmof,
