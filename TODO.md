@@ -7,42 +7,34 @@ Newest decisions win; move finished items to Done with the date.
 ## Open
 
 ### This week (time-sensitive)
-- [ ] Thu 11/12 payday ($904.12): pay Uplift $72.75 + Flash Funds $132 + the moved failed payments (Workspace, Canva, PayPal card, Bison Green). Spotloan $218.95 skipped this week (prearranged); watch for their new schedule and add it to the Money Plan.
+- [ ] Thu 11/12 payday ($904.12): Tim pays Uplift $72.75 + Flash Funds $132 + Workspace, Canva, PayPal card (Bison Green NOT this week; reschedule). Spotloan $218.95 skipped this week (prearranged); watch for their new schedule and add it to the Money Plan.
 - [ ] Google Workspace: pay or update card at https://admin.google.com/ac/billing/accounts (invoice 5723568933; suspends Dec 3). Business Starter $8.40/mo.
-- [ ] TradingView Essential ($20.27, Google Play) declined: fix by 11/25 or alerts stop.
-- [ ] Apex Trader Funding $79.90 charged 11/11 1:48 AM after a password reset: confirm it was you; if not, dispute and change the password.
-- [ ] Lucid eval at $48,180 = $180 above the $48K floor. Was 11/9 (-$1,238) an eval trade? Trade tiny or pause until payouts/plan settle.
-- [ ] Fidelity: two 401(k) withdrawal emails 11/10 (one processed, one approved 3-10 days). Confirm both were you and the amounts.
-- [ ] CapCut Google Play sub: $1.99 now, $19.99/mo from Dec 10. Cancel before 12/10 if not needed.
-- [ ] Shopify store suspended for billing (not the PbP store). Close it or pay.
-- [ ] Wait on round 2 result (Rose Simpson, 11/11). Have your role pick ready if they offer one.
+- [ ] TradingView Essential ($20.27, Google Play) declined: fix by 11/25 or alerts stop. Reminder set Wed 11/18 6:07 PM.
+- [ ] Lucid 50K eval closed (failed). Need a new account: Jarvis researching Lucid vs Apex (analysis/prop-firms/2026-11-11-lucid-vs-apex.md).
+- [ ] Fidelity 401(k) payout of $82 on the way (Tim, 11/11).
+- [ ] CapCut Google Play sub: $19.99/mo from Dec 10. Reminder set Wed 12/9 6:07 PM.
+- [ ] Shopify store (Propa Pit pet store) suspended for billing: decide keep / pause / close (Jarvis advised 11/11).
+- [ ] Round 2 went well (11/11). Waiting to hear back.
 
 ### Decisions only Tim can make
-- [ ] DRT socials (deep dive 11/11, analysis/socials/drt-deep-dive-2026-11-11.md):
-    1. OK to cut FB 9 AM, IG carousels, TikTok 12 PM card, and add music/voice to every FB/IG video?
-    2. Can "why I passed" no-trade clips post without a per-post go?
-    3. Do education cuts of an already-approved trade need a second go?
-    4. Footage first for the 6:12 PM YouTube Short (decide after 11/18 data)?
-- [ ] Peace by Page (deep dive 11/11, ventures/calm-pages/peace-by-page-deep-dive-2026-11-11.md):
-    1. KDP Calm Wings paperback go / no-go (tax + bank setup, ~$8 proof).
-    2. Agree to the 12/31 checkpoint (under 10 paid orders = maintenance mode).
-    3. Yes/no on Systeme.io sampler email capture; ask Sekora about sharing her story?
-- [ ] Pause the daily 7:57 PM column H reminder?
-- [ ] Grants (10/30): which venture to register first (Legionz best fit). NC LLC $125 at sosnc.gov, free EIN, business bank account, then Piedmont CC Small Business Center (BOOST). Research: ventures/grants/2026-10-30-grants-research.md
-- [ ] Fantasy Homes LLC: keep / pause / drop.
+- [ ] Shopify / Propa Pit store: keep, pause or close.
+
+### Paused (Tim, 11/11)
+- Grants (LLC/EIN/BOOST plan in ventures/grants/2026-10-30-grants-research.md).
+- Fantasy Homes LLC.
+- Daily column H reminder (routine disabled).
 
 ### Defined Risk Trading
 - [ ] Send 2-3 trade-screen recordings a week (incl. "why I passed" clips). #1 lever from the deep dive.
-- [ ] DRT TikTok: add the Skool link (Edit profile > Links/Website; if missing, switch to Business, category Education). Then reply to Cameron Wright.
+- [ ] Socials changes approved 11/11: cut FB 9 AM, IG carousels (Monday routine disabled), TikTok 12 PM card; test music on FB/IG; rule-following education posts need no second go; never say "link in bio" (not enough followers). Jarvis writing a 2-week content plan + Skool growth plan (posts/plans/2026-11-11-content-plan.md).
+- [ ] Skool: 0 new members since 10/1. Pick from the Skool growth plan.
 - [ ] Record Christina's video reply (script: posts/2026-11-07-christina-reply-script.md).
-- [ ] Reply to the 17 comments on the 10/29 short trade TikTok (+28 pts on a 4-pt stop). Check in the app.
-- [ ] Skool admin: members since 10/1 and how they found it (only funnel data that exists).
 - [ ] Post the paper-trade Skool recap (Tim posts).
 - [ ] CRT Pro VMap settings (analysis/indicators/vmap-analysis-2026-11-08.md): AM session 1000-1200, PM start and end both 1600, uncheck Setup B, hard stop 3.5, recreate the TradingView alert on "Any alert() function call" (logging dead since 10/23).
 - [ ] Fill column H on Forward Test Log rows #139 and #140 (#140 → 7734; #139 → lowest low after 20:31 ET before the rally).
 - [ ] Check Lucid order history for the real September reset total (~$1,700 est).
 - [ ] Move off prop-firm resets to your own MES account (plan 10/1): paper trade first, catch up bills, then NinjaTrader Free, 1 MES, 4-pt stop (~$22). Don't fund until ready ($35 fee after 30 days idle).
-- [ ] Record Modules 4 and 5 (course/module_4_liquidity_volume_v4.pptx, course/module_5_workflow_risk_v4.pptx; scripts course/scripts-m4-m5-v4.md). Decide the 3 items at the top of the scripts first.
+- [ ] Record Modules 4 and 5 (daily 8:13 PM reminder until Tim says done; course/module_4_liquidity_volume_v4.pptx, course/module_5_workflow_risk_v4.pptx; scripts course/scripts-m4-m5-v4.md). Decide the 3 items at the top of the scripts first.
 - [ ] YouTube for DRT: confirm Blotato account 48727 is the right channel; add banner/logo/About; verify phone.
 - [ ] Pink Out softball photos (10/17-18): drop in DRT Phone if you still want a post.
 - [ ] Turn off the Nested Lumen nl-* skills.
@@ -50,7 +42,10 @@ Newest decisions win; move finished items to Done with the date.
 - [ ] FUTURE: position-tool boxes on CRT Pro (after hit rate improves).
 
 ### Peace by Page (Ventures)
-- [ ] IG link in bio → payhip.com/PeaceByPage; TikTok: put it as bio text (no link until 1,000 followers).
+- [ ] KDP: go (11/11). Tim orders proofs 11/12. Setup steps: ventures/calm-pages/kdp-setup-steps.md.
+- [ ] 12/31 checkpoint: under 10 paid orders by 12/31 = maintenance mode.
+- [ ] Content plan (coloring-first + new angles): ventures/calm-pages/content-plan-2026-11.md (Jarvis writing).
+- [ ] IG link in bio → payhip.com/PeaceByPage (Jarvis checking); TikTok: put it as bio text (no link until 1,000 followers).
 - [ ] Point peacebypage.com at the Payhip store (Cloudflare) + hello@ email.
 - [ ] Send a Payhip screenshot: visits, sales, sampler downloads (Jarvis can't reach Payhip).
 - [ ] Restart Pinterest: 1 gift-angle pin a day (Jarvis makes, Tim queues). Pins stopped 11/6.
@@ -69,7 +64,7 @@ Newest decisions win; move finished items to Done with the date.
 - [ ] Rotate the Systeme.io API key (after setup).
 
 ### Legionz Detailing
-- [ ] Answer the services menu questions (draft sent 9/30):
+- [ ] Answer the services menu questions this week (draft sent 9/30):
     - What Emperor includes at "from $290"
     - Confirm Centurion = interior, Legionnaire = full detail
     - Keep the 2024 add-on prices? (Legionnaire + ceramic costs more than Emperor)
@@ -79,11 +74,9 @@ Newest decisions win; move finished items to Done with the date.
 - [ ] Update the SOP quote prices and business plan to match the new menu.
 
 ### Personal / security
-- [ ] Charger oil change (past due, ~188k): 5.7 Hemi, 7 qt 5W-20 high-mileage + MO-339 filter.
-- [ ] Check the 5 Skool login codes from 9/29; change the Skool password if they weren't all you.
+- [ ] Charger oil change at the shop this week (past due, ~188k).
 - [ ] Add a second sign-in method to Stripe.
 - [ ] Confirm the support@ recovery email change (8/23) was you.
-- [ ] Check the trade tracker Apps Script SECRET isn't still 'change-me'.
 - [ ] Export claude.ai chat data to Drive (for the PL redefinition).
 - [ ] Clean up the profile doc (still opens with the 9/26 handoff note).
 - [ ] Unsubscribe from Digital Creator emails.
@@ -98,6 +91,9 @@ Newest decisions win; move finished items to Done with the date.
 - [ ] Judge the Tip-off Projections sheet after ~50 graded games.
 
 ## Done
+- 11/11 Apex $79.90 charge confirmed by Tim. Skool 9/29 login codes confirmed OK. Apps Script SECRET is blank (not 'change-me'); fine.
+- 11/11 DRT comment replies done (Cameron + others).
+- 11/11 Paused: grants, Fantasy Homes, column H reminder. Monday IG carousel routine disabled.
 - 11/11 NBA first-basket-share blend tested: not adopted (no blend weight beat the current model out of sample; top-2 48%/50% unchanged).
 - 11/11 Round 2 interview with Rose Simpson done ("went well"); 30-60-90 plan in personal/work/inventory-supervisor-30-60-90.md.
 - 11/11 Money Plan: Spotloan $218.95 removed from 11/12 (prearranged skip); 11/12 now +$7.23.

@@ -72,7 +72,7 @@ passes the result to Tim (with a push notification when the routine asks for one
 |---|---|---|
 | Weekday morning brief | Mon–Fri 5:27 AM | personal |
 | Workspace bill reminder | Thu 10/1 8:45 AM (one time) | personal |
-| Fill in column H | Daily 7:57 PM | drt |
+| Fill in column H (PAUSED 11/11) | Daily 7:57 PM | drt |
 | Monthly net worth check-in | 1st, 8:12 PM | wealth |
 | Rent reminder ($675, due 1st, latest 5th) | 28th, 7:47 PM | personal |
 | Plan the week | Sun 6:48 PM | Jarvis (all areas) |
@@ -87,7 +87,8 @@ passes the result to Tim (with a push notification when the routine asks for one
 | Work: week 1 surveys reminder (push) | Fri 6:52 AM and 12:57 PM | Jarvis |
 | Evening trading rules push | Sun–Thu 6:58 PM | Jarvis |
 | Daily DRT content, incl. 1 YouTube Short at 6:12 PM (moved here 10/11; full prompt stays in the disabled trig_01NkNxxc7neQATLrTifB42kv) | Daily 5:02 AM | drt |
-| DRT Monday IG carousel (prompt in disabled trig_01KKoeA87HpY3wb8fzaQK8Jb) | Mon 6:52 PM | drt |
+| DRT Monday IG carousel (STOPPED 11/11, carousels cut; prompt in disabled trig_01KKoeA87HpY3wb8fzaQK8Jb) | Mon 6:52 PM | drt |
+| Record Modules 4 & 5 push (until Tim says done) | Daily 8:13 PM | Jarvis |
 | DRT Wednesday TikTok commentary (prompt in disabled trig_01Td2366YryxzXU8BPrxUv1Z) | Wed 7:22 PM | drt |
 | DRT Thursday FB lifestyle reel (prompt in disabled trig_01AgRQCG6Fn3maoJGToxnFRT) | Thu 7:52 PM | drt |
 | DRT Friday trade recap, needs Tim's go (prompt in disabled trig_01CgC1RonbscetrWJhFAWLZp) | Fri 4:57 PM | drt |
