@@ -54,7 +54,7 @@ Newest decisions win; move finished items to Done with the date.
 - [ ] Launch build-out sheet: finish remaining steps ([sheet](https://docs.google.com/spreadsheets/d/1TLL394lyp_JITaeTmSNjxmjrJ_4T-Ie6UZMhja7xzOk/edit)).
 
 ### Prosperity Legendz
-- [ ] Get a domain and verify the sender email in Systeme.io (blocks the funnel). Paste DNS records to Jarvis.
+- [ ] You already own prosperitylegendz.com (paid to 4/18/2027, DNS on Cloudflare). Confirm it's in your Cloudflare account, then verify it in Systeme.io (Settings > Emails > Domains). Fast-track: pl/fast-track-2026-11-11.md. Steps 1-5 take ~30 min.
 - [ ] Choose a mailing address for the email footer (CAN-SPAM).
 - [ ] Build the Systeme.io funnel and the 5 welcome emails.
 - [ ] Fix Blotato automation 9422: Content-Type header, button URL, Cushion Plan tag.
