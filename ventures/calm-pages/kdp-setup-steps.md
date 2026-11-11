@@ -50,7 +50,7 @@ Don't use the Payhip journal PDF: it has print-at-home pages and the wrong page 
 - Cover: "Upload a cover you already have" > **calm-wings-kdp-cover.pdf**
 - AI-generated content: **Yes**. Text: AI-generated with some edits. Images: AI-generated with some edits.
 - **Launch Previewer**. Page through all 170 pages. Fix nothing unless it flags an error (send Jarvis a screenshot if it does). Approve.
-- Note: the interior file has a few light color accents. On a black and white interior KDP prints them as gray. That is expected; just check on the proof that the light lines and the coloring-page outlines are dark enough.
+- Note: the interior file has a few light color accents. On a black and white interior KDP prints them as gray. That is expected; check on the proof that the light lines and the coloring-page outlines are dark enough.
 - Save and Continue
 
 **Rights & Pricing tab**
