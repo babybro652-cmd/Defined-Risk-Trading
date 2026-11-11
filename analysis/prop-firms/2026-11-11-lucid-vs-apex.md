@@ -9,13 +9,27 @@ Research only. Nothing was bought.
 - **Total cost to get funded: $80.50** (one-time, no activation fee, no monthly bill). Budget **$161** to allow one reset (about $80).
 - Why: cheapest all-in, no 30-day clock, end-of-day drawdown (no intraday trail on open profit), a $1,200 soft daily stop above Tim's own $1,000 max, no consistency rule or buffer once funded, and the first payout can come after 5 days of $150+ profit.
 - **The rule most likely to fail him: the $2,000 end-of-day trailing max loss.** His $1,238 day on 11/9 used 62% of it. On 2 ES, 3 stops plus slippage is about $1,200, so two bad days end the account. Trade 1 ES until the floor locks at $50,100.
-- **Timing:** the 11/12 Money Plan shows +$7.23 after bills, so this waits until a later paycheck. Don't buy on Thursday.
+- **Timing:** Tim already has an Apex 50K eval (bought 11/11, see the next section). Use it first. Buy LucidFlex only after it passes or expires, and not from the 11/12 paycheck (+$7.23 after bills).
 
-## First: the Apex charge on 11/11
+## Use the Apex eval Tim already bought, first (added 11/11 evening)
 
-`TODO.md` shows **Apex Trader Funding $79.90 charged 11/11 at 1:48 AM, after a password reset.** $79.90 is what a 50K Apex eval costs at 90% off a $799 list price, so this may be an eval already on Tim's account.
-- **If Tim didn't buy it:** dispute the charge and change the password. Nothing below changes.
-- **If he did buy it:** he already has a 50K Apex eval with a **30-day clock**. Use it before buying Lucid. Check in the Apex dashboard whether it's EOD or Intraday. If it's Intraday, trade 1 ES with a fixed bracket (no letting runners trail), because open profit raises the floor. Buy LucidFlex only after that eval passes or fails.
+Tim confirmed the $79.90 charge. Gmail receipt (invoice EDS6K35, 11/11 1:48 AM ET, user ID timwill652):
+**"50k Tradovate No Activation Fee Intraday Trail"**, $799.00 list, $719.10 off (90%), paid **$79.90**.
+
+What that means:
+- **50K eval, $3,000 target, $2,000 INTRADAY trailing drawdown** (trails peak open equity, including unrealized profit), locks at $50,100. **No daily loss limit.** Up to 6 ES in the eval.
+- **No activation fee**: pass and the funded (PA) account costs nothing more. Total cost to get funded on this one: **$79.90, already paid.**
+- **Expires 30 calendar days from purchase, about Thu 12/10-12/11.** No resets, no extensions (Apex 4.0). The receipt doesn't print the date; check the dashboard for the exact expiry.
+- Runs on **Tradovate** (TradingView can connect to it).
+- Funded payouts: 5 days of $200+ profit, balance at least $52,600 for the first $500, 50% best-day rule, first cap about $1,500, 6 payouts.
+
+How to trade it:
+1. **1 ES only, with a fixed bracket**: 3.5-4 pt stop, a set target (8 pts = 2R), entered as one OCO order. No trailing a runner. Every point of open profit raises the floor even if price comes back: a trade that runs +10 pts on 2 ES and returns to entry has moved the floor up $1,000.
+2. **Make his own daily stop: done after -$400 (2 losses).** There's no DLL on this account to stop him, and 11/9 (-$1,238) was 62% of the whole drawdown.
+3. **Same rules as always:** NY session, nothing before 10 AM ET, wait for the label, 1-2 trades, then done.
+4. **The clock:** about 20 trading days to 12/10 (Thanksgiving week is thin). $3,000 on 1 ES is about 8 net 2R winners, roughly 2 a week. If he's under $1,500 profit by 12/1, don't size up to catch up. Let it expire and go to Lucid. Forcing trades to beat a deadline is the London pattern.
+5. **Once the peak balance has passed $52,100** (floor locked at $50,100), 2 ES is OK.
+6. **Hold off on LucidFlex** until this eval passes or expires. Then the Lucid pick below applies.
 
 ## Side by side (50K)
 
