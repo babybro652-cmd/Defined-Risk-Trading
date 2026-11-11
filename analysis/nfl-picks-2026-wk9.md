@@ -97,3 +97,16 @@ Amon-Ra St. Brown 5+ (65%, fair -186) only if he is active (Q, ribs); MIA is #31
 - BUF @ MIN: total 48.5 to 43.5 (Wentz).
 - DAL @ IND: IND -1.5 to DAL -4.5. LV @ SF: SF -8.5 to -10, total 46.5 to 51.5.
 - CIN vs ATL total 48.5 to 52.5. NYJ @ KC total 41.5 to 47.5. TB @ CHI: CHI -3.5 to -6.
+
+## Results (graded Wed 11/11, catch-up run; never logged as Bets rows)
+
+Anytime TD, games not yet started (the 22 listed plays): 7-12, plus 3 no box-score line (Sean Tucker, Emanuel Wilson, Jahdae Walker; treat as void).
+- Play tier 2-4: McCaffrey W (2 TD), Cook W; Jacobs L (finger, now Out for weeks), Swift L, Charbonnet L, Jeanty L.
+- Small stake tier 5-8: Irving W (2), Bowers W, Stevenson W, Nico Collins W; Hampton, Kittle, Smith-Njigba, Marks, Josh Allen, Kraft, Mason, McBride, Aaron Jones L.
+- By position: RB/QB 5-8, WR/TE 2-4 (Bowers, Collins hit; both were below the +250 WR/TE rule's fair line, so most would have been Skip at the book).
+- Started 1:00 games (grading only): 5-3 plus Adams and Achane no line. Gibbs, Javonte Williams (now 4-0 on our lists), Kenneth Walker III (3 TD), Coleman W; Taylor, Kyren Williams, St. Brown, Rice L.
+- v2 top 10 by chance across the whole slate: McCaffrey W, Gibbs W, Javonte W, Walker W, Taylor L, Jacobs L, Kyren L, Swift L, Cook W, Charbonnet L = 5 of 10 (model expected about 5.8).
+
+Receptions: 8-1. McBride 7+ W (7), Lamb 5+ W (10), Nabers 5+ W (5), Kittle 4+ W (4), Nacua 6+ W (14), Bowers 5+ W (7), Smith-Njigba 6+ W (7), St. Brown 5+ W (8); Gibbs 4+ L (0).
+
+No ungraded Week 9 rows on the Bet Tracker (TNF JAX @ BAL rows were already graded).
