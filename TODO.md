@@ -94,11 +94,11 @@ Newest decisions win; move finished items to Done with the date.
 - [ ] Charger: 2 engine builder quotes for a forged 392 (pull-out vs Mopar crate P5160617AA $6,995); ask Whipple which 3.0L kit + pulley fits a 392 in a 5.7 car at ~7 psi and clears the Pursuit hood.
 
 ### Jarvis (auto, no action from Tim)
-- [ ] Wed 11/11 5:05 PM: backtest blending team first-basket share into the NBA model.
 - [ ] Wed 11/11 6:25 PM: NBA confirmed-lineup recheck + push.
 - [ ] Judge the Tip-off Projections sheet after ~50 graded games.
 
 ## Done
+- 11/11 NBA first-basket-share blend tested: not adopted (no blend weight beat the current model out of sample; top-2 48%/50% unchanged).
 - 11/11 Round 2 interview with Rose Simpson done ("went well"); 30-60-90 plan in personal/work/inventory-supervisor-30-60-90.md.
 - 11/11 Money Plan: Spotloan $218.95 removed from 11/12 (prearranged skip); 11/12 now +$7.23.
 - 11/11 DRT socials + Peace by Page deep dives done.
