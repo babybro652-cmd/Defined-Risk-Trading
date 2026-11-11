@@ -10,7 +10,7 @@ Newest decisions win; move finished items to Done with the date.
 - [ ] Thu 11/12 payday ($904.12): Tim pays Uplift $72.75 + Flash Funds $132 + Workspace, Canva, PayPal card (Bison Green NOT this week; reschedule). Spotloan $218.95 skipped this week (prearranged); watch for their new schedule and add it to the Money Plan.
 - [ ] Google Workspace: pay or update card at https://admin.google.com/ac/billing/accounts (invoice 5723568933; suspends Dec 3). Business Starter $8.40/mo.
 - [ ] TradingView Essential ($20.27, Google Play) declined: fix by 11/25 or alerts stop. Reminder set Wed 11/18 6:07 PM.
-- [ ] Lucid 50K eval closed (failed). Need a new account: Jarvis researching Lucid vs Apex (analysis/prop-firms/2026-11-11-lucid-vs-apex.md).
+- [ ] Trade the Apex 50K eval bought 11/11 (intraday trail $2,000, expires ~12/10; check dashboard): 1 ES, 4-pt stop / 8-pt target, stop for the day at -$400. Don't buy Lucid (LucidFlex 50K, $80.50 code ETFPROMO) until Apex passes or expires. Plan: analysis/prop-firms/2026-11-11-lucid-vs-apex.md.
 - [ ] Fidelity 401(k) payout of $82 on the way (Tim, 11/11).
 - [ ] CapCut Google Play sub: $19.99/mo from Dec 10. Reminder set Wed 12/9 6:07 PM.
 - [ ] Shopify store (Propa Pit pet store) suspended for billing: decide keep / pause / close (Jarvis advised 11/11).
