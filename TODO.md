@@ -6,78 +6,103 @@ Newest decisions win; move finished items to Done with the date.
 
 ## Open
 
-### Grants
-- [ ] (Jarvis, auto) Wed 11/11 5:05 PM: backtest blending team first-basket share into the NBA chain model (Kuminga problem). Scheduled; Tim does not need to ask.
-- [ ] DRT TikTok: add Skool link (Edit profile > Links/Website; if missing, switch to Business account, category Education). Then reply to Cameron Wright.
-- [ ] Round 2 interview Wed 11/11 2:30 PM with Rose Simpson (Director of Ops). Fill in STAR brackets in the prep doc; pick first-choice role (night inventory vs day freezer).
-- [ ] Grants prep (10/30): decide which venture to register first (Legionz is the best grant fit). Form the NC LLC ($125 at sosnc.gov), get a free EIN at irs.gov, open a business bank account. Then contact Piedmont CC Small Business Center about BOOST, and get ready for Progressive (spring 2027). Research: ventures/grants/2026-10-30-grants-research.md
+### This week (time-sensitive)
+- [ ] Thu 11/12 payday ($904.12): pay Uplift $72.75 + Flash Funds $132 + the moved failed payments (Workspace, Canva, PayPal card, Bison Green). Spotloan $218.95 skipped this week (prearranged); watch for their new schedule and add it to the Money Plan.
+- [ ] Google Workspace: pay or update card at https://admin.google.com/ac/billing/accounts (invoice 5723568933; suspends Dec 3). Business Starter $8.40/mo.
+- [ ] TradingView Essential ($20.27, Google Play) declined: fix by 11/25 or alerts stop.
+- [ ] Apex Trader Funding $79.90 charged 11/11 1:48 AM after a password reset: confirm it was you; if not, dispute and change the password.
+- [ ] Lucid eval at $48,180 = $180 above the $48K floor. Was 11/9 (-$1,238) an eval trade? Trade tiny or pause until payouts/plan settle.
+- [ ] Fidelity: two 401(k) withdrawal emails 11/10 (one processed, one approved 3-10 days). Confirm both were you and the amounts.
+- [ ] CapCut Google Play sub: $1.99 now, $19.99/mo from Dec 10. Cancel before 12/10 if not needed.
+- [ ] Shopify store suspended for billing (not the PbP store). Close it or pay.
+- [ ] Wait on round 2 result (Rose Simpson, 11/11). Have your role pick ready if they offer one.
 
-### Personal
-- [x] Pay the light bill (my half $51.25 of $102.50) and internet ($50.77). Paid 10/22.
-- [ ] Charger oil change (past due, ~188k miles): 5.7 Hemi, 7 qt 5W-20 high-mileage + MO-339 filter.
-- [ ] Google Workspace: moved to Thu 11/12 (Tim, 11/6) with the other failed payments (Canva, PayPal card, Bison Green). Business Starter ($8.40/mo) since 10/22. 11/1 charge on card 2460 DECLINED (insufficient funds); invoice 5723568933 posted 11/2. Suspension now Dec 3. Pay or update card at https://admin.google.com/ac/billing/accounts and check for any leftover 10/20 balance.
-- [ ] Check the 5 Skool login codes from 9/29. If they weren't all you, change the Skool password.
-- [ ] Add a second sign-in method to Stripe.
-- [ ] Confirm the support@ recovery email change (8/23) was you.
-- [ ] Check the trade tracker Apps Script SECRET isn't still 'change-me'.
-- [ ] Export claude.ai chat data to Drive (Settings > Privacy > Export data), for the PL redefinition.
-- [ ] Clean up the profile doc (it still opens with the 9/26 handoff note).
-- [ ] Decide keep / pause / drop for Fantasy Homes LLC. (Propa Pit: keeping, 9/30. Legionz: own agent, 9/30. Faceless channel: paused, 9/30.)
-- [ ] Unsubscribe from the Digital Creator emails (tap Unsubscribe at the top of one in Gmail).
+### Decisions only Tim can make
+- [ ] DRT socials (deep dive 11/11, analysis/socials/drt-deep-dive-2026-11-11.md):
+    1. OK to cut FB 9 AM, IG carousels, TikTok 12 PM card, and add music/voice to every FB/IG video?
+    2. Can "why I passed" no-trade clips post without a per-post go?
+    3. Do education cuts of an already-approved trade need a second go?
+    4. Footage first for the 6:12 PM YouTube Short (decide after 11/18 data)?
+- [ ] Peace by Page (deep dive 11/11, ventures/calm-pages/peace-by-page-deep-dive-2026-11-11.md):
+    1. KDP Calm Wings paperback go / no-go (tax + bank setup, ~$8 proof).
+    2. Agree to the 12/31 checkpoint (under 10 paid orders = maintenance mode).
+    3. Yes/no on Systeme.io sampler email capture; ask Sekora about sharing her story?
+- [ ] Pause the daily 7:57 PM column H reminder?
+- [ ] Grants (10/30): which venture to register first (Legionz best fit). NC LLC $125 at sosnc.gov, free EIN, business bank account, then Piedmont CC Small Business Center (BOOST). Research: ventures/grants/2026-10-30-grants-research.md
+- [ ] Fantasy Homes LLC: keep / pause / drop.
+
+### Defined Risk Trading
+- [ ] Send 2-3 trade-screen recordings a week (incl. "why I passed" clips). #1 lever from the deep dive.
+- [ ] DRT TikTok: add the Skool link (Edit profile > Links/Website; if missing, switch to Business, category Education). Then reply to Cameron Wright.
+- [ ] Record Christina's video reply (script: posts/2026-11-07-christina-reply-script.md).
+- [ ] Reply to the 17 comments on the 10/29 short trade TikTok (+28 pts on a 4-pt stop). Check in the app.
+- [ ] Skool admin: members since 10/1 and how they found it (only funnel data that exists).
+- [ ] Post the paper-trade Skool recap (Tim posts).
+- [ ] CRT Pro VMap settings (analysis/indicators/vmap-analysis-2026-11-08.md): AM session 1000-1200, PM start and end both 1600, uncheck Setup B, hard stop 3.5, recreate the TradingView alert on "Any alert() function call" (logging dead since 10/23).
+- [ ] Fill column H on Forward Test Log rows #139 and #140 (#140 → 7734; #139 → lowest low after 20:31 ET before the rally).
+- [ ] Check Lucid order history for the real September reset total (~$1,700 est).
+- [ ] Move off prop-firm resets to your own MES account (plan 10/1): paper trade first, catch up bills, then NinjaTrader Free, 1 MES, 4-pt stop (~$22). Don't fund until ready ($35 fee after 30 days idle).
+- [ ] Record Modules 4 and 5 (course/module_4_liquidity_volume_v4.pptx, course/module_5_workflow_risk_v4.pptx; scripts course/scripts-m4-m5-v4.md). Decide the 3 items at the top of the scripts first.
+- [ ] YouTube for DRT: confirm Blotato account 48727 is the right channel; add banner/logo/About; verify phone.
+- [ ] Pink Out softball photos (10/17-18): drop in DRT Phone if you still want a post.
+- [ ] Turn off the Nested Lumen nl-* skills.
+- [ ] Optional: delete the 3 old GitHub branches (all in main).
+- [ ] FUTURE: position-tool boxes on CRT Pro (after hit rate improves).
+
+### Peace by Page (Ventures)
+- [ ] IG link in bio → payhip.com/PeaceByPage; TikTok: put it as bio text (no link until 1,000 followers).
+- [ ] Point peacebypage.com at the Payhip store (Cloudflare) + hello@ email.
+- [ ] Send a Payhip screenshot: visits, sales, sampler downloads (Jarvis can't reach Payhip).
+- [ ] Restart Pinterest: 1 gift-angle pin a day (Jarvis makes, Tim queues). Pins stopped 11/6.
+- [ ] Get 3-5 honest reviews from friends with a 100% coupon.
+- [ ] Nothing is scheduled on PbP accounts after 11/9: OK the coloring-only plan (3 posts/week) so Jarvis can schedule.
+- [ ] Launch build-out sheet: finish remaining steps ([sheet](https://docs.google.com/spreadsheets/d/1TLL394lyp_JITaeTmSNjxmjrJ_4T-Ie6UZMhja7xzOk/edit)).
 
 ### Prosperity Legendz
-- [ ] Get a domain and verify the sender email in Systeme.io (blocking the funnel). Paste the DNS records to Jarvis to check.
+- [ ] Get a domain and verify the sender email in Systeme.io (blocks the funnel). Paste DNS records to Jarvis.
 - [ ] Choose a mailing address for the email footer (CAN-SPAM).
 - [ ] Build the Systeme.io funnel and the 5 welcome emails.
 - [ ] Fix Blotato automation 9422: Content-Type header, button URL, Cushion Plan tag.
 - [ ] Decide: emails say "I'm Tim" or just Prosperity Legendz?
-- [ ] Update the PL TikTok and Instagram profiles; archive old Nested Lumen posts.
+- [ ] Update PL TikTok and Instagram profiles; archive old Nested Lumen posts.
 - [ ] Test the funnel: comment LEGEND from your personal Facebook.
 - [ ] Rotate the Systeme.io API key (after setup).
 
 ### Legionz Detailing
-- [ ] Answer the services menu questions so Jarvis can finalize it (draft sent 9/30):
-    - What Emperor includes at "from $290" (old top tier was paint correction + ceramic at $450+)
-    - Confirm Centurion = interior detail and Legionnaire = full detail
-    - Keep the 2024 add-on prices? (Legionnaire + ceramic add-on currently costs more than Emperor)
-    - Phone number, Facebook page link, payment methods (is Square set up?)
+- [ ] Answer the services menu questions (draft sent 9/30):
+    - What Emperor includes at "from $290"
+    - Confirm Centurion = interior, Legionnaire = full detail
+    - Keep the 2024 add-on prices? (Legionnaire + ceramic costs more than Emperor)
+    - Phone number, Facebook page link, payment methods (Square?)
     - Keep "Results guaranteed" on headlight restoration?
-    - Add a maintenance wash to the menu? (the SOP sells one)
-- [ ] Update the SOP quote prices and the business plan (old tier names, weekday 8-5 hours) to match the new menu.
+    - Add a maintenance wash?
+- [ ] Update the SOP quote prices and business plan to match the new menu.
 
-### Peace by Page (Ventures)
-- [ ] Work through the launch build-out sheet, step by step (domain to first sales, 67 steps, launch moved to FRI 10/23 (Tim, 10/16); sheet dates still say 10/16): [Peace by Page: Launch Build-Out](https://docs.google.com/spreadsheets/d/1TLL394lyp_JITaeTmSNjxmjrJ_4T-Ie6UZMhja7xzOk/edit)
-- [x] Bought peacebypage.com at Cloudflare 10/22. Next: point it at the store + hello@ email after launch.
-- [ ] Store fixes, Wed 10/14 (steps in ventures/calm-pages/launch/launch-week-tim.md). Done 10/13: About, 988 help block, disclaimer, Home page. Done 10/20: tab name, product order, SOS Kit placeholder, TEST100 test purchase (Calm Wings, 7:26 PM). Still open (10/21 check): link in bio on IG (Pinterest already shows payhip.com/PeaceByPage; TikTok can't add a link until 1,000 followers, so put payhip.com/PeaceByPage as bio text). Files: [Launch Files page](https://claude.ai/artifact/81s4uPQAcfntqXDvALTWmN) + Drive Launch Docs > Launch Assets.
-- [x] Launch day Fri 10/23 done: FB launch post + reel, IG carousel + reel, TikTok slides + reel, Pinterest launch pin and pin 1. No sales yet on launch day.
-- [x] Connected IG @peacebypage (81296) + TikTok @peace.by.page (65985) to Blotato 10/26; reels V2-V5 scheduled on both.
-- [x] Pinterest: launch pin + 15 daily pins (10/23-11/6) scheduled by hand by Tim 10/21. Jarvis can't see scheduled pins; Tim compares them in Pinterest > Created > Scheduled pins with ventures/calm-pages/launch/launch-schedule.md section 2.
-- [x] Welcome emails / sequence (sheet #35, #37): N/A on Payhip's free plan (no email tools). Payhip's download email still goes to every buyer. Later option: free MailerLite with the Payhip customer list.
-- [ ] Optional: Systeme.io (Tim has an account, same one as PL) for a PbP welcome email / free-sampler email list later. Payhip free has no email tools (10/21).
+### Personal / security
+- [ ] Charger oil change (past due, ~188k): 5.7 Hemi, 7 qt 5W-20 high-mileage + MO-339 filter.
+- [ ] Check the 5 Skool login codes from 9/29; change the Skool password if they weren't all you.
+- [ ] Add a second sign-in method to Stripe.
+- [ ] Confirm the support@ recovery email change (8/23) was you.
+- [ ] Check the trade tracker Apps Script SECRET isn't still 'change-me'.
+- [ ] Export claude.ai chat data to Drive (for the PL redefinition).
+- [ ] Clean up the profile doc (still opens with the 9/26 handoff note).
+- [ ] Unsubscribe from Digital Creator emails.
+- [ ] NetCredit declined 11/10: an application went out through a lender-matching site. Stop applying through those (they trigger declines and spam).
 
 ### Cars
-- [ ] Cruze machine shop: give them the question list (top of the Cruze build guide doc), get a written measurement sheet and a short-block quote. Forged pistons, built for the ZZP Z04 turbo + tune (decided 10/23).
-- [ ] Charger: get 2 engine builder quotes for a forged 392 (pull-out vs Mopar crate P5160617AA $6,995); ask Whipple which 3.0L kit (WK-3021-30 full or tuner kit) and pulley fit a 392 in a 5.7 car at about 7 psi, and if it clears the stock Pursuit hood.
+- [ ] Cruze machine shop: question list (top of the Cruze build guide doc), written measurement sheet, short-block quote. Forged pistons for ZZP Z04 turbo + tune.
+- [ ] Charger: 2 engine builder quotes for a forged 392 (pull-out vs Mopar crate P5160617AA $6,995); ask Whipple which 3.0L kit + pulley fits a 392 in a 5.7 car at ~7 psi and clears the Pursuit hood.
 
-### Defined Risk Trading
-- [ ] Pink Out softball tournament (Sat 10/17-Sun 10/18): after it's over, Tim drops photos in DRT Phone and Jarvis drafts a DRT post plus a personal post (Tim approves before posting).
-- [x] Renew TradingView Essentials: renewed 10/8 at $18.99/mo, alerts back on.
-- [ ] Move off prop-firm resets to your own MES account (plan 10/1):
-    1. Paper trade CRT Pro + VMap test on TradingView for a few weeks (free).
-    2. Catch up bills first (Workspace, OneMain, Spotloan).
-    3. Open NinjaTrader Free plan (no minimum, $50 MES day margin, ~$1.88 round trip, data + TradingView once funded). Fund small, trade 1 MES (4-pt stop = ~$22).
-    4. Don't fund until ready to trade ($35 fee after 30 days with no trade).
-- [ ] Check the Lucid Trading order history for the real September reset total (estimate ~$1,700).
-- [ ] Fill column H on Forward Test Log rows #139 and #140 (#140 → 7734; #139 → lowest low after 20:31 ET before the rally).
-- [ ] Record Modules 4 and 5 from the v4 decks (redone 10/5, same 10/1 method: POC lesson 4.5, 30m profile, 3.5-4 pt stops, 1 or 2 contract sizing). Decks: course/module_4_liquidity_volume_v4.pptx, course/module_5_workflow_risk_v4.pptx (Tim uploads to the course Drive folder and opens with Google Slides; v3 trashed 10/5). Scripts + recording checklist: course/scripts-m4-m5-v4.md and Drive Doc "Modules 4 & 5 Scripts (v4)". Decide the 3 items at the top of the scripts before recording.
-- [x] (10/22: analysis/indicators/indicator-comparison-2026-10-22.md) Build the indicator comparison page (CRT Pro ES vs CRT + Divergence vs CRT Setups) once CRT Pro has a few days of trades. Same scoring: R, $ at 2 ES, win rate, by session in ET, 10 AM-12 PM window. Include the TP-then-SL rows under alternative exits (BE after TP1, half at TP1, full at TP1); see drt.md analysis notes.
-- [ ] YouTube for DRT (researched 10/1, on hold until Tim says go): feeder for Skool, 3-4 hrs/week from existing breakdowns, reels and module clips. Blotato YouTube account 48727 already connected; Tim confirms it's the right channel, adds banner/logo/About, verifies phone.
-- [ ] Install + test CRT Pro VMap (TEST) indicator (built 10/1, branch only): CRT + Volume Map combo entries, setups A/B, 4-pt stop. Logs to its own "CRT Pro VMap" tab. Review A vs B results after a week; merge to main only when Tim OKs.
-- [ ] Turn off the Nested Lumen nl-* skills.
-- [ ] Optional: delete the 3 old branches on GitHub (all fully in main).
-- [ ] FUTURE UPGRADE (after CRT Pro hit rate improves): position-tool style boxes on CRT Pro. Red box entry→SL, green box entry→TP3 with TP1/TP2 dashed inside, label with risk pts / $ at 2 ES and R:R per TP. Boxes run until the trade closes; replaces the plain lines. Sheet unchanged; needs a new alert after pasting.
+### Jarvis (auto, no action from Tim)
+- [ ] Wed 11/11 5:05 PM: backtest blending team first-basket share into the NBA model.
+- [ ] Wed 11/11 6:25 PM: NBA confirmed-lineup recheck + push.
+- [ ] Judge the Tip-off Projections sheet after ~50 graded games.
 
 ## Done
+- 11/11 Round 2 interview with Rose Simpson done ("went well"); 30-60-90 plan in personal/work/inventory-supervisor-30-60-90.md.
+- 11/11 Money Plan: Spotloan $218.95 removed from 11/12 (prearranged skip); 11/12 now +$7.23.
+- 11/11 DRT socials + Peace by Page deep dives done.
+- 11/11 NBA tab pushed to the Bet Tracker (488 rows).
 - 11/3 KDP paperback ink: black and white interior, no color (Tim).
 - 11/3 Calm Petals Payhip link (https://payhip.com/b/9lw73) added to the Sat 11/7 6:30 PM PbP FB reel (schedule 6084126).
 - 10/30 Verizon unused lines removed (Tim).
