@@ -417,6 +417,9 @@ price. The shortlist writes this in "First basket two-slot picks (chain model)".
 
 - 11/8 (7 games): StarTool cards logged 8:10 AM; chain model with RotoWire expected lineups (CHI J. Smith over Claxton, NO D. Murray over DeAndre Jordan, SAC Achiuwa over K. Murray). Bets rows 761-772 (745-760 left for NFL): 7 first basket, Doncic 4+ threes, Porter Jr. 3+, LaMelo 3+, Maxey 25+, Giannis 25+. Charts `out/charts/fb_2026-11-08.png` and `fb_tipteam_3way_2026-11-08.png` (cheat sheet not sent yet). The 10:07 AM refresh should rebuild the tab only and NOT re-log these picks.
 
+- 11/9 results (all "Pick", nothing placed; graded 11/11 catch-up): game first basket 2-6 (Allen W on CLE's first shot; Zubac W on FTs, the FT rule again; Reed did not start, came off the bench, graded L). Team first basket 4-6 (Fox, Murray on FTs, Booker, Sarr W; Wemby, Jokic, Barrett, Poeltl, Brooks, Davis L; TOR's first points went to Ja'Kobe Walter). Props 2-2 (Curry 4 threes W, Booker 32 W; Doncic 3 threes L, Durant 23 L). Tips: our favorite won 5 of 8 (missed MEM, NO, and DET where Collins jumped vs Davis, not Reed vs Sarr); tip winner scored first 6 of 8. NHL 6-1 (Celebrini 6, Draisaitl 4, Horvat 7 SOG; Draisaitl 2 G; McDavid first goal W; SOG parlay W; Horvat goal L).
+- 11/10: no picks logged (session down). First events logged only.
+
 ## Tim vs model log (first basket)
 
 Tim's picks come from his own read of the StarTool card (not just its star), so the Tim column tests how he uses StarTool's data; the StarTool column is its star/bomb as printed.
