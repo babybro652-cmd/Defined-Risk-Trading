@@ -17,7 +17,7 @@ First, yesterday. The read said sells: London swept the Asia high. New York did 
 
 Here's today:
 • Accumulation: Asia built the range, about 7,600 to 7,628.
-• Manipulation: none yet. London stayed inside Asia (about 7,603 to 7,620) and didn't take either side.
+• Manipulation: none yet. So far London has stayed inside Asia (about 7,603 to 7,620) and hasn't taken either side. We still have just under 3 hours left of the manipulation session, so a sweep can still come before New York.
 • Distribution: both sides are still untouched. The Asia high near 7,628 and the Asia low near 7,600.
 
 When London doesn't sweep, I don't guess. I let New York take one side first, then look for my setup the other way.
