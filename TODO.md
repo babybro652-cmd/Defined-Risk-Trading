@@ -30,6 +30,7 @@ Newest decisions win; move finished items to Done with the date.
 - [ ] Skool: 0 new members since 10/1. Pick from the Skool growth plan.
 - [ ] Record Christina's video reply (script: posts/2026-11-07-christina-reply-script.md).
 - [ ] Post the paper-trade Skool recap (Tim posts).
+- [ ] Tracker logging still dead (last row 10/23; alerts fire, nothing reaches the sheet). Tonight (Tim): turn on TradingView 2FA (required for webhooks) and send Jarvis the Apps Script Web app URL for a test post.
 - [ ] CRT Pro VMap settings (analysis/indicators/vmap-analysis-2026-11-08.md): AM session 1000-1200, PM start and end both 1600, uncheck Setup B, hard stop 3.5, recreate the TradingView alert on "Any alert() function call" (logging dead since 10/23).
 - [ ] Fill column H on Forward Test Log rows #139 and #140 (#140 → 7734; #139 → lowest low after 20:31 ET before the rally).
 - [ ] Check Lucid order history for the real September reset total (~$1,700 est).
