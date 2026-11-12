@@ -1,0 +1,82 @@
+{
+ "TOR": {
+  "five": [
+   "Immanuel Quickley",
+   "RJ Barrett",
+   "Ja'Kobe Walter",
+   "Scottie Barnes",
+   "Jakob Poeltl"
+  ],
+  "jumper": "Jakob Poeltl"
+ },
+ "PHI": {
+  "five": [
+   "Tyrese Maxey",
+   "VJ Edgecombe",
+   "Jaylen Brown",
+   "LeBron James",
+   "Joel Embiid"
+  ],
+  "jumper": "Joel Embiid"
+ },
+ "DET": {
+  "five": [
+   "Cade Cunningham",
+   "Daniss Jenkins",
+   "Duncan Robinson",
+   "Ausar Thompson",
+   "John Collins"
+  ],
+  "jumper": "John Collins"
+ },
+ "WSH": {
+  "five": [
+   "Trae Young",
+   "Kyshawn George",
+   "AJ Dybantsa",
+   "Anthony Davis",
+   "Alex Sarr"
+  ],
+  "jumper": "Anthony Davis"
+ },
+ "DAL": {
+  "five": [
+   "Kyrie Irving",
+   "Caleb Martin",
+   "Cooper Flagg",
+   "P.J. Washington",
+   "Daniel Gafford"
+  ],
+  "jumper": "Daniel Gafford"
+ },
+ "MIN": {
+  "five": [
+   "LaMelo Ball",
+   "Ayo Dosunmu",
+   "Jonathan Kuminga",
+   "Jaden McDaniels",
+   "Rudy Gobert"
+  ],
+  "jumper": "Rudy Gobert"
+ },
+ "CHA": {
+  "five": [
+   "Coby White",
+   "Grayson Allen",
+   "Sion James",
+   "Naz Reid",
+   "Moussa Diabate"
+  ],
+  "jumper": "Moussa Diabate"
+ },
+ "PHX": {
+  "five": [
+   "Devin Booker",
+   "Jalen Green",
+   "Dillon Brooks",
+   "Miles Bridges",
+   "Oso Ighodaro"
+  ],
+  "jumper": "Oso Ighodaro"
+ }
+}

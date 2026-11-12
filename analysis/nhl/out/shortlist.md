@@ -27,22 +27,13 @@
 - No StarTool cards saved for this slate yet. Add lines to out/startool/star_bomb.txt (date|AWAY @ HOME|star,star|bomb,bomb) and rerun.
 
 <!-- parlays:begin -->
-## Parlays 2026-11-11 (2-3 legs, $0.10 to $0.20)
+## Parlays 2026-11-12 (2-3 legs, $0.10 to $0.20)
 
 Only categories that beat their price season to date: NBA 3+ threes, NHL 3+ SOG, NFL receptions, soccer 1+ shot on target. No points overs, no first basket / first goal / anytime goal legs. Fair = product of the leg chances (no correlation boost). Take only at the minimum price or longer (fair with a 10% cushion). Legs from the same game are correlated and marked.
 
 ### NBA
-- **2-leg #1:** Luka Doncic 3+ threes (82%, LAL @ MIL) + Stephen Curry 3+ threes (81%, GS @ HOU). Fair -198 (66%); take -152 or longer.
-- **2-leg #2:** Luka Doncic 3+ threes (82%, LAL @ MIL) + Michael Porter Jr. 3+ threes (70%, BKN @ NO). Fair -133 (57%); take -108 or longer.
-- **2-leg #3:** Stephen Curry 3+ threes (81%, GS @ HOU) + Michael Porter Jr. 3+ threes (70%, BKN @ NO). Fair -128 (56%); take -105 or longer.
-- **3-leg #4:** James Harden 3+ threes (61%, CLE @ NY) + Tyler Herro 3+ threes (57%, LAL @ MIL) + Jamal Murray 3+ threes (57%, DEN @ MEM). Fair +406 (20%); take +457 or longer.
-- **3-leg #5:** James Harden 3+ threes (61%, CLE @ NY) + Tyler Herro 3+ threes (57%, LAL @ MIL) + Toumani Camara 3+ threes (56%, OKC @ POR). Fair +411 (20%); take +462 or longer.
-
-### NHL
-- **2-leg #1:** Cutter Gauthier 3+ SOG (71%, NSH @ ANA) + Macklin Celebrini 3+ SOG (67%, PIT @ SJS). Fair +111 (47%); take +132 or longer.
-- **2-leg #2:** Cutter Gauthier 3+ SOG (71%, NSH @ ANA) + Connor McDavid 3+ SOG (67%, PHI @ EDM). Fair +111 (47%); take +132 or longer.
-- **2-leg #3:** Macklin Celebrini 3+ SOG (67%, PIT @ SJS) + Connor McDavid 3+ SOG (67%, PHI @ EDM). Fair +123 (45%); take +146 or longer.
-- **3-leg #4:** Tage Thompson 3+ SOG (67%, TBL @ BUF) + Leon Draisaitl 3+ SOG (66%, PHI @ EDM) + Jack Eichel 3+ SOG (59%, UTA @ VGK). Fair +284 (26%); take +322 or longer.
-- **3-leg #5:** Brandon Hagel 3+ SOG (66%, TBL @ BUF) + Leon Draisaitl 3+ SOG (66%, PHI @ EDM) + Jack Eichel 3+ SOG (59%, UTA @ VGK). Fair +286 (26%); take +324 or longer.
+- **2-leg #1:** LaMelo Ball 3+ threes (67%, DAL @ MIN) + Duncan Robinson 3+ threes (66%, DET @ WSH). Fair +126 (44%); take +148 or longer.
+- **2-leg #2:** LaMelo Ball 3+ threes (67%, DAL @ MIN) + Tyrese Maxey 3+ threes (56%, TOR @ PHI). Fair +168 (37%); take +194 or longer.
+- **2-leg #3:** Duncan Robinson 3+ threes (66%, DET @ WSH) + Tyrese Maxey 3+ threes (56%, TOR @ PHI). Fair +169 (37%); take +196 or longer.
 
 <!-- parlays:end -->

@@ -131,3 +131,6 @@
 2026-11-11|ORL @ UTAH|Desmond Bane,Darryn Peterson||
 2026-11-11|GS @ HOU|Stephen Curry,Kevin Durant||
 2026-11-11|OKC @ POR|Shai Gilgeous-Alexander,Deni Avdija||
+2026-11-12|TOR @ PHI|RJ Barrett,Tyrese Maxey|Immanuel Quickley,Jaylen Brown
+2026-11-12|DAL @ MIN|Kyrie Irving,LaMelo Ball|Cooper Flagg,Ayo Dosunmu
+2026-11-12|CHA @ PHX|Grayson Allen,Devin Booker|Coby White,Dillon Brooks
