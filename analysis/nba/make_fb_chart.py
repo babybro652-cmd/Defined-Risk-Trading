@@ -6,15 +6,20 @@ date=sys.argv[1]; games=[(a,h,t,int(p)) for a,h,t,p in (g.split(',') for g in sy
 note=sys.argv[3] if len(sys.argv)>3 else ""
 d=json.load(open('analysis/nba/out/fb_candidates.json'))
 t=collections.defaultdict(list)
+d=[r for r in d if r.get('inj')!='Out']
 for r in d: t[r['tm']].append(r)
 for v in t.values(): v.sort(key=lambda r:-r['p_v2'])
 take=lambda f: f"+{round(((int(f)/100+1)*1.2-1)*100)}"
 def cell(tm):
     return tm+"\n"+"\n".join(f"{r['player']}{' (Q)' if r['inj'] else ''}  {r['p_v2']*100:.0f}%  {r['fair_v2']} / take {take(r['fair_v2'].strip('+'))}" for r in t[tm][:2])
-rows=[[f"{a} @ {h}\n{tm} PM",f"{a} {ap}%\n{h} {100-ap}%",cell(a),cell(h)] for a,h,tm,ap in games]
-fig,ax=plt.subplots(figsize=(14,1.6*len(games)+1.6)); ax.axis('off')
-ax.set_title(f"NBA First Basket, {date} (our chain model)\nTop 2 per team: chance, fair price / take-at (fair x1.2). (Q) = questionable",fontsize=15,fontweight='bold',pad=12)
-tb=ax.table(cellText=rows,colLabels=["Game","Tip win","Away: top 2","Home: top 2"],colWidths=[0.11,0.1,0.395,0.395],loc='upper center',cellLoc='left')
+def ls(a,h):
+    g=sorted(t[a]+t[h],key=lambda r:-r['p_v2'])
+    r=g[2]
+    return f"{r['player']} ({r['tm']})\n{r['p_v2']*100:.0f}%  {r['fair_v2']}\ntake {take(r['fair_v2'].strip('+'))}"
+rows=[[f"{a} @ {h}\n{tm} PM",f"{a} {ap}%\n{h} {100-ap}%",cell(a),cell(h),ls(a,h)] for a,h,tm,ap in games]
+fig,ax=plt.subplots(figsize=(17,1.6*len(games)+1.6)); ax.axis('off')
+ax.set_title(f"NBA First Basket, {date} (our chain model)\nTop 2 per team + longshot: chance, fair price / take-at (fair x1.2). (Q) = questionable, Out players removed",fontsize=15,fontweight='bold',pad=12)
+tb=ax.table(cellText=rows,colLabels=["Game","Tip win","Away: top 2","Home: top 2","Longshot (#3 game FB)"],colWidths=[0.1,0.09,0.31,0.31,0.19],loc='upper center',cellLoc='left')
 tb.auto_set_font_size(False); tb.set_fontsize(10.5)
 for (r,c),cl in tb.get_celld().items():
     cl.set_height(0.098 if r>0 else 0.035)
