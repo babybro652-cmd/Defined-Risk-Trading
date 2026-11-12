@@ -1,4 +1,4 @@
-# Loss trade post, Thu 11/12. DRAFT, needs Tim's go. NOTHING SCHEDULED.
+# Loss trade post, Thu 11/12. APPROVED by Tim 11/12 (-$375 confirmed). POSTED ~12:45 PM ET.
 
 Separate account (Tim: NOT the Apex 25K eval). Keep apart from posts/2026-11-12-apex-pass.md. No mention of the
 Apex pass or of any lost accounts.
@@ -24,7 +24,9 @@ Source: Drive DRT Phone, Screen_Recording_20261112_101629_TradingView.mp4 (1VUoi
 - Cuts: 0-1.8 s (home screen, baby wallpaper), 35-45 s (long-press menu naming the indicator).
 - Covers: status bar (notification icons) + chart header + volume-map table (top text band), filter table bottom
   right; crop drops the phone nav bar. Kept: chart, B SELL label, entry/SL/TP levels, order tags, chart times.
-- Not yet uploaded to Blotato (upload via presigned URL once Tim says go).
+- Uploaded 11/12 (sha256 match):
+  DRT https://database.blotato.io/storage/v1/object/public/public_media/246c6cef-6cbe-4b5b-81a9-7bb84481df9c/a52fabd6-b038-4b03-9929-227234f330a9.mp4
+  Personal https://database.blotato.io/storage/v1/object/public/public_media/246c6cef-6cbe-4b5b-81a9-7bb84481df9c/5bd756ad-bdd8-45bf-b0d3-efc3e31ea165.mp4
 
 On-screen text:
 1. SHORT 2 ES @ 7,612.50 / Stopped for -$375. / The stop did its job. (hook, 0-3 s)
@@ -70,3 +72,13 @@ DRT TikTok 8:45 PM, IG 9:00 PM, FB 9:15 PM, personal TikTok 9:30 PM, YouTube Sho
 Captions say "Thursday", so they also work Friday. If Tim wants it in Friday's 4:57 PM recap instead, use that slot.
 
 Music test log (analysis/socials/music-test-fb-ig.md): add IG and FB rows once scheduled.
+
+## Posted (Thu 11/12, ~12:45 PM ET, immediate, Tim's go)
+| Platform | Submission id | Status | Link |
+|---|---|---|---|
+| TikTok DRT 58063 | f7a71c89-219b-40c3-a808-ea830d50d7ad | published | https://www.tiktok.com/@definedrisktrading/video/7707341158434868510 |
+| Instagram reel 68887 | f0ef2550-f67b-4a34-8e11-4cf9b05a336e | published | https://www.instagram.com/reel/DfpncZJgY26/ |
+| Facebook 50185 | b6803456-337e-452c-b285-9bce04675fed | published | https://facebook.com/reel/1008085548307775/ |
+| YouTube Short 48727 | 8242b762-2bdb-4cc6-9a87-b1c3336fb0bf | published | https://www.youtube.com/watch?v=Ym6Ell1ZcoY |
+| Personal TikTok 59764 | e82cb7b8-8a82-4526-a643-63d6b94b7677 | published | https://www.tiktok.com/@timothywilliams9902/video/7707342431989107998 |
+The suggested Fri times above were not used (Tim said post now).
