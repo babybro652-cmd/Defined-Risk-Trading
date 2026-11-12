@@ -3,7 +3,7 @@
 | Time ET | Platform | Topic | Media | Music | Schedule id |
 |---|---|---|---|---|---|
 | 7:00 AM | TikTok | Yesterday's high and low as the morning map | yday-levels-music.mp4 (text cards) | old_key | 6833509 |
-| 12:00 PM | TikTok | Footage cut: 4 pt stop above the high (11/9 approved short) | footage-cut-music.mp4 | traveling_in_your_mind | 6833520 |
+| 12:00 PM | TikTok | PULLED 11/12 (wrong stop description, invented reasoning) | footage-cut-music.mp4 | traveling_in_your_mind | 6833520 |
 | 12:30 PM | IG reel | Same footage cut, caption cut | footage-cut-music.mp4 | traveling_in_your_mind | 6833545 |
 | 6:12 PM | YouTube Short | ES Short With a 4-Point Stop: The Plan on the Chart (51 chars) | footage-cut-music.mp4, music only, containsSyntheticMedia false | traveling_in_your_mind | 6833551 |
 | 8:00 PM | TikTok | 1-2 good trades, then done | two-and-done-music.mp4 (text cards) | aeroplane | 6833554 |

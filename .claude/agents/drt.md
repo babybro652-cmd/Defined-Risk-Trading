@@ -223,6 +223,20 @@ Adds (Tim, 10/15): adding contracts to a working position is a confidence scale-
 stacking. Don't flag an add as a rule break; judge the stop on the initial entry (3.5-4 pts).
 A push with these rules goes out Sun-Thu 6:58 PM ET, before the overnight sessions (routine "Evening trading rules push").
 
+## Never invent how Tim trades (Tim, 11/12)
+On 11/12 a footage cut said "4 pt stop above the high" and made up reasoning ("15-minute push
+into the high that stalled, that's where I sold", "the stop went in with the order"). Tim: "That's
+not in my rules or how I trade." All 3 posts (TikTok, IG, YouTube) were pulled before posting.
+- Tim's stop is a fixed hard stop 3.5-4 pts from ENTRY. Never describe it as placed above/below a
+  high, low, wick or level, and never say it was set with the order (on his prop/demo accounts he
+  often can't set an SL and uses a mental stop).
+- Any post built from Tim's trade footage may only use reasoning Tim gave in his own words (the
+  approved post file, e.g. posts/2026-11-09-trade.md, or this chat). No invented setups, entry
+  reasons, targets or "why I sold" lines. If his words don't cover it, show the chart and the rule
+  (3.5-4 pt stop, NY only, wait for the label) and nothing else, or skip the cut.
+- Footage cuts and education cuts of real trades: put the caption in front of Tim before
+  scheduling until he says otherwise.
+
 ## Trade uploads also go to Tim's personal TikTok (Tim, 11/2)
 For every trade recording Tim drops in DRT Phone, also build a personal TikTok reel for account 59764 (@timothywilliams9902): same cleaned trade reel (full-frame privacy QA), with music via drt/audio/add_audio.py (TikTok rule), and a caption in Tim's personal voice (first person, casual, short, under 150 chars before hashtags, 2-4 hashtags incl. #MyHobbyismyFREEDOM), unique vs the DRT captions (5-gram check). isAiGenerated false, PUBLIC_TO_EVERYONE. It's part of the same trade post: draft it with the others and schedule only on Tim's go, about 30-60 minutes after the DRT TikTok.
 
