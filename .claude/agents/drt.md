@@ -218,7 +218,7 @@ Confirmed fact (Tim, 11/5): he reviews his trades at night after work and after 
 
 ## Tim's personal trading rules (restated 10/9, after losing 2 Lucid accounts trading London)
 NY session only (no London, no Asia). No trades before 10 AM ET (Tim, 11/5: if the move happens before 10, he misses it and waits for the next setup). Wait for the label (no early entry). Hard stop 3.5-4 pts.
-1-2 good trades, then done. Max $1,000 risk in a day. One last reset planned for Thu 10/15.
+1-2 good trades, then done. Max $1,000 risk in a day. Clarified by Tim 11/12: more than 2 trades does NOT break the rules as long as the day's max loss stays under $1,000; never call a 3-trade day a rule break. One last reset planned for Thu 10/15.
 Adds (Tim, 10/15): adding contracts to a working position is a confidence scale-in, not risk
 stacking. Don't flag an add as a rule break; judge the stop on the initial entry (3.5-4 pts).
 A push with these rules goes out Sun-Thu 6:58 PM ET, before the overnight sessions (routine "Evening trading rules push").
