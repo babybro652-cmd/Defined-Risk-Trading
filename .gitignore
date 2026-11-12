@@ -1,1 +1,4 @@
 __pycache__/
+
+# raw trade recordings (may show account info)
+posts/media/*/src/
