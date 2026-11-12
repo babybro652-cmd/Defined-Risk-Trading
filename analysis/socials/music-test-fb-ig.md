@@ -11,3 +11,4 @@ return no views (a sync gap, not zero).
 
 | Date (ET) | Time | Platform | Schedule / post id | Content type | Audio (music / voice / silent) | Track | Views at 7 days | Likes |
 |---|---|---|---|---|---|---|---|---|
+| 2026-11-12 | 12:30 PM | Instagram reel | 6833545 | Footage education cut (11/9 approved short, stop placement, no P&L) | music | traveling_in_your_mind | | |
