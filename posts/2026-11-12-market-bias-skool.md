@@ -39,3 +39,19 @@ Define your risk, wait for your setup. Let's have a disciplined day.
 
 Education only, not financial advice. Futures trading involves substantial risk of loss.
 ```
+
+## Update, 8:14 AM (Tim's screenshot)
+8:00 15m candle: wicked up to about 7,626.5 (just under the Asia high ~7,628.5, not taken), then dumped to about 7,579.5, about 20 pts below the Asia low (~7,600). London range now about 7,578.5 to 7,626.5. ES 7,579.50 (-61.00).
+
+```
+UPDATE (8:15 AM)
+There's the manipulation. London just took the Asia low hard, about 20 points under 7,600, down to around 7,579. It wicked up toward the Asia high first but didn't take it.
+
+So the low side got swept. That flips my lean to buys for New York, but only if price comes back inside the Asia range.
+
+• Still nothing before 10 AM, and only on my setup. Hard stop 3.5 to 4 points.
+• Buys only if price gets back above 7,600 and holds. Targets: the middle of the range around 7,614, then the Asia high near 7,628.
+• If price stays under 7,600 and keeps pushing lower, there's no buy. I don't catch a falling knife. No setup, no trade.
+
+A move this big this early can whip both ways. Let it settle and let New York show its hand.
+```
