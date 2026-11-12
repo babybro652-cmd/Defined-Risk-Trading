@@ -27,6 +27,14 @@
    "note": "28 starts"
   },
   {
+   "player": "Collin Murray-Boyles",
+   "team": "TOR",
+   "game": "TOR @ PHI",
+   "market": "3+ threes",
+   "p": 0.029,
+   "note": "26 starts"
+  },
+  {
    "player": "Tyrese Maxey",
    "team": "PHI",
    "game": "TOR @ PHI",
@@ -51,12 +59,12 @@
    "note": "85 starts"
   },
   {
-   "player": "LeBron James",
+   "player": "Dean Wade",
    "team": "PHI",
    "game": "TOR @ PHI",
    "market": "3+ threes",
-   "p": 0.097,
-   "note": "73 starts"
+   "p": 0.12,
+   "note": "42 starts"
   },
   {
    "player": "Joel Embiid",
