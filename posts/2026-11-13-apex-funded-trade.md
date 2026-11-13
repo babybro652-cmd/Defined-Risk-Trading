@@ -1,4 +1,4 @@
-# Apex 25K funded, day 1 trade (Fri 11/13) - TIM APPROVED B (post B as written). Media: posts/media/2026-11-13-apex/trade.jpg (cropped). Waiting on Blotato to reconnect.
+# Apex 25K funded, day 1 trade (Fri 11/13) - POSTED B ~12:05 PM ET: TikTok https://www.tiktok.com/@definedrisktrading/photo/7707681076776422686 | IG https://www.instagram.com/p/DfsBToYkRDg/ | FB https://facebook.com/993318963868124_122129736219165810. Friday recap must not repost this trade.
 
 Media: Tim's 1m ES screenshot. Crop the status bar (time, call timer, battery) and the bottom nav. No account number is visible on it.
 Facts: short 1 ES at 7,632, covered at 7,623, +9 pts, +$450. About 9:31-9:35 AM ET. Tim's reason, his words: "the setup was there." The time is before his 10 AM rule (Tim confirmed).
