@@ -236,6 +236,9 @@ not in my rules or how I trade." All 3 posts (TikTok, IG, YouTube) were pulled b
   (3.5-4 pt stop, NY only, wait for the label) and nothing else, or skip the cut.
 - Footage cuts and education cuts of real trades: put the caption in front of Tim before
   scheduling until he says otherwise.
+- Before 10 AM (Tim, 11/13): "90% of the time I am just watching. But if my setup shows I take a
+  small trade." Never write that he never trades before 10 or "before 10 I only watch"; say he
+  mostly watches before 10 and only takes a small trade if his setup shows.
 
 ## Trade uploads also go to Tim's personal TikTok (Tim, 11/2)
 For every trade recording Tim drops in DRT Phone, also build a personal TikTok reel for account 59764 (@timothywilliams9902): same cleaned trade reel (full-frame privacy QA), with music via drt/audio/add_audio.py (TikTok rule), and a caption in Tim's personal voice (first person, casual, short, under 150 chars before hashtags, 2-4 hashtags incl. #MyHobbyismyFREEDOM), unique vs the DRT captions (5-gram check). isAiGenerated false, PUBLIC_TO_EVERYONE. It's part of the same trade post: draft it with the others and schedule only on Tim's go, about 30-60 minutes after the DRT TikTok.
