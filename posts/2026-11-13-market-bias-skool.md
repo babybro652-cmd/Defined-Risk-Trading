@@ -27,6 +27,7 @@ It's also Friday. End of the week can mean a clean run or a choppy fake out befo
 My plan for New York:
 • Nothing before 10 AM. Buys only, inside my 10 AM to 12 PM window, on my setup. Hard stop 3.5 to 4 points.
 • Targets in order: the Asia high near 7,649, then last week's high at 7,671.50, then yesterday's high at 7,674.75.
+• If price runs into those highs and retraces off them, I'll flip and take shorts, on my setup, same hard stop.
 • If price breaks back under the London low near 7,598 and holds, the buy idea is dead. No setup, no trade.
 
 Screenshot is in the post. Tell me what you're seeing.
