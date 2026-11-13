@@ -17,3 +17,4 @@ return no views (a sync gap, not zero).
 | 2026-11-12 | 6:45 PM | Instagram reel | 6852615 | Trade reel (Apex 25K pass, Tim approved) | music | once_more_with_you | | |
 | 2026-11-12 | 7:15 PM | Facebook reel | 6852625 | Trade reel (Apex 25K pass, Tim approved) | music | once_more_with_you | | |
 | 2026-11-12 | 8:50 PM | Facebook reel | b45af088-bf04-411f-8b7a-3e95a5133b3d | Lifestyle reel (W-2 as a base, text cards) | music | im_glad_you_are_here | | |
+| 2026-11-13 | 12:30 PM | Instagram reel | 6885328 | Education text cards + drawn diagram (overnight high sweep vs hold) | music | soft_as_a_dry_pillow | | |
