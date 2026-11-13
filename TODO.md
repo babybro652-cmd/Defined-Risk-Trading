@@ -7,7 +7,7 @@ Newest decisions win; move finished items to Done with the date.
 ## Open
 
 ### This week (time-sensitive)
-- [ ] Thu 11/12 payday ($904.12): Tim pays Uplift $72.75 + Flash Funds $132 + Workspace, Canva, PayPal card (Bison Green NOT this week; reschedule). Spotloan $218.95 skipped this week (prearranged); watch for their new schedule and add it to the Money Plan.
+- [ ] Still to pay from the 11/12 list: Workspace (suspends Dec 3), Canva (Pro ends 11/21), PayPal card, Verizon ($282.99, was due 11/11). Uplift + Flash Funds paid 11/12. Bison Green: reschedule.
 - [ ] Google Workspace: pay or update card at https://admin.google.com/ac/billing/accounts (invoice 5723568933; suspends Dec 3). Business Starter $8.40/mo.
 - [ ] Lucid 25K eval bought 11/12 (LFE02578805580006): balance $24,347 after -$653 day 1; min balance $24,000 = only $347 room. 1 MES-size risk or pause until the Apex funded plan is rolling.
 - [ ] Apex funded PA-APEX-694864-01 live (starts $25,000). Plan: analysis/prop-firms/apex-25k-funded-plan.md. 1 ES, 1 loss and done until floor locks at $26,100 high balance. 5 days of $100+; $1,000 payout needs $27,100 balance. Earliest request ~Thu 11/19 (perfect week), realistic ~11/23-24. Tim: confirm rules in the activation email links.
@@ -16,7 +16,6 @@ Newest decisions win; move finished items to Done with the date.
 - [ ] Shopify store (Propa Pit pet store) suspended for billing: decide keep / pause / close (Jarvis advised 11/11).
 - [ ] Round 2 went well (11/11). Waiting to hear back.
 
-- [ ] Peace by Page: Gmail forwarding request from peacebypage2@gmail.com (11/12 10:14 PM) needs Tim to click Confirm in that email if he set it up.
 - [ ] GitHub: Claude app requested updated permissions (11/12 email). Approve on GitHub if it was expected.
 
 ### Decisions only Tim can make
@@ -46,7 +45,7 @@ Newest decisions win; move finished items to Done with the date.
 - [ ] FUTURE: position-tool boxes on CRT Pro (after hit rate improves).
 
 ### Peace by Page (Ventures)
-- [ ] KDP: go (11/11). Tim orders proofs 11/12. Setup steps: ventures/calm-pages/kdp-setup-steps.md.
+- [ ] KDP: proofs ordered and shipped 11/12. When they arrive: check print (gray accents readable), then Publish. Setup steps: ventures/calm-pages/kdp-setup-steps.md.
 - [ ] 12/31 checkpoint: under 10 paid orders by 12/31 = maintenance mode.
 - [ ] Content plan (coloring-first + new angles): ventures/calm-pages/content-plan-2026-11.md (Jarvis writing).
 - [ ] IG link in bio → payhip.com/PeaceByPage (Jarvis checking); TikTok: put it as bio text (no link until 1,000 followers).
@@ -95,6 +94,7 @@ Newest decisions win; move finished items to Done with the date.
 - [ ] Judge the Tip-off Projections sheet after ~50 graded games.
 
 ## Done
+- 11/12 Uplift ($72.75) and Flash Funds ($132) paid. peacebypage2 Gmail forwarding confirmed. KDP proofs shipped.
 - 11/12 TradingView Essential renewed (Google Play receipt 6:48 PM). 11/18 reminder cancelled.
 - 11/11 Apex $79.90 charge confirmed by Tim. Skool 9/29 login codes confirmed OK. Apps Script SECRET is blank (not 'change-me'); fine.
 - 11/11 DRT comment replies done (Cameron + others).
