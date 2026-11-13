@@ -9,12 +9,15 @@ Newest decisions win; move finished items to Done with the date.
 ### This week (time-sensitive)
 - [ ] Thu 11/12 payday ($904.12): Tim pays Uplift $72.75 + Flash Funds $132 + Workspace, Canva, PayPal card (Bison Green NOT this week; reschedule). Spotloan $218.95 skipped this week (prearranged); watch for their new schedule and add it to the Money Plan.
 - [ ] Google Workspace: pay or update card at https://admin.google.com/ac/billing/accounts (invoice 5723568933; suspends Dec 3). Business Starter $8.40/mo.
-- [ ] TradingView Essential ($20.27, Google Play) declined: fix by 11/25 or alerts stop. Reminder set Wed 11/18 6:07 PM.
+- [ ] Lucid 25K eval bought 11/12 (LFE02578805580006): balance $24,347 after -$653 day 1; min balance $24,000 = only $347 room. 1 MES-size risk or pause until the Apex funded plan is rolling.
 - [ ] Apex funded PA-APEX-694864-01 live (starts $25,000). Plan: analysis/prop-firms/apex-25k-funded-plan.md. 1 ES, 1 loss and done until floor locks at $26,100 high balance. 5 days of $100+; $1,000 payout needs $27,100 balance. Earliest request ~Thu 11/19 (perfect week), realistic ~11/23-24. Tim: confirm rules in the activation email links.
 - [ ] Fidelity 401(k) payout of $82 on the way (Tim, 11/11).
 - [ ] CapCut Google Play sub: $19.99/mo from Dec 10. Reminder set Wed 12/9 6:07 PM.
 - [ ] Shopify store (Propa Pit pet store) suspended for billing: decide keep / pause / close (Jarvis advised 11/11).
 - [ ] Round 2 went well (11/11). Waiting to hear back.
+
+- [ ] Peace by Page: Gmail forwarding request from peacebypage2@gmail.com (11/12 10:14 PM) needs Tim to click Confirm in that email if he set it up.
+- [ ] GitHub: Claude app requested updated permissions (11/12 email). Approve on GitHub if it was expected.
 
 ### Decisions only Tim can make
 - [ ] Shopify / Propa Pit store: keep, pause or close.
@@ -92,6 +95,7 @@ Newest decisions win; move finished items to Done with the date.
 - [ ] Judge the Tip-off Projections sheet after ~50 graded games.
 
 ## Done
+- 11/12 TradingView Essential renewed (Google Play receipt 6:48 PM). 11/18 reminder cancelled.
 - 11/11 Apex $79.90 charge confirmed by Tim. Skool 9/29 login codes confirmed OK. Apps Script SECRET is blank (not 'change-me'); fine.
 - 11/11 DRT comment replies done (Cameron + others).
 - 11/11 Paused: grants, Fantasy Homes, column H reminder. Monday IG carousel routine disabled.
