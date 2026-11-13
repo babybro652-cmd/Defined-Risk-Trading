@@ -7,7 +7,7 @@ Newest decisions win; move finished items to Done with the date.
 ## Open
 
 ### This week (time-sensitive)
-- [ ] Still to pay from the 11/12 list: Workspace (suspends Dec 3), Canva (Pro ends 11/21), PayPal card, Verizon ($282.99, was due 11/11). Uplift + Flash Funds paid 11/12. Bison Green: reschedule.
+- [ ] Moved to Thu 11/19 (Money Plan updated): Verizon $282.99, Workspace $8.40. Also 11/19, no column/amount yet: Canva (Pro ends 11/21), PayPal card, Bison Green. 11/19 shows +$63.62 before those three.
 - [ ] Google Workspace: pay or update card at https://admin.google.com/ac/billing/accounts (invoice 5723568933; suspends Dec 3). Business Starter $8.40/mo.
 - [ ] Lucid 25K eval bought 11/12 (LFE02578805580006): balance $24,347 after -$653 day 1; min balance $24,000 = only $347 room. 1 MES-size risk or pause until the Apex funded plan is rolling.
 - [ ] Apex funded PA-APEX-694864-01 live (starts $25,000). Plan: analysis/prop-firms/apex-25k-funded-plan.md. 1 ES, 1 loss and done until floor locks at $26,100 high balance. 5 days of $100+; $1,000 payout needs $27,100 balance. Earliest request ~Thu 11/19 (perfect week), realistic ~11/23-24. Tim: confirm rules in the activation email links.
