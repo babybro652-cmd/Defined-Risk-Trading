@@ -16,3 +16,4 @@ return no views (a sync gap, not zero).
 | 2026-11-12 | 12:45 PM | Facebook reel | b6803456-337e-452c-b285-9bce04675fed (posted now) | Trade reel (loss, -$375, Tim approved) | music | one_cool_minute | | |
 | 2026-11-12 | 6:45 PM | Instagram reel | 6852615 | Trade reel (Apex 25K pass, Tim approved) | music | once_more_with_you | | |
 | 2026-11-12 | 7:15 PM | Facebook reel | 6852625 | Trade reel (Apex 25K pass, Tim approved) | music | once_more_with_you | | |
+| 2026-11-12 | 8:50 PM | Facebook reel | b45af088-bf04-411f-8b7a-3e95a5133b3d | Lifestyle reel (W-2 as a base, text cards) | music | im_glad_you_are_here | | |
