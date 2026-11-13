@@ -28,12 +28,11 @@ Newest decisions win; move finished items to Done with the date.
 
 ### Defined Risk Trading
 - [ ] Send 2-3 trade-screen recordings a week (incl. "why I passed" clips). #1 lever from the deep dive.
-- [ ] Socials changes approved 11/11: cut FB 9 AM, IG carousels (Monday routine disabled), TikTok 12 PM card; test music on FB/IG; rule-following education posts need no second go; never say "link in bio" (not enough followers). Jarvis writing a 2-week content plan + Skool growth plan (posts/plans/2026-11-11-content-plan.md).
-- [ ] Skool: 0 new members since 10/1. Pick from the Skool growth plan.
+- [ ] Socials changes applied 11/11 (slots cut, music test to 11/25, readout 12/2). 2-week content plan + Skool growth plan done: posts/plans/2026-11-11-content-plan.md.
+- [ ] Skool: 0 new members since 10/1 (10 total, $49 only). Decide: free tier or trial + 4-pt-stop checklist PDF? OK to build the "comment SKOOL" auto-DM (off until go)?
 - [ ] Record Christina's video reply (script: posts/2026-11-07-christina-reply-script.md).
 - [ ] Post the paper-trade Skool recap (Tim posts).
 - [ ] Tracker logging: webhook script tested OK 11/12; 2FA on, alerts redone. Forward Test Log logging again since 11/11 ("timed out" warnings are harmless). CRT Pro + VMap: confirm rows after the 10-12 window Fri 11/13 (Jarvis checks 12:15 PM).
-- [ ] CRT Pro VMap settings (analysis/indicators/vmap-analysis-2026-11-08.md): AM session 1000-1200, PM start and end both 1600, uncheck Setup B, hard stop 3.5, recreate the TradingView alert on "Any alert() function call" (logging dead since 10/23).
 - [ ] Fill column H on Forward Test Log rows #139 and #140 (#140 → 7734; #139 → lowest low after 20:31 ET before the rally).
 - [ ] Check Lucid order history for the real September reset total (~$1,700 est).
 - [ ] Move off prop-firm resets to your own MES account (plan 10/1): paper trade first, catch up bills, then NinjaTrader Free, 1 MES, 4-pt stop (~$22). Don't fund until ready ($35 fee after 30 days idle).
@@ -47,13 +46,12 @@ Newest decisions win; move finished items to Done with the date.
 ### Peace by Page (Ventures)
 - [ ] KDP: proofs ordered and shipped 11/12. When they arrive: check print (gray accents readable), then Publish. Setup steps: ventures/calm-pages/kdp-setup-steps.md.
 - [ ] 12/31 checkpoint: under 10 paid orders by 12/31 = maintenance mode.
-- [ ] Content plan (coloring-first + new angles): ventures/calm-pages/content-plan-2026-11.md (Jarvis writing).
-- [ ] IG link in bio → payhip.com/PeaceByPage (Jarvis checking); TikTok: put it as bio text (no link until 1,000 followers).
+- [ ] Content plan written (ventures/calm-pages/content-plan-2026-11.md). Tim: OK it so Jarvis schedules week 1; record clips A-D (20 min, phone overhead).
+- [ ] IG link in bio → payhip.com/PeaceByPage (Tim checks in app; Jarvis can't see bios). TikTok: bio text only.
 - [ ] Point peacebypage.com at the Payhip store (Cloudflare) + hello@ email.
 - [ ] Send a Payhip screenshot: visits, sales, sampler downloads (Jarvis can't reach Payhip).
 - [ ] Restart Pinterest: 1 gift-angle pin a day (Jarvis makes, Tim queues). Pins stopped 11/6.
 - [ ] Get 3-5 honest reviews from friends with a 100% coupon.
-- [ ] Nothing is scheduled on PbP accounts after 11/9: OK the coloring-only plan (3 posts/week) so Jarvis can schedule.
 - [ ] Launch build-out sheet: finish remaining steps ([sheet](https://docs.google.com/spreadsheets/d/1TLL394lyp_JITaeTmSNjxmjrJ_4T-Ie6UZMhja7xzOk/edit)).
 
 ### Prosperity Legendz
@@ -90,7 +88,7 @@ Newest decisions win; move finished items to Done with the date.
 - [ ] Charger: 2 engine builder quotes for a forged 392 (pull-out vs Mopar crate P5160617AA $6,995); ask Whipple which 3.0L kit + pulley fits a 392 in a 5.7 car at ~7 psi and clears the Pursuit hood.
 
 ### Jarvis (auto, no action from Tim)
-- [ ] Wed 11/11 6:25 PM: NBA confirmed-lineup recheck + push.
+- [ ] Fri 11/13 12:15 PM: check CRT Pro + VMap logging.
 - [ ] Judge the Tip-off Projections sheet after ~50 graded games.
 
 ## Done
