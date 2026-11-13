@@ -1,6 +1,6 @@
 """Source scorecard (11/12/26): ours vs StarTool vs @NBAFirstBasket vs Tip-off Projections.
 
-Graded NBA dates 11/4 to 11/11 with external sources logged. Results come from
+Graded NBA dates 11/4 to 11/12 with external sources logged. Results come from
 analysis/nba/data/games_2026-27.json (tip winner, game first points) and opening_2026-27.json
 (each team's first points, FT included). Our picks come from the last fb_candidates.json /
 shortlist.md committed for each date (after lineup reruns). External picks are transcribed from
@@ -12,7 +12,7 @@ import csv, json, re, subprocess, collections, unicodedata
 
 R = '/home/user/Defined-Risk-Trading'
 COMMITS = {'2026-11-04': 'ea0de84', '2026-11-05': 'a3b7043', '2026-11-06': '9799f9f', '2026-11-07': '08379c3',
-           '2026-11-08': 'eceed10', '2026-11-09': '3a8cef7', '2026-11-11': '5810317'}
+           '2026-11-08': 'eceed10', '2026-11-09': '3a8cef7', '2026-11-11': '5810317', '2026-11-12': 'f2dbf81'}
 
 
 def norm(n):
@@ -73,12 +73,13 @@ ST_TIP = {
                 ('DEN','HOU'):(38,63),('SA','PHX'):(88,50),('NO','GS'):(25,25)},
  '2026-11-11': {('WSH','IND'):(46,54),('CLE','NY'):(77,23),('BOS','TOR'):(39,61),('SA','CHI'):(76,24),('DEN','MEM'):(46,54),
                 ('LAL','MIL'):(58,42),('BKN','NO'):(59,41),('ORL','UTAH'):(79,21),('GS','HOU'):(36,64),('OKC','POR'):(34,66)},
+ '2026-11-12': {('TOR','PHI'):(67,33),('DAL','MIN'):(36,64),('CHA','PHX'):(59,41)},   # DET @ WSH card did not load
 }
 # team top 2 = star, bomb (star_bomb.txt), no % -> p None; 11/9 and 11/11 with printed model %
 ST = {}
 for line in open(R + '/analysis/nba/out/startool/star_bomb.txt'):
     d, game, stars, bombs = line.rstrip('\n').split('|')[:4]
-    if d not in COMMITS or d == '2026-11-11':
+    if d not in COMMITS or d in ('2026-11-11', '2026-11-12'):
         continue
     a, h = [x.strip() for x in game.split('@')]
     s, b = stars.split(','), (bombs.split(',') if bombs else ['', ''])
@@ -112,7 +113,14 @@ ST_PCT_1111 = {'WSH': [('Anthony Davis',8),('AJ Dybantsa',6),('Trae Young',6),('
     'HOU': [('Kevin Durant',15),('Alperen Sengun',12),('Amen Thompson',11),('Jabari Smith Jr.',10)],
     'OKC': [('Shai Gilgeous-Alexander',23),('Ajay Mitchell',10),('Jared McCain',7),('Isaiah Hartenstein',6),('Kenrich Williams',5)],
     'POR': [('Deni Avdija',14),('Damian Lillard',12),('Donovan Clingan',8),('Scoot Henderson',8),('Toumani Camara',8)]}
-for d, tab in (('2026-11-09', ST_PCT_0911), ('2026-11-11', ST_PCT_1111)):
+ST_PCT_1112 = {  # DET @ WSH card did not load
+    'TOR': [('RJ Barrett',13),('Immanuel Quickley',12),('Jakob Poeltl',7),('Collin Murray-Boyles',6),("Ja'Kobe Walter",6)],
+    'PHI': [('Jaylen Brown',13),('Joel Embiid',13),('Tyrese Maxey',13),('LeBron James',10),('VJ Edgecombe',8)],
+    'DAL': [('Cooper Flagg',14),('Kyrie Irving',14),('P.J. Washington',8),('Daniel Gafford',6),('Caleb Martin',2)],
+    'MIN': [('LaMelo Ball',15),('Ayo Dosunmu',12),('Jaden McDaniels',11),('Jonathan Kuminga',9),('Rudy Gobert',8)],
+    'CHA': [('Coby White',16),('Grayson Allen',16),('Naz Reid',15),('Ryan Kalkbrenner',7),('Sion James',5)],
+    'PHX': [('Devin Booker',12),('Dillon Brooks',9),('Jalen Green',8),('Miles Bridges',8),('Oso Ighodaro',3)]}
+for d, tab in (('2026-11-09', ST_PCT_0911), ('2026-11-11', ST_PCT_1111), ('2026-11-12', ST_PCT_1112)):
     for tm, v in tab.items():
         ST[(d, tm)] = [(n, p, p) for n, p in v]   # StarTool prints game first basket %; same number ranks team and game
 
@@ -128,6 +136,7 @@ SH_TIP = {  # normalized favorite; None = even
  '2026-11-09': {('IND','DAL'):'IND',('DEN','HOU'):'DEN',('SA','PHX'):'SA',('NO','GS'):None},
  '2026-11-11': {('WSH','IND'):'WSH',('CLE','NY'):'CLE',('BOS','TOR'):'TOR',('SA','CHI'):'SA',('DEN','MEM'):'MEM',
                 ('LAL','MIL'):'LAL',('BKN','NO'):'BKN',('ORL','UTAH'):'ORL',('GS','HOU'):'HOU',('OKC','POR'):'POR'},
+ '2026-11-12': {('TOR','PHI'):'TOR',('DET','WSH'):'WSH',('DAL','MIN'):'MIN',('CHA','PHX'):'PHX'},
 }
 # fb cards: team -> "Name bsk/gm; ..." (1st Bsk = share of team's first baskets, 1st Gm = game first basket)
 SH_RAW = {
@@ -202,6 +211,12 @@ SH_RAW = {
   'NO': "Dejounte Murray 19/10; Jeremiah Fears 20/12; Trey Murphy III 20/11; Zion Williamson 20/12; Karlo Matkovic 13/13",
   'GS': "Stephen Curry 24/12; Brandin Podziemski 21/11; Yaxel Lendeborg 10/0; Gui Santos 5/5; Draymond Green 19/10"},
 }
+# 11/12 on: the fbsheet (First Basket Cheat Sheet) logged per starter in fbsheet_log.csv
+HAND = set(SH_RAW)
+for r in csv.DictReader(open(R + '/analysis/nba/out/cheatsheet/fbsheet_log.csv')):
+    if r['date'] in COMMITS and r['date'] not in HAND:
+        t = SH_RAW.setdefault(r['date'], {})
+        t[r['team']] = (t[r['team']] + '; ' if r['team'] in t else '') + f"{r['player']} {r['first_bsk_pct']}/{r['first_gm_pct']}"
 SH = {}
 for d, tab in SH_RAW.items():
     for tm, s in tab.items():
