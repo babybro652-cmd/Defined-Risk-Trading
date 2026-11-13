@@ -112,4 +112,7 @@ Only categories that beat their price season to date: NBA 3+ threes, NHL 3+ SOG,
 - **2-leg #2:** Nickeil Alexander-Walker 3+ threes (64%, ATL @ CHI) + Zach LaVine 3+ threes (57%, POR @ SAC). Fair +172 (37%); take +199 or longer.
 - **2-leg #3:** James Harden 3+ threes (62%, CLE @ MIA) + Zach LaVine 3+ threes (57%, POR @ SAC). Fair +181 (36%); take +209 or longer.
 
+### NHL
+- Not enough qualifying legs.
+
 <!-- parlays:end -->
