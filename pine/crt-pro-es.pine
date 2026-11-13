@@ -33,9 +33,9 @@ useVol = input.bool(false, "Volume Confirmation", group=grpFilter)
 volLen = input.int(20, "Volume MA Length", group=grpFilter)
 volMult = input.float(1.5, "Volume Multiplier", step=0.05, group=grpFilter, tooltip="Confirmation candle volume must exceed this × the volume MA")
 useTime = input.bool(true, "Session Time Filter", group=grpFilter, tooltip="Only allow signals during high-activity windows")
-sess1Start = input.int(930, "Morning Session Start (HHMM ET)", group=grpFilter)
-sess1End = input.int(1130, "Morning Session End (HHMM ET)", group=grpFilter)
-sess2Start = input.int(1400, "Afternoon Session Start (HHMM ET)", group=grpFilter)
+sess1Start = input.int(1000, "Morning Session Start (HHMM ET)", group=grpFilter)
+sess1End = input.int(1200, "Morning Session End (HHMM ET)", group=grpFilter)
+sess2Start = input.int(1600, "Afternoon Session Start (HHMM ET)", group=grpFilter)
 sess2End = input.int(1600, "Afternoon Session End (HHMM ET)", group=grpFilter)
 
 grpStyle = "🎨 Style"
