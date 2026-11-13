@@ -676,7 +676,7 @@ def build(start, log, lineups=None):
             c['p'] = adj[c['pid']]
     json.dump([{'player': nm(c['pid']), 'tm': c['tm'], 'opp': c['opp'], 'time': c['time'], 'p_v2': round(c['p'], 4), 'p_before_10_30_fix': round(c['p_raw'], 4), 'tip_jumper': c['jumper'],
                 'p_v1': round(c['p1'], 4), 'fair_v2': american(c['p']), 'fair_v1': american(c['p1']),
-                'def_mult': round(c['mult'], 3), 'ripple': c['rip'], 'inj': c['inj']}
+                'def_mult': round(c['mult'], 3), 'ripple': c['rip'], 'inj': c['inj'], 'team_share': round(c['share'], 4), 'p_team_first': round(c['pteam'], 4)}
                for c in sorted(cands, key=lambda c: (c['time'], c['gid'], -c['p']))],
               open(os.path.join(OUT, 'fb_candidates.json'), 'w'), indent=0)
     picks = []

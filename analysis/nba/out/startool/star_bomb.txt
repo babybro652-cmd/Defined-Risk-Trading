@@ -134,3 +134,12 @@
 2026-11-12|TOR @ PHI|RJ Barrett,Tyrese Maxey|Immanuel Quickley,Jaylen Brown
 2026-11-12|DAL @ MIN|Kyrie Irving,LaMelo Ball|Cooper Flagg,Ayo Dosunmu
 2026-11-12|CHA @ PHX|Grayson Allen,Devin Booker|Coby White,Dillon Brooks
+2026-11-13|NY @ IND|Jalen Brunson,Pascal Siakam|Karl-Anthony Towns,Andrew Nembhard
+2026-11-13|MIL @ ORL|Tyler Herro,Franz Wagner|Jaime Jaquez Jr.,Desmond Bane
+2026-11-13|CLE @ MIA|Donovan Mitchell,Giannis Antetokounmpo|James Harden,Bam Adebayo
+2026-11-13|ATL @ CHI|Jalen Johnson,Caleb Wilson|Nickeil Alexander-Walker,Matas Buzelis
+2026-11-13|MEM @ NO|Ty Jerome,Zion Williamson|Cameron Boozer,Jeremiah Fears
+2026-11-13|UTAH @ HOU|Keyonte George,Kevin Durant|Darryn Peterson,Alperen Sengun
+2026-11-13|GS @ SA|Stephen Curry,Victor Wembanyama|Yaxel Lendeborg,De'Aaron Fox
+2026-11-13|POR @ SAC|Deni Avdija,Darius Acuff Jr.|Damian Lillard,Zach LaVine
+2026-11-13|OKC @ LAC|Shai Gilgeous-Alexander,Darius Garland|Jared McCain,Rui Hachimura

@@ -74,12 +74,14 @@ ST_TIP = {
  '2026-11-11': {('WSH','IND'):(46,54),('CLE','NY'):(77,23),('BOS','TOR'):(39,61),('SA','CHI'):(76,24),('DEN','MEM'):(46,54),
                 ('LAL','MIL'):(58,42),('BKN','NO'):(59,41),('ORL','UTAH'):(79,21),('GS','HOU'):(36,64),('OKC','POR'):(34,66)},
  '2026-11-12': {('TOR','PHI'):(67,33),('DAL','MIN'):(36,64),('CHA','PHX'):(59,41)},   # DET @ WSH card did not load
+ '2026-11-13': {('NY','IND'):(32,68),('MIL','ORL'):(25,75),('CLE','MIA'):(54,46),('ATL','CHI'):(60,40),('MEM','NO'):(57,43),
+                ('UTAH','HOU'):(37,63),('GS','SA'):(13,87),('POR','SAC'):(53,47),('OKC','LAC'):(61,39)},
 }
 # team top 2 = star, bomb (star_bomb.txt), no % -> p None; 11/9 and 11/11 with printed model %
 ST = {}
 for line in open(R + '/analysis/nba/out/startool/star_bomb.txt'):
     d, game, stars, bombs = line.rstrip('\n').split('|')[:4]
-    if d not in COMMITS or d in ('2026-11-11', '2026-11-12'):
+    if d not in COMMITS or d in ('2026-11-11', '2026-11-12', '2026-11-13'):
         continue
     a, h = [x.strip() for x in game.split('@')]
     s, b = stars.split(','), (bombs.split(',') if bombs else ['', ''])
@@ -120,7 +122,26 @@ ST_PCT_1112 = {  # DET @ WSH card did not load
     'MIN': [('LaMelo Ball',15),('Ayo Dosunmu',12),('Jaden McDaniels',11),('Jonathan Kuminga',9),('Rudy Gobert',8)],
     'CHA': [('Coby White',16),('Grayson Allen',16),('Naz Reid',15),('Ryan Kalkbrenner',7),('Sion James',5)],
     'PHX': [('Devin Booker',12),('Dillon Brooks',9),('Jalen Green',8),('Miles Bridges',8),('Oso Ighodaro',3)]}
-for d, tab in (('2026-11-09', ST_PCT_0911), ('2026-11-11', ST_PCT_1111), ('2026-11-12', ST_PCT_1112)):
+ST_PCT_1113 = {  # Curry, Mobley, Edey, C. Wilson listed but Out (dropped by alive())
+    'NY': [('Jalen Brunson',13),('Karl-Anthony Towns',10),('OG Anunoby',9),('Mikal Bridges',7),('Josh Hart',6)],
+    'IND': [('Pascal Siakam',16),('Andrew Nembhard',12),('Ivica Zubac',10),('Aaron Nesmith',9),('Kelly Oubre Jr.',9)],
+    'MIL': [('Tyler Herro',18),('Jaime Jaquez Jr.',13),('Kyle Kuzma',11),('Myles Turner',10),('Brayden Burries',8)],
+    'ORL': [('Franz Wagner',12),('Desmond Bane',12),('Anthony Black',9),('Wendell Carter Jr.',7),('Alex Morales',1)],
+    'CLE': [('Donovan Mitchell',12),('James Harden',10),('Evan Mobley',8),('Jarrett Allen',7),('Peyton Watson',7)],
+    'MIA': [('Giannis Antetokounmpo',18),('Bam Adebayo',14),('Klay Thompson',9),('Pelle Larsson',8),('Davion Mitchell',7)],
+    'ATL': [('Jalen Johnson',17),('Nickeil Alexander-Walker',16),('Onyeka Okongwu',12),('Dyson Daniels',9),('Kingston Flemings',7)],
+    'CHI': [('Caleb Wilson',11),('Matas Buzelis',9),('Josh Giddey',8),('Jalen Smith',6),('Isaac Okoro',5)],
+    'MEM': [('Ty Jerome',14),('Cameron Boozer',9),('Cedric Coward',8),('Jaylen Wells',8),('Zach Edey',5)],
+    'NO': [('Zion Williamson',19),('Jeremiah Fears',13),('Dejounte Murray',12),('Herbert Jones',7),('Karlo Matkovic',6)],
+    'UTAH': [('Keyonte George',16),('Darryn Peterson',11),('Ace Bailey',10),('Jaxson Hayes',6),('Josh Green',3)],
+    'HOU': [('Kevin Durant',15),('Alperen Sengun',12),('Amen Thompson',11),('Jabari Smith Jr.',10),('Fred VanVleet',8)],
+    'GS': [('Stephen Curry',13),('Yaxel Lendeborg',10),('Brandin Podziemski',7),('Al Horford',4),('Draymond Green',4)],
+    'SA': [('Victor Wembanyama',19),("De'Aaron Fox",12),('Stephon Castle',12),('Devin Vassell',10),('Dylan Harper',10)],
+    'POR': [('Deni Avdija',17),('Damian Lillard',15),('Toumani Camara',10),('Donovan Clingan',9),('Sidy Cissoko',4)],
+    'SAC': [('Darius Acuff Jr.',14),('Zach LaVine',10),('Domantas Sabonis',8),("De'Andre Hunter",7),('Keegan Murray',7)],
+    'OKC': [('Shai Gilgeous-Alexander',27),('Jared McCain',8),('Aday Mara',7),('Isaiah Hartenstein',7),('Alex Caruso',6)],
+    'LAC': [('Darius Garland',16),('Rui Hachimura',9),('Derrick Jones Jr.',8),('Isaiah Jackson',6),('Kris Dunn',6)]}
+for d, tab in (('2026-11-09', ST_PCT_0911), ('2026-11-11', ST_PCT_1111), ('2026-11-12', ST_PCT_1112), ('2026-11-13', ST_PCT_1113)):
     for tm, v in tab.items():
         ST[(d, tm)] = [(n, p, p) for n, p in v]   # StarTool prints game first basket %; same number ranks team and game
 
@@ -137,6 +158,8 @@ SH_TIP = {  # normalized favorite; None = even
  '2026-11-11': {('WSH','IND'):'WSH',('CLE','NY'):'CLE',('BOS','TOR'):'TOR',('SA','CHI'):'SA',('DEN','MEM'):'MEM',
                 ('LAL','MIL'):'LAL',('BKN','NO'):'BKN',('ORL','UTAH'):'ORL',('GS','HOU'):'HOU',('OKC','POR'):'POR'},
  '2026-11-12': {('TOR','PHI'):'TOR',('DET','WSH'):'WSH',('DAL','MIN'):'MIN',('CHA','PHX'):'PHX'},
+ '2026-11-13': {('NY','IND'):'NY',('MIL','ORL'):'ORL',('CLE','MIA'):'MIA',('ATL','CHI'):'ATL',('MEM','NO'):'MEM',
+                ('UTAH','HOU'):'HOU',('GS','SA'):'SA',('POR','SAC'):'POR',('OKC','LAC'):'LAC'},   # tip sheet only, normalized
 }
 # fb cards: team -> "Name bsk/gm; ..." (1st Bsk = share of team's first baskets, 1st Gm = game first basket)
 SH_RAW = {

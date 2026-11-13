@@ -27,13 +27,13 @@
 - No StarTool cards saved for this slate yet. Add lines to out/startool/star_bomb.txt (date|AWAY @ HOME|star,star|bomb,bomb) and rerun.
 
 <!-- parlays:begin -->
-## Parlays 2026-11-12 (2-3 legs, $0.10 to $0.20)
+## Parlays 2026-11-13 (2-3 legs, $0.10 to $0.20)
 
 Only categories that beat their price season to date: NBA 3+ threes, NHL 3+ SOG, NFL receptions, soccer 1+ shot on target. No points overs, no first basket / first goal / anytime goal legs. Fair = product of the leg chances (no correlation boost). Take only at the minimum price or longer (fair with a 10% cushion). Legs from the same game are correlated and marked.
 
 ### NBA
-- **2-leg #1:** LaMelo Ball 3+ threes (67%, DAL @ MIN) + Duncan Robinson 3+ threes (66%, DET @ WSH). Fair +126 (44%); take +148 or longer.
-- **2-leg #2:** LaMelo Ball 3+ threes (67%, DAL @ MIN) + Tyrese Maxey 3+ threes (56%, TOR @ PHI). Fair +168 (37%); take +194 or longer.
-- **2-leg #3:** Duncan Robinson 3+ threes (66%, DET @ WSH) + Tyrese Maxey 3+ threes (56%, TOR @ PHI). Fair +169 (37%); take +196 or longer.
+- **2-leg #1:** Nickeil Alexander-Walker 3+ threes (64%, ATL @ CHI) + James Harden 3+ threes (62%, CLE @ MIA). Fair +149 (40%); take +174 or longer.
+- **2-leg #2:** Nickeil Alexander-Walker 3+ threes (64%, ATL @ CHI) + Zach LaVine 3+ threes (57%, POR @ SAC). Fair +172 (37%); take +199 or longer.
+- **2-leg #3:** James Harden 3+ threes (62%, CLE @ MIA) + Zach LaVine 3+ threes (57%, POR @ SAC). Fair +181 (36%); take +209 or longer.
 
 <!-- parlays:end -->
