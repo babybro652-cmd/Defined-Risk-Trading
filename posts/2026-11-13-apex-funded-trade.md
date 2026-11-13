@@ -1,4 +1,4 @@
-# Apex 25K funded, day 1 trade (Fri 11/13) - NEEDS TIM'S GO
+# Apex 25K funded, day 1 trade (Fri 11/13) - TIM APPROVED B (post B as written). Media: posts/media/2026-11-13-apex/trade.jpg (cropped). Waiting on Blotato to reconnect.
 
 Media: Tim's 1m ES screenshot. Crop the status bar (time, call timer, battery) and the bottom nav. No account number is visible on it.
 Facts: short 1 ES at 7,632, covered at 7,623, +9 pts, +$450. About 9:31-9:35 AM ET. Tim's reason, his words: "the setup was there." The time is before his 10 AM rule (Tim confirmed).
