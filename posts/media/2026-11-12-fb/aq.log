@@ -1,0 +1,33 @@
+{
+  "video": "fb-w2-base.mp4",
+  "duration_s": 29.0,
+  "music": "im_glad_you_are_here.mp3",
+  "integrated_lufs": -17.8,
+  "true_peak_dbfs": -3.6,
+  "clipped_samples": 0,
+  "target_lufs": -18.0,
+  "checks": [
+    {
+      "check": "audio stream present",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "loudness near target",
+      "pass": true,
+      "detail": "-17.8 LUFS (target -18)"
+    },
+    {
+      "check": "no clipping",
+      "pass": true,
+      "detail": "0 clipped samples, true peak -3.6 dBFS"
+    },
+    {
+      "check": "length matches video",
+      "pass": true,
+      "detail": "29.00 s vs 29.00 s"
+    }
+  ],
+  "contact_sheet": "audio-sheet.png"
+}
+AUDIO QA: PASS
