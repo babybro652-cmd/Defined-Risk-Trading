@@ -41,7 +41,7 @@ def card_list():
     im, d = base()
     c(d, 230, "THE TRADES I POSTED", f(B, 60), GOLD)
     groups = [("PAPER", [("Sun", "Long 2", "+$1,125", GREEN), ("Mon", "Short 2", "+$1,575", GREEN)]),
-              ("SEPARATE ACCOUNT", [("Thu", "Short 2, stopped", "-$375", RED)]),
+              ("SECOND EVAL ACCOUNT", [("Thu", "Short 2, stopped", "-$375", RED)]),
               ("APEX 25K EVAL", [("Thu", "Short 2, stopped", "-$425", RED), ("Thu", "Short 2, add 2", "+$1,025", GREEN),
                                  ("Thu", "Short 2, add 2", "+$1,825", GREEN)]),
               ("APEX 25K FUNDED", [("Fri", "Short 1", "+$450", GREEN)])]
@@ -69,7 +69,7 @@ def card_net():
     c(d, 970, "+$2,875", f(B, 120), GREEN)
     c(d, 1080, "4 trades  |  3 wins, 1 loss", f(B, 50))
     d.line((340, 1180, 740, 1180), fill=GOLD, width=3)
-    c(d, 1280, "SEPARATE ACCOUNT", f(B, 56), GOLD)
+    c(d, 1280, "SECOND EVAL ACCOUNT", f(B, 56), GOLD)
     c(d, 1390, "-$375", f(B, 110), RED)
     c(d, 1510, "Separate logs, never one total", f(R, 42), MUTED)
     return im
