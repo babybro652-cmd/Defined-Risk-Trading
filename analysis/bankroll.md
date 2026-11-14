@@ -12,3 +12,4 @@ Balance snapshots from Tim's FanDuel screenshots. Newest at the bottom. Deposits
 | 10/24/26 | 1:13 PM | $2.29 | after CFB ($2.60), NBA first-basket round robins ($1.60 + $2.40 + $1.00) and a $0.10 5-leg parlay, plus other bets placed since 9:50 AM |
 | 10/25/26 | ~8 AM (estimate) | ~$10.70 | $2.29 + returns from 10/24: NBA round robin 2's $4.80 (Adebayo + Fox both hit), CFB 5 spread wins at -110 (~$1.91) and 5 TD wins (odds not recorded, ~$1.67 est). Confirm in FanDuel |
 | 10/25/26 | 10:47 AM | $11.85 | after NFL picks ($1.40, 14 x $0.10) and while placing 17 NBA first-basket singles ($1.70) |
+| 11/14/26 | ~4:30 PM | $82.18 | after the 11/14 college bets (15 x $0.10). Planned tonight: NBA first-basket full set $49.20 (10 straights $1, 40 2-leg $0.50, 80 3-leg + 80 4-leg + 32 5-leg $0.10). Separate: $2.08 on Fliff, 2-leg parlays only there |
