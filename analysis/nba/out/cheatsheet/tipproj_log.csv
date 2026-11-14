@@ -1,29 +1,29 @@
-date,game,away_jumper,home_jumper,tipproj_away_pct,tipproj_pick,our_away_pct,our_pick,actual_tip_winner,actual_jumpers
-2026-11-11,WSH @ IND,Alex Sarr,Ivica Zubac,44,IND,40,IND,IND,Anthony Davis vs Ivica Zubac
-2026-11-11,CLE @ NY,Jarrett Allen,Karl-Anthony Towns,73,CLE,73,CLE,NY,Jarrett Allen vs Karl-Anthony Towns
-2026-11-11,BOS @ TOR,Neemias Queta,Jakob Poeltl,34,TOR,28,TOR,TOR,Neemias Queta vs Jakob Poeltl
-2026-11-11,LAL @ MIL,Walker Kessler,Myles Turner,87,LAL,82,LAL,LAL,Walker Kessler vs Kel'el Ware
-2026-11-11,BKN @ NO,Day'Ron Sharpe,Karlo Matkovic,66,BKN,64,BKN,NO,Day'Ron Sharpe vs Karlo Matkovic
-2026-11-11,DEN @ MEM,Nikola Jokic,Zach Edey,32,MEM,41,MEM,DEN,Nikola Jokic vs Zach Edey
-2026-11-11,SA @ CHI,Victor Wembanyama,Jalen Smith,96,SA,95,SA,SA,Victor Wembanyama vs Jalen Smith
-2026-11-11,ORL @ UTAH,Wendell Carter Jr.,Lauri Markkanen,69,ORL,81,ORL,ORL,Wendell Carter Jr. vs Jaxson Hayes
-2026-11-11,GS @ HOU,Draymond Green,Alperen Sengun,31,HOU,34,HOU,HOU,Al Horford vs Alperen Sengun
-2026-11-11,OKC @ POR,Isaiah Hartenstein,Donovan Clingan,46,POR,35,POR,OKC,Aday Mara vs Donovan Clingan
-2026-11-12,TOR @ PHI,Jakob Poeltl,Joel Embiid,56,TOR,68,TOR,PHI,Jakob Poeltl vs Joel Embiid
-2026-11-12,DET @ WSH,John Collins,Alex Sarr,60,DET,26,WSH,DET,John Collins vs Anthony Davis
-2026-11-12,DAL @ MIN,Daniel Gafford,Rudy Gobert,31,MIN,35,MIN,MIN,Daniel Gafford vs Rudy Gobert
-2026-11-12,CHA @ PHX,Moussa Diabate,Oso Ighodaro,39,PHX,44,PHX,CHA,Moussa Diabate vs Oso Ighodaro
-2026-11-13,NY @ IND,Karl-Anthony Towns,Ivica Zubac,49,IND,43,IND,IND,Mikal Bridges vs Kelly Oubre Jr.
-2026-11-13,MIL @ ORL,Myles Turner,Wendell Carter Jr.,15,ORL,15,ORL,MIL,Myles Turner vs Wendell Carter Jr.
-2026-11-13,CLE @ MIA,Jarrett Allen,Bam Adebayo,46,MIA,44,MIA,CLE,Jarrett Allen vs Bam Adebayo
-2026-11-13,ATL @ CHI,Onyeka Okongwu,Jalen Smith,70,ATL,68,ATL,ATL,Onyeka Okongwu vs Jalen Smith
-2026-11-13,MEM @ NO,Isaiah Stewart,Karlo Matkovic,70,MEM,49,NO,NO,Isaiah Stewart vs DeAndre Jordan
-2026-11-13,UTAH @ HOU,Jaxson Hayes,Alperen Sengun,50,EVEN,37,HOU,UTAH,Jaxson Hayes vs Alperen Sengun
-2026-11-13,GS @ SA,Draymond Green,Victor Wembanyama,4,SA,5,SA,SA,Draymond Green vs Victor Wembanyama
-2026-11-13,POR @ SAC,Donovan Clingan,Domantas Sabonis,58,POR,62,POR,POR,Donovan Clingan vs Domantas Sabonis
-2026-11-13,OKC @ LAC,Isaiah Hartenstein,Brook Lopez,42,LAC,35,LAC,LAC,Aday Mara vs Brook Lopez
-2026-11-14,DEN @ NO,Nikola Jokic,Karlo Matkovic,71,DEN,75,DEN,,
-2026-11-14,DAL @ CLE,Daniel Gafford,Jarrett Allen,19,CLE,20,CLE,,
-2026-11-14,BKN @ MEM,Day'Ron Sharpe,Zach Edey,21,MEM,34,MEM,,
-2026-11-14,DET @ MIA,John Collins,Bam Adebayo,29,MIA,30,MIA,,
-2026-11-14,CHI @ MIN,Jalen Smith,Rudy Gobert,21,MIN,22,MIN,,
+date,game,away_jumper,home_jumper,tipproj_away_pct,tipproj_pick,our_away_pct,our_pick,actual_tip_winner,actual_jumpers,injury_flags
+2026-11-11,WSH @ IND,Alex Sarr,Ivica Zubac,44,IND,40,IND,IND,Anthony Davis vs Ivica Zubac,
+2026-11-11,CLE @ NY,Jarrett Allen,Karl-Anthony Towns,73,CLE,73,CLE,NY,Jarrett Allen vs Karl-Anthony Towns,
+2026-11-11,BOS @ TOR,Neemias Queta,Jakob Poeltl,34,TOR,28,TOR,TOR,Neemias Queta vs Jakob Poeltl,
+2026-11-11,LAL @ MIL,Walker Kessler,Myles Turner,87,LAL,82,LAL,LAL,Walker Kessler vs Kel'el Ware,
+2026-11-11,BKN @ NO,Day'Ron Sharpe,Karlo Matkovic,66,BKN,64,BKN,NO,Day'Ron Sharpe vs Karlo Matkovic,
+2026-11-11,DEN @ MEM,Nikola Jokic,Zach Edey,32,MEM,41,MEM,DEN,Nikola Jokic vs Zach Edey,
+2026-11-11,SA @ CHI,Victor Wembanyama,Jalen Smith,96,SA,95,SA,SA,Victor Wembanyama vs Jalen Smith,
+2026-11-11,ORL @ UTAH,Wendell Carter Jr.,Lauri Markkanen,69,ORL,81,ORL,ORL,Wendell Carter Jr. vs Jaxson Hayes,
+2026-11-11,GS @ HOU,Draymond Green,Alperen Sengun,31,HOU,34,HOU,HOU,Al Horford vs Alperen Sengun,
+2026-11-11,OKC @ POR,Isaiah Hartenstein,Donovan Clingan,46,POR,35,POR,OKC,Aday Mara vs Donovan Clingan,
+2026-11-12,TOR @ PHI,Jakob Poeltl,Joel Embiid,56,TOR,68,TOR,PHI,Jakob Poeltl vs Joel Embiid,
+2026-11-12,DET @ WSH,John Collins,Alex Sarr,60,DET,26,WSH,DET,John Collins vs Anthony Davis,
+2026-11-12,DAL @ MIN,Daniel Gafford,Rudy Gobert,31,MIN,35,MIN,MIN,Daniel Gafford vs Rudy Gobert,
+2026-11-12,CHA @ PHX,Moussa Diabate,Oso Ighodaro,39,PHX,44,PHX,CHA,Moussa Diabate vs Oso Ighodaro,
+2026-11-13,NY @ IND,Karl-Anthony Towns,Ivica Zubac,49,IND,43,IND,IND,Mikal Bridges vs Kelly Oubre Jr.,
+2026-11-13,MIL @ ORL,Myles Turner,Wendell Carter Jr.,15,ORL,15,ORL,MIL,Myles Turner vs Wendell Carter Jr.,
+2026-11-13,CLE @ MIA,Jarrett Allen,Bam Adebayo,46,MIA,44,MIA,CLE,Jarrett Allen vs Bam Adebayo,
+2026-11-13,ATL @ CHI,Onyeka Okongwu,Jalen Smith,70,ATL,68,ATL,ATL,Onyeka Okongwu vs Jalen Smith,
+2026-11-13,MEM @ NO,Isaiah Stewart,Karlo Matkovic,70,MEM,49,NO,NO,Isaiah Stewart vs DeAndre Jordan,
+2026-11-13,UTAH @ HOU,Jaxson Hayes,Alperen Sengun,50,EVEN,37,HOU,UTAH,Jaxson Hayes vs Alperen Sengun,
+2026-11-13,GS @ SA,Draymond Green,Victor Wembanyama,4,SA,5,SA,SA,Draymond Green vs Victor Wembanyama,
+2026-11-13,POR @ SAC,Donovan Clingan,Domantas Sabonis,58,POR,62,POR,POR,Donovan Clingan vs Domantas Sabonis,
+2026-11-13,OKC @ LAC,Isaiah Hartenstein,Brook Lopez,42,LAC,35,LAC,LAC,Aday Mara vs Brook Lopez,
+2026-11-14,DEN @ NO,Nikola Jokic,Karlo Matkovic,71,DEN,75,DEN,,,"NO jumper is Yves Missi (probable, starts), not Matkovic; Murphy out"
+2026-11-14,DAL @ CLE,Daniel Gafford,Jarrett Allen,19,CLE,20,CLE,,,Allen Q (knee); Mobley out; Christie doubtful
+2026-11-14,BKN @ MEM,Day'Ron Sharpe,Zach Edey,21,MEM,34,MEM,,,"Edey Q (ankle), tagged on TipProj; Ty Jerome out"
+2026-11-14,DET @ MIA,John Collins,Bam Adebayo,29,MIA,30,MIA,,,none for the jumpers; Larsson doubtful
+2026-11-14,CHI @ MIN,Jalen Smith,Rudy Gobert,21,MIN,22,MIN,,,"J. Smith Q (finger), tagged on TipProj; Powell Q"
