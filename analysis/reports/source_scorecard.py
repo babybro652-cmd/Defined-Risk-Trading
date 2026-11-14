@@ -1,4 +1,4 @@
-"""Source scorecard (11/12/26): ours vs StarTool vs @NBAFirstBasket vs Tip-off Projections.
+"""Source scorecard (11/12/26, through 11/13): ours vs StarTool vs @NBAFirstBasket vs Tip-off Projections.
 
 Graded NBA dates 11/4 to 11/12 with external sources logged. Results come from
 analysis/nba/data/games_2026-27.json (tip winner, game first points) and opening_2026-27.json
@@ -252,7 +252,7 @@ for d, tab in SH_RAW.items():
 
 TP_TIP = {}
 for r in csv.DictReader(open(R + '/analysis/nba/out/cheatsheet/tipproj_log.csv')):
-    if r['actual_tip_winner']:
+    if r['actual_tip_winner'] and r['tipproj_pick'] not in ('', 'EVEN'):   # 50/50 = no call
         a, h = [x.strip() for x in r['game'].split('@')]
         TP_TIP[(r['date'], a, h)] = r['tipproj_pick']
 

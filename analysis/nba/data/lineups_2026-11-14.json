@@ -1,0 +1,102 @@
+{
+ "DEN": {
+  "five": [
+   "Jamal Murray",
+   "Christian Braun",
+   "Cameron Johnson",
+   "Aaron Gordon",
+   "Nikola Jokic"
+  ],
+  "jumper": "Nikola Jokic"
+ },
+ "NO": {
+  "five": [
+   "Jeremiah Fears",
+   "Herbert Jones",
+   "Trey Murphy III",
+   "Saddiq Bey",
+   "Karlo Matkovic"
+  ],
+  "jumper": "Karlo Matkovic"
+ },
+ "DAL": {
+  "five": [
+   "Kyrie Irving",
+   "Caleb Martin",
+   "Cooper Flagg",
+   "P.J. Washington",
+   "Daniel Gafford"
+  ],
+  "jumper": "Daniel Gafford"
+ },
+ "CLE": {
+  "five": [
+   "James Harden",
+   "Donovan Mitchell",
+   "Peyton Watson",
+   "Evan Mobley",
+   "Jarrett Allen"
+  ],
+  "jumper": "Jarrett Allen"
+ },
+ "DET": {
+  "five": [
+   "Cade Cunningham",
+   "Daniss Jenkins",
+   "Duncan Robinson",
+   "Ausar Thompson",
+   "John Collins"
+  ],
+  "jumper": "John Collins"
+ },
+ "MIA": {
+  "five": [
+   "Davion Mitchell",
+   "Klay Thompson",
+   "Pelle Larsson",
+   "Giannis Antetokounmpo",
+   "Bam Adebayo"
+  ],
+  "jumper": "Bam Adebayo"
+ },
+ "CHI": {
+  "five": [
+   "Josh Giddey",
+   "Norman Powell",
+   "Isaac Okoro",
+   "Matas Buzelis",
+   "Jalen Smith"
+  ],
+  "jumper": "Jalen Smith"
+ },
+ "MIN": {
+  "five": [
+   "LaMelo Ball",
+   "Ayo Dosunmu",
+   "Jonathan Kuminga",
+   "Jaden McDaniels",
+   "Rudy Gobert"
+  ],
+  "jumper": "Rudy Gobert"
+ },
+ "BKN": {
+  "five": [
+   "Nolan Traore",
+   "Egor Demin",
+   "Michael Porter Jr.",
+   "Julius Randle",
+   "Day'Ron Sharpe"
+  ],
+  "jumper": "Day'Ron Sharpe"
+ },
+ "MEM": {
+  "five": [
+   "Ty Jerome",
+   "Cedric Coward",
+   "Jaylen Wells",
+   "Cameron Boozer",
+   "Zach Edey"
+  ],
+  "jumper": "Zach Edey"
+ }
+}
