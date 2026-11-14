@@ -64,6 +64,13 @@ Include the first shot and first score for each game in the grading message to T
    values.append on the Bets tab (11/14 it detected the table at column G and wrote into J:K). Tim does not want
    price checks for these; he trusts the model.
 
+   Tip-edge filter (Tim, 11/14 evening): play only games where our tip favorite is 70%+ (jumper vs jumper, after the
+   lineup rerun). In those games: top 2 game first-basket picks per game in cross-game parlays (2-leg $0.50, 3- and
+   4-leg and up $0.10) and the top 3 per game as $1 straights. Skip the other games entirely. Build the play list
+   `out/play_list_<date>.md` in game (tip time) order with the filter applied: per game the tip side and %, the
+   three straights with fair, then the parlays; log only those rows. If a lineup change moves a game across 70%,
+   rebuild the list. Rows dropped after logging stay in Bets with Placed "Dropped", stake 0, and a note.
+
 Grading (nightly): add the date to `COMMITS` in `analysis/reports/source_scorecard.py` (commit of the final
 fb_candidates for that slate), run `python3 analysis/reports/top3_coverage.py <date>` and report top-3 coverage:
 whether the game's first scorer was our #1, #2 or #3, the running hit rate by rank and the $1-straight P&L by rank
@@ -478,6 +485,7 @@ team ignored); top 2 = team first points scorer in the team's two highest team-f
 - 11/14 1 PM: StarTool (5 cards), Tip-off Projections, @NBAFirstBasket tip and first basket cheat sheets logged (`out/startool/2026-11-14.md`, `out/cheatsheet/2026-11-14.md`, tipproj/fbsheet logs, scorecard inputs). RotoWire rerun: Murphy OUT (Zion and Missi start, Missi jumps), Larsson doubtful (Myron Gardner starts). Game picks unchanged; Bets E919, E921, E924-E927, E934-E935 updated (Jokic +355, Adebayo +386, NO team rows Bey and Zion). NBA tab rows 7-41 updated (player-prop and lower sections left from the 10 AM push). All sources agree on every tip side; StarTool agrees with our pick only in DEN @ NO.
 - 11/14 3:45 PM injury rerun (ESPN, RotoWire, NBA official report 3 PM): Mobley OUT (Jaylon Tyson starts), Ty Jerome OUT (Cam Spencer starts), Murphy OUT; Allen, Mitchell, Harden, Watson, Edey, J. Smith, Powell, Claxton, Grant Q; Christie and Larsson doubtful; Klay, Giannis, Missi, Traore probable. Allen to 20% (+398, take +498), Edey to 15% (+561, take +693, now MEM 1st-shot pick); team rows CLE Allen/Watson, MEM Edey/Coward. Full NBA tab re-pushed with corrected injury cells; tipproj_log gained an injury_flags column.
 - 11/14 Tim's combo set: every cross-game combo of the top 2 game FB picks per game (Jokic/Murray, Allen/D. Mitchell, Adebayo/Giannis, Kuminga/LaMelo, Edey/Coward) logged as Bets rows 963-1204 ("Pick"): 10 straights $1, 40 doubles $0.50, 80 trebles, 80 four-leg, 32 five-leg at $0.10; $49.20 total. List in `out/parlays_2026-11-14.csv`. These break the standing parlay rule (no first basket legs, $0.10-0.20 stakes); logged on Tim's request. Note: a values.append to Bets detected the table at G761:I962 and wrote to G:N; cleared at once and rewritten to A:H with update_values. Do not use append on the Bets tab.
+- 11/14 evening: Tim narrowed to tip edge 70%+ games (DEN 75, CLE 71, MIA 70, MIN 78); BKN @ MEM (66%) dropped. 163 rows (every Edey / Coward leg, all 5-legs, Edey, Coward, Porter Jr. straights) set to Placed "Dropped", stake 0; live set 84 bets, $28.80 (`out/play_list_2026-11-14_tip70.md`, `dropped` column in the CSV).
 - 11/14 6:30 PM recheck (NBA report 6:30, ESPN, RotoWire): CLE rested Allen, Mitchell, Harden, Watson (plus Mobley); five Porter Jr., M. Thomas, Tyson, Hezonja, Bryant (Bryant jumps, CLE tip 71%, model CLE top Bryant 15.8% +532). VOID notes on Bets E920, E930, E931, E947, E965, E966, E1206 and the CLE leg of 160 parlays (findReplace regex on E). MPJ newly Q (RotoWire). DEN @ NO unchanged (Missi available). Chart `out/charts/parlays_2026-11-14.png`.
 - 11/14 6:45 PM CLE swap (Tim's final play list `out/play_list_2026-11-14.md`): Bryant replaces Allen (#1), Meleek Thomas replaces D. Mitchell (#2), Flagg replaces Watson (#3 straight). Bets E963-E1209 rewritten with the new legs and fair / take-at prices; VOID notes cleared. `out/parlays_2026-11-14.csv` matches.
 
