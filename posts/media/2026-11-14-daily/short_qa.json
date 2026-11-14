@@ -1,0 +1,47 @@
+{
+  "video": "posts/media/2026-11-14-daily/prop-math.mp4",
+  "duration_s": 31.0,
+  "voice": "/tmp/drt_audio_94g49t83/tts.wav",
+  "voice_synthetic": true,
+  "music": "old_key.mp3",
+  "captions": "supplied text timed by speech-to-text",
+  "integrated_lufs": -14.7,
+  "true_peak_dbfs": -1.7,
+  "clipped_samples": 0,
+  "target_lufs": -14.0,
+  "heard": "Say your account gives you $2 ,000 to draw down, and your e -mini stop is 4 points. The e -mini moves $50 a point, so that stop costs $200 on one contract. Trade two contracts, and five full stops use up the limit. One contract gives you 10. One micro gives you 100. Your size decides how many mistakes the account survives, so pick it before you click. Define your risk. Wait for your setup.",
+  "checks": [
+    {
+      "check": "audio stream present",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "loudness near target",
+      "pass": true,
+      "detail": "-14.7 LUFS (target -14)"
+    },
+    {
+      "check": "no clipping",
+      "pass": true,
+      "detail": "0 clipped samples, true peak -1.7 dBFS"
+    },
+    {
+      "check": "length matches video",
+      "pass": true,
+      "detail": "31.00 s vs 31.00 s"
+    },
+    {
+      "check": "music under voice",
+      "pass": true,
+      "detail": "voice 23.0 dB above music while talking"
+    },
+    {
+      "check": "voice intelligible",
+      "pass": true,
+      "detail": "91% of the words recovered by speech-to-text"
+    }
+  ],
+  "contact_sheet": "posts/media/2026-11-14-daily/sheet_prop-math-short.png"
+}
+AUDIO QA: PASS
