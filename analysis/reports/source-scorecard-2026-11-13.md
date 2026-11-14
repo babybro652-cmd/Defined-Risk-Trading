@@ -55,3 +55,5 @@ StarTool's best night so far on first basket. One night; it does not change the 
 - Team top 2: ours 48% over 140 team-games (StarTool 44%); 11/13 was our worst team night (6 of 18).
 
 Charts: `analysis/nba/out/charts/results_2026-11-13_game.png`, `_team.png`, `_firstshot.png` (script `results_2026-11-13.py`).
+
+Top 3 coverage (added 11/14): 11/13 our top 3 held the first scorer in 5 of 9 games (#1 1, #2 2, #3 2); 11/4 to 11/13: 28 of 70 (40%). Script: analysis/reports/top3_coverage.py.

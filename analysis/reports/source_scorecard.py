@@ -341,3 +341,11 @@ if __name__ == '__main__':
             f = lambda mm: (sum(h for m, h in r if m == mm), sum(1 for m, h in r if m == mm))
             line.append(f"{s} {'%d-%d' % (f('tip')[0], f('tip')[1] - f('tip')[0])} / {f('g1')[0]}of{f('g1')[1]} / {f('t2')[0]}of{f('t2')[1]}")
         print(d[5:], ' | '.join(line))
+    print('TOP 3 COVERAGE (ours, game first basket; details: analysis/reports/top3_coverage.py)')
+    import top3_coverage as t3
+    trs = t3.rows()
+    for d in COMMITS:
+        dr = [r for r in trs if r['date'] == d]
+        gms = {r['game'] for r in dr}
+        print(d[5:], f"top 3 {len({r['game'] for r in dr if r['result'] == 'W'})} of {len(gms)}",
+              ' '.join(f"#{k} {sum(1 for r in dr if r['rank'] == k and r['result'] == 'W')}" for k in (1, 2, 3)))

@@ -56,6 +56,21 @@ Include the first shot and first score for each game in the grading message to T
 
 3. Commit `data/` and `out/` so the next run starts from the cache.
 
+4. Log Tim's nightly plan (since 11/14): each game's top 3 game first-basket picks (by game chance in
+   `out/fb_candidates.json`, Out players removed) as $1.00 straights, Placed "Pick", odds blank, with the est % and
+   fair in the text; and, when Tim asks for the combo set, every cross-game parlay of the top 2 per game (2-leg $0.50,
+   3- to 5-leg $0.10). Mark rows with a questionable player "void if sits". Save the list to
+   `out/parlays_<date>.csv` (column `rank` for straights). Write with update_values to explicit A:H rows; never use
+   values.append on the Bets tab (11/14 it detected the table at column G and wrote into J:K). Tim does not want
+   price checks for these; he trusts the model.
+
+Grading (nightly): add the date to `COMMITS` in `analysis/reports/source_scorecard.py` (commit of the final
+fb_candidates for that slate), run `python3 analysis/reports/top3_coverage.py <date>` and report top-3 coverage:
+whether the game's first scorer was our #1, #2 or #3, the running hit rate by rank and the $1-straight P&L by rank
+once odds are logged in `out/top3_odds.csv` (date,player,odds). `source_scorecard.py` prints the same by date.
+Backfilled 11/4 to 11/13: top 3 held the first scorer in 28 of 70 games (40%); #1 10 of 69, #2 9 of 70, #3 9 of 70.
+11/13: 5 of 9 in the top 3, 1 of 9 at #1.
+
 ## Layout (one tab, top to bottom)
 
 - Row 1 title (frozen), legend, and **B3 = 26-27 game weight** (input, default 3). All Blend

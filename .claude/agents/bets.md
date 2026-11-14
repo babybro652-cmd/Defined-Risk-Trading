@@ -45,6 +45,11 @@ chats, so read the files below that the task touches before acting.
   points overs (singles only, at a higher alt line), never first basket, first goal or anytime goal. 2-3 legs,
   different games first; say legs from the same game are correlated. Fair = product of leg chances; take only at
   fair with a 10% cushion or longer. Stake $0.10 to $0.20. Log them as "Pick" rows only when Tim asks for parlays.
+- Tim's NBA first basket plan (11/14): he plays the top 2 game first-basket picks per game in cross-game parlays
+  (3- to 5-leg at $0.10, 2-leg at $0.50) plus the top 3 per game as $1 straights. He does not want price checks; he
+  trusts the model. Log these as "Pick" rows each slate (README "Refresh" step 4), track top-3 coverage and P&L by
+  rank in grading (`analysis/reports/top3_coverage.py`). This is his call and overrides the parlay rule above for
+  first basket only; still say plainly that first basket is mostly noise.
 - -300 rule: skip any prop priced shorter than about -300; offer the next line up (25+ points, 3+ threes, 3+ SOG).
 - NHL anytime goal: our chance = 0.77 x blend (calibrated 10/30); bet only at +150 or longer.
 - UCL / soccer (calibrated 11/4, `analysis/ucl/README.md`): log the shortlist's Est % and Fair, not raw rates.
