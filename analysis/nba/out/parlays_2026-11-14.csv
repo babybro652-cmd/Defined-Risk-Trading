@@ -1,0 +1,243 @@
+legs,picks,games,p,fair,take,stake,void_if_sits
+1,Jokic,DEN @ NO,0.2197,+355,+446,1.0,
+1,Murray,DEN @ NO,0.1518,+559,+691,1.0,
+1,Allen,DAL @ CLE,0.2009,+398,+497,1.0,yes
+1,D. Mitchell,DAL @ CLE,0.1233,+711,+873,1.0,
+1,Adebayo,DET @ MIA,0.2059,+386,+483,1.0,
+1,Giannis,DET @ MIA,0.1515,+560,+692,1.0,
+1,Kuminga,CHI @ MIN,0.1521,+557,+689,1.0,
+1,LaMelo,CHI @ MIN,0.1448,+591,+729,1.0,
+1,Edey,BKN @ MEM,0.1513,+561,+693,1.0,yes
+1,Coward,BKN @ MEM,0.1233,+711,+873,1.0,
+2,Jokic + Allen,DEN @ NO | DAL @ CLE,0.044138,+2166,+3163,0.5,yes
+2,Jokic + D. Mitchell,DEN @ NO | DAL @ CLE,0.027089,+3592,+5216,0.5,
+2,Murray + Allen,DEN @ NO | DAL @ CLE,0.030497,+3179,+4622,0.5,yes
+2,Murray + D. Mitchell,DEN @ NO | DAL @ CLE,0.018717,+5243,+7594,0.5,
+2,Jokic + Adebayo,DEN @ NO | DET @ MIA,0.045236,+2111,+3083,0.5,
+2,Jokic + Giannis,DEN @ NO | DET @ MIA,0.033285,+2904,+4226,0.5,
+2,Murray + Adebayo,DEN @ NO | DET @ MIA,0.031256,+3099,+4507,0.5,
+2,Murray + Giannis,DEN @ NO | DET @ MIA,0.022998,+4248,+6161,0.5,
+2,Jokic + Kuminga,DEN @ NO | CHI @ MIN,0.033416,+2893,+4209,0.5,
+2,Jokic + LaMelo,DEN @ NO | CHI @ MIN,0.031813,+3043,+4427,0.5,
+2,Murray + Kuminga,DEN @ NO | CHI @ MIN,0.023089,+4231,+6137,0.5,
+2,Murray + LaMelo,DEN @ NO | CHI @ MIN,0.021981,+4449,+6451,0.5,
+2,Jokic + Edey,DEN @ NO | BKN @ MEM,0.033241,+2908,+4232,0.5,yes
+2,Jokic + Coward,DEN @ NO | BKN @ MEM,0.027089,+3592,+5216,0.5,
+2,Murray + Edey,DEN @ NO | BKN @ MEM,0.022967,+4254,+6170,0.5,yes
+2,Murray + Coward,DEN @ NO | BKN @ MEM,0.018717,+5243,+7594,0.5,
+2,Allen + Adebayo,DAL @ CLE | DET @ MIA,0.041365,+2317,+3381,0.5,yes
+2,Allen + Giannis,DAL @ CLE | DET @ MIA,0.030436,+3186,+4631,0.5,yes
+2,D. Mitchell + Adebayo,DAL @ CLE | DET @ MIA,0.025387,+3839,+5572,0.5,
+2,D. Mitchell + Giannis,DAL @ CLE | DET @ MIA,0.01868,+5253,+7609,0.5,
+2,Allen + Kuminga,DAL @ CLE | CHI @ MIN,0.030557,+3173,+4613,0.5,yes
+2,Allen + LaMelo,DAL @ CLE | CHI @ MIN,0.02909,+3338,+4850,0.5,yes
+2,D. Mitchell + Kuminga,DAL @ CLE | CHI @ MIN,0.018754,+5232,+7578,0.5,
+2,D. Mitchell + LaMelo,DAL @ CLE | CHI @ MIN,0.017854,+5501,+7965,0.5,
+2,Allen + Edey,DAL @ CLE | BKN @ MEM,0.030396,+3190,+4637,0.5,yes
+2,Allen + Coward,DAL @ CLE | BKN @ MEM,0.024771,+3937,+5713,0.5,yes
+2,D. Mitchell + Edey,DAL @ CLE | BKN @ MEM,0.018655,+5260,+7619,0.5,yes
+2,D. Mitchell + Coward,DAL @ CLE | BKN @ MEM,0.015203,+6478,+9372,0.5,
+2,Adebayo + Kuminga,DET @ MIA | CHI @ MIN,0.031317,+3093,+4498,0.5,
+2,Adebayo + LaMelo,DET @ MIA | CHI @ MIN,0.029814,+3254,+4730,0.5,
+2,Giannis + Kuminga,DET @ MIA | CHI @ MIN,0.023043,+4240,+6149,0.5,
+2,Giannis + LaMelo,DET @ MIA | CHI @ MIN,0.021937,+4458,+6464,0.5,
+2,Adebayo + Edey,DET @ MIA | BKN @ MEM,0.031153,+3110,+4522,0.5,yes
+2,Adebayo + Coward,DET @ MIA | BKN @ MEM,0.025387,+3839,+5572,0.5,
+2,Giannis + Edey,DET @ MIA | BKN @ MEM,0.022922,+4263,+6182,0.5,yes
+2,Giannis + Coward,DET @ MIA | BKN @ MEM,0.01868,+5253,+7609,0.5,
+2,Kuminga + Edey,CHI @ MIN | BKN @ MEM,0.023013,+4245,+6157,0.5,yes
+2,Kuminga + Coward,CHI @ MIN | BKN @ MEM,0.018754,+5232,+7578,0.5,
+2,LaMelo + Edey,CHI @ MIN | BKN @ MEM,0.021908,+4464,+6473,0.5,yes
+2,LaMelo + Coward,CHI @ MIN | BKN @ MEM,0.017854,+5501,+7965,0.5,
+3,Jokic + Allen + Adebayo,DEN @ NO | DAL @ CLE | DET @ MIA,0.009088,+10904,+18914,0.1,yes
+3,Jokic + Allen + Giannis,DEN @ NO | DAL @ CLE | DET @ MIA,0.006687,+14855,+25742,0.1,yes
+3,Jokic + D. Mitchell + Adebayo,DEN @ NO | DAL @ CLE | DET @ MIA,0.005578,+17829,+30881,0.1,
+3,Jokic + D. Mitchell + Giannis,DEN @ NO | DAL @ CLE | DET @ MIA,0.004104,+24267,+42005,0.1,
+3,Murray + Allen + Adebayo,DEN @ NO | DAL @ CLE | DET @ MIA,0.006279,+15825,+27419,0.1,yes
+3,Murray + Allen + Giannis,DEN @ NO | DAL @ CLE | DET @ MIA,0.00462,+21544,+37301,0.1,yes
+3,Murray + D. Mitchell + Adebayo,DEN @ NO | DAL @ CLE | DET @ MIA,0.003854,+25848,+44739,0.1,
+3,Murray + D. Mitchell + Giannis,DEN @ NO | DAL @ CLE | DET @ MIA,0.002836,+35166,+60839,0.1,
+3,Jokic + Allen + Kuminga,DEN @ NO | DAL @ CLE | CHI @ MIN,0.006713,+14796,+25640,0.1,yes
+3,Jokic + Allen + LaMelo,DEN @ NO | DAL @ CLE | CHI @ MIN,0.006391,+15547,+26937,0.1,yes
+3,Jokic + D. Mitchell + Kuminga,DEN @ NO | DAL @ CLE | CHI @ MIN,0.00412,+24170,+41839,0.1,
+3,Jokic + D. Mitchell + LaMelo,DEN @ NO | DAL @ CLE | CHI @ MIN,0.003922,+25394,+43954,0.1,
+3,Murray + Allen + Kuminga,DEN @ NO | DAL @ CLE | CHI @ MIN,0.004639,+21459,+37153,0.1,yes
+3,Murray + Allen + LaMelo,DEN @ NO | DAL @ CLE | CHI @ MIN,0.004416,+22545,+39031,0.1,yes
+3,Murray + D. Mitchell + Kuminga,DEN @ NO | DAL @ CLE | CHI @ MIN,0.002847,+35027,+60599,0.1,
+3,Murray + D. Mitchell + LaMelo,DEN @ NO | DAL @ CLE | CHI @ MIN,0.00271,+36797,+63659,0.1,
+3,Jokic + Allen + Edey,DEN @ NO | DAL @ CLE | BKN @ MEM,0.006678,+14874,+25776,0.1,yes
+3,Jokic + Allen + Coward,DEN @ NO | DAL @ CLE | BKN @ MEM,0.005442,+18275,+31652,0.1,yes
+3,Jokic + D. Mitchell + Edey,DEN @ NO | DAL @ CLE | BKN @ MEM,0.004099,+24299,+42061,0.1,yes
+3,Jokic + D. Mitchell + Coward,DEN @ NO | DAL @ CLE | BKN @ MEM,0.00334,+29839,+51635,0.1,
+3,Murray + Allen + Edey,DEN @ NO | DAL @ CLE | BKN @ MEM,0.004614,+21573,+37350,0.1,yes
+3,Murray + Allen + Coward,DEN @ NO | DAL @ CLE | BKN @ MEM,0.00376,+26494,+45855,0.1,yes
+3,Murray + D. Mitchell + Edey,DEN @ NO | DAL @ CLE | BKN @ MEM,0.002832,+35212,+60920,0.1,yes
+3,Murray + D. Mitchell + Coward,DEN @ NO | DAL @ CLE | BKN @ MEM,0.002308,+43231,+74777,0.1,
+3,Jokic + Adebayo + Kuminga,DEN @ NO | DET @ MIA | CHI @ MIN,0.00688,+14434,+25015,0.1,
+3,Jokic + Adebayo + LaMelo,DEN @ NO | DET @ MIA | CHI @ MIN,0.00655,+15167,+26281,0.1,
+3,Jokic + Giannis + Kuminga,DEN @ NO | DET @ MIA | CHI @ MIN,0.005063,+19653,+34033,0.1,
+3,Jokic + Giannis + LaMelo,DEN @ NO | DET @ MIA | CHI @ MIN,0.00482,+20649,+35754,0.1,
+3,Murray + Adebayo + Kuminga,DEN @ NO | DET @ MIA | CHI @ MIN,0.004754,+20935,+36248,0.1,
+3,Murray + Adebayo + LaMelo,DEN @ NO | DET @ MIA | CHI @ MIN,0.004526,+21995,+38081,0.1,
+3,Murray + Giannis + Kuminga,DEN @ NO | DET @ MIA | CHI @ MIN,0.003498,+28488,+49300,0.1,
+3,Murray + Giannis + LaMelo,DEN @ NO | DET @ MIA | CHI @ MIN,0.00333,+29929,+51791,0.1,
+3,Jokic + Adebayo + Edey,DEN @ NO | DET @ MIA | BKN @ MEM,0.006844,+14511,+25148,0.1,yes
+3,Jokic + Adebayo + Coward,DEN @ NO | DET @ MIA | BKN @ MEM,0.005578,+17829,+30881,0.1,
+3,Jokic + Giannis + Edey,DEN @ NO | DET @ MIA | BKN @ MEM,0.005036,+19757,+34213,0.1,yes
+3,Jokic + Giannis + Coward,DEN @ NO | DET @ MIA | BKN @ MEM,0.004104,+24267,+42005,0.1,
+3,Murray + Adebayo + Edey,DEN @ NO | DET @ MIA | BKN @ MEM,0.004729,+21046,+36441,0.1,yes
+3,Murray + Adebayo + Coward,DEN @ NO | DET @ MIA | BKN @ MEM,0.003854,+25848,+44739,0.1,
+3,Murray + Giannis + Edey,DEN @ NO | DET @ MIA | BKN @ MEM,0.00348,+28639,+49562,0.1,yes
+3,Murray + Giannis + Coward,DEN @ NO | DET @ MIA | BKN @ MEM,0.002836,+35166,+60839,0.1,
+3,Jokic + Kuminga + Edey,DEN @ NO | CHI @ MIN | BKN @ MEM,0.005056,+19679,+34078,0.1,yes
+3,Jokic + Kuminga + Coward,DEN @ NO | CHI @ MIN | BKN @ MEM,0.00412,+24170,+41839,0.1,
+3,Jokic + LaMelo + Edey,DEN @ NO | CHI @ MIN | BKN @ MEM,0.004813,+20676,+35801,0.1,yes
+3,Jokic + LaMelo + Coward,DEN @ NO | CHI @ MIN | BKN @ MEM,0.003922,+25394,+43954,0.1,
+3,Murray + Kuminga + Edey,DEN @ NO | CHI @ MIN | BKN @ MEM,0.003493,+28526,+49366,0.1,yes
+3,Murray + Kuminga + Coward,DEN @ NO | CHI @ MIN | BKN @ MEM,0.002847,+35027,+60599,0.1,
+3,Murray + LaMelo + Edey,DEN @ NO | CHI @ MIN | BKN @ MEM,0.003326,+29969,+51859,0.1,yes
+3,Murray + LaMelo + Coward,DEN @ NO | CHI @ MIN | BKN @ MEM,0.00271,+36797,+63659,0.1,
+3,Allen + Adebayo + Kuminga,DAL @ CLE | DET @ MIA | CHI @ MIN,0.006292,+15794,+27365,0.1,yes
+3,Allen + Adebayo + LaMelo,DAL @ CLE | DET @ MIA | CHI @ MIN,0.00599,+16595,+28750,0.1,yes
+3,Allen + Giannis + Kuminga,DAL @ CLE | DET @ MIA | CHI @ MIN,0.004629,+21501,+37227,0.1,yes
+3,Allen + Giannis + LaMelo,DAL @ CLE | DET @ MIA | CHI @ MIN,0.004407,+22590,+39109,0.1,yes
+3,D. Mitchell + Adebayo + Kuminga,DAL @ CLE | DET @ MIA | CHI @ MIN,0.003861,+25797,+44650,0.1,
+3,D. Mitchell + Adebayo + LaMelo,DAL @ CLE | DET @ MIA | CHI @ MIN,0.003676,+27103,+46906,0.1,
+3,D. Mitchell + Giannis + Kuminga,DAL @ CLE | DET @ MIA | CHI @ MIN,0.002841,+35096,+60719,0.1,
+3,D. Mitchell + Giannis + LaMelo,DAL @ CLE | DET @ MIA | CHI @ MIN,0.002705,+36871,+63785,0.1,
+3,Allen + Adebayo + Edey,DAL @ CLE | DET @ MIA | BKN @ MEM,0.006259,+15878,+27510,0.1,yes
+3,Allen + Adebayo + Coward,DAL @ CLE | DET @ MIA | BKN @ MEM,0.0051,+19507,+33780,0.1,yes
+3,Allen + Giannis + Edey,DAL @ CLE | DET @ MIA | BKN @ MEM,0.004605,+21615,+37424,0.1,yes
+3,Allen + Giannis + Coward,DAL @ CLE | DET @ MIA | BKN @ MEM,0.003753,+26547,+45946,0.1,yes
+3,D. Mitchell + Adebayo + Edey,DAL @ CLE | DET @ MIA | BKN @ MEM,0.003841,+25934,+44887,0.1,yes
+3,D. Mitchell + Adebayo + Coward,DAL @ CLE | DET @ MIA | BKN @ MEM,0.00313,+31846,+55103,0.1,
+3,D. Mitchell + Giannis + Edey,DAL @ CLE | DET @ MIA | BKN @ MEM,0.002826,+35282,+61041,0.1,yes
+3,D. Mitchell + Giannis + Coward,DAL @ CLE | DET @ MIA | BKN @ MEM,0.002303,+43317,+74925,0.1,
+3,Allen + Kuminga + Edey,DAL @ CLE | CHI @ MIN | BKN @ MEM,0.004623,+21530,+37276,0.1,yes
+3,Allen + Kuminga + Coward,DAL @ CLE | CHI @ MIN | BKN @ MEM,0.003768,+26442,+45764,0.1,yes
+3,Allen + LaMelo + Edey,DAL @ CLE | CHI @ MIN | BKN @ MEM,0.004401,+22620,+39161,0.1,yes
+3,Allen + LaMelo + Coward,DAL @ CLE | CHI @ MIN | BKN @ MEM,0.003587,+27780,+48076,0.1,yes
+3,D. Mitchell + Kuminga + Edey,DAL @ CLE | CHI @ MIN | BKN @ MEM,0.002837,+35143,+60799,0.1,yes
+3,D. Mitchell + Kuminga + Coward,DAL @ CLE | CHI @ MIN | BKN @ MEM,0.002312,+43146,+74629,0.1,
+3,D. Mitchell + LaMelo + Edey,DAL @ CLE | CHI @ MIN | BKN @ MEM,0.002701,+36919,+63870,0.1,yes
+3,D. Mitchell + LaMelo + Coward,DAL @ CLE | CHI @ MIN | BKN @ MEM,0.002201,+45326,+78396,0.1,
+3,Adebayo + Kuminga + Edey,DET @ MIA | CHI @ MIN | BKN @ MEM,0.004738,+21005,+36369,0.1,yes
+3,Adebayo + Kuminga + Coward,DET @ MIA | CHI @ MIN | BKN @ MEM,0.003861,+25797,+44650,0.1,
+3,Adebayo + LaMelo + Edey,DET @ MIA | CHI @ MIN | BKN @ MEM,0.004511,+22068,+38207,0.1,yes
+3,Adebayo + LaMelo + Coward,DET @ MIA | CHI @ MIN | BKN @ MEM,0.003676,+27103,+46906,0.1,
+3,Giannis + Kuminga + Edey,DET @ MIA | CHI @ MIN | BKN @ MEM,0.003486,+28583,+49464,0.1,yes
+3,Giannis + Kuminga + Coward,DET @ MIA | CHI @ MIN | BKN @ MEM,0.002841,+35096,+60719,0.1,
+3,Giannis + LaMelo + Edey,DET @ MIA | CHI @ MIN | BKN @ MEM,0.003319,+30029,+51962,0.1,yes
+3,Giannis + LaMelo + Coward,DET @ MIA | CHI @ MIN | BKN @ MEM,0.002705,+36871,+63785,0.1,
+4,Jokic + Allen + Adebayo + Kuminga,DEN @ NO | DAL @ CLE | DET @ MIA | CHI @ MIN,0.001382,+72244,+149913,0.1,yes
+4,Jokic + Allen + Adebayo + LaMelo,DEN @ NO | DAL @ CLE | DET @ MIA | CHI @ MIN,0.001316,+75892,+157476,0.1,yes
+4,Jokic + Allen + Giannis + Kuminga,DEN @ NO | DAL @ CLE | DET @ MIA | CHI @ MIN,0.001017,+98221,+203779,0.1,yes
+4,Jokic + Allen + Giannis + LaMelo,DEN @ NO | DAL @ CLE | DET @ MIA | CHI @ MIN,0.000968,+103178,+214058,0.1,yes
+4,Jokic + D. Mitchell + Adebayo + Kuminga,DEN @ NO | DAL @ CLE | DET @ MIA | CHI @ MIN,0.000848,+117775,+244325,0.1,
+4,Jokic + D. Mitchell + Adebayo + LaMelo,DEN @ NO | DAL @ CLE | DET @ MIA | CHI @ MIN,0.000808,+123717,+256648,0.1,
+4,Jokic + D. Mitchell + Giannis + Kuminga,DEN @ NO | DAL @ CLE | DET @ MIA | CHI @ MIN,0.000624,+160101,+332093,0.1,
+4,Jokic + D. Mitchell + Giannis + LaMelo,DEN @ NO | DAL @ CLE | DET @ MIA | CHI @ MIN,0.000594,+168177,+348840,0.1,
+4,Murray + Allen + Adebayo + Kuminga,DEN @ NO | DAL @ CLE | DET @ MIA | CHI @ MIN,0.000955,+104604,+217014,0.1,yes
+4,Murray + Allen + Adebayo + LaMelo,DEN @ NO | DAL @ CLE | DET @ MIA | CHI @ MIN,0.000909,+109882,+227960,0.1,yes
+4,Murray + Allen + Giannis + Kuminga,DEN @ NO | DAL @ CLE | DET @ MIA | CHI @ MIN,0.000703,+142201,+294974,0.1,yes
+4,Murray + Allen + Giannis + LaMelo,DEN @ NO | DAL @ CLE | DET @ MIA | CHI @ MIN,0.000669,+149374,+309850,0.1,yes
+4,Murray + D. Mitchell + Adebayo + Kuminga,DEN @ NO | DAL @ CLE | DET @ MIA | CHI @ MIN,0.000586,+170500,+353657,0.1,
+4,Murray + D. Mitchell + Adebayo + LaMelo,DEN @ NO | DAL @ CLE | DET @ MIA | CHI @ MIN,0.000558,+179101,+371491,0.1,
+4,Murray + D. Mitchell + Giannis + Kuminga,DEN @ NO | DAL @ CLE | DET @ MIA | CHI @ MIN,0.000431,+231759,+480682,0.1,
+4,Murray + D. Mitchell + Giannis + LaMelo,DEN @ NO | DAL @ CLE | DET @ MIA | CHI @ MIN,0.000411,+243448,+504920,0.1,
+4,Jokic + Allen + Adebayo + Edey,DEN @ NO | DAL @ CLE | DET @ MIA | BKN @ MEM,0.001375,+72627,+150706,0.1,yes
+4,Jokic + Allen + Adebayo + Coward,DEN @ NO | DAL @ CLE | DET @ MIA | BKN @ MEM,0.001121,+89142,+184953,0.1,yes
+4,Jokic + Allen + Giannis + Edey,DEN @ NO | DAL @ CLE | DET @ MIA | BKN @ MEM,0.001012,+98741,+204857,0.1,yes
+4,Jokic + Allen + Giannis + Coward,DEN @ NO | DAL @ CLE | DET @ MIA | BKN @ MEM,0.000824,+121187,+251401,0.1,yes
+4,Jokic + D. Mitchell + Adebayo + Edey,DEN @ NO | DAL @ CLE | DET @ MIA | BKN @ MEM,0.000844,+118398,+245618,0.1,yes
+4,Jokic + D. Mitchell + Adebayo + Coward,DEN @ NO | DAL @ CLE | DET @ MIA | BKN @ MEM,0.000688,+145308,+301417,0.1,
+4,Jokic + D. Mitchell + Giannis + Edey,DEN @ NO | DAL @ CLE | DET @ MIA | BKN @ MEM,0.000621,+160948,+333849,0.1,yes
+4,Jokic + D. Mitchell + Giannis + Coward,DEN @ NO | DAL @ CLE | DET @ MIA | BKN @ MEM,0.000506,+197520,+409685,0.1,
+4,Murray + Allen + Adebayo + Edey,DEN @ NO | DAL @ CLE | DET @ MIA | BKN @ MEM,0.00095,+105157,+218162,0.1,yes
+4,Murray + Allen + Adebayo + Coward,DEN @ NO | DAL @ CLE | DET @ MIA | BKN @ MEM,0.000774,+129060,+267727,0.1,yes
+4,Murray + Allen + Giannis + Edey,DEN @ NO | DAL @ CLE | DET @ MIA | BKN @ MEM,0.000699,+142953,+296535,0.1,yes
+4,Murray + Allen + Giannis + Coward,DEN @ NO | DAL @ CLE | DET @ MIA | BKN @ MEM,0.00057,+175439,+363897,0.1,yes
+4,Murray + D. Mitchell + Adebayo + Edey,DEN @ NO | DAL @ CLE | DET @ MIA | BKN @ MEM,0.000583,+171402,+355527,0.1,yes
+4,Murray + D. Mitchell + Adebayo + Coward,DEN @ NO | DAL @ CLE | DET @ MIA | BKN @ MEM,0.000475,+210348,+436286,0.1,
+4,Murray + D. Mitchell + Giannis + Edey,DEN @ NO | DAL @ CLE | DET @ MIA | BKN @ MEM,0.000429,+232985,+483224,0.1,yes
+4,Murray + D. Mitchell + Giannis + Coward,DEN @ NO | DAL @ CLE | DET @ MIA | BKN @ MEM,0.00035,+285915,+592982,0.1,
+4,Jokic + Allen + Kuminga + Edey,DEN @ NO | DAL @ CLE | CHI @ MIN | BKN @ MEM,0.001016,+98351,+204049,0.1,yes
+4,Jokic + Allen + Kuminga + Coward,DEN @ NO | DAL @ CLE | CHI @ MIN | BKN @ MEM,0.000828,+120709,+250409,0.1,yes
+4,Jokic + Allen + LaMelo + Edey,DEN @ NO | DAL @ CLE | CHI @ MIN | BKN @ MEM,0.000967,+103315,+214341,0.1,yes
+4,Jokic + Allen + LaMelo + Coward,DEN @ NO | DAL @ CLE | CHI @ MIN | BKN @ MEM,0.000788,+126799,+263038,0.1,yes
+4,Jokic + D. Mitchell + Kuminga + Edey,DEN @ NO | DAL @ CLE | CHI @ MIN | BKN @ MEM,0.000623,+160313,+332532,0.1,yes
+4,Jokic + D. Mitchell + Kuminga + Coward,DEN @ NO | DAL @ CLE | CHI @ MIN | BKN @ MEM,0.000508,+196741,+408069,0.1,
+4,Jokic + D. Mitchell + LaMelo + Edey,DEN @ NO | DAL @ CLE | CHI @ MIN | BKN @ MEM,0.000593,+168400,+349301,0.1,yes
+4,Jokic + D. Mitchell + LaMelo + Coward,DEN @ NO | DAL @ CLE | CHI @ MIN | BKN @ MEM,0.000484,+206664,+428646,0.1,
+4,Murray + Allen + Kuminga + Edey,DEN @ NO | DAL @ CLE | CHI @ MIN | BKN @ MEM,0.000702,+142389,+295364,0.1,yes
+4,Murray + Allen + Kuminga + Coward,DEN @ NO | DAL @ CLE | CHI @ MIN | BKN @ MEM,0.000572,+174746,+362461,0.1,yes
+4,Murray + Allen + LaMelo + Edey,DEN @ NO | DAL @ CLE | CHI @ MIN | BKN @ MEM,0.000668,+149572,+310260,0.1,yes
+4,Murray + Allen + LaMelo + Coward,DEN @ NO | DAL @ CLE | CHI @ MIN | BKN @ MEM,0.000544,+183561,+380739,0.1,yes
+4,Murray + D. Mitchell + Kuminga + Edey,DEN @ NO | DAL @ CLE | CHI @ MIN | BKN @ MEM,0.000431,+232065,+481318,0.1,yes
+4,Murray + D. Mitchell + Kuminga + Coward,DEN @ NO | DAL @ CLE | CHI @ MIN | BKN @ MEM,0.000351,+284787,+590642,0.1,
+4,Murray + D. Mitchell + LaMelo + Edey,DEN @ NO | DAL @ CLE | CHI @ MIN | BKN @ MEM,0.00041,+243770,+505588,0.1,yes
+4,Murray + D. Mitchell + LaMelo + Coward,DEN @ NO | DAL @ CLE | CHI @ MIN | BKN @ MEM,0.000334,+299150,+620424,0.1,
+4,Jokic + Adebayo + Kuminga + Edey,DEN @ NO | DET @ MIA | CHI @ MIN | BKN @ MEM,0.001041,+95961,+199091,0.1,yes
+4,Jokic + Adebayo + Kuminga + Coward,DEN @ NO | DET @ MIA | CHI @ MIN | BKN @ MEM,0.000848,+117775,+244325,0.1,
+4,Jokic + Adebayo + LaMelo + Edey,DEN @ NO | DET @ MIA | CHI @ MIN | BKN @ MEM,0.000991,+100803,+209133,0.1,yes
+4,Jokic + Adebayo + LaMelo + Coward,DEN @ NO | DET @ MIA | CHI @ MIN | BKN @ MEM,0.000808,+123717,+256648,0.1,
+4,Jokic + Giannis + Kuminga + Edey,DEN @ NO | DET @ MIA | CHI @ MIN | BKN @ MEM,0.000766,+130454,+270616,0.1,yes
+4,Jokic + Giannis + Kuminga + Coward,DEN @ NO | DET @ MIA | CHI @ MIN | BKN @ MEM,0.000624,+160101,+332093,0.1,
+4,Jokic + Giannis + LaMelo + Edey,DEN @ NO | DET @ MIA | CHI @ MIN | BKN @ MEM,0.000729,+137035,+284264,0.1,yes
+4,Jokic + Giannis + LaMelo + Coward,DEN @ NO | DET @ MIA | CHI @ MIN | BKN @ MEM,0.000594,+168177,+348840,0.1,
+4,Murray + Adebayo + Kuminga + Edey,DEN @ NO | DET @ MIA | CHI @ MIN | BKN @ MEM,0.000719,+138928,+288189,0.1,yes
+4,Murray + Adebayo + Kuminga + Coward,DEN @ NO | DET @ MIA | CHI @ MIN | BKN @ MEM,0.000586,+170500,+353657,0.1,
+4,Murray + Adebayo + LaMelo + Edey,DEN @ NO | DET @ MIA | CHI @ MIN | BKN @ MEM,0.000685,+145938,+302723,0.1,yes
+4,Murray + Adebayo + LaMelo + Coward,DEN @ NO | DET @ MIA | CHI @ MIN | BKN @ MEM,0.000558,+179101,+371491,0.1,
+4,Murray + Giannis + Kuminga + Edey,DEN @ NO | DET @ MIA | CHI @ MIN | BKN @ MEM,0.000529,+188850,+391707,0.1,yes
+4,Murray + Giannis + Kuminga + Coward,DEN @ NO | DET @ MIA | CHI @ MIN | BKN @ MEM,0.000431,+231759,+480682,0.1,
+4,Murray + Giannis + LaMelo + Edey,DEN @ NO | DET @ MIA | CHI @ MIN | BKN @ MEM,0.000504,+198376,+411460,0.1,yes
+4,Murray + Giannis + LaMelo + Coward,DEN @ NO | DET @ MIA | CHI @ MIN | BKN @ MEM,0.000411,+243448,+504920,0.1,
+4,Allen + Adebayo + Kuminga + Edey,DAL @ CLE | DET @ MIA | CHI @ MIN | BKN @ MEM,0.000952,+104950,+217731,0.1,yes
+4,Allen + Adebayo + Kuminga + Coward,DAL @ CLE | DET @ MIA | CHI @ MIN | BKN @ MEM,0.000776,+128805,+267198,0.1,yes
+4,Allen + Adebayo + LaMelo + Edey,DAL @ CLE | DET @ MIA | CHI @ MIN | BKN @ MEM,0.000906,+110246,+228713,0.1,yes
+4,Allen + Adebayo + LaMelo + Coward,DAL @ CLE | DET @ MIA | CHI @ MIN | BKN @ MEM,0.000739,+135304,+280674,0.1,yes
+4,Allen + Giannis + Kuminga + Edey,DAL @ CLE | DET @ MIA | CHI @ MIN | BKN @ MEM,0.0007,+142671,+295949,0.1,yes
+4,Allen + Giannis + Kuminga + Coward,DAL @ CLE | DET @ MIA | CHI @ MIN | BKN @ MEM,0.000571,+175092,+363179,0.1,yes
+4,Allen + Giannis + LaMelo + Edey,DAL @ CLE | DET @ MIA | CHI @ MIN | BKN @ MEM,0.000667,+149868,+310875,0.1,yes
+4,Allen + Giannis + LaMelo + Coward,DAL @ CLE | DET @ MIA | CHI @ MIN | BKN @ MEM,0.000543,+183925,+381493,0.1,yes
+4,D. Mitchell + Adebayo + Kuminga + Edey,DAL @ CLE | DET @ MIA | CHI @ MIN | BKN @ MEM,0.000584,+171064,+354826,0.1,yes
+4,D. Mitchell + Adebayo + Kuminga + Coward,DAL @ CLE | DET @ MIA | CHI @ MIN | BKN @ MEM,0.000476,+209933,+435425,0.1,
+4,D. Mitchell + Adebayo + LaMelo + Edey,DAL @ CLE | DET @ MIA | CHI @ MIN | BKN @ MEM,0.000556,+179693,+372719,0.1,yes
+4,D. Mitchell + Adebayo + LaMelo + Coward,DAL @ CLE | DET @ MIA | CHI @ MIN | BKN @ MEM,0.000453,+220522,+457382,0.1,
+4,D. Mitchell + Giannis + Kuminga + Edey,DAL @ CLE | DET @ MIA | CHI @ MIN | BKN @ MEM,0.00043,+232525,+482271,0.1,yes
+4,D. Mitchell + Giannis + Kuminga + Coward,DAL @ CLE | DET @ MIA | CHI @ MIN | BKN @ MEM,0.00035,+285351,+591812,0.1,
+4,D. Mitchell + Giannis + LaMelo + Edey,DAL @ CLE | DET @ MIA | CHI @ MIN | BKN @ MEM,0.000409,+244253,+506589,0.1,yes
+4,D. Mitchell + Giannis + LaMelo + Coward,DAL @ CLE | DET @ MIA | CHI @ MIN | BKN @ MEM,0.000334,+299742,+621653,0.1,
+5,Jokic + Allen + Adebayo + Kuminga + Edey,DEN @ NO | DAL @ CLE | DET @ MIA | CHI @ MIN | BKN @ MEM,0.000209,+478051,+1189694,0.1,yes
+5,Jokic + Allen + Adebayo + Kuminga + Coward,DEN @ NO | DAL @ CLE | DET @ MIA | CHI @ MIN | BKN @ MEM,0.00017,+586634,+1459882,0.1,yes
+5,Jokic + Allen + Adebayo + LaMelo + Edey,DEN @ NO | DAL @ CLE | DET @ MIA | CHI @ MIN | BKN @ MEM,0.000199,+502157,+1249677,0.1,yes
+5,Jokic + Allen + Adebayo + LaMelo + Coward,DEN @ NO | DAL @ CLE | DET @ MIA | CHI @ MIN | BKN @ MEM,0.000162,+616214,+1533486,0.1,yes
+5,Jokic + Allen + Giannis + Kuminga + Edey,DEN @ NO | DAL @ CLE | DET @ MIA | CHI @ MIN | BKN @ MEM,0.000154,+649744,+1616920,0.1,yes
+5,Jokic + Allen + Giannis + Kuminga + Coward,DEN @ NO | DAL @ CLE | DET @ MIA | CHI @ MIN | BKN @ MEM,0.000125,+797316,+1984127,0.1,yes
+5,Jokic + Allen + Giannis + LaMelo + Edey,DEN @ NO | DAL @ CLE | DET @ MIA | CHI @ MIN | BKN @ MEM,0.000146,+682506,+1698441,0.1,yes
+5,Jokic + Allen + Giannis + LaMelo + Coward,DEN @ NO | DAL @ CLE | DET @ MIA | CHI @ MIN | BKN @ MEM,0.000119,+837517,+2084160,0.1,yes
+5,Jokic + D. Mitchell + Adebayo + Kuminga + Edey,DEN @ NO | DAL @ CLE | DET @ MIA | CHI @ MIN | BKN @ MEM,0.000128,+778981,+1938502,0.1,yes
+5,Jokic + D. Mitchell + Adebayo + Kuminga + Coward,DEN @ NO | DAL @ CLE | DET @ MIA | CHI @ MIN | BKN @ MEM,0.000105,+955901,+2378736,0.1,
+5,Jokic + D. Mitchell + Adebayo + LaMelo + Edey,DEN @ NO | DAL @ CLE | DET @ MIA | CHI @ MIN | BKN @ MEM,0.000122,+818257,+2036235,0.1,yes
+5,Jokic + D. Mitchell + Adebayo + LaMelo + Coward,DEN @ NO | DAL @ CLE | DET @ MIA | CHI @ MIN | BKN @ MEM,0.0001,+1004097,+2498663,0.1,
+5,Jokic + D. Mitchell + Giannis + Kuminga + Edey,DEN @ NO | DAL @ CLE | DET @ MIA | CHI @ MIN | BKN @ MEM,9.4e-05,+1058730,+2634607,0.1,yes
+5,Jokic + D. Mitchell + Giannis + Kuminga + Coward,DEN @ NO | DAL @ CLE | DET @ MIA | CHI @ MIN | BKN @ MEM,7.7e-05,+1299178,+3232918,0.1,
+5,Jokic + D. Mitchell + Giannis + LaMelo + Edey,DEN @ NO | DAL @ CLE | DET @ MIA | CHI @ MIN | BKN @ MEM,9e-05,+1112110,+2767434,0.1,yes
+5,Jokic + D. Mitchell + Giannis + LaMelo + Coward,DEN @ NO | DAL @ CLE | DET @ MIA | CHI @ MIN | BKN @ MEM,7.3e-05,+1364680,+3395909,0.1,
+5,Murray + Allen + Adebayo + Kuminga + Edey,DEN @ NO | DAL @ CLE | DET @ MIA | CHI @ MIN | BKN @ MEM,0.000145,+691928,+1721888,0.1,yes
+5,Murray + Allen + Adebayo + Kuminga + Coward,DEN @ NO | DAL @ CLE | DET @ MIA | CHI @ MIN | BKN @ MEM,0.000118,+849080,+2112931,0.1,yes
+5,Murray + Allen + Adebayo + LaMelo + Edey,DEN @ NO | DAL @ CLE | DET @ MIA | CHI @ MIN | BKN @ MEM,0.000138,+726816,+1808701,0.1,yes
+5,Murray + Allen + Adebayo + LaMelo + Coward,DEN @ NO | DAL @ CLE | DET @ MIA | CHI @ MIN | BKN @ MEM,0.000112,+891891,+2219458,0.1,yes
+5,Murray + Allen + Giannis + Kuminga + Edey,DEN @ NO | DAL @ CLE | DET @ MIA | CHI @ MIN | BKN @ MEM,0.000106,+940419,+2340212,0.1,yes
+5,Murray + Allen + Giannis + Kuminga + Coward,DEN @ NO | DAL @ CLE | DET @ MIA | CHI @ MIN | BKN @ MEM,8.7e-05,+1154000,+2871670,0.1,yes
+5,Murray + Allen + Giannis + LaMelo + Edey,DEN @ NO | DAL @ CLE | DET @ MIA | CHI @ MIN | BKN @ MEM,0.000101,+987835,+2458197,0.1,yes
+5,Murray + Allen + Giannis + LaMelo + Coward,DEN @ NO | DAL @ CLE | DET @ MIA | CHI @ MIN | BKN @ MEM,8.2e-05,+1212183,+3016448,0.1,yes
+5,Murray + D. Mitchell + Adebayo + Kuminga + Edey,DEN @ NO | DAL @ CLE | DET @ MIA | CHI @ MIN | BKN @ MEM,8.9e-05,+1127463,+2805637,0.1,yes
+5,Murray + D. Mitchell + Adebayo + Kuminga + Coward,DEN @ NO | DAL @ CLE | DET @ MIA | CHI @ MIN | BKN @ MEM,7.2e-05,+1383519,+3442787,0.1,
+5,Murray + D. Mitchell + Adebayo + LaMelo + Edey,DEN @ NO | DAL @ CLE | DET @ MIA | CHI @ MIN | BKN @ MEM,8.4e-05,+1184308,+2947086,0.1,yes
+5,Murray + D. Mitchell + Adebayo + LaMelo + Coward,DEN @ NO | DAL @ CLE | DET @ MIA | CHI @ MIN | BKN @ MEM,6.9e-05,+1453273,+3616358,0.1,
+5,Murray + D. Mitchell + Giannis + Kuminga + Edey,DEN @ NO | DAL @ CLE | DET @ MIA | CHI @ MIN | BKN @ MEM,6.5e-05,+1532343,+3813109,0.1,yes
+5,Murray + D. Mitchell + Giannis + Kuminga + Coward,DEN @ NO | DAL @ CLE | DET @ MIA | CHI @ MIN | BKN @ MEM,5.3e-05,+1880343,+4679045,0.1,
+5,Murray + D. Mitchell + Giannis + LaMelo + Edey,DEN @ NO | DAL @ CLE | DET @ MIA | CHI @ MIN | BKN @ MEM,6.2e-05,+1609600,+4005349,0.1,yes
+5,Murray + D. Mitchell + Giannis + LaMelo + Coward,DEN @ NO | DAL @ CLE | DET @ MIA | CHI @ MIN | BKN @ MEM,5.1e-05,+1975145,+4914941,0.1,
