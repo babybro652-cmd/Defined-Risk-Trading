@@ -74,6 +74,7 @@ ST_TIP = {
  '2026-11-11': {('WSH','IND'):(46,54),('CLE','NY'):(77,23),('BOS','TOR'):(39,61),('SA','CHI'):(76,24),('DEN','MEM'):(46,54),
                 ('LAL','MIL'):(58,42),('BKN','NO'):(59,41),('ORL','UTAH'):(79,21),('GS','HOU'):(36,64),('OKC','POR'):(34,66)},
  '2026-11-12': {('TOR','PHI'):(67,33),('DAL','MIN'):(36,64),('CHA','PHX'):(59,41)},   # DET @ WSH card did not load
+ '2026-11-14': {('DEN','NO'):(55,45),('DAL','CLE'):(19,81),('BKN','MEM'):(46,54),('CHI','MIN'):(31,69)},   # DET @ MIA tip still loading
  '2026-11-13': {('NY','IND'):(32,68),('MIL','ORL'):(25,75),('CLE','MIA'):(54,46),('ATL','CHI'):(60,40),('MEM','NO'):(57,43),
                 ('UTAH','HOU'):(37,63),('GS','SA'):(13,87),('POR','SAC'):(53,47),('OKC','LAC'):(61,39)},
 }
@@ -81,7 +82,7 @@ ST_TIP = {
 ST = {}
 for line in open(R + '/analysis/nba/out/startool/star_bomb.txt'):
     d, game, stars, bombs = line.rstrip('\n').split('|')[:4]
-    if d not in COMMITS or d in ('2026-11-11', '2026-11-12', '2026-11-13'):
+    if d not in COMMITS or d in ('2026-11-11', '2026-11-12', '2026-11-13', '2026-11-14'):
         continue
     a, h = [x.strip() for x in game.split('@')]
     s, b = stars.split(','), (bombs.split(',') if bombs else ['', ''])
@@ -141,7 +142,18 @@ ST_PCT_1113 = {  # Curry, Mobley, Edey, C. Wilson listed but Out (dropped by ali
     'SAC': [('Darius Acuff Jr.',14),('Zach LaVine',10),('Domantas Sabonis',8),("De'Andre Hunter",7),('Keegan Murray',7)],
     'OKC': [('Shai Gilgeous-Alexander',27),('Jared McCain',8),('Aday Mara',7),('Isaiah Hartenstein',7),('Alex Caruso',6)],
     'LAC': [('Darius Garland',16),('Rui Hachimura',9),('Derrick Jones Jr.',8),('Isaiah Jackson',6),('Kris Dunn',6)]}
-for d, tab in (('2026-11-09', ST_PCT_0911), ('2026-11-11', ST_PCT_1111), ('2026-11-12', ST_PCT_1112), ('2026-11-13', ST_PCT_1113)):
+ST_PCT_1114 = {  # DET @ MIA card: no star/bomb, tip loading, baseline estimates
+    'DEN': [('Nikola Jokic',14),('Jamal Murray',13),('Aaron Gordon',7),('Cameron Johnson',6),('Christian Braun',6)],
+    'NO': [('Zion Williamson',17),('Saddiq Bey',15),('Jeremiah Fears',12),('Herbert Jones',6),('DeAndre Jordan',3)],
+    'DAL': [('Cooper Flagg',13),('Kyrie Irving',13),('P.J. Washington',8),('Daniel Gafford',5),('Caleb Martin',2)],
+    'CLE': [('Donovan Mitchell',16),('James Harden',13),('Evan Mobley',11),('Jarrett Allen',9),('Peyton Watson',9)],
+    'DET': [('Cade Cunningham',17),('Duncan Robinson',10),('John Collins',10),('Ausar Thompson',7),('Daniss Jenkins',7)],
+    'MIA': [('Giannis Antetokounmpo',16),('Bam Adebayo',12),('Klay Thompson',8),('Pelle Larsson',7),('Davion Mitchell',6)],
+    'BKN': [('Michael Porter Jr.',16),('Julius Randle',14),('Egor Demin',7),('Nolan Traore',7),("Day'Ron Sharpe",6)],
+    'MEM': [('Ty Jerome',16),('Cameron Boozer',10),('Cedric Coward',9),('Jaylen Wells',9),('Zach Edey',5)],
+    'CHI': [('Norman Powell',12),('Josh Giddey',9),('Matas Buzelis',9),('Jalen Smith',6),('Isaac Okoro',5)],
+    'MIN': [('LaMelo Ball',16),('Ayo Dosunmu',13),('Jaden McDaniels',12),('Jonathan Kuminga',9),('Rudy Gobert',9)]}
+for d, tab in (('2026-11-09', ST_PCT_0911), ('2026-11-11', ST_PCT_1111), ('2026-11-12', ST_PCT_1112), ('2026-11-13', ST_PCT_1113), ('2026-11-14', ST_PCT_1114)):
     for tm, v in tab.items():
         ST[(d, tm)] = [(n, p, p) for n, p in v]   # StarTool prints game first basket %; same number ranks team and game
 
@@ -158,6 +170,7 @@ SH_TIP = {  # normalized favorite; None = even
  '2026-11-11': {('WSH','IND'):'WSH',('CLE','NY'):'CLE',('BOS','TOR'):'TOR',('SA','CHI'):'SA',('DEN','MEM'):'MEM',
                 ('LAL','MIL'):'LAL',('BKN','NO'):'BKN',('ORL','UTAH'):'ORL',('GS','HOU'):'HOU',('OKC','POR'):'POR'},
  '2026-11-12': {('TOR','PHI'):'TOR',('DET','WSH'):'WSH',('DAL','MIN'):'MIN',('CHA','PHX'):'PHX'},
+ '2026-11-14': {('DEN','NO'):'DEN',('DAL','CLE'):'CLE',('DET','MIA'):'MIA',('BKN','MEM'):'MEM',('CHI','MIN'):'MIN'},   # tip sheet normalized
  '2026-11-13': {('NY','IND'):'NY',('MIL','ORL'):'ORL',('CLE','MIA'):'MIA',('ATL','CHI'):'ATL',('MEM','NO'):'MEM',
                 ('UTAH','HOU'):'HOU',('GS','SA'):'SA',('POR','SAC'):'POR',('OKC','LAC'):'LAC'},   # tip sheet only, normalized
 }

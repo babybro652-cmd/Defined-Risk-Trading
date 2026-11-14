@@ -143,3 +143,7 @@
 2026-11-13|GS @ SA|Stephen Curry,Victor Wembanyama|Yaxel Lendeborg,De'Aaron Fox
 2026-11-13|POR @ SAC|Deni Avdija,Darius Acuff Jr.|Damian Lillard,Zach LaVine
 2026-11-13|OKC @ LAC|Shai Gilgeous-Alexander,Darius Garland|Jared McCain,Rui Hachimura
+2026-11-14|DEN @ NO|Nikola Jokic,Zion Williamson|Jamal Murray,Saddiq Bey
+2026-11-14|DAL @ CLE|Kyrie Irving,Donovan Mitchell|Cooper Flagg,James Harden
+2026-11-14|BKN @ MEM|Michael Porter Jr.,Ty Jerome|Julius Randle,Cameron Boozer
+2026-11-14|CHI @ MIN|Norman Powell,LaMelo Ball|Josh Giddey,Ayo Dosunmu
