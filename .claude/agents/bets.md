@@ -109,3 +109,14 @@ Rule from here (Tim to confirm): TD bets on RBs/goal-line QBs only; WR/TE TDs on
 - Early season (until mid-December): small stakes, gaps are leans. Props: points and threes only, where FanDuel likely lists them.
 - Log as Sport "NCAAB" Pick rows; save `analysis/ncaab/picks-YYYY-MM-DD.md`; grade from ESPN in column I.
 - CFB: Saturday routine (8:13 AM) follows `analysis/ncaaf/picks-2026-10-24.md` method (FPI fair spread sd 16, skip QB changes on our side, pass on FCS).
+
+## MLB anytime HR (built 11/14/26; season starts late March 2027)
+- Read `analysis/mlb/README.md` first (data, model, backtest, daily routine).
+- Daily: `python3 analysis/mlb/fetch_data.py --skip-leaderboards --games 2027`, then
+  `python3 analysis/mlb/hr_model.py picks --date YYYY-MM-DD`; rerun once lineups confirm (2-4 h before first pitch).
+  Bet only batters in a confirmed lineup.
+- 2026 backtest: well calibrated below 20%; the daily top 3-5 picks hit about 22% (fair about +350). Stars like
+  Judge / Ohtani at +200 to +300 are below fair; value lives around +400 to +600.
+- Log up to 3-5 as Sport "MLB", Bet type "Anytime HR", Pick "Name 1+ HR (fair +X, take at +Y or longer)", H "Pick".
+  Take-at = fair decimal x1.2; BET only at take-at or longer, $0.20 to $0.50. No HR parlays.
+- Grade from the MLB boxscore (batter homeRuns). Scratched before first pitch = Void.

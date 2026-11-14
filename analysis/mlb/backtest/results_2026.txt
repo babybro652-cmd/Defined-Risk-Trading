@@ -1,0 +1,59 @@
+## Backtest 2026 (fit on 2025, priors from 2023-2025)
+
+Starters scored: 43722 batter-games, 184 dates. Actual HR rate 11.5%, model mean 11.7%.
+
+Log loss 0.3472 vs 0.3566 for a flat rate (skill 2.6%). Brier 0.0998 vs 0.1017.
+
+| Model P(HR) | Batter-games | Predicted | Actual |
+|---|---|---|---|
+| 0-6% | 4011 | 4.6% | 4.6% |
+| 6-8% | 5973 | 7.1% | 7.2% |
+| 8-10% | 7797 | 9.0% | 9.0% |
+| 10-12% | 7614 | 11.0% | 11.0% |
+| 12-14% | 6200 | 13.0% | 13.0% |
+| 14-16% | 4530 | 14.9% | 14.1% |
+| 16-18% | 3250 | 16.9% | 17.1% |
+| 18-20% | 1934 | 18.9% | 17.6% |
+| 20-23% | 1471 | 21.3% | 20.6% |
+| 23%+ | 942 | 25.7% | 22.9% |
+
+Top-N picks per day (all games that day, ranked by model P):
+
+| N per day | Picks | Predicted | Hit rate | Avg fair |
+|---|---|---|---|---|
+| 1 | 184 | 28.3% | 20.7% | +254 |
+| 3 | 552 | 26.2% | 22.1% | +281 |
+| 5 | 920 | 25.0% | 22.1% | +299 |
+| 10 | 1840 | 23.3% | 21.5% | +330 |
+
+Batter-only version (same batter skill and lineup PA; no pitcher, bullpen, park or weather): log loss 0.3493 vs full 0.3472.
+
+## Same 2026 backtest with the top-end haircut used for picks
+
+Starters scored: 43722 batter-games, 184 dates. Actual HR rate 11.5%, model mean 11.5%.
+
+Log loss 0.3471 vs 0.3566 for a flat rate (skill 2.6%). Brier 0.0998 vs 0.1017.
+
+| Model P(HR) | Batter-games | Predicted | Actual |
+|---|---|---|---|
+| 0-6% | 4011 | 4.6% | 4.6% |
+| 6-8% | 5973 | 7.1% | 7.2% |
+| 8-10% | 7797 | 9.0% | 9.0% |
+| 10-12% | 7614 | 11.0% | 11.0% |
+| 12-14% | 6200 | 13.0% | 13.0% |
+| 14-16% | 4530 | 14.9% | 14.1% |
+| 16-18% | 4008 | 16.9% | 17.1% |
+| 18-20% | 1973 | 18.9% | 19.0% |
+| 20-23% | 1215 | 21.2% | 21.4% |
+| 23%+ | 401 | 24.9% | 23.4% |
+
+Top-N picks per day (all games that day, ranked by model P):
+
+| N per day | Picks | Predicted | Hit rate | Avg fair |
+|---|---|---|---|---|
+| 1 | 184 | 25.2% | 20.7% | +297 |
+| 3 | 552 | 23.7% | 22.1% | +322 |
+| 5 | 920 | 22.8% | 22.1% | +339 |
+| 10 | 1840 | 21.4% | 21.5% | +366 |
+
+Fit params: [5.966421993903, 8.34234408425517, 10.587931113463512, 0.43921847496395716, 0.008093886327929874, 0.012756103805518716, -0.0017293889912431623, 0.9662760641493888]

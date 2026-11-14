@@ -1,0 +1,271 @@
+date,game,team,slot,batter,bats,opp_sp,sp_throws,venue,temp,wind_out,park_hr,p_hr,fair,take_at,lineup,actual_hr
+2026-07-04,MIN at NYY,NYY,2,Ben Rice,L,Zebby Matthews,R,Yankee Stadium,95.0,7.0,1.19,0.2864,+249,+319,replay,0
+2026-07-04,MIN at NYY,MIN,2,Byron Buxton,R,Brendan Beck,R,Yankee Stadium,95.0,7.0,1.19,0.2632,+280,+356,replay,0
+2026-07-04,SF at COL,COL,3,Hunter Goodman,R,Robbie Ray,L,Coors Field,83.0,2.8,1.06,0.2286,+337,+425,replay,0
+2026-07-04,MIN at NYY,NYY,1,Trent Grisham,L,Zebby Matthews,R,Yankee Stadium,95.0,7.0,1.19,0.2264,+342,+430,replay,0
+2026-07-04,MIA at ATH,ATH,1,Nick Kurtz,L,Sandy Alcantara,R,Sutter Health Park,89.0,5.6,1.0,0.223,+348,+438,replay,0
+2026-07-04,MIN at NYY,MIN,3,Kody Clemens,L,Brendan Beck,R,Yankee Stadium,95.0,7.0,1.19,0.2187,+357,+449,replay,1
+2026-07-04,BAL at CIN,BAL,4,Pete Alonso,R,Hunter Greene,R,Great American Ball Park,89.0,0.0,1.21,0.215,+365,+458,replay,0
+2026-07-04,MIN at NYY,NYY,6,Jazz Chisholm Jr.,L,Zebby Matthews,R,Yankee Stadium,95.0,7.0,1.19,0.2143,+367,+460,replay,0
+2026-07-04,PHI at KC,PHI,2,Kyle Schwarber,L,Michael Wacha,R,Kauffman Stadium,82.0,0.0,0.74,0.213,+369,+463,replay,0
+2026-07-04,PIT at WSH,PIT,2,Brandon Lowe,L,Carson Palmquist,L,Nationals Park,93.0,-3.5,0.97,0.2116,+373,+467,replay,0
+2026-07-04,MIA at ATH,MIA,2,Kyle Stowers,L,Aaron Civale,R,Sutter Health Park,89.0,5.6,1.0,0.2115,+373,+467,replay,1
+2026-07-04,BAL at CIN,CIN,2,Sal Stewart,R,Brandon Young,R,Great American Ball Park,89.0,0.0,1.21,0.2057,+386,+483,replay,0
+2026-07-04,TB at HOU,HOU,2,Yordan Alvarez,L,Drew Rasmussen,R,Daikin Park,72.0,0.0,1.1,0.2031,+392,+491,replay,2
+2026-07-04,DET at TEX,DET,3,Kerry Carpenter,L,Cal Quantrill,R,Globe Life Field,72.0,0.0,1.02,0.2029,+393,+491,replay,0
+2026-07-04,MIN at NYY,NYY,3,Cody Bellinger,L,Zebby Matthews,R,Yankee Stadium,95.0,7.0,1.19,0.1967,+408,+510,replay,0
+2026-07-04,BOS at LAA,BOS,4,Willson Contreras,R,Sam Aldegheri,L,Angel Stadium,78.0,8.0,1.15,0.1945,+414,+517,replay,1
+2026-07-04,TB at HOU,TB,2,Junior Caminero,R,Hunter Brown,R,Daikin Park,72.0,0.0,1.03,0.191,+424,+528,replay,1
+2026-07-04,BAL at CIN,BAL,1,Gunnar Henderson,L,Hunter Greene,R,Great American Ball Park,89.0,0.0,1.27,0.1897,+427,+533,replay,0
+2026-07-04,MIN at NYY,NYY,7,Ryan McMahon,L,Zebby Matthews,R,Yankee Stadium,95.0,7.0,1.19,0.1859,+438,+545,replay,0
+2026-07-04,STL at CHC,STL,3,Jordan Walker,R,Shota Imanaga,L,Wrigley Field,70.0,-6.0,1.02,0.1857,+438,+546,replay,0
+2026-07-04,MIN at NYY,MIN,5,Royce Lewis,R,Brendan Beck,R,Yankee Stadium,95.0,7.0,1.19,0.1854,+439,+547,replay,0
+2026-07-04,BAL at CIN,CIN,4,Eugenio Suárez,R,Brandon Young,R,Great American Ball Park,89.0,0.0,1.21,0.1844,+442,+551,replay,0
+2026-07-04,NYM at ATL,NYM,2,Juan Soto,L,Chris Sale,L,Truist Park,86.0,0.0,1.1,0.1829,+447,+556,replay,0
+2026-07-04,BAL at CIN,CIN,3,JJ Bleday,L,Brandon Young,R,Great American Ball Park,89.0,0.0,1.27,0.1815,+451,+561,replay,0
+2026-07-04,PIT at WSH,WSH,1,James Wood,L,Braxton Ashcraft,R,Nationals Park,93.0,-3.5,0.97,0.178,+462,+574,replay,1
+2026-07-04,PIT at WSH,PIT,4,Esmerlyn Valdez,R,Carson Palmquist,L,Nationals Park,93.0,-3.5,0.91,0.1768,+466,+579,replay,0
+2026-07-04,SF at COL,SF,3,Casey Schmitt,R,Sean Sullivan,L,Coors Field,83.0,2.8,1.06,0.1766,+466,+580,replay,0
+2026-07-04,TOR at SEA,SEA,3,Dominic Canzone,L,Shane Bieber,R,T-Mobile Park,66.0,4.9,0.96,0.176,+468,+582,replay,1
+2026-07-04,MIL at AZ,MIL,3,Jake Bauers,L,Merrill Kelly,R,Chase Field,72.0,0.0,0.77,0.1757,+469,+583,replay,0
+2026-07-04,PIT at WSH,WSH,2,Luis García Jr.,L,Braxton Ashcraft,R,Nationals Park,93.0,-3.5,0.97,0.1757,+469,+583,replay,0
+2026-07-04,NYM at ATL,ATL,4,Matt Olson,L,Sean Manaea,L,Truist Park,86.0,0.0,1.1,0.1755,+470,+584,replay,0
+2026-07-04,BAL at CIN,CIN,1,Elly De La Cruz,S,Brandon Young,R,Great American Ball Park,89.0,0.0,1.27,0.1732,+477,+593,replay,0
+2026-07-04,SF at COL,SF,4,Rafael Devers,L,Sean Sullivan,L,Coors Field,83.0,2.8,1.05,0.1716,+483,+599,replay,0
+2026-07-04,DET at TEX,TEX,1,Joc Pederson,L,Jack Flaherty,R,Globe Life Field,72.0,0.0,1.02,0.1714,+483,+600,replay,0
+2026-07-04,CWS at CLE,CLE,3,Kyle Manzardo,L,Sean Burke,R,Progressive Field,82.0,-5.0,0.94,0.1712,+484,+601,replay,0
+2026-07-04,MIA at ATH,MIA,6,Owen Caissie,L,Aaron Civale,R,Sutter Health Park,89.0,5.6,1.0,0.1712,+484,+601,replay,0
+2026-07-04,STL at CHC,STL,2,Iván Herrera,R,Shota Imanaga,L,Wrigley Field,70.0,-6.0,1.02,0.1701,+488,+605,replay,0
+2026-07-04,CWS at CLE,CWS,4,Colson Montgomery,L,Parker Messick,L,Progressive Field,82.0,-5.0,0.94,0.1699,+489,+606,replay,1
+2026-07-04,DET at TEX,DET,2,Dillon Dingler,R,Cal Quantrill,R,Globe Life Field,72.0,0.0,1.05,0.1689,+492,+611,replay,0
+2026-07-04,BAL at CIN,BAL,5,Samuel Basallo,L,Hunter Greene,R,Great American Ball Park,89.0,0.0,1.27,0.1684,+494,+612,replay,1
+2026-07-04,SF at COL,SF,1,Heliot Ramos,R,Sean Sullivan,L,Coors Field,83.0,2.8,1.06,0.1678,+496,+615,replay,0
+2026-07-04,SF at COL,SF,6,Willy Adames,R,Sean Sullivan,L,Coors Field,83.0,2.8,1.06,0.1674,+497,+617,replay,0
+2026-07-04,MIA at ATH,ATH,2,Zack Gelof,R,Sandy Alcantara,R,Sutter Health Park,89.0,5.6,1.0,0.1668,+499,+619,replay,0
+2026-07-04,MIA at ATH,MIA,5,Griffin Conine,L,Aaron Civale,R,Sutter Health Park,89.0,5.6,1.0,0.1661,+502,+622,replay,0
+2026-07-04,MIN at NYY,MIN,4,Josh Bell,S,Brendan Beck,R,Yankee Stadium,95.0,7.0,1.19,0.1657,+504,+624,replay,2
+2026-07-04,PIT at WSH,PIT,3,Bryan Reynolds,S,Carson Palmquist,L,Nationals Park,93.0,-3.5,0.91,0.1652,+505,+627,replay,0
+2026-07-04,PHI at KC,PHI,3,Bryce Harper,L,Michael Wacha,R,Kauffman Stadium,82.0,0.0,0.74,0.164,+510,+632,replay,0
+2026-07-04,MIN at NYY,MIN,1,Trevor Larnach,L,Brendan Beck,R,Yankee Stadium,95.0,7.0,1.19,0.164,+510,+632,replay,1
+2026-07-04,MIN at NYY,NYY,4,Jasson Domínguez,S,Zebby Matthews,R,Yankee Stadium,95.0,7.0,1.19,0.1637,+511,+633,replay,1
+2026-07-04,PIT at WSH,PIT,5,Ryan O'Hearn,L,Carson Palmquist,L,Nationals Park,93.0,-3.5,0.97,0.1635,+512,+634,replay,0
+2026-07-04,TOR at SEA,SEA,4,Cal Raleigh,S,Shane Bieber,R,T-Mobile Park,66.0,4.9,0.96,0.1634,+512,+634,replay,1
+2026-07-04,MIA at ATH,MIA,1,Liam Hicks,L,Aaron Civale,R,Sutter Health Park,89.0,5.6,1.0,0.1631,+513,+636,replay,0
+2026-07-04,BOS at LAA,LAA,1,Zach Neto,R,Sonny Gray,R,Angel Stadium,78.0,8.0,1.15,0.163,+514,+636,replay,0
+2026-07-04,BAL at CIN,BAL,6,Colton Cowser,L,Hunter Greene,R,Great American Ball Park,89.0,0.0,1.27,0.1629,+514,+637,replay,0
+2026-07-04,DET at TEX,DET,4,Riley Greene,L,Cal Quantrill,R,Globe Life Field,72.0,0.0,1.02,0.1626,+515,+638,replay,1
+2026-07-04,DET at TEX,DET,5,Spencer Torkelson,R,Cal Quantrill,R,Globe Life Field,72.0,0.0,1.05,0.1619,+518,+641,replay,0
+2026-07-04,CWS at CLE,CWS,2,Randal Grichuk,R,Parker Messick,L,Progressive Field,82.0,-5.0,0.75,0.1616,+519,+642,replay,0
+2026-07-04,PIT at WSH,WSH,4,CJ Abrams,L,Braxton Ashcraft,R,Nationals Park,93.0,-3.5,0.97,0.1596,+526,+652,replay,0
+2026-07-04,STL at CHC,CHC,1,Pete Crow-Armstrong,L,Kyle Leahy,R,Wrigley Field,70.0,-6.0,0.95,0.1591,+528,+654,replay,0
+2026-07-04,NYM at ATL,ATL,2,Drake Baldwin,L,Sean Manaea,L,Truist Park,86.0,0.0,1.1,0.1579,+533,+660,replay,0
+2026-07-04,TOR at SEA,SEA,6,Luke Raley,L,Shane Bieber,R,T-Mobile Park,66.0,4.9,0.96,0.1577,+534,+661,replay,0
+2026-07-04,PIT at WSH,PIT,1,Konnor Griffin,R,Carson Palmquist,L,Nationals Park,93.0,-3.5,0.91,0.1565,+539,+667,replay,0
+2026-07-04,SD at LAD,SD,3,Manny Machado,R,Yoshinobu Yamamoto,R,UNIQLO Field at Dodger Stadium,77.0,0.0,1.34,0.1553,+544,+673,replay,0
+2026-07-04,TB at HOU,HOU,4,Christian Walker,R,Drew Rasmussen,R,Daikin Park,72.0,0.0,1.03,0.1543,+548,+678,replay,0
+2026-07-04,BOS at LAA,LAA,4,Jorge Soler,R,Sonny Gray,R,Angel Stadium,78.0,8.0,1.15,0.1522,+557,+688,replay,0
+2026-07-04,MIN at NYY,MIN,6,Brooks Lee,S,Brendan Beck,R,Yankee Stadium,95.0,7.0,1.19,0.1511,+562,+694,replay,0
+2026-07-04,BAL at CIN,CIN,6,Spencer Steer,R,Brandon Young,R,Great American Ball Park,89.0,0.0,1.21,0.1498,+567,+701,replay,0
+2026-07-04,BAL at CIN,BAL,2,Adley Rutschman,S,Hunter Greene,R,Great American Ball Park,89.0,0.0,1.27,0.1485,+573,+708,replay,0
+2026-07-04,BAL at CIN,CIN,5,Nathaniel Lowe,L,Brandon Young,R,Great American Ball Park,89.0,0.0,1.27,0.1482,+575,+710,replay,0
+2026-07-04,MIL at AZ,AZ,1,Ketel Marte,S,Brandon Woodruff,R,Chase Field,72.0,0.0,0.77,0.148,+576,+711,replay,0
+2026-07-04,SD at LAD,LAD,7,Max Muncy,L,Wandy Peralta,L,UNIQLO Field at Dodger Stadium,77.0,0.0,1.19,0.1474,+578,+714,replay,0
+2026-07-04,NYM at ATL,NYM,1,Francisco Lindor,S,Chris Sale,L,Truist Park,86.0,0.0,1.0,0.147,+580,+716,replay,0
+2026-07-04,NYM at ATL,ATL,5,Austin Riley,R,Sean Manaea,L,Truist Park,86.0,0.0,1.0,0.147,+580,+716,replay,1
+2026-07-04,PHI at KC,KC,2,Bobby Witt Jr.,R,Jesús Luzardo,L,Kauffman Stadium,82.0,0.0,0.93,0.1463,+583,+720,replay,0
+2026-07-04,MIA at ATH,MIA,8,Joe Mack,L,Aaron Civale,R,Sutter Health Park,89.0,5.6,1.0,0.1463,+583,+720,replay,1
+2026-07-04,BOS at LAA,BOS,3,Wilyer Abreu,L,Sam Aldegheri,L,Angel Stadium,78.0,8.0,1.09,0.146,+585,+722,replay,0
+2026-07-04,PIT at WSH,PIT,9,Henry Davis,R,Carson Palmquist,L,Nationals Park,93.0,-3.5,0.91,0.1452,+589,+727,replay,0
+2026-07-04,BOS at LAA,BOS,6,Romy Gonzalez,R,Sam Aldegheri,L,Angel Stadium,78.0,8.0,1.15,0.1446,+592,+730,replay,1
+2026-07-04,TB at HOU,TB,1,Jonathan Aranda,L,Hunter Brown,R,Daikin Park,72.0,0.0,1.1,0.1444,+593,+731,replay,0
+2026-07-04,CWS at CLE,CWS,1,Miguel Vargas,R,Parker Messick,L,Progressive Field,82.0,-5.0,0.75,0.1441,+594,+733,replay,0
+2026-07-04,MIA at ATH,ATH,4,Jonah Heim,S,Sandy Alcantara,R,Sutter Health Park,89.0,5.6,1.0,0.1441,+594,+733,replay,0
+2026-07-04,SD at LAD,LAD,4,Mookie Betts,R,Wandy Peralta,L,UNIQLO Field at Dodger Stadium,77.0,0.0,1.34,0.1429,+600,+740,replay,0
+2026-07-04,PHI at KC,KC,1,Carter Jensen,L,Jesús Luzardo,L,Kauffman Stadium,82.0,0.0,0.74,0.1427,+601,+741,replay,0
+2026-07-04,MIA at ATH,ATH,5,Carlos Cortes,L,Sandy Alcantara,R,Sutter Health Park,89.0,5.6,1.0,0.1425,+602,+742,replay,0
+2026-07-04,TOR at SEA,TOR,3,Kazuma Okamoto,R,Logan Gilbert,R,T-Mobile Park,66.0,4.9,0.91,0.142,+604,+745,replay,0
+2026-07-04,BOS at LAA,BOS,2,Ceddanne Rafaela,R,Sam Aldegheri,L,Angel Stadium,78.0,8.0,1.15,0.141,+609,+751,replay,0
+2026-07-04,BOS at LAA,LAA,6,Jo Adell,R,Sonny Gray,R,Angel Stadium,78.0,8.0,1.15,0.1408,+610,+752,replay,0
+2026-07-04,STL at CHC,STL,4,Alec Burleson,L,Shota Imanaga,L,Wrigley Field,70.0,-6.0,0.95,0.1406,+611,+753,replay,0
+2026-07-04,BAL at CIN,BAL,3,Taylor Ward,R,Hunter Greene,R,Great American Ball Park,89.0,0.0,1.21,0.1387,+621,+765,replay,0
+2026-07-04,NYM at ATL,ATL,3,Ozzie Albies,S,Sean Manaea,L,Truist Park,86.0,0.0,1.0,0.1381,+624,+769,replay,0
+2026-07-04,CWS at CLE,CLE,1,Travis Bazzana,L,Sean Burke,R,Progressive Field,82.0,-5.0,0.94,0.1367,+632,+778,replay,0
+2026-07-04,NYM at ATL,ATL,6,Michael Harris II,L,Sean Manaea,L,Truist Park,86.0,0.0,1.1,0.1362,+634,+781,replay,1
+2026-07-04,MIA at ATH,ATH,3,Lawrence Butler,L,Sandy Alcantara,R,Sutter Health Park,89.0,5.6,1.0,0.136,+635,+782,replay,0
+2026-07-04,NYM at ATL,NYM,4,Mark Vientos,R,Chris Sale,L,Truist Park,86.0,0.0,1.0,0.1352,+640,+788,replay,1
+2026-07-04,MIL at AZ,MIL,2,Christian Yelich,L,Merrill Kelly,R,Chase Field,72.0,0.0,0.77,0.1344,+644,+793,replay,1
+2026-07-04,TOR at SEA,TOR,4,Daulton Varsho,L,Logan Gilbert,R,T-Mobile Park,66.0,4.9,0.96,0.1337,+648,+798,replay,0
+2026-07-04,SD at LAD,LAD,2,Andy Pages,R,Wandy Peralta,L,UNIQLO Field at Dodger Stadium,77.0,0.0,1.34,0.1328,+653,+804,replay,0
+2026-07-04,STL at CHC,STL,1,JJ Wetherholt,L,Shota Imanaga,L,Wrigley Field,70.0,-6.0,0.95,0.1325,+655,+805,replay,1
+2026-07-04,STL at CHC,CHC,3,Michael Busch,L,Kyle Leahy,R,Wrigley Field,70.0,-6.0,0.95,0.1323,+656,+807,replay,0
+2026-07-04,SF at COL,SF,8,Victor Bericoto,R,Sean Sullivan,L,Coors Field,83.0,2.8,1.06,0.1319,+658,+810,replay,0
+2026-07-04,PHI at KC,PHI,4,Brandon Marsh,L,Michael Wacha,R,Kauffman Stadium,82.0,0.0,0.74,0.1306,+666,+819,replay,0
+2026-07-04,MIL at AZ,AZ,3,Corbin Carroll,L,Brandon Woodruff,R,Chase Field,72.0,0.0,0.77,0.1305,+666,+819,replay,0
+2026-07-04,SF at COL,SF,7,Bryce Eldridge,L,Sean Sullivan,L,Coors Field,83.0,2.8,1.05,0.1302,+668,+822,replay,1
+2026-07-04,PHI at KC,PHI,1,Trea Turner,R,Michael Wacha,R,Kauffman Stadium,82.0,0.0,0.93,0.1296,+672,+826,replay,0
+2026-07-04,BOS at LAA,LAA,2,Denzer Guzman,R,Sonny Gray,R,Angel Stadium,78.0,8.0,1.15,0.1293,+673,+828,replay,0
+2026-07-04,SD at LAD,SD,4,Gavin Sheets,L,Yoshinobu Yamamoto,R,UNIQLO Field at Dodger Stadium,77.0,0.0,1.19,0.1286,+678,+833,replay,0
+2026-07-04,SD at LAD,LAD,3,Freddie Freeman,L,Wandy Peralta,L,UNIQLO Field at Dodger Stadium,77.0,0.0,1.19,0.1284,+679,+835,replay,1
+2026-07-04,MIA at ATH,MIA,3,Otto Lopez,R,Aaron Civale,R,Sutter Health Park,89.0,5.6,1.0,0.1282,+680,+836,replay,1
+2026-07-04,SD at LAD,LAD,6,Teoscar Hernández,R,Wandy Peralta,L,UNIQLO Field at Dodger Stadium,77.0,0.0,1.34,0.1271,+686,+844,replay,0
+2026-07-04,BOS at LAA,BOS,5,Caleb Durbin,R,Sam Aldegheri,L,Angel Stadium,78.0,8.0,1.15,0.1262,+692,+851,replay,0
+2026-07-04,CWS at CLE,CLE,2,Chase DeLauter,L,Sean Burke,R,Progressive Field,82.0,-5.0,0.94,0.1259,+695,+854,replay,0
+2026-07-04,STL at CHC,CHC,4,Seiya Suzuki,R,Kyle Leahy,R,Wrigley Field,70.0,-6.0,1.02,0.1254,+697,+857,replay,0
+2026-07-04,MIN at NYY,NYY,5,Anthony Volpe,R,Zebby Matthews,R,Yankee Stadium,95.0,7.0,1.19,0.1251,+700,+860,replay,0
+2026-07-04,BOS at LAA,LAA,5,Josh Lowe,L,Sonny Gray,R,Angel Stadium,78.0,8.0,1.09,0.1249,+701,+861,replay,1
+2026-07-04,BAL at CIN,BAL,8,Jackson Holliday,L,Hunter Greene,R,Great American Ball Park,89.0,0.0,1.27,0.1244,+704,+864,replay,0
+2026-07-04,TB at HOU,TB,3,Cedric Mullins,L,Hunter Brown,R,Daikin Park,72.0,0.0,1.1,0.1244,+704,+865,replay,0
+2026-07-04,NYM at ATL,NYM,6,Francisco Alvarez,R,Chris Sale,L,Truist Park,86.0,0.0,1.0,0.1242,+705,+866,replay,0
+2026-07-04,TB at HOU,HOU,3,Isaac Paredes,R,Drew Rasmussen,R,Daikin Park,72.0,0.0,1.03,0.1233,+711,+874,replay,0
+2026-07-04,PIT at WSH,PIT,8,Tyler Callihan,L,Carson Palmquist,L,Nationals Park,93.0,-3.5,0.97,0.1228,+714,+877,replay,0
+2026-07-04,CWS at CLE,CLE,4,Kahlil Watson,L,Sean Burke,R,Progressive Field,82.0,-5.0,0.94,0.1227,+715,+878,replay,0
+2026-07-04,PHI at KC,KC,4,Jac Caglianone,L,Jesús Luzardo,L,Kauffman Stadium,82.0,0.0,0.74,0.1225,+716,+880,replay,0
+2026-07-04,MIL at AZ,MIL,1,Brice Turang,L,Merrill Kelly,R,Chase Field,72.0,0.0,0.77,0.1211,+726,+891,replay,0
+2026-07-04,PIT at WSH,WSH,3,Curtis Mead,R,Braxton Ashcraft,R,Nationals Park,93.0,-3.5,0.91,0.1198,+735,+901,replay,0
+2026-07-04,DET at TEX,DET,9,James Outman,L,Cal Quantrill,R,Globe Life Field,72.0,0.0,1.02,0.1187,+742,+911,replay,0
+2026-07-04,STL at CHC,CHC,5,Ian Happ,S,Kyle Leahy,R,Wrigley Field,70.0,-6.0,0.95,0.1186,+743,+912,replay,0
+2026-07-04,SF at COL,COL,5,Cole Carrigg,S,Robbie Ray,L,Coors Field,83.0,2.8,1.06,0.1183,+745,+914,replay,1
+2026-07-04,NYM at ATL,ATL,7,Eli White,R,Sean Manaea,L,Truist Park,86.0,0.0,1.0,0.1172,+754,+924,replay,1
+2026-07-04,SF at COL,SF,9,Eric Haase,R,Sean Sullivan,L,Coors Field,83.0,2.8,1.06,0.1169,+755,+926,replay,0
+2026-07-04,BOS at LAA,BOS,7,Jarren Duran,L,Sam Aldegheri,L,Angel Stadium,78.0,8.0,1.09,0.1167,+757,+928,replay,0
+2026-07-04,TB at HOU,HOU,1,Jose Altuve,R,Drew Rasmussen,R,Daikin Park,72.0,0.0,1.03,0.1167,+757,+928,replay,0
+2026-07-04,MIL at AZ,MIL,5,Garrett Mitchell,L,Merrill Kelly,R,Chase Field,72.0,0.0,0.77,0.1164,+759,+931,replay,0
+2026-07-04,TOR at SEA,SEA,5,Josh Naylor,L,Shane Bieber,R,T-Mobile Park,66.0,4.9,0.96,0.1161,+762,+934,replay,0
+2026-07-04,TOR at SEA,SEA,1,J.P. Crawford,L,Shane Bieber,R,T-Mobile Park,66.0,4.9,0.96,0.1156,+765,+938,replay,0
+2026-07-04,NYM at ATL,ATL,8,Joey Bart,R,Sean Manaea,L,Truist Park,86.0,0.0,1.0,0.1152,+768,+942,replay,0
+2026-07-04,MIN at NYY,MIN,9,Alex Jackson,R,Brendan Beck,R,Yankee Stadium,95.0,7.0,1.19,0.115,+770,+944,replay,1
+2026-07-04,PHI at KC,KC,3,Lane Thomas,R,Jesús Luzardo,L,Kauffman Stadium,82.0,0.0,0.93,0.1145,+773,+948,replay,0
+2026-07-04,DET at TEX,DET,1,Kevin McGonigle,L,Cal Quantrill,R,Globe Life Field,72.0,0.0,1.02,0.1145,+773,+948,replay,0
+2026-07-04,CWS at CLE,CLE,6,Cooper Ingle,L,Sean Burke,R,Progressive Field,82.0,-5.0,0.94,0.1137,+779,+955,replay,0
+2026-07-04,DET at TEX,TEX,4,Brandon Nimmo,L,Jack Flaherty,R,Globe Life Field,72.0,0.0,1.02,0.1136,+780,+956,replay,0
+2026-07-04,SD at LAD,SD,7,Jackson Merrill,L,Yoshinobu Yamamoto,R,UNIQLO Field at Dodger Stadium,77.0,0.0,1.19,0.1135,+781,+957,replay,0
+2026-07-04,STL at CHC,STL,8,Pedro Pagés,R,Shota Imanaga,L,Wrigley Field,70.0,-6.0,1.02,0.1133,+782,+959,replay,0
+2026-07-04,SD at LAD,SD,1,Fernando Tatis Jr.,R,Yoshinobu Yamamoto,R,UNIQLO Field at Dodger Stadium,77.0,0.0,1.34,0.1132,+783,+960,replay,0
+2026-07-04,TB at HOU,TB,5,Victor Mesa Jr.,L,Hunter Brown,R,Daikin Park,72.0,0.0,1.1,0.1131,+784,+961,replay,0
+2026-07-04,MIL at AZ,MIL,6,Andrew Vaughn,R,Merrill Kelly,R,Chase Field,72.0,0.0,0.97,0.1131,+784,+961,replay,0
+2026-07-04,TOR at SEA,TOR,2,Vladimir Guerrero Jr.,R,Logan Gilbert,R,T-Mobile Park,66.0,4.9,0.91,0.113,+785,+962,replay,0
+2026-07-04,SD at LAD,LAD,8,Dalton Rushing,L,Wandy Peralta,L,UNIQLO Field at Dodger Stadium,77.0,0.0,1.19,0.1124,+790,+968,replay,0
+2026-07-04,SF at COL,COL,8,Ezequiel Tovar,R,Robbie Ray,L,Coors Field,83.0,2.8,1.06,0.1122,+792,+970,replay,0
+2026-07-04,SF at COL,COL,1,Willi Castro,S,Robbie Ray,L,Coors Field,83.0,2.8,1.06,0.1113,+799,+978,replay,0
+2026-07-04,DET at TEX,TEX,3,Josh Jung,R,Jack Flaherty,R,Globe Life Field,72.0,0.0,1.05,0.1107,+803,+984,replay,0
+2026-07-04,SD at LAD,LAD,5,Kyle Tucker,L,Wandy Peralta,L,UNIQLO Field at Dodger Stadium,77.0,0.0,1.19,0.1102,+807,+988,replay,0
+2026-07-04,SD at LAD,SD,5,Ty France,R,Yoshinobu Yamamoto,R,UNIQLO Field at Dodger Stadium,77.0,0.0,1.34,0.1102,+807,+989,replay,0
+2026-07-04,TB at HOU,HOU,5,LaMonte Wade Jr.,L,Drew Rasmussen,R,Daikin Park,72.0,0.0,1.1,0.11,+809,+991,replay,0
+2026-07-04,DET at TEX,DET,6,Colt Keith,L,Cal Quantrill,R,Globe Life Field,72.0,0.0,1.02,0.11,+810,+991,replay,0
+2026-07-04,PHI at KC,PHI,7,J.T. Realmuto,R,Michael Wacha,R,Kauffman Stadium,82.0,0.0,0.93,0.1099,+810,+992,replay,1
+2026-07-04,CWS at CLE,CLE,7,Daniel Schneemann,L,Sean Burke,R,Progressive Field,82.0,-5.0,0.94,0.1099,+810,+992,replay,0
+2026-07-04,MIN at NYY,MIN,7,Ryan Kreidler,R,Brendan Beck,R,Yankee Stadium,95.0,7.0,1.19,0.1095,+813,+996,replay,0
+2026-07-04,PIT at WSH,WSH,5,Daylen Lile,L,Braxton Ashcraft,R,Nationals Park,93.0,-3.5,0.97,0.1092,+816,+999,replay,0
+2026-07-04,MIA at ATH,MIA,7,Jakob Marsee,L,Aaron Civale,R,Sutter Health Park,89.0,5.6,1.0,0.1087,+820,+1004,replay,0
+2026-07-04,STL at CHC,CHC,7,Michael Conforto,L,Kyle Leahy,R,Wrigley Field,70.0,-6.0,0.95,0.1082,+824,+1009,replay,0
+2026-07-04,TOR at SEA,SEA,2,Randy Arozarena,R,Shane Bieber,R,T-Mobile Park,66.0,4.9,0.91,0.1078,+828,+1013,replay,1
+2026-07-04,MIL at AZ,MIL,4,William Contreras,R,Merrill Kelly,R,Chase Field,72.0,0.0,0.97,0.1072,+833,+1020,replay,0
+2026-07-04,PIT at WSH,WSH,6,Dylan Crews,R,Braxton Ashcraft,R,Nationals Park,93.0,-3.5,0.91,0.1066,+838,+1025,replay,0
+2026-07-04,TOR at SEA,SEA,9,Colt Emerson,L,Shane Bieber,R,T-Mobile Park,66.0,4.9,0.96,0.1063,+841,+1029,replay,0
+2026-07-04,PIT at WSH,PIT,6,Nick Gonzales,R,Carson Palmquist,L,Nationals Park,93.0,-3.5,0.91,0.106,+843,+1032,replay,0
+2026-07-04,CWS at CLE,CWS,5,Junior Perez,R,Parker Messick,L,Progressive Field,82.0,-5.0,0.75,0.106,+844,+1033,replay,0
+2026-07-04,MIL at AZ,AZ,7,Max Kepler,L,Brandon Woodruff,R,Chase Field,72.0,0.0,0.77,0.1052,+850,+1041,replay,0
+2026-07-04,BAL at CIN,CIN,9,Matt McLain,R,Brandon Young,R,Great American Ball Park,89.0,0.0,1.21,0.1051,+852,+1042,replay,0
+2026-07-04,TOR at SEA,TOR,6,Yohendrick Piñango,L,Logan Gilbert,R,T-Mobile Park,66.0,4.9,0.96,0.1047,+856,+1047,replay,0
+2026-07-04,STL at CHC,STL,7,Lars Nootbaar,L,Shota Imanaga,L,Wrigley Field,70.0,-6.0,0.95,0.1046,+856,+1047,replay,0
+2026-07-04,MIL at AZ,AZ,5,Adrian Del Castillo,L,Brandon Woodruff,R,Chase Field,72.0,0.0,0.77,0.1038,+863,+1056,replay,1
+2026-07-04,NYM at ATL,NYM,3,Bo Bichette,R,Chris Sale,L,Truist Park,86.0,0.0,1.0,0.1036,+865,+1058,replay,0
+2026-07-04,MIA at ATH,ATH,7,Joshua Kuroda-Grauer,R,Sandy Alcantara,R,Sutter Health Park,89.0,5.6,1.0,0.1035,+866,+1059,replay,0
+2026-07-04,PHI at KC,PHI,5,Alec Bohm,R,Michael Wacha,R,Kauffman Stadium,82.0,0.0,0.93,0.1034,+867,+1060,replay,1
+2026-07-04,NYM at ATL,NYM,5,Eric Wagaman,R,Chris Sale,L,Truist Park,86.0,0.0,1.0,0.1028,+873,+1068,replay,0
+2026-07-04,STL at CHC,STL,5,Masyn Winn,R,Shota Imanaga,L,Wrigley Field,70.0,-6.0,1.02,0.1019,+882,+1078,replay,0
+2026-07-04,DET at TEX,TEX,7,Evan Carter,L,Jack Flaherty,R,Globe Life Field,72.0,0.0,1.02,0.1018,+883,+1079,replay,0
+2026-07-04,DET at TEX,DET,8,Ben Malgeri,R,Cal Quantrill,R,Globe Life Field,72.0,0.0,1.05,0.1018,+883,+1079,replay,0
+2026-07-04,SD at LAD,LAD,1,Tommy Edman,S,Wandy Peralta,L,UNIQLO Field at Dodger Stadium,77.0,0.0,1.34,0.1017,+883,+1080,replay,0
+2026-07-04,BOS at LAA,BOS,8,Andruw Monasterio,R,Sam Aldegheri,L,Angel Stadium,78.0,8.0,1.15,0.1017,+883,+1080,replay,0
+2026-07-04,TOR at SEA,TOR,7,Sean Keys,L,Logan Gilbert,R,T-Mobile Park,66.0,4.9,0.96,0.1014,+886,+1083,replay,0
+2026-07-04,TB at HOU,HOU,7,Yainer Diaz,R,Drew Rasmussen,R,Daikin Park,72.0,0.0,1.03,0.1014,+886,+1084,replay,1
+2026-07-04,BAL at CIN,CIN,7,Jose Trevino,R,Brandon Young,R,Great American Ball Park,89.0,0.0,1.21,0.1014,+887,+1084,replay,0
+2026-07-04,BOS at LAA,BOS,1,Anthony Seigler,S,Sam Aldegheri,L,Angel Stadium,78.0,8.0,1.15,0.1002,+898,+1098,replay,0
+2026-07-04,MIL at AZ,AZ,6,Nolan Arenado,R,Brandon Woodruff,R,Chase Field,72.0,0.0,0.97,0.0998,+902,+1103,replay,0
+2026-07-04,TOR at SEA,TOR,1,Nathan Lukes,L,Logan Gilbert,R,T-Mobile Park,66.0,4.9,0.96,0.0987,+913,+1115,replay,0
+2026-07-04,TB at HOU,TB,4,Ryan Vilade,R,Hunter Brown,R,Daikin Park,72.0,0.0,1.03,0.0979,+922,+1126,replay,0
+2026-07-04,NYM at ATL,ATL,1,Mauricio Dubón,R,Sean Manaea,L,Truist Park,86.0,0.0,1.0,0.0974,+927,+1132,replay,1
+2026-07-04,BOS at LAA,LAA,8,Donovan Walton,L,Sonny Gray,R,Angel Stadium,78.0,8.0,1.09,0.0965,+937,+1144,replay,0
+2026-07-04,STL at CHC,CHC,9,Dansby Swanson,R,Kyle Leahy,R,Wrigley Field,70.0,-6.0,1.02,0.0964,+937,+1145,replay,0
+2026-07-04,DET at TEX,TEX,8,Elias Díaz,R,Jack Flaherty,R,Globe Life Field,72.0,0.0,1.05,0.0962,+939,+1147,replay,0
+2026-07-04,BAL at CIN,CIN,8,TJ Friedl,L,Brandon Young,R,Great American Ball Park,89.0,0.0,1.27,0.096,+942,+1150,replay,0
+2026-07-04,SF at COL,COL,7,Braxton Fulford,R,Robbie Ray,L,Coors Field,83.0,2.8,1.06,0.0954,+949,+1158,replay,0
+2026-07-04,MIA at ATH,ATH,6,Henry Bolte,R,Sandy Alcantara,R,Sutter Health Park,89.0,5.6,1.0,0.0952,+950,+1160,replay,0
+2026-07-04,MIN at NYY,NYY,9,Ali Sánchez,R,Zebby Matthews,R,Yankee Stadium,95.0,7.0,1.19,0.095,+953,+1163,replay,0
+2026-07-04,MIN at NYY,NYY,8,Max Schuemann,R,Zebby Matthews,R,Yankee Stadium,95.0,7.0,1.19,0.0939,+965,+1178,replay,1
+2026-07-04,PHI at KC,PHI,8,Gabriel Rincones Jr.,L,Michael Wacha,R,Kauffman Stadium,82.0,0.0,0.74,0.0936,+969,+1182,replay,1
+2026-07-04,TOR at SEA,TOR,8,Brandon Valenzuela,S,Logan Gilbert,R,T-Mobile Park,66.0,4.9,0.96,0.0934,+971,+1185,replay,0
+2026-07-04,TB at HOU,HOU,8,Taylor Trammell,L,Drew Rasmussen,R,Daikin Park,72.0,0.0,1.1,0.0925,+982,+1198,replay,0
+2026-07-04,SD at LAD,SD,9,Luis Campusano,R,Yoshinobu Yamamoto,R,UNIQLO Field at Dodger Stadium,77.0,0.0,1.34,0.0924,+982,+1199,replay,0
+2026-07-04,TOR at SEA,SEA,7,Cole Young,L,Shane Bieber,R,T-Mobile Park,66.0,4.9,0.96,0.0919,+988,+1205,replay,0
+2026-07-04,BAL at CIN,BAL,7,Leody Taveras,S,Hunter Greene,R,Great American Ball Park,89.0,0.0,1.27,0.0911,+998,+1217,replay,0
+2026-07-04,SD at LAD,SD,6,Xander Bogaerts,R,Yoshinobu Yamamoto,R,UNIQLO Field at Dodger Stadium,77.0,0.0,1.34,0.0906,+1004,+1225,replay,0
+2026-07-04,NYM at ATL,NYM,7,Carson Benge,L,Chris Sale,L,Truist Park,86.0,0.0,1.1,0.0905,+1005,+1226,replay,0
+2026-07-04,STL at CHC,CHC,2,Alex Bregman,R,Kyle Leahy,R,Wrigley Field,70.0,-6.0,1.02,0.0897,+1015,+1238,replay,0
+2026-07-04,BAL at CIN,BAL,9,Blaze Alexander,R,Hunter Greene,R,Great American Ball Park,89.0,0.0,1.21,0.0883,+1033,+1259,replay,0
+2026-07-04,BOS at LAA,LAA,3,Nolan Schanuel,L,Sonny Gray,R,Angel Stadium,78.0,8.0,1.09,0.0882,+1034,+1261,replay,0
+2026-07-04,SD at LAD,SD,2,Jake Cronenworth,L,Yoshinobu Yamamoto,R,UNIQLO Field at Dodger Stadium,77.0,0.0,1.19,0.0878,+1039,+1267,replay,0
+2026-07-04,STL at CHC,STL,6,José Fermín,R,Shota Imanaga,L,Wrigley Field,70.0,-6.0,1.02,0.0875,+1043,+1272,replay,0
+2026-07-04,MIL at AZ,MIL,8,Cooper Pratt,R,Merrill Kelly,R,Chase Field,72.0,0.0,0.97,0.0874,+1044,+1272,replay,0
+2026-07-04,BOS at LAA,BOS,9,Connor Wong,R,Sam Aldegheri,L,Angel Stadium,78.0,8.0,1.15,0.0873,+1046,+1275,replay,0
+2026-07-04,NYM at ATL,ATL,9,Jorge Mateo,R,Sean Manaea,L,Truist Park,86.0,0.0,1.0,0.0872,+1047,+1277,replay,0
+2026-07-04,MIL at AZ,AZ,4,Gabriel Moreno,R,Brandon Woodruff,R,Chase Field,72.0,0.0,0.97,0.0866,+1054,+1285,replay,0
+2026-07-04,STL at CHC,STL,9,Nathan Church,L,Shota Imanaga,L,Wrigley Field,70.0,-6.0,0.95,0.0859,+1064,+1297,replay,0
+2026-07-04,PHI at KC,KC,8,Michael Massey,L,Jesús Luzardo,L,Kauffman Stadium,82.0,0.0,0.74,0.0857,+1067,+1300,replay,0
+2026-07-04,CWS at CLE,CWS,6,Braden Montgomery,S,Parker Messick,L,Progressive Field,82.0,-5.0,0.75,0.0849,+1078,+1314,replay,0
+2026-07-04,MIA at ATH,ATH,8,Jeff McNeil,L,Sandy Alcantara,R,Sutter Health Park,89.0,5.6,1.0,0.0847,+1080,+1316,replay,0
+2026-07-04,PHI at KC,KC,5,Nick Loftin,R,Jesús Luzardo,L,Kauffman Stadium,82.0,0.0,0.93,0.0842,+1087,+1325,replay,0
+2026-07-04,SF at COL,COL,2,Kyle Karros,R,Robbie Ray,L,Coors Field,83.0,2.8,1.06,0.084,+1091,+1329,replay,0
+2026-07-04,DET at TEX,DET,7,Zach McKinstry,L,Cal Quantrill,R,Globe Life Field,72.0,0.0,1.02,0.0837,+1095,+1333,replay,0
+2026-07-04,DET at TEX,TEX,2,Josh Smith,L,Jack Flaherty,R,Globe Life Field,72.0,0.0,1.02,0.0832,+1102,+1343,replay,0
+2026-07-04,NYM at ATL,NYM,8,Tyrone Taylor,R,Chris Sale,L,Truist Park,86.0,0.0,1.0,0.083,+1104,+1345,replay,1
+2026-07-04,TB at HOU,HOU,6,Cam Smith,R,Drew Rasmussen,R,Daikin Park,72.0,0.0,1.03,0.0825,+1112,+1355,replay,0
+2026-07-04,SF at COL,COL,9,Troy Johnston,L,Robbie Ray,L,Coors Field,83.0,2.8,1.05,0.0823,+1115,+1358,replay,0
+2026-07-04,PHI at KC,PHI,6,Bryson Stott,L,Michael Wacha,R,Kauffman Stadium,82.0,0.0,0.74,0.0819,+1122,+1366,replay,0
+2026-07-04,MIN at NYY,MIN,8,Luke Keaschall,R,Brendan Beck,R,Yankee Stadium,95.0,7.0,1.19,0.0817,+1124,+1369,replay,1
+2026-07-04,PHI at KC,KC,6,Starling Marte,R,Jesús Luzardo,L,Kauffman Stadium,82.0,0.0,0.93,0.0808,+1138,+1385,replay,0
+2026-07-04,SF at COL,SF,5,Jung Hoo Lee,L,Sean Sullivan,L,Coors Field,83.0,2.8,1.05,0.0805,+1142,+1390,replay,0
+2026-07-04,TOR at SEA,TOR,5,Ernie Clement,R,Logan Gilbert,R,T-Mobile Park,66.0,4.9,0.91,0.0802,+1147,+1397,replay,0
+2026-07-04,MIL at AZ,AZ,9,Tommy Troy,R,Brandon Woodruff,R,Chase Field,72.0,0.0,0.97,0.0799,+1151,+1401,replay,0
+2026-07-04,SF at COL,COL,4,Tyler Freeman,R,Robbie Ray,L,Coors Field,83.0,2.8,1.06,0.0794,+1159,+1411,replay,0
+2026-07-04,SF at COL,COL,6,Jake McCarthy,L,Robbie Ray,L,Coors Field,83.0,2.8,1.05,0.0794,+1160,+1411,replay,0
+2026-07-04,MIA at ATH,MIA,9,Javier Sanoja,R,Aaron Civale,R,Sutter Health Park,89.0,5.6,1.0,0.0793,+1161,+1413,replay,0
+2026-07-04,TB at HOU,TB,6,Jonny DeLuca,R,Hunter Brown,R,Daikin Park,72.0,0.0,1.03,0.0792,+1163,+1416,replay,1
+2026-07-04,PIT at WSH,WSH,7,José Tena,L,Braxton Ashcraft,R,Nationals Park,93.0,-3.5,0.97,0.0751,+1232,+1498,replay,0
+2026-07-04,DET at TEX,TEX,6,Ezequiel Duran,R,Jack Flaherty,R,Globe Life Field,72.0,0.0,1.05,0.0745,+1242,+1510,replay,0
+2026-07-04,STL at CHC,CHC,8,Miguel Amaya,R,Kyle Leahy,R,Wrigley Field,70.0,-6.0,1.02,0.0735,+1261,+1533,replay,0
+2026-07-04,TOR at SEA,TOR,9,Andrés Giménez,L,Logan Gilbert,R,T-Mobile Park,66.0,4.9,0.96,0.0732,+1265,+1538,replay,0
+2026-07-04,SD at LAD,SD,8,Miguel Andujar,R,Yoshinobu Yamamoto,R,UNIQLO Field at Dodger Stadium,77.0,0.0,1.34,0.0727,+1275,+1550,replay,0
+2026-07-04,CWS at CLE,CLE,5,Brayan Rocchio,S,Sean Burke,R,Progressive Field,82.0,-5.0,0.94,0.072,+1288,+1566,replay,0
+2026-07-04,CWS at CLE,CWS,9,Drew Romo,S,Parker Messick,L,Progressive Field,82.0,-5.0,0.75,0.071,+1308,+1590,replay,0
+2026-07-04,NYM at ATL,NYM,9,Brett Baty,L,Chris Sale,L,Truist Park,86.0,0.0,1.1,0.0708,+1312,+1595,replay,0
+2026-07-04,SF at COL,SF,2,Luis Arraez,L,Sean Sullivan,L,Coors Field,83.0,2.8,1.05,0.0696,+1337,+1625,replay,0
+2026-07-04,PHI at KC,KC,9,Tyler Tolbert,R,Jesús Luzardo,L,Kauffman Stadium,82.0,0.0,0.93,0.0688,+1354,+1645,replay,0
+2026-07-04,PHI at KC,KC,7,Isaac Collins,S,Jesús Luzardo,L,Kauffman Stadium,82.0,0.0,0.93,0.0681,+1369,+1663,replay,0
+2026-07-04,PHI at KC,PHI,9,Justin Crawford,L,Michael Wacha,R,Kauffman Stadium,82.0,0.0,0.74,0.068,+1372,+1666,replay,0
+2026-07-04,CWS at CLE,CWS,8,Tristan Peters,L,Parker Messick,L,Progressive Field,82.0,-5.0,0.94,0.0677,+1376,+1672,replay,0
+2026-07-04,SD at LAD,LAD,9,Alex Freeland,S,Wandy Peralta,L,UNIQLO Field at Dodger Stadium,77.0,0.0,1.34,0.0674,+1384,+1681,replay,0
+2026-07-04,BOS at LAA,LAA,7,Wade Meckler,L,Sonny Gray,R,Angel Stadium,78.0,8.0,1.09,0.0673,+1386,+1683,replay,0
+2026-07-04,TB at HOU,TB,7,Richie Palacios,L,Hunter Brown,R,Daikin Park,72.0,0.0,1.1,0.0672,+1389,+1687,replay,1
+2026-07-04,CWS at CLE,CLE,8,Austin Hedges,R,Sean Burke,R,Progressive Field,82.0,-5.0,0.75,0.066,+1415,+1718,replay,1
+2026-07-04,MIL at AZ,AZ,2,Geraldo Perdomo,S,Brandon Woodruff,R,Chase Field,72.0,0.0,0.77,0.0657,+1422,+1726,replay,0
+2026-07-04,MIA at ATH,MIA,4,Xavier Edwards,S,Aaron Civale,R,Sutter Health Park,89.0,5.6,1.0,0.0655,+1427,+1732,replay,0
+2026-07-04,MIA at ATH,ATH,9,Alika Williams,R,Sandy Alcantara,R,Sutter Health Park,89.0,5.6,1.0,0.0643,+1454,+1765,replay,0
+2026-07-04,PIT at WSH,WSH,8,Drew Millas,S,Braxton Ashcraft,R,Nationals Park,93.0,-3.5,0.97,0.0628,+1492,+1811,replay,0
+2026-07-04,CWS at CLE,CWS,3,Chase Meidroth,R,Parker Messick,L,Progressive Field,82.0,-5.0,0.75,0.0622,+1508,+1830,replay,0
+2026-07-04,DET at TEX,TEX,5,Alejandro Osuna,L,Jack Flaherty,R,Globe Life Field,72.0,0.0,1.02,0.062,+1512,+1834,replay,0
+2026-07-04,TOR at SEA,SEA,8,Victor Robles,R,Shane Bieber,R,T-Mobile Park,66.0,4.9,0.91,0.0612,+1534,+1861,replay,0
+2026-07-04,MIL at AZ,MIL,7,Sal Frelick,L,Merrill Kelly,R,Chase Field,72.0,0.0,0.77,0.0587,+1604,+1944,replay,0
+2026-07-04,TB at HOU,TB,9,Hunter Feduccia,L,Hunter Brown,R,Daikin Park,72.0,0.0,1.1,0.0553,+1709,+2071,replay,0
+2026-07-04,BOS at LAA,LAA,9,Tyler Heineman,S,Sonny Gray,R,Angel Stadium,78.0,8.0,1.09,0.0544,+1738,+2106,replay,0
+2026-07-04,MIL at AZ,AZ,8,Ildemaro Vargas,S,Brandon Woodruff,R,Chase Field,72.0,0.0,0.77,0.0529,+1791,+2169,replay,0
+2026-07-04,MIL at AZ,MIL,9,Joey Ortiz,R,Merrill Kelly,R,Chase Field,72.0,0.0,0.97,0.0518,+1832,+2219,replay,0
+2026-07-04,PIT at WSH,PIT,7,Jake Mangum,S,Carson Palmquist,L,Nationals Park,93.0,-3.5,0.91,0.0507,+1871,+2265,replay,0
+2026-07-04,CWS at CLE,CLE,9,Steven Kwan,L,Sean Burke,R,Progressive Field,82.0,-5.0,0.94,0.0469,+2032,+2459,replay,0
+2026-07-04,CWS at CLE,CWS,7,Luisangel Acuña,R,Parker Messick,L,Progressive Field,82.0,-5.0,0.75,0.0455,+2098,+2538,replay,0
+2026-07-04,PIT at WSH,WSH,9,Nasim Nuñez,S,Braxton Ashcraft,R,Nationals Park,93.0,-3.5,0.97,0.0433,+2209,+2671,replay,0
+2026-07-04,TB at HOU,TB,8,Taylor Walls,S,Hunter Brown,R,Daikin Park,72.0,0.0,1.1,0.0387,+2483,+3000,replay,0
+2026-07-04,STL at CHC,CHC,6,Nico Hoerner,R,Kyle Leahy,R,Wrigley Field,70.0,-6.0,1.02,0.0387,+2484,+3000,replay,0
+2026-07-04,DET at TEX,TEX,9,Nicky Lopez,L,Jack Flaherty,R,Globe Life Field,72.0,0.0,1.02,0.0292,+3321,+4005,replay,0
+2026-07-04,TB at HOU,HOU,9,Nick Allen,R,Drew Rasmussen,R,Daikin Park,72.0,0.0,1.03,0.0273,+3558,+4289,replay,0

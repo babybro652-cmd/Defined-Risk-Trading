@@ -1,0 +1,60 @@
+venue_id,venue,city,lat,lon,azimuth,elevation_ft,roof,lf,cf,rf
+1,Angel Stadium,Anaheim,33.80019044,-117.8823996,43.61,151,Open,330,396,330
+2,Oriole Park at Camden Yards,Baltimore,39.283787,-76.621689,31.0,33,Open,333,410,318
+3,Fenway Park,Boston,42.346456,-71.097441,45.0,21,Open,310,420,302
+5380,CoolToday Park,North Port,27.04422,-82.23593,,,Open,335,400,325
+4,Rate Field,Chicago,41.83,-87.634167,127.0,595,Open,330,400,335
+5,Progressive Field,Cleveland,41.495861,-81.685255,0.0,653,Open,325,405,325
+7,Kauffman Stadium,Kansas City,39.051567,-94.480483,46.0,856,Open,347,410,344
+5000,CACTI Park of the Palm Beaches,West Palm Beach,26.75475,-80.11316,,,Open,329,408,330
+2700,BayCare Ballpark,Clearwater,27.97159,-82.731714,,,Open,329,401,330
+12,Tropicana Field,St. Petersburg,27.767778,-82.6525,359.0,15,Dome,315,404,322
+14,Rogers Centre,Toronto,43.64155,-79.38915,345.0,270,Retractable,328,404,328
+15,Chase Field,Phoenix,33.445302,-112.066687,0.0,1086,Retractable,328,407,335
+17,Wrigley Field,Chicago,41.948171,-87.655503,37.0,595,Open,355,400,353
+19,Coors Field,Denver,39.756042,-104.994136,4.0,5190,Open,347,415,350
+4629,Sloan Park,Mesa,33.43081,-111.882,,,Open,360,410,360
+22,UNIQLO Field at Dodger Stadium,Los Angeles,34.07368,-118.24053,26.0,515,Open,330,395,330
+4249,Salt River Fields at Talking Stick,Scottsdale,33.54523,-111.88552,72.0,1298,Open,345,410,345
+31,PNC Park,Pittsburgh,40.446904,-80.005753,116.0,780,Open,325,399,320
+32,American Family Field,Milwaukee,43.02838,-87.97099,129.0,597,Retractable,344,400,345
+2722,Route 66 Stadium,Springfield,37.21078,-93.2797,,,Open,315,400,330
+680,T-Mobile Park,Seattle,47.591333,-122.33251,49.0,10,Retractable,331,405,327
+2856,Clover Park,Port St. Lucie,27.3249268,-80.4068854,,,Open,330,405,330
+2602,Great American Ball Park,Cincinnati,39.097389,-84.506611,122.0,535,Open,328,404,325
+2603,Surprise Stadium,Surprise,33.62762,-112.37849,,,Open,350,400,350
+2862,Lee Health Sports Complex,Fort Myers,26.537803,-81.841973,,,Open,330,405,330
+2735,Journey Bank Ballpark,Williamsport,41.2419845,-77.0475104,,,Open,345,405,350
+2500,Tempe Diablo Stadium,Tempe,33.40092,-111.9707,,,Open,340,420,360
+5445,Field of Dreams,Dyersville,42.498241,-91.056486,,,Open,335,400,335
+2889,Busch Stadium,St. Louis,38.62256667,-90.19286667,62.0,460,Open,336,400,335
+4169,loanDepot park,Miami,25.77796236,-80.21951795,128.0,10,Retractable,344,407,335
+2507,Hohokam Stadium,Mesa,33.43831,-111.82973,,,Open,340,410,350
+2508,Ed Smith Stadium,Sarasota,27.34795,-82.5174,,,Open,340,400,340
+5325,Globe Life Field,Arlington,32.747299,-97.081818,30.0,545,Retractable,329,407,326
+2511,Publix Field at Joker Marchant Stadium,Lakeland,28.074822,-81.9508415,,,Open,340,420,340
+4309,JetBlue Park,Ft. Myers,26.55092,-81.76225,,,Open,310,420,302
+2518,American Family Fields of Phoenix,Phoenix,33.49202,-112.1727,,,Open,350,400,340
+2520,Roger Dean Chevrolet Stadium,Jupiter,26.890957,-80.116365,,,Open,335,400,375
+2392,Daikin Park,Houston,29.756967,-95.355509,343.0,45,Retractable,315,409,326
+3289,Citi Field,Flushing,40.75753012,-73.84559155,13.0,10,Open,335,408,330
+2394,Comerica Park,Detroit,42.3391151,-83.048695,150.0,600,Open,345,420,330
+2523,George M. Steinbrenner Field,Tampa,27.97997,-82.50702,60.0,34,Open,318,408,314
+2395,Oracle Park,San Francisco,37.778383,-122.389448,85.0,0,Open,339,391,309
+5340,Estadio Alfredo Harp Helu,Mexico City,,,,,Open,325,400,325
+2526,LECOM Park,Bradenton,27.48553,-82.57038,,,Open,335,400,335
+4705,Truist Park,Atlanta,33.890672,-84.467641,145.0,1001,Open,335,400,325
+2529,Sutter Health Park,Sacramento,38.57994,-121.51246,46.0,24,Open,330,403,325
+3809,Camelback Ranch,Glendale,33.51434,-112.29612,,,Open,345,410,345
+2530,Peoria Stadium,Peoria,33.63187,-112.23359,,,Open,340,410,340
+2532,Scottsdale Stadium,Scottsdale,33.48869,-111.92099,,,Open,360,430,330
+2534,Charlotte Sports Park,Port Charlotte,26.99888,-82.18212,,,Open,343,414,343
+2536,TD Ballpark,Dunedin,27.9745812,-82.7913301,138.0,19,Open,335,400,327
+3049,Estadio Quisqueya Juan Marichal,Santo Domingo,,,,,Open,335,411,335
+5355,Las Vegas Ballpark,Las Vegas,36.152607,-115.329888,,,Open,340,415,340
+3309,Nationals Park,Washington,38.872861,-77.007501,28.0,35,Open,336,402,335
+3312,Target Field,Minneapolis,44.981829,-93.277891,129.0,828,Open,339,404,328
+3313,Yankee Stadium,Bronx,40.82919482,-73.9264977,75.0,55,Open,318,408,314
+2680,Petco Park,San Diego,32.707861,-117.157278,0.0,23,Open,336,396,322
+2681,Citizens Bank Park,Philadelphia,39.90539086,-75.16716957,9.0,20,Open,329,401,330
+3834,Goodyear Ballpark,Goodyear,33.42892,-112.39027,,,Open,340,400,340

@@ -4,3 +4,6 @@ __pycache__/
 posts/media/*/src/
 posts/media/**/fr/
 posts/media/**/f_*/
+
+# MLB raw downloads (large)
+analysis/mlb/raw/
