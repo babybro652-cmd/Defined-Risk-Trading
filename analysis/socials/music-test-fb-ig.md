@@ -18,3 +18,4 @@ return no views (a sync gap, not zero).
 | 2026-11-12 | 8:50 PM | Facebook reel | b45af088-bf04-411f-8b7a-3e95a5133b3d | Lifestyle reel (W-2 as a base, text cards) | music | im_glad_you_are_here | | |
 | 2026-11-13 | 12:30 PM | Instagram reel | 6885328 | Education text cards + drawn diagram (overnight high sweep vs hold) | music | soft_as_a_dry_pillow | | |
 | 2026-11-14 | 5:00 PM | Facebook reel | 6946234 | Education text cards + graphic (prop firm math, 4 pt stop vs $2,000 drawdown) | music | cliff_road_chill | | |
+| 2026-11-14 | 7:15 PM | Instagram reel | 6946302 | Education text cards + graphic (prop firm math, 4 pt stop vs $2,000 drawdown) | music | cliff_road_chill | | |
