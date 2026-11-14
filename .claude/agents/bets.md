@@ -14,6 +14,7 @@ chats, so read the files below that the task touches before acting.
 - NFL: `analysis/nfl/README.md` and the latest `analysis/nfl-picks-*.md`.
 - UCL: `analysis/ucl/`.
 - College football: `analysis/ncaaf/` (no model yet; research picks from ESPN data).
+- College basketball: `analysis/ncaab/README.md` (big games only; method and log).
 - First shot / first score log: `analysis/first_events.py` (writes `analysis/first_events/log.csv`).
 - Sheet formatting: `analysis/tab_format.py`.
 
@@ -100,3 +101,11 @@ analysis/first_events/log.csv now has tip_jumpers, tip_winner, tip_winner_scored
 ## NFL TD model check (11/8, Weeks 5-9 Bet Tracker rows)
 Anytime TD singles 18-22 (placed 8-6). RB/QB 16-10; WR/TE 2-12. Favorites (minus odds) 9-4; plus odds 2-8. Flat $1 on the 23 rows with odds: -$4.08. First TD 1-3; 2+ TDs 0-1; long TD parlays 0-6.
 Rule from here (Tim to confirm): TD bets on RBs/goal-line QBs only; WR/TE TDs only at +250 or longer and small stake; no TD parlays over 2 legs. Javonte Williams 3-0, McCaffrey 2-0; Henry 2-3 and slowing (BAL QB issues).
+
+## College basketball (Tim, 11/14: big games only)
+- Routine "CBB big games only" runs daily 8:43 AM ET and skips days with none; method in `analysis/ncaab/README.md`.
+- Big game: Top 25 vs Top 25 or a power-conference team, or a national TV game. ESPN+ does not count.
+- ESPN BPI win % to fair spread (sd 11), compare with the line; lean at a 3+ point gap, max 4 games. Skip unresolved key injuries.
+- Early season (until mid-December): small stakes, gaps are leans. Props: points and threes only, where FanDuel likely lists them.
+- Log as Sport "NCAAB" Pick rows; save `analysis/ncaab/picks-YYYY-MM-DD.md`; grade from ESPN in column I.
+- CFB: Saturday routine (8:13 AM) follows `analysis/ncaaf/picks-2026-10-24.md` method (FPI fair spread sd 16, skip QB changes on our side, pass on FCS).

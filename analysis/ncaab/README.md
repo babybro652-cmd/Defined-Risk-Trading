@@ -1,0 +1,29 @@
+# College basketball (CBB): big games only
+
+Tim, 11/14/26: college picks are CFB every Saturday and CBB big games only. Routine: "CBB big games only", daily 8:43 AM ET (skips days with none). No model yet; research picks from ESPN data, same idea as `analysis/ncaaf/`.
+
+## What counts as a big game
+- A Top 25 team (AP) against another Top 25 team or a power-conference team (ACC, Big Ten, Big 12, SEC, Big East), or
+- A national TV game (ESPN, ESPN2, ABC, CBS, FOX, FS1, TNT, TBS, truTV, Peacock, NBC). ESPN+ and conference streams do not count.
+- Skip Top 25 vs small-school buy games even on TV.
+
+## Method
+1. Slate: ESPN scoreboard `.../basketball/mens-college-basketball/scoreboard?dates=YYYYMMDD&groups=50&limit=400` (groups=50 is all D1; the default returns only Top 25). Rankings from `.../rankings`.
+2. For each big game, pull `summary?event=<id>`: `predictor` (ESPN BPI matchup win %) and `pickcenter` (DraftKings spread, total, moneyline).
+3. Fair spread from BPI win %: fair home spread = -11 x z(home win %), normal with sd 11 points (CBB margins). Examples: 60% = -2.8, 70% = -5.8, 76% = -7.8, 86% = -11.9.
+4. Gap = line minus fair. Lean only at a gap of 3+ points; best 4 games at most per day.
+5. Skip games where a key injury is unresolved (starter questionable, or out in the last box score with no update). ESPN's injury feed is often empty, so check the last box score for who started and played minutes.
+6. Early season caution until mid-December: BPI leans on preseason priors, and teams have only played 2 to 4 games, many against buy-game opponents. Smaller stakes, and treat a 3 to 5 point gap as a lean, not an edge. From mid-December the gaps get more trustworthy.
+
+## Player props
+- Points and threes only, only for players FanDuel likely lists (starters on Top 25 or power-conference teams in TV games).
+- Use the season box scores: minutes, points, 3PA and 3PM. Rough chance from the per-game rate; shrink early-season rates toward the player's role (early opponents are weak).
+- Same rules as the other sports: props bet only at a price longer than fair; skip anything shorter than about -300 and offer the next line up. No parlays unless Tim asks.
+
+## Logging and grading
+- Log picks as Bets rows, Sport "NCAAB", Placed "Pick", with line, fair and a short reason. Never write J:K.
+- Save `analysis/ncaab/picks-YYYY-MM-DD.md` per slate.
+- Grade from the ESPN summary (final score and box score) in column I only (W, L, Void).
+
+## Log
+- 11/14/26: first slate. Thin Saturday (football day, no Big Ten games). Two big games: LSU @ #14 Gonzaga, Colorado @ Providence (Peacock).
