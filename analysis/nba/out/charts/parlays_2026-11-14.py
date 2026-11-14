@@ -5,7 +5,7 @@ matplotlib.use('Agg')
 import matplotlib.pyplot as plt
 
 HEAD, G, R, ALT = '#1f3a5f', '#cdebd3', '#f6cccc', '#eef2f7'
-VOID = {'Allen', 'D. Mitchell', 'Watson'}
+VOID = set()
 rows = list(csv.DictReader(open('analysis/nba/out/parlays_2026-11-14.csv')))
 c = [r for r in json.load(open('analysis/nba/out/fb_candidates.json')) if r.get('inj') != 'Out']
 games = [('DEN', 'NO', '7:00'), ('DAL', 'CLE', '7:30'), ('DET', 'MIA', '8:00'), ('BKN', 'MEM', '8:00'), ('CHI', 'MIN', '8:00')]
@@ -29,7 +29,7 @@ def table(ax, title, cols, data, widths, shades=None, fs=10.5):
 
 # 1. top 3 per game now
 data, sh = [], []
-logged = {'DEN @ NO': 'Jokic / Murray / Bey', 'DAL @ CLE': 'Allen (VOID) / D. Mitchell (VOID) / Watson (VOID)',
+logged = {'DEN @ NO': 'Jokic / Murray / Bey', 'DAL @ CLE': 'Bryant / M. Thomas / Flagg (swapped 6:45 PM)',
           'DET @ MIA': 'Adebayo / Giannis / Collins', 'BKN @ MEM': 'Edey / Coward / Porter Jr.', 'CHI @ MIN': 'Kuminga / LaMelo / McDaniels'}
 for a, h, t in games:
     v = sorted([r for r in c if r['tm'] in (a, h)], key=lambda r: -r['p_v2'])[:3]
@@ -80,9 +80,8 @@ table(fig.add_axes([0.03, 0.2, 0.94, 0.23]), "Injury status (NBA report 6:30 PM,
 
 # 5. voids
 nv = sum(1 for r in rows if int(r['legs']) > 1 and set(r['picks'].split(' + ')) & VOID)
-vtxt = (f"VOIDS: straights Allen, D. Mitchell (#1/#2 CLE) and Watson (#3 CLE) = $3.00 refunded. "
-        f"{nv} parlays lose their CLE leg and pay on the rest. Also void: Allen and Watson CLE team first basket, Mitchell 25+ points.\n"
-        "Watch: Edey (straight and every parlay with Edey) and Porter Jr. (#3 straight) are questionable; a scratch voids those legs too.\n"
-        "Model CLE top now: Thomas Bryant 15.8% (+532), Meleek Thomas 12.9%, Flagg 11.6% (not logged). First basket is mostly noise.")
+vtxt = ("CLE swap 6:45 PM: Allen, Mitchell, Watson (rested) replaced by Bryant, M. Thomas, Flagg in all rows; no voids now.\n"
+        "Also void (earlier pick rows): Allen and Watson CLE team first basket, Mitchell 25+ points.\n"
+        "Watch: Edey and Porter Jr. are questionable; a scratch voids those legs. First basket is mostly noise.")
 fig.text(0.03, 0.08, vtxt, fontsize=11, va='bottom', wrap=True)
 plt.savefig('analysis/nba/out/charts/parlays_2026-11-14.png', dpi=100, bbox_inches='tight')
