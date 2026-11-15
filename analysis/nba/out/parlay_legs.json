@@ -3,12 +3,12 @@
  "sport": "NBA",
  "legs": [
   {
-   "player": "Andrew Nembhard",
+   "player": "Quenton Jackson",
    "team": "IND",
    "game": "IND @ PHI",
    "market": "3+ threes",
-   "p": 0.333,
-   "note": "68 starts"
+   "p": 0.091,
+   "note": "20 starts"
   },
   {
    "player": "Kelly Oubre Jr.",
@@ -57,14 +57,6 @@
    "market": "3+ threes",
    "p": 0.245,
    "note": "86 starts"
-  },
-  {
-   "player": "Dean Wade",
-   "team": "PHI",
-   "game": "IND @ PHI",
-   "market": "3+ threes",
-   "p": 0.113,
-   "note": "43 starts"
   },
   {
    "player": "LeBron James",
@@ -235,20 +227,20 @@
    "note": "66 starts"
   },
   {
+   "player": "Josh Okogie",
+   "team": "UTAH",
+   "game": "SA @ UTAH",
+   "market": "3+ threes",
+   "p": 0.105,
+   "note": "34 starts"
+  },
+  {
    "player": "Ace Bailey",
    "team": "UTAH",
    "game": "SA @ UTAH",
    "market": "3+ threes",
    "p": 0.351,
    "note": "73 starts"
-  },
-  {
-   "player": "Kyle Filipowski",
-   "team": "UTAH",
-   "game": "SA @ UTAH",
-   "market": "3+ threes",
-   "p": 0.073,
-   "note": "41 starts"
   },
   {
    "player": "Cooper Flagg",
@@ -275,12 +267,12 @@
    "note": "89 starts"
   },
   {
-   "player": "Jordan Walsh",
+   "player": "Baylor Scheierman",
    "team": "BOS",
    "game": "DAL @ BOS",
    "market": "3+ threes",
-   "p": 0.109,
-   "note": "32 starts"
+   "p": 0.462,
+   "note": "22 starts"
   },
   {
    "player": "Jayson Tatum",

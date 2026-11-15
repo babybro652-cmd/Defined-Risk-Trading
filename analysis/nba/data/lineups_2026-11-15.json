@@ -1,7 +1,7 @@
 {
  "IND": {
   "five": [
-   "Andrew Nembhard",
+   "Quenton Jackson",
    "Kelly Oubre Jr.",
    "Aaron Nesmith",
    "Pascal Siakam",
@@ -14,8 +14,8 @@
    "Tyrese Maxey",
    "VJ Edgecombe",
    "Jaylen Brown",
-   "Dean Wade",
-   "LeBron James"
+   "LeBron James",
+   "Jabari Walker"
   ],
   "jumper": "LeBron James"
  },
@@ -73,11 +73,11 @@
   "five": [
    "Keyonte George",
    "Darryn Peterson",
-   "Josh Green",
+   "Josh Okogie",
    "Ace Bailey",
-   "Kyle Filipowski"
+   "Mo Bamba"
   ],
-  "jumper": "Kyle Filipowski"
+  "jumper": "Mo Bamba"
  },
  "DAL": {
   "five": [
@@ -85,14 +85,14 @@
    "Caleb Martin",
    "Cooper Flagg",
    "P.J. Washington",
-   "Moussa Cisse"
+   "Daniel Gafford"
   ],
-  "jumper": "Moussa Cisse"
+  "jumper": "Daniel Gafford"
  },
  "BOS": {
   "five": [
    "Derrick White",
-   "Jordan Walsh",
+   "Baylor Scheierman",
    "Jayson Tatum",
    "Paul George",
    "Neemias Queta"
