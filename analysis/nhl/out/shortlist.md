@@ -23,13 +23,15 @@
 - No StarTool cards saved for this slate yet. Add lines to out/startool/star_bomb.txt (date|AWAY @ HOME|star,star|bomb,bomb) and rerun.
 
 <!-- parlays:begin -->
-## Parlays 2026-11-14 (2-3 legs, $0.10 to $0.20)
+## Parlays 2026-11-15 (2-3 legs, $0.10 to $0.20)
 
 Only categories that beat their price season to date: NBA 3+ threes, NHL 3+ SOG, NFL receptions, soccer 1+ shot on target. No points overs, no first basket / first goal / anytime goal legs. Fair = product of the leg chances (no correlation boost). Take only at the minimum price or longer (fair with a 10% cushion). Legs from the same game are correlated and marked.
 
 ### NBA
-- **2-leg #1:** Michael Porter Jr. 3+ threes (71%, BKN @ MEM) + LaMelo Ball 3+ threes (68%, CHI @ MIN). Fair +110 (48%); take +130 or longer.
-- **2-leg #2:** Michael Porter Jr. 3+ threes (71%, BKN @ MEM) + Duncan Robinson 3+ threes (67%, DET @ MIA). Fair +110 (48%); take +132 or longer.
-- **2-leg #3:** LaMelo Ball 3+ threes (68%, CHI @ MIN) + Duncan Robinson 3+ threes (67%, DET @ MIA). Fair +120 (45%); take +142 or longer.
+- **2-leg #1:** Luka Doncic 3+ threes (83%, LAL @ PHX) + Reed Sheppard 3+ threes (67%, HOU @ WSH). Fair -123 (55%); take -101 or longer.
+- **2-leg #2:** Luka Doncic 3+ threes (83%, LAL @ PHX) + Brandon Miller 3+ threes (63%, CHA @ LAC). Fair -109 (52%); take +110 or longer.
+- **2-leg #3:** Reed Sheppard 3+ threes (67%, HOU @ WSH) + Brandon Miller 3+ threes (63%, CHA @ LAC). Fair +137 (42%); take +161 or longer.
+- **3-leg #4:** Nickeil Alexander-Walker 3+ threes (63%, ATL @ MIL) + Zach LaVine 3+ threes (59%, OKC @ SAC) + Grayson Allen 3+ threes (58%, CHA @ LAC). Fair +364 (22%); take +411 or longer.
+- **3-leg #5:** Nickeil Alexander-Walker 3+ threes (63%, ATL @ MIL) + Zach LaVine 3+ threes (59%, OKC @ SAC) + Paul George 3+ threes (58%, DAL @ BOS). Fair +365 (21%); take +412 or longer.
 
 <!-- parlays:end -->
