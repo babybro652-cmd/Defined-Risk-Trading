@@ -385,6 +385,35 @@ team ignored); top 2 = team first points scorer in the team's two highest team-f
   the backtest chain on the same team-games with actual starters hits 46% (52), w 0.3 hits 49% (55). Three hits, noise.
   Part of the live 42% is projected lineups that changed. Recheck when 2026-27 has 400+ games.
 
+## Test 11/15/26: current-season make rates for the cold opening (Tim, 11/14). Not adopted
+
+Why: first shots go in 37.7% this season (183 games) vs 48.6% last season; our live #1 pick hit 10 of 73 since 11/4.
+Opening FGA (each team's FGA until its first points, `opening.py` ev) make 42.7% this season vs 45.6% full game;
+last season 47.6% vs 46.9%. So the opening is cold relative to the full game this season only.
+Backtest `python3 analysis/nba/backtest_cold.py` (walk-forward via backtest_chain.run, actual starters and jumpers,
+2026-27 games: tune 10/20-10/31 = 88, test 11/1-11/14 = 100). Knobs in `backtest_chain.cold_league` / `mk_counts`;
+`chain_model.player_params` takes an optional `L['mkx']` make-rate scale (off unless set).
+- (a) kfg_w: league make rate (player shrink target) = last season + N x this season (N 3, 10, 1000).
+- (a') open_a: scale every make rate by (league first-3-FGA make rate / full-game rate) ** a, weight w on this season
+  (a 0.5 / 1.0 / 1.5, w 3 / 10 / 1000).
+- (b) mk_w: player make rates count this season's games 6x or 10x (3x now).
+
+| Test (11/1-11/14, 100 games) | LL | #1 pred / hit | #2 pred / hit | #3 pred / hit | Top 3 |
+|---|---|---|---|---|---|
+| Chain (live) | 2.2916 | 16.6% / 13.0% | 13.5% / 16.0% | 11.5% / 12.0% | 41.0% |
+| kfg_w 1000 (best on tune) | 2.2915 | 16.7% / 13.0% | 13.5% / 16.0% | 11.5% / 12.0% | 41.0% |
+| open a1.5 w1000 | 2.2895 | 16.5% / 13.0% | 13.4% / 16.0% | 11.4% / 11.0% | 40.0% |
+| mk_w 10 | 2.2907 | 16.8% / 12.0% | 13.5% / 17.0% | 11.5% / 14.0% | 43.0% |
+
+Paired LL deltas on test (SE): kfg_w 1000 -.0000 (.0002), mk_w 10 -.0009 (.0021), open a1.5 w1000 -.0021 (.0014; it was
++.0008 worse on tune). Largest move of any player's chance: 0.1 to 2 points. Tune (88 games): #1 pred 16.7%, hit 18.2%.
+- Result: no variant beats the chain by more than noise out of sample, and none moves #1 calibration (16.6% to 16.8%)
+  or the #1 vs #3 gap (about 5 points). Live model unchanged.
+- Why: a colder make rate for everyone lengthens the opening but barely changes who scores first; the chain's ranking
+  comes from shot shares and FT trips. With actual starters the backtest #1 hit 15.4% on 188 games vs 16.7% predicted
+  (about 1 SE). The live 14% vs about 20% gap is mostly the live #1 being priced higher than the backtest's (projected
+  fives, late scratches) plus noise, not stale make rates. Recheck at 400+ games.
+
 ## Sources
 
 - ESPN `site.api.espn.com/apis/site/v2/sports/basketball/nba`: scoreboard, summary
@@ -489,6 +518,8 @@ team ignored); top 2 = team first points scorer in the team's two highest team-f
 - 11/14 6:30 PM recheck (NBA report 6:30, ESPN, RotoWire): CLE rested Allen, Mitchell, Harden, Watson (plus Mobley); five Porter Jr., M. Thomas, Tyson, Hezonja, Bryant (Bryant jumps, CLE tip 71%, model CLE top Bryant 15.8% +532). VOID notes on Bets E920, E930, E931, E947, E965, E966, E1206 and the CLE leg of 160 parlays (findReplace regex on E). MPJ newly Q (RotoWire). DEN @ NO unchanged (Missi available). Chart `out/charts/parlays_2026-11-14.png`.
 - 11/14 6:45 PM CLE swap (Tim's final play list `out/play_list_2026-11-14.md`): Bryant replaces Allen (#1), Meleek Thomas replaces D. Mitchell (#2), Flagg replaces Watson (#3 straight). Bets E963-E1209 rewritten with the new legs and fair / take-at prices; VOID notes cleared. `out/parlays_2026-11-14.csv` matches.
 - 11/14 results (graded 11/15; nothing priced yet, all odds blank): morning game first basket 0-3, 2 void (Allen, Edey DNP). Team first basket 4-11, 5 void (Allen, Watson, MPJ, Edey, J. Smith DNP): Jokic (FT), Flagg, Randle, LaMelo W. Props 2-0, 2 void (LaMelo 4 threes, Giannis 34 W; MPJ DNP, D. Mitchell rested). Tim's tip-70 set (84 live rows): straights 2-10 (M. Thomas #2 +675, LaMelo #2 +591), parlays 1-71 (M. Thomas + LaMelo 2-leg, fair +5,249 at $0.50). At fair odds the set is about +$12.60 on $28.80. First points: Fears (NO), M. Thomas (CLE), A. Thompson (DET), Randle (BKN), LaMelo (MIN). Top 3 held the scorer 2 of 5 (both #2); running 30 of 75 (40%). Tips: all sources same side; ours 3-2 (missed MIA vs DET, MEM vs BKN), StarTool 3-1, tip sheet 3-2, TipProj 3-2; expected jumpers 3 of 5 (Stewart for Edey, Zach Collins for J. Smith); tip winner scored first 4 of 5. 6 of 10 teams made their first shot; 1st-shot pick took it 3 of 8. Charts `out/charts/results_2026-11-14_game.png`, `_tip.png`, `_firstshot.png`; scorecard `analysis/reports/source-scorecard-2026-11-14.md`. College 11/14: CFB 5-4, 1 void (spreads 4-1; TDs 1-3, Sellers DNP); CBB 2-3.
+
+- 11/15: cold-opening test (Tim, 11/14): current-season league make rates, an opening make-rate scale and a 6x / 10x player make-rate weight, walk-forward, tuned 10/20-10/31, tested 11/1-11/14 (100 games). No variant better than noise; #1 calibration (16.6% pred, 13% hit on test) and the #1 vs #3 gap unchanged. Not adopted; details in "Test 11/15/26" above (`backtest_cold.py`).
 
 ## Tim vs model log (first basket)
 

@@ -38,6 +38,46 @@ def team_rates(TS, tm, opp, season, LC, c):
     return lto * (o_to / lto) * (d_to / lto), min(0.6, max(0.1, o_ob + d_ob - lob))
 
 
+def cold_league(LL, lgS, season, c):
+    """Cold-opening variants (11/15/26 test). Keys in c:
+      kfg_w   league make rate by type (the shrink target) = last season + kfg_w x this season (None = as built)
+      open_a  scale every player's make rate by (league opening make rate / league full-game make rate) ** open_a,
+              both = last season + open_w x this season; open_n 3 = first 3 FGA per team, 0 = all opening FGA
+      open_abs  scale by (league opening make rate / league full-game make rate, LAST season) instead of 1 = off"""
+    if not (c.get('kfg_w') or c.get('open_a')):
+        return LL
+    out = dict(LL)
+    cur, last = (season, '2025-26') if season == '2026-27' else (season, None)
+    def wsum(key, w):
+        return lgS[cur][key] * w + (lgS[last][key] if last else 0)
+    if c.get('kfg_w'):
+        w = c['kfg_w']
+        out['kfg'] = [wsum(f'M{i}', w) / wsum(f'A{i}', w) for i in range(3)]
+    if c.get('open_a'):
+        w, p = c.get('open_w', 3), 'o' if c.get('open_n', 3) == 3 else 'e'
+        r = []
+        for i in range(3):
+            op = wsum(f'{p}M{i}', w) / max(1, wsum(f'{p}A{i}', w))
+            fu = wsum(f'M{i}', w) / wsum(f'A{i}', w)
+            r.append((op / fu) ** c['open_a'])
+        if c.get('pooled'):   # one ratio for all shot types (opening FGA all types / full-game, same mix)
+            om = sum(wsum(f'{p}M{i}', w) for i in range(3)); oa = sum(wsum(f'{p}A{i}', w) for i in range(3))
+            mixf = [wsum(f'{p}A{i}', w) / oa for i in range(3)]
+            fu = sum(mixf[i] * wsum(f'M{i}', w) / wsum(f'A{i}', w) for i in range(3))
+            r = [(om / oa / fu) ** c['open_a']] * 3
+        out['mkx'] = r
+    return out
+
+
+def mk_counts(x, PS, tm, season, w):
+    """Player make-rate counts (rA..tM) with this season's games at weight w (ramped by starts with tm)."""
+    if season != '2026-27':
+        return x
+    cc, ll = PS['2026-27'][x['pid']], PS['2025-26'][x['pid']]
+    wt = bf.cur_weight(w, cc.get(('gs', tm), 0), bf.V2)
+    return dict(x, **{f: wt * cc.get(f, 0) + ll.get(f, 0) for f in ('rA', 'rM', 'jA', 'jM', 'tA', 'tM')})
+
+
 def run(chain_variants):
     games, F3, OP, CHN = [], {}, {}, {}
     for s in ('2025-26', '2026-27'):
@@ -50,6 +90,7 @@ def run(chain_variants):
     TS = {s: defaultdict(lambda: defaultdict(float)) for s in ('2025-26', '2026-27')}
     lg = defaultdict(float); lgpos = defaultdict(float); lgmix = defaultdict(lambda: [0.0, 0.0, 0.0])
     lp = defaultdict(lambda: defaultdict(float))   # chain league numbers by position
+    lgS = {x: defaultdict(float) for x in ('2025-26', '2026-27')}   # per season: full-game and opening makes by type
     by_date = defaultdict(list)
     for g in games:
         by_date[g['date']].append(g)
@@ -106,9 +147,11 @@ def run(chain_variants):
                                               for tm in st for p, v in cur.items() if p in {y[0] for y in st[tm]}}}}
                 for k, c in chain_variants.items():
                     c = dict(cm.CH, **c)
+                    LLv = cold_league(LL, lgS, s, c)
                     TT = []
                     for tm, opp in ((g['away'], g['home']), (g['home'], g['away'])):
-                        Pp = [cm.player_params(x, LL, c) for x in feats[tm]]
+                        fx = feats[tm] if not c.get('mk_w') else [mk_counts(x, PS, tm, s, c['mk_w']) for x in feats[tm]]
+                        Pp = [cm.player_params(x, LLv, c) for x in fx]
                         to, ob = team_rates(TS, tm, opp, s, LC, c)
                         ji = next((i for i, x in enumerate(Pp) if x['pid'] == jm.get(tm)), None)
                         TT.append(cm.Team(Pp, to, ob, LC['cred'], ji, c))
@@ -150,6 +193,7 @@ def run(chain_variants):
                         z[f] += v; z[(f, tm)] += v
                     for i in range(3):
                         lg[f'A{i}'] += b[2 * i]; lg[f'M{i}'] += b[2 * i + 1]
+                        lgS[s][f'A{i}'] += b[2 * i]; lgS[s][f'M{i}'] += b[2 * i + 1]
                         if pos in POS:
                             lgmix[pos][i] += b[2 * i]
                     lg['ftT'] += b[6]; lg['ftS'] += b[7]
@@ -169,6 +213,16 @@ def run(chain_variants):
                                  ('tp1', op.get('tp', {}).get(tm) == pid), ('sh1', took),
                                  ('gs3', f3 is not None), ('f3', (f3 or []).count(pid))):
                         z[f] += v; z[(f, tm)] += v
+            for tm, evs in op.get('ev', {}).items():   # opening FGA (up to the team's first points)
+                n = 0
+                for pid, kind, made in evs:
+                    if kind == 'ft':
+                        continue
+                    i = ('rim', 'j2', '3').index(kind)
+                    lgS[s][f'eA{i}'] += 1; lgS[s][f'eM{i}'] += made
+                    if n < 3:
+                        lgS[s][f'oA{i}'] += 1; lgS[s][f'oM{i}'] += made
+                    n += 1
             if ch:
                 tms = list(ch['tm'])
                 for tm in tms:
