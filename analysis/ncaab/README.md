@@ -16,9 +16,7 @@ Tim, 11/14/26: college picks are CFB every Saturday and CBB big games only. Rout
 6. Early season caution until mid-December: BPI leans on preseason priors, and teams have only played 2 to 4 games, many against buy-game opponents. Smaller stakes, and treat a 3 to 5 point gap as a lean, not an edge. From mid-December the gaps get more trustworthy.
 
 ## Player props
-- Points and threes only, only for players FanDuel likely lists (starters on Top 25 or power-conference teams in TV games).
-- Use the season box scores: minutes, points, 3PA and 3PM. Rough chance from the per-game rate; shrink early-season rates toward the player's role (early opponents are weak).
-- Same rules as the other sports: props bet only at a price longer than fair; skip anything shorter than about -300 and offer the next line up. No parlays unless Tim asks.
+None. Tim, 11/15/26: CBB is sides and totals only, no player props.
 
 ## Logging and grading
 - Log picks as Bets rows, Sport "NCAAB", Placed "Pick", with line, fair and a short reason. Never write J:K.
@@ -27,4 +25,4 @@ Tim, 11/14/26: college picks are CFB every Saturday and CBB big games only. Rout
 
 ## Log
 - 11/14/26: first slate. Thin Saturday (football day, no Big Ten games). Two big games: LSU @ #14 Gonzaga, Colorado @ Providence (Peacock).
-- 11/15/26: 11/14 went 2-3 (sides 0-2, props 2-1). Six big games checked; only Louisville @ Memphis reached a 3-point gap (Memphis +8.5). Three props.
+- 11/15/26: 11/14 went 2-3 (sides 0-2, props 2-1). Six big games checked; only Louisville @ Memphis reached a 3-point gap (Memphis +8.5). Three props. Tim dropped the props the same morning: CBB is sides and totals only from 11/15.
