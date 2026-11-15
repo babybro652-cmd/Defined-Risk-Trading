@@ -39,53 +39,53 @@ date,game,team,player,first_shot_pct,first_bsk_pct,first_gm_pct,actual_team_firs
 2026-11-12,CHA @ PHX,PHX,Dillon Brooks,30,21,8,Jalen Green,Jalen Green
 2026-11-12,CHA @ PHX,PHX,Miles Bridges,12,9,6,Jalen Green,Jalen Green
 2026-11-12,CHA @ PHX,PHX,Oso Ighodaro,18,6,6,Jalen Green,Jalen Green
-2026-11-14,DEN @ NO,DEN,Jamal Murray,33,31,23,,
-2026-11-14,DEN @ NO,DEN,Christian Braun,3,2,2,,
-2026-11-14,DEN @ NO,DEN,Cameron Johnson,19,16,10,,
-2026-11-14,DEN @ NO,DEN,Aaron Gordon,17,22,11,,
-2026-11-14,DEN @ NO,DEN,Nikola Jokic,28,30,14,,
-2026-11-14,DEN @ NO,NO,Jeremiah Fears,20,21,11,,
-2026-11-14,DEN @ NO,NO,Herbert Jones,21,24,13,,
-2026-11-14,DEN @ NO,NO,Trey Murphy III,24,20,11,,
-2026-11-14,DEN @ NO,NO,Saddiq Bey,26,22,11,,
-2026-11-14,DEN @ NO,NO,Karlo Matkovic,10,10,10,,
-2026-11-14,DAL @ CLE,DAL,Kyrie Irving,20,20,0,,
-2026-11-14,DAL @ CLE,DAL,Caleb Martin,12,18,6,,
-2026-11-14,DAL @ CLE,DAL,Cooper Flagg,26,22,7,,
-2026-11-14,DAL @ CLE,DAL,P.J. Washington,23,20,9,,
-2026-11-14,DAL @ CLE,DAL,Daniel Gafford,11,21,14,,
-2026-11-14,DAL @ CLE,CLE,James Harden,8,13,8,,
-2026-11-14,DAL @ CLE,CLE,Donovan Mitchell,21,20,9,,
-2026-11-14,DAL @ CLE,CLE,Peyton Watson,22,12,2,,
-2026-11-14,DAL @ CLE,CLE,Evan Mobley,29,31,19,,
-2026-11-14,DAL @ CLE,CLE,Jarrett Allen,25,35,27,,
-2026-11-14,DET @ MIA,DET,Cade Cunningham,22,16,8,,
-2026-11-14,DET @ MIA,DET,Daniss Jenkins,28,16,12,,
-2026-11-14,DET @ MIA,DET,Duncan Robinson,19,13,7,,
-2026-11-14,DET @ MIA,DET,Amen Thompson,11,15,5,,
-2026-11-14,DET @ MIA,DET,John Collins,24,28,15,,
-2026-11-14,DET @ MIA,MIA,Davion Mitchell,9,17,4,,
-2026-11-14,DET @ MIA,MIA,Klay Thompson,37,11,5,,
-2026-11-14,DET @ MIA,MIA,Pelle Larsson,7,12,7,,
-2026-11-14,DET @ MIA,MIA,Giannis Antetokounmpo,17,32,15,,
-2026-11-14,DET @ MIA,MIA,Bam Adebayo,45,31,24,,
-2026-11-14,CHI @ MIN,CHI,Josh Giddey,15,16,3,,
-2026-11-14,CHI @ MIN,CHI,Norman Powell,32,22,10,,
-2026-11-14,CHI @ MIN,CHI,Isaac Okoro,20,12,6,,
-2026-11-14,CHI @ MIN,CHI,Matas Buzelis,16,24,7,,
-2026-11-14,CHI @ MIN,CHI,Jalen Smith,29,35,6,,
-2026-11-14,CHI @ MIN,MIN,LaMelo Ball,22,27,14,,
-2026-11-14,CHI @ MIN,MIN,Ayo Dosunmu,6,6,0,,
-2026-11-14,CHI @ MIN,MIN,Jonathan Kuminga,23,8,4,,
-2026-11-14,CHI @ MIN,MIN,Jaden McDaniels,20,15,11,,
-2026-11-14,CHI @ MIN,MIN,Rudy Gobert,6,21,9,,
-2026-11-14,BKN @ MEM,BKN,Nolan Traore,21,21,11,,
-2026-11-14,BKN @ MEM,BKN,Egor Demin,20,20,8,,
-2026-11-14,BKN @ MEM,BKN,Michael Porter Jr.,38,37,19,,
-2026-11-14,BKN @ MEM,BKN,Julius Randle,29,20,11,,
-2026-11-14,BKN @ MEM,BKN,Day'Ron Sharpe,17,28,11,,
-2026-11-14,BKN @ MEM,MEM,Ty Jerome,28,28,8,,
-2026-11-14,BKN @ MEM,MEM,Cedric Coward,28,19,9,,
-2026-11-14,BKN @ MEM,MEM,Jaylen Wells,15,20,6,,
-2026-11-14,BKN @ MEM,MEM,Cameron Boozer,18,27,0,,
-2026-11-14,BKN @ MEM,MEM,Zach Edey,19,19,14,,
+2026-11-14,DEN @ NO,DEN,Jamal Murray,33,31,23,Nikola Jokic,Jeremiah Fears
+2026-11-14,DEN @ NO,DEN,Christian Braun,3,2,2,Nikola Jokic,Jeremiah Fears
+2026-11-14,DEN @ NO,DEN,Cameron Johnson,19,16,10,Nikola Jokic,Jeremiah Fears
+2026-11-14,DEN @ NO,DEN,Aaron Gordon,17,22,11,Nikola Jokic,Jeremiah Fears
+2026-11-14,DEN @ NO,DEN,Nikola Jokic,28,30,14,Nikola Jokic,Jeremiah Fears
+2026-11-14,DEN @ NO,NO,Jeremiah Fears,20,21,11,Jeremiah Fears,Jeremiah Fears
+2026-11-14,DEN @ NO,NO,Herbert Jones,21,24,13,Jeremiah Fears,Jeremiah Fears
+2026-11-14,DEN @ NO,NO,Trey Murphy III,24,20,11,Jeremiah Fears,Jeremiah Fears
+2026-11-14,DEN @ NO,NO,Saddiq Bey,26,22,11,Jeremiah Fears,Jeremiah Fears
+2026-11-14,DEN @ NO,NO,Karlo Matkovic,10,10,10,Jeremiah Fears,Jeremiah Fears
+2026-11-14,DAL @ CLE,DAL,Kyrie Irving,20,20,0,Cooper Flagg,Meleek Thomas
+2026-11-14,DAL @ CLE,DAL,Caleb Martin,12,18,6,Cooper Flagg,Meleek Thomas
+2026-11-14,DAL @ CLE,DAL,Cooper Flagg,26,22,7,Cooper Flagg,Meleek Thomas
+2026-11-14,DAL @ CLE,DAL,P.J. Washington,23,20,9,Cooper Flagg,Meleek Thomas
+2026-11-14,DAL @ CLE,DAL,Daniel Gafford,11,21,14,Cooper Flagg,Meleek Thomas
+2026-11-14,DAL @ CLE,CLE,James Harden,8,13,8,Meleek Thomas,Meleek Thomas
+2026-11-14,DAL @ CLE,CLE,Donovan Mitchell,21,20,9,Meleek Thomas,Meleek Thomas
+2026-11-14,DAL @ CLE,CLE,Peyton Watson,22,12,2,Meleek Thomas,Meleek Thomas
+2026-11-14,DAL @ CLE,CLE,Evan Mobley,29,31,19,Meleek Thomas,Meleek Thomas
+2026-11-14,DAL @ CLE,CLE,Jarrett Allen,25,35,27,Meleek Thomas,Meleek Thomas
+2026-11-14,DET @ MIA,DET,Cade Cunningham,22,16,8,Ausar Thompson,Ausar Thompson
+2026-11-14,DET @ MIA,DET,Daniss Jenkins,28,16,12,Ausar Thompson,Ausar Thompson
+2026-11-14,DET @ MIA,DET,Duncan Robinson,19,13,7,Ausar Thompson,Ausar Thompson
+2026-11-14,DET @ MIA,DET,Amen Thompson,11,15,5,Ausar Thompson,Ausar Thompson
+2026-11-14,DET @ MIA,DET,John Collins,24,28,15,Ausar Thompson,Ausar Thompson
+2026-11-14,DET @ MIA,MIA,Davion Mitchell,9,17,4,Myron Gardner,Ausar Thompson
+2026-11-14,DET @ MIA,MIA,Klay Thompson,37,11,5,Myron Gardner,Ausar Thompson
+2026-11-14,DET @ MIA,MIA,Pelle Larsson,7,12,7,Myron Gardner,Ausar Thompson
+2026-11-14,DET @ MIA,MIA,Giannis Antetokounmpo,17,32,15,Myron Gardner,Ausar Thompson
+2026-11-14,DET @ MIA,MIA,Bam Adebayo,45,31,24,Myron Gardner,Ausar Thompson
+2026-11-14,CHI @ MIN,CHI,Josh Giddey,15,16,3,Josh Giddey,LaMelo Ball
+2026-11-14,CHI @ MIN,CHI,Norman Powell,32,22,10,Josh Giddey,LaMelo Ball
+2026-11-14,CHI @ MIN,CHI,Isaac Okoro,20,12,6,Josh Giddey,LaMelo Ball
+2026-11-14,CHI @ MIN,CHI,Matas Buzelis,16,24,7,Josh Giddey,LaMelo Ball
+2026-11-14,CHI @ MIN,CHI,Jalen Smith,29,35,6,Josh Giddey,LaMelo Ball
+2026-11-14,CHI @ MIN,MIN,LaMelo Ball,22,27,14,LaMelo Ball,LaMelo Ball
+2026-11-14,CHI @ MIN,MIN,Ayo Dosunmu,6,6,0,LaMelo Ball,LaMelo Ball
+2026-11-14,CHI @ MIN,MIN,Jonathan Kuminga,23,8,4,LaMelo Ball,LaMelo Ball
+2026-11-14,CHI @ MIN,MIN,Jaden McDaniels,20,15,11,LaMelo Ball,LaMelo Ball
+2026-11-14,CHI @ MIN,MIN,Rudy Gobert,6,21,9,LaMelo Ball,LaMelo Ball
+2026-11-14,BKN @ MEM,BKN,Nolan Traore,21,21,11,Julius Randle,Julius Randle
+2026-11-14,BKN @ MEM,BKN,Egor Demin,20,20,8,Julius Randle,Julius Randle
+2026-11-14,BKN @ MEM,BKN,Michael Porter Jr.,38,37,19,Julius Randle,Julius Randle
+2026-11-14,BKN @ MEM,BKN,Julius Randle,29,20,11,Julius Randle,Julius Randle
+2026-11-14,BKN @ MEM,BKN,Day'Ron Sharpe,17,28,11,Julius Randle,Julius Randle
+2026-11-14,BKN @ MEM,MEM,Ty Jerome,28,28,8,Isaiah Stewart,Julius Randle
+2026-11-14,BKN @ MEM,MEM,Cedric Coward,28,19,9,Isaiah Stewart,Julius Randle
+2026-11-14,BKN @ MEM,MEM,Jaylen Wells,15,20,6,Isaiah Stewart,Julius Randle
+2026-11-14,BKN @ MEM,MEM,Cameron Boozer,18,27,0,Isaiah Stewart,Julius Randle
+2026-11-14,BKN @ MEM,MEM,Zach Edey,19,19,14,Isaiah Stewart,Julius Randle

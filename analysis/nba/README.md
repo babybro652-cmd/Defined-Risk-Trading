@@ -76,7 +76,7 @@ fb_candidates for that slate), run `python3 analysis/reports/top3_coverage.py <d
 whether the game's first scorer was our #1, #2 or #3, the running hit rate by rank and the $1-straight P&L by rank
 once odds are logged in `out/top3_odds.csv` (date,player,odds). `source_scorecard.py` prints the same by date.
 Backfilled 11/4 to 11/13: top 3 held the first scorer in 28 of 70 games (40%); #1 10 of 69, #2 9 of 70, #3 9 of 70.
-11/13: 5 of 9 in the top 3, 1 of 9 at #1.
+11/13: 5 of 9 in the top 3, 1 of 9 at #1. 11/14: 2 of 5 (both #2); 11/4 to 11/14: 30 of 75 (40%).
 
 ## Layout (one tab, top to bottom)
 
@@ -488,6 +488,7 @@ team ignored); top 2 = team first points scorer in the team's two highest team-f
 - 11/14 evening: Tim narrowed to tip edge 70%+ games (DEN 75, CLE 71, MIA 70, MIN 78); BKN @ MEM (66%) dropped. 163 rows (every Edey / Coward leg, all 5-legs, Edey, Coward, Porter Jr. straights) set to Placed "Dropped", stake 0; live set 84 bets, $28.80 (`out/play_list_2026-11-14_tip70.md`, `dropped` column in the CSV).
 - 11/14 6:30 PM recheck (NBA report 6:30, ESPN, RotoWire): CLE rested Allen, Mitchell, Harden, Watson (plus Mobley); five Porter Jr., M. Thomas, Tyson, Hezonja, Bryant (Bryant jumps, CLE tip 71%, model CLE top Bryant 15.8% +532). VOID notes on Bets E920, E930, E931, E947, E965, E966, E1206 and the CLE leg of 160 parlays (findReplace regex on E). MPJ newly Q (RotoWire). DEN @ NO unchanged (Missi available). Chart `out/charts/parlays_2026-11-14.png`.
 - 11/14 6:45 PM CLE swap (Tim's final play list `out/play_list_2026-11-14.md`): Bryant replaces Allen (#1), Meleek Thomas replaces D. Mitchell (#2), Flagg replaces Watson (#3 straight). Bets E963-E1209 rewritten with the new legs and fair / take-at prices; VOID notes cleared. `out/parlays_2026-11-14.csv` matches.
+- 11/14 results (graded 11/15; nothing priced yet, all odds blank): morning game first basket 0-3, 2 void (Allen, Edey DNP). Team first basket 4-11, 5 void (Allen, Watson, MPJ, Edey, J. Smith DNP): Jokic (FT), Flagg, Randle, LaMelo W. Props 2-0, 2 void (LaMelo 4 threes, Giannis 34 W; MPJ DNP, D. Mitchell rested). Tim's tip-70 set (84 live rows): straights 2-10 (M. Thomas #2 +675, LaMelo #2 +591), parlays 1-71 (M. Thomas + LaMelo 2-leg, fair +5,249 at $0.50). At fair odds the set is about +$12.60 on $28.80. First points: Fears (NO), M. Thomas (CLE), A. Thompson (DET), Randle (BKN), LaMelo (MIN). Top 3 held the scorer 2 of 5 (both #2); running 30 of 75 (40%). Tips: all sources same side; ours 3-2 (missed MIA vs DET, MEM vs BKN), StarTool 3-1, tip sheet 3-2, TipProj 3-2; expected jumpers 3 of 5 (Stewart for Edey, Zach Collins for J. Smith); tip winner scored first 4 of 5. 6 of 10 teams made their first shot; 1st-shot pick took it 3 of 8. Charts `out/charts/results_2026-11-14_game.png`, `_tip.png`, `_firstshot.png`; scorecard `analysis/reports/source-scorecard-2026-11-14.md`. College 11/14: CFB 5-4, 1 void (spreads 4-1; TDs 1-3, Sellers DNP); CBB 2-3.
 
 ## Tim vs model log (first basket)
 
