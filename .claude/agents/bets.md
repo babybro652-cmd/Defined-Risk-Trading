@@ -115,7 +115,7 @@ Rule from here (Tim to confirm): TD bets on RBs/goal-line QBs only; WR/TE TDs on
 - Tim, 11/15: sides and totals only. No player props on CBB.
 - Big game: Top 25 vs Top 25 or a power-conference team, or a national TV game. ESPN+ does not count.
 - ESPN BPI win % to fair spread (sd 11), compare with the line; lean at a 3+ point gap, max 4 games. Skip unresolved key injuries.
-- Early season (until mid-December): small stakes, gaps are leans. Props: points and threes only, where FanDuel likely lists them.
+- Early season (until mid-December): small stakes, gaps are leans.
 - Log as Sport "NCAAB" Pick rows; save `analysis/ncaab/picks-YYYY-MM-DD.md`; grade from ESPN in column I.
 - CFB: Saturday routine (8:13 AM) follows `analysis/ncaaf/picks-2026-10-24.md` method (FPI fair spread sd 16, skip QB changes on our side, pass on FCS).
 
