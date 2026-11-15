@@ -1,0 +1,182 @@
+{
+ "IND": {
+  "five": [
+   "Andrew Nembhard",
+   "Kelly Oubre Jr.",
+   "Aaron Nesmith",
+   "Pascal Siakam",
+   "Ivica Zubac"
+  ],
+  "jumper": "Ivica Zubac"
+ },
+ "PHI": {
+  "five": [
+   "Tyrese Maxey",
+   "VJ Edgecombe",
+   "Jaylen Brown",
+   "Dean Wade",
+   "LeBron James"
+  ],
+  "jumper": "LeBron James"
+ },
+ "LAL": {
+  "five": [
+   "Luka Doncic",
+   "Quentin Grimes",
+   "Matisse Thybulle",
+   "Jake LaRavia",
+   "Walker Kessler"
+  ],
+  "jumper": "Walker Kessler"
+ },
+ "PHX": {
+  "five": [
+   "Devin Booker",
+   "Jalen Green",
+   "Dillon Brooks",
+   "Miles Bridges",
+   "Oso Ighodaro"
+  ],
+  "jumper": "Oso Ighodaro"
+ },
+ "CHA": {
+  "five": [
+   "Coby White",
+   "Grayson Allen",
+   "Brandon Miller",
+   "Naz Reid",
+   "Moussa Diabate"
+  ],
+  "jumper": "Moussa Diabate"
+ },
+ "LAC": {
+  "five": [
+   "Darius Garland",
+   "Kris Dunn",
+   "Derrick Jones Jr.",
+   "Rui Hachimura",
+   "Brook Lopez"
+  ],
+  "jumper": "Brook Lopez"
+ },
+ "SA": {
+  "five": [
+   "De'Aaron Fox",
+   "Stephon Castle",
+   "Dylan Harper",
+   "Devin Vassell",
+   "Victor Wembanyama"
+  ],
+  "jumper": "Victor Wembanyama"
+ },
+ "UTAH": {
+  "five": [
+   "Keyonte George",
+   "Darryn Peterson",
+   "Josh Green",
+   "Ace Bailey",
+   "Kyle Filipowski"
+  ],
+  "jumper": "Kyle Filipowski"
+ },
+ "DAL": {
+  "five": [
+   "Kyrie Irving",
+   "Caleb Martin",
+   "Cooper Flagg",
+   "P.J. Washington",
+   "Moussa Cisse"
+  ],
+  "jumper": "Moussa Cisse"
+ },
+ "BOS": {
+  "five": [
+   "Derrick White",
+   "Jordan Walsh",
+   "Jayson Tatum",
+   "Paul George",
+   "Neemias Queta"
+  ],
+  "jumper": "Neemias Queta"
+ },
+ "NY": {
+  "five": [
+   "Jalen Brunson",
+   "Mikal Bridges",
+   "Josh Hart",
+   "OG Anunoby",
+   "Karl-Anthony Towns"
+  ],
+  "jumper": "Karl-Anthony Towns"
+ },
+ "TOR": {
+  "five": [
+   "Immanuel Quickley",
+   "RJ Barrett",
+   "Ja'Kobe Walter",
+   "Scottie Barnes",
+   "Jakob Poeltl"
+  ],
+  "jumper": "Jakob Poeltl"
+ },
+ "HOU": {
+  "five": [
+   "Amen Thompson",
+   "Reed Sheppard",
+   "Kevin Durant",
+   "Jabari Smith Jr.",
+   "Alperen Sengun"
+  ],
+  "jumper": "Alperen Sengun"
+ },
+ "WSH": {
+  "five": [
+   "Trae Young",
+   "Kyshawn George",
+   "AJ Dybantsa",
+   "Anthony Davis",
+   "Alex Sarr"
+  ],
+  "jumper": "Anthony Davis"
+ },
+ "ATL": {
+  "five": [
+   "CJ McCollum",
+   "Nickeil Alexander-Walker",
+   "Dyson Daniels",
+   "Jalen Johnson",
+   "Onyeka Okongwu"
+  ],
+  "jumper": "Onyeka Okongwu"
+ },
+ "MIL": {
+  "five": [
+   "Brayden Burries",
+   "Tyler Herro",
+   "Jaime Jaquez Jr.",
+   "Kyle Kuzma",
+   "Myles Turner"
+  ],
+  "jumper": "Myles Turner"
+ },
+ "OKC": {
+  "five": [
+   "Shai Gilgeous-Alexander",
+   "Jared McCain",
+   "Ajay Mitchell",
+   "Aday Mara",
+   "Isaiah Hartenstein"
+  ],
+  "jumper": "Aday Mara"
+ },
+ "SAC": {
+  "five": [
+   "Darius Acuff Jr.",
+   "Zach LaVine",
+   "De'Andre Hunter",
+   "Keegan Murray",
+   "Domantas Sabonis"
+  ],
+  "jumper": "Domantas Sabonis"
+ }
+}

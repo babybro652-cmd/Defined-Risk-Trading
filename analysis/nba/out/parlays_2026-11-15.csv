@@ -1,0 +1,85 @@
+legs,picks,games,p,fair,take,stake,void_if_sits,rank,exception
+1,Doncic,LAL @ PHX,0.2476,+304,+385,1.0,,1,
+1,Kessler,LAL @ PHX,0.1537,+551,+681,1.0,,2,
+1,Booker,LAL @ PHX,0.0844,+1085,+1322,1.0,,3,
+1,Lopez,CHA @ LAC,0.1514,+561,+693,1.0,,1,
+1,Garland,CHA @ LAC,0.1432,+598,+738,1.0,,2,
+1,Hachimura,CHA @ LAC,0.1138,+779,+954,1.0,,3,
+1,Wembanyama,SA @ UTAH,0.2605,+284,+361,1.0,,1,
+1,Fox,SA @ UTAH,0.1321,+657,+808,1.0,,2,
+1,Castle,SA @ UTAH,0.1102,+807,+989,1.0,,3,
+1,Okongwu,ATL @ MIL,0.1368,+631,+777,1.0,,1,exc
+1,J. Johnson,ATL @ MIL,0.1121,+792,+970,1.0,,2,exc
+1,Alexander-Walker,ATL @ MIL,0.1118,+794,+973,1.0,,3,exc
+2,Doncic + Lopez,LAL @ PHX | CHA @ LAC,0.03748664,+2568,+3741,0.5,,,
+2,Doncic + Garland,LAL @ PHX | CHA @ LAC,0.03545632,+2720,+3961,0.5,,,
+2,Kessler + Lopez,LAL @ PHX | CHA @ LAC,0.02327018,+4197,+6088,0.5,,,
+2,Kessler + Garland,LAL @ PHX | CHA @ LAC,0.02200984,+4443,+6443,0.5,,,
+2,Doncic + Wembanyama,LAL @ PHX | SA @ UTAH,0.0644998,+1450,+2133,0.5,,,
+2,Doncic + Fox,LAL @ PHX | SA @ UTAH,0.03270796,+2957,+4303,0.5,,,
+2,Kessler + Wembanyama,LAL @ PHX | SA @ UTAH,0.04003885,+2398,+3497,0.5,,,
+2,Kessler + Fox,LAL @ PHX | SA @ UTAH,0.02030377,+4825,+6992,0.5,,,
+2,Doncic + Okongwu,LAL @ PHX | ATL @ MIL,0.03387168,+2852,+4151,0.5,,,exc
+2,Doncic + J. Johnson,LAL @ PHX | ATL @ MIL,0.02775596,+3503,+5088,0.5,,,exc
+2,Kessler + Okongwu,LAL @ PHX | ATL @ MIL,0.02102616,+4656,+6749,0.5,,,exc
+2,Kessler + J. Johnson,LAL @ PHX | ATL @ MIL,0.01722977,+5704,+8258,0.5,,,exc
+2,Lopez + Wembanyama,CHA @ LAC | SA @ UTAH,0.0394397,+2436,+3551,0.5,,,
+2,Lopez + Fox,CHA @ LAC | SA @ UTAH,0.01999994,+4900,+7100,0.5,,,
+2,Garland + Wembanyama,CHA @ LAC | SA @ UTAH,0.0373036,+2581,+3760,0.5,,,
+2,Garland + Fox,CHA @ LAC | SA @ UTAH,0.01891672,+5186,+7512,0.5,,,
+2,Lopez + Okongwu,CHA @ LAC | ATL @ MIL,0.02071152,+4728,+6853,0.5,,,exc
+2,Lopez + J. Johnson,CHA @ LAC | ATL @ MIL,0.01697194,+5792,+8385,0.5,,,exc
+2,Garland + Okongwu,CHA @ LAC | ATL @ MIL,0.01958976,+5005,+7251,0.5,,,exc
+2,Garland + J. Johnson,CHA @ LAC | ATL @ MIL,0.01605272,+6129,+8870,0.5,,,exc
+2,Wembanyama + Okongwu,SA @ UTAH | ATL @ MIL,0.0356364,+2706,+3941,0.5,,,exc
+2,Wembanyama + J. Johnson,SA @ UTAH | ATL @ MIL,0.02920205,+3324,+4831,0.5,,,exc
+2,Fox + Okongwu,SA @ UTAH | ATL @ MIL,0.01807128,+5434,+7868,0.5,,,exc
+2,Fox + J. Johnson,SA @ UTAH | ATL @ MIL,0.01480841,+6653,+9624,0.5,,,exc
+3,Doncic + Lopez + Wembanyama,LAL @ PHX | CHA @ LAC | SA @ UTAH,0.00976527,+10140,+17595,0.1,,,
+3,Doncic + Lopez + Fox,LAL @ PHX | CHA @ LAC | SA @ UTAH,0.00495199,+20094,+34795,0.1,,,
+3,Doncic + Garland + Wembanyama,LAL @ PHX | CHA @ LAC | SA @ UTAH,0.00923637,+10727,+18609,0.1,,,
+3,Doncic + Garland + Fox,LAL @ PHX | CHA @ LAC | SA @ UTAH,0.00468378,+21250,+36793,0.1,,,
+3,Kessler + Lopez + Wembanyama,LAL @ PHX | CHA @ LAC | SA @ UTAH,0.00606188,+16397,+28406,0.1,,,
+3,Kessler + Lopez + Fox,LAL @ PHX | CHA @ LAC | SA @ UTAH,0.00307399,+32431,+56114,0.1,,,
+3,Kessler + Garland + Wembanyama,LAL @ PHX | CHA @ LAC | SA @ UTAH,0.00573356,+17341,+30038,0.1,,,
+3,Kessler + Garland + Fox,LAL @ PHX | CHA @ LAC | SA @ UTAH,0.0029075,+34294,+59333,0.1,,,
+3,Doncic + Lopez + Okongwu,LAL @ PHX | CHA @ LAC | ATL @ MIL,0.00512817,+19400,+33596,0.1,,,exc
+3,Doncic + Lopez + J. Johnson,LAL @ PHX | CHA @ LAC | ATL @ MIL,0.00420225,+23697,+41021,0.1,,,exc
+3,Doncic + Garland + Okongwu,LAL @ PHX | CHA @ LAC | ATL @ MIL,0.00485042,+20517,+35526,0.1,,,exc
+3,Doncic + Garland + J. Johnson,LAL @ PHX | CHA @ LAC | ATL @ MIL,0.00397465,+25059,+43375,0.1,,,exc
+3,Kessler + Lopez + Okongwu,LAL @ PHX | CHA @ LAC | ATL @ MIL,0.00318336,+31313,+54182,0.1,,,exc
+3,Kessler + Lopez + J. Johnson,LAL @ PHX | CHA @ LAC | ATL @ MIL,0.00260859,+38235,+66143,0.1,,,exc
+3,Kessler + Garland + Okongwu,LAL @ PHX | CHA @ LAC | ATL @ MIL,0.00301095,+33112,+57291,0.1,,,exc
+3,Kessler + Garland + J. Johnson,LAL @ PHX | CHA @ LAC | ATL @ MIL,0.0024673,+40430,+69936,0.1,,,exc
+3,Doncic + Wembanyama + Okongwu,LAL @ PHX | SA @ UTAH | ATL @ MIL,0.00882357,+11233,+19484,0.1,,,exc
+3,Doncic + Wembanyama + J. Johnson,LAL @ PHX | SA @ UTAH | ATL @ MIL,0.00723043,+13730,+23799,0.1,,,exc
+3,Doncic + Fox + Okongwu,LAL @ PHX | SA @ UTAH | ATL @ MIL,0.00447445,+22249,+38519,0.1,,,exc
+3,Doncic + Fox + J. Johnson,LAL @ PHX | SA @ UTAH | ATL @ MIL,0.00366656,+27174,+47029,0.1,,,exc
+3,Kessler + Wembanyama + Okongwu,LAL @ PHX | SA @ UTAH | ATL @ MIL,0.00547731,+18157,+31448,0.1,,,exc
+3,Kessler + Wembanyama + J. Johnson,LAL @ PHX | SA @ UTAH | ATL @ MIL,0.00448836,+22180,+38400,0.1,,,exc
+3,Kessler + Fox + Okongwu,LAL @ PHX | SA @ UTAH | ATL @ MIL,0.00277756,+35903,+62113,0.1,,,exc
+3,Kessler + Fox + J. Johnson,LAL @ PHX | SA @ UTAH | ATL @ MIL,0.00227605,+43836,+75821,0.1,,,exc
+3,Lopez + Wembanyama + Okongwu,CHA @ LAC | SA @ UTAH | ATL @ MIL,0.00539535,+18434,+31928,0.1,,,exc
+3,Lopez + Wembanyama + J. Johnson,CHA @ LAC | SA @ UTAH | ATL @ MIL,0.00442119,+22518,+38984,0.1,,,exc
+3,Lopez + Fox + Okongwu,CHA @ LAC | SA @ UTAH | ATL @ MIL,0.00273599,+36450,+63058,0.1,,,exc
+3,Lopez + Fox + J. Johnson,CHA @ LAC | SA @ UTAH | ATL @ MIL,0.00224199,+44503,+76974,0.1,,,exc
+3,Garland + Wembanyama + Okongwu,CHA @ LAC | SA @ UTAH | ATL @ MIL,0.00510313,+19496,+33762,0.1,,,exc
+3,Garland + Wembanyama + J. Johnson,CHA @ LAC | SA @ UTAH | ATL @ MIL,0.00418173,+23814,+41223,0.1,,,exc
+3,Garland + Fox + Okongwu,CHA @ LAC | SA @ UTAH | ATL @ MIL,0.00258781,+38543,+66675,0.1,,,exc
+3,Garland + Fox + J. Johnson,CHA @ LAC | SA @ UTAH | ATL @ MIL,0.00212056,+47057,+81388,0.1,,,exc
+4,Doncic + Lopez + Wembanyama + Okongwu,LAL @ PHX | CHA @ LAC | SA @ UTAH | ATL @ MIL,0.00133589,+74757,+155122,0.1,,,exc
+4,Doncic + Lopez + Wembanyama + J. Johnson,LAL @ PHX | CHA @ LAC | SA @ UTAH | ATL @ MIL,0.00109469,+91250,+189324,0.1,,,exc
+4,Doncic + Lopez + Fox + Okongwu,LAL @ PHX | CHA @ LAC | SA @ UTAH | ATL @ MIL,0.00067743,+147516,+305997,0.1,,,exc
+4,Doncic + Lopez + Fox + J. Johnson,LAL @ PHX | CHA @ LAC | SA @ UTAH | ATL @ MIL,0.00055512,+180042,+373443,0.1,,,exc
+4,Doncic + Garland + Wembanyama + Okongwu,LAL @ PHX | CHA @ LAC | SA @ UTAH | ATL @ MIL,0.00126354,+79043,+164011,0.1,,,exc
+4,Doncic + Garland + Wembanyama + J. Johnson,LAL @ PHX | CHA @ LAC | SA @ UTAH | ATL @ MIL,0.0010354,+96481,+200171,0.1,,,exc
+4,Doncic + Garland + Fox + Okongwu,LAL @ PHX | CHA @ LAC | SA @ UTAH | ATL @ MIL,0.00064074,+155969,+323525,0.1,,,exc
+4,Doncic + Garland + Fox + J. Johnson,LAL @ PHX | CHA @ LAC | SA @ UTAH | ATL @ MIL,0.00052505,+190357,+394833,0.1,,,exc
+4,Kessler + Lopez + Wembanyama + Okongwu,LAL @ PHX | CHA @ LAC | SA @ UTAH | ATL @ MIL,0.00082927,+120489,+249953,0.1,,,exc
+4,Kessler + Lopez + Wembanyama + J. Johnson,LAL @ PHX | CHA @ LAC | SA @ UTAH | ATL @ MIL,0.00067954,+147059,+305049,0.1,,,exc
+4,Kessler + Lopez + Fox + Okongwu,LAL @ PHX | CHA @ LAC | SA @ UTAH | ATL @ MIL,0.00042052,+237700,+493002,0.1,,,exc
+4,Kessler + Lopez + Fox + J. Johnson,LAL @ PHX | CHA @ LAC | SA @ UTAH | ATL @ MIL,0.00034459,+290096,+601651,0.1,,,exc
+4,Kessler + Garland + Wembanyama + Okongwu,LAL @ PHX | CHA @ LAC | SA @ UTAH | ATL @ MIL,0.00078435,+127394,+264271,0.1,,,exc
+4,Kessler + Garland + Wembanyama + J. Johnson,LAL @ PHX | CHA @ LAC | SA @ UTAH | ATL @ MIL,0.00064273,+155486,+322523,0.1,,,exc
+4,Kessler + Garland + Fox + Okongwu,LAL @ PHX | CHA @ LAC | SA @ UTAH | ATL @ MIL,0.00039775,+251317,+521238,0.1,,,exc
+4,Kessler + Garland + Fox + J. Johnson,LAL @ PHX | CHA @ LAC | SA @ UTAH | ATL @ MIL,0.00032593,+306714,+636109,0.1,,,exc
