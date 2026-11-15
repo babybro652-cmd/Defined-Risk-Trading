@@ -531,6 +531,8 @@ Paired LL deltas on test (SE): kfg_w 1000 -.0000 (.0002), mk_w 10 -.0009 (.0021)
 
 - 11/15 12 PM: StarTool (9 cards), Tip-off Projections, @NBAFirstBasket tip and first basket cheat sheets logged (`out/startool/2026-11-15.md`, `out/cheatsheet/2026-11-15.md`, star_bomb.txt, tipproj/fbsheet logs, ST_TIP / ST_PCT_1115 / SH_TIP in the scorecard). RotoWire 12:03 PM rerun: Nembhard OUT (Quenton Jackson starts), PHI Jabari Walker for Wade (LeBron still jumps), UTAH Okogie and Mo Bamba (Bamba jumps, SA tip 89%), Gafford Q but back in DAL's five (DAL @ BOS flips to BOS 57%, game pick Tatum), BOS Scheierman for Walsh. Play-list picks unchanged; SA prices moved (Wembanyama +295, Fox +677, Castle +831); Bets E1214-E1242 and E1269-E1346 rewritten, play list and CSV regenerated. NBA tab NOT re-pushed after the rerun (still the 10:10 build). Source tip disagreements on play-list games: StarTool has CHA 54 (all others LAC 63-73) and MIL 53 (others ATL 58-65).
 
+- 11/15 3:25 PM recheck (NBA report 3 PM, ESPN, RotoWire) for the play-list games: no starter or jumper changes; Fox Q (left hip tightness) but in RotoWire's five, so Fox rows (Bets E1236, E1270, 26 parlays) marked void if he sits, `void_if_sits` set in the CSV, Fox legs tagged (Q) in the play list and solid parlays list. Landale (ATL) and Rollins (MIL) Q, bench. No model rerun.
+
 ## Tim vs model log (first basket)
 
 Tim's picks come from his own read of the StarTool card (not just its star), so the Tim column tests how he uses StarTool's data; the StarTool column is its star/bomb as printed.
