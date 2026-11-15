@@ -533,6 +533,8 @@ Paired LL deltas on test (SE): kfg_w 1000 -.0000 (.0002), mk_w 10 -.0009 (.0021)
 
 - 11/15 3:25 PM recheck (NBA report 3 PM, ESPN, RotoWire) for the play-list games: no starter or jumper changes; Fox Q (left hip tightness) but in RotoWire's five, so Fox rows (Bets E1236, E1270, 26 parlays) marked void if he sits, `void_if_sits` set in the CSV, Fox legs tagged (Q) in the play list and solid parlays list. Landale (ATL) and Rollins (MIL) Q, bench. No model rerun.
 
+- 11/15 4:40 PM: Fox OUT (RotoWire, Tim's FanDuel board has no Fox); Julian Champagnie starts. SA rerun: Wembanyama 27.6% (+263), Castle 11.6% (+761) moves to #2, Vassell 10.5% (+850) new #3; SA tip 89%. Bets E1217, E1235-E1236, E1269-E1346 rewritten (Fox legs now Castle, void notes cleared), F1269-F1271 = FanDuel 3:38 PM prices (+300, +650, +700; Castle and Vassell below fair). Play list, CSV and solid parlays regenerated; SA@UTAH solid again.
+
 ## Tim vs model log (first basket)
 
 Tim's picks come from his own read of the StarTool card (not just its star), so the Tim column tests how he uses StarTool's data; the StarTool column is its star/bomb as printed.

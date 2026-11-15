@@ -187,20 +187,20 @@
    "note": "45 starts"
   },
   {
-   "player": "De'Aaron Fox",
-   "team": "SA",
-   "game": "SA @ UTAH",
-   "market": "3+ threes",
-   "p": 0.179,
-   "note": "86 starts"
-  },
-  {
    "player": "Stephon Castle",
    "team": "SA",
    "game": "SA @ UTAH",
    "market": "3+ threes",
    "p": 0.234,
    "note": "81 starts"
+  },
+  {
+   "player": "Julian Champagnie",
+   "team": "SA",
+   "game": "SA @ UTAH",
+   "market": "3+ threes",
+   "p": 0.473,
+   "note": "70 starts"
   },
   {
    "player": "Devin Vassell",

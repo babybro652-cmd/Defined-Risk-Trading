@@ -2,7 +2,7 @@
 
 Tip winner scores first 66% (25-26).
 
-- **First basket: Victor Wembanyama** (SA @ UTAH 5:00). Est 25% (fair +295; old model 26%; tip jumper x1.2 if his team wins the tip; chain model): SA scores first 67%; first pts 24/57 and first shot 22/57 starts 25-26, 5/13 26-27, first 3 FGA 1.01 per start, FG 52%; UTAH vs F x0.88
+- **First basket: Victor Wembanyama** (SA @ UTAH 5:00). Est 28% (fair +263; old model 26%; tip jumper x1.2 if his team wins the tip; chain model): SA scores first 67%; first pts 24/57 and first shot 22/57 starts 25-26, 5/13 26-27, first 3 FGA 1.01 per start, FG 52%; UTAH vs F x0.88; De'Aaron Fox out (30% share spread to the rest)
 - **First basket: Luka Doncic** (LAL @ PHX 4:00). Est 25% (fair +304; old model 23%; chain model): LAL scores first 62%; first pts 22/65 and first shot 33/65 starts 25-26, 6/11 26-27, first 3 FGA 1.08 per start, FG 48%; PHX vs G x1.06
 - **First basket: Anthony Davis** (WSH vs HOU 7:00). Est 18% (fair +463; old model 14%; tip jumper x1.2 if his team wins the tip; chain model): WSH scores first 52%; first pts 5/20 and first shot 7/20 starts 25-26, 3/11 26-27, first 3 FGA 0.94 per start, FG 51%; HOU vs F x0.92
 - **First basket: Alperen Sengun** (HOU @ WSH 7:00). Est 16% (fair +538; old model 13%; tip jumper x1.2 if his team wins the tip; chain model): HOU scores first 48%; first pts 20/72 and first shot 23/72 starts 25-26, 3/11 26-27, first 3 FGA 0.87 per start, FG 52%; WSH vs C x1.15
@@ -10,8 +10,8 @@ Tip winner scores first 66% (25-26).
 - **First basket: Brook Lopez** (LAC vs CHA 4:30). Est 15% (fair +560; old model 13%; tip jumper x1.2 if his team wins the tip; chain model): LAC scores first 58%; first pts 10/40 and first shot 12/40 starts 25-26, 0/5 26-27, first 3 FGA 0.76 per start, FG 48%; CHA vs C x1.08
 - **First basket: Jayson Tatum** (BOS vs DAL 6:00). Est 15% (fair +587; old model 17%; chain model): BOS scores first 53%; first pts 2/16 and first shot 2/16 starts 25-26, 5/11 26-27, first 3 FGA 0.67 per start, FG 42%; DAL vs F x1.03
 - **First basket: Darius Garland** (LAC vs CHA 4:30). Est 14% (fair +598; old model 11%; chain model): LAC scores first 58%; first pts 5/43 and first shot 9/43 starts 25-26, 3/11 26-27, first 3 FGA 0.70 per start, FG 46%; CHA vs G x0.94
+- **Team first basket: Victor Wembanyama** (SA @ UTAH). Model share of SA's first points 41% (old 39%); raw 25-26 24/57, first shot 22/57, FG 52%; De'Aaron Fox out (30% share spread to the rest)
 - **Team first basket: Luka Doncic** (LAL @ PHX). Model share of LAL's first points 40% (old 37%); raw 25-26 22/65, first shot 33/65, FG 48%
-- **Team first basket: Victor Wembanyama** (SA @ UTAH). Model share of SA's first points 38% (old 39%); raw 25-26 24/57, first shot 22/57, FG 52%
 - **Team first basket: Anthony Davis** (WSH vs HOU). Model share of WSH's first points 34% (old 27%); raw 25-26 5/20, first shot 7/20, FG 51%
 - **Team first basket: Alperen Sengun** (HOU @ WSH). Model share of HOU's first points 33% (old 27%); raw 25-26 20/72, first shot 23/72, FG 52%
 - **Over 2.5 threes: Luka Doncic** (LAL @ PHX). Over 2.5 in 83% of starts (blend); last 5 starts 25-26: 1 6 5 4 3; fair -476 is shorter than -300, so take over 3.5 instead (64%, fair -180)
@@ -35,8 +35,8 @@ Tip winner scores first 66% (25-26).
   - LAC: 1st-shot pick Darius Garland 14% (fair +598; scores on LAC's first shot 12%); 2nd-chance pick Brook Lopez 15% (fair +560; after a miss 13%)
   - CHA: 1st-shot pick Grayson Allen 9% (fair +1039; scores on CHA's first shot 10%); 2nd-chance pick Brandon Miller 9% (fair +1060; after a miss 12%)
 - SA @ UTAH 5:00: tip SA 89% (Victor Wembanyama vs Mo Bamba); SA scores first 67%
-  - SA: 1st-shot pick Victor Wembanyama 25% (fair +295; scores on SA's first shot 15%); 2nd-chance pick De'Aaron Fox 13% (fair +677; after a miss 9%)
-  - UTAH: 1st-shot pick Ace Bailey 9% (fair +1073; scores on UTAH's first shot 12%); 2nd-chance pick Mo Bamba 8% (fair +1229; after a miss 13%)
+  - SA: 1st-shot pick Victor Wembanyama 28% (fair +263; scores on SA's first shot 17%); 2nd-chance pick Devin Vassell 11% (fair +849; after a miss 9%)
+  - UTAH: 1st-shot pick Ace Bailey 9% (fair +1055; scores on UTAH's first shot 12%); 2nd-chance pick Mo Bamba 8% (fair +1208; after a miss 13%)
 - DAL @ BOS 6:00: tip BOS 57% (Daniel Gafford vs Neemias Queta); DAL scores first 47%
   - BOS: 1st-shot pick Jayson Tatum 15% (fair +587; scores on BOS's first shot 14%); 2nd-chance pick Neemias Queta 12% (fair +729; after a miss 14%)
   - DAL: 1st-shot pick Cooper Flagg 13% (fair +664; scores on DAL's first shot 14%); 2nd-chance pick Daniel Gafford 10% (fair +877; after a miss 13%)
@@ -61,7 +61,7 @@ Dunk/layup includes tip-ins and putbacks; 2pt jumper includes floaters and hooks
 - IND @ PHI 1:00: first points Dunk/layup 41% (+145), 2pt jumper 23% (+327), 3-pointer 25% (+307), Free throw 11% (+798); first basket Dunk/layup 45% (+122), 2pt jumper 24% (+317), 3-pointer 31% (+223)
 - LAL @ PHX 4:00: first points Dunk/layup 28% (+260), 2pt jumper 33% (+203), 3-pointer 31% (+222), Free throw 8% (+1120); first basket Dunk/layup 31% (+225), 2pt jumper 35% (+183), 3-pointer 34% (+194)
 - CHA @ LAC 4:30: first points Dunk/layup 37% (+171), 2pt jumper 28% (+255), 3-pointer 27% (+270), Free throw 8% (+1158); first basket Dunk/layup 40% (+152), 2pt jumper 29% (+240), 3-pointer 31% (+223)
-- SA @ UTAH 5:00: first points Dunk/layup 31% (+219), 2pt jumper 30% (+232), 3-pointer 25% (+294), Free throw 13% (+665); first basket Dunk/layup 36% (+179), 2pt jumper 33% (+202), 3-pointer 31% (+223)
+- SA @ UTAH 5:00: first points Dunk/layup 31% (+219), 2pt jumper 30% (+232), 3-pointer 25% (+294), Free throw 13% (+666); first basket Dunk/layup 36% (+178), 2pt jumper 33% (+202), 3-pointer 31% (+223)
 - DAL @ BOS 6:00: first points Dunk/layup 33% (+206), 2pt jumper 28% (+254), 3-pointer 29% (+241), Free throw 10% (+932); first basket Dunk/layup 36% (+177), 2pt jumper 30% (+234), 3-pointer 34% (+194)
 - NY @ TOR 6:00: first points Dunk/layup 35% (+188), 2pt jumper 24% (+312), 3-pointer 32% (+212), Free throw 9% (+1007); first basket Dunk/layup 38% (+166), 2pt jumper 26% (+288), 3-pointer 37% (+173)
 - HOU @ WSH 7:00: first points Dunk/layup 33% (+201), 2pt jumper 31% (+218), 3-pointer 29% (+249), Free throw 7% (+1397); first basket Dunk/layup 36% (+177), 2pt jumper 33% (+199), 3-pointer 30% (+229)
@@ -70,7 +70,7 @@ Dunk/layup includes tip-ins and putbacks; 2pt jumper includes floaters and hooks
 
 Best player + method (fair price; bet only if the book pays more):
 
-- **Victor Wembanyama first basket: Dunk/layup** (SA @ UTAH 5:00). Est 14.3% (fair +599) = FB 25% x 56% if he scores first; his first-FG sample 39, made FGs 981
+- **Victor Wembanyama first basket: Dunk/layup** (SA @ UTAH 5:00). Est 15.6% (fair +542) = FB 28% x 56% if he scores first; his first-FG sample 39, made FGs 981
 - **Walker Kessler first basket: Dunk/layup** (LAL @ PHX 4:00). Est 13.9% (fair +617) = FB 15% x 91% if he scores first; his first-FG sample 4, made FGs 269
 - **Luka Doncic first basket: 2pt jumper** (LAL @ PHX 4:00). Est 13.6% (fair +635) = FB 25% x 55% if he scores first; his first-FG sample 38, made FGs 1087
 - **Domantas Sabonis first basket: Dunk/layup** (SAC vs OKC 9:00). Est 10.0% (fair +905) = FB 13% x 75% if he scores first; his first-FG sample 15, made FGs 312
@@ -81,7 +81,15 @@ Best player + method (fair price; bet only if the book pays more):
 
 ## StarTool check (side by side, no blend)
 
-- No StarTool cards saved for this slate yet. Add lines to out/startool/star_bomb.txt (date|AWAY @ HOME|star,star|bomb,bomb) and rerun.
+- IND @ PHI: our top Jaylen Brown (14%): agree (StarTool bomb)
+- LAL @ PHX: our top Luka Doncic (25%): agree (StarTool star)
+- CHA @ LAC: our top Brook Lopez (15%): differs (StarTool stars Brandon Miller, Darius Garland; bombs Coby White, Rui Hachimura)
+- SA @ UTAH: our top Victor Wembanyama (28%): agree (StarTool star)
+- DAL @ BOS: our top Jayson Tatum (15%): agree (StarTool star)
+- NY @ TOR: our top Scottie Barnes (14%): differs (StarTool stars Jalen Brunson, RJ Barrett; bombs Karl-Anthony Towns, Immanuel Quickley)
+- HOU @ WSH: our top Anthony Davis (18%): agree (StarTool star)
+- ATL @ MIL: our top Onyeka Okongwu (14%): differs (StarTool stars Jalen Johnson, Tyler Herro; bombs Nickeil Alexander-Walker, Jaime Jaquez Jr.)
+- OKC @ SAC: our top Domantas Sabonis (13%): differs (StarTool stars Shai Gilgeous-Alexander, Darius Acuff Jr.; bombs Ajay Mitchell, Zach LaVine)
 
 ## Tip-off
 

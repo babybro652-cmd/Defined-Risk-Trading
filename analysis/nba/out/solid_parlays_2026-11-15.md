@@ -1,11 +1,11 @@
 # Solid 2-leg and 3-leg parlays, Sun 11/15
-3:25 PM recheck (NBA report 3 PM, ESPN, RotoWire): Fox questionable (left hip), still in RotoWire's five. Fox legs void if he sits; place them close to tip or skip. No other play-list changes.
 
-Solid = both our #1 and #2 are starting and not on any injury report (ESPN checked 12:30 PM, RotoWire 12:03 PM).
+Solid = both our #1 and #2 are starting and not on any injury report (4:40 PM: NBA report 3 PM, ESPN, RotoWire).
+4:40 PM: Fox OUT; Castle replaces him as SA's #2 (healthy), so SA@UTAH is solid again.
 All 4 play-list games qualify:
 - LAL@PHX 4:00: Doncic, Kessler
 - CHA@LAC 4:30: Lopez, Garland
-- SA@UTAH 5:00: Wembanyama, Fox (now Q, 3 PM report: not solid until he is confirmed; Fox legs void if he sits)
+- SA@UTAH 5:00: Wembanyama, Castle
 - ATL@MIL 8:00: Okongwu, J. Johnson
 
 ## 2-leg, $0.50 each (24 = $12.00)
@@ -16,42 +16,42 @@ All 4 play-list games qualify:
 3. [ ] Kessler + Lopez (fair +4,197)
 4. [ ] Kessler + Garland (fair +4,443)
 *LAL@PHX 4:00 + SA@UTAH 5:00*
-5. [ ] Doncic + Wembanyama (fair +1,495)
-6. [ ] Doncic + Fox (Q) (fair +3,038)
-7. [ ] Kessler + Wembanyama (fair +2,470)
-8. [ ] Kessler + Fox (Q) (fair +4,955)
+5. [ ] Doncic + Wembanyama (fair +1,366)
+6. [ ] Doncic + Castle (fair +3,376)
+7. [ ] Kessler + Wembanyama (fair +2,262)
+8. [ ] Kessler + Castle (fair +5,499)
 *LAL@PHX 4:00 + ATL@MIL 8:00*
 9. [ ] Doncic + Okongwu (fair +2,852)
 10. [ ] Doncic + J. Johnson (fair +3,503)
 11. [ ] Kessler + Okongwu (fair +4,656)
 12. [ ] Kessler + J. Johnson (fair +5,704)
 *CHA@LAC 4:30 + SA@UTAH 5:00*
-13. [ ] Lopez + Wembanyama (fair +2,509)
-14. [ ] Lopez + Fox (Q) (fair +5,032)
-15. [ ] Garland + Wembanyama (fair +2,658)
-16. [ ] Garland + Fox (Q) (fair +5,326)
+13. [ ] Lopez + Wembanyama (fair +2,297)
+14. [ ] Lopez + Castle (fair +5,584)
+15. [ ] Garland + Wembanyama (fair +2,435)
+16. [ ] Garland + Castle (fair +5,910)
 *CHA@LAC 4:30 + ATL@MIL 8:00*
 17. [ ] Lopez + Okongwu (fair +4,728)
 18. [ ] Lopez + J. Johnson (fair +5,792)
 19. [ ] Garland + Okongwu (fair +5,005)
 20. [ ] Garland + J. Johnson (fair +6,129)
 *SA@UTAH 5:00 + ATL@MIL 8:00*
-21. [ ] Wembanyama + Okongwu (fair +2,787)
-22. [ ] Wembanyama + J. Johnson (fair +3,423)
-23. [ ] Fox (Q) + Okongwu (fair +5,580)
-24. [ ] Fox (Q) + J. Johnson (fair +6,831)
+21. [ ] Wembanyama + Okongwu (fair +2,553)
+22. [ ] Wembanyama + J. Johnson (fair +3,138)
+23. [ ] Castle + Okongwu (fair +6,191)
+24. [ ] Castle + J. Johnson (fair +7,577)
 
 ## 3-leg, $0.10 each (32 = $3.20)
 
 *LAL@PHX 4:00 + CHA@LAC 4:30 + SA@UTAH 5:00*
-1. [ ] Doncic + Lopez + Wembanyama (fair +10,436)
-2. [ ] Doncic + Lopez + Fox (Q) (fair +20,627)
-3. [ ] Doncic + Garland + Wembanyama (fair +11,039)
-4. [ ] Doncic + Garland + Fox (Q) (fair +21,814)
-5. [ ] Kessler + Lopez + Wembanyama (fair +16,872)
-6. [ ] Kessler + Lopez + Fox (Q) (fair +33,290)
-7. [ ] Kessler + Garland + Wembanyama (fair +17,844)
-8. [ ] Kessler + Garland + Fox (Q) (fair +35,202)
+1. [ ] Doncic + Lopez + Wembanyama (fair +9,583)
+2. [ ] Doncic + Lopez + Castle (fair +22,857)
+3. [ ] Doncic + Garland + Wembanyama (fair +10,137)
+4. [ ] Doncic + Garland + Castle (fair +24,172)
+5. [ ] Kessler + Lopez + Wembanyama (fair +15,498)
+6. [ ] Kessler + Lopez + Castle (fair +36,882)
+7. [ ] Kessler + Garland + Wembanyama (fair +16,392)
+8. [ ] Kessler + Garland + Castle (fair +39,000)
 *LAL@PHX 4:00 + CHA@LAC 4:30 + ATL@MIL 8:00*
 9. [ ] Doncic + Lopez + Okongwu (fair +19,400)
 10. [ ] Doncic + Lopez + J. Johnson (fair +23,697)
@@ -62,21 +62,20 @@ All 4 play-list games qualify:
 15. [ ] Kessler + Garland + Okongwu (fair +33,112)
 16. [ ] Kessler + Garland + J. Johnson (fair +40,430)
 *LAL@PHX 4:00 + SA@UTAH 5:00 + ATL@MIL 8:00*
-17. [ ] Doncic + Wembanyama + Okongwu (fair +11,560)
-18. [ ] Doncic + Wembanyama + J. Johnson (fair +14,129)
-19. [ ] Doncic + Fox (Q) + Okongwu (fair +22,840)
-20. [ ] Doncic + Fox (Q) + J. Johnson (fair +27,894)
-21. [ ] Kessler + Wembanyama + Okongwu (fair +18,683)
-22. [ ] Kessler + Wembanyama + J. Johnson (fair +22,822)
-23. [ ] Kessler + Fox (Q) + Okongwu (fair +36,854)
-24. [ ] Kessler + Fox (Q) + J. Johnson (fair +44,996)
+17. [ ] Doncic + Wembanyama + Okongwu (fair +10,616)
+18. [ ] Doncic + Wembanyama + J. Johnson (fair +12,977)
+19. [ ] Doncic + Castle + Okongwu (fair +25,307)
+20. [ ] Doncic + Castle + J. Johnson (fair +30,905)
+21. [ ] Kessler + Wembanyama + Okongwu (fair +17,163)
+22. [ ] Kessler + Wembanyama + J. Johnson (fair +20,967)
+23. [ ] Kessler + Castle + Okongwu (fair +40,829)
+24. [ ] Kessler + Castle + J. Johnson (fair +49,848)
 *CHA@LAC 4:30 + SA@UTAH 5:00 + ATL@MIL 8:00*
-25. [ ] Lopez + Wembanyama + Okongwu (fair +18,969)
-26. [ ] Lopez + Wembanyama + J. Johnson (fair +23,170)
-27. [ ] Lopez + Fox (Q) + Okongwu (fair +37,415)
-28. [ ] Lopez + Fox (Q) + J. Johnson (fair +45,681)
-29. [ ] Garland + Wembanyama + Okongwu (fair +20,061)
-30. [ ] Garland + Wembanyama + J. Johnson (fair +24,503)
-31. [ ] Garland + Fox (Q) + Okongwu (fair +39,564)
-32. [ ] Garland + Fox (Q) + J. Johnson (fair +48,303)
-
+25. [ ] Lopez + Wembanyama + Okongwu (fair +17,425)
+26. [ ] Lopez + Wembanyama + J. Johnson (fair +21,287)
+27. [ ] Lopez + Castle + Okongwu (fair +41,451)
+28. [ ] Lopez + Castle + J. Johnson (fair +50,606)
+29. [ ] Garland + Wembanyama + Okongwu (fair +18,429)
+30. [ ] Garland + Wembanyama + J. Johnson (fair +22,512)
+31. [ ] Garland + Castle + Okongwu (fair +43,830)
+32. [ ] Garland + Castle + J. Johnson (fair +53,510)
