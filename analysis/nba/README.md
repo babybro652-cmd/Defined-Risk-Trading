@@ -535,6 +535,8 @@ Paired LL deltas on test (SE): kfg_w 1000 -.0000 (.0002), mk_w 10 -.0009 (.0021)
 
 - 11/15 4:40 PM: Fox OUT (RotoWire, Tim's FanDuel board has no Fox); Julian Champagnie starts. SA rerun: Wembanyama 27.6% (+263), Castle 11.6% (+761) moves to #2, Vassell 10.5% (+850) new #3; SA tip 89%. Bets E1217, E1235-E1236, E1269-E1346 rewritten (Fox legs now Castle, void notes cleared), F1269-F1271 = FanDuel 3:38 PM prices (+300, +650, +700; Castle and Vassell below fair). Play list, CSV and solid parlays regenerated; SA@UTAH solid again.
 
+- 11/15 5:18 PM rerun (ESPN 4:17 PM, RotoWire): Kyrie OUT on RotoWire (ESPN day-to-day), replacement not posted, Walter Clayton Jr. used as estimate; Gafford probable, jumps. Barnes OUT, Murray-Boyles starts. Sarr off the report. Ajay Mitchell Q. Game picks unchanged (Tatum +582, Barrett +638, Davis +463, Sabonis +656); team #2 changes: DAL Gafford for Kyrie (E1240), TOR Murray-Boyles for Poeltl (E1246). Tips unchanged, so none of the 4 games qualifies for the play list (no 70%, exception hit rates unchanged). NBA tab rows 29-37 (tip table) updated.
+
 ## Tim vs model log (first basket)
 
 Tim's picks come from his own read of the StarTool card (not just its star), so the Tim column tests how he uses StarTool's data; the StarTool column is its star/bomb as printed.
