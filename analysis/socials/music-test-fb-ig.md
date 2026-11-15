@@ -19,3 +19,5 @@ return no views (a sync gap, not zero).
 | 2026-11-13 | 12:30 PM | Instagram reel | 6885328 | Education text cards + drawn diagram (overnight high sweep vs hold) | music | soft_as_a_dry_pillow | | |
 | 2026-11-14 | 5:00 PM | Facebook reel | 6946234 | Education text cards + graphic (prop firm math, 4 pt stop vs $2,000 drawdown) | music | cliff_road_chill | | |
 | 2026-11-14 | 7:15 PM | Instagram reel | 6946302 | Education text cards + graphic (prop firm math, 4 pt stop vs $2,000 drawdown) | music | cliff_road_chill | | |
+| 2026-11-15 | 12:30 PM | Instagram reel | 6971780 | Education text cards + drawn diagram (equal highs, sweep vs breakout) | music | traveling_in_your_mind | | |
+| 2026-11-15 | 5:00 PM | Facebook reel | 6971781 | Lifestyle text cards (night review after son's bedtime) | music | waiting_tttt | | |
