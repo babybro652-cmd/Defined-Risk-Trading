@@ -17,3 +17,4 @@ Balance snapshots from Tim's FanDuel screenshots. Newest at the bottom. Deposits
 | 11/15/26 | 12:02 PM | $66.52 | after placing the 11/15 NFL bets (11 x $1.00: 4 anytime TDs, 4-leg SGP+, 4 first TDs, 4-leg first TD parlay, Gibbs 2+ TDs live) and CBB Memphis +8.5 ($1.00), plus $0.18 Bet Protect+ on 6 slips |
 | 11/15/26 | 3:52 PM | $42.48 | after IND@PHI first basket (Maxey/Brown/Zubac, $5 each, placed 12:10 PM; Maxey +700 won, $40 return) and early 11/15 settlements |
 | 11/15/26 | 3:53 PM | $44.11 | +$1.63 vs 3:52 PM; likely a settled win credited between the two |
+| 11/15/26 | 3:55 PM | $44.11 | after placing LAL@PHX first basket straights ($30: Doncic +350, Kessler +650, Booker +650, $10 each, placed 3:46 PM; Bets rows 1263-1265) |
