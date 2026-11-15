@@ -112,6 +112,7 @@ Rule from here (Tim to confirm): TD bets on RBs/goal-line QBs only; WR/TE TDs on
 
 ## College basketball (Tim, 11/14: big games only)
 - Routine "CBB big games only" runs daily 8:43 AM ET and skips days with none; method in `analysis/ncaab/README.md`.
+- Tim, 11/15: sides and totals only. No player props on CBB.
 - Big game: Top 25 vs Top 25 or a power-conference team, or a national TV game. ESPN+ does not count.
 - ESPN BPI win % to fair spread (sd 11), compare with the line; lean at a 3+ point gap, max 4 games. Skip unresolved key injuries.
 - Early season (until mid-December): small stakes, gaps are leans. Props: points and threes only, where FanDuel likely lists them.
