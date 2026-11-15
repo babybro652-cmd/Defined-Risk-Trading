@@ -70,6 +70,12 @@ Include the first shot and first score for each game in the grading message to T
    `out/play_list_<date>.md` in game (tip time) order with the filter applied: per game the tip side and %, the
    three straights with fair, then the parlays; log only those rows. If a lineup change moves a game across 70%,
    rebuild the list. Rows dropped after logging stay in Bets with Placed "Dropped", stake 0, and a note.
+   Model-accuracy exception (Tim, 11/15): a game under 70% tip is ALSO played if our model has been good at the
+   picks for that matchup. Test from our logs (top3_log.csv, first_events, Bets grading), season to date: for EACH
+   team in the game, how often the team's first scorer was in our team top 2 (need 5+ graded games for the team).
+   Include the game if both teams are at 55%+ (season average is about 48%), or if one team is 65%+ and the other is
+   at least average. Show the reason on the play list ("tip 66%, model hit CHI 6/9, MIN 5/8"). Track these
+   exception games separately in grading (top-3 coverage and P&L) so we can see if the exception pays.
 
 Grading (nightly): add the date to `COMMITS` in `analysis/reports/source_scorecard.py` (commit of the final
 fb_candidates for that slate), run `python3 analysis/reports/top3_coverage.py <date>` and report top-3 coverage:

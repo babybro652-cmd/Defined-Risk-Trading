@@ -53,6 +53,9 @@ chats, so read the files below that the task touches before acting.
 - Tip-edge filter (Tim, 11/14 evening): he only plays games where our tip edge is 70%+. In those games, the top 2 per
   game go in parlays and the top 3 per game are $1 straights; other games are skipped. The morning refresh builds the
   play list in game order with this filter (`analysis/nba/README.md`, Refresh step 4).
+- Model-accuracy exception (Tim, 11/15): also play games under 70% tip where our team top-2 first-scorer hit rate is
+  55%+ for both teams (5+ graded games each), or 65%+ for one and average for the other. Details and tracking in
+  `analysis/nba/README.md`, Refresh step 4.
 - -300 rule: skip any prop priced shorter than about -300; offer the next line up (25+ points, 3+ threes, 3+ SOG).
 - NHL anytime goal: our chance = 0.77 x blend (calibrated 10/30); bet only at +150 or longer.
 - UCL / soccer (calibrated 11/4, `analysis/ucl/README.md`): log the shortlist's Est % and Fair, not raw rates.
