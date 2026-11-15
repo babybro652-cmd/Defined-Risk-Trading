@@ -27,3 +27,4 @@ Tim, 11/14/26: college picks are CFB every Saturday and CBB big games only. Rout
 
 ## Log
 - 11/14/26: first slate. Thin Saturday (football day, no Big Ten games). Two big games: LSU @ #14 Gonzaga, Colorado @ Providence (Peacock).
+- 11/15/26: 11/14 went 2-3 (sides 0-2, props 2-1). Six big games checked; only Louisville @ Memphis reached a 3-point gap (Memphis +8.5). Three props.
