@@ -18,3 +18,4 @@ Balance snapshots from Tim's FanDuel screenshots. Newest at the bottom. Deposits
 | 11/15/26 | 3:52 PM | $42.48 | after IND@PHI first basket (Maxey/Brown/Zubac, $5 each, placed 12:10 PM; Maxey +700 won, $40 return) and early 11/15 settlements |
 | 11/15/26 | 3:53 PM | $44.11 | +$1.63 vs 3:52 PM; likely a settled win credited between the two |
 | 11/15/26 | 3:55 PM | $44.11 | after placing LAL@PHX first basket straights ($30: Doncic +350, Kessler +650, Booker +650, $10 each, placed 3:46 PM; Bets rows 1263-1265) |
+| 11/15/26 | 4:15 PM | $44.11 | after placing CHA@LAC first basket straights ($45: Lopez +650, Garland +490, Hachimura +600, $15 each, placed 4:14 PM; Bets rows 1266-1268). Doncic +350 win ($45 return) may not have posted yet |
