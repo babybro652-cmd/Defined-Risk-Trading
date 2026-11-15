@@ -15,3 +15,5 @@ Balance snapshots from Tim's FanDuel screenshots. Newest at the bottom. Deposits
 | 11/14/26 | ~4:30 PM | $82.18 | after the 11/14 college bets (15 x $0.10). Planned tonight: NBA first-basket full set $49.20 (10 straights $1, 40 2-leg $0.50, 80 3-leg + 80 4-leg + 32 5-leg $0.10). Separate: $2.08 on Fliff, 2-leg parlays only there |
 | 11/15/26 | morning | $78.70 | after the 11/14 bets settled. Pikkit shows the night at -$4.28. Only slip sent so far: M. Thomas + LaMelo 2-leg first basket +4100, $0.50, returned $21.00 (Bets row 996) |
 | 11/15/26 | 12:02 PM | $66.52 | after placing the 11/15 NFL bets (11 x $1.00: 4 anytime TDs, 4-leg SGP+, 4 first TDs, 4-leg first TD parlay, Gibbs 2+ TDs live) and CBB Memphis +8.5 ($1.00), plus $0.18 Bet Protect+ on 6 slips |
+| 11/15/26 | 3:52 PM | $42.48 | after IND@PHI first basket (Maxey/Brown/Zubac, $5 each, placed 12:10 PM; Maxey +700 won, $40 return) and early 11/15 settlements |
+| 11/15/26 | 3:53 PM | $44.11 | +$1.63 vs 3:52 PM; likely a settled win credited between the two |
