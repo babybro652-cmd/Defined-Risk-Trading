@@ -44,7 +44,7 @@ Newest decisions win; move finished items to Done with the date.
 - [ ] FUTURE: position-tool boxes on CRT Pro (after hit rate improves).
 
 ### Peace by Page (Ventures)
-- [ ] KDP: proofs ordered and shipped 11/12. When they arrive: check print (gray accents readable), then Publish. Setup steps: ventures/calm-pages/kdp-setup-steps.md.
+- [ ] KDP: proofs arrived 11/16 and look good (bigger than expected: 8.5 x 11 in). Next: Publish in KDP (Bookshelf > Edit paperback content > Rights & Pricing > Publish). Steps: ventures/calm-pages/kdp-setup-steps.md.
 - [ ] 12/31 checkpoint: under 10 paid orders by 12/31 = maintenance mode.
 - [ ] Content plan written (ventures/calm-pages/content-plan-2026-11.md). Tim: OK it so Jarvis schedules week 1; record clips A-D (20 min, phone overhead).
 - [ ] IG link in bio → payhip.com/PeaceByPage (Tim checks in app; Jarvis can't see bios). TikTok: bio text only.
