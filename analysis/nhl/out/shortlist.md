@@ -31,7 +31,6 @@ Only categories that beat their price season to date: NBA 3+ threes, NHL 3+ SOG,
 - **2-leg #1:** Luka Doncic 3+ threes (83%, LAL @ PHX) + Reed Sheppard 3+ threes (67%, HOU @ WSH). Fair -123 (55%); take -101 or longer.
 - **2-leg #2:** Luka Doncic 3+ threes (83%, LAL @ PHX) + Brandon Miller 3+ threes (63%, CHA @ LAC). Fair -109 (52%); take +110 or longer.
 - **2-leg #3:** Reed Sheppard 3+ threes (67%, HOU @ WSH) + Brandon Miller 3+ threes (63%, CHA @ LAC). Fair +137 (42%); take +161 or longer.
-- **3-leg #4:** Nickeil Alexander-Walker 3+ threes (63%, ATL @ MIL) + Zach LaVine 3+ threes (59%, OKC @ SAC) + Grayson Allen 3+ threes (58%, CHA @ LAC). Fair +364 (22%); take +411 or longer.
-- **3-leg #5:** Nickeil Alexander-Walker 3+ threes (63%, ATL @ MIL) + Zach LaVine 3+ threes (59%, OKC @ SAC) + Paul George 3+ threes (58%, DAL @ BOS). Fair +365 (21%); take +412 or longer.
+- **3-leg #4:** Nickeil Alexander-Walker 3+ threes (63%, ATL @ MIL) + Grayson Allen 3+ threes (58%, CHA @ LAC) + Paul George 3+ threes (58%, DAL @ BOS). Fair +370 (21%); take +417 or longer.
 
 <!-- parlays:end -->
