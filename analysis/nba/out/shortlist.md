@@ -8,8 +8,8 @@ Tip winner scores first 66% (25-26).
 - **First basket: Alperen Sengun** (HOU @ WSH 7:00). Est 16% (fair +538; old model 13%; tip jumper x1.2 if his team wins the tip; chain model): HOU scores first 48%; first pts 20/72 and first shot 23/72 starts 25-26, 3/11 26-27, first 3 FGA 0.87 per start, FG 52%; WSH vs C x1.15
 - **First basket: Walker Kessler** (LAL @ PHX 4:00). Est 15% (fair +551; old model 7%; tip jumper x1.2 if his team wins the tip; chain model): LAL scores first 62%; first pts 1/5 and first shot 1/5 starts 25-26, 1/13 26-27, first 3 FGA 0.17 per start, FG 62%; PHX vs C x1.09
 - **First basket: Brook Lopez** (LAC vs CHA 4:30). Est 15% (fair +560; old model 13%; tip jumper x1.2 if his team wins the tip; chain model): LAC scores first 58%; first pts 10/40 and first shot 12/40 starts 25-26, 0/5 26-27, first 3 FGA 0.76 per start, FG 48%; CHA vs C x1.08
+- **First basket: Domantas Sabonis** (SAC vs OKC 9:00). Est 15% (fair +564; old model 14%; tip jumper x1.2 if his team wins the tip; chain model): SAC scores first 48%; first pts 4/15 and first shot 5/15 starts 25-26, 5/11 26-27, first 3 FGA 0.69 per start, FG 57%; OKC vs F x0.94; De'Andre Hunter out (25% share spread to the rest)
 - **First basket: Jayson Tatum** (BOS vs DAL 6:00). Est 15% (fair +582; old model 17%; chain model): BOS scores first 53%; first pts 2/16 and first shot 2/16 starts 25-26, 5/11 26-27, first 3 FGA 0.67 per start, FG 42%; DAL vs F x1.03
-- **First basket: Darius Garland** (LAC vs CHA 4:30). Est 14% (fair +598; old model 11%; chain model): LAC scores first 58%; first pts 5/43 and first shot 9/43 starts 25-26, 3/11 26-27, first 3 FGA 0.70 per start, FG 46%; CHA vs G x0.94
 - **Team first basket: Victor Wembanyama** (SA @ UTAH). Model share of SA's first points 41% (old 39%); raw 25-26 24/57, first shot 22/57, FG 52%; De'Aaron Fox out (30% share spread to the rest)
 - **Team first basket: Luka Doncic** (LAL @ PHX). Model share of LAL's first points 40% (old 37%); raw 25-26 22/65, first shot 33/65, FG 48%
 - **Team first basket: Anthony Davis** (WSH vs HOU). Model share of WSH's first points 34% (old 27%); raw 25-26 5/20, first shot 7/20, FG 51%
@@ -50,9 +50,9 @@ Tip winner scores first 66% (25-26).
   - ATL: 1st-shot pick Nickeil Alexander-Walker 11% (fair +794; scores on ATL's first shot 10%); 2nd-chance pick Jalen Johnson 11% (fair +792; after a miss 12%)
   - MIL: 1st-shot pick Brayden Burries 10% (fair +881; scores on MIL's first shot 10%); 2nd-chance pick Tyler Herro 8% (fair +1110; after a miss 12%)
   - overall top: Onyeka Okongwu 14% (fair +631)
-- OKC @ SAC 9:00: tip OKC 57% (Aday Mara vs Domantas Sabonis); OKC scores first 55%
-  - OKC: 1st-shot pick Ajay Mitchell 12% (fair +756; scores on OKC's first shot 11%); 2nd-chance pick Shai Gilgeous-Alexander 11% (fair +788; after a miss 11%)
-  - SAC: 1st-shot pick Domantas Sabonis 13% (fair +656; scores on SAC's first shot 12%); 2nd-chance pick Darius Acuff Jr. 8% (fair +1087; after a miss 12%)
+- OKC @ SAC 9:00: tip OKC 51% (Isaiah Hartenstein vs Domantas Sabonis); OKC scores first 52%
+  - OKC: 1st-shot pick Ajay Mitchell 11% (fair +776; scores on OKC's first shot 11%); 2nd-chance pick Shai Gilgeous-Alexander 11% (fair +808; after a miss 12%)
+  - SAC: 1st-shot pick Domantas Sabonis 15% (fair +564; scores on SAC's first shot 13%); 2nd-chance pick Darius Acuff Jr. 10% (fair +867; after a miss 13%)
 
 ## First basket method
 
@@ -66,14 +66,14 @@ Dunk/layup includes tip-ins and putbacks; 2pt jumper includes floaters and hooks
 - NY @ TOR 6:00: first points Dunk/layup 35% (+188), 2pt jumper 24% (+312), 3-pointer 32% (+212), Free throw 9% (+1008); first basket Dunk/layup 38% (+166), 2pt jumper 26% (+288), 3-pointer 37% (+173)
 - HOU @ WSH 7:00: first points Dunk/layup 33% (+201), 2pt jumper 31% (+218), 3-pointer 29% (+249), Free throw 7% (+1397); first basket Dunk/layup 36% (+177), 2pt jumper 33% (+199), 3-pointer 30% (+229)
 - ATL @ MIL 8:00: first points Dunk/layup 37% (+168), 2pt jumper 24% (+317), 3-pointer 30% (+234), Free throw 9% (+1048); first basket Dunk/layup 41% (+144), 2pt jumper 26% (+283), 3-pointer 33% (+204)
-- OKC @ SAC 9:00: first points Dunk/layup 35% (+187), 2pt jumper 28% (+253), 3-pointer 25% (+303), Free throw 12% (+730); first basket Dunk/layup 39% (+156), 2pt jumper 31% (+225), 3-pointer 30% (+231)
+- OKC @ SAC 9:00: first points Dunk/layup 34% (+191), 2pt jumper 29% (+244), 3-pointer 25% (+308), Free throw 12% (+730); first basket Dunk/layup 39% (+157), 2pt jumper 31% (+218), 3-pointer 30% (+237)
 
 Best player + method (fair price; bet only if the book pays more):
 
 - **Victor Wembanyama first basket: Dunk/layup** (SA @ UTAH 5:00). Est 15.6% (fair +542) = FB 28% x 56% if he scores first; his first-FG sample 39, made FGs 981
 - **Walker Kessler first basket: Dunk/layup** (LAL @ PHX 4:00). Est 13.9% (fair +617) = FB 15% x 91% if he scores first; his first-FG sample 4, made FGs 269
 - **Luka Doncic first basket: 2pt jumper** (LAL @ PHX 4:00). Est 13.6% (fair +635) = FB 25% x 55% if he scores first; his first-FG sample 38, made FGs 1087
-- **Domantas Sabonis first basket: Dunk/layup** (SAC vs OKC 9:00). Est 10.0% (fair +905) = FB 13% x 75% if he scores first; his first-FG sample 15, made FGs 312
+- **Domantas Sabonis first basket: Dunk/layup** (SAC vs OKC 9:00). Est 11.3% (fair +783) = FB 15% x 75% if he scores first; his first-FG sample 15, made FGs 312
 - **Collin Murray-Boyles first basket: Dunk/layup** (TOR vs NY 6:00). Est 9.9% (fair +909) = FB 13% x 77% if he scores first; his first-FG sample 10, made FGs 327
 - **Anthony Davis first basket: 2pt jumper** (WSH vs HOU 7:00). Est 9.9% (fair +915) = FB 18% x 55% if he scores first; his first-FG sample 15, made FGs 496
 - **Neemias Queta first basket: Dunk/layup** (BOS vs DAL 6:00). Est 9.2% (fair +990) = FB 12% x 75% if he scores first; his first-FG sample 23, made FGs 446
@@ -89,7 +89,7 @@ Best player + method (fair price; bet only if the book pays more):
 - NY @ TOR: our top RJ Barrett (14%): agree (StarTool star)
 - HOU @ WSH: our top Anthony Davis (18%): agree (StarTool star)
 - ATL @ MIL: our top Onyeka Okongwu (14%): differs (StarTool stars Jalen Johnson, Tyler Herro; bombs Nickeil Alexander-Walker, Jaime Jaquez Jr.)
-- OKC @ SAC: our top Domantas Sabonis (13%): differs (StarTool stars Shai Gilgeous-Alexander, Darius Acuff Jr.; bombs Ajay Mitchell, Zach LaVine)
+- OKC @ SAC: our top Domantas Sabonis (15%): differs (StarTool stars Shai Gilgeous-Alexander, Darius Acuff Jr.; bombs Ajay Mitchell, Zach LaVine)
 
 ## Tip-off
 
@@ -101,7 +101,7 @@ Best player + method (fair price; bet only if the book pays more):
 - NY @ TOR 6:00 ET: Karl-Anthony Towns vs Jakob Poeltl; away wins tip 34%, away scores first 43%
 - HOU @ WSH 7:00 ET: Alperen Sengun vs Anthony Davis; away wins tip 40%, away scores first 48%
 - ATL @ MIL 8:00 ET: Onyeka Okongwu vs Myles Turner; away wins tip 62%, away scores first 57%
-- OKC @ SAC 9:00 ET: Aday Mara vs Domantas Sabonis; away wins tip 57%, away scores first 55%
+- OKC @ SAC 9:00 ET: Isaiah Hartenstein vs Domantas Sabonis; away wins tip 51%, away scores first 52%
 
 <!-- parlays:begin -->
 ## Parlays 2026-11-15 (2-3 legs, $0.10 to $0.20)
@@ -112,7 +112,6 @@ Only categories that beat their price season to date: NBA 3+ threes, NHL 3+ SOG,
 - **2-leg #1:** Luka Doncic 3+ threes (83%, LAL @ PHX) + Reed Sheppard 3+ threes (67%, HOU @ WSH). Fair -123 (55%); take -101 or longer.
 - **2-leg #2:** Luka Doncic 3+ threes (83%, LAL @ PHX) + Brandon Miller 3+ threes (63%, CHA @ LAC). Fair -109 (52%); take +110 or longer.
 - **2-leg #3:** Reed Sheppard 3+ threes (67%, HOU @ WSH) + Brandon Miller 3+ threes (63%, CHA @ LAC). Fair +137 (42%); take +161 or longer.
-- **3-leg #4:** Nickeil Alexander-Walker 3+ threes (63%, ATL @ MIL) + Zach LaVine 3+ threes (59%, OKC @ SAC) + Grayson Allen 3+ threes (58%, CHA @ LAC). Fair +364 (22%); take +411 or longer.
-- **3-leg #5:** Nickeil Alexander-Walker 3+ threes (63%, ATL @ MIL) + Zach LaVine 3+ threes (59%, OKC @ SAC) + Paul George 3+ threes (58%, DAL @ BOS). Fair +365 (21%); take +412 or longer.
+- **3-leg #4:** Nickeil Alexander-Walker 3+ threes (63%, ATL @ MIL) + Grayson Allen 3+ threes (58%, CHA @ LAC) + Paul George 3+ threes (58%, DAL @ BOS). Fair +370 (21%); take +417 or longer.
 
 <!-- parlays:end -->
