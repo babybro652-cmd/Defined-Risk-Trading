@@ -25,7 +25,7 @@ ES is around 7,561, down about 22 points. We're in the lower half of last week's
 Mondays can set the tone for the week, but they can also be slow and choppy while the market decides. I don't need to catch the first move of the week. I need my setup.
 
 My plan for New York:
-• Before 10 AM, 90% of the time I'm just watching. If my setup shows, I take a small trade. My main window is 10 AM to 12 PM. Hard stop 3.5 to 4 points.
+• Before 10 AM, 90% of the time I'm watching. If my setup shows, I take a small trade. My main window is 10 AM to 12 PM. Hard stop 3.5 to 4 points.
 • If New York takes the London high near 7,570 and pushes, I look for buys toward last week's high near 7,613.
 • If New York breaks back under the London low near 7,550, last week's low near 7,538 is the next target. A sweep of that low and a snap back in is where I'd look for buys.
 • If price chops between 7,550 and 7,570 all morning, I sit out. No setup, no trade.
