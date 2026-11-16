@@ -1,40 +1,39 @@
 # Solid 2-leg and 3-leg parlays, Mon 11/16
 
-Solid = both our #1 and #2 are starting and not questionable (10:15 AM: RotoWire expected fives, ESPN injuries).
-3 of 4 play-list games qualify:
-- ORL@BOS 7:00: Carter, Wagner
+Solid = both our #1 and #2 are starting and not questionable (6:30 PM: NBA 6:15 PM report, ESPN, RotoWire).
+6:30 PM: ORL@BOS dropped (tip BOS 69% after Queta OUT). Watson now available, so CHI@CLE is solid.
+3 of 3 play-list games qualify:
+- CHI@CLE 7:00: Allen, Watson
 - HOU@MIA 7:30: Adebayo, Giannis
 - PHX@DEN 9:00: Jokic, Murray
-- Not solid: CHI@CLE (Watson questionable)
-12:30 PM source check: StarTool's CLE card shows the 11/14 rest five (no Allen, Mitchell, Harden, Watson). NBA 12 PM report, ESPN and RotoWire have no rest for CLE (out only Mobley, Merrill, Tomlin; Watson Q, Tyson Q/doubtful), and CLE did not play 11/15. Card is stale; CLE picks unchanged.
-These are a subset of the play-list parlays, not extra bets.
+These are the same as the play-list parlays tonight.
 
 ## 2-leg, $0.50 each (12 = $6.00)
 
-*ORL@BOS 7:00 + HOU@MIA 7:30*
-1. [ ] Carter + Adebayo (fair +2,664)
-2. [ ] Carter + Giannis (fair +3,672)
-3. [ ] Wagner + Adebayo (fair +3,111)
-4. [ ] Wagner + Giannis (fair +4,282)
-*ORL@BOS 7:00 + PHX@DEN 9:00*
-5. [ ] Carter + Jokic (fair +2,763)
-6. [ ] Carter + Murray (fair +4,043)
-7. [ ] Wagner + Jokic (fair +3,225)
-8. [ ] Wagner + Murray (fair +4,713)
+*CHI@CLE 7:00 + HOU@MIA 7:30*
+1. [ ] Allen + Adebayo (fair +2,140)
+2. [ ] Allen + Giannis (fair +2,961)
+3. [ ] Watson + Adebayo (fair +3,466)
+4. [ ] Watson + Giannis (fair +4,772)
+*CHI@CLE 7:00 + PHX@DEN 9:00*
+5. [ ] Allen + Jokic (fair +2,132)
+6. [ ] Allen + Murray (fair +3,131)
+7. [ ] Watson + Jokic (fair +3,454)
+8. [ ] Watson + Murray (fair +5,044)
 *HOU@MIA 7:30 + PHX@DEN 9:00*
-9. [ ] Adebayo + Jokic (fair +2,083)
-10. [ ] Adebayo + Murray (fair +3,060)
-11. [ ] Giannis + Jokic (fair +2,879)
-12. [ ] Giannis + Murray (fair +4,212)
+9. [ ] Adebayo + Jokic (fair +2,169)
+10. [ ] Adebayo + Murray (fair +3,184)
+11. [ ] Giannis + Jokic (fair +3,000)
+12. [ ] Giannis + Murray (fair +4,387)
 
 ## 3-leg, $0.10 each (8 = $0.80)
 
-*ORL@BOS 7:00 + HOU@MIA 7:30 + PHX@DEN 9:00*
-1. [ ] Carter + Adebayo + Jokic (fair +13,044)
-2. [ ] Carter + Adebayo + Murray (fair +18,924)
-3. [ ] Carter + Giannis + Jokic (fair +17,837)
-4. [ ] Carter + Giannis + Murray (fair +25,862)
-5. [ ] Wagner + Adebayo + Jokic (fair +15,167)
-6. [ ] Wagner + Adebayo + Murray (fair +21,997)
-7. [ ] Wagner + Giannis + Jokic (fair +20,735)
-8. [ ] Wagner + Giannis + Murray (fair +30,055)
+*CHI@CLE 7:00 + HOU@MIA 7:30 + PHX@DEN 9:00*
+1. [ ] Allen + Adebayo + Jokic (fair +10,551)
+2. [ ] Allen + Adebayo + Murray (fair +15,316)
+3. [ ] Allen + Giannis + Jokic (fair +14,453)
+4. [ ] Allen + Giannis + Murray (fair +20,963)
+5. [ ] Watson + Adebayo + Jokic (fair +16,856)
+6. [ ] Watson + Adebayo + Murray (fair +24,441)
+7. [ ] Watson + Giannis + Jokic (fair +23,068)
+8. [ ] Watson + Giannis + Murray (fair +33,431)

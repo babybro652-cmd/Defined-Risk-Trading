@@ -4,7 +4,7 @@ plt.rcParams['text.parse_math']=False
 from matplotlib.patches import FancyBboxPatch
 d=json.load(open('analysis/nba/out/fb_candidates.json'))
 games=[('ORL','BOS','7:00'),('CHI','CLE','7:00'),('MEM','WSH','7:00'),('PHI','BKN','7:30'),('HOU','MIA','7:30'),('POR','MIN','8:00'),('GS','NO','8:00'),('PHX','DEN','9:00')]
-play={'ORL@BOS','CHI@CLE','HOU@MIA','PHX@DEN'}
+play={'CHI@CLE','HOU@MIA','PHX@DEN'}
 def am(p):
     dec=1/p; return ('+%d'%round((dec-1)*100)) if dec>=2 else ('-%d'%round(100/(dec-1)))
 def take(p):

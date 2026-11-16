@@ -139,14 +139,6 @@
    "note": "51 starts"
   },
   {
-   "player": "Jaylon Tyson",
-   "team": "CLE",
-   "game": "CHI @ CLE",
-   "market": "3+ threes",
-   "p": 0.479,
-   "note": "44 starts"
-  },
-  {
    "player": "Cam Spencer",
    "team": "MEM",
    "game": "MEM @ WSH",
@@ -227,12 +219,12 @@
    "note": "87 starts"
   },
   {
-   "player": "LeBron James",
+   "player": "Dean Wade",
    "team": "PHI",
    "game": "PHI @ BKN",
    "market": "3+ threes",
-   "p": 0.094,
-   "note": "74 starts"
+   "p": 0.113,
+   "note": "43 starts"
   },
   {
    "player": "Joel Embiid",
@@ -313,14 +305,6 @@
    "market": "3+ threes",
    "p": 0.523,
    "note": "20 starts"
-  },
-  {
-   "player": "Pelle Larsson",
-   "team": "MIA",
-   "game": "HOU @ MIA",
-   "market": "3+ threes",
-   "p": 0.133,
-   "note": "56 starts"
   },
   {
    "player": "Bam Adebayo",
