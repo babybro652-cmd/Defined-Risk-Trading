@@ -83,6 +83,7 @@ whether the game's first scorer was our #1, #2 or #3, the running hit rate by ra
 once odds are logged in `out/top3_odds.csv` (date,player,odds). `source_scorecard.py` prints the same by date.
 Backfilled 11/4 to 11/13: top 3 held the first scorer in 28 of 70 games (40%); #1 10 of 69, #2 9 of 70, #3 9 of 70.
 11/13: 5 of 9 in the top 3, 1 of 9 at #1. 11/14: 2 of 5 (both #2); 11/4 to 11/14: 30 of 75 (40%).
+11/15: 6 of 9 (#1 2, #2 1, #3 3); play-list games 3 of 4 (tip-70% games 3 of 3: Doncic #1, Garland #2, Wembanyama #1; exception ATL@MIL missed, Kuzma). 11/4 to 11/15: 36 of 84 (43%); $1 P&L on priced ranks #1 +3.70 (5), #2 +11.90 (7), #3 +11.00 (5).
 
 ## Layout (one tab, top to bottom)
 
@@ -537,6 +538,7 @@ Paired LL deltas on test (SE): kfg_w 1000 -.0000 (.0002), mk_w 10 -.0009 (.0021)
 
 - 11/15 5:18 PM rerun (ESPN 4:17 PM, RotoWire): Kyrie OUT on RotoWire (ESPN day-to-day), replacement not posted, Walter Clayton Jr. used as estimate; Gafford probable, jumps. Barnes OUT, Murray-Boyles starts. Sarr off the report. Ajay Mitchell Q. Game picks unchanged (Tatum +582, Barrett +638, Davis +463, Sabonis +656); team #2 changes: DAL Gafford for Kyrie (E1240), TOR Murray-Boyles for Poeltl (E1246). Tips unchanged, so none of the 4 games qualifies for the play list (no 70%, exception hit rates unchanged). NBA tab rows 29-37 (tip table) updated.
 - 11/15 8:40 PM OKC @ SAC rerun (RotoWire confirmed both fives, ESPN 8:38 PM): SAC Acuff, Monk, Keegan Murray, Sabonis, Dylan Cardwell (Hunter, LaVine, Achiuwa, Raynaud, Simmons out); OKC SGA, McCain, Ajay Mitchell (off report), Kenrich Williams, Hartenstein (Mara not starting; Hartenstein jumps). Sabonis assumed SAC jumper. Tip OKC 51% (was 57%). Game top 3: Sabonis 15% +564, Hartenstein 12% +762, Mitchell 11% +776. Team: OKC Hartenstein +347, Mitchell +354; SAC Sabonis +220, Acuff +366. Bets E1222, E1258-E1261 rewritten. Not on the play list (tip under 70%). NBA tab not re-pushed.
+- 11/16 (8 games, 10:07 refresh): RotoWire expected fives 10:15 AM (`data/lineups_2026-11-16.json`) plus ESPN. Q: Watson and Tyson (CLE), Jalen Smith (CHI jumper), Edey (MEM), Larsson (MIA); Embiid and VanVleet probable. Chain model. Bets rows 1418-1545 (Bets grid extended 300 rows): 8 game first basket, 32 team first basket, MPJ and LaMelo 3+ threes, Giannis and Maxey 25+, then the play list. Play list: ORL@BOS (ORL 76%), CHI@CLE (CLE 87%), HOU@MIA (MIA 73%), PHX@DEN (DEN 71%); no exception games (closest MEM@WSH: WSH 5/7 but MEM 2/6). First day on Tim's $100 budget: 12 straights at $6 ($72), 24 two-leg $0.50 ($12), 32 three-leg and 16 four-leg $0.10 ($4.80), total $88.80, $11.20 held back. Solid parlays: ORL@BOS, HOU@MIA, PHX@DEN (CHI@CLE out, Watson Q). NBA tab pushed and reformatted (a stale 18th gradient rule removed). Chart `out/charts/fb_2026-11-16.png`. 11/15 graded: Bets I1214-I1262, first events, tipproj and fbsheet actuals, scorecard COMMITS 11/15 = ae974ef, 11/15 FanDuel prices added to `out/top3_odds.csv`.
 
 ## Tim vs model log (first basket)
 

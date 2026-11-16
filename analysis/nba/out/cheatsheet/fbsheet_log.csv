@@ -89,93 +89,93 @@ date,game,team,player,first_shot_pct,first_bsk_pct,first_gm_pct,actual_team_firs
 2026-11-14,BKN @ MEM,MEM,Jaylen Wells,15,20,6,Isaiah Stewart,Julius Randle
 2026-11-14,BKN @ MEM,MEM,Cameron Boozer,18,27,0,Isaiah Stewart,Julius Randle
 2026-11-14,BKN @ MEM,MEM,Zach Edey,19,19,14,Isaiah Stewart,Julius Randle
-2026-11-15,IND @ PHI,IND,Andrew Nembhard,32,22,10,,
-2026-11-15,IND @ PHI,IND,Kelly Oubre Jr.,22,20,17,,
-2026-11-15,IND @ PHI,IND,Aaron Nesmith,25,17,6,,
-2026-11-15,IND @ PHI,IND,Pascal Siakam,18,27,15,,
-2026-11-15,IND @ PHI,IND,Ivica Zubac,24,35,11,,
-2026-11-15,IND @ PHI,PHI,Tyrese Maxey,25,21,13,,
-2026-11-15,IND @ PHI,PHI,VJ Edgecombe,19,13,5,,
-2026-11-15,IND @ PHI,PHI,Jaylen Brown,38,29,14,,
-2026-11-15,IND @ PHI,PHI,Dean Wade,7,5,4,,
-2026-11-15,IND @ PHI,PHI,LeBron James,15,21,14,,
-2026-11-15,LAL @ PHX,LAL,Luka Doncic,49,37,16,,
-2026-11-15,LAL @ PHX,LAL,Quentin Grimes,5,0,0,,
-2026-11-15,LAL @ PHX,LAL,Matisse Thybulle,15,15,8,,
-2026-11-15,LAL @ PHX,LAL,Jake LaRavia,10,10,8,,
-2026-11-15,LAL @ PHX,LAL,Walker Kessler,17,11,11,,
-2026-11-15,LAL @ PHX,PHX,Devin Booker,17,28,13,,
-2026-11-15,LAL @ PHX,PHX,Jalen Green,27,30,14,,
-2026-11-15,LAL @ PHX,PHX,Dillon Brooks,29,21,8,,
-2026-11-15,LAL @ PHX,PHX,Miles Bridges,13,9,6,,
-2026-11-15,LAL @ PHX,PHX,Oso Ighodaro,18,6,6,,
-2026-11-15,CHA @ LAC,CHA,Coby White,23,23,10,,
-2026-11-15,CHA @ LAC,CHA,Grayson Allen,50,30,17,,
-2026-11-15,CHA @ LAC,CHA,Brandon Miller,38,32,16,,
-2026-11-15,CHA @ LAC,CHA,Naz Reid,40,20,7,,
-2026-11-15,CHA @ LAC,CHA,Moussa Diabate,14,20,8,,
-2026-11-15,CHA @ LAC,LAC,Darius Garland,22,15,13,,
-2026-11-15,CHA @ LAC,LAC,Kris Dunn,11,9,5,,
-2026-11-15,CHA @ LAC,LAC,Derrick Jones Jr.,20,23,16,,
-2026-11-15,CHA @ LAC,LAC,Rui Hachimura,25,23,12,,
-2026-11-15,CHA @ LAC,LAC,Brook Lopez,28,24,7,,
-2026-11-15,SA @ UTAH,SA,De'Aaron Fox,23,21,16,,
-2026-11-15,SA @ UTAH,SA,Stephon Castle,17,20,12,,
-2026-11-15,SA @ UTAH,SA,Dylan Harper,5,5,0,,
-2026-11-15,SA @ UTAH,SA,Devin Vassell,18,22,13,,
-2026-11-15,SA @ UTAH,SA,Victor Wembanyama,36,41,29,,
-2026-11-15,SA @ UTAH,UTAH,Keyonte George,24,26,14,,
-2026-11-15,SA @ UTAH,UTAH,Darryn Peterson,0,15,0,,
-2026-11-15,SA @ UTAH,UTAH,Josh Green,0,0,0,,
-2026-11-15,SA @ UTAH,UTAH,Ace Bailey,34,21,12,,
-2026-11-15,SA @ UTAH,UTAH,Kyle Filipowski,20,17,7,,
-2026-11-15,DAL @ BOS,DAL,Kyrie Irving,18,18,0,,
-2026-11-15,DAL @ BOS,DAL,Caleb Martin,11,17,6,,
-2026-11-15,DAL @ BOS,DAL,Cooper Flagg,27,23,7,,
-2026-11-15,DAL @ BOS,DAL,P.J. Washington,22,19,9,,
-2026-11-15,DAL @ BOS,DAL,Daniel Gafford,11,21,14,,
-2026-11-15,DAL @ BOS,BOS,Derrick White,17,19,8,,
-2026-11-15,DAL @ BOS,BOS,Jordan Walsh,19,9,6,,
-2026-11-15,DAL @ BOS,BOS,Jayson Tatum,24,24,12,,
-2026-11-15,DAL @ BOS,BOS,Paul George,29,27,19,,
-2026-11-15,DAL @ BOS,BOS,Neemias Queta,16,28,17,,
-2026-11-15,NY @ TOR,NY,Jalen Brunson,32,29,21,,
-2026-11-15,NY @ TOR,NY,Mikal Bridges,18,18,8,,
-2026-11-15,NY @ TOR,NY,Josh Hart,11,14,7,,
-2026-11-15,NY @ TOR,NY,OG Anunoby,15,18,7,,
-2026-11-15,NY @ TOR,NY,Karl-Anthony Towns,20,21,12,,
-2026-11-15,NY @ TOR,TOR,Immanuel Quickley,12,19,6,,
-2026-11-15,NY @ TOR,TOR,RJ Barrett,22,20,12,,
-2026-11-15,NY @ TOR,TOR,Ja'Kobe Walter,15,15,9,,
-2026-11-15,NY @ TOR,TOR,Scottie Barnes,20,17,9,,
-2026-11-15,NY @ TOR,TOR,Jakob Poeltl,10,17,7,,
-2026-11-15,HOU @ WSH,HOU,Amen Thompson,13,19,7,,
-2026-11-15,HOU @ WSH,HOU,Reed Sheppard,30,15,0,,
-2026-11-15,HOU @ WSH,HOU,Kevin Durant,26,20,10,,
-2026-11-15,HOU @ WSH,HOU,Jabari Smith Jr.,9,14,7,,
-2026-11-15,HOU @ WSH,HOU,Alperen Sengun,31,26,15,,
-2026-11-15,HOU @ WSH,WSH,Trae Young,11,7,4,,
-2026-11-15,HOU @ WSH,WSH,Kyshawn George,18,18,7,,
-2026-11-15,HOU @ WSH,WSH,AJ Dybantsa,22,22,11,,
-2026-11-15,HOU @ WSH,WSH,Anthony Davis,32,26,10,,
-2026-11-15,HOU @ WSH,WSH,Alex Sarr,23,22,10,,
-2026-11-15,ATL @ MIL,ATL,CJ McCollum,20,23,11,,
-2026-11-15,ATL @ MIL,ATL,Nickeil Alexander-Walker,27,22,11,,
-2026-11-15,ATL @ MIL,ATL,Dyson Daniels,13,13,6,,
-2026-11-15,ATL @ MIL,ATL,Jalen Johnson,15,19,8,,
-2026-11-15,ATL @ MIL,ATL,Onyeka Okongwu,21,22,11,,
-2026-11-15,ATL @ MIL,MIL,Brayden Burries,43,14,14,,
-2026-11-15,ATL @ MIL,MIL,Tyler Herro,12,20,15,,
-2026-11-15,ATL @ MIL,MIL,Jaime Jaquez Jr.,17,50,25,,
-2026-11-15,ATL @ MIL,MIL,Kyle Kuzma,18,12,7,,
-2026-11-15,ATL @ MIL,MIL,Myles Turner,24,17,5,,
-2026-11-15,OKC @ SAC,OKC,Shai Gilgeous-Alexander,10,14,6,,
-2026-11-15,OKC @ SAC,OKC,Jared McCain,17,17,8,,
-2026-11-15,OKC @ SAC,OKC,Ajay Mitchell,23,19,6,,
-2026-11-15,OKC @ SAC,OKC,Aday Mara,25,50,50,,
-2026-11-15,OKC @ SAC,OKC,Isaiah Hartenstein,16,20,7,,
-2026-11-15,OKC @ SAC,SAC,Darius Acuff Jr.,17,25,17,,
-2026-11-15,OKC @ SAC,SAC,Zach LaVine,22,22,10,,
-2026-11-15,OKC @ SAC,SAC,De'Andre Hunter,28,25,22,,
-2026-11-15,OKC @ SAC,SAC,Keegan Murray,8,20,4,,
-2026-11-15,OKC @ SAC,SAC,Domantas Sabonis,31,35,12,,
+2026-11-15,IND @ PHI,IND,Andrew Nembhard,32,22,10,Quenton Jackson,Tyrese Maxey
+2026-11-15,IND @ PHI,IND,Kelly Oubre Jr.,22,20,17,Quenton Jackson,Tyrese Maxey
+2026-11-15,IND @ PHI,IND,Aaron Nesmith,25,17,6,Quenton Jackson,Tyrese Maxey
+2026-11-15,IND @ PHI,IND,Pascal Siakam,18,27,15,Quenton Jackson,Tyrese Maxey
+2026-11-15,IND @ PHI,IND,Ivica Zubac,24,35,11,Quenton Jackson,Tyrese Maxey
+2026-11-15,IND @ PHI,PHI,Tyrese Maxey,25,21,13,Tyrese Maxey,Tyrese Maxey
+2026-11-15,IND @ PHI,PHI,VJ Edgecombe,19,13,5,Tyrese Maxey,Tyrese Maxey
+2026-11-15,IND @ PHI,PHI,Jaylen Brown,38,29,14,Tyrese Maxey,Tyrese Maxey
+2026-11-15,IND @ PHI,PHI,Dean Wade,7,5,4,Tyrese Maxey,Tyrese Maxey
+2026-11-15,IND @ PHI,PHI,LeBron James,15,21,14,Tyrese Maxey,Tyrese Maxey
+2026-11-15,LAL @ PHX,LAL,Luka Doncic,49,37,16,Luka Doncic,Luka Doncic
+2026-11-15,LAL @ PHX,LAL,Quentin Grimes,5,0,0,Luka Doncic,Luka Doncic
+2026-11-15,LAL @ PHX,LAL,Matisse Thybulle,15,15,8,Luka Doncic,Luka Doncic
+2026-11-15,LAL @ PHX,LAL,Jake LaRavia,10,10,8,Luka Doncic,Luka Doncic
+2026-11-15,LAL @ PHX,LAL,Walker Kessler,17,11,11,Luka Doncic,Luka Doncic
+2026-11-15,LAL @ PHX,PHX,Devin Booker,17,28,13,Miles Bridges,Luka Doncic
+2026-11-15,LAL @ PHX,PHX,Jalen Green,27,30,14,Miles Bridges,Luka Doncic
+2026-11-15,LAL @ PHX,PHX,Dillon Brooks,29,21,8,Miles Bridges,Luka Doncic
+2026-11-15,LAL @ PHX,PHX,Miles Bridges,13,9,6,Miles Bridges,Luka Doncic
+2026-11-15,LAL @ PHX,PHX,Oso Ighodaro,18,6,6,Miles Bridges,Luka Doncic
+2026-11-15,CHA @ LAC,CHA,Coby White,23,23,10,Naz Reid,Darius Garland
+2026-11-15,CHA @ LAC,CHA,Grayson Allen,50,30,17,Naz Reid,Darius Garland
+2026-11-15,CHA @ LAC,CHA,Brandon Miller,38,32,16,Naz Reid,Darius Garland
+2026-11-15,CHA @ LAC,CHA,Naz Reid,40,20,7,Naz Reid,Darius Garland
+2026-11-15,CHA @ LAC,CHA,Moussa Diabate,14,20,8,Naz Reid,Darius Garland
+2026-11-15,CHA @ LAC,LAC,Darius Garland,22,15,13,Darius Garland,Darius Garland
+2026-11-15,CHA @ LAC,LAC,Kris Dunn,11,9,5,Darius Garland,Darius Garland
+2026-11-15,CHA @ LAC,LAC,Derrick Jones Jr.,20,23,16,Darius Garland,Darius Garland
+2026-11-15,CHA @ LAC,LAC,Rui Hachimura,25,23,12,Darius Garland,Darius Garland
+2026-11-15,CHA @ LAC,LAC,Brook Lopez,28,24,7,Darius Garland,Darius Garland
+2026-11-15,SA @ UTAH,SA,De'Aaron Fox,23,21,16,Victor Wembanyama,Victor Wembanyama
+2026-11-15,SA @ UTAH,SA,Stephon Castle,17,20,12,Victor Wembanyama,Victor Wembanyama
+2026-11-15,SA @ UTAH,SA,Dylan Harper,5,5,0,Victor Wembanyama,Victor Wembanyama
+2026-11-15,SA @ UTAH,SA,Devin Vassell,18,22,13,Victor Wembanyama,Victor Wembanyama
+2026-11-15,SA @ UTAH,SA,Victor Wembanyama,36,41,29,Victor Wembanyama,Victor Wembanyama
+2026-11-15,SA @ UTAH,UTAH,Keyonte George,24,26,14,Mo Bamba,Victor Wembanyama
+2026-11-15,SA @ UTAH,UTAH,Darryn Peterson,0,15,0,Mo Bamba,Victor Wembanyama
+2026-11-15,SA @ UTAH,UTAH,Josh Green,0,0,0,Mo Bamba,Victor Wembanyama
+2026-11-15,SA @ UTAH,UTAH,Ace Bailey,34,21,12,Mo Bamba,Victor Wembanyama
+2026-11-15,SA @ UTAH,UTAH,Kyle Filipowski,20,17,7,Mo Bamba,Victor Wembanyama
+2026-11-15,DAL @ BOS,DAL,Kyrie Irving,18,18,0,Naji Marshall,Paul George
+2026-11-15,DAL @ BOS,DAL,Caleb Martin,11,17,6,Naji Marshall,Paul George
+2026-11-15,DAL @ BOS,DAL,Cooper Flagg,27,23,7,Naji Marshall,Paul George
+2026-11-15,DAL @ BOS,DAL,P.J. Washington,22,19,9,Naji Marshall,Paul George
+2026-11-15,DAL @ BOS,DAL,Daniel Gafford,11,21,14,Naji Marshall,Paul George
+2026-11-15,DAL @ BOS,BOS,Derrick White,17,19,8,Paul George,Paul George
+2026-11-15,DAL @ BOS,BOS,Jordan Walsh,19,9,6,Paul George,Paul George
+2026-11-15,DAL @ BOS,BOS,Jayson Tatum,24,24,12,Paul George,Paul George
+2026-11-15,DAL @ BOS,BOS,Paul George,29,27,19,Paul George,Paul George
+2026-11-15,DAL @ BOS,BOS,Neemias Queta,16,28,17,Paul George,Paul George
+2026-11-15,NY @ TOR,NY,Jalen Brunson,32,29,21,Jalen Brunson,Scottie Barnes
+2026-11-15,NY @ TOR,NY,Mikal Bridges,18,18,8,Jalen Brunson,Scottie Barnes
+2026-11-15,NY @ TOR,NY,Josh Hart,11,14,7,Jalen Brunson,Scottie Barnes
+2026-11-15,NY @ TOR,NY,OG Anunoby,15,18,7,Jalen Brunson,Scottie Barnes
+2026-11-15,NY @ TOR,NY,Karl-Anthony Towns,20,21,12,Jalen Brunson,Scottie Barnes
+2026-11-15,NY @ TOR,TOR,Immanuel Quickley,12,19,6,Scottie Barnes,Scottie Barnes
+2026-11-15,NY @ TOR,TOR,RJ Barrett,22,20,12,Scottie Barnes,Scottie Barnes
+2026-11-15,NY @ TOR,TOR,Ja'Kobe Walter,15,15,9,Scottie Barnes,Scottie Barnes
+2026-11-15,NY @ TOR,TOR,Scottie Barnes,20,17,9,Scottie Barnes,Scottie Barnes
+2026-11-15,NY @ TOR,TOR,Jakob Poeltl,10,17,7,Scottie Barnes,Scottie Barnes
+2026-11-15,HOU @ WSH,HOU,Amen Thompson,13,19,7,Amen Thompson,Amen Thompson
+2026-11-15,HOU @ WSH,HOU,Reed Sheppard,30,15,0,Amen Thompson,Amen Thompson
+2026-11-15,HOU @ WSH,HOU,Kevin Durant,26,20,10,Amen Thompson,Amen Thompson
+2026-11-15,HOU @ WSH,HOU,Jabari Smith Jr.,9,14,7,Amen Thompson,Amen Thompson
+2026-11-15,HOU @ WSH,HOU,Alperen Sengun,31,26,15,Amen Thompson,Amen Thompson
+2026-11-15,HOU @ WSH,WSH,Trae Young,11,7,4,Alex Sarr,Amen Thompson
+2026-11-15,HOU @ WSH,WSH,Kyshawn George,18,18,7,Alex Sarr,Amen Thompson
+2026-11-15,HOU @ WSH,WSH,AJ Dybantsa,22,22,11,Alex Sarr,Amen Thompson
+2026-11-15,HOU @ WSH,WSH,Anthony Davis,32,26,10,Alex Sarr,Amen Thompson
+2026-11-15,HOU @ WSH,WSH,Alex Sarr,23,22,10,Alex Sarr,Amen Thompson
+2026-11-15,ATL @ MIL,ATL,CJ McCollum,20,23,11,CJ McCollum,Kyle Kuzma
+2026-11-15,ATL @ MIL,ATL,Nickeil Alexander-Walker,27,22,11,CJ McCollum,Kyle Kuzma
+2026-11-15,ATL @ MIL,ATL,Dyson Daniels,13,13,6,CJ McCollum,Kyle Kuzma
+2026-11-15,ATL @ MIL,ATL,Jalen Johnson,15,19,8,CJ McCollum,Kyle Kuzma
+2026-11-15,ATL @ MIL,ATL,Onyeka Okongwu,21,22,11,CJ McCollum,Kyle Kuzma
+2026-11-15,ATL @ MIL,MIL,Brayden Burries,43,14,14,Kyle Kuzma,Kyle Kuzma
+2026-11-15,ATL @ MIL,MIL,Tyler Herro,12,20,15,Kyle Kuzma,Kyle Kuzma
+2026-11-15,ATL @ MIL,MIL,Jaime Jaquez Jr.,17,50,25,Kyle Kuzma,Kyle Kuzma
+2026-11-15,ATL @ MIL,MIL,Kyle Kuzma,18,12,7,Kyle Kuzma,Kyle Kuzma
+2026-11-15,ATL @ MIL,MIL,Myles Turner,24,17,5,Kyle Kuzma,Kyle Kuzma
+2026-11-15,OKC @ SAC,OKC,Shai Gilgeous-Alexander,10,14,6,Ajay Mitchell,Ajay Mitchell
+2026-11-15,OKC @ SAC,OKC,Jared McCain,17,17,8,Ajay Mitchell,Ajay Mitchell
+2026-11-15,OKC @ SAC,OKC,Ajay Mitchell,23,19,6,Ajay Mitchell,Ajay Mitchell
+2026-11-15,OKC @ SAC,OKC,Aday Mara,25,50,50,Ajay Mitchell,Ajay Mitchell
+2026-11-15,OKC @ SAC,OKC,Isaiah Hartenstein,16,20,7,Ajay Mitchell,Ajay Mitchell
+2026-11-15,OKC @ SAC,SAC,Darius Acuff Jr.,17,25,17,Dylan Cardwell,Ajay Mitchell
+2026-11-15,OKC @ SAC,SAC,Zach LaVine,22,22,10,Dylan Cardwell,Ajay Mitchell
+2026-11-15,OKC @ SAC,SAC,De'Andre Hunter,28,25,22,Dylan Cardwell,Ajay Mitchell
+2026-11-15,OKC @ SAC,SAC,Keegan Murray,8,20,4,Dylan Cardwell,Ajay Mitchell
+2026-11-15,OKC @ SAC,SAC,Domantas Sabonis,31,35,12,Dylan Cardwell,Ajay Mitchell

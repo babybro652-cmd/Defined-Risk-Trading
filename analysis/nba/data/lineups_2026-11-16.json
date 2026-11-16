@@ -1,0 +1,162 @@
+{
+ "ORL": {
+  "five": [
+   "Jalen Suggs",
+   "Anthony Black",
+   "Desmond Bane",
+   "Franz Wagner",
+   "Wendell Carter Jr."
+  ],
+  "jumper": "Wendell Carter Jr."
+ },
+ "BOS": {
+  "five": [
+   "Derrick White",
+   "Baylor Scheierman",
+   "Jayson Tatum",
+   "Paul George",
+   "Neemias Queta"
+  ],
+  "jumper": "Neemias Queta"
+ },
+ "CHI": {
+  "five": [
+   "Josh Giddey",
+   "Norman Powell",
+   "Isaac Okoro",
+   "Matas Buzelis",
+   "Jalen Smith"
+  ],
+  "jumper": "Jalen Smith"
+ },
+ "CLE": {
+  "five": [
+   "James Harden",
+   "Donovan Mitchell",
+   "Peyton Watson",
+   "Jaylon Tyson",
+   "Jarrett Allen"
+  ],
+  "jumper": "Jarrett Allen"
+ },
+ "MEM": {
+  "five": [
+   "Cam Spencer",
+   "Cedric Coward",
+   "Jaylen Wells",
+   "Cameron Boozer",
+   "Zach Edey"
+  ],
+  "jumper": "Zach Edey"
+ },
+ "WSH": {
+  "five": [
+   "Trae Young",
+   "Kyshawn George",
+   "AJ Dybantsa",
+   "Anthony Davis",
+   "Alex Sarr"
+  ],
+  "jumper": "Anthony Davis"
+ },
+ "HOU": {
+  "five": [
+   "Fred VanVleet",
+   "Amen Thompson",
+   "Kevin Durant",
+   "Jabari Smith Jr.",
+   "Alperen Sengun"
+  ],
+  "jumper": "Alperen Sengun"
+ },
+ "MIA": {
+  "five": [
+   "Davion Mitchell",
+   "Klay Thompson",
+   "Pelle Larsson",
+   "Giannis Antetokounmpo",
+   "Bam Adebayo"
+  ],
+  "jumper": "Bam Adebayo"
+ },
+ "PHI": {
+  "five": [
+   "Tyrese Maxey",
+   "VJ Edgecombe",
+   "Jaylen Brown",
+   "LeBron James",
+   "Joel Embiid"
+  ],
+  "jumper": "Joel Embiid"
+ },
+ "BKN": {
+  "five": [
+   "Egor Demin",
+   "Michael Porter Jr.",
+   "Danny Wolf",
+   "Julius Randle",
+   "Day'Ron Sharpe"
+  ],
+  "jumper": "Day'Ron Sharpe"
+ },
+ "GS": {
+  "five": [
+   "Brandin Podziemski",
+   "De'Anthony Melton",
+   "Will Richard",
+   "Yaxel Lendeborg",
+   "Draymond Green"
+  ],
+  "jumper": "Draymond Green"
+ },
+ "NO": {
+  "five": [
+   "Jeremiah Fears",
+   "Herbert Jones",
+   "Saddiq Bey",
+   "Zion Williamson",
+   "Yves Missi"
+  ],
+  "jumper": "Yves Missi"
+ },
+ "POR": {
+  "five": [
+   "Damian Lillard",
+   "Sidy Cissoko",
+   "Toumani Camara",
+   "Deni Avdija",
+   "Donovan Clingan"
+  ],
+  "jumper": "Donovan Clingan"
+ },
+ "MIN": {
+  "five": [
+   "LaMelo Ball",
+   "Ayo Dosunmu",
+   "Jonathan Kuminga",
+   "Jaden McDaniels",
+   "Rudy Gobert"
+  ],
+  "jumper": "Rudy Gobert"
+ },
+ "PHX": {
+  "five": [
+   "Devin Booker",
+   "Jalen Green",
+   "Dillon Brooks",
+   "Miles Bridges",
+   "Oso Ighodaro"
+  ],
+  "jumper": "Oso Ighodaro"
+ },
+ "DEN": {
+  "five": [
+   "Jamal Murray",
+   "Christian Braun",
+   "Cameron Johnson",
+   "Aaron Gordon",
+   "Nikola Jokic"
+  ],
+  "jumper": "Nikola Jokic"
+ }
+}
