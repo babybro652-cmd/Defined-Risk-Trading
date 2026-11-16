@@ -6,6 +6,7 @@ Solid = both our #1 and #2 are starting and not questionable (10:15 AM: RotoWire
 - HOU@MIA 7:30: Adebayo, Giannis
 - PHX@DEN 9:00: Jokic, Murray
 - Not solid: CHI@CLE (Watson questionable)
+12:30 PM source check: StarTool's CLE card shows the 11/14 rest five (no Allen, Mitchell, Harden, Watson). NBA 12 PM report, ESPN and RotoWire have no rest for CLE (out only Mobley, Merrill, Tomlin; Watson Q, Tyson Q/doubtful), and CLE did not play 11/15. Card is stale; CLE picks unchanged.
 These are a subset of the play-list parlays, not extra bets.
 
 ## 2-leg, $0.50 each (12 = $6.00)
