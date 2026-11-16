@@ -1,0 +1,47 @@
+{
+  "video": "posts/media/2026-11-16-daily/wait-confirm-shortcut.mp4",
+  "duration_s": 27.2,
+  "voice": "/tmp/drt_audio_r896qz18/tts.wav",
+  "voice_synthetic": true,
+  "music": "drowning_in_your_smile.mp3",
+  "captions": "supplied text timed by speech-to-text",
+  "integrated_lufs": -14.7,
+  "true_peak_dbfs": -1.8,
+  "clipped_samples": 0,
+  "target_lufs": -14.0,
+  "heard": "An EES entry before your setup confirms is a guess with a stop on it. You see it farming, and you click before it's done. If the setup never finishes, you're holding a trade your plan never gave you. So I wait for the setup to confirm. Then I enter, with a hard stop 3 .5 to 4 points from entry. Waiting can cost a few ticks. The ESSing can cost a full stop.",
+  "checks": [
+    {
+      "check": "audio stream present",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "loudness near target",
+      "pass": true,
+      "detail": "-14.7 LUFS (target -14)"
+    },
+    {
+      "check": "no clipping",
+      "pass": true,
+      "detail": "0 clipped samples, true peak -1.8 dBFS"
+    },
+    {
+      "check": "length matches video",
+      "pass": true,
+      "detail": "27.20 s vs 27.20 s"
+    },
+    {
+      "check": "music under voice",
+      "pass": true,
+      "detail": "voice 23.8 dB above music while talking"
+    },
+    {
+      "check": "voice intelligible",
+      "pass": true,
+      "detail": "95% of the words recovered by speech-to-text"
+    }
+  ],
+  "contact_sheet": "posts/media/2026-11-16-daily/sheet_wait-confirm-short.png"
+}
+AUDIO QA: PASS

@@ -21,3 +21,5 @@ return no views (a sync gap, not zero).
 | 2026-11-14 | 7:15 PM | Instagram reel | 6946302 | Education text cards + graphic (prop firm math, 4 pt stop vs $2,000 drawdown) | music | cliff_road_chill | | |
 | 2026-11-15 | 12:30 PM | Instagram reel | 6971780 | Education text cards + drawn diagram (equal highs, sweep vs breakout) | music | traveling_in_your_mind | | |
 | 2026-11-15 | 5:00 PM | Facebook reel | 6971781 | Lifestyle text cards (night review after son's bedtime) | music | waiting_tttt | | |
+| 2026-11-16 | 12:30 PM | Instagram reel | 7020926 | Education text cards (wait for confirmation, early entries) | music | this_pain_is_soft | | |
+| 2026-11-16 | 5:00 PM | Facebook reel | 7020928 | Education text cards (leave the stop alone) | music | i_hope_youre_happy | | |
