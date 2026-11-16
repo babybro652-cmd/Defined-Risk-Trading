@@ -23,3 +23,4 @@ Balance snapshots from Tim's FanDuel screenshots. Newest at the bottom. Deposits
 | 11/15/26 | 5:02 PM | $102.61 | Garland $88.50 payout posted ($14.11 + $88.50). Doncic $45 was already in the $44.11. SA@UTAH $30 open. |
 | 11/15/26 | 8:41 PM | $161.31 | after placing OKC@SAC first basket straights ($15: Sabonis +650, Hartenstein +800, Ajay Mitchell +700, $5 each, tip 9:10 PM; Bets rows 1222, 1415-1416) |
 | 11/16/26 | 5:49 AM | $201.31 | $161.31 + $40 Ajay Mitchell first basket payout. 11/15 day: $78.70 to $201.31 (+$122.61 incl. open NFL bets settling). Pikkit Top 1% badge for 11/15. |
+| 11/16/26 | 6:05 AM | $201.31 | Tim: only $100 to bet with today (11/16 betting budget cap). |
