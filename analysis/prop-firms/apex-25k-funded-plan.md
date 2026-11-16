@@ -118,3 +118,4 @@ Use 5 MES for any day right after a red day (slows the payout, protects the acco
 | Day | Date | Trades | Net (before fees) | Qualifies ($100+ net) | Running profit | Peak balance / floor |
 |---|---|---|---|---|---|---|
 | 1 | Fri 11/13 | Short 1 ES 7,632 to 7,623 (about 9:31-9:35 AM, before Tim's 10 AM rule) | +$450 | Yes, once fees are taken out (about +$445) | +$450 | about $25,450 / about $24,450 or higher (the intraday trail counts open profit, so the floor may sit a bit higher) |
+| - | Mon 11/16 | None (day off on Apex; the +$500 ES long 7,505.50 to 7,510.50 was on paper by mistake) | $0 | No (does not count) | +$450 | unchanged |
