@@ -25,3 +25,4 @@ Balance snapshots from Tim's FanDuel screenshots. Newest at the bottom. Deposits
 | 11/16/26 | 5:49 AM | $201.31 | $161.31 + $40 Ajay Mitchell first basket payout. 11/15 day: $78.70 to $201.31 (+$122.61 incl. open NFL bets settling). Pikkit Top 1% badge for 11/15. |
 | 11/16/26 | 6:05 AM | $201.31 | Tim: only $100 to bet with today (11/16 betting budget cap). |
 | 11/16/26 | 8:39 PM | $63.21 | after placing PHX@DEN first basket straights ($60: Jokic +500, Murray +450, Cam Johnson +950, $20 each, placed 8:32 PM, tip 9:10 PM; Bets rows 1471-1473). Day started at $201.31 with a $100 budget; $138.10 out today net of any payouts, so about $78 went to other 11/16 bets. None of those are marked placed on the sheet yet (no slips logged). |
+| 11/17/26 | 12:22 PM | $39.41 | after placing Rutgers +16.5 -110 $1.00 (CBB, 2 PM ET; Bets row 1547) |
