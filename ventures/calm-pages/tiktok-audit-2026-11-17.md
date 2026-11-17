@@ -1,6 +1,14 @@
 # Peace by Page: TikTok audit (Tue 11/17/2026)
 
-Written by the ventures agent after Tim said PbP views are dropping on TikTok. **Read-only: no posts, schedules or routines were changed.** Everything below is a proposal for Tim.
+Written by the ventures agent after Tim said PbP views are dropping on TikTok. The audit itself was read-only.
+
+> **Decision, Tue 11/17: Tim approved the plan ("Go").** What is now in effect:
+> - PbP TikTok = **3 real-footage posts a week, Mon / Wed / Fri evenings.** No rendered text-card reels on TikTok (Facebook can keep them). No offer-first posts. No "link in bio" end cards.
+> - **Blotato draft-to-inbox flow:** Jarvis sends each finished clip to the @peace.by.page TikTok inbox as a draft; Tim adds a TikTok sound and posts it from the app.
+> - **Captions** open with a question and end with a question viewers can answer in a word. Gift angle through 12/20. Paperback mentioned only once the KDP listing is live (Calm Wings submitted 11/16 at $16.99, not live yet).
+> - Week 1 starts once Tim films the proof copy (about 20 min). Full schedule and rules: `content-plan-2026-11.md`.
+> - Stats: Tim doesn't have TikTok Studio. App steps are in **section 7** below (they replace the Studio steps in section 3).
+> - Routines checked 11/17: no PbP routine or scheduled PbP post existed, so nothing had to be stopped. See section 8.
 
 Sources: Blotato `list_accounts` (TikTok), `list_posts` for every TikTok account 10/1 to 12/10 (165 posts: 13 PbP, 135 DRT, 17 personal), `get_post_analytics` snapshot history on 5 PbP posts, the reel build scripts in `launch/`, `content-plan-2026-11.md`, the 11/2 analysis, the 11/11 deep dive, and the DRT engagement plan (`posts/plans/2026-11-17-engagement-plan.md`).
 
@@ -99,6 +107,8 @@ The gap between best and worst is small (35 vs 96), all inside the first test ba
 - One more thing to rule out: anxiety content with "988 crisis" in every caption may be handled as a sensitive wellness topic. TikTok Studio shows "not eligible for the For You feed" on a post if so. Low odds, but the screenshot checks it.
 
 ## 3. Screenshots Tim should send (5 minutes, tonight)
+**Update 11/17: Tim doesn't have TikTok Studio. Use the app steps in section 7 to reach the same screens.** Original list:
+
 TikTok app on **@peace.by.page** > Profile > menu (3 lines, top right) > **TikTok Studio**:
 1. **Overview / Analytics, Last 28 days:** video views, profile views, likes, followers (the graph shows exactly when the drop started).
 2. **Account status** (or "Account check"): any violation, warning or "not eligible for For You" note.
@@ -164,3 +174,32 @@ About **35 minutes this week**, then about **15 minutes a week**.
 3. The gift angle copy and "tag a friend" asks for the next 4 weeks.
 4. Nothing is scheduled right now and no routine was changed. The 11/16 to 12/6 content plan stays as written until Tim says to swap in these changes.
 5. Separate, already pending: the KDP publish go for Calm Wings (needed before any "paperback on Amazon" line).
+
+## 7. Reading TikTok stats without TikTok Studio (added 11/17)
+Tim's app has no TikTok Studio. Same numbers, from the TikTok app on **@peace.by.page** (switch accounts first: tap your username at the top of the Profile tab).
+
+**Account stats (views, followers, profile views):**
+1. Tap **Profile** (bottom right).
+2. Tap the **☰ menu** (3 lines, top right).
+3. Tap **Creator tools**.
+4. Tap **Analytics**. Pick **Last 28 days**. Screenshot Overview, then the Content tab (lists every post, including ones posted by hand).
+
+**If Analytics is missing:**
+- Profile > ☰ > **Settings and privacy** > **Account** > **Switch to Business account** (free; it adds Analytics). Note: Business accounts only see the Commercial Music Library for sounds, which is fine for these posts.
+- Or, on a personal account: Profile > ☰ > **Creator tools** and turn on **Analytics** there if the app offers it.
+- Analytics can take up to 24 hours to fill after it's turned on.
+
+**One post's stats (watch time, traffic source):**
+1. Open the video from your profile.
+2. Tap **"..."** (or the share arrow, then scroll the bottom row).
+3. Tap **Analytics**. Screenshot the overview (views, average watch time, watched full video) and **Traffic source** (For You, Personal profile, Following, Search).
+
+**Account status (flags or "not eligible for For You"):** Profile > ☰ > **Settings and privacy** > **Account** > **Account status** (on some versions: Support > Safety center > Account status).
+
+Send the screenshots to Jarvis. Blotato only sees views, likes, comments and shares on posts it sent, and **drafts Tim posts from the app don't show up in Blotato**, so these screenshots are the only way to read the new posts.
+
+## 8. Routines and scheduled posts (checked 11/17)
+- Blotato `list_posts` (scheduled, all platforms, 11/17 to 1/31): **no PbP posts scheduled** on TikTok 65985, Instagram 81296, Facebook page 1255582607649321 or Pinterest 9654. Nothing to stop.
+- Routines: **no PbP content routine exists.** The only PbP routine is the one-time "Check Calm Wings KDP is live" reminder (Thu 11/19 8:17 PM ET, trig_01UA4LVhAg4jGjkDXhsrrsWj). Its prompt was updated 11/17 to also switch on the paperback line in the TikTok captions once Tim sends the Amazon link. Its time is unchanged.
+- No new recurring routines were created. The Mon 12/7 readout is in the content plan; Jarvis decides whether to set a one-time reminder for it.
+

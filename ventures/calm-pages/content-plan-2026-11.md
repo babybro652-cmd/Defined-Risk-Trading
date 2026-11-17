@@ -1,72 +1,78 @@
-# Peace by Page: 3-week content plan, Mon 11/16 to Sun 12/6
+# Peace by Page: content plan, 11/16 to 12/20 (TikTok approach updated 11/17)
 
-Written 11/11 by the ventures agent from the 11/11 deep dive. **Plan only: nothing is scheduled.** Jarvis schedules each week after Tim approves it.
+Written 11/11 by the ventures agent from the 11/11 deep dive. **Updated 11/17** after Tim approved the TikTok audit (`tiktok-audit-2026-11-17.md`, "Go"). The 11/17 rules below win over anything older. Nothing is scheduled yet: week 1 starts once Tim films the Calm Wings proof copy.
 
-## The rules for this plan
-- **Coloring first.** Every video is real or animated coloring, or a real page in hand. No more rendered text-card reels.
-- **3 videos a week** (Mon, Wed, Fri), same file to TikTok, Instagram and Facebook. **1 Pinterest pin a day.**
-- **Hook on screen at 0.0 s**, 3 to 6 words, pencil already moving. Clips 7 to 12 s so they loop. Real pencil sound.
-- **Audio:** the 11/2 standard (about -23 LUFS, true peak under -1 dBTP; pencil about 14 dB under the music, page turns about 9 dB under).
-- **Value first, product second.** The call to action is the free 7-day sampler, except on the Friday gift posts.
-- **Links by platform:**
-  - TikTok: no clickable link until 1,000 followers. On screen in the last second and in the caption: "free 7-day journal: payhip.com/PeaceByPage". Never "link in bio" on TikTok.
-  - Instagram: "link in bio" only after Tim confirms the bio link (see "IG bio" below). Until then use the same payhip.com/PeaceByPage line.
-  - Facebook and Pinterest: the direct product link.
-- Every caption: "Supports, not replaces, professional care. In crisis in the US, call or text 988." No treatment words (no "relief", "cure", "therapy", "heal"). No em dashes, no filler words. Nothing that echoes "peace by piece".
-- Times (ET): Mon 7:30 PM, Wed 8:45 PM (bedtime slot), Fri 7:30 PM. Pins 7:30 PM.
+## TikTok rules (Tim approved 11/17)
+- **3 posts a week on @peace.by.page (Blotato 65985): Mon 7:30 PM, Wed 8:45 PM (bedtime slot), Fri 7:30 PM ET.**
+- **Real footage only:** Tim's hands, the real paperback, real pencil sound. No rendered text-card reels, no Jarvis animations, no product cards on TikTok. No clip for a slot = skip the slot.
+- **No offer-first posts.** The hook is never the product or the price. The free journal line goes in the caption only (and at most the last second on screen).
+- **No "link in bio"** anywhere on TikTok (captions, burned-in text, end cards). Use "free 7-day journal: payhip.com/PeaceByPage". The TikTok file has no end card; it ends on the page.
+- **Clips 7 to 12 s** so they loop, hook on screen at 0.0 s (3 to 6 words, a question), pencil or page already moving at frame 0. No face, no voice.
+- **Facebook (page 1255582607649321) and Instagram (81296)** get the same footage clips, captions written separately per platform. Facebook may keep running Jarvis text-card reels on top (they did better there); Instagram stays footage-first. FB/IG files use the 11/2 audio standard with the CC0 music bed.
 
-## What worked (replicate)
+### Draft-to-inbox flow (how each TikTok goes out)
+1. Jarvis cuts the clip, adds the on-screen hook, runs media QA (frame 0, contact sheet, no visible dates or other accounts).
+2. **TikTok audio:** the TikTok file carries only the real footage sound (pencil, page turns), normalized to about -23 LUFS, true peak under -1 dBTP, and **no CC0 music**, so the in-app sound becomes the music. (FB/IG versions keep the 11/2 mix with music.)
+3. Jarvis uploads it (presigned URL) and calls `blotato_create_post` on account 65985 with **`isDraft: true`**, `privacyLevel: PUBLIC_TO_EVERYONE`, `isYourBrand: true`, `isBrandedContent: false`, `isAiGenerated: false`, comments/duet/stitch on. Sent the morning of the post day (or the night before). Nothing is public until Tim posts it.
+4. Jarvis sends Tim the caption in chat, ready to paste (Blotato drafts **don't carry the caption**).
+5. Tim, about 3 minutes in the app at the slot time: open the TikTok inbox notification > open the draft > **Add sound** (a quiet trending or Commercial Music Library sound; set its volume low, about 20 to 30%, so the pencil stays audible) > paste the caption > Post.
+6. Tim replies to comments within a day (10 AM lunch). Drafts posted from the app don't show in Blotato, so stats come from the app (audit section 7).
+
+### Captions
+- **Open with a question. End with a question viewers can answer in one word** (last line before the hashtags).
+- Short: under about 150 characters before the support note and hashtags.
+- **Gift angle through Sat 12/20:** "for the friend who overthinks everything", "a $3.99 stocking stuffer for the worrier" (SOS kit), and "Tag the friend who needs this." From 12/21 the gift lines stop.
+- **Paperback:** say nothing about Amazon or a paperback until the Calm Wings KDP listing is live (submitted 11/16 at $16.99, not live as of 11/17). Once Tim sends the Amazon link, gift captions may add "also in paperback on Amazon" (the TikTok caption can't link it; say "search Calm Wings Peace by Page on Amazon" only after checking the listing title). The footage shows the proof copy either way; that's fine, it's what the paperback looks like.
+- Every caption: "Supports, not replaces, professional care. In crisis in the US, call or text 988." No treatment words ("relief", "cure", "therapy", "heal", "fix your anxiety"). No em dashes, no filler words (actually, really, just, simply, truly, genuinely). Nothing that echoes "peace by piece".
+- Hashtags: 3 to 5, from #anxietyjournal #colorwithme #coloringforadults #journalwithme #giftideas #stockingstuffer.
+
+## What Tim films (one sitting, about 20 minutes, proof copy)
+Setup: phone propped **straight above** the book (a stack of books works), vertical, 1080p or 4K at 30 fps, long-press to lock focus and exposure, no face, no voice, no music, quiet room so the pencil sound is clean. 20 to 30 s per take; Jarvis cuts each to 7 to 12 s.
+
+| Clip | What | Takes | Light |
+|---|---|---|---|
+| **1. Flip-through** | Slow flip through the Calm Wings paperback, front to back, stop on a butterfly page | 2 | Lamp, evening |
+| **2. Coloring a page** | Coloring one butterfly page in the book with colored pencils | 3: blank, half done, nearly done (for a reveal) | Daylight or bright lamp |
+| **3. Worry page** | Writing one short worry on a worry-time page, setting the pen down, closing the book | 2 | One warm lamp |
+| 4. Optional: gift | Ribbon or twine tied around the paperback, then 3 s of coloring | 1 | Any |
+
+Send the raw clips to Jarvis (Drive or text). From these Jarvis makes about 9 TikToks (different cuts, hooks and takes), so one sitting covers 3 weeks.
+
+## TikTok schedule (week 1 starts after the footage arrives)
+Post days are the next Mon/Wed/Fri at least one day after Jarvis has the clips. **If Tim films by Thu 11/19, post 1 is Fri 11/20 7:30 PM**; if he films over the weekend, post 1 is Mon 11/23. Shift the whole list to match.
+
+| # | If filmed by Thu 11/19 | Clip | On-screen hook | Caption opens | Caption ends (one-word answer) | Gift line |
+|---|---|---|---|---|---|---|
+| 1 | Fri 11/20 7:30 PM | Flip-through | "Know someone who overthinks everything?" | "Know someone who overthinks everything? 90 days of pages for the worry spiral, plus coloring breaks." | "Tag the friend who needs this. Butterflies, flowers or moon?" | Yes |
+| 2 | Mon 11/23 7:30 PM | Coloring (blank to nearly done) | "Would you color this?" | "Would you color this first or write in it first?" | "Pencil or marker?" | No |
+| 3 | Wed 11/25 8:45 PM | Worry page | "Brain louder at bedtime?" | "Does your brain get louder at bedtime? One worry on paper, then the book closes." | "What time does yours start?" | No |
+| 4 | Fri 11/27 7:30 PM | Flip-through, take 2 (Black Friday, quiet: no sale) | "A gift for someone who worries?" | "Shopping for someone who worries? A calm gift, no sale, no rush." | "Tag the friend who needs this. Who's first on your list?" | Yes |
+| 5 | Mon 11/30 7:30 PM | Coloring, half-done take | "Can you color for 10 seconds?" | "Can you color with me for 10 seconds?" | "What color goes next?" | No |
+| 6 | Wed 12/2 8:45 PM | Worry page, take 2 | "Worries louder at night?" | "Are your worries louder at night too? This is the 10-minute version." | "Morning or night person?" | No |
+| 7 | Fri 12/4 7:30 PM | Coloring reveal + SOS kit pages | "Stocking stuffer for the worrier?" | "Need a stocking stuffer for the worrier? The SOS kit is $3.99 and prints tonight." | "Tag the friend who needs this. Stocking or gift bag?" | Yes |
+| 8 | Mon 12/7 7:30 PM | Gift clip (clip 4) or flip-through close-up | "For the friend who overthinks everything?" | "Got a friend who overthinks everything? This one's for them." | "Tag the friend who needs this. Yes or no?" | Yes |
+| 9 | Wed 12/9 8:45 PM | Coloring, nearly-done take | "Phone down for 10 minutes?" | "Could you put the phone down for 10 minutes tonight?" | "Tonight or tomorrow?" | No |
+
+Every caption then adds: "Free 7-day journal: payhip.com/PeaceByPage" and the support note with 988, then hashtags. Jarvis writes the final caption per post, checks it against the rules above, and sends it with the draft.
+
+Posts 10 to 12 (12/11 to 12/18) need a second sitting (Calm Petals or Calm Nights pages, or the paperback once it's live); Jarvis asks Tim the week of 12/7. Gift posts run through Fri 12/18; the last gift line is used on or before 12/20.
+
+**Readout Mon 12/7** (after about 7 to 9 posts): Tim sends the app screenshots (audit section 7). Target: at least 1 post past 300 views and a comment on most posts. If real footage posted from the app still stays under 100 every time and Account status shows no flag, cut TikTok to 1 post a week and put the time into Pinterest and the KDP listing.
+
+## Facebook and Instagram
+- Same clip as each TikTok, posted the same evening through Blotato (scheduled), captions written separately, 11/2 audio mix with music. Facebook: the direct product link. Instagram: "link in bio" only after Tim confirms the bio link (see IG bio below); until then the payhip.com/PeaceByPage line.
+- Facebook may add Jarvis text-card reels (coloring or bedtime-worry style) on non-TikTok days if Tim wants more volume there. None are scheduled now.
+- Every FB/IG post still goes to Tim for one approval per week before it's scheduled.
+
+## What worked before (still true)
 | Proven | Result | How we reuse it |
 |---|---|---|
-| "Color with me" coloring clip (11/3) | #1 on FB (208 views), only IG reel that held viewers (4.3 s avg watch, 4x the rest) | Every Monday is a "Color with me" clip, a different edition each week |
-| Bedtime worry hook, V12 worry time (11/9) | #2 FB (189), #1 TikTok (96) | Every Wednesday is a bedtime post, Calm Nights first |
-| Coloring reveal (V3, 10/28) | #2 TikTok (94, 5 likes) | Blank-to-finished reveal as the last 2 s of coloring clips |
-| Offer-only posts (V5 sampler) | 0 IG views | Never lead with the offer; the sampler goes in the last second only |
+| "Color with me" coloring clip (11/3) | #1 on FB (208 views), best IG watch time | Coloring clips on Mondays |
+| Bedtime worry hook (V12, 11/9) | #2 FB (189), #1 TikTok (96) | Wednesday bedtime slot, question hook |
+| Coloring reveal (V3, 10/28) | #2 TikTok (94, 5 likes) | Blank-to-finished takes as the reveal |
+| Offer-only posts (V5 sampler, V4 editions) | Bottom on every platform | Never lead with the offer |
 
-## 10 new angles to test
-Ranked by how likely they are to work in the next 3 weeks. Top 6 are in the schedule; 7 to 10 go in as Pinterest pins or swaps if a slot underperforms.
-
-| # | Angle | Hook (on screen) | Best for |
-|---|---|---|---|
-| 1 | **Gift for someone who worries** | "For the friend who overthinks everything" | Fri gift posts, Pinterest gift board |
-| 2 | **Phone-free wind-down / sleep** | "My last 10 minutes before bed, no phone" | Wed bedtime posts, Calm Nights |
-| 3 | **Holiday stress, Thanksgiving week** | "When the family dinner is a lot" (5-4-3-2-1 grounding page) | Wed 11/25 |
-| 4 | **New-parent nap break** (Tim's own life, no face) | "5 minutes for me while the baby naps" | Mon or Fri, IG and FB |
-| 5 | **Stocking stuffer under $5** | "A $3.99 stocking stuffer for the worrier" (SOS kit) | Fri 12/4, Pinterest |
-| 6 | **Counselors and teachers: calm-corner printable** | "A free printable for your calm corner" (sampler) | Pinterest first, 1 video in week 3 |
-| 7 | Parent and teen, color side by side | "What we do when her day was a lot" | Needs 2 pairs of hands; test once if possible |
-| 8 | Print-tonight digital gift | "Forgot a gift? Print this tonight" | Save for 12/14 to 12/24 (outside this plan) |
-| 9 | Pencil sound ASMR, no words | "Sound on" | Swap-in if a Monday flops |
-| 10 | "Pick your edition" (butterflies, flowers or moon) | "Which one are you?" | Pinterest and an IG carousel |
-
-Gift and stocking-stuffer posts sell the printables (instant, no shipping). Once the KDP paperback is live, add "also on Amazon in paperback" to gift posts and pins.
-
-## The schedule
-
-### Week 1: Mon 11/16 to Sun 11/22 (Wings + Nights, gift angle starts)
-| Day | Post | Footage | Hook | Caption CTA |
-|---|---|---|---|---|
-| Mon 11/16 | Color with me: Calm Wings butterfly | Clip A (Tim) | "Color with me for 10 seconds" | Free 7-day journal |
-| Wed 11/18 | Bedtime: phone-free wind-down, coloring a moon page by lamp | Clip B (Tim) | "My last 10 minutes before bed, no phone" | Free 7-day journal |
-| Fri 11/20 | Gift: printed pages tied with ribbon, then 3 s of coloring | Clip D (Tim) | "For the friend who overthinks everything" | Calm Wings bundle |
-
-### Week 2: Mon 11/23 to Sun 11/29 (Thanksgiving and Black Friday)
-| Day | Post | Footage | Hook | Caption CTA |
-|---|---|---|---|---|
-| Mon 11/23 | Color with me: Calm Petals flower | Clip E (Tim, next sitting) or Jarvis animation (11/3 style) | "Color with me for 10 seconds" | Free 7-day journal |
-| Wed 11/25 | Holiday stress: 5-4-3-2-1 grounding page, pencil ticking off each line | Clip C (Tim) | "When the family dinner is a lot" | Free 7-day journal |
-| Fri 11/27 | Black Friday, quiet version: one gift idea, no sale (Tim has not said LAUNCH25) | Clip D second take, or Jarvis reveal | "A calm gift for someone who worries" | Calm Nights bundle |
-
-### Week 3: Mon 11/30 to Sun 12/6 (gift peak)
-| Day | Post | Footage | Hook | Caption CTA |
-|---|---|---|---|---|
-| Mon 11/30 | New-parent nap break: coloring with the baby monitor in frame (no baby, no face) | Clip F (Tim) | "5 minutes for me while the baby naps" | Free 7-day journal |
-| Wed 12/2 | Bedtime: worry time page, writing one worry then closing the journal | Clip B second take or new | "Worries louder at bedtime?" | Calm Nights journal |
-| Fri 12/4 | Stocking stuffer: SOS kit pages folded into a stocking | Clip G (Tim) | "A $3.99 stocking stuffer for the worrier" | SOS kit |
-
-Swap rule: if a Monday coloring clip beats the Wednesday and Friday posts by 2x again, turn the next Friday into a coloring clip with the gift line as a caption only.
-
-## Pinterest: 1 pin a day (21 pins, 7:30 PM)
+## Pinterest: 1 pin a day (21 pins, 7:30 PM; unchanged by the 11/17 TikTok update)
 Blotato still refuses the account, so Tim queues each week's 7 pins in Pinterest's own scheduler in one sitting (about 15 minutes; steps in `launch/launch-schedule.md` section 2). The first 15 pins ran 10/23 to 11/6, so these are **new images**: Jarvis makes them (1000 x 1500), plus stills from Tim's clips. Board ids are in `launch/launch-schedule.md`.
 
 | Date | Angle | Board | Link |
@@ -96,22 +102,6 @@ Blotato still refuses the account, so Tim queues each week's 7 pins in Pinterest
 Pin titles and descriptions carry search words: "anxiety journal printable", "gift for someone with anxiety", "adult coloring pages printable", "bedtime journal", "calm corner printable". Every description ends with the support note and 988.
 If the KDP paperback goes live before 12/6, swap 2 gift pins to the Amazon link.
 
-## What Tim records (phone over a page while coloring)
-Setup for every clip: phone propped **straight above** the page (a stack of books or a cheap overhead stand), vertical, 1080p or 4K at 30 fps, lock focus and exposure (long-press on the screen), no face, no voice, no music (Jarvis adds it), quiet room so the pencil sound is clean. Record 20 to 30 s per take; Jarvis cuts it to 7 to 12 s. Print the pages at home first (Calm Wings and Calm Nights coloring packs, the Calm Nights journal, the SOS kit).
-
-**This week (one sitting, about 20 minutes, by Sun 11/15):**
-- **Clip A:** coloring a Calm Wings butterfly page with colored pencils, daylight or bright lamp. 3 takes: page blank, half done, nearly done (for the reveal).
-- **Clip B:** evening, one warm lamp only: coloring a Calm Nights moon page, then 3 s of setting the pencil down. 2 takes.
-- **Clip C:** the 5-4-3-2-1 grounding page (in the SOS kit or the journal): pencil ticks a line and writes one short word on each row. 1 take.
-- **Clip D:** 4 to 5 printed pages rolled or stacked and tied with ribbon or twine, hands tying the bow, then 3 s of coloring. 2 takes.
-
-**Next sitting (by Sun 11/22):**
-- **Clip E:** coloring a Calm Petals flower page.
-- **Clip F:** coloring at the table with the baby monitor or a bottle in the corner of the frame (no baby, no face).
-- **Clip G:** SOS kit pages folded and slid into a stocking.
-
-Send raw clips to Jarvis (Drive or text). Jarvis edits, adds the hook, mixes audio to the 11/2 standard, writes captions and pin images, and returns each week for one approval.
-
 ## IG bio (one-time, Tim)
 Jarvis could not see the @peacebypage bio (Instagram blocks logged-out fetches). To check and add it:
 1. Instagram app > profile tab (bottom right) > make sure it shows @peacebypage.
@@ -121,7 +111,10 @@ Jarvis could not see the @peacebypage bio (Instagram blocks logged-out fetches).
 5. Tell Jarvis "IG link is in", and IG captions can say "link in bio".
 
 ## Needs Tim
-- Approve this plan (or edit), then Jarvis schedules week 1 on Sun 11/15.
-- Record Clips A to D this week.
-- Send the Payhip links for the SOS kits and the Calm Wings / Nights mood trackers (only the Petals mood tracker link is on file). Needed for the 11/24 and 12/4 posts and pins.
+- **Film the proof copy** (about 20 min, one evening): clips 1 to 3 above, clip 4 optional. Send them to Jarvis.
+- Post each TikTok draft from the app with a sound (about 3 min, Mon/Wed/Fri evening).
+- Reply to TikTok comments at 10 AM lunch.
+- Send the app stats screenshots (audit section 7) on Mon 12/7, or sooner if something looks off.
+- Send the Amazon link when Calm Wings is live on KDP (the paperback line stays off until then).
+- Send the Payhip links for the SOS kits and the Calm Wings / Nights mood trackers (needed for the 12/4 stocking-stuffer post and pins).
 - Check the IG bio link.

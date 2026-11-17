@@ -48,7 +48,8 @@ Newest decisions win; move finished items to Done with the date.
 ### Peace by Page (Ventures)
 - [ ] KDP: proofs arrived 11/16 and look good (bigger than expected: 8.5 x 11 in). Publishing at $16.99 (11/16, about $7.15 a sale, expanded distribution off). Live in about 72 hrs; then add the Amazon link to Payhip and socials. Steps: ventures/calm-pages/kdp-setup-steps.md.
 - [ ] 12/31 checkpoint: under 10 paid orders by 12/31 = maintenance mode.
-- [ ] Content plan written (ventures/calm-pages/content-plan-2026-11.md). Tim: OK it so Jarvis schedules week 1; record clips A-D (20 min, phone overhead).
+- [ ] Film the Calm Wings proof copy (20 min, one evening, phone propped overhead): flip-through, coloring a page, writing on the worry page. Send clips to Jarvis. TikTok week 1 starts the next Mon/Wed/Fri (by Thu 11/19 = first post Fri 11/20). Plan: ventures/calm-pages/content-plan-2026-11.md.
+- [ ] PbP TikTok (approved 11/17): post each draft from the TikTok inbox with a sound, Mon/Wed/Fri evening (3 min). Stats: Profile > ☰ > Creator tools > Analytics (steps in ventures/calm-pages/tiktok-audit-2026-11-17.md section 7). Readout Mon 12/7.
 - [ ] IG link in bio → payhip.com/PeaceByPage (Tim checks in app; Jarvis can't see bios). TikTok: bio text only.
 - [ ] Point peacebypage.com at the Payhip store (Cloudflare) + hello@ email.
 - [ ] Send a Payhip screenshot: visits, sales, sampler downloads (Jarvis can't reach Payhip).
