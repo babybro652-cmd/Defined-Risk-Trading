@@ -29,3 +29,5 @@ return no views (a sync gap, not zero).
 | 2026-11-17 | 5:00 PM | Facebook reel | 7073991 | Education text cards (4 rules before a trade) | music | aeroplane | | |
 | 2026-11-17 | 7:16 AM | Facebook reel | 7078054 (post 9466573) | Trade still reel (second funded account day 1, Tim approved) | music | lag | | |
 | 2026-11-17 | 7:19 AM | Instagram reel | 7078056 (post 9466608) | Trade still reel (second funded account day 1, Tim approved) | music | lag | | |
+| 2026-11-17 | 5:45 PM | Facebook reel | 7096635 | Market commentary still reel (ES selloff chart, Tim's screenshot) | music | one_cool_minute | | |
+| 2026-11-17 | 6:30 PM | Instagram reel | 7096638 | Market commentary still reel (ES selloff chart, Tim's screenshot) | music | one_cool_minute | | |
