@@ -31,6 +31,5 @@ Only categories that beat their price season to date: NBA 3+ threes, NHL 3+ SOG,
 - **2-leg #1:** Luka Doncic 3+ threes (83%, CHA @ LAL) + LaMelo Ball 3+ threes (67%, POR @ MIN). Fair -125 (55%); take -102 or longer.
 - **2-leg #2:** Luka Doncic 3+ threes (83%, CHA @ LAL) + Immanuel Quickley 3+ threes (55%, NY @ TOR). Fair +117 (46%); take +139 or longer.
 - **2-leg #3:** LaMelo Ball 3+ threes (67%, POR @ MIN) + Brandon Miller 3+ threes (61%, CHA @ LAL). Fair +145 (41%); take +169 or longer.
-- **3-leg #4:** Brandon Miller 3+ threes (61%, CHA @ LAL) + Grayson Allen 3+ threes (58%, CHA @ LAL) + Immanuel Quickley 3+ threes (55%, NY @ TOR). Fair +407 (20%); take +458 or longer; same game, correlated, fair price is optimistic.
 
 <!-- parlays:end -->

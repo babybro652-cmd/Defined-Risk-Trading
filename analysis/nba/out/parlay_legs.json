@@ -131,14 +131,6 @@
    "note": "29 starts"
   },
   {
-   "player": "Jonathan Kuminga",
-   "team": "MIN",
-   "game": "POR @ MIN",
-   "market": "3+ threes",
-   "p": 0.179,
-   "note": "28 starts"
-  },
-  {
    "player": "Jaden McDaniels",
    "team": "MIN",
    "game": "POR @ MIN",
@@ -267,11 +259,11 @@
    "note": "32 starts"
   },
   {
-   "player": "Grayson Allen",
+   "player": "Sion James",
    "team": "CHA",
    "game": "CHA @ LAL",
    "market": "3+ threes",
-   "p": 0.583,
+   "p": 0.154,
    "note": "30 starts"
   },
   {
