@@ -222,6 +222,7 @@ SH_TIP = {  # normalized favorite; None = even
  '2026-11-11': {('WSH','IND'):'WSH',('CLE','NY'):'CLE',('BOS','TOR'):'TOR',('SA','CHI'):'SA',('DEN','MEM'):'MEM',
                 ('LAL','MIL'):'LAL',('BKN','NO'):'BKN',('ORL','UTAH'):'ORL',('GS','HOU'):'HOU',('OKC','POR'):'POR'},
  '2026-11-12': {('TOR','PHI'):'TOR',('DET','WSH'):'WSH',('DAL','MIN'):'MIN',('CHA','PHX'):'PHX'},
+ '2026-11-17': {('NY','TOR'):'NY',('POR','MIN'):None,('DET','SA'):'SA',('UTAH','LAC'):'LAC',('CHA','LAL'):None},   # tip sheet normalized; LAL jumper Mamukelashvili 0% (no sample) = no call
  '2026-11-16': {('ORL','BOS'):'ORL',('CHI','CLE'):'CLE',('MEM','WSH'):'MEM',('HOU','MIA'):'MIA',('PHI','BKN'):'PHI',
                 ('GS','NO'):'GS',('POR','MIN'):None,('PHX','DEN'):'DEN'},   # tip sheet normalized (log5 of jumper tip %); POR/MIN 54 vs 54 = no call
  '2026-11-15': {('IND','PHI'):None,('LAL','PHX'):'LAL',('CHA','LAC'):'LAC',('SA','UTAH'):'SA',('DAL','BOS'):'BOS',

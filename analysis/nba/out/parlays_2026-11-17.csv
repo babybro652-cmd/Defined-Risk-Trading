@@ -1,0 +1,11 @@
+legs,picks,games,p,fair,take,stake,void_if_sits,rank,dropped
+1,Wembanyama,DET @ SA,0.2365,+323,+407,16,,1,
+1,Fox,DET @ SA,0.1229,+714,+876,16,,2,
+1,Castle,DET @ SA,0.1012,+888,+1086,16,,3,
+1,Garland,UTAH @ LAC,0.1529,+554,+685,16,,1,
+1,Lopez,UTAH @ LAC,0.1508,+563,+696,16,,2,
+1,Bamba,UTAH @ LAC,0.1148,+771,+945,16,,3,
+2,Wembanyama+Garland,DET @ SA + UTAH @ LAC,0.0362,+2665,+3882,0.5,,,
+2,Wembanyama+Lopez,DET @ SA + UTAH @ LAC,0.0357,+2704,+3938,0.5,,,
+2,Fox+Garland,DET @ SA + UTAH @ LAC,0.0188,+5222,+7563,0.5,,,
+2,Fox+Lopez,DET @ SA + UTAH @ LAC,0.0185,+5296,+7670,0.5,,,
