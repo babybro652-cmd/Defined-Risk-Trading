@@ -164,3 +164,8 @@
 2026-11-16|POR @ MIN|Deni Avdija,LaMelo Ball|Damian Lillard,Ayo Dosunmu
 2026-11-16|GS @ NO|Yaxel Lendeborg,Zion Williamson|Brandin Podziemski,Saddiq Bey
 2026-11-16|PHX @ DEN|Devin Booker,Nikola Jokic|Dillon Brooks,Jamal Murray
+2026-11-17|NY @ TOR|Jalen Brunson,RJ Barrett|Karl-Anthony Towns,Scottie Barnes
+2026-11-17|POR @ MIN|Deni Avdija,LaMelo Ball|Damian Lillard,Ayo Dosunmu
+2026-11-17|DET @ SA|Cade Cunningham,Victor Wembanyama|Duncan Robinson,De'Aaron Fox
+2026-11-17|UTAH @ LAC|Keyonte George,Darius Garland|
+2026-11-17|CHA @ LAL|Brandon Miller,Luka Doncic|Coby White,Walker Kessler

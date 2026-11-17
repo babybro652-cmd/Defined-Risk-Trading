@@ -12,7 +12,7 @@ import csv, json, re, subprocess, collections, unicodedata
 
 R = '/home/user/Defined-Risk-Trading'
 COMMITS = {'2026-11-04': 'ea0de84', '2026-11-05': 'a3b7043', '2026-11-06': '9799f9f', '2026-11-07': '08379c3',
-           '2026-11-08': 'eceed10', '2026-11-09': '3a8cef7', '2026-11-11': '5810317', '2026-11-12': 'f2dbf81', '2026-11-13': '2b2ac63', '2026-11-14': 'd5fc33e', '2026-11-15': 'ae974ef'}
+           '2026-11-08': 'eceed10', '2026-11-09': '3a8cef7', '2026-11-11': '5810317', '2026-11-12': 'f2dbf81', '2026-11-13': '2b2ac63', '2026-11-14': 'd5fc33e', '2026-11-15': 'ae974ef', '2026-11-16': 'e332b63'}
 
 
 def norm(n):
@@ -74,6 +74,7 @@ ST_TIP = {
  '2026-11-11': {('WSH','IND'):(46,54),('CLE','NY'):(77,23),('BOS','TOR'):(39,61),('SA','CHI'):(76,24),('DEN','MEM'):(46,54),
                 ('LAL','MIL'):(58,42),('BKN','NO'):(59,41),('ORL','UTAH'):(79,21),('GS','HOU'):(36,64),('OKC','POR'):(34,66)},
  '2026-11-12': {('TOR','PHI'):(67,33),('DAL','MIN'):(36,64),('CHA','PHX'):(59,41)},   # DET @ WSH card did not load
+ '2026-11-17': {('NY','TOR'):(40,60),('POR','MIN'):(53,47),('DET','SA'):(25,75),('CHA','LAL'):(28,72)},   # UTAH @ LAC tip 'loading'
  '2026-11-16': {('ORL','BOS'):(66,34),('MEM','WSH'):(33,67),('PHI','BKN'):(51,49),('HOU','MIA'):(30,70),
                 ('POR','MIN'):(53,47),('GS','NO'):(48,52),('PHX','DEN'):(28,72)},   # CHI @ CLE tip 'loading'
  '2026-11-15': {('IND','PHI'):(65,35),('LAL','PHX'):(71,29),('CHA','LAC'):(54,46),('SA','UTAH'):(83,17),('DAL','BOS'):(37,63),
@@ -86,7 +87,7 @@ ST_TIP = {
 ST = {}
 for line in open(R + '/analysis/nba/out/startool/star_bomb.txt'):
     d, game, stars, bombs = line.rstrip('\n').split('|')[:4]
-    if d not in COMMITS or d in ('2026-11-11', '2026-11-12', '2026-11-13', '2026-11-14', '2026-11-15', '2026-11-16'):
+    if d not in COMMITS or d in ('2026-11-11', '2026-11-12', '2026-11-13', '2026-11-14', '2026-11-15', '2026-11-16', '2026-11-17'):
         continue
     a, h = [x.strip() for x in game.split('@')]
     s, b = stars.split(','), (bombs.split(',') if bombs else ['', ''])
@@ -193,7 +194,18 @@ ST_PCT_1116 = {  # CLE card is stale (11/14 rest five: M. Thomas, Tyson, Hezonja
     'NO': [('Zion Williamson',18),('Saddiq Bey',16),('Jeremiah Fears',12),('Herbert Jones',7),('Yves Missi',5)],
     'PHX': [('Devin Booker',13),('Dillon Brooks',10),('Jalen Green',9),('Miles Bridges',8),('Oso Ighodaro',4)],
     'DEN': [('Nikola Jokic',17),('Jamal Murray',16),('Aaron Gordon',8),('Cameron Johnson',8),('Christian Braun',8)]}
-for d, tab in (('2026-11-09', ST_PCT_0911), ('2026-11-11', ST_PCT_1111), ('2026-11-12', ST_PCT_1112), ('2026-11-13', ST_PCT_1113), ('2026-11-14', ST_PCT_1114), ('2026-11-15', ST_PCT_1115), ('2026-11-16', ST_PCT_1116)):
+ST_PCT_1117 = {  # DET card lists D. Robinson (OUT); CHA@LAL card lists Kessler (OUT) and Sion James; MIN card has Kuminga, Dosunmu
+    'NY': [('Jalen Brunson',15),('Karl-Anthony Towns',12),('OG Anunoby',10),('Mikal Bridges',8),('Josh Hart',7)],
+    'TOR': [('RJ Barrett',13),('Scottie Barnes',12),('Immanuel Quickley',11),('Collin Murray-Boyles',6),("Ja'Kobe Walter",6)],
+    'POR': [('Deni Avdija',16),('Damian Lillard',14),('Donovan Clingan',9),('Toumani Camara',9),('Sidy Cissoko',4)],
+    'MIN': [('LaMelo Ball',13),('Ayo Dosunmu',10),('Jaden McDaniels',10),('Jonathan Kuminga',8),('Rudy Gobert',7)],
+    'DET': [('Cade Cunningham',14),('Duncan Robinson',8),('John Collins',8),('Ausar Thompson',6),('Daniss Jenkins',6)],
+    'SA': [('Victor Wembanyama',18),("De'Aaron Fox",11),('Stephon Castle',11),('Devin Vassell',9),('Dylan Harper',9)],
+    'UTAH': [('Keyonte George',17),('Darryn Peterson',13),('Ace Bailey',11),('Mo Bamba',7),('Josh Green',3)],
+    'LAC': [('Darius Garland',18),('Rui Hachimura',10),('Derrick Jones Jr.',9),('Kris Dunn',7),('Isaiah Jackson',6)],
+    'CHA': [('Brandon Miller',14),('Coby White',11),('Naz Reid',10),('Moussa Diabate',5),('Sion James',3)],
+    'LAL': [('Luka Doncic',26),('Walker Kessler',11),('Quentin Grimes',9),('Jake LaRavia',6),('Matisse Thybulle',5)]}
+for d, tab in (('2026-11-09', ST_PCT_0911), ('2026-11-11', ST_PCT_1111), ('2026-11-12', ST_PCT_1112), ('2026-11-13', ST_PCT_1113), ('2026-11-14', ST_PCT_1114), ('2026-11-15', ST_PCT_1115), ('2026-11-16', ST_PCT_1116), ('2026-11-17', ST_PCT_1117)):
     for tm, v in tab.items():
         ST[(d, tm)] = [(n, p, p) for n, p in v]   # StarTool prints game first basket %; same number ranks team and game
 

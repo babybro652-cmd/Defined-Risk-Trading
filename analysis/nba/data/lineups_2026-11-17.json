@@ -1,0 +1,102 @@
+{
+ "NY": {
+  "five": [
+   "Jalen Brunson",
+   "Mikal Bridges",
+   "Josh Hart",
+   "OG Anunoby",
+   "Karl-Anthony Towns"
+  ],
+  "jumper": "Karl-Anthony Towns"
+ },
+ "TOR": {
+  "five": [
+   "Immanuel Quickley",
+   "RJ Barrett",
+   "Ja'Kobe Walter",
+   "Scottie Barnes",
+   "Collin Murray-Boyles"
+  ],
+  "jumper": "Collin Murray-Boyles"
+ },
+ "POR": {
+  "five": [
+   "Damian Lillard",
+   "Sidy Cissoko",
+   "Toumani Camara",
+   "Deni Avdija",
+   "Donovan Clingan"
+  ],
+  "jumper": "Donovan Clingan"
+ },
+ "MIN": {
+  "five": [
+   "LaMelo Ball",
+   "Ayo Dosunmu",
+   "Jonathan Kuminga",
+   "Jaden McDaniels",
+   "Rudy Gobert"
+  ],
+  "jumper": "Rudy Gobert"
+ },
+ "DET": {
+  "five": [
+   "Cade Cunningham",
+   "Daniss Jenkins",
+   "Kevin Huerter",
+   "Ausar Thompson",
+   "John Collins"
+  ],
+  "jumper": "John Collins"
+ },
+ "SA": {
+  "five": [
+   "De'Aaron Fox",
+   "Stephon Castle",
+   "Dylan Harper",
+   "Devin Vassell",
+   "Victor Wembanyama"
+  ],
+  "jumper": "Victor Wembanyama"
+ },
+ "UTAH": {
+  "five": [
+   "Keyonte George",
+   "Darryn Peterson",
+   "Josh Green",
+   "Ace Bailey",
+   "Mo Bamba"
+  ],
+  "jumper": "Mo Bamba"
+ },
+ "LAC": {
+  "five": [
+   "Darius Garland",
+   "Kris Dunn",
+   "Derrick Jones Jr.",
+   "Rui Hachimura",
+   "Brook Lopez"
+  ],
+  "jumper": "Brook Lopez"
+ },
+ "CHA": {
+  "five": [
+   "Coby White",
+   "Grayson Allen",
+   "Brandon Miller",
+   "Naz Reid",
+   "Moussa Diabate"
+  ],
+  "jumper": "Moussa Diabate"
+ },
+ "LAL": {
+  "five": [
+   "Luka Doncic",
+   "Quentin Grimes",
+   "Matisse Thybulle",
+   "Jake LaRavia",
+   "Sandro Mamukelashvili"
+  ],
+  "jumper": "Sandro Mamukelashvili"
+ }
+}

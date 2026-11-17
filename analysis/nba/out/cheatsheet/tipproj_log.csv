@@ -36,11 +36,11 @@ date,game,away_jumper,home_jumper,tipproj_away_pct,tipproj_pick,our_away_pct,our
 2026-11-15,HOU @ WSH,Alperen Sengun,Alex Sarr,48,WSH,40,WSH,WSH,Anthony Davis vs Alperen Sengun,"TipProj WSH jumper Sarr (Q, tagged); ours Davis"
 2026-11-15,ATL @ MIL,Onyeka Okongwu,Myles Turner,65,ATL,62,ATL,MIL,Jericho Sims vs Onyeka Okongwu,
 2026-11-15,OKC @ SAC,Isaiah Hartenstein,Domantas Sabonis,57,OKC,57,OKC,OKC,Isaiah Hartenstein vs Dylan Cardwell,TipProj OKC jumper Hartenstein; ours Mara; Ajay Mitchell Q
-2026-11-16,ORL @ BOS,Wendell Carter Jr.,Neemias Queta,75,ORL,76,ORL,,,
-2026-11-16,MEM @ WSH,Zach Edey,Alex Sarr,73,MEM,50,MEM,,,"Edey Q (tagged); TipProj WSH jumper Sarr, ours Davis (jumped 11/15 and recent WSH games)"
-2026-11-16,CHI @ CLE,Jalen Smith,Jarrett Allen,12,CLE,13,CLE,,,"J. Smith Q (tagged); Watson Q, Tyson Q/doubtful"
-2026-11-16,HOU @ MIA,Alperen Sengun,Bam Adebayo,21,MIA,27,MIA,,,Larsson Q
-2026-11-16,PHI @ BKN,Joel Embiid,Day'Ron Sharpe,68,PHI,55,PHI,,,Embiid probable
-2026-11-16,GS @ NO,Draymond Green,Yves Missi,47,NO,53,GS,,,
-2026-11-16,POR @ MIN,Donovan Clingan,Rudy Gobert,49,MIN,54,POR,,,
-2026-11-16,PHX @ DEN,Oso Ighodaro,Nikola Jokic,44,DEN,29,DEN,,,
+2026-11-16,ORL @ BOS,Wendell Carter Jr.,Neemias Queta,75,ORL,76,ORL,ORL,Wendell Carter Jr. vs Luka Garza,
+2026-11-16,MEM @ WSH,Zach Edey,Alex Sarr,73,MEM,50,MEM,WSH,Anthony Davis vs Zach Edey,"Edey Q (tagged); TipProj WSH jumper Sarr, ours Davis (jumped 11/15 and recent WSH games)"
+2026-11-16,CHI @ CLE,Jalen Smith,Jarrett Allen,12,CLE,13,CLE,CLE,Jarrett Allen vs Jalen Smith,"J. Smith Q (tagged); Watson Q, Tyson Q/doubtful"
+2026-11-16,HOU @ MIA,Alperen Sengun,Bam Adebayo,21,MIA,27,MIA,MIA,Bam Adebayo vs Alperen Sengun,Larsson Q
+2026-11-16,PHI @ BKN,Joel Embiid,Day'Ron Sharpe,68,PHI,55,PHI,BKN,Day'Ron Sharpe vs Joel Embiid,Embiid probable
+2026-11-16,GS @ NO,Draymond Green,Yves Missi,47,NO,53,GS,GS,Al Horford vs Yves Missi,
+2026-11-16,POR @ MIN,Donovan Clingan,Rudy Gobert,49,MIN,54,POR,POR,Donovan Clingan vs Rudy Gobert,
+2026-11-16,PHX @ DEN,Oso Ighodaro,Nikola Jokic,44,DEN,29,DEN,PHX,Oso Ighodaro vs Nikola Jokic,
