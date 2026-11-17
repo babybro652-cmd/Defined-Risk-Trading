@@ -23,7 +23,7 @@ the files below that the task touches before acting.
 - Facebook `50185`, always with `pageId` `993318963868124` (video only)
 - Tim's personal TikTok `59764`. Never post DRT content to Prosperity Legendz accounts.
 - YouTube `48727` "Timothy Williams (Defined Risk Trading)". Required fields: `title`,
-  `privacyStatus` (public|private|unlisted), `shouldNotifySubscribers`. See "Daily YouTube Short".
+  `privacyStatus` (public|private|unlisted), `shouldNotifySubscribers`. See "YouTube Shorts: footage only".
 - Media must be a public URL. Upload local files with
   `blotato_create_presigned_upload_url` + a curl PUT (database.blotato.io is allowed
   since 9/30), or use Drive files shared anyone-with-link via
@@ -89,19 +89,20 @@ that close hit first. Score Div entries from the label price, never from the piv
 - Also check wide-risk entries (e.g. 12.25 and 17.25 pt stops) against the course's
   3.5-4 pt stop rule.
 
-## Daily YouTube Short (Tim approved 10/30)
-One Short a day on YouTube `48727` at **6:12 PM ET** (22:12 UTC in EDT, 23:12 UTC after Nov 1),
-weekends included. It's Step 6b of the daily content routine (prompt stored in the disabled
-`trig_01NkNxxc7neQATLrTifB42kv`). First Short: 10/30, schedule 6235272.
-- Pick the day's strongest QA'd vertical reel (sharpest 2-second hook, one lesson; Tim's real
-  chart/footage over plain text cards), or a Shorts-specific cut (QA it again). Never a trade
-  post unless Tim approved that exact video for YouTube.
-- 9:16, under 60 s (check with ffmpeg). Same media QA as every post.
-- Title under 60 chars with a hook, keyword near the front, no hashtags, no clickbait the
-  video doesn't deliver. Description: 1-2 fresh sentences, then "Education only. Not financial
-  advice.", then 2-3 hashtags incl. `#shorts`. No links or signup CTA.
+## YouTube Shorts: footage only, 3-5 a week (Tim, 11/17; replaces the daily AI-voice Short of 10/30)
+The daily 6:12 PM AI-voice Short is STOPPED (median 18 views, 0 subs). Shorts on YouTube `48727` now
+go out 3-5 times a week, only from Tim's real footage (approved trade video, education cut, "why I
+passed", lunch chart check, night review, comment reply video). No footage = no Short. Never a text
+card, rendered reel or AI voiceover as a Short. Slot stays 6:12 PM ET, max 1 a day. It's Step 6b of the
+daily content routine (prompt stored in the disabled `trig_01NkNxxc7neQATLrTifB42kv`).
+- Never a new trade post unless Tim approved that exact video for YouTube.
+- 9:16, under 60 s (check with ffmpeg), chart at frame 0. Same media QA as every post.
+- Title under 60 chars with a hook (rotate patterns, no "X isn't Y"), keyword near the front, no
+  hashtags, no clickbait the video doesn't deliver. Description: 1-2 fresh sentences, the closing
+  question, then "Education only. Not financial advice.", then 2-3 hashtags incl. `#shorts`. No links
+  or signup CTA.
 - Fields: `privacyStatus` "public", `shouldNotifySubscribers` false, `isMadeForKids` false,
-  `containsSyntheticMedia` true only for realistic AI imagery or voice.
+  `containsSyntheticMedia` false (Tim's footage and voice, music only).
 - Own wording: run the 5-gram check with the fixed disclaimer line stripped first.
 - No "AMD"/"CRT", no em dashes, no filler words. Day-job mentions only when accurate (see "Day job facts" under Rules).
 - Blotato can't set the Shorts "related video" link (YouTube API limit); Tim adds it in
@@ -113,17 +114,51 @@ weekends included. It's Step 6b of the daily content routine (prompt stored in t
   `drt/audio/music/` (CC0, sources in `LICENSES.md`), rotated by date: bed about -19 LUFS, ducked
   about 25 dB under voice, fade in 0.5 s / out 1 s, final -14 LUFS with voice, -18 LUFS music only,
   AAC 192k. `--music synth` renders an original pad if a track can't be used.
-  - Trade Shorts: Tim's voice memo when he sends one (DRT Phone or chat): `--voice MEMO --captions`
-    (captions from faster-whisper; `--voice-offset S` to sync; `--caption-text` fallback). No memo =
-    music only. Never AI voice on a trade Short.
-  - Education Shorts: AI voice `--tts-text "SCRIPT" --captions` (local Piper en_US-norman-medium,
-    public-domain training data, 0 credits; Blotato's AI video templates cost credits and are
-    paused). About 2.5 words per second of video, fact-checked like a caption.
-    `containsSyntheticMedia: true`.
+  - Tim's voice memo when he sends one (DRT Phone or chat): `--voice MEMO --captions` (captions from
+    faster-whisper; `--voice-offset S` to sync; `--caption-text` fallback). No memo = music only.
+    No AI voice (`--tts-text`) on Shorts any more.
   - Audio QA: script must print `AUDIO QA: PASS` (audio stream, loudness on target, no clipping,
     length matches, voice 15+ dB over music, 80%+ of voice words recovered by speech-to-text), then
     Read the sheet (captions spelled right, not covering on-screen text; `--caption-margin PX`).
     Upload OUT.mp4 via presigned URL. Prompt store: Step 6b item 3b of `trig_01NkNxxc7neQATLrTifB42kv`.
+
+## Engagement decisions (Tim approved 11/17, "Do what's best"; plan: `posts/plans/2026-11-17-engagement-plan.md`)
+1. **TikTok reset 11/18-11/24:** 1 DRT TikTok text card a day (7:00 AM only) in a new look: opens on a
+   chart or diagram already moving at frame 0, no black fade, hook text by 0.3 s, new palette (not the
+   black/gold-dash card), changed weekly. TikTok 12 PM = footage cut only; 8 PM = footage or a footage
+   series post only. Trade reels Tim approves don't count against the cap. Readout in the 11/24 daily
+   run vs the 11/11-11/15 baseline (median 87, 0.5%, 0 comments); over 150 median = recommend stepping
+   back up slowly. The cadence stays on the reset rules until Tim or Jarvis changes the prompt.
+   **Tim's to do:** TikTok Studio screenshots (account status + traffic source) and one native
+   app-upload test (a footage clip posted from the TikTok app with an in-app sound).
+2. **YouTube Shorts:** footage only, 3-5 a week (section above).
+3. **End every caption with a question,** every platform (YouTube: in the description before the
+   disclaimer). One specific, easy question, 2-3 choices when possible. It replaces "Save this" /
+   "Follow for" (no lift). "Comment below" and "tag" CTAs stay banned. The question must not invent
+   anything about how Tim trades. Counts toward TikTok's 150 characters and the uniqueness check.
+4. **IG/FB comment replies, option (a):** the daily run lists new IG/FB comments (`blotato_list_comments`)
+   with drafted replies under "Comments for Tim". Tim approves; Jarvis sends only the approved ones.
+   Never auto-reply, never `blotato_post_comment` without Tim's go. TikTok/YouTube comments: Tim in the app.
+5. **"Comment SKOOL" automations built INACTIVE (11/17):** IG `34586`, FB `34587` (page
+   993318963868124). Keyword SKOOL, DM names "Skool: Defined Risk Trading" with an "Open Skool" button
+   to the about page, public reply "Sent to your DMs..." (no emoji). Turn on only on Tim's go; until
+   then no "comment SKOOL" in copy. Never "link in bio".
+6. **Trending audio:** 1 trade reel a week via the TikTok draft flow (`isDraft: true`; Tim re-pastes the
+   caption, picks a Commercial Music Library sound, publishes). Trade reels still need Tim's approval;
+   offer the draft option when presenting that week's trade reel or the Friday recap.
+7. **Series:** "Why I passed Wednesday" (numbered "Pass #N", only when Tim sends a clip, posted by the
+   Wed TikTok routine, then cut for IG/FB/Short); Sunday night review (from Tim's night review
+   recording only); "One rule, one week" week 1 (no early entries, from 11/15) closes Fri 11/20 with
+   Tim's real footage if he sends some, else no rendered close. No week 2 until Tim says so.
+8. **Openings and hooks:** every video starts on the chart (or a moving diagram) at frame 0, no black
+   frame; check frame 0 in media QA. Rotate hook patterns (trade situation first, number/receipt,
+   confession, audience callout, speed how-to, curiosity gap); never the same pattern twice a day or in
+   the same slot two days running. Drop "X isn't Y" openers.
+- Never mention Tim's lost or blown prop accounts in public copy (internal context only).
+- Prompt stores updated 11/17: daily `trig_01NkNxxc7neQATLrTifB42kv`, Wed TikTok
+  `trig_01Td2366YryxzXU8BPrxUv1Z` (Why I passed first; no clip during the reset = skip), Thu FB
+  `trig_01AgRQCG6Fn3maoJGToxnFRT`, Fri recap `trig_01CgC1RonbscetrWJhFAWLZp`. All stay disabled; the
+  routines fire into the Jarvis chat.
 
 ## Music on every TikTok reel (Tim approved 11/2)
 Every video going to TikTok @definedrisktrading `58063` gets music before it's scheduled, trade
@@ -195,7 +230,7 @@ Put any text the viewer must read on a clean graphic you render yourself.
   Trade reels for TikTok get music first (see "Music on every TikTok reel"), so Tim approves
   the version with music.
 - Every caption is written natively per platform; no shared wording (run the check).
-- No em dashes, no filler words, no "comment/tag" CTAs (one exception: "comment SKOOL", see Skool link). Hashtags: IG 3-5 incl.
+- No em dashes, no filler words, no "comment below"/"tag" CTAs (one exception: "comment SKOOL", see Skool link). Every caption ends with a question to the viewer (Engagement decisions, 11/17). Hashtags: IG 3-5 incl.
   #MyHobbyismyFREEDOM and #definedrisktrading; TikTok max 5 incl. #definedrisktrading
   and caption under 150 characters before hashtags; Facebook none.
 - Cohort CLOSED (9/28): no signup CTAs, no $49.
@@ -244,7 +279,7 @@ not in my rules or how I trade." All 3 posts (TikTok, IG, YouTube) were pulled b
 For every trade recording Tim drops in DRT Phone, also build a personal TikTok reel for account 59764 (@timothywilliams9902): same cleaned trade reel (full-frame privacy QA), with music via drt/audio/add_audio.py (TikTok rule), and a caption in Tim's personal voice (first person, casual, short, under 150 chars before hashtags, 2-4 hashtags incl. #MyHobbyismyFREEDOM), unique vs the DRT captions (5-gram check). isAiGenerated false, PUBLIC_TO_EVERYONE. It's part of the same trade post: draft it with the others and schedule only on Tim's go, about 30-60 minutes after the DRT TikTok.
 
 ## Pre-scheduled posts to respect (updated 11/5 evening)
-- Fri 11/6: Keaira testimonial at 10:00 TikTok, 10:30 IG, 11:00 FB, 11:30 YouTube Short; paper-to-real-money at 2:00 TikTok, 2:30 IG carousel, 3:00 FB, 3:30 YouTube Short; FB lifestyle reel 12:15 PM. Daily routine 11/6: run it FULLY as normal, including the 6:12 PM YouTube Short (Tim, 11/5: don't skip). These extra posts don't count against its caps; just keep its posts 30+ min from these slots.
+- Fri 11/6: Keaira testimonial at 10:00 TikTok, 10:30 IG, 11:00 FB, 11:30 YouTube Short; paper-to-real-money at 2:00 TikTok, 2:30 IG carousel, 3:00 FB, 3:30 YouTube Short; FB lifestyle reel 12:15 PM. Daily routine 11/6: run it FULLY as normal, including the 6:12 PM YouTube Short (Tim, 11/5: don't skip; superseded 11/17, Shorts are footage-only now). These extra posts don't count against its caps; just keep its posts 30+ min from these slots.
 - Sat 11/7 and Mon 11/9: run normally (the earlier overrides for those days are cancelled).
 
 ## Skool link (Tim, 11/6)
