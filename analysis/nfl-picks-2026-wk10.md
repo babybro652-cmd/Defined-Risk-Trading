@@ -93,3 +93,17 @@ Kittle 4+ is 84% (fair -543, too short) and 5+ is under 55%: skip. Evans OUT may
 
 KC 24.5 to 25.2 and ATL 21.0 to 22.2 (total up about 2); DET 27.0 to 26.0 and NE 24.5 to 23.5 (total down 2); MIN 19 to 20; CLE 17 to 18;
 SF 29.5 to 30.0, DAL 26.0 to 25.5. Chances moved under 2 points; Bijan Robinson rose to Play at 50%.
+
+## Results (graded Tue 11/17)
+
+Tim's placed bets (Bet Tracker rows 1347-1357), $1 each: 3-8, net -$1.01 before Bet Protect+ fees ($0.18 on 6 slips).
+- Anytime TD: Cook W (-160), McCaffrey W (-270, 3 TD), Taylor L, Javonte L.
+- SGP+ 4 legs L (Javonte and Taylor missed).
+- First TD: Charbonnet L (Mendoza QB rush), Taylor L (McGowan), Kyren L (Higbee), McCaffrey L (Deebo). 4-leg first TD parlay L.
+- Gibbs 2+ TDs (in game) W +600.
+
+v2 Plays (Saturday list): 5-4. W: McCaffrey, Gibbs, Cook, Henry (2), Bijan. L: Javonte, Taylor, Kyren, Charbonnet.
+Small stake: Tuten W, Hampton W.
+
+First TD chain model, walk-forward on Week 10 (not logged as picks; model built 11/17): top-1 hit 3/14 games
+(Hubbard, Collins, Skattebo), top-3 hit 7/14 (adds Allen #2, Washington #2, St. Brown #2, Deebo #3). Backtest average top-3 is 35-39%.
