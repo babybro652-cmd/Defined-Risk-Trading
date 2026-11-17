@@ -115,7 +115,9 @@ Use 5 MES for any day right after a red day (slows the payout, protects the acco
 - Apex's own help center (support.apextraderfunding.com, apextraderfunding.com/help-center) returned 403 to automated reads. Most of these sites are affiliates.
 
 ## Progress log
+Two funded accounts as of 11/16: PA-01 (1 qualifying day, +$450) and PA-02 (new). Track each separately.
 | Day | Date | Trades | Net (before fees) | Qualifies ($100+ net) | Running profit | Peak balance / floor |
 |---|---|---|---|---|---|---|
 | 1 | Fri 11/13 | Short 1 ES 7,632 to 7,623 (about 9:31-9:35 AM, before Tim's 10 AM rule) | +$450 | Yes, once fees are taken out (about +$445) | +$450 | about $25,450 / about $24,450 or higher (the intraday trail counts open profit, so the floor may sit a bit higher) |
 | - | Mon 11/16 | None (day off on Apex; the +$500 ES long 7,505.50 to 7,510.50 was on paper by mistake) | $0 | No (does not count) | +$450 | unchanged |
+| PA-02 day 1 | Tue 11/17 | New funded account PA-APEX-694864-02 (live 11/16 after eval -03 pass, $69). Tim: "up $100" (details from DRT photo pending) | +$100 | Yes if net of fees stays $100+ (check) | PA-02 +$100 | PA-02 starts $25,000 |
