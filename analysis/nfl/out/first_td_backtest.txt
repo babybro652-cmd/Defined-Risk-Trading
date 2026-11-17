@@ -1,0 +1,73 @@
+NFL first TD chain model backtest (walk-forward, 2025 Weeks 1-18 + 2026 Weeks 1-10, n=421 games)
+Training: 2024 Week 4 on, refit before every week on earlier weeks only. Active players = played that game.
+
+First TD type: rec 245 (58.2%), rush 156 (37.1%), def 12 (2.9%), st 5 (1.2%), none 2 (0.5%), off_other 1 (0.2%)
+Non-offensive or no TD first (every player bet loses): 19 (4.5%). Model average: 4.8%
+Opening kickoff receiver scored the first offensive TD: 232/402 (57.7%)
+
+== All: 2025 + 2026 Weeks 1-10, chain model only (421 games) ==
+Team that scores first (3 outcomes: home, away, non-offense/none), log loss: chain 0.8213
+Favored team scored the first offensive TD: 238/402 (59.2%)
+Top-1 / top-2 / top-3 per game contains the first TD scorer: 64 (15.2%) / 112 (26.6%) / 148 (35.2%)
+Player log loss (every active skill player): 0.1523; scorer log loss per game: 2.870
+Calibration (predicted first TD chance vs actual):
+  bucket     chain n  pred / act
+  0-3%         5280   1.5% /  1.5%
+  3-6%         2501   4.3% /  3.9%
+  6-9%         1323   7.3% /  8.4%
+  9-12%         536  10.3% /  9.9%
+  12-15%        247  13.2% / 12.6%
+  15-20%        141  16.8% / 17.0%
+  20%+           16  21.5% / 37.5%
+
+== 2025 Weeks 1-18, chain model only (272 games) ==
+Team that scores first (3 outcomes: home, away, non-offense/none), log loss: chain 0.8458
+Favored team scored the first offensive TD: 155/257 (60.3%)
+Top-1 / top-2 / top-3 per game contains the first TD scorer: 39 (14.3%) / 69 (25.4%) / 90 (33.1%)
+Player log loss (every active skill player): 0.1521; scorer log loss per game: 2.878
+Calibration (predicted first TD chance vs actual):
+  bucket     chain n  pred / act
+  0-3%         3373   1.5% /  1.5%
+  3-6%         1589   4.3% /  4.0%
+  6-9%          867   7.3% /  8.4%
+  9-12%         364  10.3% /  9.3%
+  12-15%        160  13.3% / 12.5%
+  15-20%         89  16.8% / 15.7%
+  20%+            8  21.2% / 12.5%
+
+== 2026 Weeks 1-10, chain model only (149 games) ==
+Team that scores first (3 outcomes: home, away, non-offense/none), log loss: chain 0.7766
+Favored team scored the first offensive TD: 83/145 (57.2%)
+Top-1 / top-2 / top-3 per game contains the first TD scorer: 25 (16.8%) / 43 (28.9%) / 58 (38.9%)
+Player log loss (every active skill player): 0.1525; scorer log loss per game: 2.854
+Calibration (predicted first TD chance vs actual):
+  bucket     chain n  pred / act
+  0-3%         1907   1.5% /  1.5%
+  3-6%          912   4.3% /  3.7%
+  6-9%          456   7.3% /  8.3%
+  9-12%         172  10.4% / 11.0%
+  12-15%         87  13.1% / 12.6%
+  15-20%         52  16.8% / 19.2%
+  20%+            8  21.9% / 62.5%
+
+== Head to head vs old method (td_charts.py on TD model v2), games where both exist: 2025 Wk 7 to 2026 Wk 10 (316 games) ==
+Team that scores first (3 outcomes: home, away, non-offense/none), log loss: chain 0.8397   old 0.8972
+Favored team scored the first offensive TD: 174/300 (58.0%)   old: 171/300 (57.0%)
+Top-1 / top-2 / top-3 per game contains the first TD scorer: 51 (16.1%) / 88 (27.8%) / 117 (37.0%)   old: 48 (15.2%) / 86 (27.2%) / 110 (34.8%)
+Player log loss (every active skill player): 0.1485; scorer log loss per game: 2.807
+Same players, both models (n=5347): log loss chain 0.1918 vs old 0.1963; Brier 0.04834 vs 0.04885
+Calibration (predicted first TD chance vs actual):
+  bucket     chain n  pred / act            old n  pred / act
+  0-3%         1961   1.8% /  1.8%           1437   2.3% /  1.9%
+  3-6%         1737   4.4% /  4.1%           2646   4.3% /  4.6%
+  6-9%          958   7.3% /  8.9%            879   7.2% /  7.6%
+  9-12%         386  10.3% / 10.1%            263  10.2% / 16.7%
+  12-15%        186  13.2% / 14.0%             96  13.1% / 15.6%
+  15-20%        108  16.9% / 18.5%             26  16.4% / 26.9%
+  20%+           11  21.7% / 45.5%        -
+
+Team first TD calibration (chain, all games): 0-35% n=127 29%/32%; 35-42% n=145 39%/37%; 42-48% n=152 44%/47%; 48-54% n=168 52%/47%; 54-60% n=119 57%/62%; 60-66% n=82 63%/63%; 66%+ n=49 71%/63%
+Team first TD scorer (team market): our top 2 per team hit 306/777 (39.4%)
+
+Drive model weights (last fit): const -1.211, d1 +0.049, d2 +0.146, ln_imp +1.799, off +0.266, dfn +0.150, open_off +0.062, open_def +0.054
+Player share weights (last fit): other -4.528, l_td +0.224, l_rz +0.152, l_gl +0.057, l_open +0.080, l_q1 +0.356, l_snap +0.518, l_tfirst -0.041, new -0.422, QB -0.142, WR +0.073, TE +0.154

@@ -133,3 +133,64 @@ per week, a 2026 sample of 8 weeks, top buckets thin, and backtest QB flag uses 
 
 Shortlist verdict rule (Tim's 11/8 rule pending his confirm): RB/QB Play at 45%+, Small stake 30-44%; WR/TE Small stake at 30%+ and only at +250 or
 longer; bet only at take-at or longer. Questionable, cold 2026 and small-sample drops still apply. Games already started are Skip.
+
+## First TD chain model (11/17/26)
+
+Replaces the crude first TD estimate in `td_charts.py` (player TD rate / both teams' TD rates x P(any TD)). Built like the NBA
+first basket chain: play the game drive by drive until a TD, then split the scoring team's first TD among its players.
+
+Data: nflverse play-by-play, weekly rosters, snap counts and depth charts (GitHub release downloads work through the proxy),
+schedule + spread/total from nflverse `games.csv` (jsdelivr mirror; the raw GitHub repo is blocked), injuries from the ESPN feed.
+Raw files go in `raw/` (gitignored). Cleaned tables in `data/`: `ftd_games.csv` (lines, opening kickoff receiver, first TD team /
+player / type), `ftd_drives.csv` (every drive, offensive TD or not), `ftd_player_games.csv` (snaps, carries, targets, RZ, inside-5,
+first-2-drives and 1st-quarter usage, TDs, team first TD, game first TD). 2024, 2025, 2026 Weeks 1-10.
+
+Weekly steps:
+
+```
+python3 analysis/nfl/first_td_data.py --download          # refresh raw + rebuild data/ (Tuesday after MNF)
+python3 analysis/nfl/first_td_week.py --week 11           # chart out/charts/first_td_wk11.png + out/first_td_wk11.csv/.json
+python3 analysis/nfl/first_td_week.py --week 11 --out "Name One" --q "Name Two"   # manual Out / Questionable overrides
+python3 analysis/nfl/first_td_model.py backtest           # out/first_td_backtest.txt/.json
+```
+
+Rerun `first_td_week.py` Thursday (TNF), Saturday after final injury reports, and Sunday after inactives.
+
+Model (`first_td_model.py`; every input uses only earlier games):
+1. Opening kickoff: 50/50 coin toss plus each team's shrunk receive habit (teams that take the ball). Receiver scored the first
+   offensive TD 58% of the time in 2025-26.
+2. Drive chain: drives alternate, second half starts with the other team receiving, drive count from both teams' pace. Each
+   drive's offensive TD chance comes from a ridge logistic model: implied team total, team TD rate per drive, opponent TD rate
+   allowed, opening-drive rates (offense and defense) and team drive 1 / 2 terms. Each drive also has a league chance (about 1%)
+   of a defensive or special teams TD. Gives P(home offense first), P(away offense first), P(non-offensive TD first), P(no TD).
+3. Player share of his team's first TD: conditional logit over active skill players plus "other", on decayed shares (recent
+   games weigh more) of team TDs, RZ and inside-5 carries + targets, first-2-drives and 1st-quarter touches, snap share, team
+   first TD share, position terms; shares shrink toward position priors.
+4. Injuries and QB changes: out players are dropped and their usage shares go to active teammates at the same position. The
+   expected starting QB (schedule file / depth chart) is the only QB candidate and inherits the QB role. Line moves for QB changes
+   flow through the implied total.
+5. Chance = P(team offense first) x share. Fair = 1 / chance. Take-at = fair decimal x1.2.
+
+Backtest (walk-forward, refit before every week, 2025 Weeks 1-18 + 2026 Weeks 1-10, 421 games; full output in
+`out/first_td_backtest.txt`):
+
+| | Chain model | Old method |
+|---|---|---|
+| Top-1 / 2 / 3 per game has the first TD scorer (all 421 games) | 15.2% / 26.6% / 35.2% | n/a |
+| Same, 316 games where both exist (2025 Wk 7 - 2026 Wk 10) | 16.1% / 27.8% / 37.0% | 15.2% / 27.2% / 34.8% |
+| Player log loss, same 5,347 player-games | **0.1918** | 0.1963 |
+| Team-first log loss (home / away / non-offense) | **0.8397** | 0.8972 |
+| Favored team scored the first offensive TD | 58.0% | 57.0% |
+
+2026 Weeks 1-10 alone: top-3 38.9%, favored team 57.2%. Team first TD scorer market: our top 2 per team hit 39.4%.
+
+Calibration (chain, all games, predicted / actual): 0-3% 1.5 / 1.5, 3-6% 4.3 / 3.9, 6-9% 7.3 / 8.4, 9-12% 10.3 / 9.9,
+12-15% 13.2 / 12.6, 15-20% 16.8 / 17.0, 20%+ 21.5 / 37.5 (16 players only). The old method understated its 9%+ picks
+(10.2% predicted vs 16.7% actual at 9-12%, 16.4% vs 26.9% at 15-20%) and overstated its 0-3% bucket.
+
+First TD type, 421 games: receiving 58.2%, rushing 37.1%, defensive 2.9%, special teams 1.2%, no TD 0.5%. So about 4.5% of
+games lose every player first TD bet (model average 4.8%, shown as "No off. TD" on the chart).
+
+Read: a top pick is about 15-18% (fair +450 to +570). Even the best model hits the top-3 about 1 game in 3. Value is only in
+prices at take-at or longer. Small stakes. Backtest caveats: active players = those who played (live uses injuries and the
+depth chart), lines are nflverse closing lines, 2026 sample is 10 weeks.
