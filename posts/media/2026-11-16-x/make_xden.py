@@ -34,9 +34,9 @@ T((800,200),'PHX @ DEN','permanent-marker.ttf',110,WH)
 T((800,320),'FIRST BASKET','permanent-marker.ttf',96,G,glow_c=(60,140,30))
 d=ImageDraw.Draw(img); d.line((440,385,1160,379),fill=G,width=6)
 T((800,425),'DEN WINS THE TIP 71% • JOKIC VS IGHODARO','anton.ttf',34,WH)
-picks=[('#1','JOKIC','+376'),('#2','MURRAY','+588'),('#3','CAM JOHNSON','+947')]
+picks=[('#1','JOKIC','+376'),('#2','MURRAY','+588')]
 for i,(r,n,o) in enumerate(picks):
-    cx=360+i*440; d=ImageDraw.Draw(img)
+    cx=560+i*480; d=ImageDraw.Draw(img)
     d.rounded_rectangle((cx-190,480,cx+190,700),radius=20,fill=(16,22,17),outline=G if i==0 else GD,width=4 if i==0 else 3)
     T((cx,520),r,'permanent-marker.ttf',40,G)
     T((cx,590),n,'anton.ttf',58,WH)
