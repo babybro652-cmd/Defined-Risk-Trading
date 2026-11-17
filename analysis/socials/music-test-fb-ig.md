@@ -27,3 +27,5 @@ return no views (a sync gap, not zero).
 | 2026-11-16 | 6:00 PM | Instagram reel | 7049661 | Trade reel (paper trade, Tim approved; row added 11/17) | music | cliff_road_chill | | |
 | 2026-11-17 | 12:30 PM | Instagram reel | 7073979 | Education text cards + drawn diagram (stop distance from entry) | music | old_key | | |
 | 2026-11-17 | 5:00 PM | Facebook reel | 7073991 | Education text cards (4 rules before a trade) | music | aeroplane | | |
+| 2026-11-17 | 5:45 PM | Facebook reel | 7078054 | Trade still reel (second funded account day 1, Tim approved) | music | lag | | |
+| 2026-11-17 | 6:45 PM | Instagram reel | 7078056 | Trade still reel (second funded account day 1, Tim approved) | music | lag | | |
