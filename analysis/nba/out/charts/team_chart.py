@@ -4,7 +4,7 @@ plt.rcParams['text.parse_math']=False
 from matplotlib.patches import FancyBboxPatch
 d=json.load(open('analysis/nba/out/fb_candidates.json'))
 games=[('NY','TOR','7:30'),('POR','MIN','8:00'),('DET','SA','8:00'),('UTAH','LAC','10:30'),('CHA','LAL','11:00')]
-play={'DET@SA','UTAH@LAC'}
+play={'DET@SA','UTAH@LAC'}  # 4:50 PM rerun: unchanged
 def am(p):
     dec=1/p; return ('+%d'%round((dec-1)*100)) if dec>=2 else ('-%d'%round(100/(dec-1)))
 def take(p):
@@ -14,7 +14,7 @@ for r in d: by.setdefault(r['tm'],[]).append(r)
 BG='#0f1420'; CARD='#1a2233'; TXT='#e8ecf3'; MUTED='#9aa4b5'; GOLD='#f5c542'; BLUE='#5aa9ff'; GREEN='#4cd38a'; RED='#ff6b6b'
 fig=plt.figure(figsize=(7.2,12.8),dpi=200); fig.patch.set_facecolor(BG)
 ax=fig.add_axes([0,0,1,1]); ax.set_xlim(0,100); ax.set_ylim(0,178); ax.axis('off')
-ax.text(5,173,'TEAM FIRST BASKET  •  TUE 11/17',color=TXT,fontsize=16,weight='bold',va='center')
+ax.text(5,173,'TEAM FIRST BASKET  •  TUE 11/17 (4:50 PM)',color=TXT,fontsize=16,weight='bold',va='center')
 ax.text(5,168.6,'Top 2 per team: chance to score his team\'s first points, fair odds, take-at (fair x1.2)',color=MUTED,fontsize=8,va='center')
 ax.text(5,165,'Gold border = on tonight\'s play list (tip 70%+)',color=GOLD,fontsize=8,va='center')
 y=161; h=18.2
