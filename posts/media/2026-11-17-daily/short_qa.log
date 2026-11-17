@@ -1,0 +1,47 @@
+{
+  "video": "posts/media/2026-11-17-daily/stop-distance-shortcut.mp4",
+  "duration_s": 26.8,
+  "voice": "/tmp/drt_audio_6lg87ux4/tts.wav",
+  "voice_synthetic": true,
+  "music": "soft_as_a_dry_pillow.mp3",
+  "captions": "supplied text timed by speech-to-text",
+  "integrated_lufs": -14.7,
+  "true_peak_dbfs": -1.9,
+  "clipped_samples": 0,
+  "target_lufs": -14.0,
+  "heard": "Where does my E stop go? 3 .5 to 4 points for my entry, long or short, same distance, either sod. On one contract, 4 points is $200, I know that number before I click, if the setup needs a wider stop than your max, it's a pass. To find your risk, wait for your setup.",
+  "checks": [
+    {
+      "check": "audio stream present",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "loudness near target",
+      "pass": true,
+      "detail": "-14.7 LUFS (target -14)"
+    },
+    {
+      "check": "no clipping",
+      "pass": true,
+      "detail": "0 clipped samples, true peak -1.9 dBFS"
+    },
+    {
+      "check": "length matches video",
+      "pass": true,
+      "detail": "26.80 s vs 26.80 s"
+    },
+    {
+      "check": "music under voice",
+      "pass": true,
+      "detail": "voice 22.8 dB above music while talking"
+    },
+    {
+      "check": "voice intelligible",
+      "pass": true,
+      "detail": "83% of the words recovered by speech-to-text"
+    }
+  ],
+  "contact_sheet": "posts/media/2026-11-17-daily/sheet_stop-distance-short.png"
+}
+AUDIO QA: PASS

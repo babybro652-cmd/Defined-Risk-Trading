@@ -23,3 +23,7 @@ return no views (a sync gap, not zero).
 | 2026-11-15 | 5:00 PM | Facebook reel | 6971781 | Lifestyle text cards (night review after son's bedtime) | music | waiting_tttt | | |
 | 2026-11-16 | 12:30 PM | Instagram reel | 7020926 | Education text cards (wait for confirmation, early entries) | music | this_pain_is_soft | | |
 | 2026-11-16 | 5:00 PM | Facebook reel | 7020928 | Education text cards (leave the stop alone) | music | i_hope_youre_happy | | |
+| 2026-11-16 | 5:30 PM | Facebook reel | 7049659 | Trade reel (paper trade, Tim approved; row added 11/17) | music | cliff_road_chill | | |
+| 2026-11-16 | 6:00 PM | Instagram reel | 7049661 | Trade reel (paper trade, Tim approved; row added 11/17) | music | cliff_road_chill | | |
+| 2026-11-17 | 12:30 PM | Instagram reel | 7073979 | Education text cards + drawn diagram (stop distance from entry) | music | old_key | | |
+| 2026-11-17 | 5:00 PM | Facebook reel | 7073991 | Education text cards (4 rules before a trade) | music | aeroplane | | |
