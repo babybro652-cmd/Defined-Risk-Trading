@@ -26,3 +26,4 @@ None. Tim, 11/15/26: CBB is sides and totals only, no player props.
 ## Log
 - 11/14/26: first slate. Thin Saturday (football day, no Big Ten games). Two big games: LSU @ #14 Gonzaga, Colorado @ Providence (Peacock).
 - 11/15/26: 11/14 went 2-3 (sides 0-2, props 2-1). Six big games checked; only Louisville @ Memphis reached a 3-point gap (Memphis +8.5). Three props. Tim dropped the props the same morning: CBB is sides and totals only from 11/15.
+- 11/17/26: 11/15 went 1-0 (Memphis +8.5 W); no big games 11/16. Seven big games checked; three reached a 3-point gap: Rutgers +18.5, Indiana +2.5, UNLV +18.5. Two are big-dog leans against BPI early-season priors; watch whether BPI underrates the top teams this early.
