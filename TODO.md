@@ -44,7 +44,7 @@ Newest decisions win; move finished items to Done with the date.
 - [ ] FUTURE: position-tool boxes on CRT Pro (after hit rate improves).
 
 ### Peace by Page (Ventures)
-- [ ] KDP: proofs arrived 11/16 and look good (bigger than expected: 8.5 x 11 in). Next: Publish in KDP (Bookshelf > Edit paperback content > Rights & Pricing > Publish). Steps: ventures/calm-pages/kdp-setup-steps.md.
+- [ ] KDP: proofs arrived 11/16 and look good (bigger than expected: 8.5 x 11 in). Publishing at $16.99 (11/16, about $7.15 a sale, expanded distribution off). Live in about 72 hrs; then add the Amazon link to Payhip and socials. Steps: ventures/calm-pages/kdp-setup-steps.md.
 - [ ] 12/31 checkpoint: under 10 paid orders by 12/31 = maintenance mode.
 - [ ] Content plan written (ventures/calm-pages/content-plan-2026-11.md). Tim: OK it so Jarvis schedules week 1; record clips A-D (20 min, phone overhead).
 - [ ] IG link in bio → payhip.com/PeaceByPage (Tim checks in app; Jarvis can't see bios). TikTok: bio text only.

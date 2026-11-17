@@ -56,7 +56,7 @@ Don't use the Payhip journal PDF: it has print-at-home pages and the wrong page 
 **Rights & Pricing tab**
 - Territories: All
 - Primary marketplace: Amazon.com
-- Price: **$12.99** (printing is about $3.04, so about $4.75 royalty per sale)
+- Price: **$16.99** (Tim 11/16; printing about $3.04, so about $7.15 royalty per Amazon sale). Expanded distribution: off. Other marketplaces: auto from the US price.
 - Expanded distribution: off for now
 - **Do NOT press Publish yet.** Press "Save as Draft".
 
