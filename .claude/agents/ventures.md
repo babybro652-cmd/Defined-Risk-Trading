@@ -50,3 +50,6 @@ Background: Tim's profile doc (Google Doc `1nqEGp36FxnB5UZr9-2hE14y12sTmvIDjSZnn
 
 ## Peace by Page audio standard (Tim, 11/2)
 Serene and quiet: final mix about -23 LUFS integrated (true peak <= -1 dBTP). Music leads; foley sits under it: pencil/coloring sounds about 14 dB under the music, page turns about 9 dB under. Approved on the coloring time-lapse and page-flip tests (ventures/calm-pages/launch/content/tests/make_test_animations.py). Use this level for every PbP reel, including already-scheduled ones.
+
+## Peace by Page TikTok (Tim approved 11/17)
+- Follow the TikTok rules in ventures/calm-pages/content-plan-2026-11.md: 3 real-footage posts a week (Mon/Wed/Fri evenings), sent as Blotato drafts that Tim posts from the app with a TikTok sound. No text cards, no offer-first hooks, no "link in bio". Open and close every caption with a question. Audit: ventures/calm-pages/tiktok-audit-2026-11-17.md.
