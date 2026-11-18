@@ -7,6 +7,7 @@ Newest decisions win; move finished items to Done with the date.
 ## Open
 
 ### This week (time-sensitive)
+- [ ] Fix indicator tracking (all trackers stopped 11/13). Drive folder "DRT Indicator Tracking (fix later)" https://drive.google.com/drive/folders/1ng3nQSXxSkII0SWvIQvqP75GHGL8pnOJ has every Pine + Apps Script file and a START HERE checklist. Copy CRT-Divergence-SR.pine from TradingView into it (not in repo). Decide: fix or retire CRT Setups Tracker.
 - [ ] Moved to Thu 11/19 (Money Plan updated): Verizon $282.99, Workspace $8.40. Also 11/19, no column/amount yet: Canva (Pro ends 11/21), PayPal card. Bison Green: Tim dropping it from the plan (11/16). Verizon: promise-to-pay for 11/26 (moved there in Money Plan 11/17). OneMain late Nov 1 payment $143.83 paid Thu 11/19 (Money Plan 11/17). 11/19 shows +$63.62 before those three.
 - [ ] Google Workspace: pay or update card at https://admin.google.com/ac/billing/accounts (invoice 5723568933; suspends Dec 3). Business Starter $8.40/mo.
 - [ ] Lucid 25K eval bought 11/12 (LFE02578805580006): balance $24,347 after -$653 day 1; min balance $24,000 = only $347 room. 1 MES-size risk or pause until the Apex funded plan is rolling.
