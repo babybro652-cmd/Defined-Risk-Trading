@@ -93,7 +93,18 @@ Best player + method (fair price; bet only if the book pays more):
 
 ## StarTool check (side by side, no blend)
 
-- No StarTool cards saved for this slate yet. Add lines to out/startool/star_bomb.txt (date|AWAY @ HOME|star,star|bomb,bomb) and rerun.
+- MEM @ CLE: our top Jarrett Allen (18%): differs (StarTool stars Cameron Boozer, Donovan Mitchell; bombs Cedric Coward, James Harden)
+- HOU @ IND: our top Alperen Sengun (15%): agree (StarTool bomb)
+- MIL @ MIA: our top Bam Adebayo (21%): agree (StarTool bomb)
+- PHI @ ORL: our top Wendell Carter Jr. (16%): differs (StarTool stars Joel Embiid, Desmond Bane; bombs Jaylen Brown, Franz Wagner)
+- CHI @ BKN: our top Michael Porter Jr. (15%): agree (StarTool star)
+- WSH @ TOR: our top Anthony Davis (17%): agree (StarTool star)
+- DET @ NO: our top John Collins (16%): agree (StarTool bomb)
+- ATL @ OKC: our top Onyeka Okongwu (12%): differs (StarTool stars Jalen Johnson, Shai Gilgeous-Alexander; bombs Nickeil Alexander-Walker, Ajay Mitchell)
+- GS @ DAL: our top Cooper Flagg (14%): agree (StarTool bomb)
+- BOS @ DEN: our top Nikola Jokic (20%): agree (StarTool star)
+- UTAH @ LAL: our top Luka Doncic (25%): agree (StarTool star)
+- PHX @ SAC: our top Domantas Sabonis (16%): differs (StarTool stars Devin Booker, Darius Acuff Jr.; bombs Jalen Green, Zach LaVine)
 
 ## Tip-off
 
