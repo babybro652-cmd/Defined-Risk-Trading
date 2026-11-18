@@ -115,6 +115,7 @@ Use 5 MES for any day right after a red day (slows the payout, protects the acco
 - Apex's own help center (support.apextraderfunding.com, apextraderfunding.com/help-center) returned 403 to automated reads. Most of these sites are affiliates.
 
 ## Progress log
+**PA-01 CLOSED 11/17 7:35 PM (Apex liquidation email: trailing drawdown or position held past 4:59 PM). Only PA-02 remains.**
 Two funded accounts as of 11/16: PA-01 (1 qualifying day, +$450) and PA-02 (new). Track each separately.
 | Day | Date | Trades | Net (before fees) | Qualifies ($100+ net) | Running profit | Peak balance / floor |
 |---|---|---|---|---|---|---|
