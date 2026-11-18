@@ -1,0 +1,242 @@
+{
+ "MEM": {
+  "five": [
+   "Cam Spencer",
+   "Cedric Coward",
+   "Jaylen Wells",
+   "Cameron Boozer",
+   "Zach Edey"
+  ],
+  "jumper": "Zach Edey"
+ },
+ "CLE": {
+  "five": [
+   "James Harden",
+   "Donovan Mitchell",
+   "Tyrese Proctor",
+   "Peyton Watson",
+   "Jarrett Allen"
+  ],
+  "jumper": "Jarrett Allen"
+ },
+ "HOU": {
+  "five": [
+   "Fred VanVleet",
+   "Amen Thompson",
+   "Kevin Durant",
+   "Jabari Smith Jr.",
+   "Alperen Sengun"
+  ],
+  "jumper": "Alperen Sengun"
+ },
+ "IND": {
+  "five": [
+   "Andrew Nembhard",
+   "Kelly Oubre Jr.",
+   "Aaron Nesmith",
+   "Pascal Siakam",
+   "Ivica Zubac"
+  ],
+  "jumper": "Ivica Zubac"
+ },
+ "MIL": {
+  "five": [
+   "Brayden Burries",
+   "Tyler Herro",
+   "Kyle Kuzma",
+   "Jericho Sims",
+   "Myles Turner"
+  ],
+  "jumper": "Jericho Sims"
+ },
+ "MIA": {
+  "five": [
+   "Davion Mitchell",
+   "Klay Thompson",
+   "Pelle Larsson",
+   "Giannis Antetokounmpo",
+   "Bam Adebayo"
+  ],
+  "jumper": "Bam Adebayo"
+ },
+ "PHI": {
+  "five": [
+   "Tyrese Maxey",
+   "VJ Edgecombe",
+   "Dean Wade",
+   "LeBron James",
+   "Joel Embiid"
+  ],
+  "jumper": "Joel Embiid"
+ },
+ "ORL": {
+  "five": [
+   "Jalen Suggs",
+   "Anthony Black",
+   "Desmond Bane",
+   "Franz Wagner",
+   "Wendell Carter Jr."
+  ],
+  "jumper": "Wendell Carter Jr."
+ },
+ "CHI": {
+  "five": [
+   "Josh Giddey",
+   "Norman Powell",
+   "Isaac Okoro",
+   "Matas Buzelis",
+   "Jalen Smith"
+  ],
+  "jumper": "Jalen Smith"
+ },
+ "BKN": {
+  "five": [
+   "Nolan Traore",
+   "Egor Demin",
+   "Michael Porter Jr.",
+   "Julius Randle",
+   "Day'Ron Sharpe"
+  ],
+  "jumper": "Day'Ron Sharpe"
+ },
+ "WSH": {
+  "five": [
+   "Trae Young",
+   "Kyshawn George",
+   "AJ Dybantsa",
+   "Anthony Davis",
+   "Alex Sarr"
+  ],
+  "jumper": "Anthony Davis"
+ },
+ "TOR": {
+  "five": [
+   "Immanuel Quickley",
+   "RJ Barrett",
+   "Ja'Kobe Walter",
+   "Scottie Barnes",
+   "Collin Murray-Boyles"
+  ],
+  "jumper": "Collin Murray-Boyles"
+ },
+ "DET": {
+  "five": [
+   "Cade Cunningham",
+   "Daniss Jenkins",
+   "Kevin Huerter",
+   "Ausar Thompson",
+   "John Collins"
+  ],
+  "jumper": "John Collins"
+ },
+ "NO": {
+  "five": [
+   "Jeremiah Fears",
+   "Herbert Jones",
+   "Saddiq Bey",
+   "Zion Williamson",
+   "Yves Missi"
+  ],
+  "jumper": "Yves Missi"
+ },
+ "GS": {
+  "five": [
+   "LJ Cryer",
+   "Brandin Podziemski",
+   "Yaxel Lendeborg",
+   "Draymond Green",
+   "Al Horford"
+  ],
+  "jumper": "Al Horford"
+ },
+ "DAL": {
+  "five": [
+   "Kyrie Irving",
+   "Caleb Martin",
+   "Cooper Flagg",
+   "P.J. Washington",
+   "Daniel Gafford"
+  ],
+  "jumper": "Daniel Gafford"
+ },
+ "ATL": {
+  "five": [
+   "Nickeil Alexander-Walker",
+   "Dyson Daniels",
+   "Luguentz Dort",
+   "Jalen Johnson",
+   "Onyeka Okongwu"
+  ],
+  "jumper": "Onyeka Okongwu"
+ },
+ "OKC": {
+  "five": [
+   "Shai Gilgeous-Alexander",
+   "Jared McCain",
+   "Ajay Mitchell",
+   "Kenrich Williams",
+   "Isaiah Hartenstein"
+  ],
+  "jumper": "Isaiah Hartenstein"
+ },
+ "BOS": {
+  "five": [
+   "Derrick White",
+   "Jordan Walsh",
+   "Jayson Tatum",
+   "Paul George",
+   "Neemias Queta"
+  ],
+  "jumper": "Neemias Queta"
+ },
+ "DEN": {
+  "five": [
+   "Jamal Murray",
+   "Christian Braun",
+   "Cameron Johnson",
+   "Aaron Gordon",
+   "Nikola Jokic"
+  ],
+  "jumper": "Nikola Jokic"
+ },
+ "UTAH": {
+  "five": [
+   "Keyonte George",
+   "Darryn Peterson",
+   "Josh Green",
+   "Ace Bailey",
+   "Mo Bamba"
+  ],
+  "jumper": "Mo Bamba"
+ },
+ "LAL": {
+  "five": [
+   "Luka Doncic",
+   "Quentin Grimes",
+   "Matisse Thybulle",
+   "Jake LaRavia",
+   "Kevon Looney"
+  ],
+  "jumper": "Kevon Looney"
+ },
+ "PHX": {
+  "five": [
+   "Devin Booker",
+   "Jalen Green",
+   "Dillon Brooks",
+   "Miles Bridges",
+   "Oso Ighodaro"
+  ],
+  "jumper": "Oso Ighodaro"
+ },
+ "SAC": {
+  "five": [
+   "Darius Acuff Jr.",
+   "Zach LaVine",
+   "De'Andre Hunter",
+   "Keegan Murray",
+   "Domantas Sabonis"
+  ],
+  "jumper": "Domantas Sabonis"
+ }
+}
