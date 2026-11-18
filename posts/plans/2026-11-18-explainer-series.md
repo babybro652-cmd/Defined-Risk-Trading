@@ -54,6 +54,19 @@ Education only. Not financial advice.
 #shorts #futurestrading #volumeprofile
 Fields: public, shouldNotifySubscribers false, isMadeForKids false, containsSyntheticMedia false (rendered chart, no AI voice or AI imagery).
 
+## Voiced version (Tim, 11/18: "Do a voiceover explanation")
+`posts/media/explainers/volume-profile/volume-profile-voice.mp4`, 90.5 s, Piper TTS voice en_US-john-medium (local,
+free, public-domain LibriVox dataset; clearer on numbers than norman, the old AI-Short voice), speed 1.15, music
+soft_as_a_dry_pillow ducked 22.5 dB under the voice, phrase captions burned in at y 1560 (above the bottom UI), handle
+moved to the chart header. Script with start times: `posts/media/explainers/volume-profile/voiceover.txt`.
+AUDIO QA PASS (-14.3 LUFS, true peak -1.6 dBFS, 0 clipped). Speech-to-text (faster-whisper small.en) on the final file:
+98% of script words; the misses are number formats ("7348" heard as "73 48", "9" as "nine") and one whole-file
+mishearing of "226" that reads correctly when the segment is checked on its own.
+Render: `make_explainer.py --topic volume-profile --voice --speed 1.15 --music soft_as_a_dry_pillow`.
+The voice is synthetic: YouTube `containsSyntheticMedia: true` if Tim ever OKs it as a Short (it's also over 60 s).
+The 11/17 stop on AI-voice Shorts was for low performance; this voiced explainer is Tim's 11/18 call for this format.
+The captions below still fit the voiced cut (unchanged, still 5-gram clean).
+
 ## Next topics (one real ES session each, picked for a clean example)
 1. **Liquidity sweep vs breakdown**: price trades under a marked low; the close back above (or below) decides which. Real NY bars, the low marked, two outcomes side by side.
 2. **FVG vs IFVG**: a 3-candle gap draws in, price fills it, then the gap flips (inverse) and holds from the other side.

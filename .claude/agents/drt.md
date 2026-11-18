@@ -146,6 +146,8 @@ Original animated explainers on REAL ES bars (concept builds on the chart step b
 music only, no voice), inspired by a saved third-party reel but never copying its frames, text, audio or branding.
 Renderer `posts/media/explainers/make_explainer.py --topic NAME`; plan and topics `posts/plans/2026-11-18-explainer-series.md`.
 Pilot (volume profile) built 11/18, waiting on Tim's OK before any explainer is scheduled; Shorts exception undecided.
+Tim, 11/18 after watching it: "Do a voiceover explanation." Explainers get a synthetic voiceover (`--voice`: local Piper
+john voice, free, phrase captions burned in, music ducked), the one place AI voice is used; still not on Shorts unless Tim says so.
 
 ## Engagement decisions (Tim approved 11/17, "Do what's best"; plan: `posts/plans/2026-11-17-engagement-plan.md`)
 1. **TikTok reset 11/18-11/24:** 1 DRT TikTok text card a day (7:00 AM only) in a new look: opens on a

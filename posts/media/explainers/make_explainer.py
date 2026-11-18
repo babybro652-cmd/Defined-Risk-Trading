@@ -2,12 +2,17 @@
 
 Original 9:16 explainers built from REAL ES bars: candles print, then the concept builds on the chart step by step
 (profile, zones, call-outs), and on-screen text does the teaching. Music is added after with drt/audio/add_audio.py.
-No voiceover, no indicator names, no AMD/CRT, no trade calls, no P&L, no dates on screen.
+Music only by default (--voice adds a synthetic voiceover); no indicator names, no AMD/CRT, no trade calls, no P&L, no dates on screen.
 
 Usage
   python3 make_explainer.py --topic volume-profile [--out vp.mp4] [--stills DIR]
   python3 make_explainer.py --list
 Then: python3 drt/audio/add_audio.py vp.mp4 -o vp-music.mp4 --music NAME --sheet sheet.png  (needs AUDIO QA: PASS)
+Voiced (Tim, 11/18 "Do a voiceover explanation"):
+  python3 make_explainer.py --topic volume-profile --voice --speed 1.15 --music NAME --out vp.mp4
+  -> vp-voice.mp4 (Piper john voice, free/offline, phrase captions burned in above the bottom UI, music ducked by
+  add_audio.py) + vp_voice/voiceover.txt. Scenes stretch to fit each spoken line (Scene.say). Use {shown|spoken}
+  in a line when the TTS misreads a number; check the final file with speech-to-text against voiceover.txt.
 
 Adding a topic: write a function that returns a list of Scene objects and register it in TOPICS. Reuse Chart
 (real bars from data/*.csv: time_et,open,high,low,close,volume) and the drawing layers below. Keep the hook on
@@ -35,6 +40,7 @@ NAVY = dict(bg_top=(12, 30, 58), bg_bot=(6, 18, 38), grid=(24, 46, 78), text=(23
 
 # chart area (TikTok side icons sit right of x~960, captions low on the screen: keep content inside)
 CX0, CX1, CY0, CY1 = 70, 930, 830, 1640
+CAP_Y = 1560  # voice captions (--voice): centre line, above TikTok/IG bottom UI
 
 
 # ---------------------------------------------------------------- data
@@ -128,9 +134,17 @@ def text_panel(im, P, label, head, sub=None, reveal=1.0, hs=70, ls=40, ss=46):
     if sl: put(sl, fs, P["muted"], y + 24, int(ss * 1.32), shown)
     im.alpha_composite(ov)
 
-def handle(d, P):
-    f = font(B, 34); t = "@definedrisktrading"
-    d.text(((W - d.textlength(t, font=f)) / 2, H - 196), t, font=f, fill=P["muted"])
+def handle(d, P, top=False):
+    f = font(B, 34 if not top else 30); t = "@definedrisktrading"
+    if top: d.text((CX1 - d.textlength(t, font=f), CY0 - 66), t, font=f, fill=P["muted"])
+    else: d.text(((W - d.textlength(t, font=f)) / 2, H - 196), t, font=f, fill=P["muted"])
+
+def caption(im, P, text):
+    """Voice caption: short phrase, bold, dark pill, centred on CAP_Y."""
+    d = ImageDraw.Draw(im); f = font(B, 54); w = d.textlength(text, font=f)
+    x = (W - w) / 2; y = CAP_Y - 34
+    d.rounded_rectangle([x - 26, y - 14, x + w + 26, y + 76], radius=18, fill=(4, 12, 26, 235))
+    d.text((x, y), text, font=f, fill=(255, 255, 255))
 
 def chip(d, P, text):
     f = font(B, 30); w = d.textlength(text, font=f)
@@ -182,12 +196,15 @@ def ease(t): t = float(np.clip(t, 0, 1)); return t * t * (3 - 2 * t)
 
 class Scene:
     """dur seconds; text; state(t) -> dict for the frame (t = 0..1 inside the scene)."""
-    def __init__(self, dur, label, head, sub=None, state=None, reveal=True):
+    def __init__(self, dur, label, head, sub=None, state=None, reveal=True, say=None):
         self.dur, self.label, self.head, self.sub, self.state, self.reveal = dur, label, head, sub, state or (lambda t: {}), reveal
+        self.say = say  # voiceover line for --voice (numbers from the bars, same as the on-screen text)
 
 
-def frames(C, P, scenes, chip_text):
+def frames(C, P, scenes, chip_text, caps=None):
     base = background(P); d0 = ImageDraw.Draw(base); chip(d0, P, chip_text)
+    if caps is not None: handle(d0, P, top=True)
+    T = 0.0
     for sc in scenes:
         n = int(round(sc.dur * FPS))
         for k in range(n):
@@ -209,8 +226,13 @@ def frames(C, P, scenes, chip_text):
             for tg in s.get("tags", []): tag(d, P, *tg)
             rv = 1.0 if not sc.reveal else min(1.0, t * sc.dur / 0.9)  # words in over ~0.9 s
             text_panel(im, P, sc.label, sc.head, sc.sub, rv)
-            handle(ImageDraw.Draw(im), P)
+            if caps is None: handle(ImageDraw.Draw(im), P)
+            else:
+                now = T + k / FPS
+                cur = [c for c in caps if c[0] <= now < c[1]]
+                if cur: caption(im, P, cur[-1][2])
             yield np.asarray(im.convert("RGB"))
+        T += n / FPS
 
 
 def render(out, gen):
@@ -236,6 +258,7 @@ def topic_volume_profile():
     print(f"POC {C.poc}  heavy {heavy}  thin {thin}  drop {drop_pts} pts / {drop_min} min  "
           f"thin closes {thin_closes}  heavy closes {heavy_closes}/{C.n}", file=sys.stderr)
     assert (drop_pts, drop_min) == (60.0, 13), "on-screen numbers no longer match the bars"
+    assert f"{C.poc - C.bin / 2:.0f}" == "7348", "spoken POC (seventy-three forty-eight) no longer matches"
     drop_set = set(range(a // C.tf, b // C.tf + 1))
     chop_set = {i for i in range(C.idx("11:00") // C.tf, C.nc)}
     hb = lambda al: (heavy[0], heavy[1], P["heavy"], al, f"HEAVY {heavy[0]:.0f}-{heavy[1]:.0f}")
@@ -289,21 +312,120 @@ def topic_volume_profile():
     S.append(Scene(4.2, None, "Fast through thin. Slow at heavy.", "Define your risk. Wait for your setup.",
                    state=lambda t: dict(full, heavy=(heavy[0], heavy[1], 0.6), thin=(thin[0], thin[1], 0.6),
                                         bands=[hb(0.6), tb(0.6)], poc_a=0.6)))
+    say = [
+        f"Look at this drop on {{ES|E S}}. {drop_pts:.0f} points in {{{drop_min}|{spoken(drop_min)}}} minutes. Then it went sideways for hours. The volume tells you why.",
+        "This is one real New York session, on five minute candles. Watch where price races, and where it goes flat.",
+        "Now take all the volume from that day and stack it sideways, at every price. Longer bar, more contracts traded there.",
+        "These long bars are heavy volume. Buyers and sellers both kept trading here, so price slowed down.",
+        f"The longest bar is the point of control. The busiest price of the day, right around {{{pocp}|seventy-three forty-eight}}.",
+        "Up here, the bars are short. That's thin volume. Few contracts traded, because one side was in control.",
+        f"And that's where the drop happened. {drop_pts:.0f} points in {{{drop_min}|{spoken(drop_min)}}} minutes. Price closed inside that thin zone only {thin_closes} times all day.",
+        (f"Then it hit the heavy zone and slowed to a crawl. {{{heavy_closes}|{spoken(heavy_closes, True)}}} out of {{{C.n}|{spoken(C.n, True)}}} minutes closed inside it.", 0.87),  # numbers read slower
+        "So before the next session, mark both. Thin areas can move fast. Heavy areas tend to chop.",
+        "A level only helps you plan. It doesn't replace your stop. Decide the stop before you enter. Mine is 3.5 to 4 points from entry.",
+        "Fast through thin, slow at heavy. Define your risk. Wait for your setup.",
+    ]
+    for sc, line in zip(S, say): sc.say = line  # a (text, speed factor) tuple slows one line
     return C, P, S, "ES  ·  5m  ·  NY session"
 
 
 TOPICS = {"volume-profile": topic_volume_profile}
 
 
+PIPER_VOICES = {  # free, offline, public-domain LibriVox datasets (rhasspy/piper-voices model cards)
+    "john": "https://huggingface.co/rhasspy/piper-voices/resolve/main/en/en_US/john/medium/en_US-john-medium",
+    "norman": "https://huggingface.co/rhasspy/piper-voices/resolve/main/en/en_US/norman/medium/en_US-norman-medium"}
+
+def piper_model(name):
+    d = os.path.expanduser("~/.cache/drt-piper"); os.makedirs(d, exist_ok=True)
+    base = os.path.join(d, os.path.basename(PIPER_VOICES[name]))
+    for ext in (".onnx", ".onnx.json"):
+        if not os.path.exists(base + ext):
+            subprocess.run(["curl", "-sSL", "-m", "300", "-o", base + ext, PIPER_VOICES[name] + ext], check=True)
+    return base + ".onnx"
+
+def spoken(n, and_=False):
+    """Small ints as words for the TTS (numbers like 226 get slurred mid-sentence)."""
+    ones = "zero one two three four five six seven eight nine ten eleven twelve thirteen fourteen fifteen sixteen seventeen eighteen nineteen".split()
+    tens = "_ _ twenty thirty forty fifty sixty seventy eighty ninety".split()
+    def two(x): return ones[x] if x < 20 else tens[x // 10] + ("-" + ones[x % 10] if x % 10 else "")
+    return two(n) if n < 100 else ones[n // 100] + " hundred" + ((" and " if and_ else " ") + two(n % 100) if n % 100 else "")
+
+def split_say(line):
+    """'{7348|seventy-three forty-eight}' -> shown text (captions) and spoken text (TTS)."""
+    import re
+    return (re.sub(r"\{([^|}]*)\|([^}]*)\}", r"\1", line), re.sub(r"\{([^|}]*)\|([^}]*)\}", r"\2", line))
+
+def build_voice(S, workdir, speed=1.0, model="john", lead=0.2, tail=0.4):
+    """Local Piper voice per scene line (john by default: clearer on numbers than norman, the old AI-Short voice;
+    both free and offline). Stretches each scene to fit its line, writes one voice WAV and returns caption
+    phrases timed by speech-to-text."""
+    sys.path.insert(0, os.path.join(HERE, "..", "..", "..", "drt", "audio"))
+    import add_audio as AA, soundfile as sf
+    os.makedirs(workdir, exist_ok=True)
+    clips, sr = [], None
+    for i, sc in enumerate(S):
+        if not sc.say: clips.append(None); continue
+        if isinstance(sc.say, tuple): sc.say, sc.say_speed = sc.say
+        wav = os.path.join(workdir, f"line_{i:02d}.wav")
+        subprocess.run([sys.executable, "-m", "piper", "-m", piper_model(model), "-f", wav, "--length-scale", str(1.0 / (speed * getattr(sc, "say_speed", 1.0))),
+                        "--sentence-silence", "0.3"], input=split_say(sc.say)[1].encode(), check=True, capture_output=True)
+        x, sr = sf.read(wav, dtype="float32")
+        if x.ndim > 1: x = x.mean(axis=1)
+        nz = np.nonzero(np.abs(x) > 0.01)[0]; x = x[max(0, nz[0] - int(0.03 * sr)): nz[-1] + int(0.08 * sr)]  # trim silence
+        clips.append(x)
+        need = (0.15 if i == 0 else lead) + len(x) / sr + tail
+        sc.dur = max(sc.dur * 0.75, need)  # visual minimum, else the voice sets the pace
+    starts, T = [], 0.0
+    for i, sc in enumerate(S):
+        n = int(round(sc.dur * FPS)); starts.append(T + (0.15 if i == 0 else lead)); T += n / FPS
+    voice = np.zeros(int((T + 0.5) * sr), np.float32)
+    caps = []
+    for i, (sc, x) in enumerate(zip(S, clips)):
+        if x is None: continue
+        o = int(starts[i] * sr); voice[o:o + len(x)] += x
+        idx = np.arange(0, len(x), sr / 16000.0).astype(int)
+        words = AA.whisper_words(x[idx[idx < len(x)]])
+        if words:
+            timed = AA.align_text(split_say(sc.say)[0], words)
+        else:  # no speech-to-text: spread the words over the clip
+            ws = split_say(sc.say)[0].split(); d = len(x) / sr / len(ws); timed = [(k * d, (k + 1) * d, w) for k, w in enumerate(ws)]
+        for st, en, txt in AA.chunk_words(timed, max_words=4, max_chars=22):
+            caps.append((starts[i] + st, starts[i] + en, txt))
+    # hold each phrase until the next one (no flicker), max 0.6 s past its last word
+    caps = [(st, min(caps[j + 1][0] if j + 1 < len(caps) else en + 0.6, en + 0.6), t) for j, (st, en, t) in enumerate(caps)]
+    path = os.path.join(workdir, "voice.wav"); sf.write(path, voice[: int(T * sr)], sr)
+    with open(os.path.join(workdir, "voiceover.txt"), "w") as f:
+        for i, sc in enumerate(S):
+            if sc.say: f.write(f"[{starts[i]:5.1f}s] {split_say(sc.say)[0]}\n")
+    return path, caps, T
+
+
 def main():
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("--topic", default="volume-profile"); ap.add_argument("--out"); ap.add_argument("--stills")
     ap.add_argument("--list", action="store_true")
+    ap.add_argument("--voice", action="store_true", help="AI voiceover (local Piper, free) + burned phrase captions")
+    ap.add_argument("--music", default="auto", help="add_audio.py music choice; with --voice the final mix is made here")
+    ap.add_argument("--speed", type=float, default=1.0, help="voice speed (1.0 = calm)")
+    ap.add_argument("--voice-model", default="john", choices=sorted(PIPER_VOICES))
     a = ap.parse_args()
     if a.list: print("\n".join(f"{k}: {v.__doc__}" for k, v in TOPICS.items())); return
+    global CY1
+    if a.voice: CY1 = 1470  # make room for the voice captions above the bottom UI
     C, P, S, chip_text = TOPICS[a.topic]()
     out = a.out or f"{a.topic}.mp4"
-    n = render(out, frames(C, P, S, chip_text))
+    caps = None
+    if a.voice:
+        work = os.path.splitext(out)[0] + "_voice"
+        vpath, caps, T = build_voice(S, work, a.speed, a.voice_model)
+        print(f"voice: {vpath}  scenes {T:.1f} s  script {work}/voiceover.txt", file=sys.stderr)
+    n = render(out, frames(C, P, S, chip_text, caps))
+    if a.voice:
+        final = os.path.splitext(out)[0] + "-voice.mp4"
+        subprocess.run([sys.executable, os.path.join(HERE, "..", "..", "..", "drt", "audio", "add_audio.py"), out, "-o", final,
+                        "--voice", vpath, "--video-audio", "drop", "--music", a.music,
+                        "--sheet", os.path.splitext(out)[0] + "_audio_sheet.png"], check=False)
     print(f"{out}: {n} frames, {n / FPS:.1f} s")
     if a.stills:  # frame 0 plus the middle of every scene
         os.makedirs(a.stills, exist_ok=True); t0 = 0.0

@@ -1,0 +1,11 @@
+[  0.1s] Look at this drop on ES. 60 points in 13 minutes. Then it went sideways for hours. The volume tells you why.
+[  9.8s] This is one real New York session, on five minute candles. Watch where price races, and where it goes flat.
+[ 18.3s] Now take all the volume from that day and stack it sideways, at every price. Longer bar, more contracts traded there.
+[ 26.4s] These long bars are heavy volume. Buyers and sellers both kept trading here, so price slowed down.
+[ 33.6s] The longest bar is the point of control. The busiest price of the day, right around 7348.
+[ 40.9s] Up here, the bars are short. That's thin volume. Few contracts traded, because one side was in control.
+[ 49.2s] And that's where the drop happened. 60 points in 13 minutes. Price closed inside that thin zone only 9 times all day.
+[ 58.0s] Then it hit the heavy zone and slowed to a crawl. 226 out of 390 minutes closed inside it.
+[ 67.0s] So before the next session, mark both. Thin areas can move fast. Heavy areas tend to chop.
+[ 74.5s] A level only helps you plan. It doesn't replace your stop. Decide the stop before you enter. Mine is 3.5 to 4 points from entry.
+[ 84.5s] Fast through thin, slow at heavy. Define your risk. Wait for your setup.
