@@ -5,7 +5,7 @@
 | `crt-pro-es.pine` | CRT Pro ES, Tim's primary indicator, logs to the CRT Trade Tracker | live |
 | `crt-pro-vmap-es.pine` | CRT Pro VMap test version | test |
 | `crt-setups.pine` | CRT Setups (tracker dormant since 9/28) | test |
-| `volume-bubbles-es.pine` | Volume Bubbles ES (below) | new 11/18, testing before lock-in |
+| `volume-bubbles-es.pine` | Volume Bubbles ES (below), with FVG / IFVG boxes since 11/18 | new 11/18, testing before lock-in |
 | `archive/` | old versions | |
 
 The Divergence indicator (CRT-Divergence-SR.pine) lives only in Tim's TradingView, not in this repo.
@@ -39,6 +39,20 @@ Standalone overlay for **1m ES** on the **Essential plan**, desktop and phone. I
   labels), it shows whether the pivot bar or a bar next to it had big volume (z 2+ and 1.5x normal for that minute).
   `held` = the pivot candle closed off its low (or high). The tag prints 5 bars after the pivot, the same bar the
   Div label appears on. So a Div label with a blue tag under it has volume behind it, and one without a tag doesn't.
+- **FVG / IFVG boxes** (added 11/18):
+  - **Bull FVG**: 3 candles in a row where candle 3's low is above candle 1's high. The gap is candle 1 high to
+    candle 3 low. **Bear FVG**: candle 3's high is below candle 1's low.
+  - Min gap: 1 tick by default (0.25). Set "Min gap" to 1.0 for the 1 pt variant (fewer, bigger gaps).
+  - Unfilled FVGs are solid boxes (green bull, red bear). A box goes away once price trades through the whole gap.
+  - **IFVG** (inverse FVG) = an FVG that a candle later closed fully through, so it flips role. A bear FVG closed
+    above becomes bull support (dashed teal box marked IFVG); a bull FVG closed below becomes bear resistance
+    (dashed orange box). It ends on a close back through its far side.
+  - For the phone: only the newest 3 FVG boxes and 2 IFVG boxes per side, drawn on the last bar only.
+  - Pivot tags and Vol hold tags get ` FVG` and/or ` IFVG` added to their text (e.g. `Vol 3.1 held FVG`):
+    - FVG = a gap in the tag's direction formed in the last 10 bars, or price is inside an unfilled one.
+    - IFVG = an IFVG in the tag's direction within 1.5 pts of the close.
+  - Test result (11/18, `analysis/indicators/fvg-ifvg-tag-2026-11-18.md`): on Div labels it leaned positive but
+    wasn't proven (n=35). On CRT Pro longs it didn't help. So it's a label to watch, not a filter.
 
 ### How often (tested on Yahoo ES 1m, 11/13-11/18, with a Python copy of the same rules)
 
@@ -71,6 +85,10 @@ Standalone overlay for **1m ES** on the **Essential plan**, desktop and phone. I
 | 3. Vol hold | Close location / Min wick / Hold for bars / Max range | 0.6 / 30% / 3 / 2.5 ATR |
 | 4. Pivot volume | Pivot length / Bars either side / Min z / Min x normal | 5 / 1 / 2.0 / 1.5 |
 | 5. Alerts | Bubble / Vol hold / Pivot volume alerts | all on |
+| 7. FVG / IFVG | Show FVG boxes / Show IFVG boxes | on / on |
+| | Min gap / FVG just formed / IFVG near price | 0.25 pt (1 tick; 1.0 = 1 pt variant) / 10 bars / 1.5 pts |
+| | Forget FVGs / IFVGs after | 240 / 720 bars |
+| | Max boxes per side (FVG / IFVG) / Add to pivot tags | 3 / 2 / on |
 
 Fewer bubbles: raise Min z-score (5) or Min x normal (2.5). More: lower them.
 
@@ -85,7 +103,7 @@ Alerts keep the settings they were made with, so change settings first and then 
 is in the script. Example payload:
 
 ```json
-{"source":"volume-bubbles-es","symbol":"ES1!","tf":"1","type":"vol_hold","time":"2026-11-18T10:42","confirmTime":"2026-11-18T10:45","tz":"ET","price":7372.25,"volume":13617,"zScore":4.6,"rvol":3.3,"nearHVN":true,"held":true,"side":"bull"}
+{"source":"volume-bubbles-es","symbol":"ES1!","tf":"1","type":"vol_hold","time":"2026-11-18T10:42","confirmTime":"2026-11-18T10:45","tz":"ET","price":7372.25,"volume":13617,"zScore":4.6,"rvol":3.3,"nearHVN":true,"held":true,"side":"bull","fvg":false,"ifvg":true}
 ```
 
 | Field | Values |
@@ -95,6 +113,8 @@ is in the script. Example payload:
 | `confirmTime` | the bar the alert fired on: same bar for a bubble, +3 bars for Vol hold, +5 for a pivot |
 | `side` | `up` / `down` / `flat` for bubbles; `bull` / `bear` for Vol hold and pivots |
 | `held` | `null` on bubbles |
+| `fvg` | `true` when an FVG in the event's direction formed in the last 10 bars or the close sits inside an unfilled one; `null` on bubbles |
+| `ifvg` | `true` when an IFVG in the event's direction is within 1.5 pts of the close; `null` on bubbles |
 
 All times are ET. The Forward Test Log uses Central, so subtract 1 hour when matching rows.
 
@@ -135,5 +155,7 @@ path 0).
 3. HVN boxes sit where volume really built up. Compare with TradingView's own Session Volume Profile.
 4. Check a few Div labels: does the blue pivot tag show up under the ones that worked?
 5. Phone: bubbles and tags are readable and don't cover candles too much.
+6. FVG / IFVG boxes: a few spot checks that the boxes match the 3-candle gaps, and that the dashed IFVG boxes
+   appear after a candle closes through a gap. If the chart is too busy, set Max boxes to 1 or Min gap to 1.0.
 
 Once Tim says it's locked, build the tracker (sheet + webhook) for the alert payload above.

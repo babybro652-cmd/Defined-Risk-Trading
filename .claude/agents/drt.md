@@ -98,6 +98,13 @@ Current evidence (analysis/indicators/indicator-analysis-2026-11-18.md):
 - Drop: VMap, CRT Pro shorts in NY, CRT Pro's own sub-1-pt stops.
 - Built in: NY only (10 AM-4 PM), wait for the label, fixed 3.5-4 pt stop from ENTRY, 8 pt target, max 2 trades a day,
   daily stop well inside the $1,000 max. One alert() JSON payload and one tracker sheet.
+FVG/IFVG test (11/18, analysis/indicators/fvg-ifvg-tag-2026-11-18.md, script fvg_tag.py): LABEL, not a filter yet.
+- Div (5m, NY, 4/8): with an FVG/IFVG at the label 35 trades +11.9R / +$2,200 vs without 46, -1.0R. Same sign on 2m and
+  at a 1 pt gap, but only about 1 standard error; IFVG alone +9.9R on 16 (thin). Re-test after about 100 more NY Div trades.
+- CRT Pro longs: mixed (1m/2m helps, 5m season reverses), so no filter. Confirmation entry (wait for the gap) lost on Div.
+- Volume Bubbles ES now draws FVG/IFVG boxes and sends `fvg`/`ifvg` in pivot_vol/vol_hold alerts; carry that into the combined one.
+- 6 pt stop TEST (Tim, 11/18; NOT his rule, which stays 3.5-4): lower R than 4/8 on Div and CRT Pro longs; only about 1 in 10
+  4 pt losers flip to winners; same FVG answer. 2 stops at 6 pts = $610 a day on 1 ES vs $410 at 4.
 Blockers before building: (1) CRT-Divergence-SR.pine source is only in Tim's TradingView, so get a copy into pine/;
 (2) tracking is down since 11/13; fix it and collect about 100 more NY Div trades to confirm.
 

@@ -18,11 +18,14 @@
 //    or high, so a Div label can be checked for volume behind it.
 // 5. Alerts: one JSON alert() per bubble, Vol hold and pivot volume event,
 //    ready for a future tracker sheet (no webhook wired yet).
+// 6. FVG / IFVG (added 11/18): unfilled fair value gaps (3-candle gaps) as
+//    boxes, inverse FVGs (a gap price closed fully through, flipped role) as
+//    dashed boxes, and "fvg"/"ifvg" fields on pivot and Vol hold alerts.
 // Volume data: each bar's total volume only (no intrabar split on Essential).
 // =============================================================================
 
 //@version=6
-indicator("Volume Bubbles ES", shorttitle="Vol Bubbles", overlay=true, max_labels_count=300, max_boxes_count=20, max_lines_count=10, max_bars_back=1500)
+indicator("Volume Bubbles ES", shorttitle="Vol Bubbles", overlay=true, max_labels_count=300, max_boxes_count=60, max_lines_count=10, max_bars_back=1500)
 
 // --- INPUTS ------------------------------------------------------------------
 
@@ -76,6 +79,22 @@ pocCol = input.color(color.new(#FFB300, 20), "POC line", group=grpS)
 holdBullCol = input.color(color.new(#00E676, 0), "Vol hold, bull", group=grpS)
 holdBearCol = input.color(color.new(#FF1744, 0), "Vol hold, bear", group=grpS)
 pivCol = input.color(color.new(#29B6F6, 10), "Pivot volume tag", group=grpS)
+
+grpF = "7. FVG / IFVG"
+showFvg = input.bool(true, "Show unfilled FVG boxes", group=grpF, tooltip="Bull FVG: candle 3 low above candle 1 high. Bear FVG: candle 3 high below candle 1 low. A box stays until price trades through the whole gap.")
+showIfvg = input.bool(true, "Show IFVG boxes (dashed)", group=grpF, tooltip="IFVG = an FVG that a candle later CLOSED fully through. A bear FVG closed above turns into bull support, a bull FVG closed below turns into bear resistance. It ends on a close back through its far side.")
+minGapPts = input.float(0.25, "Min gap (points)", minval=0.25, step=0.25, group=grpF, tooltip="0.25 = 1 tick (default, as tested 11/18). 1.0 = the 1 pt variant: fewer, bigger gaps.")
+fvgLook = input.int(10, "FVG just formed (bars)", minval=1, maxval=50, group=grpF, tooltip="An FVG in the tag's direction counts for the pivot tag and alert when it formed within this many bars, or when price sits inside an unfilled one.")
+ifvgNear = input.float(1.5, "IFVG near price (points)", minval=0.0, step=0.25, group=grpF)
+fvgAge = input.int(240, "Forget FVGs after (bars)", minval=20, maxval=2000, group=grpF)
+ifvgAge = input.int(720, "Forget IFVGs after (bars)", minval=20, maxval=2000, group=grpF)
+maxFvgShow = input.int(3, "Max FVG boxes per side", minval=0, maxval=10, group=grpF, tooltip="Newest first. Kept low for the phone.")
+maxIfvgShow = input.int(2, "Max IFVG boxes per side", minval=0, maxval=10, group=grpF)
+tagPivFvg = input.bool(true, "Add FVG / IFVG to pivot tags", group=grpF)
+fvgBullCol = input.color(color.new(#26A69A, 85), "FVG, bull", group=grpF)
+fvgBearCol = input.color(color.new(#EF5350, 85), "FVG, bear", group=grpF)
+ifvgBullCol = input.color(color.new(#00B8D4, 75), "IFVG, bull (support)", group=grpF)
+ifvgBearCol = input.color(color.new(#FF9100, 75), "IFVG, bear (resistance)", group=grpF)
 
 // --- SESSION -------------------------------------------------------------------
 
@@ -186,8 +205,90 @@ fmtT(int t) =>
 bubSize(float zz) =>
     zz >= 12 ? size.huge : zz >= 8 ? size.large : zz >= 6 ? size.normal : size.small
 
-json(string typ, int t, float price, float v, float zz, float rv, bool near, string held, string side) =>
-    '{"source":"volume-bubbles-es","symbol":"' + syminfo.ticker + '","tf":"' + timeframe.period + '","type":"' + typ + '","time":"' + fmtT(t) + '","confirmTime":"' + fmtT(time) + '","tz":"ET","price":' + str.tostring(math.round_to_mintick(price)) + ',"volume":' + str.tostring(v, "#") + ',"zScore":' + (na(zz) ? "null" : str.tostring(zz, "#.##")) + ',"rvol":' + (na(rv) ? "null" : str.tostring(rv, "#.##")) + ',"nearHVN":' + (near ? "true" : "false") + ',"held":' + held + ',"side":"' + side + '"}'
+json(string typ, int t, float price, float v, float zz, float rv, bool near, string held, string side, string fvgS, string ifvgS) =>
+    '{"source":"volume-bubbles-es","symbol":"' + syminfo.ticker + '","tf":"' + timeframe.period + '","type":"' + typ + '","time":"' + fmtT(t) + '","confirmTime":"' + fmtT(time) + '","tz":"ET","price":' + str.tostring(math.round_to_mintick(price)) + ',"volume":' + str.tostring(v, "#") + ',"zScore":' + (na(zz) ? "null" : str.tostring(zz, "#.##")) + ',"rvol":' + (na(rv) ? "null" : str.tostring(rv, "#.##")) + ',"nearHVN":' + (near ? "true" : "false") + ',"held":' + held + ',"side":"' + side + '","fvg":' + fvgS + ',"ifvg":' + ifvgS + '}'
+
+tf(bool b) =>
+    b ? "true" : "false"
+
+// --- 6. FVG / IFVG (state updated on each closed bar) -------------------------------
+// Gap: dir 1 = bull, -1 = bear. For an IFVG, dir is its NEW role
+// (a bear FVG closed above becomes dir 1, bull support).
+
+type Gap
+    int dir
+    float top
+    float bot
+    int left
+    int k3
+    bool filled = false
+    int invBar = na
+
+var array<Gap> fvgList = array.new<Gap>()
+var array<Gap> ifvgList = array.new<Gap>()
+var int lastBullFvg = na
+var int lastBearFvg = na
+
+if barstate.isconfirmed
+    // IFVGs end on a close back through the far side, or when old
+    if ifvgList.size() > 0
+        for i = ifvgList.size() - 1 to 0
+            Gap g = ifvgList.get(i)
+            bool broken = g.dir == 1 ? close < g.bot : close > g.top
+            if broken or bar_index - g.invBar > ifvgAge
+                ifvgList.remove(i)
+    // FVGs: a full close through = inversion (becomes an IFVG); a trade through = filled
+    if fvgList.size() > 0
+        for i = fvgList.size() - 1 to 0
+            Gap g = fvgList.get(i)
+            bool inverted = g.dir == 1 ? close < g.bot : close > g.top
+            if inverted
+                g.dir := -g.dir
+                g.invBar := bar_index
+                ifvgList.push(g)
+                fvgList.remove(i)
+            else
+                if not g.filled and (g.dir == 1 ? low <= g.bot : high >= g.top)
+                    g.filled := true
+                if bar_index - g.k3 > fvgAge
+                    fvgList.remove(i)
+    // new gap with this bar as candle 3 (3 bars in a row, no session break)
+    bool contig = bar_index >= 2 and (time - time[2]) <= 2 * timeframe.in_seconds() * 1000
+    if contig and low - high[2] >= minGapPts - 0.000001
+        fvgList.push(Gap.new(1, low, high[2], bar_index - 2, bar_index))
+        lastBullFvg := bar_index
+    else if contig and low[2] - high >= minGapPts - 0.000001
+        fvgList.push(Gap.new(-1, low[2], high, bar_index - 2, bar_index))
+        lastBearFvg := bar_index
+    if fvgList.size() > 200
+        fvgList.shift()
+    if ifvgList.size() > 100
+        ifvgList.shift()
+
+// Tags for a price and side (1 bull, -1 bear), same rules as analysis/indicators/fvg_tag.py:
+// fvg = a gap in that direction formed in the last fvgLook bars, or price inside/at
+// (1 tick) an unfilled one; ifvg = an active IFVG in that direction within ifvgNear.
+fvgTags(int side, float px) =>
+    bool fv = false
+    bool ifv = false
+    int lastB = side == 1 ? lastBullFvg : lastBearFvg
+    if not na(lastB) and bar_index - lastB <= fvgLook
+        fv := true
+    for g in fvgList
+        if g.dir == side and not g.filled and px >= g.bot - syminfo.mintick and px <= g.top + syminfo.mintick
+            fv := true
+    for g in ifvgList
+        if g.dir == side
+            float d = px >= g.bot and px <= g.top ? 0.0 : math.min(math.abs(px - g.bot), math.abs(px - g.top))
+            if d <= ifvgNear
+                ifv := true
+    [fv, ifv]
+
+[fvgBull, ifvgBull] = fvgTags(1, close)
+[fvgBear, ifvgBear] = fvgTags(-1, close)
+
+fvgText(bool fv, bool ifv) =>
+    tagPivFvg ? (fv ? " FVG" : "") + (ifv ? " IFVG" : "") : ""
 
 // --- 1. BUBBLES ------------------------------------------------------------------
 
@@ -201,7 +302,7 @@ if bubble and showBub
     label.new(bar_index, bubPrice, showNum ? fmtVol(vol) : "", style=label.style_circle, color=close >= open ? upCol : dnCol, textcolor=color.white, size=bubSize(z), tooltip="Volume " + str.tostring(vol, "#") + " | z " + str.tostring(z, "#.#") + " | " + str.tostring(rvol, "#.#") + "x normal for " + str.format_time(time, "HH:mm", "America/New_York") + (nearLow or nearHigh ? " | near HVN" : ""))
 
 if bubble and alBub
-    alert(json("bubble", time, bubPrice, vol, z, rvol, (lowWick >= upWick ? nearLow : nearHigh), "null", candleSide), alert.freq_once_per_bar_close)
+    alert(json("bubble", time, bubPrice, vol, z, rvol, (lowWick >= upWick ? nearLow : nearHigh), "null", candleSide, "null", "null"), alert.freq_once_per_bar_close)
 
 // --- 3. VOL HOLD (bubble at an HVN, wick + close held, confirmed later) -----------
 
@@ -216,14 +317,14 @@ bool bullHeld = bullCand[holdBars] and lowAfter >= low[holdBars] - buf
 bool bearHeld = bearCand[holdBars] and highAfter <= high[holdBars] + buf
 
 if bullHeld and showHold
-    label.new(bar_index - holdBars, low[holdBars], "Vol hold", style=label.style_label_up, color=holdBullCol, textcolor=color.black, size=size.small, tooltip="Big volume at an HVN, closed off the low, low held " + str.tostring(holdBars) + " bars. Proxy, not bid/ask absorption.")
+    label.new(bar_index - holdBars, low[holdBars], "Vol hold" + fvgText(fvgBull, ifvgBull), style=label.style_label_up, color=holdBullCol, textcolor=color.black, size=size.small, tooltip="Big volume at an HVN, closed off the low, low held " + str.tostring(holdBars) + " bars. Proxy, not bid/ask absorption.")
 if bearHeld and showHold
-    label.new(bar_index - holdBars, high[holdBars], "Vol hold", style=label.style_label_down, color=holdBearCol, textcolor=color.white, size=size.small, tooltip="Big volume at an HVN, closed off the high, high held " + str.tostring(holdBars) + " bars. Proxy, not bid/ask absorption.")
+    label.new(bar_index - holdBars, high[holdBars], "Vol hold" + fvgText(fvgBear, ifvgBear), style=label.style_label_down, color=holdBearCol, textcolor=color.white, size=size.small, tooltip="Big volume at an HVN, closed off the high, high held " + str.tostring(holdBars) + " bars. Proxy, not bid/ask absorption.")
 
 if bullHeld and alHold
-    alert(json("vol_hold", time[holdBars], low[holdBars], vol[holdBars], z[holdBars], rvol[holdBars], true, "true", "bull"), alert.freq_once_per_bar_close)
+    alert(json("vol_hold", time[holdBars], low[holdBars], vol[holdBars], z[holdBars], rvol[holdBars], true, "true", "bull", tf(fvgBull), tf(ifvgBull)), alert.freq_once_per_bar_close)
 if bearHeld and alHold
-    alert(json("vol_hold", time[holdBars], high[holdBars], vol[holdBars], z[holdBars], rvol[holdBars], true, "true", "bear"), alert.freq_once_per_bar_close)
+    alert(json("vol_hold", time[holdBars], high[holdBars], vol[holdBars], z[holdBars], rvol[holdBars], true, "true", "bear", tf(fvgBear), tf(ifvgBear)), alert.freq_once_per_bar_close)
 
 // --- 4. PIVOT VOLUME TAG ----------------------------------------------------------
 
@@ -254,21 +355,21 @@ if not na(pl) and pivShow
     bool heldL = pivCloseLoc >= 0.5 and close > pl
     bool nearL = nearHvn(pl)
     if strongVol and showPiv
-        label.new(bar_index - pivLen, pl, "Vol " + str.tostring(pz, "#.#") + (heldL ? " held" : ""), style=label.style_label_up, color=pivCol, textcolor=color.black, size=size.tiny, tooltip="Pivot low with big volume (" + str.tostring(pVol, "#") + ", z " + str.tostring(pz, "#.#") + ", " + str.tostring(pRv, "#.#") + "x normal)" + (nearL ? ", near HVN" : "") + (heldL ? ", closed off the low" : ", closed near the low"))
+        label.new(bar_index - pivLen, pl, "Vol " + str.tostring(pz, "#.#") + (heldL ? " held" : "") + fvgText(fvgBull, ifvgBull), style=label.style_label_up, color=pivCol, textcolor=color.black, size=size.tiny, tooltip="Pivot low with big volume (" + str.tostring(pVol, "#") + ", z " + str.tostring(pz, "#.#") + ", " + str.tostring(pRv, "#.#") + "x normal)" + (nearL ? ", near HVN" : "") + (heldL ? ", closed off the low" : ", closed near the low"))
     else if showWeak and showPiv
-        label.new(bar_index - pivLen, pl, "low vol", style=label.style_label_up, color=color.new(color.gray, 40), textcolor=color.white, size=size.tiny)
+        label.new(bar_index - pivLen, pl, "low vol" + fvgText(fvgBull, ifvgBull), style=label.style_label_up, color=color.new(color.gray, 40), textcolor=color.white, size=size.tiny)
     if alPiv and (strongVol or showWeak)
-        alert(json("pivot_vol", time[pivLen], pl, pVol, pz, pRv, nearL, heldL ? "true" : "false", "bull"), alert.freq_once_per_bar_close)
+        alert(json("pivot_vol", time[pivLen], pl, pVol, pz, pRv, nearL, heldL ? "true" : "false", "bull", tf(fvgBull), tf(ifvgBull)), alert.freq_once_per_bar_close)
 
 if not na(ph) and pivShow
     bool heldH = pivCloseLoc <= 0.5 and close < ph
     bool nearH = nearHvn(ph)
     if strongVol and showPiv
-        label.new(bar_index - pivLen, ph, "Vol " + str.tostring(pz, "#.#") + (heldH ? " held" : ""), style=label.style_label_down, color=pivCol, textcolor=color.black, size=size.tiny, tooltip="Pivot high with big volume (" + str.tostring(pVol, "#") + ", z " + str.tostring(pz, "#.#") + ", " + str.tostring(pRv, "#.#") + "x normal)" + (nearH ? ", near HVN" : "") + (heldH ? ", closed off the high" : ", closed near the high"))
+        label.new(bar_index - pivLen, ph, "Vol " + str.tostring(pz, "#.#") + (heldH ? " held" : "") + fvgText(fvgBear, ifvgBear), style=label.style_label_down, color=pivCol, textcolor=color.black, size=size.tiny, tooltip="Pivot high with big volume (" + str.tostring(pVol, "#") + ", z " + str.tostring(pz, "#.#") + ", " + str.tostring(pRv, "#.#") + "x normal)" + (nearH ? ", near HVN" : "") + (heldH ? ", closed off the high" : ", closed near the high"))
     else if showWeak and showPiv
-        label.new(bar_index - pivLen, ph, "low vol", style=label.style_label_down, color=color.new(color.gray, 40), textcolor=color.white, size=size.tiny)
+        label.new(bar_index - pivLen, ph, "low vol" + fvgText(fvgBear, ifvgBear), style=label.style_label_down, color=color.new(color.gray, 40), textcolor=color.white, size=size.tiny)
     if alPiv and (strongVol or showWeak)
-        alert(json("pivot_vol", time[pivLen], ph, pVol, pz, pRv, nearH, heldH ? "true" : "false", "bear"), alert.freq_once_per_bar_close)
+        alert(json("pivot_vol", time[pivLen], ph, pVol, pz, pRv, nearH, heldH ? "true" : "false", "bear", tf(fvgBear), tf(ifvgBear)), alert.freq_once_per_bar_close)
 
 // --- 2. HVN ZONES (drawn on the last bar only, light for mobile) -------------------
 
@@ -327,3 +428,35 @@ if barstate.islast
         if showPoc and not na(pocRow)
             float pocPx = (pocRow + 0.5) * rowPts
             pocLine := line.new(profStart, pocPx, bar_index + 10, pocPx, color=pocCol, width=1, style=line.style_dotted)
+
+// --- 6b. FVG / IFVG BOXES (last bar only, newest first, capped for mobile) -----------
+
+var array<box> fvgBoxes = array.new<box>()
+
+if barstate.islast
+    for b in fvgBoxes
+        b.delete()
+    fvgBoxes.clear()
+    if showFvg and maxFvgShow > 0 and fvgList.size() > 0
+        int nBull = 0
+        int nBear = 0
+        for i = fvgList.size() - 1 to 0
+            Gap g = fvgList.get(i)
+            if not g.filled
+                if g.dir == 1 and nBull < maxFvgShow
+                    fvgBoxes.push(box.new(g.left, g.top, bar_index + 8, g.bot, border_color=color.new(fvgBullCol, 50), bgcolor=fvgBullCol))
+                    nBull += 1
+                else if g.dir == -1 and nBear < maxFvgShow
+                    fvgBoxes.push(box.new(g.left, g.top, bar_index + 8, g.bot, border_color=color.new(fvgBearCol, 50), bgcolor=fvgBearCol))
+                    nBear += 1
+    if showIfvg and maxIfvgShow > 0 and ifvgList.size() > 0
+        int mBull = 0
+        int mBear = 0
+        for i = ifvgList.size() - 1 to 0
+            Gap g = ifvgList.get(i)
+            if g.dir == 1 and mBull < maxIfvgShow
+                fvgBoxes.push(box.new(g.left, g.top, bar_index + 8, g.bot, border_color=color.new(ifvgBullCol, 0), border_style=line.style_dashed, bgcolor=ifvgBullCol, text="IFVG", text_size=size.tiny, text_color=color.new(ifvgBullCol, 0), text_halign=text.align_right))
+                mBull += 1
+            else if g.dir == -1 and mBear < maxIfvgShow
+                fvgBoxes.push(box.new(g.left, g.top, bar_index + 8, g.bot, border_color=color.new(ifvgBearCol, 0), border_style=line.style_dashed, bgcolor=ifvgBearCol, text="IFVG", text_size=size.tiny, text_color=color.new(ifvgBearCol, 0), text_halign=text.align_right))
+                mBear += 1
