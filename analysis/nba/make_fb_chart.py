@@ -2,6 +2,7 @@
 import json,collections,sys
 import matplotlib; matplotlib.use('Agg')
 import matplotlib.pyplot as plt
+plt.rcParams['text.parse_math']=False
 date=sys.argv[1]; games=[(a,h,t,int(p)) for a,h,t,p in (g.split(',') for g in sys.argv[2].split(';'))]
 note=sys.argv[3] if len(sys.argv)>3 else ""
 d=json.load(open('analysis/nba/out/fb_candidates.json'))

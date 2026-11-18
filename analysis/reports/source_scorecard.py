@@ -75,6 +75,8 @@ ST_TIP = {
                 ('LAL','MIL'):(58,42),('BKN','NO'):(59,41),('ORL','UTAH'):(79,21),('GS','HOU'):(36,64),('OKC','POR'):(34,66)},
  '2026-11-12': {('TOR','PHI'):(67,33),('DAL','MIN'):(36,64),('CHA','PHX'):(59,41)},   # DET @ WSH card did not load
  '2026-11-17': {('NY','TOR'):(40,60),('POR','MIN'):(53,47),('DET','SA'):(25,75),('CHA','LAL'):(28,72)},   # UTAH @ LAC tip 'loading'
+ '2026-11-18': {('MEM','CLE'):(32,68),('HOU','IND'):(32,68),('MIL','MIA'):(32,68),('PHI','ORL'):(31,69),('CHI','BKN'):(30,70),('WSH','TOR'):(51,49),
+                ('DET','NO'):(69,31),('ATL','OKC'):(48,52),('GS','DAL'):(48,52),('BOS','DEN'):(50,50),('PHX','SAC'):(33,67)},   # UTAH @ LAL tip 'loading'
  '2026-11-16': {('ORL','BOS'):(66,34),('MEM','WSH'):(33,67),('PHI','BKN'):(51,49),('HOU','MIA'):(30,70),
                 ('POR','MIN'):(53,47),('GS','NO'):(48,52),('PHX','DEN'):(28,72)},   # CHI @ CLE tip 'loading'
  '2026-11-15': {('IND','PHI'):(65,35),('LAL','PHX'):(71,29),('CHA','LAC'):(54,46),('SA','UTAH'):(83,17),('DAL','BOS'):(37,63),
@@ -87,7 +89,7 @@ ST_TIP = {
 ST = {}
 for line in open(R + '/analysis/nba/out/startool/star_bomb.txt'):
     d, game, stars, bombs = line.rstrip('\n').split('|')[:4]
-    if d not in COMMITS or d in ('2026-11-11', '2026-11-12', '2026-11-13', '2026-11-14', '2026-11-15', '2026-11-16', '2026-11-17'):
+    if d not in COMMITS or d in ('2026-11-11', '2026-11-12', '2026-11-13', '2026-11-14', '2026-11-15', '2026-11-16', '2026-11-17', '2026-11-18'):
         continue
     a, h = [x.strip() for x in game.split('@')]
     s, b = stars.split(','), (bombs.split(',') if bombs else ['', ''])
@@ -205,7 +207,33 @@ ST_PCT_1117 = {  # DET card lists D. Robinson (OUT); CHA@LAL card lists Kessler 
     'LAC': [('Darius Garland',18),('Rui Hachimura',10),('Derrick Jones Jr.',9),('Kris Dunn',7),('Isaiah Jackson',6)],
     'CHA': [('Brandon Miller',14),('Coby White',11),('Naz Reid',10),('Moussa Diabate',5),('Sion James',3)],
     'LAL': [('Luka Doncic',26),('Walker Kessler',11),('Quentin Grimes',9),('Jake LaRavia',6),('Matisse Thybulle',5)]}
-for d, tab in (('2026-11-09', ST_PCT_0911), ('2026-11-11', ST_PCT_1111), ('2026-11-12', ST_PCT_1112), ('2026-11-13', ST_PCT_1113), ('2026-11-14', ST_PCT_1114), ('2026-11-15', ST_PCT_1115), ('2026-11-16', ST_PCT_1116), ('2026-11-17', ST_PCT_1117)):
+ST_PCT_1118 = {  # PHI card lists Jaylen Brown (OUT); MIL card lists Jaquez and Turner (RotoWire: Sims, no Jaquez); UTAH@LAL no labels, baseline
+    'MEM': [('Cameron Boozer',11),('Cedric Coward',9),('Jaylen Wells',8),('Cam Spencer',7),('Zach Edey',6)],
+    'CLE': [('Donovan Mitchell',18),('James Harden',15),('Peyton Watson',11),('Jarrett Allen',10),('Tyrese Proctor',5)],
+    'HOU': [('Kevin Durant',12),('Alperen Sengun',10),('Amen Thompson',9),('Jabari Smith Jr.',8),('Fred VanVleet',7)],
+    'IND': [('Pascal Siakam',16),('Andrew Nembhard',12),('Aaron Nesmith',9),('Ivica Zubac',9),('Kelly Oubre Jr.',9)],
+    'MIL': [('Tyler Herro',13),('Jaime Jaquez Jr.',10),('Kyle Kuzma',8),('Myles Turner',7),('Brayden Burries',6)],
+    'MIA': [('Giannis Antetokounmpo',18),('Bam Adebayo',14),('Klay Thompson',9),('Pelle Larsson',8),('Davion Mitchell',7)],
+    'PHI': [('Jaylen Brown',15),('Joel Embiid',15),('Tyrese Maxey',15),('VJ Edgecombe',9),('Dean Wade',3)],
+    'ORL': [('Desmond Bane',11),('Franz Wagner',11),('Anthony Black',8),('Jalen Suggs',7),('Wendell Carter Jr.',6)],
+    'CHI': [('Norman Powell',11),('Matas Buzelis',9),('Josh Giddey',8),('Jalen Smith',6),('Isaac Okoro',5)],
+    'BKN': [('Michael Porter Jr.',20),('Julius Randle',17),('Egor Demin',9),('Nolan Traore',9),("Day'Ron Sharpe",7)],
+    'WSH': [('Anthony Davis',10),('Trae Young',8),('AJ Dybantsa',7),('Kyshawn George',7),('Alex Sarr',6)],
+    'TOR': [('RJ Barrett',17),('Scottie Barnes',15),('Immanuel Quickley',14),('Collin Murray-Boyles',8),("Ja'Kobe Walter",8)],
+    'DET': [('Cade Cunningham',17),('John Collins',10),('Ausar Thompson',7),('Daniss Jenkins',7),('Kevin Huerter',7)],
+    'NO': [('Zion Williamson',16),('Saddiq Bey',14),('Jeremiah Fears',11),('Herbert Jones',6),('Yves Missi',4)],
+    'ATL': [('Jalen Johnson',13),('Nickeil Alexander-Walker',12),('CJ McCollum',11),('Onyeka Okongwu',9),('Dyson Daniels',7)],
+    'OKC': [('Shai Gilgeous-Alexander',22),('Ajay Mitchell',10),('Jared McCain',7),('Isaiah Hartenstein',6),('Kenrich Williams',5)],
+    'GS': [('Yaxel Lendeborg',19),('Brandin Podziemski',13),('Al Horford',7),('Draymond Green',7),('LJ Cryer',7)],
+    'DAL': [('Cooper Flagg',15),('Kyrie Irving',15),('P.J. Washington',9),('Daniel Gafford',6),('Caleb Martin',3)],
+    'BOS': [('Jayson Tatum',20),('Paul George',15),('Derrick White',13),('Neemias Queta',8),('Jordan Walsh',4)],
+    'DEN': [('Nikola Jokic',12),('Jamal Murray',11),('Aaron Gordon',6),('Cameron Johnson',6),('Christian Braun',6)],
+    'UTAH': [('Keyonte George',17),('Darryn Peterson',12),('Ace Bailey',11),('Mo Bamba',7),('Josh Green',3)],
+    'LAL': [('Luka Doncic',27),('Quentin Grimes',10),('Jake LaRavia',6),('Matisse Thybulle',6),('Kevon Looney',2)],
+    'PHX': [('Devin Booker',14),('Dillon Brooks',10),('Jalen Green',10),('Miles Bridges',9),('Oso Ighodaro',4)],
+    'SAC': [('Darius Acuff Jr.',17),('Zach LaVine',12),('Domantas Sabonis',9),("De'Andre Hunter",8),('Keegan Murray',8)],
+}
+for d, tab in (('2026-11-09', ST_PCT_0911), ('2026-11-11', ST_PCT_1111), ('2026-11-12', ST_PCT_1112), ('2026-11-13', ST_PCT_1113), ('2026-11-14', ST_PCT_1114), ('2026-11-15', ST_PCT_1115), ('2026-11-16', ST_PCT_1116), ('2026-11-17', ST_PCT_1117), ('2026-11-18', ST_PCT_1118)):
     for tm, v in tab.items():
         ST[(d, tm)] = [(n, p, p) for n, p in v]   # StarTool prints game first basket %; same number ranks team and game
 
@@ -222,6 +250,8 @@ SH_TIP = {  # normalized favorite; None = even
  '2026-11-11': {('WSH','IND'):'WSH',('CLE','NY'):'CLE',('BOS','TOR'):'TOR',('SA','CHI'):'SA',('DEN','MEM'):'MEM',
                 ('LAL','MIL'):'LAL',('BKN','NO'):'BKN',('ORL','UTAH'):'ORL',('GS','HOU'):'HOU',('OKC','POR'):'POR'},
  '2026-11-12': {('TOR','PHI'):'TOR',('DET','WSH'):'WSH',('DAL','MIN'):'MIN',('CHA','PHX'):'PHX'},
+ '2026-11-18': {('MEM','CLE'):'CLE',('HOU','IND'):'IND',('MIL','MIA'):'MIA',('PHI','ORL'):'ORL',('CHI','BKN'):'BKN',('WSH','TOR'):'WSH',
+                ('DET','NO'):'DET',('GS','DAL'):'GS',('ATL','OKC'):'OKC',('BOS','DEN'):'DEN',('UTAH','LAL'):'LAL',('PHX','SAC'):'PHX'},   # tip sheet normalized (log5); MIL jumper Turner on the sheet; Hayes, Kessler, Horford tagged
  '2026-11-17': {('NY','TOR'):'NY',('POR','MIN'):None,('DET','SA'):'SA',('UTAH','LAC'):'LAC',('CHA','LAL'):None},   # tip sheet normalized; LAL jumper Mamukelashvili 0% (no sample) = no call
  '2026-11-16': {('ORL','BOS'):'ORL',('CHI','CLE'):'CLE',('MEM','WSH'):'MEM',('HOU','MIA'):'MIA',('PHI','BKN'):'PHI',
                 ('GS','NO'):'GS',('POR','MIN'):None,('PHX','DEN'):'DEN'},   # tip sheet normalized (log5 of jumper tip %); POR/MIN 54 vs 54 = no call
