@@ -1,22 +1,23 @@
-# NHL shortlist 2026-11-13 (not guaranteed)
+# NHL shortlist 2026-11-18 (not guaranteed)
 
-- **Anytime goal: Pavel Dorofeyev** (NYR @ VAN). Est 25% (fair +292) = 0.77 x 33% blend; 26-27: 6 G in 20 GP; VAN allows 4.1 GA/G; faces Leevi Merilainen (likely, SV .872); bet only at +332 or longer (never shorter than +150)
-- **Anytime goal: Steven Stamkos** (NSH @ VGK). Est 33% (fair +201) = 0.77 x 43% blend; 26-27: 11 G in 19 GP; VGK allows 2.8 GA/G; faces Adin Hill (unconfirmed, SV .879); bet only at +231 or longer (never shorter than +150)
-- **Anytime goal: Mika Zibanejad** (NYR @ VAN). Est 21% (fair +370) = 0.77 x 28% blend; 26-27: 5 G in 20 GP; VAN allows 4.1 GA/G; faces Leevi Merilainen (likely, SV .872); bet only at +416 or longer (never shorter than +150)
-- **Anytime goal: Alexis Lafrenière** (NYR @ VAN). Est 21% (fair +385) = 0.77 x 27% blend; 26-27: 9 G in 20 GP; VAN allows 4.1 GA/G; faces Leevi Merilainen (likely, SV .872); bet only at +434 or longer (never shorter than +150)
-- **First goal: Gabe Perreault** (NYR @ VAN). Scored first in 0/49 games in 25-26, 2/20 in 26-27; 0.28 goals/G (blend); NYR scores first 51%; Top 6 PP2
-- **First goal: Mark Stone** (VGK vs NSH). Scored first in 3/60 games in 25-26, 0/20 in 26-27; 0.48 goals/G (blend); VGK scores first 43%; Top 6 PP1
-- **First goal: Filip Forsberg** (NSH @ VGK). Scored first in 7/82 games in 25-26, 3/19 in 26-27; 0.44 goals/G (blend); NSH scores first 44%; Top 6 PP1
-- **SOG over 1.5: Pavel Dorofeyev** (NYR @ VAN). Over 1.5 in 78% of games (blend); 2.9 SOG/G; L5: 3 6 3 4 1; VAN allows 30.1 SA/G; fair -358 is shorter than -300, so take over 2.5 instead (55%, fair -122)
-- **SOG over 1.5: Jack Eichel** (VGK vs NSH). Over 1.5 in 79% of games (blend); 3.1 SOG/G; L5: 1 5 5 1 1; NSH allows 29.4 SA/G; fair -379 is shorter than -300, so take over 2.5 instead (57%, fair -135)
-- **SOG over 1.5: Roman Josi** (NSH @ VGK). Over 1.5 in 80% of games (blend); 2.7 SOG/G; L5: 1 3 2 2 3; VGK allows 24.8 SA/G; fair -400 is shorter than -300, so take over 2.5 instead (46%, fair +119)
-- **SOG over 1.5: Jake DeBrusk** (VAN vs NYR). Over 1.5 in 71% of games (blend); 2.5 SOG/G; L5: 4 2 1 3 2; NYR allows 27.8 SA/G
-- **SOG over 1.5: Filip Forsberg** (NSH @ VGK). Over 1.5 in 78% of games (blend); 2.8 SOG/G; L5: 2 3 3 3 0; VGK allows 24.8 SA/G; fair -348 is shorter than -300, so take over 2.5 instead (53%, fair -111)
+- **Anytime goal: Cole Caufield** (MTL @ NJD). Est 33% (fair +207) = 0.77 x 42% blend; 26-27: 12 G in 21 GP; NJD allows 3.0 GA/G; faces Connor Hellebuyck (unconfirmed, SV .897); bet only at +237 or longer (never shorter than +150)
+- **Anytime goal: Artturi Lehkonen** (COL @ UTA). Est 30% (fair +239) = 0.77 x 38% blend; 26-27: 15 G in 21 GP; UTA allows 3.2 GA/G; faces Karel Vejmelka (unconfirmed, SV .892); bet only at +273 or longer (never shorter than +150)
+- **Anytime goal: Martin Necas** (COL @ UTA). Est 29% (fair +239) = 0.77 x 38% blend; 26-27: 10 G in 21 GP; UTA allows 3.2 GA/G; faces Karel Vejmelka (unconfirmed, SV .892); bet only at +273 or longer (never shorter than +150)
+- **Anytime goal: Nick Suzuki** (MTL @ NJD). Est 30% (fair +237) = 0.77 x 39% blend; 26-27: 8 G in 15 GP; NJD allows 3.0 GA/G; faces Connor Hellebuyck (unconfirmed, SV .897); bet only at +270 or longer (never shorter than +150)
+- **First goal: Brock Nelson** (COL @ UTA). Scored first in 3/81 games in 25-26, 1/21 in 26-27; 0.35 goals/G (blend); COL scores first 55%; Top 6 PP2
+- **First goal: Logan Cooley** (UTA vs COL). Scored first in 7/54 games in 25-26, 2/19 in 26-27; 0.51 goals/G (blend); UTA scores first 48%; Top 6 PP1
+- **First goal: David Pastrnak** (BOS @ DET). Scored first in 6/77 games in 25-26, 0/21 in 26-27; 0.40 goals/G (blend); BOS scores first 53%; Top 6 PP1
+- **SOG over 2.5: Alex DeBrincat** (DET vs BOS). Over 2.5 in 74% of games (blend); 3.5 SOG/G; L5: 3 2 1 2 5; BOS allows 28.9 SA/G
+- **SOG over 2.5: David Pastrnak** (BOS @ DET). Over 2.5 in 73% of games (blend); 3.5 SOG/G; L5: 4 6 3 3 4; DET allows 27.1 SA/G
+- **SOG over 1.5: Jack Hughes** (NJD vs MTL). Over 1.5 in 94% of games (blend); 3.8 SOG/G; L5: 2 3 3 3 5; MTL allows 27.9 SA/G; fair -1450 is shorter than -300, so take over 2.5 instead (69%, fair -226)
+- **SOG over 1.5: Timo Meier** (NJD vs MTL). Over 1.5 in 84% of games (blend); 3.6 SOG/G; L5: 3 4 3 5 8; MTL allows 27.9 SA/G; fair -509 is shorter than -300, so take over 2.5 instead (66%, fair -192)
+- **SOG over 1.5: Lucas Raymond** (DET vs BOS). Over 1.5 in 79% of games (blend); 2.5 SOG/G; L5: 2 3 2 2 3; BOS allows 28.9 SA/G; fair -377 is shorter than -300, so take over 2.5 instead (43%, fair +134)
 
 ## Goalies
 
-- NYR @ VAN 9:00 ET: Dylan Garand (Unconfirmed) / Leevi Merilainen (Likely)
-- NSH @ VGK 10:00 ET: Juuse Saros (Unconfirmed) / Adin Hill (Unconfirmed)
+- BOS @ DET 7:30 ET: Jeremy Swayman (Unconfirmed) / Daniil Tarasov (Confirmed)
+- MTL @ NJD 7:30 ET: Jacob Fowler (Unconfirmed) / Connor Hellebuyck (Unconfirmed)
+- COL @ UTA 10:00 ET: Mackenzie Blackwood (Unconfirmed) / Karel Vejmelka (Unconfirmed)
 
 ## StarTool check (side by side, no blend)
 
@@ -33,5 +34,11 @@ Only categories that beat their price season to date: NBA 3+ threes, NHL 3+ SOG,
 - **2-leg #3:** Michael Porter Jr. 3+ threes (68%, CHI @ BKN) + Nickeil Alexander-Walker 3+ threes (61%, ATL @ OKC). Fair +140 (42%); take +164 or longer.
 - **3-leg #4:** James Harden 3+ threes (59%, MEM @ CLE) + Zach LaVine 3+ threes (59%, PHX @ SAC) + Paul George 3+ threes (57%, BOS @ DEN). Fair +401 (20%); take +451 or longer.
 - **3-leg #5:** James Harden 3+ threes (59%, MEM @ CLE) + Zach LaVine 3+ threes (59%, PHX @ SAC) + Tyrese Maxey 3+ threes (57%, PHI @ ORL). Fair +407 (20%); take +458 or longer.
+
+### NHL
+- **2-leg #1:** Alex DeBrincat 3+ SOG (74%, BOS @ DET) + Jack Hughes 3+ SOG (69%, MTL @ NJD). Fair -105 (51%); take +115 or longer.
+- **2-leg #2:** David Pastrnak 3+ SOG (73%, BOS @ DET) + Jack Hughes 3+ SOG (69%, MTL @ NJD). Fair -102 (51%); take +117 or longer.
+- **2-leg #3:** Alex DeBrincat 3+ SOG (74%, BOS @ DET) + Cole Caufield 3+ SOG (68%, MTL @ NJD). Fair -101 (50%); take +119 or longer.
+- **3-leg #4:** David Pastrnak 3+ SOG (73%, BOS @ DET) + Cole Caufield 3+ SOG (68%, MTL @ NJD) + Timo Meier 3+ SOG (66%, MTL @ NJD). Fair +207 (33%); take +237 or longer; same game, correlated, fair price is optimistic.
 
 <!-- parlays:end -->
