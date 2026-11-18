@@ -33,3 +33,5 @@ return no views (a sync gap, not zero).
 | 2026-11-17 | 6:30 PM | Instagram reel | 7096638 | Market commentary still reel (ES selloff chart, Tim's screenshot) | music | one_cool_minute | | |
 | 2026-11-18 | 12:30 PM | Instagram reel | 7133361 | Education text cards over a moving drawn chart, light palette (0-trade day still logged) | music | once_more_with_you | | |
 | 2026-11-18 | 5:00 PM | Facebook reel | 7133365 | Education text cards over a moving drawn chart, light palette (3 numbers: 1-2 trades, 3.5-4 pt stop, $1,000 max) | music | happy_sadie | | |
+| 2026-11-18 | 5:45 PM | Facebook reel | 7142195 | Trade reel, Tim's screen recording (paper trade, misread then short to target, Tim approved) | music | static_shoes | | |
+| 2026-11-18 | 6:00 PM | Instagram reel | 7142199 | Trade reel, Tim's screen recording (paper trade, misread then short to target, Tim approved) | music | static_shoes | | |
