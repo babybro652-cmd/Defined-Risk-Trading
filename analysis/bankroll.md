@@ -26,3 +26,4 @@ Balance snapshots from Tim's FanDuel screenshots. Newest at the bottom. Deposits
 | 11/16/26 | 6:05 AM | $201.31 | Tim: only $100 to bet with today (11/16 betting budget cap). |
 | 11/16/26 | 8:39 PM | $63.21 | after placing PHX@DEN first basket straights ($60: Jokic +500, Murray +450, Cam Johnson +950, $20 each, placed 8:32 PM, tip 9:10 PM; Bets rows 1471-1473). Day started at $201.31 with a $100 budget; $138.10 out today net of any payouts, so about $78 went to other 11/16 bets. None of those are marked placed on the sheet yet (no slips logged). |
 | 11/17/26 | 12:22 PM | $39.41 | after placing Rutgers +16.5 -110 $1.00 (CBB, 2 PM ET; Bets row 1547) |
+| 11/18/26 | 8:47 AM | $9.00 | Tim (via Jarvis). Down from $39.41 on 11/17; a $60 withdrawal bounced back and he deposited $15 since. 11/18 NBA first basket plan sized to $8.95 (9 straights $0.75, 12 two-leg $0.10, 4 method longshots $1.00). |
