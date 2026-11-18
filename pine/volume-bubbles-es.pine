@@ -1,0 +1,312 @@
+// =============================================================================
+// Volume Bubbles ES | Indicator | Pine Script v6
+// =============================================================================
+// Built for 1m ES on the TradingView Essential plan (desktop and mobile).
+// What it draws:
+// 1. Bubbles: circles with the volume number on candles whose volume is far
+//    above normal (z-score AND a multiple of the median, measured against
+//    recent bars of the same session type: NY session vs overnight).
+// 2. HVN zones: high-volume price rows from a volume profile this script
+//    builds itself (session from 6 PM ET, NY session from 9:30 ET, or rolling).
+// 3. "Vol hold": a bubble at or near an HVN zone whose wick and close show the
+//    level held, confirmed when the next few bars don't break the wick.
+//    This is a PROXY. Without bid/ask traded volume it cannot tell who was
+//    aggressive or show resting orders, so it is not true absorption.
+// 4. Pivot volume tag: at each swing pivot (pivot length 5, matching the Div
+//    labels) it marks whether the pivot had big volume and closed off its low
+//    or high, so a Div label can be checked for volume behind it.
+// 5. Alerts: one JSON alert() per bubble, Vol hold and pivot volume event,
+//    ready for a future tracker sheet (no webhook wired yet).
+// Volume data: each bar's total volume only (no intrabar split on Essential).
+// =============================================================================
+
+//@version=6
+indicator("Volume Bubbles ES", shorttitle="Vol Bubbles", overlay=true, max_labels_count=300, max_boxes_count=20, max_lines_count=10, max_bars_back=1500)
+
+// --- INPUTS ------------------------------------------------------------------
+
+grpB = "1. Bubbles"
+showBub = input.bool(true, "Show bubbles", group=grpB)
+volLen = input.int(120, "Baseline length (bars)", minval=20, maxval=500, group=grpB, tooltip="Volume is compared with this many recent bars of the same session type (NY session bars vs overnight bars), so the 9:30 open is measured against yesterday's NY session, not the quiet overnight.")
+zMin = input.float(3.0, "Min z-score", minval=1.0, step=0.25, group=grpB, tooltip="How many standard deviations above the baseline average. Raise it for fewer bubbles.")
+medMult = input.float(3.0, "Min multiple of median volume", minval=1.0, step=0.25, group=grpB, tooltip="Volume must also be at least this many times the baseline median. Both tests must pass.")
+nyOnly = input.bool(true, "NY session only", group=grpB, tooltip="Bubbles, Vol hold and pivot tags only between the NY session times below.")
+nySess = input.session("0930-1600", "NY session (ET)", group=grpB)
+showNum = input.bool(true, "Show volume number", group=grpB)
+
+grpH = "2. HVN zones"
+showHvn = input.bool(true, "Show HVN zones", group=grpH)
+profMode = input.string("Session (6 PM ET)", "Profile", options=["Session (6 PM ET)", "NY session (9:30 ET)", "Rolling bars"], group=grpH, tooltip="Session = the CME day from 6 PM ET. NY session = 9:30 ET onward, NY bars only. Rolling = the last N bars.")
+rollLen = input.int(390, "Rolling bars", minval=50, maxval=1440, group=grpH)
+rowPts = input.float(1.0, "Row size (points)", minval=0.25, step=0.25, group=grpH, tooltip="1.0 = 4 ES ticks per profile row.")
+hvnPct = input.int(70, "HVN threshold (% of POC row)", minval=30, maxval=100, group=grpH, tooltip="A row is part of an HVN zone when its volume is at least this % of the busiest row.")
+maxZones = input.int(3, "Max zones drawn", minval=1, maxval=6, group=grpH)
+showPoc = input.bool(true, "Show POC line", group=grpH)
+nearPts = input.float(1.0, "Near zone (points)", minval=0.0, step=0.25, group=grpH, tooltip="A wick counts as 'near HVN' when an HVN row is within this distance.")
+minProfBars = input.int(30, "Min bars before zones count", minval=5, maxval=500, group=grpH)
+
+grpV = "3. Vol hold"
+showHold = input.bool(true, "Show Vol hold", group=grpV)
+closeLocMin = input.float(0.6, "Close location (0-1)", minval=0.5, maxval=1.0, step=0.05, group=grpV, tooltip="Bull: close in the top 40% of the bar (0.6). Bear: close in the bottom 40%.")
+wickMin = input.float(0.3, "Min wick (share of bar range)", minval=0.0, maxval=0.9, step=0.05, group=grpV)
+holdBars = input.int(3, "Hold for bars", minval=1, maxval=20, group=grpV, tooltip="The wick must not be broken for this many bars after the bubble. The tag prints when that is confirmed.")
+holdBufTicks = input.int(0, "Hold buffer (ticks)", minval=0, maxval=20, group=grpV)
+maxRangeAtr = input.float(2.5, "Max bar range (x ATR 14)", minval=0.5, step=0.25, group=grpV, tooltip="Skips huge news candles that blew through the level.")
+
+grpP = "4. Pivot volume"
+showPiv = input.bool(true, "Show pivot volume tags", group=grpP)
+pivLen = input.int(5, "Pivot length", minval=2, maxval=20, group=grpP, tooltip="5 on 1m matches the Div labels.")
+pivSpan = input.int(1, "Bars either side of pivot", minval=0, maxval=3, group=grpP, tooltip="Biggest volume within the pivot bar +/- this many bars.")
+pivZ = input.float(2.0, "Min z-score at pivot", minval=0.5, step=0.25, group=grpP)
+showWeak = input.bool(false, "Also tag low-volume pivots", group=grpP)
+
+grpA = "5. Alerts (JSON)"
+alBub = input.bool(true, "Bubble alerts", group=grpA, tooltip="Create ONE alert: condition 'Volume Bubbles ES', 'Any alert() function call'. Alerts keep the settings they were created with.")
+alHold = input.bool(true, "Vol hold alerts", group=grpA)
+alPiv = input.bool(true, "Pivot volume alerts", group=grpA, tooltip="Strong pivots only, plus weak ones when 'Also tag low-volume pivots' is on.")
+
+grpS = "6. Style"
+upCol = input.color(color.new(#26A69A, 35), "Bubble, up candle", group=grpS)
+dnCol = input.color(color.new(#EF5350, 35), "Bubble, down candle", group=grpS)
+zoneCol = input.color(color.new(#5C6BC0, 82), "HVN zone", group=grpS)
+pocCol = input.color(color.new(#FFB300, 20), "POC line", group=grpS)
+holdBullCol = input.color(color.new(#00E676, 0), "Vol hold, bull", group=grpS)
+holdBearCol = input.color(color.new(#FF1744, 0), "Vol hold, bear", group=grpS)
+pivCol = input.color(color.new(#29B6F6, 10), "Pivot volume tag", group=grpS)
+
+// --- SESSION -------------------------------------------------------------------
+
+inNy = not na(time(timeframe.period, nySess, "America/New_York"))
+showHere = not nyOnly or inNy
+
+// --- VOLUME BASELINE (same session type, current bar excluded) -------------------
+
+float vol = nz(volume)
+var array<float> nyVols = array.new<float>()
+var array<float> ethVols = array.new<float>()
+array<float> base = inNy ? nyVols : ethVols
+int nBase = array.size(base)
+bool ready = nBase >= math.min(volLen, 30)
+float mu = nBase > 0 ? array.avg(base) : na
+float sd = nBase > 1 ? array.stdev(base) : na
+float med = nBase > 0 ? array.median(base) : na
+float z = ready and sd > 0 ? (vol - mu) / sd : na
+float mult = ready and med > 0 ? vol / med : na
+array.push(base, vol)
+if array.size(base) > volLen
+    array.shift(base)
+
+bool big = ready and not na(z) and z >= zMin and not na(mult) and mult >= medMult
+
+// --- CANDLE SHAPE ----------------------------------------------------------------
+
+float rng = high - low
+float lowWick = math.min(open, close) - low
+float upWick = high - math.max(open, close)
+float closeLoc = rng > 0 ? (close - low) / rng : 0.5
+float atr = ta.atr(14)
+
+// --- VOLUME PROFILE (map: row index -> volume) ------------------------------------
+
+var map<int, float> prof = map.new<int, float>()
+var int profStart = 0
+var int profBars = 0
+
+bool isNySess = profMode == "NY session (9:30 ET)"
+bool isRoll = profMode == "Rolling bars"
+bool dayChange = timeframe.change("1D")
+bool nyStart = inNy and not inNy[1]
+bool newProf = isRoll ? false : isNySess ? nyStart : dayChange
+if newProf
+    prof.clear()
+    profStart := bar_index
+    profBars := 0
+
+addSpread(map<int, float> m, float lo, float hi, float v, float rs, float sign) =>
+    int r0 = int(math.floor(lo / rs))
+    int r1 = int(math.floor(hi / rs))
+    int nr = r1 - r0 + 1
+    if nr > 0 and nr <= 400 and v > 0
+        float per = sign * v / nr
+        for r = r0 to r1
+            m.put(r, nz(m.get(r)) + per)
+    true
+
+// HVN threshold from the profile BEFORE this bar is added
+float pocVol = prof.size() > 0 ? prof.values().max() : 0.0
+float hvnThr = pocVol * hvnPct / 100.0
+bool profReady = profBars >= minProfBars and pocVol > 0
+
+nearHvn(float p) =>
+    bool hit = false
+    if profReady
+        int r0 = int(math.floor((p - nearPts) / rowPts))
+        int r1 = int(math.floor((p + nearPts) / rowPts))
+        for r = r0 to r1
+            if nz(prof.get(r)) >= hvnThr
+                hit := true
+                break
+    hit
+
+bool nearLow = nearHvn(low)
+bool nearHigh = nearHvn(high)
+
+// Add this bar to the profile
+bool addThis = isNySess ? inNy : true
+if addThis
+    addSpread(prof, low, high, vol, rowPts, 1.0)
+    profBars += 1
+if isRoll and bar_index >= rollLen
+    addSpread(prof, low[rollLen], high[rollLen], nz(volume[rollLen]), rowPts, -1.0)
+if isRoll
+    profStart := math.max(0, bar_index - rollLen + 1)
+
+// --- HELPERS ---------------------------------------------------------------------
+
+fmtVol(float v) =>
+    v >= 1000 ? str.tostring(v / 1000, "#.#") + "K" : str.tostring(v, "#")
+
+fmtT(int t) =>
+    str.format_time(t, "yyyy-MM-dd'T'HH:mm", "America/New_York")
+
+bubSize(float zz) =>
+    zz >= 7 ? size.huge : zz >= 5 ? size.large : zz >= 4 ? size.normal : size.small
+
+json(string typ, int t, float price, float v, float zz, bool near, string held, string side) =>
+    '{"source":"volume-bubbles-es","symbol":"' + syminfo.ticker + '","tf":"' + timeframe.period + '","type":"' + typ + '","time":"' + fmtT(t) + '","confirmTime":"' + fmtT(time) + '","tz":"ET","price":' + str.tostring(math.round_to_mintick(price)) + ',"volume":' + str.tostring(v, "#") + ',"zScore":' + (na(zz) ? "null" : str.tostring(zz, "#.##")) + ',"nearHVN":' + (near ? "true" : "false") + ',"held":' + held + ',"side":"' + side + '"}'
+
+// --- 1. BUBBLES ------------------------------------------------------------------
+
+bool bubble = big and showHere and barstate.isconfirmed
+// Place the bubble on the side with the bigger wick (where price was pushed back);
+// on a bar with almost no wicks, at the close.
+float bubPrice = math.max(lowWick, upWick) < 0.2 * rng ? close : lowWick >= upWick ? low : high
+string candleSide = close > open ? "up" : close < open ? "down" : "flat"
+
+if bubble and showBub
+    label.new(bar_index, bubPrice, showNum ? fmtVol(vol) : "", style=label.style_circle, color=close >= open ? upCol : dnCol, textcolor=color.white, size=bubSize(z), tooltip="Volume " + str.tostring(vol, "#") + " | z " + str.tostring(z, "#.#") + " | " + str.tostring(mult, "#.#") + "x median" + (nearLow or nearHigh ? " | near HVN" : ""))
+
+if bubble and alBub
+    alert(json("bubble", time, bubPrice, vol, z, (lowWick >= upWick ? nearLow : nearHigh), "null", candleSide), alert.freq_once_per_bar_close)
+
+// --- 3. VOL HOLD (bubble at an HVN, wick + close held, confirmed later) -----------
+
+bool okRange = na(atr) or rng <= maxRangeAtr * atr
+bool bullCand = bubble and okRange and nearLow and closeLoc >= closeLocMin and rng > 0 and lowWick >= wickMin * rng
+bool bearCand = bubble and okRange and nearHigh and closeLoc <= 1 - closeLocMin and rng > 0 and upWick >= wickMin * rng
+float buf = holdBufTicks * syminfo.mintick
+
+float lowAfter = ta.lowest(low, holdBars)
+float highAfter = ta.highest(high, holdBars)
+bool bullHeld = bullCand[holdBars] and lowAfter >= low[holdBars] - buf
+bool bearHeld = bearCand[holdBars] and highAfter <= high[holdBars] + buf
+
+if bullHeld and showHold
+    label.new(bar_index - holdBars, low[holdBars], "Vol hold", style=label.style_label_up, color=holdBullCol, textcolor=color.black, size=size.small, tooltip="Big volume at an HVN, closed off the low, low held " + str.tostring(holdBars) + " bars. Proxy, not bid/ask absorption.")
+if bearHeld and showHold
+    label.new(bar_index - holdBars, high[holdBars], "Vol hold", style=label.style_label_down, color=holdBearCol, textcolor=color.white, size=size.small, tooltip="Big volume at an HVN, closed off the high, high held " + str.tostring(holdBars) + " bars. Proxy, not bid/ask absorption.")
+
+if bullHeld and alHold
+    alert(json("vol_hold", time[holdBars], low[holdBars], vol[holdBars], z[holdBars], true, "true", "bull"), alert.freq_once_per_bar_close)
+if bearHeld and alHold
+    alert(json("vol_hold", time[holdBars], high[holdBars], vol[holdBars], z[holdBars], true, "true", "bear"), alert.freq_once_per_bar_close)
+
+// --- 4. PIVOT VOLUME TAG ----------------------------------------------------------
+
+float pl = ta.pivotlow(low, pivLen, pivLen)
+float ph = ta.pivothigh(high, pivLen, pivLen)
+
+pivotZ() =>
+    float best = na
+    float bestVol = 0.0
+    for k = pivLen - pivSpan to pivLen + pivSpan
+        float zk = z[k]
+        if not na(zk) and (na(best) or zk > best)
+            best := zk
+            bestVol := vol[k]
+    [best, bestVol]
+
+[pz, pVol] = pivotZ()
+bool pivShow = not nyOnly or inNy[pivLen]
+float pivCloseLoc = closeLoc[pivLen]
+bool strongVol = not na(pz) and pz >= pivZ
+
+if not na(pl) and pivShow
+    // held: the pivot low was not broken for pivLen bars (built into the pivot)
+    // and the pivot candle closed in its upper half
+    bool heldL = pivCloseLoc >= 0.5 and close > pl
+    bool nearL = nearHvn(pl)
+    if strongVol and showPiv
+        label.new(bar_index - pivLen, pl, "Vol " + str.tostring(pz, "#.#") + (heldL ? " held" : ""), style=label.style_label_up, color=pivCol, textcolor=color.black, size=size.tiny, tooltip="Pivot low with big volume (z " + str.tostring(pz, "#.#") + ", " + str.tostring(pVol, "#") + ")" + (nearL ? ", near HVN" : "") + (heldL ? ", closed off the low" : ", closed near the low"))
+    else if showWeak and showPiv
+        label.new(bar_index - pivLen, pl, "low vol", style=label.style_label_up, color=color.new(color.gray, 40), textcolor=color.white, size=size.tiny)
+    if alPiv and (strongVol or showWeak)
+        alert(json("pivot_vol", time[pivLen], pl, pVol, pz, nearL, heldL ? "true" : "false", "bull"), alert.freq_once_per_bar_close)
+
+if not na(ph) and pivShow
+    bool heldH = pivCloseLoc <= 0.5 and close < ph
+    bool nearH = nearHvn(ph)
+    if strongVol and showPiv
+        label.new(bar_index - pivLen, ph, "Vol " + str.tostring(pz, "#.#") + (heldH ? " held" : ""), style=label.style_label_down, color=pivCol, textcolor=color.black, size=size.tiny, tooltip="Pivot high with big volume (z " + str.tostring(pz, "#.#") + ", " + str.tostring(pVol, "#") + ")" + (nearH ? ", near HVN" : "") + (heldH ? ", closed off the high" : ", closed near the high"))
+    else if showWeak and showPiv
+        label.new(bar_index - pivLen, ph, "low vol", style=label.style_label_down, color=color.new(color.gray, 40), textcolor=color.white, size=size.tiny)
+    if alPiv and (strongVol or showWeak)
+        alert(json("pivot_vol", time[pivLen], ph, pVol, pz, nearH, heldH ? "true" : "false", "bear"), alert.freq_once_per_bar_close)
+
+// --- 2. HVN ZONES (drawn on the last bar only, light for mobile) -------------------
+
+var array<box> zoneBoxes = array.new<box>()
+var line pocLine = na
+
+if barstate.islast
+    for b in zoneBoxes
+        b.delete()
+    zoneBoxes.clear()
+    pocLine.delete()
+    if (showHvn or showPoc) and prof.size() > 0
+        array<int> keys = prof.keys()
+        keys.sort(order.ascending)
+        float mx = 0.0
+        int pocRow = na
+        for k in keys
+            float v = nz(prof.get(k))
+            if v > mx
+                mx := v
+                pocRow := k
+        float thr = mx * hvnPct / 100.0
+        // runs of consecutive rows at or above the threshold
+        array<int> rStart = array.new<int>()
+        array<int> rEnd = array.new<int>()
+        array<float> rSum = array.new<float>()
+        int curS = na
+        int prevK = na
+        float curSum = 0.0
+        for k in keys
+            float v = nz(prof.get(k))
+            bool hot = v >= thr and v > 0
+            bool contiguous = not na(prevK) and k == prevK + 1
+            if hot and not na(curS) and contiguous
+                curSum += v
+            else
+                if not na(curS)
+                    rStart.push(curS)
+                    rEnd.push(prevK)
+                    rSum.push(curSum)
+                curS := hot ? k : na
+                curSum := hot ? v : 0.0
+            prevK := k
+        if not na(curS)
+            rStart.push(curS)
+            rEnd.push(prevK)
+            rSum.push(curSum)
+        if showHvn and rSum.size() > 0
+            array<int> idx = rSum.sort_indices(order.descending)
+            int nZones = math.min(maxZones, idx.size())
+            for i = 0 to nZones - 1
+                int j = idx.get(i)
+                float top = (rEnd.get(j) + 1) * rowPts
+                float bot = rStart.get(j) * rowPts
+                zoneBoxes.push(box.new(profStart, top, bar_index + 10, bot, border_color=color.new(zoneCol, 50), bgcolor=zoneCol, extend=extend.none))
+        if showPoc and not na(pocRow)
+            float pocPx = (pocRow + 0.5) * rowPts
+            pocLine := line.new(profStart, pocPx, bar_index + 10, pocPx, color=pocCol, width=1, style=line.style_dotted)
