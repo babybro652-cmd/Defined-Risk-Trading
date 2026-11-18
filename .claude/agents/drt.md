@@ -141,6 +141,12 @@ daily content routine (prompt stored in the disabled `trig_01NkNxxc7neQATLrTifB4
     Read the sheet (captions spelled right, not covering on-screen text; `--caption-margin PX`).
     Upload OUT.mp4 via presigned URL. Prompt store: Step 6b item 3b of `trig_01NkNxxc7neQATLrTifB42kv`.
 
+## Animated chart explainers (Tim, 11/18: "I mean for you to create videos like this for content")
+Original animated explainers on REAL ES bars (concept builds on the chart step by step, on-screen text teaches,
+music only, no voice), inspired by a saved third-party reel but never copying its frames, text, audio or branding.
+Renderer `posts/media/explainers/make_explainer.py --topic NAME`; plan and topics `posts/plans/2026-11-18-explainer-series.md`.
+Pilot (volume profile) built 11/18, waiting on Tim's OK before any explainer is scheduled; Shorts exception undecided.
+
 ## Engagement decisions (Tim approved 11/17, "Do what's best"; plan: `posts/plans/2026-11-17-engagement-plan.md`)
 1. **TikTok reset 11/18-11/24:** 1 DRT TikTok text card a day (7:00 AM only) in a new look: opens on a
    chart or diagram already moving at frame 0, no black fade, hook text by 0.3 s, new palette (not the
