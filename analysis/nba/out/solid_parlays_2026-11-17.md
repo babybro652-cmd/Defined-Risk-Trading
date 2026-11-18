@@ -1,6 +1,6 @@
-# Solid 2-leg parlays, Tue 11/17 (4:50 PM rerun)
+# Solid 2-leg parlays, Tue 11/17 (7:00 PM recheck)
 
-Solid = both our #1 and #2 are starting and not questionable (RotoWire 4:50 PM, NBA 4:45 PM report, ESPN).
+Solid = both our #1 and #2 are starting and not questionable (RotoWire 7:00 PM, NBA 7 PM report).
 2 of 2 play-list games qualify:
 - DET@SA 8:00: Wembanyama, Fox
 - UTAH@LAC 10:30: Garland, Lopez
