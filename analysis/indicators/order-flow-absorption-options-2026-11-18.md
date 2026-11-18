@@ -72,6 +72,12 @@ upgrade.
   (one third-party source cites $9.95; the TradingView page says $7.00). If Tim already sees live ES on
   TradingView, he has it or gets it through another route; confirm under his TradingView account, Data.
 
+**Update 11/18 (Tim's screenshot):** his ES1! on TradingView shows no "D" badge and a live "Market open" dot, so
+his CME data is real-time without the $7 add-on, most likely through his Tradovate connection in the Trading Panel
+(TradingView lists Tradovate as a broker that gives real-time CME data; it lasts 7 days and renews at each
+Trading Panel login). Path (a) needs no data purchase. Built 11/18 on Tim's go: `pine/volume-bubbles-es.pine`
+(see `pine/README.md`). Source: https://in.tradingview.com/support/solutions/43000479666
+
 ## 2. What Pine Script can do
 
 - **`request.footprint(ticks_per_row, va_percent, imbalance_percent)`** exists in Pine v6 (added early 2026).
