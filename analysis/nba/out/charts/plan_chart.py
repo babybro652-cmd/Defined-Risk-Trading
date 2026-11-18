@@ -13,7 +13,7 @@ ax=fig.add_axes([0,0,1,1]); ax.set_xlim(0,100); ax.set_ylim(44,200); ax.axis('of
 def card(x,y,w,h): ax.add_patch(FancyBboxPatch((x,y),w,h,boxstyle='round,pad=0.4,rounding_size=1.5',fc=CARD,ec='#2c3850',lw=1))
 ax.text(5,195,'NBA PLAN  •  '+DATE,color=TXT,fontsize=17,weight='bold',va='center')
 ax.text(5,190.5,'Plan $35.50 of $36  •  Straights $30  •  Method $3.50  •  2-leg $2',color=MUTED,fontsize=8.6,va='center')
-ax.text(5,186.8,'7 PM recheck: no changes. Skipped: NY@TOR 51%, POR@MIN 56%, CHA@LAL 52%',color=MUTED,fontsize=8.4,va='center')
+ax.text(5,186.8,'7:20 PM recheck: no changes. Skipped: NY@TOR 51%, POR@MIN 56%, CHA@LAL 52%',color=MUTED,fontsize=8.4,va='center')
 ax.text(5,182,'FIRST BASKET  (top 3 straights, $5 each)',color=GOLD,fontsize=11,weight='bold',va='center')
 y=178
 for g,t,tip,picks,note in fb:

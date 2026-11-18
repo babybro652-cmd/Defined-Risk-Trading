@@ -14,7 +14,7 @@ for r in d: by.setdefault(r['tm'],[]).append(r)
 BG='#0f1420'; CARD='#1a2233'; TXT='#e8ecf3'; MUTED='#9aa4b5'; GOLD='#f5c542'; BLUE='#5aa9ff'; GREEN='#4cd38a'; RED='#ff6b6b'
 fig=plt.figure(figsize=(7.2,12.8),dpi=200); fig.patch.set_facecolor(BG)
 ax=fig.add_axes([0,0,1,1]); ax.set_xlim(0,100); ax.set_ylim(0,178); ax.axis('off')
-ax.text(5,173,'TEAM FIRST BASKET  •  TUE 11/17 (7:00 PM)',color=TXT,fontsize=16,weight='bold',va='center')
+ax.text(5,173,'TEAM FIRST BASKET  •  TUE 11/17 (7:20 PM)',color=TXT,fontsize=16,weight='bold',va='center')
 ax.text(5,168.6,'Top 2 per team: chance to score his team\'s first points, fair odds, take-at (fair x1.2)',color=MUTED,fontsize=8,va='center')
 ax.text(5,165,'Gold border = on tonight\'s play list (tip 70%+)',color=GOLD,fontsize=8,va='center')
 y=161; h=18.2
