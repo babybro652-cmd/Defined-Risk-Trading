@@ -89,6 +89,18 @@ that close hit first. Score Div entries from the label price, never from the piv
 - Also check wide-risk entries (e.g. 12.25 and 17.25 pt stops) against the course's
   3.5-4 pt stop rule.
 
+## End goal: ONE indicator (Tim, 11/18)
+All the indicators (CRT Pro ES, CRT + Divergence, CRT Setups, CRT Pro VMap, Volume Bubbles ES) are inputs to
+ONE final indicator that keeps only what tests well. Every analysis, build and tracker should feed that.
+Current evidence (analysis/indicators/indicator-analysis-2026-11-18.md):
+- Keep: Div label entries (best signal: NY 10-4, 83 trades, +$1,548 on 1 ES; first 2 a day +$3,178), CRT Pro LONGS in NY.
+- Test as a filter: Volume Bubbles "Vol"/"Vol hold" tag at the Div pivot (forward test, needs tracking).
+- Drop: VMap, CRT Pro shorts in NY, CRT Pro's own sub-1-pt stops.
+- Built in: NY only (10 AM-4 PM), wait for the label, fixed 3.5-4 pt stop from ENTRY, 8 pt target, max 2 trades a day,
+  daily stop well inside the $1,000 max. One alert() JSON payload and one tracker sheet.
+Blockers before building: (1) CRT-Divergence-SR.pine source is only in Tim's TradingView, so get a copy into pine/;
+(2) tracking is down since 11/13; fix it and collect about 100 more NY Div trades to confirm.
+
 ## YouTube Shorts: footage only, 3-5 a week (Tim, 11/17; replaces the daily AI-voice Short of 10/30)
 The daily 6:12 PM AI-voice Short is STOPPED (median 18 views, 0 subs). Shorts on YouTube `48727` now
 go out 3-5 times a week, only from Tim's real footage (approved trade video, education cut, "why I
