@@ -2,15 +2,15 @@
 
 Tip winner scores first 66% (25-26).
 
-- **First basket: Luka Doncic** (LAL vs UTAH 10:00). Est 25% (fair +294; old model 21%; chain model): LAL scores first 57%; first pts 22/65 and first shot 33/65 starts 25-26, 7/13 26-27, first 3 FGA 1.10 per start, FG 48%; UTAH vs G x1.07
-- **First basket: Bam Adebayo** (MIA vs MIL 7:00). Est 21% (fair +373; old model 17%; tip jumper x1.2 if his team wins the tip; chain model): MIA scores first 58%; first pts 23/73 and first shot 33/73 starts 25-26, 4/14 26-27, first 3 FGA 1.00 per start, FG 47%; MIL vs C x0.87; Day-To-Day
+- **First basket: Luka Doncic** (LAL vs UTAH 10:00). Est 25% (fair +296; old model 25%; chain model): LAL scores first 67%; first pts 22/65 and first shot 33/65 starts 25-26, 7/13 26-27, first 3 FGA 1.10 per start, FG 48%; UTAH vs G x1.07
+- **First basket: Bam Adebayo** (MIA vs MIL 7:00). Est 21% (fair +373; old model 17%; tip jumper x1.2 if his team wins the tip; chain model): MIA scores first 58%; first pts 23/73 and first shot 33/73 starts 25-26, 4/14 26-27, first 3 FGA 1.00 per start, FG 47%; MIL vs C x0.87
 - **First basket: Nikola Jokic** (DEN vs BOS 9:30). Est 20% (fair +399; old model 15%; tip jumper x1.2 if his team wins the tip; chain model): DEN scores first 55%; first pts 20/66 and first shot 18/66 starts 25-26, 3/12 26-27, first 3 FGA 0.69 per start, FG 54%; BOS vs C x1.08
-- **First basket: Jarrett Allen** (CLE vs MEM 7:00). Est 18% (fair +456; old model 16%; tip jumper x1.2 if his team wins the tip; chain model): CLE scores first 57%; first pts 19/56 and first shot 11/56 starts 25-26, 5/12 26-27, first 3 FGA 0.63 per start, FG 61%; MEM vs C x0.85
-- **First basket: Anthony Davis** (WSH @ TOR 7:30). Est 17% (fair +504; old model 12%; tip jumper x1.2 if his team wins the tip; chain model): WSH scores first 50%; first pts 5/20 and first shot 7/20 starts 25-26, 3/13 26-27, first 3 FGA 0.97 per start, FG 51%; TOR vs F x0.89
+- **First basket: Jarrett Allen** (CLE vs MEM 7:00). Est 19% (fair +438; old model 16%; tip jumper x1.2 if his team wins the tip; chain model): CLE scores first 58%; first pts 19/56 and first shot 11/56 starts 25-26, 5/12 26-27, first 3 FGA 0.63 per start, FG 61%; MEM vs C x0.85
 - **First basket: John Collins** (DET @ NO 8:00). Est 16% (fair +506; old model 18%; tip jumper x1.2 if his team wins the tip; chain model): DET scores first 61%; first pts 15/56 and first shot 13/56 starts 25-26, 4/13 26-27, first 3 FGA 0.83 per start, FG 52%; NO vs F x0.99
 - **First basket: Domantas Sabonis** (SAC vs PHX 10:00). Est 16% (fair +507; old model 14%; tip jumper x1.2 if his team wins the tip; chain model): SAC scores first 51%; first pts 4/15 and first shot 5/15 starts 25-26, 5/12 26-27, first 3 FGA 0.70 per start, FG 57%; PHX vs F x0.87
 - **First basket: Wendell Carter Jr.** (ORL vs PHI 7:00). Est 16% (fair +527; old model 13%; tip jumper x1.2 if his team wins the tip; chain model): ORL scores first 58%; first pts 18/78 and first shot 21/78 starts 25-26, 3/13 26-27, first 3 FGA 0.65 per start, FG 52%; PHI vs C x1.09
-- **Team first basket: Luka Doncic** (LAL vs UTAH). Model share of LAL's first points 45% (old 38%); raw 25-26 22/65, first shot 33/65, FG 48%
+- **First basket: Giannis Antetokounmpo** (MIA vs MIL 7:00). Est 16% (fair +538; old model 13%; chain model): MIA scores first 58%; first pts 11/36 and first shot 5/36 starts 25-26, 5/14 26-27, first 3 FGA 0.68 per start, FG 60%; MIL vs F x1.06
+- **Team first basket: Luka Doncic** (LAL vs UTAH). Model share of LAL's first points 38% (old 38%); raw 25-26 22/65, first shot 33/65, FG 48%
 - **Team first basket: Nikola Jokic** (DEN vs BOS). Model share of DEN's first points 36% (old 28%); raw 25-26 20/66, first shot 18/66, FG 54%
 - **Team first basket: Bam Adebayo** (MIA vs MIL). Model share of MIA's first points 36% (old 30%); raw 25-26 23/73, first shot 33/73, FG 47%
 - **Team first basket: Anthony Davis** (WSH @ TOR). Model share of WSH's first points 33% (old 25%); raw 25-26 5/20, first shot 7/20, FG 51%
@@ -25,9 +25,9 @@ Tip winner scores first 66% (25-26).
 
 1st-shot pick = most likely to take and make (or draw FTs on) his team's first shot. 2nd-chance pick = most likely to score his team's first points after a miss (rebound, putback, FTs). Fair = his chance to score the GAME's first points (FanDuel first basket, FT included).
 
-- MEM @ CLE 7:00: tip CLE 66% (Zach Edey vs Jarrett Allen); MEM scores first 43%
-  - CLE: 1st-shot pick Jarrett Allen 18% (fair +456; scores on CLE's first shot 13%); 2nd-chance pick Donovan Mitchell 12% (fair +735; after a miss 12%)
-  - MEM: 1st-shot pick Zach Edey 11% (fair +796; scores on MEM's first shot 11%); 2nd-chance pick Cameron Boozer 9% (fair +1010; after a miss 12%)
+- MEM @ CLE 7:00: tip CLE 66% (Zach Edey vs Jarrett Allen); MEM scores first 42%
+  - CLE: 1st-shot pick Jarrett Allen 19% (fair +438; scores on CLE's first shot 14%); 2nd-chance pick Donovan Mitchell 13% (fair +698; after a miss 12%)
+  - MEM: 1st-shot pick Zach Edey 11% (fair +799; scores on MEM's first shot 11%); 2nd-chance pick Cameron Boozer 9% (fair +1015; after a miss 12%)
 - HOU @ IND 7:00: tip IND 60% (Alperen Sengun vs Ivica Zubac); HOU scores first 49%
   - IND: 1st-shot pick Andrew Nembhard 12% (fair +768; scores on IND's first shot 11%); 2nd-chance pick Ivica Zubac 14% (fair +617; after a miss 14%)
   - HOU: 1st-shot pick Alperen Sengun 15% (fair +575; scores on HOU's first shot 13%); 2nd-chance pick Kevin Durant 12% (fair +747; after a miss 12%)
@@ -40,9 +40,9 @@ Tip winner scores first 66% (25-26).
 - CHI @ BKN 7:30: tip BKN 76% (Jalen Smith vs Day'Ron Sharpe); CHI scores first 40%
   - BKN: 1st-shot pick Michael Porter Jr. 15% (fair +574; scores on BKN's first shot 12%); 2nd-chance pick Day'Ron Sharpe 14% (fair +616; after a miss 14%)
   - CHI: 1st-shot pick Norman Powell 11% (fair +843; scores on CHI's first shot 13%); 2nd-chance pick Jalen Smith 12% (fair +764; after a miss 15%)
-- WSH @ TOR 7:30: tip WSH 55% (Anthony Davis vs Collin Murray-Boyles); WSH scores first 50%
-  - WSH: 1st-shot pick Anthony Davis 17% (fair +504; scores on WSH's first shot 13%); 2nd-chance pick Alex Sarr 11% (fair +829; after a miss 13%)
-  - TOR: 1st-shot pick Scottie Barnes 13% (fair +661; scores on TOR's first shot 13%); 2nd-chance pick RJ Barrett 11% (fair +815; after a miss 12%)
+- WSH @ TOR 7:30: tip TOR 54% (Anthony Davis vs Jakob Poeltl); WSH scores first 46%
+  - TOR: 1st-shot pick RJ Barrett 13% (fair +671; scores on TOR's first shot 12%); 2nd-chance pick Jakob Poeltl 12% (fair +737; after a miss 12%)
+  - WSH: 1st-shot pick Anthony Davis 15% (fair +568; scores on WSH's first shot 13%); 2nd-chance pick Alex Sarr 10% (fair +916; after a miss 13%)
 - DET @ NO 8:00: tip DET 77% (John Collins vs Yves Missi); DET scores first 61%
   - DET: 1st-shot pick Cade Cunningham 13% (fair +659; scores on DET's first shot 11%); 2nd-chance pick John Collins 16% (fair +506; after a miss 14%)
   - NO: 1st-shot pick Jeremiah Fears 10% (fair +929; scores on NO's first shot 12%); 2nd-chance pick Zion Williamson 9% (fair +1009; after a miss 13%)
@@ -56,9 +56,9 @@ Tip winner scores first 66% (25-26).
 - BOS @ DEN 9:30: tip DEN 61% (Neemias Queta vs Nikola Jokic); BOS scores first 45%
   - DEN: 1st-shot pick Nikola Jokic 20% (fair +399; scores on DEN's first shot 16%); 2nd-chance pick Jamal Murray 13% (fair +649; after a miss 12%)
   - BOS: 1st-shot pick Jayson Tatum 12% (fair +739; scores on BOS's first shot 14%); 2nd-chance pick Paul George 12% (fair +750; after a miss 14%)
-- UTAH @ LAL 10:00: tip LAL 68% (Mo Bamba vs Kevon Looney); UTAH scores first 43%
-  - LAL: 1st-shot pick Luka Doncic 25% (fair +294; scores on LAL's first shot 23%); 2nd-chance pick Kevon Looney 10% (fair +868; after a miss 11%)
-  - UTAH: 1st-shot pick Ace Bailey 11% (fair +834; scores on UTAH's first shot 12%); 2nd-chance pick Mo Bamba 12% (fair +727; after a miss 15%)
+- UTAH @ LAL 10:00: tip LAL 88% (Mo Bamba vs Walker Kessler); UTAH scores first 33%
+  - LAL: 1st-shot pick Luka Doncic 25% (fair +296; scores on LAL's first shot 21%); 2nd-chance pick Austin Reaves 14% (fair +625; after a miss 12%)
+  - UTAH: 1st-shot pick Ace Bailey 8% (fair +1094; scores on UTAH's first shot 12%); 2nd-chance pick Mo Bamba 9% (fair +1002; after a miss 15%)
 - PHX @ SAC 10:00: tip SAC 55% (Oso Ighodaro vs Domantas Sabonis); PHX scores first 49%
   - SAC: 1st-shot pick Domantas Sabonis 16% (fair +507; scores on SAC's first shot 13%); 2nd-chance pick Darius Acuff Jr. 9% (fair +962; after a miss 12%)
   - PHX: 1st-shot pick Jalen Green 11% (fair +820; scores on PHX's first shot 11%); 2nd-chance pick Devin Booker 11% (fair +793; after a miss 14%)
@@ -72,33 +72,33 @@ Dunk/layup includes tip-ins and putbacks; 2pt jumper includes floaters and hooks
 - MIL @ MIA 7:00: first points Dunk/layup 32% (+209), 2pt jumper 22% (+358), 3-pointer 35% (+188), Free throw 11% (+802); first basket Dunk/layup 38% (+166), 2pt jumper 24% (+309), 3-pointer 38% (+164)
 - PHI @ ORL 7:00: first points Dunk/layup 40% (+148), 2pt jumper 28% (+257), 3-pointer 20% (+393), Free throw 11% (+779); first basket Dunk/layup 45% (+123), 2pt jumper 29% (+248), 3-pointer 26% (+279)
 - CHI @ BKN 7:30: first points Dunk/layup 42% (+141), 2pt jumper 20% (+388), 3-pointer 26% (+288), Free throw 12% (+717); first basket Dunk/layup 46% (+119), 2pt jumper 23% (+342), 3-pointer 32% (+216)
-- WSH @ TOR 7:30: first points Dunk/layup 36% (+180), 2pt jumper 30% (+239), 3-pointer 26% (+282), Free throw 9% (+1067); first basket Dunk/layup 41% (+147), 2pt jumper 31% (+227), 3-pointer 29% (+247)
+- WSH @ TOR 7:30: first points Dunk/layup 36% (+179), 2pt jumper 30% (+237), 3-pointer 26% (+280), Free throw 8% (+1127); first basket Dunk/layup 40% (+147), 2pt jumper 31% (+226), 3-pointer 29% (+246)
 - DET @ NO 8:00: first points Dunk/layup 41% (+144), 2pt jumper 20% (+400), 3-pointer 25% (+305), Free throw 14% (+598); first basket Dunk/layup 46% (+120), 2pt jumper 22% (+345), 3-pointer 32% (+212)
 - ATL @ OKC 8:00: first points Dunk/layup 34% (+195), 2pt jumper 27% (+276), 3-pointer 27% (+276), Free throw 13% (+673); first basket Dunk/layup 38% (+161), 2pt jumper 29% (+240), 3-pointer 32% (+210)
 - GS @ DAL 8:00: first points Dunk/layup 32% (+214), 2pt jumper 27% (+271), 3-pointer 31% (+220), Free throw 10% (+909); first basket Dunk/layup 36% (+181), 2pt jumper 29% (+239), 3-pointer 35% (+186)
 - BOS @ DEN 9:30: first points Dunk/layup 30% (+235), 2pt jumper 21% (+377), 3-pointer 39% (+156), Free throw 10% (+892); first basket Dunk/layup 34% (+197), 2pt jumper 23% (+340), 3-pointer 44% (+129)
-- UTAH @ LAL 10:00: first points Dunk/layup 30% (+234), 2pt jumper 34% (+195), 3-pointer 27% (+272), Free throw 9% (+986); first basket Dunk/layup 32% (+213), 2pt jumper 36% (+174), 3-pointer 32% (+216)
+- UTAH @ LAL 10:00: first points Dunk/layup 29% (+246), 2pt jumper 35% (+189), 3-pointer 27% (+266), Free throw 9% (+994); first basket Dunk/layup 31% (+224), 2pt jumper 37% (+171), 3-pointer 32% (+211)
 - PHX @ SAC 10:00: first points Dunk/layup 34% (+195), 2pt jumper 32% (+208), 3-pointer 25% (+298), Free throw 9% (+1074); first basket Dunk/layup 39% (+158), 2pt jumper 34% (+194), 3-pointer 27% (+266)
 
 Best player + method (fair price; bet only if the book pays more):
 
-- **Luka Doncic first basket: 2pt jumper** (LAL vs UTAH 10:00). Est 13.6% (fair +635) = FB 25% x 54% if he scores first; his first-FG sample 41, made FGs 1165
+- **Luka Doncic first basket: 2pt jumper** (LAL vs UTAH 10:00). Est 13.6% (fair +638) = FB 25% x 54% if he scores first; his first-FG sample 41, made FGs 1165
+- **Walker Kessler first basket: Dunk/layup** (LAL vs UTAH 10:00). Est 13.3% (fair +652) = FB 15% x 91% if he scores first; his first-FG sample 4, made FGs 281
 - **Domantas Sabonis first basket: Dunk/layup** (SAC vs PHX 10:00). Est 12.4% (fair +707) = FB 16% x 75% if he scores first; his first-FG sample 15, made FGs 321
+- **Jarrett Allen first basket: Dunk/layup** (CLE vs MEM 7:00). Est 11.4% (fair +780) = FB 19% x 61% if he scores first; his first-FG sample 26, made FGs 514
 - **Giannis Antetokounmpo first basket: Dunk/layup** (MIA vs MIL 7:00). Est 11.0% (fair +806) = FB 16% x 70% if he scores first; his first-FG sample 18, made FGs 838
-- **Jarrett Allen first basket: Dunk/layup** (CLE vs MEM 7:00). Est 11.0% (fair +809) = FB 18% x 61% if he scores first; his first-FG sample 26, made FGs 514
 - **Day'Ron Sharpe first basket: Dunk/layup** (BKN vs CHI 7:30). Est 9.8% (fair +916) = FB 14% x 70% if he scores first; his first-FG sample 12, made FGs 340
 - **Bam Adebayo first basket: 2pt jumper** (MIA vs MIL 7:00). Est 9.6% (fair +945) = FB 21% x 45% if he scores first; his first-FG sample 35, made FGs 776
-- **Luka Doncic first basket: 3-pointer** (LAL vs UTAH 10:00). Est 9.4% (fair +960) = FB 25% x 37% if he scores first; his first-FG sample 41, made FGs 1165
-- **Nikola Jokic first basket: 2pt jumper** (DEN vs BOS 9:30). Est 9.3% (fair +972) = FB 20% x 47% if he scores first; his first-FG sample 29, made FGs 984
+- **Luka Doncic first basket: 3-pointer** (LAL vs UTAH 10:00). Est 9.4% (fair +964) = FB 25% x 37% if he scores first; his first-FG sample 41, made FGs 1165
 
 ## StarTool check (side by side, no blend)
 
-- MEM @ CLE: our top Jarrett Allen (18%): differs (StarTool stars Cameron Boozer, Donovan Mitchell; bombs Cedric Coward, James Harden)
+- MEM @ CLE: our top Jarrett Allen (19%): differs (StarTool stars Cameron Boozer, Donovan Mitchell; bombs Cedric Coward, James Harden)
 - HOU @ IND: our top Alperen Sengun (15%): agree (StarTool bomb)
 - MIL @ MIA: our top Bam Adebayo (21%): agree (StarTool bomb)
 - PHI @ ORL: our top Wendell Carter Jr. (16%): differs (StarTool stars Joel Embiid, Desmond Bane; bombs Jaylen Brown, Franz Wagner)
 - CHI @ BKN: our top Michael Porter Jr. (15%): agree (StarTool star)
-- WSH @ TOR: our top Anthony Davis (17%): agree (StarTool star)
+- WSH @ TOR: our top Anthony Davis (15%): agree (StarTool star)
 - DET @ NO: our top John Collins (16%): agree (StarTool bomb)
 - ATL @ OKC: our top Onyeka Okongwu (12%): differs (StarTool stars Jalen Johnson, Shai Gilgeous-Alexander; bombs Nickeil Alexander-Walker, Ajay Mitchell)
 - GS @ DAL: our top Cooper Flagg (14%): agree (StarTool bomb)
@@ -108,17 +108,17 @@ Best player + method (fair price; bet only if the book pays more):
 
 ## Tip-off
 
-- MEM @ CLE 7:00 ET: Zach Edey vs Jarrett Allen; away wins tip 34%, away scores first 43%
+- MEM @ CLE 7:00 ET: Zach Edey vs Jarrett Allen; away wins tip 34%, away scores first 42%
 - HOU @ IND 7:00 ET: Alperen Sengun vs Ivica Zubac; away wins tip 40%, away scores first 49%
 - MIL @ MIA 7:00 ET: Jericho Sims vs Bam Adebayo; away wins tip 37%, away scores first 42%
 - PHI @ ORL 7:00 ET: Joel Embiid vs Wendell Carter Jr.; away wins tip 28%, away scores first 42%
 - CHI @ BKN 7:30 ET: Jalen Smith vs Day'Ron Sharpe; away wins tip 24%, away scores first 40%
-- WSH @ TOR 7:30 ET: Anthony Davis vs Collin Murray-Boyles; away wins tip 55%, away scores first 50%
+- WSH @ TOR 7:30 ET: Anthony Davis vs Jakob Poeltl; away wins tip 46%, away scores first 46%
 - DET @ NO 8:00 ET: John Collins vs Yves Missi; away wins tip 77%, away scores first 61%
 - ATL @ OKC 8:00 ET: Onyeka Okongwu vs Isaiah Hartenstein; away wins tip 45%, away scores first 47%
 - GS @ DAL 8:00 ET: Al Horford vs Daniel Gafford; away wins tip 65%, away scores first 52%
 - BOS @ DEN 9:30 ET: Neemias Queta vs Nikola Jokic; away wins tip 39%, away scores first 45%
-- UTAH @ LAL 10:00 ET: Mo Bamba vs Kevon Looney; away wins tip 32%, away scores first 43%
+- UTAH @ LAL 10:00 ET: Mo Bamba vs Walker Kessler; away wins tip 12%, away scores first 33%
 - PHX @ SAC 10:00 ET: Oso Ighodaro vs Domantas Sabonis; away wins tip 45%, away scores first 49%
 
 <!-- parlays:begin -->

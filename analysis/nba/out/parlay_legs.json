@@ -43,14 +43,6 @@
    "note": "84 starts"
   },
   {
-   "player": "Peyton Watson",
-   "team": "CLE",
-   "game": "MEM @ CLE",
-   "market": "3+ threes",
-   "p": 0.118,
-   "note": "52 starts"
-  },
-  {
    "player": "Amen Thompson",
    "team": "HOU",
    "game": "HOU @ IND",
@@ -379,14 +371,6 @@
    "note": "31 starts"
   },
   {
-   "player": "Scottie Barnes",
-   "team": "TOR",
-   "game": "WSH @ TOR",
-   "market": "3+ threes",
-   "p": 0.091,
-   "note": "90 starts"
-  },
-  {
    "player": "Collin Murray-Boyles",
    "team": "TOR",
    "game": "WSH @ TOR",
@@ -619,12 +603,12 @@
    "note": "78 starts"
   },
   {
-   "player": "Quentin Grimes",
+   "player": "Austin Reaves",
    "team": "LAL",
    "game": "UTAH @ LAL",
    "market": "3+ threes",
-   "p": 0.29,
-   "note": "23 starts"
+   "p": 0.383,
+   "note": "57 starts"
   },
   {
    "player": "Jake LaRavia",

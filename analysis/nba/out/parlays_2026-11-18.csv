@@ -6,20 +6,20 @@ legs,picks,games,p,fair,take,stake,void_if_sits,rank,dropped,method,plan
 1,Day'Ron Sharpe,CHI @ BKN,0.1396,+616,+760,0.75,,2,,,9
 1,Julius Randle,CHI @ BKN,0.1385,+622,+766,0.75,,3,,,9
 1,John Collins,DET @ NO,0.1649,+506,+628,0.75,,1,,,9
-1,Cade Cunningham,DET @ NO,0.1317,+659,+811,0.75,,2,,,9
-1,Daniss Jenkins,DET @ NO,0.1256,+696,+855,0.75,,3,,,9
+1,Ausar Thompson,DET @ NO,0.1023,+878,+1073,0.75,,3,,,9
+1,Daniss Jenkins,DET @ NO,0.1256,+696,+855,0.75,,2,,,9
 2,Carter+Porter Jr.,PHI @ ORL + CHI @ BKN,0.02369,+4122,+5980,0.1,,,,,9
 2,Carter+Sharpe,PHI @ ORL + CHI @ BKN,0.02227,+4391,+6367,0.1,,,,,9
 2,Wagner+Porter Jr.,PHI @ ORL + CHI @ BKN,0.02018,+4855,+7035,0.1,,,,,9
 2,Wagner+Sharpe,PHI @ ORL + CHI @ BKN,0.01897,+5171,+7490,0.1,,,,,9
 2,Carter+Collins,PHI @ ORL + DET @ NO,0.0263,+3702,+5375,0.1,,,,,9
-2,Carter+Cunningham,PHI @ ORL + DET @ NO,0.02101,+4661,+6755,0.1,,,,,9
+2,Carter+Jenkins,PHI @ ORL + DET @ NO,0.02003,+4892,+7088,0.1,,,,,9
 2,Wagner+Collins,PHI @ ORL + DET @ NO,0.02241,+4362,+6326,0.1,,,,,9
-2,Wagner+Cunningham,PHI @ ORL + DET @ NO,0.0179,+5487,+7946,0.1,,,,,9
+2,Wagner+Jenkins,PHI @ ORL + DET @ NO,0.01707,+5759,+8336,0.1,,,,,9
 2,Porter Jr.+Collins,CHI @ BKN + DET @ NO,0.02449,+3984,+5781,0.1,,,,,9
-2,Porter Jr.+Cunningham,CHI @ BKN + DET @ NO,0.01956,+5013,+7263,0.1,,,,,9
+2,Porter Jr.+Jenkins,CHI @ BKN + DET @ NO,0.01865,+5261,+7621,0.1,,,,,9
 2,Sharpe+Collins,CHI @ BKN + DET @ NO,0.02302,+4244,+6155,0.1,,,,,9
-2,Sharpe+Cunningham,CHI @ BKN + DET @ NO,0.01839,+5339,+7732,0.1,,,,,9
+2,Sharpe+Jenkins,CHI @ BKN + DET @ NO,0.01753,+5603,+8113,0.1,,,,,9
 1,First points method: Free throw,DET @ NO,0.13,+669,+823,0.5,,,,ft,9
 1,First points method: Dunk,DET @ NO,0.127,+687,+845,0.2,,,,dunk,9
 1,First points method: Free throw,PHI @ ORL,0.108,+826,+1011,0.2,,,,ft,9
