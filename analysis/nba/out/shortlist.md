@@ -122,4 +122,10 @@ Only categories that beat their price season to date: NBA 3+ threes, NHL 3+ SOG,
 - **3-leg #4:** James Harden 3+ threes (59%, MEM @ CLE) + Zach LaVine 3+ threes (59%, PHX @ SAC) + Paul George 3+ threes (57%, BOS @ DEN). Fair +401 (20%); take +451 or longer.
 - **3-leg #5:** James Harden 3+ threes (59%, MEM @ CLE) + Zach LaVine 3+ threes (59%, PHX @ SAC) + Tyrese Maxey 3+ threes (57%, PHI @ ORL). Fair +407 (20%); take +458 or longer.
 
+### NHL
+- **2-leg #1:** Alex DeBrincat 3+ SOG (74%, BOS @ DET) + Jack Hughes 3+ SOG (69%, MTL @ NJD). Fair -105 (51%); take +115 or longer.
+- **2-leg #2:** David Pastrnak 3+ SOG (73%, BOS @ DET) + Jack Hughes 3+ SOG (69%, MTL @ NJD). Fair -102 (51%); take +117 or longer.
+- **2-leg #3:** Alex DeBrincat 3+ SOG (74%, BOS @ DET) + Cole Caufield 3+ SOG (68%, MTL @ NJD). Fair -101 (50%); take +119 or longer.
+- **3-leg #4:** David Pastrnak 3+ SOG (73%, BOS @ DET) + Cole Caufield 3+ SOG (68%, MTL @ NJD) + Timo Meier 3+ SOG (66%, MTL @ NJD). Fair +207 (33%); take +237 or longer; same game, correlated, fair price is optimistic.
+
 <!-- parlays:end -->
