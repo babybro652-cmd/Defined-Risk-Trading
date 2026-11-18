@@ -46,7 +46,7 @@ Newest decisions win; move finished items to Done with the date.
 - [ ] FUTURE: position-tool boxes on CRT Pro (after hit rate improves).
 
 ### Peace by Page (Ventures)
-- [ ] KDP: Calm Wings paperback LIVE on Amazon (11/17, $16.99). Send Jarvis the Amazon link: add to Payhip, socials and the PbP gift captions.
+- [ ] KDP: Calm Wings series page live 11/17; paperback format still in review ($16.99, up to 72 hrs). When it says LIVE, send Jarvis the Amazon link (Payhip, socials, PbP gift captions).
 - [ ] 12/31 checkpoint: under 10 paid orders by 12/31 = maintenance mode.
 - [ ] Film the Calm Wings proof copy (20 min, one evening, phone propped overhead): flip-through, coloring a page, writing on the worry page. Send clips to Jarvis. TikTok week 1 starts the next Mon/Wed/Fri (by Thu 11/19 = first post Fri 11/20). Plan: ventures/calm-pages/content-plan-2026-11.md.
 - [ ] PbP TikTok (approved 11/17): post each draft from the TikTok inbox with a sound, Mon/Wed/Fri evening (3 min). Stats: Profile > ☰ > Creator tools > Analytics (steps in ventures/calm-pages/tiktok-audit-2026-11-17.md section 7). Readout Mon 12/7.
