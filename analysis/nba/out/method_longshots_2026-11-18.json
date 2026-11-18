@@ -628,13 +628,30 @@
   },
   {
    "game": "DET @ NO",
-   "player": "Cade Cunningham",
-   "method": "Other",
-   "key": "other",
-   "p": 0.051960020986905275,
-   "fair": "+1,825",
-   "take": "+2,209",
-   "stake": 0.1
+   "player": "Daniss Jenkins",
+   "method": "Three Point Field Goal",
+   "key": "3",
+   "p": 0.05042427335818803,
+   "fair": "+1,883",
+   "take": "+2,280",
+   "stake": 0.1,
+   "note": "swapped in 11/18 PM for Cade Cunningham - Other after a 20% blend with the @NBAFirstBasket method split (model alone 4.4%)"
   }
- ]
+ ],
+ "sheet_check": {
+  "source": "@NBAFirstBasket First Basket Cheat Sheet 11/18 (data/sources/2026-11-18/cheatsheet_firstbasket.csv)",
+  "blend": "est = p_first x (0.8 model method split + 0.2 sheet method split); ranking check only",
+  "blended_top": [
+   "Randle Other 7.0%",
+   "Embiid Other 6.3%",
+   "Sharpe Layup 5.5%",
+   "Jenkins 3PT 5.0%",
+   "F. Wagner Layup 5.0%",
+   "Demin 3PT 5.0%",
+   "Zion Layup 4.9%",
+   "Traore Other 4.8%",
+   "MPJ 3PT 4.7%",
+   "Cunningham Other 4.7%"
+  ]
+ }
 }

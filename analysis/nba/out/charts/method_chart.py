@@ -13,7 +13,7 @@ BG = '#0f1420'; CARD = '#1a2233'; TXT = '#e8ecf3'; MUTED = '#9aa4b5'; GOLD = '#f
 def am(p): d = 1 / p; return '+{:,}'.format(round((d - 1) * 100)) if d >= 2 else '-%d' % round(100 / (d - 1))
 pk = {(k['player'], k['key']): k for k in J['picks']}
 games = J['games']; nrows = sum(len(g['players']) + 1.6 for g in games)
-H = 3.2 + nrows * 0.5 + 2.6 + len(J['picks']) * 0.5
+H = 3.2 + nrows * 0.5 + 2.6 + len(J['picks']) * 0.5 + (0.5 if J.get('sheet_check') else 0)
 fig = plt.figure(figsize=(8, H * 0.62), dpi=200); fig.patch.set_facecolor(BG)
 ax = fig.add_axes([0, 0, 1, 1]); ax.set_xlim(0, 100); ax.set_ylim(0, H); ax.axis('off')
 day = dt.date.fromisoformat(D).strftime('%a %m/%d').upper()
@@ -45,6 +45,9 @@ ax.text(3, y, 'BETS ($1.00, ranked by likelihood)', color=GOLD, fontsize=9.5, we
 for k in J['picks']:
     ax.text(4, y, f"{k['player']} - {k['method']}  ${k['stake']:.2f}   est {k['p'] * 100:.1f}%, fair {k['fair']}, "
             f"take {k['take']}", color=TXT, fontsize=8, va='center'); y -= 0.5
+if J.get('sheet_check'):
+    ax.text(3, y - 0.1, '11/18 PM: Cade - Other swapped for Jenkins 3PT after a light blend with the @NBAFirstBasket method split.',
+            color=MUTED, fontsize=7.2, va='center'); y -= 0.5
 ax.text(3, y - 0.1, 'Second column = his first basket chance. Green = 4%+. Longshots on a noisy market; small stakes.',
         color=MUTED, fontsize=7.2, va='center')
 fig.savefig(OUT, facecolor=BG)

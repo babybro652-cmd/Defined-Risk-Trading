@@ -575,6 +575,11 @@ Paired LL deltas on test (SE): kfg_w 1000 -.0000 (.0002), mk_w 10 -.0009 (.0021)
   (Bets 1681-1683) were unbettable. Rebuilt `method_longshots.py` (player + method, FanDuel's 5 methods, new
   `fd_method.py` cache) and rewrote Bets A1681:H1684: Randle - Other $0.50 (fair +1,430), Embiid - Other $0.20
   (+1,525), Sharpe - Layup $0.20 (+1,710), Cunningham - Other $0.10 (+1,825). Charts method and plan re-rendered.
+- 11/18 PM: @NBAFirstBasket first basket cheat sheet (2 cards, 12 games) saved to `data/sources/2026-11-18/` and
+  transcribed to `cheatsheet_firstbasket.csv` (shot / bsk / gm % plus method split); 1st Bsk / 1st Gm added to
+  `out/cheatsheet/fbsheet_log.csv` for the scorecard. Light check (20% sheet method split, ranking only): Randle,
+  Embiid, Sharpe hold; Cade - Other fell to #10 (sheet Oth 21%), Daniss Jenkins - 3PT (sheet 3P 60%) rose to #4 and
+  replaced it in Bets A1684:H1684 ($0.10, est 5.0%, fair +1,883, take +2,280). Sheet note: Horford's method split sums to 120%.
 
 ## Tim vs model log (first basket)
 
