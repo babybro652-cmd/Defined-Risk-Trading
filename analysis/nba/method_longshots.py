@@ -1,118 +1,152 @@
 #!/usr/bin/env python3
-"""First basket METHOD longshots (11/17/26, Tim): how the game's first points are scored, FanDuel style
-(3-pointer, layup, dunk, jump shot (2), free throw).
+"""First basket METHOD longshots, FanDuel format: PLAYER + METHOD only (Tim's correction 11/18/26).
 
-Per game:
-  team part   = fb_method game split (team offense x opponent defense, shrunk, weighted by P(team scores first))
-  player part = sum over starters of P(he scores the first points) x his split (FT share from his team's split,
-                FG part from fb_method player_split: his shot mix + first-FG history)
-  blend       = 0.5 team + 0.5 player, then shrunk 25% toward the league first-points rates (both seasons)
-  rim -> dunk / layup with the player-weighted dunk share of rim makes (rimsplit caches, 26-27 x3),
-                each player shrunk toward the league with 15 pseudo makes, scaled so the league average
-                matches the league dunk share of rim FIRST points (29%).
-Player + method combo: P(he scores first) x (1 - team FT share) x his rim share x his dunk share.
+FanDuel's "Method of First Basket" market lists one player plus one method per option, e.g.
+"Bam Adebayo - Dunk +3500", "Bam Adebayo - Free Throw +3000", "Bam Adebayo - Layup +2700",
+"Bam Adebayo - Other +1200", "Bam Adebayo - Three Point Field Goal +2000". There is no game-level
+"DET@NO Free throw" bet, so this script never outputs one.
+
+Methods (fd_method.py): Dunk, Layup, Other, Three Point Field Goal, Free Throw.
+  Other = every made 2 that is not a dunk or layup: jump shots, pullups, step-backs, fadeaways,
+  floaters, hooks, bank shots and tip shots (ESPN "Tip Shot"). Layup includes finger rolls and
+  putback / alley-oop layups; Dunk includes alley-oop and putback dunks.
+
+Per starter:
+  P(he scores the game's first points)    = p_v2 from out/fb_candidates.json (chain model, FT counts)
+  his event mix  = made dunks, layups, other 2s, 3s and FT trips (2026-27 games x3, 2025-26 x1),
+                   shrunk toward his position's mix with K_MIX pseudo events
+  first-points calibration: each method x (league first-points rate / league event rate), renormalized
+                   (FT trips and dunks are rarer on the opening trips than over a whole game)
+  his own first-points methods (as the game's first scorer) shrunk in with K_FIRST pseudo games
+  P(player + method) = P(first points) x P(method | he scores first)
 Fair = 1 / p; take-at = fair decimal x1.2.
 
-Usage: python3 analysis/nba/method_longshots.py 2026-11-17 [--json out.json]
+Picks: the 4 most likely player + method combos in the play-list games (max 2 per game, 1 per player),
+staked $0.50 / $0.20 / $0.20 / $0.10.
+
+Usage: python3 analysis/nba/method_longshots.py 2026-11-18 --games "PHI@ORL,CHI@BKN,DET@NO" [--json out.json]
+       python3 analysis/nba/method_longshots.py --check     # out-of-sample method log loss
 """
-import json, os, sys
+import json, math, os, sys
 from collections import Counter
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, HERE)
-import fb_method as FM
+from fd_method import FD, FD_LAB, load as fd_load
 
-W_TEAM, SHRINK, K_DUNK, W_CUR = 0.5, 0.25, 15, 3
-LAB = {'3': '3-pointer', 'layup': 'Layup', 'dunk': 'Dunk', 'j2': 'Jump shot (2)', 'ft': 'Free throw'}
+K_MIX, K_FIRST, W_CUR = 20, 40, 3
+STAKES = (0.50, 0.20, 0.20, 0.10)
 
 
 def am(p):
     d = 1 / p
-    return f'+{round((d - 1) * 100)}' if d >= 2 else f'-{round(100 / (d - 1))}'
+    return f'+{round((d - 1) * 100):,}' if d >= 2 else f'-{round(100 / (d - 1))}'
 
 
 def take(p):
     return am(p / 1.2)
 
 
-def main(date, out_json=None):
-    cands = json.load(open(os.path.join(HERE, 'out', 'fb_candidates.json')))
-    sv = json.load(open(os.path.join(HERE, 'out', 'sheet_values.json')))['NBA']
+def norm(d):
+    s = sum(d.values())
+    return {k: v / s for k, v in d.items()}
+
+
+class MethodModel:
+    def __init__(self, seasons, pos_of):
+        self.mix, self.first = {}, {}
+        lg_ev, lg_fp = Counter(), Counter()
+        posmix = {p: Counter() for p in 'GFC'}
+        for c, w in seasons:
+            for g in c.values():
+                if g['fp']:
+                    lg_fp[g['fp'][1]] += w
+                    self.first.setdefault(g['fp'][2], Counter())[g['fp'][1]] += w
+                for pid, mk in g['mk'].items():
+                    e = self.mix.setdefault(pid, Counter())
+                    ps = (pos_of.get(pid) or 'F')[:1]; ps = ps if ps in posmix else 'F'
+                    for m, v in zip(FD, mk):
+                        e[m] += w * v; lg_ev[m] += w * v; posmix[ps][m] += w * v
+        self.lg_fp = norm(lg_fp); self.lg_ev = norm(lg_ev)
+        self.posmix = {p: norm(v) for p, v in posmix.items()}
+        self.scale = {m: self.lg_fp[m] / self.lg_ev[m] for m in FD}
+
+    def split(self, pid, pos):
+        ps = (pos or 'F')[:1]; ps = ps if ps in self.posmix else 'F'
+        mix = self.mix.get(pid, Counter()); n = sum(mix.values())
+        sm = {m: (mix[m] + K_MIX * self.posmix[ps][m]) / (n + K_MIX) for m in FD}
+        prior = norm({m: sm[m] * self.scale[m] for m in FD})
+        f = self.first.get(pid, Counter()); nf = sum(f.values())
+        return {m: (f[m] + K_FIRST * prior[m]) / (nf + K_FIRST) for m in FD}
+
+
+def pos_map():
     roster = json.load(open(os.path.join(HERE, 'data', 'rosters.json')))
-    pid_of = {(v['name'], v['tm']): (k, v['pos']) for k, v in roster.items()}
-    # P(away scores first) from the tip table rows "AWAY @ HOME time"
-    pfirst = {}
-    for r in sv:
-        if r and isinstance(r[0], str) and ' @ ' in r[0] and isinstance(r[4] if len(r) > 4 else None, float) \
-                and isinstance(r[3], float):
-            a, rest = r[0].split(' @ '); h = rest.split()[0]
-            pfirst.setdefault((a, h), r[4])
-    MM = FM.Model(FM.load_all(W_CUR))
-    # league first-points rates and dunk shares from the rimsplit caches
-    lg, dk = Counter(), [0.0, 0.0]
-    fp_d = [0.0, 0.0]
-    rk = {}
-    for season, w in (('2025-26', 1), ('2026-27', W_CUR)):
-        c = json.load(open(os.path.join(HERE, 'data', f'rimsplit_{season}.json')))
-        for g in c.values():
-            if g['fp']:
-                lg[g['fp'][2]] += w
-                if g['fp'][1] == 'rim':
-                    fp_d[0 if g['fp'][2] == 'dunk' else 1] += w
-            for pid, (d, l) in g['rk'].items():
-                e = rk.setdefault(pid, [0.0, 0.0]); e[0] += w * d; e[1] += w * l
-                dk[0] += w * d; dk[1] += w * l
-    n = sum(lg.values()); lgp = {m: lg[m] / n for m in LAB}
-    lg_rim = {'rim': lgp['dunk'] + lgp['layup'], 'j2': lgp['j2'], '3': lgp['3'], 'ft': lgp['ft']}
-    dunk_all = dk[0] / sum(dk); dunk_first = fp_d[0] / sum(fp_d); scale = dunk_first / dunk_all
+    return roster, {k: v['pos'] for k, v in roster.items()}
 
-    def dshare(pid):
-        d, l = rk.get(pid, [0, 0])
-        return min(0.95, scale * (d + K_DUNK * dunk_all) / (d + l + K_DUNK))
 
-    games = []
-    for (a, h), paf in pfirst.items():
-        gc = [c for c in cands if c['tm'] in (a, h)]
-        if not gc:
+def check():
+    """Fit on 2025-26, score the method of each 2026-27 game's first points given the scorer."""
+    _, pos_of = pos_map()
+    M = MethodModel([(fd_load('2025-26', False), 1)], pos_of)
+    ll = Counter(); n = 0
+    for g in fd_load('2026-27', False).values():
+        if not g['fp']:
             continue
-        team = MM.game_split(a, h, paf)
-        tsp = {a: MM.team_split(a, h), h: MM.team_split(h, a)}
-        pl = Counter(); rimw = []; tot = 0; combos = []
-        for c in gc:
-            pid, pos = pid_of.get((c['player'], c['tm']), (None, 'F'))
-            post = MM.player_split(pid, pos)[0] if pid else MM.posfirst[(pos or 'F')[:1]]
-            p = c['p_v2']; ft = tsp[c['tm']]['ft']; tot += p
-            pl['ft'] += p * ft
-            for m in FM.METHODS:
-                pl[m] += p * (1 - ft) * post[m]
-            ds = dshare(pid)
-            rimw.append((p * (1 - ft) * post['rim'], ds))
-            combos.append((c['player'], c['tm'], p, p * (1 - ft) * post['rim'] * ds,
-                           p * (1 - ft) * post['rim'] * (1 - ds), p * (1 - ft) * post['3'], p * (1 - ft) * post['j2']))
-        pl = {m: v / tot for m, v in pl.items()}
-        bl = {m: (1 - SHRINK) * (W_TEAM * team[m] + (1 - W_TEAM) * pl[m]) + SHRINK * lg_rim[m] for m in lg_rim}
-        s = sum(bl.values()); bl = {m: v / s for m, v in bl.items()}
-        dg = sum(w * d for w, d in rimw) / sum(w for w, _ in rimw)
-        dg = (1 - SHRINK) * dg + SHRINK * dunk_first
-        res = {'3': bl['3'], 'layup': bl['rim'] * (1 - dg), 'dunk': bl['rim'] * dg, 'j2': bl['j2'], 'ft': bl['ft']}
-        tipfav = a if paf > 0.5 else h
-        games.append({'game': f'{a} @ {h}', 'p_away_first': paf, 'methods': res, 'team': team, 'player': pl,
-                      'dunk_share': dg,
-                      'combos': sorted(combos, key=lambda x: -x[3])[:4]})
-    print(f'League first points (25-26 + 26-27 x{W_CUR}): ' + ', '.join(f'{LAB[m]} {lgp[m]:.1%}' for m in LAB)
-          + f'; dunk share of rim first points {dunk_first:.0%}')
-    for g in games:
-        print(f"\n{g['game']}  (P away first {g['p_away_first']:.0%}; dunk share of rim {g['dunk_share']:.0%})")
-        for m in LAB:
-            p = g['methods'][m]
-            print(f'  {LAB[m]:<14} {p:5.1%}  fair {am(p):>6}  take {take(p):>6}')
-        for nm, tm, p, pd, pla, p3, pj in g['combos'][:2]:
-            print(f'  combo {nm} ({tm}) first basket dunk {pd:.1%} fair {am(pd)} take {take(pd)}; '
-                  f'layup {pla:.1%} fair {am(pla)}')
+        _, m, pid = g['fp']; ps = (pos_of.get(pid) or 'F')[:1]; ps = ps if ps in M.posmix else 'F'
+        n += 1
+        for key, d in (('league', M.lg_fp), ('position', norm({k: M.posmix[ps][k] * M.scale[k] for k in FD})),
+                       ('player model', M.split(pid, pos_of.get(pid)))):
+            ll[key] -= math.log(d[m])
+    print(f'{n} games (2026-27 first points, fit on 2025-26). Method log loss given the scorer:')
+    for k, v in ll.items():
+        print(f'  {k:<13} {v / n:.3f}')
+
+
+def main(date, games, out_json=None):
+    cands = json.load(open(os.path.join(HERE, 'out', 'fb_candidates.json')))
+    roster, pos_of = pos_map()
+    pid_of = {(v['name'], v['tm']): k for k, v in roster.items()}
+    M = MethodModel([(fd_load('2025-26', False), 1), (fd_load('2026-27', False), W_CUR)], pos_of)
+    print('League first points: ' + ', '.join(f'{FD_LAB[m]} {M.lg_fp[m]:.1%}' for m in FD))
+    out = []
+    for gm in games:
+        a, h = gm.split('@')
+        rows = []
+        for c in [c for c in cands if c['tm'] in (a, h)]:
+            pid = pid_of.get((c['player'], c['tm']))
+            sp = M.split(pid, pos_of.get(pid))
+            rows.append({'player': c['player'], 'tm': c['tm'], 'p_first': c['p_v2'],
+                         'split': sp, 'p': {m: c['p_v2'] * sp[m] for m in FD}})
+        rows.sort(key=lambda r: -r['p_first'])
+        out.append({'game': f'{a} @ {h}', 'players': rows})
+        print(f'\n{a} @ {h}')
+        for r in rows:
+            print(f"  {r['player']:<24} {r['tm']:<4} FB {r['p_first']:5.1%}  " +
+                  '  '.join(f"{FD_LAB[m][:5]} {r['p'][m]:4.1%} {am(r['p'][m]):>7}" for m in FD))
+    combos = sorted(((r['p'][m], g['game'], r['player'], m) for g in out for r in g['players'] for m in FD),
+                    reverse=True)
+    picks, per_game, used = [], Counter(), set()
+    for p, g, pl, m in combos:
+        if per_game[g] < 2 and pl not in used:
+            picks.append({'game': g, 'player': pl, 'method': FD_LAB[m], 'key': m, 'p': p,
+                          'fair': am(p), 'take': take(p), 'stake': STAKES[len(picks)]})
+            per_game[g] += 1; used.add(pl)
+        if len(picks) == len(STAKES):
+            break
+    print('\nPicks (player + method, FanDuel format):')
+    for k in picks:
+        print(f"  {k['player']} - {k['method']} ({k['game']}), ${k['stake']:.2f}: est {k['p']:.1%}, "
+              f"fair {k['fair']}, take {k['take']}")
     if out_json:
-        json.dump({'date': date, 'games': games}, open(out_json, 'w'), indent=1)
+        json.dump({'date': date, 'format': 'player + method (FanDuel Method of First Basket)',
+                   'league_first_points': M.lg_fp, 'games': out, 'picks': picks}, open(out_json, 'w'), indent=1)
 
 
 if __name__ == '__main__':
     a = sys.argv[1:]
-    main(a[0], a[a.index('--json') + 1] if '--json' in a else None)
+    if '--check' in a:
+        check()
+    else:
+        g = a[a.index('--games') + 1].split(',') if '--games' in a else []
+        main(a[0], g, a[a.index('--json') + 1] if '--json' in a else None)

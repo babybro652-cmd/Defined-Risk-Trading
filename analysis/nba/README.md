@@ -189,6 +189,31 @@ each team's first points / first FG method and scorer, every player's made FGs b
 - first_events log: columns `first_basket_method` and `first_points_method` since 10/29 (backfilled for
   every NBA row from the cache with `python3 analysis/first_events.py --backfill-methods`).
 
+## Method of First Basket longshots: PLAYER + METHOD only (Tim's correction 11/18/26)
+
+FanDuel's "Method of First Basket" market is player + method only. Each option is one player and one method, e.g.
+"Bam Adebayo - Dunk +3500", "Bam Adebayo - Free Throw +3000", "Bam Adebayo - Layup +2700", "Bam Adebayo - Other
++1200", "Bam Adebayo - Three Point Field Goal +2000", "Brayden Burries - Dunk +20000". There is no game-level bet
+("DET@NO Free throw" or "DET@NO Dunk" cannot be placed). **Method longshots must always be player + method.**
+The 11/17 and morning 11/18 game-level picks were the wrong shape; only "Carter first basket by dunk" fit.
+
+- Methods (`fd_method.py`, cache `data/fdmethod_<season>.json`, ESPN play type): Free Throw; Three Point Field
+  Goal; Dunk = any type with "dunk" (alley-oop, putback, tip dunks); Layup = "layup" or "finger roll" (driving,
+  cutting, reverse, alley-oop, putback layups); **Other = every other made 2**: pullup, step-back, fadeaway,
+  turnaround and plain jump shots, floaters, hooks, bank shots and tip shots ("Tip Shot" is about 8% of Other makes).
+- League first points (both seasons): Dunk 10.5%, Layup 23%, Other 30%, 3PT 27%, FT 9%.
+- `method_longshots.py`: P(player + method) = P(he scores the first points) (chain model p_v2) x P(method | he
+  scores first). P(method | first) = his made dunk / layup / other / 3 / FT-trip mix (26-27 x3) shrunk toward
+  his position's mix with K_MIX = 20 events, scaled by league first-points rate / league event rate per method
+  (FT trips and dunks are rarer on the first trip), then his own game-first-points methods shrunk in with
+  K_FIRST = 40. Check (`--check`, fit 2025-26, scored on 210 2026-27 first points given the scorer): log loss
+  league 1.500, position 1.500, player model 1.405.
+- Picks: 4 most likely combos in the play-list games, max 2 per game and 1 per player, $0.50 / $0.20 / $0.20 /
+  $0.10. Fair = 1/p, take-at = fair decimal x1.2. With FanDuel prices in hand, rank by edge (price vs take-at).
+- Chart: `python3 analysis/nba/out/charts/method_chart.py <date>` -> `out/charts/method_<date>.png`.
+- Run: `python3 analysis/nba/fd_method.py` (update caches), then
+  `python3 analysis/nba/method_longshots.py <date> --games "AWAY@HOME,..." --json out/method_longshots_<date>.json`.
+
 ## Model changes 10/30/26 (Tim approved, from `analysis/reports/2026-10-30-picks-vs-startool.md`)
 
 Backtest: `python3 analysis/nba/backtest_fb.py --jumper` (walk-forward, current model V2 + ramp, actual starters and
@@ -545,6 +570,11 @@ Paired LL deltas on test (SE): kfg_w 1000 -.0000 (.0002), mk_w 10 -.0009 (.0021)
 - 11/17 (5 games, 10:07 refresh): RotoWire expected fives 10:10 AM (`data/lineups_2026-11-17.json`, jumpers set: TOR Murray-Boyles, DET Collins, LAL Mamukelashvili since Kessler OUT). Chain model. StarTool (5), Tip-off Projections, @NBAFirstBasket tip and first basket cheat sheets logged (`out/startool/2026-11-17.md`, `out/cheatsheet/2026-11-17.md`, star_bomb.txt, tipproj/fbsheet logs, ST_TIP / ST_PCT_1117 / SH_TIP). Bets rows 1550-1588: 5 game first basket, 20 team first basket, Doncic 4+ threes, LaMelo 3+ threes, Brunson 25+, Wembanyama 20+, then the play list. Play list: DET@SA (SA 85%), UTAH@LAC (LAC 77%); no exception games (NY 4/5 but TOR 2/6; MIN 4/6 but POR 2/6; LAL 5/6 but CHA 2/5). $100 budget: 6 straights at $16 ($96), 4 two-leg $0.50 ($2), total $98. Outside sources favor LAL 62-72 in CHA@LAL (new jumper, no tip history); ours CHA 52. NBA tab pushed and reformatted (17 old gradient rules removed). Charts `out/charts/fb_2026-11-17.png`, `plan_2026-11-17.png`, `team_fb_2026-11-17.png`. 11/16 graded: Bets I1418-I1546 (Dropped rows left blank), first events, tipproj actuals, scorecard COMMITS 11/16 = e332b63. 11/16 top 3: 5 of 8 (#1 1, #2 2, #3 2); play-list games 2 of 3 (Mitchell #3, Adebayo #1; DEN missed, Miles Bridges). 3s parlay L (K. George 2 threes). 11/4 to 11/16: 41 of 92 (45%).
 - 11/17 4:50 PM injury rerun (RotoWire, NBA 4:45 PM report, ESPN): MIN Kuminga OUT, Terrence Shannon Jr. starts (MIN team #2 now McDaniels, game #2 LaMelo); CHA RotoWire starts Sion James over Grayson Allen (not on the report; CHA team #2 Coby White, game #2 Naz Reid); Barnes (TOR) and Avdija (POR) questionable, still in the fives (team rows void if sits); Isaiah Joe OUT (not starting). No jumper changes, so tips and the play list are unchanged (DET@SA, UTAH@LAC); their picks and prices are unchanged. Bets E1551, E1554, E1557, E1560-E1562, E1571-E1572 rewritten; straights 1579-1584 cut to $5 (FanDuel $39.41, $36 plan). New: first basket METHOD longshots (Tim): `rim_split.py` (dunk vs layup from ESPN play text, caches `data/rimsplit_<season>.json`; league first points 3PT 28%, layup 25%, dunk 10%, jump shot 28%, FT 9%; dunks are 29% of rim first points) and `method_longshots.py` (half team model, half chain-weighted player shot mix, 25% shrink to league). Bets 1589-1593: DET@SA dunk $1 (14.8%, +577), DET@SA FT $0.50 (14.3%, +600), Wembanyama FB by dunk $1 (8.0%, +1,146), UTAH@LAC dunk $0.50 (10.8%, +830), Bamba FB by dunk $0.50 (4.2%, +2,303); take at fair x1.2. Plan $35.50: straights $30, method $3.50, 2-leg $2. NBA tab rows 8-14, 30-33, 38-41, 45-68 updated. Charts fb, plan (method block added), team_fb re-rendered.
 - 11/18 (12 games, 10:07 refresh): RotoWire expected fives 9 AM (`data/lineups_2026-11-18.json`; jumpers MIL Sims per TipProj and 11/15, GS Horford (Q), TOR Murray-Boyles, DET Collins, UTAH Bamba, LAL Looney as on 11/17). Sources saved in `data/sources/2026-11-18/` (12 StarTool cards, 2 tip cheat sheets, TipProj) and logged (`out/startool/2026-11-18.md`, `out/cheatsheet/2026-11-18.md`, star_bomb.txt, tipproj_log, ST_TIP / ST_PCT_1118 / SH_TIP). Tip 70%+: PHI@ORL 72, CHI@BKN 76, DET@NO 77. Exception games MIL@MIA (MIL 4/6, MIA 3/6) and BOS@DEN (BOS 4/6, DEN 3/6) qualify but were trimmed: FanDuel balance $9 (Tim 8:47 AM), plan $8.95 = 9 straights $0.75, 12 two-leg $0.10, 4 method longshots $1.00. Bets rows 1596-1684. Scenarios: Kessler starts and jumps -> LAL 88% (Doncic 28%, Kessler 16%); Turner jumps -> MIA 81%. Charts `out/charts/fb_2026-11-18.png`, `plan_2026-11-18.png`, `team_fb_2026-11-18.png`, `method_2026-11-18.png` (new `out/charts/method_chart.py`). NBA tab not re-pushed. 11/17 graded: Bets I1550-I1593, first events, tipproj actuals, COMMITS 11/17 = 5ac9192. 11/17 top 3: 0 of 5 (Vassell, Josh Green, Looney, Bridges, McDaniels); play-list straights and 2-legs all lost; DET@SA dunk hit (Vassell driving dunk). Team FB hits: Murray-Boyles, McDaniels, Garland. Props 4-0. Tips 4 of 5 (missed CHA@LAL: Looney, not Mamukelashvili, jumped). 11/4 to 11/17: 41 of 97 (42%).
+
+- 11/18 10:30 AM (Tim): FanDuel "Method of First Basket" is player + method only. Game-level method picks
+  (Bets 1681-1683) were unbettable. Rebuilt `method_longshots.py` (player + method, FanDuel's 5 methods, new
+  `fd_method.py` cache) and rewrote Bets A1681:H1684: Randle - Other $0.50 (fair +1,430), Embiid - Other $0.20
+  (+1,525), Sharpe - Layup $0.20 (+1,710), Cunningham - Other $0.10 (+1,825). Charts method and plan re-rendered.
 
 ## Tim vs model log (first basket)
 

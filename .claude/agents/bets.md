@@ -74,6 +74,11 @@ chats, so read the files below that the task touches before acting.
   after a miss: rebound, putback, FTs), each with his chance to score the game's first points and fair price. Copy them
   from the shortlist section "First basket two-slot picks (chain model)". This replaces "top 2 per team" in the
   confirmed-lineup reruns below.
+- NBA METHOD OF FIRST BASKET (Tim, 11/18): FanDuel's market is PLAYER + METHOD only ("Bam Adebayo - Dunk +3500",
+  "Bam Adebayo - Free Throw +3000", "Bam Adebayo - Layup +2700", "Bam Adebayo - Other +1200", "Bam Adebayo - Three
+  Point Field Goal +2000"). Never log game-level method picks ("DET@NO Free throw"); Tim can't bet them. Methods:
+  Dunk, Free Throw, Layup, Other (jumpers, floaters, hooks, tip shots), Three Point Field Goal. Use
+  `analysis/nba/method_longshots.py` (README "Method of First Basket longshots"); fair and take-at (fair x1.2).
 - No StarTool blend (Tim rejected it 10/30). Keep StarTool side by side; save star/bomb to
   `analysis/<sport>/out/startool/star_bomb.txt` and rerun the build for the "agree" flag.
 

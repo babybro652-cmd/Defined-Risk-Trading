@@ -7,7 +7,7 @@ DATE='WED 11/18'; OUT='analysis/nba/out/charts/plan_2026-11-18.png'
 fb=[('PHI @ ORL','7:00','ORL 72%',[('Wendell Carter Jr.','+527'),('Franz Wagner','+636'),('Joel Embiid','+759')],'Banchero OUT; J. Brown OUT; Carter jumps vs Embiid'),
     ('CHI @ BKN','7:30','BKN 76%',[('Michael Porter Jr.','+573'),("Day'Ron Sharpe",'+616'),('Julius Randle','+622')],'Caleb Wilson OUT; Sharpe jumps vs Jalen Smith'),
     ('DET @ NO','8:00','DET 77%',[('John Collins','+506'),('Cade Cunningham','+659'),('Daniss Jenkins','+696')],'Duren OUT; NO: Murphy, Murray, Mathurin OUT')]
-meth=[('DET@NO: Free throw','$0.50','+671','+825'),('DET@NO: Dunk','$0.20','+685','+842'),('PHI@ORL: Free throw','$0.20','+829','+1,015'),('Carter FB by dunk','$0.10','+2,015','+2,437')]
+meth=[('Julius Randle - Other (CHI@BKN)','$0.50','+1,430','+1,736'),('Joel Embiid - Other (PHI@ORL)','$0.20','+1,525','+1,850'),("Day'Ron Sharpe - Layup (CHI@BKN)",'$0.20','+1,710','+2,072'),('Cade Cunningham - Other (DET@NO)','$0.10','+1,825','+2,209')]
 pars=[('Carter + Porter Jr.','+4,122'),('Carter + Sharpe','+4,391'),('Wagner + Porter Jr.','+4,855'),('Wagner + Sharpe','+5,171'),
       ('Carter + Collins','+3,702'),('Carter + Cunningham','+4,661'),('Wagner + Collins','+4,362'),('Wagner + Cunningham','+5,487'),
       ('Porter Jr. + Collins','+3,984'),('Porter Jr. + Cunningham','+5,013'),('Sharpe + Collins','+4,244'),('Sharpe + Cunningham','+5,339')]
@@ -44,7 +44,7 @@ for i,(n,st,f,t) in enumerate(meth):
     ax.text(9,yy,n,color=TXT,fontsize=9.6,va='center'); ax.text(62,yy,st,color=GREEN,fontsize=9.2,va='center',ha='right')
     ax.text(93,yy,'fair '+f+' / take '+t,color=MUTED,fontsize=8.6,va='center',ha='right')
 y=y-h-3.5
-ax.text(5,y,'Method est: DET@NO FT 13%, dunk 13% (league 9%, 10%); PHI@ORL FT 11%.',color=MUTED,fontsize=8.2,va='center')
+ax.text(5,y,'FanDuel Method of First Basket = player + method. Other = jumper, floater, hook, tip.',color=MUTED,fontsize=8.2,va='center')
 ax.text(5,y-4,'FanDuel $9 at 8:47 AM. Plan leaves $0.05. Watch Kessler (LAL) at 6:30.',color=MUTED,fontsize=8.2,va='center')
 ax.text(5,y-8,'Recheck lineups 30 min before tip. First basket is mostly noise.',color=MUTED,fontsize=8.2,va='center')
 fig.savefig(OUT,facecolor=BG)
