@@ -31,3 +31,5 @@ return no views (a sync gap, not zero).
 | 2026-11-17 | 7:19 AM | Instagram reel | 7078056 (post 9466608) | Trade still reel (second funded account day 1, Tim approved) | music | lag | | |
 | 2026-11-17 | 5:45 PM | Facebook reel | 7096635 | Market commentary still reel (ES selloff chart, Tim's screenshot) | music | one_cool_minute | | |
 | 2026-11-17 | 6:30 PM | Instagram reel | 7096638 | Market commentary still reel (ES selloff chart, Tim's screenshot) | music | one_cool_minute | | |
+| 2026-11-18 | 12:30 PM | Instagram reel | 7133361 | Education text cards over a moving drawn chart, light palette (0-trade day still logged) | music | once_more_with_you | | |
+| 2026-11-18 | 5:00 PM | Facebook reel | 7133365 | Education text cards over a moving drawn chart, light palette (3 numbers: 1-2 trades, 3.5-4 pt stop, $1,000 max) | music | happy_sadie | | |
