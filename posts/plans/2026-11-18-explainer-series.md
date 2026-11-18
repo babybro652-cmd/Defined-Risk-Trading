@@ -1,3 +1,5 @@
+**STATUS: ON HOLD (Tim 11/18 evening). Tweak with Tim this weekend; do not schedule any explainer until he approves.**
+
 # Animated chart explainers: series plan (Tim, 11/18)
 
 Tim, 11/18 evening, on the "Pips Beyond Borders" volume-profile reel he saved to DRT Phone: "I mean for you to
