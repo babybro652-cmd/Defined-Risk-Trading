@@ -28,3 +28,5 @@ Balance snapshots from Tim's FanDuel screenshots. Newest at the bottom. Deposits
 | 11/17/26 | 12:22 PM | $39.41 | after placing Rutgers +16.5 -110 $1.00 (CBB, 2 PM ET; Bets row 1547) |
 | 11/18/26 | 8:47 AM | $9.00 | Tim (via Jarvis). Down from $39.41 on 11/17; a $60 withdrawal bounced back and he deposited $15 since. 11/18 NBA first basket plan sized to $8.95 (9 straights $0.75, 12 two-leg $0.10, 4 method longshots $1.00). |
 | 11/18/26 | evening | $4.00 | Tim (via Jarvis): balance $4.00, not $9. 11/18 NBA plan resized to $4.00: 9 straights $0.30, 6 two-legs $0.10, method longshots Randle $0.50, Embiid $0.10, Jenkins $0.10. Dropped 6 two-legs, Sharpe - Layup, UTAH@LAL. Bets rows 1660-1684. |
+
+- 11/19 (Tim, morning): bankroll for tonight = $20 total across NBA, NHL and CBB picks.
