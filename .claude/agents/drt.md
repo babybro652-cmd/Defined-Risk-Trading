@@ -109,7 +109,7 @@ FVG/IFVG test (11/18, analysis/indicators/fvg-ifvg-tag-2026-11-18.md, script fvg
 - Volume Bubbles ES now draws FVG/IFVG boxes and sends `fvg`/`ifvg` in pivot_vol/vol_hold alerts; carry that into the combined one.
 - 6 pt stop TEST (Tim, 11/18; NOT his rule, which stays 3.5-4): lower R than 4/8 on Div and CRT Pro longs; only about 1 in 10
   4 pt losers flip to winners; same FVG answer. 2 stops at 6 pts = $610 a day on 1 ES vs $410 at 4.
-Blockers before building: (1) CRT-Divergence-SR.pine source is only in Tim's TradingView, so get a copy into pine/;
+Blockers before building: (1) DONE 11/18: CRT-Divergence-SR source saved to pine/crt-divergence-sr.pine (from Tim's Drive doc);
 (2) tracking is down since 11/13; fix it and collect about 100 more NY Div trades to confirm.
 
 ## YouTube Shorts: footage only, 3-5 a week (Tim, 11/17; replaces the daily AI-voice Short of 10/30)

@@ -8,7 +8,7 @@ Newest decisions win; move finished items to Done with the date.
 
 ### This week (time-sensitive)
 - [ ] Explainer videos: ON HOLD (Tim 11/18). Tweak the volume-profile pilot with Tim this weekend (posts/media/explainers/volume-profile/volume-profile-voice.mp4) before anything posts. Don't schedule any explainer until he OKs it.
-- [ ] END GOAL: one combined DRT indicator (best of CRT Pro, Div, Setups, Volume Bubbles). Needs first: CRT-Divergence-SR.pine copied from TradingView into Drive/pine, tracking fixed, ~100 more NY Div trades. Plan in .claude/agents/drt.md.
+- [ ] END GOAL: one combined DRT indicator (best of CRT Pro, Div, Setups, Volume Bubbles). Div source saved 11/18 (pine/crt-divergence-sr.pine); alerts rebuilt 11/18 (CRT Pro, Div, Vol Bubbles). Needs first: tracking confirmed logging, ~100 more NY Div trades. Plan in .claude/agents/drt.md.
 - [ ] Fix indicator tracking (all trackers stopped 11/13). Drive folder "DRT Indicator Tracking (fix later)" https://drive.google.com/drive/folders/1ng3nQSXxSkII0SWvIQvqP75GHGL8pnOJ has every Pine + Apps Script file and a START HERE checklist. Copy CRT-Divergence-SR.pine from TradingView into it (not in repo). Decide: fix or retire CRT Setups Tracker.
 - [ ] Moved to Thu 11/19 (Money Plan updated): Verizon $282.99, Workspace $8.40. Also 11/19, no column/amount yet: Canva (Pro ends 11/21), PayPal card. Bison Green: Tim dropping it from the plan (11/16). Verizon: promise-to-pay for 11/26 (moved there in Money Plan 11/17). OneMain late Nov 1 payment $143.83 paid Thu 11/19 (Money Plan 11/17). 11/19 shows +$63.62 before those three.
 - [ ] Google Workspace: pay or update card at https://admin.google.com/ac/billing/accounts (invoice 5723568933; suspends Dec 3). Business Starter $8.40/mo.
