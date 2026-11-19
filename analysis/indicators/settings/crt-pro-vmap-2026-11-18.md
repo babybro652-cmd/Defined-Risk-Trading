@@ -3,7 +3,8 @@ Score VMap rows from 11/19 on with THESE settings; never mix with rows from befo
 
 Reference candle: Lookback 2 (was default 3), Min Range 0.75x ATR, ATR 14.
 Filters: EMA trend filter ON (20), Volume Confirmation OFF (MA 20, 1.5x), Session filter ON:
-  Morning 1000-1200 ET, Afternoon 1400-1600 ET (12:00-14:00 excluded).
+  UPDATED 11/18 later: full 1000-1600 ET, no gap (Tim). Lookback stays 2.
+  (Screenshot showed Morning 1000-1200, Afternoon 1400-1600.)
 Style: line ext 10, show EMA, reference zone, raw CRT signals (small gray) ON.
 Volume map: mode Developing, developing start Asia open; fixed London 03:00-09:29 and NY 09:30-15:59 ON;
   profile source 1m intrabar; row 1 pt; shelf >= 60% of POC vol; thin <= 25%; ignore zones < 2 pts;
