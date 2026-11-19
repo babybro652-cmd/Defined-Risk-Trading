@@ -13,7 +13,8 @@ Newest decisions win; move finished items to Done with the date.
 - [ ] Moved to Thu 11/19 (Money Plan updated): Verizon $282.99, Workspace $8.40. Also 11/19, no column/amount yet: Canva (Pro ends 11/21), PayPal card. Bison Green: Tim dropping it from the plan (11/16). Verizon: promise-to-pay for 11/26 (moved there in Money Plan 11/17). OneMain late Nov 1 payment $143.83 paid Thu 11/19 (Money Plan 11/17). 11/19 shows +$63.62 before those three.
 - [ ] Google Workspace: pay or update card at https://admin.google.com/ac/billing/accounts (invoice 5723568933; suspends Dec 3). Business Starter $8.40/mo.
 - [ ] Lucid 25K eval bought 11/12 (LFE02578805580006): balance $24,347 after -$653 day 1; min balance $24,000 = only $347 room. 1 MES-size risk or pause until the Apex funded plan is rolling.
-- [ ] Apex: PA-01 CLOSED 11/17 (drawdown). PA-02 (PA-APEX-694864-02) is the only funded account, balance $24,490.80 on 11/17. Check its trailing threshold before every session. 1 ES, one loss and done. Plan: analysis/prop-firms/apex-25k-funded-plan.md.
+- [ ] Apex: PA-01 CLOSED 11/17 and PA-02 CLOSED 11/18 7:47 PM (liquidation email: open past 4:59 PM or drawdown; Tim sat out 11/18, so check the dashboard for an order left open). PA subscription cancelled. Confirm whether any Apex PA (e.g. -03, activated 11/16) is still open.
+- [ ] Lucid 50K Flex eval bought 11/19 4:32 AM ($88.20, ETFPROMO), account LFE05078805580063. Log into Tradovate, sign agreements as non-professional, CHANGE THE PASSWORD (emailed in plain text). Plan: 1 ES, 4 pt stop, done after 2 losses (~$400, inside $1,200 DLL).
 - [ ] Fidelity 401(k) payout of $82 on the way (Tim, 11/11).
 - [ ] CapCut Google Play sub: $19.99/mo from Dec 10. Reminder set Wed 12/9 6:07 PM.
 - [ ] Shopify store (Propa Pit pet store) suspended for billing: decide keep / pause / close (Jarvis advised 11/11).
