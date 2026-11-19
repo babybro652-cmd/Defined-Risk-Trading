@@ -31,11 +31,8 @@ Never repost it, its audio, its animation or its text. Don't name or show the cr
 - Tim confirms: OK to say publicly "I'm testing a volume profile on my chart, it isn't a rule". If not, cut that line
   and keep it pure education.
 
-### 2. "Why I passed Wednesday": price walked into a heavy-volume zone and chopped
-- Hook (confession): "Label printed right inside the busiest price of the day. I passed."
-- Only if Tim has a real pass where that happened and says so in his own words. Wed TikTok series ("Pass #N"),
-  then cut for IG/FB/Short. Never invent the reason he passed.
-- Tim records: the clip of the skipped setup + one sentence on why he passed.
+### 2. DROPPED 11/18
+Tim dropped the "Why I passed" series ("Not doing that."), so this concept is cancelled.
 
 ### 3. Moving diagram card for the 7:00 AM TikTok (reset week, no Tim recording needed)
 - Hook (speed how-to): "Thick volume = slow price. Thin volume = fast price. 10 seconds."
@@ -47,8 +44,7 @@ Never repost it, its audio, its animation or its text. Don't name or show the cr
 ## Engagement plan fit
 - TikTok reset 11/18-11/24: concept 3 fits the 7 AM card slot; concept 1 fits 12 PM / 8 PM (footage only).
 - Shorts: concept 1 only (Tim's footage + voice). Thu 11/19 6:12 PM is open if he records by then.
-- Series: concept 2 is a "Why I passed Wednesday" entry next week (11/25) if Tim has the clip. Too late for tonight's
-  7:22 PM slot (no Tim footage today).
+- Series: concept 2 dropped 11/18 (no "Why I passed" series).
 - Trending audio draft flow: not for this (that's for 1 trade reel a week).
 - Every caption ends with a question. No "comment SKOOL" (automations inactive), no link in bio.
 

@@ -1,5 +1,9 @@
 # DRT engagement audit and plan (Tue 11/17/2026)
 
+> **Update 11/18: the "Why I passed" series and clips are DROPPED** (Tim: "The why i passed needs to be delete.
+> Not doing that."). Every "why I passed" item below is cancelled: no clips asked for, no "Pass #N" posts. The Wed
+> 7:22 PM TikTok is plain market commentary. The rest of the plan stands.
+
 Tim: "We need to increase engagement." Read-only audit; nothing was posted, scheduled, replied to or changed.
 Every change below is a proposal. Tim decides.
 
@@ -154,13 +158,13 @@ What to record (phone screen recording of TradingView, 30-60 s, no setup, no tal
 
 | Clip | When | Time | What it shows | Approval |
 |---|---|---|---|---|
-| **"Why I passed"** | 10 AM lunch, any day | 1-2 min | The setup he watched and skipped. Then one line in chat or DRT Phone: "passed: stop would've been 9 pts" | Autopilot (no P&L) |
+| ~~**"Why I passed"**~~ (DROPPED 11/18) | 10 AM lunch, any day | 1-2 min | The setup he watched and skipped. Then one line in chat or DRT Phone: "passed: stop would've been 9 pts" | Autopilot (no P&L) |
 | **Lunch chart check** | 10 AM lunch, no trade | 1 min | Scroll the morning: overnight high/low, what price did. Reason line optional | Autopilot |
 | **Night review** | After his son's bedtime | 3-5 min | 45-60 s marking up the day's chart, plus a voice memo (talk while recording, or a separate memo) | Autopilot if no P&L/balances on screen |
 | **Trade recording** | When he trades | already doing it | As now | Tim's go |
 | **Comment reply video** | Weekend evening | 10 min | Christina first (script ready: `posts/2026-11-07-christina-reply-script.md`), then one comment a week | Autopilot unless it shows P&L |
 
-Weekly ask: **2 "why I passed" or lunch-chart clips + 1 night review + 1 reply video = about 20 minutes.**
+Weekly ask: **2 lunch-chart clips + 1 night review + 1 reply video = about 20 minutes.** ("why I passed" dropped 11/18)
 Jarvis does the rest (privacy crop, captions, music, all platforms). One recording fills 3-4 slots (TT, IG, FB, YT Short).
 Voice: when Tim talks, Jarvis uses his words only. With no reason given, the cut shows the chart and the fixed rules
 (NY only, wait for the label, 3.5-4 pt hard stop from entry) and nothing else.
@@ -197,7 +201,7 @@ How:
 | "Your stop is the price of the ticket." | Receipt (#1) | "2 ES, 4 point stop: $400. I know that number before I click." |
 | "Two ES highs at the same price, and price keeps coming back for them." | Audience callout (#63) | "ES traders: 2 tops at the same price are a target, not a ceiling." |
 | "2 levels to mark before the New York open." | Speed how-to (#80) | "2 lines, 2 minutes, before 9:30: yesterday's high and low on ES." |
-| (why I passed clip) | Curiosity gap (#40) | "ES ran 20 points without me this morning. Here's why I passed." (only with Tim's real reason) |
+| (why I passed clip, DROPPED 11/18) | Curiosity gap (#40) | "ES ran 20 points without me this morning. Here's why I passed." (only with Tim's real reason) |
 | (trade reel) | Keep the winner | "ES short, 4 pt stop. [the twist in Tim's words]." |
 
 - Rotate patterns so the feed doesn't read as one template (the skill's own rule). Retire "X isn't Y" openers as the default.
@@ -206,7 +210,7 @@ How:
 ### 5. Re-cut the cadence around what works, run series, open the Skool path
 Cadence (proposal):
 - **YouTube:** stop the daily 6:12 PM AI-voice Short (median 18, 0 subs). Post a Short only when there's footage (trade,
-  "why I passed", night review, reply video): 3-5 a week instead of 7. Frees the heaviest daily build.
+  lunch chart check, night review, reply video): 3-5 a week instead of 7. Frees the heaviest daily build.
 - **TikTok:** 7 AM education (changed look), footage at 12 PM when it exists, 8 PM only for series or footage (see change 1).
 - **IG 12:30 / FB 5 PM:** keep (IG is at a steady 110-130 now; music test runs to 11/25, readout 12/2).
 - **Trade posts:** keep posting when they happen.
@@ -214,7 +218,7 @@ Cadence (proposal):
 Series (give people a reason to come back):
 - **"One rule, one week"** (week 1 "no early entries" started 11/15): keep it, but close each week with Tim's real chart on
   Friday ("week 1 done: here's the entry I waited for"), not another card.
-- **"Why I passed Wednesday"**: one skipped setup a week, numbered ("Pass #3").
+- ~~**"Why I passed Wednesday"**~~ (DROPPED 11/18 by Tim): one skipped setup a week, numbered ("Pass #3").
 - **"Night review"** on Sundays: dad + process, the strongest lifestyle angle.
 
 Trending audio on TikTok: 1 trade reel a week as a test, through the existing draft flow (Blotato `isDraft: true` sends it to
@@ -235,7 +239,7 @@ Skool funnel (never "link in bio"):
 |---|---|---|
 | TikTok Studio: account status + traffic source, screenshot | 5 min | Tonight |
 | One native TikTok upload of a footage clip with an in-app sound | 3 min | Any lunch or evening |
-| 2 "why I passed" or lunch-chart screen recordings + one-line reason | 2-4 min | 10 AM lunch, 2 days |
+| 2 lunch-chart screen recordings + one-line note (no "why I passed", dropped 11/18) | 2-4 min | 10 AM lunch, 2 days |
 | 1 night review (45-60 s recording, talk or voice memo) | 5 min | After bedtime, 1 night |
 | Christina reply video (script ready) | 10 min | Weekend |
 | TikTok comment replies | 5 min x 3-4 days | Lunch or evening |
@@ -250,6 +254,6 @@ Thanksgiving week (11/26): keep the ask to 1 clip that week.
 4. IG/FB comment replies: Jarvis drafts for approval (A), or replies to non-trade comments on autopilot (B)?
 5. Build the "comment SKOOL" IG/FB automation as an inactive draft? Free tier or trial in Skool?
 6. Trending-audio draft flow on 1 trade reel a week?
-7. Series: keep "One rule, one week" with a Friday footage close; add "Why I passed Wednesday" and Sunday night review?
+7. Series: keep "One rule, one week" with a Friday footage close; add "Why I passed Wednesday" (dropped 11/18) and Sunday night review?
 
 Routines, the content-agent prompt and scheduled posts were not touched.

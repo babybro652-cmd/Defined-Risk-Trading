@@ -1,5 +1,8 @@
 # DRT content plan, Thu 11/12 to Wed 11/25/2026, plus Skool growth
 
+> **Update 11/18: "Why I passed" is DROPPED** (Tim: "Not doing that."). Every "why I passed" slot and ask below is
+> cancelled; fill those slots with the other footage types or education instead.
+
 Built from the 11/11 deep dive (`analysis/socials/drt-deep-dive-2026-11-11.md`) and Tim's 11/11 decisions
 (recorded in `.claude/agents/drt.md` under "Socials decisions"). The daily routine reads this plan in Step 3.
 

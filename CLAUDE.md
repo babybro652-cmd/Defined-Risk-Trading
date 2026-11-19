@@ -91,7 +91,7 @@ passes the result to Tim (with a push notification when the routine asks for one
 | Daily DRT content (YouTube Shorts footage-only, 3-5 a week, since 11/17; TikTok reset 11/18-11/24; drafts IG/FB comment replies for Tim) (moved here 10/11; full prompt stays in the disabled trig_01NkNxxc7neQATLrTifB42kv) | Daily 5:02 AM | drt |
 | DRT Monday IG carousel (STOPPED 11/11, carousels cut; prompt in disabled trig_01KKoeA87HpY3wb8fzaQK8Jb) | Mon 6:52 PM | drt |
 | Record Modules 4 & 5 push (until Tim says done) | Daily 8:13 PM | Jarvis |
-| DRT Wednesday TikTok: "Why I passed Wednesday" when Tim sends a clip, else commentary (prompt in disabled trig_01Td2366YryxzXU8BPrxUv1Z) | Wed 7:22 PM | drt |
+| DRT Wednesday TikTok commentary (prompt in disabled trig_01Td2366YryxzXU8BPrxUv1Z) | Wed 7:22 PM | drt |
 | DRT Thursday FB lifestyle reel (prompt in disabled trig_01AgRQCG6Fn3maoJGToxnFRT) | Thu 7:52 PM | drt |
 | DRT Friday trade recap, needs Tim's go (prompt in disabled trig_01CgC1RonbscetrWJhFAWLZp) | Fri 4:57 PM | drt |
 

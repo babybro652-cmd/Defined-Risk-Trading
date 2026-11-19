@@ -110,8 +110,8 @@ Blockers before building: (1) CRT-Divergence-SR.pine source is only in Tim's Tra
 
 ## YouTube Shorts: footage only, 3-5 a week (Tim, 11/17; replaces the daily AI-voice Short of 10/30)
 The daily 6:12 PM AI-voice Short is STOPPED (median 18 views, 0 subs). Shorts on YouTube `48727` now
-go out 3-5 times a week, only from Tim's real footage (approved trade video, education cut, "why I
-passed", lunch chart check, night review, comment reply video). No footage = no Short. Never a text
+go out 3-5 times a week, only from Tim's real footage (approved trade video, education cut,
+lunch chart check, night review, comment reply video). No footage = no Short. Never a text
 card, rendered reel or AI voiceover as a Short. Slot stays 6:12 PM ET, max 1 a day. It's Step 6b of the
 daily content routine (prompt stored in the disabled `trig_01NkNxxc7neQATLrTifB42kv`).
 - Never a new trade post unless Tim approved that exact video for YouTube.
@@ -173,17 +173,19 @@ john voice, free, phrase captions burned in, music ducked), the one place AI voi
 6. **Trending audio:** 1 trade reel a week via the TikTok draft flow (`isDraft: true`; Tim re-pastes the
    caption, picks a Commercial Music Library sound, publishes). Trade reels still need Tim's approval;
    offer the draft option when presenting that week's trade reel or the Friday recap.
-7. **Series:** "Why I passed Wednesday" (numbered "Pass #N", only when Tim sends a clip, posted by the
-   Wed TikTok routine, then cut for IG/FB/Short); Sunday night review (from Tim's night review
+7. **Series:** Sunday night review (from Tim's night review
    recording only); "One rule, one week" week 1 (no early entries, from 11/15) closes Fri 11/20 with
    Tim's real footage if he sends some, else no rendered close. No week 2 until Tim says so.
 8. **Openings and hooks:** every video starts on the chart (or a moving diagram) at frame 0, no black
    frame; check frame 0 in media QA. Rotate hook patterns (trade situation first, number/receipt,
    confession, audience callout, speed how-to, curiosity gap); never the same pattern twice a day or in
    the same slot two days running. Drop "X isn't Y" openers.
+- **DROPPED 11/18 (Tim: "The why i passed needs to be delete. Not doing that."):** the "Why I passed"
+  series and clips. Never plan, build or post one, and never ask Tim for one. The Wed 7:22 PM TikTok is
+  plain market commentary (skipped during the 11/18-11/24 reset).
 - Never mention Tim's lost or blown prop accounts in public copy (internal context only).
 - Prompt stores updated 11/17: daily `trig_01NkNxxc7neQATLrTifB42kv`, Wed TikTok
-  `trig_01Td2366YryxzXU8BPrxUv1Z` (Why I passed first; no clip during the reset = skip), Thu FB
+  `trig_01Td2366YryxzXU8BPrxUv1Z` (market commentary only since 11/18; skipped during the reset), Thu FB
   `trig_01AgRQCG6Fn3maoJGToxnFRT`, Fri recap `trig_01CgC1RonbscetrWJhFAWLZp`. All stay disabled; the
   routines fire into the Jarvis chat.
 
@@ -317,7 +319,7 @@ Skool community: https://www.skool.com/defined-risk-trading-6797/about. Use it i
 1. **Cut:** FB 9 AM post, TikTok 12 PM text card, IG carousels (the Mon IG carousel routine is disabled). TikTok carousels are still fine.
 2. **Replicate what works:** Tim's real chart footage, trade reels, the "thinking behind the trade" caption cut, loss/mistake stories, TikTok 7 AM education. Hooks state the concrete situation (instrument, direction, stop, the twist); don't default to "X isn't Y" openers.
 3. **Music test on FB and IG videos, 11/12-11/25.** Every FB/IG video gets a music bed (add_audio.py, AUDIO QA: PASS). Log schedule id, platform, audio yes/no, track, and views at 7 days in `analysis/socials/music-test-fb-ig.md`; compare with the silent baseline (10/1-11/1 silent FB/IG videos) and any silent post in the window. Read it out on 12/2, once the 7-day snapshots are in.
-4. **Approval scope.** Education posts that follow every rule post without a second go. That covers education cuts of a trade Tim already approved and "why I passed" clips (a setup he watched and skipped), as long as they show no P&L, no dollar results, no account balances or funded numbers, and pass full-frame privacy QA. New trade posts (P&L, entries/exits, recaps, screenshots) still need Tim's go.
+4. **Approval scope.** Education posts that follow every rule post without a second go. That covers education cuts of a trade Tim already approved, as long as they show no P&L, no dollar results, no account balances or funded numbers, and pass full-frame privacy QA. New trade posts (P&L, entries/exits, recaps, screenshots) still need Tim's go.
 5. **No "link in bio"** (see Skool link above).
 6. Cameron's reply and the other comment replies are done (11/11).
 Content plan for 11/12-11/25 and the Skool growth plan: `posts/plans/2026-11-11-content-plan.md`.

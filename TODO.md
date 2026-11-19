@@ -31,8 +31,8 @@ Newest decisions win; move finished items to Done with the date.
 
 ### Defined Risk Trading
 - [ ] Volume Bubbles ES: test on chart, then lock in; then build tracker. Code: pine/volume-bubbles-es.pine (phone copy: Drive "1 - TradingView indicators (Pine)" / volume-bubbles-es.txt). Checklist in pine/README.md.
-- [ ] Send 2-3 trade-screen recordings a week (incl. "why I passed" clips). #1 lever from the deep dive.
-- [ ] Engagement plan approved 11/17 (posts/plans/2026-11-17-engagement-plan.md). This week: (1) TONIGHT: TikTok Studio screenshots, account status + traffic source on an 11/12-11/15 post, to DRT Phone or chat; (2) one native TikTok app-upload test (a footage clip posted from the app with an in-app sound); (3) 2 "why I passed" clips at lunch + one line on why; (4) 1 night review (45-60 s after bedtime); (5) Christina reply video. TikTok reset 11/18-11/24, readout 11/24.
+- [ ] Send 2-3 trade-screen recordings a week. #1 lever from the deep dive.
+- [ ] Engagement plan approved 11/17 (posts/plans/2026-11-17-engagement-plan.md). This week: (1) TONIGHT: TikTok Studio screenshots, account status + traffic source on an 11/12-11/15 post, to DRT Phone or chat; (2) one native TikTok app-upload test (a footage clip posted from the app with an in-app sound); (3) 1 night review (45-60 s after bedtime); (4) Christina reply video. TikTok reset 11/18-11/24, readout 11/24.
 - [ ] "Comment SKOOL" auto-DM built 11/17, INACTIVE (IG 34586, FB 34587). Say go to turn it on.
 - [ ] Socials changes applied 11/11 (slots cut, music test to 11/25, readout 12/2). 2-week content plan + Skool growth plan done: posts/plans/2026-11-11-content-plan.md.
 - [ ] Skool: 0 new members since 10/1 (10 total, $49 only). Decide: free tier or trial + 4-pt-stop checklist PDF? (SKOOL auto-DM built 11/17, off until go.)
