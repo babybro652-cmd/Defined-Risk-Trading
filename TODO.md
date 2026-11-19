@@ -30,7 +30,7 @@ Newest decisions win; move finished items to Done with the date.
 - Daily column H reminder (routine disabled).
 
 ### Defined Risk Trading
-- [ ] Volume Bubbles ES: test on chart, then lock in; then build tracker. Code: pine/volume-bubbles-es.pine (phone copy: Drive "1 - TradingView indicators (Pine)" / volume-bubbles-es.txt). Checklist in pine/README.md.
+- [ ] Volume Bubbles ES: on the chart 11/18 (compiles). Tracker built 11/18, Tim to deploy (see tracking line). Code: pine/volume-bubbles-es.pine (phone copy: Drive "1 - TradingView indicators (Pine)" / volume-bubbles-es.txt).
 - [ ] Send 2-3 trade-screen recordings a week. #1 lever from the deep dive.
 - [ ] Engagement plan approved 11/17 (posts/plans/2026-11-17-engagement-plan.md). This week: (1) TONIGHT: TikTok Studio screenshots, account status + traffic source on an 11/12-11/15 post, to DRT Phone or chat; (2) one native TikTok app-upload test (a footage clip posted from the app with an in-app sound); (3) 1 night review (45-60 s after bedtime); (4) Christina reply video. TikTok reset 11/18-11/24, readout 11/24.
 - [ ] "Comment SKOOL" auto-DM built 11/17, INACTIVE (IG 34586, FB 34587). Say go to turn it on.
@@ -38,7 +38,7 @@ Newest decisions win; move finished items to Done with the date.
 - [ ] Skool: 0 new members since 10/1 (10 total, $49 only). Decide: free tier or trial + 4-pt-stop checklist PDF? (SKOOL auto-DM built 11/17, off until go.)
 - [ ] Record Christina's video reply (script: posts/2026-11-07-christina-reply-script.md).
 - [ ] Post the paper-trade Skool recap (Tim posts).
-- [ ] Tracker logging: webhook script tested OK 11/12; 2FA on, alerts redone. Forward Test Log logging again since 11/11 ("timed out" warnings are harmless). CRT Pro + VMap: confirm rows after the 10-12 window Fri 11/13 (Jarvis checks 12:15 PM).
+- [ ] Tracker logging: CRT Pro + Div alerts rebuilt 11/18 with 2FA on; Vol Bubbles tracker built, Tim to deploy (steps: integrations/volume-bubbles-tracker/README.md, also in the ALERTS doc in Drive).
 - [ ] Fill column H on Forward Test Log rows #139 and #140 (#140 → 7734; #139 → lowest low after 20:31 ET before the rally).
 - [ ] Check Lucid order history for the real September reset total (~$1,700 est).
 - [ ] Move off prop-firm resets to your own MES account (plan 10/1): paper trade first, catch up bills, then NinjaTrader Free, 1 MES, 4-pt stop (~$22). Don't fund until ready ($35 fee after 30 days idle).

@@ -92,12 +92,14 @@ Standalone overlay for **1m ES** on the **Essential plan**, desktop and phone. I
 
 Fewer bubbles: raise Min z-score (5) or Min x normal (2.5). More: lower them.
 
-### Alerts (ready for a tracker, not wired yet)
+### Alerts (logged by the Volume Bubbles Tracker sheet since 11/18)
 
-The script fires one `alert()` per event, once per bar close. When the tracker is built:
+The script fires one `alert()` per event, once per bar close. Tracker: `integrations/volume-bubbles-tracker/`
+(sheet "Volume Bubbles Tracker", setup steps in its README).
 
-1. Create ONE alert: condition "Volume Bubbles ES", then "Any alert() function call".
-2. Add the webhook URL.
+1. Create ONE alert on ES1! 1m: condition "Volume Bubbles ES", then "Any alert() function call", Once Per Bar
+   Close, open-ended. Name it "LOG Vol Bubbles".
+2. Webhook URL = the tracker's `/exec` URL. No Webhook Key (the script has none).
 
 Alerts keep the settings they were made with, so change settings first and then create the alert. No webhook URL
 is in the script. Example payload:

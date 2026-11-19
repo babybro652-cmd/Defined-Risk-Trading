@@ -95,6 +95,10 @@ ONE final indicator that keeps only what tests well. Every analysis, build and t
 Current evidence (analysis/indicators/indicator-analysis-2026-11-18.md):
 - Keep: Div label entries (best signal: NY 10-4, 83 trades, +$1,548 on 1 ES; first 2 a day +$3,178), CRT Pro LONGS in NY.
 - Test as a filter: Volume Bubbles "Vol"/"Vol hold" tag at the Div pivot (forward test, needs tracking).
+  Tracker built 11/18: `integrations/volume-bubbles-tracker/` (Code.gs + README), sheet "Volume Bubbles Tracker"
+  `1YHKqEq8lbUV4Ubm7dKDieI5fPB7aZQdlzC3GPVJx9Ec`, tab Bubbles Log (one row per bubble / vol_hold / pivot_vol, ET).
+  Its MFE 30m / MAE 30m / Held Level 30m columns stay blank in the sheet; analysis/indicators scripts fill them from
+  1m bars (measured from Price, 30 bars after Confirm Time). Join to Div rows by time (Div log is Central, +1 h).
 - Drop: VMap, CRT Pro shorts in NY, CRT Pro's own sub-1-pt stops.
 - Built in: NY only (10 AM-4 PM), wait for the label, fixed 3.5-4 pt stop from ENTRY, 8 pt target, max 2 trades a day,
   daily stop well inside the $1,000 max. One alert() JSON payload and one tracker sheet.
