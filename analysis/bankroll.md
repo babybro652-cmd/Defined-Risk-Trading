@@ -31,3 +31,4 @@ Balance snapshots from Tim's FanDuel screenshots. Newest at the bottom. Deposits
 
 - 11/19 (Tim, morning): bankroll for tonight = $20 total across NBA, NHL and CBB picks.
   Split (Jarvis default unless Tim changes it): CBB $3 (1:30 PM run), NHL $5 (6:00 PM run), NBA $12 (about 7:10 PM run).
+- 11/19/26 1:49 PM: $20.60 after $4.50 on CBB (NC State -3.5 -106 $1.50, VCU +1.5 -106 $1.50, VCU ML +104 $1.50; Bets rows 1685-1687).
