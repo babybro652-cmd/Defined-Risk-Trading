@@ -137,3 +137,7 @@ Rule from here (Tim to confirm): TD bets on RBs/goal-line QBs only; WR/TE TDs on
 - Log up to 3-5 as Sport "MLB", Bet type "Anytime HR", Pick "Name 1+ HR (fair +X, take at +Y or longer)", H "Pick".
   Take-at = fair decimal x1.2; BET only at take-at or longer, $0.20 to $0.50. No HR parlays.
 - Grade from the MLB boxscore (batter homeRuns). Scratched before first pitch = Void.
+
+
+## Timing (Tim, 11/19)
+Run picks about 1 hour before the first game of each sport (after injuries/lineups settle), always with a chart. CBB and NBA morning routines now schedule the real run for first tip minus 1 hour.

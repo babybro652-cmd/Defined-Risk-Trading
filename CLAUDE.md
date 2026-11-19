@@ -80,8 +80,8 @@ passes the result to Tim (with a push notification when the routine asks for one
 | NFL Saturday injury recheck + final shortlist | Sat 10:47 AM | bets |
 | NHL tab weekly refresh (goals, first goal, SOG; grade NHL bets) | Wed 9:41 AM | bets |
 | CFB Saturday picks (sides, totals, anytime TDs; grade last week) | Sat 8:13 AM | bets |
-| CBB big games only (Top 25 / national TV; skips days with none) | Daily 8:43 AM | bets |
-| NBA first-basket refresh (skips days with no regular-season games; season starts 10/20) | Daily 10:07 AM | bets |
+| CBB big games only (Top 25 / national TV; skips days with none); 8:43 check schedules the picks 1 hr before first tip, with injuries/lineups + chart | Daily 8:43 AM | bets |
+| NBA first-basket refresh (skips days with no regular-season games); 10:07 grades yesterday and schedules the full plan + 4 charts 1 hr before first tip | Daily 10:07 AM | bets |
 | UCL refresh, eve of matchday (goals, shots, BTTS, corners; skips if no matches tomorrow) | Mon/Tue 7:37 PM | bets |
 | UCL refresh, matchday morning (lineups; skips if no matches today) | Tue/Wed 9:37 AM | bets |
 | Loan spam cleanup (delete + unsubscribe; replaces the old label-only check) | Mon 8:56 AM | personal |
