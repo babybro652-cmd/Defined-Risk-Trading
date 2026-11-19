@@ -30,3 +30,4 @@ Balance snapshots from Tim's FanDuel screenshots. Newest at the bottom. Deposits
 | 11/18/26 | evening | $4.00 | Tim (via Jarvis): balance $4.00, not $9. 11/18 NBA plan resized to $4.00: 9 straights $0.30, 6 two-legs $0.10, method longshots Randle $0.50, Embiid $0.10, Jenkins $0.10. Dropped 6 two-legs, Sharpe - Layup, UTAH@LAL. Bets rows 1660-1684. |
 
 - 11/19 (Tim, morning): bankroll for tonight = $20 total across NBA, NHL and CBB picks.
+  Split (Jarvis default unless Tim changes it): CBB $3 (1:30 PM run), NHL $5 (6:00 PM run), NBA $12 (about 7:10 PM run).
