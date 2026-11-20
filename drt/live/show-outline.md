@@ -57,7 +57,7 @@ Bias card on (`TODAY'S BIAS: ____`). Walk the chart left to right, slow.
 - If he traded: entry, stop, target, result in points and R. Say paper or live. Was the
   stop within the 3.5-4 point rule? Was it at or after 10 AM ET? Did he wait for the label?
 - If he sat out: what he was waiting for and why it never showed. Sitting out is a result.
-- Rules check out loud: NY session only, no trades before 10 AM ET, wait for the label,
+- Rules check out loud: primarily NY session (always looking for my setup), no trades before 10 AM ET, wait for the label,
   3.5-4 pt hard stop, 1-2 good trades then done, max $1,000 risk in a day.
 - Disclaimer out loud #2 at the end of this segment (about minute 15).
 

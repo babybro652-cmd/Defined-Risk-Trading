@@ -2,7 +2,7 @@
 
 Channel: Blotato account `48727` "Timothy Williams (Defined Risk Trading)". 0 videos before 10/30.
 Daily Short wired into the daily content routine at 6:12 PM ET (see `.claude/agents/drt.md`).
-Focus: ES futures, defined risk, discipline, NY session only, prop firm evals, Skool, TradingView.
+Focus: ES futures, defined risk, discipline, primarily the NY session, prop firm evals, Skool, TradingView.
 
 Research notes: most "best time" and RPM numbers below come from third-party blogs and tool
 vendors, not YouTube. YouTube doesn't publish RPM by niche. Treat ranges as planning numbers
@@ -196,7 +196,7 @@ the day Tim reopens enrollment, and it'll be worth more than the other two combi
 |---|---|---|---|
 | 1 | Short | Why I Didn't Take This ES Trade | The setup that almost fired and the rule that blocked it |
 | 2 | Short | Your Stop Is Too Wide | Why a 3.5-4 pt ES stop forces better entries |
-| 3 | Short | Stop Trading London | Why NY session only (Tim's 2 lost accounts as the lesson, no numbers, Tim's go) |
+| 3 | Short | Stop Trading London | Why NY is the main session (Tim's 2 lost accounts as the lesson, no numbers, Tim's go) |
 | 4 | Short | The Opening Move Traps Most Traders | Remake of the 3,406-view FB hook on a real chart |
 | 5 | Short | 2 Trades, Then I'm Done | The daily trade cap and why it protects the account |
 | 6 | Short | Prop Firm Rule Most Traders Miss | Trailing drawdown explained in 30 s |
@@ -210,7 +210,7 @@ End every long-form with Tim's sign-off: "Define your risk, wait for your setup.
 ### Channel setup checklist (Tim, week 1)
 - [ ] Rename the channel to **Defined Risk Trading** and claim the handle **@definedrisktrading** (Blotato shows it as "Timothy Williams (Defined Risk Trading)").
 - [ ] Profile photo = same DRT logo as IG/TikTok.
-- [ ] Banner (2560x1440, safe area 1546x423): "ES futures. Defined risk. NY session only." DRT can render one with PIL on request.
+- [ ] Banner (2560x1440, safe area 1546x423): "ES futures. Defined risk. Primarily NY session." DRT can render one with PIL on request.
 - [ ] About section: who it's for, what Tim teaches, upload schedule ("Daily Shorts, new breakdown every Sunday"), and the risk disclaimer.
 - [ ] Links: TradingView affiliate (once approved), Skool (waitlist or free tier only, while the cohort is closed), Instagram, TikTok.
 - [ ] Playlists: the 6 from section 2.

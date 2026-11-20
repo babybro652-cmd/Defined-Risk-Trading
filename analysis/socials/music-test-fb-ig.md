@@ -38,3 +38,5 @@ return no views (a sync gap, not zero).
 | 2026-11-19 | 12:30 PM | Instagram reel | 7182057 | Education text cards over a moving drawn chart, light palette (size an ES trade from the stop in 3 steps, ES vs MES) | music | cliff_road_chill | | |
 | 2026-11-19 | 8:12 PM | Facebook reel | 7221518 | Lifestyle reel, rendered moving drawn chart, warm dark palette (building something my son will inherit) | music | sugar_and_coffee | | |
 | 2026-11-20 | 12:30 PM | Instagram reel | 7238301 | Education text cards over a moving drawn chart, light palette (ES session map: Asia, London, New York in ET) | music | soft_as_a_dry_pillow | | |
+| 2026-11-20 | 5:55 AM | Instagram reel | d671b94b-4a94-4828-ae80-c97a06f53edb | Trade reel, Tim's screen recording (25K eval long 1 ES, +12 pts, Tim approved, posted now) | music | old_key | | |
+| 2026-11-20 | 5:55 AM | Facebook reel | e916eba5-070f-44bd-bc60-f1b14e4cb168 | Trade reel, Tim's screen recording (25K eval long 1 ES, +12 pts, Tim approved, posted now) | music | old_key | | |

@@ -167,7 +167,7 @@ What to record (phone screen recording of TradingView, 30-60 s, no setup, no tal
 Weekly ask: **2 lunch-chart clips + 1 night review + 1 reply video = about 20 minutes.** ("why I passed" dropped 11/18)
 Jarvis does the rest (privacy crop, captions, music, all platforms). One recording fills 3-4 slots (TT, IG, FB, YT Short).
 Voice: when Tim talks, Jarvis uses his words only. With no reason given, the cut shows the chart and the fixed rules
-(NY only, wait for the label, 3.5-4 pt hard stop from entry) and nothing else.
+(primarily NY session, always looking for my setup, wait for the label, 3.5-4 pt hard stop from entry) and nothing else.
 
 ### 3. Give people a reason to comment, and answer them
 Why: 0 captions ask the viewer anything; comments only come from trade twists; TikTok replies are unchecked since 11/11.

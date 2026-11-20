@@ -286,7 +286,7 @@ Tim is NOT a single dad (corrected 10/8). Say "dad" or "new dad" only; never "si
 Confirmed fact (Tim, 11/5): he reviews his trades at night after work and after his son's bedtime. OK to use in content.
 
 ## Tim's personal trading rules (restated 10/9, after losing 2 Lucid accounts trading London)
-NY session only (no London, no Asia). No trades before 10 AM ET (Tim, 11/5: if the move happens before 10, he misses it and waits for the next setup). Wait for the label (no early entry). Hard stop 3.5-4 pts.
+Primarily NY session, always looking for my setup (Tim, 11/20; replaces "NY session only"). No trades before 10 AM ET (Tim, 11/5: if the move happens before 10, he misses it and waits for the next setup). Wait for the label (no early entry). Hard stop 3.5-4 pts.
 1-2 good trades, then done. Max $1,000 risk in a day. Clarified by Tim 11/12: more than 2 trades does NOT break the rules as long as the day's max loss stays under $1,000; never call a 3-trade day a rule break. One last reset planned for Thu 10/15.
 Adds (Tim, 10/15): adding contracts to a working position is a confidence scale-in, not risk
 stacking. Don't flag an add as a rule break; judge the stop on the initial entry (3.5-4 pts).
@@ -302,7 +302,7 @@ not in my rules or how I trade." All 3 posts (TikTok, IG, YouTube) were pulled b
 - Any post built from Tim's trade footage may only use reasoning Tim gave in his own words (the
   approved post file, e.g. posts/2026-11-09-trade.md, or this chat). No invented setups, entry
   reasons, targets or "why I sold" lines. If his words don't cover it, show the chart and the rule
-  (3.5-4 pt stop, NY only, wait for the label) and nothing else, or skip the cut.
+  (3.5-4 pt stop, primarily NY session, wait for the label) and nothing else, or skip the cut.
 - Footage cuts and education cuts of real trades: put the caption in front of Tim before
   scheduling until he says otherwise.
 - Before 10 AM (Tim, 11/13): "90% of the time I am just watching. But if my setup shows I take a
