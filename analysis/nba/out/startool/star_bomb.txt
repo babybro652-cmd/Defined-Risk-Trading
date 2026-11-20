@@ -182,3 +182,6 @@
 2026-11-18|UTAH @ LAL|Keyonte George,Luka Doncic|
 2026-11-18|PHX @ SAC|Devin Booker,Darius Acuff Jr.|Jalen Green,Zach LaVine
 2026-11-19|GS @ MEM|Yaxel Lendeborg,Cameron Boozer|Brandin Podziemski,Cedric Coward
+2026-11-19|LAC @ SA|Darius Garland,Victor Wembanyama|Rui Hachimura,De'Aaron Fox
+2026-11-19|NY @ MIN|Jalen Brunson,LaMelo Ball|Karl-Anthony Towns,Ayo Dosunmu
+2026-11-19|POR @ MIL|Deni Avdija,Tyler Herro|Damian Lillard,Jaime Jaquez Jr.

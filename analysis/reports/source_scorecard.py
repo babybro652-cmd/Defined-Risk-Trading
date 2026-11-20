@@ -12,7 +12,7 @@ import csv, json, re, subprocess, collections, unicodedata
 
 R = '/home/user/Defined-Risk-Trading'
 COMMITS = {'2026-11-04': 'ea0de84', '2026-11-05': 'a3b7043', '2026-11-06': '9799f9f', '2026-11-07': '08379c3',
-           '2026-11-08': 'eceed10', '2026-11-09': '3a8cef7', '2026-11-11': '5810317', '2026-11-12': 'f2dbf81', '2026-11-13': '2b2ac63', '2026-11-14': 'd5fc33e', '2026-11-15': 'ae974ef', '2026-11-16': 'e332b63', '2026-11-17': '5ac9192', '2026-11-18': '92b0ac4'}
+           '2026-11-08': 'eceed10', '2026-11-09': '3a8cef7', '2026-11-11': '5810317', '2026-11-12': 'f2dbf81', '2026-11-13': '2b2ac63', '2026-11-14': 'd5fc33e', '2026-11-15': 'ae974ef', '2026-11-16': 'e332b63', '2026-11-17': '5ac9192', '2026-11-18': '92b0ac4', '2026-11-19': '835095d'}
 
 
 def norm(n):
@@ -75,6 +75,7 @@ ST_TIP = {
                 ('LAL','MIL'):(58,42),('BKN','NO'):(59,41),('ORL','UTAH'):(79,21),('GS','HOU'):(36,64),('OKC','POR'):(34,66)},
  '2026-11-12': {('TOR','PHI'):(67,33),('DAL','MIN'):(36,64),('CHA','PHX'):(59,41)},   # DET @ WSH card did not load
  '2026-11-17': {('NY','TOR'):(40,60),('POR','MIN'):(53,47),('DET','SA'):(25,75),('CHA','LAL'):(28,72)},   # UTAH @ LAC tip 'loading'
+ '2026-11-19': {('GS','MEM'):(37,63),('POR','MIL'):(61,39),('NY','MIN'):(44,56),('LAC','SA'):(11,89)},
  '2026-11-18': {('MEM','CLE'):(32,68),('HOU','IND'):(32,68),('MIL','MIA'):(32,68),('PHI','ORL'):(31,69),('CHI','BKN'):(30,70),('WSH','TOR'):(51,49),
                 ('DET','NO'):(69,31),('ATL','OKC'):(48,52),('GS','DAL'):(48,52),('BOS','DEN'):(50,50),('PHX','SAC'):(33,67)},   # UTAH @ LAL tip 'loading'
  '2026-11-16': {('ORL','BOS'):(66,34),('MEM','WSH'):(33,67),('PHI','BKN'):(51,49),('HOU','MIA'):(30,70),
@@ -89,7 +90,7 @@ ST_TIP = {
 ST = {}
 for line in open(R + '/analysis/nba/out/startool/star_bomb.txt'):
     d, game, stars, bombs = line.rstrip('\n').split('|')[:4]
-    if d not in COMMITS or d in ('2026-11-11', '2026-11-12', '2026-11-13', '2026-11-14', '2026-11-15', '2026-11-16', '2026-11-17', '2026-11-18'):
+    if d not in COMMITS or d in ('2026-11-11', '2026-11-12', '2026-11-13', '2026-11-14', '2026-11-15', '2026-11-16', '2026-11-17', '2026-11-18', '2026-11-19'):
         continue
     a, h = [x.strip() for x in game.split('@')]
     s, b = stars.split(','), (bombs.split(',') if bombs else ['', ''])
@@ -207,6 +208,15 @@ ST_PCT_1117 = {  # DET card lists D. Robinson (OUT); CHA@LAL card lists Kessler 
     'LAC': [('Darius Garland',18),('Rui Hachimura',10),('Derrick Jones Jr.',9),('Kris Dunn',7),('Isaiah Jackson',6)],
     'CHA': [('Brandon Miller',14),('Coby White',11),('Naz Reid',10),('Moussa Diabate',5),('Sion James',3)],
     'LAL': [('Luka Doncic',26),('Walker Kessler',11),('Quentin Grimes',9),('Jake LaRavia',6),('Matisse Thybulle',5)]}
+ST_PCT_1119 = {  # GS card lists Bassey, Green (OUT), Cryer; MEM card lists Edey (OUT); SA card lists Harper over Champagnie
+    'GS': [('Yaxel Lendeborg',16),('Brandin Podziemski',11),('Charles Bassey',6),('Draymond Green',6),('LJ Cryer',6)],
+    'MEM': [('Cameron Boozer',14),('Cedric Coward',12),('Jaylen Wells',11),('Cam Spencer',10),('Zach Edey',8)],
+    'LAC': [('Darius Garland',14),('Rui Hachimura',8),('Derrick Jones Jr.',7),('Isaiah Jackson',5),('Kris Dunn',5)],
+    'SA': [('Victor Wembanyama',19),("De'Aaron Fox",12),('Stephon Castle',12),('Devin Vassell',10),('Dylan Harper',10)],
+    'NY': [('Jalen Brunson',14),('Karl-Anthony Towns',11),('OG Anunoby',9),('Mikal Bridges',7),('Josh Hart',6)],
+    'MIN': [('LaMelo Ball',14),('Ayo Dosunmu',11),('Jaden McDaniels',11),('Jonathan Kuminga',9),('Rudy Gobert',8)],
+    'POR': [('Deni Avdija',14),('Damian Lillard',12),('Donovan Clingan',8),('Toumani Camara',8),('Sidy Cissoko',3)],
+    'MIL': [('Tyler Herro',16),('Jaime Jaquez Jr.',12),('Kyle Kuzma',10),('Myles Turner',9),('Brayden Burries',8)]}
 ST_PCT_1118 = {  # PHI card lists Jaylen Brown (OUT); MIL card lists Jaquez and Turner (RotoWire: Sims, no Jaquez); UTAH@LAL no labels, baseline
     'MEM': [('Cameron Boozer',11),('Cedric Coward',9),('Jaylen Wells',8),('Cam Spencer',7),('Zach Edey',6)],
     'CLE': [('Donovan Mitchell',18),('James Harden',15),('Peyton Watson',11),('Jarrett Allen',10),('Tyrese Proctor',5)],
@@ -233,7 +243,7 @@ ST_PCT_1118 = {  # PHI card lists Jaylen Brown (OUT); MIL card lists Jaquez and 
     'PHX': [('Devin Booker',14),('Dillon Brooks',10),('Jalen Green',10),('Miles Bridges',9),('Oso Ighodaro',4)],
     'SAC': [('Darius Acuff Jr.',17),('Zach LaVine',12),('Domantas Sabonis',9),("De'Andre Hunter",8),('Keegan Murray',8)],
 }
-for d, tab in (('2026-11-09', ST_PCT_0911), ('2026-11-11', ST_PCT_1111), ('2026-11-12', ST_PCT_1112), ('2026-11-13', ST_PCT_1113), ('2026-11-14', ST_PCT_1114), ('2026-11-15', ST_PCT_1115), ('2026-11-16', ST_PCT_1116), ('2026-11-17', ST_PCT_1117), ('2026-11-18', ST_PCT_1118)):
+for d, tab in (('2026-11-09', ST_PCT_0911), ('2026-11-11', ST_PCT_1111), ('2026-11-12', ST_PCT_1112), ('2026-11-13', ST_PCT_1113), ('2026-11-14', ST_PCT_1114), ('2026-11-15', ST_PCT_1115), ('2026-11-16', ST_PCT_1116), ('2026-11-17', ST_PCT_1117), ('2026-11-18', ST_PCT_1118), ('2026-11-19', ST_PCT_1119)):
     for tm, v in tab.items():
         ST[(d, tm)] = [(n, p, p) for n, p in v]   # StarTool prints game first basket %; same number ranks team and game
 

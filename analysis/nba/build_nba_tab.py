@@ -65,6 +65,7 @@ V2 = {'w_shot': 0.5,      # share = (1 - w) x first-FG share + w x first-shot sh
 # opening.py caches each game's team first points scorer and the shot-type box (data/opening_<season>.json).
 FP = {'fit_fp': True, 'w_shot3': 0.7, 'k_mix': 30, 'k_fg': 40, 'k_ftr': 100, 'k_fts': 20}
 FB_MODEL = {'name': 'chain'}   # 'fp' = the 11/5 model, 'fg' = the 11/2 model (set by --fb-model)
+JUMPER_RULE = {'name': 'costart'}   # 11/19/26 diagnostic: 'costart' (default) or 'old' (set by --jumper-rule)
 # Chain model (11/5/26 evening, Tim's idea; chain_model.py, backtest_chain.py, README "Model change 11/5/26 (chain)"):
 # the opening is played possession by possession (tip, shooter, make / FT trip, offensive rebound, putback,
 # turnover) until someone scores. Default since 11/5. Needs data/chain_<season>.json (chain_data.py).
@@ -495,9 +496,42 @@ def build(start, log, lineups=None):
         if lu.get('five'):
             starters[tm] = [lineup_pid(tm, n) for n in lu['five']]
 
+    def costart_jumper(tm):
+        """11/19/26 rule (analysis/nba/reports/jumper_test.py, walk-forward 2026-27: 94% vs 81% for the old rule given
+        the five): only players in the projected five; same recency weights; games where every in-five player who has
+        jumped this season also started count x4 (Mara jumps when he starts next to Hartenstein)."""
+        five = set(starters.get(tm, []))
+        mine = sorted((g for g in g_cur_all.values() if g['tip'] and tm in (g['away'], g['home'])),
+                      key=lambda g: g['date'], reverse=True)
+        hist = []
+        for g in mine:
+            f5 = {p[0] for p in g['pl'] if p[1] == tm and p[2]}
+            hist += [(g, pid, f5) for pid, jt in g['tip']['j'] if jt == tm]
+        rivals = {pid for _, pid, _ in hist if pid in five}
+        cands = {}
+        for i, (g, pid, f5) in enumerate(hist):
+            if pid not in five:
+                continue
+            wt = ((3, 2, 1.5)[i] if i < 3 else 1) * (2 if g['type'] == 2 else 1)
+            if len(rivals) > 1 and rivals <= f5:
+                wt *= 4
+            cands[pid] = cands.get(pid, 0) + wt
+        for pid in five:
+            if S(PL, pid)['tips']:
+                cands[pid] = cands.get(pid, 0) + 0.05 * S(PL, pid)['tips']
+        return max(cands, key=cands.get) if cands else None
+
     def main_jumper(tm):
         if lineups.get(tm, {}).get('jumper'):
-            return lineup_pid(tm, lineups[tm]['jumper'])
+            j = lineup_pid(tm, lineups[tm]['jumper'])
+            c = costart_jumper(tm) if lineups[tm].get('five') else None
+            if c and c != j:
+                log(f"jumper check {tm}: lineup file says {roster[j]['name']}, co-start history says {roster[c]['name']}")
+            return j
+        if JUMPER_RULE['name'] == 'costart' and lineups.get(tm, {}).get('five'):
+            c = costart_jumper(tm)
+            if c:
+                return c
         # this season's games (preseason and regular) newest first: weights 3, 2, 1.5, then 1; regular season x2.
         # Last season's tips count 0.05 each for any team, so traded bigs carry over but current roles win.
         ok = lambda pid: (roster.get(pid, {}).get('tm') == tm
@@ -1014,8 +1048,12 @@ def main():
                     help='chain (default since 11/5/26 evening): possession chain; fp: first points incl FT + shot type '
                          '(11/5 morning); fg: the 11/2 first made FG model')
     ap.add_argument('--lineups', help='JSON file of confirmed lineups: {"WSH": {"five": [names], "jumper": name}}')
+    ap.add_argument('--jumper-rule', choices=('costart', 'old'), default='costart',
+                    help='costart (default since 11/19/26): with a lineup five and no jumper named, pick the jumper from '
+                         'the five by co-start tip history; old: this season tip history for any player on the team')
     a = ap.parse_args()
     FB_MODEL['name'] = a.fb_model
+    JUMPER_RULE['name'] = a.jumper_rule
     lu = json.load(open(a.lineups)) if a.lineups else None
     d = dt.date.fromisoformat(a.date) if a.date else dt.datetime.now(ET).date()
     build(d, lambda m: print(m, file=sys.stderr), lu)

@@ -32,6 +32,12 @@ Include the first shot and first score for each game in the grading message to T
    Confirmed lineups (since 10/30): put them in `data/lineups_<date>.json`
    (`{"WSH": {"five": [names as on the ESPN roster], "jumper": "Anthony Davis"}}`) and add
    `--lineups analysis/nba/data/lineups_<date>.json`. Listed teams use those five and that jumper instead of the estimate.
+   Jumper (11/19 diagnostic): leave `"jumper"` out unless a source names who jumps. With a five and no jumper the build
+   picks him from the five by co-start tip history (`--jumper-rule costart`, default; `old` = the earlier rule): 94% right
+   vs 81% for the old rule, walk-forward 2026-27 (`analysis/nba/reports/jumper_test.py`). When a hand-set jumper differs
+   from the co-start pick the build prints "jumper check" on stderr; read it. OKC: Mara jumps whenever he starts next to
+   Hartenstein (5 of 5). RotoWire "expected" fives were wrong in 1 of 3 team-games 11/4-11/19; rerun on the official
+   starting lineups about 30 minutes before tip before anything is placed.
 
    It downloads only new final games (parsed games are cached in `data/games_<season>.json`,
    the schedule in `data/schedule_<season>.json`), then pulls current rosters and ESPN injuries,
@@ -445,6 +451,18 @@ Paired LL deltas on test (SE): kfg_w 1000 -.0000 (.0002), mk_w 10 -.0009 (.0021)
   comes from shot shares and FT trips. With actual starters the backtest #1 hit 15.4% on 188 games vs 16.7% predicted
   (about 1 SE). The live 14% vs about 20% gap is mostly the live #1 being priced higher than the backtest's (projected
   fives, late scratches) plus noise, not stale make rates. Recheck at 400+ games.
+
+## Diagnostic 11/19/26 (Tim: "What's missing?")
+
+Full write-up: `analysis/nba/reports/diagnostic-2026-11-19.md`. Scripts: `analysis/nba/reports/diagnostic.py` (live
+published picks), `diagnostic_bt.py` (walk-forward, actual fives, out-of-sample fix tests), `jumper_test.py`.
+- The model is calibrated: live top 3 hit about what it predicted; with actual fives it is calibrated by bucket and rank.
+- The slump is mostly variance plus lineups: projected fives wrong in 1 of 3 team-games, jumpers wrong 12%.
+- No tested model change beat the chain out of sample (tip shrink, tip-winner edge, flatten/sharpen, recency weight 1/6/10,
+  first-shot share k 20/100, jumper boost 1.0/1.4, team-first share). Recency weight 6 or 10 is worse.
+- The tip 70%+ filter works (top 3 57% vs 38% in 2026-27, actual fives). The model-accuracy exception does not: a team's
+  past top-2 hit rate does not predict its next game (51% at 55%+, 51% under 45%).
+- Tim's prices matched our fair within 3% on average; first basket at book prices is about break-even by our own numbers.
 
 ## Sources
 
