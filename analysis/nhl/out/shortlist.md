@@ -33,9 +33,18 @@
 - No StarTool cards saved for this slate yet. Add lines to out/startool/star_bomb.txt (date|AWAY @ HOME|star,star|bomb,bomb) and rerun.
 
 <!-- parlays:begin -->
-## Parlays --help (2-3 legs, $0.10 to $0.20)
+## Parlays 2026-11-19 (2-3 legs, $0.10 to $0.20)
 
 Only categories that beat their price season to date: NBA 3+ threes, NHL 3+ SOG, NFL receptions, soccer 1+ shot on target. No points overs, no first basket / first goal / anytime goal legs. Fair = product of the leg chances (no correlation boost). Take only at the minimum price or longer (fair with a 10% cushion). Legs from the same game are correlated and marked.
 
-- No qualifying legs today.
+### NBA
+- Not enough qualifying legs.
+
+### NHL
+- **2-leg #1:** Cutter Gauthier 3+ SOG (73%, ANA @ COL) + Matt Boldy 3+ SOG (72%, MIN @ CGY). Fair -113 (53%); take +107 or longer.
+- **2-leg #2:** Cutter Gauthier 3+ SOG (73%, ANA @ COL) + Kirill Kaprizov 3+ SOG (71%, MIN @ CGY). Fair -108 (52%); take +112 or longer.
+- **2-leg #3:** Matt Boldy 3+ SOG (72%, MIN @ CGY) + Jason Robertson 3+ SOG (70%, DAL @ VGK). Fair -102 (50%); take +118 or longer.
+- **3-leg #4:** Kirill Kaprizov 3+ SOG (71%, MIN @ CGY) + Jason Robertson 3+ SOG (70%, DAL @ VGK) + Kyle Connor 3+ SOG (70%, NYI @ WPG). Fair +192 (34%); take +221 or longer.
+- **3-leg #5:** Kyle Connor 3+ SOG (70%, NYI @ WPG) + Tage Thompson 3+ SOG (67%, BUF @ WSH) + Leon Draisaitl 3+ SOG (67%, EDM @ TBL). Fair +217 (32%); take +249 or longer.
+
 <!-- parlays:end -->
