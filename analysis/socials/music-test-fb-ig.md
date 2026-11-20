@@ -16,7 +16,7 @@ return no views (a sync gap, not zero).
 | 2026-11-12 | 6:45 PM | Instagram reel | 6852615 | Trade reel (Apex 25K pass, Tim approved) | music | once_more_with_you | 120 (post 9271880, snapshot 11/14) | 1 |
 | 2026-11-12 | 7:15 PM | Facebook reel | 6852625 | Trade reel (Apex 25K pass, Tim approved) | music | once_more_with_you | 32 (post 9273470, snapshot 11/14) | 1 |
 | 2026-11-12 | 8:50 PM | Facebook reel | b45af088-bf04-411f-8b7a-3e95a5133b3d | Lifestyle reel (W-2 as a base, text cards) | music | im_glad_you_are_here | 26 (post 9276350, snapshot 11/14) | 0 |
-| 2026-11-13 | 12:30 PM | Instagram reel | 6885328 | Education text cards + drawn diagram (overnight high sweep vs hold) | music | soft_as_a_dry_pillow | | |
+| 2026-11-13 | 12:30 PM | Instagram reel | 6885328 | Education text cards + drawn diagram (overnight high sweep vs hold) | music | soft_as_a_dry_pillow | 118 (post 9305054, snapshot 11/14, latest Blotato has) | 0 |
 | 2026-11-14 | 5:00 PM | Facebook reel | 6946234 | Education text cards + graphic (prop firm math, 4 pt stop vs $2,000 drawdown) | music | cliff_road_chill | | |
 | 2026-11-14 | 7:15 PM | Instagram reel | 6946302 | Education text cards + graphic (prop firm math, 4 pt stop vs $2,000 drawdown) | music | cliff_road_chill | | |
 | 2026-11-15 | 12:30 PM | Instagram reel | 6971780 | Education text cards + drawn diagram (equal highs, sweep vs breakout) | music | traveling_in_your_mind | | |
@@ -37,3 +37,4 @@ return no views (a sync gap, not zero).
 | 2026-11-18 | 6:00 PM | Instagram reel | 7142199 | Trade reel, Tim's screen recording (paper trade, misread then short to target, Tim approved) | music | static_shoes | | |
 | 2026-11-19 | 12:30 PM | Instagram reel | 7182057 | Education text cards over a moving drawn chart, light palette (size an ES trade from the stop in 3 steps, ES vs MES) | music | cliff_road_chill | | |
 | 2026-11-19 | 8:12 PM | Facebook reel | 7221518 | Lifestyle reel, rendered moving drawn chart, warm dark palette (building something my son will inherit) | music | sugar_and_coffee | | |
+| 2026-11-20 | 12:30 PM | Instagram reel | 7238301 | Education text cards over a moving drawn chart, light palette (ES session map: Asia, London, New York in ET) | music | soft_as_a_dry_pillow | | |
