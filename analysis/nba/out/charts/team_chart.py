@@ -4,7 +4,7 @@ plt.rcParams['text.parse_math']=False
 from matplotlib.patches import FancyBboxPatch
 d=json.load(open('analysis/nba/out/fb_candidates.json'))
 games=[('CHA','ATL','7:00'),('ORL','BKN','7:30'),('IND','CLE','7:30'),('TOR','DET','7:30'),('WSH','CHI','8:00'),('NO','OKC','8:00'),('PHX','UTAH','9:30'),('HOU','DEN','10:00'),('SAC','LAL','10:00')]
-play={'ORL@BKN','IND@CLE','WSH@CHI','NO@OKC','SAC@LAL'}  # 11/20 plan
+play={'ORL@BKN','IND@CLE','NO@OKC','SAC@LAL'}  # 11/20 plan
 def am(p):
     dec=1/p; return ('+%d'%round((dec-1)*100)) if dec>=2 else ('-%d'%round(100/(dec-1)))
 def take(p):
@@ -14,7 +14,7 @@ for r in d: by.setdefault(r['tm'],[]).append(r)
 BG='#0f1420'; CARD='#1a2233'; TXT='#e8ecf3'; MUTED='#9aa4b5'; GOLD='#f5c542'; BLUE='#5aa9ff'; GREEN='#4cd38a'; RED='#ff6b6b'
 fig=plt.figure(figsize=(7.2,14.6),dpi=200); fig.patch.set_facecolor(BG)
 ax=fig.add_axes([0,0,1,1]); ax.set_xlim(0,100); ax.set_ylim(102,306); ax.axis('off')
-ax.text(5,301,'TEAM FIRST BASKET  •  FRI 11/20 (prelim)',color=TXT,fontsize=16,weight='bold',va='center')
+ax.text(5,301,'TEAM FIRST BASKET  •  FRI 11/20 (final)',color=TXT,fontsize=16,weight='bold',va='center')
 ax.text(5,296.6,'Top 2 per team: chance to score his team\'s first points, fair odds, take-at (fair x1.2)',color=MUTED,fontsize=8,va='center')
 ax.text(5,293,'Gold border = tip 70%+ games. Tracking only this week (log FanDuel price), no money',color=GOLD,fontsize=7.6,va='center')
 y=289; h=18.2

@@ -299,20 +299,20 @@
    "note": "91 starts"
   },
   {
-   "player": "Jalen Smith",
-   "team": "CHI",
-   "game": "WSH @ CHI",
-   "market": "3+ threes",
-   "p": 0.233,
-   "note": "34 starts"
-  },
-  {
    "player": "Jeremiah Fears",
    "team": "NO",
    "game": "NO @ OKC",
    "market": "3+ threes",
    "p": 0.124,
    "note": "65 starts"
+  },
+  {
+   "player": "Trey Murphy III",
+   "team": "NO",
+   "game": "NO @ OKC",
+   "market": "3+ threes",
+   "p": 0.516,
+   "note": "75 starts"
   },
   {
    "player": "Saddiq Bey",
