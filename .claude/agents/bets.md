@@ -45,17 +45,17 @@ chats, so read the files below that the task touches before acting.
   points overs (singles only, at a higher alt line), never first basket, first goal or anytime goal. 2-3 legs,
   different games first; say legs from the same game are correlated. Fair = product of leg chances; take only at
   fair with a 10% cushion or longer. Stake $0.10 to $0.20. Log them as "Pick" rows only when Tim asks for parlays.
-- Tim's NBA first basket plan (11/14): he plays the top 2 game first-basket picks per game in cross-game parlays
-  (3- to 5-leg at $0.10, 2-leg at $0.50) plus the top 3 per game as $1 straights. He does not want price checks; he
-  trusts the model. Log these as "Pick" rows each slate (README "Refresh" step 4), track top-3 coverage and P&L by
-  rank in grading (`analysis/reports/top3_coverage.py`). This is his call and overrides the parlay rule above for
-  first basket only; still say plainly that first basket is mostly noise.
-- Tip-edge filter (Tim, 11/14 evening): he only plays games where our tip edge is 70%+. In those games, the top 2 per
-  game go in parlays and the top 3 per game are $1 straights; other games are skipped. The morning refresh builds the
-  play list in game order with this filter (`analysis/nba/README.md`, Refresh step 4).
-- Model-accuracy exception (Tim, 11/15): also play games under 70% tip where our team top-2 first-scorer hit rate is
-  55%+ for both teams (5+ graded games each), or 65%+ for one and average for the other. Details and tracking in
-  `analysis/nba/README.md`, Refresh step 4.
+- Tim's NBA first basket plan (11/20, replaces the 11/14 volume plan and the 11/15 model-accuracy exception):
+  - OUR MODEL is what we trust. StarTool and the cheat sheets are comparison and tracking only: never blend them,
+    never let them change a pick, rank, fair price or the play list. Grade them side by side, nothing more.
+  - Tip-edge filter stays: only games where our tip edge is 70%+. No exception games.
+  - Run the picks about 1 hr before first tip as usual, then RERUN after official lineups (about 30 min before tip)
+    and place only off the rerun. Use the confirmed five and the co-start jumper rule.
+  - Straights only, $0.20 to $0.50, and only at take-at (fair x1.2) or longer. No 3- to 5-leg first basket parlays.
+  - Team first basket: log our top 2 per team plus FanDuel's team first basket price for a week (from 11/20) before
+    any money goes there.
+  - Keep logging the top 3 per game as "Pick" rows and tracking top-3 coverage (`analysis/reports/top3_coverage.py`).
+  - Say plainly that first basket is mostly noise; points, threes and SOG are the steadier plays.
 - -300 rule: skip any prop priced shorter than about -300; offer the next line up (25+ points, 3+ threes, 3+ SOG).
 - NHL anytime goal: our chance = 0.77 x blend (calibrated 10/30); bet only at +150 or longer.
 - UCL / soccer (calibrated 11/4, `analysis/ucl/README.md`): log the shortlist's Est % and Fair, not raw rates.
@@ -79,7 +79,7 @@ chats, so read the files below that the task touches before acting.
   Point Field Goal +2000"). Never log game-level method picks ("DET@NO Free throw"); Tim can't bet them. Methods:
   Dunk, Free Throw, Layup, Other (jumpers, floaters, hooks, tip shots), Three Point Field Goal. Use
   `analysis/nba/method_longshots.py` (README "Method of First Basket longshots"); fair and take-at (fair x1.2).
-- No StarTool blend (Tim rejected it 10/30). Keep StarTool side by side; save star/bomb to
+- No StarTool or cheat sheet blend, ever (Tim 10/30 and 11/20: our model only). Keep them side by side for comparison; save star/bomb to
   `analysis/<sport>/out/startool/star_bomb.txt` and rerun the build for the "agree" flag.
 
 ## Grading

@@ -62,26 +62,20 @@ Include the first shot and first score for each game in the grading message to T
 
 3. Commit `data/` and `out/` so the next run starts from the cache.
 
-4. Log Tim's nightly plan (since 11/14): each game's top 3 game first-basket picks (by game chance in
-   `out/fb_candidates.json`, Out players removed) as $1.00 straights, Placed "Pick", odds blank, with the est % and
-   fair in the text; and, when Tim asks for the combo set, every cross-game parlay of the top 2 per game (2-leg $0.50,
-   3- to 5-leg $0.10). Mark rows with a questionable player "void if sits". Save the list to
-   `out/parlays_<date>.csv` (column `rank` for straights). Write with update_values to explicit A:H rows; never use
-   values.append on the Bets tab (11/14 it detected the table at column G and wrote into J:K). Tim does not want
-   price checks for these; he trusts the model.
-
-   Tip-edge filter (Tim, 11/14 evening): play only games where our tip favorite is 70%+ (jumper vs jumper, after the
-   lineup rerun). In those games: top 2 game first-basket picks per game in cross-game parlays (2-leg $0.50, 3- and
-   4-leg and up $0.10) and the top 3 per game as $1 straights. Skip the other games entirely. Build the play list
-   `out/play_list_<date>.md` in game (tip time) order with the filter applied: per game the tip side and %, the
-   three straights with fair, then the parlays; log only those rows. If a lineup change moves a game across 70%,
-   rebuild the list. Rows dropped after logging stay in Bets with Placed "Dropped", stake 0, and a note.
-   Model-accuracy exception (Tim, 11/15): a game under 70% tip is ALSO played if our model has been good at the
-   picks for that matchup. Test from our logs (top3_log.csv, first_events, Bets grading), season to date: for EACH
-   team in the game, how often the team's first scorer was in our team top 2 (need 5+ graded games for the team).
-   Include the game if both teams are at 55%+ (season average is about 48%), or if one team is 65%+ and the other is
-   at least average. Show the reason on the play list ("tip 66%, model hit CHI 6/9, MIN 5/8"). Track these
-   exception games separately in grading (top-3 coverage and P&L) so we can see if the exception pays.
+4. Log Tim's nightly plan (11/20 rules; replace the 11/14 volume plan and the 11/15 exception):
+   - Our model only. StarTool, the cheat sheets and TipProj are saved and graded for comparison; they never change a
+     pick, rank, fair price or the play list, and are never blended in.
+   - Each game's top 3 game first-basket picks (by game chance in `out/fb_candidates.json`, Out players removed) are
+     logged as Placed "Pick", odds blank, est % and fair in the text, for top-3 tracking.
+   - Play list: only games where our tip favorite is 70%+ (jumper vs jumper). No exception games. Build
+     `out/play_list_<date>.md` in tip-time order: tip side and %, the straights with fair and take-at (fair x1.2).
+   - Timing: first run about 1 hr before first tip; RERUN after official lineups (about 30 min before tip) with the
+     confirmed five and the co-start jumper rule, and rebuild the list if a game crosses 70%. Tim places off the rerun.
+   - Straights only, $0.20 to $0.50, and only at take-at or longer. No first basket parlays.
+   - Team first basket: log top 2 per team plus FanDuel's team first basket price (Tim's board) for a week from
+     11/20; no money there until that sample is reviewed.
+   - Write with update_values to explicit A:H rows; never values.append on the Bets tab. Rows dropped after logging
+     stay with Placed "Dropped", stake 0, and a note.
 
 Grading (nightly): add the date to `COMMITS` in `analysis/reports/source_scorecard.py` (commit of the final
 fb_candidates for that slate), run `python3 analysis/reports/top3_coverage.py <date>` and report top-3 coverage:
