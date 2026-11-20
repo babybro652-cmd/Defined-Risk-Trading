@@ -185,3 +185,12 @@
 2026-11-19|LAC @ SA|Darius Garland,Victor Wembanyama|Rui Hachimura,De'Aaron Fox
 2026-11-19|NY @ MIN|Jalen Brunson,LaMelo Ball|Karl-Anthony Towns,Ayo Dosunmu
 2026-11-19|POR @ MIL|Deni Avdija,Tyler Herro|Damian Lillard,Jaime Jaquez Jr.
+2026-11-20|CHA @ ATL|Brandon Miller,Jalen Johnson|Coby White,Nickeil Alexander-Walker
+2026-11-20|TOR @ DET|Immanuel Quickley,John Collins|Jakob Poeltl,Daniss Jenkins
+2026-11-20|IND @ CLE|Pascal Siakam,Donovan Mitchell|Andrew Nembhard,James Harden
+2026-11-20|ORL @ BKN|Franz Wagner,Michael Porter Jr.|Desmond Bane,Julius Randle
+2026-11-20|NO @ OKC|Zion Williamson,Shai Gilgeous-Alexander|Saddiq Bey,Ajay Mitchell
+2026-11-20|WSH @ CHI|Anthony Davis,Norman Powell|Trae Young,Matas Buzelis
+2026-11-20|PHX @ UTAH|Devin Booker,Keyonte George|Dillon Brooks,Darryn Peterson
+2026-11-20|HOU @ DEN|Kevin Durant,Jamal Murray|Alperen Sengun,Nikola Jokic
+2026-11-20|SAC @ LAL|Darius Acuff Jr.,Luka Doncic|Zach LaVine,Walker Kessler

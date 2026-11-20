@@ -1,0 +1,164 @@
+{
+ "CHA": {
+  "five": [
+   "Coby White",
+   "Brandon Miller",
+   "Sion James",
+   "Naz Reid",
+   "Moussa Diabate"
+  ]
+ },
+ "ATL": {
+  "five": [
+   "Nickeil Alexander-Walker",
+   "Dyson Daniels",
+   "Aaron Wiggins",
+   "Jalen Johnson",
+   "Onyeka Okongwu"
+  ]
+ },
+ "IND": {
+  "five": [
+   "Andrew Nembhard",
+   "Kelly Oubre Jr.",
+   "Aaron Nesmith",
+   "Pascal Siakam",
+   "Ivica Zubac"
+  ]
+ },
+ "CLE": {
+  "five": [
+   "James Harden",
+   "Donovan Mitchell",
+   "Tyrese Proctor",
+   "Peyton Watson",
+   "Jarrett Allen"
+  ]
+ },
+ "TOR": {
+  "five": [
+   "Immanuel Quickley",
+   "Ja'Kobe Walter",
+   "Jamison Battle",
+   "Scottie Barnes",
+   "Jakob Poeltl"
+  ]
+ },
+ "DET": {
+  "five": [
+   "Cade Cunningham",
+   "Daniss Jenkins",
+   "Kevin Huerter",
+   "Ausar Thompson",
+   "John Collins"
+  ]
+ },
+ "ORL": {
+  "five": [
+   "Jalen Suggs",
+   "Anthony Black",
+   "Desmond Bane",
+   "Franz Wagner",
+   "Wendell Carter Jr."
+  ]
+ },
+ "BKN": {
+  "five": [
+   "Nolan Traore",
+   "Egor Demin",
+   "Michael Porter Jr.",
+   "Julius Randle",
+   "Day'Ron Sharpe"
+  ]
+ },
+ "WSH": {
+  "five": [
+   "Trae Young",
+   "Kyshawn George",
+   "AJ Dybantsa",
+   "Anthony Davis",
+   "Alex Sarr"
+  ]
+ },
+ "CHI": {
+  "five": [
+   "Josh Giddey",
+   "Norman Powell",
+   "Isaac Okoro",
+   "Matas Buzelis",
+   "Jalen Smith"
+  ]
+ },
+ "NO": {
+  "five": [
+   "Jeremiah Fears",
+   "Trey Murphy III",
+   "Saddiq Bey",
+   "Zion Williamson",
+   "Yves Missi"
+  ]
+ },
+ "OKC": {
+  "five": [
+   "Shai Gilgeous-Alexander",
+   "Jared McCain",
+   "Ajay Mitchell",
+   "Aday Mara",
+   "Isaiah Hartenstein"
+  ]
+ },
+ "PHX": {
+  "five": [
+   "Devin Booker",
+   "Jalen Green",
+   "Dillon Brooks",
+   "Miles Bridges",
+   "Oso Ighodaro"
+  ]
+ },
+ "UTAH": {
+  "five": [
+   "Keyonte George",
+   "Darryn Peterson",
+   "Josh Green",
+   "Ace Bailey",
+   "Jaxson Hayes"
+  ]
+ },
+ "HOU": {
+  "five": [
+   "Fred VanVleet",
+   "Amen Thompson",
+   "Kevin Durant",
+   "Jabari Smith Jr.",
+   "Alperen Sengun"
+  ]
+ },
+ "DEN": {
+  "five": [
+   "Jamal Murray",
+   "Christian Braun",
+   "Cameron Johnson",
+   "Aaron Gordon",
+   "Nikola Jokic"
+  ]
+ },
+ "SAC": {
+  "five": [
+   "Darius Acuff Jr.",
+   "Zach LaVine",
+   "De'Andre Hunter",
+   "Keegan Murray",
+   "Domantas Sabonis"
+  ]
+ },
+ "LAL": {
+  "five": [
+   "Luka Doncic",
+   "Quentin Grimes",
+   "Matisse Thybulle",
+   "Ziaire Williams",
+   "Walker Kessler"
+  ]
+ }
+}

@@ -3,8 +3,8 @@ import matplotlib.pyplot as plt
 plt.rcParams['text.parse_math']=False
 from matplotlib.patches import FancyBboxPatch
 d=json.load(open('analysis/nba/out/fb_candidates.json'))
-games=[('GS','MEM','8:00'),('POR','MIL','8:00'),('NY','MIN','8:00'),('LAC','SA','8:00')]
-play={'GS@MEM','NY@MIN','LAC@SA'}  # 11/19 $9.40 plan
+games=[('CHA','ATL','7:00'),('ORL','BKN','7:30'),('IND','CLE','7:30'),('TOR','DET','7:30'),('WSH','CHI','8:00'),('NO','OKC','8:00'),('PHX','UTAH','9:30'),('HOU','DEN','10:00'),('SAC','LAL','10:00')]
+play={'ORL@BKN','IND@CLE','WSH@CHI','NO@OKC','SAC@LAL'}  # 11/20 plan
 def am(p):
     dec=1/p; return ('+%d'%round((dec-1)*100)) if dec>=2 else ('-%d'%round(100/(dec-1)))
 def take(p):
@@ -12,11 +12,11 @@ def take(p):
 by={}
 for r in d: by.setdefault(r['tm'],[]).append(r)
 BG='#0f1420'; CARD='#1a2233'; TXT='#e8ecf3'; MUTED='#9aa4b5'; GOLD='#f5c542'; BLUE='#5aa9ff'; GREEN='#4cd38a'; RED='#ff6b6b'
-fig=plt.figure(figsize=(7.2,7.6),dpi=200); fig.patch.set_facecolor(BG)
-ax=fig.add_axes([0,0,1,1]); ax.set_xlim(0,100); ax.set_ylim(200,306); ax.axis('off')
-ax.text(5,301,'TEAM FIRST BASKET  •  THU 11/19 (7 PM)',color=TXT,fontsize=16,weight='bold',va='center')
+fig=plt.figure(figsize=(7.2,14.6),dpi=200); fig.patch.set_facecolor(BG)
+ax=fig.add_axes([0,0,1,1]); ax.set_xlim(0,100); ax.set_ylim(102,306); ax.axis('off')
+ax.text(5,301,'TEAM FIRST BASKET  •  FRI 11/20 (prelim)',color=TXT,fontsize=16,weight='bold',va='center')
 ax.text(5,296.6,'Top 2 per team: chance to score his team\'s first points, fair odds, take-at (fair x1.2)',color=MUTED,fontsize=8,va='center')
-ax.text(5,293,'Gold border = play list (GS@MEM, LAC@SA tip 70%+; NY@MIN exception). Not in the $9.40 plan; $0.20 at take-at only',color=GOLD,fontsize=7.6,va='center')
+ax.text(5,293,'Gold border = tip 70%+ games. Tracking only this week (log FanDuel price), no money',color=GOLD,fontsize=7.6,va='center')
 y=289; h=18.2
 for a,hm,t in games:
     key=f'{a}@{hm}'; on=key in play
@@ -37,7 +37,7 @@ for a,hm,t in games:
     y-=h+1.6
 ax.text(5,y,'Read: chance  •  fair  /  take at. Bet only at the take-at price or longer.',color=MUTED,fontsize=8,va='center')
 ax.text(5,y-4,'Team first basket = first made basket or FT points for that team (FanDuel rules).',color=MUTED,fontsize=8,va='center')
-fig.savefig('analysis/nba/out/charts/team_fb_2026-11-19.png',facecolor=BG)
+fig.savefig('analysis/nba/out/charts/team_fb_2026-11-20.png',facecolor=BG)
 for a,hm,t in games:
     for tm in (a,hm):
         print(tm,[(r['player'],round(r['team_share'],3),r.get('inj')) for r in sorted(by.get(tm,[]),key=lambda r:-r['team_share'])[:2]])
