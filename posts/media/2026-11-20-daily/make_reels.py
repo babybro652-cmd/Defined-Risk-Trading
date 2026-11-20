@@ -24,7 +24,7 @@ ig = []
 ig.append(scene(P, 4.6, day, None, "ES traders: 3 sessions, 1 trading day. Know which one you're in.", start=5.0, hs=68))
 ig.append(scene(P, 5.0, day, "ASIA", "6:00 PM to 3:00 AM ET", "The trading day opens here.", start=6.0, ls=60))
 ig.append(scene(P, 5.0, day, "LONDON", "3:00 AM to 9:30 AM ET", "Overnight trading, before the cash open.", start=7.5, ls=60))
-ig.append(scene(P, 5.2, day, "NEW YORK", "9:30 AM to 4:00 PM ET", "Regular trading hours. The only session I trade.", start=9.0, ls=60))
+ig.append(scene(P, 5.2, day, "NEW YORK", "9:30 AM to 4:00 PM ET", "Regular trading hours. My main session, but I always watch for my setup.", start=9.0, ls=60))
 ig.append(scene(P, 5.0, day, "THE BREAK", "5:00 to 6:00 PM ET, daily.", "Globex is the platform, not a session.", start=10.5, ls=60))
 ig.append(scene(P, 4.2, walk(11, 17, 0.0, 0.05), None, "Know the session before the setup.", "Define your risk. Wait for your setup.", start=7.0))
 render("session-map.mp4", ig)
