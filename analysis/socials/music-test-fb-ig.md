@@ -36,3 +36,4 @@ return no views (a sync gap, not zero).
 | 2026-11-18 | 5:45 PM | Facebook reel | 7142195 | Trade reel, Tim's screen recording (paper trade, misread then short to target, Tim approved) | music | static_shoes | | |
 | 2026-11-18 | 6:00 PM | Instagram reel | 7142199 | Trade reel, Tim's screen recording (paper trade, misread then short to target, Tim approved) | music | static_shoes | | |
 | 2026-11-19 | 12:30 PM | Instagram reel | 7182057 | Education text cards over a moving drawn chart, light palette (size an ES trade from the stop in 3 steps, ES vs MES) | music | cliff_road_chill | | |
+| 2026-11-19 | 8:12 PM | Facebook reel | 7221518 | Lifestyle reel, rendered moving drawn chart, warm dark palette (building something my son will inherit) | music | sugar_and_coffee | | |
