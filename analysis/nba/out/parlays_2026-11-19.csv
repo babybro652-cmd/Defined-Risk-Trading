@@ -1,0 +1,26 @@
+legs,picks,games,p,fair,take,stake,void_if_sits,rank,dropped,method,plan
+1,Yaxel Lendeborg,GS @ MEM,0.1335,+649,+799,0.8,,1,,,9.4
+1,Brandin Podziemski,GS @ MEM,0.1298,+670,+824,0.8,,2,,,9.4
+1,Isaiah Stewart,GS @ MEM,0.1198,+735,+902,0.8,Q,3,,,9.4
+1,Jalen Brunson,NY @ MIN,0.1378,+626,+771,0.8,,1,,,9.4
+1,Karl-Anthony Towns,NY @ MIN,0.1359,+636,+783,0.8,,2,,,9.4
+1,Jaden McDaniels,NY @ MIN,0.1222,+718,+882,0.8,,3,,,9.4
+1,Victor Wembanyama,LAC @ SA,0.2415,+314,+397,0.8,,1,,,9.4
+1,De'Aaron Fox,LAC @ SA,0.1235,+710,+872,0.8,,2,,,9.4
+1,Devin Vassell,LAC @ SA,0.1066,+838,"+1,026",0.8,,3,,,9.4
+2,Yaxel Lendeborg + Jalen Brunson,GS@MEM + NY@MIN,0.0184,"+5,336","+6,423",0.1,,,,,9.4
+2,Yaxel Lendeborg + Karl-Anthony Towns,GS@MEM + NY@MIN,0.01814,"+5,412","+6,514",0.1,,,,,9.4
+2,Brandin Podziemski + Jalen Brunson,GS@MEM + NY@MIN,0.01789,"+5,491","+6,609",0.1,,,,,9.4
+2,Brandin Podziemski + Karl-Anthony Towns,GS@MEM + NY@MIN,0.01764,"+5,569","+6,703",0.1,,,,,9.4
+2,Yaxel Lendeborg + Victor Wembanyama,GS@MEM + LAC@SA,0.03224,"+3,002","+3,622",0.1,,,,,9.4
+2,Yaxel Lendeborg + De'Aaron Fox,GS@MEM + LAC@SA,0.01649,"+5,965","+7,178",0.1,,,,,9.4
+2,Brandin Podziemski + Victor Wembanyama,GS@MEM + LAC@SA,0.03135,"+3,090","+3,728",0.1,,,,,9.4
+2,Brandin Podziemski + De'Aaron Fox,GS@MEM + LAC@SA,0.01603,"+6,138","+7,386",0.1,,,,,9.4
+2,Jalen Brunson + Victor Wembanyama,NY@MIN + LAC@SA,0.03328,"+2,905","+3,506",0.1,,,,,9.4
+2,Jalen Brunson + De'Aaron Fox,NY@MIN + LAC@SA,0.01702,"+5,776","+6,951",0.1,,,,,9.4
+2,Karl-Anthony Towns + Victor Wembanyama,NY@MIN + LAC@SA,0.03282,"+2,947","+3,556",0.1,,,,,9.4
+2,Karl-Anthony Towns + De'Aaron Fox,NY@MIN + LAC@SA,0.01678,"+5,858","+7,050",0.1,,,,,9.4
+1,Victor Wembanyama - Dunk,LAC @ SA,0.0866,"+1,054","+1,285",0.5,,,,Dunk,9.4
+1,LJ Cryer - Three Point Field Goal,GS @ MEM,0.0763,"+1,211","+1,473",0.2,,,,Three Point Field Goal,9.4
+1,Jalen Brunson - Other,NY @ MIN,0.0742,"+1,248","+1,518",0.2,,,,Other,9.4
+1,LaMelo Ball - Three Point Field Goal,NY @ MIN,0.0658,"+1,420","+1,724",0.1,,,,Three Point Field Goal,9.4

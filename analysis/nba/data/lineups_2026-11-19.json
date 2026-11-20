@@ -1,0 +1,10 @@
+{
+ "GS": {"five": ["LJ Cryer", "Brandin Podziemski", "Yaxel Lendeborg", "Gui Santos", "Al Horford"], "jumper": "Al Horford"},
+ "MEM": {"five": ["Cam Spencer", "Cedric Coward", "Jaylen Wells", "Cameron Boozer", "Isaiah Stewart"], "jumper": "Isaiah Stewart"},
+ "POR": {"five": ["Damian Lillard", "Sidy Cissoko", "Toumani Camara", "Deni Avdija", "Donovan Clingan"], "jumper": "Donovan Clingan"},
+ "MIL": {"five": ["Brayden Burries", "Tyler Herro", "Jaime Jaquez Jr.", "Nate Ament", "Jericho Sims"], "jumper": "Jericho Sims"},
+ "NY": {"five": ["Jalen Brunson", "Mikal Bridges", "Josh Hart", "OG Anunoby", "Karl-Anthony Towns"], "jumper": "Karl-Anthony Towns"},
+ "MIN": {"five": ["LaMelo Ball", "Ayo Dosunmu", "Jonathan Kuminga", "Jaden McDaniels", "Rudy Gobert"], "jumper": "Rudy Gobert"},
+ "LAC": {"five": ["Darius Garland", "Kris Dunn", "Derrick Jones Jr.", "Rui Hachimura", "Brook Lopez"], "jumper": "Brook Lopez"},
+ "SA": {"five": ["De'Aaron Fox", "Stephon Castle", "Julian Champagnie", "Devin Vassell", "Victor Wembanyama"], "jumper": "Victor Wembanyama"}
+}

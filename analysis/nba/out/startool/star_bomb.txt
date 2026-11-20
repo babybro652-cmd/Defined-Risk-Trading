@@ -181,3 +181,4 @@
 2026-11-18|BOS @ DEN|Jayson Tatum,Nikola Jokic|Paul George,Jamal Murray
 2026-11-18|UTAH @ LAL|Keyonte George,Luka Doncic|
 2026-11-18|PHX @ SAC|Devin Booker,Darius Acuff Jr.|Jalen Green,Zach LaVine
+2026-11-19|GS @ MEM|Yaxel Lendeborg,Cameron Boozer|Brandin Podziemski,Cedric Coward
