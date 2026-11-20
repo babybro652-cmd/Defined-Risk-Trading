@@ -1,4 +1,4 @@
-# Weekly trade recap, Mon 11/16 to Fri 11/20/2026 (TRADE POST, DRAFT, needs Tim's go; nothing scheduled)
+# Weekly trade recap, Mon 11/16 to Fri 11/20/2026 (TRADE POST, SCHEDULED 11/20 on Tim's "Go")
 
 Routine: DRT Friday recap (prompt in disabled trig_01CgC1RonbscetrWJhFAWLZp), run 11/20 ~5 PM ET. Steps 1-5 only.
 DRT Phone checked ~5 PM: no new 11/20 files after the 5:04 AM recording, so trades #1-#2 only for today.
@@ -32,7 +32,16 @@ home screen or photos; no indicator names (VMap table on the eval clip covered b
 every number matches the table; paper labeled on every paper frame; no AMD/CRT; no stop mention for #1.
 isAiGenerated: true on TikTok (rendered cards + footage, per the recap prompt).
 
-## Planned times (ET, pending Tim's go; 5:30 PM default will have passed)
+## Scheduled (Tim: "Go", 11/20; all 4 confirmed in blotato_list_schedules; hosted copies sha256 f69fa79f... match local)
+| Time ET | Platform | Schedule id | Submission id |
+|---|---|---|---|
+| 7:00 PM | Facebook reel 50185 (page 993318963868124) | 7268234 | 1190a0a1-8176-41b9-81b0-76f3e0056c3a |
+| 8:00 PM | TikTok DRT 58063 (normal post, not draft) | 7268235 | f9162bfb-af54-4a9c-b4c2-2fee1738abc0 |
+| 8:30 PM | Instagram reel 68887 | 7268236 | a5ff719b-5714-4ba9-b93a-72e896572141 |
+| 9:00 PM | TikTok personal 59764 | 7268237 | 92aa926d-9c3e-4fff-90cc-9b0a9cb8e7c6 |
+FB/IG rows added to analysis/socials/music-test-fb-ig.md.
+
+## Planned times (as proposed)
 FB 7:00 PM (00:00Z 11/21), TikTok DRT 8:00 PM (01:00Z), IG reel 8:30 PM (01:30Z), personal TikTok 9:00 PM (02:00Z).
 No other schedules queued tonight. Trending-audio draft option available for the DRT TikTok (no draft flow used this week).
 
@@ -66,7 +75,7 @@ Paper, eval or funded: which one do you take most seriously?
 ```
 Monday started on paper: a long on 2 ES for +$500.
 
-Tuesday was day 1 on a funded account. The Asian session gave me a 3.5 point loss and a 2 point win, London was where I tried out my strategy, and by the close the account sat $100 higher.
+Tuesday was day 1 on a funded account. The Asian session gave me a 3.5 point loss and a 2 point win. London was where I tried out my strategy, and by the close the account sat $100 higher.
 
 Wednesday went back to paper. I read the direction wrong on the first entry and took a 4 point stop, -$400. The next short ran 10.25 points to my target for +$1,025.
 

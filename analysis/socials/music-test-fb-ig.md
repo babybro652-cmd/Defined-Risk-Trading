@@ -40,3 +40,5 @@ return no views (a sync gap, not zero).
 | 2026-11-20 | 12:30 PM | Instagram reel | 7238301 | Education text cards over a moving drawn chart, light palette (ES session map: Asia, London, New York in ET) | music | soft_as_a_dry_pillow | | |
 | 2026-11-20 | 5:55 AM | Instagram reel | d671b94b-4a94-4828-ae80-c97a06f53edb | Trade reel, Tim's screen recording (25K eval long 1 ES, +12 pts, Tim approved, posted now) | music | old_key | | |
 | 2026-11-20 | 5:55 AM | Facebook reel | e916eba5-070f-44bd-bc60-f1b14e4cb168 | Trade reel, Tim's screen recording (25K eval long 1 ES, +12 pts, Tim approved, posted now) | music | old_key | | |
+| 2026-11-20 | 7:00 PM | Facebook reel | 7268234 (sub 1190a0a1-8176-41b9-81b0-76f3e0056c3a) | Weekly trade recap reel, Tim's footage + rendered cards (Tim approved) | music | im_glad_you_are_here | | |
+| 2026-11-20 | 8:30 PM | Instagram reel | 7268236 (sub a5ff719b-5714-4ba9-b93a-72e896572141) | Weekly trade recap reel, Tim's footage + rendered cards (Tim approved) | music | im_glad_you_are_here | | |
