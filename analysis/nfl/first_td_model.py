@@ -281,9 +281,11 @@ class State:
             self.team_recent[t].append(recent.get(t, {}))
 
 
-def candidates(st, team, active, starter_qb=None):
+def candidates(st, team, active, starter_qb=None, lead_rb=None):
     """active: list of (pid, pos). Returns rows with shares adjusted for out regulars, by position.
-    starter_qb: the expected starting QB (live); in the backtest the QB with the most snaps that game."""
+    starter_qb: the expected starting QB (live); in the backtest the QB with the most snaps that game.
+    lead_rb: live only (11/21/26). The next-up RB on the depth chart when the lead RB is out: his usage rises to 85% of
+    the vacated RB usage (or stays at his own if higher), the rest is split pro rata. None keeps the old split (backtest)."""
     rows = []
     for pid, pos in active:
         if pos not in SKILL:
@@ -304,11 +306,24 @@ def candidates(st, team, active, starter_qb=None):
                 top = next((r for r in grp if r['pid'] == starter_qb), None) or max(grp, key=lambda r: r['snap'])
                 top[key] += vac
                 continue
+            lead = next((r for r in grp if r['pid'] == lead_rb), None) if pos == 'RB' else None
+            if lead is not None and vac > 0 and lead[key] < 0.85 * vac:
+                add = 0.85 * vac - lead[key]
+                lead[key] += add
+                s = sum(r[key] for r in grp if r is not lead)
+                for r in grp:
+                    if r is not lead and s > 0:
+                        r[key] *= min(2.0, 1 + (vac - add) / s)
+                continue
             s = sum(r[key] for r in grp)
             if s > 0 and vac > 0:
                 k = min(2.0, 1 + vac / s)
                 for r in grp:
                     r[key] *= k
+    lead = next((r for r in rows if r['pid'] == lead_rb and r['pos'] == 'RB'), None)
+    if lead is not None:
+        vs = sum(st.player_feats(pid, pos)['snap'] for pid, pos in out if pos == 'RB')
+        lead['snap'] = min(0.8, max(lead['snap'], 0.85 * vs))
     for r in rows:
         for key in ('l_td', 'l_rz', 'l_gl', 'l_open', 'l_q1', 'l_tfirst'):
             r[key] = math.log(r[key] + 0.01)

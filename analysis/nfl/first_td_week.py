@@ -116,7 +116,17 @@ def run(season, week, extra_out=(), extra_q=()):
                     continue
                 act.append((gid, pos)); status[gid] = (stt, name)
             starter = qb if qb in status else next((gid for gid, (p, rk) in dep.get(t, {}).items() if p == 'QB' and rk == 1 and gid in status), None)
-            rows = m.candidates(st, t, act, starter)
+            # lead RB out: the top active RB on the depth chart inherits most of his role (11/21/26)
+            reg = st.regulars(t)
+            rbs_reg = [pid for pid, pos in reg.items() if pos == 'RB']
+            top_reg = max(rbs_reg, key=lambda pid: st.player_feats(pid, 'RB')['snap'], default=None)
+            lead_rb = None
+            if top_reg and top_reg not in status:
+                ranked = sorted((rk, gid) for gid, (p, rk) in dep.get(t, {}).items() if p == 'RB' and gid in status)
+                lead_rb = ranked[0][1] if ranked else None
+            rows = m.candidates(st, t, act, starter, lead_rb=lead_rb)
+            if lead_rb:
+                print(f'{t}: lead RB out, {status[lead_rb][1]} takes the lead role', file=sys.stderr)
             sh, oth = m.clogit_probs(wp, m.pmat(rows)) if rows else ([], 1)
             out['teams'][t] = dict(rows=rows, share=list(sh), other=float(oth), status=status, starter=starter)
         pa = min(0.85, max(0.15, 0.5 + st.recv_tend(g['home']) - st.recv_tend(g['away'])))
@@ -175,6 +185,9 @@ def chart(week, res, ts):
     import matplotlib.pyplot as plt
     plt.rcParams['text.parse_math'] = False
     order = {'Thursday': 0, 'Friday': 1, 'Saturday': 2, 'Sunday': 3, 'Monday': 4}
+    # drop games already played (date before today), so Saturday / Sunday reruns show only the games left
+    today = datetime.now().strftime('%Y-%m-%d')
+    res = [o for o in res if o['game']['date'] >= today] or res
     res = sorted(res, key=lambda o: (order.get(o['game']['day'], 5), o['game']['time'], o['game']['game_id']))
     rows, fav_col = [], []
     for o in res:

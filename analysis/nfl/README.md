@@ -169,6 +169,9 @@ Model (`first_td_model.py`; every input uses only earlier games):
 4. Injuries and QB changes: out players are dropped and their usage shares go to active teammates at the same position. The
    expected starting QB (schedule file / depth chart) is the only QB candidate and inherits the QB role. Line moves for QB changes
    flow through the implied total.
+   Live only (11/21/26): when a team's lead RB (top-snap regular RB) is out, the next RB on the depth chart takes 85% of his
+   usage and snaps (or keeps his own if higher), the rest goes pro rata. The old pro-rata split capped at 2x left Emmett Johnson
+   (KC, Walker out) at 11.9%; now 16.0%. Backtest path unchanged (no depth charts there).
 5. Chance = P(team offense first) x share. Fair = 1 / chance. Take-at = fair decimal x1.2.
 
 Backtest (walk-forward, refit before every week, 2025 Weeks 1-18 + 2026 Weeks 1-10, 421 games; full output in

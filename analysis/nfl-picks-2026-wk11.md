@@ -84,3 +84,31 @@ Cook BUF 17.6% (fair +468, take +581), Gibbs DET 16.9% (+493 / +611), Javonte Wi
 Chase Brown 13.2% (+658 / +810), Henry 12.7% (+689 / +847), McCaffrey 12.0% (+731 / +897), Emmett Johnson 11.9% (+737 / +904).
 
 Line moves since Tuesday (small): NYJ @ LAC total up 2 (LAC -3), PIT @ PHI PIT -3.5 (was -4.5), DET -5.5 (was -6.5), CIN @ WSH total 53.5 (+1).
+
+## Saturday afternoon rerun (Sat 11/21 3:30 PM, final first TD)
+
+Built with `python3 analysis/nfl/first_td_week.py --week 11` after refreshing `raw/games.csv` and the depth chart; Week 11 lines
+patched to ESPN's current numbers (DAL -7.5, DET -4.5 / 46.5, KC -15.5, LAC total 42.5, CIN @ WSH 54.5). Chart now drops played
+games (TNF gone). Model fix: when a lead RB is out, the next RB on the depth chart takes 85% of his usage and snaps (was a pro-rata
+split capped at 2x). Emmett Johnson KC 11.9% to 16.0%. Backtest unchanged (live only).
+
+Injury changes since this morning: ARI QB Carson Beck OUT (back; Minshew on IR, Josh Johnson starts, ARI team-first 18%).
+TEN Tyjae Spears to IR (Pollard alone, 10.2%). PIT activated WR Wilson (hand) from IR (Q). Mayfield still Q, coach expects him to start.
+Bowers, McConkey, Waller, Rachaad White still Q. Kincaid doubtful, Ferguson, Addison, Walker out.
+
+| Game | #1 | #2 | #3 |
+|---|---|---|---|
+| ARI @ KC | Emmett Johnson 16.0% +526 / +651 | Rashee Rice 9.3% +976 / +1191 | Travis Kelce 8.4% +1085 / +1322 |
+| BAL @ CAR | Derrick Henry 12.4% +703 / +864 | Chuba Hubbard 12.4% +706 / +867 | Tetairoa McMillan 7.1% +1316 / +1599 |
+| JAX @ NYG | Bhayshul Tuten 9.8% +918 / +1121 | Parker Washington 8.1% +1134 / +1380 | Jakobi Meyers 6.8% +1372 / +1666 |
+| MIA @ BUF | James Cook 17.7% +464 / +577 | Josh Allen 10.6% +843 / +1032 | DJ Moore 9.1% +1005 / +1226 |
+| NO @ CHI | D'Andre Swift 16.2% +516 / +640 | Kyle Monangai 8.6% +1062 / +1295 | Colston Loveland 8.1% +1131 / +1378 |
+| TB @ DET | Jahmyr Gibbs 15.6% +540 / +668 | Bucky Irving 10.6% +841 / +1029 | Amon-Ra St. Brown 9.7% +933 / +1140 |
+| TEN @ DAL | Javonte Williams 16.4% +509 / +630 | Tony Pollard 10.2% +881 / +1077 | CeeDee Lamb 9.9% +909 / +1111 |
+| NYJ @ LAC | Omarion Hampton 10.7% +836 / +1023 | Breece Hall 7.4% +1250 / +1521 | Garrett Wilson 7.4% +1259 / +1531 |
+| LV @ DEN | Jonah Coleman 10.2% +884 / +1081 | RJ Harvey 9.3% +975 / +1190 | J.K. Dobbins 8.6% +1057 / +1288 |
+| PIT @ PHI | Jaylen Warren 11.3% +786 / +963 | Rico Dowdle 10.1% +891 / +1089 | Saquon Barkley 8.6% +1066 / +1300 |
+| MIN @ SF | Christian McCaffrey 12.0% +731 / +897 | Justin Jefferson 7.4% +1258 / +1530 | Aaron Jones 7.3% +1266 / +1540 |
+| CIN @ WSH (Mon) | Chase Brown 13.1% +666 / +819 | Ja'Marr Chase 11.4% +778 / +954 | Tee Higgins 9.0% +1017 / +1240 |
+
+(chance, fair / take-at). Bet only at take-at or longer, $0.20 to $0.50. Rerun Sunday after inactives (90 min before kickoff).
