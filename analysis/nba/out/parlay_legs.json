@@ -3,6 +3,14 @@
  "sport": "NBA",
  "legs": [
   {
+   "player": "Ryan Rollins",
+   "team": "MIL",
+   "game": "MIL @ PHI",
+   "market": "3+ threes",
+   "p": 0.432,
+   "note": "74 starts"
+  },
+  {
    "player": "Tyler Herro",
    "team": "MIL",
    "game": "MIL @ PHI",
