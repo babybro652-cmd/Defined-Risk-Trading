@@ -17,8 +17,8 @@ return no views (a sync gap, not zero).
 | 2026-11-12 | 7:15 PM | Facebook reel | 6852625 | Trade reel (Apex 25K pass, Tim approved) | music | once_more_with_you | 32 (post 9273470, snapshot 11/14) | 1 |
 | 2026-11-12 | 8:50 PM | Facebook reel | b45af088-bf04-411f-8b7a-3e95a5133b3d | Lifestyle reel (W-2 as a base, text cards) | music | im_glad_you_are_here | 26 (post 9276350, snapshot 11/14) | 0 |
 | 2026-11-13 | 12:30 PM | Instagram reel | 6885328 | Education text cards + drawn diagram (overnight high sweep vs hold) | music | soft_as_a_dry_pillow | 118 (post 9305054, snapshot 11/14, latest Blotato has) | 0 |
-| 2026-11-14 | 5:00 PM | Facebook reel | 6946234 | Education text cards + graphic (prop firm math, 4 pt stop vs $2,000 drawdown) | music | cliff_road_chill | | |
-| 2026-11-14 | 7:15 PM | Instagram reel | 6946302 | Education text cards + graphic (prop firm math, 4 pt stop vs $2,000 drawdown) | music | cliff_road_chill | | |
+| 2026-11-14 | 5:00 PM | Facebook reel | 6946234 | Education text cards + graphic (prop firm math, 4 pt stop vs $2,000 drawdown) | music | cliff_road_chill | 198 (post 9358709, snapshot 11/15, latest Blotato has) | 1 |
+| 2026-11-14 | 7:15 PM | Instagram reel | 6946302 | Education text cards + graphic (prop firm math, 4 pt stop vs $2,000 drawdown) | music | cliff_road_chill | 108 (post 9363096, snapshot 11/16, latest Blotato has) | 0 |
 | 2026-11-15 | 12:30 PM | Instagram reel | 6971780 | Education text cards + drawn diagram (equal highs, sweep vs breakout) | music | traveling_in_your_mind | | |
 | 2026-11-15 | 5:00 PM | Facebook reel | 6971781 | Lifestyle text cards (night review after son's bedtime) | music | waiting_tttt | | |
 | 2026-11-16 | 12:30 PM | Instagram reel | 7020926 | Education text cards (wait for confirmation, early entries) | music | this_pain_is_soft | | |
@@ -42,3 +42,5 @@ return no views (a sync gap, not zero).
 | 2026-11-20 | 5:55 AM | Facebook reel | e916eba5-070f-44bd-bc60-f1b14e4cb168 | Trade reel, Tim's screen recording (25K eval long 1 ES, +12 pts, Tim approved, posted now) | music | old_key | | |
 | 2026-11-20 | 7:00 PM | Facebook reel | 7268234 (sub 1190a0a1-8176-41b9-81b0-76f3e0056c3a) | Weekly trade recap reel, Tim's footage + rendered cards (Tim approved) | music | im_glad_you_are_here | | |
 | 2026-11-20 | 8:30 PM | Instagram reel | 7268236 (sub a5ff719b-5714-4ba9-b93a-72e896572141) | Weekly trade recap reel, Tim's footage + rendered cards (Tim approved) | music | im_glad_you_are_here | | |
+| 2026-11-21 | 12:30 PM | Instagram reel | 7300272 | Education text cards over a moving drawn chart, light palette (4 pt stop / 8 pt target break-even math) | music | coexistenz | | |
+| 2026-11-21 | 5:00 PM | Facebook reel | 7300275 | Lifestyle reel, rendered moving drawn chart, slate palette (full-time job, lunch window with a hard end) | music | waiting_tttt | | |
