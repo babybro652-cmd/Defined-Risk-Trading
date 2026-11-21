@@ -1,0 +1,85 @@
+NFL first scoring play model backtest (walk-forward, 2024 Wk 8 to 2026 Wk 10, n=587 games)
+Refit before every week on earlier weeks only (training from 2024 Week 4). Lines = nflverse closing spread / total.
+
+First score type: TD 59.5%, FG 40.2%, safety 0.3%, no score 0.0%
+Spread favorite scored first: 333/585 (56.9%)
+
+== All seasons (587 games) ==
+6-way log loss: model 1.3596 | B1 spread 1.3781 | B2 spread+total 1.3736  (lower is better)
+6-way Brier:    model 0.7269 | B1 spread 0.7361 | B2 spread+total 0.7337
+Any FG first: actual 40.2%, model avg 40.5%; binary log loss model 0.6717 vs B2 0.6740
+Any TD first: actual 59.5%, model avg 58.9%; binary log loss model 0.6728 vs B2 0.6750
+Home scores first: log loss model 0.6732 vs spread 0.6818
+Top outcome hit: model 213/587 (36.3%), B2 208 (35.4%)
+
+== 2024 (165 games) ==
+6-way log loss: model 1.3453 | B1 spread 1.3785 | B2 spread+total 1.3772  (lower is better)
+6-way Brier:    model 0.7146 | B1 spread 0.7317 | B2 spread+total 0.7308
+Any FG first: actual 37.0%, model avg 40.9%; binary log loss model 0.6587 vs B2 0.6631
+Any TD first: actual 62.4%, model avg 58.4%; binary log loss model 0.6621 vs B2 0.6664
+Home scores first: log loss model 0.6634 vs spread 0.6811
+Top outcome hit: model 66/165 (40.0%), B2 59 (35.8%)
+
+== 2025 (272 games) ==
+6-way log loss: model 1.3663 | B1 spread 1.3838 | B2 spread+total 1.3781  (lower is better)
+6-way Brier:    model 0.7308 | B1 spread 0.7386 | B2 spread+total 0.7355
+Any FG first: actual 40.8%, model avg 40.5%; binary log loss model 0.6703 vs B2 0.6751
+Any TD first: actual 58.8%, model avg 58.9%; binary log loss model 0.6708 vs B2 0.6756
+Home scores first: log loss model 0.6757 vs spread 0.6841
+Top outcome hit: model 97/272 (35.7%), B2 99 (36.4%)
+
+== 2026 (150 games) ==
+6-way log loss: model 1.3632 | B1 spread 1.3675 | B2 spread+total 1.3617  (lower is better)
+6-way Brier:    model 0.7333 | B1 spread 0.7363 | B2 spread+total 0.7335
+Any FG first: actual 42.7%, model avg 40.2%; binary log loss model 0.6884 vs B2 0.6839
+Any TD first: actual 57.3%, model avg 59.3%; binary log loss model 0.6880 vs B2 0.6834
+Home scores first: log loss model 0.6794 vs spread 0.6783
+Top outcome hit: model 50/150 (33.3%), B2 50 (33.3%)
+
+Calibration, Team TD first (predicted / actual):
+  bucket       model n  pred / act        B2 n  pred / act
+  0-10%            2   8.9% /  0.0%
+  10-15%          27  13.6% / 18.5%         3  13.9% /  0.0%
+  15-20%         117  18.0% / 18.8%        49  17.9% / 18.4%
+  20-25%         224  22.7% / 21.4%       188  23.0% / 21.3%
+  25-30%         245  27.4% / 25.3%       364  27.3% / 26.9%
+  30-35%         275  32.6% / 33.8%       347  32.6% / 31.7%
+  35-40%         176  37.4% / 39.8%       170  36.9% / 38.8%
+  40-50%         102  43.5% / 45.1%        53  42.1% / 49.1%
+  50%+             6  53.2% / 50.0%
+
+Calibration, Team FG first (predicted / actual):
+  bucket       model n  pred / act        B2 n  pred / act
+  0-10%            1   9.1% /  0.0%
+  10-15%          33  14.1% / 12.1%        24  14.1% / 20.8%
+  15-20%         559  18.1% / 18.2%       602  18.2% / 19.6%
+  20-25%         492  22.0% / 21.1%       538  21.8% / 20.8%
+  25-30%          84  26.6% / 27.4%        10  26.4% / 10.0%
+  30-35%           4  30.8% / 75.0%
+  35-40%           1  36.4% /  0.0%
+
+Calibration, All 4 team outcomes (predicted / actual):
+  bucket       model n  pred / act        B2 n  pred / act
+  0-10%            3   9.0% /  0.0%
+  10-15%          60  13.9% / 15.0%        27  14.1% / 18.5%
+  15-20%         676  18.0% / 18.3%       651  18.2% / 19.5%
+  20-25%         716  22.2% / 21.2%       726  22.1% / 20.9%
+  25-30%         329  27.2% / 25.8%       374  27.2% / 26.5%
+  30-35%         279  32.5% / 34.4%       347  32.6% / 31.7%
+  35-40%         177  37.4% / 39.5%       170  36.9% / 38.8%
+  40-50%         102  43.5% / 45.1%        53  42.1% / 49.1%
+  50%+             6  53.2% / 50.0%
+
+Safety first: predicted avg 0.58%, actual 0.34%
+
+Simulated ROI (NO historical first scoring play prices available). Book = B2 baseline chance with a 1.18 overround (proportional hold), roughly how FanDuel prices this market. $1 per bet.
+  take-at (our p x price >= 1.2): FG 6 bets, 2 won, +3.9 units (+64.7%); TD 9 bets, 4 won, +2.9 units (+32.6%); all 15 bets, 6 won, +6.8 units (+45.5%)
+  any edge (our p x price >= 1.0): FG 167 bets, 41 won, +14.6 units (+8.8%); TD 67 bets, 30 won, +14.3 units (+21.4%); all 234 bets, 71 won, +29.0 units (+12.4%)
+  reference, bet every team outcome at that book: 2348 bets, -14.6% (the hold)
+  2024: edge 1.0: 143 bets +14.4% (FG 86 bets +15.5%); edge 1.1: 54 bets +39.0% (FG 27 bets +31.9%); edge 1.2: 15 bets +45.5% (FG 6 bets +64.7%)
+  2025: edge 1.0: 74 bets +12.6% (FG 64 bets +3.5%); edge 1.1: 11 bets -6.7% (FG 11 bets -6.7%); edge 1.2: 0 bets
+  2026: edge 1.0: 17 bets -5.5% (FG 17 bets -5.5%); edge 1.1: 3 bets +172.7% (FG 3 bets +172.7%); edge 1.2: 0 bets
+
+FG model weights (last fit): const -1.266, d1 +0.055, d2 +0.012, ln_imp +0.780, fg_off -0.031, fg_def +0.005, stall_off +0.091, stall_def -0.112, kick_oe +0.167, dome +0.133, off -0.076, dfn +0.141
+TD drive weights (last fit): const -1.211, d1 +0.049, d2 +0.146, ln_imp +1.799, off +0.266, dfn +0.150, open_off +0.062, open_def +0.054
+League per-drive rates: opponent TD 0.95%, safety 0.19%

@@ -197,3 +197,49 @@ games lose every player first TD bet (model average 4.8%, shown as "No off. TD" 
 Read: a top pick is about 15-18% (fair +450 to +570). Even the best model hits the top-3 about 1 game in 3. Value is only in
 prices at take-at or longer. Small stakes. Backtest caveats: active players = those who played (live uses injuries and the
 depth chart), lines are nflverse closing lines, 2026 sample is 10 weeks.
+
+## First scoring play model (11/21/26)
+
+FanDuel "First Scoring Play": team + type ("LSU Field Goal", "KC Touchdown", "Safety"). TD = any TD by that team (offense,
+defense or return). Files: `first_score_model.py` (data build + model + backtest), `first_score_week.py` (live prices + chart).
+
+Weekly steps (after `first_td_data.py --download`):
+
+```
+python3 analysis/nfl/first_score_model.py build       # data/fs_drives.csv (drive results, red zone, FG tries), data/fs_games.csv (first score team + type)
+python3 analysis/nfl/first_score_week.py --week 11    # out/first_score_wk11.csv/.json + out/charts/first_score_wk11.png
+python3 analysis/nfl/first_score_model.py backtest    # out/first_score_backtest.txt/.json
+```
+
+Model: the first TD drive chain, with each drive ending in own TD, made FG, opponent TD (pick six, return), safety or nothing.
+- Offensive TD chance: the first TD ridge logistic, unchanged.
+- FG chance given no TD: ridge logistic on implied team total, team FG rate per non-TD drive and opponent's allowed (shrunk,
+  decayed), red-zone stall rate (FG share of scoring red-zone trips, offense and defense), team kicking over expected (makes
+  minus distance-based expected), dome / closed roof, team TD terms, drive 1 / 2. Only the implied total carries much weight;
+  kicking, dome and stall terms are small.
+- Opponent TD 0.95% and safety 0.19% per drive (league rates). Kickoff 50/50 plus receive habit; second half flips.
+- Fair = 1 / chance, take-at = fair decimal x1.2.
+
+Base rates 2024-26 (694 games): first score TD 59%, FG 40%, safety 0.3%; spread favorite scored first 57%.
+
+Backtest (walk-forward, refit weekly, 2024 Wk 8 to 2026 Wk 10, 587 games). B1 = spread logistic x league type split;
+B2 = B1 plus implied-total logistic for TD vs FG.
+
+| 6-way log loss (lower better) | Model | B1 spread | B2 spread+total |
+|---|---|---|---|
+| All 587 | **1.3596** | 1.3781 | 1.3736 |
+| 2024 (165) | **1.3453** | 1.3785 | 1.3772 |
+| 2025 (272) | **1.3663** | 1.3838 | 1.3781 |
+| 2026 (150) | 1.3632 | 1.3675 | **1.3617** |
+
+Brier follows the same order (all: 0.7269 vs 0.7337 B2). Calibration is good: team outcomes at 15-20% hit 18.3%, 20-25% hit 21.2%,
+30-35% hit 34.4%, 40-50% hit 45.1%. FG predictions sit in a narrow 15-27% band (actual tracks within 1 point), so the model
+separates WHO scores first better than it separates FG from TD. 2026 alone is a wash with B2 (who scores first slightly worse
+than the spread).
+
+ROI is SIMULATED: no historical first scoring play prices exist in our data. Book = B2 chance with an 18% hold. Betting where
+our chance x price >= 1.2 (take-at) found 15 bets, all in 2024 (+6.8 units); 0 in 2025-26. At any edge (>= 1.0): 234 bets,
++12.4% overall but 2026 -5.5% (17 bets). Read: a small, real gain over a line-only model, but rarely a 20% gap vs a line-based
+price. Value only shows if FanDuel prices an outcome long (often FG first). Price check: BET only at take-at or longer, small stakes.
+
+Chart: per game, away/home TD and FG chances with fair and take-at, and "vs spread-only" (our chance / B2). Green = 8%+ above B2.
