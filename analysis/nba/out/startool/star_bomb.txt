@@ -194,3 +194,5 @@
 2026-11-20|PHX @ UTAH|Devin Booker,Keyonte George|Dillon Brooks,Darryn Peterson
 2026-11-20|HOU @ DEN|Kevin Durant,Jamal Murray|Alperen Sengun,Nikola Jokic
 2026-11-20|SAC @ LAL|Darius Acuff Jr.,Luka Doncic|Zach LaVine,Walker Kessler
+2026-11-21|LAC @ DAL|Darius Garland,Kyrie Irving|Rui Hachimura,Cooper Flagg
+2026-11-21|NO @ SA|Zion Williamson,Victor Wembanyama|Saddiq Bey,De'Aaron Fox

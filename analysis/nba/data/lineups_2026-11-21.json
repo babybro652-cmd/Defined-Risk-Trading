@@ -1,0 +1,14 @@
+{
+ "MIL": {"five": ["Brayden Burries", "Tyler Herro", "Kyle Kuzma", "Jericho Sims", "Myles Turner"]},
+ "PHI": {"five": ["Tyrese Maxey", "VJ Edgecombe", "Kentavious Caldwell-Pope", "LeBron James", "Joel Embiid"]},
+ "POR": {"five": ["Damian Lillard", "Sidy Cissoko", "Toumani Camara", "Deni Avdija", "Donovan Clingan"]},
+ "NY": {"five": ["Jalen Brunson", "Mikal Bridges", "Landry Shamet", "Josh Hart", "Karl-Anthony Towns"]},
+ "LAC": {"five": ["Darius Garland", "Max Strus", "Derrick Jones Jr.", "Rui Hachimura", "Brook Lopez"]},
+ "DAL": {"five": ["Kyrie Irving", "Caleb Martin", "Cooper Flagg", "P.J. Washington", "Daniel Gafford"]},
+ "MEM": {"five": ["Ty Jerome", "Cedric Coward", "Jaylen Wells", "Taylor Hendricks", "Zach Edey"]},
+ "MIN": {"five": ["LaMelo Ball", "Ayo Dosunmu", "Jonathan Kuminga", "Jaden McDaniels", "Rudy Gobert"]},
+ "NO": {"five": ["Jeremiah Fears", "Herbert Jones", "Saddiq Bey", "Zion Williamson", "Yves Missi"]},
+ "SA": {"five": ["De'Aaron Fox", "Stephon Castle", "Julian Champagnie", "Devin Vassell", "Victor Wembanyama"]},
+ "BOS": {"five": ["Derrick White", "Jordan Walsh", "Jayson Tatum", "Paul George", "Neemias Queta"]},
+ "SAC": {"five": ["Darius Acuff Jr.", "Zach LaVine", "De'Andre Hunter", "Keegan Murray", "Domantas Sabonis"]}
+}
