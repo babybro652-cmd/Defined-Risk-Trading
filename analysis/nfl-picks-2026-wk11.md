@@ -50,7 +50,7 @@ Built with `python3 analysis/nfl/build_tracker.py --week 11 --slate 11` (TNF IND
 `python3 analysis/nfl/first_td_week.py --week 11`. Pushed Injuries, Week Shortlist (top 60 rows) and Notes tabs.
 
 TNF results (Tim's 11/19 bets, not yet graded on Bets I1688:I1691): Nico Collins scored the first TD (42 yd, 1st Q) = W at +600 ($0.20 pays $1.40).
-Montgomery first TD L, Taylor first TD L, 3-leg SGP L (Montgomery and Taylor no TD). Net on the four: about -$0.40.
+Montgomery first TD L, Taylor first TD L, 3-leg SGP L (Montgomery and Taylor no TD). Net on the four: -$0.20 ($1.60 staked, $1.40 back).
 
 ### Final anytime TD list (v2)
 
