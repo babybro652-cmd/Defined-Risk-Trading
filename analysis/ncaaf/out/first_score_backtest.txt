@@ -1,0 +1,63 @@
+FBS first scoring play model: walk-forward backtest (refit before every week)
+Outcomes: home TD / home FG / away TD / away FG / safety / no score. Lower log loss is better.
+
+2024: 736 games | 6-way log loss model 1.2847 (raw chain 1.2841) vs naive 1.3034 | which team first 0.6715 vs 0.6709 | TD vs FG given team 0.5858 vs 0.6052
+2025: 794 games | 6-way log loss model 1.2442 (raw chain 1.2456) vs naive 1.2687 | which team first 0.6457 vs 0.6475 | TD vs FG given team 0.5726 vs 0.5954
+2026: 643 games | 6-way log loss model 1.2434 (raw chain 1.2549) vs naive 1.2721 | which team first 0.6410 vs 0.6400 | TD vs FG given team 0.5846 vs 0.6145
+All: 2173 games | 6-way log loss model 1.2577 (raw chain 1.2614) vs naive 1.2815 | which team first 0.6531 vs 0.6532 | TD vs FG given team 0.5806 vs 0.6044
+TD vs FG vs a stronger naive (implied team total only), 1949 games: model 0.5829 vs 0.5832
+
+Outcome mix (all eval games): H_TD 41.0%, H_FG 14.5%, A_TD 29.5%, A_FG 14.5%, SAF 0.5%, NONE 0.0%
+Favorite scored first: 61.1% of 2163 games
+First score was a TD 70.9% / FG 29.1% (of TD + FG)
+
+Calibration, every outcome option (team TD / team FG), predicted vs actual:
+  Model:
+     0-  5%: n   18  pred   3.5%  actual   5.6%
+     5- 10%: n  280  pred   8.8%  actual  12.1%
+    10- 15%: n 2796  pred  12.9%  actual  13.1%
+    15- 20%: n 1694  pred  16.6%  actual  16.9%
+    20- 25%: n  416  pred  22.5%  actual  20.4%
+    25- 30%: n  588  pred  27.5%  actual  23.0%
+    30- 35%: n  688  pred  32.4%  actual  31.8%
+    35- 40%: n  657  pred  37.5%  actual  36.5%
+    40- 50%: n  976  pred  44.2%  actual  45.4%
+    50-100%: n  579  pred  58.2%  actual  60.8%
+  Naive:
+     0-  5%: n   31  pred   4.3%  actual   6.5%
+     5- 10%: n  577  pred   8.4%  actual  12.3%
+    10- 15%: n 2355  pred  12.8%  actual  15.8%
+    15- 20%: n 1414  pred  16.9%  actual  13.6%
+    20- 25%: n  415  pred  22.3%  actual  13.0%
+    25- 30%: n  539  pred  27.7%  actual  20.0%
+    30- 35%: n  960  pred  32.6%  actual  28.1%
+    35- 40%: n 1042  pred  37.7%  actual  36.0%
+    40- 50%: n 1081  pred  44.0%  actual  49.4%
+    50-100%: n  278  pred  54.1%  actual  66.2%
+
+By option, mean predicted vs actual:
+  Favorite TD: model 45.9%  naive 43.1%  actual 47.1%
+  Favorite FG: model 13.8%  naive 16.2%  actual 13.7%
+  Underdog TD: model 25.6%  naive 29.2%  actual 23.4%
+  Underdog FG: model 14.2%  naive 11.0%  actual 15.3%
+
+Field goal options only (team FG first), by model chance:
+  0-10%: n  212  model   9.1%  naive  13.5%  actual  12.3%
+  10-14%: n 1954  model  12.4%  naive  13.6%  actual  12.9%
+  14-18%: n 1986  model  15.6%  naive  13.6%  actual  15.9%
+  18-24%: n  194  model  19.1%  naive  13.6%  actual  18.6%
+
+Model top option hit: 46.9%
+Naive top option hit: 46.9%
+
+Drive model weights (final fit; columns none / TD / FG / defense score):
+    const: +0.000 -0.678 -1.584 -3.746
+       d1: +0.000 -0.055 -0.121 +0.000
+       d2: +0.000 -0.108 -0.091 +0.000
+   ln_imp: +0.000 +1.631 +0.551 +0.000
+      otd: +0.000 +0.219 +0.079 +0.000
+      ofg: +0.000 +0.023 +0.266 +0.000
+      dtd: +0.000 +0.191 -0.056 +0.000
+      dfg: +0.000 -0.057 -0.212 +0.000
+      etd: +0.000 +0.049 -0.056 +0.000
+      efg: +0.000 -0.013 +0.013 +0.000

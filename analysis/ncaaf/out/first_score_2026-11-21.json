@@ -1,0 +1,272 @@
+[
+ {
+  "game": "WSU at TXST",
+  "kick": "6:00",
+  "spread_home": -13.5,
+  "total": 61.5,
+  "home_recv": 0.703,
+  "probs": {
+   "H_TD": 0.5458,
+   "H_FG": 0.117,
+   "A_TD": 0.198,
+   "A_FG": 0.1345,
+   "SAF": 0.0047,
+   "NONE": 0.0
+  }
+ },
+ {
+  "game": "MD at USC",
+  "kick": "6:15",
+  "spread_home": -17.5,
+  "total": 57.5,
+  "home_recv": 0.668,
+  "probs": {
+   "H_TD": 0.5848,
+   "H_FG": 0.1191,
+   "A_TD": 0.1585,
+   "A_FG": 0.133,
+   "SAF": 0.0047,
+   "NONE": 0.0
+  }
+ },
+ {
+  "game": "VT at MIA",
+  "kick": "7:00",
+  "spread_home": -20.5,
+  "total": 61.5,
+  "home_recv": 0.402,
+  "probs": {
+   "H_TD": 0.6266,
+   "H_FG": 0.1047,
+   "A_TD": 0.1379,
+   "A_FG": 0.1261,
+   "SAF": 0.0047,
+   "NONE": 0.0
+  }
+ },
+ {
+  "game": "ARIZ at KSU",
+  "kick": "7:00",
+  "spread_home": 10.0,
+  "total": 53.5,
+  "home_recv": 0.487,
+  "probs": {
+   "H_TD": 0.2403,
+   "H_FG": 0.1503,
+   "A_TD": 0.4526,
+   "A_FG": 0.1521,
+   "SAF": 0.0047,
+   "NONE": 0.0
+  }
+ },
+ {
+  "game": "UNLV at SJSU",
+  "kick": "7:00",
+  "spread_home": 6.5,
+  "total": 47.5,
+  "home_recv": 0.381,
+  "probs": {
+   "H_TD": 0.2597,
+   "H_FG": 0.1708,
+   "A_TD": 0.4048,
+   "A_FG": 0.16,
+   "SAF": 0.0047,
+   "NONE": 0.0
+  }
+ },
+ {
+  "game": "ARST at LT",
+  "kick": "7:00",
+  "spread_home": -14.5,
+  "total": 54.5,
+  "home_recv": 0.453,
+  "probs": {
+   "H_TD": 0.5514,
+   "H_FG": 0.1212,
+   "A_TD": 0.1713,
+   "A_FG": 0.1515,
+   "SAF": 0.0047,
+   "NONE": 0.0
+  }
+ },
+ {
+  "game": "UGA at SC",
+  "kick": "7:30",
+  "spread_home": 14.5,
+  "total": 50.5,
+  "home_recv": 0.659,
+  "probs": {
+   "H_TD": 0.1893,
+   "H_FG": 0.1522,
+   "A_TD": 0.5165,
+   "A_FG": 0.1374,
+   "SAF": 0.0047,
+   "NONE": 0.0
+  }
+ },
+ {
+  "game": "SMU at ND",
+  "kick": "7:30",
+  "spread_home": -20.5,
+  "total": 55.5,
+  "home_recv": 0.229,
+  "probs": {
+   "H_TD": 0.6226,
+   "H_FG": 0.1086,
+   "A_TD": 0.1251,
+   "A_FG": 0.1391,
+   "SAF": 0.0047,
+   "NONE": 0.0
+  }
+ },
+ {
+  "game": "UK at MIZ",
+  "kick": "7:30",
+  "spread_home": -4.5,
+  "total": 49.5,
+  "home_recv": 0.44,
+  "probs": {
+   "H_TD": 0.4039,
+   "H_FG": 0.1572,
+   "A_TD": 0.2694,
+   "A_FG": 0.1648,
+   "SAF": 0.0047,
+   "NONE": 0.0
+  }
+ },
+ {
+  "game": "PITT at LOU",
+  "kick": "7:30",
+  "spread_home": -11.5,
+  "total": 50.5,
+  "home_recv": 0.442,
+  "probs": {
+   "H_TD": 0.4929,
+   "H_FG": 0.1479,
+   "A_TD": 0.1954,
+   "A_FG": 0.1591,
+   "SAF": 0.0047,
+   "NONE": 0.0
+  }
+ },
+ {
+  "game": "STAN at CAL",
+  "kick": "7:30",
+  "spread_home": 2.5,
+  "total": 55.5,
+  "home_recv": 0.415,
+  "probs": {
+   "H_TD": 0.3389,
+   "H_FG": 0.1393,
+   "A_TD": 0.3579,
+   "A_FG": 0.1593,
+   "SAF": 0.0047,
+   "NONE": 0.0
+  }
+ },
+ {
+  "game": "CSU at FRES",
+  "kick": "7:30",
+  "spread_home": -20.5,
+  "total": 67.5,
+  "home_recv": 0.572,
+  "probs": {
+   "H_TD": 0.6303,
+   "H_FG": 0.1017,
+   "A_TD": 0.1555,
+   "A_FG": 0.1077,
+   "SAF": 0.0047,
+   "NONE": 0.0
+  }
+ },
+ {
+  "game": "UTSA at UAB",
+  "kick": "8:00",
+  "spread_home": 4.0,
+  "total": 49.5,
+  "home_recv": 0.574,
+  "probs": {
+   "H_TD": 0.2954,
+   "H_FG": 0.1653,
+   "A_TD": 0.3759,
+   "A_FG": 0.1586,
+   "SAF": 0.0047,
+   "NONE": 0.0
+  }
+ },
+ {
+  "game": "UTAH at TCU",
+  "kick": "9:00",
+  "spread_home": 8.5,
+  "total": 46.5,
+  "home_recv": 0.361,
+  "probs": {
+   "H_TD": 0.2449,
+   "H_FG": 0.1624,
+   "A_TD": 0.4335,
+   "A_FG": 0.1545,
+   "SAF": 0.0047,
+   "NONE": 0.0
+  }
+ },
+ {
+  "game": "SDSU at BOIS",
+  "kick": "9:30",
+  "spread_home": -20.5,
+  "total": 60.5,
+  "home_recv": 0.657,
+  "probs": {
+   "H_TD": 0.6283,
+   "H_FG": 0.1041,
+   "A_TD": 0.132,
+   "A_FG": 0.1309,
+   "SAF": 0.0047,
+   "NONE": 0.0
+  }
+ },
+ {
+  "game": "OKST at ASU",
+  "kick": "10:15",
+  "spread_home": 2.5,
+  "total": 59.5,
+  "home_recv": 0.537,
+  "probs": {
+   "H_TD": 0.332,
+   "H_FG": 0.1466,
+   "A_TD": 0.3634,
+   "A_FG": 0.1533,
+   "SAF": 0.0047,
+   "NONE": 0.0
+  }
+ },
+ {
+  "game": "USU at ORST",
+  "kick": "10:30",
+  "spread_home": -7.0,
+  "total": 51.5,
+  "home_recv": 0.449,
+  "probs": {
+   "H_TD": 0.4551,
+   "H_FG": 0.1348,
+   "A_TD": 0.2493,
+   "A_FG": 0.156,
+   "SAF": 0.0047,
+   "NONE": 0.0
+  }
+ },
+ {
+  "game": "HAW at NEV",
+  "kick": "10:30",
+  "spread_home": -7.0,
+  "total": 40.5,
+  "home_recv": 0.54,
+  "probs": {
+   "H_TD": 0.4171,
+   "H_FG": 0.1736,
+   "A_TD": 0.2161,
+   "A_FG": 0.1885,
+   "SAF": 0.0047,
+   "NONE": 0.0
+  }
+ }
+]

@@ -11,7 +11,9 @@ FanDuel market: "First Scoring Play - LSU Field Goal", "LSU Touchdown", ... Same
    ridge multinomial logit on: implied team total (spread + total), the offense's shrunk TD and FG rates per drive,
    the defense's shrunk TD and FG rates allowed, the offense's early-drive (team drives 1-3) TD and FG rates, and
    dummies for team drive 1 and 2. Drive count comes from both teams' pace.
-3. Output per game: P(home TD first), P(home FG first), P(away TD first), P(away FG first), P(safety first),
+3. Stage 2 calibration (fit on earlier games only, recent weeks weigh more): which team scores first = logistic on the
+   chain's side logit + spread; TD vs FG given the team = logistic on the chain's TD-share logit, home flag, team spread.
+4. Output per game: P(home TD first), P(home FG first), P(away TD first), P(away FG first), P(safety first),
    P(no score). A team's TD includes its defensive / return TDs (FanDuel's team TD option counts any TD by that team).
    Fair = 1 / chance. Take-at = fair decimal x 1.2.
 
@@ -36,6 +38,7 @@ CARRY = 0.5           # weight kept on last season's counts at a new season
 K_TEAM = 30.0         # pseudo-drives in team rate shrink
 K_EARLY = 9.0         # pseudo-drives in early-drive rate shrink
 K_RECV = 12.0         # pseudo-games in receive-habit shrink
+CAL_HL = 15.0        # stage-2 calibration half-life in game weeks (about one season)
 MAX_TEAM_DRIVE = 4    # team drives per game used to fit the drive model
 FEATS = ['d1', 'd2', 'ln_imp', 'otd', 'ofg', 'dtd', 'dfg', 'etd', 'efg']
 CLS = ['none', 'TD', 'FG', 'DEF']
@@ -232,21 +235,24 @@ def chain(W, fh, fa, p_h_recv, n_drives, saf_share):
 
 
 # ------------------------------------------------------------------ walk-forward engine
-def walk(G, dg, eval_from=(2024, 1), fit_from=(2023, 3), live=None):
-    """Weeks in order; refit before each eval week on earlier drives. live: list of upcoming games to price at end."""
+def walk(G, dg, eval_from=(2024, 1), fit_from=(2023, 3), raw_from=(2023, 6), live=None):
+    """Weeks in order; refit before each week on earlier drives. Raw chain prices start at raw_from and feed the
+    stage-2 calibration (fit on earlier games only). live: list of upcoming games to price at the end."""
     st = State()
     by_week = defaultdict(list)
     for g in G:
         by_week[(g['season'], g['week'])].append(g)
-    rows_x, rows_y, rows_k, preds = [], [], [], []
+    rows_x, rows_y, rows_k, preds, raws = [], [], [], [], []
     base = []   # (key, spread_home, outcome) for the naive baseline
-    W = None
+    W = cal = None
     for wk in sorted(by_week):
         st.new_season(wk[0])
-        if wk >= eval_from:
+        if wk >= raw_from:
             m = np.array([k < wk for k in rows_k])
             W = mnl_fit(np.array(rows_x)[m], np.array(rows_y)[m])
+        if wk >= eval_from:
             bl = baseline_fit([b for b in base if b[0] < wk])
+            cal = cal_fit([r for r in raws if r['key'] < wk])
         for g in by_week[wk]:
             teams = {'H': g['home'], 'A': g['away']}
             fe = {s: st.feats(teams[s], teams['A' if s == 'H' else 'H'], implied(g['spread'], g['total'], s))
@@ -261,24 +267,72 @@ def walk(G, dg, eval_from=(2024, 1), fit_from=(2023, 3), live=None):
                         rows_y.append({'TD': 1, 'FG': 2, 'DTD': 3, 'SAF': 3}.get(d['res'], 0))
                         rows_k.append(wk)
                 base.append((wk, g['spread'], outcome(g)))
-            if wk >= eval_from and g['spread'] is not None:
-                pr = price(st, W, g, fe)
-                pr['base'] = baseline_probs(bl, g['spread'])
-                pr['y'] = outcome(g); pr['game'] = g
-                preds.append(pr)
+            if wk >= raw_from and g['spread'] is not None:
+                pr = price(st, W, g, fe); pr['fe'] = fe
+                pr['y'] = outcome(g); pr['game'] = g; pr['key'] = wk
+                raws.append(pr)
+                if wk >= eval_from:
+                    pr['raw'] = pr['p']
+                    pr['p'] = cal_apply(cal, pr['raw'], g['spread'])
+                    pr['base'] = baseline_probs(bl, g['spread'])
+                    preds.append(pr)
         for g in by_week[wk]:
             st.update(g, dg[g['id']], {'H': g['home'], 'A': g['away']})
     if live is not None:
-        st.new_season(max(k[0] for k in by_week) if not live else live[0]['season'])
+        st.new_season(live[0]['season'])
         W = mnl_fit(np.array(rows_x), np.array(rows_y))
+        cal = cal_fit(raws)
         out = []
         for g in live:
             fe = {s: st.feats(g['home' if s == 'H' else 'away'], g['away' if s == 'H' else 'home'],
                               implied(g['spread'], g['total'], s)) for s in ('H', 'A')}
             pr = price(st, W, g, fe); pr['game'] = g
+            pr['raw'] = pr['p']; pr['p'] = cal_apply(cal, pr['raw'], g['spread'])
             out.append(pr)
         return out, W, st
     return preds, W, st
+
+
+def _lfit(X, y, lam=0.5, sw=None):
+    Xb = np.hstack([np.ones((len(X), 1)), X])
+    sw = np.ones(len(y)) if sw is None else sw
+
+    def nll(w):
+        z = Xb @ w; p = 1 / (1 + np.exp(-z))
+        return -(sw * (y * np.log(p + 1e-12) + (1 - y) * np.log(1 - p + 1e-12))).sum() + lam * (w[1:] ** 2).sum()
+    return minimize(nll, np.zeros(Xb.shape[1]), method='BFGS').x
+
+
+def cal_fit(raws):
+    """Stage 2 on earlier games: which team scores first (chain side logit + spread) and TD vs FG given the team
+    (chain TD-share logit, home flag, team spread). Safety rate = league."""
+    sc = [r for r in raws if r['y'] not in ('SAF', 'NONE')]
+    side = lambda q: logit((q[0] + q[1]) / q[:4].sum())
+    Xs = np.array([[side(r['raw'] if 'raw' in r else r['p']), r['game']['spread'] / 10] for r in sc])
+    ys = np.array([float(r['y'].startswith('H')) for r in sc])
+    Xt, yt = [], []
+    for r in sc:
+        q = r['raw'] if 'raw' in r else r['p']
+        o = 0 if r['y'].startswith('H') else 2
+        tsp = r['game']['spread'] if o == 0 else -r['game']['spread']
+        Xt.append([logit(q[o] / (q[o] + q[o + 1])), float(o == 0), tsp / 10]); yt.append(float(r['y'].endswith('TD')))
+    saf = (sum(r['y'] == 'SAF' for r in raws) + 1) / (len(raws) + 100)
+    # recent games weigh more (half-life CAL_HL game weeks): the dog-TD-first rate fell each season 2023-2026
+    order = sorted({r['key'] for r in sc})
+    rank = {k: i for i, k in enumerate(order)}
+    sw = np.array([0.5 ** ((len(order) - 1 - rank[r['key']]) / CAL_HL) for r in sc])
+    return dict(ws=_lfit(Xs, ys, sw=sw), wt=_lfit(np.array(Xt), np.array(yt), sw=sw), saf=saf)
+
+
+def cal_apply(c, q, spread):
+    if c is None:
+        return q
+    sg = lambda z: 1 / (1 + math.exp(-z))
+    ph = sg(c['ws'][0] + c['ws'][1] * logit((q[0] + q[1]) / q[:4].sum()) + c['ws'][2] * spread / 10)
+    th = sg(c['wt'][0] + c['wt'][1] * logit(q[0] / (q[0] + q[1])) + c['wt'][2] + c['wt'][3] * spread / 10)
+    ta = sg(c['wt'][0] + c['wt'][1] * logit(q[2] / (q[2] + q[3])) - c['wt'][3] * spread / 10)
+    r = 1 - c['saf']
+    return np.array([r * ph * th, r * ph * (1 - th), r * (1 - ph) * ta, r * (1 - ph) * (1 - ta), c['saf'], 0.0])
 
 
 def price(st, W, g, fe):
@@ -321,7 +375,8 @@ def backtest():
     yi = lambda pr: OUTC.index(pr['y'])
 
     def ll(sub, key):
-        return float(np.mean([-math.log(max(1e-4, (pr['p'] if key == 'm' else pr['base'])[yi(pr)])) for pr in sub]))
+        k = {'m': 'p', 'b': 'base', 'r': 'raw'}[key]
+        return float(np.mean([-math.log(max(1e-4, pr[k][yi(pr)])) for pr in sub]))
 
     def side_ll(sub, key):
         v = []
@@ -349,11 +404,32 @@ def backtest():
     P('')
     seasons = sorted({pr['game']['season'] for pr in preds})
     for lab, sub in [(str(s), [pr for pr in preds if pr['game']['season'] == s]) for s in seasons] + [('All', preds)]:
-        r = dict(n=len(sub), ll_m=ll(sub, 'm'), ll_b=ll(sub, 'b'), side_m=side_ll(sub, 'm'), side_b=side_ll(sub, 'b'),
+        r = dict(n=len(sub), ll_m=ll(sub, 'm'), ll_b=ll(sub, 'b'), ll_raw=ll(sub, 'r'), side_m=side_ll(sub, 'm'), side_b=side_ll(sub, 'b'),
                  type_m=type_ll(sub, 'm'), type_b=type_ll(sub, 'b'))
         res[lab] = r
-        P(f"{lab}: {r['n']} games | 6-way log loss model {r['ll_m']:.4f} vs naive {r['ll_b']:.4f} | "
+        P(f"{lab}: {r['n']} games | 6-way log loss model {r['ll_m']:.4f} (raw chain {r['ll_raw']:.4f}) vs naive {r['ll_b']:.4f} | "
           f"which team first {r['side_m']:.4f} vs {r['side_b']:.4f} | TD vs FG given team {r['type_m']:.4f} vs {r['type_b']:.4f}")
+    # stronger naive for the TD vs FG split: logistic on the scoring team's implied total only (walk-forward)
+    rows = []
+    for pr in preds:
+        if pr['y'] in ('SAF', 'NONE'):
+            continue
+        sd = pr['y'][0]; imp = implied(pr['game']['spread'], pr['game']['total'], sd)
+        if imp is not None:
+            o = 0 if sd == 'H' else 2
+            rows.append((pr['key'], imp / 10, float(pr['y'].endswith('TD')), pr['p'][o] / (pr['p'][o] + pr['p'][o + 1])))
+    v2, vm = [], []
+    for wk in sorted({r[0] for r in rows}):
+        tr = [r for r in rows if r[0] < wk]
+        if len(tr) < 200:
+            continue
+        w = _lfit(np.array([[r[1]] for r in tr]), np.array([r[2] for r in tr]))
+        for r in rows:
+            if r[0] == wk:
+                q = 1 / (1 + math.exp(-(w[0] + w[1] * r[1])))
+                v2.append(-math.log(q if r[2] else 1 - q)); vm.append(-math.log(r[3] if r[2] else 1 - r[3]))
+    P(f'TD vs FG vs a stronger naive (implied team total only), {len(vm)} games: model {np.mean(vm):.4f} vs {np.mean(v2):.4f}')
+    res['td_fg_vs_implied'] = dict(n=len(vm), model=float(np.mean(vm)), implied_only=float(np.mean(v2)))
     c = Counter(pr['y'] for pr in preds)
     P('')
     P('Outcome mix (all eval games): ' + ', '.join(f'{k} {100 * c[k] / len(preds):.1f}%' for k in OUTC))
@@ -378,6 +454,13 @@ def backtest():
             if ps:
                 P(f'    {int(lo * 100):>2}-{int(min(hi, 1) * 100):>3}%: n {len(ps):>4}  pred {100 * np.mean(ps):5.1f}%  '
                   f'actual {100 * np.mean(ys):5.1f}%')
+    P('')
+    P('By option, mean predicted vs actual:')
+    for nm, fj in (('Favorite TD', lambda hf: 0 if hf else 2), ('Favorite FG', lambda hf: 1 if hf else 3),
+                   ('Underdog TD', lambda hf: 2 if hf else 0), ('Underdog FG', lambda hf: 3 if hf else 1)):
+        js = [(pr, fj(pr['game']['spread'] <= 0)) for pr in preds]
+        P(f"  {nm}: model {100 * np.mean([pr['p'][j] for pr, j in js]):.1f}%  naive "
+          f"{100 * np.mean([pr['base'][j] for pr, j in js]):.1f}%  actual {100 * np.mean([yi(pr) == j for pr, j in js]):.1f}%")
     # FG-specific check: the FG options are the market's long prices
     P('')
     P('Field goal options only (team FG first), by model chance:')
@@ -469,7 +552,7 @@ def chart(date, preds):
     matplotlib.use('Agg')
     import matplotlib.pyplot as plt
     preds = sorted(preds, key=lambda pr: pr['game']['date'])
-    hdr = ['Kick ET', 'Game (line)', 'Fav TD', 'Fav FG', 'Dog TD', 'Dog FG', 'Saf / none']
+    hdr = ['Kick ET', 'Game (line)', 'Fav TD', 'Fav FG', 'Dog TD', 'Dog FG', 'Safety']
     cells, fgcol = [], []
     for pr in preds:
         g, p = pr['game'], pr['p']
@@ -479,13 +562,13 @@ def chart(date, preds):
         c = lambda j, t: f'{t} {100 * p[j]:.0f}%  {american(p[j])}\ntake {take_at(p[j])}'
         cells.append([et_time(g['date']), f"{g['away']} at {g['home']}\n{fav} -{abs(g['spread']):g}, o/u {g['total']:g}",
                       c(fi, fav), c(fi + 1, fav), c(di, dog), c(di + 1, dog),
-                      f'{100 * p[4]:.1f}% / {100 * p[5]:.1f}%'])
-    fig_h = 1.2 + 0.62 * len(cells)
+                      f'{100 * p[4]:.1f}%'])
+    fig_h = 0.6 + 0.52 * (len(cells) + 1)
     fig, ax = plt.subplots(figsize=(13, fig_h))
     fig.patch.set_facecolor('black'); ax.set_facecolor('black'); ax.axis('off')
-    tb = ax.table(cellText=cells, colLabels=hdr, loc='upper center', cellLoc='center',
+    tb = ax.table(cellText=cells, colLabels=hdr, cellLoc='center', bbox=[0, 0, 1, 1],
                   colWidths=[.07, .19, .16, .16, .16, .16, .10])
-    tb.auto_set_font_size(False); tb.set_fontsize(9); tb.scale(1, 2.6)
+    tb.auto_set_font_size(False); tb.set_fontsize(9)
     for (r, cc), cl in tb.get_celld().items():
         cl.set_edgecolor('#1db954')
         if r == 0:
@@ -496,8 +579,9 @@ def chart(date, preds):
                 cl.get_text().set_color('#7CFC9A')
     ax.set_title(f'CFB first scoring play, {date} (our drive chain model; fair price, take-at = fair x1.2)',
                  color='#1db954', fontsize=12, fontweight='bold', loc='left')
-    fig.text(0.01, 0.005, 'Team TD includes defense / return TDs. Small stakes: the backtest edge over a spread-only '
-             'baseline is small. Bet only at take-at or longer.', color='#9a9a9a', fontsize=8)
+    ax.text(0, -0.02, 'Team TD includes defense / return TDs. Backtest: as accurate as the spread + total, no edge beyond '
+            'them. Value only where FanDuel pays take-at or longer. Small stakes.', color='#9a9a9a', fontsize=8,
+            transform=ax.transAxes, va='top')
     p = os.path.join(OUT, f'first_score_{date}.png')
     plt.savefig(p, dpi=110, bbox_inches='tight', facecolor='black')
     print('chart', p)
