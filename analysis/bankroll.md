@@ -34,3 +34,4 @@ Balance snapshots from Tim's FanDuel screenshots. Newest at the bottom. Deposits
 - 11/19/26 1:49 PM: $20.60 after $4.50 on CBB (NC State -3.5 -106 $1.50, VCU +1.5 -106 $1.50, VCU ML +104 $1.50; Bets rows 1685-1687).
 - 11/19 updated split after CBB used $4.50: NHL $5 (6:00 PM run), NBA $10.50 (7:00 PM run).
 - 11/19 5:02 PM: $19.00 after $1.60 on TNF (not in the $20 plan). Tonight's $20 total: CBB $4.50 + TNF $1.60 = $6.10 used, so $13.90 left: NHL $4.50, NBA $9.40.
+- 11/21/26 10:14 AM (Tim): FanDuel balance $10.97. Size today's NBA (first tip 1 PM) and CBB (6 PM run) to this.
