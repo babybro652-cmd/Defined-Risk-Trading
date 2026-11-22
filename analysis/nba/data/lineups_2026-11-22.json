@@ -1,0 +1,128 @@
+{
+ "DET": {
+  "five": [
+   "Daniss Jenkins",
+   "Kevin Huerter",
+   "Cade Cunningham",
+   "Ausar Thompson",
+   "John Collins"
+  ]
+ },
+ "ATL": {
+  "five": [
+   "Nickeil Alexander-Walker",
+   "Dyson Daniels",
+   "Kingston Flemings",
+   "Jalen Johnson",
+   "Onyeka Okongwu"
+  ]
+ },
+ "OKC": {
+  "five": [
+   "Jared McCain",
+   "Ajay Mitchell",
+   "Shai Gilgeous-Alexander",
+   "Aday Mara",
+   "Isaiah Hartenstein"
+  ]
+ },
+ "MIA": {
+  "five": [
+   "Klay Thompson",
+   "Pelle Larsson",
+   "Davion Mitchell",
+   "Giannis Antetokounmpo",
+   "Bam Adebayo"
+  ]
+ },
+ "ORL": {
+  "five": [
+   "Anthony Black",
+   "Desmond Bane",
+   "Jalen Suggs",
+   "Franz Wagner",
+   "Wendell Carter Jr."
+  ]
+ },
+ "WSH": {
+  "five": [
+   "Kyshawn George",
+   "AJ Dybantsa",
+   "Trae Young",
+   "Anthony Davis",
+   "Alex Sarr"
+  ]
+ },
+ "DEN": {
+  "five": [
+   "Christian Braun",
+   "Cameron Johnson",
+   "Jamal Murray",
+   "Aaron Gordon",
+   "Nikola Jokic"
+  ]
+ },
+ "CHI": {
+  "five": [
+   "Isaac Okoro",
+   "Matas Buzelis",
+   "Josh Giddey",
+   "Noa Essengue",
+   "Jalen Smith"
+  ]
+ },
+ "DAL": {
+  "five": [
+   "Caleb Martin",
+   "Cooper Flagg",
+   "Kyrie Irving",
+   "Zaccharie Risacher",
+   "Daniel Gafford"
+  ]
+ },
+ "UTAH": {
+  "five": [
+   "Darryn Peterson",
+   "Josh Green",
+   "Keyonte George",
+   "Ace Bailey",
+   "Jaxson Hayes"
+  ]
+ },
+ "IND": {
+  "five": [
+   "Kelly Oubre Jr.",
+   "Aaron Nesmith",
+   "Andrew Nembhard",
+   "Pascal Siakam",
+   "Ivica Zubac"
+  ]
+ },
+ "NY": {
+  "five": [
+   "Landry Shamet",
+   "Mikal Bridges",
+   "Jalen Brunson",
+   "Josh Hart",
+   "Karl-Anthony Towns"
+  ]
+ },
+ "BOS": {
+  "five": [
+   "Jordan Walsh",
+   "Jayson Tatum",
+   "Derrick White",
+   "Paul George",
+   "Neemias Queta"
+  ]
+ },
+ "GS": {
+  "five": [
+   "Brandin Podziemski",
+   "Yaxel Lendeborg",
+   "De'Anthony Melton",
+   "Draymond Green",
+   "Charles Bassey"
+  ]
+ }
+}
