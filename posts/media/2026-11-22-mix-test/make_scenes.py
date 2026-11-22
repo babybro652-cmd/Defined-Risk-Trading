@@ -82,7 +82,7 @@ def main(od):
             d.rectangle([x, y0 + 2, x + 60, y1 - 2], fill=col)
             if i < k: d.text((x - 110, (y0 + y1) / 2 - 18), "$50", font=font(B, 34), fill=P["poc"])
         top_card(im, [("1 point = $50", 76, P["text"], True),
-                      (f"{k} pts  =  ${50 * k}" if k else "count the points", 64, P["poc"], True)])
+                      (f"{k} pt{'s' if k > 1 else ''}  =  ${50 * k}" if k else "count the points", 64, P["poc"], True)])
     render(os.path.join(od, "s2.mp4"), s2)
 
     # 3 hard stop measured from entry: entry line, red band exactly 4 pts under it
