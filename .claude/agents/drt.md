@@ -153,6 +153,14 @@ Renderer `posts/media/explainers/make_explainer.py --topic NAME`; plan and topic
 Pilot (volume profile) built 11/18, waiting on Tim's OK before any explainer is scheduled; Shorts exception undecided.
 Tim, 11/18 after watching it: "Do a voiceover explanation." Explainers get a synthetic voiceover (`--voice`: local Piper
 john voice, free, phrase captions burned in, music ducked), the one place AI voice is used; still not on Shorts unless Tim says so.
+**Tim, 11/22: "Keep it" = the MIX format is the explainer standard** (replaces the Piper voice). Our own scene clips
+drawn on real ES bars (one per scene, labels above the caption band, chart below) fed into Blotato's "AI Video with AI
+Voice" template: ElevenLabs voice "Bill", teal center word captions, music bed added locally with add_audio.py.
+Reference: `posts/media/2026-11-22-mix-test/` (make_scenes.py, mix-test-explainer.mp4) and
+`posts/2026-11-22-ai-explainer-test.md`. Costs 0 credits (only AI images cost credits; never use them, they
+got trading terms wrong). Render ~9 min. Use transition "none" or "slide", not fade (fade dips to black).
+Label as AI voice: TikTok isAiGenerated true, YouTube containsSyntheticMedia true. Not a Short under the
+footage-only rule. The pilot daily-max-math video is QA-passed but unscheduled; explainers still need Tim's go to start posting.
 
 ## Engagement decisions (Tim approved 11/17, "Do what's best"; plan: `posts/plans/2026-11-17-engagement-plan.md`)
 1. **TikTok reset 11/18-11/24:** 1 DRT TikTok text card a day (7:00 AM only) in a new look: opens on a
