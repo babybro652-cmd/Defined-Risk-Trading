@@ -70,9 +70,9 @@ date,game,away_jumper,home_jumper,tipproj_away_pct,tipproj_pick,our_away_pct,our
 2026-11-20,PHX @ UTAH,Oso Ighodaro,Jaxson Hayes,56,PHX,54,PHX,UTAH,Jaxson Hayes vs Oso Ighodaro,
 2026-11-20,HOU @ DEN,Alperen Sengun,Nikola Jokic,36,DEN,38,DEN,DEN,Nikola Jokic vs Alperen Sengun,Sengun Q (injury flag)
 2026-11-20,SAC @ LAL,Domantas Sabonis,Walker Kessler,17,LAL,20,LAL,LAL,Walker Kessler vs Domantas Sabonis,
-2026-11-21,MIL @ PHI,Jericho Sims,Joel Embiid,41,PHI,33,PHI,,,TipProj Sims; tip sheet Turner; ours Turner (co-start)
-2026-11-21,POR @ NY,Donovan Clingan,Karl-Anthony Towns,59,POR,62,POR,,,Towns Q (illness)
-2026-11-21,LAC @ DAL,Brook Lopez,Daniel Gafford,76,LAC,78,LAC,,,
-2026-11-21,MEM @ MIN,Zach Edey,Rudy Gobert,56,MEM,51,MEM,,,
-2026-11-21,NO @ SA,Yves Missi,Victor Wembanyama,4,SA,3,SA,,,
-2026-11-21,BOS @ SAC,Neemias Queta,Domantas Sabonis,52,BOS,53,BOS,,,
+2026-11-21,MIL @ PHI,Jericho Sims,Joel Embiid,41,PHI,33,PHI,PHI,Myles Turner vs Joel Embiid,TipProj Sims; tip sheet Turner; ours Turner (co-start)
+2026-11-21,POR @ NY,Donovan Clingan,Karl-Anthony Towns,59,POR,62,POR,NY,Donovan Clingan vs Andre Drummond,Towns Q (illness)
+2026-11-21,LAC @ DAL,Brook Lopez,Daniel Gafford,76,LAC,78,LAC,DAL,Brook Lopez vs Daniel Gafford,
+2026-11-21,MEM @ MIN,Zach Edey,Rudy Gobert,56,MEM,51,MEM,MIN,Zach Edey vs Rudy Gobert,
+2026-11-21,NO @ SA,Yves Missi,Victor Wembanyama,4,SA,3,SA,SA,Yves Missi vs Victor Wembanyama,
+2026-11-21,BOS @ SAC,Neemias Queta,Domantas Sabonis,52,BOS,53,BOS,BOS,Neemias Queta vs Domantas Sabonis,
