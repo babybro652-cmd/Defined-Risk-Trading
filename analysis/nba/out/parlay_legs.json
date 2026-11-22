@@ -123,12 +123,12 @@
    "note": "65 starts"
   },
   {
-   "player": "Karl-Anthony Towns",
+   "player": "Andre Drummond",
    "team": "NY",
    "game": "POR @ NY",
    "market": "3+ threes",
-   "p": 0.246,
-   "note": "92 starts"
+   "p": 0.04,
+   "note": "25 starts"
   },
   {
    "player": "Darius Garland",
@@ -179,12 +179,20 @@
    "note": "84 starts"
   },
   {
-   "player": "P.J. Washington",
+   "player": "Naji Marshall",
    "team": "DAL",
    "game": "LAC @ DAL",
    "market": "3+ threes",
-   "p": 0.204,
-   "note": "68 starts"
+   "p": 0.094,
+   "note": "49 starts"
+  },
+  {
+   "player": "Ty Jerome",
+   "team": "MEM",
+   "game": "MEM @ MIN",
+   "market": "3+ threes",
+   "p": 0.417,
+   "note": "26 starts"
   },
   {
    "player": "Cedric Coward",
@@ -299,12 +307,12 @@
    "note": "73 starts"
   },
   {
-   "player": "Derrick White",
+   "player": "Payton Pritchard",
    "team": "BOS",
    "game": "BOS @ SAC",
    "market": "3+ threes",
-   "p": 0.426,
-   "note": "92 starts"
+   "p": 0.44,
+   "note": "50 starts"
   },
   {
    "player": "Jordan Walsh",
@@ -315,12 +323,12 @@
    "note": "35 starts"
   },
   {
-   "player": "Jayson Tatum",
+   "player": "Baylor Scheierman",
    "team": "BOS",
    "game": "BOS @ SAC",
    "market": "3+ threes",
-   "p": 0.5,
-   "note": "30 starts"
+   "p": 0.462,
+   "note": "22 starts"
   },
   {
    "player": "Paul George",
