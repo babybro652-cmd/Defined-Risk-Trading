@@ -1,0 +1,433 @@
+{
+ "through": "2026-11-21",
+ "d7_from": "2026-11-15",
+ "model": [
+  {
+   "cat": "Top 3 overall",
+   "d7": {
+    "n": 154,
+    "hits": 23,
+    "exp": 21.63,
+    "z": 0.32,
+    "pval": 0.819
+   },
+   "season": {
+    "n": 376,
+    "hits": 53,
+    "exp": 51.95,
+    "z": 0.16,
+    "pval": 0.921
+   }
+  },
+  {
+   "cat": "Rank 1",
+   "d7": {
+    "n": 53,
+    "hits": 6,
+    "exp": 9.01,
+    "z": -1.11,
+    "pval": 0.358
+   },
+   "season": {
+    "n": 126,
+    "hits": 16,
+    "exp": 20.98,
+    "z": -1.2,
+    "pval": 0.279
+   }
+  },
+  {
+   "cat": "Rank 2",
+   "d7": {
+    "n": 50,
+    "hits": 6,
+    "exp": 6.67,
+    "z": -0.28,
+    "pval": 0.985
+   },
+   "season": {
+    "n": 125,
+    "hits": 17,
+    "exp": 16.48,
+    "z": 0.14,
+    "pval": 0.97
+   }
+  },
+  {
+   "cat": "Rank 3",
+   "d7": {
+    "n": 51,
+    "hits": 11,
+    "exp": 5.95,
+    "z": 2.21,
+    "pval": 0.062
+   },
+   "season": {
+    "n": 125,
+    "hits": 20,
+    "exp": 14.49,
+    "z": 1.54,
+    "pval": 0.17
+   }
+  },
+  {
+   "cat": "Play list (bets)",
+   "d7": {
+    "n": 62,
+    "hits": 8,
+    "exp": 9.1,
+    "z": -0.4,
+    "pval": 0.86
+   },
+   "season": {
+    "n": 74,
+    "hits": 10,
+    "exp": 10.87,
+    "z": -0.29,
+    "pval": 0.934
+   }
+  },
+  {
+   "cat": "Team FB top 2",
+   "d7": {
+    "n": 206,
+    "hits": 45,
+    "exp": 52.77,
+    "z": -1.25,
+    "pval": 0.241
+   },
+   "season": {
+    "n": 497,
+    "hits": 116,
+    "exp": 126.12,
+    "z": -1.05,
+    "pval": 0.319
+   }
+  },
+  {
+   "cat": "Method longshots",
+   "d7": {
+    "n": 16,
+    "hits": 1,
+    "exp": 1.12,
+    "z": -0.12,
+    "pval": 1.0
+   },
+   "season": {
+    "n": 16,
+    "hits": 1,
+    "exp": 1.12,
+    "z": -0.12,
+    "pval": 1.0
+   }
+  }
+ ],
+ "games": 241,
+ "bench_first": 0,
+ "hot": [
+  {
+   "player": "Aday Mara",
+   "tm": "OKC",
+   "starts": 6,
+   "hits": 3,
+   "exp": 0.7,
+   "z": 2.95,
+   "pval": 0.047,
+   "tag": "watch",
+   "fs": 2,
+   "fs_exp": 1.04
+  },
+  {
+   "player": "Nolan Traore",
+   "tm": "BKN",
+   "starts": 10,
+   "hits": 3,
+   "exp": 0.72,
+   "z": 2.8,
+   "pval": 0.06,
+   "tag": "watch",
+   "fs": 3,
+   "fs_exp": 1.83
+  },
+  {
+   "player": "Lauri Markkanen",
+   "tm": "UTAH",
+   "starts": 8,
+   "hits": 3,
+   "exp": 0.85,
+   "z": 2.48,
+   "pval": 0.087,
+   "tag": "watch",
+   "fs": 3,
+   "fs_exp": 1.78
+  },
+  {
+   "player": "Paul George",
+   "tm": "BOS",
+   "starts": 14,
+   "hits": 5,
+   "exp": 1.92,
+   "z": 2.4,
+   "pval": 0.065,
+   "tag": "watch",
+   "fs": 5,
+   "fs_exp": 4.01
+  },
+  {
+   "player": "De'Aaron Fox",
+   "tm": "SA",
+   "starts": 16,
+   "hits": 5,
+   "exp": 1.95,
+   "z": 2.34,
+   "pval": 0.073,
+   "tag": "watch",
+   "fs": 4,
+   "fs_exp": 3.36
+  },
+  {
+   "player": "Damian Lillard",
+   "tm": "POR",
+   "starts": 16,
+   "hits": 4,
+   "exp": 1.55,
+   "z": 2.07,
+   "pval": 0.124,
+   "tag": "luck",
+   "fs": 3,
+   "fs_exp": 3.67
+  },
+  {
+   "player": "Jaime Jaquez Jr.",
+   "tm": "MIL",
+   "starts": 12,
+   "hits": 3,
+   "exp": 1.08,
+   "z": 1.95,
+   "pval": 0.171,
+   "tag": "luck",
+   "fs": 2,
+   "fs_exp": 2.51
+  },
+  {
+   "player": "Jaden McDaniels",
+   "tm": "MIN",
+   "starts": 17,
+   "hits": 4,
+   "exp": 1.73,
+   "z": 1.82,
+   "pval": 0.174,
+   "tag": "luck",
+   "fs": 5,
+   "fs_exp": 3.49
+  },
+  {
+   "player": "Darius Garland",
+   "tm": "LAC",
+   "starts": 15,
+   "hits": 4,
+   "exp": 1.74,
+   "z": 1.82,
+   "pval": 0.173,
+   "tag": "luck",
+   "fs": 6,
+   "fs_exp": 4.27
+  },
+  {
+   "player": "John Collins",
+   "tm": "DET",
+   "starts": 15,
+   "hits": 4,
+   "exp": 1.81,
+   "z": 1.74,
+   "pval": 0.193,
+   "tag": "luck",
+   "fs": 3,
+   "fs_exp": 3.44
+  }
+ ],
+ "cold": [
+  {
+   "player": "Alex Sarr",
+   "tm": "WSH",
+   "starts": 16,
+   "hits": 0,
+   "exp": 1.89,
+   "z": -1.47,
+   "pval": 0.267,
+   "tag": "luck",
+   "fs": 3,
+   "fs_exp": 3.65
+  },
+  {
+   "player": "Yaxel Lendeborg",
+   "tm": "GS",
+   "starts": 16,
+   "hits": 0,
+   "exp": 1.64,
+   "z": -1.35,
+   "pval": 0.355,
+   "tag": "luck",
+   "fs": 2,
+   "fs_exp": 3.32
+  },
+  {
+   "player": "Peyton Watson",
+   "tm": "CLE",
+   "starts": 13,
+   "hits": 0,
+   "exp": 1.45,
+   "z": -1.28,
+   "pval": 0.429,
+   "tag": "luck",
+   "fs": 4,
+   "fs_exp": 2.88
+  },
+  {
+   "player": "Dylan Harper",
+   "tm": "SA",
+   "starts": 15,
+   "hits": 0,
+   "exp": 1.44,
+   "z": -1.26,
+   "pval": 0.439,
+   "tag": "luck",
+   "fs": 1,
+   "fs_exp": 2.29
+  },
+  {
+   "player": "Cade Cunningham",
+   "tm": "DET",
+   "starts": 14,
+   "hits": 0,
+   "exp": 1.39,
+   "z": -1.25,
+   "pval": 0.46,
+   "tag": "luck",
+   "fs": 3,
+   "fs_exp": 3.29
+  },
+  {
+   "player": "Deni Avdija",
+   "tm": "POR",
+   "starts": 14,
+   "hits": 0,
+   "exp": 1.37,
+   "z": -1.23,
+   "pval": 0.471,
+   "tag": "luck",
+   "fs": 4,
+   "fs_exp": 2.76
+  },
+  {
+   "player": "Neemias Queta",
+   "tm": "BOS",
+   "starts": 10,
+   "hits": 0,
+   "exp": 1.18,
+   "z": -1.16,
+   "pval": 0.565,
+   "tag": "luck",
+   "fs": 0,
+   "fs_exp": 1.45
+  },
+  {
+   "player": "Derrick Jones Jr.",
+   "tm": "LAC",
+   "starts": 14,
+   "hits": 0,
+   "exp": 1.22,
+   "z": -1.16,
+   "pval": 0.559,
+   "tag": "luck",
+   "fs": 2,
+   "fs_exp": 2.55
+  },
+  {
+   "player": "Toumani Camara",
+   "tm": "POR",
+   "starts": 16,
+   "hits": 0,
+   "exp": 1.24,
+   "z": -1.16,
+   "pval": 0.549,
+   "tag": "luck",
+   "fs": 2,
+   "fs_exp": 2.87
+  },
+  {
+   "player": "Kyshawn George",
+   "tm": "WSH",
+   "starts": 17,
+   "hits": 0,
+   "exp": 1.25,
+   "z": -1.16,
+   "pval": 0.543,
+   "tag": "luck",
+   "fs": 4,
+   "fs_exp": 2.73
+  }
+ ],
+ "flagged": [
+  {
+   "player": "Aday Mara",
+   "tm": "OKC",
+   "starts": 6,
+   "hits": 3,
+   "exp": 0.7,
+   "z": 2.95,
+   "pval": 0.047,
+   "tag": "watch",
+   "fs": 2,
+   "fs_exp": 1.04
+  },
+  {
+   "player": "Nolan Traore",
+   "tm": "BKN",
+   "starts": 10,
+   "hits": 3,
+   "exp": 0.72,
+   "z": 2.8,
+   "pval": 0.06,
+   "tag": "watch",
+   "fs": 3,
+   "fs_exp": 1.83
+  },
+  {
+   "player": "Lauri Markkanen",
+   "tm": "UTAH",
+   "starts": 8,
+   "hits": 3,
+   "exp": 0.85,
+   "z": 2.48,
+   "pval": 0.087,
+   "tag": "watch",
+   "fs": 3,
+   "fs_exp": 1.78
+  },
+  {
+   "player": "Paul George",
+   "tm": "BOS",
+   "starts": 14,
+   "hits": 5,
+   "exp": 1.92,
+   "z": 2.4,
+   "pval": 0.065,
+   "tag": "watch",
+   "fs": 5,
+   "fs_exp": 4.01
+  },
+  {
+   "player": "De'Aaron Fox",
+   "tm": "SA",
+   "starts": 16,
+   "hits": 5,
+   "exp": 1.95,
+   "z": 2.34,
+   "pval": 0.073,
+   "tag": "watch",
+   "fs": 4,
+   "fs_exp": 3.36
+  }
+ ]
+}

@@ -81,6 +81,8 @@ Grading (nightly): add the date to `COMMITS` in `analysis/reports/source_scoreca
 fb_candidates for that slate), run `python3 analysis/reports/top3_coverage.py <date>` and report top-3 coverage:
 whether the game's first scorer was our #1, #2 or #3, the running hit rate by rank and the $1-straight P&L by rank
 once odds are logged in `out/top3_odds.csv` (date,player,odds). `source_scorecard.py` prints the same by date.
+Then run the HOT/COLD METER (Tim, 11/22; tracking only, never changes a pick, rank, fair or the play list):
+`python3 analysis/nba/hotcold.py <date>` and send `out/charts/hotcold_<date>.png` with the grade. See "Hot/cold meter" below.
 Backfilled 11/4 to 11/13: top 3 held the first scorer in 28 of 70 games (40%); #1 10 of 69, #2 9 of 70, #3 9 of 70.
 11/13: 5 of 9 in the top 3, 1 of 9 at #1. 11/14: 2 of 5 (both #2); 11/4 to 11/14: 30 of 75 (40%).
 11/15: 6 of 9 (#1 2, #2 1, #3 3); play-list games 3 of 4 (tip-70% games 3 of 3: Doncic #1, Garland #2, Wembanyama #1; exception ATL@MIL missed, Kuzma). 11/4 to 11/15: 36 of 84 (43%); $1 P&L on priced ranks #1 +3.70 (5), #2 +11.90 (7), #3 +11.00 (5).
@@ -457,6 +459,23 @@ published picks), `diagnostic_bt.py` (walk-forward, actual fives, out-of-sample 
 - The tip 70%+ filter works (top 3 57% vs 38% in 2026-27, actual fives). The model-accuracy exception does not: a team's
   past top-2 hit rate does not predict its next game (51% at 55%+, 51% under 45%).
 - Tim's prices matched our fair within 3% on average; first basket at book prices is about break-even by our own numbers.
+
+## Hot/cold meter (Tim approved 11/22/26; tracking only)
+
+`analysis/nba/hotcold.py <date>` runs after each night's grade (after `top3_coverage.py` and the COMMITS entry). Same rule
+as StarTool: it never changes a pick, rank, fair price or the play list. It says whether a run is more than luck.
+- Model level: hits vs expected (sum of our model chances) for top 3, rank 1/2/3, the play list (top 3 in play-list games;
+  `PLAY_GAMES` in the script through 11/21, later dates parsed from the "Play list (tip 70%+):" line, games "off the play
+  list" dropped), team first basket top 2 (team_share in the committed fb_candidates), method longshots (picks in
+  `out/method_longshots_<date>.json`, graded on `data/fdmethod_<season>.json`). Windows: last 7 days and since 11/4.
+- Player level: every starter, 2026-27 season. The published fb_candidates only hold our projected fives, so per-starter
+  chances are rebuilt walk-forward with `backtest_chain.run` (actual fives and jumpers, no lookahead; `KEEP_BENCH`
+  keeps games whose first scorer came off the bench). Also team first-shot attempts vs the model's first-shot share.
+- Tag: two-sided Poisson-binomial p-value. real = p < 0.05 and 20+ starts; watch = p < 0.10 (or p < 0.05 under 20
+  starts); luck otherwise. With about 275 starters, about 14 show p < 0.05 by chance.
+- Outputs: `out/charts/hotcold_<date>.png`, `out/hotcold_<date>.json`, `out/hotcold_players.csv`. About 20 seconds.
+- First run through 11/21: top 3 53 vs 52.0; rank 1 16 vs 21.0, rank 2 17 vs 16.5, rank 3 20 vs 14.5; play list 10 vs 10.9;
+  team FB top 2 116 vs 126.1; method 1 vs 1.1. No player "real"; watch: Mara, Traore, Markkanen, P. George, Fox (all hot).
 
 ## Sources
 

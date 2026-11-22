@@ -24,6 +24,7 @@ from build_nba_tab import POS, JB, v1_share, jumper_split, shrink_top  # noqa: E
 CHF = ('mins', 'OR', 'PA', 'PM', 'trT', 'trS', 'cFGA')
 bf.F = bf.F + CHF
 TF = ('to', 'seg', 'mf', 'orb', 'dto', 'dseg', 'dmf', 'dorb')
+KEEP_BENCH = False   # hotcold.py: keep games whose first scorer came off the bench (default skips them)
 
 
 def team_rates(TS, tm, opp, season, LC, c):
@@ -126,7 +127,7 @@ def run(chain_variants):
                 ptip = {g['away']: pt, g['home']: 1 - pt}
                 jm = {tm: pid for pid, tm in g['tip']['j']}
                 win = g['fp'][0]
-                if win not in {p[0] for v in st.values() for p in v}:
+                if not KEEP_BENCH and win not in {p[0] for v in st.values() for p in v}:
                     continue
                 s = bf.season_of(d)
                 feats = {tm: [dict(bf.counts(PS, p[0], tm, s), pos=p[6], pid=p[0]) for p in st[tm]] for tm in st}
