@@ -3,11 +3,11 @@ import matplotlib.pyplot as plt
 plt.rcParams['text.parse_math']=False
 from matplotlib.patches import FancyBboxPatch
 BG='#0f1420'; CARD='#1a2233'; TXT='#e8ecf3'; MUTED='#9aa4b5'; GOLD='#f5c542'; BLUE='#5aa9ff'; GREEN='#4cd38a'; RED='#ff6b6b'
-DATE='SUN 11/22 (2:30 PM, EXPECTED FIVES)'; OUT='analysis/nba/out/charts/plan_2026-11-22.png'
+DATE='SUN 11/22 (6:35 PM RERUN)'; OUT='analysis/nba/out/charts/plan_2026-11-22.png'
 fb=[('OKC @ MIA','6:00','MIA 71%',[('Bam Adebayo  $0.30','+337 / +424'),('Bobby Portis  $0.20','+719 / +882'),('Klay Thompson  $0.20','+923 / +1127')],'Official fives: Hartenstein vs Adebayo. Giannis, SGA, Mara OUT'),
-    ('DEN @ CHI','7:00','DEN 77%',[('Nikola Jokic','+349 / +439'),('Jamal Murray','+593 / +731'),('Jalen Smith (CHI, prob)','+755 / +927')],'Jokic vs J. Smith (probable, illness). CHI: Powell OUT, Claxton Q'),
-    ('BOS @ GS','8:30','GS 84%',[('Charles Bassey','+474 / +589'),('Brandin Podziemski','+658 / +810'),('Yaxel Lendeborg','+688 / +846')],'Bassey vs Queta; Bassey 3 of 3 tips (small sample). Tatum prob, White Q')]
-meth=[('Nikola Jokic - Other','$0.50','+796','+976'),('Charles Bassey - Other','$0.20','+1,248','+1,518'),('Cameron Johnson - Three Point FG','$0.20','+1,848','+2,237'),('Brandin Podziemski - Three Point FG','$0.10','+2,126','+2,571')]
+    ('DEN @ CHI','7:00','DEN 77%',[('Nikola Jokic','+347 / +436'),('Jamal Murray','+588 / +726'),('Jalen Smith (CHI, prob)','+748 / +918')],'Jokic vs J. Smith. CHI: Hield in for Essengue; Powell, Claxton OUT'),
+    ('BOS @ GS','8:30','GS 84%',[('Charles Bassey','+473 / +588'),('Brandin Podziemski','+657 / +808'),('Yaxel Lendeborg','+687 / +844')],'Prelim: BOS five not confirmed (Hauser for George). Rerun 8:00 PM')]
+meth=[('Nikola Jokic - Other','$0.50','+792','+970'),('Charles Bassey - Other','$0.20','+1,246','+1,515'),('Cameron Johnson - Three Point FG','$0.20','+1,835','+2,222'),('Brandin Podziemski - Three Point FG','$0.10','+2,121','+2,565')]
 fig=plt.figure(figsize=(7.2,10.9),dpi=200); fig.patch.set_facecolor(BG)
 ax=fig.add_axes([0,0,1,1]); ax.set_xlim(0,100); ax.set_ylim(55,200); ax.axis('off')
 def card(x,y,w,h): ax.add_patch(FancyBboxPatch((x,y),w,h,boxstyle='round,pad=0.4,rounding_size=1.5',fc=CARD,ec='#2c3850',lw=1))

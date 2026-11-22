@@ -211,20 +211,20 @@
    "note": "69 starts"
   },
   {
-   "player": "Matas Buzelis",
-   "team": "CHI",
-   "game": "DEN @ CHI",
-   "market": "3+ threes",
-   "p": 0.361,
-   "note": "92 starts"
-  },
-  {
    "player": "Josh Giddey",
    "team": "CHI",
    "game": "DEN @ CHI",
    "market": "3+ threes",
    "p": 0.188,
    "note": "66 starts"
+  },
+  {
+   "player": "Matas Buzelis",
+   "team": "CHI",
+   "game": "DEN @ CHI",
+   "market": "3+ threes",
+   "p": 0.361,
+   "note": "92 starts"
   },
   {
    "player": "Jalen Smith",
@@ -361,6 +361,14 @@
    "market": "3+ threes",
    "p": 0.426,
    "note": "92 starts"
+  },
+  {
+   "player": "Sam Hauser",
+   "team": "BOS",
+   "game": "BOS @ GS",
+   "market": "3+ threes",
+   "p": 0.491,
+   "note": "51 starts"
   },
   {
    "player": "Brandin Podziemski",
