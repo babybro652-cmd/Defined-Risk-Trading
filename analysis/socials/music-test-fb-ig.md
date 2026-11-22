@@ -44,3 +44,5 @@ return no views (a sync gap, not zero).
 | 2026-11-20 | 8:30 PM | Instagram reel | 7268236 (sub a5ff719b-5714-4ba9-b93a-72e896572141) | Weekly trade recap reel, Tim's footage + rendered cards (Tim approved) | music | im_glad_you_are_here | | |
 | 2026-11-21 | 12:30 PM | Instagram reel | 7300272 | Education text cards over a moving drawn chart, light palette (4 pt stop / 8 pt target break-even math) | music | coexistenz | | |
 | 2026-11-21 | 5:00 PM | Facebook reel | 7300275 | Lifestyle reel, rendered moving drawn chart, slate palette (full-time job, lunch window with a hard end) | music | waiting_tttt | | |
+| 2026-11-22 | 12:30 PM | Instagram reel | 7344166 | Education text cards over a moving drawn chart, forest palette (daily max loss set before the first trade) | music | traveling_in_your_mind | | |
+| 2026-11-22 | 5:00 PM | Facebook reel | 7344167 | Education text cards over a moving drawn chart, navy/teal palette (ES weekend gap: mark Friday's close; reused 11/21 unused TikTok card) | music | drowning_in_your_smile | | |
