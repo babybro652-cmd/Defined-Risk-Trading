@@ -59,14 +59,6 @@
    "note": "27 starts"
   },
   {
-   "player": "Shai Gilgeous-Alexander",
-   "team": "OKC",
-   "game": "OKC @ MIA",
-   "market": "3+ threes",
-   "p": 0.379,
-   "note": "84 starts"
-  },
-  {
    "player": "Klay Thompson",
    "team": "MIA",
    "game": "OKC @ MIA",
@@ -369,14 +361,6 @@
    "market": "3+ threes",
    "p": 0.426,
    "note": "92 starts"
-  },
-  {
-   "player": "Paul George",
-   "team": "BOS",
-   "game": "BOS @ GS",
-   "market": "3+ threes",
-   "p": 0.532,
-   "note": "51 starts"
   },
   {
    "player": "Brandin Podziemski",
