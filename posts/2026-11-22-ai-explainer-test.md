@@ -72,3 +72,24 @@ beat our Piper voice. The AI images do not beat our real-chart reels: they're de
 and nothing on screen is real ES data, which is our edge. Best use if Tim wants more: a hybrid, feeding our own
 rendered chart clips into the same template as `uploadedMedia` per scene (keeps real bars, gains the better voice and
 captions), still about 6 credits. Not recommended as-is for posting.
+
+## Mix version (IN PROGRESS, 11/22)
+**STATUS: render submitted, final file not in yet. NOT SCHEDULED, NOT POSTED.**
+- Method: same Blotato template ("AI Video with AI Voice"), same script, voice Bill, teal #2EC4B6 center captions, fade,
+  but every scene uses `mediaSource` = a public URL of OUR clip (the field takes a plain URL string; an
+  `{"uploadedMedia": url}` object is rejected). No AI images.
+- Visuals: six 12 s clips rendered by `posts/media/2026-11-22-mix-test/make_scenes.py` (reuses
+  `posts/media/explainers/make_explainer.py`) on real ES 1m bars (Tue 11/17 NY session, date not shown): 1 session
+  printing + "DAILY MAX MATH"; 2 four 1 pt blocks lighting up "$50" each to "4 pts = $200"; 3 example entry line with a
+  red band exactly 4 pts under it, "HARD STOP 3.5 to 4 pts from ENTRY", "example, not a trade call", candles stop at
+  the entry bar (no outcome shown); 4 a $1,000 meter filling with five $200 stops; 5 "Wait for the label / 1 or 2 good
+  trades" with two of five blocks used, "$600 left as a buffer"; 6 "Define your risk before the trade". Labels stay in
+  y 150-620 and the chart in y 980-1640 so Blotato's center captions (about y 700-830) sit in clear space. No account
+  numbers, status bar, home screen, P&L, AMD/CRT. Clips: `posts/media/2026-11-22-mix-test/scenes/`, preview
+  `scenes_preview.png`.
+- Blotato design id `51c7d442-940d-4f55-835c-c19fb60e1206` (a render:false draft `facaebd5-...` cost 0 credits).
+  Credits 2,079 before; 2,079 at hand-back (nothing charged yet; the all-AI run charged 6).
+- Still to do once the render is done: download, music bed (add_audio.py --video-audio auto, AUDIO QA: PASS), contact
+  sheet + frame 0 check, compare, save as `posts/media/2026-11-22-mix-test/mix-test-explainer.mp4`.
+- Labels: no AI images any more, but the voice is AI (ElevenLabs), so TikTok `isAiGenerated: true` and YouTube
+  `containsSyntheticMedia: true` still apply. Not a Short under the footage-only rule.
