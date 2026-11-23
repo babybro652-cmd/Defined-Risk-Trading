@@ -46,3 +46,5 @@ return no views (a sync gap, not zero).
 | 2026-11-21 | 5:00 PM | Facebook reel | 7300275 | Lifestyle reel, rendered moving drawn chart, slate palette (full-time job, lunch window with a hard end) | music | waiting_tttt | | |
 | 2026-11-22 | 12:30 PM | Instagram reel | 7344166 | Education text cards over a moving drawn chart, forest palette (daily max loss set before the first trade) | music | traveling_in_your_mind | | |
 | 2026-11-22 | 5:00 PM | Facebook reel | 7344167 | Education text cards over a moving drawn chart, navy/teal palette (ES weekend gap: mark Friday's close; reused 11/21 unused TikTok card) | music | drowning_in_your_smile | | |
+| 2026-11-23 | 10:45 AM | Instagram reel | 7374418 (sub aabfa922-0d94-48c7-af70-996db5c2df35) | Trade still reel, Tim's screenshot (Sunday open 25K eval long 1 ES, +14.5 pts, Tim approved) | music | sugar_and_coffee | | |
+| 2026-11-23 | 2:30 PM | Facebook reel | 7374427 (sub b4f234c4-8da3-4c28-9ee3-54693b521ee6) | Trade still reel, Tim's screenshot (Sunday open 25K eval long 1 ES, +14.5 pts, Tim approved) | music | sugar_and_coffee | | |
