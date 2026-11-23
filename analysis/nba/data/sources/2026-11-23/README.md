@@ -19,3 +19,11 @@ UTA Hayes (inj flag) 20 / LAL Kessler 80.
 - LAC 51 / HOU 49 (8:30): Garland 18, KD 12, Hachimura 10, Sengun 10, Lopez 9, DJJ 9, Amen Thompson 9, Strus 8, Jabari Smith 8, VanVleet 7.
 - UTAH 34 / LAL 66 (10:00): Doncic 25, K. George 14, Kessler 11, Peterson 10, Bailey 9, Grimes 9, Z. Williams 8, Thybulle 6, Hayes 5, Green 3.
 - SA 82 / SAC 18 (10:00): Wembanyama 23, Castle 14, Fox 13, Vassell 12, Acuff 9, Champagnie 9, LaVine 7, Sabonis 5, Hunter 4, Murray 4.
+
+## Cheat sheet tip-off (jumper, tip win %, team 1st score %), 2 pages
+POR Clingan 54/43 vs PHI Embiid* 56/54; MEM Edey 58/42 vs CHA Diabate 34/45;
+OKC Mara* 50/52 vs IND Zubac 47/49; BKN Sharpe 41/41 vs MIN Gobert 53/56;
+MIL Turner 29/41 vs TOR Murray-Boyles 38/50 (TipProj says MIL jumper Sims); PHX Ighodaro 46/55 vs NOP Missi 20/50;
+CLE Allen 68/61 vs CHI Smith 29/32 (H2H 1-1); LAC Lopez 58/48 vs HOU Sengun 39/46 (Lopez 3-1);
+UTA Hayes* 48/54 vs LAL Kessler 81/60 (1-1); SAS Wembanyama* 90/64 vs SAC Sabonis 34/44 (Wemby 4-0).
+(* injury designation)
