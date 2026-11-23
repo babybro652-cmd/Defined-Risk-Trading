@@ -196,3 +196,6 @@
 2026-11-20|SAC @ LAL|Darius Acuff Jr.,Luka Doncic|Zach LaVine,Walker Kessler
 2026-11-21|LAC @ DAL|Darius Garland,Kyrie Irving|Rui Hachimura,Cooper Flagg
 2026-11-21|NO @ SA|Zion Williamson,Victor Wembanyama|Saddiq Bey,De'Aaron Fox
+2026-11-22|OKC @ MIA|Shai Gilgeous-Alexander,Giannis Antetokounmpo|Ajay Mitchell,Bam Adebayo
+2026-11-22|DEN @ CHI|Jamal Murray,Norman Powell|Nikola Jokic,Matas Buzelis
+2026-11-22|BOS @ GS|Paul George,Yaxel Lendeborg|Payton Pritchard,Brandin Podziemski
