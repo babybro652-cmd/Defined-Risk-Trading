@@ -1,398 +1,582 @@
 {
- "date": "2026-11-22",
+ "date": "2026-11-23",
  "sport": "NBA",
  "legs": [
   {
-   "player": "Daniss Jenkins",
-   "team": "DET",
-   "game": "DET @ ATL",
+   "player": "Cedric Coward",
+   "team": "MEM",
+   "game": "MEM @ CHA",
    "market": "3+ threes",
-   "p": 0.375,
-   "note": "26 starts"
+   "p": 0.347,
+   "note": "63 starts"
   },
   {
-   "player": "Cade Cunningham",
-   "team": "DET",
-   "game": "DET @ ATL",
+   "player": "Ty Jerome",
+   "team": "MEM",
+   "game": "MEM @ CHA",
    "market": "3+ threes",
-   "p": 0.312,
-   "note": "81 starts"
+   "p": 0.451,
+   "note": "27 starts"
   },
   {
-   "player": "John Collins",
-   "team": "DET",
-   "game": "DET @ ATL",
+   "player": "Jaylen Wells",
+   "team": "MEM",
+   "game": "MEM @ CHA",
    "market": "3+ threes",
-   "p": 0.168,
-   "note": "71 starts"
+   "p": 0.292,
+   "note": "86 starts"
   },
   {
-   "player": "Nickeil Alexander-Walker",
-   "team": "ATL",
-   "game": "DET @ ATL",
+   "player": "Brandon Miller",
+   "team": "CHA",
+   "game": "MEM @ CHA",
    "market": "3+ threes",
-   "p": 0.605,
-   "note": "87 starts"
+   "p": 0.635,
+   "note": "78 starts"
   },
   {
-   "player": "Jalen Johnson",
-   "team": "ATL",
-   "game": "DET @ ATL",
+   "player": "Sion James",
+   "team": "CHA",
+   "game": "MEM @ CHA",
    "market": "3+ threes",
-   "p": 0.18,
-   "note": "85 starts"
+   "p": 0.145,
+   "note": "31 starts"
   },
   {
-   "player": "Onyeka Okongwu",
-   "team": "ATL",
-   "game": "DET @ ATL",
+   "player": "Coby White",
+   "team": "CHA",
+   "game": "MEM @ CHA",
    "market": "3+ threes",
-   "p": 0.288,
-   "note": "79 starts"
+   "p": 0.22,
+   "note": "34 starts"
+  },
+  {
+   "player": "Sidy Cissoko",
+   "team": "POR",
+   "game": "POR @ PHI",
+   "market": "3+ threes",
+   "p": 0.255,
+   "note": "33 starts"
+  },
+  {
+   "player": "Toumani Camara",
+   "team": "POR",
+   "game": "POR @ PHI",
+   "market": "3+ threes",
+   "p": 0.508,
+   "note": "98 starts"
+  },
+  {
+   "player": "Deni Avdija",
+   "team": "POR",
+   "game": "POR @ PHI",
+   "market": "3+ threes",
+   "p": 0.282,
+   "note": "82 starts"
+  },
+  {
+   "player": "Donovan Clingan",
+   "team": "POR",
+   "game": "POR @ PHI",
+   "market": "3+ threes",
+   "p": 0.136,
+   "note": "93 starts"
+  },
+  {
+   "player": "VJ Edgecombe",
+   "team": "PHI",
+   "game": "POR @ PHI",
+   "market": "3+ threes",
+   "p": 0.276,
+   "note": "91 starts"
+  },
+  {
+   "player": "Jaylen Brown",
+   "team": "PHI",
+   "game": "POR @ PHI",
+   "market": "3+ threes",
+   "p": 0.284,
+   "note": "88 starts"
+  },
+  {
+   "player": "Tyrese Maxey",
+   "team": "PHI",
+   "game": "POR @ PHI",
+   "market": "3+ threes",
+   "p": 0.554,
+   "note": "89 starts"
+  },
+  {
+   "player": "LeBron James",
+   "team": "PHI",
+   "game": "POR @ PHI",
+   "market": "3+ threes",
+   "p": 0.088,
+   "note": "76 starts"
   },
   {
    "player": "Ajay Mitchell",
    "team": "OKC",
-   "game": "OKC @ MIA",
+   "game": "OKC @ IND",
    "market": "3+ threes",
-   "p": 0.061,
-   "note": "27 starts"
+   "p": 0.058,
+   "note": "28 starts"
   },
   {
-   "player": "Klay Thompson",
-   "team": "MIA",
-   "game": "OKC @ MIA",
+   "player": "Shai Gilgeous-Alexander",
+   "team": "OKC",
+   "game": "OKC @ IND",
    "market": "3+ threes",
-   "p": 0.58,
+   "p": 0.379,
+   "note": "84 starts"
+  },
+  {
+   "player": "Quenton Jackson",
+   "team": "IND",
+   "game": "OKC @ IND",
+   "market": "3+ threes",
+   "p": 0.071,
    "note": "22 starts"
   },
   {
-   "player": "Pelle Larsson",
-   "team": "MIA",
-   "game": "OKC @ MIA",
+   "player": "Kelly Oubre Jr.",
+   "team": "IND",
+   "game": "OKC @ IND",
    "market": "3+ threes",
-   "p": 0.127,
-   "note": "57 starts"
+   "p": 0.243,
+   "note": "52 starts"
   },
   {
-   "player": "Davion Mitchell",
-   "team": "MIA",
-   "game": "OKC @ MIA",
+   "player": "Andrew Nembhard",
+   "team": "IND",
+   "game": "OKC @ IND",
    "market": "3+ threes",
-   "p": 0.322,
-   "note": "85 starts"
+   "p": 0.344,
+   "note": "70 starts"
   },
   {
-   "player": "Bam Adebayo",
-   "team": "MIA",
-   "game": "OKC @ MIA",
+   "player": "Pascal Siakam",
+   "team": "IND",
+   "game": "OKC @ IND",
    "market": "3+ threes",
-   "p": 0.178,
-   "note": "88 starts"
+   "p": 0.261,
+   "note": "79 starts"
   },
   {
-   "player": "Anthony Black",
-   "team": "ORL",
-   "game": "ORL @ WSH",
+   "player": "Tyler Herro",
+   "team": "MIL",
+   "game": "MIL @ TOR",
    "market": "3+ threes",
-   "p": 0.288,
-   "note": "51 starts"
+   "p": 0.513,
+   "note": "44 starts"
   },
   {
-   "player": "Desmond Bane",
-   "team": "ORL",
-   "game": "ORL @ WSH",
+   "player": "Ryan Rollins",
+   "team": "MIL",
+   "game": "MIL @ TOR",
    "market": "3+ threes",
-   "p": 0.516,
-   "note": "96 starts"
+   "p": 0.418,
+   "note": "75 starts"
   },
   {
-   "player": "Jalen Suggs",
-   "team": "ORL",
-   "game": "ORL @ WSH",
+   "player": "Kyle Kuzma",
+   "team": "MIL",
+   "game": "MIL @ TOR",
    "market": "3+ threes",
-   "p": 0.338,
-   "note": "62 starts"
+   "p": 0.176,
+   "note": "59 starts"
   },
   {
-   "player": "Franz Wagner",
-   "team": "ORL",
-   "game": "ORL @ WSH",
+   "player": "Myles Turner",
+   "team": "MIL",
+   "game": "MIL @ TOR",
    "market": "3+ threes",
-   "p": 0.221,
-   "note": "47 starts"
+   "p": 0.293,
+   "note": "86 starts"
   },
   {
-   "player": "Wendell Carter Jr.",
-   "team": "ORL",
-   "game": "ORL @ WSH",
+   "player": "Ja'Kobe Walter",
+   "team": "TOR",
+   "game": "MIL @ TOR",
    "market": "3+ threes",
-   "p": 0.073,
-   "note": "93 starts"
+   "p": 0.475,
+   "note": "33 starts"
   },
   {
-   "player": "Kyshawn George",
-   "team": "WSH",
-   "game": "ORL @ WSH",
+   "player": "Immanuel Quickley",
+   "team": "TOR",
+   "game": "MIL @ TOR",
    "market": "3+ threes",
-   "p": 0.404,
-   "note": "65 starts"
+   "p": 0.562,
+   "note": "84 starts"
   },
   {
-   "player": "Trae Young",
-   "team": "WSH",
-   "game": "ORL @ WSH",
+   "player": "Scottie Barnes",
+   "team": "TOR",
+   "game": "MIL @ TOR",
    "market": "3+ threes",
-   "p": 0.379,
-   "note": "32 starts"
-  },
-  {
-   "player": "Anthony Davis",
-   "team": "WSH",
-   "game": "ORL @ WSH",
-   "market": "3+ threes",
-   "p": 0.046,
-   "note": "35 starts"
-  },
-  {
-   "player": "Alex Sarr",
-   "team": "WSH",
-   "game": "ORL @ WSH",
-   "market": "3+ threes",
-   "p": 0.135,
-   "note": "64 starts"
-  },
-  {
-   "player": "Christian Braun",
-   "team": "DEN",
-   "game": "DEN @ CHI",
-   "market": "3+ threes",
-   "p": 0.151,
-   "note": "58 starts"
-  },
-  {
-   "player": "Cameron Johnson",
-   "team": "DEN",
-   "game": "DEN @ CHI",
-   "market": "3+ threes",
-   "p": 0.264,
-   "note": "65 starts"
-  },
-  {
-   "player": "Jamal Murray",
-   "team": "DEN",
-   "game": "DEN @ CHI",
-   "market": "3+ threes",
-   "p": 0.521,
+   "p": 0.088,
    "note": "91 starts"
   },
   {
-   "player": "Aaron Gordon",
-   "team": "DEN",
-   "game": "DEN @ CHI",
+   "player": "Collin Murray-Boyles",
+   "team": "TOR",
+   "game": "MIL @ TOR",
    "market": "3+ threes",
-   "p": 0.133,
-   "note": "47 starts"
+   "p": 0.022,
+   "note": "30 starts"
   },
   {
-   "player": "Nikola Jokic",
-   "team": "DEN",
-   "game": "DEN @ CHI",
+   "player": "Michael Porter Jr.",
+   "team": "BKN",
+   "game": "BKN @ MIN",
    "market": "3+ threes",
-   "p": 0.213,
-   "note": "80 starts"
+   "p": 0.67,
+   "note": "66 starts"
+  },
+  {
+   "player": "Danny Wolf",
+   "team": "BKN",
+   "game": "BKN @ MIN",
+   "market": "3+ threes",
+   "p": 0.2,
+   "note": "20 starts"
+  },
+  {
+   "player": "Egor Demin",
+   "team": "BKN",
+   "game": "BKN @ MIN",
+   "market": "3+ threes",
+   "p": 0.435,
+   "note": "53 starts"
+  },
+  {
+   "player": "Julius Randle",
+   "team": "BKN",
+   "game": "BKN @ MIN",
+   "market": "3+ threes",
+   "p": 0.242,
+   "note": "94 starts"
+  },
+  {
+   "player": "Ayo Dosunmu",
+   "team": "MIN",
+   "game": "BKN @ MIN",
+   "market": "3+ threes",
+   "p": 0.397,
+   "note": "32 starts"
+  },
+  {
+   "player": "Jonathan Kuminga",
+   "team": "MIN",
+   "game": "BKN @ MIN",
+   "market": "3+ threes",
+   "p": 0.161,
+   "note": "30 starts"
+  },
+  {
+   "player": "LaMelo Ball",
+   "team": "MIN",
+   "game": "BKN @ MIN",
+   "market": "3+ threes",
+   "p": 0.667,
+   "note": "86 starts"
+  },
+  {
+   "player": "Jaden McDaniels",
+   "team": "MIN",
+   "game": "BKN @ MIN",
+   "market": "3+ threes",
+   "p": 0.153,
+   "note": "90 starts"
+  },
+  {
+   "player": "Donovan Mitchell",
+   "team": "CLE",
+   "game": "CLE @ CHI",
+   "market": "3+ threes",
+   "p": 0.492,
+   "note": "86 starts"
+  },
+  {
+   "player": "James Harden",
+   "team": "CLE",
+   "game": "CLE @ CHI",
+   "market": "3+ threes",
+   "p": 0.61,
+   "note": "86 starts"
+  },
+  {
+   "player": "Peyton Watson",
+   "team": "CLE",
+   "game": "CLE @ CHI",
+   "market": "3+ threes",
+   "p": 0.152,
+   "note": "53 starts"
   },
   {
    "player": "Isaac Okoro",
    "team": "CHI",
-   "game": "DEN @ CHI",
+   "game": "CLE @ CHI",
    "market": "3+ threes",
-   "p": 0.181,
-   "note": "69 starts"
+   "p": 0.174,
+   "note": "70 starts"
   },
   {
    "player": "Josh Giddey",
    "team": "CHI",
-   "game": "DEN @ CHI",
+   "game": "CLE @ CHI",
    "market": "3+ threes",
-   "p": 0.188,
-   "note": "66 starts"
+   "p": 0.182,
+   "note": "67 starts"
   },
   {
    "player": "Matas Buzelis",
    "team": "CHI",
-   "game": "DEN @ CHI",
+   "game": "CLE @ CHI",
    "market": "3+ threes",
-   "p": 0.361,
-   "note": "92 starts"
+   "p": 0.376,
+   "note": "93 starts"
   },
   {
    "player": "Jalen Smith",
    "team": "CHI",
-   "game": "DEN @ CHI",
+   "game": "CLE @ CHI",
    "market": "3+ threes",
-   "p": 0.233,
-   "note": "34 starts"
+   "p": 0.27,
+   "note": "35 starts"
   },
   {
-   "player": "Caleb Martin",
-   "team": "DAL",
-   "game": "DAL @ UTAH",
+   "player": "Jalen Green",
+   "team": "PHX",
+   "game": "PHX @ NO",
    "market": "3+ threes",
-   "p": 0.128,
-   "note": "21 starts"
+   "p": 0.25,
+   "note": "42 starts"
   },
   {
-   "player": "Cooper Flagg",
-   "team": "DAL",
-   "game": "DAL @ UTAH",
+   "player": "Dillon Brooks",
+   "team": "PHX",
+   "game": "PHX @ NO",
    "market": "3+ threes",
-   "p": 0.165,
-   "note": "85 starts"
+   "p": 0.406,
+   "note": "71 starts"
   },
   {
-   "player": "Zaccharie Risacher",
-   "team": "DAL",
-   "game": "DAL @ UTAH",
+   "player": "Devin Booker",
+   "team": "PHX",
+   "game": "PHX @ NO",
    "market": "3+ threes",
-   "p": 0.2,
-   "note": "49 starts"
+   "p": 0.259,
+   "note": "82 starts"
   },
   {
-   "player": "Keyonte George",
-   "team": "UTAH",
-   "game": "DAL @ UTAH",
+   "player": "Miles Bridges",
+   "team": "PHX",
+   "game": "PHX @ NO",
    "market": "3+ threes",
-   "p": 0.412,
-   "note": "70 starts"
+   "p": 0.311,
+   "note": "92 starts"
   },
   {
-   "player": "Ace Bailey",
-   "team": "UTAH",
-   "game": "DAL @ UTAH",
+   "player": "Herbert Jones",
+   "team": "NO",
+   "game": "PHX @ NO",
+   "market": "3+ threes",
+   "p": 0.217,
+   "note": "68 starts"
+  },
+  {
+   "player": "Saddiq Bey",
+   "team": "NO",
+   "game": "PHX @ NO",
+   "market": "3+ threes",
+   "p": 0.447,
+   "note": "71 starts"
+  },
+  {
+   "player": "Jeremiah Fears",
+   "team": "NO",
+   "game": "PHX @ NO",
+   "market": "3+ threes",
+   "p": 0.146,
+   "note": "67 starts"
+  },
+  {
+   "player": "Brandon Ingram",
+   "team": "LAC",
+   "game": "LAC @ HOU",
    "market": "3+ threes",
    "p": 0.312,
    "note": "77 starts"
   },
   {
-   "player": "Kelly Oubre Jr.",
-   "team": "IND",
-   "game": "IND @ NY",
+   "player": "Darius Garland",
+   "team": "LAC",
+   "game": "LAC @ HOU",
    "market": "3+ threes",
-   "p": 0.254,
-   "note": "51 starts"
+   "p": 0.523,
+   "note": "58 starts"
   },
   {
-   "player": "Aaron Nesmith",
-   "team": "IND",
-   "game": "IND @ NY",
+   "player": "Rui Hachimura",
+   "team": "LAC",
+   "game": "LAC @ HOU",
    "market": "3+ threes",
-   "p": 0.333,
-   "note": "55 starts"
+   "p": 0.338,
+   "note": "54 starts"
   },
   {
-   "player": "Andrew Nembhard",
-   "team": "IND",
-   "game": "IND @ NY",
+   "player": "Brook Lopez",
+   "team": "LAC",
+   "game": "LAC @ HOU",
    "market": "3+ threes",
-   "p": 0.355,
-   "note": "69 starts"
+   "p": 0.284,
+   "note": "49 starts"
   },
   {
-   "player": "Pascal Siakam",
-   "team": "IND",
-   "game": "IND @ NY",
+   "player": "Amen Thompson",
+   "team": "HOU",
+   "game": "LAC @ HOU",
    "market": "3+ threes",
-   "p": 0.241,
-   "note": "78 starts"
+   "p": 0.024,
+   "note": "95 starts"
   },
   {
-   "player": "Mikal Bridges",
-   "team": "NY",
-   "game": "IND @ NY",
+   "player": "Kevin Durant",
+   "team": "HOU",
+   "game": "LAC @ HOU",
    "market": "3+ threes",
-   "p": 0.214,
-   "note": "99 starts"
+   "p": 0.295,
+   "note": "98 starts"
   },
   {
-   "player": "Jalen Brunson",
-   "team": "NY",
-   "game": "IND @ NY",
+   "player": "Jabari Smith Jr.",
+   "team": "HOU",
+   "game": "LAC @ HOU",
    "market": "3+ threes",
-   "p": 0.54,
+   "p": 0.398,
    "note": "94 starts"
   },
   {
-   "player": "Josh Hart",
-   "team": "NY",
-   "game": "IND @ NY",
+   "player": "Alperen Sengun",
+   "team": "HOU",
+   "game": "LAC @ HOU",
    "market": "3+ threes",
-   "p": 0.207,
-   "note": "66 starts"
+   "p": 0.026,
+   "note": "87 starts"
   },
   {
-   "player": "Karl-Anthony Towns",
-   "team": "NY",
-   "game": "IND @ NY",
-   "market": "3+ threes",
-   "p": 0.246,
-   "note": "92 starts"
-  },
-  {
-   "player": "Jordan Walsh",
-   "team": "BOS",
-   "game": "BOS @ GS",
-   "market": "3+ threes",
-   "p": 0.091,
-   "note": "35 starts"
-  },
-  {
-   "player": "Jayson Tatum",
-   "team": "BOS",
-   "game": "BOS @ GS",
-   "market": "3+ threes",
-   "p": 0.5,
-   "note": "30 starts"
-  },
-  {
-   "player": "Derrick White",
-   "team": "BOS",
-   "game": "BOS @ GS",
-   "market": "3+ threes",
-   "p": 0.426,
-   "note": "92 starts"
-  },
-  {
-   "player": "Sam Hauser",
-   "team": "BOS",
-   "game": "BOS @ GS",
-   "market": "3+ threes",
-   "p": 0.491,
-   "note": "51 starts"
-  },
-  {
-   "player": "Brandin Podziemski",
-   "team": "GS",
-   "game": "BOS @ GS",
+   "player": "Keyonte George",
+   "team": "UTAH",
+   "game": "UTAH @ LAL",
    "market": "3+ threes",
    "p": 0.4,
-   "note": "57 starts"
+   "note": "71 starts"
   },
   {
-   "player": "De'Anthony Melton",
-   "team": "GS",
-   "game": "BOS @ GS",
+   "player": "Ace Bailey",
+   "team": "UTAH",
+   "game": "UTAH @ LAL",
    "market": "3+ threes",
-   "p": 0.194,
-   "note": "28 starts"
+   "p": 0.33,
+   "note": "78 starts"
   },
   {
-   "player": "Draymond Green",
-   "team": "GS",
-   "game": "BOS @ GS",
+   "player": "Quentin Grimes",
+   "team": "LAL",
+   "game": "UTAH @ LAL",
    "market": "3+ threes",
-   "p": 0.121,
+   "p": 0.324,
+   "note": "25 starts"
+  },
+  {
+   "player": "Luka Doncic",
+   "team": "LAL",
+   "game": "UTAH @ LAL",
+   "market": "3+ threes",
+   "p": 0.791,
+   "note": "80 starts"
+  },
+  {
+   "player": "Ziaire Williams",
+   "team": "LAL",
+   "game": "UTAH @ LAL",
+   "market": "3+ threes",
+   "p": 0.118,
+   "note": "20 starts"
+  },
+  {
+   "player": "Walker Kessler",
+   "team": "LAL",
+   "game": "UTAH @ LAL",
+   "market": "3+ threes",
+   "p": 0.019,
+   "note": "21 starts"
+  },
+  {
+   "player": "Stephon Castle",
+   "team": "SA",
+   "game": "SA @ SAC",
+   "market": "3+ threes",
+   "p": 0.235,
+   "note": "85 starts"
+  },
+  {
+   "player": "Julian Champagnie",
+   "team": "SA",
+   "game": "SA @ SAC",
+   "market": "3+ threes",
+   "p": 0.494,
+   "note": "73 starts"
+  },
+  {
+   "player": "De'Aaron Fox",
+   "team": "SA",
+   "game": "SA @ SAC",
+   "market": "3+ threes",
+   "p": 0.165,
+   "note": "89 starts"
+  },
+  {
+   "player": "Devin Vassell",
+   "team": "SA",
+   "game": "SA @ SAC",
+   "market": "3+ threes",
+   "p": 0.306,
    "note": "81 starts"
+  },
+  {
+   "player": "Victor Wembanyama",
+   "team": "SA",
+   "game": "SA @ SAC",
+   "market": "3+ threes",
+   "p": 0.315,
+   "note": "74 starts"
+  },
+  {
+   "player": "Zach LaVine",
+   "team": "SAC",
+   "game": "SA @ SAC",
+   "market": "3+ threes",
+   "p": 0.524,
+   "note": "52 starts"
+  },
+  {
+   "player": "De'Andre Hunter",
+   "team": "SAC",
+   "game": "SA @ SAC",
+   "market": "3+ threes",
+   "p": 0.284,
+   "note": "39 starts"
+  },
+  {
+   "player": "Keegan Murray",
+   "team": "SAC",
+   "game": "SA @ SAC",
+   "market": "3+ threes",
+   "p": 0.116,
+   "note": "29 starts"
   }
  ]
 }

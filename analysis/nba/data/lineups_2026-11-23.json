@@ -1,0 +1,182 @@
+{
+ "MEM": {
+  "five": [
+   "Jahmai Mashack",
+   "Cedric Coward",
+   "Ty Jerome",
+   "Jaylen Wells",
+   "Zach Edey"
+  ]
+ },
+ "CHA": {
+  "five": [
+   "Brandon Miller",
+   "Sion James",
+   "Coby White",
+   "Naz Reid",
+   "Moussa Diabate"
+  ]
+ },
+ "POR": {
+  "five": [
+   "Sidy Cissoko",
+   "Toumani Camara",
+   "Damian Lillard",
+   "Deni Avdija",
+   "Donovan Clingan"
+  ]
+ },
+ "PHI": {
+  "five": [
+   "VJ Edgecombe",
+   "Jaylen Brown",
+   "Tyrese Maxey",
+   "LeBron James",
+   "Dominick Barlow"
+  ]
+ },
+ "OKC": {
+  "five": [
+   "Jared McCain",
+   "Ajay Mitchell",
+   "Shai Gilgeous-Alexander",
+   "Kenrich Williams",
+   "Isaiah Hartenstein"
+  ]
+ },
+ "IND": {
+  "five": [
+   "Quenton Jackson",
+   "Kelly Oubre Jr.",
+   "Andrew Nembhard",
+   "Pascal Siakam",
+   "Ivica Zubac"
+  ]
+ },
+ "MIL": {
+  "five": [
+   "Tyler Herro",
+   "Jaime Jaquez Jr.",
+   "Ryan Rollins",
+   "Kyle Kuzma",
+   "Myles Turner"
+  ]
+ },
+ "TOR": {
+  "five": [
+   "Ja'Kobe Walter",
+   "Allen Graves",
+   "Immanuel Quickley",
+   "Scottie Barnes",
+   "Collin Murray-Boyles"
+  ]
+ },
+ "BKN": {
+  "five": [
+   "Michael Porter Jr.",
+   "Danny Wolf",
+   "Egor Demin",
+   "Julius Randle",
+   "Day'Ron Sharpe"
+  ]
+ },
+ "MIN": {
+  "five": [
+   "Ayo Dosunmu",
+   "Jonathan Kuminga",
+   "LaMelo Ball",
+   "Jaden McDaniels",
+   "Rudy Gobert"
+  ]
+ },
+ "CLE": {
+  "five": [
+   "Donovan Mitchell",
+   "Jaylon Tyson",
+   "James Harden",
+   "Peyton Watson",
+   "Jarrett Allen"
+  ]
+ },
+ "CHI": {
+  "five": [
+   "Buddy Hield",
+   "Isaac Okoro",
+   "Josh Giddey",
+   "Matas Buzelis",
+   "Jalen Smith"
+  ]
+ },
+ "PHX": {
+  "five": [
+   "Jalen Green",
+   "Dillon Brooks",
+   "Devin Booker",
+   "Miles Bridges",
+   "Oso Ighodaro"
+  ]
+ },
+ "NO": {
+  "five": [
+   "Herbert Jones",
+   "Saddiq Bey",
+   "Jeremiah Fears",
+   "Zion Williamson",
+   "Yves Missi"
+  ]
+ },
+ "LAC": {
+  "five": [
+   "Max Strus",
+   "Brandon Ingram",
+   "Darius Garland",
+   "Rui Hachimura",
+   "Brook Lopez"
+  ]
+ },
+ "HOU": {
+  "five": [
+   "Amen Thompson",
+   "Kevin Durant",
+   "Fred VanVleet",
+   "Jabari Smith Jr.",
+   "Alperen Sengun"
+  ]
+ },
+ "UTAH": {
+  "five": [
+   "Darryn Peterson",
+   "Josh Green",
+   "Keyonte George",
+   "Ace Bailey",
+   "Mo Bamba"
+  ]
+ },
+ "LAL": {
+  "five": [
+   "Quentin Grimes",
+   "Matisse Thybulle",
+   "Luka Doncic",
+   "Ziaire Williams",
+   "Walker Kessler"
+  ]
+ },
+ "SA": {
+  "five": [
+   "Stephon Castle",
+   "Julian Champagnie",
+   "De'Aaron Fox",
+   "Devin Vassell",
+   "Victor Wembanyama"
+  ]
+ },
+ "SAC": {
+  "five": [
+   "Zach LaVine",
+   "De'Andre Hunter",
+   "Darius Acuff Jr.",
+   "Keegan Murray",
+   "Domantas Sabonis"
+  ]
+ }
+}
