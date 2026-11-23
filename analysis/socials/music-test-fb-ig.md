@@ -19,12 +19,12 @@ return no views (a sync gap, not zero).
 | 2026-11-13 | 12:30 PM | Instagram reel | 6885328 | Education text cards + drawn diagram (overnight high sweep vs hold) | music | soft_as_a_dry_pillow | 118 (post 9305054, snapshot 11/14, latest Blotato has) | 0 |
 | 2026-11-14 | 5:00 PM | Facebook reel | 6946234 | Education text cards + graphic (prop firm math, 4 pt stop vs $2,000 drawdown) | music | cliff_road_chill | 198 (post 9358709, snapshot 11/15, latest Blotato has) | 1 |
 | 2026-11-14 | 7:15 PM | Instagram reel | 6946302 | Education text cards + graphic (prop firm math, 4 pt stop vs $2,000 drawdown) | music | cliff_road_chill | 108 (post 9363096, snapshot 11/16, latest Blotato has) | 0 |
-| 2026-11-15 | 12:30 PM | Instagram reel | 6971780 | Education text cards + drawn diagram (equal highs, sweep vs breakout) | music | traveling_in_your_mind | | |
-| 2026-11-15 | 5:00 PM | Facebook reel | 6971781 | Lifestyle text cards (night review after son's bedtime) | music | waiting_tttt | | |
-| 2026-11-16 | 12:30 PM | Instagram reel | 7020926 | Education text cards (wait for confirmation, early entries) | music | this_pain_is_soft | | |
-| 2026-11-16 | 5:00 PM | Facebook reel | 7020928 | Education text cards (leave the stop alone) | music | i_hope_youre_happy | | |
-| 2026-11-16 | 5:30 PM | Facebook reel | 7049659 | Trade reel (paper trade, Tim approved; row added 11/17) | music | cliff_road_chill | | |
-| 2026-11-16 | 6:00 PM | Instagram reel | 7049661 | Trade reel (paper trade, Tim approved; row added 11/17) | music | cliff_road_chill | | |
+| 2026-11-15 | 12:30 PM | Instagram reel | 6971780 | Education text cards + drawn diagram (equal highs, sweep vs breakout) | music | traveling_in_your_mind | 117 (post 9389339, snapshot 11/22) | 0 |
+| 2026-11-15 | 5:00 PM | Facebook reel | 6971781 | Lifestyle text cards (night review after son's bedtime) | music | waiting_tttt | 37 (post 9398677, snapshot 11/22) | 0 |
+| 2026-11-16 | 12:30 PM | Instagram reel | 7020926 | Education text cards (wait for confirmation, early entries) | music | this_pain_is_soft | 60 (post 9433961, snapshot 11/17, latest Blotato has) | 0 |
+| 2026-11-16 | 5:00 PM | Facebook reel | 7020928 | Education text cards (leave the stop alone) | music | i_hope_youre_happy | 195 (post 9444881, snapshot 11/17, latest Blotato has) | 0 |
+| 2026-11-16 | 5:30 PM | Facebook reel | 7049659 | Trade reel (paper trade, Tim approved; row added 11/17) | music | cliff_road_chill | 28 (post 9445732, snapshot 11/17, latest Blotato has) | 0 |
+| 2026-11-16 | 6:00 PM | Instagram reel | 7049661 | Trade reel (paper trade, Tim approved; row added 11/17) | music | cliff_road_chill | 120 (post 9447163, snapshot 11/17, latest Blotato has) | 2 |
 | 2026-11-17 | 12:30 PM | Instagram reel | 7073979 | Education text cards + drawn diagram (stop distance from entry) | music | old_key | | |
 | 2026-11-17 | 5:00 PM | Facebook reel | 7073991 | Education text cards (4 rules before a trade) | music | aeroplane | | |
 | 2026-11-17 | 7:16 AM | Facebook reel | 7078054 (post 9466573) | Trade still reel (second funded account day 1, Tim approved) | music | lag | | |
