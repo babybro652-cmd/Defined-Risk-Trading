@@ -1,6 +1,6 @@
 # Peace by Page: content plan, 11/16 to 12/20 (TikTok approach updated 11/17)
 
-Written 11/11 by the ventures agent from the 11/11 deep dive. **Updated 11/17** after Tim approved the TikTok audit (`tiktok-audit-2026-11-17.md`, "Go"). The 11/17 rules below win over anything older. Nothing is scheduled yet: week 1 starts once Tim films the Calm Wings proof copy.
+Written 11/11 by the ventures agent from the 11/11 deep dive. **Updated 11/17** after Tim approved the TikTok audit (`tiktok-audit-2026-11-17.md`, "Go"). The 11/17 rules below win over anything older. **11/23:** Calm Wings paperback is live on Amazon; the paperback line is on (see Captions). Nothing is scheduled yet: week 1 starts once Tim films the Calm Wings proof copy.
 
 ## TikTok rules (Tim approved 11/17)
 - **3 posts a week on @peace.by.page (Blotato 65985): Mon 7:30 PM, Wed 8:45 PM (bedtime slot), Fri 7:30 PM ET.**
@@ -22,7 +22,12 @@ Written 11/11 by the ventures agent from the 11/11 deep dive. **Updated 11/17** 
 - **Open with a question. End with a question viewers can answer in one word** (last line before the hashtags).
 - Short: under about 150 characters before the support note and hashtags.
 - **Gift angle through Sat 12/20:** "for the friend who overthinks everything", "a $3.99 stocking stuffer for the worrier" (SOS kit), and "Tag the friend who needs this." From 12/21 the gift lines stop.
-- **Paperback:** say nothing about Amazon or a paperback until the Calm Wings KDP listing is live (submitted 11/16 at $16.99, not live as of 11/17). Once Tim sends the Amazon link, gift captions may add "also in paperback on Amazon" (the TikTok caption can't link it; say "search Calm Wings Peace by Page on Amazon" only after checking the listing title). The footage shows the proof copy either way; that's fine, it's what the paperback looks like.
+- **Paperback: LIVE on Amazon 11/23 (line is ON).** Calm Wings paperback, $16.99, 170 pages, ASIN B0HS5QCNDM, ISBN 9798165687648, In Stock (publication date 11/17). Link: **https://www.amazon.com/dp/B0HS5QCNDM** (Tim's share link https://a.co/d/01To3Z7q resolves there). Amazon title: "Calm Wings: A 90-Day Anxiety Journal with Daily Prompts, Mood Tracker, Grounding Tools and Butterfly Coloring Pages (Peace by Page)".
+  - **Gift captions** (the "Gift line: Yes" posts) add one line after the gift line: "Calm Wings is also in paperback on Amazon." Only Calm Wings has a paperback; never say it for Petals or Nights.
+  - **TikTok:** no links in captions besides the free-journal line, so write "Search Calm Wings Peace by Page on Amazon" (checked 11/23: that search returns the listing as the top result).
+  - **Facebook:** add the link: "Also in paperback on Amazon: https://www.amazon.com/dp/B0HS5QCNDM".
+  - **Instagram:** captions aren't clickable; use the TikTok wording ("Search Calm Wings Peace by Page on Amazon").
+  - Non-gift posts don't mention the paperback. The footage shows the proof copy; that's fine, it's what the paperback looks like.
 - Every caption: "Supports, not replaces, professional care. In crisis in the US, call or text 988." No treatment words ("relief", "cure", "therapy", "heal", "fix your anxiety"). No em dashes, no filler words (actually, really, just, simply, truly, genuinely). Nothing that echoes "peace by piece".
 - Hashtags: 3 to 5, from #anxietyjournal #colorwithme #coloringforadults #journalwithme #giftideas #stockingstuffer.
 
@@ -100,7 +105,10 @@ Blotato still refuses the account, so Tim queues each week's 7 pins in Pinterest
 | 12/6 | Gift guide: 3 editions side by side | Gifts for Someone Who Worries | Store |
 
 Pin titles and descriptions carry search words: "anxiety journal printable", "gift for someone with anxiety", "adult coloring pages printable", "bedtime journal", "calm corner printable". Every description ends with the support note and 988.
-If the KDP paperback goes live before 12/6, swap 2 gift pins to the Amazon link.
+**Paperback live 11/23: 2 gift pins go to Amazon** (Tim sets these when he queues the 11/30 to 12/6 week):
+- **11/30 Coloring gift for adults** now links to https://www.amazon.com/dp/B0HS5QCNDM. Title: "Calm Wings Paperback: a 90-Day Anxiety Journal with Butterfly Coloring Pages". Description ends: "Paperback on Amazon, $16.99. Printable version on Payhip. Supports, not replaces, professional care. US crisis line: call or text 988."
+- **12/6 Gift guide** stays on the store link (it shows all 3 editions) and its description adds "Calm Wings is also in paperback on Amazon."
+- Also swap the 11/16 Wings gift pin's description (already posted) only if Pinterest lets Tim edit it: add the same line. Optional.
 
 ## IG bio (one-time, Tim)
 Jarvis could not see the @peacebypage bio (Instagram blocks logged-out fetches). To check and add it:
@@ -108,13 +116,14 @@ Jarvis could not see the @peacebypage bio (Instagram blocks logged-out fetches).
 2. Look under the bio: if you see **payhip.com/PeaceByPage**, it's done.
 3. If not: **Edit profile** > **Links** > **Add external link** > URL `https://payhip.com/PeaceByPage`, Title "Shop + free 7-day journal" > Done > Done.
 4. Optional, once peacebypage.com redirects to the store, use that instead.
-5. Tell Jarvis "IG link is in", and IG captions can say "link in bio".
+5. Tell Jarvis "IG link is in", and IG captions can point to the profile link.
+6. Optional bio text line (Amazon): add "Calm Wings paperback on Amazon" to the bio text. IG allows up to 5 links, so Tim can also add https://www.amazon.com/dp/B0HS5QCNDM as a second link titled "Calm Wings paperback".
 
 ## Needs Tim
 - **Film the proof copy** (about 20 min, one evening): clips 1 to 3 above, clip 4 optional. Send them to Jarvis.
 - Post each TikTok draft from the app with a sound (about 3 min, Mon/Wed/Fri evening).
 - Reply to TikTok comments at 10 AM lunch.
 - Send the app stats screenshots (audit section 7) on Mon 12/7, or sooner if something looks off.
-- Send the Amazon link when Calm Wings is live on KDP (the paperback line stays off until then).
+- ~~Send the Amazon link~~ Done 11/23 (https://www.amazon.com/dp/B0HS5QCNDM). Add the Amazon line to the Calm Wings Payhip listings (text in TODO.md).
 - Send the Payhip links for the SOS kits and the Calm Wings / Nights mood trackers (needed for the 12/4 stocking-stuffer post and pins).
 - Check the IG bio link.
