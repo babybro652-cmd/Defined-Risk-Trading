@@ -12,7 +12,7 @@ import csv, json, re, subprocess, collections, unicodedata
 
 R = '/home/user/Defined-Risk-Trading'
 COMMITS = {'2026-11-04': 'ea0de84', '2026-11-05': 'a3b7043', '2026-11-06': '9799f9f', '2026-11-07': '08379c3',
-           '2026-11-08': 'eceed10', '2026-11-09': '3a8cef7', '2026-11-11': '5810317', '2026-11-12': 'f2dbf81', '2026-11-13': '2b2ac63', '2026-11-14': 'd5fc33e', '2026-11-15': 'ae974ef', '2026-11-16': 'e332b63', '2026-11-17': '5ac9192', '2026-11-18': '92b0ac4', '2026-11-19': '835095d', '2026-11-20': '53e3069', '2026-11-21': 'fb634e3', '2026-11-22': '9a9019e'}
+           '2026-11-08': 'eceed10', '2026-11-09': '3a8cef7', '2026-11-11': '5810317', '2026-11-12': 'f2dbf81', '2026-11-13': '2b2ac63', '2026-11-14': 'd5fc33e', '2026-11-15': 'ae974ef', '2026-11-16': 'e332b63', '2026-11-17': '5ac9192', '2026-11-18': '92b0ac4', '2026-11-19': '835095d', '2026-11-20': '53e3069', '2026-11-21': 'fb634e3', '2026-11-22': '9a9019e', '2026-11-23': 'b8bf3ed'}
 
 
 def norm(n):
@@ -33,7 +33,7 @@ for g in games:
     if isinstance(g, dict) and g.get('date') in COMMITS:
         played = {norm(g['nm'][p[0]]) for p in g['pl'] if p[0] in g['nm']}
         tp = {t: norm(g['nm'].get(p, '?')) for t, p in opening.get(g['id'], {}).get('tp', {}).items()}
-        G[(g['date'], g['away'], g['home'])] = dict(tipw=g['tip'].get('w'), fp=norm(g['nm'][g['fp'][0]]),
+        G[(g['date'], g['away'], g['home'])] = dict(tipw=(g['tip'] or {}).get('w'), fp=norm(g['nm'][g['fp'][0]]),
                                                     fpteam=g['fp'][1], tp=tp, played=played)
 
 
@@ -80,6 +80,8 @@ ST_TIP = {
                 ('WSH','CHI'):(73,27),('PHX','UTAH'):(51,49),('HOU','DEN'):(47,53),('SAC','LAL'):(36,64)},
  '2026-11-22': {('DET','ATL'):(55,45),('OKC','MIA'):(33,67),('ORL','WSH'):(48,52),('DEN','CHI'):(69,31),('DAL','UTAH'):(46,54),
                 ('IND','NY'):(65,35),('BOS','GS'):(65,35)},
+ '2026-11-23': {('MEM','CHA'):(52,48),('POR','PHI'):(53,47),('OKC','IND'):(33,67),('MIL','TOR'):(36,64),('BKN','MIN'):(53,47),
+                ('CLE','CHI'):(75,25),('PHX','NO'):(60,40),('LAC','HOU'):(51,49),('UTAH','LAL'):(34,66),('SA','SAC'):(82,18)},
  '2026-11-21': {('MIL','PHI'):(47,53),('POR','NY'):(65,35),('LAC','DAL'):(69,31),('NO','SA'):(10,90),('BOS','SAC'):(51,49)},   # MEM @ MIN tip 'loading'
  '2026-11-18': {('MEM','CLE'):(32,68),('HOU','IND'):(32,68),('MIL','MIA'):(32,68),('PHI','ORL'):(31,69),('CHI','BKN'):(30,70),('WSH','TOR'):(51,49),
                 ('DET','NO'):(69,31),('ATL','OKC'):(48,52),('GS','DAL'):(48,52),('BOS','DEN'):(50,50),('PHX','SAC'):(33,67)},   # UTAH @ LAL tip 'loading'
@@ -248,7 +250,28 @@ ST_PCT_1118 = {  # PHI card lists Jaylen Brown (OUT); MIL card lists Jaquez and 
     'PHX': [('Devin Booker',14),('Dillon Brooks',10),('Jalen Green',10),('Miles Bridges',9),('Oso Ighodaro',4)],
     'SAC': [('Darius Acuff Jr.',17),('Zach LaVine',12),('Domantas Sabonis',9),("De'Andre Hunter",8),('Keegan Murray',8)],
 }
-for d, tab in (('2026-11-09', ST_PCT_0911), ('2026-11-11', ST_PCT_1111), ('2026-11-12', ST_PCT_1112), ('2026-11-13', ST_PCT_1113), ('2026-11-14', ST_PCT_1114), ('2026-11-15', ST_PCT_1115), ('2026-11-16', ST_PCT_1116), ('2026-11-17', ST_PCT_1117), ('2026-11-18', ST_PCT_1118), ('2026-11-19', ST_PCT_1119)):
+ST_PCT_1123 = {  # matchup cards 11/23 (data/sources/2026-11-23); Embiid, LeBron, Nesmith, Sims, Traore, Hayes, Wembanyama, Fox, Mashack listed but DNP (dropped by alive())
+    'MEM': [('Ty Jerome',19),('Cedric Coward',11),('Jaylen Wells',10),('Zach Edey',7),('Jahmai Mashack',5)],
+    'CHA': [('Brandon Miller',15),('Coby White',12),('Naz Reid',11),('Moussa Diabate',6),('Sion James',4)],
+    'POR': [('Deni Avdija',15),('Damian Lillard',13),('Donovan Clingan',8),('Toumani Camara',8),('Sidy Cissoko',4)],
+    'PHI': [('Jaylen Brown',12),('Joel Embiid',12),('Tyrese Maxey',12),('LeBron James',9),('VJ Edgecombe',7)],
+    'OKC': [('Ajay Mitchell',14),('Jared McCain',11),('Isaiah Hartenstein',8),('Kenrich Williams',7),('Micah Peavy',5)],
+    'IND': [('Pascal Siakam',16),('Andrew Nembhard',12),('Aaron Nesmith',9),('Ivica Zubac',9),('Kelly Oubre Jr.',9)],
+    'MIL': [('Tyler Herro',19),('Kyle Kuzma',12),('Brayden Burries',10),('Myles Turner',10),('Jericho Sims',5)],
+    'TOR': [('Scottie Barnes',14),('Immanuel Quickley',13),("Ja'Kobe Walter",7),('Jakob Poeltl',7),('Allen Graves',4)],
+    'BKN': [('Michael Porter Jr.',13),('Julius Randle',11),('Nolan Traore',6),('Danny Wolf',5),("Day'Ron Sharpe",5)],
+    'MIN': [('LaMelo Ball',16),('Ayo Dosunmu',13),('Jaden McDaniels',12),('Jonathan Kuminga',10),('Rudy Gobert',8)],
+    'CLE': [('Donovan Mitchell',18),('James Harden',15),('Peyton Watson',11),('Jarrett Allen',10),('Tyrese Proctor',5)],
+    'CHI': [('Matas Buzelis',11),('Josh Giddey',10),('Jalen Smith',8),('Buddy Hield',6),('Isaac Okoro',6)],
+    'PHX': [('Devin Booker',15),('Dillon Brooks',12),('Jalen Green',11),('Miles Bridges',10),('Oso Ighodaro',4)],
+    'NO': [('Saddiq Bey',15),('Jeremiah Fears',12),('Derik Queen',10),('Herbert Jones',7),('Yves Missi',5)],
+    'LAC': [('Darius Garland',18),('Rui Hachimura',10),('Brook Lopez',9),('Derrick Jones Jr.',9),('Max Strus',8)],
+    'HOU': [('Kevin Durant',12),('Alperen Sengun',10),('Amen Thompson',9),('Jabari Smith Jr.',8),('Fred VanVleet',7)],
+    'UTAH': [('Keyonte George',14),('Darryn Peterson',10),('Ace Bailey',9),('Jaxson Hayes',5),('Josh Green',3)],
+    'LAL': [('Luka Doncic',25),('Walker Kessler',11),('Quentin Grimes',9),('Ziaire Williams',8),('Matisse Thybulle',6)],
+    'SA': [('Victor Wembanyama',23),('Stephon Castle',14),("De'Aaron Fox",13),('Devin Vassell',12),('Julian Champagnie',9)],
+    'SAC': [('Darius Acuff Jr.',9),('Zach LaVine',7),('Domantas Sabonis',5),("De'Andre Hunter",4),('Keegan Murray',4)]}
+for d, tab in (('2026-11-09', ST_PCT_0911), ('2026-11-11', ST_PCT_1111), ('2026-11-12', ST_PCT_1112), ('2026-11-13', ST_PCT_1113), ('2026-11-14', ST_PCT_1114), ('2026-11-15', ST_PCT_1115), ('2026-11-16', ST_PCT_1116), ('2026-11-17', ST_PCT_1117), ('2026-11-18', ST_PCT_1118), ('2026-11-19', ST_PCT_1119), ('2026-11-23', ST_PCT_1123)):
     for tm, v in tab.items():
         ST[(d, tm)] = [(n, p, p) for n, p in v]   # StarTool prints game first basket %; same number ranks team and game
 
@@ -265,6 +288,8 @@ SH_TIP = {  # normalized favorite; None = even
  '2026-11-11': {('WSH','IND'):'WSH',('CLE','NY'):'CLE',('BOS','TOR'):'TOR',('SA','CHI'):'SA',('DEN','MEM'):'MEM',
                 ('LAL','MIL'):'LAL',('BKN','NO'):'BKN',('ORL','UTAH'):'ORL',('GS','HOU'):'HOU',('OKC','POR'):'POR'},
  '2026-11-12': {('TOR','PHI'):'TOR',('DET','WSH'):'WSH',('DAL','MIN'):'MIN',('CHA','PHX'):'PHX'},
+ '2026-11-23': {('MEM','CHA'):'MEM',('POR','PHI'):'PHI',('OKC','IND'):'OKC',('BKN','MIN'):'MIN',('MIL','TOR'):'TOR',('PHX','NO'):'PHX',
+                ('CLE','CHI'):'CLE',('LAC','HOU'):'LAC',('UTAH','LAL'):'LAL',('SA','SAC'):'SA'},   # tip sheet jumper tip win %; PHI jumper Embiid (OUT), UTAH Hayes (OUT), SA Wembanyama (OUT)
  '2026-11-18': {('MEM','CLE'):'CLE',('HOU','IND'):'IND',('MIL','MIA'):'MIA',('PHI','ORL'):'ORL',('CHI','BKN'):'BKN',('WSH','TOR'):'WSH',
                 ('DET','NO'):'DET',('GS','DAL'):'GS',('ATL','OKC'):'OKC',('BOS','DEN'):'DEN',('UTAH','LAL'):'LAL',('PHX','SAC'):'PHX'},   # tip sheet normalized (log5); MIL jumper Turner on the sheet; Hayes, Kessler, Horford tagged
  '2026-11-17': {('NY','TOR'):'NY',('POR','MIN'):None,('DET','SA'):'SA',('UTAH','LAC'):'LAC',('CHA','LAL'):None},   # tip sheet normalized; LAL jumper Mamukelashvili 0% (no sample) = no call
