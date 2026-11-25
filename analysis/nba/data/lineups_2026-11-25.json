@@ -1,0 +1,164 @@
+{
+ "MIA": {
+  "five": [
+   "Klay Thompson",
+   "Pelle Larsson",
+   "Davion Mitchell",
+   "Giannis Antetokounmpo",
+   "Bam Adebayo"
+  ]
+ },
+ "PHI": {
+  "five": [
+   "VJ Edgecombe",
+   "Jaylen Brown",
+   "Tyrese Maxey",
+   "LeBron James",
+   "Jabari Walker"
+  ]
+ },
+ "CHI": {
+  "five": [
+   "Buddy Hield",
+   "Isaac Okoro",
+   "Josh Giddey",
+   "Matas Buzelis",
+   "Jalen Smith"
+  ]
+ },
+ "CHA": {
+  "five": [
+   "Brandon Miller",
+   "Sion James",
+   "Coby White",
+   "Naz Reid",
+   "Moussa Diabate"
+  ]
+ },
+ "CLE": {
+  "five": [
+   "Donovan Mitchell",
+   "Sam Merrill",
+   "James Harden",
+   "Peyton Watson",
+   "Jarrett Allen"
+  ]
+ },
+ "NY": {
+  "five": [
+   "Landry Shamet",
+   "Mikal Bridges",
+   "Jalen Brunson",
+   "Josh Hart",
+   "Karl-Anthony Towns"
+  ]
+ },
+ "MIN": {
+  "five": [
+   "Ayo Dosunmu",
+   "Jonathan Kuminga",
+   "LaMelo Ball",
+   "Jaden McDaniels",
+   "Rudy Gobert"
+  ]
+ },
+ "OKC": {
+  "five": [
+   "Jared McCain",
+   "Ajay Mitchell",
+   "Shai Gilgeous-Alexander",
+   "Micah Peavy",
+   "Isaiah Hartenstein"
+  ]
+ },
+ "LAC": {
+  "five": [
+   "Brandon Ingram",
+   "Derrick Jones Jr.",
+   "Darius Garland",
+   "Rui Hachimura",
+   "Brook Lopez"
+  ]
+ },
+ "MEM": {
+  "five": [
+   "Cedric Coward",
+   "Jaylen Wells",
+   "Ty Jerome",
+   "Kris Murray",
+   "Zach Edey"
+  ]
+ },
+ "BKN": {
+  "five": [
+   "Michael Porter Jr.",
+   "Danny Wolf",
+   "Mikel Brown Jr.",
+   "Julius Randle",
+   "Day'Ron Sharpe"
+  ]
+ },
+ "MIL": {
+  "five": [
+   "Tyler Herro",
+   "Jaime Jaquez Jr.",
+   "Ryan Rollins",
+   "Kyle Kuzma",
+   "Myles Turner"
+  ]
+ },
+ "PHX": {
+  "five": [
+   "Jalen Green",
+   "Dillon Brooks",
+   "Devin Booker",
+   "Miles Bridges",
+   "Oso Ighodaro"
+  ]
+ },
+ "HOU": {
+  "five": [
+   "Amen Thompson",
+   "Kevin Durant",
+   "Fred VanVleet",
+   "Jabari Smith Jr.",
+   "Alperen Sengun"
+  ]
+ },
+ "SAC": {
+  "five": [
+   "Zach LaVine",
+   "De'Andre Hunter",
+   "Darius Acuff Jr.",
+   "Keegan Murray",
+   "Domantas Sabonis"
+  ]
+ },
+ "GS": {
+  "five": [
+   "Brandin Podziemski",
+   "Yaxel Lendeborg",
+   "De'Anthony Melton",
+   "Draymond Green",
+   "Charles Bassey"
+  ]
+ },
+ "SA": {
+  "five": [
+   "Stephon Castle",
+   "Julian Champagnie",
+   "De'Aaron Fox",
+   "Devin Vassell",
+   "Victor Wembanyama"
+  ]
+ },
+ "POR": {
+  "five": [
+   "Sidy Cissoko",
+   "Toumani Camara",
+   "Damian Lillard",
+   "Deni Avdija",
+   "Donovan Clingan"
+  ]
+ }
+}
