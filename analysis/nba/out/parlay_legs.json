@@ -91,14 +91,6 @@
    "note": "94 starts"
   },
   {
-   "player": "Jalen Smith",
-   "team": "CHI",
-   "game": "CHI @ CHA",
-   "market": "3+ threes",
-   "p": 0.258,
-   "note": "36 starts"
-  },
-  {
    "player": "Brandon Miller",
    "team": "CHA",
    "game": "CHI @ CHA",
@@ -417,14 +409,6 @@
    "market": "3+ threes",
    "p": 0.025,
    "note": "88 starts"
-  },
-  {
-   "player": "Zach LaVine",
-   "team": "SAC",
-   "game": "SAC @ GS",
-   "market": "3+ threes",
-   "p": 0.506,
-   "note": "53 starts"
   },
   {
    "player": "De'Andre Hunter",

@@ -7,13 +7,13 @@ Tip winner scores first 66% (25-26).
 - **First basket: Charles Bassey** (GS vs SAC 10:00). Est 18% (fair +454; old model 15%; tip jumper x1.2 if his team wins the tip; chain model): GS scores first 65%; first pts 0/0 and first shot 0/0 starts 25-26, 1/4 26-27, first 3 FGA 0.75 per start, FG 61%; SAC vs C x0.91
 - **First basket: Jarrett Allen** (CLE @ NY 7:30). Est 17% (fair +483; old model 15%; tip jumper x1.2 if his team wins the tip; chain model): CLE scores first 59%; first pts 19/56 and first shot 11/56 starts 25-26, 5/15 26-27, first 3 FGA 0.61 per start, FG 61%; NY vs C x0.85
 - **First basket: Alperen Sengun** (HOU vs PHX 8:30). Est 16% (fair +526; old model 13%; tip jumper x1.2 if his team wins the tip; chain model): HOU scores first 53%; first pts 20/72 and first shot 23/72 starts 25-26, 3/16 26-27, first 3 FGA 0.84 per start, FG 53%; PHX vs C x1.11
-- **First basket: Jalen Smith** (CHI @ CHA 7:00). Est 15% (fair +585; old model 17%; tip jumper x1.2 if his team wins the tip; chain model): CHI scores first 47%; first pts 7/21 and first shot 6/21 starts 25-26, 6/15 26-27, first 3 FGA 0.75 per start, FG 51%; CHA vs F x1.07; Day-To-Day
-- **First basket: Naz Reid** (CHA vs CHI 7:00). Est 15% (fair +587; old model 15%; chain model): CHA scores first 53%; first pts 0/3 and first shot 1/3 starts 25-26, 5/16 26-27, first 3 FGA 0.89 per start, FG 42%; CHI vs C x0.96
+- **First basket: Nic Claxton** (CHI @ CHA 7:00). Est 15% (fair +549; old model 12%; tip jumper x1.2 if his team wins the tip; chain model): CHI scores first 58%; first pts 16/68 and first shot 12/68 starts 25-26, 0/1 26-27, first 3 FGA 0.46 per start, FG 55%; CHA vs C x1.04; Jalen Smith out (36% share spread to the rest)
 - **First basket: Day'Ron Sharpe** (BKN @ MIL 8:00). Est 14% (fair +618; old model 12%; tip jumper x1.2 if his team wins the tip; chain model): BKN scores first 57%; first pts 2/7 and first shot 2/7 starts 25-26, 3/16 26-27, first 3 FGA 0.61 per start, FG 56%; MIL vs C x0.90; Nolan Traore out (28% share spread to the rest)
+- **First basket: Brandin Podziemski** (GS vs SAC 10:00). Est 14% (fair +631; old model 15%; chain model): GS scores first 65%; first pts 9/43 and first shot 10/43 starts 25-26, 6/15 26-27, first 3 FGA 0.67 per start, FG 45%; SAC vs G x0.95
 - **Team first basket: Bam Adebayo** (MIA @ PHI). Model share of MIA's first points 38% (old 31%); raw 25-26 23/73, first shot 33/73, FG 47%
 - **Team first basket: Victor Wembanyama** (SA @ POR). Model share of SA's first points 37% (old 37%); raw 25-26 24/57, first shot 22/57, FG 52%
-- **Team first basket: Jalen Smith** (CHI @ CHA). Model share of CHI's first points 31% (old 36%); raw 25-26 7/21, first shot 6/21, FG 51%
 - **Team first basket: Domantas Sabonis** (SAC @ GS). Model share of SAC's first points 31% (old 32%); raw 25-26 4/15, first shot 5/15, FG 58%
+- **Team first basket: Alperen Sengun** (HOU vs PHX). Model share of HOU's first points 30% (old 24%); raw 25-26 20/72, first shot 23/72, FG 53%
 - **Over 24.5 points: Shai Gilgeous-Alexander** (OKC vs MIN). Over 24.5 in 85% of starts (blend); last 5 starts 25-26: 20 25 20 28 47; singles only, never in a parlay
 - **Over 24.5 points: Giannis Antetokounmpo** (MIA @ PHI). Over 24.5 in 70% of starts (blend); last 5 starts 25-26: 31 31 22 27 24; singles only, never in a parlay
 - **Over 19.5 points: Tyrese Maxey** (PHI vs MIA). Over 19.5 in 85% of starts (blend); last 5 starts 25-26: 21 32 24 15 23; fair -553 is shorter than -300, so take over 24.5 instead (65%, fair -188); singles only, never in a parlay
@@ -28,9 +28,9 @@ Tip winner scores first 66% (25-26).
 - MIA @ PHI 5:00: tip PHI 56% (Bam Adebayo vs Jabari Walker); MIA scores first 49%
   - PHI: 1st-shot pick Tyrese Maxey 12% (fair +723; scores on PHI's first shot 12%); 2nd-chance pick Jaylen Brown 12% (fair +702; after a miss 13%)
   - MIA: 1st-shot pick Bam Adebayo 19% (fair +440; scores on MIA's first shot 18%); 2nd-chance pick Giannis Antetokounmpo 13% (fair +687; after a miss 17%)
-- CHI @ CHA 7:00: tip CHA 59% (Jalen Smith vs Moussa Diabate); CHI scores first 47%
-  - CHA: 1st-shot pick Naz Reid 15% (fair +587; scores on CHA's first shot 13%); 2nd-chance pick Coby White 12% (fair +741; after a miss 14%)
-  - CHI: 1st-shot pick Jalen Smith 15% (fair +585; scores on CHI's first shot 13%); 2nd-chance pick Buddy Hield 10% (fair +934; after a miss 11%)
+- CHI @ CHA 7:00: tip CHI 72% (Nic Claxton vs Moussa Diabate); CHI scores first 58%
+  - CHI: 1st-shot pick Buddy Hield 13% (fair +668; scores on CHI's first shot 11%); 2nd-chance pick Nic Claxton 15% (fair +549; after a miss 13%)
+  - CHA: 1st-shot pick Naz Reid 12% (fair +767; scores on CHA's first shot 13%); 2nd-chance pick Coby White 9% (fair +963; after a miss 14%)
 - CLE @ NY 7:30: tip CLE 73% (Jarrett Allen vs Karl-Anthony Towns); CLE scores first 59%
   - CLE: 1st-shot pick Jarrett Allen 17% (fair +483; scores on CLE's first shot 12%); 2nd-chance pick Donovan Mitchell 12% (fair +732; after a miss 12%)
   - NY: 1st-shot pick Jalen Brunson 12% (fair +747; scores on NY's first shot 14%); 2nd-chance pick Karl-Anthony Towns 12% (fair +736; after a miss 17%)
@@ -58,7 +58,7 @@ Tip winner scores first 66% (25-26).
 Dunk/layup includes tip-ins and putbacks; 2pt jumper includes floaters and hooks (book rules vary). First points counts free throws; first basket is the first made FG (FanDuel). Sample: 1235 games 25-26, 261 games 26-27.
 
 - MIA @ PHI 5:00: first points Dunk/layup 34% (+196), 2pt jumper 24% (+311), 3-pointer 26% (+279), Free throw 15% (+546); first basket Dunk/layup 41% (+145), 2pt jumper 27% (+274), 3-pointer 32% (+208)
-- CHI @ CHA 7:00: first points Dunk/layup 45% (+123), 2pt jumper 19% (+420), 3-pointer 28% (+259), Free throw 8% (+1145); first basket Dunk/layup 48% (+107), 2pt jumper 21% (+386), 3-pointer 31% (+221)
+- CHI @ CHA 7:00: first points Dunk/layup 45% (+123), 2pt jumper 20% (+413), 3-pointer 28% (+262), Free throw 8% (+1146); first basket Dunk/layup 48% (+109), 2pt jumper 21% (+380), 3-pointer 31% (+219)
 - CLE @ NY 7:30: first points Dunk/layup 30% (+233), 2pt jumper 26% (+283), 3-pointer 28% (+254), Free throw 16% (+540); first basket Dunk/layup 33% (+204), 2pt jumper 29% (+243), 3-pointer 38% (+163)
 - MIN @ OKC 7:30: first points Dunk/layup 28% (+259), 2pt jumper 29% (+244), 3-pointer 29% (+242), Free throw 14% (+626); first basket Dunk/layup 32% (+210), 2pt jumper 34% (+195), 3-pointer 34% (+195)
 - LAC @ MEM 8:00: first points Dunk/layup 32% (+216), 2pt jumper 34% (+191), 3-pointer 25% (+301), Free throw 9% (+1011); first basket Dunk/layup 34% (+195), 2pt jumper 38% (+166), 3-pointer 29% (+251)
@@ -72,8 +72,8 @@ Best player + method (fair price; bet only if the book pays more):
 - **Victor Wembanyama first basket: Dunk/layup** (SA @ POR 10:00). Est 13.8% (fair +625) = FB 24% x 58% if he scores first; his first-FG sample 42, made FGs 1143
 - **Charles Bassey first basket: Dunk/layup** (GS vs SAC 10:00). Est 11.9% (fair +737) = FB 18% x 66% if he scores first; his first-FG sample 3, made FGs 190
 - **Jarrett Allen first basket: Dunk/layup** (CLE @ NY 7:30). Est 10.6% (fair +843) = FB 17% x 62% if he scores first; his first-FG sample 26, made FGs 562
+- **Nic Claxton first basket: Dunk/layup** (CHI @ CHA 7:00). Est 10.1% (fair +891) = FB 15% x 66% if he scores first; his first-FG sample 15, made FGs 405
 - **Day'Ron Sharpe first basket: Dunk/layup** (BKN @ MIL 8:00). Est 9.9% (fair +911) = FB 14% x 71% if he scores first; his first-FG sample 12, made FGs 376
-- **Moussa Diabate first basket: Dunk/layup** (CHA vs CHI 7:00). Est 9.5% (fair +955) = FB 11% x 86% if he scores first; his first-FG sample 18, made FGs 394
 - **Giannis Antetokounmpo first basket: Dunk/layup** (MIA @ PHI 5:00). Est 9.0% (fair +1013) = FB 13% x 71% if he scores first; his first-FG sample 18, made FGs 859
 - **Bam Adebayo first basket: 2pt jumper** (MIA @ PHI 5:00). Est 8.8% (fair +1043) = FB 19% x 47% if he scores first; his first-FG sample 38, made FGs 821
 - **Domantas Sabonis first basket: Dunk/layup** (SAC @ GS 10:00). Est 8.6% (fair +1065) = FB 11% x 80% if he scores first; his first-FG sample 21, made FGs 396
@@ -85,7 +85,7 @@ Best player + method (fair price; bet only if the book pays more):
 ## Tip-off
 
 - MIA @ PHI 5:00 ET: Bam Adebayo vs Jabari Walker; away wins tip 44%, away scores first 49%
-- CHI @ CHA 7:00 ET: Jalen Smith vs Moussa Diabate; away wins tip 41%, away scores first 47%
+- CHI @ CHA 7:00 ET: Nic Claxton vs Moussa Diabate; away wins tip 72%, away scores first 58%
 - CLE @ NY 7:30 ET: Jarrett Allen vs Karl-Anthony Towns; away wins tip 73%, away scores first 59%
 - MIN @ OKC 7:30 ET: Rudy Gobert vs Isaiah Hartenstein; away wins tip 54%, away scores first 51%
 - LAC @ MEM 8:00 ET: Brook Lopez vs Zach Edey; away wins tip 65%, away scores first 54%
