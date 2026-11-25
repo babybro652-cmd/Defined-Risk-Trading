@@ -100,15 +100,22 @@ Best player + method (fair price; bet only if the book pays more):
 - SA @ SAC 10:00 ET: Victor Wembanyama vs Domantas Sabonis; away wins tip 94%, away scores first 68%
 
 <!-- parlays:begin -->
-## Parlays 2026-11-23 (2-3 legs, $0.10 to $0.20)
+## Parlays 2026-11-25 (2-3 legs, $0.10 to $0.20)
 
 Only categories that beat their price season to date: NBA 3+ threes, NHL 3+ SOG, NFL receptions, soccer 1+ shot on target. No points overs, no first basket / first goal / anytime goal legs. Fair = product of the leg chances (no correlation boost). Take only at the minimum price or longer (fair with a 10% cushion). Legs from the same game are correlated and marked.
 
-### NBA
-- **2-leg #1:** Luka Doncic 3+ threes (79%, UTAH @ LAL) + Michael Porter Jr. 3+ threes (67%, BKN @ MIN). Fair -113 (53%); take +108 or longer.
-- **2-leg #2:** Luka Doncic 3+ threes (79%, UTAH @ LAL) + LaMelo Ball 3+ threes (67%, BKN @ MIN). Fair -112 (53%); take +108 or longer.
-- **2-leg #3:** Michael Porter Jr. 3+ threes (67%, BKN @ MIN) + Brandon Miller 3+ threes (64%, MEM @ CHA). Fair +135 (43%); take +159 or longer.
-- **3-leg #4:** LaMelo Ball 3+ threes (67%, BKN @ MIN) + Brandon Miller 3+ threes (64%, MEM @ CHA) + James Harden 3+ threes (61%, CLE @ CHI). Fair +287 (26%); take +326 or longer.
-- **3-leg #5:** James Harden 3+ threes (61%, CLE @ CHI) + Immanuel Quickley 3+ threes (56%, MIL @ TOR) + Tyrese Maxey 3+ threes (55%, POR @ PHI). Fair +427 (19%); take +479 or longer.
+### NHL
+- **2-leg #1:** Alex DeBrincat 3+ SOG (75%, VAN @ DET) + David Pastrnak 3+ SOG (74%, WPG @ BOS). Fair -124 (55%); take -101 or longer.
+- **2-leg #2:** Alex DeBrincat 3+ SOG (75%, VAN @ DET) + Cutter Gauthier 3+ SOG (73%, SJS @ ANA). Fair -120 (55%); take +101 or longer.
+- **2-leg #3:** David Pastrnak 3+ SOG (74%, WPG @ BOS) + Cutter Gauthier 3+ SOG (73%, SJS @ ANA). Fair -117 (54%); take +104 or longer.
+- **3-leg #4:** Matt Boldy 3+ SOG (72%, UTA @ MIN) + Brady Tkachuk 3+ SOG (70%, OTT @ FLA) + Jason Robertson 3+ SOG (69%, NSH @ DAL). Fair +186 (35%); take +214 or longer.
+- **3-leg #5:** Matt Boldy 3+ SOG (72%, UTA @ MIN) + Brady Tkachuk 3+ SOG (70%, OTT @ FLA) + Timo Meier 3+ SOG (68%, NJD @ CBJ). Fair +190 (34%); take +219 or longer.
+
+### UCL
+- **2-leg #1:** Kylian Mbappé 1+ shot on target (85%, PSV @ RMA) + Raphinha 1+ shot on target (84%, BAR @ SAB). Fair -246 (71%); take -182 or longer.
+- **2-leg #2:** Kylian Mbappé 1+ shot on target (85%, PSV @ RMA) + Erling Haaland 1+ shot on target (82%, NAP @ MNC). Fair -230 (70%); take -173 or longer.
+- **2-leg #3:** Raphinha 1+ shot on target (84%, BAR @ SAB) + Erling Haaland 1+ shot on target (82%, NAP @ MNC). Fair -220 (69%); take -166 or longer.
+- **3-leg #4:** Anis Hadj Moussa 1+ shot on target (79%, FCP @ FEY) + Abde Ezzalzouli 1+ shot on target (78%, BET @ SLB) + Pio Esposito 1+ shot on target (77%, VFB @ INT). Fair +113 (47%); take +134 or longer.
+- **3-leg #5:** Anis Hadj Moussa 1+ shot on target (79%, FCP @ FEY) + Abde Ezzalzouli 1+ shot on target (78%, BET @ SLB) + Luis Suárez 1+ shot on target (75%, MAN @ SCP). Fair +119 (46%); take +141 or longer.
 
 <!-- parlays:end -->
