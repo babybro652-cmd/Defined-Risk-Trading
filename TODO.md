@@ -10,7 +10,7 @@ Newest decisions win; move finished items to Done with the date.
 - [ ] Explainer videos: ON HOLD (Tim 11/18). Tweak the volume-profile pilot with Tim this weekend (posts/media/explainers/volume-profile/volume-profile-voice.mp4) before anything posts. Don't schedule any explainer until he OKs it.
 - [ ] END GOAL: one combined DRT indicator (best of CRT Pro, Div, Setups, Volume Bubbles). Div source saved 11/18 (pine/crt-divergence-sr.pine); alerts rebuilt 11/18 (CRT Pro, Div, Vol Bubbles). Needs first: tracking confirmed logging, ~100 more NY Div trades. Plan in .claude/agents/drt.md.
 - [ ] Indicator alerts: they had expired (logging stopped 11/19-11/20); Tim reset all alerts 11/23 to expire Wed 12/23/2026. Reminder set Mon 12/21 7:07 PM to renew. Older note: Fix indicator tracking (all trackers stopped 11/13). Drive folder "DRT Indicator Tracking (fix later)" https://drive.google.com/drive/folders/1ng3nQSXxSkII0SWvIQvqP75GHGL8pnOJ has every Pine + Apps Script file and a START HERE checklist. Copy CRT-Divergence-SR.pine from TradingView into it (not in repo). Decide: fix or retire CRT Setups Tracker.
-- [ ] Moved to Thu 11/19 (Money Plan updated): Verizon $282.99, Workspace $8.40. Also 11/19, no column/amount yet: PayPal card. Canva Pro PAID 11/19 ($15, Mastercard 2460; email 11/20 brief). Bison Green: Tim dropping it from the plan (11/16). Verizon: promise-to-pay for 11/26 (moved there in Money Plan 11/17). OneMain late Nov 1 payment $143.83 paid Thu 11/19 (Money Plan 11/17). 11/19 shows +$63.62 before those three.
+- [ ] Moved to Thu 11/19 (Money Plan updated): Verizon $282.99, Workspace $8.40. Also 11/19, no column/amount yet: PayPal card. Canva Pro PAID 11/19 ($15, Mastercard 2460; email 11/20 brief). Bison Green: Tim dropping it from the plan (11/16). Verizon: promise-to-pay $282.99 PAID 11/25 (Mastercard 2460, confirmation email). OneMain late Nov 1 payment $143.83 paid Thu 11/19 (Money Plan 11/17). 11/19 shows +$63.62 before those three.
 - [ ] Google Workspace: pay or update card at https://admin.google.com/ac/billing/accounts (invoice 5723568933; suspends Dec 3). Business Starter $8.40/mo.
 - [ ] Lucid 25K eval bought 11/12 (LFE02578805580006): balance $24,347 after -$653 day 1; min balance $24,000 = only $347 room. 1 MES-size risk or pause until the Apex funded plan is rolling.
 - [ ] Apex: PA-01 CLOSED 11/17 and PA-02 CLOSED 11/18 7:47 PM (liquidation email: open past 4:59 PM or drawdown; Tim sat out 11/18, so check the dashboard for an order left open). PA subscription cancelled. Confirm whether any Apex PA (e.g. -03, activated 11/16) is still open.
@@ -101,6 +101,7 @@ Newest decisions win; move finished items to Done with the date.
 - [ ] Judge the Tip-off Projections sheet after ~50 graded games.
 
 ## Done
+- 11/25 Verizon $282.99 paid (promise-to-pay for 11/26 met). Google One $1.99 renewed (Play receipt 5:43 AM, after the 11/24 decline).
 - 11/23 KDP: Calm Wings paperback LIVE on Amazon, $16.99, ASIN B0HS5QCNDM: https://www.amazon.com/dp/B0HS5QCNDM (share link https://a.co/d/01To3Z7q). Gift-caption paperback line switched on in the PbP content plan.
 - 11/12 Uplift ($72.75) and Flash Funds ($132) paid. peacebypage2 Gmail forwarding confirmed. KDP proofs shipped.
 - 11/12 TradingView Essential renewed (Google Play receipt 6:48 PM). 11/18 reminder cancelled.
