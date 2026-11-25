@@ -1,0 +1,1464 @@
+{
+ "season": 2026,
+ "week": 12,
+ "injuries_feed": "2026-11-25T15:06:40Z",
+ "built": "2026-11-25T15:06",
+ "games": [
+  {
+   "game": "GB @ LA",
+   "kickoff": "Wednesday 2026-11-25 20:00",
+   "spread_line": "2.5",
+   "total_line": "44.5",
+   "p_home": 0.5231210015530432,
+   "p_away": 0.4335564644690053,
+   "p_non": 0.041471099188694086,
+   "p_none": 0.0018514347892576153,
+   "p_home_recv": 0.44288100427299065,
+   "top": [
+    {
+     "name": "Kyren Williams",
+     "team": "LA",
+     "pos": "RB",
+     "share": 0.2678377130442521,
+     "p": 0.14011153270138574,
+     "status": ""
+    },
+    {
+     "name": "Josh Jacobs",
+     "team": "GB",
+     "pos": "RB",
+     "share": 0.2225578743998845,
+     "p": 0.09649140516455088,
+     "status": "Questionable"
+    },
+    {
+     "name": "Blake Corum",
+     "team": "LA",
+     "pos": "RB",
+     "share": 0.13245180363275194,
+     "p": 0.0692883201738722,
+     "status": ""
+    },
+    {
+     "name": "Colby Parkinson",
+     "team": "LA",
+     "pos": "TE",
+     "share": 0.1164549142243247,
+     "p": 0.060920011364802476,
+     "status": ""
+    },
+    {
+     "name": "Tyler Higbee",
+     "team": "LA",
+     "pos": "TE",
+     "share": 0.10059969250207743,
+     "p": 0.052625811897614914,
+     "status": ""
+    },
+    {
+     "name": "Matthew Golden",
+     "team": "GB",
+     "pos": "WR",
+     "share": 0.114959589177484,
+     "p": 0.04984147304059929,
+     "status": ""
+    }
+   ],
+   "team_top": {
+    "LA": [
+     {
+      "name": "Kyren Williams",
+      "share": 0.2678377130442521
+     },
+     {
+      "name": "Blake Corum",
+      "share": 0.13245180363275194
+     },
+     {
+      "name": "Colby Parkinson",
+      "share": 0.1164549142243247
+     }
+    ],
+    "GB": [
+     {
+      "name": "Josh Jacobs",
+      "share": 0.2225578743998845
+     },
+     {
+      "name": "Matthew Golden",
+      "share": 0.114959589177484
+     },
+     {
+      "name": "Tucker Kraft",
+      "share": 0.11356732499360715
+     }
+    ]
+   }
+  },
+  {
+   "game": "CHI @ DET",
+   "kickoff": "Thursday 2026-11-26 13:00",
+   "spread_line": "-1.5",
+   "total_line": "55.5",
+   "p_home": 0.45931029188912076,
+   "p_away": 0.5096230454178133,
+   "p_non": 0.03092297924463578,
+   "p_none": 0.00014368344843034375,
+   "p_home_recv": 0.4444750275118966,
+   "top": [
+    {
+     "name": "Jahmyr Gibbs",
+     "team": "DET",
+     "pos": "RB",
+     "share": 0.28483192751859304,
+     "p": 0.13082623576790586,
+     "status": ""
+    },
+    {
+     "name": "D'Andre Swift",
+     "team": "CHI",
+     "pos": "RB",
+     "share": 0.23334591946040228,
+     "p": 0.11891845811123,
+     "status": ""
+    },
+    {
+     "name": "Amon-Ra St. Brown",
+     "team": "DET",
+     "pos": "WR",
+     "share": 0.16574247079767265,
+     "p": 0.0761272226405031,
+     "status": ""
+    },
+    {
+     "name": "Kyle Monangai",
+     "team": "CHI",
+     "pos": "RB",
+     "share": 0.1238957247439234,
+     "p": 0.06314011655824538,
+     "status": ""
+    },
+    {
+     "name": "Colston Loveland",
+     "team": "CHI",
+     "pos": "TE",
+     "share": 0.12121002009257992,
+     "p": 0.06177141957473492,
+     "status": ""
+    },
+    {
+     "name": "Isiah Pacheco",
+     "team": "DET",
+     "pos": "RB",
+     "share": 0.1177919863439636,
+     "p": 0.05410307162984525,
+     "status": ""
+    }
+   ],
+   "team_top": {
+    "DET": [
+     {
+      "name": "Jahmyr Gibbs",
+      "share": 0.28483192751859304
+     },
+     {
+      "name": "Amon-Ra St. Brown",
+      "share": 0.16574247079767265
+     },
+     {
+      "name": "Isiah Pacheco",
+      "share": 0.1177919863439636
+     }
+    ],
+    "CHI": [
+     {
+      "name": "D'Andre Swift",
+      "share": 0.23334591946040228
+     },
+     {
+      "name": "Kyle Monangai",
+      "share": 0.1238957247439234
+     },
+     {
+      "name": "Colston Loveland",
+      "share": 0.12121002009257992
+     }
+    ]
+   }
+  },
+  {
+   "game": "PHI @ DAL",
+   "kickoff": "Thursday 2026-11-26 16:30",
+   "spread_line": "8.5",
+   "total_line": "48.5",
+   "p_home": 0.6208220826536778,
+   "p_away": 0.3420339766415325,
+   "p_non": 0.036386768479641896,
+   "p_none": 0.0007571722251479926,
+   "p_home_recv": 0.6454477484742667,
+   "top": [
+    {
+     "name": "Javonte Williams",
+     "team": "DAL",
+     "pos": "RB",
+     "share": 0.26404117870746097,
+     "p": 0.16392259447149785,
+     "status": ""
+    },
+    {
+     "name": "CeeDee Lamb",
+     "team": "DAL",
+     "pos": "WR",
+     "share": 0.1597904305408949,
+     "p": 0.09920142787652621,
+     "status": ""
+    },
+    {
+     "name": "George Pickens",
+     "team": "DAL",
+     "pos": "WR",
+     "share": 0.15076777335931527,
+     "p": 0.09359996305398778,
+     "status": ""
+    },
+    {
+     "name": "Saquon Barkley",
+     "team": "PHI",
+     "pos": "RB",
+     "share": 0.19926432751796572,
+     "p": 0.06815517034377057,
+     "status": ""
+    },
+    {
+     "name": "Ryan Flournoy",
+     "team": "DAL",
+     "pos": "WR",
+     "share": 0.07351576825972787,
+     "p": 0.0456402123588894,
+     "status": ""
+    },
+    {
+     "name": "Dak Prescott",
+     "team": "DAL",
+     "pos": "QB",
+     "share": 0.06455107931118972,
+     "p": 0.04007473549551554,
+     "status": ""
+    }
+   ],
+   "team_top": {
+    "DAL": [
+     {
+      "name": "Javonte Williams",
+      "share": 0.26404117870746097
+     },
+     {
+      "name": "CeeDee Lamb",
+      "share": 0.1597904305408949
+     },
+     {
+      "name": "George Pickens",
+      "share": 0.15076777335931527
+     }
+    ],
+    "PHI": [
+     {
+      "name": "Saquon Barkley",
+      "share": 0.19926432751796572
+     },
+     {
+      "name": "Dallas Goedert",
+      "share": 0.10413199052495592
+     },
+     {
+      "name": "DeVonta Smith",
+      "share": 0.10385578100486965
+     }
+    ]
+   }
+  },
+  {
+   "game": "KC @ BUF",
+   "kickoff": "Thursday 2026-11-26 20:20",
+   "spread_line": "3",
+   "total_line": "46.5",
+   "p_home": 0.5428260433648125,
+   "p_away": 0.4177056822315603,
+   "p_non": 0.03795763652357874,
+   "p_none": 0.001510637880048734,
+   "p_home_recv": 0.5800302063801335,
+   "top": [
+    {
+     "name": "James Cook",
+     "team": "BUF",
+     "pos": "RB",
+     "share": 0.22332655373782956,
+     "p": 0.12122746954380521,
+     "status": ""
+    },
+    {
+     "name": "Kenneth Walker III",
+     "team": "KC",
+     "pos": "RB",
+     "share": 0.22716724394322158,
+     "p": 0.09488904861196665,
+     "status": "Questionable"
+    },
+    {
+     "name": "Josh Allen",
+     "team": "BUF",
+     "pos": "QB",
+     "share": 0.12469457887535734,
+     "p": 0.06768746487995177,
+     "status": ""
+    },
+    {
+     "name": "DJ Moore",
+     "team": "BUF",
+     "pos": "WR",
+     "share": 0.11623241065891594,
+     "p": 0.0630939795887334,
+     "status": ""
+    },
+    {
+     "name": "Emmett Johnson",
+     "team": "KC",
+     "pos": "RB",
+     "share": 0.11184628791762546,
+     "p": 0.046718829999699264,
+     "status": ""
+    },
+    {
+     "name": "Rashee Rice",
+     "team": "KC",
+     "pos": "WR",
+     "share": 0.10693070668937757,
+     "p": 0.04466556378918932,
+     "status": ""
+    }
+   ],
+   "team_top": {
+    "BUF": [
+     {
+      "name": "James Cook",
+      "share": 0.22332655373782956
+     },
+     {
+      "name": "Josh Allen",
+      "share": 0.12469457887535734
+     },
+     {
+      "name": "DJ Moore",
+      "share": 0.11623241065891594
+     }
+    ],
+    "KC": [
+     {
+      "name": "Kenneth Walker III",
+      "share": 0.22716724394322158
+     },
+     {
+      "name": "Emmett Johnson",
+      "share": 0.11184628791762546
+     },
+     {
+      "name": "Rashee Rice",
+      "share": 0.10693070668937757
+     }
+    ]
+   }
+  },
+  {
+   "game": "DEN @ PIT",
+   "kickoff": "Friday 2026-11-27 15:00",
+   "spread_line": "-3.5",
+   "total_line": "36.5",
+   "p_home": 0.3745498732975558,
+   "p_away": 0.5538427060631719,
+   "p_non": 0.057828700352364024,
+   "p_none": 0.01377872028690864,
+   "p_home_recv": 0.42045900735222413,
+   "top": [
+    {
+     "name": "Jonah Coleman",
+     "team": "DEN",
+     "pos": "RB",
+     "share": 0.21655455389368375,
+     "p": 0.11993716013878081,
+     "status": ""
+    },
+    {
+     "name": "Jaylen Warren",
+     "team": "PIT",
+     "pos": "RB",
+     "share": 0.22138324130424483,
+     "p": 0.08291906498070713,
+     "status": ""
+    },
+    {
+     "name": "RJ Harvey",
+     "team": "DEN",
+     "pos": "RB",
+     "share": 0.14944014569125294,
+     "p": 0.08276633468411819,
+     "status": ""
+    },
+    {
+     "name": "Rico Dowdle",
+     "team": "PIT",
+     "pos": "RB",
+     "share": 0.18735373325421137,
+     "p": 0.07017331705218893,
+     "status": ""
+    },
+    {
+     "name": "Courtland Sutton",
+     "team": "DEN",
+     "pos": "WR",
+     "share": 0.10779333601060591,
+     "p": 0.05970055291169073,
+     "status": ""
+    },
+    {
+     "name": "DK Metcalf",
+     "team": "PIT",
+     "pos": "WR",
+     "share": 0.15878061183071135,
+     "p": 0.05947125804330133,
+     "status": ""
+    }
+   ],
+   "team_top": {
+    "PIT": [
+     {
+      "name": "Jaylen Warren",
+      "share": 0.22138324130424483
+     },
+     {
+      "name": "Rico Dowdle",
+      "share": 0.18735373325421137
+     },
+     {
+      "name": "DK Metcalf",
+      "share": 0.15878061183071135
+     }
+    ],
+    "DEN": [
+     {
+      "name": "Jonah Coleman",
+      "share": 0.21655455389368375
+     },
+     {
+      "name": "RJ Harvey",
+      "share": 0.14944014569125294
+     },
+     {
+      "name": "Courtland Sutton",
+      "share": 0.10779333601060591
+     }
+    ]
+   }
+  },
+  {
+   "game": "NO @ CIN",
+   "kickoff": "Sunday 2026-11-29 13:00",
+   "spread_line": "10",
+   "total_line": "50.5",
+   "p_home": 0.676976090938783,
+   "p_away": 0.28776039078234816,
+   "p_non": 0.03460389534770967,
+   "p_none": 0.0006596229311594677,
+   "p_home_recv": 0.5795787877194805,
+   "top": [
+    {
+     "name": "Chase Brown",
+     "team": "CIN",
+     "pos": "RB",
+     "share": 0.21134579010863475,
+     "p": 0.14307604682411204,
+     "status": ""
+    },
+    {
+     "name": "Ja'Marr Chase",
+     "team": "CIN",
+     "pos": "WR",
+     "share": 0.1872468091294901,
+     "p": 0.12676161288524262,
+     "status": ""
+    },
+    {
+     "name": "Tee Higgins",
+     "team": "CIN",
+     "pos": "WR",
+     "share": 0.14227181264451552,
+     "p": 0.09631461557485903,
+     "status": ""
+    },
+    {
+     "name": "Samaje Perine",
+     "team": "CIN",
+     "pos": "RB",
+     "share": 0.08846133754878258,
+     "p": 0.05988621049299101,
+     "status": ""
+    },
+    {
+     "name": "Mike Gesicki",
+     "team": "CIN",
+     "pos": "TE",
+     "share": 0.07015575329465304,
+     "p": 0.04749376762227986,
+     "status": ""
+    },
+    {
+     "name": "Travis Etienne",
+     "team": "NO",
+     "pos": "RB",
+     "share": 0.15457308482597032,
+     "p": 0.04448001129395427,
+     "status": ""
+    }
+   ],
+   "team_top": {
+    "CIN": [
+     {
+      "name": "Chase Brown",
+      "share": 0.21134579010863475
+     },
+     {
+      "name": "Ja'Marr Chase",
+      "share": 0.1872468091294901
+     },
+     {
+      "name": "Tee Higgins",
+      "share": 0.14227181264451552
+     }
+    ],
+    "NO": [
+     {
+      "name": "Travis Etienne",
+      "share": 0.15457308482597032
+     },
+     {
+      "name": "Alvin Kamara",
+      "share": 0.13262740683602367
+     },
+     {
+      "name": "Chris Olave",
+      "share": 0.11683625675561937
+     }
+    ]
+   }
+  },
+  {
+   "game": "BAL @ HOU",
+   "kickoff": "Sunday 2026-11-29 13:00",
+   "spread_line": "7",
+   "total_line": "47.5",
+   "p_home": 0.5927377127201034,
+   "p_away": 0.36786268944809974,
+   "p_non": 0.038271228305379705,
+   "p_none": 0.0011283695264173014,
+   "p_home_recv": 0.4658517668920821,
+   "top": [
+    {
+     "name": "Derrick Henry",
+     "team": "BAL",
+     "pos": "RB",
+     "share": 0.29546711509146056,
+     "p": 0.10869132760101591,
+     "status": ""
+    },
+    {
+     "name": "Woody Marks",
+     "team": "HOU",
+     "pos": "RB",
+     "share": 0.12413723403799619,
+     "p": 0.07358082016708203,
+     "status": "Questionable"
+    },
+    {
+     "name": "Nico Collins",
+     "team": "HOU",
+     "pos": "WR",
+     "share": 0.12117406347073802,
+     "p": 0.07182443722264589,
+     "status": ""
+    },
+    {
+     "name": "David Montgomery",
+     "team": "HOU",
+     "pos": "RB",
+     "share": 0.11367815519760802,
+     "p": 0.06738132969807112,
+     "status": ""
+    },
+    {
+     "name": "Zay Flowers",
+     "team": "BAL",
+     "pos": "WR",
+     "share": 0.13631596982790029,
+     "p": 0.05014555927561742,
+     "status": ""
+    },
+    {
+     "name": "Jayden Higgins",
+     "team": "HOU",
+     "pos": "WR",
+     "share": 0.07511295163762163,
+     "p": 0.044522279149339594,
+     "status": ""
+    }
+   ],
+   "team_top": {
+    "HOU": [
+     {
+      "name": "Woody Marks",
+      "share": 0.12413723403799619
+     },
+     {
+      "name": "Nico Collins",
+      "share": 0.12117406347073802
+     },
+     {
+      "name": "David Montgomery",
+      "share": 0.11367815519760802
+     }
+    ],
+    "BAL": [
+     {
+      "name": "Derrick Henry",
+      "share": 0.29546711509146056
+     },
+     {
+      "name": "Zay Flowers",
+      "share": 0.13631596982790029
+     },
+     {
+      "name": "Mark Andrews",
+      "share": 0.10952971003155453
+     }
+    ]
+   }
+  },
+  {
+   "game": "NYG @ IND",
+   "kickoff": "Sunday 2026-11-29 13:00",
+   "spread_line": "-6.5",
+   "total_line": "41.5",
+   "p_home": 0.3597031935179288,
+   "p_away": 0.5888175761329577,
+   "p_non": 0.04708331646390631,
+   "p_none": 0.004395913885207362,
+   "p_home_recv": 0.597121929436051,
+   "top": [
+    {
+     "name": "Jonathan Taylor",
+     "team": "IND",
+     "pos": "RB",
+     "share": 0.36459959533492287,
+     "p": 0.13114763879731628,
+     "status": ""
+    },
+    {
+     "name": "Cam Skattebo",
+     "team": "NYG",
+     "pos": "RB",
+     "share": 0.20068481471370053,
+     "p": 0.11816674616641287,
+     "status": ""
+    },
+    {
+     "name": "Malik Nabers",
+     "team": "NYG",
+     "pos": "WR",
+     "share": 0.1538245105725303,
+     "p": 0.09057457546515582,
+     "status": ""
+    },
+    {
+     "name": "Isaiah Likely",
+     "team": "NYG",
+     "pos": "TE",
+     "share": 0.1330896586532189,
+     "p": 0.07836553021655107,
+     "status": ""
+    },
+    {
+     "name": "Devin Singletary",
+     "team": "NYG",
+     "pos": "RB",
+     "share": 0.08765763544742645,
+     "p": 0.051614356433700076,
+     "status": ""
+    },
+    {
+     "name": "Tyler Warren",
+     "team": "IND",
+     "pos": "TE",
+     "share": 0.13603979234402466,
+     "p": 0.04893394775166155,
+     "status": ""
+    }
+   ],
+   "team_top": {
+    "IND": [
+     {
+      "name": "Jonathan Taylor",
+      "share": 0.36459959533492287
+     },
+     {
+      "name": "Tyler Warren",
+      "share": 0.13603979234402466
+     },
+     {
+      "name": "Anthony Richardson",
+      "share": 0.12868293493836908
+     }
+    ],
+    "NYG": [
+     {
+      "name": "Cam Skattebo",
+      "share": 0.20068481471370053
+     },
+     {
+      "name": "Malik Nabers",
+      "share": 0.1538245105725303
+     },
+     {
+      "name": "Isaiah Likely",
+      "share": 0.1330896586532189
+     }
+    ]
+   }
+  },
+  {
+   "game": "TEN @ JAX",
+   "kickoff": "Sunday 2026-11-29 13:00",
+   "spread_line": "14.5",
+   "total_line": "48.5",
+   "p_home": 0.7438757706415751,
+   "p_away": 0.21933399892512623,
+   "p_non": 0.03591243518602399,
+   "p_none": 0.0008777952472749624,
+   "p_home_recv": 0.5297509229130629,
+   "top": [
+    {
+     "name": "Bhayshul Tuten",
+     "team": "JAX",
+     "pos": "RB",
+     "share": 0.15985601768934712,
+     "p": 0.11891301835035635,
+     "status": "Questionable"
+    },
+    {
+     "name": "Parker Washington",
+     "team": "JAX",
+     "pos": "WR",
+     "share": 0.13996948958723254,
+     "p": 0.10411991193301053,
+     "status": ""
+    },
+    {
+     "name": "Jakobi Meyers",
+     "team": "JAX",
+     "pos": "WR",
+     "share": 0.11168874828272402,
+     "p": 0.08308255370080422,
+     "status": ""
+    },
+    {
+     "name": "Brenton Strange",
+     "team": "JAX",
+     "pos": "TE",
+     "share": 0.10206328325277517,
+     "p": 0.07592240348386749,
+     "status": ""
+    },
+    {
+     "name": "Chris Rodriguez Jr.",
+     "team": "JAX",
+     "pos": "RB",
+     "share": 0.09248769516032737,
+     "p": 0.0687993555122516,
+     "status": ""
+    },
+    {
+     "name": "Brian Thomas Jr.",
+     "team": "JAX",
+     "pos": "WR",
+     "share": 0.08409818055139927,
+     "p": 0.06255859886722645,
+     "status": ""
+    }
+   ],
+   "team_top": {
+    "JAX": [
+     {
+      "name": "Bhayshul Tuten",
+      "share": 0.15985601768934712
+     },
+     {
+      "name": "Parker Washington",
+      "share": 0.13996948958723254
+     },
+     {
+      "name": "Jakobi Meyers",
+      "share": 0.11168874828272402
+     }
+    ],
+    "TEN": [
+     {
+      "name": "Tony Pollard",
+      "share": 0.2340271708432824
+     },
+     {
+      "name": "Wan'Dale Robinson",
+      "share": 0.11696169829646477
+     },
+     {
+      "name": "Carnell Tate",
+      "share": 0.100629651093017
+     }
+    ]
+   }
+  },
+  {
+   "game": "NYJ @ MIA",
+   "kickoff": "Sunday 2026-11-29 13:00",
+   "spread_line": "-3.5",
+   "total_line": "40.5",
+   "p_home": 0.4195054370904485,
+   "p_away": 0.5241594713980957,
+   "p_non": 0.04891228322351957,
+   "p_none": 0.007422808287936402,
+   "p_home_recv": 0.5406996131790457,
+   "top": [
+    {
+     "name": "Breece Hall",
+     "team": "NYJ",
+     "pos": "RB",
+     "share": 0.1825878897694739,
+     "p": 0.09570517178526121,
+     "status": ""
+    },
+    {
+     "name": "De'Von Achane",
+     "team": "MIA",
+     "pos": "RB",
+     "share": 0.21929959705455943,
+     "p": 0.09199737331613218,
+     "status": ""
+    },
+    {
+     "name": "Garrett Wilson",
+     "team": "NYJ",
+     "pos": "WR",
+     "share": 0.15150038923484535,
+     "p": 0.07941036393794229,
+     "status": ""
+    },
+    {
+     "name": "Kyle McCord",
+     "team": "MIA",
+     "pos": "QB",
+     "share": 0.14482228315022513,
+     "p": 0.06075373519337189,
+     "status": ""
+    },
+    {
+     "name": "Braelon Allen",
+     "team": "NYJ",
+     "pos": "RB",
+     "share": 0.113932666169839,
+     "p": 0.05971888607455852,
+     "status": ""
+    },
+    {
+     "name": "Ollie Gordon II",
+     "team": "MIA",
+     "pos": "RB",
+     "share": 0.13858179988673663,
+     "p": 0.05813581853426652,
+     "status": ""
+    }
+   ],
+   "team_top": {
+    "MIA": [
+     {
+      "name": "De'Von Achane",
+      "share": 0.21929959705455943
+     },
+     {
+      "name": "Kyle McCord",
+      "share": 0.14482228315022513
+     },
+     {
+      "name": "Ollie Gordon II",
+      "share": 0.13858179988673663
+     }
+    ],
+    "NYJ": [
+     {
+      "name": "Breece Hall",
+      "share": 0.1825878897694739
+     },
+     {
+      "name": "Garrett Wilson",
+      "share": 0.15150038923484535
+     },
+     {
+      "name": "Braelon Allen",
+      "share": 0.113932666169839
+     }
+    ]
+   }
+  },
+  {
+   "game": "ATL @ MIN",
+   "kickoff": "Sunday 2026-11-29 13:00",
+   "spread_line": "7",
+   "total_line": "41.5",
+   "p_home": 0.5984418983634711,
+   "p_away": 0.3459833668605406,
+   "p_non": 0.04949999305573298,
+   "p_none": 0.006074741720255473,
+   "p_home_recv": 0.4978678809845658,
+   "top": [
+    {
+     "name": "Aaron Jones",
+     "team": "MIN",
+     "pos": "RB",
+     "share": 0.18899314420584093,
+     "p": 0.11310141599622468,
+     "status": ""
+    },
+    {
+     "name": "Justin Jefferson",
+     "team": "MIN",
+     "pos": "WR",
+     "share": 0.18804225973295113,
+     "p": 0.11253236688714417,
+     "status": ""
+    },
+    {
+     "name": "Bijan Robinson",
+     "team": "ATL",
+     "pos": "RB",
+     "share": 0.3007498936354525,
+     "p": 0.10405446078294334,
+     "status": ""
+    },
+    {
+     "name": "Jauan Jennings",
+     "team": "MIN",
+     "pos": "WR",
+     "share": 0.12218000115982995,
+     "p": 0.07311763183613973,
+     "status": ""
+    },
+    {
+     "name": "Jordan Mason",
+     "team": "MIN",
+     "pos": "RB",
+     "share": 0.11002586838571798,
+     "p": 0.06584408954583848,
+     "status": ""
+    },
+    {
+     "name": "T.J. Hockenson",
+     "team": "MIN",
+     "pos": "TE",
+     "share": 0.1093672698601227,
+     "p": 0.06544995659392186,
+     "status": ""
+    }
+   ],
+   "team_top": {
+    "MIN": [
+     {
+      "name": "Aaron Jones",
+      "share": 0.18899314420584093
+     },
+     {
+      "name": "Justin Jefferson",
+      "share": 0.18804225973295113
+     },
+     {
+      "name": "Jauan Jennings",
+      "share": 0.12218000115982995
+     }
+    ],
+    "ATL": [
+     {
+      "name": "Bijan Robinson",
+      "share": 0.3007498936354525
+     },
+     {
+      "name": "Drake London",
+      "share": 0.14603084171957192
+     },
+     {
+      "name": "Kyle Pitts",
+      "share": 0.11685689758842044
+     }
+    ]
+   }
+  },
+  {
+   "game": "NE @ LAC",
+   "kickoff": "Sunday 2026-11-29 16:05",
+   "spread_line": "1.5",
+   "total_line": "35.5",
+   "p_home": 0.473227793098693,
+   "p_away": 0.4553088725852973,
+   "p_non": 0.05727284035138201,
+   "p_none": 0.014190493964627897,
+   "p_home_recv": 0.4140364775876899,
+   "top": [
+    {
+     "name": "Omarion Hampton",
+     "team": "LAC",
+     "pos": "RB",
+     "share": 0.1914016812314364,
+     "p": 0.09057659520453216,
+     "status": ""
+    },
+    {
+     "name": "Rhamondre Stevenson",
+     "team": "NE",
+     "pos": "RB",
+     "share": 0.18737398991078033,
+     "p": 0.08531304009808625,
+     "status": ""
+    },
+    {
+     "name": "TreVeyon Henderson",
+     "team": "NE",
+     "pos": "RB",
+     "share": 0.1316044307111873,
+     "p": 0.059920664974340565,
+     "status": ""
+    },
+    {
+     "name": "Mack Hollins",
+     "team": "NE",
+     "pos": "WR",
+     "share": 0.12676718241355275,
+     "p": 0.05771822290552943,
+     "status": ""
+    },
+    {
+     "name": "Ladd McConkey",
+     "team": "LAC",
+     "pos": "WR",
+     "share": 0.1178285130189296,
+     "p": 0.05575972718004867,
+     "status": ""
+    },
+    {
+     "name": "Hunter Henry",
+     "team": "NE",
+     "pos": "TE",
+     "share": 0.1013960464981122,
+     "p": 0.046166519615661844,
+     "status": ""
+    }
+   ],
+   "team_top": {
+    "LAC": [
+     {
+      "name": "Omarion Hampton",
+      "share": 0.1914016812314364
+     },
+     {
+      "name": "Ladd McConkey",
+      "share": 0.1178285130189296
+     },
+     {
+      "name": "Kimani Vidal",
+      "share": 0.09723297704095063
+     }
+    ],
+    "NE": [
+     {
+      "name": "Rhamondre Stevenson",
+      "share": 0.18737398991078033
+     },
+     {
+      "name": "TreVeyon Henderson",
+      "share": 0.1316044307111873
+     },
+     {
+      "name": "Mack Hollins",
+      "share": 0.12676718241355275
+     }
+    ]
+   }
+  },
+  {
+   "game": "WAS @ ARI",
+   "kickoff": "Sunday 2026-11-29 16:25",
+   "spread_line": "-7",
+   "total_line": "41.5",
+   "p_home": 0.3391455524762072,
+   "p_away": 0.6086042704791242,
+   "p_non": 0.04681664783304987,
+   "p_none": 0.005433529211619032,
+   "p_home_recv": 0.5837804747860483,
+   "top": [
+    {
+     "name": "Jacory Croskey-Merritt",
+     "team": "WAS",
+     "pos": "RB",
+     "share": 0.1297499545545419,
+     "p": 0.0789663764363665,
+     "status": ""
+    },
+    {
+     "name": "James Conner",
+     "team": "ARI",
+     "pos": "RB",
+     "share": 0.20272615990182025,
+     "p": 0.06875367550128275,
+     "status": ""
+    },
+    {
+     "name": "Rachaad White",
+     "team": "WAS",
+     "pos": "RB",
+     "share": 0.10222775296898731,
+     "p": 0.06221624701841065,
+     "status": ""
+    },
+    {
+     "name": "Jayden Daniels",
+     "team": "WAS",
+     "pos": "QB",
+     "share": 0.09934037500113116,
+     "p": 0.06045897645668606,
+     "status": ""
+    },
+    {
+     "name": "Terry McLaurin",
+     "team": "WAS",
+     "pos": "WR",
+     "share": 0.09082442767964855,
+     "p": 0.055276134549656485,
+     "status": ""
+    },
+    {
+     "name": "Stefon Diggs",
+     "team": "WAS",
+     "pos": "WR",
+     "share": 0.0895277940902021,
+     "p": 0.0544869978098727,
+     "status": ""
+    }
+   ],
+   "team_top": {
+    "ARI": [
+     {
+      "name": "James Conner",
+      "share": 0.20272615990182025
+     },
+     {
+      "name": "Trey McBride",
+      "share": 0.15881292096676927
+     },
+     {
+      "name": "Michael Wilson",
+      "share": 0.11554449073022138
+     }
+    ],
+    "WAS": [
+     {
+      "name": "Jacory Croskey-Merritt",
+      "share": 0.1297499545545419
+     },
+     {
+      "name": "Rachaad White",
+      "share": 0.10222775296898731
+     },
+     {
+      "name": "Jayden Daniels",
+      "share": 0.09934037500113116
+     }
+    ]
+   }
+  },
+  {
+   "game": "SEA @ SF",
+   "kickoff": "Sunday 2026-11-29 16:25",
+   "spread_line": "3",
+   "total_line": "45.5",
+   "p_home": 0.5584795995352289,
+   "p_away": 0.3990327535526501,
+   "p_non": 0.04026718126357484,
+   "p_none": 0.0022204656485462987,
+   "p_home_recv": 0.5147838152375508,
+   "top": [
+    {
+     "name": "Christian McCaffrey",
+     "team": "SF",
+     "pos": "RB",
+     "share": 0.2029375420292698,
+     "p": 0.11333647720317028,
+     "status": ""
+    },
+    {
+     "name": "Jaxon Smith-Njigba",
+     "team": "SEA",
+     "pos": "WR",
+     "share": 0.17180749125341144,
+     "p": 0.06855681631582161,
+     "status": ""
+    },
+    {
+     "name": "Zach Charbonnet",
+     "team": "SEA",
+     "pos": "RB",
+     "share": 0.16478914821136556,
+     "p": 0.06575626756637697,
+     "status": ""
+    },
+    {
+     "name": "George Kittle",
+     "team": "SF",
+     "pos": "TE",
+     "share": 0.1025092139106118,
+     "p": 0.057249304733469585,
+     "status": ""
+    },
+    {
+     "name": "Mike Evans",
+     "team": "SF",
+     "pos": "WR",
+     "share": 0.09857374703261784,
+     "p": 0.055051426767463364,
+     "status": ""
+    },
+    {
+     "name": "Deebo Samuel Sr.",
+     "team": "SF",
+     "pos": "WR",
+     "share": 0.09740524526682447,
+     "p": 0.05439884236924687,
+     "status": ""
+    }
+   ],
+   "team_top": {
+    "SF": [
+     {
+      "name": "Christian McCaffrey",
+      "share": 0.2029375420292698
+     },
+     {
+      "name": "George Kittle",
+      "share": 0.1025092139106118
+     },
+     {
+      "name": "Mike Evans",
+      "share": 0.09857374703261784
+     }
+    ],
+    "SEA": [
+     {
+      "name": "Jaxon Smith-Njigba",
+      "share": 0.17180749125341144
+     },
+     {
+      "name": "Zach Charbonnet",
+      "share": 0.16478914821136556
+     },
+     {
+      "name": "AJ Barner",
+      "share": 0.10851572939274523
+     }
+    ]
+   }
+  },
+  {
+   "game": "LV @ CLE",
+   "kickoff": "Sunday 2026-11-29 20:20",
+   "spread_line": "4.5",
+   "total_line": "40.5",
+   "p_home": 0.562008602191854,
+   "p_away": 0.3806330290466937,
+   "p_non": 0.0512383307793962,
+   "p_none": 0.006120037982056514,
+   "p_home_recv": 0.655026885117457,
+   "top": [
+    {
+     "name": "Quinshon Judkins",
+     "team": "CLE",
+     "pos": "RB",
+     "share": 0.21833539310533226,
+     "p": 0.12270636908813674,
+     "status": ""
+    },
+    {
+     "name": "Ashton Jeanty",
+     "team": "LV",
+     "pos": "RB",
+     "share": 0.23775135271220296,
+     "p": 0.09049601754279467,
+     "status": ""
+    },
+    {
+     "name": "Harold Fannin Jr.",
+     "team": "CLE",
+     "pos": "TE",
+     "share": 0.1363639324601738,
+     "p": 0.07663770307132667,
+     "status": ""
+    },
+    {
+     "name": "Denzel Boston",
+     "team": "CLE",
+     "pos": "WR",
+     "share": 0.1316431133465639,
+     "p": 0.07398456212008618,
+     "status": "Questionable"
+    },
+    {
+     "name": "KC Concepcion",
+     "team": "CLE",
+     "pos": "WR",
+     "share": 0.12114723574097994,
+     "p": 0.06808578861819516,
+     "status": ""
+    },
+    {
+     "name": "Brock Bowers",
+     "team": "LV",
+     "pos": "TE",
+     "share": 0.17073758294232946,
+     "p": 0.06498836336744997,
+     "status": "Questionable"
+    }
+   ],
+   "team_top": {
+    "CLE": [
+     {
+      "name": "Quinshon Judkins",
+      "share": 0.21833539310533226
+     },
+     {
+      "name": "Harold Fannin Jr.",
+      "share": 0.1363639324601738
+     },
+     {
+      "name": "Denzel Boston",
+      "share": 0.1316431133465639
+     }
+    ],
+    "LV": [
+     {
+      "name": "Ashton Jeanty",
+      "share": 0.23775135271220296
+     },
+     {
+      "name": "Brock Bowers",
+      "share": 0.17073758294232946
+     },
+     {
+      "name": "Fernando Mendoza",
+      "share": 0.10791103504910088
+     }
+    ]
+   }
+  },
+  {
+   "game": "CAR @ TB",
+   "kickoff": "Monday 2026-11-30 20:15",
+   "spread_line": "3",
+   "total_line": "43.5",
+   "p_home": 0.559748993477583,
+   "p_away": 0.3941726012469906,
+   "p_non": 0.043248982280069556,
+   "p_none": 0.0028294229953572565,
+   "p_home_recv": 0.6358846907657395,
+   "top": [
+    {
+     "name": "Bucky Irving",
+     "team": "TB",
+     "pos": "RB",
+     "share": 0.2601383229567365,
+     "p": 0.14561216443997968,
+     "status": ""
+    },
+    {
+     "name": "Chuba Hubbard",
+     "team": "CAR",
+     "pos": "RB",
+     "share": 0.25689413277898226,
+     "p": 0.10126062856258124,
+     "status": ""
+    },
+    {
+     "name": "Emeka Egbuka",
+     "team": "TB",
+     "pos": "WR",
+     "share": 0.13016754382385734,
+     "p": 0.07286115163885332,
+     "status": ""
+    },
+    {
+     "name": "Tetairoa McMillan",
+     "team": "CAR",
+     "pos": "WR",
+     "share": 0.14548816105842327,
+     "p": 0.05734744689503982,
+     "status": ""
+    },
+    {
+     "name": "Chris Godwin Jr.",
+     "team": "TB",
+     "pos": "WR",
+     "share": 0.09457005751635512,
+     "p": 0.05293549450789691,
+     "status": ""
+    },
+    {
+     "name": "Kenny Gainwell",
+     "team": "TB",
+     "pos": "RB",
+     "share": 0.09294699691882907,
+     "p": 0.05202698797207858,
+     "status": ""
+    }
+   ],
+   "team_top": {
+    "TB": [
+     {
+      "name": "Bucky Irving",
+      "share": 0.2601383229567365
+     },
+     {
+      "name": "Emeka Egbuka",
+      "share": 0.13016754382385734
+     },
+     {
+      "name": "Chris Godwin Jr.",
+      "share": 0.09457005751635512
+     }
+    ],
+    "CAR": [
+     {
+      "name": "Chuba Hubbard",
+      "share": 0.25689413277898226
+     },
+     {
+      "name": "Tetairoa McMillan",
+      "share": 0.14548816105842327
+     },
+     {
+      "name": "Jalen Coker",
+      "share": 0.09592100982715562
+     }
+    ]
+   }
+  }
+ ]
+}
