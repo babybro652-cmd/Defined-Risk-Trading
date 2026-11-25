@@ -39,6 +39,11 @@
 
 Only categories that beat their price season to date: NBA 3+ threes, NHL 3+ SOG, NFL receptions, soccer 1+ shot on target. No points overs, no first basket / first goal / anytime goal legs. Fair = product of the leg chances (no correlation boost). Take only at the minimum price or longer (fair with a 10% cushion). Legs from the same game are correlated and marked.
 
+### NBA
+- **2-leg #1:** LaMelo Ball 3+ threes (65%, MIN @ OKC) + Michael Porter Jr. 3+ threes (65%, BKN @ MIL). Fair +137 (42%); take +161 or longer.
+- **2-leg #2:** LaMelo Ball 3+ threes (65%, MIN @ OKC) + Brandon Miller 3+ threes (64%, CHI @ CHA). Fair +139 (42%); take +162 or longer.
+- **2-leg #3:** Michael Porter Jr. 3+ threes (65%, BKN @ MIL) + Brandon Miller 3+ threes (64%, CHI @ CHA). Fair +139 (42%); take +163 or longer.
+
 ### NHL
 - **2-leg #1:** Alex DeBrincat 3+ SOG (75%, VAN @ DET) + David Pastrnak 3+ SOG (74%, WPG @ BOS). Fair -124 (55%); take -101 or longer.
 - **2-leg #2:** Alex DeBrincat 3+ SOG (75%, VAN @ DET) + Cutter Gauthier 3+ SOG (73%, SJS @ ANA). Fair -120 (55%); take +101 or longer.
