@@ -25,16 +25,16 @@ return no views (a sync gap, not zero).
 | 2026-11-16 | 5:00 PM | Facebook reel | 7020928 | Education text cards (leave the stop alone) | music | i_hope_youre_happy | 195 (post 9444881, snapshot 11/17, latest Blotato has) | 0 |
 | 2026-11-16 | 5:30 PM | Facebook reel | 7049659 | Trade reel (paper trade, Tim approved; row added 11/17) | music | cliff_road_chill | 28 (post 9445732, snapshot 11/17, latest Blotato has) | 0 |
 | 2026-11-16 | 6:00 PM | Instagram reel | 7049661 | Trade reel (paper trade, Tim approved; row added 11/17) | music | cliff_road_chill | 120 (post 9447163, snapshot 11/17, latest Blotato has) | 2 |
-| 2026-11-17 | 12:30 PM | Instagram reel | 7073979 | Education text cards + drawn diagram (stop distance from entry) | music | old_key | | |
-| 2026-11-17 | 5:00 PM | Facebook reel | 7073991 | Education text cards (4 rules before a trade) | music | aeroplane | | |
-| 2026-11-17 | 7:16 AM | Facebook reel | 7078054 (post 9466573) | Trade still reel (second funded account day 1, Tim approved) | music | lag | | |
-| 2026-11-17 | 7:19 AM | Instagram reel | 7078056 (post 9466608) | Trade still reel (second funded account day 1, Tim approved) | music | lag | | |
-| 2026-11-17 | 5:45 PM | Facebook reel | 7096635 | Market commentary still reel (ES selloff chart, Tim's screenshot) | music | one_cool_minute | | |
-| 2026-11-17 | 6:30 PM | Instagram reel | 7096638 | Market commentary still reel (ES selloff chart, Tim's screenshot) | music | one_cool_minute | | |
-| 2026-11-18 | 12:30 PM | Instagram reel | 7133361 | Education text cards over a moving drawn chart, light palette (0-trade day still logged) | music | once_more_with_you | | |
-| 2026-11-18 | 5:00 PM | Facebook reel | 7133365 | Education text cards over a moving drawn chart, light palette (3 numbers: 1-2 trades, 3.5-4 pt stop, $1,000 max) | music | happy_sadie | | |
-| 2026-11-18 | 5:45 PM | Facebook reel | 7142195 | Trade reel, Tim's screen recording (paper trade, misread then short to target, Tim approved) | music | static_shoes | | |
-| 2026-11-18 | 6:00 PM | Instagram reel | 7142199 | Trade reel, Tim's screen recording (paper trade, misread then short to target, Tim approved) | music | static_shoes | | |
+| 2026-11-17 | 12:30 PM | Instagram reel | 7073979 | Education text cards + drawn diagram (stop distance from entry) | music | old_key | 106 (post 9481970, snapshot 11/24) | 0 |
+| 2026-11-17 | 5:00 PM | Facebook reel | 7073991 | Education text cards (4 rules before a trade) | music | aeroplane | 18 (post 9493226, snapshot 11/24) | 0 |
+| 2026-11-17 | 7:16 AM | Facebook reel | 7078054 (post 9466573) | Trade still reel (second funded account day 1, Tim approved) | music | lag | 52 (snapshot 11/24) | 0 |
+| 2026-11-17 | 7:19 AM | Instagram reel | 7078056 (post 9466608) | Trade still reel (second funded account day 1, Tim approved) | music | lag | 122 (snapshot 11/24) | 2 |
+| 2026-11-17 | 5:45 PM | Facebook reel | 7096635 | Market commentary still reel (ES selloff chart, Tim's screenshot) | music | one_cool_minute | 96 (post 9494513, snapshot 11/25) | 1 |
+| 2026-11-17 | 6:30 PM | Instagram reel | 7096638 | Market commentary still reel (ES selloff chart, Tim's screenshot) | music | one_cool_minute | 123 (post 9496489, snapshot 11/25) | 0 |
+| 2026-11-18 | 12:30 PM | Instagram reel | 7133361 | Education text cards over a moving drawn chart, light palette (0-trade day still logged) | music | once_more_with_you | 109 (post 9532117, snapshot 11/19, latest Blotato has) | 0 |
+| 2026-11-18 | 5:00 PM | Facebook reel | 7133365 | Education text cards over a moving drawn chart, light palette (3 numbers: 1-2 trades, 3.5-4 pt stop, $1,000 max) | music | happy_sadie | 199 (post 9543935, snapshot 11/19, latest Blotato has) | 1 |
+| 2026-11-18 | 5:45 PM | Facebook reel | 7142195 | Trade reel, Tim's screen recording (paper trade, misread then short to target, Tim approved) | music | static_shoes | 104 (post 9545324, snapshot 11/19, latest Blotato has) | 1 |
+| 2026-11-18 | 6:00 PM | Instagram reel | 7142199 | Trade reel, Tim's screen recording (paper trade, misread then short to target, Tim approved) | music | static_shoes | 10,107 (post 9546433, snapshot 11/19, latest Blotato has; reach 8,165, 181 likes, 2 comments) | 181 |
 | 2026-11-19 | 12:30 PM | Instagram reel | 7182057 | Education text cards over a moving drawn chart, light palette (size an ES trade from the stop in 3 steps, ES vs MES) | music | cliff_road_chill | | |
 | 2026-11-19 | 8:12 PM | Facebook reel | 7221518 | Lifestyle reel, rendered moving drawn chart, warm dark palette (building something my son will inherit) | music | sugar_and_coffee | | |
 | 2026-11-20 | 12:30 PM | Instagram reel | 7238301 | Education text cards over a moving drawn chart, light palette (ES session map: Asia, London, New York in ET) | music | soft_as_a_dry_pillow | | |
@@ -50,3 +50,5 @@ return no views (a sync gap, not zero).
 | 2026-11-23 | 2:30 PM | Facebook reel | 7374427 (sub b4f234c4-8da3-4c28-9ee3-54693b521ee6) | Trade still reel, Tim's screenshot (Sunday open 25K eval long 1 ES, +14.5 pts, Tim approved) | music | sugar_and_coffee | | |
 | 2026-11-23 | 8:40 PM | Instagram reel | 7408967 (sub 2d32cc88-118c-4195-aad8-3eeac9eb374e) | Trade reel, Tim's screen recording (paper account long 1 ES, +13.75 pts, Tim approved) | music | im_glad_you_are_here | | |
 | 2026-11-23 | 9:15 PM | Facebook reel | 7408968 (sub 7a3e296c-c890-40a1-a39b-ad1de2e4fd19) | Trade reel, Tim's screen recording (paper account long 1 ES, +13.75 pts, Tim approved) | music | im_glad_you_are_here | | |
+| 2026-11-25 | 12:30 PM | Instagram reel | 7526228 (sub 6f6d7156-8a1e-47b8-ba74-34983d046e19) | Education text cards over a moving drawn chart, plum palette (holiday week, same risk numbers) | music | old_key | | |
+| 2026-11-25 | 5:00 PM | Facebook reel | 7526237 (sub 1e6f05bb-bf90-43b3-8e89-5d1dbe518bc9) | Lifestyle reel, rendered moving drawn chart, slate palette (son's first Thanksgiving, rules don't take the week off) | music | sugar_and_coffee | | |
