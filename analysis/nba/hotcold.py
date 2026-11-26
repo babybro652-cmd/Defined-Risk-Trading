@@ -48,6 +48,7 @@ PLAY_GAMES = {
     '2026-11-20': ['ORL@BKN', 'IND@CLE', 'NO@OKC', 'SAC@LAL'],
     '2026-11-21': ['LAC@DAL', 'NO@SA'],
     '2026-11-22': ['OKC@MIA', 'DEN@CHI', 'BOS@GS'],   # OKC@MIA added at the 5:50 PM rerun (MIA 71%)
+    '2026-11-25': ['CHI@CHA', 'CLE@NY', 'SAC@GS', 'SA@POR'],   # CHI@CHA added at the 6:35 PM check (CHI 72%)
 }
 
 
