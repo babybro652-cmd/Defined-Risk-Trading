@@ -6,9 +6,9 @@ BG='#0f1420'; CARD='#1a2233'; TXT='#e8ecf3'; MUTED='#9aa4b5'; GOLD='#f5c542'; BL
 DATE='WED 11/25 (6:35 PM update)'; OUT='analysis/nba/out/charts/plan_2026-11-25.png'
 fb=[('CHI @ CHA','7:00','CHI 72%',[('Nic Claxton  $0.30','+549 / +679'),('Buddy Hield  $0.20','+668 / +822'),('Naz Reid  $0.20','+767 / +940')],'Claxton vs Diabate. J. Smith out of the five. Place only if Claxton starts'),
     ('CLE @ NY','7:30','CLE 73%',[('Jarrett Allen  $0.50','+483 / +599'),('Donovan Mitchell  $0.30','+733 / +899'),('Karl-Anthony Towns (Prob)  $0.20','+735 / +903')],'Allen vs Towns (probable). Brunson downgraded to Q; Mobley OUT'),
-    ('SAC @ GS','10:00','GS 90%',[('Charles Bassey  $0.50','+454 / +565'),('Brandin Podziemski  $0.30','+630 / +777'),('Yaxel Lendeborg (Q)  $0.20','+673 / +827')],'Bassey vs Sabonis. Bassey tip sample small. LaVine, Lendeborg Q; Curry OUT'),
-    ('SA @ POR','10:00','SA 88%',[('Victor Wembanyama (Q)  $0.50','+318 / +401'),('Devin Vassell  $0.30','+705 / +865'),("De'Aaron Fox (Q)  $0.20",'+733 / +900')],'Wemby vs Clingan. Wemby (back), Fox Q: if Wemby sits, skip game')]
-meth=[('Victor Wembanyama - Dunk','$0.50','+1,050','+1,280'),('Charles Bassey - Other','$0.20','+1,136','+1,383'),('Sam Merrill - Three Point Field Goal','$0.20','+1,403','+1,704'),('Jarrett Allen - Other','$0.10','+1,618','+1,961')]
+    ('SAC @ GS','10:00','GS 90%',[('Charles Bassey  $0.50','+451 / +561'),('Brandin Podziemski  $0.30','+626 / +771'),('Yaxel Lendeborg  $0.20','+667 / +821')],'9:32 rerun: Bassey vs Sabonis. Lendeborg starts; LaVine out, Monk starts. Fives expected, not confirmed'),
+    ('SA @ POR','10:00','SA 88%',[('Victor Wembanyama  $0.50','+290 / +368'),('Devin Vassell  $0.30','+651 / +801'),('Stephon Castle  $0.20','+820 / +1005')],'9:32 rerun: Wemby in, vs Clingan. Fox out (Barnes starts), Castle replaces Fox. Fives expected')]
+meth=[('Victor Wembanyama - Dunk','$0.50','+974','+1,189'),('Charles Bassey - Other','$0.20','+1,128','+1,374'),('Sam Merrill - Three Point Field Goal','$0.20','+1,403','+1,704'),('Jarrett Allen - Other','$0.10','+1,618','+1,961')]
 fig=plt.figure(figsize=(7.2,12.3),dpi=200); fig.patch.set_facecolor(BG)
 ax=fig.add_axes([0,0,1,1]); ax.set_xlim(0,100); ax.set_ylim(35,200); ax.axis('off')
 def card(x,y,w,h): ax.add_patch(FancyBboxPatch((x,y),w,h,boxstyle='round,pad=0.4,rounding_size=1.5',fc=CARD,ec='#2c3850',lw=1))

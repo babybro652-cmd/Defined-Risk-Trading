@@ -43,6 +43,14 @@
    "note": "92 starts"
   },
   {
+   "player": "Jaylen Brown",
+   "team": "PHI",
+   "game": "MIA @ PHI",
+   "market": "3+ threes",
+   "p": 0.277,
+   "note": "89 starts"
+  },
+  {
    "player": "Tyrese Maxey",
    "team": "PHI",
    "game": "MIA @ PHI",
@@ -443,12 +451,12 @@
    "note": "82 starts"
   },
   {
-   "player": "Stephon Castle",
+   "player": "Devin Vassell",
    "team": "SA",
    "game": "SA @ POR",
    "market": "3+ threes",
-   "p": 0.254,
-   "note": "86 starts"
+   "p": 0.325,
+   "note": "82 starts"
   },
   {
    "player": "Julian Champagnie",
@@ -459,20 +467,20 @@
    "note": "74 starts"
   },
   {
-   "player": "De'Aaron Fox",
+   "player": "Stephon Castle",
    "team": "SA",
    "game": "SA @ POR",
    "market": "3+ threes",
-   "p": 0.165,
-   "note": "89 starts"
+   "p": 0.254,
+   "note": "86 starts"
   },
   {
-   "player": "Devin Vassell",
+   "player": "Harrison Barnes",
    "team": "SA",
    "game": "SA @ POR",
    "market": "3+ threes",
-   "p": 0.325,
-   "note": "82 starts"
+   "p": 0.268,
+   "note": "54 starts"
   },
   {
    "player": "Victor Wembanyama",
