@@ -35,8 +35,8 @@ Tip winner scores first 66% (25-26).
   - CLE: 1st-shot pick Jarrett Allen 17% (fair +483; scores on CLE's first shot 12%); 2nd-chance pick Donovan Mitchell 12% (fair +732; after a miss 12%)
   - NY: 1st-shot pick Jalen Brunson 12% (fair +747; scores on NY's first shot 14%); 2nd-chance pick Karl-Anthony Towns 12% (fair +736; after a miss 17%)
 - MIN @ OKC 7:30: tip MIN 54% (Rudy Gobert vs Isaiah Hartenstein); MIN scores first 51%
-  - MIN: 1st-shot pick Jaden McDaniels 12% (fair +764; scores on MIN's first shot 11%); 2nd-chance pick LaMelo Ball 11% (fair +787; after a miss 14%)
-  - OKC: 1st-shot pick Shai Gilgeous-Alexander 13% (fair +692; scores on OKC's first shot 12%); 2nd-chance pick Ajay Mitchell 10% (fair +913; after a miss 12%)
+  - MIN: 1st-shot pick Jaden McDaniels 11% (fair +772; scores on MIN's first shot 11%); 2nd-chance pick LaMelo Ball 11% (fair +797; after a miss 14%)
+  - OKC: 1st-shot pick Shai Gilgeous-Alexander 13% (fair +657; scores on OKC's first shot 13%); 2nd-chance pick Ajay Mitchell 10% (fair +866; after a miss 12%)
 - LAC @ MEM 8:00: tip LAC 65% (Brook Lopez vs Zach Edey); LAC scores first 54%
   - LAC: 1st-shot pick Brandon Ingram 14% (fair +639; scores on LAC's first shot 12%); 2nd-chance pick Darius Garland 11% (fair +770; after a miss 11%)
   - MEM: 1st-shot pick Ty Jerome 12% (fair +703; scores on MEM's first shot 13%); 2nd-chance pick Zach Edey 12% (fair +761; after a miss 13%)
@@ -60,7 +60,7 @@ Dunk/layup includes tip-ins and putbacks; 2pt jumper includes floaters and hooks
 - MIA @ PHI 5:00: first points Dunk/layup 34% (+196), 2pt jumper 24% (+311), 3-pointer 26% (+279), Free throw 15% (+546); first basket Dunk/layup 41% (+145), 2pt jumper 27% (+274), 3-pointer 32% (+208)
 - CHI @ CHA 7:00: first points Dunk/layup 45% (+123), 2pt jumper 20% (+413), 3-pointer 28% (+262), Free throw 8% (+1146); first basket Dunk/layup 48% (+109), 2pt jumper 21% (+380), 3-pointer 31% (+219)
 - CLE @ NY 7:30: first points Dunk/layup 30% (+233), 2pt jumper 26% (+283), 3-pointer 28% (+254), Free throw 16% (+540); first basket Dunk/layup 33% (+204), 2pt jumper 29% (+243), 3-pointer 38% (+163)
-- MIN @ OKC 7:30: first points Dunk/layup 28% (+259), 2pt jumper 29% (+244), 3-pointer 29% (+242), Free throw 14% (+626); first basket Dunk/layup 32% (+210), 2pt jumper 34% (+195), 3-pointer 34% (+195)
+- MIN @ OKC 7:30: first points Dunk/layup 28% (+259), 2pt jumper 29% (+244), 3-pointer 29% (+242), Free throw 14% (+624); first basket Dunk/layup 32% (+210), 2pt jumper 34% (+195), 3-pointer 34% (+195)
 - LAC @ MEM 8:00: first points Dunk/layup 32% (+216), 2pt jumper 34% (+191), 3-pointer 25% (+301), Free throw 9% (+1011); first basket Dunk/layup 34% (+195), 2pt jumper 38% (+166), 3-pointer 29% (+251)
 - BKN @ MIL 8:00: first points Dunk/layup 38% (+163), 2pt jumper 21% (+382), 3-pointer 31% (+225), Free throw 11% (+850); first basket Dunk/layup 41% (+141), 2pt jumper 24% (+325), 3-pointer 35% (+185)
 - PHX @ HOU 8:30: first points Dunk/layup 33% (+206), 2pt jumper 32% (+217), 3-pointer 30% (+234), Free throw 6% (+1617); first basket Dunk/layup 35% (+184), 2pt jumper 34% (+196), 3-pointer 31% (+222)
