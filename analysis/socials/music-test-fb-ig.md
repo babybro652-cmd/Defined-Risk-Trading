@@ -61,3 +61,5 @@ return no views (a sync gap, not zero).
 | 2026-11-28 | 8:40 PM | Instagram reel | 7529692 (sub 4ae2cb3c-0fb1-45d6-8677-a69456a07916) | Trade still reel, Tim's screenshot (11/25 9:45 AM long 1 + add 1 ES, +10.75 pts, Tim approved) | music | happy_sadie | | |
 | 2026-11-28 | 9:15 PM | Facebook reel | 7529696 (sub c0007aa9-295a-406f-987c-0d5b8e8396a8) | Trade still reel, Tim's screenshot (11/25 9:45 AM long 1 + add 1 ES, +10.75 pts, Tim approved) | music | happy_sadie | | |
 | 2026-11-26 | 12:30 PM | Instagram reel | 7579825 (sub c2036668-f5ed-4fad-9456-768fe1dc128b) | Rendered education reel, Thanksgiving: 3 checks before any ES trade (sage palette) | music | im_glad_you_are_here | | |
+| 2026-11-26 | 1:30 PM | Instagram reel | 7579962 (sub c58523ec-3123-48b2-b144-abc19cae7596) | Rendered Happy Thanksgiving card (autumn palette, Tim's request) | music | happy_sadie | | |
+| 2026-11-26 | 2:00 PM | Facebook reel | 7579965 (sub dba2d5f5-bc1b-4794-9530-b04ee69757f2) | Rendered Happy Thanksgiving card (autumn palette, Tim's request) | music | happy_sadie | | |
