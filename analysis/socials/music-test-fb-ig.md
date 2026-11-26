@@ -60,3 +60,4 @@ return no views (a sync gap, not zero).
 | 2026-11-27 | 9:15 PM | Facebook reel | 7529671 (sub 08493b9b-0b6b-4faa-a587-1f218d6db018) | Trade reel, Tim's screen recording (11/25 4:54 AM long 2 ES, +2.25 pts each, Tim approved) | music | drowning_in_your_smile | | |
 | 2026-11-28 | 8:40 PM | Instagram reel | 7529692 (sub 4ae2cb3c-0fb1-45d6-8677-a69456a07916) | Trade still reel, Tim's screenshot (11/25 9:45 AM long 1 + add 1 ES, +10.75 pts, Tim approved) | music | happy_sadie | | |
 | 2026-11-28 | 9:15 PM | Facebook reel | 7529696 (sub c0007aa9-295a-406f-987c-0d5b8e8396a8) | Trade still reel, Tim's screenshot (11/25 9:45 AM long 1 + add 1 ES, +10.75 pts, Tim approved) | music | happy_sadie | | |
+| 2026-11-26 | 12:30 PM | Instagram reel | 7579825 (sub c2036668-f5ed-4fad-9456-768fe1dc128b) | Rendered education reel, Thanksgiving: 3 checks before any ES trade (sage palette) | music | im_glad_you_are_here | | |
