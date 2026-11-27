@@ -46,7 +46,7 @@
 "fair_v1": "+1182",
 "def_mult": 0.888,
 "ripple": "",
-"inj": "Day-To-Day",
+"inj": "",
 "team_share": 0.2872,
 "p_team_first": 0.3987
 },
@@ -471,7 +471,7 @@
 "fair_v1": "+716",
 "def_mult": 0.918,
 "ripple": "",
-"inj": "Day-To-Day",
+"inj": "",
 "team_share": 0.1726,
 "p_team_first": 0.4845
 },
