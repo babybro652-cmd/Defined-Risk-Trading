@@ -47,3 +47,13 @@ BUF Dalton Kincaid Q. PHI Dontayvion Wicks IR; depth chart lists Joe Milton at Q
 
 If every price qualifies the total is $5.90; drop the Gibbs, Barkley and DAL first-score plays first to stay near $5.
 First TD and first scoring play are mostly noise (top first TD pick hits about 1 in 6). No promises.
+
+## Tim's placed slip (FanDuel, logged 11/26 8:15 PM ET)
+3-leg parlay, "either player" first TD scorer (slip: analysis/nfl/slips/2026-11-26-first-td-either-parlay.jpg)
+| Game | Leg | Odds | Result |
+|---|---|---|---|
+| CHI@DET | Gibbs or Loveland first TD | +322 | W (Gibbs) |
+| PHI@DAL | CeeDee Lamb or Javonte Williams first TD | +202 | W |
+| KC@BUF | James Cook or Emmett Johnson first TD | +253 | W (BUF TD in 2nd) |
+Combined about +4400 (4.22 x 3.02 x 3.53 = 45.0x). Stake: TBD from Tim. All 3 legs show green on the slip: WIN.
+Not on the Bets tab: tab is full at row 1935.
