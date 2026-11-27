@@ -1,8 +1,8 @@
 {
  "season": 2026,
  "week": 12,
- "injuries_feed": "2026-11-27T15:18:01Z",
- "built": "2026-11-27T15:18",
+ "injuries_feed": "2026-11-27T15:20:59Z",
+ "built": "2026-11-27T15:21",
  "games": [
   {
    "game": "GB @ LA",
@@ -27,8 +27,8 @@
      "name": "Kaleb Johnson",
      "team": "GB",
      "pos": "RB",
-     "share": 0.22882178310759868,
-     "p": 0.09863820755155538,
+     "share": 0.2288217831075987,
+     "p": 0.09863820755155539,
      "status": ""
     },
     {
@@ -51,8 +51,8 @@
      "name": "MarShawn Lloyd",
      "team": "GB",
      "pos": "RB",
-     "share": 0.12951546158206126,
-     "p": 0.05583023087736186,
+     "share": 0.1295154615820613,
+     "p": 0.05583023087736187,
      "status": ""
     },
     {
@@ -82,15 +82,15 @@
     "GB": [
      {
       "name": "Kaleb Johnson",
-      "share": 0.22882178310759868
+      "share": 0.2288217831075987
      },
      {
       "name": "MarShawn Lloyd",
-      "share": 0.12951546158206126
+      "share": 0.1295154615820613
      },
      {
       "name": "Matthew Golden",
-      "share": 0.11309014694502051
+      "share": 0.11309014694502052
      }
     ]
    },
@@ -115,7 +115,7 @@
      {
       "pair": "Kaleb Johnson or Puka Nacua",
       "teams": "GB/LA",
-      "p": 0.19070217214459598,
+      "p": 0.190702172144596,
       "fair": "+424",
       "take_at": "+529",
       "status": ""
@@ -133,7 +133,7 @@
      "GB": {
       "pair": "Kaleb Johnson or MarShawn Lloyd",
       "teams": "GB",
-      "p": 0.15446843842891722,
+      "p": 0.15446843842891728,
       "fair": "+547",
       "take_at": "+677",
       "status": ""
@@ -172,8 +172,8 @@
      "name": "Amon-Ra St. Brown",
      "team": "DET",
      "pos": "WR",
-     "share": 0.16574247079767265,
-     "p": 0.07619740272444635,
+     "share": 0.16574247079767263,
+     "p": 0.07619740272444633,
      "status": ""
     },
     {
@@ -196,8 +196,8 @@
      "name": "Isiah Pacheco",
      "team": "DET",
      "pos": "RB",
-     "share": 0.1177919863439636,
-     "p": 0.05415294811261804,
+     "share": 0.11779198634396358,
+     "p": 0.05415294811261803,
      "status": ""
     }
    ],
@@ -209,11 +209,11 @@
      },
      {
       "name": "Amon-Ra St. Brown",
-      "share": 0.16574247079767265
+      "share": 0.16574247079767263
      },
      {
       "name": "Isiah Pacheco",
-      "share": 0.1177919863439636
+      "share": 0.11779198634396358
      }
     ],
     "CHI": [
@@ -252,7 +252,7 @@
      {
       "pair": "D'Andre Swift or Amon-Ra St. Brown",
       "teams": "CHI/DET",
-      "p": 0.1972685894613382,
+      "p": 0.19726858946133818,
       "fair": "+407",
       "take_at": "+508",
       "status": ""
@@ -301,40 +301,40 @@
      "name": "CeeDee Lamb",
      "team": "DAL",
      "pos": "WR",
-     "share": 0.1602265714441827,
-     "p": 0.09916913303569568,
+     "share": 0.16022657144418267,
+     "p": 0.09916913303569566,
      "status": ""
     },
     {
      "name": "George Pickens",
      "team": "DAL",
      "pos": "WR",
-     "share": 0.15116629589345235,
-     "p": 0.09356145096815892,
+     "share": 0.1511662958934524,
+     "p": 0.09356145096815896,
      "status": ""
     },
     {
      "name": "Saquon Barkley",
      "team": "PHI",
      "pos": "RB",
-     "share": 0.1937649277593664,
-     "p": 0.06685125952166286,
+     "share": 0.19376492775936638,
+     "p": 0.06685125952166285,
      "status": "Questionable"
     },
     {
      "name": "Ryan Flournoy",
      "team": "DAL",
      "pos": "WR",
-     "share": 0.0735536301521534,
-     "p": 0.04552459475398758,
+     "share": 0.07355363015215338,
+     "p": 0.045524594753987575,
      "status": ""
     },
     {
      "name": "Dak Prescott",
      "team": "DAL",
      "pos": "QB",
-     "share": 0.06325723104265983,
-     "p": 0.03915183795170092,
+     "share": 0.06325723104265982,
+     "p": 0.03915183795170091,
      "status": ""
     }
    ],
@@ -346,25 +346,25 @@
      },
      {
       "name": "CeeDee Lamb",
-      "share": 0.1602265714441827
+      "share": 0.16022657144418267
      },
      {
       "name": "George Pickens",
-      "share": 0.15116629589345235
+      "share": 0.1511662958934524
      }
     ],
     "PHI": [
      {
       "name": "Saquon Barkley",
-      "share": 0.1937649277593664
+      "share": 0.19376492775936638
      },
      {
       "name": "Dallas Goedert",
-      "share": 0.10125810210404035
+      "share": 0.10125810210404033
      },
      {
       "name": "DeVonta Smith",
-      "share": 0.10098951555685144
+      "share": 0.10098951555685147
      }
     ]
    },
@@ -381,7 +381,7 @@
      {
       "pair": "Javonte Williams or George Pickens",
       "teams": "DAL",
-      "p": 0.25370900468285884,
+      "p": 0.2537090046828589,
       "fair": "+294",
       "take_at": "+373",
       "status": ""
@@ -407,7 +407,7 @@
      "PHI": {
       "pair": "Saquon Barkley (Q) or Dallas Goedert (Q)",
       "teams": "PHI",
-      "p": 0.10178653775134765,
+      "p": 0.10178653775134763,
       "fair": "+882",
       "take_at": "+1079",
       "status": "Q"
@@ -438,8 +438,8 @@
      "name": "Emmett Johnson",
      "team": "KC",
      "pos": "RB",
-     "share": 0.20787328014621317,
-     "p": 0.08648569602806562,
+     "share": 0.2078732801462132,
+     "p": 0.08648569602806563,
      "status": ""
     },
     {
@@ -462,16 +462,16 @@
      "name": "Rashee Rice",
      "team": "KC",
      "pos": "WR",
-     "share": 0.12031825974969577,
-     "p": 0.05005842228505188,
+     "share": 0.1203182597496958,
+     "p": 0.0500584222850519,
      "status": ""
     },
     {
      "name": "Travis Kelce",
      "team": "KC",
      "pos": "TE",
-     "share": 0.11942148474534023,
-     "p": 0.0496853189675995,
+     "share": 0.11942148474534024,
+     "p": 0.04968531896759951,
      "status": ""
     }
    ],
@@ -493,15 +493,15 @@
     "KC": [
      {
       "name": "Emmett Johnson",
-      "share": 0.20787328014621317
+      "share": 0.2078732801462132
      },
      {
       "name": "Rashee Rice",
-      "share": 0.12031825974969577
+      "share": 0.1203182597496958
      },
      {
       "name": "Travis Kelce",
-      "share": 0.11942148474534023
+      "share": 0.11942148474534024
      }
     ]
    },
@@ -510,7 +510,7 @@
      {
       "pair": "James Cook or Emmett Johnson",
       "teams": "BUF/KC",
-      "p": 0.20929069969494726,
+      "p": 0.2092906996949473,
       "fair": "+378",
       "take_at": "+473",
       "status": ""
@@ -544,7 +544,7 @@
      "KC": {
       "pair": "Emmett Johnson or Rashee Rice",
       "teams": "KC",
-      "p": 0.1365441183131175,
+      "p": 0.13654411831311752,
       "fair": "+632",
       "take_at": "+779",
       "status": ""
@@ -567,16 +567,8 @@
      "name": "Jonah Coleman",
      "team": "DEN",
      "pos": "RB",
-     "share": 0.21051109835140283,
-     "p": 0.11659003636727146,
-     "status": ""
-    },
-    {
-     "name": "RJ Harvey",
-     "team": "DEN",
-     "pos": "RB",
-     "share": 0.14526967289131149,
-     "p": 0.08045654874303576,
+     "share": 0.24628949234023612,
+     "p": 0.1364056389126412,
      "status": ""
     },
     {
@@ -588,6 +580,14 @@
      "status": ""
     },
     {
+     "name": "Courtland Sutton",
+     "team": "DEN",
+     "pos": "WR",
+     "share": 0.1225943556779064,
+     "p": 0.06789798969672266,
+     "status": ""
+    },
+    {
      "name": "Rico Dowdle",
      "team": "PIT",
      "pos": "RB",
@@ -596,11 +596,11 @@
      "status": ""
     },
     {
-     "name": "Courtland Sutton",
+     "name": "Jaylen Waddle",
      "team": "DEN",
      "pos": "WR",
-     "share": 0.10478511373025584,
-     "p": 0.05803447094350212,
+     "share": 0.11423996502697338,
+     "p": 0.06327097137110105,
      "status": ""
     },
     {
@@ -630,52 +630,52 @@
     "DEN": [
      {
       "name": "Jonah Coleman",
-      "share": 0.21051109835140283
-     },
-     {
-      "name": "RJ Harvey",
-      "share": 0.14526967289131149
+      "share": 0.24628949234023612
      },
      {
       "name": "Courtland Sutton",
-      "share": 0.10478511373025584
+      "share": 0.1225943556779064
+     },
+     {
+      "name": "Jaylen Waddle",
+      "share": 0.11423996502697338
      }
     ]
    },
    "either": {
     "top_pairs": [
      {
-      "pair": "Jonah Coleman or RJ Harvey",
-      "teams": "DEN",
-      "p": 0.1970465851103072,
-      "fair": "+407",
-      "take_at": "+509",
+      "pair": "Jonah Coleman or Jaylen Warren",
+      "teams": "DEN/PIT",
+      "p": 0.21255414197586112,
+      "fair": "+370",
+      "take_at": "+465",
       "status": ""
      },
      {
-      "pair": "Jonah Coleman or Jaylen Warren",
-      "teams": "DEN/PIT",
-      "p": 0.19273853943049135,
-      "fair": "+419",
-      "take_at": "+523",
+      "pair": "Jonah Coleman or Courtland Sutton",
+      "teams": "DEN",
+      "p": 0.20430362860936385,
+      "fair": "+389",
+      "take_at": "+487",
       "status": ""
      },
      {
       "pair": "Jonah Coleman or Rico Dowdle",
       "teams": "DEN/PIT",
-      "p": 0.18103351567746642,
-      "fair": "+452",
-      "take_at": "+563",
+      "p": 0.2008491182228362,
+      "fair": "+398",
+      "take_at": "+497",
       "status": ""
      }
     ],
     "same_team": {
      "DEN": {
-      "pair": "Jonah Coleman or RJ Harvey",
+      "pair": "Jonah Coleman or Courtland Sutton",
       "teams": "DEN",
-      "p": 0.1970465851103072,
-      "fair": "+407",
-      "take_at": "+509",
+      "p": 0.20430362860936385,
+      "fair": "+389",
+      "take_at": "+487",
       "status": ""
      },
      "PIT": {
@@ -865,8 +865,8 @@
      "name": "David Montgomery",
      "team": "HOU",
      "pos": "RB",
-     "share": 0.11367815519760803,
-     "p": 0.0664965479660462,
+     "share": 0.113678155197608,
+     "p": 0.06649654796604619,
      "status": ""
     },
     {
@@ -898,7 +898,7 @@
      },
      {
       "name": "David Montgomery",
-      "share": 0.11367815519760803
+      "share": 0.113678155197608
      }
     ],
     "BAL": [
@@ -978,16 +978,16 @@
      "name": "Jonathan Taylor",
      "team": "IND",
      "pos": "RB",
-     "share": 0.36459959533492287,
-     "p": 0.13445213882954893,
+     "share": 0.3645995953349229,
+     "p": 0.13445213882954896,
      "status": ""
     },
     {
      "name": "Cam Skattebo",
      "team": "NYG",
      "pos": "RB",
-     "share": 0.18015876423128888,
-     "p": 0.1044339957406853,
+     "share": 0.18015876423128893,
+     "p": 0.10443399574068535,
      "status": ""
     },
     {
@@ -1010,16 +1010,16 @@
      "name": "Tyrone Tracy Jr.",
      "team": "NYG",
      "pos": "RB",
-     "share": 0.10228003803722947,
-     "p": 0.05928944452030191,
+     "share": 0.10228003803722949,
+     "p": 0.05928944452030192,
      "status": ""
     },
     {
      "name": "Tyler Warren",
      "team": "IND",
      "pos": "TE",
-     "share": 0.13603979234402466,
-     "p": 0.05016692635047979,
+     "share": 0.1360397923440247,
+     "p": 0.0501669263504798,
      "status": ""
     }
    ],
@@ -1027,21 +1027,21 @@
     "IND": [
      {
       "name": "Jonathan Taylor",
-      "share": 0.36459959533492287
+      "share": 0.3645995953349229
      },
      {
       "name": "Tyler Warren",
-      "share": 0.13603979234402466
+      "share": 0.1360397923440247
      },
      {
       "name": "Anthony Richardson",
-      "share": 0.12868293493836908
+      "share": 0.1286829349383691
      }
     ],
     "NYG": [
      {
       "name": "Cam Skattebo",
-      "share": 0.18015876423128888
+      "share": 0.18015876423128893
      },
      {
       "name": "Malik Nabers",
@@ -1058,7 +1058,7 @@
      {
       "pair": "Jonathan Taylor or Cam Skattebo",
       "teams": "IND/NYG",
-      "p": 0.23888613457023422,
+      "p": 0.2388861345702343,
       "fair": "+319",
       "take_at": "+402",
       "status": ""
@@ -1066,7 +1066,7 @@
      {
       "pair": "Jonathan Taylor or Malik Nabers",
       "teams": "IND/NYG",
-      "p": 0.21450058845869732,
+      "p": 0.21450058845869735,
       "fair": "+366",
       "take_at": "+459",
       "status": ""
@@ -1084,7 +1084,7 @@
      "NYG": {
       "pair": "Cam Skattebo or Malik Nabers",
       "teams": "NYG",
-      "p": 0.18448244536983371,
+      "p": 0.18448244536983374,
       "fair": "+442",
       "take_at": "+550",
       "status": ""
@@ -1092,7 +1092,7 @@
      "IND": {
       "pair": "Jonathan Taylor or Tyler Warren",
       "teams": "IND",
-      "p": 0.1846190651800287,
+      "p": 0.18461906518002874,
       "fair": "+442",
       "take_at": "+550",
       "status": ""
@@ -1178,15 +1178,15 @@
     "TEN": [
      {
       "name": "Tony Pollard",
-      "share": 0.2340271708432824
+      "share": 0.23402717084328237
      },
      {
       "name": "Wan'Dale Robinson",
-      "share": 0.11696169829646477
+      "share": 0.11696169829646474
      },
      {
       "name": "Carnell Tate",
-      "share": 0.100629651093017
+      "share": 0.10062965109301698
      }
     ]
    },
@@ -1229,7 +1229,7 @@
      "TEN": {
       "pair": "Tony Pollard or Wan'Dale Robinson",
       "teams": "TEN",
-      "p": 0.07864671958454597,
+      "p": 0.07864671958454596,
       "fair": "+1172",
       "take_at": "+1426",
       "status": ""
@@ -1260,8 +1260,8 @@
      "name": "De'Von Achane",
      "team": "MIA",
      "pos": "RB",
-     "share": 0.2192995970545594,
-     "p": 0.08781817691590316,
+     "share": 0.21929959705455943,
+     "p": 0.08781817691590317,
      "status": ""
     },
     {
@@ -1284,16 +1284,16 @@
      "name": "Kyle McCord",
      "team": "MIA",
      "pos": "QB",
-     "share": 0.1448222831502251,
-     "p": 0.05799385431559813,
+     "share": 0.14482228315022513,
+     "p": 0.057993854315598135,
      "status": ""
     },
     {
      "name": "Ollie Gordon II",
      "team": "MIA",
      "pos": "RB",
-     "share": 0.1385817998867366,
-     "p": 0.05549486265927774,
+     "share": 0.13858179988673663,
+     "p": 0.055494862659277756,
      "status": ""
     }
    ],
@@ -1301,15 +1301,15 @@
     "MIA": [
      {
       "name": "De'Von Achane",
-      "share": 0.2192995970545594
+      "share": 0.21929959705455943
      },
      {
       "name": "Kyle McCord",
-      "share": 0.1448222831502251
+      "share": 0.14482228315022513
      },
      {
       "name": "Ollie Gordon II",
-      "share": 0.1385817998867366
+      "share": 0.13858179988673663
      }
     ],
     "NYJ": [
@@ -1348,7 +1348,7 @@
      {
       "pair": "De'Von Achane or Garrett Wilson",
       "teams": "MIA/NYJ",
-      "p": 0.17012649226846058,
+      "p": 0.1701264922684606,
       "fair": "+488",
       "take_at": "+605",
       "status": ""
@@ -1366,7 +1366,7 @@
      "MIA": {
       "pair": "De'Von Achane or Kyle McCord",
       "teams": "MIA",
-      "p": 0.14581203123150127,
+      "p": 0.1458120312315013,
       "fair": "+586",
       "take_at": "+723",
       "status": ""
@@ -1389,47 +1389,47 @@
      "name": "Aaron Jones",
      "team": "MIN",
      "pos": "RB",
-     "share": 0.18899314420584085,
-     "p": 0.11310141599622464,
+     "share": 0.1889931442058409,
+     "p": 0.11310141599622467,
      "status": ""
     },
     {
      "name": "Justin Jefferson",
      "team": "MIN",
      "pos": "WR",
-     "share": 0.18804225973295113,
-     "p": 0.11253236688714417,
+     "share": 0.1880422597329511,
+     "p": 0.11253236688714416,
      "status": ""
     },
     {
      "name": "Bijan Robinson",
      "team": "ATL",
      "pos": "RB",
-     "share": 0.3007498936354525,
-     "p": 0.10405446078294334,
+     "share": 0.30074989363545246,
+     "p": 0.10405446078294331,
      "status": ""
     },
     {
      "name": "Jauan Jennings",
      "team": "MIN",
      "pos": "WR",
-     "share": 0.12218000115982991,
-     "p": 0.0731176318361397,
+     "share": 0.12218000115982994,
+     "p": 0.07311763183613973,
      "status": ""
     },
     {
      "name": "Jordan Mason",
      "team": "MIN",
      "pos": "RB",
-     "share": 0.11002586838571796,
-     "p": 0.06584408954583847,
+     "share": 0.11002586838571797,
+     "p": 0.06584408954583848,
      "status": ""
     },
     {
      "name": "T.J. Hockenson",
      "team": "MIN",
      "pos": "TE",
-     "share": 0.10936726986012267,
+     "share": 0.10936726986012268,
      "p": 0.06544995659392185,
      "status": ""
     }
@@ -1438,21 +1438,21 @@
     "MIN": [
      {
       "name": "Aaron Jones",
-      "share": 0.18899314420584085
+      "share": 0.1889931442058409
      },
      {
       "name": "Justin Jefferson",
-      "share": 0.18804225973295113
+      "share": 0.1880422597329511
      },
      {
       "name": "Jauan Jennings",
-      "share": 0.12218000115982991
+      "share": 0.12218000115982994
      }
     ],
     "ATL": [
      {
       "name": "Bijan Robinson",
-      "share": 0.3007498936354525
+      "share": 0.30074989363545246
      },
      {
       "name": "Drake London",
@@ -1460,7 +1460,7 @@
      },
      {
       "name": "Kyle Pitts",
-      "share": 0.11685689758842044
+      "share": 0.11685689758842042
      }
     ]
    },
@@ -1485,7 +1485,7 @@
      {
       "pair": "Justin Jefferson or Bijan Robinson",
       "teams": "MIN/ATL",
-      "p": 0.21658682767008752,
+      "p": 0.21658682767008747,
       "fair": "+362",
       "take_at": "+454",
       "status": ""
@@ -1503,7 +1503,7 @@
      "ATL": {
       "pair": "Bijan Robinson or Drake London",
       "teams": "ATL",
-      "p": 0.15457870306655952,
+      "p": 0.1545787030665595,
       "fair": "+547",
       "take_at": "+676",
       "status": ""
@@ -1671,16 +1671,16 @@
      "name": "James Conner",
      "team": "ARI",
      "pos": "RB",
-     "share": 0.20272615990182025,
-     "p": 0.06875367550128275,
+     "share": 0.20272615990182022,
+     "p": 0.06875367550128274,
      "status": ""
     },
     {
      "name": "Rachaad White",
      "team": "WAS",
      "pos": "RB",
-     "share": 0.10222775296898733,
-     "p": 0.06221624701841066,
+     "share": 0.10222775296898735,
+     "p": 0.06221624701841068,
      "status": ""
     },
     {
@@ -1712,15 +1712,15 @@
     "ARI": [
      {
       "name": "James Conner",
-      "share": 0.20272615990182025
+      "share": 0.20272615990182022
      },
      {
       "name": "Trey McBride",
-      "share": 0.15881292096676927
+      "share": 0.15881292096676924
      },
      {
       "name": "Michael Wilson",
-      "share": 0.11554449073022138
+      "share": 0.11554449073022137
      }
     ],
     "WAS": [
@@ -1730,7 +1730,7 @@
      },
      {
       "name": "Rachaad White",
-      "share": 0.10222775296898733
+      "share": 0.10222775296898735
      },
      {
       "name": "Jayden Daniels",
@@ -1751,7 +1751,7 @@
      {
       "pair": "Jacory Croskey-Merritt or Rachaad White",
       "teams": "WAS",
-      "p": 0.14118262345477717,
+      "p": 0.1411826234547772,
       "fair": "+608",
       "take_at": "+750",
       "status": ""
@@ -1769,7 +1769,7 @@
      "WAS": {
       "pair": "Jacory Croskey-Merritt or Rachaad White",
       "teams": "WAS",
-      "p": 0.14118262345477717,
+      "p": 0.1411826234547772,
       "fair": "+608",
       "take_at": "+750",
       "status": ""
@@ -1777,7 +1777,7 @@
      "ARI": {
       "pair": "James Conner or Trey McBride",
       "teams": "ARI",
-      "p": 0.12261437132291794,
+      "p": 0.12261437132291791,
       "fair": "+716",
       "take_at": "+879",
       "status": ""
@@ -2008,7 +2008,7 @@
      },
      {
       "name": "Fernando Mendoza",
-      "share": 0.10791103504910088
+      "share": 0.1079110350491009
      }
     ]
    },
@@ -2082,8 +2082,8 @@
      "name": "Chuba Hubbard",
      "team": "CAR",
      "pos": "RB",
-     "share": 0.2663261214664415,
-     "p": 0.10497846007844924,
+     "share": 0.26632612146644147,
+     "p": 0.10497846007844922,
      "status": ""
     },
     {
@@ -2098,24 +2098,24 @@
      "name": "Tetairoa McMillan",
      "team": "CAR",
      "pos": "WR",
-     "share": 0.15082982719309868,
-     "p": 0.059452985330337785,
+     "share": 0.1508298271930987,
+     "p": 0.0594529853303378,
      "status": "Questionable"
     },
     {
      "name": "Chris Godwin Jr.",
      "team": "TB",
      "pos": "WR",
-     "share": 0.10368336872093827,
-     "p": 0.058036661281910304,
+     "share": 0.10368336872093828,
+     "p": 0.05803666128191031,
      "status": ""
     },
     {
      "name": "Kenny Gainwell",
      "team": "TB",
      "pos": "RB",
-     "share": 0.1004098021441026,
-     "p": 0.05620428568544469,
+     "share": 0.10040980214410261,
+     "p": 0.056204285685444694,
      "status": ""
     }
    ],
@@ -2131,17 +2131,17 @@
      },
      {
       "name": "Chris Godwin Jr.",
-      "share": 0.10368336872093827
+      "share": 0.10368336872093828
      }
     ],
     "CAR": [
      {
       "name": "Chuba Hubbard",
-      "share": 0.2663261214664415
+      "share": 0.26632612146644147
      },
      {
       "name": "Tetairoa McMillan",
-      "share": 0.15082982719309868
+      "share": 0.1508298271930987
      },
      {
       "name": "Jalen Coker",
@@ -2154,7 +2154,7 @@
      {
       "pair": "Bucky Irving or Chuba Hubbard",
       "teams": "TB/CAR",
-      "p": 0.2622819675167946,
+      "p": 0.26228196751679456,
       "fair": "+281",
       "take_at": "+358",
       "status": ""
@@ -2170,7 +2170,7 @@
      {
       "pair": "Bucky Irving or Tetairoa McMillan (Q)",
       "teams": "TB/CAR",
-      "p": 0.21675649276868314,
+      "p": 0.21675649276868317,
       "fair": "+361",
       "take_at": "+454",
       "status": "Q"

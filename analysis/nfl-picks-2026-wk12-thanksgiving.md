@@ -84,3 +84,22 @@ DEN J.K. Dobbins suspended (out), RB Tyler Badie Q, S Taylor Rapp OUT, TE Caleb 
 
 If every price qualifies the total is $3.25 (cap $4). FanDuel usually prices Coleman ATD and the either pairs short: skip anything under take-at.
 First TD and first scoring play are mostly noise. No promises.
+
+### Update 11/27 ~11:00 AM ET: RJ Harvey not on FanDuel (treated OUT)
+No injury listed for Harvey; ESPN depth chart now has him 5th at RB (Coleman, Dobbins (suspended), Tyler Badie Q, Cody Schrader, Harvey),
+so likely a healthy scratch. Coleman takes most of his work; Badie (Q) / Schrader are the backups.
+Reran `first_td_week.py --week 12 --out "RJ Harvey" --q "Tyler Badie"`. The anytime TD model does not move usage, so Coleman's anytime
+chance is hand-adjusted from 49% to about 55% (his team first TD share rose x1.31 with Dobbins and Harvey out; scaled at x1.2 to stay conservative).
+Harvey rows above are void. New plays:
+
+| Pick | Chance | Fair | Take-at | Stake | Note |
+|---|---|---|---|---|---|
+| Jonah Coleman anytime TD | 55% | -123 | -102 | $1.00 | hand-adjusted, see above |
+| Coleman first TD | 13.6% | +633 | +780 | $0.50 | |
+| Jaylen Warren first TD | 7.6% | +1213 | +1476 | $0.25 | |
+| Courtland Sutton first TD | 6.8% | +1373 | +1667 | $0.25 | WR, small |
+| Either: Coleman or Warren (new top-2 combo) | 21.3% | +370 | +465 | $0.50 | different teams |
+| Either: Coleman or Sutton (best DEN pair) | 20.4% | +389 | +487 | $0.25 | same team |
+| Either: Warren or Dowdle (best PIT pair) | 14.1% | +611 | +754 | $0.25 | |
+
+Side, first scoring play and total: still pass. Max $3.00 if every price qualifies (cap $4).
