@@ -114,6 +114,13 @@ analysis/first_events/log.csv now has tip_jumpers, tip_winner, tip_winner_scored
 - Caution (11/8 report): our team-level top-2 hit rate is about random (42% vs 40%), so lean only on teams where the first basket is concentrated and the model has been consistent (UTAH Markkanen, SA Wemby/Fox, MIL Jaquez, DEN, TOR); skip POR, CHA, CHI, DET, IND, LAC until that changes. Recheck weekly with analysis/reports/model_consistency_by_team.py.
 - FanDuel team first basket counts free throws (Tim confirmed 11/8): grade on the team's first points.
 
+## NFL Either Player - First Touchdown Scorer (Tim, 11/27)
+- FanDuel pair market ("A or B"). P = pA + pB from the first TD chain model; fair = 1/P; take-at = fair decimal x1.2.
+- `analysis/nfl/first_td_week.py` writes `out/first_td_either_wk<N>.csv` and `out/charts/first_td_either_wk<N>.png`: top-2 combo,
+  pairs #2-#3, best same-team pair per team. Include it in every NFL first TD run (Thu, Sat recheck, Sun after inactives).
+- Backtest: top-2 combo hits about 27% (fair about +270). FanDuel often prices pairs short (Tim's 11/26 legs were all below fair).
+- Straights only at take-at or longer, $0.20 to $0.50. Parlays of these legs are tracking only unless Tim says otherwise.
+
 ## NFL TD model check (11/8, Weeks 5-9 Bet Tracker rows)
 Anytime TD singles 18-22 (placed 8-6). RB/QB 16-10; WR/TE 2-12. Favorites (minus odds) 9-4; plus odds 2-8. Flat $1 on the 23 rows with odds: -$4.08. First TD 1-3; 2+ TDs 0-1; long TD parlays 0-6.
 Rule from here (Tim to confirm): TD bets on RBs/goal-line QBs only; WR/TE TDs only at +250 or longer and small stake; no TD parlays over 2 legs. Javonte Williams 3-0, McCaffrey 2-0; Henry 2-3 and slowing (BAL QB issues).

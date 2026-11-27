@@ -129,6 +129,34 @@ def take_at(p):
     return f'+{round((dec - 1) * 100)}' if dec >= 2 else f'-{round(100 / (dec - 1))}'
 
 
+def either_pairs(players, top_n=8):
+    """FanDuel "Either Player - First Touchdown Scorer" (added 11/27/26). First TD scorers are mutually exclusive, so
+    P(A or B) = pA + pB; fair = 1 / (pA + pB), take-at = fair decimal x1.2 (same rule as singles).
+    players: dicts with name/pid, team, p. Returns (best pairs sorted by combined chance, best same-team pair per team)."""
+    pl = sorted(players, key=lambda x: -x['p'])[:top_n]
+    pairs = []
+    for i in range(len(pl)):
+        for j in range(i + 1, len(pl)):
+            a, b = pl[i], pl[j]
+            pairs.append(dict(a=a, b=b, p=a['p'] + b['p'], same=a['team'] == b['team']))
+    pairs.sort(key=lambda x: -x['p'])
+    same = {}
+    for t in sorted({x['team'] for x in players}):
+        tp = sorted([x for x in players if x['team'] == t], key=lambda x: -x['p'])
+        if len(tp) >= 2:
+            same[t] = dict(a=tp[0], b=tp[1], p=tp[0]['p'] + tp[1]['p'], same=True)
+    return pairs, same
+
+
+def dec_to_american(d):
+    return f'+{round((d - 1) * 100)}' if d >= 2 else f'-{round(100 / (d - 1))}'
+
+
+def american_to_p(s):
+    o = float(s)
+    return 100 / (o + 100) if o > 0 else -o / (-o + 100)
+
+
 # ------------------------------------------------------------------ data
 def load_tables():
     G = list(csv.DictReader(open(os.path.join(DATA, 'ftd_games.csv'))))
@@ -441,6 +469,56 @@ def walk(G, dg, pgm, eval_from=(2025, 1), fit_from=(2024, 4)):
     return preds, st, wd, wp, drows, prows
 
 
+def either_backtest(preds, pgm, res):
+    """Either-player first TD (pair) backtest: top-2 combo, top-3 pair list, best same-team pair (favored team)."""
+    L = ['== Either Player - First Touchdown Scorer (pairs, added 11/27/26) ==',
+         'P(A or B) = pA + pB (first TD scorers are mutually exclusive). Pair hits if either player scores the first TD.']
+    out = {}
+    rows = {'top2': [], 'pair2': [], 'pair3': [], 'same_fav': [], 'same_dog': []}
+    any3 = 0
+    for pr in preds:
+        g = pr['game']
+        scorer = g['first_td_pid'] if g['first_td_kind'] in OFF_KINDS else None
+        pairs, same = either_pairs(pr['players'])
+        if len(pairs) < 3:
+            continue
+        hit = lambda q: int(scorer in (q['a']['pid'], q['b']['pid']))
+        rows['top2'].append((pairs[0]['p'], hit(pairs[0])))
+        rows['pair2'].append((pairs[1]['p'], hit(pairs[1])))
+        rows['pair3'].append((pairs[2]['p'], hit(pairs[2])))
+        any3 += int(any(hit(q) for q in pairs[:3]))
+        fav = g['home'] if pr['p_home'] >= pr['p_away'] else g['away']
+        for t, q in same.items():
+            rows['same_fav' if t == fav else 'same_dog'].append((q['p'], hit(q)))
+    lab = {'top2': 'Top-2 combo (our #1 + #2 player)', 'pair2': 'Pair #2', 'pair3': 'Pair #3',
+           'same_fav': 'Best same-team pair, favored team', 'same_dog': 'Best same-team pair, other team'}
+    for k, v in rows.items():
+        n = len(v); pm = float(np.mean([x[0] for x in v])); h = sum(x[1] for x in v)
+        out[k] = dict(n=n, pred=pm, hit=h, rate=h / n)
+        L.append(f'{lab[k]:36s} n={n}  predicted {pm * 100:4.1f}% (fair {american(pm)})  hit {h} ({h / n * 100:4.1f}%, '
+                 f'fair at hit rate {american(h / n)})')
+    n = len(rows['top2'])
+    L.append(f'Any of the top-3 pairs hit: {any3}/{n} ({any3 / n * 100:.1f}%)')
+    allp = rows['top2'] + rows['pair2'] + rows['pair3'] + rows['same_fav'] + rows['same_dog']
+    tb = bucket_table([x[1] for x in allp], [x[0] for x in allp], edges=(0, .15, .20, .25, .30, .35, 1.01))
+    L.append('Pair calibration (all listed pairs, pred / actual): ' + '; '.join(f'{b[0]} n={b[1]} {b[2] * 100:.0f}%/{b[3] * 100:.0f}%' for b in tb))
+    # season split for the top-2 combo
+    for yr in sorted({pr['key'][0] for pr in preds}):
+        sub = [pr for pr in preds if pr['key'][0] == yr]
+        v = []
+        for pr in sub:
+            g = pr['game']; sc = g['first_td_pid'] if g['first_td_kind'] in OFF_KINDS else None
+            pairs, _ = either_pairs(pr['players'])
+            if pairs:
+                v.append((pairs[0]['p'], int(sc in (pairs[0]['a']['pid'], pairs[0]['b']['pid']))))
+        h = sum(x[1] for x in v)
+        L.append(f'  {yr} top-2 combo: predicted {np.mean([x[0] for x in v]) * 100:.1f}%, hit {h}/{len(v)} ({h / len(v) * 100:.1f}%)')
+    L.append('Take-at = fair decimal x1.2: a 27% pair (fair +270) is a bet only at +344 or longer.')
+    L.append('')
+    res['either'] = out
+    return L
+
+
 # ------------------------------------------------------------------ old (crude) method, for the backtest
 def crude_preds():
     """td_charts.py method on top of the v2 anytime model (td_model.py), walk-forward. Keyed (season, week, gsis)."""
@@ -516,7 +594,8 @@ def backtest():
     res = {}
     kinds = Counter(pr['game']['first_td_kind'] for pr in preds)
     n = len(preds)
-    L.append(f'NFL first TD chain model backtest (walk-forward, 2025 Weeks 1-18 + 2026 Weeks 1-10, n={n} games)')
+    w26 = max(pr['key'][1] for pr in preds if pr['key'][0] == 2026)
+    L.append(f'NFL first TD chain model backtest (walk-forward, 2025 Weeks 1-18 + 2026 Weeks 1-{w26}, n={n} games)')
     L.append('Training: 2024 Week 4 on, refit before every week on earlier weeks only. Active players = played that game.')
     L.append('')
     L.append('First TD type: ' + ', '.join(f'{k} {v} ({v / n * 100:.1f}%)' for k, v in kinds.most_common()))
@@ -620,9 +699,9 @@ def backtest():
 
     s25 = [p for p in preds if p['key'][0] == 2025]
     s26 = [p for p in preds if p['key'][0] == 2026]
-    res['all'] = section('All: 2025 + 2026 Weeks 1-10, chain model only', preds, False)
+    res['all'] = section(f'All: 2025 + 2026 Weeks 1-{w26}, chain model only', preds, False)
     res['2025'] = section('2025 Weeks 1-18, chain model only', s25, False)
-    res['2026'] = section('2026 Weeks 1-10, chain model only', s26, False)
+    res['2026'] = section(f'2026 Weeks 1-{w26}, chain model only', s26, False)
     common = [p for p in preds if (p['key'][0], p['key'][1], 'TEAM', p['game']['home']) in crude
               and (p['key'][0], p['key'][1], 'TEAM', p['game']['away']) in crude]
     wks = sorted({p['key'] for p in common})
@@ -644,6 +723,7 @@ def backtest():
                 tn += 1; th += int(sc[0] in [x['pid'] for x in pl[:2]])
     L.append(f'Team first TD scorer (team market): our top 2 per team hit {th}/{tn} ({th / tn * 100:.1f}%)')
     L.append('')
+    L.extend(either_backtest(preds, pgm, res))
     L.append('Drive model weights (last fit): ' + ', '.join(f'{k} {v:+.3f}' for k, v in zip(['const'] + DFEATS, wd)))
     L.append('Player share weights (last fit): ' + ', '.join(f'{k} {v:+.3f}' for k, v in zip(['other'] + PFEATS, wp)))
     txt = '\n'.join(L)

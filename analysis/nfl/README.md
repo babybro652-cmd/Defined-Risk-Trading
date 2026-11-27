@@ -198,6 +198,34 @@ Read: a top pick is about 15-18% (fair +450 to +570). Even the best model hits t
 prices at take-at or longer. Small stakes. Backtest caveats: active players = those who played (live uses injuries and the
 depth chart), lines are nflverse closing lines, 2026 sample is 10 weeks.
 
+## Either Player - First Touchdown Scorer (11/27/26)
+
+FanDuel market "Gibbs or Loveland +322": the bet wins if either player scores the game's first TD. First TD scorers are
+mutually exclusive, so P(A or B) = pA + pB from the chain model. Fair = 1 / (pA + pB). Take-at = fair decimal x1.2 (same as singles).
+
+`first_td_week.py` now also writes `out/first_td_either_wk<N>.csv`, `out/charts/first_td_either_wk<N>.png` and an `either` block per
+game in `out/first_td_wk<N>.json`: the top-2 combo (our #1 + #2), pairs #2 and #3, and the best same-team pair for each team
+(favored team first). Helper: `either_pairs()` in `first_td_model.py`; backtest section in `out/first_td_backtest.txt`.
+
+Backtest (walk-forward, 2025 Weeks 1-18 + 2026 Weeks 1-11, 435 games):
+
+| Pair | Predicted | Hit | Fair at hit rate |
+|---|---|---|---|
+| Top-2 combo | 24.6% | 26.9% (117) | +272 |
+| Pair #2 | 23.0% | 24.6% | +307 |
+| Pair #3 | 22.0% | 24.1% | +314 |
+| Best same-team pair, favored team | 23.3% | 24.1% | +314 |
+| Best same-team pair, other team | 15.6% | 16.1% | +521 |
+
+Any of the top-3 pairs hit 41.6%. Top-2 combo: 2025 25.4%, 2026 29.4%. Calibration is close; 25-35% pairs ran a bit hot (pred 27-32%, actual 33-39%).
+
+Tim's 11/26 slip (3/3 hit, a parlay): Gibbs or Loveland +322 (ours 19.4%, fair +416, take +519); Lamb or Javonte Williams +202
+(25.9%, fair +286, take +363); Cook or Emmett Johnson +253 (20.9%, fair +378, take +473). All three were shorter than our fair, so
+they would have been SKIP as straights. FanDuel prices these pairs about 1.2x-1.35x our chance: value needs a long price.
+
+Play rules: straights only, at take-at or longer, $0.20 to $0.50. Parlays of either-player legs are tracking only unless Tim says
+otherwise. Never shorter than -300. Log as Bet type "Either first TD", Pick "A or B (ours X%, fair +F, take at +T or longer)".
+
 ## First scoring play model (11/21/26)
 
 FanDuel "First Scoring Play": team + type ("LSU Field Goal", "KC Touchdown", "Safety"). TD = any TD by that team (offense,

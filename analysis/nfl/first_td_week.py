@@ -4,7 +4,8 @@
 Inputs: data/ftd_*.csv (all games so far), raw/games.csv (schedule + spread/total), raw/roster_<season>.csv (latest week),
 raw/depth_<season>.csv (latest depth chart), ESPN injuries feed (live). Refresh raw first:
   python3 analysis/nfl/first_td_data.py --download --seasons 2024 2025 2026
-Outputs: out/first_td_wk<N>.csv, out/first_td_wk<N>.json, out/charts/first_td_wk<N>.png
+Outputs: out/first_td_wk<N>.csv, out/first_td_wk<N>.json, out/charts/first_td_wk<N>.png,
+  either-player pairs (11/27/26): out/first_td_either_wk<N>.csv, out/charts/first_td_either_wk<N>.png (also 'either' in the json)
 """
 import csv, json, math, os, sys
 from collections import defaultdict
@@ -169,6 +170,9 @@ def write(season, week, res, ts):
                  team_top={t: sorted([dict(name=o['teams'][t]['status'][r['pid']][1], share=float(s)) for r, s in
                                       zip(o['teams'][t]['rows'], o['teams'][t]['share'])], key=lambda x: -x['share'])[:3]
                            for t in o['teams']}) for o in res]
+    for o, sl in zip(res, slim):
+        sl['either'] = either_summary(o)
+    write_either(week, res)
     json.dump(dict(season=season, week=week, injuries_feed=ts, built=datetime.now().isoformat(timespec='minutes'), games=slim),
               open(os.path.join(OUT, f'first_td_wk{week}.json'), 'w'), indent=1)
     chart(week, res, ts)
@@ -177,6 +181,84 @@ def write(season, week, res, ts):
         print(f"{g['away']} @ {g['home']}  {g['day']} {g['time']}  home {o['p_home'] * 100:.0f}% away {o['p_away'] * 100:.0f}% non {o['p_non'] * 100:.1f}% none {o['p_none'] * 100:.1f}%")
         for x in o['players'][:5]:
             print(f"   {x['name']:24s} {x['team']:3s} {x['pos']:2s} {x['p'] * 100:5.1f}%  fair {m.american(x['p']):>6s}  take {m.take_at(x['p']):>6s} {x['status']}")
+
+
+def pair_dict(q):
+    return dict(pair=f"{q['a']['name']}{short(q['a']['status'])} or {q['b']['name']}{short(q['b']['status'])}",
+                teams=f"{q['a']['team']}/{q['b']['team']}" if not q['same'] else q['a']['team'],
+                p=float(q['p']), fair=m.american(q['p']), take_at=m.take_at(q['p']),
+                status='Q' if 'Quest' in q['a']['status'] + q['b']['status'] else '')
+
+
+def either_summary(o):
+    pairs, same = m.either_pairs(o['players'])
+    g = o['game']
+    fav = g['home'] if o['p_home'] >= o['p_away'] else g['away']
+    return dict(top_pairs=[pair_dict(q) for q in pairs[:3]],
+                same_team={t: pair_dict(same[t]) for t in sorted(same, key=lambda t: t != fav)})
+
+
+def write_either(week, res):
+    with open(os.path.join(OUT, f'first_td_either_wk{week}.csv'), 'w', newline='') as f:
+        w = csv.writer(f)
+        w.writerow(['Game', 'Kickoff', 'Slot', 'Pair', 'Teams', 'Combined chance', 'Fair', 'Take at', 'Status'])
+        for o in res:
+            g = o['game']
+            e = either_summary(o)
+            gm, ko = f"{g['away']} @ {g['home']}", f"{g['day']} {g['date']} {g['time']}"
+            for i, q in enumerate(e['top_pairs']):
+                w.writerow([gm, ko, 'Top-2 combo' if i == 0 else f'Pair #{i + 1}', q['pair'], q['teams'], f"{q['p'] * 100:.1f}%", q['fair'], q['take_at'], q['status']])
+            for t, q in e['same_team'].items():
+                w.writerow([gm, ko, f'Same team {t}', q['pair'], q['teams'], f"{q['p'] * 100:.1f}%", q['fair'], q['take_at'], q['status']])
+    chart_either(week, res)
+
+
+def chart_either(week, res):
+    import matplotlib
+    matplotlib.use('Agg')
+    import matplotlib.pyplot as plt
+    plt.rcParams['text.parse_math'] = False
+    order = {'Wednesday': -1, 'Thursday': 0, 'Friday': 1, 'Saturday': 2, 'Sunday': 3, 'Monday': 4}
+    today = datetime.now().strftime('%Y-%m-%d')
+    res = [o for o in res if o['game']['date'] >= today] or res
+    res = sorted(res, key=lambda o: (order.get(o['game']['day'], 5), o['game']['time'], o['game']['game_id']))
+    rows = []
+    for o in res:
+        g = o['game']
+        hr = '%s %s' % (g['day'][:3], datetime.strptime(g['time'], '%H:%M').strftime('%-I:%M %p'))
+        e = either_summary(o)
+        ab = lambda nm: ' '.join([nm.split(' ')[0][0] + '.'] + nm.split(' ')[1:]) if ' ' in nm else nm
+        cell = lambda q, lab='': (f"{lab}{' or '.join(ab(x) for x in q['pair'].split(' or '))}\n"
+                                  f"{q['p'] * 100:.1f}%   fair {q['fair']}   take {q['take_at']}")
+        c = [f"{g['away']} @ {g['home']}\n{hr}"] + [cell(q) for q in e['top_pairs']]
+        c += [cell(q, f'{t}: ') for t, q in list(e['same_team'].items())[:2]]
+        while len(c) < 6:
+            c.append('')
+        rows.append(c)
+    fig, ax = plt.subplots(figsize=(24, 0.75 * len(rows) + 1.6))
+    ax.axis('off')
+    ax.set_title(f"NFL Either Player - First Touchdown Scorer, Week {week} (our chain model)\n"
+                 "Chance either player scores the game's first TD = pA + pB. Fair price / take-at (fair decimal x1.2). (Q) = questionable",
+                 fontsize=15, fontweight='bold', pad=12)
+    tb = ax.table(cellText=rows, colLabels=['Game', 'Top-2 combo', 'Pair #2', 'Pair #3', 'Best same-team (fav)', 'Best same-team (other)'],
+                  colWidths=[0.08, 0.184, 0.184, 0.184, 0.184, 0.184], loc='upper center', cellLoc='left')
+    tb.auto_set_font_size(False); tb.set_fontsize(10)
+    hgt = 0.86 / max(len(rows), 1)
+    for (r, c), cl in tb.get_celld().items():
+        cl.set_height(hgt if r > 0 else 0.03)
+        if r == 0:
+            cl.set_facecolor('#1f3a5f'); cl.get_text().set_color('white'); cl.get_text().set_fontweight('bold')
+        elif c == 1:
+            cl.set_facecolor('#dff3e3')
+        elif r % 2 == 0:
+            cl.set_facecolor('#eef2f7')
+    plt.figtext(0.5, 0.02, "Back-test (2025 + 2026, walk-forward): top-2 combo hit about 27% (fair about +270); best same-team pair of the favored team about 24%.\n"
+                "Straights only at take-at or longer, $0.20 to $0.50. Parlays of these legs are tracking only. First TD is mostly noise.",
+                ha='center', fontsize=10)
+    p = os.path.join(OUT, 'charts', f'first_td_either_wk{week}.png')
+    plt.savefig(p, dpi=110, bbox_inches='tight')
+    plt.close(fig)
+    print(p)
 
 
 def chart(week, res, ts):
