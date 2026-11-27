@@ -103,3 +103,6 @@ Harvey rows above are void. New plays:
 | Either: Warren or Dowdle (best PIT pair) | 14.1% | +611 | +754 | $0.25 | |
 
 Side, first scoring play and total: still pass. Max $3.00 if every price qualifies (cap $4).
+
+### Placed (Tim, 11/27 ~11:30 AM ET): "All played"
+All 7 DEN@PIT plays above (Harvey-free rerun) placed, $3.00 total: Coleman ATD $1, Coleman FTD $0.50, Warren FTD $0.25, Sutton FTD $0.25, Coleman/Warren either $0.50, Coleman/Sutton either $0.25, Warren/Dowdle either $0.25. Prices not sent (no slip).
