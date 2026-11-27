@@ -14,3 +14,8 @@ Cheat sheet player tip win: Adebayo 72 / Towns 45; Turner 30 / Collins 33; Embii
 Okongwu 45 / Queta 41; Edey 67 / Gobert 55; Gafford 39 / Ighodaro 45; Missi 27 / Lopez 58; Bassey 100 / Clingan 49;
 Kessler 66 / Wemby 85; Jokic 50 / Hayes 60.
 Questionable: Giannis (P), Reaves, Fox, Hayes, Embiid, Oubre, Edey, LaMelo.
+
+## TipProj (tipproj.jpg, Tim ~1:08 PM). Away % / Home %:
+Adebayo 75 / Towns 25 (Towns injury tag); Turner 43 / Collins 57; Embiid(inj) 59 / Zubac 41; Sharpe 50 / Murray-Boyles 50;
+Okongwu 52 / Queta 48; Edey(inj) 51 / Gobert 49; Gafford 38 / Ighodaro 62; Kessler 32 / Wembanyama 68; Jokic 54 / Hayes(inj) 46;
+Bassey 46 / Clingan 54; Missi 18 / Lopez 82.
