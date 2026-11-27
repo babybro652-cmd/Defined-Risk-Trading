@@ -24,8 +24,10 @@ Per day: Tue +49.25 (3 trades; not a rule break, Tim 11/12), Wed +15.25. Paper: 
 Only loss: 4.5 pts (4 pt stop + 0.5 slippage), inside the rule. No week number used (11/20 recap had none).
 
 ## Media (posts/media/2026-11-27-recap/; make_weekly_recap_1127.py; 0 credits)
-weekly-recap-1127-music.mp4: 28.07 s, 1080x1920, 30 fps, music static_shoes (CC0; not on TikTok 11/26-11/28), AUDIO QA: PASS,
-true peak -5.8 dBFS. sha256 60374136e9f98ac3... Silent base weekly-recap-1127.mp4.
+weekly-recap-1127-music.mp4: 28.07 s, 1080x1920, 30 fps, music one_cool_minute (CC0, Loyalty Freak Music; last used 11/22,
+not on any post 11/23-11/28), AUDIO QA: PASS, -17.9 LUFS, true peak -2.9 dBFS. sha256 ee23a6a4fe614045... Silent base weekly-recap-1127.mp4.
+Music changed 11/27 on Tim's "Change music." (was static_shoes, sha256 60374136...). Picture unchanged (music-only run copies the video);
+first_frame.png and audio_sheet.png re-read after the change: chart + hook at frame 0, same frames.
 Frame 0 = Tim's 11/24 chart at the 7,172.50 exit with hook band "MY ES WEEK / 5 trades: 4 wins, 1 loss" (no fade-in).
 Then still B, trade C final frame (held), still D, paper final frame (held, "PAPER ACCOUNT" band), points list card,
 totals card (real +64.5 / paper +13.75 separate), process card ("NY is my main session unless my setup shows." / only loss
