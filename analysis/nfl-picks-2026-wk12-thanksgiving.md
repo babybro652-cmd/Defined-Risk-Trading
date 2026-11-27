@@ -57,3 +57,30 @@ First TD and first scoring play are mostly noise (top first TD pick hits about 1
 | KC@BUF | James Cook or Emmett Johnson first TD | +253 | W (BUF TD in 2nd) |
 Combined about +4400 (4.22 x 3.02 x 3.53 = 45.0x). Stake: TBD from Tim. All 3 legs show green on the slip: WIN.
 Not on the Bets tab: tab is full at row 1935.
+
+## Fri DEN@PIT 3:00 PM (Prime, built 11/27 10:30 AM ET)
+
+Reran `build_tracker.py --week 11 --slate 12 --injuries-only`, `first_td_week.py --week 12 --q "Tyler Badie"`, `first_score_week.py --week 12`.
+Fixed `first_td_week.py`: ESPN status "Suspension" was not dropped (Dobbins had 6.0% first TD); his share now goes to Coleman / Harvey.
+Line ESPN DEN -4.5 / 37.5. Chart: `analysis/nfl/out/charts/blackfriday_den_pit.png` (`analysis/nfl/blackfriday_chart.py`).
+
+Injuries: PIT released Aaron Rodgers (cleared waivers 11/26); Mason Rudolph starts (backup QB cut applied to PIT). Michael Pittman Jr.
+activated off IR (in the model, 3.8% first TD). PIT LB Alex Highsmith OUT, LB Cole Holcomb Q, WR Ben Skowronek IR.
+DEN J.K. Dobbins suspended (out), RB Tyler Badie Q, S Taylor Rapp OUT, TE Caleb Lohner IR. Recheck inactives at 1:30 PM.
+
+| Pick | Chance | Fair | Take-at | Stake | Note |
+|---|---|---|---|---|---|
+| Side PIT +4.5 | 57% | -132 | - | pass | FPI PIT by 0.3 (4.8 pt gap), but QB change on PIT side and FPI may predate the Rodgers release |
+| Jonah Coleman anytime TD | 49% | +105 | +126 | $1.00 | RB1, Dobbins out; TD model did not shift Dobbins usage, so slightly conservative |
+| RJ Harvey anytime TD | 34% | +192 | +230 | $0.50 | |
+| Coleman first TD | 11.7% | +758 | +929 | $0.50 | top first TD pick |
+| Harvey first TD | 8.0% | +1143 | +1391 | $0.25 | |
+| Jaylen Warren first TD | 7.6% | +1213 | +1476 | $0.25 | PIT top |
+| Either: Coleman or Harvey (top-2 combo, best DEN pair) | 19.7% | +407 | +509 | $0.50 | same team |
+| Either: Warren or Dowdle (best PIT pair) | 14.1% | +611 | +754 | $0.25 | |
+| Next pairs | Coleman or Warren 19.3% (+419, take +523); Coleman or Dowdle 18.1% (+452, take +563) | | | tracking | |
+| First scoring play | DEN TD 30.6% | +227 | +293 | pass | x0.92 to x1.04 vs spread-only: no edge |
+| Total 37.5 | - | - | - | pass | no model |
+
+If every price qualifies the total is $3.25 (cap $4). FanDuel usually prices Coleman ATD and the either pairs short: skip anything under take-at.
+First TD and first scoring play are mostly noise. No promises.

@@ -18,7 +18,7 @@ sys.path.insert(0, HERE)
 import first_td_model as m  # noqa
 
 RAW, OUT = m.RAW, m.OUT
-BAD = ('Out', 'Injured Reserve', 'Doubtful', 'Suspended', 'Physically Unable to Perform', 'PUP', 'IR', 'Reserve')
+BAD = ('Out', 'Injured Reserve', 'Doubtful', 'Suspended', 'Suspension', 'Physically Unable to Perform', 'PUP', 'IR', 'Reserve')
 
 
 def schedule(season, week):
