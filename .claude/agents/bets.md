@@ -30,6 +30,8 @@ chats, so read the files below that the task touches before acting.
   adding rows at the same time). Don't overwrite Tim's rows.
 
 ## Tim's bets (FanDuel, account balance small)
+
+**Daily budget (Tim, 11/26): $20 a day total across all sports, starting 11/27.** CBB/NFL sides $2-3 each; first basket / first TD straights $0.50-1; longshots and parlays $0.25 max. Stop for the day if down $20. This overrides the $0.20-$0.50 sizing in older rules. Recheck each Monday (about 10% of balance; see analysis/bankroll.md).
 - He sends screenshots of slips. Match each slip to an existing "Pick" row (fill F odds, G stake,
   H "Yes"); add a new row for anything not on the list (parlays, SGPs).
 - Typical stakes $0.50 to $1. Bet Protect+ adds 3% (note it in the report, not in G).

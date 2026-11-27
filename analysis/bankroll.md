@@ -36,3 +36,4 @@ Balance snapshots from Tim's FanDuel screenshots. Newest at the bottom. Deposits
 - 11/19 5:02 PM: $19.00 after $1.60 on TNF (not in the $20 plan). Tonight's $20 total: CBB $4.50 + TNF $1.60 = $6.10 used, so $13.90 left: NHL $4.50, NBA $9.40.
 - 11/21/26 10:14 AM (Tim): FanDuel balance $10.97. Size today's NBA (first tip 1 PM) and CBB (6 PM run) to this.
 - 11/26/26 10:15 PM ET (Tim): FanDuel balance $194.07, after the Thanksgiving 3-leg either-player first TD parlay hit (about +4400). Size the next plays to this balance unless Tim sets a daily budget.
+- **11/26/26 (Tim): DAILY BUDGET $20, starting Fri 11/27.** Split: CBB/NFL sides $2-3 each; first basket / first TD straights $0.50-1; longshots and parlays $0.25 max. Stop for the day if down $20 (no chasing). Recheck the cap each Monday (about 10% of balance). Jarvis suggested withdrawing $100 to protect the win; Tim's call.
