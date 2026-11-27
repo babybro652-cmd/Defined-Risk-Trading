@@ -24,3 +24,18 @@ Fact check: CME's own holiday pages returned 403/503; third-party calendars say 
 source, so copy says "closes early" with no time. "Thin volume" stated as "tends to". Nothing else claimed about how Tim trades.
 Counts Fri: TikTok 7 AM card (daily run, 7619514) + 8:15 + trade C 6:40 PM (+ 8 PM only if footage). IG 8:45 AM + trade C 8:40 PM = 2 (max): no 12:30 IG.
 FB 9:10 AM + trade C 9:15 PM (+ 5 PM daily = 3, the cap).
+
+## Daily run (drt agent, started 5:03 AM ET)
+7:00 AM TikTok booked FIRST (~5:05 AM ET): reused the unused 11/26 equal-highs card.
+- Schedule 7619514, submission 0006a659-5504-459c-a806-7fa741cc92e8, 12:00 UTC. isAiGenerated true (rendered card), PUBLIC_TO_EVERYONE.
+- Slip caught and fixed: the create call first went out with a truncated placeholder media URL; patched within minutes via
+  update_schedule with the full publicUrl .../246c6cef-6cbe-4b5b-81a9-7bb84481df9c/32c4577d-4c38-4caf-aa07-bd25f0ae5cb0.mp4.
+  Blotato re-hosted it as .../0dec87ae-cd20-497f-9072-48332cc5b2ed.mp4; downloaded, sha256 460f238da1ffc8bc = local equal-highs-music.mp4.
+- Caption (141 chars before hashtags), hashtags #definedrisktrading #esfutures #futurestrading #daytrading. Hook: audience callout (on screen) / speed level.
+- QA: contact_equal-highs.png and first_equal-highs.png (posts/media/2026-11-26-daily/) re-read: chart + hook at frame 0, light/navy palette,
+  no dates, prices or P&L, matches caption. Music once_more_with_you (other DRT TikToks today: cliff_road_chill 8:15, drowning_in_your_smile 6:40 PM;
+  yesterday happy_sadie + trade B), AUDIO QA: PASS (11/26).
+- 5-gram check OK vs today's caps.json and the 11/26 set.
+Other slots: IG at max (8:45 AM + 8:40 PM), so no 12:30 reel. FB 5 PM left empty (Friday recap slot; FB already 2 today). TikTok 12 PM / 8 PM:
+no new footage in Drive (only the 11/25 trade C recording, already booked), so empty. No YouTube Short from this run (trade C Short 6:12 PM).
+Comments: no new IG/FB comments since 11/26. Credits 2079 start/end. Note: TikTok has 2 rendered cards today (7 AM + 8:15 not-trading, Jarvis-directed).
