@@ -78,6 +78,7 @@ passes the result to Tim (with a push notification when the routine asks for one
 | Plan the week | Sun 6:48 PM | Jarvis (all areas) |
 | NFL tracker weekly update (scorers, red zone, defenses; grade pending bets) | Tue 9:52 AM | bets |
 | NFL Saturday injury recheck + final shortlist | Sat 10:47 AM | bets |
+| NFL Sunday inactives rerun (first TD + either pairs, backup fix) | Sun 11:43 AM | bets |
 | NHL tab weekly refresh (goals, first goal, SOG; grade NHL bets) | Wed 9:41 AM | bets |
 | CFB Saturday picks (sides, totals, anytime TDs; grade last week) | Sat 8:13 AM | bets |
 | CBB big games only (Top 25 / national TV; skips days with none); 8:43 check schedules the picks 1 hr before first tip, with injuries/lineups + chart | Daily 8:43 AM | bets |
