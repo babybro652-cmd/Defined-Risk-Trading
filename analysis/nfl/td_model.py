@@ -85,6 +85,8 @@ class State:
         self.qbteam = defaultdict(lambda: deque(maxlen=QB_WINDOW))  # team -> deque of {qbid: att}
         self.tot_sum, self.tot_n = 0.0, 0            # league average implied team total
         self.qbrows = []                             # team-games for the QB-change factor: (key, backup, td, implied, pos-group tds)
+        self.team_recent = defaultdict(lambda: deque(maxlen=3))  # team -> last 3 games' box-score ids (backup fix 11/28/26)
+        self.touch = Counter()                       # decay-free carries + targets, for the next-up proxy
 
     # ---- knowledge
     def avg_imp(self):
@@ -147,6 +149,9 @@ class State:
             s['gp'] += 1; s['hits'] += int(r['rectd'] + r['rushtd'] > 0)
             s['rz'] += r['rz']; s['i5'] += r['i5']; s['prz_t'] += r.get('rzt', 0)
             s['ti5'] += t['i5']; s['trz'] += t['rz']; s['trzt'] += t['rzt']
+            self.touch[r['id']] += r.get('car', 0) + r.get('tgt', 0)
+        for team in teams:
+            self.team_recent[team].append({r['id'] for r in g['rows'] if r['team'] == team})
         odds = g.get('odds')
         for team in teams:
             qs = g.get('qbs', {}).get(team, [])
@@ -213,15 +218,110 @@ def predict_w(w, rows, feats):
     return sigmoid(w[0] + X @ w[1:])
 
 
-def build_history(games, pos):
+# ---------------------------------------------------------------- backup fix (11/28/26): vacancy shift
+# Same routing as the first TD model (first_td_model.VAC): RB vacancy to RBs (the next-up RB gets 85%), WR vacancy 75% WR /
+# 25% TE, TE vacancy 50% TE / 50% WR; NEXT_UP of the same-position part to the player entering the starting group.
+# Shifts goal-line, red-zone and red-zone-target shares; SH_BOOST scales the shrunk hit rate by the player's usage gain.
+VAC_MODE = 'new'
+VAC = dict(WR_SAME=0.75, TE_SAME=0.50, NEXT_UP=0.25, RB_LEAD=0.85, CAP=3.0, SH_BOOST=0.25)
+STARTERS = {'RB': 1, 'WR': 3, 'TE': 1}
+# A shifted share never goes above the 99th percentile of that position in 2025-26 (3+ games), so two RBs out cannot push
+# the backup past any real workload the model was fit on (Coleman 11/27: 69% uncapped).
+POS_CAP = {'RB': dict(gls=0.48, rzs=0.49, rzts=0.0, p_sh=0.66), 'WR': dict(gls=0.21, rzs=0.19, rzts=0.33, p_sh=0.51),
+           'TE': dict(gls=0.16, rzs=0.19, rzts=0.30, p_sh=0.49)}
+
+
+def regulars(st, team):
+    """Players in 2+ of the team's last 3 box scores who are still with the team."""
+    c = Counter()
+    for ids in st.team_recent[team]:
+        c.update(ids)
+    return [a for a, n in c.items() if n >= 2 and st.p[a]['team'] == team]
+
+
+def vacancy_shift(st, team, feats, out_ids, depth=None, vac=None, log=None):
+    """feats: {id: features dict} for the team's available players (edited in place). out_ids: unavailable regulars.
+    depth: live {id: rank within position} from the ESPN depth chart; None = usage proxy (carries + targets per game)."""
+    V = dict(VAC, **(vac or {}))
+    if not out_ids or not feats:
+        return
+    byp = defaultdict(list)
+    for a, f in feats.items():
+        byp[f['pos']].append(a)
+    outp = defaultdict(list)
+    for a in out_ids:
+        outp[pg(st.pos.get(a, '?'))].append(a)
+    use = lambda a: st.touch[a] / max(st.p[a]['gp'], 1)
+    nxt = {}
+    for p in ('RB', 'WR', 'TE'):
+        if not outp[p] or not byp[p]:
+            continue
+        allp = byp[p] + outp[p]
+        order = sorted(allp, key=lambda a: (depth.get(a, 99), -use(a))) if depth else sorted(allp, key=lambda a: -use(a))
+        k = STARTERS[p]
+        if any(a in outp[p] for a in order[:k]):
+            act = [a for a in order if a in feats]
+            nxt[p] = act[k - 1] if len(act) >= k else act[-1]
+    route = {'RB': {'RB': 1.0}, 'WR': {'WR': V['WR_SAME'], 'TE': 1 - V['WR_SAME']}, 'TE': {'TE': V['TE_SAME'], 'WR': 1 - V['TE_SAME']}}
+    base_use = {a: f['gls'] + f['rzs'] for a, f in feats.items()}
+    base0 = {a: {k: f[k] for k in ('gls', 'rzs', 'rzts')} for a, f in feats.items()}
+    for key in ('gls', 'rzs', 'rzts'):
+        for src in ('RB', 'WR', 'TE'):
+            if src == 'RB' and key == 'rzts':
+                continue
+            vac = 0.0
+            for a in outp[src]:
+                s = st.p[a]
+                vac += {'gls': s['i5'] / (s['ti5'] + SHARE_PSEUDO), 'rzs': s['rz'] / (s['trz'] + SHARE_PSEUDO),
+                        'rzts': s['prz_t'] / (s['trzt'] + SHARE_PSEUDO)}[key]
+            if vac <= 0:
+                continue
+            dests = {d: w for d, w in route[src].items() if byp[d] and w > 0}
+            tw = sum(dests.values())
+            for d, w in dests.items():
+                amt = vac * w / tw
+                grp = byp[d]
+                if key == 'rzts' and d not in ('WR', 'TE'):
+                    continue
+                n = nxt.get(d) if d == src else None
+                if d == src == 'RB' and n is not None:
+                    add = max(0.0, V['RB_LEAD'] * amt - feats[n][key])
+                    feats[n][key] += add; amt -= add
+                    grp = [a for a in grp if a != n]
+                elif n is not None:
+                    feats[n][key] += V['NEXT_UP'] * amt; amt *= 1 - V['NEXT_UP']
+                tot = sum(feats[a][key] for a in grp)
+                base = {a: feats[a][key] for a in grp}
+                for a in grp:
+                    add = amt * base[a] / tot if tot > 0 else amt / len(grp)
+                    feats[a][key] = min(base[a] + add, max(V['CAP'] * base[a], base[a]) if tot > 0 else base[a] + add)
+    for a, f in feats.items():
+        cap = POS_CAP.get(f['pos'])
+        if cap:
+            for k in ('gls', 'rzs', 'rzts'):
+                f[k] = min(f[k], max(cap[k], base0[a][k]))
+        u0 = base_use[a]; u1 = f['gls'] + f['rzs']
+        if V['SH_BOOST'] > 0 and u1 > u0 > 0:
+            ratio = 1 + V['SH_BOOST'] * (u1 / u0 - 1)
+            p = f['p_sh'] * min(ratio, 2.0)
+            f['p_sh'] = min(p, max(cap['p_sh'], f['p_sh'])) if cap else min(p, 0.85)
+            f['logit_sh'] = logit(f['p_sh'])
+    if log is not None:
+        for p, a in nxt.items():
+            log.append(f"{team}: {p} out ({', '.join(outp[p])}); next up {a}")
+
+
+def build_history(games, pos, mode=None, vac=None):
     """Walk every game in time order. Returns (rows with features + outcome, final State)."""
     st = State(pos)
     slots = defaultdict(list)
     for gid, g in games.items():
         slots[(g['season'], g['week'])].append(g)
     hist = []
+    mode = mode or VAC_MODE
     for key in sorted(slots):
         for g in slots[key]:
+            byteam = defaultdict(dict)
             for r in g['rows']:
                 team = r['team']
                 if team not in g['teams']:
@@ -234,6 +334,12 @@ def build_history(games, pos):
                 f.update(key=key, id=r['id'], name=r['name'], team=team, opp=r['opp'], y=int(r['rectd'] + r['rushtd'] > 0),
                          backup=bk, bqb=int(bk), gid=g.get('gid'))
                 hist.append(f)
+                byteam[team][r['id']] = f
+            if mode == 'new':
+                for team in g['teams']:
+                    played = {r['id'] for r in g['rows'] if r['team'] == team}
+                    out = [a for a in regulars(st, team) if a not in played]
+                    vacancy_shift(st, team, byteam.get(team, {}), out, vac=vac)
         for g in slots[key]:
             st.update(g)
     return hist, st
@@ -409,6 +515,29 @@ def live_qb(st, team, depth_ids, qb_status, names):
     return False, ''
 
 
+def vacancy_compare(games, pos, res):
+    """Backup fix (11/28/26): anytime TD with vs without the vacancy shift, 2025 Wk 7-18 + 2026 Wk 2-11 pooled."""
+    L = ['', '== Backup fix (11/28/26): vacancy shift, old vs new (2025 Wk 7-18 + 2026 Wk 2-11) ==',
+         'Out = a player in 2+ of the team\'s last 3 box scores with no box line this game. New = goal-line, RZ and RZ-target shares '
+         f"routed like the first TD model, plus shrunk hit rate x (1 + {VAC['SH_BOOST']} x usage gain)."]
+    out = {}
+    for mode in ('old', 'new'):
+        hist, _ = build_history(games, pos, mode=mode)
+        keys = sorted({r['key'] for r in hist if (r['key'][0] == 2026 and 2 <= r['key'][1] <= 11) or (r['key'][0] == 2025 and r['key'][1] >= 7)})
+        pr = fit_predict(hist, keys, FEATS)
+        rows = [r for r in hist if id(r) in pr]
+        y = np.array([r['y'] for r in rows], float); p = np.array([pr[id(r)] for r in rows])
+        cb = bucket_table(y, p)
+        out[mode] = dict(n=len(y), ll=log_loss(y, p), br=brier(y, p), ece=sum(b[1] * abs(b[2] - b[3]) for b in cb) / len(y), calib=cb)
+    a, b = out['old'], out['new']
+    L.append(f"n={b['n']}: log-loss {a['ll']:.5f} -> {b['ll']:.5f}; Brier {a['br']:.5f} -> {b['br']:.5f}; calibration error "
+             f"{a['ece'] * 100:.2f} -> {b['ece'] * 100:.2f} pts")
+    L.append('Calibration old -> new (pred / actual): ' + '; '.join(f"{x[0]} {x[2] * 100:.1f}/{x[3] * 100:.1f} -> {z[2] * 100:.1f}/{z[3] * 100:.1f}"
+                                                                for x, z in zip(a['calib'], b['calib']) if x[0] == z[0]))
+    res['vacancy'] = {k: {kk: vv for kk, vv in v.items() if kk != 'calib'} for k, v in out.items()}
+    return L
+
+
 def main():
     games = load_games()
     pos = json.load(open(os.path.join(DATA, 'pos.json')))
@@ -432,6 +561,7 @@ def main():
         lines.append('  backup-QB rows: n=%d, model with flag %.1f%%, without flag %.1f%%, actual %.1f%%' % (ev['qb_effect']['n'], ev['qb_effect']['with_flag']*100, ev['qb_effect']['without']*100, ev['qb_effect']['actual']*100))
         res[label] = dict(n=ev['n'], qb_effect=ev['qb_effect'], base=ev['base_rate'], old=ev['old'], models=ev['models'], picks=ps, top10=tw,
                           calib_new=bucket_table(ev['y'], ev['final_p']), calib_old=bucket_table(ev['y'], ev['old_p']))
+    lines += vacancy_compare(games, pos, res)
     qf = qb_factor(st.qbrows)
     lines.append('QB-change factor (all 2025-26 backup-QB team games): ' + json.dumps({k: (round(v, 3) if isinstance(v, float) else v) for k, v in qf.items()}))
     print('\n'.join(lines))

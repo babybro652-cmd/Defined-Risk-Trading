@@ -303,6 +303,66 @@ def short_status(s):
     return {'Injured Reserve': 'IR'}.get(s, s)
 
 
+# ---------------------------------------------------------------- availability (backup fix 11/28/26)
+def availability_and_features(P, st, opp_of, tid_of, eid_of, imp_of, qbflag, status, week, log):
+    """Returns ({espn id: reason} for unavailable skill players, {espn id: features after the vacancy shift}).
+    Rules in availability.py; the exclusion log goes to out/anytime_status_wk<N>.csv."""
+    import availability as av
+    rost = {}
+    p = os.path.join(HERE, 'raw', 'roster_2026.csv')
+    if os.path.exists(p):
+        for r in csv.DictReader(open(p)):
+            e = r['espn_id']
+            if e and (e not in rost or int(r['week']) >= int(rost[e]['week'])):
+                rost[e] = r
+    teams = [t for t in opp_of if t in tid_of]
+    depth = av.fetch_depth({t: tid_of[t] for t in teams})
+    groster = {t: av.fetch_game_roster(eid_of[t], tid_of[t]) for t in teams if t in eid_of}
+    susp = av.load_suspensions(2026, week)
+    espn_abbr = {'LA': 'LAR', 'WAS': 'WSH'}   # nflverse -> ESPN
+    unavail, feat_of, log_rows = {}, {}, []
+    byteam = defaultdict(list)
+    for aid, x in P.items():
+        if x['team'] in opp_of and x['pos'] in SKILL:
+            byteam[x['team']].append(aid)
+    for t, ids in byteam.items():
+        d = depth.get(t, {})
+        avail = []
+        for aid in ids:
+            x = P[aid]
+            pos = td_model.pg(x['pos'])
+            s = status(aid)['status']
+            if pos == 'QB':
+                avail.append(aid)
+                continue
+            r = rost.get(aid)
+            r = dict(r, team=espn_abbr.get(r['team'], r['team'])) if r else None
+            why = av.check(x['name'], t, pos, '' if s == 'Active' else s, roster=r,
+                           depth=d.get(aid), depth_loaded=bool(d), game_roster=groster.get(t), espn_id=aid, suspensions=susp)
+            if why:
+                unavail[aid] = '; '.join(why)
+                log_rows.append([t, x['name'], pos, unavail[aid]])
+            else:
+                avail.append(aid)
+        feats = {}
+        for aid in avail:
+            f = st.features(aid, t, imp_of.get(t))
+            if f['gp']:
+                feats[aid] = f
+        out_ids = [a for a in td_model.regulars(st, t) if a in unavail]
+        notes = []
+        td_model.vacancy_shift(st, t, feats, out_ids, depth={a: v[1] for a, v in d.items()} if d else None, log=notes)
+        for n in notes:
+            log_rows.append([t, '', '', 'VACANCY ' + re.sub(r'\d{5,}', lambda m: P.get(m.group(0), {}).get('name', m.group(0)), n)])
+        feat_of.update(feats)
+    with open(os.path.join(OUT, f'anytime_status_wk{week}.csv'), 'w', newline='') as f:
+        w = csv.writer(f)
+        w.writerow(['Team', 'Player', 'Pos', 'Reason'])
+        w.writerows(sorted(log_rows))
+    log(f'availability: {len(unavail)} skill players unavailable; vacancy notes {sum(1 for r in log_rows if r[3].startswith("VACANCY"))}')
+    return unavail, feat_of
+
+
 # ---------------------------------------------------------------- build
 def build(week, log, injuries_only=False, slate=None):
     now = datetime.now(timezone.utc)
@@ -460,7 +520,7 @@ def build(week, log, injuries_only=False, slate=None):
 
     # ---- Week Shortlist (new TD model v2 from td_model.py; old hit-rate rule kept as a comparison column)
     nxt = slate or week + 1
-    opp_of, game_of, played, started, tid_of, game_odds_of, imp_of = {}, {}, set(), set(), {}, {}, {}
+    opp_of, game_of, played, started, tid_of, game_odds_of, imp_of, eid_of = {}, {}, set(), set(), {}, {}, {}, {}
     try:
         sb = scoreboard(2026, nxt)
         for e in sb.get('events', []):
@@ -469,6 +529,7 @@ def build(week, log, injuries_only=False, slate=None):
             away = [x['team']['abbreviation'] for x in c['competitors'] if x['homeAway'] == 'away'][0]
             for x in c['competitors']:
                 tid_of[x['team']['abbreviation']] = x['team']['id']
+                eid_of[x['team']['abbreviation']] = e['id']
             kt = datetime.fromisoformat(e['date'].replace('Z', '+00:00')).astimezone(ET)
             day = kt.strftime('%a %-I:%M %p ET')
             opp_of[home], opp_of[away] = away, home
@@ -521,6 +582,9 @@ def build(week, log, injuries_only=False, slate=None):
            'Shrunk hit %', 'New TD chance', 'Fair price', 'Take-at (fair x1.2)', 'QB flag', 'Old rule verdict']]
     oldcands = {a for a in tracked if P[a]['h6'] >= 2 or P[a]['name'] in REPORT_PLAYERS[:15]}
     avgimp = st.avg_imp()
+    # backup fix (11/28/26): availability (injury, inactives, depth chart top N, roster status, suspension list) and
+    # vacancy shift of out regulars' goal-line / RZ shares to available teammates (td_model.vacancy_shift)
+    unavail, feat_of = availability_and_features(P, st, opp_of, tid_of, eid_of, imp_of, qbflag, status, nxt, log)
     rowsout = []
     for aid, x in P.items():
         t = x['team']; opp = opp_of.get(t)
@@ -528,7 +592,7 @@ def build(week, log, injuries_only=False, slate=None):
             continue
         s = status(aid)['status']
         imp = imp_of.get(t)
-        f = st.features(aid, t, imp)
+        f = feat_of.get(aid) or st.features(aid, t, imp)
         qf, qnote = qbflag.get(t, (False, ''))
         f['bqb'] = int(qf)
         pnew = td_model.chance(mw, f)
@@ -538,7 +602,7 @@ def build(week, log, injuries_only=False, slate=None):
         rk25 = k25[k].get(opp, 'n/a') if k else 'n/a'
         c = x['comb']
         # old rule verdict (kept for comparison)
-        if t in played or t in started or s in td_model.OUT_STATUSES:
+        if t in played or t in started or s in td_model.OUT_STATUSES or aid in unavail:
             ov = 'Skip'
         elif c >= 0.55 and rk is not None and rk <= 16:
             ov = 'Play'
@@ -555,6 +619,8 @@ def build(week, log, injuries_only=False, slate=None):
             v, why = 'Skip', 'Game already started'
         elif s in td_model.OUT_STATUSES:
             v, why = 'Skip', f'Injury status: {s}'
+        elif aid in unavail:
+            v, why = 'Skip', 'Unavailable: ' + unavail[aid]
         else:
             if grp in ('RB', 'QB'):
                 v = 'Play' if pnew >= 0.45 else 'Small stake' if pnew >= 0.30 else 'Skip'

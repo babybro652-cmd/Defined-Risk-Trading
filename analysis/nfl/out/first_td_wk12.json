@@ -1,8 +1,8 @@
 {
  "season": 2026,
  "week": 12,
- "injuries_feed": "2026-11-27T15:20:59Z",
- "built": "2026-11-27T15:21",
+ "injuries_feed": "2026-11-28T01:39:55Z",
+ "built": "2026-11-28T01:40",
  "games": [
   {
    "game": "GB @ LA",
@@ -19,48 +19,48 @@
      "name": "Kyren Williams",
      "team": "LA",
      "pos": "RB",
-     "share": 0.19804633584329676,
-     "p": 0.10375200342649822,
+     "share": 0.2617861100269663,
+     "p": 0.1371438318657828,
      "status": ""
     },
     {
      "name": "Kaleb Johnson",
      "team": "GB",
      "pos": "RB",
-     "share": 0.2288217831075987,
-     "p": 0.09863820755155539,
+     "share": 0.29037537539149727,
+     "p": 0.12517211498285966,
      "status": ""
     },
     {
-     "name": "Puka Nacua",
+     "name": "Colby Parkinson",
      "team": "LA",
-     "pos": "WR",
-     "share": 0.17573569905833758,
-     "p": 0.0920639645930406,
+     "pos": "TE",
+     "share": 0.1516311796533571,
+     "p": 0.07943615116114532,
      "status": ""
     },
     {
-     "name": "Davante Adams",
+     "name": "Tyler Higbee",
      "team": "LA",
-     "pos": "WR",
-     "share": 0.1445849089840283,
-     "p": 0.07574476906354019,
-     "status": ""
-    },
-    {
-     "name": "MarShawn Lloyd",
-     "team": "GB",
-     "pos": "RB",
-     "share": 0.1295154615820613,
-     "p": 0.05583023087736187,
-     "status": ""
+     "pos": "TE",
+     "share": 0.1345169142802681,
+     "p": 0.07047037397536746,
+     "status": "Questionable"
     },
     {
      "name": "Blake Corum",
      "team": "LA",
      "pos": "RB",
-     "share": 0.09793838995693786,
-     "p": 0.05130771103201839,
+     "share": 0.1332547319275686,
+     "p": 0.06980914514109222,
+     "status": ""
+    },
+    {
+     "name": "Matthew Golden",
+     "team": "GB",
+     "pos": "WR",
+     "share": 0.14481829606545976,
+     "p": 0.06242682383892783,
      "status": ""
     }
    ],
@@ -68,74 +68,169 @@
     "LA": [
      {
       "name": "Kyren Williams",
-      "share": 0.19804633584329676
+      "share": 0.2617861100269663
      },
      {
-      "name": "Puka Nacua",
-      "share": 0.17573569905833758
+      "name": "Colby Parkinson",
+      "share": 0.1516311796533571
      },
      {
-      "name": "Davante Adams",
-      "share": 0.1445849089840283
+      "name": "Tyler Higbee",
+      "share": 0.1345169142802681
      }
     ],
     "GB": [
      {
       "name": "Kaleb Johnson",
-      "share": 0.2288217831075987
-     },
-     {
-      "name": "MarShawn Lloyd",
-      "share": 0.1295154615820613
+      "share": 0.29037537539149727
      },
      {
       "name": "Matthew Golden",
-      "share": 0.11309014694502052
+      "share": 0.14481829606545976
+     },
+     {
+      "name": "Tucker Kraft",
+      "share": 0.13658380042131496
      }
     ]
    },
+   "excluded": [
+    {
+     "team": "LA",
+     "player": "Jordan Whittington",
+     "pos": "WR",
+     "reason": "not on game-day roster; depth chart WR6 (top 5 only); roster: reserve list (R01)"
+    },
+    {
+     "team": "LA",
+     "player": "Davante Adams",
+     "pos": "WR",
+     "reason": "not on game-day roster; roster: reserve list (R01)"
+    },
+    {
+     "team": "LA",
+     "player": "Alex Bachman",
+     "pos": "WR",
+     "reason": "not on game-day roster; not on LA depth chart at WR; roster: practice squad (P07)"
+    },
+    {
+     "team": "LA",
+     "player": "Terrance Ferguson",
+     "pos": "TE",
+     "reason": "injury report: Injured Reserve; not on game-day roster; depth chart TE5 (top 3 only); roster: reserve list (R01)"
+    },
+    {
+     "team": "LA",
+     "player": "Davis Allen",
+     "pos": "TE",
+     "reason": "injury report: Doubtful"
+    },
+    {
+     "team": "LA",
+     "player": "Puka Nacua",
+     "pos": "WR",
+     "reason": "not on game-day roster; depth chart WR7 (top 5 only); roster: reserve list (R40)"
+    },
+    {
+     "team": "LA",
+     "player": "Max Klare",
+     "pos": "TE",
+     "reason": "depth chart TE4 (top 3 only)"
+    },
+    {
+     "team": "GB",
+     "player": "Luke Musgrave",
+     "pos": "TE",
+     "reason": "injury report: Out; not on game-day roster; depth chart TE4 (top 3 only); roster: reserve list (R04)"
+    },
+    {
+     "team": "GB",
+     "player": "Josh Jacobs",
+     "pos": "RB",
+     "reason": "injury report: Out; inactive (game-day list); roster: inactive (roster)"
+    },
+    {
+     "team": "GB",
+     "player": "Josh Whyle",
+     "pos": "TE",
+     "reason": "not on game-day roster; depth chart TE5 (top 3 only); roster: reserve list (R01)"
+    },
+    {
+     "team": "GB",
+     "player": "Pierre Strong",
+     "pos": "RB",
+     "reason": "not on game-day roster; not on GB depth chart at RB; roster: practice squad (P07)"
+    },
+    {
+     "team": "GB",
+     "player": "Jayden Reed",
+     "pos": "WR",
+     "reason": "not on game-day roster; depth chart WR7 (top 5 only); roster: reserve list (R01)"
+    },
+    {
+     "team": "GB",
+     "player": "Drake Dabney",
+     "pos": "TE",
+     "reason": "not on GB depth chart at TE"
+    },
+    {
+     "team": "GB",
+     "player": "MarShawn Lloyd",
+     "pos": "RB",
+     "reason": "depth chart RB4 (top 3 only)"
+    },
+    {
+     "team": "GB",
+     "player": "Skyy Moore",
+     "pos": "WR",
+     "reason": "depth chart WR6 (top 5 only)"
+    }
+   ],
+   "vacancy": [
+    "GB: RB out (Josh Jacobs, Pierre Strong); next up Kaleb Johnson"
+   ],
    "either": {
     "top_pairs": [
      {
       "pair": "Kyren Williams or Kaleb Johnson",
       "teams": "LA/GB",
-      "p": 0.2023902109780536,
-      "fair": "+394",
-      "take_at": "+493",
+      "p": 0.26231594684864246,
+      "fair": "+281",
+      "take_at": "+357",
       "status": ""
      },
      {
-      "pair": "Kyren Williams or Puka Nacua",
+      "pair": "Kyren Williams or Colby Parkinson",
       "teams": "LA",
-      "p": 0.19581596801953882,
-      "fair": "+411",
-      "take_at": "+513",
+      "p": 0.2165799830269281,
+      "fair": "+362",
+      "take_at": "+454",
       "status": ""
      },
      {
-      "pair": "Kaleb Johnson or Puka Nacua",
-      "teams": "GB/LA",
-      "p": 0.190702172144596,
-      "fair": "+424",
-      "take_at": "+529",
-      "status": ""
+      "pair": "Kyren Williams or Tyler Higbee (Q)",
+      "teams": "LA",
+      "p": 0.20761420584115026,
+      "fair": "+382",
+      "take_at": "+478",
+      "status": "Q"
      }
     ],
     "same_team": {
      "LA": {
-      "pair": "Kyren Williams or Puka Nacua",
+      "pair": "Kyren Williams or Colby Parkinson",
       "teams": "LA",
-      "p": 0.19581596801953882,
-      "fair": "+411",
-      "take_at": "+513",
+      "p": 0.2165799830269281,
+      "fair": "+362",
+      "take_at": "+454",
       "status": ""
      },
      "GB": {
-      "pair": "Kaleb Johnson or MarShawn Lloyd",
+      "pair": "Kaleb Johnson or Matthew Golden",
       "teams": "GB",
-      "p": 0.15446843842891728,
-      "fair": "+547",
-      "take_at": "+677",
+      "p": 0.1875989388217875,
+      "fair": "+433",
+      "take_at": "+540",
       "status": ""
      }
     }
@@ -156,48 +251,48 @@
      "name": "Jahmyr Gibbs",
      "team": "DET",
      "pos": "RB",
-     "share": 0.28483192751859304,
-     "p": 0.1309468417205429,
+     "share": 0.32814629560570685,
+     "p": 0.1508599173070513,
      "status": ""
     },
     {
      "name": "D'Andre Swift",
      "team": "CHI",
      "pos": "RB",
-     "share": 0.23744694345449338,
-     "p": 0.12107118673689186,
+     "share": 0.2953501804296149,
+     "p": 0.15059531332489734,
      "status": ""
     },
     {
      "name": "Amon-Ra St. Brown",
      "team": "DET",
      "pos": "WR",
-     "share": 0.16574247079767263,
-     "p": 0.07619740272444633,
+     "share": 0.1955306290964584,
+     "p": 0.08989202356235416,
      "status": ""
     },
     {
      "name": "Kyle Monangai",
      "team": "CHI",
      "pos": "RB",
-     "share": 0.1260731758907662,
-     "p": 0.06428311436112158,
+     "share": 0.15599444189626058,
+     "p": 0.07953958863386662,
      "status": ""
     },
     {
-     "name": "Colston Loveland",
+     "name": "Luther Burden III",
      "team": "CHI",
-     "pos": "TE",
-     "share": 0.12334027033168166,
-     "p": 0.06288964045716447,
-     "status": "Questionable"
+     "pos": "WR",
+     "share": 0.13999464614096752,
+     "p": 0.07138149558175512,
+     "status": ""
     },
     {
-     "name": "Isiah Pacheco",
-     "team": "DET",
-     "pos": "RB",
-     "share": 0.11779198634396358,
-     "p": 0.05415294811261803,
+     "name": "Rome Odunze",
+     "team": "CHI",
+     "pos": "WR",
+     "share": 0.13907211656879265,
+     "p": 0.07091110944631726,
      "status": ""
     }
    ],
@@ -205,56 +300,103 @@
     "DET": [
      {
       "name": "Jahmyr Gibbs",
-      "share": 0.28483192751859304
+      "share": 0.32814629560570685
      },
      {
       "name": "Amon-Ra St. Brown",
-      "share": 0.16574247079767263
+      "share": 0.1955306290964584
      },
      {
-      "name": "Isiah Pacheco",
-      "share": 0.11779198634396358
+      "name": "Jameson Williams",
+      "share": 0.12748129737193534
      }
     ],
     "CHI": [
      {
       "name": "D'Andre Swift",
-      "share": 0.23744694345449338
+      "share": 0.2953501804296149
      },
      {
       "name": "Kyle Monangai",
-      "share": 0.1260731758907662
+      "share": 0.15599444189626058
      },
      {
-      "name": "Colston Loveland",
-      "share": 0.12334027033168166
+      "name": "Luther Burden III",
+      "share": 0.13999464614096752
      }
     ]
    },
+   "excluded": [
+    {
+     "team": "DET",
+     "player": "Tom Kennedy",
+     "pos": "WR",
+     "reason": "not on game-day roster; depth chart WR6 (top 5 only); roster: reserve list (R01)"
+    },
+    {
+     "team": "CHI",
+     "player": "Colston Loveland",
+     "pos": "TE",
+     "reason": "injury report: Doubtful"
+    },
+    {
+     "team": "CHI",
+     "player": "Salvon Ahmed",
+     "pos": "RB",
+     "reason": "not on CHI depth chart at RB"
+    },
+    {
+     "team": "CHI",
+     "player": "Roschon Johnson",
+     "pos": "RB",
+     "reason": "injury report: Out; inactive (game-day list); roster: inactive (roster)"
+    },
+    {
+     "team": "CHI",
+     "player": "Cole Kmet",
+     "pos": "TE",
+     "reason": "not on game-day roster; depth chart TE5 (top 3 only); roster: reserve list (R01)"
+    },
+    {
+     "team": "CHI",
+     "player": "Kaden Davis",
+     "pos": "WR",
+     "reason": "not on CHI depth chart at WR"
+    },
+    {
+     "team": "CHI",
+     "player": "Brittain Brown",
+     "pos": "RB",
+     "reason": "not on game-day roster; depth chart RB5 (top 3 only); roster: reserve list (R01)"
+    }
+   ],
+   "vacancy": [
+    "CHI: TE out (Colston Loveland); next up Sam Roush"
+   ],
    "either": {
     "top_pairs": [
      {
       "pair": "Jahmyr Gibbs or D'Andre Swift",
       "teams": "DET/CHI",
-      "p": 0.25201802845743476,
-      "fair": "+297",
-      "take_at": "+376",
+      "p": 0.3014552306319487,
+      "fair": "+232",
+      "take_at": "+298",
       "status": ""
      },
      {
       "pair": "Jahmyr Gibbs or Amon-Ra St. Brown",
       "teams": "DET",
-      "p": 0.20714424444498925,
-      "fair": "+383",
-      "take_at": "+479",
+      "p": 0.2407519408694055,
+      "fair": "+315",
+      "take_at": "+398",
       "status": ""
      },
      {
       "pair": "D'Andre Swift or Amon-Ra St. Brown",
       "teams": "CHI/DET",
-      "p": 0.19726858946133818,
-      "fair": "+407",
-      "take_at": "+508",
+      "p": 0.2404873368872515,
+      "fair": "+316",
+      "take_at": "+399",
       "status": ""
      }
     ],
@@ -262,17 +404,17 @@
      "CHI": {
       "pair": "D'Andre Swift or Kyle Monangai",
       "teams": "CHI",
-      "p": 0.18535430109801343,
-      "fair": "+440",
-      "take_at": "+547",
+      "p": 0.23013490195876396,
+      "fair": "+335",
+      "take_at": "+421",
       "status": ""
      },
      "DET": {
       "pair": "Jahmyr Gibbs or Amon-Ra St. Brown",
       "teams": "DET",
-      "p": 0.20714424444498925,
-      "fair": "+383",
-      "take_at": "+479",
+      "p": 0.2407519408694055,
+      "fair": "+315",
+      "take_at": "+398",
       "status": ""
      }
     }
@@ -293,105 +435,212 @@
      "name": "Javonte Williams",
      "team": "DAL",
      "pos": "RB",
-     "share": 0.25874879280877894,
-     "p": 0.16014755371469994,
+     "share": 0.29236324956753745,
+     "p": 0.18095257066155035,
      "status": ""
     },
     {
      "name": "CeeDee Lamb",
      "team": "DAL",
      "pos": "WR",
-     "share": 0.16022657144418267,
-     "p": 0.09916913303569566,
+     "share": 0.19323477071482043,
+     "p": 0.11959891865261478,
      "status": ""
     },
     {
      "name": "George Pickens",
      "team": "DAL",
      "pos": "WR",
-     "share": 0.1511662958934524,
-     "p": 0.09356145096815896,
+     "share": 0.18272930829606984,
+     "p": 0.11309676616432097,
      "status": ""
     },
     {
      "name": "Saquon Barkley",
      "team": "PHI",
      "pos": "RB",
-     "share": 0.19376492775936638,
-     "p": 0.06685125952166285,
+     "share": 0.23859224251018782,
+     "p": 0.08231722896577227,
      "status": "Questionable"
     },
     {
      "name": "Ryan Flournoy",
      "team": "DAL",
      "pos": "WR",
-     "share": 0.07355363015215338,
-     "p": 0.045524594753987575,
+     "share": 0.0834279043939169,
+     "p": 0.051636085545348084,
      "status": ""
     },
     {
-     "name": "Dak Prescott",
-     "team": "DAL",
-     "pos": "QB",
-     "share": 0.06325723104265982,
-     "p": 0.03915183795170091,
-     "status": ""
+     "name": "DeVonta Smith",
+     "team": "PHI",
+     "pos": "WR",
+     "share": 0.1323071197447687,
+     "p": 0.04564756739468143,
+     "status": "Questionable"
     }
    ],
    "team_top": {
     "DAL": [
      {
       "name": "Javonte Williams",
-      "share": 0.25874879280877894
+      "share": 0.29236324956753745
      },
      {
       "name": "CeeDee Lamb",
-      "share": 0.16022657144418267
+      "share": 0.19323477071482043
      },
      {
       "name": "George Pickens",
-      "share": 0.1511662958934524
+      "share": 0.18272930829606984
      }
     ],
     "PHI": [
      {
       "name": "Saquon Barkley",
-      "share": 0.19376492775936638
-     },
-     {
-      "name": "Dallas Goedert",
-      "share": 0.10125810210404033
+      "share": 0.23859224251018782
      },
      {
       "name": "DeVonta Smith",
-      "share": 0.10098951555685147
+      "share": 0.1323071197447687
+     },
+     {
+      "name": "Dallas Goedert",
+      "share": 0.1234050363653828
      }
     ]
    },
+   "excluded": [
+    {
+     "team": "DAL",
+     "player": "James Mitchell",
+     "pos": "TE",
+     "reason": "depth chart TE4 (top 3 only)"
+    },
+    {
+     "team": "DAL",
+     "player": "Malik Davis",
+     "pos": "RB",
+     "reason": "not on game-day roster; depth chart RB4 (top 3 only); roster: reserve list (R01)"
+    },
+    {
+     "team": "DAL",
+     "player": "Jake Ferguson",
+     "pos": "TE",
+     "reason": "injury report: Out; inactive (game-day list); roster: inactive (roster)"
+    },
+    {
+     "team": "DAL",
+     "player": "Tyler Goodson",
+     "pos": "RB",
+     "reason": "not on game-day roster; roster: reserve list (R01)"
+    },
+    {
+     "team": "DAL",
+     "player": "Hunter Luepke",
+     "pos": "RB",
+     "reason": "depth chart RB5 (top 3 only)"
+    },
+    {
+     "team": "DAL",
+     "player": "Jonathan Mingo",
+     "pos": "WR",
+     "reason": "injury report: Out; inactive (game-day list); roster: inactive (roster)"
+    },
+    {
+     "team": "DAL",
+     "player": "Camden Brown",
+     "pos": "WR",
+     "reason": "depth chart WR6 (top 5 only)"
+    },
+    {
+     "team": "DAL",
+     "player": "Parris Campbell",
+     "pos": "WR",
+     "reason": "not on game-day roster; not on DAL depth chart at WR; roster: retired"
+    },
+    {
+     "team": "PHI",
+     "player": "Carson Steele",
+     "pos": "RB",
+     "reason": "not on game-day roster; not on PHI depth chart at RB; roster: cut"
+    },
+    {
+     "team": "PHI",
+     "player": "Elijah Mitchell",
+     "pos": "RB",
+     "reason": "not on PHI depth chart at RB"
+    },
+    {
+     "team": "PHI",
+     "player": "Marquise Brown",
+     "pos": "WR",
+     "reason": "not on game-day roster; not on PHI depth chart at WR"
+    },
+    {
+     "team": "PHI",
+     "player": "Johnny Wilson",
+     "pos": "WR",
+     "reason": "not on game-day roster; depth chart WR7 (top 5 only); roster: reserve list (R01)"
+    },
+    {
+     "team": "PHI",
+     "player": "Dameon Pierce",
+     "pos": "RB",
+     "reason": "not on PHI depth chart at RB; roster: cut"
+    },
+    {
+     "team": "PHI",
+     "player": "Eli Stowers",
+     "pos": "TE",
+     "reason": "depth chart TE4 (top 3 only)"
+    },
+    {
+     "team": "PHI",
+     "player": "Tank Bigsby",
+     "pos": "RB",
+     "reason": "depth chart RB4 (top 3 only)"
+    },
+    {
+     "team": "PHI",
+     "player": "Dontayvion Wicks",
+     "pos": "WR",
+     "reason": "not on game-day roster; depth chart WR6 (top 5 only); roster: reserve list (R01)"
+    },
+    {
+     "team": "PHI",
+     "player": "Grant Calcaterra",
+     "pos": "TE",
+     "reason": "injury report: Out; inactive (game-day list); depth chart TE5 (top 3 only); roster: inactive (roster)"
+    }
+   ],
+   "vacancy": [
+    "DAL: TE out (Jake Ferguson); next up Brevyn Spann-Ford"
+   ],
    "either": {
     "top_pairs": [
      {
       "pair": "Javonte Williams or CeeDee Lamb",
       "teams": "DAL",
-      "p": 0.2593166867503956,
-      "fair": "+286",
-      "take_at": "+363",
+      "p": 0.30055148931416514,
+      "fair": "+233",
+      "take_at": "+299",
       "status": ""
      },
      {
       "pair": "Javonte Williams or George Pickens",
       "teams": "DAL",
-      "p": 0.2537090046828589,
-      "fair": "+294",
-      "take_at": "+373",
+      "p": 0.2940493368258713,
+      "fair": "+240",
+      "take_at": "+308",
       "status": ""
      },
      {
       "pair": "Javonte Williams or Saquon Barkley (Q)",
       "teams": "DAL/PHI",
-      "p": 0.22699881323636278,
-      "fair": "+341",
-      "take_at": "+429",
+      "p": 0.2632697996273226,
+      "fair": "+280",
+      "take_at": "+356",
       "status": "Q"
      }
     ],
@@ -399,17 +648,17 @@
      "DAL": {
       "pair": "Javonte Williams or CeeDee Lamb",
       "teams": "DAL",
-      "p": 0.2593166867503956,
-      "fair": "+286",
-      "take_at": "+363",
+      "p": 0.30055148931416514,
+      "fair": "+233",
+      "take_at": "+299",
       "status": ""
      },
      "PHI": {
-      "pair": "Saquon Barkley (Q) or Dallas Goedert (Q)",
+      "pair": "Saquon Barkley (Q) or DeVonta Smith (Q)",
       "teams": "PHI",
-      "p": 0.10178653775134763,
-      "fair": "+882",
-      "take_at": "+1079",
+      "p": 0.12796479636045371,
+      "fair": "+681",
+      "take_at": "+838",
       "status": "Q"
      }
     }
@@ -419,59 +668,59 @@
    "game": "KC @ BUF",
    "kickoff": "Thursday 2026-11-26 20:20",
    "spread_line": "3",
-   "total_line": "45.5",
-   "p_home": 0.5430078350855198,
-   "p_away": 0.4160500857408591,
-   "p_non": 0.03906801168971911,
-   "p_none": 0.0018740674839023076,
+   "total_line": "46.5",
+   "p_home": 0.5428260433648125,
+   "p_away": 0.4177056822315603,
+   "p_non": 0.03795763652357874,
+   "p_none": 0.001510637880048734,
    "p_home_recv": 0.5800302063801335,
    "top": [
     {
      "name": "James Cook",
      "team": "BUF",
      "pos": "RB",
-     "share": 0.22615696447094683,
-     "p": 0.12280500366688164,
+     "share": 0.2402342166528548,
+     "p": 0.13040538930651432,
      "status": ""
     },
     {
      "name": "Emmett Johnson",
      "team": "KC",
      "pos": "RB",
-     "share": 0.2078732801462132,
-     "p": 0.08648569602806563,
+     "share": 0.23844576307045826,
+     "p": 0.09960015013857075,
      "status": ""
     },
     {
      "name": "Josh Allen",
      "team": "BUF",
      "pos": "QB",
-     "share": 0.1262749412124965,
-     "p": 0.06856828245334899,
+     "share": 0.13964526861952373,
+     "p": 0.07580308863935248,
      "status": ""
     },
     {
      "name": "DJ Moore",
      "team": "BUF",
      "pos": "WR",
-     "share": 0.12061475129840764,
-     "p": 0.06549475498192671,
+     "share": 0.13157892163840945,
+     "p": 0.07142446542318652,
      "status": ""
     },
     {
      "name": "Rashee Rice",
      "team": "KC",
      "pos": "WR",
-     "share": 0.1203182597496958,
-     "p": 0.0500584222850519,
+     "share": 0.14754854531181788,
+     "p": 0.061631865781747175,
      "status": ""
     },
     {
      "name": "Travis Kelce",
      "team": "KC",
      "pos": "TE",
-     "share": 0.11942148474534024,
-     "p": 0.04968531896759951,
+     "share": 0.13744387438077782,
+     "p": 0.05741108731677167,
      "status": ""
     }
    ],
@@ -479,56 +728,127 @@
     "BUF": [
      {
       "name": "James Cook",
-      "share": 0.22615696447094683
+      "share": 0.2402342166528548
      },
      {
       "name": "Josh Allen",
-      "share": 0.1262749412124965
+      "share": 0.13964526861952373
      },
      {
       "name": "DJ Moore",
-      "share": 0.12061475129840764
+      "share": 0.13157892163840945
      }
     ],
     "KC": [
      {
       "name": "Emmett Johnson",
-      "share": 0.2078732801462132
+      "share": 0.23844576307045826
      },
      {
       "name": "Rashee Rice",
-      "share": 0.1203182597496958
+      "share": 0.14754854531181788
      },
      {
       "name": "Travis Kelce",
-      "share": 0.11942148474534024
+      "share": 0.13744387438077782
      }
     ]
    },
+   "excluded": [
+    {
+     "team": "BUF",
+     "player": "Trent Sherfield",
+     "pos": "WR",
+     "reason": "not on game-day roster; not on BUF depth chart at WR; roster: practice squad (P07)"
+    },
+    {
+     "team": "BUF",
+     "player": "Josh Palmer",
+     "pos": "WR",
+     "reason": "not on game-day roster; depth chart WR7 (top 5 only); roster: reserve list (R01)"
+    },
+    {
+     "team": "BUF",
+     "player": "Frank Gore Jr.",
+     "pos": "RB",
+     "reason": "not on game-day roster; not on BUF depth chart at RB; roster: practice squad (P01)"
+    },
+    {
+     "team": "BUF",
+     "player": "Jackson Hawes",
+     "pos": "TE",
+     "reason": "depth chart TE4 (top 3 only)"
+    },
+    {
+     "team": "BUF",
+     "player": "Skyler Bell",
+     "pos": "WR",
+     "reason": "injury report: Out; inactive (game-day list); depth chart WR6 (top 5 only); roster: inactive (roster)"
+    },
+    {
+     "team": "KC",
+     "player": "Tyquan Thornton",
+     "pos": "WR",
+     "reason": "not on game-day roster; depth chart WR7 (top 5 only); roster: reserve list (R01)"
+    },
+    {
+     "team": "KC",
+     "player": "Jared Wiley",
+     "pos": "TE",
+     "reason": "not on game-day roster; depth chart TE5 (top 3 only); roster: reserve list (R01)"
+    },
+    {
+     "team": "KC",
+     "player": "Justin Watson",
+     "pos": "WR",
+     "reason": "not on KC depth chart at WR"
+    },
+    {
+     "team": "KC",
+     "player": "Brashard Smith",
+     "pos": "RB",
+     "reason": "not on game-day roster; depth chart RB4 (top 3 only); roster: reserve list (R01)"
+    },
+    {
+     "team": "KC",
+     "player": "Kenneth Walker III",
+     "pos": "RB",
+     "reason": "injury report: Out; inactive (game-day list); roster: inactive (roster)"
+    },
+    {
+     "team": "KC",
+     "player": "Andrew Armstrong",
+     "pos": "WR",
+     "reason": "depth chart WR6 (top 5 only)"
+    }
+   ],
+   "vacancy": [
+    "KC: RB out (Kenneth Walker III); next up Emmett Johnson"
+   ],
    "either": {
     "top_pairs": [
      {
       "pair": "James Cook or Emmett Johnson",
       "teams": "BUF/KC",
-      "p": 0.2092906996949473,
-      "fair": "+378",
-      "take_at": "+473",
+      "p": 0.23000553944508506,
+      "fair": "+335",
+      "take_at": "+422",
       "status": ""
      },
      {
       "pair": "James Cook or Josh Allen",
       "teams": "BUF",
-      "p": 0.19137328612023063,
-      "fair": "+423",
-      "take_at": "+527",
+      "p": 0.2062084779458668,
+      "fair": "+385",
+      "take_at": "+482",
       "status": ""
      },
      {
       "pair": "James Cook or DJ Moore",
       "teams": "BUF",
-      "p": 0.18829975864880835,
-      "fair": "+431",
-      "take_at": "+537",
+      "p": 0.20182985472970083,
+      "fair": "+395",
+      "take_at": "+495",
       "status": ""
      }
     ],
@@ -536,17 +856,17 @@
      "BUF": {
       "pair": "James Cook or Josh Allen",
       "teams": "BUF",
-      "p": 0.19137328612023063,
-      "fair": "+423",
-      "take_at": "+527",
+      "p": 0.2062084779458668,
+      "fair": "+385",
+      "take_at": "+482",
       "status": ""
      },
      "KC": {
       "pair": "Emmett Johnson or Rashee Rice",
       "teams": "KC",
-      "p": 0.13654411831311752,
-      "fair": "+632",
-      "take_at": "+779",
+      "p": 0.16123201592031794,
+      "fair": "+520",
+      "take_at": "+644",
       "status": ""
      }
     }
@@ -555,60 +875,60 @@
   {
    "game": "DEN @ PIT",
    "kickoff": "Friday 2026-11-27 15:00",
-   "spread_line": "-3.5",
+   "spread_line": "-4.5",
    "total_line": "36.5",
-   "p_home": 0.3745498732975558,
-   "p_away": 0.5538427060631719,
-   "p_non": 0.057828700352364024,
-   "p_none": 0.01377872028690864,
+   "p_home": 0.35392506553167347,
+   "p_away": 0.5748605508133073,
+   "p_non": 0.05763931612439958,
+   "p_none": 0.013575067530619933,
    "p_home_recv": 0.42045900735222413,
    "top": [
     {
      "name": "Jonah Coleman",
      "team": "DEN",
      "pos": "RB",
-     "share": 0.24628949234023612,
-     "p": 0.1364056389126412,
-     "status": ""
-    },
-    {
-     "name": "Jaylen Warren",
-     "team": "PIT",
-     "pos": "RB",
-     "share": 0.20330671158103641,
-     "p": 0.07614850306321991,
+     "share": 0.25526229354076624,
+     "p": 0.14674022266671302,
      "status": ""
     },
     {
      "name": "Courtland Sutton",
      "team": "DEN",
      "pos": "WR",
-     "share": 0.1225943556779064,
-     "p": 0.06789798969672266,
+     "share": 0.13225452728408063,
+     "p": 0.07602791040208018,
      "status": ""
     },
     {
-     "name": "Rico Dowdle",
+     "name": "Jaylen Warren",
      "team": "PIT",
      "pos": "RB",
-     "share": 0.17205580325747105,
-     "p": 0.06444347931019496,
+     "share": 0.20978824991874528,
+     "p": 0.07424932010026701,
      "status": ""
     },
     {
      "name": "Jaylen Waddle",
      "team": "DEN",
      "pos": "WR",
-     "share": 0.11423996502697338,
-     "p": 0.06327097137110105,
+     "share": 0.12450408725015728,
+     "p": 0.0715724881751335,
+     "status": ""
+    },
+    {
+     "name": "Rico Dowdle",
+     "team": "PIT",
+     "pos": "RB",
+     "share": 0.1779771242657167,
+     "p": 0.06299056536888258,
      "status": ""
     },
     {
      "name": "DK Metcalf",
      "team": "PIT",
      "pos": "WR",
-     "share": 0.14545544958591405,
-     "p": 0.054480320212843124,
+     "share": 0.15452959792032245,
+     "p": 0.054691898070533276,
      "status": ""
     }
    ],
@@ -616,56 +936,113 @@
     "PIT": [
      {
       "name": "Jaylen Warren",
-      "share": 0.20330671158103641
+      "share": 0.20978824991874528
      },
      {
       "name": "Rico Dowdle",
-      "share": 0.17205580325747105
+      "share": 0.1779771242657167
      },
      {
       "name": "DK Metcalf",
-      "share": 0.14545544958591405
+      "share": 0.15452959792032245
      }
     ],
     "DEN": [
      {
       "name": "Jonah Coleman",
-      "share": 0.24628949234023612
+      "share": 0.25526229354076624
      },
      {
       "name": "Courtland Sutton",
-      "share": 0.1225943556779064
+      "share": 0.13225452728408063
      },
      {
       "name": "Jaylen Waddle",
-      "share": 0.11423996502697338
+      "share": 0.12450408725015728
      }
     ]
    },
+   "excluded": [
+    {
+     "team": "PIT",
+     "player": "Ben Skowronek",
+     "pos": "WR",
+     "reason": "injury report: Injured Reserve; not on game-day roster; depth chart WR7 (top 5 only); roster: reserve list (R01)"
+    },
+    {
+     "team": "PIT",
+     "player": "Brandon Johnson",
+     "pos": "WR",
+     "reason": "not on game-day roster; not on PIT depth chart at WR; roster: practice squad (P06)"
+    },
+    {
+     "team": "PIT",
+     "player": "Brandon Smith",
+     "pos": "WR",
+     "reason": "not on game-day roster; not on PIT depth chart at WR; roster: practice squad (P01)"
+    },
+    {
+     "team": "PIT",
+     "player": "Travis Homer",
+     "pos": "RB",
+     "reason": "depth chart RB4 (top 3 only)"
+    },
+    {
+     "team": "DEN",
+     "player": "Lucas Krull",
+     "pos": "TE",
+     "reason": "not on game-day roster; not on DEN depth chart at TE; roster: practice squad (P07)"
+    },
+    {
+     "team": "DEN",
+     "player": "Adam Prentice",
+     "pos": "RB",
+     "reason": "depth chart RB6 (top 3 only)"
+    },
+    {
+     "team": "DEN",
+     "player": "RJ Harvey",
+     "pos": "RB",
+     "reason": "not on game-day roster; depth chart RB5 (top 3 only); roster: reserve list (R01)"
+    },
+    {
+     "team": "DEN",
+     "player": "J.K. Dobbins",
+     "pos": "RB",
+     "reason": "injury report: Suspension; not on game-day roster; roster: suspended (R33); suspension list: suspended (11/27 report; length not confirmed: extend last_week if he is still listed)"
+    },
+    {
+     "team": "DEN",
+     "player": "Lil'Jordan Humphrey",
+     "pos": "WR",
+     "reason": "injury report: Out; inactive (game-day list); depth chart WR6 (top 5 only)"
+    }
+   ],
+   "vacancy": [],
    "either": {
     "top_pairs": [
      {
-      "pair": "Jonah Coleman or Jaylen Warren",
-      "teams": "DEN/PIT",
-      "p": 0.21255414197586112,
-      "fair": "+370",
-      "take_at": "+465",
-      "status": ""
-     },
-     {
       "pair": "Jonah Coleman or Courtland Sutton",
       "teams": "DEN",
-      "p": 0.20430362860936385,
-      "fair": "+389",
-      "take_at": "+487",
+      "p": 0.2227681330687932,
+      "fair": "+349",
+      "take_at": "+439",
       "status": ""
      },
      {
-      "pair": "Jonah Coleman or Rico Dowdle",
+      "pair": "Jonah Coleman or Jaylen Warren",
       "teams": "DEN/PIT",
-      "p": 0.2008491182228362,
-      "fair": "+398",
-      "take_at": "+497",
+      "p": 0.22098954276698002,
+      "fair": "+353",
+      "take_at": "+443",
+      "status": ""
+     },
+     {
+      "pair": "Jonah Coleman or Jaylen Waddle",
+      "teams": "DEN",
+      "p": 0.2183127108418465,
+      "fair": "+358",
+      "take_at": "+450",
       "status": ""
      }
     ],
@@ -673,17 +1050,17 @@
      "DEN": {
       "pair": "Jonah Coleman or Courtland Sutton",
       "teams": "DEN",
-      "p": 0.20430362860936385,
-      "fair": "+389",
-      "take_at": "+487",
+      "p": 0.2227681330687932,
+      "fair": "+349",
+      "take_at": "+439",
       "status": ""
      },
      "PIT": {
       "pair": "Jaylen Warren or Rico Dowdle",
       "teams": "PIT",
-      "p": 0.14059198237341486,
-      "fair": "+611",
-      "take_at": "+754",
+      "p": 0.1372398854691496,
+      "fair": "+629",
+      "take_at": "+774",
       "status": ""
      }
     }
@@ -692,60 +1069,60 @@
   {
    "game": "NO @ CIN",
    "kickoff": "Sunday 2026-11-29 13:00",
-   "spread_line": "10",
-   "total_line": "49.5",
-   "p_home": 0.6793977955697849,
-   "p_away": 0.2843317185971236,
-   "p_non": 0.03545552173050878,
-   "p_none": 0.0008149641025827857,
+   "spread_line": "9.5",
+   "total_line": "48.5",
+   "p_home": 0.6749542091375862,
+   "p_away": 0.2876000549350064,
+   "p_non": 0.03642510936742434,
+   "p_none": 0.0010206265599831594,
    "p_home_recv": 0.5795787877194805,
    "top": [
     {
      "name": "Chase Brown",
      "team": "CIN",
      "pos": "RB",
-     "share": 0.21134579010863475,
-     "p": 0.14358786390276088,
+     "share": 0.22307641112459783,
+     "p": 0.15056636264785397,
      "status": ""
     },
     {
      "name": "Ja'Marr Chase",
      "team": "CIN",
      "pos": "WR",
-     "share": 0.1872468091294901,
-     "p": 0.12721506935005183,
+     "share": 0.21621430038256054,
+     "p": 0.14593475211894766,
      "status": ""
     },
     {
      "name": "Tee Higgins",
      "team": "CIN",
      "pos": "WR",
-     "share": 0.14227181264451552,
-     "p": 0.09665915588240129,
+     "share": 0.15738847980876133,
+     "p": 0.10623001691668946,
+     "status": "Questionable"
+    },
+    {
+     "name": "Travis Etienne",
+     "team": "NO",
+     "pos": "RB",
+     "share": 0.21478313169287241,
+     "p": 0.06177164047398282,
      "status": ""
     },
     {
      "name": "Samaje Perine",
      "team": "CIN",
      "pos": "RB",
-     "share": 0.08846133754878258,
-     "p": 0.060100437723797515,
+     "share": 0.08994273206110677,
+     "p": 0.06070722558597814,
      "status": ""
     },
     {
      "name": "Mike Gesicki",
      "team": "CIN",
      "pos": "TE",
-     "share": 0.07015575329465304,
-     "p": 0.04766366413492495,
-     "status": ""
-    },
-    {
-     "name": "Travis Etienne",
-     "team": "NO",
-     "pos": "RB",
-     "share": 0.15457308482597032,
-     "p": 0.04395003085742711,
+     "share": 0.08485545515622091,
+     "p": 0.057273546625976994,
      "status": ""
     }
    ],
@@ -753,74 +1130,151 @@
     "CIN": [
      {
       "name": "Chase Brown",
-      "share": 0.21134579010863475
+      "share": 0.22307641112459783
      },
      {
       "name": "Ja'Marr Chase",
-      "share": 0.1872468091294901
+      "share": 0.21621430038256054
      },
      {
       "name": "Tee Higgins",
-      "share": 0.14227181264451552
+      "share": 0.15738847980876133
      }
     ],
     "NO": [
      {
       "name": "Travis Etienne",
-      "share": 0.15457308482597032
+      "share": 0.21478313169287241
      },
      {
       "name": "Alvin Kamara",
-      "share": 0.13262740683602367
+      "share": 0.18387177323212017
      },
      {
       "name": "Chris Olave",
-      "share": 0.11683625675561937
+      "share": 0.1439464914786469
      }
     ]
    },
+   "excluded": [
+    {
+     "team": "CIN",
+     "player": "Jack Endries",
+     "pos": "TE",
+     "reason": "depth chart TE4 (top 3 only)"
+    },
+    {
+     "team": "CIN",
+     "player": "Tanner Hudson",
+     "pos": "TE",
+     "reason": "depth chart TE6 (top 3 only); roster: reserve list (R01)"
+    },
+    {
+     "team": "CIN",
+     "player": "Kendric Pryor",
+     "pos": "WR",
+     "reason": "not on CIN depth chart at WR; roster: cut"
+    },
+    {
+     "team": "CIN",
+     "player": "Andrei Iosivas",
+     "pos": "WR",
+     "reason": "injury report: Injured Reserve; depth chart WR6 (top 5 only)"
+    },
+    {
+     "team": "CIN",
+     "player": "Erick All",
+     "pos": "TE",
+     "reason": "depth chart TE5 (top 3 only); roster: reserve list (R01)"
+    },
+    {
+     "team": "NO",
+     "player": "Moliki Matavao",
+     "pos": "TE",
+     "reason": "depth chart TE4 (top 3 only); roster: reserve list (R01)"
+    },
+    {
+     "team": "NO",
+     "player": "Mason Tipton",
+     "pos": "WR",
+     "reason": "depth chart WR6 (top 5 only); roster: reserve list (R04)"
+    },
+    {
+     "team": "NO",
+     "player": "Kevin Austin Jr.",
+     "pos": "WR",
+     "reason": "not on NO depth chart at WR; roster: practice squad (P01)"
+    },
+    {
+     "team": "NO",
+     "player": "Audric Estime",
+     "pos": "RB",
+     "reason": "depth chart RB4 (top 3 only)"
+    },
+    {
+     "team": "NO",
+     "player": "Juwan Johnson",
+     "pos": "TE",
+     "reason": "injury report: Out"
+    },
+    {
+     "team": "NO",
+     "player": "Zamir White",
+     "pos": "RB",
+     "reason": "not on NO depth chart at RB; roster: practice squad (P07)"
+    },
+    {
+     "team": "NO",
+     "player": "Cedric Tillman",
+     "pos": "WR",
+     "reason": "not on NO depth chart at WR; roster: practice squad (P07)"
+    }
+   ],
+   "vacancy": [
+    "NO: TE out (Juwan Johnson); next up Noah Fant"
+   ],
    "either": {
     "top_pairs": [
      {
       "pair": "Chase Brown or Ja'Marr Chase",
       "teams": "CIN",
-      "p": 0.2708029332528127,
-      "fair": "+269",
-      "take_at": "+343",
+      "p": 0.29650111476680163,
+      "fair": "+237",
+      "take_at": "+305",
       "status": ""
      },
      {
-      "pair": "Chase Brown or Tee Higgins",
+      "pair": "Chase Brown or Tee Higgins (Q)",
       "teams": "CIN",
-      "p": 0.24024701978516216,
-      "fair": "+316",
-      "take_at": "+399",
-      "status": ""
+      "p": 0.25679637956454343,
+      "fair": "+289",
+      "take_at": "+367",
+      "status": "Q"
      },
      {
-      "pair": "Ja'Marr Chase or Tee Higgins",
+      "pair": "Ja'Marr Chase or Tee Higgins (Q)",
       "teams": "CIN",
-      "p": 0.22387422523245312,
-      "fair": "+347",
-      "take_at": "+436",
-      "status": ""
+      "p": 0.2521647690356371,
+      "fair": "+297",
+      "take_at": "+376",
+      "status": "Q"
      }
     ],
     "same_team": {
      "CIN": {
       "pair": "Chase Brown or Ja'Marr Chase",
       "teams": "CIN",
-      "p": 0.2708029332528127,
-      "fair": "+269",
-      "take_at": "+343",
+      "p": 0.29650111476680163,
+      "fair": "+237",
+      "take_at": "+305",
       "status": ""
      },
      "NO": {
       "pair": "Travis Etienne or Alvin Kamara",
       "teams": "NO",
-      "p": 0.08166020937619362,
-      "fair": "+1125",
-      "take_at": "+1370",
+      "p": 0.11465317255653762,
+      "fair": "+772",
+      "take_at": "+947",
       "status": ""
      }
     }
@@ -841,124 +1295,213 @@
      "name": "Derrick Henry",
      "team": "BAL",
      "pos": "RB",
-     "share": 0.29546711509146056,
-     "p": 0.11098157895232681,
-     "status": "Questionable"
-    },
-    {
-     "name": "Woody Marks",
-     "team": "HOU",
-     "pos": "RB",
-     "share": 0.12413723403799616,
-     "p": 0.07261463315648183,
-     "status": "Questionable"
+     "share": 0.31247753839549647,
+     "p": 0.11737093174492097,
+     "status": ""
     },
     {
      "name": "Nico Collins",
      "team": "HOU",
      "pos": "WR",
-     "share": 0.12117406347073799,
-     "p": 0.0708813132111085,
+     "share": 0.16562462191844524,
+     "p": 0.09688286721941722,
+     "status": ""
+    },
+    {
+     "name": "Woody Marks",
+     "team": "HOU",
+     "pos": "RB",
+     "share": 0.15339730078034403,
+     "p": 0.0897304407471313,
      "status": ""
     },
     {
      "name": "David Montgomery",
      "team": "HOU",
      "pos": "RB",
-     "share": 0.113678155197608,
-     "p": 0.06649654796604619,
+     "share": 0.1420261463866192,
+     "p": 0.08307883286119025,
      "status": ""
     },
     {
-     "name": "Zay Flowers",
-     "team": "BAL",
-     "pos": "WR",
-     "share": 0.1363159698279003,
-     "p": 0.05120218391557767,
-     "status": ""
-    },
-    {
-     "name": "Jayden Higgins",
+     "name": "Tank Dell",
      "team": "HOU",
      "pos": "WR",
-     "share": 0.07511295163762162,
-     "p": 0.043937658759151926,
+     "share": 0.10671615984731879,
+     "p": 0.06242409748560737,
+     "status": ""
+    },
+    {
+     "name": "Xavier Hutchinson",
+     "team": "HOU",
+     "pos": "WR",
+     "share": 0.09724236511211996,
+     "p": 0.05688235866222013,
      "status": ""
     }
    ],
    "team_top": {
     "HOU": [
      {
-      "name": "Woody Marks",
-      "share": 0.12413723403799616
+      "name": "Nico Collins",
+      "share": 0.16562462191844524
      },
      {
-      "name": "Nico Collins",
-      "share": 0.12117406347073799
+      "name": "Woody Marks",
+      "share": 0.15339730078034403
      },
      {
       "name": "David Montgomery",
-      "share": 0.113678155197608
+      "share": 0.1420261463866192
      }
     ],
     "BAL": [
      {
       "name": "Derrick Henry",
-      "share": 0.29546711509146056
+      "share": 0.31247753839549647
      },
      {
       "name": "Zay Flowers",
-      "share": 0.1363159698279003
+      "share": 0.14111697206444576
      },
      {
       "name": "Mark Andrews",
-      "share": 0.1095297100315545
+      "share": 0.10880059346896288
      }
     ]
    },
+   "excluded": [
+    {
+     "team": "HOU",
+     "player": "Cade Stover",
+     "pos": "TE",
+     "reason": "depth chart TE5 (top 3 only)"
+    },
+    {
+     "team": "HOU",
+     "player": "Marlin Klein",
+     "pos": "TE",
+     "reason": "depth chart TE4 (top 3 only)"
+    },
+    {
+     "team": "HOU",
+     "player": "Jayden Higgins",
+     "pos": "WR",
+     "reason": "depth chart WR7 (top 5 only); roster: reserve list (R01)"
+    },
+    {
+     "team": "HOU",
+     "player": "Dare Ogunbowale",
+     "pos": "RB",
+     "reason": "not on HOU depth chart at RB; roster: cut"
+    },
+    {
+     "team": "HOU",
+     "player": "Jaylin Noel",
+     "pos": "WR",
+     "reason": "depth chart WR8 (top 5 only); roster: reserve list (R01)"
+    },
+    {
+     "team": "HOU",
+     "player": "Brevin Jordan",
+     "pos": "TE",
+     "reason": "injury report: Out"
+    },
+    {
+     "team": "HOU",
+     "player": "British Brooks",
+     "pos": "RB",
+     "reason": "depth chart RB4 (top 3 only); roster: reserve list (R01)"
+    },
+    {
+     "team": "HOU",
+     "player": "Jawhar Jordan",
+     "pos": "RB",
+     "reason": "not on HOU depth chart at RB; roster: practice squad (P02)"
+    },
+    {
+     "team": "HOU",
+     "player": "Lewis Bond",
+     "pos": "WR",
+     "reason": "not on HOU depth chart at WR; roster: practice squad (P01)"
+    },
+    {
+     "team": "HOU",
+     "player": "Kayshon Boutte",
+     "pos": "WR",
+     "reason": "injury report: Out"
+    },
+    {
+     "team": "BAL",
+     "player": "Nick Vannett",
+     "pos": "TE",
+     "reason": "not on BAL depth chart at TE; roster: practice squad (P07)"
+    },
+    {
+     "team": "BAL",
+     "player": "Durham Smythe",
+     "pos": "TE",
+     "reason": "depth chart TE4 (top 3 only); roster: reserve list (R01)"
+    },
+    {
+     "team": "BAL",
+     "player": "LaJohntay Wester",
+     "pos": "WR",
+     "reason": "not on BAL depth chart at WR; roster: cut"
+    },
+    {
+     "team": "BAL",
+     "player": "Chris Moore",
+     "pos": "WR",
+     "reason": "not on BAL depth chart at WR; roster: practice squad (P07)"
+    }
+   ],
+   "vacancy": [
+    "HOU: WR out (Kayshon Boutte); next up Tank Dell"
+   ],
    "either": {
     "top_pairs": [
      {
-      "pair": "Derrick Henry (Q) or Woody Marks (Q)",
+      "pair": "Derrick Henry or Nico Collins",
       "teams": "BAL/HOU",
-      "p": 0.18359621210880864,
-      "fair": "+445",
-      "take_at": "+554",
-      "status": "Q"
+      "p": 0.2142537989643382,
+      "fair": "+367",
+      "take_at": "+460",
+      "status": ""
      },
      {
-      "pair": "Derrick Henry (Q) or Nico Collins",
+      "pair": "Derrick Henry or Woody Marks",
       "teams": "BAL/HOU",
-      "p": 0.18186289216343532,
-      "fair": "+450",
-      "take_at": "+560",
-      "status": "Q"
+      "p": 0.20710137249205227,
+      "fair": "+383",
+      "take_at": "+479",
+      "status": ""
      },
      {
-      "pair": "Derrick Henry (Q) or David Montgomery",
+      "pair": "Derrick Henry or David Montgomery",
       "teams": "BAL/HOU",
-      "p": 0.177478126918373,
-      "fair": "+463",
-      "take_at": "+576",
-      "status": "Q"
+      "p": 0.20044976460611122,
+      "fair": "+399",
+      "take_at": "+499",
+      "status": ""
      }
     ],
     "same_team": {
      "HOU": {
-      "pair": "Woody Marks (Q) or Nico Collins",
+      "pair": "Nico Collins or Woody Marks",
       "teams": "HOU",
-      "p": 0.14349594636759033,
-      "fair": "+597",
-      "take_at": "+736",
-      "status": "Q"
+      "p": 0.18661330796654851,
+      "fair": "+436",
+      "take_at": "+543",
+      "status": ""
      },
      "BAL": {
-      "pair": "Derrick Henry (Q) or Zay Flowers",
+      "pair": "Derrick Henry or Zay Flowers",
       "teams": "BAL",
-      "p": 0.16218376286790448,
-      "fair": "+517",
-      "take_at": "+640",
-      "status": "Q"
+      "p": 0.1703764392168292,
+      "fair": "+487",
+      "take_at": "+604",
+      "status": ""
      }
     }
    }
@@ -966,60 +1509,60 @@
   {
    "game": "NYG @ IND",
    "kickoff": "Sunday 2026-11-29 13:00",
-   "spread_line": "-6",
+   "spread_line": "-5.5",
    "total_line": "41.5",
-   "p_home": 0.3687665607693299,
-   "p_away": 0.5796775759774436,
-   "p_non": 0.047121228438575614,
-   "p_none": 0.004434634814651072,
+   "p_home": 0.37787640130492217,
+   "p_away": 0.5704973386704583,
+   "p_non": 0.04715524016475616,
+   "p_none": 0.004471019859863712,
    "p_home_recv": 0.597121929436051,
    "top": [
     {
      "name": "Jonathan Taylor",
      "team": "IND",
      "pos": "RB",
-     "share": 0.3645995953349229,
-     "p": 0.13445213882954896,
+     "share": 0.3875067457666764,
+     "p": 0.14642965457169305,
      "status": ""
     },
     {
      "name": "Cam Skattebo",
      "team": "NYG",
      "pos": "RB",
-     "share": 0.18015876423128893,
-     "p": 0.10443399574068535,
+     "share": 0.24423550652425213,
+     "p": 0.1393357064809172,
      "status": ""
     },
     {
      "name": "Malik Nabers",
      "team": "NYG",
      "pos": "WR",
-     "share": 0.1380913337801137,
-     "p": 0.0800484496291484,
+     "share": 0.18473334191701068,
+     "p": 0.10538987992735441,
      "status": ""
     },
     {
      "name": "Isaiah Likely",
      "team": "NYG",
      "pos": "TE",
-     "share": 0.11947724330380581,
-     "p": 0.06925827878281741,
-     "status": "Questionable"
-    },
-    {
-     "name": "Tyrone Tracy Jr.",
-     "team": "NYG",
-     "pos": "RB",
-     "share": 0.10228003803722949,
-     "p": 0.05928944452030192,
+     "share": 0.15709477448721826,
+     "p": 0.08962215076399382,
      "status": ""
     },
     {
      "name": "Tyler Warren",
      "team": "IND",
      "pos": "TE",
-     "share": 0.1360397923440247,
-     "p": 0.0501669263504798,
+     "share": 0.18040380138572074,
+     "p": 0.06817033924936408,
+     "status": ""
+    },
+    {
+     "name": "Devin Singletary",
+     "team": "NYG",
+     "pos": "RB",
+     "share": 0.10377716803472194,
+     "p": 0.05920459817856582,
      "status": ""
     }
    ],
@@ -1027,74 +1570,155 @@
     "IND": [
      {
       "name": "Jonathan Taylor",
-      "share": 0.3645995953349229
+      "share": 0.3875067457666764
      },
      {
       "name": "Tyler Warren",
-      "share": 0.1360397923440247
+      "share": 0.18040380138572074
      },
      {
       "name": "Anthony Richardson",
-      "share": 0.1286829349383691
+      "share": 0.1429607990965897
      }
     ],
     "NYG": [
      {
       "name": "Cam Skattebo",
-      "share": 0.18015876423128893
+      "share": 0.24423550652425213
      },
      {
       "name": "Malik Nabers",
-      "share": 0.1380913337801137
+      "share": 0.18473334191701068
      },
      {
       "name": "Isaiah Likely",
-      "share": 0.11947724330380581
+      "share": 0.15709477448721826
      }
     ]
    },
+   "excluded": [
+    {
+     "team": "IND",
+     "player": "Quez Watkins",
+     "pos": "WR",
+     "reason": "depth chart WR6 (top 5 only)"
+    },
+    {
+     "team": "IND",
+     "player": "Alec Pierce",
+     "pos": "WR",
+     "reason": "injury report: Injured Reserve; depth chart WR7 (top 5 only); roster: reserve list (R01)"
+    },
+    {
+     "team": "IND",
+     "player": "Seth McGowan",
+     "pos": "RB",
+     "reason": "injury report: Out"
+    },
+    {
+     "team": "IND",
+     "player": "Will Mallory",
+     "pos": "TE",
+     "reason": "injury report: Out"
+    },
+    {
+     "team": "IND",
+     "player": "Sean McKeon",
+     "pos": "TE",
+     "reason": "not on IND depth chart at TE; roster: practice squad (P07)"
+    },
+    {
+     "team": "IND",
+     "player": "Pharaoh Brown",
+     "pos": "TE",
+     "reason": "depth chart TE4 (top 3 only)"
+    },
+    {
+     "team": "IND",
+     "player": "Mo Alie-Cox",
+     "pos": "TE",
+     "reason": "depth chart TE5 (top 3 only); roster: reserve list (R01)"
+    },
+    {
+     "team": "NYG",
+     "player": "Najee Harris",
+     "pos": "RB",
+     "reason": "not on NYG depth chart at RB; roster: cut"
+    },
+    {
+     "team": "NYG",
+     "player": "Thomas Fidone II",
+     "pos": "TE",
+     "reason": "depth chart TE4 (top 3 only)"
+    },
+    {
+     "team": "NYG",
+     "player": "Patrick Ricard",
+     "pos": "RB",
+     "reason": "depth chart RB5 (top 3 only)"
+    },
+    {
+     "team": "NYG",
+     "player": "Tyrone Tracy Jr.",
+     "pos": "RB",
+     "reason": "depth chart RB4 (top 3 only); roster: reserve list (R01)"
+    },
+    {
+     "team": "NYG",
+     "player": "Gunner Olszewski",
+     "pos": "WR",
+     "reason": "depth chart WR8 (top 5 only); roster: reserve list (R01)"
+    },
+    {
+     "team": "NYG",
+     "player": "Braxton Berrios",
+     "pos": "WR",
+     "reason": "depth chart WR7 (top 5 only); roster: reserve list (R01)"
+    }
+   ],
+   "vacancy": [],
    "either": {
     "top_pairs": [
      {
       "pair": "Jonathan Taylor or Cam Skattebo",
       "teams": "IND/NYG",
-      "p": 0.2388861345702343,
-      "fair": "+319",
-      "take_at": "+402",
+      "p": 0.28576536105261025,
+      "fair": "+250",
+      "take_at": "+320",
       "status": ""
      },
      {
       "pair": "Jonathan Taylor or Malik Nabers",
       "teams": "IND/NYG",
-      "p": 0.21450058845869735,
-      "fair": "+366",
-      "take_at": "+459",
+      "p": 0.2518195344990475,
+      "fair": "+297",
+      "take_at": "+377",
       "status": ""
      },
      {
-      "pair": "Jonathan Taylor or Isaiah Likely (Q)",
-      "teams": "IND/NYG",
-      "p": 0.20371041761236636,
-      "fair": "+391",
-      "take_at": "+489",
-      "status": "Q"
+      "pair": "Cam Skattebo or Malik Nabers",
+      "teams": "NYG",
+      "p": 0.2447255864082716,
+      "fair": "+309",
+      "take_at": "+390",
+      "status": ""
      }
     ],
     "same_team": {
      "NYG": {
       "pair": "Cam Skattebo or Malik Nabers",
       "teams": "NYG",
-      "p": 0.18448244536983374,
-      "fair": "+442",
-      "take_at": "+550",
+      "p": 0.2447255864082716,
+      "fair": "+309",
+      "take_at": "+390",
       "status": ""
      },
      "IND": {
       "pair": "Jonathan Taylor or Tyler Warren",
       "teams": "IND",
-      "p": 0.18461906518002874,
-      "fair": "+442",
-      "take_at": "+550",
+      "p": 0.21459999382105713,
+      "fair": "+366",
+      "take_at": "+459",
       "status": ""
      }
     }
@@ -1103,135 +1727,207 @@
   {
    "game": "TEN @ JAX",
    "kickoff": "Sunday 2026-11-29 13:00",
-   "spread_line": "14.5",
-   "total_line": "49.5",
-   "p_home": 0.740135839629472,
-   "p_away": 0.22407183389406166,
-   "p_non": 0.03507622123739712,
-   "p_none": 0.0007161052390692135,
+   "spread_line": "14",
+   "total_line": "48.5",
+   "p_home": 0.7375841522917723,
+   "p_away": 0.22552444564261726,
+   "p_non": 0.035995831330689336,
+   "p_none": 0.0008955707349213121,
    "p_home_recv": 0.5297509229130629,
    "top": [
-    {
-     "name": "Bhayshul Tuten",
-     "team": "JAX",
-     "pos": "RB",
-     "share": 0.15985601768934712,
-     "p": 0.11831516787232867,
-     "status": "Questionable"
-    },
-    {
-     "name": "Parker Washington",
-     "team": "JAX",
-     "pos": "WR",
-     "share": 0.13996948958723254,
-     "p": 0.103596435698155,
-     "status": "Questionable"
-    },
     {
      "name": "Jakobi Meyers",
      "team": "JAX",
      "pos": "WR",
-     "share": 0.11168874828272402,
-     "p": 0.08266484548739869,
-     "status": "Questionable"
-    },
-    {
-     "name": "Brenton Strange",
-     "team": "JAX",
-     "pos": "TE",
-     "share": 0.10206328325277517,
-     "p": 0.07554069384563337,
+     "share": 0.16631980361365326,
+     "p": 0.12267485135771049,
      "status": ""
     },
     {
      "name": "Chris Rodriguez Jr.",
      "team": "JAX",
      "pos": "RB",
-     "share": 0.09248769516032737,
-     "p": 0.06845345791288356,
+     "share": 0.15856424306696748,
+     "p": 0.11695447280633575,
+     "status": ""
+    },
+    {
+     "name": "Brenton Strange",
+     "team": "JAX",
+     "pos": "TE",
+     "share": 0.13925959828261883,
+     "p": 0.10271567274777817,
      "status": ""
     },
     {
      "name": "Brian Thomas Jr.",
      "team": "JAX",
      "pos": "WR",
-     "share": 0.08409818055139927,
-     "p": 0.062244077473720835,
+     "share": 0.12546331809260752,
+     "p": 0.0925397551190489,
+     "status": ""
+    },
+    {
+     "name": "Josh Cameron",
+     "team": "JAX",
+     "pos": "WR",
+     "share": 0.11745922887423599,
+     "p": 0.08663606575804862,
+     "status": ""
+    },
+    {
+     "name": "Trevor Lawrence",
+     "team": "JAX",
+     "pos": "QB",
+     "share": 0.08926313168303923,
+     "p": 0.06583907131334334,
      "status": ""
     }
    ],
    "team_top": {
     "JAX": [
      {
-      "name": "Bhayshul Tuten",
-      "share": 0.15985601768934712
-     },
-     {
-      "name": "Parker Washington",
-      "share": 0.13996948958723254
-     },
-     {
       "name": "Jakobi Meyers",
-      "share": 0.11168874828272402
+      "share": 0.16631980361365326
+     },
+     {
+      "name": "Chris Rodriguez Jr.",
+      "share": 0.15856424306696748
+     },
+     {
+      "name": "Brenton Strange",
+      "share": 0.13925959828261883
      }
     ],
     "TEN": [
      {
       "name": "Tony Pollard",
-      "share": 0.23402717084328237
-     },
-     {
-      "name": "Wan'Dale Robinson",
-      "share": 0.11696169829646474
+      "share": 0.27363915471931444
      },
      {
       "name": "Carnell Tate",
-      "share": 0.10062965109301698
+      "share": 0.13796825244749472
+     },
+     {
+      "name": "Elic Ayomanor",
+      "share": 0.10705410422915664
      }
     ]
    },
+   "excluded": [
+    {
+     "team": "JAX",
+     "player": "Austin Trammell",
+     "pos": "WR",
+     "reason": "not on JAX depth chart at WR; roster: practice squad (P07)"
+    },
+    {
+     "team": "JAX",
+     "player": "Tim Jones",
+     "pos": "WR",
+     "reason": "not on JAX depth chart at WR; roster: practice squad (P07)"
+    },
+    {
+     "team": "JAX",
+     "player": "Tanner Koziol",
+     "pos": "TE",
+     "reason": "depth chart TE4 (top 3 only)"
+    },
+    {
+     "team": "JAX",
+     "player": "Parker Washington",
+     "pos": "WR",
+     "reason": "injury report: Out"
+    },
+    {
+     "team": "JAX",
+     "player": "Ameer Abdullah",
+     "pos": "RB",
+     "reason": "depth chart RB4 (top 3 only)"
+    },
+    {
+     "team": "JAX",
+     "player": "C.J. Williams",
+     "pos": "WR",
+     "reason": "depth chart WR6 (top 5 only)"
+    },
+    {
+     "team": "JAX",
+     "player": "Bhayshul Tuten",
+     "pos": "RB",
+     "reason": "injury report: Out"
+    },
+    {
+     "team": "TEN",
+     "player": "Michael Carter",
+     "pos": "RB",
+     "reason": "not on TEN depth chart at RB; roster: practice squad (P07)"
+    },
+    {
+     "team": "TEN",
+     "player": "Kylen Granson",
+     "pos": "TE",
+     "reason": "depth chart TE4 (top 3 only)"
+    },
+    {
+     "team": "TEN",
+     "player": "Tyjae Spears",
+     "pos": "RB",
+     "reason": "depth chart RB4 (top 3 only); roster: reserve list (R01)"
+    },
+    {
+     "team": "TEN",
+     "player": "Wan'Dale Robinson",
+     "pos": "WR",
+     "reason": "depth chart WR6 (top 5 only); roster: reserve list (R01)"
+    }
+   ],
+   "vacancy": [
+    "JAX: RB out (Bhayshul Tuten); next up Chris Rodriguez Jr.",
+    "JAX: WR out (Parker Washington); next up Josh Cameron"
+   ],
    "either": {
     "top_pairs": [
      {
-      "pair": "Bhayshul Tuten (Q) or Parker Washington (Q)",
+      "pair": "Jakobi Meyers or Chris Rodriguez Jr.",
       "teams": "JAX",
-      "p": 0.22191160357048367,
-      "fair": "+351",
-      "take_at": "+441",
-      "status": "Q"
+      "p": 0.23962932416404625,
+      "fair": "+317",
+      "take_at": "+401",
+      "status": ""
      },
      {
-      "pair": "Bhayshul Tuten (Q) or Jakobi Meyers (Q)",
+      "pair": "Jakobi Meyers or Brenton Strange",
       "teams": "JAX",
-      "p": 0.20098001335972737,
-      "fair": "+398",
-      "take_at": "+497",
-      "status": "Q"
+      "p": 0.22539052410548865,
+      "fair": "+344",
+      "take_at": "+432",
+      "status": ""
      },
      {
-      "pair": "Bhayshul Tuten (Q) or Brenton Strange",
+      "pair": "Chris Rodriguez Jr. or Brenton Strange",
       "teams": "JAX",
-      "p": 0.19385586171796204,
-      "fair": "+416",
-      "take_at": "+519",
-      "status": "Q"
+      "p": 0.2196701455541139,
+      "fair": "+355",
+      "take_at": "+446",
+      "status": ""
      }
     ],
     "same_team": {
      "JAX": {
-      "pair": "Bhayshul Tuten (Q) or Parker Washington (Q)",
+      "pair": "Jakobi Meyers or Chris Rodriguez Jr.",
       "teams": "JAX",
-      "p": 0.22191160357048367,
-      "fair": "+351",
-      "take_at": "+441",
-      "status": "Q"
+      "p": 0.23962932416404625,
+      "fair": "+317",
+      "take_at": "+401",
+      "status": ""
      },
      "TEN": {
-      "pair": "Tony Pollard or Wan'Dale Robinson",
+      "pair": "Tony Pollard or Carnell Tate",
       "teams": "TEN",
-      "p": 0.07864671958454596,
-      "fair": "+1172",
-      "take_at": "+1426",
+      "p": 0.09282753232368968,
+      "fair": "+977",
+      "take_at": "+1193",
       "status": ""
      }
     }
@@ -1240,117 +1936,188 @@
   {
    "game": "NYJ @ MIA",
    "kickoff": "Sunday 2026-11-29 13:00",
-   "spread_line": "-4.5",
-   "total_line": "40.5",
-   "p_home": 0.40044841894558947,
-   "p_away": 0.5432878144291022,
-   "p_non": 0.04888788260365972,
-   "p_none": 0.007375884021648807,
+   "spread_line": "-5.5",
+   "total_line": "39.5",
+   "p_home": 0.3768495800856391,
+   "p_away": 0.5637797879651172,
+   "p_non": 0.05052707086926442,
+   "p_none": 0.008843561079979346,
    "p_home_recv": 0.5406996131790457,
    "top": [
     {
      "name": "Breece Hall",
      "team": "NYJ",
      "pos": "RB",
-     "share": 0.1825878897694739,
-     "p": 0.09919777557407931,
-     "status": ""
-    },
-    {
-     "name": "De'Von Achane",
-     "team": "MIA",
-     "pos": "RB",
-     "share": 0.21929959705455943,
-     "p": 0.08781817691590317,
+     "share": 0.19744337321987998,
+     "p": 0.11131458308902144,
      "status": ""
     },
     {
      "name": "Garrett Wilson",
      "team": "NYJ",
      "pos": "WR",
-     "share": 0.15150038923484535,
-     "p": 0.08230831535255742,
-     "status": ""
-    },
-    {
-     "name": "Braelon Allen",
-     "team": "NYJ",
-     "pos": "RB",
-     "share": 0.113932666169839,
-     "p": 0.06189822919549235,
+     "share": 0.1751445921181135,
+     "p": 0.09874298100758697,
      "status": ""
     },
     {
      "name": "Kyle McCord",
      "team": "MIA",
      "pos": "QB",
-     "share": 0.14482228315022513,
-     "p": 0.057993854315598135,
+     "share": 0.19993515443622775,
+     "p": 0.07534547899364984,
      "status": ""
     },
     {
      "name": "Ollie Gordon II",
      "team": "MIA",
      "pos": "RB",
-     "share": 0.13858179988673663,
-     "p": 0.055494862659277756,
+     "share": 0.19751918432906082,
+     "p": 0.07443502167326452,
+     "status": ""
+    },
+    {
+     "name": "Braelon Allen",
+     "team": "NYJ",
+     "pos": "RB",
+     "share": 0.12128615187190649,
+     "p": 0.06837868098544844,
+     "status": ""
+    },
+    {
+     "name": "Adonai Mitchell",
+     "team": "NYJ",
+     "pos": "WR",
+     "share": 0.09642716802402677,
+     "p": 0.054363688342662544,
      "status": ""
     }
    ],
    "team_top": {
     "MIA": [
      {
-      "name": "De'Von Achane",
-      "share": 0.21929959705455943
-     },
-     {
       "name": "Kyle McCord",
-      "share": 0.14482228315022513
+      "share": 0.19993515443622775
      },
      {
       "name": "Ollie Gordon II",
-      "share": 0.13858179988673663
+      "share": 0.19751918432906082
+     },
+     {
+      "name": "Caleb Douglas",
+      "share": 0.12439874933295778
      }
     ],
     "NYJ": [
      {
       "name": "Breece Hall",
-      "share": 0.1825878897694739
+      "share": 0.19744337321987998
      },
      {
       "name": "Garrett Wilson",
-      "share": 0.15150038923484535
+      "share": 0.1751445921181135
      },
      {
       "name": "Braelon Allen",
-      "share": 0.113932666169839
+      "share": 0.12128615187190649
      }
     ]
    },
+   "excluded": [
+    {
+     "team": "MIA",
+     "player": "Carlos Washington",
+     "pos": "RB",
+     "reason": "not on MIA depth chart at RB; roster: practice squad (P01)"
+    },
+    {
+     "team": "MIA",
+     "player": "Jared Wayne",
+     "pos": "WR",
+     "reason": "injury report: Out; depth chart WR6 (top 5 only)"
+    },
+    {
+     "team": "MIA",
+     "player": "Jalen Reagor",
+     "pos": "WR",
+     "reason": "not on MIA depth chart at WR; roster: practice squad (P07)"
+    },
+    {
+     "team": "MIA",
+     "player": "DJ Herman",
+     "pos": "RB",
+     "reason": "depth chart RB5 (top 3 only)"
+    },
+    {
+     "team": "MIA",
+     "player": "De'Von Achane",
+     "pos": "RB",
+     "reason": "depth chart RB4 (top 3 only); roster: reserve list (R01)"
+    },
+    {
+     "team": "NYJ",
+     "player": "Sterling Shepard",
+     "pos": "WR",
+     "reason": "not on NYJ depth chart at WR; roster: practice squad (P07)"
+    },
+    {
+     "team": "NYJ",
+     "player": "Kene Nwangwu",
+     "pos": "RB",
+     "reason": "depth chart RB4 (top 3 only)"
+    },
+    {
+     "team": "NYJ",
+     "player": "Tyler Johnson",
+     "pos": "WR",
+     "reason": "not on NYJ depth chart at WR; roster: cut"
+    },
+    {
+     "team": "NYJ",
+     "player": "Omar Cooper Jr.",
+     "pos": "WR",
+     "reason": "injury report: Out"
+    },
+    {
+     "team": "NYJ",
+     "player": "Jelani Woods",
+     "pos": "TE",
+     "reason": "depth chart TE5 (top 3 only)"
+    },
+    {
+     "team": "NYJ",
+     "player": "Arian Smith",
+     "pos": "WR",
+     "reason": "depth chart WR7 (top 5 only); roster: reserve list (R01)"
+    }
+   ],
+   "vacancy": [
+    "NYJ: WR out (Omar Cooper Jr., Sterling Shepard); next up Isaiah Williams"
+   ],
    "either": {
     "top_pairs": [
      {
-      "pair": "Breece Hall or De'Von Achane",
-      "teams": "NYJ/MIA",
-      "p": 0.18701595248998248,
-      "fair": "+435",
-      "take_at": "+542",
-      "status": ""
-     },
-     {
       "pair": "Breece Hall or Garrett Wilson",
       "teams": "NYJ",
-      "p": 0.18150609092663672,
-      "fair": "+451",
-      "take_at": "+561",
+      "p": 0.21005756409660842,
+      "fair": "+376",
+      "take_at": "+471",
       "status": ""
      },
      {
-      "pair": "De'Von Achane or Garrett Wilson",
-      "teams": "MIA/NYJ",
-      "p": 0.1701264922684606,
-      "fair": "+488",
-      "take_at": "+605",
+      "pair": "Breece Hall or Kyle McCord",
+      "teams": "NYJ/MIA",
+      "p": 0.18666006208267127,
+      "fair": "+436",
+      "take_at": "+543",
+      "status": ""
+     },
+     {
+      "pair": "Breece Hall or Ollie Gordon II",
+      "teams": "NYJ/MIA",
+      "p": 0.18574960476228597,
+      "fair": "+438",
+      "take_at": "+546",
       "status": ""
      }
     ],
@@ -1358,17 +2125,17 @@
      "NYJ": {
       "pair": "Breece Hall or Garrett Wilson",
       "teams": "NYJ",
-      "p": 0.18150609092663672,
-      "fair": "+451",
-      "take_at": "+561",
+      "p": 0.21005756409660842,
+      "fair": "+376",
+      "take_at": "+471",
       "status": ""
      },
      "MIA": {
-      "pair": "De'Von Achane or Kyle McCord",
+      "pair": "Kyle McCord or Ollie Gordon II",
       "teams": "MIA",
-      "p": 0.1458120312315013,
-      "fair": "+586",
-      "take_at": "+723",
+      "p": 0.14978050066691434,
+      "fair": "+568",
+      "take_at": "+701",
       "status": ""
      }
     }
@@ -1386,51 +2153,51 @@
    "p_home_recv": 0.4978678809845658,
    "top": [
     {
+     "name": "Bijan Robinson",
+     "team": "ATL",
+     "pos": "RB",
+     "share": 0.3625032074357019,
+     "p": 0.1254200802063491,
+     "status": ""
+    },
+    {
      "name": "Aaron Jones",
      "team": "MIN",
      "pos": "RB",
-     "share": 0.1889931442058409,
-     "p": 0.11310141599622467,
+     "share": 0.2013574150824779,
+     "p": 0.1205007137315195,
      "status": ""
     },
     {
      "name": "Justin Jefferson",
      "team": "MIN",
      "pos": "WR",
-     "share": 0.1880422597329511,
-     "p": 0.11253236688714416,
-     "status": ""
-    },
-    {
-     "name": "Bijan Robinson",
-     "team": "ATL",
-     "pos": "RB",
-     "share": 0.30074989363545246,
-     "p": 0.10405446078294331,
-     "status": ""
-    },
-    {
-     "name": "Jauan Jennings",
-     "team": "MIN",
-     "pos": "WR",
-     "share": 0.12218000115982994,
-     "p": 0.07311763183613973,
-     "status": ""
-    },
-    {
-     "name": "Jordan Mason",
-     "team": "MIN",
-     "pos": "RB",
-     "share": 0.11002586838571797,
-     "p": 0.06584408954583848,
+     "share": 0.18340464703104878,
+     "p": 0.10975702513794318,
      "status": ""
     },
     {
      "name": "T.J. Hockenson",
      "team": "MIN",
      "pos": "TE",
-     "share": 0.10936726986012268,
-     "p": 0.06544995659392185,
+     "share": 0.12868527288445752,
+     "p": 0.07701065899639607,
+     "status": ""
+    },
+    {
+     "name": "Jauan Jennings",
+     "team": "MIN",
+     "pos": "WR",
+     "share": 0.11980933806232444,
+     "p": 0.0716989277116883,
+     "status": ""
+    },
+    {
+     "name": "Drake London",
+     "team": "ATL",
+     "pos": "WR",
+     "share": 0.20532615432484663,
+     "p": 0.07103943417783738,
      "status": ""
     }
    ],
@@ -1438,56 +2205,134 @@
     "MIN": [
      {
       "name": "Aaron Jones",
-      "share": 0.1889931442058409
+      "share": 0.2013574150824779
      },
      {
       "name": "Justin Jefferson",
-      "share": 0.1880422597329511
+      "share": 0.18340464703104878
      },
      {
-      "name": "Jauan Jennings",
-      "share": 0.12218000115982994
+      "name": "T.J. Hockenson",
+      "share": 0.12868527288445752
      }
     ],
     "ATL": [
      {
       "name": "Bijan Robinson",
-      "share": 0.30074989363545246
+      "share": 0.3625032074357019
      },
      {
       "name": "Drake London",
-      "share": 0.14603084171957192
+      "share": 0.20532615432484663
      },
      {
       "name": "Kyle Pitts",
-      "share": 0.11685689758842042
+      "share": 0.1492398295558547
      }
     ]
    },
+   "excluded": [
+    {
+     "team": "MIN",
+     "player": "Max Bredeson",
+     "pos": "RB",
+     "reason": "depth chart RB5 (top 3 only)"
+    },
+    {
+     "team": "MIN",
+     "player": "Josh Oliver",
+     "pos": "TE",
+     "reason": "depth chart TE4 (top 3 only); roster: reserve list (R01)"
+    },
+    {
+     "team": "MIN",
+     "player": "C.J. Ham",
+     "pos": "RB",
+     "reason": "not on MIN depth chart at RB; roster: retired"
+    },
+    {
+     "team": "MIN",
+     "player": "Odell Beckham Jr.",
+     "pos": "WR",
+     "reason": "not on MIN depth chart at WR; roster: practice squad (P07)"
+    },
+    {
+     "team": "MIN",
+     "player": "Jordan Addison",
+     "pos": "WR",
+     "reason": "injury report: Out"
+    },
+    {
+     "team": "MIN",
+     "player": "Jeshaun Jones",
+     "pos": "WR",
+     "reason": "depth chart WR6 (top 5 only)"
+    },
+    {
+     "team": "ATL",
+     "player": "Zachariah Branch",
+     "pos": "WR",
+     "reason": "injury report: Out"
+    },
+    {
+     "team": "ATL",
+     "player": "Brian Robinson",
+     "pos": "RB",
+     "reason": "roster: reserve list (R01)"
+    },
+    {
+     "team": "ATL",
+     "player": "Chris Blair",
+     "pos": "WR",
+     "reason": "depth chart WR6 (top 5 only)"
+    },
+    {
+     "team": "ATL",
+     "player": "Dylan Drummond",
+     "pos": "WR",
+     "reason": "not on ATL depth chart at WR; roster: practice squad (P06)"
+    },
+    {
+     "team": "ATL",
+     "player": "Jahan Dotson",
+     "pos": "WR",
+     "reason": "injury report: Out"
+    },
+    {
+     "team": "ATL",
+     "player": "Nick Muse",
+     "pos": "TE",
+     "reason": "depth chart TE4 (top 3 only)"
+    }
+   ],
+   "vacancy": [
+    "MIN: WR out (Jordan Addison); next up Tai Felton",
+    "ATL: WR out (Jahan Dotson, Chris Blair); next up Beaux Collins"
+   ],
    "either": {
     "top_pairs": [
      {
+      "pair": "Bijan Robinson or Aaron Jones",
+      "teams": "ATL/MIN",
+      "p": 0.2459207939378686,
+      "fair": "+307",
+      "take_at": "+388",
+      "status": ""
+     },
+     {
+      "pair": "Bijan Robinson or Justin Jefferson",
+      "teams": "ATL/MIN",
+      "p": 0.23517710534429226,
+      "fair": "+325",
+      "take_at": "+410",
+      "status": ""
+     },
+     {
       "pair": "Aaron Jones or Justin Jefferson",
       "teams": "MIN",
-      "p": 0.22563378288336883,
-      "fair": "+343",
-      "take_at": "+432",
-      "status": ""
-     },
-     {
-      "pair": "Aaron Jones or Bijan Robinson",
-      "teams": "MIN/ATL",
-      "p": 0.21715587677916798,
-      "fair": "+360",
-      "take_at": "+453",
-      "status": ""
-     },
-     {
-      "pair": "Justin Jefferson or Bijan Robinson",
-      "teams": "MIN/ATL",
-      "p": 0.21658682767008747,
-      "fair": "+362",
-      "take_at": "+454",
+      "p": 0.23025773886946266,
+      "fair": "+334",
+      "take_at": "+421",
       "status": ""
      }
     ],
@@ -1495,17 +2340,17 @@
      "MIN": {
       "pair": "Aaron Jones or Justin Jefferson",
       "teams": "MIN",
-      "p": 0.22563378288336883,
-      "fair": "+343",
-      "take_at": "+432",
+      "p": 0.23025773886946266,
+      "fair": "+334",
+      "take_at": "+421",
       "status": ""
      },
      "ATL": {
       "pair": "Bijan Robinson or Drake London",
       "teams": "ATL",
-      "p": 0.1545787030665595,
-      "fair": "+547",
-      "take_at": "+676",
+      "p": 0.19645951438418646,
+      "fair": "+409",
+      "take_at": "+511",
       "status": ""
      }
     }
@@ -1514,60 +2359,60 @@
   {
    "game": "NE @ LAC",
    "kickoff": "Sunday 2026-11-29 16:05",
-   "spread_line": "-1.5",
-   "total_line": "35.5",
-   "p_home": 0.40757372272713255,
-   "p_away": 0.5215638707959253,
-   "p_non": 0.05694506617070576,
-   "p_none": 0.013917340306236942,
+   "spread_line": "-3",
+   "total_line": "34.5",
+   "p_home": 0.37135790125052026,
+   "p_away": 0.5531868574802743,
+   "p_non": 0.058937716079544,
+   "p_none": 0.016517525189661802,
    "p_home_recv": 0.4140364775876899,
    "top": [
     {
      "name": "Rhamondre Stevenson",
      "team": "NE",
      "pos": "RB",
-     "share": 0.18737398991078036,
-     "p": 0.09772750346434325,
+     "share": 0.22304281997203135,
+     "p": 0.12338435666386659,
      "status": ""
     },
     {
      "name": "Omarion Hampton",
      "team": "LAC",
      "pos": "RB",
-     "share": 0.1914016812314364,
-     "p": 0.07801029575572846,
-     "status": ""
-    },
-    {
-     "name": "TreVeyon Henderson",
-     "team": "NE",
-     "pos": "RB",
-     "share": 0.13160443071118727,
-     "p": 0.06864011629562097,
-     "status": ""
-    },
-    {
-     "name": "Mack Hollins",
-     "team": "NE",
-     "pos": "WR",
-     "share": 0.12676718241355275,
-     "p": 0.06611718234950571,
+     "share": 0.2396837720177239,
+     "p": 0.08900846254031013,
      "status": ""
     },
     {
      "name": "Hunter Henry",
      "team": "NE",
      "pos": "TE",
-     "share": 0.1013960464981122,
-     "p": 0.05288451449495902,
+     "share": 0.13742441333568245,
+     "p": 0.07602137935423647,
+     "status": ""
+    },
+    {
+     "name": "Mack Hollins",
+     "team": "NE",
+     "pos": "WR",
+     "share": 0.13193812398527266,
+     "p": 0.0729864361892558,
+     "status": ""
+    },
+    {
+     "name": "Efton Chism III",
+     "team": "NE",
+     "pos": "WR",
+     "share": 0.10833736688129728,
+     "p": 0.059930807532752386,
      "status": ""
     },
     {
      "name": "Ladd McConkey",
      "team": "LAC",
      "pos": "WR",
-     "share": 0.1178285130189296,
-     "p": 0.04802380569452754,
+     "share": 0.14592652462532613,
+     "p": 0.05419096792164347,
      "status": ""
     }
    ],
@@ -1575,74 +2420,157 @@
     "LAC": [
      {
       "name": "Omarion Hampton",
-      "share": 0.1914016812314364
+      "share": 0.2396837720177239
      },
      {
       "name": "Ladd McConkey",
-      "share": 0.1178285130189296
+      "share": 0.14592652462532613
      },
      {
       "name": "Kimani Vidal",
-      "share": 0.09723297704095063
+      "share": 0.12183003828654307
      }
     ],
     "NE": [
      {
       "name": "Rhamondre Stevenson",
-      "share": 0.18737398991078036
+      "share": 0.22304281997203135
      },
      {
-      "name": "TreVeyon Henderson",
-      "share": 0.13160443071118727
+      "name": "Hunter Henry",
+      "share": 0.13742441333568245
      },
      {
       "name": "Mack Hollins",
-      "share": 0.12676718241355275
+      "share": 0.13193812398527266
      }
     ]
    },
+   "excluded": [
+    {
+     "team": "LAC",
+     "player": "Brenen Thompson",
+     "pos": "WR",
+     "reason": "injury report: Doubtful; depth chart WR6 (top 5 only)"
+    },
+    {
+     "team": "LAC",
+     "player": "Theo Wease Jr.",
+     "pos": "WR",
+     "reason": "not on LAC depth chart at WR; roster: practice squad (P01)"
+    },
+    {
+     "team": "LAC",
+     "player": "Amar Johnson",
+     "pos": "RB",
+     "reason": "not on LAC depth chart at RB; roster: practice squad (P01)"
+    },
+    {
+     "team": "LAC",
+     "player": "Alec Ingold",
+     "pos": "RB",
+     "reason": "depth chart RB5 (top 3 only); roster: reserve list (R01)"
+    },
+    {
+     "team": "LAC",
+     "player": "Scott Matlock",
+     "pos": "RB",
+     "reason": "depth chart RB4 (top 3 only)"
+    },
+    {
+     "team": "LAC",
+     "player": "Keaton Mitchell",
+     "pos": "RB",
+     "reason": "injury report: Out"
+    },
+    {
+     "team": "NE",
+     "player": "Tanner Arkin",
+     "pos": "TE",
+     "reason": "not on NE depth chart at TE; roster: practice squad (P01)"
+    },
+    {
+     "team": "NE",
+     "player": "TreVeyon Henderson",
+     "pos": "RB",
+     "reason": "depth chart RB4 (top 3 only); roster: reserve list (R01)"
+    },
+    {
+     "team": "NE",
+     "player": "A.J. Brown",
+     "pos": "WR",
+     "reason": "injury report: Out"
+    },
+    {
+     "team": "NE",
+     "player": "Terrell Jennings",
+     "pos": "RB",
+     "reason": "not on NE depth chart at RB; roster: practice squad (P01)"
+    },
+    {
+     "team": "NE",
+     "player": "Reggie Gilliam",
+     "pos": "RB",
+     "reason": "depth chart RB6 (top 3 only)"
+    },
+    {
+     "team": "NE",
+     "player": "Romeo Doubs",
+     "pos": "WR",
+     "reason": "injury report: Injured Reserve; depth chart WR6 (top 5 only)"
+    },
+    {
+     "team": "NE",
+     "player": "Ryan Miller",
+     "pos": "WR",
+     "reason": "not on NE depth chart at WR; roster: practice squad (P06)"
+    }
+   ],
+   "vacancy": [
+    "NE: WR out (A.J. Brown); next up Efton Chism III"
+   ],
    "either": {
     "top_pairs": [
      {
       "pair": "Rhamondre Stevenson or Omarion Hampton",
       "teams": "NE/LAC",
-      "p": 0.1757377992200717,
-      "fair": "+469",
-      "take_at": "+583",
+      "p": 0.2123928192041767,
+      "fair": "+371",
+      "take_at": "+465",
       "status": ""
      },
      {
-      "pair": "Rhamondre Stevenson or TreVeyon Henderson",
+      "pair": "Rhamondre Stevenson or Hunter Henry",
       "teams": "NE",
-      "p": 0.16636761975996422,
-      "fair": "+501",
-      "take_at": "+621",
+      "p": 0.19940573601810307,
+      "fair": "+401",
+      "take_at": "+502",
       "status": ""
      },
      {
       "pair": "Rhamondre Stevenson or Mack Hollins",
       "teams": "NE",
-      "p": 0.16384468581384898,
-      "fair": "+510",
-      "take_at": "+632",
+      "p": 0.19637079285312237,
+      "fair": "+409",
+      "take_at": "+511",
       "status": ""
      }
     ],
     "same_team": {
      "NE": {
-      "pair": "Rhamondre Stevenson or TreVeyon Henderson",
+      "pair": "Rhamondre Stevenson or Hunter Henry",
       "teams": "NE",
-      "p": 0.16636761975996422,
-      "fair": "+501",
-      "take_at": "+621",
+      "p": 0.19940573601810307,
+      "fair": "+401",
+      "take_at": "+502",
       "status": ""
      },
      "LAC": {
       "pair": "Omarion Hampton or Ladd McConkey",
       "teams": "LAC",
-      "p": 0.126034101450256,
-      "fair": "+693",
-      "take_at": "+852",
+      "p": 0.1431994304619536,
+      "fair": "+598",
+      "take_at": "+738",
       "status": ""
      }
     }
@@ -1651,135 +2579,246 @@
   {
    "game": "WAS @ ARI",
    "kickoff": "Sunday 2026-11-29 16:25",
-   "spread_line": "-7",
+   "spread_line": "-6.5",
    "total_line": "41.5",
-   "p_home": 0.3391455524762072,
-   "p_away": 0.6086042704791242,
-   "p_non": 0.04681664783304987,
-   "p_none": 0.005433529211619032,
+   "p_home": 0.34801599411532386,
+   "p_away": 0.5996220547991085,
+   "p_non": 0.0468744409973545,
+   "p_none": 0.005487510088213455,
    "p_home_recv": 0.5837804747860483,
    "top": [
+    {
+     "name": "Trey McBride",
+     "team": "ARI",
+     "pos": "TE",
+     "share": 0.2869066168495405,
+     "p": 0.09984809148115716,
+     "status": ""
+    },
     {
      "name": "Jacory Croskey-Merritt",
      "team": "WAS",
      "pos": "RB",
-     "share": 0.12974995455454194,
-     "p": 0.07896637643636652,
-     "status": ""
-    },
-    {
-     "name": "James Conner",
-     "team": "ARI",
-     "pos": "RB",
-     "share": 0.20272615990182022,
-     "p": 0.06875367550128274,
-     "status": ""
-    },
-    {
-     "name": "Rachaad White",
-     "team": "WAS",
-     "pos": "RB",
-     "share": 0.10222775296898735,
-     "p": 0.06221624701841068,
+     "share": 0.16118012643316293,
+     "p": 0.09664715860463326,
      "status": ""
     },
     {
      "name": "Jayden Daniels",
      "team": "WAS",
      "pos": "QB",
-     "share": 0.09934037500113117,
-     "p": 0.06045897645668607,
+     "share": 0.12830668654458072,
+     "p": 0.07693551903032661,
      "status": ""
     },
     {
-     "name": "Terry McLaurin",
+     "name": "Rachaad White",
      "team": "WAS",
-     "pos": "WR",
-     "share": 0.09082442767964856,
-     "p": 0.05527613454965649,
+     "pos": "RB",
+     "share": 0.1242493806456892,
+     "p": 0.07450266893028473,
      "status": ""
     },
     {
      "name": "Stefon Diggs",
      "team": "WAS",
      "pos": "WR",
-     "share": 0.08952779409020212,
-     "p": 0.05448699780987271,
+     "share": 0.11233399120695134,
+     "p": 0.06735793863129715,
+     "status": ""
+    },
+    {
+     "name": "Austin Ekeler",
+     "team": "WAS",
+     "pos": "RB",
+     "share": 0.1029173148495281,
+     "p": 0.061711491804480836,
      "status": ""
     }
    ],
    "team_top": {
     "ARI": [
      {
-      "name": "James Conner",
-      "share": 0.20272615990182022
-     },
-     {
       "name": "Trey McBride",
-      "share": 0.15881292096676924
+      "share": 0.2869066168495405
      },
      {
-      "name": "Michael Wilson",
-      "share": 0.11554449073022137
+      "name": "Tyler Allgeier",
+      "share": 0.1669650258569718
+     },
+     {
+      "name": "Bam Knight",
+      "share": 0.10846279764551173
      }
     ],
     "WAS": [
      {
       "name": "Jacory Croskey-Merritt",
-      "share": 0.12974995455454194
-     },
-     {
-      "name": "Rachaad White",
-      "share": 0.10222775296898735
+      "share": 0.16118012643316293
      },
      {
       "name": "Jayden Daniels",
-      "share": 0.09934037500113117
+      "share": 0.12830668654458072
+     },
+     {
+      "name": "Rachaad White",
+      "share": 0.1242493806456892
      }
     ]
    },
+   "excluded": [
+    {
+     "team": "ARI",
+     "player": "James Conner",
+     "pos": "RB",
+     "reason": "depth chart RB5 (top 3 only)"
+    },
+    {
+     "team": "ARI",
+     "player": "Trey Benson",
+     "pos": "RB",
+     "reason": "depth chart RB6 (top 3 only); roster: reserve list (R01)"
+    },
+    {
+     "team": "ARI",
+     "player": "Kendrick Bourne",
+     "pos": "WR",
+     "reason": "depth chart WR6 (top 5 only); roster: reserve list (R01)"
+    },
+    {
+     "team": "ARI",
+     "player": "Tip Reiman",
+     "pos": "TE",
+     "reason": "depth chart TE5 (top 3 only); roster: reserve list (R04)"
+    },
+    {
+     "team": "ARI",
+     "player": "Jalen Brooks",
+     "pos": "WR",
+     "reason": "depth chart WR7 (top 5 only); roster: reserve list (R01)"
+    },
+    {
+     "team": "ARI",
+     "player": "Michael Wilson",
+     "pos": "WR",
+     "reason": "roster: reserve list (R01)"
+    },
+    {
+     "team": "ARI",
+     "player": "Teagan Quitoriano",
+     "pos": "TE",
+     "reason": "depth chart TE4 (top 3 only)"
+    },
+    {
+     "team": "ARI",
+     "player": "Xavier Weaver",
+     "pos": "WR",
+     "reason": "not on ARI depth chart at WR; roster: cut"
+    },
+    {
+     "team": "ARI",
+     "player": "Jeremiyah Love",
+     "pos": "RB",
+     "reason": "injury report: Injured Reserve; depth chart RB4 (top 3 only); roster: reserve list (R01)"
+    },
+    {
+     "team": "ARI",
+     "player": "Zay Jones",
+     "pos": "WR",
+     "reason": "not on ARI depth chart at WR; roster: practice squad (P07)"
+    },
+    {
+     "team": "WAS",
+     "player": "Jeremy McNichols",
+     "pos": "RB",
+     "reason": "depth chart RB5 (top 3 only); roster: reserve list (R01)"
+    },
+    {
+     "team": "WAS",
+     "player": "Dyami Brown",
+     "pos": "WR",
+     "reason": "depth chart WR6 (top 5 only); roster: reserve list (R01)"
+    },
+    {
+     "team": "WAS",
+     "player": "Colson Yankoff",
+     "pos": "TE",
+     "reason": "depth chart TE4 (top 3 only)"
+    },
+    {
+     "team": "WAS",
+     "player": "Jaden Bradley",
+     "pos": "WR",
+     "reason": "not on WAS depth chart at WR; roster: practice squad (P01)"
+    },
+    {
+     "team": "WAS",
+     "player": "Jacoby Jones",
+     "pos": "WR",
+     "reason": "not on WAS depth chart at WR; roster: cut"
+    },
+    {
+     "team": "WAS",
+     "player": "Jaylin Lane",
+     "pos": "WR",
+     "reason": "depth chart WR8 (top 5 only); roster: reserve list (R01)"
+    },
+    {
+     "team": "WAS",
+     "player": "Terry McLaurin",
+     "pos": "WR",
+     "reason": "depth chart WR7 (top 5 only); roster: reserve list (R01)"
+    },
+    {
+     "team": "WAS",
+     "player": "Craig Reynolds",
+     "pos": "RB",
+     "reason": "not on WAS depth chart at RB; roster: cut"
+    }
+   ],
+   "vacancy": [],
    "either": {
     "top_pairs": [
      {
-      "pair": "Jacory Croskey-Merritt or James Conner",
-      "teams": "WAS/ARI",
-      "p": 0.14772005193764925,
-      "fair": "+577",
-      "take_at": "+712",
+      "pair": "Trey McBride or Jacory Croskey-Merritt",
+      "teams": "ARI/WAS",
+      "p": 0.1964952500857904,
+      "fair": "+409",
+      "take_at": "+511",
       "status": ""
      },
      {
-      "pair": "Jacory Croskey-Merritt or Rachaad White",
-      "teams": "WAS",
-      "p": 0.1411826234547772,
-      "fair": "+608",
-      "take_at": "+750",
+      "pair": "Trey McBride or Jayden Daniels",
+      "teams": "ARI/WAS",
+      "p": 0.17678361051148378,
+      "fair": "+466",
+      "take_at": "+579",
       "status": ""
      },
      {
-      "pair": "Jacory Croskey-Merritt or Jayden Daniels",
-      "teams": "WAS",
-      "p": 0.13942535289305258,
-      "fair": "+617",
-      "take_at": "+761",
+      "pair": "Trey McBride or Rachaad White",
+      "teams": "ARI/WAS",
+      "p": 0.17435076041144187,
+      "fair": "+474",
+      "take_at": "+588",
       "status": ""
      }
     ],
     "same_team": {
      "WAS": {
-      "pair": "Jacory Croskey-Merritt or Rachaad White",
+      "pair": "Jacory Croskey-Merritt or Jayden Daniels",
       "teams": "WAS",
-      "p": 0.1411826234547772,
-      "fair": "+608",
-      "take_at": "+750",
+      "p": 0.17358267763495988,
+      "fair": "+476",
+      "take_at": "+591",
       "status": ""
      },
      "ARI": {
-      "pair": "James Conner or Trey McBride",
+      "pair": "Trey McBride or Tyler Allgeier",
       "teams": "ARI",
-      "p": 0.12261437132291791,
-      "fair": "+716",
-      "take_at": "+879",
+      "p": 0.15795459093726194,
+      "fair": "+533",
+      "take_at": "+660",
       "status": ""
      }
     }
@@ -1788,60 +2827,60 @@
   {
    "game": "SEA @ SF",
    "kickoff": "Sunday 2026-11-29 16:25",
-   "spread_line": "2.5",
-   "total_line": "44.5",
-   "p_home": 0.5501218185665019,
-   "p_away": 0.40560610613700837,
-   "p_non": 0.041521986520520776,
-   "p_none": 0.0027500887759691357,
+   "spread_line": "-1.5",
+   "total_line": "42.5",
+   "p_home": 0.477260926391769,
+   "p_away": 0.4739705247369082,
+   "p_non": 0.044494999575292,
+   "p_none": 0.0042735492960308645,
    "p_home_recv": 0.5147838152375508,
    "top": [
     {
      "name": "Christian McCaffrey",
      "team": "SF",
      "pos": "RB",
-     "share": 0.2050715624306405,
-     "p": 0.11281434086061788,
+     "share": 0.278768133172446,
+     "p": 0.13304513748638558,
      "status": ""
     },
     {
      "name": "Jaxon Smith-Njigba",
      "team": "SEA",
      "pos": "WR",
-     "share": 0.17180749125341144,
-     "p": 0.06968616753246434,
-     "status": "Questionable"
+     "share": 0.1916631547343317,
+     "p": 0.09084268602216243,
+     "status": ""
     },
     {
      "name": "Zach Charbonnet",
      "team": "SEA",
      "pos": "RB",
-     "share": 0.16478914821136556,
-     "p": 0.06683948473964635,
+     "share": 0.17473230463233258,
+     "p": 0.08281796211507597,
      "status": ""
     },
     {
      "name": "George Kittle",
      "team": "SF",
      "pos": "TE",
-     "share": 0.10358716504585401,
-     "p": 0.056985559615173584,
+     "share": 0.14806834117072862,
+     "p": 0.07066723367643445,
      "status": ""
     },
     {
      "name": "Mike Evans",
      "team": "SF",
      "pos": "WR",
-     "share": 0.09976374752067907,
-     "p": 0.05488221421308531,
+     "share": 0.14547210010935863,
+     "p": 0.06942814926234865,
      "status": "Questionable"
     },
     {
      "name": "Deebo Samuel Sr.",
      "team": "SF",
      "pos": "WR",
-     "share": 0.09857967802218602,
-     "p": 0.054230831747265194,
+     "share": 0.1436700059777961,
+     "p": 0.06856808014767396,
      "status": ""
     }
    ],
@@ -1849,56 +2888,161 @@
     "SF": [
      {
       "name": "Christian McCaffrey",
-      "share": 0.2050715624306405
+      "share": 0.278768133172446
      },
      {
       "name": "George Kittle",
-      "share": 0.10358716504585401
+      "share": 0.14806834117072862
      },
      {
       "name": "Mike Evans",
-      "share": 0.09976374752067907
+      "share": 0.14547210010935863
      }
     ],
     "SEA": [
      {
       "name": "Jaxon Smith-Njigba",
-      "share": 0.17180749125341144
+      "share": 0.1916631547343317
      },
      {
       "name": "Zach Charbonnet",
-      "share": 0.16478914821136556
+      "share": 0.17473230463233258
      },
      {
-      "name": "AJ Barner",
-      "share": 0.10851572939274523
+      "name": "Emanuel Wilson",
+      "share": 0.11153984926144253
      }
     ]
    },
+   "excluded": [
+    {
+     "team": "SF",
+     "player": "KhaDarel Hodge",
+     "pos": "WR",
+     "reason": "not on SF depth chart at WR; roster: practice squad (P07)"
+    },
+    {
+     "team": "SF",
+     "player": "De'Zhaun Stribling",
+     "pos": "WR",
+     "reason": "injury report: Injured Reserve; depth chart WR7 (top 5 only); roster: reserve list (R01)"
+    },
+    {
+     "team": "SF",
+     "player": "Jake Tonges",
+     "pos": "TE",
+     "reason": "depth chart TE4 (top 3 only); roster: reserve list (R01)"
+    },
+    {
+     "team": "SF",
+     "player": "Isaac Guerendo",
+     "pos": "RB",
+     "reason": "depth chart RB4 (top 3 only); roster: reserve list (R04)"
+    },
+    {
+     "team": "SF",
+     "player": "Ricky Pearsall",
+     "pos": "WR",
+     "reason": "depth chart WR9 (top 5 only); roster: reserve list (R01)"
+    },
+    {
+     "team": "SF",
+     "player": "Demarcus Robinson",
+     "pos": "WR",
+     "reason": "depth chart WR6 (top 5 only)"
+    },
+    {
+     "team": "SF",
+     "player": "Christian Kirk",
+     "pos": "WR",
+     "reason": "depth chart WR8 (top 5 only); roster: reserve list (R01)"
+    },
+    {
+     "team": "SF",
+     "player": "Brandin Cooks",
+     "pos": "WR",
+     "reason": "not on SF depth chart at WR; roster: practice squad (P07)"
+    },
+    {
+     "team": "SF",
+     "player": "Kyle Juszczyk",
+     "pos": "RB",
+     "reason": "depth chart RB5 (top 3 only)"
+    },
+    {
+     "team": "SF",
+     "player": "Jordan Watkins",
+     "pos": "WR",
+     "reason": "injury report: Out"
+    },
+    {
+     "team": "SEA",
+     "player": "George Holani",
+     "pos": "RB",
+     "reason": "injury report: Injured Reserve; depth chart RB4 (top 3 only); roster: reserve list (R01)"
+    },
+    {
+     "team": "SEA",
+     "player": "Ricky White III",
+     "pos": "WR",
+     "reason": "not on SEA depth chart at WR; roster: practice squad (P01)"
+    },
+    {
+     "team": "SEA",
+     "player": "Brady Russell",
+     "pos": "RB",
+     "reason": "depth chart RB5 (top 3 only)"
+    },
+    {
+     "team": "SEA",
+     "player": "Robbie Ouzts",
+     "pos": "RB",
+     "reason": "depth chart RB6 (top 3 only); roster: reserve list (R01)"
+    },
+    {
+     "team": "SEA",
+     "player": "Jake Bobo",
+     "pos": "WR",
+     "reason": "depth chart WR6 (top 5 only); roster: reserve list (R01)"
+    },
+    {
+     "team": "SEA",
+     "player": "Jacardia Wright",
+     "pos": "RB",
+     "reason": "not on SEA depth chart at RB; roster: practice squad (P02)"
+    },
+    {
+     "team": "SEA",
+     "player": "Elijah Arroyo",
+     "pos": "TE",
+     "reason": "depth chart TE4 (top 3 only); roster: reserve list (R01)"
+    }
+   ],
+   "vacancy": [],
    "either": {
     "top_pairs": [
      {
-      "pair": "Christian McCaffrey or Jaxon Smith-Njigba (Q)",
+      "pair": "Christian McCaffrey or Jaxon Smith-Njigba",
       "teams": "SF/SEA",
-      "p": 0.18250050839308224,
-      "fair": "+448",
-      "take_at": "+558",
-      "status": "Q"
+      "p": 0.22388782350854802,
+      "fair": "+347",
+      "take_at": "+436",
+      "status": ""
      },
      {
       "pair": "Christian McCaffrey or Zach Charbonnet",
       "teams": "SF/SEA",
-      "p": 0.17965382560026422,
-      "fair": "+457",
-      "take_at": "+568",
+      "p": 0.21586309960146155,
+      "fair": "+363",
+      "take_at": "+456",
       "status": ""
      },
      {
       "pair": "Christian McCaffrey or George Kittle",
       "teams": "SF",
-      "p": 0.16979990047579147,
-      "fair": "+489",
-      "take_at": "+607",
+      "p": 0.20371237116282004,
+      "fair": "+391",
+      "take_at": "+489",
       "status": ""
      }
     ],
@@ -1906,18 +3050,18 @@
      "SF": {
       "pair": "Christian McCaffrey or George Kittle",
       "teams": "SF",
-      "p": 0.16979990047579147,
-      "fair": "+489",
-      "take_at": "+607",
+      "p": 0.20371237116282004,
+      "fair": "+391",
+      "take_at": "+489",
       "status": ""
      },
      "SEA": {
-      "pair": "Jaxon Smith-Njigba (Q) or Zach Charbonnet",
+      "pair": "Jaxon Smith-Njigba or Zach Charbonnet",
       "teams": "SEA",
-      "p": 0.1365256522721107,
-      "fair": "+632",
-      "take_at": "+779",
-      "status": "Q"
+      "p": 0.17366064813723842,
+      "fair": "+476",
+      "take_at": "+591",
+      "status": ""
      }
     }
    }
@@ -1926,59 +3070,59 @@
    "game": "LV @ CLE",
    "kickoff": "Sunday 2026-11-29 20:20",
    "spread_line": "4.5",
-   "total_line": "40.5",
-   "p_home": 0.562008602191854,
-   "p_away": 0.3806330290466937,
-   "p_non": 0.0512383307793962,
-   "p_none": 0.006120037982056514,
+   "total_line": "39.5",
+   "p_home": 0.5622989288501059,
+   "p_away": 0.3772028435149143,
+   "p_non": 0.053038310868391905,
+   "p_none": 0.007459916766588034,
    "p_home_recv": 0.655026885117457,
    "top": [
     {
      "name": "Quinshon Judkins",
      "team": "CLE",
      "pos": "RB",
-     "share": 0.2145132373832415,
-     "p": 0.1205582846934049,
+     "share": 0.23498688625358316,
+     "p": 0.13213287443421148,
      "status": ""
     },
     {
      "name": "Ashton Jeanty",
      "team": "LV",
      "pos": "RB",
-     "share": 0.23775135271220296,
-     "p": 0.09049601754279467,
+     "share": 0.2545622492398531,
+     "p": 0.09602160426482492,
      "status": ""
     },
     {
      "name": "Harold Fannin Jr.",
      "team": "CLE",
      "pos": "TE",
-     "share": 0.1339767602416595,
-     "p": 0.07529609174960822,
+     "share": 0.1409477709219733,
+     "p": 0.0792547806132357,
      "status": ""
     },
     {
      "name": "Denzel Boston",
      "team": "CLE",
      "pos": "WR",
-     "share": 0.12933858327567122,
-     "p": 0.07268939639623469,
+     "share": 0.13927541242017147,
+     "p": 0.07831441521901915,
      "status": "Questionable"
     },
     {
      "name": "KC Concepcion",
      "team": "CLE",
      "pos": "WR",
-     "share": 0.11902644536559871,
-     "p": 0.06689388618378521,
+     "share": 0.12982068781605272,
+     "p": 0.07299803370155043,
      "status": ""
     },
     {
      "name": "Brock Bowers",
      "team": "LV",
      "pos": "TE",
-     "share": 0.17073758294232946,
-     "p": 0.06498836336744997,
+     "share": 0.18202024724292376,
+     "p": 0.06865855483731859,
      "status": "Questionable"
     }
    ],
@@ -1986,56 +3130,119 @@
     "CLE": [
      {
       "name": "Quinshon Judkins",
-      "share": 0.2145132373832415
+      "share": 0.23498688625358316
      },
      {
       "name": "Harold Fannin Jr.",
-      "share": 0.1339767602416595
+      "share": 0.1409477709219733
      },
      {
       "name": "Denzel Boston",
-      "share": 0.12933858327567122
+      "share": 0.13927541242017147
      }
     ],
     "LV": [
      {
       "name": "Ashton Jeanty",
-      "share": 0.23775135271220296
+      "share": 0.2545622492398531
      },
      {
       "name": "Brock Bowers",
-      "share": 0.17073758294232946
+      "share": 0.18202024724292376
      },
      {
       "name": "Fernando Mendoza",
-      "share": 0.1079110350491009
+      "share": 0.11896036691035755
      }
     ]
    },
+   "excluded": [
+    {
+     "team": "CLE",
+     "player": "Zaire Mitchell-Paden",
+     "pos": "TE",
+     "reason": "not on CLE depth chart at TE; roster: practice squad (P01)"
+    },
+    {
+     "team": "CLE",
+     "player": "Raheim Sanders",
+     "pos": "RB",
+     "reason": "injury report: Injured Reserve; depth chart RB4 (top 3 only)"
+    },
+    {
+     "team": "CLE",
+     "player": "Isaiah Bond",
+     "pos": "WR",
+     "reason": "depth chart WR6 (top 5 only)"
+    },
+    {
+     "team": "CLE",
+     "player": "Michael Burton",
+     "pos": "RB",
+     "reason": "depth chart RB5 (top 3 only); roster: reserve list (R01)"
+    },
+    {
+     "team": "LV",
+     "player": "Dont'e Thornton Jr.",
+     "pos": "WR",
+     "reason": "depth chart WR6 (top 5 only)"
+    },
+    {
+     "team": "LV",
+     "player": "Deven Thompkins",
+     "pos": "WR",
+     "reason": "not on LV depth chart at WR; roster: practice squad (P07)"
+    },
+    {
+     "team": "LV",
+     "player": "Malik Benson",
+     "pos": "WR",
+     "reason": "depth chart WR7 (top 5 only)"
+    },
+    {
+     "team": "LV",
+     "player": "Albert Okwuegbunam",
+     "pos": "TE",
+     "reason": "not on LV depth chart at TE; roster: practice squad (P07)"
+    },
+    {
+     "team": "LV",
+     "player": "Connor Heyward",
+     "pos": "RB",
+     "reason": "depth chart RB4 (top 3 only)"
+    },
+    {
+     "team": "LV",
+     "player": "Chris Collier",
+     "pos": "RB",
+     "reason": "not on LV depth chart at RB; roster: cut"
+    }
+   ],
+   "vacancy": [],
    "either": {
     "top_pairs": [
      {
       "pair": "Quinshon Judkins or Ashton Jeanty",
       "teams": "CLE/LV",
-      "p": 0.2110543022361996,
-      "fair": "+374",
-      "take_at": "+469",
+      "p": 0.2281544786990364,
+      "fair": "+338",
+      "take_at": "+426",
       "status": ""
      },
      {
       "pair": "Quinshon Judkins or Harold Fannin Jr.",
       "teams": "CLE",
-      "p": 0.19585437644301312,
-      "fair": "+411",
-      "take_at": "+513",
+      "p": 0.21138765504744716,
+      "fair": "+373",
+      "take_at": "+468",
       "status": ""
      },
      {
       "pair": "Quinshon Judkins or Denzel Boston (Q)",
       "teams": "CLE",
-      "p": 0.19324768108963958,
-      "fair": "+417",
-      "take_at": "+521",
+      "p": 0.21044728965323062,
+      "fair": "+375",
+      "take_at": "+470",
       "status": "Q"
      }
     ],
@@ -2043,17 +3250,17 @@
      "CLE": {
       "pair": "Quinshon Judkins or Harold Fannin Jr.",
       "teams": "CLE",
-      "p": 0.19585437644301312,
-      "fair": "+411",
-      "take_at": "+513",
+      "p": 0.21138765504744716,
+      "fair": "+373",
+      "take_at": "+468",
       "status": ""
      },
      "LV": {
       "pair": "Ashton Jeanty or Brock Bowers (Q)",
       "teams": "LV",
-      "p": 0.15548438091024464,
-      "fair": "+543",
-      "take_at": "+672",
+      "p": 0.1646801591021435,
+      "fair": "+507",
+      "take_at": "+629",
       "status": "Q"
      }
     }
@@ -2074,48 +3281,48 @@
      "name": "Bucky Irving",
      "team": "TB",
      "pos": "RB",
-     "share": 0.281025083155679,
-     "p": 0.15730350743834537,
+     "share": 0.2890922700023462,
+     "p": 0.16181910715596295,
      "status": ""
     },
     {
      "name": "Chuba Hubbard",
      "team": "CAR",
      "pos": "RB",
-     "share": 0.26632612146644147,
-     "p": 0.10497846007844922,
+     "share": 0.29268067890665866,
+     "p": 0.11536670453937287,
      "status": ""
     },
     {
      "name": "Emeka Egbuka",
      "team": "TB",
      "pos": "WR",
-     "share": 0.14279733942456482,
-     "p": 0.07993066701417693,
+     "share": 0.1453841233955408,
+     "p": 0.08137861673827469,
      "status": ""
     },
     {
      "name": "Tetairoa McMillan",
      "team": "CAR",
      "pos": "WR",
-     "share": 0.1508298271930987,
-     "p": 0.0594529853303378,
+     "share": 0.16674927563949252,
+     "p": 0.0657279957348702,
      "status": "Questionable"
     },
     {
      "name": "Chris Godwin Jr.",
      "team": "TB",
      "pos": "WR",
-     "share": 0.10368336872093828,
-     "p": 0.05803666128191031,
+     "share": 0.10324254780297237,
+     "p": 0.057789912216775034,
      "status": ""
     },
     {
      "name": "Kenny Gainwell",
      "team": "TB",
      "pos": "RB",
-     "share": 0.10040980214410261,
-     "p": 0.056204285685444694,
+     "share": 0.1003954240150596,
+     "p": 0.05619623754218478,
      "status": ""
     }
    ],
@@ -2123,56 +3330,107 @@
     "TB": [
      {
       "name": "Bucky Irving",
-      "share": 0.281025083155679
+      "share": 0.2890922700023462
      },
      {
       "name": "Emeka Egbuka",
-      "share": 0.14279733942456482
+      "share": 0.1453841233955408
      },
      {
       "name": "Chris Godwin Jr.",
-      "share": 0.10368336872093828
+      "share": 0.10324254780297237
      }
     ],
     "CAR": [
      {
       "name": "Chuba Hubbard",
-      "share": 0.26632612146644147
+      "share": 0.29268067890665866
      },
      {
       "name": "Tetairoa McMillan",
-      "share": 0.1508298271930987
+      "share": 0.16674927563949252
      },
      {
       "name": "Jalen Coker",
-      "share": 0.09944279473439512
+      "share": 0.10376901492767725
      }
     ]
    },
+   "excluded": [
+    {
+     "team": "TB",
+     "player": "Jalen McMillan",
+     "pos": "WR",
+     "reason": "injury report: Injured Reserve; depth chart WR6 (top 5 only)"
+    },
+    {
+     "team": "TB",
+     "player": "Ko Kieft",
+     "pos": "TE",
+     "reason": "depth chart TE4 (top 3 only)"
+    },
+    {
+     "team": "TB",
+     "player": "David Sills",
+     "pos": "WR",
+     "reason": "not on TB depth chart at WR; roster: practice squad (P07)"
+    },
+    {
+     "team": "CAR",
+     "player": "David Moore",
+     "pos": "WR",
+     "reason": "not on CAR depth chart at WR; roster: practice squad (P07)"
+    },
+    {
+     "team": "CAR",
+     "player": "Ja'Seem Reed",
+     "pos": "WR",
+     "reason": "not on CAR depth chart at WR; roster: practice squad (P01)"
+    },
+    {
+     "team": "CAR",
+     "player": "AJ Dillon",
+     "pos": "RB",
+     "reason": "depth chart RB4 (top 3 only)"
+    },
+    {
+     "team": "CAR",
+     "player": "Ja'Tavion Sanders",
+     "pos": "TE",
+     "reason": "depth chart TE5 (top 3 only)"
+    },
+    {
+     "team": "CAR",
+     "player": "Jonathon Brooks",
+     "pos": "RB",
+     "reason": "injury report: Injured Reserve; depth chart RB5 (top 3 only)"
+    }
+   ],
+   "vacancy": [],
    "either": {
     "top_pairs": [
      {
       "pair": "Bucky Irving or Chuba Hubbard",
       "teams": "TB/CAR",
-      "p": 0.26228196751679456,
-      "fair": "+281",
-      "take_at": "+358",
+      "p": 0.27718581169533585,
+      "fair": "+261",
+      "take_at": "+333",
       "status": ""
      },
      {
       "pair": "Bucky Irving or Emeka Egbuka",
       "teams": "TB",
-      "p": 0.23723417445252232,
-      "fair": "+322",
-      "take_at": "+406",
+      "p": 0.24319772389423766,
+      "fair": "+311",
+      "take_at": "+393",
       "status": ""
      },
      {
       "pair": "Bucky Irving or Tetairoa McMillan (Q)",
       "teams": "TB/CAR",
-      "p": 0.21675649276868317,
-      "fair": "+361",
-      "take_at": "+454",
+      "p": 0.22754710289083316,
+      "fair": "+339",
+      "take_at": "+427",
       "status": "Q"
      }
     ],
@@ -2180,17 +3438,17 @@
      "TB": {
       "pair": "Bucky Irving or Emeka Egbuka",
       "teams": "TB",
-      "p": 0.23723417445252232,
-      "fair": "+322",
-      "take_at": "+406",
+      "p": 0.24319772389423766,
+      "fair": "+311",
+      "take_at": "+393",
       "status": ""
      },
      "CAR": {
       "pair": "Chuba Hubbard or Tetairoa McMillan (Q)",
       "teams": "CAR",
-      "p": 0.164431445408787,
-      "fair": "+508",
-      "take_at": "+630",
+      "p": 0.18109470027424307,
+      "fair": "+452",
+      "take_at": "+563",
       "status": "Q"
      }
     }

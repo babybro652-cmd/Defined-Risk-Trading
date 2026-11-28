@@ -2,7 +2,8 @@
 """Live first TD picks for one week, from the chain model (first_td_model.py).
 
 Inputs: data/ftd_*.csv (all games so far), raw/games.csv (schedule + spread/total), raw/roster_<season>.csv (latest week),
-raw/depth_<season>.csv (latest depth chart), ESPN injuries feed (live). Refresh raw first:
+raw/depth_<season>.csv (fallback depth chart), ESPN injuries feed, live ESPN depth charts and game-day rosters
+(availability.py, backup fix 11/28/26). Exclusions: out/first_td_status_wk<N>.csv. Refresh raw first:
   python3 analysis/nfl/first_td_data.py --download --seasons 2024 2025 2026
 Outputs: out/first_td_wk<N>.csv, out/first_td_wk<N>.json, out/charts/first_td_wk<N>.png,
   either-player pairs (11/27/26): out/first_td_either_wk<N>.csv, out/charts/first_td_either_wk<N>.png (also 'either' in the json)
@@ -16,6 +17,7 @@ import numpy as np
 HERE = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, HERE)
 import first_td_model as m  # noqa
+import availability as av  # noqa
 
 RAW, OUT = m.RAW, m.OUT
 BAD = ('Out', 'Injured Reserve', 'Doubtful', 'Suspended', 'Suspension', 'Physically Unable to Perform', 'PUP', 'IR', 'Reserve')
@@ -74,62 +76,115 @@ def injuries(e2g):
     return {e2g[k]: v for k, v in inj.items() if k in e2g}, ts
 
 
-def run(season, week, extra_out=(), extra_q=()):
+def espn_events(season, week):
+    """{(away, home): (event_id, {abbr: team_id})} from the ESPN scoreboard; {} if it fails."""
+    try:
+        import build_tracker as bt
+        sb = bt.scoreboard(season, week)
+    except Exception as e:  # noqa
+        print('ESPN scoreboard failed:', e, file=sys.stderr)
+        return {}
+    out = {}
+    for e in sb.get('events', []):
+        c = e['competitions'][0]
+        side = {x['homeAway']: x['team'] for x in c['competitors']}
+        fix = lambda a: {'WSH': 'WAS', 'LAR': 'LA'}.get(a, a)
+        out[(fix(side['away']['abbreviation']), fix(side['home']['abbreviation']))] = (
+            e['id'], {fix(x['team']['abbreviation']): x['team']['id'] for x in c['competitors']})
+    return out
+
+
+def run(season, week, extra_out=(), extra_q=(), use_depth=True, use_inactives=True):
     G, dg, pgm = m.load_tables()
     preds, st, wd, wp, drows, prows = m.walk(G, dg, pgm, eval_from=(9999, 0))
     wd = m.ridge_logit(np.array([r[1] for r in drows]), np.array([r[2] for r in drows], float), lam=2.0)
     wp = m.clogit_fit([(r[1], r[2]) for r in prows], lam=1.0)
     games = schedule(season, week)
     latest, last_wk, e2g = roster_now(season)
-    dep, e2g2 = depth_now(season)
+    dep_nv, e2g2 = depth_now(season)
     e2g.update(e2g2)
+    g2e = {g: e for e, g in e2g.items()}
     inj, ts = injuries(e2g)
-    res = []
+    ev = espn_events(season, week)
+    tids = {}
+    for _, (eid, tm) in ev.items():
+        tids.update(tm)
+    # depth chart: live ESPN (backup fix 11/28/26); nflverse daily file as fallback
+    dep_live = {}
+    if use_depth:
+        for t, d in av.fetch_depth({t: tids[t] for g in games for t in (g['home'], g['away']) if t in tids}, season).items():
+            dep_live[t] = {e2g[e]: v for e, v in d.items() if e in e2g}
+    dep_rank = av.depth_from_nflverse(*_nv_depth_rows(season))
+    susp = av.load_suspensions(season, week)
+    res, excl, notes = [], [], []
     for g in games:
-        out = dict(game=g, teams={})
+        out = dict(game=g, teams={}, excluded=[])
         fe, cand = {}, {}
+        eid, _ = ev.get((g['away'], g['home']), (None, {}))
         for t, o, qb in ((g['home'], g['away'], g['home_qb']), (g['away'], g['home'], g['away_qb'])):
             fe[t] = st.team_feats(t, o, m.implied(g, t))
+            src = 'ESPN live' if t in dep_live else 'nflverse file'
+            dmap = dep_live.get(t) or dep_rank.get(t, {})
+            depth_loaded = use_depth and bool(dmap)
+            groster = av.fetch_game_roster(eid, tids[t]) if (use_inactives and eid and t in tids) else None
             act, status = [], {}
-            pool = {gid for gid, r in latest.items() if r['team'] == t and r['status'] == 'ACT'} | set(dep.get(t, {}))
+            pool = {gid for gid, r in latest.items() if r['team'] == t} | set(dmap) | set(dep_nv.get(t, {}))
             for gid in pool:
                 r = latest.get(gid)
-                pos = m.SKILL and (r['position'] if r else dep[t][gid][0])
+                pos = r['position'] if r else (dmap.get(gid) or dep_nv.get(t, {}).get(gid))[0]
                 pos = 'RB' if pos in ('FB', 'HB') else pos
                 if pos not in m.SKILL:
-                    continue
-                if r and r['team'] != t:
                     continue
                 name = (r['full_name'] if r else st.pinfo.get(gid, {}).get('name', gid))
                 i = inj.get(gid)
                 stt = i['status'] if i and i['status'] != 'Active' else ''
-                if name in extra_out or any(b.lower() in stt.lower() for b in BAD):
-                    continue
                 if name in extra_q:
                     stt = 'Questionable'
-                # keep players with a role: history with real snaps, or on the depth chart top 3 (top 1 QB)
-                d = dep.get(t, {}).get(gid)
-                hist_ok = st.p[gid]['gp'] >= 1 and st.p[gid]['snap'] / max(st.p[gid]['gp'], 1) >= 0.08
-                dep_ok = d is not None and d[1] <= (1 if pos == 'QB' else 3)
-                if not (hist_ok or dep_ok):
+                if r and r.get('status_description_abbr') == 'R48' and not stt:
+                    stt = 'Questionable (IR return window)'
+                d = dmap.get(gid)
+                hist_ok = st.p[gid]['gp'] >= 1 and st.p[gid]['snap'] / max(st.p[gid]['gp'], 1) >= 0.08 and st.pinfo.get(gid, {}).get('team') == t
+                dep_ok = d is not None and d[1] <= (1 if pos == 'QB' else av.TOPN.get(pos, 3))
+                if not (hist_ok or dep_ok or name in extra_out):
                     continue
-                if pos == 'QB' and not dep_ok and gid != qb:
+                if pos == 'QB':
+                    if (stt and not stt.startswith(av.OK_INJ) and any(b.lower() in stt.lower() for b in av.BAD_INJ)) or name in extra_out:
+                        continue
+                    if not dep_ok and gid != qb:
+                        continue
+                    act.append((gid, pos)); status[gid] = (stt, name)
+                    continue
+                why = av.check(name, t, pos, stt, roster=r, depth=d, depth_loaded=depth_loaded and (t not in dep_live or gid in g2e), game_roster=groster,
+                               espn_id=g2e.get(gid), suspensions=susp)
+                if name in extra_out:
+                    why.append('manual --out')
+                if why:
+                    if hist_ok or name in extra_out:   # log only players who had a role
+                        snap = st.p[gid]['snap'] / max(st.p[gid]['gp'], 1)
+                        soft = len(why) == 1 and why[0].startswith(('depth chart', 'not on ', 'roster: reserve'))
+                        x = dict(game=f"{g['away']} @ {g['home']}", team=t, player=name, pos=pos, reason='; '.join(why),
+                                 depth_source=src if depth_loaded else 'none', game_roster='posted' if groster else 'not posted',
+                                 snap=snap, check='yes' if soft and snap >= 0.30 else '')
+                        excl.append(x); out['excluded'].append(x)
                     continue
                 act.append((gid, pos)); status[gid] = (stt, name)
-            starter = qb if qb in status else next((gid for gid, (p, rk) in dep.get(t, {}).items() if p == 'QB' and rk == 1 and gid in status), None)
+            starter = qb if qb in status else next((gid for gid, (p, rk) in dmap.items() if p == 'QB' and rk == 1 and gid in status), None)
             # lead RB out: the top active RB on the depth chart inherits most of his role (11/21/26)
             reg = st.regulars(t)
             rbs_reg = [pid for pid, pos in reg.items() if pos == 'RB']
             top_reg = max(rbs_reg, key=lambda pid: st.player_feats(pid, 'RB')['snap'], default=None)
             lead_rb = None
             if top_reg and top_reg not in status:
-                ranked = sorted((rk, gid) for gid, (p, rk) in dep.get(t, {}).items() if p == 'RB' and gid in status)
+                ranked = sorted((rk, gid) for gid, (p, rk) in dmap.items() if p == 'RB' and gid in status)
                 lead_rb = ranked[0][1] if ranked else None
-            rows = m.candidates(st, t, act, starter, lead_rb=lead_rb)
-            if lead_rb:
-                print(f'{t}: lead RB out, {status[lead_rb][1]} takes the lead role', file=sys.stderr)
+            drank = {gid: rk for gid, (p, rk) in dmap.items()} if depth_loaded else None
+            vlog = []
+            rows = m.candidates(st, t, act, starter, lead_rb=lead_rb, depth=drank, log=vlog)
+            notes += vlog
+            for s in vlog:
+                print(s, file=sys.stderr)
             sh, oth = m.clogit_probs(wp, m.pmat(rows)) if rows else ([], 1)
-            out['teams'][t] = dict(rows=rows, share=list(sh), other=float(oth), status=status, starter=starter)
+            out['teams'][t] = dict(rows=rows, share=list(sh), other=float(oth), status=status, starter=starter, vacancy=vlog)
         pa = min(0.85, max(0.15, 0.5 + st.recv_tend(g['home']) - st.recv_tend(g['away'])))
         ch = m.chain(wd, fe[g['home']], fe[g['away']], st.lg_non(), pa, st.pace(g['home']) + st.pace(g['away']))
         out.update(p_home=ch[0], p_away=ch[1], p_non=ch[2], p_none=ch[3], p_home_recv=pa)
@@ -142,8 +197,28 @@ def run(season, week, extra_out=(), extra_q=()):
         players.sort(key=lambda x: -x['p'])
         out['players'] = players
         res.append(out)
+    write_status(week, excl, notes, ts)
     write(season, week, res, ts)
     return res
+
+
+def _nv_depth_rows(season):
+    rows = list(csv.DictReader(open(os.path.join(RAW, f'depth_{season}.csv'))))
+    return rows, (max(r['dt'][:10] for r in rows) if rows else '')
+
+
+def write_status(week, excl, notes, ts):
+    """Exclusion log (backup fix 11/28/26): every player with a role who was dropped, and why."""
+    p = os.path.join(OUT, f'first_td_status_wk{week}.csv')
+    with open(p, 'w', newline='') as f:
+        w = csv.writer(f)
+        w.writerow(['Game', 'Team', 'Player', 'Pos', 'Prior snap share', 'Reason', 'Hand check', 'Depth source', 'Game-day roster', 'Built'])
+        built = datetime.now().isoformat(timespec='minutes')
+        for x in sorted(excl, key=lambda x: (x['game'], x['team'], -x['snap'])):
+            w.writerow([x['game'], x['team'], x['player'], x['pos'], f"{x['snap'] * 100:.0f}%", x['reason'], x['check'], x['depth_source'], x['game_roster'], built])
+        for n in notes:
+            w.writerow(['', n.split(':')[0], '', '', '', 'VACANCY ' + n, '', '', '', built])
+    print(f'{len(excl)} players excluded -> {p}', file=sys.stderr)
 
 
 def short(stt):
@@ -169,7 +244,8 @@ def write(season, week, res, ts):
                  top=[{k: x[k] for k in ('name', 'team', 'pos', 'share', 'p', 'status')} for x in o['players'][:6]],
                  team_top={t: sorted([dict(name=o['teams'][t]['status'][r['pid']][1], share=float(s)) for r, s in
                                       zip(o['teams'][t]['rows'], o['teams'][t]['share'])], key=lambda x: -x['share'])[:3]
-                           for t in o['teams']}) for o in res]
+                           for t in o['teams']}, excluded=[{k: x[k] for k in ('team', 'player', 'pos', 'reason')} for x in o.get('excluded', [])],
+                 vacancy=[v for t in o['teams'] for v in o['teams'][t].get('vacancy', [])]) for o in res]
     for o, sl in zip(res, slim):
         sl['either'] = either_summary(o)
     write_either(week, res)
@@ -288,7 +364,7 @@ def chart(week, res, ts):
     fig, ax = plt.subplots(figsize=(17, 1.0 * len(rows) + 1.6))
     ax.axis('off')
     ax.set_title(f"NFL First TD, Week {week} (our chain model)\nTop 3 per game: chance to score the game's first TD, fair price / take-at (fair decimal x1.2). "
-                 f"(Q) = questionable; Out / IR removed", fontsize=15, fontweight='bold', pad=12)
+                 f"(Q) = questionable; Out / IR / suspended / inactive / off the depth-chart top N removed", fontsize=15, fontweight='bold', pad=12)
     tb = ax.table(cellText=rows, colLabels=['Game', 'Team first TD', '#1', '#2', '#3'], colWidths=[0.13, 0.12, 0.25, 0.25, 0.25],
                   loc='upper center', cellLoc='left')
     tb.auto_set_font_size(False); tb.set_fontsize(10.5)
@@ -307,7 +383,7 @@ def chart(week, res, ts):
     plt.figtext(0.5, 0.02, "Green = player on the team favored to score first. Team % = chance that team's offense scores the game's first TD "
                 "(kickoff 50/50 + receive habit, opening-drive and per-drive TD rates, implied totals).\n'No off. TD' = defense / "
                 "special teams TD first or no TD: every player bet loses.\nFirst TD is mostly noise: small stakes, bet only at take-at or longer. "
-                f"Injuries from ESPN feed {ts[:16]}. Rerun after inactives (90 min before kickoff).", ha='center', fontsize=10)
+                f"Injuries from ESPN feed {ts[:16]}. Rerun after inactives (about 90 min before kickoff; Sunday 11:30 AM ET for 1 PM games).", ha='center', fontsize=10)
     p = os.path.join(OUT, 'charts', f'first_td_wk{week}.png')
     plt.savefig(p, dpi=110, bbox_inches='tight')
     plt.close(fig)
@@ -321,5 +397,7 @@ if __name__ == '__main__':
     ap.add_argument('--season', type=int, default=2026)
     ap.add_argument('--out', nargs='*', default=[], help='extra player names to treat as Out')
     ap.add_argument('--q', nargs='*', default=[], help='extra player names to mark Questionable')
+    ap.add_argument('--no-depth', action='store_true', help='skip the depth-chart top-N rule (if ESPN depth charts look wrong)')
+    ap.add_argument('--no-inactives', action='store_true', help='skip the ESPN game-day roster check')
     a = ap.parse_args()
-    run(a.season, a.week, set(a.out), set(a.q))
+    run(a.season, a.week, set(a.out), set(a.q), use_depth=not a.no_depth, use_inactives=not a.no_inactives)

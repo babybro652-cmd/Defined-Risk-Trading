@@ -154,7 +154,9 @@ python3 analysis/nfl/first_td_week.py --week 11 --out "Name One" --q "Name Two" 
 python3 analysis/nfl/first_td_model.py backtest           # out/first_td_backtest.txt/.json
 ```
 
-Rerun `first_td_week.py` Thursday (TNF), Saturday after final injury reports, and Sunday after inactives.
+Rerun `first_td_week.py` Thursday (TNF), Saturday after final injury reports, and Sunday after inactives (11:30 AM ET for
+1 PM games, about 90 min before each later kickoff). The Sunday run is the one that sees the game-day inactives (rule 2 in
+"Backup fix" below); the Saturday run cannot.
 
 Model (`first_td_model.py`; every input uses only earlier games):
 1. Opening kickoff: 50/50 coin toss plus each team's shrunk receive habit (teams that take the ball). Receiver scored the first
@@ -271,3 +273,66 @@ our chance x price >= 1.2 (take-at) found 15 bets, all in 2024 (+6.8 units); 0 i
 price. Value only shows if FanDuel prices an outcome long (often FG first). Price check: BET only at take-at or longer, small stakes.
 
 Chart: per game, away/home TD and FG chances with fair and take-at, and "vs spread-only" (our chance / B2). Green = 8%+ above B2.
+
+## Backup fix (11/28/26): player status + vacancy shift for every skill position
+
+Why: on 11/27 two players slipped through and had to be removed by hand: J.K. Dobbins (suspended) and RJ Harvey (healthy
+scratch, RB5 on the depth chart). And only RBs got the backup shift: an out WR's or TE's targets and red-zone share went to no one.
+
+### Player status (`availability.py`, used by `first_td_week.py` and the Week Shortlist in `build_tracker.py`)
+A RB / WR / TE is dropped before a game is scored if any of these is true. Every drop is logged with its reasons in
+`out/first_td_status_wk<N>.csv` (first TD) and `out/anytime_status_wk<N>.csv` (anytime TD):
+1. ESPN injury status Out, Doubtful, IR, PUP, Suspended / Suspension, Reserve, NFI.
+2. Official inactives: the ESPN game-day roster (core API competitor roster, posted about 90 min before kickoff) lists him as
+   did-not-play, or the roster is posted and he is not on it. Before it posts the CSV says "not posted".
+3. Not in the top N at his position on the team's live ESPN depth chart: RB 3, WR 5, TE 3 (WR order = every WR1 slot, then the
+   WR2s, ...). Catches healthy scratches and demotions. Falls back to the nflverse depth file if ESPN fails; skipped for a team
+   with no chart (`--no-depth` turns it off).
+4. nflverse weekly roster status: suspended (R33), reserve / IR (RES), practice squad (DEV unless he is on the depth-chart top N
+   or the game-day active list), cut / released / retired / traded / inactive. RES with code R48 (IR return window) is kept and
+   marked Questionable. A Questionable / Probable tag or the game-day active list overrides a stale RES. Nothing overrides a suspension.
+5. `data/suspensions.csv` (name, team, season, first_week, last_week, note): add a row when a suspension is announced.
+
+QBs keep the old rule (expected starter only). "Hand check" = yes in the first TD status CSV marks a drop with a single soft
+reason (depth chart only, or roster RES only) for a player with 30%+ prior snaps: look at those before betting the team.
+
+### Vacancy shift (`first_td_model.candidates`, `td_model.vacancy_shift`)
+- RB: the next RB on the depth chart gets 85% of the vacated RB usage (or keeps his own if higher); the rest is pro rata among the
+  other RBs. Backtest proxy for "next RB" = top prior-snap active RB.
+- WR out: 75% of his shares stay with WRs, 25% go to TEs. TE out: 50% TE, 50% WR. Inside a position, 25% goes to the player who
+  moves into the starting group (WR3 when a top-3 WR sits, TE2 when the TE1 sits), the rest pro rata by current share (cap 3x).
+- First TD: shifts team TD, RZ, inside-5, first-2-drives, 1st-quarter and team-first-TD shares; next-up snap share = 85% of vacated.
+- Anytime TD: shifts goal-line, RZ and RZ-target shares, then shrunk hit rate x (1 + 0.25 x usage gain). Shifted values are capped at
+  the 99th percentile for the position in 2025-26 (RB GL 48%, RZ 49%, hit 66%; WR 21 / 19 / 51%; TE 16 / 19 / 49%), so two RBs out
+  cannot push a backup past any workload the model was fit on.
+- Weights: the WR / TE split comes from where vacated targets went in 2025-26 (WR out: 76% to WR; TE out: 36-45% to TE, the
+  rest mostly WR), then checked on the backtest grid (WR 40-100%, TE 35-75%, next-up 0-50%, snap on/off). 75 / 50 / 25% kept
+  calibration best; the log-loss-best 40-60% WR splits made calibration slightly worse.
+- Also flows into the either-player pairs (pA + pB) and the team first TD picks. `first_score_model.py` is team-level only (no
+  player shares), so it is unchanged. `VAC_MODE = 'old'` in either file brings back the 11/21 rules.
+
+### Backtest, old vs new (same walk-forward, 2025 Weeks 1-18 + 2026 Weeks 1-11)
+| First TD (435 games) | Old (11/21) | New |
+|---|---|---|
+| Player log loss | 0.15176 | **0.15146** |
+| Brier | 0.036754 | **0.036731** |
+| Calibration error (report buckets) | 0.31 pts | **0.25 pts** |
+| Top-1 / top-2 / top-3 has the scorer | 67 / 117 / 157 (36.1%) | 66 / 121 / 154 (35.4%) |
+| 329 games with a starting RB / WR / TE out: log loss, top-3 | 0.15317, 114 | **0.15278**, 112 |
+| Either top-2 combo hit | 26.9% | 27.8% |
+
+| Anytime TD (5,614 player-games, 2025 Wk 7-18 + 2026 Wk 2-11) | Old | New |
+|---|---|---|
+| Log loss | 0.49783 | **0.49717** |
+| Brier | 0.16086 | **0.16069** |
+| Calibration error | 1.74 pts | **1.51 pts** |
+
+Read: small, consistent gains in log loss, Brier and calibration; the top-3 hit count moved by 3 games out of 435 (noise level).
+The 15-20% first TD bucket now runs hotter than predicted (16.8% vs 20.4%), so top picks are slightly conservative.
+
+### Regression checks (rerun with no hand edits, data through Week 11)
+- DEN @ PIT 11/27: Dobbins dropped (injury report Suspension, roster R33, suspension list); Harvey dropped (depth chart RB5, roster
+  reserve R01; the game-day roster also left him off). Coleman: first TD 14.1% (hand fix was 13.6%), anytime TD 60.2% (was 49.4%
+  before the fix, 55% by hand; 69% without the 99th-percentile cap).
+- PHI @ DAL 11/26: Ferguson out now splits his TE shares: Spann-Ford is the TE next up (4.4% first TD), Lamb 11.5% to 12.0% and
+  Pickens 10.8% to 11.3%; before, all of it went to the TEs.

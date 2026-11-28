@@ -119,9 +119,22 @@ analysis/first_events/log.csv now has tip_jumpers, tip_winner, tip_winner_scored
 ## NFL Either Player - First Touchdown Scorer (Tim, 11/27)
 - FanDuel pair market ("A or B"). P = pA + pB from the first TD chain model; fair = 1/P; take-at = fair decimal x1.2.
 - `analysis/nfl/first_td_week.py` writes `out/first_td_either_wk<N>.csv` and `out/charts/first_td_either_wk<N>.png`: top-2 combo,
-  pairs #2-#3, best same-team pair per team. Include it in every NFL first TD run (Thu, Sat recheck, Sun after inactives).
+  pairs #2-#3, best same-team pair per team. Include it in every NFL first TD run (Thu, Sat recheck, Sun 11:30 AM after inactives).
 - Backtest: top-2 combo hits about 27% (fair about +270). FanDuel often prices pairs short (Tim's 11/26 legs were all below fair).
 - Straights only at take-at or longer, $0.20 to $0.50. Parlays of these legs are tracking only unless Tim says otherwise.
+
+## NFL player status + backup shift (Tim approved 11/27, built 11/28; README "Backup fix")
+- `first_td_week.py` and the Week Shortlist (`build_tracker.py`) now drop a RB/WR/TE on their own if: injury status Out /
+  Doubtful / IR / PUP / Suspended / Reserve; on the ESPN game-day inactives list (posted about 90 min before kickoff); outside the
+  live ESPN depth chart top N (RB 3, WR 5, TE 3); roster status suspended / reserve / practice squad / cut; or on
+  `analysis/nfl/data/suspensions.csv` (add a row when a suspension is announced). No more hand `--out` edits for these.
+- Read the exclusion logs before reporting: `out/first_td_status_wk<N>.csv` (column "Hand check" = yes: one soft reason for a
+  30%+ snap player, verify before betting his team) and `out/anytime_status_wk<N>.csv`.
+- Vacated usage now moves for every skill position: RB next-up 85%; WR out 75% WR / 25% TE; TE out 50% TE / 50% WR; 25% of the
+  same-position part to the player entering the starting group. The anytime TD model uses the same shift (capped at real workloads).
+- SUNDAY INACTIVES MATTER: the Saturday first TD routine must run `first_td_week.py --week N` again on Sunday at 11:30 AM ET (1 PM
+  games) and about 90 min before the 4 PM and night games, plus the `build_tracker.py --injuries-only` Week Shortlist. Only those
+  runs see the game-day inactives. Bet only off the Sunday run; say in the report whether the game-day roster was "posted".
 
 ## NFL TD model check (11/8, Weeks 5-9 Bet Tracker rows)
 Anytime TD singles 18-22 (placed 8-6). RB/QB 16-10; WR/TE 2-12. Favorites (minus odds) 9-4; plus odds 2-8. Flat $1 on the 23 rows with odds: -$4.08. First TD 1-3; 2+ TDs 0-1; long TD parlays 0-6.

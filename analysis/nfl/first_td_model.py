@@ -309,11 +309,61 @@ class State:
             self.team_recent[t].append(recent.get(t, {}))
 
 
-def candidates(st, team, active, starter_qb=None, lead_rb=None):
-    """active: list of (pid, pos). Returns rows with shares adjusted for out regulars, by position.
+# Vacancy redistribution (11/28/26, Tim's backup fix). When a regular is out, his usage shares go to active teammates.
+# RB: the next RB on the depth chart gets 85% of the vacated RB usage (or keeps his own if higher); the rest is pro rata.
+# WR/TE: part of the vacated share stays at the same position (WR_SAME / TE_SAME), the rest goes to the other receiving
+# position. Inside a position, NEXT_UP of it goes to the player who moves into the starting group (depth chart order:
+# WR3 when a top-3 WR sits, TE2 when the TE1 sits), the rest pro rata by current share. Weights from the 2025-26 backtest
+# grid (see README "Backup fix 11/28/26"). VAC_MODE 'old' = the 11/21 rules (same position pro rata, cap 2x, RB lead live only).
+VAC_MODE = 'new'
+VAC = dict(WR_SAME=0.75, TE_SAME=0.50, NEXT_UP=0.25, RB_LEAD=0.85, SNAP_NEXT=0.85, CAP=3.0, PROXY_DEPTH=True)
+STARTERS = {'RB': 1, 'WR': 3, 'TE': 1}
+SHARE_KEYS = ('l_td', 'l_rz', 'l_gl', 'l_open', 'l_q1', 'l_tfirst')
+
+
+def depth_order(st, pos, active_pids, out_pids, depth=None):
+    """Order of a position group (active + out regulars), best first. Live: depth chart rank (pid -> rank), players
+    missing from it go last by snap share. Backtest: prior snap share (proxy for the depth chart)."""
+    allp = list(active_pids) + list(out_pids)
+    snap = {p: st.player_feats(p, pos)['snap'] for p in allp}
+    if depth:
+        return sorted(allp, key=lambda p: (depth.get(p, 99), -snap[p]))
+    return sorted(allp, key=lambda p: -snap[p])
+
+
+def next_up(order, out_pids, active_pids, pos):
+    """The active player who moves into the starting group when a starter sits (None if no starter is out)."""
+    k = STARTERS.get(pos, 1)
+    if not any(p in out_pids for p in order[:k]):
+        return None
+    act = [p for p in order if p in active_pids]
+    return act[k - 1] if len(act) >= k else (act[-1] if act else None)
+
+
+def _spread(grp, key, amt, orig, cap, nxt=None, nx=0.0):
+    """Add amt of a share to grp: nx of it to nxt, the rest pro rata by current value, capped at cap x original."""
+    if amt <= 0 or not grp:
+        return
+    if nxt is not None and nx > 0:
+        nxt[key] += nx * amt; amt *= (1 - nx)
+    s = sum(r[key] for r in grp)
+    if s <= 0:
+        for r in grp:
+            r[key] += amt / len(grp)
+        return
+    base = {id(r): r[key] for r in grp}
+    for r in grp:
+        r[key] = min(base[id(r)] + amt * base[id(r)] / s, max(cap * orig[id(r)], base[id(r)]))
+
+
+def candidates(st, team, active, starter_qb=None, lead_rb=None, depth=None, mode=None, vac=None, log=None):
+    """active: list of (pid, pos). Returns rows with shares adjusted for out regulars.
     starter_qb: the expected starting QB (live); in the backtest the QB with the most snaps that game.
-    lead_rb: live only (11/21/26). The next-up RB on the depth chart when the lead RB is out: his usage rises to 85% of
-    the vacated RB usage (or stays at his own if higher), the rest is split pro rata. None keeps the old split (backtest)."""
+    lead_rb: live, the next-up RB on the depth chart when the lead RB is out (11/21/26).
+    depth: live, {pid: rank within position} from the ESPN depth chart; None in the backtest (snap share proxy).
+    mode: 'new' (default, VAC_MODE) or 'old' (11/21 rules) for the backtest comparison. log: list to append vacancy notes."""
+    mode = mode or VAC_MODE
+    V = dict(VAC, **(vac or {}))
     rows = []
     for pid, pos in active:
         if pos not in SKILL:
@@ -323,14 +373,80 @@ def candidates(st, team, active, starter_qb=None, lead_rb=None):
     act = {r['pid'] for r in rows}
     reg = st.regulars(team)
     out = [(pid, pos) for pid, pos in reg.items() if pid not in act and pos in SKILL]
-    for key in ('l_td', 'l_rz', 'l_gl', 'l_open', 'l_q1', 'l_tfirst'):
+    if mode == 'old':
+        _old_shift(st, rows, out, starter_qb, lead_rb)
+    else:
+        _new_shift(st, rows, out, starter_qb, lead_rb, depth, V, log, team)
+    for r in rows:
+        for key in SHARE_KEYS:
+            r[key] = math.log(r[key] + 0.01)
+        r['l_snap'] = math.log(r['snap'] + 0.05)
+        r['QB'] = float(r['pos'] == 'QB'); r['WR'] = float(r['pos'] == 'WR'); r['TE'] = float(r['pos'] == 'TE')
+    # QB: only the expected starter is a real candidate (backups rarely score); keep top-snap QB
+    qbs = [r for r in rows if r['pos'] == 'QB']
+    if len(qbs) > 1:
+        keep = next((r for r in qbs if r['pid'] == starter_qb), None) or max(qbs, key=lambda r: r['snap'])
+        rows = [r for r in rows if r['pos'] != 'QB' or r is keep]
+    return rows
+
+
+def _new_shift(st, rows, out, starter_qb, lead_rb, depth, V, log, team):
+    byp = {p: [r for r in rows if r['pos'] == p] for p in SKILL}
+    orig = {id(r): dict((k, r[k]) for k in SHARE_KEYS) for r in rows}
+    outp = {p: [pid for pid, pp in out if pp == p] for p in SKILL}
+    nxt = {}
+    for p in ('RB', 'WR', 'TE'):
+        if not outp[p] or not byp[p]:
+            continue
+        actp = [r['pid'] for r in byp[p]]
+        order = depth_order(st, p, actp, outp[p], depth if depth else (None if V['PROXY_DEPTH'] else {}))
+        n = lead_rb if (p == 'RB' and lead_rb in actp) else next_up(order, set(outp[p]), set(actp), p)
+        if n is not None and (depth or V['PROXY_DEPTH'] or (p == 'RB' and lead_rb)):
+            nxt[p] = next(r for r in byp[p] if r['pid'] == n)
+    route = {'RB': {'RB': 1.0}, 'WR': {'WR': V['WR_SAME'], 'TE': 1 - V['WR_SAME']}, 'TE': {'TE': V['TE_SAME'], 'WR': 1 - V['TE_SAME']}}
+    for key in SHARE_KEYS:
+        vac = {p: sum(st.player_feats(pid, p)[key] for pid in outp[p]) for p in SKILL}
+        if vac['QB'] > 0 and byp['QB']:
+            top = next((r for r in byp['QB'] if r['pid'] == starter_qb), None) or max(byp['QB'], key=lambda r: r['snap'])
+            top[key] += vac['QB']
+        for src in ('RB', 'WR', 'TE'):
+            if vac[src] <= 0:
+                continue
+            dests = {d: w for d, w in route[src].items() if byp[d]}
+            tw = sum(dests.values())
+            for d, w in dests.items():
+                amt = vac[src] * w / tw
+                grp = byp[d]
+                o = {id(r): orig[id(r)][key] for r in grp}
+                if d == src == 'RB' and 'RB' in nxt:
+                    lead = nxt['RB']
+                    add = max(0.0, V['RB_LEAD'] * amt - lead[key])
+                    lead[key] += add
+                    _spread([r for r in grp if r is not lead], key, amt - add, o, V['CAP'])
+                elif d == src and d in nxt:
+                    _spread(grp, key, amt, o, V['CAP'], nxt[d], V['NEXT_UP'])
+                else:
+                    _spread(grp, key, amt, o, V['CAP'])
+    for p, r in nxt.items():
+        vs = sum(st.player_feats(pid, p)['snap'] for pid in outp[p])
+        f = V['RB_LEAD'] if p == 'RB' else V['SNAP_NEXT']
+        if f > 0:
+            r['snap'] = min(0.85, max(r['snap'], f * vs))
+    if log is not None:
+        for p, r in nxt.items():
+            names = ', '.join(st.pinfo.get(pid, {}).get('name', pid) for pid in outp[p])
+            log.append(f"{team}: {p} out ({names}); next up {st.pinfo.get(r['pid'], {}).get('name', r['pid'])}")
+
+
+def _old_shift(st, rows, out, starter_qb, lead_rb):
+    """The 11/21/26 rules, kept for the backtest comparison."""
+    for key in SHARE_KEYS:
         for pos in SKILL:
             grp = [r for r in rows if r['pos'] == pos]
             if not grp:
                 continue
             vac = sum(st.player_feats(pid, pos)[key] for pid, pp in out if pp == pos)
             if pos == 'QB':
-                # a new starting QB takes the whole QB role: give vacated share to the top-snap QB only
                 top = next((r for r in grp if r['pid'] == starter_qb), None) or max(grp, key=lambda r: r['snap'])
                 top[key] += vac
                 continue
@@ -352,17 +468,6 @@ def candidates(st, team, active, starter_qb=None, lead_rb=None):
     if lead is not None:
         vs = sum(st.player_feats(pid, pos)['snap'] for pid, pos in out if pos == 'RB')
         lead['snap'] = min(0.8, max(lead['snap'], 0.85 * vs))
-    for r in rows:
-        for key in ('l_td', 'l_rz', 'l_gl', 'l_open', 'l_q1', 'l_tfirst'):
-            r[key] = math.log(r[key] + 0.01)
-        r['l_snap'] = math.log(r['snap'] + 0.05)
-        r['QB'] = float(r['pos'] == 'QB'); r['WR'] = float(r['pos'] == 'WR'); r['TE'] = float(r['pos'] == 'TE')
-    # QB: only the expected starter is a real candidate (backups rarely score); keep top-snap QB
-    qbs = [r for r in rows if r['pos'] == 'QB']
-    if len(qbs) > 1:
-        keep = next((r for r in qbs if r['pid'] == starter_qb), None) or max(qbs, key=lambda r: r['snap'])
-        rows = [r for r in rows if r['pos'] != 'QB' or r is keep]
-    return rows
 
 
 def pmat(rows):
@@ -406,7 +511,7 @@ def chain(wd, fa, fb, q, pa_recv, n_drives):
 
 
 # ------------------------------------------------------------------ walk-forward engine
-def walk(G, dg, pgm, eval_from=(2025, 1), fit_from=(2024, 4)):
+def walk(G, dg, pgm, eval_from=(2025, 1), fit_from=(2024, 4), mode=None, vac=None):
     """Walk weeks in order. Before each eval week, refit both models on earlier rows. Returns per-game predictions."""
     st = State()
     weeks = sorted({(g['season'], g['week']) for g in G})
@@ -432,7 +537,7 @@ def walk(G, dg, pgm, eval_from=(2025, 1), fit_from=(2024, 4)):
                 act = [(p['pid'], p['pos']) for p in pls if p['team'] == t and (p['snaps'] > 0 or p['car'] + p['tgt'] > 0)]
                 qbs = [p for p in pls if p['team'] == t and p['pos'] == 'QB']
                 sq = max(qbs, key=lambda p: p['snaps'])['pid'] if qbs else None
-                cand[t] = candidates(st, t, act, sq)
+                cand[t] = candidates(st, t, act, sq, mode=mode, vac=vac)
             # training rows from this game (features known before it)
             if wk >= fit_from:
                 for d in dg[g['game_id']]:
@@ -586,6 +691,58 @@ def bucket_table(y, p, edges=(0, .03, .06, .09, .12, .15, .20, 1.01)):
     return out
 
 
+def vacancy_compare(G, dg, pgm, preds_new, res):
+    """Backup fix (11/28/26): old vacancy rules (same position pro rata, cap 2x) vs new (RB next-up 85%, WR/TE routing)."""
+    old = walk(G, dg, pgm, mode='old')[0]
+    # games where a starting RB / WR / TE (prior snap share 50%+, in the last 3 games' regulars) did not play
+    st = State(); aff = set()
+    byw = defaultdict(list)
+    for g in G:
+        byw[(g['season'], g['week'])].append(g)
+    for wk in sorted(byw):
+        for g in byw[wk]:
+            pls = pgm[g['game_id']]
+            for t in (g['home'], g['away']):
+                act = {p['pid'] for p in pls if p['team'] == t and (p['snaps'] > 0 or p['car'] + p['tgt'] > 0)}
+                if any(pid not in act and pos in ('RB', 'WR', 'TE') and st.player_feats(pid, pos)['snap'] >= 0.5
+                       for pid, pos in st.regulars(t).items()):
+                    aff.add(g['game_id'])
+        for g in byw[wk]:
+            st.update(g, dg[g['game_id']], pgm[g['game_id']])
+
+    def sc(preds, only=None):
+        y, p, t3, n = [], [], 0, 0
+        for pr in preds:
+            g = pr['game']
+            if only is not None and g['game_id'] not in only:
+                continue
+            s = g['first_td_pid'] if g['first_td_kind'] in OFF_KINDS else None
+            pl = sorted(pr['players'], key=lambda x: -x['p'])
+            y += [int(x['pid'] == s) for x in pl]; p += [x['p'] for x in pl]
+            t3 += int(s in [x['pid'] for x in pl[:3]]); n += 1
+        y, p = np.array(y, float), np.array(p, float)
+        cb = bucket_table(y, p)
+        ece = sum(b[1] * abs(b[2] - b[3]) for b in cb) / max(sum(b[1] for b in cb), 1)
+        return dict(n=n, ll=ll(y, p), brier=float(np.mean((p - y) ** 2)), top3=t3, calib=cb, ece=ece)
+    L = ['== Backup fix (11/28/26): vacancy rules, old vs new ==',
+         f"New: RB next-up {VAC['RB_LEAD']:.0%} of vacated RB usage (backtest next-up = top prior-snap active RB); WR vacancy "
+         f"{VAC['WR_SAME']:.0%} to WR / {1 - VAC['WR_SAME']:.0%} to TE; TE vacancy {VAC['TE_SAME']:.0%} to TE / {1 - VAC['TE_SAME']:.0%} to WR; "
+         f"{VAC['NEXT_UP']:.0%} of the same-position part to the next-up player, rest pro rata (cap {VAC['CAP']:g}x); next-up snap = {VAC['SNAP_NEXT']:.0%} of vacated."]
+    out = {}
+    for lab, only in (('All games', None), (f'Games with a starting RB/WR/TE out', aff)):
+        a, b = sc(old, only), sc(preds_new, only)
+        out[lab] = dict(old=a, new=b)
+        L.append(f"{lab} (n={b['n']}): player log loss old {a['ll']:.5f} -> new {b['ll']:.5f}; Brier {a['brier']:.6f} -> {b['brier']:.6f}; "
+                 f"top-3 {a['top3']} ({a['top3'] / a['n'] * 100:.1f}%) -> {b['top3']} ({b['top3'] / b['n'] * 100:.1f}%); "
+                 f"calibration error {a['ece'] * 100:.2f} -> {b['ece'] * 100:.2f} pts")
+    a, b = out['All games']['old']['calib'], out['All games']['new']['calib']
+    L.append('Calibration old -> new (pred / actual): ' + '; '.join(
+        f"{x[0]} {x[2] * 100:.1f}/{x[3] * 100:.1f} -> {z[2] * 100:.1f}/{z[3] * 100:.1f}" for x, z in zip(a, b) if x[0] == z[0]))
+    L.append('')
+    res['vacancy'] = out
+    return L
+
+
 def backtest():
     G, dg, pgm = load_tables()
     preds, st, wd, wp, _, _ = walk(G, dg, pgm)
@@ -656,6 +813,7 @@ def backtest():
                     ctop[k] += int(scorer in [pid for _, pid in cl[:k]])
         out['n'] = len(sub)
         out['player_ll'] = ll(yn, pn); out['calib'] = bucket_table(yn, pn); out['top'] = top
+        out['player_brier'] = float(np.mean((np.array(pn) - np.array(yn)) ** 2))
         out['scorer_ll'] = float(np.mean(cat_new))
         if with_crude:
             out['common_n'] = len(yc)
@@ -677,7 +835,7 @@ def backtest():
         L.append(f"Top-1 / top-2 / top-3 per game contains the first TD scorer: "
                  + ' / '.join(f"{ev['top'][k]} ({ev['top'][k] / n * 100:.1f}%)" for k in (1, 2, 3))
                  + (('   old: ' + ' / '.join(f"{ev['ctop'][k]} ({ev['ctop'][k] / n * 100:.1f}%)" for k in (1, 2, 3))) if with_crude else ''))
-        L.append(f"Player log loss (every active skill player): {ev['player_ll']:.4f}; scorer log loss per game: {ev['scorer_ll']:.3f}")
+        L.append(f"Player log loss (every active skill player): {ev['player_ll']:.4f}; Brier {ev['player_brier']:.5f}; scorer log loss per game: {ev['scorer_ll']:.3f}")
         if with_crude:
             L.append(f"Same players, both models (n={ev['common_n']}): log loss chain {ev['common_ll_new']:.4f} vs old {ev['common_ll_crude']:.4f}; "
                      f"Brier {ev['common_brier_new']:.5f} vs {ev['common_brier_crude']:.5f}")
@@ -724,6 +882,7 @@ def backtest():
     L.append(f'Team first TD scorer (team market): our top 2 per team hit {th}/{tn} ({th / tn * 100:.1f}%)')
     L.append('')
     L.extend(either_backtest(preds, pgm, res))
+    L.extend(vacancy_compare(G, dg, pgm, preds, res))
     L.append('Drive model weights (last fit): ' + ', '.join(f'{k} {v:+.3f}' for k, v in zip(['const'] + DFEATS, wd)))
     L.append('Player share weights (last fit): ' + ', '.join(f'{k} {v:+.3f}' for k, v in zip(['other'] + PFEATS, wp)))
     txt = '\n'.join(L)
