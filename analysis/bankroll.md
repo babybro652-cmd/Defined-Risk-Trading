@@ -39,3 +39,5 @@ Balance snapshots from Tim's FanDuel screenshots. Newest at the bottom. Deposits
 - **11/26/26 (Tim): DAILY BUDGET $20, starting Fri 11/27.** Split: CBB/NFL sides $2-3 each; first basket / first TD straights $0.50-1; longshots and parlays $0.25 max. Stop for the day if down $20 (no chasing). Recheck the cap each Monday (about 10% of balance). Jarvis suggested withdrawing $100 to protect the win; Tim's call.
 - 11/27: spent so far CBB $8 (4 plays) + NFL DEN@PIT $3 = $11. NBA tonight max $9.
 - 11/27: Tim also placed Georgia -5.5 vs UCF (lean) $1. Total so far $12. NBA tonight max $8.
+- 11/27 graded 11/28 (est., Tim to confirm balance): staked $14.25 (CBB $9, NFL DEN@PIT $3, NBA MIA@NY $2.25; 9:30 games cancelled, PrizePicks not confirmed). CBB 1-4 (-$5.26 at listed prices), NFL 0-7 (-$3.00), NBA 0-4 (-$2.25: Klay Thompson 3 scored first). Day net about -$10.51.
+- 11/28 plan: CFB $8.00 (5 sides $6.00, 4 anytime TDs $2.00). Leaves $12 for NBA and CBB tonight.

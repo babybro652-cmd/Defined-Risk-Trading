@@ -24,3 +24,15 @@ All 6 hit: about 7% if every line sits at our cutoff; about 2-3% if lines sit at
 Payout: check the app; a 6-pick Power is worth it only if the payout beats 1 / chance (7% = 14x). Flex (5 of 6 pays) is the lower-variance option.
 Stake $1 ($8 left of the $20 day). Any leg past its cutoff: swap in a backup. A DNP drops the slip to 5 picks.
 Not logged to the Bet Tracker (PrizePicks, not FanDuel) unless Tim places it.
+
+## Graded 11/28 (tracking only; Tim did not confirm placing). Graded at our cutoff line.
+| # | Leg | Actual | Result |
+|---|---|---|---|
+| 1 | Coleman rush att More 17.5 | 15 | L |
+| 2 | Sutton receptions Less 3.5 | 1 | W |
+| 3 | Giannis Pts+Reb More 39.5 | 45 (22+23) | W |
+| 4 | Siakam Pts+Reb More 26.5 | 13 (11+2) | L |
+| 5 | Dyson Daniels PRA More 23.5 | 16 (5+6+5) | L |
+| 6 | Zion PRA More 28.5 | 37 (25+7+5) | W |
+Legs 3-3. 6-pick Power and Flex both lose. Backups: Booker P+R 36 W, Maxey P+R 15 L.
+Lesson: three of the misses were minutes/script legs (PIT game script, Siakam 25 min in a 24-point IND loss, Daniels 37 min but 5 pts). PHI won 111-87, so the Siakam leg lost to a blowout we did not expect (IND was a home team in a close spread).

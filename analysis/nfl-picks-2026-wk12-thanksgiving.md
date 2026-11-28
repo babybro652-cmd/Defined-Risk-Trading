@@ -106,3 +106,10 @@ Side, first scoring play and total: still pass. Max $3.00 if every price qualifi
 
 ### Placed (Tim, 11/27 ~11:30 AM ET): "All played"
 All 7 DEN@PIT plays above (Harvey-free rerun) placed, $3.00 total: Coleman ATD $1, Coleman FTD $0.50, Warren FTD $0.25, Sutton FTD $0.25, Coleman/Warren either $0.50, Coleman/Sutton either $0.25, Warren/Dowdle either $0.25. Prices not sent (no slip).
+
+### Graded 11/28 (ESPN box score and play-by-play): PIT 27, DEN 5
+First TD: T.J. Watt fumble recovery in the end zone (1Q 6:03, defense). Then DK Metcalf 22-yd catch, Jalen Ramsey pick-six. DEN never scored a TD (safety, FG).
+- Coleman anytime TD: L (15 car, 26 yds; 8 rec, 46 yds; 0 TD)
+- Coleman first TD: L | Warren first TD: L (20 car, 46 yds) | Sutton first TD: L (1 rec, 4 yds)
+- Either Coleman/Warren: L | Either Coleman/Sutton: L | Either Warren/Dowdle: L
+All 7 lost: -$3.00 (no payout to estimate, so the missing prices do not matter). Coleman's workload held (23 touches) but DEN's offense scored 0 TD vs Rudolph's PIT. A defensive TD first is the noise first TD carries (no model covers it).
