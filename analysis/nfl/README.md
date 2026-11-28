@@ -332,7 +332,7 @@ The 15-20% first TD bucket now runs hotter than predicted (16.8% vs 20.4%), so t
 
 ### Regression checks (rerun with no hand edits, data through Week 11)
 - DEN @ PIT 11/27: Dobbins dropped (injury report Suspension, roster R33, suspension list); Harvey dropped (depth chart RB5, roster
-  reserve R01; the game-day roster also left him off). Coleman: first TD 14.1% (hand fix was 13.6%), anytime TD 60.2% (was 49.4%
+  reserve R01; the game-day roster also left him off). Coleman: first TD 14.1% (14.7% after the 11/28 line and roster refresh; hand fix was 13.6%), anytime TD 60.2% (was 49.4%
   before the fix, 55% by hand; 69% without the 99th-percentile cap).
 - PHI @ DAL 11/26: Ferguson out now splits his TE shares: Spann-Ford is the TE next up (4.4% first TD), Lamb 11.5% to 12.0% and
   Pickens 10.8% to 11.3%; before, all of it went to the TEs.
